@@ -4,6 +4,9 @@
 ; void core_cloth_cpp_CCloth_applyRotation_FUN_00438780(int param_1,float *param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_00438620 at 00438642
+;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0

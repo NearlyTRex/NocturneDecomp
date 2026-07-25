@@ -14,7 +14,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[2]:
+; XREF[4]:
+;   FUN_004673e0 at 0046752d
+;   FUN_004f8240 at 004f8490
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004ea049
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 at 00471725
 ;

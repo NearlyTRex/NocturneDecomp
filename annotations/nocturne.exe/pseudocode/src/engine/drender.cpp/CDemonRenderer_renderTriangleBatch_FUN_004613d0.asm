@@ -4,7 +4,8 @@
 ; void __cdecl engine_drender_cpp_CDemonRenderer_renderTriangleBatch_FUN_004613d0(int param_1,int param_2,int param_3,int param_4)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0050dd60 at 0050dda2
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 at 004160ed
 ;
 ; Called Functions:

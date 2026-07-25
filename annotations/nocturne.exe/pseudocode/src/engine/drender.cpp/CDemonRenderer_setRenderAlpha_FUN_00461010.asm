@@ -4,7 +4,7 @@
 ; void __cdecl engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(undefined4 param_1,undefined4 param_2)
 ;
 ;
-; XREF[41]:
+; XREF[42]:
 ;   FUN_00419c20 at 00419c94
 ;   FUN_0041eaf0 at 0041eb70
 ;   FUN_00421540 at 00421655
@@ -14,8 +14,8 @@
 ;   FUN_004ac440 at 004ac558
 ;   FUN_004ac600 at 004ac717
 ;   FUN_004ac7c0 at 004ac902
-;   FUN_00550210 at 005502ae
-;   ... and 31 more
+;   FUN_005159a0 at 00515b65
+;   ... and 32 more
 ;
 ; Called Functions:
 ;   engine_3d.c_setRenderAlpha_FUN_00408370

@@ -25,7 +25,7 @@
 ;   float FLOAT_005a2730 = -1.047198
 ;   float FLOAT_005a2734 = 1.221730
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_00765a98
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa9dbc
 ;   ... and 4 more
@@ -296,7 +296,7 @@ section .text
     JGE 0x0053e101                      ; 0053dc8b
         ;   XREF to: 0053e101 (CONDITIONAL_JUMP)  ; LAB_0053e101
     MOV ESI,dword ptr [ESP + 0x17c]     ; 0053dc91
-    MOV EBX,dword ptr [0x00765a98]      ; 0053dc98 | DAT_00765a98
+    MOV EBX,dword ptr [0x00765a98]      ; 0053dc98 | CDemonActorType_00765a60.name_hash
     ADD EAX,ESI                         ; 0053dc9e
     PUSH EBX                            ; 0053dca0
     MOV EDI,dword ptr [EAX + 0x152b3c]  ; 0053dca1

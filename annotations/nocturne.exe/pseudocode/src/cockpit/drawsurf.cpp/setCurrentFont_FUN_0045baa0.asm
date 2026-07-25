@@ -4,7 +4,8 @@
 ; void __cdecl cockpit_drawsurf_cpp_setCurrentFont_FUN_0045baa0(undefined4 param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0045e370 at 0045e4e5
 ;   FUN_004fe9d0 at 004fea2f
 ;
 ; Referenced Globals:

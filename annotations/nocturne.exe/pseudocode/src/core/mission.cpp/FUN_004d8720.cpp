@@ -100,7 +100,7 @@ void FUN_004d8720(int param_1,uint param_2)
   for (iVar4 = *(int *)(param_1 + 0x514); iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x144)) {
     core_actor_cpp_CDemonActor_save_FUN_0040c040(iVar4,param_2);
   }
-  core_gore_cpp_CGore_save_FUN_004b08d0(0x01C78C7C,param_2);
+  core_gore_cpp_CGore_save_FUN_004b08d0(INT_005b96c4,param_2);
   *(uint *)(param_1 + 0x858) = 0;
   return;
 }

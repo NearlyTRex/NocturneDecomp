@@ -235,7 +235,7 @@ section .text
     ADD ESP,0x8                         ; 004fd405
     LEA EDI,[ESP + 0x134]               ; 004fd408
     LEA ESI,[ESP + 0xf4]                ; 004fd40f
-    PUSH 0x51b650                       ; 004fd416 | LAB_0051b650
+    PUSH 0x51b650                       ; 004fd416
     MOV ECX,dword ptr [ESP + 0x14c]     ; 004fd41b
     MOVSD ES:EDI,ESI                    ; 004fd422
     MOVSD ES:EDI,ESI                    ; 004fd423

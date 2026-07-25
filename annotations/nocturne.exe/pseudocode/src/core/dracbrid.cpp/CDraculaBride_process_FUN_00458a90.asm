@@ -1137,7 +1137,7 @@ section .text
     PUSH ESI                            ; 00459670
     LEA EAX,[EBP + 0xfffffebe]          ; 00459671
     PUSH EAX                            ; 00459677
-    MOV EAX,[0x005b96c4]                ; 00459678 | DAT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 00459678 | INT_005b96c4
     PUSH EAX                            ; 0045967d
     CALL FUN_004b0480                   ; 0045967e
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()

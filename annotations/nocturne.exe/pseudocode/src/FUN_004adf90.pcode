@@ -1,0 +1,234 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    FUN_004adf90
+# Entry:       004adf90
+# Signature:   void FUN_004adf90(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@004adf90 [ESP:-4](-4)  # PUSH 0x1c78c7c
+COPY (unique,0x87f00,4) = (const,0x1c78c7c,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adf95 [ESP:-4](-4)  # CALL 0x004afd80
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4adf9a,4)
+CALL (ram,0x4afd80,4)
+
+@004adf9a [ESP:+0](+4)?  # ADD ESP, 0x4
+INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@004adf9d [ESP:-4](-4)  # PUSH 0x5b9694
+COPY (unique,0x87f00,4) = (const,0x5b9694,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adfa2 [ESP:-4](-4)  # CALL 0x00564bb0
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4adfa7,4)
+CALL (ram,0x564bb0,4)
+
+@004adfa7 [ESP:+0](+4)?  # ADD ESP, 0x4
+INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@004adfaa [ESP:-4](-4)  # PUSH 0x59e530
+COPY (unique,0x87f00,4) = (const,0x59e530,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adfaf [ESP:-8](-4)  # PUSH 0x100
+COPY (unique,0x87f00,4) = (const,0x100,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adfb4 [ESP:-12](-4)  # PUSH 0x1c78cec
+COPY (unique,0x87f00,4) = (const,0x1c78cec,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adfb9 [ESP:-12](-4)  # CALL 0x005644a7
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4adfbe,4)
+CALL (ram,0x5644a7,4)
+
+@004adfbe [ESP:+0](+12)?  # ADD ESP, 0xc
+INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@004adfc1 [ESP:-4](-4)  # PUSH 0x5b96a4
+COPY (unique,0x87f00,4) = (const,0x5b96a4,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adfc6 [ESP:-4](-4)  # CALL 0x00564bb0
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4adfcb,4)
+CALL (ram,0x564bb0,4)
+
+@004adfcb [ESP:+0](+4)?  # ADD ESP, 0x4
+INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@004adfce [ESP:-4](-4)  # PUSH 0x59e550
+COPY (unique,0x87f00,4) = (const,0x59e550,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adfd3 [ESP:-8](-4)  # PUSH 0x7d0
+COPY (unique,0x87f00,4) = (const,0x7d0,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adfd8 [ESP:-12](-4)  # PUSH 0x1c7ccf4
+COPY (unique,0x87f00,4) = (const,0x1c7ccf4,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adfdd [ESP:-12](-4)  # CALL 0x005644a7
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4adfe2,4)
+CALL (ram,0x5644a7,4)
+
+@004adfe2 [ESP:+0](+12)?  # ADD ESP, 0xc
+INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@004adfe5 [ESP:-4](-4)  # PUSH 0x59e570
+COPY (unique,0x87f00,4) = (const,0x59e570,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adfea [ESP:-8](-4)  # PUSH 0x20
+COPY (unique,0x87b00,4) = (const,0x20,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87b00,4)
+
+@004adfec [ESP:-12](-4)  # PUSH 0x1c9e03c
+COPY (unique,0x87f00,4) = (const,0x1c9e03c,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adff1 [ESP:-12](-4)  # CALL 0x005644a7
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4adff6,4)
+CALL (ram,0x5644a7,4)
+
+@004adff6 [ESP:+0](+12)?  # ADD ESP, 0xc
+INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@004adff9 [ESP:-4](-4)  # PUSH 0x59e590
+COPY (unique,0x87f00,4) = (const,0x59e590,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004adffe [ESP:-8](-4)  # PUSH 0x3e8
+COPY (unique,0x87f00,4) = (const,0x3e8,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004ae003 [ESP:-12](-4)  # PUSH 0x1c9e544
+COPY (unique,0x87f00,4) = (const,0x1c9e544,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004ae008 [ESP:-12](-4)  # CALL 0x005644a7
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4ae00d,4)
+CALL (ram,0x5644a7,4)
+
+@004ae00d [ESP:+0](+12)?  # ADD ESP, 0xc
+INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
+INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@004ae010 [ESP:-4](-4)  # PUSH 0x5b96b4
+COPY (unique,0x87f00,4) = (const,0x5b96b4,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@004ae015 [ESP:-4](-4)  # CALL 0x00564bb0
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4ae01a,4)
+CALL (ram,0x564bb0,4)
+
+@004ae01a [ESP:+0](+4)?  # ADD ESP, 0x4
+INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@004ae01d [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 33 instructions, 147 P-code ops
+# ============================================================================

@@ -4,8 +4,11 @@
 ; void __cdecl engine_clipper_c_interpolateVertexBottomClipAdvanced_FUN_00433a00(int *param_1,int *param_2,int *param_3)
 ;
 ;
-; XREF[2]:
-;   engine_clipper.c_FUN_00433ef0 at 00433fab
+; XREF[5]:
+;   FUN_00433f58 at 00433fab
+;   FUN_00433fc8 at 00433ffe
+;   FUN_004347cc at 0043482b
+;   FUN_0043484b at 00434881
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0 at 00434fcd
 ;
 ; *****************************************************************************

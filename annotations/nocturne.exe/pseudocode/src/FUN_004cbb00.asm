@@ -4,6 +4,9 @@
 ; int FUN_004cbb00(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004cbad0 at 004cbae3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_mirrhack_kfm_0058815a
 ;   undefined1* PTR_FUN_005a0134 = 004cbb50

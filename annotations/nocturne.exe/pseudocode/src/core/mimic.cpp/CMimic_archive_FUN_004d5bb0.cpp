@@ -15,15 +15,15 @@ void core_mimic_cpp_CMimic_archive_FUN_004d5bb0(int param_1)
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0xbd88,"attackCondition");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x4691c,"attackMode");
   core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x46920,"mirrorPlaneActor");
-  if (0x00000003 < 2) {
-    if (0x00000003 < 3) {
+  if (INT_005baf48 < 2) {
+    if (INT_005baf48 < 3) {
       return;
     }
   }
   else {
     core_actor_cpp_FUN_0040cb00(param_1 + 0x150,"motion state");
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x46924,"morphActorType");
-    if (0x00000003 < 3) {
+    if (INT_005baf48 < 3) {
       return;
     }
   }

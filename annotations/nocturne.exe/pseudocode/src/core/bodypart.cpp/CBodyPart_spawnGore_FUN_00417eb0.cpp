@@ -16,6 +16,6 @@ void __cdecl core_bodypart_cpp_CBodyPart_spawnGore_FUN_00417eb0(int param_1)
     return;
   }
   core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-            (0x01C78C7C,param_1 + 0x20,&DAT_02dd1184,*(uint *)(param_1 + 0xca0));
+            (INT_005b96c4,param_1 + 0x20,&DAT_02dd1184,*(uint *)(param_1 + 0xca0));
   return;
 }

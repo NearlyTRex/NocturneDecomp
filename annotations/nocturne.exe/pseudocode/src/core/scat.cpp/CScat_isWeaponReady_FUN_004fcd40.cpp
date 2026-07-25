@@ -1,6 +1,6 @@
 // Name: core_scat.cpp_CScat_isWeaponReady_FUN_004fcd40
 // Address: 004fcd40
-// Address Range: [[004fbb84, 004fbb89] [004fcd40, 004fcd66]]
+// Address Range: [[004fcd40, 004fcd66]]
 // Convention: __cdecl
 // Signature: undefined4 __cdecl core_scat_cpp_CScat_isWeaponReady_FUN_004fcd40(int param_1)
 

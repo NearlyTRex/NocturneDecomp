@@ -122,7 +122,7 @@ section .text
     CMP EDI,EDX                         ; 0050d3a5
     JL 0x0050d383                       ; 0050d3a7
         ;   XREF to: 0050d383 (CONDITIONAL_JUMP)  ; LAB_0050d383
-    PUSH 0x50d2a0                       ; 0050d3a9 | LAB_0050d2a0
+    PUSH 0x50d2a0                       ; 0050d3a9
         ;   Label: LAB_0050d3a9
     PUSH 0x8                            ; 0050d3ae
     MOV ECX,dword ptr [0x02080430]      ; 0050d3b0 | DAT_02080430

@@ -47,4 +47,5 @@ section .text
     ADD ESP,0x4                         ; 0047a24c
     POP EBX                             ; 0047a24f
     RET                                 ; 0047a250
+        ;   Label: LAB_0047a250
 

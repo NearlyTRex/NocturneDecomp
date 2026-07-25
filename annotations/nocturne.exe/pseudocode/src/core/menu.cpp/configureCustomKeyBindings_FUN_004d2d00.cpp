@@ -702,7 +702,7 @@ LAB_004d2d2e:
             iVar28 = -1;
             iVar31 = 0;
             do {
-              iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,iVar31);
+              iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,iVar31);
               if ((iVar4 != 0) && (bVar33 = -1 < iVar28, iVar28 = iVar31, bVar33))
               goto LAB_004d3d37;
               iVar31 = iVar31 + 1;
@@ -713,11 +713,11 @@ LAB_004d3d37:
                               ("OK - you can release the key now...");
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
                       (0x01BCD074,uVar3);
-            iVar28 = (**(code **)*0x01CC30E4)(0x01CC30E4,1);
+            iVar28 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,1);
             if (iVar28 != 0) break;
             wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
           }
-          iVar28 = (**(code **)*0x01CC30E4)(0x01CC30E4,1);
+          iVar28 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,1);
           if (iVar28 == 0) {
             pcVar30 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
                                         ("Press new key or button for ");
@@ -754,7 +754,7 @@ LAB_004d3d37:
             } while (cVar1 != '\0');
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
                       (0x01BCD074,acStack_444);
-            engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(0x01CC30E4,1);
+            engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(INT_005bac64,1);
 LAB_004d3e28:
             do {
               wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
@@ -764,7 +764,7 @@ LAB_004d3e28:
               iVar28 = -1;
               iVar31 = 0;
               do {
-                iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,iVar31);
+                iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,iVar31);
                 if ((iVar4 != 0) && (bVar33 = -1 < iVar28, iVar28 = iVar31, bVar33))
                 goto LAB_004d3e28;
                 iVar31 = iVar31 + 1;
@@ -782,7 +782,7 @@ LAB_004d3e28:
               iVar28 = -1;
               iVar31 = 0;
               do {
-                iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,iVar31);
+                iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,iVar31);
                 if ((iVar4 != 0) && (bVar33 = -1 < iVar28, iVar28 = iVar31, bVar33))
                 goto LAB_004d3ec0;
                 iVar31 = iVar31 + 1;
@@ -803,7 +803,7 @@ LAB_004d3ec0:
                 iVar31 = iVar31 + 4;
               } while (iVar28 < _DAT_01cc8120);
             }
-            engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(0x01CC30E4,0);
+            engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(INT_005bac64,0);
           }
           else {
             engine_2d_c_clearInputAndWait_FUN_00403f50();

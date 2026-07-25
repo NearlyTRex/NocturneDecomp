@@ -20,6 +20,6 @@ void FUN_0048c0d0(uint param_1,uint param_2,uint param_3,uint param_4,uint param
   core_sound_cpp_CSound_playActorSound_FUN_0052ea60
             (0x02DC9450,param_1,"xplode?.wav @ 6.0",param_2);
   core_fire_cpp_CFireEffect_createCrater_FUN_0048c370(param_1,param_2,param_5);
-  FUN_004940d0(0x01C70F74);
+  FUN_004940d0(INT_005b9284);
   return;
 }

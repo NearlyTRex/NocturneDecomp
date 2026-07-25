@@ -1,0 +1,210 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 21,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 10
+  },
+  "cross_references": [
+    {
+      "addr": "00568690",
+      "from_addr": "005686e6",
+      "name": "FUN_00568690",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056f1a0",
+    "address_range": [
+      [
+        "0056f1a0",
+        "0056f1a9"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0056f1a0",
+    "signature": "int FUN_0056f1a0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005671dc",
+      "is_variadic": false,
+      "name": "FUN_005671dc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c1abc",
+      "name": "PTR_FUN_005c1abc",
+      "type": "void*",
+      "value": "005671dc"
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.333333333333333,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "CALLIND": 1,
+      "COPY": 1,
+      "INT_ADD": 2,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 16
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 7,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (*(code *)PTR_FUN_005c1abc)();",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

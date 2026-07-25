@@ -66,7 +66,7 @@ section .text
     PUSH EAX                            ; 00419d19
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 00419d1a
         ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80()
-    MOV ECX,dword ptr [0x005ad054]      ; 00419d1f | DAT_005ad054
+    MOV ECX,dword ptr [0x005ad054]      ; 00419d1f | INT_005ad054
     ADD ESP,0x8                         ; 00419d25
     CMP ECX,0x4                         ; 00419d28
     JL 0x00419ee8                       ; 00419d2b
@@ -78,7 +78,7 @@ section .text
     PUSH EBX                            ; 00419d40
     CALL core_actor.cpp_FUN_0040cb00    ; 00419d41
         ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
-    MOV ESI,dword ptr [0x005ad054]      ; 00419d46 | DAT_005ad054
+    MOV ESI,dword ptr [0x005ad054]      ; 00419d46 | INT_005ad054
     ADD ESP,0x8                         ; 00419d4c
     CMP ESI,0x2                         ; 00419d4f
     JL 0x00419ed0                       ; 00419d52
@@ -197,7 +197,7 @@ section .text
     LEA EAX,[EAX]                       ; 00419ec3
     LEA EDX,[EDX]                       ; 00419ec9
     NOP                                 ; 00419ecf
-    MOV ECX,dword ptr [0x005ad054]      ; 00419ed0 | DAT_005ad054
+    MOV ECX,dword ptr [0x005ad054]      ; 00419ed0 | INT_005ad054
         ;   Label: LAB_00419ed0
     CMP ECX,0x3                         ; 00419ed6
     JL 0x00419ee0                       ; 00419ed9

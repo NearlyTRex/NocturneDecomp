@@ -4,6 +4,9 @@
 ; int FUN_004c9430(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004c9400 at 004c9413
+;
 ; Referenced Globals:
 ;   TerminatedCString s_doorpuzz_kfm_00587ef3
 ;   TerminatedCString s_puzz_rec_kfm_00587f00

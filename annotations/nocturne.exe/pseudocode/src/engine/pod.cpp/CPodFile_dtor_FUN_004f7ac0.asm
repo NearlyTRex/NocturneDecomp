@@ -4,8 +4,10 @@
 ; undefined4 __cdecl engine_pod_cpp_CPodFile_dtor_FUN_004f7ac0(undefined4 param_1)
 ;
 ;
-; XREF[2]:
+; XREF[4]:
 ;   FUN_004f8a10 at 004f8aa9
+;   FUN_004f8eb0 at 004f9099
+;   FUN_004f9100 at 004f913f
 ;   engine_pod.cpp_CPod_cleanup_FUN_004f8b40 at 004f8b76
 ;
 ; Called Functions:

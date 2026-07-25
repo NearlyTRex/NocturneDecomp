@@ -3,21 +3,20 @@
 ; *****************************************************************************
 ; void core_xform_cpp_FUN_0055de20(void)
 ;
+; Local Variables:
+; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0055de10 = 0055de88
 ;   undefined1* PTR_caseD_1_0055de14 = 0055deed
 ;   undefined1* PTR_caseD_3_0055de1c = 0055decd
 ;   string caseD_0
+;   undefined4 caseD_3
+;   undefined4 caseD_1
 ;   string caseD_2
-;   undefined4 DAT_00766c70
-;   undefined4 DAT_00766c74
 ;   undefined4 DAT_02de313c
 ;   undefined4 DAT_02de4344
 ;   undefined4 DAT_02de4348
-;
-; Called Functions:
-;   core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0
 ;
 ; *****************************************************************************
 
@@ -71,34 +70,4 @@ section .text
         ;   XREF to: 0055decd (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [EAX*0x4 + 0x55de10]  ; 0055de81 | = "k=plv" | caseD_1 | caseD_2
         ;   Label: switchD
-    MOV ESI,dword ptr [ESP]             ; 0055decd
-        ;   Label: caseD_3
-    MOV EDI,dword ptr [0x02de313c]      ; 0055ded0 | DAT_02de313c
-    INC ESI                             ; 0055ded6
-    ADD EBX,0x30                        ; 0055ded7
-    MOV dword ptr [ESP],ESI             ; 0055deda
-    CMP ESI,EDI                         ; 0055dedd
-    JL 0x0055de3f                       ; 0055dedf
-        ;   XREF to: 0055de3f (CONDITIONAL_JUMP)  ; LAB_0055de3f
-    ADD ESP,0x4                         ; 0055dee5
-        ;   Label: LAB_0055dee5
-    POP EBP                             ; 0055dee8
-    POP EDI                             ; 0055dee9
-    POP ESI                             ; 0055deea
-    POP EBX                             ; 0055deeb
-    RET                                 ; 0055deec
-    IMUL EAX,dword ptr [0x00766c70],0x30 ; 0055deed | DAT_00766c70
-        ;   Label: caseD_1
-    ADD EAX,0x766c74                    ; 0055def4 | DAT_00766c74
-    PUSH EAX                            ; 0055def9
-    PUSH EDX                            ; 0055defa
-    PUSH EBP                            ; 0055defb
-    CALL core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0 ; 0055defc
-        ;   XREF to: 0055d8f0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0()
-    MOV ESI,dword ptr [0x00766c70]      ; 0055df01 | DAT_00766c70
-    INC ESI                             ; 0055df07
-    ADD ESP,0xc                         ; 0055df08
-    MOV dword ptr [0x00766c70],ESI      ; 0055df0b | DAT_00766c70
-    JMP 0x0055decd                      ; 0055df11
-        ;   XREF to: 0055decd (UNCONDITIONAL_JUMP)  ; caseD_3
 

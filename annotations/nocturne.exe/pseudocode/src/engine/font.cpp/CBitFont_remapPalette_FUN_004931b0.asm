@@ -16,7 +16,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0044cd80 at 0044cd87
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 0049018d
 ;
 ; Referenced Globals:

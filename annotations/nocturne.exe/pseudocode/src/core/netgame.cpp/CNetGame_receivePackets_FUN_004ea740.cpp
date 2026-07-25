@@ -30,7 +30,7 @@ void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(int param_1)
       return;
     }
     iVar1 = support_trisock_cpp_receiveSocketData_FUN_00549010
-                      (param_1 + 0x170,0x1d1640c,0x404,local_10);
+                      (param_1 + 0x170,&DAT_01d1640c,0x404,local_10);
     if (iVar1 < 1) break;
     _DAT_01d16408 = iVar1 + 1;
     core_netgame_cpp_CNetGame_processPacket_FUN_004ea830(param_1,local_10,&DAT_01d16408);

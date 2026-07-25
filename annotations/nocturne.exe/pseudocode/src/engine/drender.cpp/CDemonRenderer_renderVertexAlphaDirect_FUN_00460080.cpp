@@ -30,10 +30,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460
     if (((uVar2 & 0x80000000) == 0) || ((uVar2 & 0x1f) == 0)) {
       if (param_1[1] == 0) {
         if (DAT_005b7624 == 0x20) {
-          _DAT_01c00c7c = &LAB_0052f031;
+          _DAT_01c00c7c = FUN_0052f031;
         }
         else {
-          _DAT_01c00c7c = &LAB_0052f823;
+          _DAT_01c00c7c = FUN_0052f823;
         }
         _DAT_01c039a4 = 6;
         _DAT_01c039a0 = 0x367;
@@ -41,7 +41,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460
       else {
         _DAT_01c039a0 = 0;
         _DAT_01c039a4 = 0;
-        _DAT_01c00c7c = &LAB_00463a79;
+        _DAT_01c00c7c = FUN_00463a79;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
                 (param_1,*(uint *)(param_2 + 4),param_2 + 0x18);

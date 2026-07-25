@@ -47,7 +47,7 @@
 ;   double DOUBLE_0057df24 = 32
 ;   float FLOAT_0059c6f8 = 3
 ;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_01e57284
@@ -478,7 +478,7 @@ section .text
     PUSH 0x1                            ; 00462eb0
     LEA EAX,[EBP + -0xa]                ; 00462eb2
     PUSH EAX                            ; 00462eb5
-    MOV EDX,dword ptr [0x005b96c4]      ; 00462eb6 | DAT_005b96c4
+    MOV EDX,dword ptr [0x005b96c4]      ; 00462eb6 | INT_005b96c4
     PUSH EDX                            ; 00462ebc
     CALL FUN_004b0480                   ; 00462ebd
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()

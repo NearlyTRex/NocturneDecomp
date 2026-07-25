@@ -6,10 +6,14 @@
 ; Local Variables:
 ; undefined8       Stack[-0x28]:8  local_28
 ;
-; XREF[3]:
+; XREF[7]:
 ;   FUN_0046d680 at 0046d75c
 ;   FUN_0046d7e0 at 0046d8c2
+;   FUN_0046d950 at 0046da2a
+;   FUN_0046dab0 at 0046db90
 ;   FUN_0046dc10 at 0046dcf2
+;   FUN_0046dd80 at 0046de62
+;   FUN_0046df40 at 0046e553
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtri_cpp_0057e48e

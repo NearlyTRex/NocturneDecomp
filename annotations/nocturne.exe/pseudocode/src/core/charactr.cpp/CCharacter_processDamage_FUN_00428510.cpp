@@ -75,7 +75,7 @@ LAB_00428579:
     iStack_14 = (int)ROUND(fVar4);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,uVar5,puVar6,puVar7);
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-              (0x01C78C7C,auStack_20,param_2 + 3,(int)ROUND(fVar4) + 1,
+              (INT_005b96c4,auStack_20,param_2 + 3,(int)ROUND(fVar4) + 1,
                *(uint *)(param_1 + 0x2608));
   }
   if ((*(int *)(param_1 + 0x243c) == 1) && (param_1 != *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8))) {

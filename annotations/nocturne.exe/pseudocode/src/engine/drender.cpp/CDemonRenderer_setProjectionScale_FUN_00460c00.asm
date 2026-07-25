@@ -4,7 +4,8 @@
 ; void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(undefined4 param_1,float param_2)
 ;
 ;
-; XREF[11]:
+; XREF[12]:
+;   FUN_00511d80 at 00511e3e
 ;   FUN_005125a0 at 00512da8
 ;   FUN_00513720 at 005137c8
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 004404ad
@@ -14,8 +15,7 @@
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_004d6610 at 004d6632
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 at 004df071
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec8b
-;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 at 0050e1b4
-;   ... and 1 more
+;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057dc45 = 18

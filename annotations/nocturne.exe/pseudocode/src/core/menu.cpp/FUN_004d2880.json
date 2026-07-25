@@ -1,0 +1,352 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 149,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 10,
+    "suspect_types": [
+      "stack_param",
+      "undefined_data",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d2880",
+    "address_range": [
+      [
+        "004d2880",
+        "004d28f9"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004d2880",
+    "signature": "void FUN_004d2880(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "FUN_004c8440"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00588d42",
+      "name": "s_core_menu_cpp_00588d42",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00588d53",
+      "name": "s_Too_many_custom_keys_00588d53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "DAT_01cc4800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "DAT_01cc4804",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc8120",
+      "name": "DAT_01cc8120",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc8124",
+      "name": "DAT_01cc8124",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.625,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 30,
+      "INT_ADD": 16,
+      "INT_AND": 44,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 25,
+      "INT_LEFT": 4,
+      "INT_LESS": 3,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 15,
+      "INT_SUB": 11,
+      "INT_XOR": 2,
+      "LOAD": 9,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 225
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_004d2880.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 30,
+          "message": "Uninitialized variable: in_stack_00000008",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "uint in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*(uint *)(&DAT_01cc8124 + _DAT_01cc8120 * 4) = in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 20,
+      "match": "DAT_01cc8124",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_01cc8124 + _DAT_01cc8120 * 4) = in_stack_00000004;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "cVar1 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "cVar1 = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 22,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000008",
+      "line": 30,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "cVar1 = *in_stack_00000008;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

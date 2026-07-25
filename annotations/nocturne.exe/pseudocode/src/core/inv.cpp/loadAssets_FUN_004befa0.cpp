@@ -18,17 +18,17 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004befa0(void)
   iVar1 = engine_dosio_cpp_getFile_FUN_00456a60
                     ("data","invsize.txt","rt");
   if (iVar1 != 0) {
-    _fscanf(iVar1,"%d,%d\n",&DAT_005bab60,&DAT_005bab64);
+    _fscanf(iVar1,"%d,%d\n",&INT_005bab60,&INT_005bab64);
     _fclose(iVar1);
   }
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (0x1cb0380,"invback",0x000000D0,0x00000060);
+            (0x1cb0380,"invback",INT_005bab60,INT_005bab64);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (0x1cb0394,"invback2",0x00000060,0x00000060);
+            (0x1cb0394,"invback2",INT_005bab64,INT_005bab64);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (0x1cb03a8,"weapback",0x000000D0,0x00000060);
+            (0x1cb03a8,"weapback",INT_005bab60,INT_005bab64);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0
-            (0x1cb03bc,"weapback2",0x00000060,0x00000060);
+            (0x1cb03bc,"weapback2",INT_005bab64,INT_005bab64);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(0x1cc2fd8,"battery",0x10,0x20);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(0x1cc2fec,"hbar1",0x1b,0x40);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(0x1cc3000,"hbar2",0x1b,0x40);

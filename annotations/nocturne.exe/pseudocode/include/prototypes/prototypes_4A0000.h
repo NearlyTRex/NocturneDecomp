@@ -7,7 +7,10 @@
 // FUNCTION PROTOTYPES - Range 0x4A0000
 // =============================================================================
 
+undefined4 FUN_004a0260(char *param_1);
 void __cdecl core_game_cpp_giveHeroWeapon_FUN_004a02e0(undefined4 param_1);
+void FUN_004a03a0(void);
+void FUN_004a0430(char *param_1,undefined4 param_2,undefined4 param_3);
 void __cdecl core_game_cpp_scaleBoneRecursive_FUN_004a04e0(int param_1,int param_2,float param_3,int param_4);
 void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(int param_1);
 void __cdecl core_game_cpp_CGame_loadAssets_FUN_004a3660(void);
@@ -34,6 +37,8 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(int param_1);
 void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(undefined4 param_1);
 undefined4 FUN_004a72a0(undefined4 param_1);
 undefined4 FUN_004a72b0(undefined4 param_1);
+void FUN_004a72f0(void);
+void FUN_004a7320(void);
 undefined4 FUN_004a7340(void);
 int core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(undefined4 param_1);
 void core_gargoyle_cpp_CGargoyle_setup_FUN_004a7450(int param_1);
@@ -46,6 +51,8 @@ void core_gargoyle_cpp_CGargoyle_processDamage_FUN_004a85d0(int param_1,int para
 int core_gargoyle_cpp_CGargoyle_getTargetPoints_FUN_004a8730(int param_1,undefined4 *param_2);
 void FUN_004a88d0(undefined4 param_1,undefined4 param_2);
 int FUN_004a88f0(int param_1,byte param_2);
+void FUN_004a89b0(void);
+void FUN_004a89e0(void);
 undefined4 FUN_004a8a00(void);
 int FUN_004a8a10(undefined4 param_1);
 void FUN_004a8a60(int param_1);
@@ -56,6 +63,8 @@ void FUN_004a8b30(int param_1);
 undefined4 FUN_004a8b60(void);
 undefined4 * FUN_004a8b70(int param_1,undefined4 *param_2);
 undefined4 FUN_004a8bc0(undefined4 param_1,byte param_2);
+void FUN_004a8c10(void);
+void FUN_004a8c70(void);
 undefined4 FUN_004a8c90(void);
 int core_ghoul_cpp_CGhoul_ctor_FUN_004a8ca0(undefined4 param_1);
 void core_ghoul_cpp_CGhoul_setup_FUN_004a8dd0(int param_1);
@@ -69,6 +78,8 @@ void __cdecl core_ghoul_cpp_CGhoul_processDismemberment_FUN_004ab190(int param_1
 void FUN_004ab450(int param_1,int param_2);
 int FUN_004ab830(int param_1,float *param_2);
 int FUN_004aba30(int param_1,byte param_2);
+void FUN_004abaf0(void);
+void FUN_004abb20(void);
 undefined4 FUN_004abb40(void);
 int FUN_004abb50(undefined4 param_1);
 void core_glass_cpp_CGlass_setup_FUN_004abc90(int param_1);
@@ -87,6 +98,7 @@ undefined4 FUN_004adec0(void);
 void FUN_004aded0(int param_1);
 int FUN_004adef0(int param_1,byte param_2);
 void __cdecl core_glass_cpp_CVector3f_arrdtor_FUN_004adf70(undefined4 param_1);
+void FUN_004adf90(void);
 void __cdecl core_gore_cpp_CBloodParticle_setup_FUN_004ae070(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 void core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(void);
 void core_gore_cpp_CBloodParticle_render_FUN_004ae190(float *param_1);

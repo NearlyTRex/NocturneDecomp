@@ -4,7 +4,8 @@
 ; void __cdecl core_sound_cpp_CSound_playSound_FUN_0052ea40(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[8]:
+; XREF[9]:
+;   FUN_004a0430 at 004a04cb
 ;   FUN_0054dd50 at 0054df66
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c50d
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a05cf

@@ -21,10 +21,10 @@
 ;   TerminatedCString s_s_005872c9
 ;   TerminatedCString s_core_inv_cpp_005872d6
 ;   TerminatedCString s_CInventory_load_Can_t_fi_005872e6
-;   undefined4 DAT_005bab68
-;   undefined4 DAT_005bab6c
-;   undefined4 DAT_005babd0
-;   undefined4 DAT_005babd4
+;   int INT_005bab68 = 0x0
+;   int INT_005bab6c = 0x0
+;   int INT_005babd0 = 0x0
+;   int INT_005babd4 = 0x0
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -139,18 +139,18 @@ section .text
         ;   Label: LAB_004c129b
     LEA EDI,[ESP + 0x100]               ; 004c12a0
     LEA EAX,[ESP + 0x164]               ; 004c12a7
-    MOV ESI,0x5bab68                    ; 004c12ae | DAT_005bab68
+    MOV ESI,0x5bab68                    ; 004c12ae | INT_005bab68
     PUSH EAX                            ; 004c12b3
     LEA EAX,[ESP + 0x104]               ; 004c12b4
-    MOVSD.REP ES:EDI,ESI                ; 004c12bb | DAT_005bab68 | DAT_005bab6c
+    MOVSD.REP ES:EDI,ESI                ; 004c12bb | INT_005bab68 | INT_005bab6c
     PUSH EAX                            ; 004c12bd
     MOV ECX,0x19                        ; 004c12be
     LEA EDI,[ESP + 0x16c]               ; 004c12c3
     PUSH 0x5872c9                       ; 004c12ca | = " %s \"%[^\"]\"\n"
     MOV EAX,dword ptr [ESP + 0x1f0]     ; 004c12cf
-    MOV ESI,0x5babd0                    ; 004c12d6 | DAT_005babd0
+    MOV ESI,0x5babd0                    ; 004c12d6 | INT_005babd0
     PUSH EAX                            ; 004c12db
-    MOVSD.REP ES:EDI,ESI                ; 004c12dc | DAT_005babd0 | DAT_005babd4
+    MOVSD.REP ES:EDI,ESI                ; 004c12dc | INT_005babd0 | INT_005babd4
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004c12de
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
     MOV ESI,dword ptr [0x005baf90]      ; 004c12e3 | DAT_005baf90

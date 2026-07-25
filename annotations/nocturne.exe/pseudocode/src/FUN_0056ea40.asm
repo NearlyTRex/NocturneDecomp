@@ -4,6 +4,9 @@
 ; bool FUN_0056ea40(void)
 ;
 ;
+; XREF[1]:
+;   FUN_0056ead4 at 0056eaea
+;
 ; Referenced Globals:
 ;   void* PTR_GetProcAddress_00575534 = 00175ddc
 ;   void* PTR_LoadLibraryA_00575560 = 00175eaa

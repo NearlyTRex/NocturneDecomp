@@ -4,7 +4,8 @@
 ; int core_netgame_cpp_CNetGame_addPlayer_FUN_004eb440(int param_1,undefined4 *param_2,char *param_3,undefined4 param_4,undefined4 param_5)
 ;
 ;
-; XREF[3]:
+; XREF[4]:
+;   FUN_004e99f0 at 004e9a4f
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_004ec600 at 004ecc48
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9ae1
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004eaa18

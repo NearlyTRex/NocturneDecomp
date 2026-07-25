@@ -4,6 +4,9 @@
 ; void cockpit_drawsurf_cpp_CDrawSurface_setColorRGB_FUN_0045b800(uint param_1,uint param_2,uint param_3)
 ;
 ;
+; XREF[1]:
+;   FUN_0045e370 at 0045e41a
+;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01b4d710

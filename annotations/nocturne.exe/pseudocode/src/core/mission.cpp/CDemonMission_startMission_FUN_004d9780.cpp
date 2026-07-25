@@ -30,7 +30,7 @@ uint __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(int param_
     core_mission_cpp_CDemonMission_loadSet_FUN_004d9020
               (param_1,*(uint *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2c));
     uVar1 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Loading script",0);
-    core_level_cpp_CLevelLoader_update_FUN_004c59e0(0x01CC3160,uVar1);
+    core_level_cpp_CLevelLoader_update_FUN_004c59e0(INT_005baca0,uVar1);
     iVar2 = core_mission_cpp_CDemonMission_loadScript_FUN_004d86d0
                       (param_1,*(uint *)(0x01C775EC + 0x234));
     if (iVar2 == 0) {

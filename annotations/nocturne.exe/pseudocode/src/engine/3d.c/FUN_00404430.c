@@ -2,13 +2,13 @@
 // Address: 00404430
 // Address Range: [[00404430, 00404477]]
 // Convention: unknown
-// Signature: undefined * engine_3d_c_FUN_00404430(undefined4 *param_1)
+// Signature: undefined4 * engine_3d_c_FUN_00404430(undefined4 *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-byte * engine_3d_c_FUN_00404430(uint *param_1)
+uint * engine_3d_c_FUN_00404430(uint *param_1)
 
 {
   byte local_54 [80];

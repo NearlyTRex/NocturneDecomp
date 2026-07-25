@@ -4,18 +4,18 @@
 ; void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005263c0(void)
 ;
 ;
-; XREF[27]:
+; XREF[28]:
 ;   FUN_00418a00 at 00419040
 ;   FUN_0045ab40 at 0045afff
 ;   FUN_004c79a0 at 004c7c44
 ;   FUN_0052d790 at 0052dbfb
 ;   FUN_0052dff0 at 0052e426
+;   FUN_0052eac0 at 0052eaf6
 ;   FUN_00535900 at 00537c3b
 ;   FUN_005464a0 at 005466d0
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e840
 ;   core_charactr.cpp_CCharacter_processFire_FUN_004269b0 at 00426d53
-;   core_drone.cpp_CDrone_process_FUN_00462a60 at 004630bd
-;   ... and 17 more
+;   ... and 18 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005934ab

@@ -1,13 +1,28 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * core_actor_cpp_registerActorClass_FUN_0040d3f0(char *param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040d3f0(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func,int *max_version,int version,CDemonActorType *parent_class_info)
 ;
+; Parameters:
+; CDemonActorType * Stack[0x4]:4   this_ptr
+; char *           Stack[0x8]:4   class_name
+; CDemonActor_FactoryFunc * Stack[0xc]:4   factor_func
+; int *            Stack[0x10]:4   max_version
+; int              Stack[0x14]:4   version
+; CDemonActorType * Stack[0x18]:4   parent_class_info
 ;
-; XREF[3]:
+; XREF[106]:
+;   FUN_00409840 at 00409855
+;   FUN_0040eb10 at 0040eb2b
+;   FUN_0040efe0 at 0040effb
+;   FUN_0040f500 at 0040f51b
+;   FUN_0040f900 at 0040f91b
+;   FUN_0040fe70 at 0040fe8b
+;   FUN_00410140 at 0041015b
 ;   FUN_004116b0 at 004116cb
 ;   FUN_00411910 at 0041192b
 ;   FUN_004120a0 at 004120bb
+;   ... and 96 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_00577f3b

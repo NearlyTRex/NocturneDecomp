@@ -10,6 +10,7 @@ void FUN_004116b0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&DAT_00764524,"CBarrier",&LAB_004116e0,&DAT_005acf80,2,&DAT_00763e48);
+            (&CDemonActorType_00764524,"CBarrier",FUN_004116e0,&INT_005acf80,2,
+             &CDemonActorType_00763e48);
   return;
 }

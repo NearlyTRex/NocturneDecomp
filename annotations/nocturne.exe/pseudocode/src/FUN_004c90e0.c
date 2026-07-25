@@ -51,9 +51,9 @@ void FUN_004c90e0(void)
         _DAT_01bd1d80 = 0x4000;
       }
       iVar6 = iVar6 - _DAT_01bd1d80;
-      iVar1 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x2a);
+      iVar1 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x2a);
       if (iVar1 != 0) {
-        iVar1 = (**(code **)*0x01CC30E4)(0x01CC30E4,1);
+        iVar1 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,1);
         if (iVar1 != 0) break;
       }
       iVar1 = iVar4;
@@ -73,7 +73,7 @@ void FUN_004c90e0(void)
     _fclose(iVar1);
   }
   core_netgame_cpp_CNetGame_shutdown_FUN_004e99c0(0x01CEA280);
-  FUN_004940d0(0x01C70F74);
+  FUN_004940d0(INT_005b9284);
   FUN_004ee680(0x01D465C0);
   FUN_004d7e90(0x01CC9450);
   thunk_FUN_00527e10(0x02DC9450);

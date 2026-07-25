@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_00580fb1
 ;   TerminatedCString s_movieName_00580fbb
-;   undefined4 DAT_005b8018
+;   int INT_005b8018 = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00
@@ -30,7 +30,7 @@ section .text
     PUSH EAX                            ; 00481e39
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 00481e3a
         ;   XREF to: 0040ca00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00()
-    MOV EDX,dword ptr [0x005b8018]      ; 00481e3f | DAT_005b8018
+    MOV EDX,dword ptr [0x005b8018]      ; 00481e3f | INT_005b8018
     ADD ESP,0x8                         ; 00481e45
     CMP EDX,0x2                         ; 00481e48
     JGE 0x00481e4f                      ; 00481e4b

@@ -37,7 +37,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0057e3b2 = 0.125
 ;   double DOUBLE_0057e3b6 = 6.42401069530502E-315
-;   undefined4 DAT_005b6d08
+;   undefined1 DAT_005b6d08
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0

@@ -501,7 +501,7 @@ section .text
     PUSH EAX                            ; 004b7237
     LEA EAX,[ESP + 0x70]                ; 004b7238
     PUSH EAX                            ; 004b723c
-    MOV EAX,[0x005b96c4]                ; 004b723d | DAT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 004b723d | INT_005b96c4
     PUSH EAX                            ; 004b7242
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 004b7243
         ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0()
@@ -1692,7 +1692,7 @@ section .text
     MOV dword ptr [ESP + 0x1b4],EAX     ; 004b808f
     FLD float ptr [ESP + 0x1b4]         ; 004b8096
     ADD ESP,0xc                         ; 004b809d
-    PUSH 0x51b650                       ; 004b80a0 | LAB_0051b650
+    PUSH 0x51b650                       ; 004b80a0
     MOV EDX,dword ptr [EBX + 0x1f934]   ; 004b80a5
     PUSH EDX                            ; 004b80ab
     MOV ECX,dword ptr [0x01cae1a0]      ; 004b80ac | DAT_01cae1a0
@@ -1704,7 +1704,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 004b80c8
         ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
     ADD ESP,0x18                        ; 004b80cd
-    PUSH 0x51b650                       ; 004b80d0 | LAB_0051b650
+    PUSH 0x51b650                       ; 004b80d0
     MOV EAX,dword ptr [EBX + 0x1f938]   ; 004b80d5
     PUSH EAX                            ; 004b80db
     PUSH dword ptr [EBX + 0x1f94c]      ; 004b80dc

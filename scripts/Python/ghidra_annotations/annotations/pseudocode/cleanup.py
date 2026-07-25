@@ -5,6 +5,19 @@ import os
 from ghidra_annotations.util.log import log_info
 
 
+def _is_exporter_output(file_path):
+    """True if the file carries the exporter's "// Name: <func>" header.
+
+    Used to identify extension-less files as ours before deleting them, so an
+    unrelated file that happens to have no extension is left alone.
+    """
+    try:
+        with open(file_path, 'r') as f:
+            return f.readline().startswith('// Name: ')
+    except Exception:
+        return False
+
+
 def delete_pseudocode(currentProgram, path):
     """Delete all pseudocode files in the output directory.
 
@@ -48,17 +61,26 @@ def delete_pseudocode(currentProgram, path):
         ]
 
         for file in files:
+            file_path = os.path.join(root, file)
             if file.lower().endswith(('.c', '.cpp', '.h', '.asm', '.json', '.pcode')):
                 # Protect manual override files (.keep.cpp, .keep.h, etc.)
                 if '.keep.' in file.lower():
                     continue
-                file_path = os.path.join(root, file)
-                try:
-                    os.remove(file_path)
-                    log_info("Deleted file: %s" % os.path.relpath(file_path, pseudocode_dir))
-                    deleted_count += 1
-                except Exception as e:
-                    log_info("Failed to delete file %s: %s" % (file, str(e)))
+            elif '.' not in file:
+                # Extension-less leftovers from older exporter runs that dropped
+                # the file extension. Without this they can never be swept, so
+                # they linger as orphans long after the function was renamed.
+                if not _is_exporter_output(file_path):
+                    continue
+            else:
+                continue
+
+            try:
+                os.remove(file_path)
+                log_info("Deleted file: %s" % os.path.relpath(file_path, pseudocode_dir))
+                deleted_count += 1
+            except Exception as e:
+                log_info("Failed to delete file %s: %s" % (file, str(e)))
 
     # Remove empty directories (skip protected paths)
     for root, dirs, files in os.walk(pseudocode_dir, topdown=False):

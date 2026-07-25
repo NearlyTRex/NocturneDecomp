@@ -16,17 +16,17 @@ int core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(int param_1)
   int local_14;
   
   core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);
-  if (0x00000009 < 2) {
+  if (INT_005ae6c8 < 2) {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbc8c,"speed");
   }
   iVar1 = core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80
                     (param_1 + 0x150,"modelName");
-  if ((1 < 0x00000009) && (0x00000009 < 6)) {
+  if ((1 < INT_005ae6c8) && (INT_005ae6c8 < 6)) {
     iVar1 = core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbc9c,"guardDistance");
   }
-  if (((2 < 0x00000009) &&
+  if (((2 < INT_005ae6c8) &&
       (iVar1 = core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0xbd48,"riseEvent"),
-      0x00000009 < 4)) &&
+      INT_005ae6c8 < 4)) &&
      (core_actor_cpp_archiveInteger_FUN_0040c900(&local_14,"initialState"),
      iVar1 = DAT_00763e88, DAT_00763e88 == 1)) {
     if (local_14 == 1) {
@@ -38,10 +38,10 @@ int core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(int param_1)
     iVar1 = core_motion_cpp_CMotionController_jumpToMotionByName_FUN_004e1960
                       (param_1 + 0x150,pcVar4,0);
   }
-  if (3 < 0x00000009) {
+  if (3 < INT_005ae6c8) {
     iVar1 = core_actor_cpp_FUN_0040cb00(param_1 + 0x150,"motionState");
   }
-  if (0x00000009 == 4) {
+  if (INT_005ae6c8 == 4) {
     iVar2 = 0;
     iVar1 = core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2a8c,"clothCount");
     if (0 < *(int *)(param_1 + 0x2a8c)) {
@@ -53,11 +53,11 @@ int core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(int param_1)
       } while (iVar2 < *(int *)(param_1 + 0x2a8c));
     }
   }
-  if (6 < 0x00000009) {
+  if (6 < INT_005ae6c8) {
     iVar1 = core_actor_cpp_archiveInteger_FUN_0040c900
                       (param_1 + 0xbdac,"freakyVoiceNumber");
   }
-  if (7 < 0x00000009) {
+  if (7 < INT_005ae6c8) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbe4c,"exploded");
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbdd0,"partCount");
     iVar2 = 0;
@@ -71,7 +71,7 @@ int core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(int param_1)
       } while (iVar2 < *(int *)(param_1 + 0xbdd0));
     }
   }
-  if (8 < 0x00000009) {
+  if (8 < INT_005ae6c8) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbdb0,"mistState");
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbdb4,"vanishTimer");
     iVar1 = core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0xbdc0,"newPos");

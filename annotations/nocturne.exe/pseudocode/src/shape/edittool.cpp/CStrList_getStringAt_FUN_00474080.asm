@@ -4,7 +4,8 @@
 ; undefined4 __cdecl shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(int param_1,int param_2)
 ;
 ;
-; XREF[15]:
+; XREF[16]:
+;   FUN_00473e90 at 00473eca
 ;   FUN_00475470 at 004754db
 ;   FUN_004759d0 at 00475c19
 ;   FUN_004fe9d0 at 004feb27
@@ -14,8 +15,7 @@
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_0052c930 at 0052c958
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00474ea0 at 00475178
 ;   shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00 at 00473c35
-;   shape_edittool.cpp_CStrList_copyToClipboard_FUN_00474380 at 00474397
-;   ... and 5 more
+;   ... and 6 more
 ;
 ; *****************************************************************************
 

@@ -169,7 +169,7 @@ uint core_actor_cpp_FUN_0040b300(int param_1,int param_2)
             ;
             iStack_1c = (int)ROUND(fVar7);
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                      (0x01C78C7C,&uStack_cc,auStack_6c,iStack_1c,uVar8,uVar4);
+                      (INT_005b96c4,&uStack_cc,auStack_6c,iStack_1c,uVar8,uVar4);
             (**(code **)(*(int *)(param_1 + 0x14c) + 0x78))(param_1,param_2,auStack_1a4);
           }
         }

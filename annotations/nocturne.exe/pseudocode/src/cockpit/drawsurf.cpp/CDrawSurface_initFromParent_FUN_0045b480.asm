@@ -4,7 +4,8 @@
 ; undefined4 __cdecl cockpit_drawsurf_cpp_CDrawSurface_initFromParent_FUN_0045b480(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0045e370 at 0045e3cc
 ;   FUN_004fe9d0 at 004fea0e
 ;
 ; Called Functions:

@@ -28,7 +28,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[5]:
+; XREF[6]:
+;   FUN_0052eac0 at 0052eaec
 ;   core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00 at 0052eb32
 ;   core_sound.cpp_CSound_playActorSound_FUN_0052ea60 at 0052ea7a
 ;   core_sound.cpp_CSound_playSound_FUN_0052ea40 at 0052ea54

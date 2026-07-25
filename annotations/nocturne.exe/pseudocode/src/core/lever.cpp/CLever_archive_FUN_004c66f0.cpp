@@ -38,26 +38,26 @@ void core_lever_cpp_CLever_archive_FUN_004c66f0(int param_1)
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x33c,"offEvent");
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x3a0,"sound");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2d4,"param");
-  if (1 < 0x00000008) {
+  if (1 < INT_005bacbc) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x404,"momentaryFlag");
   }
-  if (2 < 0x00000008) {
+  if (2 < INT_005bacbc) {
     core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x408,"linkedLever");
   }
-  if (3 < 0x00000008) {
+  if (3 < INT_005bacbc) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x40c,"endVertexIndex");
   }
-  if (4 < 0x00000008) {
+  if (4 < INT_005bacbc) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x410,"moving");
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x414,"moveToPct");
   }
-  if (5 < 0x00000008) {
+  if (5 < INT_005bacbc) {
     core_actor_cpp_archiveRules_FUN_0040d110(param_1 + 0x418,"rules");
   }
-  if (6 < 0x00000008) {
+  if (6 < INT_005bacbc) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x804,"allowedSides");
   }
-  if (0x00000008 < 8) {
+  if (INT_005bacbc < 8) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x808,"enableCollision");

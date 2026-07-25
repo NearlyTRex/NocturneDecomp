@@ -12,7 +12,7 @@
 ;   TerminatedCString s_stoneGreen_00584a36
 ;   TerminatedCString s_stoneBlue_00584a41
 ;   TerminatedCString s_homeBase_00584a4b
-;   undefined4 DAT_005b9624
+;   int INT_005b9624 = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -50,7 +50,7 @@ section .text
     PUSH ESI                            ; 004a82ac
     CALL core_actor.cpp_FUN_0040cb00    ; 004a82ad
         ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
-    MOV EDX,dword ptr [0x005b9624]      ; 004a82b2 | DAT_005b9624
+    MOV EDX,dword ptr [0x005b9624]      ; 004a82b2 | INT_005b9624
     ADD ESP,0x8                         ; 004a82b8
     CMP EDX,0x2                         ; 004a82bb
     JGE 0x004a82c3                      ; 004a82be

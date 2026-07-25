@@ -389,7 +389,7 @@ section .text
     TEST EAX,EAX                        ; 004fc287
     JNZ 0x004fc2ce                      ; 004fc289
         ;   XREF to: 004fc2ce (CONDITIONAL_JUMP)  ; LAB_004fc2ce
-    PUSH 0x51b650                       ; 004fc28b | LAB_0051b650
+    PUSH 0x51b650                       ; 004fc28b
     MOV EDI,dword ptr [0x01e53388]      ; 004fc290 | DAT_01e53388
     PUSH EDI                            ; 004fc296
     LEA EAX,[EBX + 0x1fa40]             ; 004fc297

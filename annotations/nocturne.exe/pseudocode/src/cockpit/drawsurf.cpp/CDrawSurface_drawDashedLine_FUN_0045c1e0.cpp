@@ -26,9 +26,9 @@ void cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0(int param_1,i
   if (_DAT_01bd1d84 != _DAT_01b4d480) {
     _DAT_01b4d478 = (float)_DAT_01bd1d80 * (float)1.52587890625e-05 + _DAT_01b4d478;
     _DAT_01b4d480 = _DAT_01bd1d84;
-    if (_DAT_005ae6f8 < _DAT_01b4d478) {
-      _DAT_01b4d47c = _DAT_01b4d478 / _DAT_005ae6f8 + _DAT_01b4d47c;
-      if ((float)(_DAT_005ae6f4 * 2) < _DAT_01b4d47c) {
+    if (DAT_005ae6f8 < _DAT_01b4d478) {
+      _DAT_01b4d47c = _DAT_01b4d478 / DAT_005ae6f8 + _DAT_01b4d47c;
+      if ((float)(DAT_005ae6f4 * 2) < _DAT_01b4d47c) {
         _DAT_01b4d47c = 0.0;
       }
       _DAT_01b4d478 = 0.0;
@@ -64,7 +64,7 @@ void cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0(int param_1,i
     if (-1 < iVar2) {
       do {
         if ((int)((uStack_1c ^ (int)uStack_1c >> 0x1f) - ((int)uStack_1c >> 0x1f)) %
-            (_DAT_005ae6f4 * 2) < _DAT_005ae6f4) {
+            (DAT_005ae6f4 * 2) < DAT_005ae6f4) {
           cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0
                     (unaff_retaddr,param_4,param_5,uVar5);
         }
@@ -85,7 +85,7 @@ void cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0(int param_1,i
     if (-1 < iVar1) {
       do {
         if ((int)((uStack_1c ^ (int)uStack_1c >> 0x1f) - ((int)uStack_1c >> 0x1f)) %
-            (_DAT_005ae6f4 * 2) < _DAT_005ae6f4) {
+            (DAT_005ae6f4 * 2) < DAT_005ae6f4) {
           cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0
                     (unaff_retaddr,param_4,param_5,uVar5);
         }

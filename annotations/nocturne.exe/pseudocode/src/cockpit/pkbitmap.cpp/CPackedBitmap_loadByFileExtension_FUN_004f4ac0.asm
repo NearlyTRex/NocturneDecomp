@@ -4,6 +4,9 @@
 ; void cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0(char *param_1,undefined4 param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_004f5a50 at 004f5a7c
+;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_004f4ef0

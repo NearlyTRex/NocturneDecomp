@@ -4,6 +4,9 @@
 ; int core_frankgen_cpp_CFrankenstienMachine_ctor_FUN_00494630(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00494600 at 00494613
+;
 ; Referenced Globals:
 ;   undefined1* PTR_core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0_0059db84 = 004946c0
 ;

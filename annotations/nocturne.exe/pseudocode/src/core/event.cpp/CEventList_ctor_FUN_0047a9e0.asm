@@ -4,6 +4,9 @@
 ; undefined4 core_event_cpp_CEventList_ctor_FUN_0047a9e0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0047a1d0 at 0047a1d5
+;
 ; Called Functions:
 ;   core_event.cpp_CEventList_reset_FUN_0047aa00
 ;   core_event.cpp_CEventList_resetGameFlags_FUN_00480410

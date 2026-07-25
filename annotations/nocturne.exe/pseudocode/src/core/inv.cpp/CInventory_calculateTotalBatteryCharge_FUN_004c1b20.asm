@@ -11,7 +11,7 @@
 ;   FUN_004c79a0 at 004c79cf
 ;
 ; Referenced Globals:
-;   undefined4 DAT_007646ac
+;   undefined4 CDemonActorType_00764674.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -39,7 +39,7 @@ section .text
     JLE 0x004c1b65                      ; 004c1b40
         ;   XREF to: 004c1b65 (CONDITIONAL_JUMP)  ; LAB_004c1b65
     MOV ESI,EDI                         ; 004c1b42
-    MOV EAX,[0x007646ac]                ; 004c1b44 | DAT_007646ac
+    MOV EAX,[0x007646ac]                ; 004c1b44 | CDemonActorType_00764674.name_hash
         ;   Label: LAB_004c1b44
     PUSH EAX                            ; 004c1b49
     MOV EDX,dword ptr [ESI + 0xc]       ; 004c1b4a

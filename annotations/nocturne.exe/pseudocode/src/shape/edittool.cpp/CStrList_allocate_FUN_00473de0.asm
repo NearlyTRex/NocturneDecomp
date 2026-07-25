@@ -4,7 +4,8 @@
 ; void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00473de0(int *param_1,int param_2)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00473e90 at 00473ea4
 ;   shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00 at 00473c25
 ;   shape_edittool.cpp_CStrList_insert_FUN_00473cf0 at 00473d38
 ;

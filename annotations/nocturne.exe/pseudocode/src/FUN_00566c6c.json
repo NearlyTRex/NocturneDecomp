@@ -1,0 +1,260 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 66,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 4,
+    "suspect_types": [
+      "fpu_register_input",
+      "undefined_data",
+      "unknown_type"
+    ],
+    "total_lines": 24
+  },
+  "cross_references": [
+    {
+      "addr": "00566c96",
+      "from_addr": "00566c9a",
+      "name": "FUN_00566c96",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00566c6c",
+    "address_range": [
+      [
+        "00566c6c",
+        "00566c80"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00566c6c",
+    "signature": "void FUN_00566c6c(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056dc98",
+      "is_variadic": false,
+      "name": "FUN_0056dc98"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c1d98",
+      "name": "DAT_005c1d98",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00566c9a",
+        "call_type": "direct",
+        "caller": "FUN_00566c96",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.285714285714286,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLOTHER": 1,
+      "CBRANCH": 1,
+      "COPY": 19,
+      "INT2FLOAT": 1,
+      "INT_ADD": 1,
+      "INT_AND": 3,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 1,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 37
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unknown/unresolved type",
+      "line": 5,
+      "match": "unkbyte10",
+      "severity": "mild",
+      "text": "unkbyte10 in_ST0;",
+      "type": "unknown_type"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 5,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "unkbyte10 in_ST0;",
+      "type": "fpu_register_input"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_005c1d98",
+      "severity": "mild",
+      "text": "if ((DAT_005c1d98 & 1) == 0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "FPU register input (calling convention issue)",
+      "line": 8,
+      "match": "in_ST0",
+      "severity": "mild",
+      "text": "fpatan(in_ST0,(float10)1);",
+      "type": "fpu_register_input"
+    }
+  ]
+}

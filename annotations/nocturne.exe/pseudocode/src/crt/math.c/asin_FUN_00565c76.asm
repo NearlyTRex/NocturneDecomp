@@ -4,7 +4,9 @@
 ; void __fpustack_safe crt_math_c_asin_FUN_00565c76(void)
 ;
 ;
-; XREF[3]:
+; XREF[5]:
+;   FUN_0044db00 at 0044db28
+;   FUN_0055b0b0 at 0055b0d8
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0 at 0044dc71
 ;   core_xform.cpp_matrixToEulerAnglesZYX_FUN_0055b6c0 at 0055b7e9
 ;   core_xform.cpp_matrixToEulerAngles_FUN_0055b180 at 0055b2a9

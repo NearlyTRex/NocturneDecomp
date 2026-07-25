@@ -35,29 +35,29 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_004f6fa0(int param_1)
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2cc,"state");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2d4,"param");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2e4,"travelTimeToStart");
-  if (0x0000000B < 7) {
+  if (INT_005be19c < 7) {
     *(uint *)(param_1 + 0x2e0) = *(uint *)(param_1 + 0x2e4);
   }
   else {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2e0,"travelTimeToEnd");
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2d0,"groundType");
-  if (1 < 0x0000000B) {
+  if (1 < INT_005be19c) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x4b8,"oneShot");
   }
-  if (2 < 0x0000000B) {
+  if (2 < INT_005be19c) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x4bc,"blockVirtualDirectorFlag");
   }
-  if (3 < 0x0000000B) {
+  if (3 < INT_005be19c) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x4c0,"renderInBackgroundWhenNotMovingFlag");
   }
-  if (4 < 0x0000000B) {
+  if (4 < INT_005be19c) {
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x4c4,"cameraWhileMoving");
   }
-  if (5 < 0x0000000B) {
+  if (5 < INT_005be19c) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x504,"plotAsBoxInShadow");
   }
-  if (7 < 0x0000000B) {
+  if (7 < INT_005be19c) {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2d8,"goalParam");
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2dc,"currentMovementRate");
     if (DAT_00763e88 == 1) {
@@ -100,13 +100,13 @@ void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_004f6fa0(int param_1)
       } while (iVar2 < 10);
     }
   }
-  if (8 < 0x0000000B) {
+  if (8 < INT_005be19c) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x508,"pushFlag");
   }
-  if (9 < 0x0000000B) {
+  if (9 < INT_005be19c) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x50c,"recomputeFog");
   }
-  if (10 < 0x0000000B) {
+  if (10 < INT_005be19c) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x510,"plotInShadowFlag");
     return;
   }

@@ -22,7 +22,6 @@
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170 at 0045332d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00444440
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01b4d738
@@ -82,7 +81,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x30]      ; 0050de48
     MOV dword ptr [ESP + 0x20],EAX      ; 0050de4b
     MOV EAX,dword ptr [EBX + 0x3c]      ; 0050de4f
-    PUSH 0x444440                       ; 0050de52 | DAT_00444440
+    PUSH 0x444440                       ; 0050de52
     MOV dword ptr [ESP + 0x28],EAX      ; 0050de57
     LEA EAX,[ESP + 0x4]                 ; 0050de5b
     PUSH EAX                            ; 0050de5f

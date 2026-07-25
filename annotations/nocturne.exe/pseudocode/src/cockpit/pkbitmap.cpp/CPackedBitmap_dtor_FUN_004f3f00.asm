@@ -4,6 +4,9 @@
 ; undefined4 cockpit_pkbitmap_cpp_CPackedBitmap_dtor_FUN_004f3f00(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004f4f90 at 004f50db
+;
 ; Called Functions:
 ;   FUN_004f3f50
 ;

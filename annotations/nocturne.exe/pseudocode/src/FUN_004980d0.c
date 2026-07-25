@@ -49,8 +49,8 @@ void FUN_004980d0(int param_1,uint param_2)
   if (*(float *)(param_1 + 0x1fa44) < 0.64f) {
     (**(code **)(*(int *)(*(int *)(param_1 + 0x1f8d0) + 0x14c) + 0xd4))
               (*(int *)(param_1 + 0x1f8d0),1);
-    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_22c,0x1c71370,0x1c7137c)
-    ;
+    core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
+              (local_22c,&DAT_01c71370,&DAT_01c7137c);
     core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
               (local_22c,_DAT_01c713c0 * 0x30 + param_1 + 0xfd0,local_34c);
     puVar1 = local_1cc;
@@ -67,7 +67,7 @@ void FUN_004980d0(int param_1,uint param_2)
     (**(code **)(*(int *)(*(int *)(param_1 + 0x1f8d0) + 0x14c) + 0xd4))
               (*(int *)(param_1 + 0x1f8d0),2);
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-              (local_13c,0x1c71364,&DAT_02dd1184);
+              (local_13c,&DAT_01c71364,&DAT_02dd1184);
     core_xform_cpp_buildRotationX_FUN_0055c730
               (0x3fc90fdb,local_13c,_DAT_01c713dc * 0x30 + param_1 + 0xfd0);
     puVar1 = local_16c;

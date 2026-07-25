@@ -29,7 +29,7 @@
 ;   TerminatedCString s_CGame_rollCredits_Out_of_005846a2
 ;   TerminatedCString s_faded_remix_mp3_005846c5
 ;   float FLOAT_005846d6 = 32
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_014b9900
 ;   undefined4 DAT_01cc30e4
 ;   undefined4 DAT_01cc4800
@@ -269,7 +269,7 @@ section .text
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
         ;   Label: LAB_004a7103
     PUSH 0x1                            ; 004a7108
-    MOV EAX,[0x005bac64]                ; 004a710a | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004a710a | INT_005bac64
     PUSH EAX                            ; 004a710f | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 004a7110 | DAT_01cc30e4
     CALL dword ptr [EDX]                ; 004a7112

@@ -4,7 +4,8 @@
 ; void __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(undefined4 param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00415cf0 at 00415d03
 ;   core_bodypart.cpp_createBodyPart_FUN_00415b30 at 00415c32
 ;
 ; Referenced Globals:

@@ -28,7 +28,8 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[15]:
+; XREF[16]:
+;   FUN_0051e860 at 0051e8a9
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412de0 at 00413007
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_004145f0 at 00414794
 ;   core_bodypart.cpp_CBodyPart_archive_FUN_00416570 at 004168a1
@@ -38,8 +39,7 @@
 ;   core_cow.cpp_CZombieCow_processDismemberment_FUN_0043c360 at 0043c4ec
 ;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0045a1a0 at 0045a1fc
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004a8330 at 004a84b6
-;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004ab190 at 004ab32f
-;   ... and 5 more
+;   ... and 6 more
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005790b2 = 0.00390625

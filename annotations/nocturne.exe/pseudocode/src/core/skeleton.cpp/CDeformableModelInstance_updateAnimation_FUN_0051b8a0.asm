@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 0051b8c7 (CONDITIONAL_JUMP)  ; LAB_0051b8c7
     POP EBX                             ; 0051b8c5
     RET                                 ; 0051b8c6
-    PUSH 0x51b650                       ; 0051b8c7 | LAB_0051b650
+    PUSH 0x51b650                       ; 0051b8c7
         ;   Label: LAB_0051b8c7
     PUSH -0x1                           ; 0051b8cc
     PUSH dword ptr [EBX + 0x14]         ; 0051b8ce

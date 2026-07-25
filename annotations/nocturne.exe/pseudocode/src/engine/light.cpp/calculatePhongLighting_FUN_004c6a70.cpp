@@ -44,9 +44,9 @@ int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004c6a70(int param_1,int
   else if (0xffff < (int)uVar5) {
     uVar5 = 0xffff;
   }
-  if (0x00000001 == 0) {
-    uVar5 = (uint)((longlong)0x00010000 * (longlong)(int)uVar5) >> 0x10 |
-            (int)((ulonglong)((longlong)0x00010000 * (longlong)(int)uVar5) >> 0x20) << 0x10;
+  if (DAT_005bacd4 == 0) {
+    uVar5 = (uint)((longlong)DAT_005bacd8 * (longlong)(int)uVar5) >> 0x10 |
+            (int)((ulonglong)((longlong)DAT_005bacd8 * (longlong)(int)uVar5) >> 0x20) << 0x10;
     goto LAB_004c6c38;
   }
   iVar4 = ((uint)((longlong)param_1 * (longlong)iVar3) >> 0x10 |
@@ -96,10 +96,10 @@ LAB_004c6bed:
     lVar1 = (longlong)(int)uVar2 * (longlong)(int)uVar2;
     uVar2 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   }
-  uVar5 = ((uint)((longlong)0x00010000 * (longlong)(int)uVar5) >> 0x10 |
-          (int)((ulonglong)((longlong)0x00010000 * (longlong)(int)uVar5) >> 0x20) << 0x10) +
-          ((uint)((longlong)0x00010000 * (longlong)(int)uVar2) >> 0x10 |
-          (int)((ulonglong)((longlong)0x00010000 * (longlong)(int)uVar2) >> 0x20) << 0x10);
+  uVar5 = ((uint)((longlong)DAT_005bacd8 * (longlong)(int)uVar5) >> 0x10 |
+          (int)((ulonglong)((longlong)DAT_005bacd8 * (longlong)(int)uVar5) >> 0x20) << 0x10) +
+          ((uint)((longlong)DAT_005bacdc * (longlong)(int)uVar2) >> 0x10 |
+          (int)((ulonglong)((longlong)DAT_005bacdc * (longlong)(int)uVar2) >> 0x20) << 0x10);
 LAB_004c6c38:
   return ((int)((uVar5 + ((int)uVar5 >> 0x1f) * -0x10) - (uint)(((int)uVar5 >> 0x1f) << 3 < 0)) >> 4
          ) + 0x100;

@@ -4,18 +4,18 @@
 ; void FUN_00568e80(undefined4 param_1)
 ;
 ;
-; XREF[26]:
+; XREF[28]:
 ;   FUN_005653e0 at 00565434
 ;   FUN_005656a4 at 00565711
 ;   FUN_00568560 at 0056860a
+;   FUN_00568690 at 00568765
 ;   FUN_00568890 at 00568915
 ;   FUN_005689c0 at 005689d5
 ;   FUN_00568a50 at 00568a69
 ;   FUN_00568e90 at 00568e92
 ;   FUN_00568e9c at 00568e9e
 ;   FUN_00568f70 at 00568f89
-;   FUN_00569fb0 at 00569fcd
-;   ... and 16 more
+;   ... and 18 more
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1abc = 005671dc

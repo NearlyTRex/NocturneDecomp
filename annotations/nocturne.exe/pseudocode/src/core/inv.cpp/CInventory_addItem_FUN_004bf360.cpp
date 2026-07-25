@@ -51,7 +51,7 @@ uint __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(int param_1,int param_
      (*(int *)(0x01C775EC + 0x228) == 0)) {
     pcStack_34 = (char *)core_inv_cpp_getItemDisplayName_FUN_004beca0(param_2);
     core_inv_cpp_getItemIconName_FUN_004bed10(param_2);
-    iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,DAT_007641f4);
+    iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,CDemonActorType_007641bc.name_hash);
     pcVar4 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("You've found : ");
     do {
       cVar1 = *pcVar4;
@@ -604,7 +604,8 @@ uint __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(int param_1,int param_
     }
     iVar3 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CAmmo");
     if (iVar3 != 0) {
-      iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,DAT_007641f4);
+      iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                        (param_2,CDemonActorType_007641bc.name_hash);
       iVar3 = core_actor_cpp_createActorByName_FUN_0040d540(iVar3 + 0x2cc);
       pcVar4 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370
                                  ("This ammo is for your ");
@@ -951,7 +952,8 @@ uint __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(int param_1,int param_
                           (_DAT_014b9904,(char *)(param_1 + 0x34c));
     *(float *)(param_1 + 0x344) = (float)iStack_14 * (float)0.025000000000000001;
   }
-  iStack_24 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,DAT_007641f4);
+  iStack_24 = core_actor_cpp_castToClassHash_FUN_0040d890
+                        (param_2,CDemonActorType_007641bc.name_hash);
   if (iStack_24 != 0) {
     iVar3 = iStack_24 + 0x2cc;
     iVar10 = 0;
@@ -961,7 +963,7 @@ uint __cdecl core_inv_cpp_CInventory_addItem_FUN_004bf360(int param_1,int param_
       do {
         iStack_2c = iVar3;
         iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar7 + 0xc),DAT_007641f4);
+                          (*(uint *)(iVar7 + 0xc),CDemonActorType_007641bc.name_hash);
         if (((iVar3 != 0) &&
             (iVar6 = _strcmp(iStack_2c,iVar3 + 0x2cc), iVar6 == 0)) &&
            (*(int *)(iVar3 + 0x310) == *(int *)(iStack_24 + 0x310))) {
@@ -1094,7 +1096,7 @@ LAB_004bfff1:
       iStack_18 = param_1;
       do {
         iVar7 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iStack_18 + 0xc),DAT_007641f4);
+                          (*(uint *)(iStack_18 + 0xc),CDemonActorType_007641bc.name_hash);
         if (iVar7 != 0) {
           uVar5 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar3);
           iVar10 = _strcmp(iVar7 + 0x2cc,uVar5);

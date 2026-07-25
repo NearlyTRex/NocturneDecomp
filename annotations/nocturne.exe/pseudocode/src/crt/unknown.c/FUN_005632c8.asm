@@ -49,16 +49,16 @@ section .text
         ;   Label: LAB_00563300
     MOV EDX,dword ptr [ESP + 0x30]      ; 00563307
         ;   Label: LAB_00563307
-    MOV EAX,0x5632b0                    ; 0056330b | LAB_005632b0
+    MOV EAX,0x5632b0                    ; 0056330b
     PUSH EDX                            ; 00563310
     MOV ECX,dword ptr [ESP + 0x30]      ; 00563311
-    MOV dword ptr [ESP + 0x8],EAX       ; 00563315 | LAB_005632b0
+    MOV dword ptr [ESP + 0x8],EAX       ; 00563315
     PUSH ECX                            ; 00563319
     LEA EAX,[ESP + 0x8]                 ; 0056331a
-    MOV EBP,0x563290                    ; 0056331e | LAB_00563290
+    MOV EBP,0x563290                    ; 0056331e
     PUSH EAX                            ; 00563323
     MOV dword ptr [ESP + 0x14],EBX      ; 00563324
-    MOV dword ptr [ESP + 0xc],EBP       ; 00563328 | LAB_00563290
+    MOV dword ptr [ESP + 0xc],EBP       ; 00563328
     CALL FUN_00567560                   ; 0056332c
         ;   XREF to: 00567560 (UNCONDITIONAL_CALL)  ; undefined FUN_00567560()
     ADD ESP,0xc                         ; 00563331

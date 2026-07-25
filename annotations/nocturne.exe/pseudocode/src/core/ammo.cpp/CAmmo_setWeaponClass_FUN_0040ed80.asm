@@ -4,8 +4,10 @@
 ; void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(int param_1,char *param_2)
 ;
 ;
-; XREF[4]:
+; XREF[6]:
 ;   FUN_0040f1a0 at 0040f230
+;   FUN_004a03a0 at 004a03f7
+;   FUN_004c0640 at 004c06ba
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1fff
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bff5e
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90 at 004c1be5

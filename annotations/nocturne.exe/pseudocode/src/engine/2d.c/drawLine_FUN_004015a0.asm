@@ -9,8 +9,9 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[7]:
+; XREF[8]:
 ;   FUN_004759d0 at 00475a93
+;   FUN_00493760 at 0049382d
 ;   cockpit_ckptutil.c_drawClippedEdges_FUN_0042ef60 at 0042f025
 ;   core_game.cpp_CGame_drawScreenBorder_FUN_0049a960 at 0049a972
 ;   engine_2d.c_clipAndDrawLine_FUN_00403990 at 00403bb5

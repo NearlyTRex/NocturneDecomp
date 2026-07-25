@@ -135,7 +135,7 @@ void core_werewolf_cpp_CWerewolf_process_FUN_00555c60(int param_1,float param_2)
       uVar10 = 0x555d7d;
       fVar9 = (float10)round((float10)local_14 * (float10)0.25);
       local_34 = (int)ROUND(fVar9);
-      core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(0x01C78C7C,local_98,0,local_34,uVar10);
+      core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(INT_005b96c4,local_98,0,local_34,uVar10);
     }
     else if (uVar5 == 0x29a) {
       FUN_004d9110(0x01CC9450,param_1);
@@ -433,7 +433,7 @@ LAB_005567aa:
             uVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                               (param_1 + 0x150,local_1ac,0);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_1b8,uVar7);
-            FUN_004b0480(0x01C78C7C,local_1b8,0);
+            FUN_004b0480(INT_005b96c4,local_1b8,0);
             *(uint *)(param_1 + 0xbc90) = 1;
           }
           goto LAB_00555e90;

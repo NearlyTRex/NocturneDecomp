@@ -4,7 +4,8 @@
 ; void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(int *param_1,int param_2,int *param_3,int param_4,int param_5)
 ;
 ;
-; XREF[4]:
+; XREF[5]:
+;   FUN_004df740 at 004df75d
 ;   core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0 at 004df3f5
 ;   core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004df460 at 004df53b
 ;   core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_004df770 at 004df7b1

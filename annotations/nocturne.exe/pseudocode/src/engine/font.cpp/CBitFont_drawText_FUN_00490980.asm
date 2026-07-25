@@ -8,18 +8,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[17]:
+; XREF[28]:
 ;   FUN_0046fb40 at 0046fc8d
 ;   FUN_0046fcd0 at 0046fe1d
 ;   FUN_0046fe60 at 0046ffad
+;   FUN_004700d0 at 00470163
 ;   FUN_00470eb0 at 00471048
 ;   FUN_004722b0 at 0047242c
+;   FUN_00472de0 at 00472fc1
 ;   FUN_004759d0 at 00475cd3
-;   FUN_004c2470 at 004c2650
-;   FUN_004c90e0 at 004c91b5
-;   FUN_004fe770 at 004fe959
-;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049ac5e
-;   ... and 7 more
+;   FUN_00476f40 at 00476fb9
+;   FUN_00477390 at 00477422
+;   ... and 18 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_font_cpp_005818c4

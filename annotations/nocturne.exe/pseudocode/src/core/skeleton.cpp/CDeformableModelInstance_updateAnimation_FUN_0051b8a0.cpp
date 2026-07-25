@@ -16,6 +16,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051
   }
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
             (param_1,*(uint *)(param_1 + 0x18),*(uint *)(param_1 + 0x1c),
-             *(uint *)(param_1 + 0x14),0xffffffff,&LAB_0051b650);
+             *(uint *)(param_1 + 0x14),0xffffffff,FUN_0051b650);
   return;
 }

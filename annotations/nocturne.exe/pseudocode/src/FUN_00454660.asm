@@ -4,6 +4,9 @@
 ; int FUN_00454660(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00454630 at 00454643
+;
 ; Referenced Globals:
 ;   TerminatedCString s_dog_dfm_0057cf31
 ;   float FLOAT_0059c0dc = 50

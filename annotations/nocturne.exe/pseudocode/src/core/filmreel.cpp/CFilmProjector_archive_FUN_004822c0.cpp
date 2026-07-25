@@ -10,7 +10,7 @@ void core_filmreel_cpp_CFilmProjector_archive_FUN_004822c0(int param_1)
 
 {
   core_dest_cpp_CActorDestination_archive_FUN_0044bb10(param_1);
-  if (0x00000002 < 2) {
+  if (INT_005b801c < 2) {
     return;
   }
   core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x368,"keyReel");

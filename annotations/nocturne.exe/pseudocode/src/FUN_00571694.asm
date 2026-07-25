@@ -4,9 +4,10 @@
 ; bool FUN_00571694(void)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
 ;   FUN_00571718 at 0057179a
 ;   FUN_005717d8 at 0057183e
+;   FUN_0057189c at 005718a5
 ;
 ; Referenced Globals:
 ;   void* PTR_SetConsoleCtrlHandler_00575584 = 00175f5c

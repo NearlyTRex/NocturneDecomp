@@ -12,17 +12,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[10]:
+; XREF[12]:
 ;   FUN_004c2470 at 004c2b14
 ;   FUN_004c85f0 at 004c8c56
+;   FUN_004c8eb0 at 004c8f24
 ;   FUN_004c90e0 at 004c9173
+;   FUN_004ee740 at 004ee79c
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a66cf
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6b5a
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7030
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d9d8
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640 at 004c5744
-;   core_menu.cpp_showCalibrationTestPattern_FUN_004cfe50 at 004cfeea
-;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004df013
+;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c

@@ -13,9 +13,6 @@
 
 section .text
 
-    MOV EAX,0x1                         ; 0041dc14
-        ;   Label: LAB_0041dc14
-    RET                                 ; 0041dc19
     MOV EDX,dword ptr [ESP + 0x4]       ; 0041dc20
         ;   Label: core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20
     MOV ECX,dword ptr [ESP + 0x8]       ; 0041dc24

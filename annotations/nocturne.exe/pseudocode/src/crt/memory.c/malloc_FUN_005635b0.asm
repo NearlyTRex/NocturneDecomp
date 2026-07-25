@@ -4,18 +4,18 @@
 ; void __cdecl crt_memory_c_malloc_FUN_005635b0(undefined4 param_1)
 ;
 ;
-; XREF[37]:
+; XREF[49]:
 ;   FUN_00401010 at 004010fb
+;   FUN_0042d180 at 0042d1e2
+;   FUN_0042eb90 at 0042ed04
+;   FUN_00430210 at 00430312
 ;   FUN_004303d0 at 004303ff
+;   FUN_0044d460 at 0044d47c
 ;   FUN_004a57c0 at 004a59b9
+;   FUN_004e28a0 at 004e28ec
 ;   FUN_004e7ed0 at 004e7f4b
-;   FUN_004f7ae0 at 004f7c42
-;   FUN_004fee30 at 004feeec
-;   FUN_00552b40 at 00552b67
-;   FUN_0056497c at 00564987
-;   FUN_00565c50 at 00565c5b
-;   FUN_00568560 at 005685a1
-;   ... and 27 more
+;   FUN_004f54c0 at 004f55b3
+;   ... and 39 more
 ;
 ; Called Functions:
 ;   FUN_005635c0

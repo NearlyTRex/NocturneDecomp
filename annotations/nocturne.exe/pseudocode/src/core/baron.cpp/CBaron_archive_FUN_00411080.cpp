@@ -10,7 +10,7 @@ void core_baron_cpp_CBaron_archive_FUN_00411080(int param_1)
 
 {
   FUN_004b49a0(param_1);
-  if (0x00000002 < 2) {
+  if (INT_005acf3c < 2) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1fa3c,"summonEvent");

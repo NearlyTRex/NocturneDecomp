@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * engine_3d_c_renderPolygonSolidTexturedHardwareOp53_FUN_00407070(int param_1)
+; undefined4 * engine_3d_c_renderPolygonSolidTexturedHardwareOp53_FUN_00407070(int param_1)
 ;
 ;
 ; Referenced Globals:
@@ -36,7 +36,7 @@ section .text
     CMP dword ptr [0x005b7624],0x20     ; 00407085 | DAT_005b7624
     JNZ 0x004070d8                      ; 0040708c
         ;   XREF to: 004070d8 (CONDITIONAL_JUMP)  ; LAB_004070d8
-    MOV dword ptr [0x01c00c7c],0x5300ec ; 0040708e | DAT_01c00c7c | LAB_005300ec
+    MOV dword ptr [0x01c00c7c],0x5300ec ; 0040708e | DAT_01c00c7c
     MOV EDI,0x3                         ; 00407098
         ;   Label: LAB_00407098
     PUSH 0xffff                         ; 0040709d
@@ -62,7 +62,7 @@ section .text
     POP ESI                             ; 004070d5
     POP EBX                             ; 004070d6
     RET                                 ; 004070d7
-    MOV dword ptr [0x01c00c7c],0x530322 ; 004070d8 | DAT_01c00c7c | LAB_00530322
+    MOV dword ptr [0x01c00c7c],0x530322 ; 004070d8 | DAT_01c00c7c
         ;   Label: LAB_004070d8
     JMP 0x00407098                      ; 004070e2
         ;   XREF to: 00407098 (UNCONDITIONAL_JUMP)  ; LAB_00407098
@@ -70,10 +70,10 @@ section .text
         ;   Label: LAB_004070e4
     JNZ 0x004070f9                      ; 004070eb
         ;   XREF to: 004070f9 (CONDITIONAL_JUMP)  ; LAB_004070f9
-    MOV dword ptr [0x01c00c7c],0x52f031 ; 004070ed | DAT_01c00c7c | LAB_0052f031
+    MOV dword ptr [0x01c00c7c],0x52f031 ; 004070ed | DAT_01c00c7c
     JMP 0x00407098                      ; 004070f7
         ;   XREF to: 00407098 (UNCONDITIONAL_JUMP)  ; LAB_00407098
-    MOV dword ptr [0x01c00c7c],0x52f823 ; 004070f9 | DAT_01c00c7c | LAB_0052f823
+    MOV dword ptr [0x01c00c7c],0x52f823 ; 004070f9 | DAT_01c00c7c
         ;   Label: LAB_004070f9
     JMP 0x00407098                      ; 00407103
         ;   XREF to: 00407098 (UNCONDITIONAL_JUMP)  ; LAB_00407098

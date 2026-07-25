@@ -7,7 +7,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[20]:
+; XREF[21]:
+;   FUN_00470730 at 00470a50
 ;   FUN_004a3b90 at 004a4015
 ;   FUN_004a4170 at 004a46be
 ;   FUN_004a57c0 at 004a5bd1
@@ -17,14 +18,13 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1e34
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d434b
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920 at 004d9a6d
-;   core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0 at 004d8bc0
-;   ... and 10 more
+;   ... and 11 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
 ;   TerminatedCString s_Error_0057e5d7
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
@@ -179,7 +179,7 @@ section .text
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0046fe2a
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
-    MOV EBP,dword ptr [0x005bac64]      ; 0046fe2f | DAT_005bac64
+    MOV EBP,dword ptr [0x005bac64]      ; 0046fe2f | INT_005bac64
     PUSH EBP                            ; 0046fe35 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0 ; 0046fe36
         ;   XREF to: 004c41c0 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0()

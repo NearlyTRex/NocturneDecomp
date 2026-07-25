@@ -7,7 +7,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004dd760 at 004dd76b
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90 at 004c4029
 ;
 ; Referenced Globals:

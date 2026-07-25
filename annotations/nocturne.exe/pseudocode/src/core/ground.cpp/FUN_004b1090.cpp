@@ -1,0 +1,65 @@
+// Name: FUN_004b1090
+// Address: 004b1090
+// Address Range: [[004b1090, 004b116e]]
+// Convention: unknown
+// Signature: int FUN_004b1090(undefined4 param_1,char *param_2,char *param_3,undefined4 param_4)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int FUN_004b1090(uint param_1,char *param_2,char *param_3,uint param_4)
+
+{
+  char cVar1;
+  int iVar2;
+  char *pcVar3;
+  char *pcVar4;
+  char local_60 [80];
+  
+  pcVar4 = local_60;
+  do {
+    cVar1 = *param_2;
+    *pcVar4 = cVar1;
+    pcVar3 = local_60;
+    if (cVar1 == '\0') break;
+    cVar1 = param_2[1];
+    param_2 = param_2 + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+    pcVar3 = local_60;
+  } while (cVar1 != '\0');
+  do {
+    pcVar4 = pcVar3;
+    if (*pcVar3 == '.') goto LAB_004b10d3;
+    if (*pcVar3 == '\0') break;
+    pcVar4 = pcVar3 + 1;
+    if (*pcVar4 == '.') goto LAB_004b10d3;
+    pcVar3 = pcVar3 + 2;
+  } while (*pcVar4 != '\0');
+  pcVar4 = (char *)0x0;
+LAB_004b10d3:
+  if (pcVar4 == (char *)0x0) {
+    _DAT_01cc4800 = "..\\core\\ground.cpp";
+    _DAT_01cc4804 = 0x40;
+    FUN_004c8440("eopen - ext not found!");
+  }
+  pcVar4 = pcVar4 + 1;
+  do {
+    cVar1 = *param_3;
+    *pcVar4 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = param_3[1];
+    param_3 = param_3 + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+  } while (cVar1 != '\0');
+  iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(param_1,local_60,param_4);
+  if (iVar2 == 0) {
+    _DAT_01cc4800 = "..\\core\\ground.cpp";
+    _DAT_01cc4804 = 0x44;
+    FUN_004c8440("eopen - Cannot open file");
+    return 0;
+  }
+  return iVar2;
+}

@@ -4,7 +4,9 @@
 ; void __cdecl core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(int param_1)
 ;
 ;
-; XREF[13]:
+; XREF[15]:
+;   FUN_0047a150 at 0047a160
+;   FUN_004c0640 at 004c06b0
 ;   FUN_004d8720 at 004d891e
 ;   core_actor.cpp_CDemonActor_load_FUN_0040c160 at 0040c172
 ;   core_actor.cpp_CDemonActor_save_FUN_0040c040 at 0040c055
@@ -13,9 +15,7 @@
 ;   core_event.cpp_CEventList_setActorVariable_FUN_00480950 at 00480984
 ;   core_event.cpp_resolveActorByName_FUN_0047a390 at 0047a493
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004c0177
-;   core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50 at 004c0ade
-;   core_inv.cpp_CInventory_saveItems_FUN_004c1140 at 004c115c
-;   ... and 3 more
+;   ... and 5 more
 ;
 ; *****************************************************************************
 

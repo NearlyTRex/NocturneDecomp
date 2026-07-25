@@ -261,7 +261,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0 ; 004106e4
         ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0()
     ADD ESP,0x4                         ; 004106e9
-    PUSH 0x51b650                       ; 004106ec | LAB_0051b650
+    PUSH 0x51b650                       ; 004106ec
     MOV ESI,dword ptr [0x007642e8]      ; 004106f1 | DAT_007642e8
     PUSH ESI                            ; 004106f7
     LEA EAX,[EBP + 0x1fb04]             ; 004106f8

@@ -8,8 +8,9 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[10]:
+; XREF[11]:
 ;   FUN_0041d050 at 0041d075
+;   FUN_00511d80 at 005120fa
 ;   FUN_005125a0 at 005126a5
 ;   FUN_00533750 at 0053382a
 ;   FUN_00549cd0 at 00549e9f
@@ -18,7 +19,7 @@
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050f015
 ;   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710 at 00510753
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40 at 0051efbf
-;   core_turret.cpp_CTurret_updateTargeting_FUN_0054a110 at 0054a169
+;   ... and 1 more
 ;
 ; *****************************************************************************
 

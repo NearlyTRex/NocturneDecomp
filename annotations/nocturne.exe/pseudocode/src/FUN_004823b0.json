@@ -1,0 +1,326 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 186,
+    "complexity_score": 185,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 40,
+    "suspect_count": 14,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 226
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004823b0",
+    "address_range": [
+      [
+        "004823b0",
+        "00482628"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004823b0",
+    "signature": "void FUN_004823b0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00454490",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490"
+    },
+    {
+      "addr": "005644a7",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005644a7"
+    },
+    {
+      "addr": "00564bb0",
+      "is_variadic": false,
+      "name": "FUN_00564bb0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0048a130",
+      "name": "SUB_0048a130",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.449664429530201,
+    "instruction_count": 149,
+    "opcode_distribution": {
+      "CALL": 36,
+      "COPY": 76,
+      "INT_ADD": 37,
+      "INT_AND": 72,
+      "INT_CARRY": 36,
+      "INT_EQUAL": 72,
+      "INT_SCARRY": 36,
+      "INT_SLESS": 36,
+      "INT_SUB": 112,
+      "LOAD": 1,
+      "POPCOUNT": 36,
+      "RETURN": 1,
+      "STORE": 112
+    },
+    "pcode_op_count": 663
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_0059b030",
+      "severity": "mild",
+      "text": "__arrinit(0x1c094bc,5,&DAT_0059b030);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_01c0a140",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c0a140,0x800,&DAT_0059d300);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_0059d300",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c0a140,0x800,&DAT_0059d300);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_01c20148",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c20148,0x100,&DAT_0059d320);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 13,
+      "match": "DAT_0059d320",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c20148,0x100,&DAT_0059d320);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_01c4e958",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c4e958,0x14,&DAT_0059d380);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_0059d380",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c4e958,0x14,&DAT_0059d380);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_0059d3c0",
+      "severity": "mild",
+      "text": "__arrinit(0x1c58c90,10,&DAT_0059d3c0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_0059d420",
+      "severity": "mild",
+      "text": "__arrinit(0x1c5c704,0x40,&DAT_0059d420);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_0059d440",
+      "severity": "mild",
+      "text": "__arrinit(0x1c5d708,10,&DAT_0059d440);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_01c62ebc",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c62ebc,500,&DAT_0059d4a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_0059d4a0",
+      "severity": "mild",
+      "text": "__arrinit(&DAT_01c62ebc,500,&DAT_0059d4a0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_0059d4c0",
+      "severity": "mild",
+      "text": "__arrinit(0x1c67510,10,&DAT_0059d4c0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_0059d4e0",
+      "severity": "mild",
+      "text": "__arrinit(0x1c676cc,100,&DAT_0059d4e0);",
+      "type": "undefined_data"
+    }
+  ]
+}

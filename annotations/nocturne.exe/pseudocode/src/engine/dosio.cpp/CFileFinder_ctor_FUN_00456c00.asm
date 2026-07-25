@@ -4,7 +4,9 @@
 ; int __cdecl engine_dosio_cpp_CFileFinder_ctor_FUN_00456c00(int param_1)
 ;
 ;
-; XREF[4]:
+; XREF[6]:
+;   FUN_004569a0 at 004569cc
+;   FUN_00470730 at 004707ec
 ;   FUN_00474ae0 at 00474b9f
 ;   core_podmain.cpp_CDemonPod_load_FUN_004f92b0 at 004f92de
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0 at 004747e9

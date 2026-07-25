@@ -11,7 +11,7 @@
 ;   TerminatedCString s_initRotVel_00591156
 ;   TerminatedCString s_triggerEvent_00591161
 ;   TerminatedCString s_type_0059116e
-;   undefined4 DAT_005be964
+;   int INT_005be964 = 0x3
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
@@ -43,12 +43,12 @@ section .text
     PUSH EAX                            ; 0051703d
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0051703e
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
-    MOV EDX,dword ptr [0x005be964]      ; 00517043 | DAT_005be964
+    MOV EDX,dword ptr [0x005be964]      ; 00517043 | INT_005be964
     ADD ESP,0x8                         ; 00517049
     CMP EDX,0x2                         ; 0051704c
     JGE 0x0051705c                      ; 0051704f
         ;   XREF to: 0051705c (CONDITIONAL_JUMP)  ; LAB_0051705c
-    CMP dword ptr [0x005be964],0x3      ; 00517051 | DAT_005be964
+    CMP dword ptr [0x005be964],0x3      ; 00517051 | INT_005be964
     JGE 0x005170a3                      ; 00517058
         ;   XREF to: 005170a3 (CONDITIONAL_JUMP)  ; LAB_005170a3
     POP EBX                             ; 0051705a
@@ -72,7 +72,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 00517090
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
     ADD ESP,0x8                         ; 00517095
-    CMP dword ptr [0x005be964],0x3      ; 00517098 | DAT_005be964
+    CMP dword ptr [0x005be964],0x3      ; 00517098 | INT_005be964
     JGE 0x005170a3                      ; 0051709f
         ;   XREF to: 005170a3 (CONDITIONAL_JUMP)  ; LAB_005170a3
     POP EBX                             ; 005170a1

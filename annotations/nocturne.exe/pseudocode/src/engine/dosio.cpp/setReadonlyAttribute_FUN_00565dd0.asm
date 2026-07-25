@@ -4,7 +4,8 @@
 ; undefined4 __cdecl engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(LPCSTR param_1,byte param_2)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00456a30 at 00456a49
 ;   FUN_004bdb80 at 004bdb93
 ;   FUN_004c85f0 at 004c8665
 ;

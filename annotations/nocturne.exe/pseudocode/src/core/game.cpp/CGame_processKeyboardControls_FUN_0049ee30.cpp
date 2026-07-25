@@ -18,8 +18,8 @@ void __cdecl core_game_cpp_CGame_processKeyboardControls_FUN_0049ee30(int param_
   byte bVar5;
   
   if (*(int *)(param_1 + 0x27c) != 0) {
-    (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x200);
-    (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x201);
+    (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x200);
+    (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x201);
   }
   param_2[8] = 0;
   pfVar1 = (float *)(param_2 + 8);
@@ -177,62 +177,62 @@ LAB_0049ef39:
   else {
     param_2[7] = (uint)(byte)(&DAT_01c02598)[iVar3];
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x7c));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x7c));
   if (iVar3 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
               (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,0,5,1);
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x80));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x80));
   if (iVar3 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
               (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,0,5,0xffffffff);
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x84));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x84));
   if (iVar3 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004c0950
               (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,1);
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x88));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x88));
   if (iVar3 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004c0950
               (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,0xffffffff);
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x90));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x90));
   if (iVar3 != 0) {
     core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50
               (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,1);
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x8c));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x8c));
   if (iVar3 != 0) {
     core_inv_cpp_CInventory_toggleDetailView_FUN_004c32e0
               (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0);
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x68));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x68));
   if (iVar3 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
               (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,0,0,1);
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x6c));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x6c));
   if (iVar3 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
               (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,0,1,1);
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x70));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x70));
   if (iVar3 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
               (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,0,2,1);
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x74));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x74));
   if (iVar3 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
               (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,0,4,1);
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x78));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x78));
   if (iVar3 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004c0850
               (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0,0,3,1);
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,*(uint *)(param_1 + 0x54));
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,*(uint *)(param_1 + 0x54));
   if (iVar3 != 0) {
     uVar4 = (uint)(*(int *)(param_1 + 0x240) == 0);
     *(uint *)(param_1 + 0x240) = uVar4;

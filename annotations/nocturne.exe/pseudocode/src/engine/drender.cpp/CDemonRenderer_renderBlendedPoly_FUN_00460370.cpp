@@ -38,10 +38,10 @@ int engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370(int *param_
   if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
     if (param_1[1] == 0) {
       if (DAT_005b7624 == 0x20) {
-        _DAT_01c00c7c = &LAB_0052f031;
+        _DAT_01c00c7c = FUN_0052f031;
       }
       else {
-        _DAT_01c00c7c = &LAB_0052f823;
+        _DAT_01c00c7c = FUN_0052f823;
       }
       _DAT_01c039a4 = 6;
       _DAT_01c039a0 = 0x267;
@@ -61,7 +61,7 @@ int engine_drender_cpp_CDemonRenderer_renderBlendedPoly_FUN_00460370(int *param_
     else {
       _DAT_01c039a0 = 0;
       _DAT_01c039a4 = 0;
-      _DAT_01c00c7c = &LAB_00463a79;
+      _DAT_01c00c7c = FUN_00463a79;
     }
     iVar2 = engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
                       (param_1,*(uint *)(param_2 + 4),&DAT_01b4d76c);

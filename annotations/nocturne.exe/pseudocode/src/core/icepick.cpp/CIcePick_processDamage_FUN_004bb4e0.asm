@@ -9,7 +9,7 @@
 ;   TerminatedCString s_icepick_injured_wav_00586267
 ;   undefined4 DAT_0059f3d8
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_01c777bc
 ;   undefined4 DAT_01c77818
 ;
@@ -145,7 +145,7 @@ section .text
     PUSH 0x42480000                     ; 004bb617
     PUSH 0x32                           ; 004bb61c
     PUSH EBX                            ; 004bb61e
-    MOV ECX,dword ptr [0x005b96c4]      ; 004bb61f | DAT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 004bb61f | INT_005b96c4
     PUSH ECX                            ; 004bb625
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 004bb626
         ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670()

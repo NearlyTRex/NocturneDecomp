@@ -136,12 +136,12 @@ section .text
         ;   XREF to: 004c27a0 (CONDITIONAL_JUMP)  ; LAB_004c27a0
     MOV EBX,0x10                        ; 004c251d
     MOV ESI,0x70                        ; 004c2522
-    MOV EAX,[0x005bab60]                ; 004c2527 | DAT_005bab60
+    MOV EAX,[0x005bab60]                ; 004c2527 | INT_005bab60
     MOV EDI,dword ptr [0x005b7620]      ; 004c252c | DAT_005b7620
     MOV dword ptr [ESP + 0x638],EAX     ; 004c2532
     MOV dword ptr [ESP + 0x640],EBX     ; 004c2539
     MOV dword ptr [ESP + 0x630],ESI     ; 004c2540
-    MOV EAX,[0x005bab64]                ; 004c2547 | DAT_005bab64
+    MOV EAX,[0x005bab64]                ; 004c2547 | INT_005bab64
     MOV EBX,0x24                        ; 004c254c
     MOV dword ptr [ESP + 0x634],EAX     ; 004c2551
     CMP EDI,0x180                       ; 004c2558
@@ -337,11 +337,11 @@ section .text
         ;   XREF to: 004c2a80 (CONDITIONAL_JUMP)  ; LAB_004c2a80
     MOV EBX,0x70                        ; 004c27c3
     MOV ECX,0x10                        ; 004c27c8
-    MOV ESI,dword ptr [0x005bab64]      ; 004c27cd | DAT_005bab64
+    MOV ESI,dword ptr [0x005bab64]      ; 004c27cd | INT_005bab64
     MOV EDI,dword ptr [0x005b7620]      ; 004c27d3 | DAT_005b7620
     MOV dword ptr [ESP + 0x62c],EBX     ; 004c27d9
     MOV dword ptr [ESP + 0x63c],ECX     ; 004c27e0
-    MOV EBX,dword ptr [0x005bab60]      ; 004c27e7 | DAT_005bab60
+    MOV EBX,dword ptr [0x005bab60]      ; 004c27e7 | INT_005bab60
     CMP EDI,0x180                       ; 004c27ed
     JGE 0x004c2805                      ; 004c27f3
         ;   XREF to: 004c2805 (CONDITIONAL_JUMP)  ; LAB_004c2805
@@ -726,7 +726,7 @@ section .text
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 004c2cc0
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_setRenderAlpha_FUN_00408370()
     MOV EAX,[0x014b9904]                ; 004c2cc5 | DAT_014b9904
-    MOV EDX,dword ptr [0x005bab64]      ; 004c2cca | DAT_005bab64
+    MOV EDX,dword ptr [0x005bab64]      ; 004c2cca | INT_005bab64
     ADD ESP,0x4                         ; 004c2cd0
     MOV ESI,dword ptr [0x005b7620]      ; 004c2cd3 | DAT_005b7620
     MOV dword ptr [ESP + 0x670],EAX     ; 004c2cd9

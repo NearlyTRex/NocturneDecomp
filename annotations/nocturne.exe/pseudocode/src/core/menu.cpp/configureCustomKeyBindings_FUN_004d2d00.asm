@@ -1471,7 +1471,7 @@ section .text
     XOR EBX,EBX                         ; 004d3d1b
     PUSH EBX                            ; 004d3d1d
         ;   Label: LAB_004d3d1d
-    MOV EAX,[0x005bac64]                ; 004d3d1e | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004d3d1e | INT_005bac64
     PUSH EAX                            ; 004d3d23 | DAT_01cc30e4
     MOV EDI,dword ptr [EAX]             ; 004d3d24 | DAT_01cc30e4
     CALL dword ptr [EDI]                ; 004d3d26
@@ -1493,7 +1493,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004d3d4c
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0()
     ADD ESP,0x8                         ; 004d3d51
-    MOV EAX,[0x005bac64]                ; 004d3d54 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004d3d54 | INT_005bac64
     PUSH 0x1                            ; 004d3d59
     MOV EDX,dword ptr [EAX]             ; 004d3d5b | DAT_01cc30e4
     PUSH EAX                            ; 004d3d5d | DAT_01cc30e4
@@ -1523,7 +1523,7 @@ section .text
         ;   XREF to: 004d3d37 (CONDITIONAL_JUMP)  ; LAB_004d3d37
     PUSH 0x1                            ; 004d3d87
         ;   Label: LAB_004d3d87
-    MOV EAX,[0x005bac64]                ; 004d3d89 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004d3d89 | INT_005bac64
     PUSH EAX                            ; 004d3d8e | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 004d3d8f | DAT_01cc30e4
     CALL dword ptr [EDX]                ; 004d3d91
@@ -1585,7 +1585,7 @@ section .text
         ;   XREF to: 0046fff0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0()
     ADD ESP,0x8                         ; 004d3e14
     PUSH 0x1                            ; 004d3e17
-    MOV EDI,dword ptr [0x005bac64]      ; 004d3e19 | DAT_005bac64
+    MOV EDI,dword ptr [0x005bac64]      ; 004d3e19 | INT_005bac64
     PUSH EDI                            ; 004d3e1f | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210 ; 004d3e20
         ;   XREF to: 004c4210 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210()
@@ -1602,7 +1602,7 @@ section .text
     XOR EBX,EBX                         ; 004d3e44
     PUSH EBX                            ; 004d3e46
         ;   Label: LAB_004d3e46
-    MOV EAX,[0x005bac64]                ; 004d3e47 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004d3e47 | INT_005bac64
     PUSH EAX                            ; 004d3e4c | DAT_01cc30e4
     MOV EDI,dword ptr [EAX]             ; 004d3e4d | DAT_01cc30e4
     CALL dword ptr [EDI]                ; 004d3e4f
@@ -1644,7 +1644,7 @@ section .text
     XOR EBX,EBX                         ; 004d3ea4
     PUSH EBX                            ; 004d3ea6
         ;   Label: LAB_004d3ea6
-    MOV EAX,[0x005bac64]                ; 004d3ea7 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004d3ea7 | INT_005bac64
     PUSH EAX                            ; 004d3eac | DAT_01cc30e4
     MOV EDI,dword ptr [EAX]             ; 004d3ead | DAT_01cc30e4
     CALL dword ptr [EDI]                ; 004d3eaf
@@ -1711,7 +1711,7 @@ section .text
         ;   XREF to: 004d3f14 (CONDITIONAL_JUMP)  ; LAB_004d3f14
     PUSH 0x0                            ; 004d3f26
         ;   Label: LAB_004d3f26
-    MOV EBP,dword ptr [0x005bac64]      ; 004d3f28 | DAT_005bac64
+    MOV EBP,dword ptr [0x005bac64]      ; 004d3f28 | INT_005bac64
     PUSH EBP                            ; 004d3f2e | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210 ; 004d3f2f
         ;   XREF to: 004c4210 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210()

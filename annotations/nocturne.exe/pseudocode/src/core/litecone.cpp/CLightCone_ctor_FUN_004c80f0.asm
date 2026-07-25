@@ -4,6 +4,9 @@
 ; int core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004c80c0 at 004c80d3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00587ad0
 ;   undefined4 s_one_00587ad0+1

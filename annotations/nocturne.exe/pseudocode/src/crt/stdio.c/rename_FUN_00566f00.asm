@@ -4,7 +4,8 @@
 ; undefined4 crt_stdio_c_rename_FUN_00566f00(LPCSTR param_1,LPCSTR param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00568690 at 0056872b
 ;   engine_ini.cpp_CIni_writeProfileString_FUN_004bd480 at 004bd671
 ;
 ; Referenced Globals:

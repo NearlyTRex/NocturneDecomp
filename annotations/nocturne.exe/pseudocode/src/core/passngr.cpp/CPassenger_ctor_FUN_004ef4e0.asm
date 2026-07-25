@@ -4,6 +4,9 @@
 ; int core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004ef4b0 at 004ef4c3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_wolfbrn_dfm_0058cbd0
 ;   undefined4 s_wolfbrn_dfm_0058cbd0+1

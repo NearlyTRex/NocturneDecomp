@@ -4,7 +4,8 @@
 ; void __cdecl sound_sndmain_cpp_set3DListenerPos_FUN_00527610(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00527d80 at 00527dbd
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e902
 ;   core_sound.cpp_updateListeners_FUN_0052c9d0 at 0052cb0b
 ;

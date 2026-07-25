@@ -12,7 +12,7 @@
 ;   double DOUBLE_0057a03a = 0.400000000000000
 ;   float FLOAT_0057a042 = 10
 ;   float FLOAT_0057a046 = 0.5
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -149,7 +149,7 @@ section .text
     PUSH EAX                            ; 00428418
     LEA EAX,[ESP + 0x78]                ; 00428419
     PUSH EAX                            ; 0042841d
-    MOV ECX,dword ptr [0x005b96c4]      ; 0042841e | DAT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 0042841e | INT_005b96c4
     PUSH ECX                            ; 00428424
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 00428425
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200()

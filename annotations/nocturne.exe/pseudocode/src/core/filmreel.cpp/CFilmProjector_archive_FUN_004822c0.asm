@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_keyReel_00581053
 ;   TerminatedCString s_keyEvent_0058105b
-;   undefined4 DAT_005b801c
+;   int INT_005b801c = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -24,7 +24,7 @@ section .text
     PUSH EBX                            ; 004822c5
     CALL core_dest.cpp_CActorDestination_archive_FUN_0044bb10 ; 004822c6
         ;   XREF to: 0044bb10 (UNCONDITIONAL_CALL)  ; undefined core_dest.cpp_CActorDestination_archive_FUN_0044bb10()
-    MOV EDX,dword ptr [0x005b801c]      ; 004822cb | DAT_005b801c
+    MOV EDX,dword ptr [0x005b801c]      ; 004822cb | INT_005b801c
     ADD ESP,0x4                         ; 004822d1
     CMP EDX,0x2                         ; 004822d4
     JGE 0x004822db                      ; 004822d7

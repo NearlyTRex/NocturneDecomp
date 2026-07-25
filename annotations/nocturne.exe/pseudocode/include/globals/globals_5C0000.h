@@ -10,10 +10,27 @@
 // TerminatedCString
 extern TerminatedCString s_d3d_dll_005c0e83;
 
+// int
+extern int INT_005c0ff0;
+extern int INT_005c10b0;
+extern int INT_005c1130;
+extern int INT_005c1160;
+extern int INT_005c1174;
+extern int INT_005c1188;
+extern int INT_005c11a0;
+extern int INT_005c11c4;
+extern int INT_005c154c;
+extern int INT_005c1578;
+extern int INT_005c1590;
+extern int INT_005c1614;
+extern int INT_005c1668;
+extern int INT_005c166c;
+
 // undefined1
 extern undefined1 DAT_005c0e80;
 extern undefined1 DAT_005c0e81;
 extern undefined1 DAT_005c0e82;
+extern undefined1 DAT_005c1a9c;
 extern undefined1 DAT_005c1b23;
 extern undefined1 DAT_005c1b24;
 extern undefined1 DAT_005c1b25;
@@ -21,7 +38,6 @@ extern undefined1 DAT_005c1b26;
 extern undefined1 DAT_005c1b27;
 extern undefined1 DAT_005c1d0f;
 extern undefined1 DAT_005c1e89;
-extern undefined1 DAT_005c1f20;
 extern undefined1 DAT_005c2050;
 extern undefined1 DAT_005c2140;
 extern undefined1 DAT_005c2302;
@@ -35,9 +51,9 @@ extern undefined2 DAT_005c1d11;
 extern undefined2 DAT_005c1f4c;
 
 // undefined4
+extern undefined4 DAT_005c1654;
 extern undefined4 DAT_005c1660;
 extern undefined4 DAT_005c1664;
-extern undefined4 DAT_005c1668;
 extern undefined4 DAT_005c1680;
 extern undefined4 DAT_005c1684;
 extern undefined4 DAT_005c1688;
@@ -71,6 +87,7 @@ extern undefined4 DAT_005c1e00;
 extern undefined4 DAT_005c1e04;
 extern undefined4 DAT_005c1f14;
 extern undefined4 DAT_005c1f1c;
+extern undefined4 DAT_005c1f20;
 extern undefined4 DAT_005c1f50;
 extern undefined4 DAT_005c1f54;
 extern undefined4 DAT_005c1f58;
@@ -81,6 +98,7 @@ extern undefined4 DAT_005c204c;
 extern undefined4 DAT_005c206c;
 extern undefined4 DAT_005c20d0;
 extern undefined4 DAT_005c20d4;
+extern undefined4 DAT_005c2144;
 extern undefined4 DAT_005c5010;
 extern undefined4 DAT_005c5014;
 extern undefined4 DAT_005c5018;
@@ -99,10 +117,15 @@ extern undefined4 DAT_005c5064;
 extern undefined4 DAT_005c5068;
 extern undefined4 DAT_005c506c;
 extern undefined4 DAT_005c5070;
+extern undefined4 DAT_005c5074;
+extern undefined4 DAT_005c5078;
 extern undefined4 DAT_005c5084;
+extern undefined4 DAT_005c5088;
 extern undefined4 DAT_005c5094;
 extern undefined4 DAT_005c5098;
 extern undefined4 DAT_005c509c;
+extern undefined4 DAT_005c50a4;
+extern undefined4 DAT_005c50a8;
 extern undefined4 DAT_005c50b4;
 extern undefined4 DAT_005c50c4;
 extern undefined4 DAT_005c50c8;

@@ -4,6 +4,9 @@
 ; void core_barrier_cpp_CBarrier_ctor_FUN_00411710(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004116e0 at 004116f3
+;
 ; Referenced Globals:
 ;   void* PTR_core_barrier.cpp_CBarrier_setup_FUN_00411760_00599d74 = 00411760
 ;

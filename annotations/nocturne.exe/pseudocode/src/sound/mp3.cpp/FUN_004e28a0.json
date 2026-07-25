@@ -1,0 +1,523 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 82,
+    "complexity_score": 358,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 33,
+    "suspect_count": 31,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 115
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e28a0",
+    "address_range": [
+      [
+        "004e28a0",
+        "004e2977"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004e28a0",
+    "signature": "void FUN_004e28a0(int *param_1,int param_2,int param_3,int param_4)"
+  },
+  "function_calls": [
+    {
+      "addr": "005635b0",
+      "is_variadic": false,
+      "name": "crt_memory.c_malloc_FUN_005635b0"
+    },
+    {
+      "addr": "00563380",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_00563380"
+    },
+    {
+      "addr": "0056582c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fseek_FUN_0056582c"
+    },
+    {
+      "addr": "00566e70",
+      "is_variadic": false,
+      "name": "crt_stdio.c_ftell_FUN_00566e70"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "FUN_004c8440"
+    },
+    {
+      "addr": "005638d0",
+      "is_variadic": false,
+      "name": "FUN_005638d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0058b567",
+      "name": "s_sound_mp3_cpp_0058b567",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058b578",
+      "name": "s_Out_of_memory_File_s_0058b578",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "DAT_01cc4800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "DAT_01cc4804",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cd8b28",
+      "name": "DAT_01cd8b28",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5384615384615383,
+    "instruction_count": 65,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CBRANCH": 3,
+      "COPY": 54,
+      "INT_ADD": 29,
+      "INT_AND": 21,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 18,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 19,
+      "LOAD": 14,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 32
+    },
+    "pcode_op_count": 230
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_004e28a0.cpp",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "AssignmentAddressToInteger",
+          "column": 9,
+          "line": 29,
+          "message": "Assigning a pointer to an integer is not portable.",
+          "severity": "portability"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_004e28a0(int *param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_004e28a0(int *param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void FUN_004e28a0(int *param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void FUN_004e28a0(int *param_1,int param_2,int param_3,int param_4)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (*param_1 != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fclose(*param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[1] != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_005638d0(param_1[1]);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*param_1 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_1 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "iVar1 = _ftell(param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[8] = iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[9] = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_1[9] = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2] = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "param_1[2] = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar1 = malloc(param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[1] = iVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 27,
+      "match": "DAT_01cd8b28",
+      "severity": "mild",
+      "text": "FUN_004c8440(\"Out of memory.  File: %s\",&DAT_01cd8b28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fseek(*param_1,param_1[8],0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fseek(*param_1,param_1[8],0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[4] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[5] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[6] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[7] = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[10] = param_1[9];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[10] = param_1[9];",
+      "type": "unnamed_param"
+    }
+  ]
+}

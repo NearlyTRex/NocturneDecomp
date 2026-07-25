@@ -220,7 +220,8 @@ void FUN_00495a20(int param_1,float param_2)
           }
           else if (uVar2 < 0xf) {
             local_2c = core_actor_cpp_castToClassHash_FUN_0040d890
-                                 (*(uint *)(param_1 + 0x1fa08),DAT_00764230);
+                                 (*(uint *)(param_1 + 0x1fa08),
+                                  CDemonActorType_007641f8.name_hash);
             if (local_2c != 0) {
               local_14 = (float)core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60
                                           (iVar9);
@@ -418,7 +419,7 @@ LAB_00496834:
     }
   }
   iVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                    (*(uint *)(param_1 + 0x24ac),DAT_00764ad4);
+                    (*(uint *)(param_1 + 0x24ac),CDemonActorType_00764a9c.name_hash);
   if (iVar9 != 0) {
     if (((*(int *)(param_1 + 0xbca8) != 0) &&
         (!bVar7 && (!bVar6 && (!bVar5 && (!bVar4 && (!bVar16 && (!bVar15 && (!bVar14 && !bVar3))))))
@@ -581,7 +582,8 @@ LAB_00495fcb:
                                 (param_1 + 0x150);
     if ((1.0 < local_14) &&
        (iVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(param_1 + 0x1fa0c),DAT_00764838), iVar9 != 0)) {
+                          (*(uint *)(param_1 + 0x1fa0c),CDemonActorType_00764800.name_hash),
+       iVar9 != 0)) {
       FUN_00497870(param_1,local_7c);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_16c,local_7c);
       local_190[0] = local_16c[0] - local_184[0];

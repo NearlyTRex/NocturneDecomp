@@ -4,7 +4,9 @@
 ; int __cdecl engine_2d_c_getStringWidth_FUN_00401ed0(byte *param_1)
 ;
 ;
-; XREF[7]:
+; XREF[9]:
+;   FUN_0045e2e0 at 0045e30b
+;   FUN_0045e340 at 0045e35a
 ;   engine_2d.c_FUN_004027f0 at 004027fb
 ;   engine_2d.c_FUN_004028b0 at 004028bb
 ;   engine_2d.c_FUN_00402980 at 00402996

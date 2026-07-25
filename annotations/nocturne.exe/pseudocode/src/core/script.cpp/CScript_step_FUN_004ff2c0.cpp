@@ -352,8 +352,9 @@ uint __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(uint *param_1,uint param_
             core_script_cpp_trimString_FUN_004fe000(local_27e4);
             iVar4 = core_script_cpp_getActor_FUN_004fe180(local_e1c,_DAT_01cae124,0x1cae0ec);
             if ((iVar4 == 0) ||
-               (iVar9 = core_script_cpp_getActor_FUN_004fe180(local_27e4,DAT_00763e80,&DAT_00763e48)
-               , iVar9 == 0)) goto joined_r0x00500ad6;
+               (iVar9 = core_script_cpp_getActor_FUN_004fe180
+                                  (local_27e4,CDemonActorType_00763e48.name_hash,
+                                   &CDemonActorType_00763e48), iVar9 == 0)) goto joined_r0x00500ad6;
             if (_DAT_01e56418 == 0) {
               core_inv_cpp_CInventory_addItem_FUN_004bf360(iVar4 + 0x1f5a0,iVar9,0);
             }
@@ -463,7 +464,8 @@ LAB_0050064d:
                                         (local_d54,_DAT_01e428cc,0x1e42894);
                       if ((iVar4 == 0) ||
                          (iVar9 = core_script_cpp_getActor_FUN_004fe180
-                                            (local_190c,DAT_00763e80,&DAT_00763e48), iVar9 == 0))
+                                            (local_190c,CDemonActorType_00763e48.name_hash,
+                                             &CDemonActorType_00763e48), iVar9 == 0))
                       goto joined_r0x00500ad6;
                       if (_DAT_01e56418 == 0) {
                         core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(iVar4,iVar9);
@@ -551,7 +553,7 @@ LAB_0050064d:
                                       iVar7 = core_actor_cpp_castToClassHash_FUN_0040d890
                                                         (*(uint *)
                                                           (iVar9 + 0x14cd70 + 0x01E57284),
-                                                         DAT_00765a98);
+                                                         CDemonActorType_00765a60.name_hash);
                                       if (iVar7 != 0) {
                                         (**(code **)(*(int *)(iVar7 + 0x14c) + 0x128))(iVar7,0,0,0);
                                       }
@@ -561,7 +563,8 @@ LAB_0050064d:
                                 }
                                 else {
                                   iVar4 = core_script_cpp_getActor_FUN_004fe180
-                                                    (local_2334,DAT_00765a98,&DAT_00765a60);
+                                                    (local_2334,CDemonActorType_00765a60.name_hash,
+                                                     &CDemonActorType_00765a60);
                                   if (iVar4 == 0) goto joined_r0x00500ad6;
                                   if (_DAT_01e56418 == 0) {
                                     (**(code **)(*(int *)(iVar4 + 0x14c) + 0x128))(iVar4,0,0,0);
@@ -793,8 +796,9 @@ joined_r0x00504194:
                                             core_script_cpp_trimString_FUN_004fe000(local_2bcc);
                                             core_script_cpp_trimString_FUN_004fe000(local_1844);
                                             local_f0 = core_script_cpp_getActor_FUN_004fe180
-                                                                 (local_2bcc,DAT_00765a98,
-                                                                  &DAT_00765a60);
+                                                                 (local_2bcc,
+                                                                  CDemonActorType_00765a60.name_hash
+                                                                  ,&CDemonActorType_00765a60);
                                             if (local_f0 == 0) goto joined_r0x00500ad6;
                                             iVar4 = core_script_cpp_parseBodyPartMask_FUN_004fe3d0
                                                               (local_f0,local_1844,local_c8c);
@@ -1037,8 +1041,10 @@ LAB_00501802:
                                                   core_script_cpp_trimString_FUN_004fe000
                                                             (local_1f4c);
                                                   iVar4 = core_script_cpp_getActor_FUN_004fe180
-                                                                    (local_32d4,DAT_00765a98,
-                                                                     &DAT_00765a60);
+                                                                    (local_32d4,
+                                                                     CDemonActorType_00765a60.
+                                                                     name_hash,
+                                                                     &CDemonActorType_00765a60);
                                                   if (iVar4 == 0) goto joined_r0x00500ad6;
                                                   iVar9 = _stricmp
                                                                     (local_1f4c,"false");
@@ -1161,8 +1167,10 @@ LAB_00501802:
                                                   core_script_cpp_trimString_FUN_004fe000
                                                             (local_19d4);
                                                   iVar4 = core_script_cpp_getActor_FUN_004fe180
-                                                                    (local_1a9c,DAT_00765a98,
-                                                                     &DAT_00765a60);
+                                                                    (local_1a9c,
+                                                                     CDemonActorType_00765a60.
+                                                                     name_hash,
+                                                                     &CDemonActorType_00765a60);
                                                   if (iVar4 == 0) goto joined_r0x00500ad6;
                                                   if (_DAT_01e56418 == 0) {
                                                     uVar10 = 
@@ -1636,8 +1644,10 @@ LAB_005021b8:
                                                   core_script_cpp_trimString_FUN_004fe000
                                                             (local_1394);
                                                   iVar4 = core_script_cpp_getActor_FUN_004fe180
-                                                                    (local_1394,DAT_00765a98,
-                                                                     &DAT_00765a60);
+                                                                    (local_1394,
+                                                                     CDemonActorType_00765a60.
+                                                                     name_hash,
+                                                                     &CDemonActorType_00765a60);
                                                   if (iVar4 == 0) {
 joined_r0x00500ad6:
                                                     if (_DAT_01e56c2c == 0) {
@@ -1661,8 +1671,10 @@ joined_r0x00500ad6:
                                                     core_script_cpp_trimString_FUN_004fe000
                                                               (local_2fb4);
                                                     iVar9 = core_script_cpp_getActor_FUN_004fe180
-                                                                      (local_2fb4,DAT_00763e80,
-                                                                       &DAT_00763e48);
+                                                                      (local_2fb4,
+                                                                       CDemonActorType_00763e48.
+                                                                       name_hash,
+                                                                       &CDemonActorType_00763e48);
                                                     if (iVar9 == 0) goto joined_r0x00500ad6;
                                                   }
                                                   if (*local_118 != ')') {
@@ -1748,9 +1760,11 @@ joined_r0x00500ad6:
                                                                      0x1af4e9c);
                                                   if ((iVar4 == 0) ||
                                                      (iVar9 = core_script_cpp_getActor_FUN_004fe180
-                                                                        (local_28ac,DAT_00765a98,
-                                                                         &DAT_00765a60), iVar9 == 0)
-                                                     ) goto joined_r0x00500ad6;
+                                                                        (local_28ac,
+                                                                         CDemonActorType_00765a60.
+                                                                         name_hash,
+                                                                         &CDemonActorType_00765a60),
+                                                     iVar9 == 0)) goto joined_r0x00500ad6;
                                                   if (_DAT_01e56418 == 0) {
                                                     local_124 = _DAT_01e56418;
                                                     if (0.0 <= (float)param_1[0x11]) {
@@ -2210,8 +2224,10 @@ LAB_00503106:
                                                     return 0xffffffff;
                                                   }
                                                   iVar4 = core_script_cpp_getActor_FUN_004fe180
-                                                                    (local_24c4,DAT_00763e80,
-                                                                     &DAT_00763e48);
+                                                                    (local_24c4,
+                                                                     CDemonActorType_00763e48.
+                                                                     name_hash,
+                                                                     &CDemonActorType_00763e48);
                                                   if (_DAT_01e56418 == 0) {
                                                                                                         
                                                   core_event_cpp_CEventList_setActorVariable_FUN_00480950
@@ -2301,8 +2317,10 @@ LAB_00503106:
                                                   core_script_cpp_trimString_FUN_004fe000
                                                             (local_23fc);
                                                   iVar4 = core_script_cpp_getActor_FUN_004fe180
-                                                                    (local_23fc,DAT_00765a98,
-                                                                     &DAT_00765a60);
+                                                                    (local_23fc,
+                                                                     CDemonActorType_00765a60.
+                                                                     name_hash,
+                                                                     &CDemonActorType_00765a60);
                                                   if (iVar4 == 0) goto joined_r0x00500ad6;
                                                   if (_DAT_01e56418 == 0) {
                                                     *(float *)(iVar4 + 0x2434) =
@@ -2338,8 +2356,10 @@ LAB_00503106:
                                                     return 0xffffffff;
                                                   }
                                                   iVar4 = core_script_cpp_getActor_FUN_004fe180
-                                                                    (local_9bc,DAT_00763e80,
-                                                                     &DAT_00763e48);
+                                                                    (local_9bc,
+                                                                     CDemonActorType_00763e48.
+                                                                     name_hash,
+                                                                     &CDemonActorType_00763e48);
                                                   if (iVar4 == 0) goto joined_r0x00500ad6;
                                                   if (iVar4 != param_1[3]) {
                                                     param_1[4] = 1;
@@ -2549,8 +2569,10 @@ LAB_00503b62:
                                                   }
                                                   else {
                                                     iVar4 = core_script_cpp_getActor_FUN_004fe180
-                                                                      (local_a20,DAT_00765a98,
-                                                                       &DAT_00765a60);
+                                                                      (local_a20,
+                                                                       CDemonActorType_00765a60.
+                                                                       name_hash,
+                                                                       &CDemonActorType_00765a60);
                                                     param_1[1] = iVar4;
                                                     if (iVar4 == 0) goto joined_r0x00500ad6;
                                                   }
@@ -2651,8 +2673,10 @@ LAB_00503b62:
                                                     if ((iVar7 != 0) &&
                                                        (iVar9 = 
                                                   core_script_cpp_getActor_FUN_004fe180
-                                                            (local_1204,DAT_00765a98,&DAT_00765a60),
-                                                  iVar9 == 0)) goto joined_r0x00500ad6;
+                                                            (local_1204,
+                                                             CDemonActorType_00765a60.name_hash,
+                                                             &CDemonActorType_00765a60), iVar9 == 0)
+                                                  ) goto joined_r0x00500ad6;
                                                   }
                                                   if (*local_118 != ')') {
                                                     _sprintf(&DAT_01e56420,
@@ -2690,13 +2714,17 @@ LAB_00503b62:
                                                   core_script_cpp_trimString_FUN_004fe000
                                                             (local_1c2c);
                                                   iVar4 = core_script_cpp_getActor_FUN_004fe180
-                                                                    (local_2c94,DAT_00763e80,
-                                                                     &DAT_00763e48);
+                                                                    (local_2c94,
+                                                                     CDemonActorType_00763e48.
+                                                                     name_hash,
+                                                                     &CDemonActorType_00763e48);
                                                   if ((iVar4 == 0) ||
                                                      (iVar9 = core_script_cpp_getActor_FUN_004fe180
-                                                                        (local_1c2c,DAT_00763e80,
-                                                                         &DAT_00763e48), iVar9 == 0)
-                                                     ) goto joined_r0x00500ad6;
+                                                                        (local_1c2c,
+                                                                         CDemonActorType_00763e48.
+                                                                         name_hash,
+                                                                         &CDemonActorType_00763e48),
+                                                     iVar9 == 0)) goto joined_r0x00500ad6;
                                                   if (_DAT_01e56418 == 0) {
                                                     core_bodypart_cpp_subtractVector_FUN_00417f90
                                                               (iVar9 + 0x20,local_13c,iVar4 + 0x20);
@@ -2955,13 +2983,17 @@ LAB_005043d6:
                                                   core_script_cpp_trimString_FUN_004fe000
                                                             (local_2974);
                                                   iVar4 = core_script_cpp_getActor_FUN_004fe180
-                                                                    (local_320c,DAT_00765a98,
-                                                                     &DAT_00765a60);
+                                                                    (local_320c,
+                                                                     CDemonActorType_00765a60.
+                                                                     name_hash,
+                                                                     &CDemonActorType_00765a60);
                                                   if ((iVar4 == 0) ||
                                                      (iVar9 = core_script_cpp_getActor_FUN_004fe180
-                                                                        (local_2974,DAT_00763e80,
-                                                                         &DAT_00763e48), iVar9 == 0)
-                                                     ) goto joined_r0x00500ad6;
+                                                                        (local_2974,
+                                                                         CDemonActorType_00763e48.
+                                                                         name_hash,
+                                                                         &CDemonActorType_00763e48),
+                                                     iVar9 == 0)) goto joined_r0x00500ad6;
                                                   if (_DAT_01e56418 == 0) {
                                                     (**(code **)(*(int *)(iVar4 + 0x14c) + 300))
                                                               (iVar4,iVar9);
@@ -3075,13 +3107,17 @@ LAB_005043d6:
                                                   }
                                                   local_118 = local_118 + 1;
                                                   iVar4 = core_script_cpp_getActor_FUN_004fe180
-                                                                    (local_2a3c,DAT_00765a98,
-                                                                     &DAT_00765a60);
+                                                                    (local_2a3c,
+                                                                     CDemonActorType_00765a60.
+                                                                     name_hash,
+                                                                     &CDemonActorType_00765a60);
                                                   if ((iVar4 == 0) ||
                                                      (iVar9 = core_script_cpp_getActor_FUN_004fe180
-                                                                        (local_113c,DAT_00763e80,
-                                                                         &DAT_00763e48), iVar9 == 0)
-                                                     ) goto joined_r0x00500ad6;
+                                                                        (local_113c,
+                                                                         CDemonActorType_00763e48.
+                                                                         name_hash,
+                                                                         &CDemonActorType_00763e48),
+                                                     iVar9 == 0)) goto joined_r0x00500ad6;
                                                   if (_DAT_01e56418 == 0) {
                                                     (**(code **)(*(int *)(iVar4 + 0x14c) + 0x128))
                                                               (iVar4,iVar9,local_120,local_1c);

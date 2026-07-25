@@ -117,8 +117,9 @@ void core_batman_cpp_CBatman_process_FUN_00413800(int param_1,float param_2)
           iVar3 = 0;
           while ((iVar3 < *(int *)(0x01E57284 + 0x150bf4) &&
                  ((iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                     (*(uint *)(iVar4 + 0x150bf8 + 0x01E57284),DAT_00764670)
-                  , iVar5 == 0 || (*(int *)(iVar5 + 0xbdc0) == 0))))) {
+                                     (*(uint *)(iVar4 + 0x150bf8 + 0x01E57284),
+                                      CDemonActorType_00764638.name_hash), iVar5 == 0 ||
+                  (*(int *)(iVar5 + 0xbdc0) == 0))))) {
             iVar3 = iVar3 + 1;
             iVar4 = iVar4 + 4;
           }
@@ -231,7 +232,7 @@ void core_batman_cpp_CBatman_process_FUN_00413800(int param_1,float param_2)
         uVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                           (iVar3,local_ec,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_74,uVar7);
-        FUN_004b0480(0x01C78C7C,local_74,0);
+        FUN_004b0480(INT_005b96c4,local_74,0);
         *(uint *)(param_1 + 0xbc90) = 1;
       }
       break;

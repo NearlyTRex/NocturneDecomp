@@ -4,7 +4,9 @@
 ; void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080(int *param_1,int param_2)
 ;
 ;
-; XREF[11]:
+; XREF[13]:
+;   FUN_0044d060 at 0044d1d2
+;   FUN_00450c90 at 004512bd
 ;   FUN_00489990 at 00489cc0
 ;   FUN_0048d5d0 at 0048daa7
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 at 0044f94e
@@ -13,9 +15,7 @@
 ;   core_fire.cpp_CFireball_render_FUN_00484390 at 00484759
 ;   core_fire.cpp_CGunFlame_render_FUN_00488580 at 00488a9a
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 00486207
-;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 0048a06d
-;   core_fire.cpp_CSpark_render_FUN_004838c0 at 004839f3
-;   ... and 1 more
+;   ... and 3 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624
@@ -73,7 +73,7 @@ section .text
     JZ 0x00460113                       ; 004600d1
         ;   XREF to: 00460113 (CONDITIONAL_JUMP)  ; LAB_00460113
     XOR EDX,EDX                         ; 004600d3
-    MOV EAX,0x463a79                    ; 004600d5 | LAB_00463a79
+    MOV EAX,0x463a79                    ; 004600d5
     MOV dword ptr [0x01c039a0],EDX      ; 004600da | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EDX      ; 004600e0 | DAT_01c039a4
     MOV [0x01c00c7c],EAX                ; 004600e6 | DAT_01c00c7c
@@ -107,7 +107,7 @@ section .text
         ;   Label: LAB_00460113
     JNZ 0x0046013e                      ; 0046011a
         ;   XREF to: 0046013e (CONDITIONAL_JUMP)  ; LAB_0046013e
-    MOV dword ptr [0x01c00c7c],0x52f031 ; 0046011c | DAT_01c00c7c | LAB_0052f031
+    MOV dword ptr [0x01c00c7c],0x52f031 ; 0046011c | DAT_01c00c7c
     MOV EDI,0x6                         ; 00460126
         ;   Label: LAB_00460126
     MOV EBX,0x367                       ; 0046012b
@@ -115,7 +115,7 @@ section .text
     MOV dword ptr [0x01c039a0],EBX      ; 00460136 | DAT_01c039a0
     JMP 0x004600eb                      ; 0046013c
         ;   XREF to: 004600eb (UNCONDITIONAL_JUMP)  ; LAB_004600eb
-    MOV dword ptr [0x01c00c7c],0x52f823 ; 0046013e | DAT_01c00c7c | LAB_0052f823
+    MOV dword ptr [0x01c00c7c],0x52f823 ; 0046013e | DAT_01c00c7c
         ;   Label: LAB_0046013e
     JMP 0x00460126                      ; 00460148
         ;   XREF to: 00460126 (UNCONDITIONAL_JUMP)  ; LAB_00460126

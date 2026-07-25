@@ -4,7 +4,8 @@
 ; undefined4 __cdecl core_netgame_cpp_CNetGame_initializeNetwork_FUN_004e9d50(int param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004e99f0 at 004e9a64
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9af0
 ;
 ; Referenced Globals:

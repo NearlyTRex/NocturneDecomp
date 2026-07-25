@@ -362,7 +362,7 @@ section .text
     PUSH 0x0                            ; 004bbd8b
     LEA EAX,[EBP + -0x2]                ; 004bbd8d
     PUSH EAX                            ; 004bbd90
-    MOV ESI,dword ptr [0x005b96c4]      ; 004bbd91 | DAT_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 004bbd91 | INT_005b96c4
     PUSH ESI                            ; 004bbd97
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004bbd98
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200()
@@ -612,7 +612,7 @@ section .text
     PUSH 0x0                            ; 004bc063
     LEA EAX,[EBP + -0x3e]               ; 004bc065
     PUSH EAX                            ; 004bc068
-    MOV ECX,dword ptr [0x005b96c4]      ; 004bc069 | DAT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 004bc069 | INT_005b96c4
     PUSH ECX                            ; 004bc06f
     CALL FUN_004b0480                   ; 004bc070
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()

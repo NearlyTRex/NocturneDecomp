@@ -18,13 +18,13 @@ void core_vessel_cpp_CCryptVessel_archive_FUN_00550540(int param_1)
   core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x3a4,"endLoc");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x3b0,"state");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x3b4,"timer");
-  if (1 < 0x00000004) {
+  if (1 < INT_005c11c4) {
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x33c,"winEvent");
   }
-  if (2 < 0x00000004) {
+  if (2 < INT_005c11c4) {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x3a8,"eatDistance");
   }
-  if (0x00000004 < 4) {
+  if (INT_005c11c4 < 4) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x3ac,"visualType");

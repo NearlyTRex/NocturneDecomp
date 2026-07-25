@@ -4,7 +4,8 @@
 ; undefined4 * support_trisock_cpp_convertSockAddr_FUN_00548d50(undefined4 *param_1,short *param_2)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00549170 at 005491c2
 ;   support_trisock.cpp_getSocketName_FUN_005491e0 at 00549218
 ;   support_trisock.cpp_receiveSocketData_FUN_00549010 at 00549072
 ;

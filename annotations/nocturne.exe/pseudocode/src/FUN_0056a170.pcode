@@ -1,0 +1,49 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    FUN_0056a170
+# Entry:       0056a170
+# Signature:   void FUN_0056a170(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@0056a170 [ESP:-4](-4)  # PUSH EBX
+COPY (unique,0x41500,4) = (register,0xc,4) /* EBX */
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x41500,4)
+
+@0056a171 [ESP:-4]  # MOV EDX, 0x56f573
+COPY (register,0x8,4) /* EDX */ = (const,0x56f573,4)
+
+@0056a176 [ESP:-4]  # MOV EBX, 0x56a189
+COPY (register,0xc,4) /* EBX */ = (const,0x56a189,4)
+
+@0056a17b [ESP:-4]  # MOV dword ptr [0x005c1f88], EDX
+COPY (ram,0x5c1f88,4) = (register,0x8,4) /* EDX */
+
+@0056a181 [ESP:-4]  # MOV dword ptr [0x005c1f8c], EBX
+COPY (ram,0x5c1f8c,4) = (register,0xc,4) /* EBX */
+
+@0056a187 [ESP:+0](+4)  # POP EBX
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+COPY (register,0xc,4) /* EBX */ = (unique,0x87300,4)
+
+@0056a188 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 7 instructions, 14 P-code ops
+# ============================================================================

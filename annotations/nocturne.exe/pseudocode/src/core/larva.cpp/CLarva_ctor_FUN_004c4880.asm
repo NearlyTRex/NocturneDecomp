@@ -4,6 +4,9 @@
 ; int core_larva_cpp_CLarva_ctor_FUN_004c4880(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004c4850 at 004c4863
+;
 ; Referenced Globals:
 ;   TerminatedCString s_worm_dfm_0058777b
 ;   float FLOAT_0059fa70 = 20

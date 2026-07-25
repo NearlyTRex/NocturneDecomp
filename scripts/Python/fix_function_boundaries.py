@@ -12,7 +12,7 @@ whose *body* doesn't cover all its code (tail/interior left undisassembled). Thi
 tool fixes a function whose *start* is wrong - orphaned bytes that PRECEDE the
 entry, which the body-coverage scan can't see.
 
-Three detected classes (thunks/externals skipped):
+Four detected classes (thunks/externals skipped):
 
   ENTRY_LATE  - the instruction ending immediately before a function's entry is
                 orphaned (belongs to no function) and falls through into the
@@ -37,7 +37,20 @@ Three detected classes (thunks/externals skipped):
                 Gated on there being no incoming references to the padding entry
                 (a real entry gets called; padding does not).
 
-All three fixes remove the mis-defined function(s) and rebuild via Ghidra's flow
+  OVERLAP     - a phase-shifted / misaligned HALLUCINATION: the entry sits after a
+                run of UNDEFINED bytes that a preceding function V flows into, i.e.
+                B was defined mid-instruction inside V's real (still-undisassembled)
+                tail; B then x86-resyncs into V's genuine tail (often sharing its
+                `ret`). Predecessor bytes are undefined (not defined code, not NOP
+                padding), so ENTRY_LATE/SPLIT/ENTRY_EARLY are all blind to it - it
+                otherwise only shows up as V's HIGH FLOW_UNDEFINED tail in
+                validate_function_ranges. Gated on B having ZERO incoming refs and
+                not being a vtable slot. The fix is a DELETE of B (+ undefine its
+                body); the victim's tail is then rebuilt by validate --fix. Because
+                DELETE is destructive and unlike the boundary moves, OVERLAP is
+                always detected/reported but only acted on with --kind OVERLAP.
+
+The ENTRY_* / SPLIT fixes remove the mis-defined function(s) and rebuild via flow
 analysis. By default the function's NAME, SIGNATURE (return type, parameter
 names/types/storage), calling convention, no-return flag, namespace, comments and
 local variables are snapshotted before removal and re-applied afterwards - pass
@@ -105,7 +118,11 @@ import argparse
 MAX_CHAIN = 64     # safety bound on prologue-chain walk-back
 MAX_NOP_RUN = 8    # safety bound on leading alignment-padding NOP run
 
-ALL_KINDS = ("ENTRY_LATE", "SPLIT", "ENTRY_EARLY")
+# OVERLAP is always detected/reported but is NOT in the default apply set: its
+# action is a DELETE (of a bogus function), which is a different, destructive
+# operation from the boundary moves - require an explicit --kind OVERLAP to act.
+DEFAULT_KINDS = ("ENTRY_LATE", "SPLIT", "ENTRY_EARLY")
+ALL_KINDS = ("ENTRY_LATE", "SPLIT", "ENTRY_EARLY", "OVERLAP")
 
 # Single-instruction no-ops Watcom/MSVC emit as inter-function alignment padding.
 _NOP_FORMS = (
@@ -231,6 +248,68 @@ def _detect_entry_early(program, B, listing):
     return cur, _ref_count_to(program, cur)
 
 
+def _detect_overlap(program, B, listing, fm, vtable_targets):
+    """OVERLAP: phase-shifted / misaligned hallucinated function.
+
+    B's entry sits after a run of UNDEFINED bytes that a *preceding* function V
+    flows into - i.e. B was defined mid-instruction inside V's real, still-
+    undisassembled tail (V ends, a few undefined bytes remain, then B starts on a
+    byte that is partway through V's next real instruction). x86 self-resync means
+    B's body then rejoins V's genuine tail (often sharing its `ret`).
+
+    Neither ENTRY_LATE/SPLIT/ENTRY_EARLY can see this: those need the bytes before
+    the entry to be DEFINED code (owned or orphan) or NOP padding. Here they are
+    undefined, so detect()'s `pinstr is None` arm would otherwise treat it as a
+    clean boundary. It only surfaces as V's HIGH FLOW_UNDEFINED tail in
+    validate_function_ranges.
+
+    Signature (all required): an undefined gap immediately before B; the function V
+    whose last instruction ends just before the gap FALLS THROUGH into the gap (V is
+    fragmented - its real tail was stolen); B has ZERO incoming references; B is not
+    a vtable slot. A real function after a gap gets referenced and its predecessor
+    ends in ret/jmp - neither holds here.
+
+    Returns dict(victim, gap_start) or None. The action is a DELETE of B (then the
+    victim's tail is rebuilt by validate_function_ranges --fix).
+    """
+    E = B.getEntryPoint()
+    prev = E.subtract(1) if E.getOffset() > 0 else None
+    if prev is None or listing.getInstructionContaining(prev) is not None:
+        return None  # predecessor is defined code -> ENTRY_LATE/SPLIT territory
+    if listing.getDefinedDataContaining(prev) is not None:
+        return None  # predecessor is defined DATA -> genuine data/code boundary
+
+    # walk back through contiguous undefined bytes to the start of the gap
+    g_start = E
+    steps = 0
+    while steps < MAX_CHAIN:
+        pb = g_start.subtract(1) if g_start.getOffset() > 0 else None
+        if pb is None:
+            return None
+        if listing.getInstructionContaining(pb) is not None:
+            break
+        if listing.getDefinedDataContaining(pb) is not None:
+            return None  # ran into defined data before finding a function tail
+        g_start = pb
+        steps += 1
+    if g_start.getOffset() == E.getOffset():
+        return None  # no undefined gap
+
+    vlast = listing.getInstructionContaining(g_start.subtract(1))
+    if vlast is None:
+        return None
+    V = fm.getFunctionContaining(vlast.getAddress())
+    if V is None or V.getEntryPoint().getOffset() == E.getOffset():
+        return None
+    if _ft_offset(vlast) != g_start.getOffset():
+        return None  # V ends in ret/jmp-away -> gap is padding, B is legit-after-pad
+    if E.getOffset() in vtable_targets:
+        return None  # vtable slot -> real virtual method
+    if _ref_count_to(program, E) > 0:
+        return None  # referenced -> real function, not a hallucination
+    return {"victim": V, "gap_start": g_start}
+
+
 def detect(program, vtable_targets=frozenset()):
     """Return list of findings: dicts with kind/entry/correct/other/name."""
     fm = program.getFunctionManager()
@@ -260,6 +339,19 @@ def detect(program, vtable_targets=frozenset()):
             continue
         pinstr = listing.getInstructionContaining(prev_byte)
         if pinstr is None:
+            # Data / undefined / padding before entry - usually a clean boundary.
+            # But an UNDEFINED gap that a preceding function flows into means B was
+            # defined mid-instruction inside that function's stolen tail (OVERLAP).
+            ov = _detect_overlap(program, B, listing, fm, vtable_targets)
+            if ov is not None:
+                findings.append({
+                    "kind": "OVERLAP", "entry": E,
+                    "correct": ov["victim"].getEntryPoint(),
+                    "other": ov["victim"], "name": B.getName(), "func": B,
+                    "note": "0-ref entry inside %s's tail (it flows into undefined "
+                            "%s); delete B, then validate --fix rebuilds the victim"
+                            % (ov["victim"].getName(), ov["gap_start"]),
+                })
             continue  # data / undefined / padding before entry -> clean boundary
         # the instruction just before must fall through *into* this entry
         if _ft_offset(pinstr) != E.getOffset():
@@ -624,6 +716,27 @@ def apply(program, findings, preserve):
             name = f["name"]
             named = not name.startswith("FUN_")
 
+            if f["kind"] == "OVERLAP":
+                # Delete the misaligned hallucination + undefine its (partly-garbage,
+                # partly-victim-tail) body. The victim's tail is then rebuilt by
+                # validate_function_ranges --fix (it disassembles the freed bytes and
+                # re-absorbs them). We do not rebuild here to avoid duplicating that
+                # tool's flow-disassembly logic.
+                B = f.get("func") or fm.getFunctionAt(f["entry"])
+                if B is None:
+                    continue
+                body_ranges = [(r.getMinAddress(), r.getMaxAddress())
+                               for r in B.getBody().getAddressRanges()]
+                if fm.removeFunction(B.getEntryPoint()):
+                    stale_cleared += clear_vacated_symbol(program, f["entry"], name)
+                    for lo, hi in body_ranges:
+                        listing.clearCodeUnits(lo, hi, False)
+                    changed = True
+                    print("  OVERLAP  deleted %s (%s) + undefined body; run "
+                          "validate_function_ranges --fix to rebuild victim %s" % (
+                              f["entry"], name, f["correct"]))
+                continue
+
             if f["kind"].startswith("SPLIT"):
                 A = f["other"]
                 B = f.get("func") or fm.getFunctionAt(f["entry"])
@@ -701,8 +814,11 @@ def main():
     p.add_argument("--only-fun", action="store_true", help="Only touch FUN_-named (unnamed) functions")
     p.add_argument("--exclude", action="append", default=[], metavar="REGEX",
                    help="Skip findings whose function name matches (repeatable), e.g. '^crt_'")
-    p.add_argument("--kind", default=",".join(ALL_KINDS),
-                   help="Comma-separated kinds to act on (default: all of %s)" % ",".join(ALL_KINDS))
+    p.add_argument("--kind", default=",".join(DEFAULT_KINDS),
+                   help="Comma-separated kinds to act on (valid: %s; default: %s - "
+                        "OVERLAP is detected/reported always but only DELETED when you "
+                        "opt in with --kind OVERLAP)" % (
+                            ",".join(ALL_KINDS), ",".join(DEFAULT_KINDS)))
     p.add_argument("--split-strong-only", action="store_true",
                    help="Only act on SPLITs where A's body is fragmented around B "
                         "(near-proof); skip fallthrough-only ones, which can be "

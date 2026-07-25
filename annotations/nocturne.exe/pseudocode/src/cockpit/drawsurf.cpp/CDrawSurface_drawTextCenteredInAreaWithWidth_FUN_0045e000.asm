@@ -4,7 +4,8 @@
 ; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_0045e000(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_0045e040 at 0045e062
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260 at 0045e277
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070 at 0045e0db
 ;

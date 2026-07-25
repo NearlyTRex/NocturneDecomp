@@ -4,7 +4,8 @@
 ; void core_dlight_cpp_CDemonLight_ctor_FUN_0044e110(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_0049a1e0 at 0049a1ef
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 at 0041f32d
 ;   core_setutil.cpp_C3DSLight_create_FUN_005151f0 at 00515329
 ;

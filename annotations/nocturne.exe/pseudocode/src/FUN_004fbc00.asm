@@ -4,6 +4,9 @@
 ; int FUN_004fbc00(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004fbbd0 at 004fbbe3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_scat_dfm_0058dd12
 ;   TerminatedCString s_draw_stand2coatPocket_0058dd1b

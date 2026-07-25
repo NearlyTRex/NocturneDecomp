@@ -9,7 +9,7 @@
 ;   TerminatedCString s_modelName_0058783a
 ;   TerminatedCString s_guardDistance_00587844
 ;   TerminatedCString s_motion_state_00587852
-;   undefined4 DAT_005bac7c
+;   int INT_005bac7c = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
@@ -39,7 +39,7 @@ section .text
     PUSH EAX                            ; 004c527d
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 004c527e
         ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80()
-    MOV EDX,dword ptr [0x005bac7c]      ; 004c5283 | DAT_005bac7c
+    MOV EDX,dword ptr [0x005bac7c]      ; 004c5283 | INT_005bac7c
     ADD ESP,0x8                         ; 004c5289
     CMP EDX,0x2                         ; 004c528c
     JL 0x004c52a7                       ; 004c528f

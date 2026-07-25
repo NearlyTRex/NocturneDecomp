@@ -4,6 +4,9 @@
 ; int core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0054f8f0 at 0054f903
+;
 ; Referenced Globals:
 ;   TerminatedCString s_vsslbase_kfm_00597448
 ;   TerminatedCString s_none_00597455

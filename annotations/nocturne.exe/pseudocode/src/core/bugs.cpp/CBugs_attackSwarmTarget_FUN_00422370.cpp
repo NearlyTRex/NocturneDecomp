@@ -113,7 +113,7 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(int param_1,floa
   }
   if ((0 < (int)puVar5) &&
      (fVar1 = *(float *)(param_1 + 0x1985c) - param_2, *(float *)(param_1 + 0x1985c) = fVar1,
-     uVar2 = DAT_00765a98, fVar1 <= 0.0)) {
+     uVar2 = CDemonActorType_00765a60.name_hash, fVar1 <= 0.0)) {
     *(uint *)(param_1 + 0x1985c) = 0x3e4ccccd;
     iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(*(uint *)(param_1 + 0x12960),uVar2);
     if (iVar4 != 0) {

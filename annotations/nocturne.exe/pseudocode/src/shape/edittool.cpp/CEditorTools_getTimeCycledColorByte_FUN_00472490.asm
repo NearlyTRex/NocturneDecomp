@@ -4,7 +4,8 @@
 ; undefined1 __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490(void)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00437ab0 at 00437c94
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0 at 004724f0
 ;
 ; Referenced Globals:

@@ -4,11 +4,12 @@
 ; void __cdecl shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_00471a80(undefined4 param_1,int param_2,int param_3,int param_4,undefined4 param_5)
 ;
 ;
-; XREF[8]:
+; XREF[9]:
 ;   FUN_0046f7e0 at 0046f888
 ;   FUN_0046fb40 at 0046fc26
 ;   FUN_0046fcd0 at 0046fdb6
 ;   FUN_0046fe60 at 0046ff46
+;   FUN_004701a0 at 004701ef
 ;   FUN_00470eb0 at 00470f40
 ;   FUN_00475470 at 00475806
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfbf8

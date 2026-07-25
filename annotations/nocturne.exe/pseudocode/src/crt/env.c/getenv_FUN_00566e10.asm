@@ -4,12 +4,13 @@
 ; int __cdecl crt_env_c_getenv_FUN_00566e10(char *param_1)
 ;
 ;
-; XREF[7]:
+; XREF[8]:
 ;   FUN_0049cc10 at 0049d613
 ;   FUN_0049f930 at 0049fece
 ;   FUN_004c85f0 at 004c8622
 ;   FUN_005687bc at 005687d4
 ;   FUN_0056d608 at 0056d60d
+;   FUN_00572b70 at 00572b7c
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dc1e
 ;   core_netgame.cpp_CNetGame_init_FUN_004e9910 at 004e994a
 ;

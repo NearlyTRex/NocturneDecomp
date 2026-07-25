@@ -4,7 +4,8 @@
 ; void __cdecl shape_edittool_cpp_CStrList_sortAll_FUN_00473fd0(int *param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00470730 at 0047085b
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 004705a7
 ;
 ; *****************************************************************************

@@ -259,7 +259,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               local_148 = 3;
               local_24 = iVar5;
               engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-                        (piVar3,&local_160,&LAB_004442a0);
+                        (piVar3,&local_160,FUN_004442a0);
             } while (iVar5 < 4);
             local_48 = local_48 + 1;
           } while (local_48 < 0x10);

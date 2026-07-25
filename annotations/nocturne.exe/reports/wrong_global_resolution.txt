@@ -11,37 +11,97 @@ suspicious, since the reference list uses exact address resolution.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions checked: 4404
-  Functions with suspicious globals: 135
-  Total suspicious global references: 236
+  Functions checked: 5611
+  Functions with suspicious globals: 304
+  Total suspicious global references: 560
 
   Most commonly misresolved globals:
     DAT_01bd2fa0                                       10 functions
+    DAT_01bf7720                                       10 functions
+    DAT_005993b0                                       10 functions
     DAT_01bff720                                       10 functions
-    DAT_01bf7720                                       8 functions
-    DAT_012ceb78                                       7 functions
+    DAT_00768d54                                       9 functions
+    DAT_012ceb78                                       9 functions
+    DAT_00766c74                                       8 functions
+    DAT_00768d50                                       8 functions
+    DAT_00768754                                       7 functions
+    DAT_00768d4c                                       7 functions
     DAT_01cd8b28                                       7 functions
+    DAT_0076874c                                       6 functions
+    DAT_00767b54                                       6 functions
+    DAT_00768750                                       6 functions
+    DAT_00766c70                                       6 functions
     DAT_02dbd3e8                                       6 functions
     DAT_01c02598                                       6 functions
     DAT_01c00648                                       5 functions
-    DAT_02dc1b74                                       5 functions
-    DAT_00b0e1fc                                       4 functions
-    DAT_005c5014                                       4 functions
-    DAT_01c20148                                       4 functions
-    DAT_01c62eb8                                       4 functions
-    DAT_01e56420                                       4 functions
-    DAT_005b7620                                       4 functions
-    DAT_020875f8                                       3 functions
-    DAT_01c4e954                                       3 functions
-    DAT_005b761c                                       3 functions
-    DAT_01d0661c                                       3 functions
-    DAT_006afa3c                                       2 functions
+    DAT_00767b4c                                       5 functions
+    DAT_00767b48                                       5 functions
 
-  Raw .cpp files with issues: 135
+  Raw .cpp files with issues: 304
 
 ====================================================================================================
 DETAILED FINDINGS
 ====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+FUN_004823b0  [.cpp]  (14 suspicious globals)
+  File: 
+
+  DAT_0059b030
+    Used at lines: 18
+    NOT found in function reference list
+
+  DAT_0059d300
+    Used at lines: 19
+    NOT found in function reference list
+
+  DAT_0059d320
+    Used at lines: 20
+    NOT found in function reference list
+
+  DAT_0059d380
+    Used at lines: 25
+    NOT found in function reference list
+
+  DAT_0059d3c0
+    Used at lines: 28
+    NOT found in function reference list
+
+  DAT_0059d420
+    Used at lines: 33
+    NOT found in function reference list
+
+  DAT_0059d440
+    Used at lines: 34
+    NOT found in function reference list
+
+  DAT_0059d4a0
+    Used at lines: 39
+    NOT found in function reference list
+
+  DAT_0059d4c0
+    Used at lines: 40
+    NOT found in function reference list
+
+  DAT_0059d4e0
+    Used at lines: 41
+    NOT found in function reference list
+
+  DAT_01c0a140
+    Used at lines: 19
+    NOT found in function reference list
+
+  DAT_01c20148
+    Used at lines: 20
+    NOT found in function reference list
+
+  DAT_01c4e958
+    Used at lines: 25
+    NOT found in function reference list
+
+  DAT_01c62ebc
+    Used at lines: 39
+    NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
 core_fire.cpp_CFireEffect_process_FUN_0048a390  [.cpp]  (13 suspicious globals)
@@ -100,6 +160,110 @@ core_fire.cpp_CFireEffect_process_FUN_0048a390  [.cpp]  (13 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_00434492  [.cpp]  (12 suspicious globals)
+  File: 
+
+  DAT_00766c70
+    Used at lines: 184, 195, 195, 199, 200, ...
+    NOT found in function reference list
+
+  DAT_00766c74
+    Used at lines: 184, 199, 204, 217, 225
+    NOT found in function reference list
+
+  DAT_00767b44
+    Used at lines: 72, 83, 83, 87, 88, ...
+    NOT found in function reference list
+
+  DAT_00767b48
+    Used at lines: 128, 139, 139, 143, 144, ...
+    NOT found in function reference list
+
+  DAT_0076814c
+    Used at lines: 267
+    NOT found in function reference list
+
+  DAT_00768154
+    Used at lines: 269
+    NOT found in function reference list
+
+  DAT_0076874c
+    Used at lines: 72, 87, 92, 105, 115, ...
+    NOT found in function reference list
+
+  DAT_00768750
+    Used at lines: 122
+    NOT found in function reference list
+
+  DAT_00768754
+    Used at lines: 122
+    NOT found in function reference list
+
+  DAT_00768d4c
+    Used at lines: 128, 143, 148, 161, 171, ...
+    NOT found in function reference list
+
+  DAT_00768d50
+    Used at lines: 178
+    NOT found in function reference list
+
+  DAT_00768d54
+    Used at lines: 178
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043474d  [.cpp]  (12 suspicious globals)
+  File: 
+
+  DAT_00766c70
+    Used at lines: 189, 200, 200, 204, 205, ...
+    NOT found in function reference list
+
+  DAT_00766c74
+    Used at lines: 189, 204, 209, 222, 230
+    NOT found in function reference list
+
+  DAT_00767b3c
+    Used at lines: 59, 269, 270
+    NOT found in function reference list
+
+  DAT_00767b48
+    Used at lines: 133, 144, 144, 148, 149, ...
+    NOT found in function reference list
+
+  DAT_00767b54
+    Used at lines: 71
+    NOT found in function reference list
+
+  DAT_0076814c
+    Used at lines: 272
+    NOT found in function reference list
+
+  DAT_00768154
+    Used at lines: 274
+    NOT found in function reference list
+
+  DAT_00768750
+    Used at lines: 127
+    NOT found in function reference list
+
+  DAT_00768754
+    Used at lines: 127
+    NOT found in function reference list
+
+  DAT_00768d4c
+    Used at lines: 133, 148, 153, 166, 176, ...
+    NOT found in function reference list
+
+  DAT_00768d50
+    Used at lines: 183
+    NOT found in function reference list
+
+  DAT_00768d54
+    Used at lines: 183
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_fire.cpp_CFireEffect_render_FUN_0048a650  [.cpp]  (12 suspicious globals)
   File: core/fire.cpp
 
@@ -152,6 +316,230 @@ core_fire.cpp_CFireEffect_render_FUN_0048a650  [.cpp]  (12 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_0046c250  [.cpp]  (9 suspicious globals)
+  File: 
+
+  DAT_005993b0
+    Used at lines: 12, 13, 14, 15, 16, ...
+    NOT found in function reference list
+
+  DAT_0059c080
+    Used at lines: 19
+    NOT found in function reference list
+
+  DAT_01bc9970
+    Used at lines: 12
+    NOT found in function reference list
+
+  DAT_01bc9a34
+    Used at lines: 13
+    NOT found in function reference list
+
+  DAT_01bc9af8
+    Used at lines: 14
+    NOT found in function reference list
+
+  DAT_01bc9bbc
+    Used at lines: 15
+    NOT found in function reference list
+
+  DAT_01bc9c80
+    Used at lines: 16
+    NOT found in function reference list
+
+  DAT_01bc9d44
+    Used at lines: 17
+    NOT found in function reference list
+
+  DAT_01bc9e08
+    Used at lines: 18
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00434210  [.cpp]  (8 suspicious globals)
+  File: 
+
+  DAT_00767b4c
+    Used at lines: 102, 117, 122, 135, 145, ...
+    NOT found in function reference list
+
+  DAT_00767b54
+    Used at lines: 153
+    NOT found in function reference list
+
+  DAT_0076874c
+    Used at lines: 159, 174, 179, 192, 202, ...
+    NOT found in function reference list
+
+  DAT_00768750
+    Used at lines: 209
+    NOT found in function reference list
+
+  DAT_00768754
+    Used at lines: 209
+    NOT found in function reference list
+
+  DAT_00768d4c
+    Used at lines: 215, 230, 235, 248, 258, ...
+    NOT found in function reference list
+
+  DAT_00768d50
+    Used at lines: 265
+    NOT found in function reference list
+
+  DAT_00768d54
+    Used at lines: 265
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004347cc  [.cpp]  (8 suspicious globals)
+  File: 
+
+  DAT_00766c70
+    Used at lines: 128, 139, 139, 143, 144, ...
+    NOT found in function reference list
+
+  DAT_00766c74
+    Used at lines: 128, 143, 148, 161, 169
+    NOT found in function reference list
+
+  DAT_00767b40
+    Used at lines: 55, 207, 208
+    NOT found in function reference list
+
+  DAT_00767b4c
+    Used at lines: 210
+    NOT found in function reference list
+
+  DAT_00767b54
+    Used at lines: 212
+    NOT found in function reference list
+
+  DAT_00768754
+    Used at lines: 66
+    NOT found in function reference list
+
+  DAT_00768d50
+    Used at lines: 122
+    NOT found in function reference list
+
+  DAT_00768d54
+    Used at lines: 122
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00448410  [.cpp]  (8 suspicious globals)
+  File: 
+
+  DAT_005993b0
+    Used at lines: 12, 13, 14, 15, 16, ...
+    NOT found in function reference list
+
+  DAT_014b8490
+    Used at lines: 12
+    NOT found in function reference list
+
+  DAT_014b8554
+    Used at lines: 13
+    NOT found in function reference list
+
+  DAT_014b8618
+    Used at lines: 14
+    NOT found in function reference list
+
+  DAT_014b86dc
+    Used at lines: 15
+    NOT found in function reference list
+
+  DAT_014b87a0
+    Used at lines: 16
+    NOT found in function reference list
+
+  DAT_014b8864
+    Used at lines: 17
+    NOT found in function reference list
+
+  DAT_014b8928
+    Used at lines: 18
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+thunk_FUN_004d23d0  [.cpp]  (6 suspicious globals)
+  File: 
+
+  DAT_005b7620
+    Used at lines: 26
+    NOT found in function reference list
+
+  DAT_01cc7d10
+    Used at lines: 57, 91
+    NOT found in function reference list
+
+  DAT_01cc7e10
+    Used at lines: 68
+    NOT found in function reference list
+
+  DAT_01cc7f10
+    Used at lines: 79
+    NOT found in function reference list
+
+  DAT_01cc8010
+    Used at lines: 89
+    NOT found in function reference list
+
+  INT_005bac64
+    Used at lines: 116, 116, 118, 118, 119, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043484b  [.cpp]  (5 suspicious globals)
+  File: 
+
+  DAT_00767b44
+    Used at lines: 54, 149, 150
+    NOT found in function reference list
+
+  DAT_0076874c
+    Used at lines: 152
+    NOT found in function reference list
+
+  DAT_00768750
+    Used at lines: 154
+    NOT found in function reference list
+
+  DAT_00768754
+    Used at lines: 154
+    NOT found in function reference list
+
+  DAT_00768d54
+    Used at lines: 65
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00448660  [.cpp]  (5 suspicious globals)
+  File: 
+
+  DAT_014b8490
+    Used at lines: 22, 43, 55
+    NOT found in function reference list
+
+  DAT_014b8494
+    Used at lines: 29
+    NOT found in function reference list
+
+  DAT_014b8554
+    Used at lines: 35, 36, 43, 48, 49, ...
+    NOT found in function reference list
+
+  DAT_014b8558
+    Used at lines: 37, 50
+    NOT found in function reference list
+
+  DAT_014b855c
+    Used at lines: 38, 51
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_004487c0  [.cpp]  (5 suspicious globals)
   File: 
 
@@ -196,6 +584,30 @@ FUN_00448bf0  [.cpp]  (5 suspicious globals)
     NOT found in function reference list
 
   DAT_014b886c
+    Used at lines: 38, 51
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0046d680  [.cpp]  (5 suspicious globals)
+  File: 
+
+  DAT_01bc9970
+    Used at lines: 22, 43, 55
+    NOT found in function reference list
+
+  DAT_01bc9974
+    Used at lines: 29
+    NOT found in function reference list
+
+  DAT_01bc9a34
+    Used at lines: 35, 36, 43, 48, 49, ...
+    NOT found in function reference list
+
+  DAT_01bc9a38
+    Used at lines: 37, 50
+    NOT found in function reference list
+
+  DAT_01bc9a3c
     Used at lines: 38, 51
     NOT found in function reference list
 
@@ -248,27 +660,163 @@ FUN_0046dc10  [.cpp]  (5 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-thunk_FUN_004d23d0  [.cpp]  (5 suspicious globals)
+FUN_004320dc  [.cpp]  (4 suspicious globals)
   File: 
 
-  DAT_005b7620
-    Used at lines: 26
+  DAT_005ad284
+    Used at lines: 76, 77
     NOT found in function reference list
 
-  DAT_01cc7d10
-    Used at lines: 57, 91
+  DAT_007672f4
+    Used at lines: 68, 72, 73
     NOT found in function reference list
 
-  DAT_01cc7e10
-    Used at lines: 68
+  DAT_007672f8
+    Used at lines: 75
     NOT found in function reference list
 
-  DAT_01cc7f10
-    Used at lines: 79
+  DAT_00767300
+    Used at lines: 77
     NOT found in function reference list
 
-  DAT_01cc8010
-    Used at lines: 89
+----------------------------------------------------------------------------------------------------
+FUN_00432bd8  [.cpp]  (4 suspicious globals)
+  File: 
+
+  DAT_005ad284
+    Used at lines: 86, 87
+    NOT found in function reference list
+
+  DAT_007672f4
+    Used at lines: 70, 82, 83
+    NOT found in function reference list
+
+  DAT_007672f8
+    Used at lines: 85
+    NOT found in function reference list
+
+  DAT_00767300
+    Used at lines: 87
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00433fc8  [.cpp]  (4 suspicious globals)
+  File: 
+
+  DAT_00767b44
+    Used at lines: 50, 54, 55
+    NOT found in function reference list
+
+  DAT_0076874c
+    Used at lines: 57
+    NOT found in function reference list
+
+  DAT_00768750
+    Used at lines: 59
+    NOT found in function reference list
+
+  DAT_00768754
+    Used at lines: 59
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043410e  [.cpp]  (4 suspicious globals)
+  File: 
+
+  DAT_00767b48
+    Used at lines: 50, 54, 55
+    NOT found in function reference list
+
+  DAT_00768d4c
+    Used at lines: 57
+    NOT found in function reference list
+
+  DAT_00768d50
+    Used at lines: 59
+    NOT found in function reference list
+
+  DAT_00768d54
+    Used at lines: 59
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00434541  [.cpp]  (4 suspicious globals)
+  File: 
+
+  DAT_00766c70
+    Used at lines: 124, 135, 135, 139, 140, ...
+    NOT found in function reference list
+
+  DAT_00766c74
+    Used at lines: 124, 139, 144, 157, 165
+    NOT found in function reference list
+
+  DAT_00767b4c
+    Used at lines: 206
+    NOT found in function reference list
+
+  DAT_00767b54
+    Used at lines: 208
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004348ca  [.cpp]  (4 suspicious globals)
+  File: 
+
+  DAT_00767b48
+    Used at lines: 52, 90, 91
+    NOT found in function reference list
+
+  DAT_00768d4c
+    Used at lines: 93
+    NOT found in function reference list
+
+  DAT_00768d50
+    Used at lines: 95
+    NOT found in function reference list
+
+  DAT_00768d54
+    Used at lines: 95
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043d8e0  [.cpp]  (4 suspicious globals)
+  File: 
+
+  DAT_005993b0
+    Used at lines: 12
+    NOT found in function reference list
+
+  DAT_0077bdbc
+    Used at lines: 12
+    NOT found in function reference list
+
+  DAT_0077c26c
+    Used at lines: 13
+    NOT found in function reference list
+
+  INT_005ad3f0
+    Used at lines: 15
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00506b40  [.cpp]  (4 suspicious globals)
+  File: 
+
+  DAT_005993b0
+    Used at lines: 20
+    NOT found in function reference list
+
+  DAT_01e57284
+    Used at lines: 12
+    NOT found in function reference list
+
+  DAT_01fba938
+    Used at lines: 16
+    NOT found in function reference list
+
+  DAT_01fff5b0
+    Used at lines: 20
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -329,6 +877,26 @@ core_netgame.cpp_CNetGame_processChatOut_FUN_004ebfd0  [.cpp]  (4 suspicious glo
 
   DAT_01d06628
     Used at lines: 61
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_xform.cpp_FUN_0055de20  [.cpp]  (4 suspicious globals)
+  File: core/xform.cpp
+
+  DAT_00766c70
+    Used at lines: 42, 47, 66, 66, 70, ...
+    NOT found in function reference list
+
+  DAT_00766c74
+    Used at lines: 42, 70, 74, 100
+    NOT found in function reference list
+
+  DAT_00766c78
+    Used at lines: 47, 79
+    NOT found in function reference list
+
+  DAT_02de4340
+    Used at lines: 29, 70, 100
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -404,6 +972,38 @@ FUN_004013d0  [.cpp]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_00410140  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_0076436c
+    Used at lines: 15
+    NOT found in function reference list
+
+  INT_005acf3c
+    Used at lines: 13
+    NOT found in function reference list
+
+  INT_005acf58
+    Used at lines: 17
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0041e260  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_0076483c
+    Used at lines: 15
+    NOT found in function reference list
+
+  INT_005ad09c
+    Used at lines: 13
+    NOT found in function reference list
+
+  INT_005ad0a0
+    Used at lines: 18
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_0042fd60  [.cpp]  (3 suspicious globals)
   File: 
 
@@ -420,35 +1020,131 @@ FUN_0042fd60  [.cpp]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-FUN_00448660  [.cpp]  (3 suspicious globals)
+FUN_00432057  [.cpp]  (3 suspicious globals)
   File: 
 
-  DAT_014b8554
-    Used at lines: 37, 38, 45, 50, 51, ...
+  DAT_005ad284
+    Used at lines: 66, 67
     NOT found in function reference list
 
-  DAT_014b8558
-    Used at lines: 39, 52
+  DAT_007672f8
+    Used at lines: 77, 107
     NOT found in function reference list
 
-  DAT_014b855c
-    Used at lines: 40, 53
+  DAT_00767300
+    Used at lines: 67
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-FUN_0046d680  [.cpp]  (3 suspicious globals)
+FUN_00432b48  [.cpp]  (3 suspicious globals)
   File: 
 
-  DAT_01bc9a34
-    Used at lines: 37, 38, 45, 50, 51, ...
+  DAT_005ad284
+    Used at lines: 81, 82
     NOT found in function reference list
 
-  DAT_01bc9a38
-    Used at lines: 39, 52
+  DAT_007672f8
+    Used at lines: 92, 122
     NOT found in function reference list
 
-  DAT_01bc9a3c
-    Used at lines: 40, 53
+  DAT_00767300
+    Used at lines: 82
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00433d43  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_00767b3c
+    Used at lines: 50, 54, 55
+    NOT found in function reference list
+
+  DAT_0076814c
+    Used at lines: 57
+    NOT found in function reference list
+
+  DAT_00768154
+    Used at lines: 59
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00433e8d  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_00767b40
+    Used at lines: 50, 54, 55
+    NOT found in function reference list
+
+  DAT_00767b4c
+    Used at lines: 57
+    NOT found in function reference list
+
+  DAT_00767b54
+    Used at lines: 59
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00433f58  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_0076874c
+    Used at lines: 63, 81
+    NOT found in function reference list
+
+  DAT_00768750
+    Used at lines: 53
+    NOT found in function reference list
+
+  DAT_00768754
+    Used at lines: 53
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043469b  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_00768d4c
+    Used at lines: 99, 117
+    NOT found in function reference list
+
+  DAT_00768d50
+    Used at lines: 89
+    NOT found in function reference list
+
+  DAT_00768d54
+    Used at lines: 89
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00448d60  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_014b8928
+    Used at lines: 35, 36, 43, 48, 49, ...
+    NOT found in function reference list
+
+  DAT_014b892c
+    Used at lines: 37, 50
+    NOT found in function reference list
+
+  DAT_014b8930
+    Used at lines: 38, 51
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0046dd80  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_01bc9e08
+    Used at lines: 35, 36, 43, 48, 49, ...
+    NOT found in function reference list
+
+  DAT_01bc9e0c
+    Used at lines: 37, 50
+    NOT found in function reference list
+
+  DAT_01bc9e10
+    Used at lines: 38, 51
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -468,6 +1164,70 @@ FUN_00473190  [.cpp]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_004980d0  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_01c71364
+    Used at lines: 70
+    NOT found in function reference list
+
+  DAT_01c71370
+    Used at lines: 53
+    NOT found in function reference list
+
+  DAT_01c7137c
+    Used at lines: 53
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0049a1e0  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_01c74640
+    Used at lines: 12
+    NOT found in function reference list
+
+  DAT_01c775ec
+    Used at lines: 14
+    NOT found in function reference list
+
+  DAT_01c78424
+    Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004d6140  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_005993b0
+    Used at lines: 12, 13
+    NOT found in function reference list
+
+  DAT_01cc9124
+    Used at lines: 12
+    NOT found in function reference list
+
+  DAT_01cc92a8
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004de770  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_0059df00
+    Used at lines: 14
+    NOT found in function reference list
+
+  DAT_005a0ca0
+    Used at lines: 18
+    NOT found in function reference list
+
+  DAT_01ccdc50
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_005138e0  [.cpp]  (3 suspicious globals)
   File: 
 
@@ -484,6 +1244,22 @@ FUN_005138e0  [.cpp]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_0052c8c0  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_005a22f0
+    Used at lines: 15
+    NOT found in function reference list
+
+  DAT_02dc9610
+    Used at lines: 13
+    NOT found in function reference list
+
+  DAT_02dc9ca4
+    Used at lines: 15
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_0052d790  [.cpp]  (3 suspicious globals)
   File: 
 
@@ -497,6 +1273,38 @@ FUN_0052d790  [.cpp]  (3 suspicious globals)
 
   DAT_02dc9cac
     Used at lines: 129
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0055de8e  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_02de4340
+    Used at lines: 84, 114
+    NOT found in function reference list
+
+  DAT_02de4344
+    Used at lines: 74
+    NOT found in function reference list
+
+  DAT_02de4348
+    Used at lines: 74
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0055df19  [.cpp]  (3 suspicious globals)
+  File: 
+
+  DAT_02de4340
+    Used at lines: 76
+    NOT found in function reference list
+
+  DAT_02de4344
+    Used at lines: 78
+    NOT found in function reference list
+
+  DAT_02de4348
+    Used at lines: 78
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -564,6 +1372,22 @@ engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_00408d10  [.cpp]  (3 suspicious g
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+engine_clipper.c_FUN_00431f50  [.cpp]  (3 suspicious globals)
+  File: engine/clipper.c
+
+  DAT_00766c74
+    Used at lines: 39, 70, 98, 102, 128
+    NOT found in function reference list
+
+  DAT_00766c78
+    Used at lines: 75, 107
+    NOT found in function reference list
+
+  DAT_00766c7c
+    Used at lines: 31, 32
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005244b0  [.cpp]  (3 suspicious globals)
   File: sound/sndmain.cpp
 
@@ -592,6 +1416,78 @@ FUN_004012a0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_00423ea0  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_007658e4
+    Used at lines: 12
+    NOT found in function reference list
+
+  INT_005ad1e8
+    Used at lines: 15
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00433c70  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_00767b40
+    Used at lines: 39, 50, 50, 54, 55, ...
+    NOT found in function reference list
+
+  DAT_00767b4c
+    Used at lines: 39, 54, 59, 72
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00433cd7  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_0076814c
+    Used at lines: 53
+    NOT found in function reference list
+
+  DAT_00768154
+    Used at lines: 55
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00433db0  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_00767b44
+    Used at lines: 39, 50, 50, 54, 55, ...
+    NOT found in function reference list
+
+  DAT_0076874c
+    Used at lines: 39, 54, 59, 72
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00434030  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_00766c70
+    Used at lines: 37, 48, 48, 52, 53, ...
+    NOT found in function reference list
+
+  DAT_00766c74
+    Used at lines: 37, 52, 57, 70
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043409e  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_00768d50
+    Used at lines: 53
+    NOT found in function reference list
+
+  DAT_00768d54
+    Used at lines: 53
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_004470f0  [.cpp]  (2 suspicious globals)
   File: 
 
@@ -601,6 +1497,18 @@ FUN_004470f0  [.cpp]  (2 suspicious globals)
 
   DAT_012ceb78
     Used at lines: 56, 106
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00458580  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_01b4d280
+    Used at lines: 26
+    NOT found in function reference list
+
+  INT_005ae6c8
+    Used at lines: 24
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -628,6 +1536,30 @@ FUN_0046568b  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_004671c0  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_005993b0
+    Used at lines: 12
+    NOT found in function reference list
+
+  DAT_01b8efcc
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00481bb0  [.cpp]  (2 suspicious globals)
+  File: 
+
+  INT_005b8018
+    Used at lines: 13
+    NOT found in function reference list
+
+  INT_005b801c
+    Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_0048a970  [.cpp]  (2 suspicious globals)
   File: 
 
@@ -640,6 +1572,54 @@ FUN_0048a970  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_004a9270  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_01c78bc0
+    Used at lines: 716
+    NOT found in function reference list
+
+  DAT_01c78bcc
+    Used at lines: 552
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004adf90  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_0059e550
+    Used at lines: 16
+    NOT found in function reference list
+
+  DAT_0059e570
+    Used at lines: 17
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004b44b0  [.cpp]  (2 suspicious globals)
+  File: 
+
+  INT_005ba940
+    Used at lines: 14
+    NOT found in function reference list
+
+  INT_005ba944
+    Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004c93b0  [.cpp]  (2 suspicious globals)
+  File: 
+
+  INT_005bad50
+    Used at lines: 13
+    NOT found in function reference list
+
+  INT_005bad54
+    Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_004e6160  [.cpp]  (2 suspicious globals)
   File: sound/mp3.cpp
 
@@ -649,6 +1629,66 @@ FUN_004e6160  [.cpp]  (2 suspicious globals)
 
   DAT_01cd8b28
     Used at lines: 509
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_005430d0  [.cpp]  (2 suspicious globals)
+  File: 
+
+  INT_005c1050
+    Used at lines: 13
+    NOT found in function reference list
+
+  INT_005c1054
+    Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_005437c0  [.cpp]  (2 suspicious globals)
+  File: 
+
+  INT_005c107c
+    Used at lines: 13
+    NOT found in function reference list
+
+  INT_005c1080
+    Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_005511a0  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_005993b0
+    Used at lines: 12
+    NOT found in function reference list
+
+  INT_005c154c
+    Used at lines: 15
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00554930  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_005993b0
+    Used at lines: 13
+    NOT found in function reference list
+
+  DAT_02ddfa28
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_005576a0  [.cpp]  (2 suspicious globals)
+  File: 
+
+  DAT_02de0774
+    Used at lines: 43
+    NOT found in function reference list
+
+  DAT_02de0780
+    Used at lines: 44
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -700,15 +1740,15 @@ core_netgame.cpp_CNetGame_removePlayer_FUN_004ecc80  [.cpp]  (2 suspicious globa
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_xform.cpp_FUN_0055de20  [.cpp]  (2 suspicious globals)
-  File: core/xform.cpp
+core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760  [.cpp]  (2 suspicious globals)
+  File: core/stranger.cpp
 
-  DAT_00766c78
-    Used at lines: 47, 79
+  DAT_02dc9f34
+    Used at lines: 395
     NOT found in function reference list
 
-  DAT_02de4340
-    Used at lines: 29, 70, 100
+  DAT_02dc9f40
+    Used at lines: 357
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -736,15 +1776,27 @@ engine_3d.c_FUN_00409590  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_clipper.c_FUN_00431f50  [.cpp]  (2 suspicious globals)
-  File: engine/clipper.c
+engine_3d.c_flushRenderQueue_FUN_00408f50  [.cpp]  (2 suspicious globals)
+  File: engine/3d.c
 
-  DAT_00766c78
-    Used at lines: 75, 107
+  DAT_005c5014
+    Used at lines: 20
     NOT found in function reference list
 
-  DAT_00766c7c
-    Used at lines: 31, 32
+  DAT_00761ec8
+    Used at lines: 20, 28
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_clipper.c_FUN_00433ef0  [.cpp]  (2 suspicious globals)
+  File: engine/clipper.c
+
+  DAT_00767b48
+    Used at lines: 37, 48, 48, 52, 53, ...
+    NOT found in function reference list
+
+  DAT_00768d4c
+    Used at lines: 37, 52, 57, 70
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -784,6 +1836,206 @@ entry  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_00409840  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005acc88
+    Used at lines: 14
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0040efe0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005aceb4
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0040f500  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005acec8
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0040f900  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005acedc
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0040fe70  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005acf20
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00413380  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005acfbc
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00414d20  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005acfd0
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00414ff0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005acfe4
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00415310  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005acff8
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00415b00  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ad00c
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00418150  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ad054
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0041fb20  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ad0e0
+    Used at lines: 21
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00420fe0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ad0f4
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0042b6f0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ad250
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00433e1d  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_00767b54
+    Used at lines: 55
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00439cd0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ad32c
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043abb0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_0077ad0c
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043aff0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ad380
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043bb80  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ad3ac
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043c7b0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ad3c4
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043ceb0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ad3d8
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0043f9c0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_005993b0
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00443180  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_01410290
+    Used at lines: 35
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004442a0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_012ceb78
+    Used at lines: 57
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00444440  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_012ceb78
+    Used at lines: 50
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_00446810  [.cpp]  (1 suspicious globals)
   File: core/dcamera.cpp
 
@@ -808,6 +2060,390 @@ FUN_00447c60  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_0044b740  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ad4bc
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0044bc20  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_014b8a58
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0044d550  [.cpp]  (1 suspicious globals)
+  File: core/dimage.cpp
+
+  DAT_01bf7720
+    Used at lines: 95
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00452530  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_005ae638
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00454600  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ae678
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00454ff0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ae690
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0045ecf0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_01b4d738
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00461ff0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b064c
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004628e0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b0660
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0046eb60  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b6d24
+    Used at lines: 15
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004776b0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b75c4
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00478360  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b75dc
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00479530  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b7604
+    Used at lines: 14
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0048cf00  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b91c0
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0048e310  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b91c4
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0048e960  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b91dc
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0048ed00  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b91f8
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0048ee90  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b9210
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00490ff0  [.cpp]  (1 suspicious globals)
+  File: engine/font.cpp
+
+  DAT_01bf7720
+    Used at lines: 16
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004945d0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b9288
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004954a0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b92a8
+    Used at lines: 30
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004a72f0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b9624
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004a8c10  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b9650
+    Used at lines: 21
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004abaf0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005b9668
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004b0ae0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ba8c8
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004b2700  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ba900
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004b3040  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ba910
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004b4190  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ba928
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004b65b0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ba960
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004b6990  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ba980
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004b8c40  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ba994
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004b9a90  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ba9ac
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004b9cc0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ba9cc
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004bb700  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005ba9e0
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004c3400  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005bac4c
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004c4230  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005bac68
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004c4820  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005bac7c
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004c5fe0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005bacbc
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004c6dd0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005bace0
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004c8090  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005bacf8
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004cc080  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005badb8
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004cec00  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005bade4
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004cf1f0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_0059df00
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004d4390  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005baf48
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004d5fb0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005baf5c
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004d9fd0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005bb124
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004dd8d0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005bb144
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004df1f0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_0059df00
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_004e5200  [.cpp]  (1 suspicious globals)
   File: sound/mp3.cpp
 
@@ -824,11 +2460,67 @@ FUN_004e7ed0  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_004e94a0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_01cea280
+    Used at lines: 14
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004ee8f0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005be074
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004ef480  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005be078
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004f2530  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_005a1200
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_004f2990  [.cpp]  (1 suspicious globals)
   File: engine/pcx.c
 
   DAT_01c00648
     Used at lines: 93, 103
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004f2bd0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005be164
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004f5d30  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005be19c
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_004fde80  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_01e56da0
+    Used at lines: 14
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -848,6 +2540,22 @@ FUN_00504d90  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_005058c0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005be310
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00511d60  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_005993f0
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_005125a0  [.cpp]  (1 suspicious globals)
   File: 
 
@@ -864,11 +2572,43 @@ FUN_00513670  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_00515cc0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005be93c
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_005169b0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005be950
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00516b40  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005be964
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_0051f650  [.cpp]  (1 suspicious globals)
   File: 
 
   DAT_02737ef4
     Used at lines: 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0051fc90  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005bea0c
+    Used at lines: 13
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -896,11 +2636,43 @@ FUN_005278e0  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_0052d710  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_02dc9d50
+    Used at lines: 15
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_00530e60  [.cpp]  (1 suspicious globals)
   File: engine/special.c
 
   DAT_005c0e80
     Used at lines: 19
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00534750  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c0fc4
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00534ca0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c0fd8
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00534e30  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c0ff0
+    Used at lines: 21
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -912,11 +2684,171 @@ FUN_005384d0  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+FUN_00540ae0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c1008
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00541950  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c1020
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00543b00  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c10b0
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00545b30  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c10f0
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_005467c0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c1108
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00546c30  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c111c
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00547850  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c1130
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00548aa0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_02dd10c4
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00549440  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c1160
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0054b0b0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c1174
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0054c250  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c1188
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0054e540  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c11a0
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0054f8c0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c11c4
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00550730  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_02dd1210
+    Used at lines: 12
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00552380  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c1578
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00553d60  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c1590
+    Used at lines: 14
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00555a00  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c1614
+    Used at lines: 21
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0055e780  [.cpp]  (1 suspicious globals)
+  File: 
+
+  INT_005c166c
+    Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0056ddf0  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_005c1894
+    Used at lines: 20
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 FUN_0056deac  [.cpp]  (1 suspicious globals)
   File: 
 
   DAT_005c1894
     Used at lines: 33
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_0056e6b8  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_005c1ab8
+    Used at lines: 15, 16, 17
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -933,6 +2865,22 @@ FUN_0056f986  [.cpp]  (1 suspicious globals)
 
   DAT_005c168c
     Used at lines: 14
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00571858  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_005c20d8
+    Used at lines: 23
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+FUN_00573720  [.cpp]  (1 suspicious globals)
+  File: 
+
+  DAT_005c168c
+    Used at lines: 24
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -1136,6 +3084,14 @@ core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90  [.cpp]  (1 suspi
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740  [.cpp]  (1 suspicious globals)
+  File: core/netgame.cpp
+
+  DAT_01d1640c
+    Used at lines: 33
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_netgame.cpp_removeChatOut_FUN_004e9640  [.cpp]  (1 suspicious globals)
   File: core/netgame.cpp
 
@@ -1304,14 +3260,6 @@ engine_3d.c_addRasterizerEdge_FUN_00562620  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_3d.c_flushRenderQueue_FUN_00408f50  [.cpp]  (1 suspicious globals)
-  File: engine/3d.c
-
-  DAT_005c5014
-    Used at lines: 20
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 engine_3d.c_processPolygonColor_FUN_00405140  [.cpp]  (1 suspicious globals)
   File: engine/3d.c
 
@@ -1416,6 +3364,14 @@ sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60  [.cpp]  (1 suspi
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+sound_snddx.cpp_getDirectSoundDevice_FUN_0052bef0  [.cpp]  (1 suspicious globals)
+  File: sound/snddx.cpp
+
+  DAT_02dc93a0
+    Used at lines: 27, 69, 84
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0  [.cpp]  (1 suspicious globals)
   File: sound/sndmain.cpp
 
@@ -1480,6 +3436,14 @@ sound_sndmain.cpp_startSfx_FUN_005265a0  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_getWavOutDevice_FUN_0052c760  [.cpp]  (1 suspicious globals)
+  File: sound/sndwav.cpp
+
+  DAT_02dc9440
+    Used at lines: 16, 25
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0  [.cpp]  (1 suspicious globals)
   File: wincore/wddvmem.cpp
 
@@ -1525,4 +3489,12 @@ wincore_winrun.cpp_processWindowMessages_FUN_005591c0  [.cpp]  (1 suspicious glo
 
   DAT_01c02598
     Used at lines: 23
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+wincore_winrun.cpp_setRegistryStringValue_FUN_00559da0  [.cpp]  (1 suspicious globals)
+  File: wincore/winrun.cpp
+
+  DAT_80000002
+    Used at lines: 21
     NOT found in function reference list

@@ -17,7 +17,7 @@
 ;   TerminatedCString s_actionPending_00595c68
 ;   TerminatedCString s_layerActionIndex_00595c76
 ;   TerminatedCString s_layerActionT_00595c87
-;   undefined4 DAT_005c0ff0
+;   int INT_005c0ff0 = 0x9
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -35,7 +35,7 @@ section .text
     PUSH EBX                            ; 0053cf95
     CALL FUN_004b49a0                   ; 0053cf96
         ;   XREF to: 004b49a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b49a0()
-    MOV EDX,dword ptr [0x005c0ff0]      ; 0053cf9b | DAT_005c0ff0
+    MOV EDX,dword ptr [0x005c0ff0]      ; 0053cf9b | INT_005c0ff0
     ADD ESP,0x4                         ; 0053cfa1
     CMP EDX,0x2                         ; 0053cfa4
     JL 0x0053cffe                       ; 0053cfa7
@@ -67,7 +67,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 0053cff6
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
     ADD ESP,0x8                         ; 0053cffb
-    CMP dword ptr [0x005c0ff0],0x2      ; 0053cffe | DAT_005c0ff0
+    CMP dword ptr [0x005c0ff0],0x2      ; 0053cffe | INT_005c0ff0
         ;   Label: LAB_0053cffe
     JNZ 0x0053d02f                      ; 0053d005
         ;   XREF to: 0053d02f (CONDITIONAL_JUMP)  ; LAB_0053d02f
@@ -83,7 +83,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 0053d027
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
     ADD ESP,0x8                         ; 0053d02c
-    CMP dword ptr [0x005c0ff0],0x4      ; 0053d02f | DAT_005c0ff0
+    CMP dword ptr [0x005c0ff0],0x4      ; 0053d02f | INT_005c0ff0
         ;   Label: LAB_0053d02f
     JL 0x0053d04c                       ; 0053d036
         ;   XREF to: 0053d04c (CONDITIONAL_JUMP)  ; LAB_0053d04c
@@ -93,7 +93,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 0053d044
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
     ADD ESP,0x8                         ; 0053d049
-    CMP dword ptr [0x005c0ff0],0x6      ; 0053d04c | DAT_005c0ff0
+    CMP dword ptr [0x005c0ff0],0x6      ; 0053d04c | INT_005c0ff0
         ;   Label: LAB_0053d04c
     JL 0x0053d069                       ; 0053d053
         ;   XREF to: 0053d069 (CONDITIONAL_JUMP)  ; LAB_0053d069
@@ -103,7 +103,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0053d061
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 0053d066
-    CMP dword ptr [0x005c0ff0],0x7      ; 0053d069 | DAT_005c0ff0
+    CMP dword ptr [0x005c0ff0],0x7      ; 0053d069 | INT_005c0ff0
         ;   Label: LAB_0053d069
     JL 0x0053d086                       ; 0053d070
         ;   XREF to: 0053d086 (CONDITIONAL_JUMP)  ; LAB_0053d086
@@ -113,7 +113,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 0053d07e
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
     ADD ESP,0x8                         ; 0053d083
-    CMP dword ptr [0x005c0ff0],0x8      ; 0053d086 | DAT_005c0ff0
+    CMP dword ptr [0x005c0ff0],0x8      ; 0053d086 | INT_005c0ff0
         ;   Label: LAB_0053d086
     JL 0x0053d0a3                       ; 0053d08d
         ;   XREF to: 0053d0a3 (CONDITIONAL_JUMP)  ; LAB_0053d0a3
@@ -123,7 +123,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0053d09b
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 0053d0a0
-    CMP dword ptr [0x005c0ff0],0x9      ; 0053d0a3 | DAT_005c0ff0
+    CMP dword ptr [0x005c0ff0],0x9      ; 0053d0a3 | INT_005c0ff0
         ;   Label: LAB_0053d0a3
     JGE 0x0053d0ae                      ; 0053d0aa
         ;   XREF to: 0053d0ae (CONDITIONAL_JUMP)  ; LAB_0053d0ae

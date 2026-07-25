@@ -10,7 +10,7 @@
 ;   TerminatedCString s_modelName_005875a4
 ;   TerminatedCString s_keyMask_005875ae
 ;   TerminatedCString s_descriptiveName_005875b6
-;   undefined4 DAT_005bac4c
+;   int INT_005bac4c = 0x3
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
@@ -41,7 +41,7 @@ section .text
     PUSH EAX                            ; 004c3686
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004c3687
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
-    MOV EDX,dword ptr [0x005bac4c]      ; 004c368c | DAT_005bac4c
+    MOV EDX,dword ptr [0x005bac4c]      ; 004c368c | INT_005bac4c
     ADD ESP,0x8                         ; 004c3692
     CMP EDX,0x2                         ; 004c3695
     JZ 0x004c36a2                       ; 004c3698

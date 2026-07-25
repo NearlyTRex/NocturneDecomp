@@ -4,6 +4,9 @@
 ; int core_chain_cpp_CChain_ctor_FUN_0042b750(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0042b720 at 0042b733
+;
 ; Referenced Globals:
 ;   TerminatedCString s_CHAINLINK_RAW_0057a55d
 ;   undefined4 s_CHAINLINK_RAW_0057a55d+1

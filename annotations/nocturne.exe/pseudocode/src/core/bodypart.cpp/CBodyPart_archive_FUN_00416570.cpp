@@ -105,21 +105,21 @@ int core_bodypart_cpp_CBodyPart_archive_FUN_00416570(int param_1)
       } while (iVar5 < *(int *)(param_1 + 0x184));
     }
   }
-  if (1 < 0x00000005) {
+  if (1 < INT_005ad00c) {
     core_actor_cpp_FUN_0040ce80(param_1 + 0xcb4,"simBox");
     iVar4 = core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0xf10,"carriedByActor");
   }
-  if (2 < 0x00000005) {
+  if (2 < INT_005ad00c) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xca0,"bloodType");
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xc98,"dontUseNormals");
     iVar4 = core_actor_cpp_archiveInteger_FUN_0040c900
                       (param_1 + 0xc9c,"transparentGeometryFlag");
   }
-  if (3 < 0x00000005) {
+  if (3 < INT_005ad00c) {
     iVar4 = core_actor_cpp_archiveInteger_FUN_0040c900
                       (param_1 + 0x150,"renderInBackground");
   }
-  if (4 < 0x00000005) {
+  if (4 < INT_005ad00c) {
     iVar4 = core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xcac,"dontPickMeUp");
     return iVar4;
   }

@@ -20,8 +20,8 @@ void FUN_0056d608(void)
     FUN_0056d87c();
     return;
   }
-  if (((DAT_005c1f20 & 1) == 0) || ((DAT_005c1f20 & 2) == 0)) {
-    DAT_005c1f20 = DAT_005c1f20 | 2;
+  if ((((byte)DAT_005c1f20 & 1) == 0) || (((byte)DAT_005c1f20 & 2) == 0)) {
+    DAT_005c1f20._0_1_ = (byte)DAT_005c1f20 | 2;
     DVar1 = GetTimeZoneInformation(&local_b4);
     if (DVar1 != 0) {
       if (DVar1 < 2) {

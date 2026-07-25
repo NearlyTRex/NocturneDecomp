@@ -4,6 +4,9 @@
 ; int FUN_004bb760(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004bb730 at 004bb743
+;
 ; Referenced Globals:
 ;   TerminatedCString s_imp_dfm_00586282
 ;   undefined4 DAT_0059f570

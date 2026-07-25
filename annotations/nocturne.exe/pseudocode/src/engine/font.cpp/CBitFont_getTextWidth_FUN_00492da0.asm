@@ -6,18 +6,18 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[25]:
+; XREF[31]:
+;   FUN_0045e340 at 0045e350
 ;   FUN_0046fb40 at 0046fbcb
 ;   FUN_0046fcd0 at 0046fd5b
 ;   FUN_0046fe60 at 0046feeb
 ;   FUN_00470eb0 at 004710bb
 ;   FUN_004722b0 at 0047240e
 ;   FUN_00475470 at 00475517
+;   FUN_00476f40 at 00476f6e
 ;   FUN_00477080 at 004770e6
-;   FUN_004c2470 at 004c261b
-;   FUN_004c85f0 at 004c8bfd
-;   FUN_004c90e0 at 004c9187
-;   ... and 15 more
+;   FUN_004771f0 at 00477298
+;   ... and 21 more
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_getCharWidth_FUN_004930b0

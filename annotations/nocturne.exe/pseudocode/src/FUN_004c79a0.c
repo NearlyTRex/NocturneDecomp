@@ -50,7 +50,7 @@ void FUN_004c79a0(int param_1,float param_2)
     }
     iVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
     if (iVar3 == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-      FUN_004940d0(0x01C70F74,
+      FUN_004940d0(INT_005b9284,
                    1.0f + (1.58f - 1.0f) * *(float *)(param_1 + 0x57c),
                    (0.45f - 0.3f) * *(float *)(param_1 + 0x57c) + 0.3f)
       ;
@@ -73,7 +73,7 @@ void FUN_004c79a0(int param_1,float param_2)
   sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(param_1 + 0x574),uVar5);
   iVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
   if (iVar3 == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-    FUN_004940d0(0x01C70F74);
+    FUN_004940d0(INT_005b9284);
   }
   *(uint *)(param_1 + 0x570) = 0;
   return;

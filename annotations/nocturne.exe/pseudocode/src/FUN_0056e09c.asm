@@ -4,6 +4,9 @@
 ; void FUN_0056e09c(HANDLE param_1,uint param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_00572b70 at 00572c7d
+;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1af0 = 005671e4
 ;   void* PTR_FUN_005c1af4 = 005671e4

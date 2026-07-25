@@ -213,7 +213,7 @@ int __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(int *param_1,int p
     core_dskybox_cpp_renderSkyDome_FUN_00463580(0x01B7B4E8,param_1 + 0x58491,param_1[0x58499]);
   }
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(param_1,1);
-  FUN_004afe80(0x01C78C7C,1);
+  FUN_004afe80(INT_005b96c4,1);
   FUN_0048a970(0x01C08D04,1);
   if (*0x02DD1210 == 0) {
     core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,0);

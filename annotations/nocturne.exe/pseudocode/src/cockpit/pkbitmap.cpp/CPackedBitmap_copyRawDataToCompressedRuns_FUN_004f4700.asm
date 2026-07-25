@@ -4,7 +4,8 @@
 ; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700(int param_1,int param_2,int param_3)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004f5740 at 004f58f4
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0 at 004f46d8
 ;
 ; *****************************************************************************

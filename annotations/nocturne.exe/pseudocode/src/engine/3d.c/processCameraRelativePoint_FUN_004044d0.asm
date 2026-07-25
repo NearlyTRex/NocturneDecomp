@@ -4,7 +4,8 @@
 ; int __cdecl engine_3d_c_processCameraRelativePoint_FUN_004044d0(int param_1)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00472fd0 at 00473003
 ;   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0 at 004609ee
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 at 00460a37
 ;

@@ -4,6 +4,9 @@
 ; void FUN_0056ea78(char *param_1,char *param_2,uint param_3)
 ;
 ;
+; XREF[1]:
+;   FUN_0056ead4 at 0056ec16
+;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0123456789abcdef_005c1f74
 ;

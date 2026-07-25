@@ -4,7 +4,8 @@
 ; void __cdecl sound_sndmain_cpp_setNextSfxDelay_FUN_00526210(undefined4 param_1,undefined4 param_2)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_0052eac0 at 0052ead0
 ;   core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00 at 0052eb14
 ;   core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_0052eb50 at 0052eb60
 ;

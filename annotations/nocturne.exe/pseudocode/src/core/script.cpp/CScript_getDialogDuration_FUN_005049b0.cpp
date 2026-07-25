@@ -52,7 +52,8 @@ float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(int param_1,uint pa
   else {
     local_28 = *(float *)(param_1 + 0x44c);
   }
-  iVar2 = core_script_cpp_getActor_FUN_004fe180(param_2,DAT_00765a98,&DAT_00765a60);
+  iVar2 = core_script_cpp_getActor_FUN_004fe180
+                    (param_2,CDemonActorType_00765a60.name_hash,&CDemonActorType_00765a60);
   *(int *)(param_1 + 4) = iVar2;
   if (iVar2 == 0) {
     if (_DAT_01e56c2c != 0) {

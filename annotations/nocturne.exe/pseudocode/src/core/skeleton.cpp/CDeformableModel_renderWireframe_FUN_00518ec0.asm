@@ -4,6 +4,9 @@
 ; void core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_00518ec0(int param_1,int param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_0051dc30 at 0051dc50
+;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
 ;

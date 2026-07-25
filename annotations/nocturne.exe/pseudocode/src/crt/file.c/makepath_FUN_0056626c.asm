@@ -7,7 +7,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[8]:
+; XREF[9]:
+;   FUN_00470730 at 004708d6
 ;   FUN_00474ae0 at 00474b40
 ;   core_mission.cpp_CDemonMission_loadScript_FUN_004d86d0 at 004d86ef
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 004900dd

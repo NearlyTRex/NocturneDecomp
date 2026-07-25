@@ -4,17 +4,18 @@
 ; int __cdecl crt_stdio_c_ftell_FUN_00566e70(int param_1)
 ;
 ;
-; XREF[10]:
+; XREF[12]:
 ;   FUN_004a4170 at 004a42fc
+;   FUN_004e28a0 at 004e28d2
 ;   FUN_004e7ed0 at 004e7f31
 ;   FUN_004edfc0 at 004ee01d
 ;   FUN_004febd0 at 004fecb4
 ;   FUN_00522480 at 0052262a
+;   FUN_005229f0 at 00522c52
 ;   FUN_005634b0 at 005634f4
 ;   core_script.cpp_CScript_dbLoad_FUN_00504e70 at 00504ed6
 ;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 at 00521f28
-;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527aea
-;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526b53
+;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1ac0 = 005671e4

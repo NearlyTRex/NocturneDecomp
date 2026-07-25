@@ -4,7 +4,10 @@
 ; void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,undefined4 param_7,undefined4 param_8)
 ;
 ;
-; XREF[2]:
+; XREF[5]:
+;   FUN_004e0110 at 004e0159
+;   FUN_004e01f0 at 004e0230
+;   FUN_004e0240 at 004e0280
 ;   core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004df610 at 004df64e
 ;   core_morph.cpp_CMorph_setupModelFromTriPolygons_FUN_004e00b0 at 004e00f9
 ;

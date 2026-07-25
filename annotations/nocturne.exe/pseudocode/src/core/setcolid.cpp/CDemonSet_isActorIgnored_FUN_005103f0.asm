@@ -10,7 +10,7 @@
 ;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0 at 00510195
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00765a98
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClassHash_FUN_0040d860
@@ -53,7 +53,7 @@ section .text
     POP ESI                             ; 0051042d
     POP EBX                             ; 0051042e
     RET                                 ; 0051042f
-    MOV ECX,dword ptr [0x00765a98]      ; 00510430 | DAT_00765a98
+    MOV ECX,dword ptr [0x00765a98]      ; 00510430 | CDemonActorType_00765a60.name_hash
         ;   Label: LAB_00510430
     PUSH ECX                            ; 00510436
     PUSH ESI                            ; 00510437

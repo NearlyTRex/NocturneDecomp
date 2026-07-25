@@ -4,7 +4,8 @@
 ; undefined4 FUN_00566570(LPCSTR param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00470730 at 00470abf
 ;   FUN_0056c864 at 0056c93f
 ;
 ; Referenced Globals:

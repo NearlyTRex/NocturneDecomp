@@ -4,6 +4,9 @@
 ; int core_grave_cpp_CGrave_ctor_FUN_004b0b40(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004b0b10 at 004b0b23
+;
 ; Referenced Globals:
 ;   TerminatedCString s_grave1_kfm_005851fd
 ;   undefined1* PTR_FUN_0059e5d4 = 004b0bd0

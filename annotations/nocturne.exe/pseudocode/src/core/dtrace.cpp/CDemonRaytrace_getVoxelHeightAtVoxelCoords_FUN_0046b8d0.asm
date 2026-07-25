@@ -11,7 +11,7 @@
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0 at 004f051d
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6d08
+;   undefined1 DAT_005b6d08
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0

@@ -4,6 +4,9 @@
 ; undefined4 cockpit_pkbitmap_cpp_CPackedBitmap_ctor_FUN_004f3e90(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004f4f90 at 004f50bc
+;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20
 ;   crt_memory.c_memset_FUN_00563cc0

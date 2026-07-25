@@ -6,7 +6,8 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[18]:
+; XREF[20]:
+;   FUN_00470730 at 00470a8b
 ;   FUN_00474ae0 at 00474b16
 ;   FUN_004a3b90 at 004a3bd5
 ;   FUN_004a4170 at 004a41ab
@@ -14,10 +15,9 @@
 ;   FUN_004febd0 at 004fec3c
 ;   FUN_004feff0 at 004ff093
 ;   FUN_00522480 at 0052258b
+;   FUN_005229f0 at 00522a78
 ;   core_game.cpp_CGame_promptLoadGame_FUN_004a6570 at 004a65a4
-;   core_script.cpp_CScript_dbLoad_FUN_00504e70 at 00504fdf
-;   core_script.cpp_CScript_findDialogEntry_FUN_00505180 at 005051a6
-;   ... and 8 more
+;   ... and 10 more
 ;
 ; Called Functions:
 ;   FUN_00566450

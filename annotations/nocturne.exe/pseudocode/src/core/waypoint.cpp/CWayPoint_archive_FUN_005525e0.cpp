@@ -15,10 +15,10 @@ uint core_waypoint_cpp_CWayPoint_archive_FUN_005525e0(int param_1)
   byte local_14 [4];
   
   uVar1 = core_trigger_cpp_CTrigger_archive_FUN_00548170(param_1);
-  if (0x00000002 < 2) {
+  if (INT_005c1578 < 2) {
     uVar1 = core_actor_cpp_archiveActor_FUN_0040c980(local_14,"nextWayPoint");
   }
-  if (1 < 0x00000002) {
+  if (1 < INT_005c1578) {
     iVar3 = 0;
     uVar1 = core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x368,"adjCount");
     if (0 < *(int *)(param_1 + 0x368)) {

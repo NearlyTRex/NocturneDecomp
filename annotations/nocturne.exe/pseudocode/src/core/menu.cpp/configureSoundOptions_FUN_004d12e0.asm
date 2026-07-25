@@ -938,7 +938,7 @@ section .text
     ADD ESP,0x4                         ; 004d1b8a
     PUSH 0x1                            ; 004d1b8d
         ;   Label: default
-    MOV EAX,[0x005bac64]                ; 004d1b8f | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004d1b8f | INT_005bac64
     PUSH EAX                            ; 004d1b94 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 004d1b95 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004d1b97

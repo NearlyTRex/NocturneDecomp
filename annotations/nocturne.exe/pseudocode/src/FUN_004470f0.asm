@@ -50,13 +50,6 @@
 
 section .text
 
-    ADD ESP,0x18                        ; 004445f1
-        ;   Label: LAB_004445f1
-    POP EBP                             ; 004445f4
-    POP EDI                             ; 004445f5
-    POP ESI                             ; 004445f6
-    POP EBX                             ; 004445f7
-    RET                                 ; 004445f8
     PUSH EBX                            ; 004470f0
         ;   Label: FUN_004470f0
     PUSH ESI                            ; 004470f1

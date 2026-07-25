@@ -4,7 +4,8 @@
 ; void __cdecl engine_3d_c_setBlendMode_FUN_004083c0(undefined4 param_1)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_004ee740 at 004ee833
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004defd2
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 at 00461005
 ;

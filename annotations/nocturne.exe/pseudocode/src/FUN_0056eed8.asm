@@ -33,12 +33,12 @@ section .text
     MOV dword ptr [EAX],EBX             ; 0056eef6
     CALL dword ptr [0x005c1abc]         ; 0056eef8 | PTR_FUN_005c1abc
     MOV EAX,dword ptr [EAX + 0x54]      ; 0056eefe
-    MOV dword ptr [EAX + 0x4],0x56ed08  ; 0056ef01 | LAB_0056ed08
+    MOV dword ptr [EAX + 0x4],0x56ed08  ; 0056ef01
     CALL dword ptr [0x005c1abc]         ; 0056ef08 | PTR_FUN_005c1abc
     MOV EAX,dword ptr [EAX + 0x54]      ; 0056ef0e
     XOR EDX,EDX                         ; 0056ef11
     MOV dword ptr FS:[EDX],EAX          ; 0056ef13
-    PUSH 0x56ead4                       ; 0056ef16 | LAB_0056ead4
+    PUSH 0x56ead4                       ; 0056ef16
     CALL dword ptr CS:[0x5755b4]        ; 0056ef1b | PTR_SetUnhandledExceptionFilter_005755b4
     POP EBX                             ; 0056ef22
     RET                                 ; 0056ef23

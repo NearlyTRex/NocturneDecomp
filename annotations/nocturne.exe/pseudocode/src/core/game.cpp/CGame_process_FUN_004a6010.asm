@@ -218,7 +218,7 @@ section .text
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004a6224
         ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV [0x01c78b14],EAX                ; 004a6229 | DAT_01c78b14
-    MOV EAX,[0x005b96c4]                ; 004a622e | DAT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 004a622e | INT_005b96c4
         ;   Label: LAB_004a622e
     PUSH EAX                            ; 004a6233
     CALL core_gore.cpp_CGore_process_FUN_004b0030 ; 004a6234

@@ -4,6 +4,9 @@
 ; int FUN_00411a10(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004119e0 at 004119f3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_batpath_pth_0057877c
 ;   undefined4 s_batpath_pth_0057877c+1

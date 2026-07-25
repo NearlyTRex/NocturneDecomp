@@ -6,7 +6,7 @@
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ;
-; XREF[72]:
+; XREF[74]:
 ;   FUN_00439f50 at 0043a05e
 ;   FUN_00495a20 at 004962da
 ;   FUN_00498de0 at 00498ec7
@@ -17,7 +17,7 @@
 ;   FUN_004baba0 at 004badba
 ;   FUN_004c4970 at 004c4efb
 ;   FUN_004d4f30 at 004d5168
-;   ... and 62 more
+;   ... and 64 more
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_00566c81

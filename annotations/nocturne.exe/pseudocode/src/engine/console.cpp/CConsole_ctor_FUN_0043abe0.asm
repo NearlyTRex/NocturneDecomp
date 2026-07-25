@@ -4,6 +4,9 @@
 ; undefined4 * engine_console_cpp_CConsole_ctor_FUN_0043abe0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
 ;
 ;
+; XREF[1]:
+;   FUN_0043abb0 at 0043abbd
+;
 ; Called Functions:
 ;   engine_console.cpp_CConsole_reset_FUN_0043ae00
 ;

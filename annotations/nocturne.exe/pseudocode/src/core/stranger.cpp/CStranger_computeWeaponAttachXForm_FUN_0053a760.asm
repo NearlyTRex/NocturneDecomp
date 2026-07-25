@@ -203,7 +203,7 @@
 ;   double DOUBLE_005959af = 0.700000000000000
 ;   double DOUBLE_005959b7 = 0.300000000000000
 ;   float FLOAT_005959bf = 0.3330000
-;   undefined4 DAT_00764ad4
+;   undefined4 CDemonActorType_00764a9c.name_hash
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;   undefined4 DAT_02dc9f84
@@ -799,7 +799,7 @@ section .text
     CMP dword ptr [EBX + 0x2a84],0xe    ; 0053af61
     JZ 0x0053b2e9                       ; 0053af68
         ;   XREF to: 0053b2e9 (CONDITIONAL_JUMP)  ; LAB_0053b2e9
-    MOV ECX,dword ptr [0x00764ad4]      ; 0053af6e | DAT_00764ad4
+    MOV ECX,dword ptr [0x00764ad4]      ; 0053af6e | CDemonActorType_00764a9c.name_hash
     PUSH ECX                            ; 0053af74
     MOV ESI,dword ptr [EBP + 0x8e]      ; 0053af75
     PUSH ESI                            ; 0053af7b

@@ -4,6 +4,9 @@
 ; void FUN_005524d0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_005524a0 at 005524b3
+;
 ; Referenced Globals:
 ;   undefined1* PTR_core_waypoint.cpp_CWaypoint_setup_FUN_00552510_005a4034 = 00552510
 ;

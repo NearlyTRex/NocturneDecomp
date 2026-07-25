@@ -18,7 +18,7 @@
 ;   TerminatedCString s_courseName_0059740f
 ;   TerminatedCString s_lastMobsterLeft_0059741a
 ;   TerminatedCString s_lastMobsterRight_0059742a
-;   undefined4 DAT_005c11a0
+;   int INT_005c11a0 = 0x3
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -109,11 +109,11 @@ section .text
         ;   XREF to: 0054f3ed (CONDITIONAL_JUMP)  ; LAB_0054f3ed
     POP ESI                             ; 0054f457
     POP EDI                             ; 0054f458
-    CMP dword ptr [0x005c11a0],0x2      ; 0054f459 | DAT_005c11a0
+    CMP dword ptr [0x005c11a0],0x2      ; 0054f459 | INT_005c11a0
         ;   Label: LAB_0054f459
     JGE 0x0054f471                      ; 0054f460
         ;   XREF to: 0054f471 (CONDITIONAL_JUMP)  ; LAB_0054f471
-    CMP dword ptr [0x005c11a0],0x3      ; 0054f462 | DAT_005c11a0
+    CMP dword ptr [0x005c11a0],0x3      ; 0054f462 | INT_005c11a0
     JGE 0x0054f4c5                      ; 0054f469
         ;   XREF to: 0054f4c5 (CONDITIONAL_JUMP)  ; LAB_0054f4c5
     ADD ESP,0x8                         ; 0054f46b
@@ -142,7 +142,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 0054f4ae
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
     ADD ESP,0x8                         ; 0054f4b3
-    CMP dword ptr [0x005c11a0],0x3      ; 0054f4b6 | DAT_005c11a0
+    CMP dword ptr [0x005c11a0],0x3      ; 0054f4b6 | INT_005c11a0
     JGE 0x0054f4c5                      ; 0054f4bd
         ;   XREF to: 0054f4c5 (CONDITIONAL_JUMP)  ; LAB_0054f4c5
     ADD ESP,0x8                         ; 0054f4bf

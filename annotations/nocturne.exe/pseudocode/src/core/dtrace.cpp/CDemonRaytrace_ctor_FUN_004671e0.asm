@@ -4,6 +4,9 @@
 ; void core_dtrace_cpp_CDemonRaytrace_ctor_FUN_004671e0(undefined4 *param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00506b40 at 00506b79
+;
 ; *****************************************************************************
 
 section .text

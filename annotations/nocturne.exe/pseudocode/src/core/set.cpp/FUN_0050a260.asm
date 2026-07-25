@@ -33,7 +33,7 @@
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_005be378
 ;   undefined4 DAT_005c15b8
@@ -238,7 +238,7 @@ section .text
         ;   XREF to: 0050a413 (CONDITIONAL_JUMP)  ; LAB_0050a413
     LEA EAX,[EAX]                       ; 0050a444
     LEA EDX,[EDX]                       ; 0050a44a
-    MOV ECX,dword ptr [0x005b96c4]      ; 0050a450 | DAT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 0050a450 | INT_005b96c4
         ;   Label: LAB_0050a450
     PUSH ECX                            ; 0050a456
     CALL core_gore.cpp_CGore_renderParticles_FUN_004afe00 ; 0050a457

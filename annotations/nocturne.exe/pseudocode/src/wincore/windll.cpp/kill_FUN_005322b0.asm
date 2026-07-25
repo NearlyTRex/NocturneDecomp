@@ -4,7 +4,8 @@
 ; undefined4 __cdecl wincore_windll_cpp_kill_FUN_005322b0(void)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00532f50 at 00532f52
 ;   FUN_00552cb0 at 00552cdc
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004d0080 at 004d022d
 ;

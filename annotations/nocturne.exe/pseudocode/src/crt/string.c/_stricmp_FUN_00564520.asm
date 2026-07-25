@@ -4,18 +4,18 @@
 ; int __cdecl crt_string_c__stricmp_FUN_00564520(byte *param_1,byte *param_2)
 ;
 ;
-; XREF[88]:
+; XREF[93]:
+;   FUN_00470730 at 004708ee
+;   FUN_00473ff0 at 00473ffe
 ;   FUN_004a3b90 at 004a3bea
 ;   FUN_004a4170 at 004a41c0
 ;   FUN_004a4b50 at 004a4e43
 ;   FUN_004ee9e0 at 004ee9fc
+;   FUN_004f5a50 at 004f5adc
 ;   FUN_004f7ae0 at 004f7e26
 ;   FUN_004f8a10 at 004f8a75
 ;   FUN_004feff0 at 004ff0ce
-;   FUN_0051f680 at 0051f6ae
-;   FUN_00522480 at 005224a0
-;   FUN_005278e0 at 0052790f
-;   ... and 78 more
+;   ... and 83 more
 ;
 ; *****************************************************************************
 

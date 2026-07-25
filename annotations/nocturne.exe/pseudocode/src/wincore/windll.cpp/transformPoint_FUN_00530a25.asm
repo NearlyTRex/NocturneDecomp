@@ -4,18 +4,18 @@
 ; void __cdecl wincore_windll_cpp_transformPoint_FUN_00530a25(uint *param_1,int *param_2)
 ;
 ;
-; XREF[14]:
+; XREF[16]:
 ;   FUN_0042c4c0 at 0042c630
 ;   FUN_00489990 at 004899d6
+;   FUN_0048c8d0 at 0048c904
 ;   FUN_004cc440 at 004cc47f
+;   FUN_004d77f0 at 004d7830
 ;   core_fire.cpp_CCrater_render_FUN_00487af0 at 00487b60
 ;   core_fire.cpp_CLightningBolt_render_FUN_00488bf0 at 00488fb2
 ;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 00489d46
 ;   core_fire.cpp_CShell_render_FUN_004896d0 at 00489721
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00482950 at 00482992
-;   core_fire.cpp_CSpark_render_FUN_004838c0 at 00483914
-;   core_gore.cpp_CBloodParticle_render_FUN_004ae190 at 004ae1de
-;   ... and 4 more
+;   ... and 6 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bf4d8

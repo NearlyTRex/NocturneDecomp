@@ -4,6 +4,9 @@
 ; int core_baron_cpp_CBaron_ctor_FUN_004101d0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004101a0 at 004101b3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_baron_dfm_0057850c
 ;   TerminatedCString s_none_00578516

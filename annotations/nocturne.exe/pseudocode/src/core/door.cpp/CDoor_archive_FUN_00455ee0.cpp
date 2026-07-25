@@ -30,18 +30,18 @@ void core_door_cpp_CDoor_archive_FUN_00455ee0(int param_1)
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x9a8,"maxParam");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x9ac,"openSpeed");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x9b0,"closeSpeed");
-  if (1 < 0x0000000B) {
+  if (1 < INT_005ae690) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2cc,"groundType");
   }
-  if (2 < 0x0000000B) {
+  if (2 < INT_005ae690) {
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x3a8,"eventToTriggerWhenOpen");
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x40c,"eventToTriggerWhenClosed");
   }
-  if (3 < 0x0000000B) {
+  if (3 < INT_005ae690) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x9c0,"oneShot");
   }
-  if (0x0000000B < 7) {
-    if (4 < 0x0000000B) {
+  if (INT_005ae690 < 7) {
+    if (4 < INT_005ae690) {
       core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x668,"scriptOpenEvent");
       if (*(char *)(param_1 + 0x668) == '\0') {
         *(uint *)(param_1 + 0x470) = 0;
@@ -65,19 +65,19 @@ void core_door_cpp_CDoor_archive_FUN_00455ee0(int param_1)
   else {
     core_actor_cpp_archiveRules_FUN_0040d110(param_1 + 0x470,"openRules");
   }
-  if (5 < 0x0000000B) {
+  if (5 < INT_005ae690) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x9c8,"blockVirtualDirectorFlag");
   }
-  if (7 < 0x0000000B) {
+  if (7 < INT_005ae690) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x9cc,"plotAsBoxInShadow");
   }
-  if (8 < 0x0000000B) {
+  if (8 < INT_005ae690) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x9d0,"allowedSides");
   }
-  if (9 < 0x0000000B) {
+  if (9 < INT_005ae690) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x9d4,"allowBulletHoles");
   }
-  if (0x0000000B < 0xb) {
+  if (INT_005ae690 < 0xb) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x924,"lockedSound");

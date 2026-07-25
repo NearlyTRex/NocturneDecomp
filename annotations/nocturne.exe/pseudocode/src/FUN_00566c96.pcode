@@ -1,0 +1,84 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    FUN_00566c96
+# Entry:       00566c96
+# Signature:   double FUN_00566c96(double param_1)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@00566c96 [ESP:+0]  # FLD double ptr [ESP + 0x4]
+INT_ADD (unique,0x7600,4) = (const,0x4,4), (register,0x10,4) /* ESP */
+COPY (register,0x10ac,4) = (const,0x566c96,4)
+COPY (unique,0x52900,10) = (register,0x1170,10)
+COPY (register,0x1170,10) = (register,0x1160,10)
+COPY (register,0x1160,10) = (register,0x1150,10)
+COPY (register,0x1150,10) = (register,0x1140,10)
+COPY (register,0x1140,10) = (register,0x1130,10)
+COPY (register,0x1130,10) = (register,0x1120,10)
+COPY (register,0x1120,10) = (register,0x1110,10)
+COPY (register,0x1110,10) = (register,0x1100,10)
+COPY (register,0x1100,10) = (unique,0x52900,10)
+LOAD (unique,0xaa00,8) = (const,0x1a1,4), (unique,0x7600,4)
+FLOAT2FLOAT (register,0x1100,10) = (unique,0xaa00,8)
+
+@00566c9a [ESP:+0](-4)  # CALL 0x00566c6c
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x566c9f,4)
+CALL (ram,0x566c6c,4)
+
+@00566c9f [ESP:-8](-8)?  # SUB ESP, 0x8
+INT_LESS (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
+INT_SBORROW (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x8,4)
+INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@00566ca2 [ESP:-8]  # FSTP double ptr [ESP]
+COPY (register,0x10ac,4) = (const,0x566ca2,4)
+FLOAT2FLOAT (unique,0xaa00,8) = (register,0x1100,10)
+STORE (const,0x1a1,4), (register,0x10,4) /* ESP */, (unique,0xaa00,8)
+COPY (register,0x1100,10) = (register,0x1110,10)
+COPY (register,0x1110,10) = (register,0x1120,10)
+COPY (register,0x1120,10) = (register,0x1130,10)
+COPY (register,0x1130,10) = (register,0x1140,10)
+COPY (register,0x1140,10) = (register,0x1150,10)
+COPY (register,0x1150,10) = (register,0x1160,10)
+COPY (register,0x1160,10) = (register,0x1170,10)
+
+@00566ca5 [ESP:-8]  # WAIT
+# (no p-code)
+
+@00566ca6 [ESP:-4](+4)  # POP EAX
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0x87300,4)
+
+@00566ca7 [ESP:+0](+4)  # POP EDX
+COPY (unique,0x87300,4) = (const,0x0,4)
+LOAD (unique,0x87300,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+COPY (register,0x8,4) /* EDX */ = (unique,0x87300,4)
+
+@00566ca8 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 8 instructions, 46 P-code ops
+# ============================================================================

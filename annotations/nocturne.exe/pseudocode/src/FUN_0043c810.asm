@@ -4,6 +4,9 @@
 ; int FUN_0043c810(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0043c7e0 at 0043c7f3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_0057b422
 ;   undefined1* PTR_core_crate.cpp_CCrate_setup_FUN_0043c870_0059ba34 = 0043c870

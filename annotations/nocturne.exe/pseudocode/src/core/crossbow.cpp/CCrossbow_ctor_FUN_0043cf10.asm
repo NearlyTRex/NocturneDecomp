@@ -4,6 +4,9 @@
 ; int core_crossbow_cpp_CCrossbow_ctor_FUN_0043cf10(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0043cee0 at 0043cef3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_crossbow_kfm_0057b478
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059bb54 = 00553f10

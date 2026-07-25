@@ -39,7 +39,7 @@
 ;   TerminatedCString s_CDemonSet_setCameraView_00590476
 ;   undefined4 DAT_005b0674
 ;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_005bed68
 ;   undefined4 DAT_005c11ec
 ;   undefined4 DAT_005c15b8
@@ -393,7 +393,7 @@ section .text
         ;   XREF to: 00508750 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_CDemonSet_renderBackgroundActors_FUN_00508750()
     ADD ESP,0x8                         ; 00508c8d
     PUSH 0x1                            ; 00508c90
-    MOV ECX,dword ptr [0x005b96c4]      ; 00508c92 | DAT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 00508c92 | INT_005b96c4
     PUSH ECX                            ; 00508c98
     CALL FUN_004afe80                   ; 00508c99
         ;   XREF to: 004afe80 (UNCONDITIONAL_CALL)  ; undefined FUN_004afe80()

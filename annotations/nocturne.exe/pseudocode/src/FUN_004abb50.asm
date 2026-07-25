@@ -4,6 +4,9 @@
 ; int FUN_004abb50(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004abb20 at 004abb33
+;
 ; Referenced Globals:
 ;   TerminatedCString s_HEADLITE_RAW_00584ebf
 ;   undefined4 s_HEADLITE_RAW_00584ebf+1

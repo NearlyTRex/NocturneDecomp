@@ -527,7 +527,7 @@ section .text
     MOV dword ptr [EAX],0x280           ; 004d0625 | DAT_01c775ec
     PUSH 0x1                            ; 004d062b
         ;   Label: default
-    MOV EAX,[0x005bac64]                ; 004d062d | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004d062d | INT_005bac64
     PUSH EAX                            ; 004d0632 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 004d0633 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004d0635

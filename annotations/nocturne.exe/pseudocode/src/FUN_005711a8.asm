@@ -4,6 +4,9 @@
 ; undefined4 * FUN_005711a8(void)
 ;
 ;
+; XREF[1]:
+;   FUN_0056e52c at 0056e558
+;
 ; Referenced Globals:
 ;   void* PTR_GetCurrentThreadId_00575500 = 00175ce8
 ;   void* PTR_TlsSetValue_005755cc = 001760aa

@@ -9,7 +9,8 @@
 ; undefined1       Stack[-0x20d]:1  local_20d
 ; undefined        Stack[-0x110]:1  local_110
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004bd790 at 004bd7e5
 ;   engine_ini.cpp_getProfileString_FUN_004bd750 at 004bd777
 ;
 ; Referenced Globals:

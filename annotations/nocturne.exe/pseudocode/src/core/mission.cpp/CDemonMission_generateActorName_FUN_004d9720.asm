@@ -7,7 +7,8 @@
 ; undefined        Stack[-0x2c]:1  local_2c
 ; undefined1       Stack[-0x2b]:1  local_2b
 ;
-; XREF[12]:
+; XREF[13]:
+;   FUN_004a03a0 at 004a03d3
 ;   FUN_00540f50 at 00541226
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530 at 004115a2
 ;   core_bodypart.cpp_createBodyPart_FUN_00415b30 at 00415be3
@@ -17,8 +18,7 @@
 ;   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080 at 004b60e7
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004c0050
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004d5e20 at 004d5eb2
-;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 at 004d8c9a
-;   ... and 2 more
+;   ... and 3 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0

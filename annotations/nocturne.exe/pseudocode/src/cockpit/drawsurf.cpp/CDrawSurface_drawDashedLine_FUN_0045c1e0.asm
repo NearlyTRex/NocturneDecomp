@@ -4,6 +4,9 @@
 ; void cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0(int param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ;
+; XREF[1]:
+;   FUN_0045c050 at 0045c0d7
+;
 ; Referenced Globals:
 ;   double DOUBLE_0057d976 = 0.0000152587890625
 ;   undefined4 DAT_005ae6f4

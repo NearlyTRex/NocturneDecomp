@@ -110,7 +110,7 @@ uint FUN_004b27c0(int param_1)
                                  (0x01E57284,&fStack_6c,&fStack_90);
     if ((fStack_18 < 0.0) || (1.0 < fStack_18)) break;
     iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(0x01E57284 + 0x14cd5c),DAT_00765a98);
+                      (*(uint *)(0x01E57284 + 0x14cd5c),CDemonActorType_00765a60.name_hash);
     if ((iVar2 != 0) && (iVar4 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x104))(iVar2), 0 < iVar4))
     {
       iVar2 = 0;
@@ -121,7 +121,8 @@ uint FUN_004b27c0(int param_1)
                       (*(uint *)(0x01E57284 + 0x14cd5c),_DAT_02dd10bc);
     iStack_2c = iVar4;
     iStack_28 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(0x01E57284 + 0x14cd5c),DAT_0077bd78);
+                          (*(uint *)(0x01E57284 + 0x14cd5c),
+                           CDemonActorType_0077bd40.name_hash);
     iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
                       (*(uint *)(0x01E57284 + 0x14cd5c),_DAT_01c7068c);
     if (iVar2 == 0) {
@@ -236,7 +237,7 @@ uint FUN_004b27c0(int param_1)
             (0x01C08D04,param_1 + 0x20,param_1 + 0x30,&uStack_54,uVar1);
   iVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
   if (iVar2 == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-    FUN_004940d0(0x01C70F74);
+    FUN_004940d0(INT_005b9284);
   }
   return 1;
 }

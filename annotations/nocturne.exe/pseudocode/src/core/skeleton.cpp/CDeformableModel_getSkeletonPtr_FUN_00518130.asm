@@ -4,7 +4,9 @@
 ; undefined4 __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00518130(int param_1)
 ;
 ;
-; XREF[6]:
+; XREF[8]:
+;   FUN_00518f60 at 00518f6c
+;   FUN_00519120 at 0051912e
 ;   core_cloth.cpp_CCloth_setup_FUN_004359e0 at 00435cef
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40 at 0051ef5b
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0 at 0051e0ae

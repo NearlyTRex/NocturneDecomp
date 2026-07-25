@@ -4,7 +4,8 @@
 ; undefined4 FUN_0056ae10(int param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00564c30 at 00564c47
 ;   crt_stdio.c_fprintf_FUN_005644f0 at 00564508
 ;
 ; Referenced Globals:
@@ -79,7 +80,7 @@ section .text
     OR CL,0x1                           ; 0056ae85
     MOV EDI,0x1                         ; 0056ae88
     MOV byte ptr [EBX + 0xd],CL         ; 0056ae8d
-    PUSH 0x56adf0                       ; 0056ae90 | LAB_0056adf0
+    PUSH 0x56adf0                       ; 0056ae90
         ;   Label: LAB_0056ae90
     MOV ECX,dword ptr [ESP + 0x20]      ; 0056ae95
     PUSH ECX                            ; 0056ae99

@@ -54,7 +54,7 @@ void FUN_004996b0(int param_1,int param_2)
           uVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3e800000,0x3ecccccd);
           (**(code **)(iVar2 + 0x2c))(param_1,"gb-die[1,6].wav",uVar4);
         }
-        core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(0x01C78C7C,param_1,0x32,0x42480000,0);
+        core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(INT_005b96c4,param_1,0x32,0x42480000,0);
       }
     }
   }

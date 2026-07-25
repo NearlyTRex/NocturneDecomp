@@ -379,7 +379,7 @@ section .text
     FLD float ptr [EAX + 0x2e0]         ; 004c7617
     FMUL float ptr [ESP + 0x8]          ; 004c761d
     FSTP float ptr [EAX + 0x584]        ; 004c7621
-    MOV EAX,[0x00765a98]                ; 004c7627 | DAT_00765a98
+    MOV EAX,[0x00765a98]                ; 004c7627 | CDemonActorType_00765a60.name_hash
     PUSH EAX                            ; 004c762c
     MOV EAX,[0x005be368]                ; 004c762d | DAT_005be368
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 004c7632 | DAT_01fa3fe0
@@ -674,7 +674,7 @@ section .text
     CMP EAX,ESI                         ; 004c7964
     JNZ 0x004c7977                      ; 004c7966
         ;   XREF to: 004c7977 (CONDITIONAL_JUMP)  ; LAB_004c7977
-    MOV EDI,dword ptr [0x005b9284]      ; 004c7968 | DAT_005b9284
+    MOV EDI,dword ptr [0x005b9284]      ; 004c7968 | INT_005b9284
     PUSH EDI                            ; 004c796e
     CALL FUN_004940d0                   ; 004c796f
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()

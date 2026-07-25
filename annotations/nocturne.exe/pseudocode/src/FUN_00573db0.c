@@ -17,7 +17,7 @@ void FUN_00573db0(uint param_1)
   FUN_0056da30(param_1,local_c);
   iVar1 = FUN_0056da50(local_c);
   local_c[iVar1] = 0;
-  if (((0x00000001 == 0x3a4) && (_DAT_02de5c30 != 0)) &&
+  if (((DAT_005c2144 == 0x3a4) && (_DAT_02de5c30 != 0)) &&
      ((*(byte *)(local_c[0] + 0x2de5c41) & 1) != 0)) {
     FUN_00574520(param_1);
   }

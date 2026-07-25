@@ -265,7 +265,7 @@ section .text
     TEST EDI,EDI                        ; 004db920
     JZ 0x004dba30                       ; 004db922
         ;   XREF to: 004dba30 (CONDITIONAL_JUMP)  ; LAB_004dba30
-    PUSH 0x51b650                       ; 004db928 | LAB_0051b650
+    PUSH 0x51b650                       ; 004db928
     MOV ECX,dword ptr [0x01ccdbd0]      ; 004db92d | DAT_01ccdbd0
     PUSH ECX                            ; 004db933
     PUSH dword ptr [EBX + 0xbdf4]       ; 004db934
@@ -287,7 +287,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004db963
     MOVSD ES:EDI,ESI                    ; 004db964
     MOVSD ES:EDI,ESI                    ; 004db965
-    PUSH 0x51b650                       ; 004db966 | LAB_0051b650
+    PUSH 0x51b650                       ; 004db966
     MOV ESI,dword ptr [0x01ccdbd0]      ; 004db96b | DAT_01ccdbd0
     PUSH ESI                            ; 004db971
     LEA EAX,[ESP + 0x10]                ; 004db972
@@ -305,7 +305,7 @@ section .text
         ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 004db9a0
     LEA EDI,[ESP + 0x8]                 ; 004db9a3
-    PUSH 0x51b650                       ; 004db9a7 | LAB_0051b650
+    PUSH 0x51b650                       ; 004db9a7
     MOV EAX,[0x01ccdbd0]                ; 004db9ac | DAT_01ccdbd0
     LEA ESI,[ESP + 0x1c]                ; 004db9b1
     PUSH EAX                            ; 004db9b5
@@ -356,7 +356,7 @@ section .text
     MOV dword ptr [EBX + 0xbdf4],0x0    ; 004dba21
     JMP 0x004db8b2                      ; 004dba2b
         ;   XREF to: 004db8b2 (UNCONDITIONAL_JUMP)  ; LAB_004db8b2
-    PUSH 0x51b650                       ; 004dba30 | LAB_0051b650
+    PUSH 0x51b650                       ; 004dba30
         ;   Label: LAB_004dba30
     MOV EDX,dword ptr [0x01ccdbd0]      ; 004dba35 | DAT_01ccdbd0
     PUSH EDX                            ; 004dba3b

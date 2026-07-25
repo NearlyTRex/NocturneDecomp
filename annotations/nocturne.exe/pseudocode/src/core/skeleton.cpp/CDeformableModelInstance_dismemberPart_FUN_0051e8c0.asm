@@ -4,7 +4,8 @@
 ; void core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_0051e8c0(int param_1,int param_2,int param_3)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0051e860 at 0051e895
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 at 00427f0c
 ;
 ; Called Functions:

@@ -30,11 +30,11 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004af8a0(uint *param_1,float *para
     fVar6 = (float10)fcos((float10)*(float *)(param_3 + 4));
     fVar5 = fVar5 * (float10)0.5;
     fVar6 = fVar6 * (float10)0.5;
-    local_40 = (float)(fVar5 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +
-                       -fVar6 * (float10)*(float *)((int)&DAT_005ba82c + iVar2) + (float10)*param_2)
-    ;
-    local_38 = (float)(fVar6 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +
-                      fVar5 * (float10)*(float *)((int)&DAT_005ba82c + iVar2)) + param_2[2];
+    local_40 = (float)(fVar5 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +
+                       -fVar6 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2) +
+                      (float10)*param_2);
+    local_38 = (float)(fVar6 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +
+                      fVar5 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2)) + param_2[2];
     if (&local_34 != &local_40) {
       local_34 = local_40;
       local_30 = param_2[1];

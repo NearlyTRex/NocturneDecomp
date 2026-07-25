@@ -4,7 +4,8 @@
 ; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70(int *param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0045e370 at 0045e43e
 ;   FUN_004fe9d0 at 004feb69
 ;
 ; Called Functions:

@@ -20,9 +20,9 @@
 ;   double DOUBLE_00585188 = 4
 ;   float FLOAT_00585190 = -3
 ;   float FLOAT_00585194 = 0.08333334
-;   undefined4 DAT_005ba82c
-;   undefined4 DAT_005ba830
-;   undefined4 DAT_005ba83c
+;   float FLOAT_005ba82c = 1
+;   float FLOAT_005ba830 = -1
+;   float FLOAT_005ba83c = 1
 ;   undefined4 DAT_01fba938
 ;
 ; Called Functions:
@@ -58,15 +58,15 @@ section .text
     FXCH ST2                            ; 004af8d1
     FMULP                               ; 004af8d3
     FLD ST1                             ; 004af8d5
-    FMUL float ptr [EBX + 0x5ba82c]     ; 004af8d7 | DAT_005ba82c | DAT_005ba830
+    FMUL float ptr [EBX + 0x5ba82c]     ; 004af8d7 | FLOAT_005ba82c | FLOAT_005ba830
     FLD ST1                             ; 004af8dd
     FCHS                                ; 004af8df
-    FMUL float ptr [EBX + 0x5ba82c]     ; 004af8e1 | DAT_005ba82c | DAT_005ba830
+    FMUL float ptr [EBX + 0x5ba82c]     ; 004af8e1 | FLOAT_005ba82c | FLOAT_005ba830
     FXCH ST2                            ; 004af8e7
-    FMUL float ptr [EBX + 0x5ba83c]     ; 004af8e9 | DAT_005ba83c
+    FMUL float ptr [EBX + 0x5ba83c]     ; 004af8e9 | FLOAT_005ba83c
     XOR EDX,EDX                         ; 004af8ef
     FXCH ST3                            ; 004af8f1
-    FMUL float ptr [EBX + 0x5ba83c]     ; 004af8f3 | DAT_005ba83c
+    FMUL float ptr [EBX + 0x5ba83c]     ; 004af8f3 | FLOAT_005ba83c
     MOV dword ptr [ESP + 0x4],EDX       ; 004af8f9
     FXCH ST3                            ; 004af8fd
     FADDP                               ; 004af8ff

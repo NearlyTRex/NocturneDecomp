@@ -4,8 +4,11 @@
 ; undefined4 FUN_0056c6d0(uint param_1)
 ;
 ;
-; XREF[2]:
-;   FUN_00573a31 at 00573aac
+; XREF[5]:
+;   FUN_0056c6b8 at 0056c6c4
+;   FUN_0056f170 at 0056f192
+;   FUN_00573930 at 00573aac
+;   FUN_005740b0 at 00574210
 ;   crt_errno.c___set_errno_FUN_0056c73c at 0056c744
 ;
 ; Referenced Globals:

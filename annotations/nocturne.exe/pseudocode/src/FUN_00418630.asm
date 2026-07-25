@@ -12,6 +12,9 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
+; XREF[1]:
+;   FUN_004182a0 at 004182b3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_boneguy_dfm_00579186
 ;   TerminatedCString s_boneguydie_00579192

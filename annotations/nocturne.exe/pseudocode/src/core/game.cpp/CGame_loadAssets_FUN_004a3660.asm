@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
 ;
@@ -35,7 +35,7 @@ section .text
     CALL core_fire.cpp_CFireEffect_loadAssets_FUN_0048af70 ; 004a3677
         ;   XREF to: 0048af70 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_loadAssets_FUN_0048af70()
     ADD ESP,0x4                         ; 004a367c
-    MOV EBX,dword ptr [0x005b96c4]      ; 004a367f | DAT_005b96c4
+    MOV EBX,dword ptr [0x005b96c4]      ; 004a367f | INT_005b96c4
     PUSH EBX                            ; 004a3685
     CALL core_gore.cpp_CGore_loadAssets_FUN_004b04b0 ; 004a3686
         ;   XREF to: 004b04b0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_loadAssets_FUN_004b04b0()

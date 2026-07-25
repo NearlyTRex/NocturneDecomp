@@ -18,7 +18,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(int param_1)
   float10 fVar5;
   uint uVar6;
   byte *puVar7;
-  byte *puVar8;
+  code *pcVar8;
   byte local_64 [4];
   uint local_60;
   uint local_5c;
@@ -80,7 +80,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(int param_1)
       local_4c = *(uint *)((int)&DAT_005ad890 + iVar3);
       local_48 = *(uint *)((int)&DAT_005ad894 + iVar3);
       local_44 = *(uint *)((int)&DAT_005ad898 + iVar3);
-      puVar8 = &LAB_00444180;
+      pcVar8 = FUN_00444180;
       local_40 = *(uint *)((int)&DAT_005ad89c + iVar3);
       puVar7 = local_64;
       iVar3 = iVar3 + 0x24;
@@ -89,7 +89,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(int param_1)
                                  ((float10)*piVar1 * (float10)*(float *)(param_1 + 0x30));
       local_54 = (int)ROUND(fVar5);
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-                (piVar2,uVar6,puVar7,puVar8);
+                (piVar2,uVar6,puVar7,pcVar8);
     } while (iVar3 != 0xbd0);
     return;
   }

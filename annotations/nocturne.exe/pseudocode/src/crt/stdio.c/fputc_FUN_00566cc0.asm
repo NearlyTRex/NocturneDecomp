@@ -4,9 +4,11 @@
 ; uint __cdecl crt_stdio_c_fputc_FUN_00566cc0(uint param_1,int *param_2)
 ;
 ;
-; XREF[8]:
+; XREF[10]:
+;   FUN_0049a320 at 0049a58e
 ;   FUN_0049cc10 at 0049d7df
 ;   FUN_004f2990 at 004f2af6
+;   FUN_0056adf0 at 0056adfe
 ;   FUN_005729e8 at 00572a2a
 ;   FUN_00573660 at 005736be
 ;   crt_stdio.c_fwrite_FUN_00563a50 at 00563c0e

@@ -16,7 +16,7 @@
 ;   TerminatedCString s_state_00596f33
 ;   TerminatedCString s_periodicSoundTimerMin_00596f39
 ;   TerminatedCString s_periodicSoundTimerMax_00596f4f
-;   undefined4 DAT_005c1174
+;   int INT_005c1174 = 0x5
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
@@ -34,7 +34,7 @@ section .text
     PUSH EBX                            ; 0054b310
         ;   Label: core_tvbat.cpp_CTVBat_archive_FUN_0054b310
     MOV EBX,dword ptr [ESP + 0x8]       ; 0054b311
-    CMP dword ptr [0x005c1174],0x3      ; 0054b315 | DAT_005c1174
+    CMP dword ptr [0x005c1174],0x3      ; 0054b315 | INT_005c1174
     JL 0x0054b3fe                       ; 0054b31c
         ;   XREF to: 0054b3fe (CONDITIONAL_JUMP)  ; LAB_0054b3fe
     PUSH EBX                            ; 0054b322
@@ -53,7 +53,7 @@ section .text
     PUSH EAX                            ; 0054b34a
     CALL core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00 ; 0054b34b
         ;   XREF to: 0040ca00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00()
-    MOV ECX,dword ptr [0x005c1174]      ; 0054b350 | DAT_005c1174
+    MOV ECX,dword ptr [0x005c1174]      ; 0054b350 | INT_005c1174
     ADD ESP,0x8                         ; 0054b356
     CMP ECX,0x2                         ; 0054b359
     JL 0x0054b3d6                       ; 0054b35c
@@ -94,7 +94,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0054b3ce
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 0054b3d3
-    CMP dword ptr [0x005c1174],0x4      ; 0054b3d6 | DAT_005c1174
+    CMP dword ptr [0x005c1174],0x4      ; 0054b3d6 | INT_005c1174
         ;   Label: LAB_0054b3d6
     JL 0x0054b409                       ; 0054b3dd
         ;   XREF to: 0054b409 (CONDITIONAL_JUMP)  ; LAB_0054b409
@@ -104,7 +104,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0054b3eb
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 0054b3f0
-    CMP dword ptr [0x005c1174],0x5      ; 0054b3f3 | DAT_005c1174
+    CMP dword ptr [0x005c1174],0x5      ; 0054b3f3 | INT_005c1174
     JGE 0x0054b41e                      ; 0054b3fa
         ;   XREF to: 0054b41e (CONDITIONAL_JUMP)  ; LAB_0054b41e
     POP EBX                             ; 0054b3fc
@@ -117,7 +117,7 @@ section .text
         ;   XREF to: 0054b328 (UNCONDITIONAL_JUMP)  ; LAB_0054b328
     MOV dword ptr [EBX + 0xbee0],0x0    ; 0054b409
         ;   Label: LAB_0054b409
-    CMP dword ptr [0x005c1174],0x5      ; 0054b413 | DAT_005c1174
+    CMP dword ptr [0x005c1174],0x5      ; 0054b413 | INT_005c1174
     JGE 0x0054b41e                      ; 0054b41a
         ;   XREF to: 0054b41e (CONDITIONAL_JUMP)  ; LAB_0054b41e
     POP EBX                             ; 0054b41c

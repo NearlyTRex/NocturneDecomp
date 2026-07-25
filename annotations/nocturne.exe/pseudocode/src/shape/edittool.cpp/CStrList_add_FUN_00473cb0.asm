@@ -4,18 +4,18 @@
 ; void __cdecl shape_edittool_cpp_CStrList_add_FUN_00473cb0(undefined4 *param_1,undefined4 param_2)
 ;
 ;
-; XREF[15]:
+; XREF[17]:
 ;   FUN_00470230 at 0047028a
 ;   FUN_00470310 at 0047036a
 ;   FUN_004703f0 at 0047044b
+;   FUN_00470730 at 00470968
 ;   FUN_00474ae0 at 00474c3d
 ;   FUN_004a4b50 at 004a4f59
+;   FUN_004f8240 at 004f84bf
 ;   FUN_004febd0 at 004fece4
 ;   FUN_0052ed40 at 0052ed63
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049df1a
-;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3b17
-;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d210b
-;   ... and 5 more
+;   ... and 7 more
 ;
 ; *****************************************************************************
 

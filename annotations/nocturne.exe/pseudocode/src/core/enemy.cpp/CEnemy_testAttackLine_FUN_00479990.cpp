@@ -29,7 +29,7 @@ uint __cdecl core_enemy_cpp_CEnemy_testAttackLine_FUN_00479990(int param_1,uint 
                                   (float10)0.25);
       iStack_18 = (int)ROUND(fVar2);
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                (0x01C78C7C,(int)&uStack_28 + 4,0,iStack_18,uVar3,uVar4);
+                (INT_005b96c4,(int)&uStack_28 + 4,0,iStack_18,uVar3,uVar4);
       return 1;
     }
   }

@@ -6,11 +6,12 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[8]:
+; XREF[9]:
 ;   FUN_0046f7e0 at 0046f8a2
 ;   FUN_0046fb40 at 0046fc2f
 ;   FUN_0046fcd0 at 0046fdbf
 ;   FUN_0046fe60 at 0046ff4f
+;   FUN_004700d0 at 0047012c
 ;   FUN_00470eb0 at 00470f9a
 ;   FUN_004759d0 at 004759e1
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfc5f
@@ -134,6 +135,7 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 0047238e
     MOV [0x01c00c70],EAX                ; 00472391 | DAT_01c00c70
     ADD ESP,0x4                         ; 00472396
+        ;   Label: LAB_00472396
     POP EBP                             ; 00472399
     POP EDI                             ; 0047239a
     POP ESI                             ; 0047239b

@@ -4,8 +4,9 @@
 ; undefined4 __cdecl wincore_windll_cpp_drawPolygon_FUN_00532620(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[4]:
+; XREF[5]:
 ;   FUN_004f9dd0 at 004f9faa
+;   FUN_00545700 at 005457e4
 ;   engine_3d.c_rasterizeTriangle_FUN_005628c0 at 00562bb0
 ;   engine_prim.c_renderScanlinePolygon_FUN_004fad00 at 004fafd9
 ;   wincore_windll.cpp_drawFullScreenQuad_FUN_005329c0 at 00532a5d

@@ -2,6 +2,8 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/funcdefs/CDemonActor_FactoryFunc.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x400000
@@ -90,7 +92,7 @@ void engine_2d_c_setSolidColor_FUN_00404090(int param_1,int param_2,uint param_3
 int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(int param_1,int param_2,int param_3,int param_4,uint param_5);
 void engine_2d_c_mapTextureFrameBuffer_FUN_00404340(void);
 int engine_2d_c_unmapFrameBuffer_FUN_00404360(void);
-undefined * engine_3d_c_FUN_00404430(undefined4 *param_1);
+undefined4 * engine_3d_c_FUN_00404430(undefined4 *param_1);
 void thunk_FUN_005458a0(void);
 void thunk_FUN_005458d0(void);
 undefined4 engine_3d_c_badMRGLStruct_FUN_004044a0(undefined4 param_1);
@@ -110,8 +112,9 @@ int engine_3d_c_processPolygonColor_FUN_00405140(int param_1);
 int engine_3d_c_oldFunction3_FUN_004051e0(int param_1);
 int engine_3d_c_FUN_00405200(int param_1);
 int engine_3d_c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00405240(int param_1);
+int FUN_00405340(int param_1);
 int engine_3d_c_renderPolygonSolidTexturedOp15_FUN_00405440(int param_1);
-undefined * engine_3d_c_oldFunction5_FUN_004054f0(undefined4 *param_1);
+undefined4 * engine_3d_c_oldFunction5_FUN_004054f0(undefined4 *param_1);
 int engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00405540(int param_1);
 int engine_3d_c_FUN_00405740(int param_1);
 int engine_3d_c_setRelativeCoord_FUN_00405750(int param_1);
@@ -120,23 +123,32 @@ void __cdecl engine_3d_c_setActiveRenderColor_FUN_00405840(void);
 int engine_3d_c_drawLineStrip2D_FUN_00405870(int param_1);
 int engine_3d_c_FUN_00405900(int param_1);
 undefined4 engine_3d_c_oldFunction7_FUN_00405990(void);
+void FUN_004059c0(int param_1);
+uint FUN_00405a60(int *param_1,int *param_2);
+void FUN_00405ab0(int param_1,undefined4 param_2,undefined4 param_3);
+void FUN_00405b30(void);
+uint * FUN_00405b40(uint *param_1);
 int engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(int param_1);
 int engine_3d_c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10(int param_1);
 int engine_3d_c_renderPolygonLitNearPlaneOp35_FUN_00406010(int param_1);
 int engine_3d_c_renderPolygonAdaptiveDepthOp25_FUN_004060b0(int param_1);
 int engine_3d_c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00406230(int param_1);
 int engine_3d_c_renderPolygonFogColorDepthOp27_FUN_00406320(int param_1);
-undefined * engine_3d_c_oldFunction8_FUN_004063c0(undefined4 *param_1);
+undefined4 * engine_3d_c_oldFunction8_FUN_004063c0(undefined4 *param_1);
 int engine_3d_c_updateAnimatedTexture_FUN_00406690(int param_1);
 int engine_3d_c_renderPolygonTexturedUVLitOp30_FUN_00406740(int param_1);
 int engine_3d_c_setVertexTextureU_FUN_00406840(int param_1);
 int engine_3d_c_renderPolygonDestReadBlendOp33_FUN_00406880(int param_1);
+int FUN_00406920(int param_1);
+int FUN_00406a00(int param_1);
+int FUN_00406ae0(int param_1);
+int FUN_00406b80(int param_1);
 int __cdecl engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00406c60(int param_1);
 int __cdecl engine_3d_c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00406d80(int param_1);
 int engine_3d_c_renderPolygonFogTexturedPerspOp39_FUN_00406ea0(int param_1);
 int __cdecl engine_3d_c_renderPolygonDepthWritePass_FUN_00406f30(int param_1);
-undefined * engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00406fd0(int param_1);
-undefined * engine_3d_c_renderPolygonSolidTexturedHardwareOp53_FUN_00407070(int param_1);
+undefined4 * engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_00406fd0(int param_1);
+undefined4 * engine_3d_c_renderPolygonSolidTexturedHardwareOp53_FUN_00407070(int param_1);
 int engine_3d_c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120(int param_1);
 int engine_3d_c_renderPolygonFogTexturedDepthOp42_FUN_004072d0(int param_1);
 int engine_3d_c_renderPolygonTexturedDepthWriteOp43_FUN_00407370(int param_1);
@@ -167,8 +179,12 @@ void __cdecl engine_3d_c_renderPolygonWithRenderFlags_FUN_00408c10(int param_1,u
 void engine_3d_c_renderPolygonWithRenderFlagsUV_FUN_00408d10(int param_1,uint param_2,int param_3);
 void engine_3d_c_FUN_00408e80(int *param_1);
 void engine_3d_c_flushRenderQueue_FUN_00408f50(void);
+void FUN_00408fc0(byte *param_1);
+void FUN_00409210(int param_1,int param_2);
 void engine_3d_c_clipAndDrawLine2D_FUN_00409290(int param_1,int param_2,int param_3,undefined4 param_4,uint param_5);
+void FUN_00409510(int param_1,int param_2);
 uint engine_3d_c_FUN_00409590(uint param_1,uint param_2,int param_3,undefined4 param_4,uint param_5);
+void FUN_00409840(void);
 float core_actor_cpp_rayCylinderIntersect_FUN_00409860(int param_1,float *param_2,float *param_3,float *param_4);
 void core_actor_cpp_FUN_00409cd0(int param_1);
 void __cdecl core_actor_cpp_initTransformCache_FUN_00409cf0(undefined4 *param_1);
@@ -219,6 +235,8 @@ uint core_actor_cpp_FUN_0040b200(int param_1);
 undefined4 core_actor_cpp_FUN_0040b300(int param_1,int param_2);
 void core_actor_cpp_FUN_0040bca0(int param_1,undefined4 param_2,int param_3);
 void core_actor_cpp_FUN_0040bce0(int param_1,uint param_2);
+undefined4 * FUN_0040bd40(void);
+void FUN_0040bd90(char *param_1,undefined4 param_2,undefined4 param_3);
 undefined8 __cdecl core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(int param_1);
 void core_actor_cpp_CDemonActor_save_FUN_0040c040(char *param_1,int param_2);
 void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040c160(char *param_1,int param_2);
@@ -241,7 +259,11 @@ void core_actor_cpp_FUN_0040ce80(undefined4 param_1,undefined4 param_2);
 void __cdecl core_actor_cpp_archiveClothList_FUN_0040cf70(int *param_1,undefined4 param_2);
 void __cdecl core_actor_cpp_archiveRules_FUN_0040d110(int *param_1,undefined4 param_2);
 void __cdecl core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(int param_1);
-char * core_actor_cpp_registerActorClass_FUN_0040d3f0(char *param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040d3f0(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func,int *max_version,int version,CDemonActorType *parent_class_info);
+template<typename T_func0>
+inline CDemonActorType * core_actor_cpp_registerActorClass_FUN_0040d3f0(CDemonActorType *this_ptr,char *class_name,T_func0 factor_func,int *max_version,int version,CDemonActorType *parent_class_info) {
+    return core_actor_cpp_registerActorClass_FUN_0040d3f0(this_ptr, class_name, (CDemonActor_FactoryFunc *)factor_func, max_version, version, parent_class_info);
+}
 int __cdecl core_actor_cpp_getActorClassByName_FUN_0040d4d0(char *param_1);
 int __cdecl core_actor_cpp_createActorByName_FUN_0040d540(undefined4 param_1);
 uint __cdecl core_actor_cpp_matchClassTerm_FUN_0040d600(undefined4 param_1,int *param_2);
@@ -271,11 +293,17 @@ undefined2 core_actor_cpp_FUN_0040e120(undefined4 param_1,char *param_2);
 undefined4 __cdecl core_actor_cpp_CVector_ctor_FUN_0040e160(undefined4 param_1);
 undefined4 core_actor_cpp_FUN_0040e170(undefined4 param_1);
 void __cdecl core_actor_cpp_copyVector_FUN_0040e180(undefined4 *param_1,undefined4 *param_2);
+float FUN_0040e1a0(float *param_1);
+void FUN_0040e1cc(void);
 undefined4 FUN_0040e220(undefined4 param_1);
 undefined4 FUN_0040e230(undefined4 param_1);
 undefined4 * FUN_0040e240(undefined4 *param_1,undefined4 *param_2);
 undefined4 FUN_0040e290(undefined4 param_1);
 void FUN_0040e2a0(undefined4 *param_1,undefined4 *param_2);
+void FUN_0040e2ce(void);
+void FUN_0040e2e1(undefined4 *param_1);
+void FUN_0040e2f1(undefined4 *param_1);
+void FUN_0040e300(undefined4 param_1);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(undefined4 *param_1);
 undefined4 __cdecl engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340(undefined4 param_1);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040e360(int *param_1);
@@ -284,7 +312,10 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(int *param_1,
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040e8c0(int *param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7 ,undefined4 param_8);
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(int *param_1,int param_2,int param_3);
 void engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0(int param_1);
-undefined * FUN_0040eb60(void);
+void FUN_0040eadd(void);
+void FUN_0040eb10(void);
+void FUN_0040eb40(void);
+CDemonActorType * FUN_0040eb60(void);
 int __cdecl core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(undefined4 param_1);
 void core_ammo_cpp_FUN_0040ec00(int param_1);
 void core_ammo_cpp_FUN_0040ec20(void);
@@ -296,7 +327,9 @@ void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(int param_1,char *p
 void FUN_0040ef60(int param_1,undefined4 param_2);
 undefined4 FUN_0040ef70(undefined4 param_1,undefined4 param_2);
 undefined4 FUN_0040ef90(undefined4 param_1,byte param_2);
-undefined * FUN_0040f030(void);
+void FUN_0040efe0(void);
+void FUN_0040f010(void);
+CDemonActorType * FUN_0040f030(void);
 int FUN_0040f040(undefined4 param_1);
 undefined4 FUN_0040f0f0(int param_1);
 void FUN_0040f120(void);
@@ -308,7 +341,9 @@ void FUN_0040f390(int param_1);
 bool FUN_0040f460(int param_1);
 undefined4 FUN_0040f480(int param_1,undefined4 param_2);
 undefined4 FUN_0040f4b0(undefined4 param_1,byte param_2);
-undefined * FUN_0040f550(void);
+void FUN_0040f500(void);
+void FUN_0040f530(void);
+CDemonActorType * FUN_0040f550(void);
 int FUN_0040f560(undefined4 param_1);
 void FUN_0040f5f0(int param_1);
 void FUN_0040f610(int param_1,float param_2);
@@ -317,7 +352,9 @@ void FUN_0040f7d0(int param_1);
 undefined4 FUN_0040f850(void);
 undefined4 * FUN_0040f860(int param_1,undefined4 *param_2);
 undefined4 FUN_0040f8b0(undefined4 param_1,byte param_2);
-undefined * FUN_0040f950(void);
+void FUN_0040f900(void);
+void FUN_0040f930(void);
+CDemonActorType * FUN_0040f950(void);
 int FUN_0040f960(undefined4 param_1);
 void FUN_0040fa00(int param_1);
 void FUN_0040fa20(int param_1,float param_2);
@@ -332,7 +369,9 @@ undefined4 core_armour_cpp_CFlame_dtor_FUN_0040fdc0(undefined4 param_1,byte para
 void __cdecl core_armour_cpp_CVector3f_arrdtor_FUN_0040fe10(undefined4 param_1);
 void __cdecl core_armour_cpp_SFire_arrdtor_FUN_0040fe30(undefined4 param_1);
 void __cdecl core_armour_cpp_CFlame_arrdtor_FUN_0040fe50(undefined4 param_1);
-undefined * FUN_0040fec0(void);
+void FUN_0040fe70(void);
+void FUN_0040fea0(void);
+CDemonActorType * FUN_0040fec0(void);
 int FUN_0040fed0(undefined4 param_1);
 undefined8 core_backgnd_cpp_CBackgroundActor_setup_FUN_0040ff30(int param_1);
 void core_backgnd_cpp_FUN_0040ff70(void);

@@ -1,54 +1,54 @@
 // Name: core_actor.cpp_registerActorClass_FUN_0040d3f0
 // Address: 0040d3f0
 // Address Range: [[0040d3f0, 0040d4c3]]
-// Convention: unknown
-// Signature: char * core_actor_cpp_registerActorClass_FUN_0040d3f0(char *param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+// Convention: __cdecl
+// Signature: CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040d3f0(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func,int *max_version,int version,CDemonActorType *parent_class_info)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-char * core_actor_cpp_registerActorClass_FUN_0040d3f0(char *param_1,char *param_2,uint param_3,uint param_4,uint param_5,uint param_6)
+CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040d3f0(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func,int *max_version,int version,CDemonActorType *parent_class_info)
 
 {
   char cVar1;
   int iVar2;
   uint uVar3;
-  char *pcVar4;
+  CDemonActorType *pCVar4;
   
-  pcVar4 = param_1;
+  pCVar4 = this_ptr;
   do {
-    cVar1 = *param_2;
-    *pcVar4 = cVar1;
+    cVar1 = *class_name;
+    pCVar4->class_name[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = param_2[1];
-    param_2 = param_2 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    cVar1 = class_name[1];
+    class_name = class_name + 2;
+    pCVar4->class_name[1] = cVar1;
+    pCVar4 = (CDemonActorType *)(pCVar4->class_name + 2);
   } while (cVar1 != '\0');
-  *(uint *)(param_1 + 0x2c) = param_3;
-  *(uint *)(param_1 + 0x30) = param_4;
+  this_ptr->factory_func = factor_func;
+  this_ptr->type_info = max_version;
   uVar3 = 0;
-  *(uint *)(param_1 + 0x34) = param_5;
-  *(uint *)(param_1 + 0x28) = param_6;
-  pcVar4 = param_1;
+  this_ptr->type_id = version;
+  this_ptr->parent_type = parent_class_info;
+  pCVar4 = this_ptr;
   while( true ) {
     iVar2 = DAT_00763e94;
-    cVar1 = *pcVar4;
-    pcVar4 = pcVar4 + 1;
+    cVar1 = pCVar4->class_name[0];
+    pCVar4 = (CDemonActorType *)(pCVar4->class_name + 1);
     if (cVar1 == '\0') break;
     if (((&DAT_005c168c)[(byte)(cVar1 + 1)] & 0xe0) != 0) {
       iVar2 = tolower(cVar1);
       uVar3 = iVar2 * 0x20001 + uVar3 * 0x80 + (uVar3 >> 0x19);
     }
   }
-  *(uint *)(param_1 + 0x38) = uVar3;
+  this_ptr->name_hash = uVar3;
   if (199 < iVar2) {
     _DAT_01cc4800 = "..\\core\\actor.cpp";
     _DAT_01cc4804 = 0xa19;
     FUN_004c8440("Too many actor types!");
   }
-  (&DAT_00763e98)[DAT_00763e94] = param_1;
+  (&DAT_00763e98)[DAT_00763e94] = this_ptr;
   DAT_00763e94 = DAT_00763e94 + 1;
-  return param_1;
+  return this_ptr;
 }

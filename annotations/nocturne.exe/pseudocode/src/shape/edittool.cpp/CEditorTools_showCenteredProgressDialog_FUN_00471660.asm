@@ -4,7 +4,9 @@
 ; void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660(undefined4 param_1,int param_2)
 ;
 ;
-; XREF[1]:
+; XREF[3]:
+;   FUN_004673e0 at 004673f7
+;   FUN_004f8240 at 004f8416
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004e9f11
 ;
 ; Referenced Globals:

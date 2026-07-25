@@ -102,7 +102,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(uint *param_1,int 
   pcVar7 = (char *)0x0;
 LAB_004cf677:
   _DAT_01cc5b68 = 0;
-  iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x48);
+  iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x48);
   if (iVar2 != 0) {
     _DAT_01cc5b68 = 1;
     iVar2 = *param_3;
@@ -111,7 +111,7 @@ LAB_004cf677:
       *param_3 = param_2 + -1;
     }
   }
-  iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x50);
+  iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x50);
   if (iVar2 != 0) {
     iVar2 = *param_3;
     _DAT_01cc5b68 = 1;
@@ -122,15 +122,15 @@ LAB_004cf677:
   }
   if (pcVar7 != (char *)0x0) {
     _DAT_01cc5b5c = 0;
-    iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x4b);
+    iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x4b);
     if (iVar2 != 0) {
       _DAT_01cc5b5c = 1;
       return *param_3;
     }
-    iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x4d);
+    iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x4d);
     if (iVar2 != 0) goto LAB_004cf73d;
   }
-  iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);
+  iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x1c);
   if (iVar2 == 0) {
     return -1;
   }

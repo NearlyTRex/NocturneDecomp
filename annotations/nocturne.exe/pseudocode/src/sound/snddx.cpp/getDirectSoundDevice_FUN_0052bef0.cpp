@@ -2,13 +2,13 @@
 // Address: 0052bef0
 // Address Range: [[0052bef0, 0052c11a]]
 // Convention: __cdecl
-// Signature: undefined4 __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
+// Signature: undefined1 * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
+byte * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
 
 {
   int iVar1;
@@ -24,7 +24,7 @@ uint __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
   uint uStack_2c;
   uint uStack_28;
   
-  puStack_77c = (byte *)0x2dc93a0;
+  puStack_77c = &DAT_02dc93a0;
   puStack_780 = (byte *)0x52bf0a;
   iVar1 = sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90();
   if (iVar1 != 0) {
@@ -66,7 +66,7 @@ uint __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
           if ((iVar1 != 0) && (*(int *)(param_1 * 0x11c + 0x2dc85dc) != 0)) {
             (**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&DAT_005c3908,&DAT_02dc9220);
           }
-          return 0x2dc93a0;
+          return &DAT_02dc93a0;
         }
         uVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
         _sprintf(auStack_2d4,"DirectSux: Unable to %s.  (%s)","Set cooperative level",
@@ -81,9 +81,9 @@ uint __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
       }
 LAB_0052bf91:
       FUN_00529980(puVar3);
-      sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(0x2dc93a0);
-      return 0;
+      sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(&DAT_02dc93a0);
+      return (byte *)0x0;
     }
   }
-  return 0;
+  return (byte *)0x0;
 }

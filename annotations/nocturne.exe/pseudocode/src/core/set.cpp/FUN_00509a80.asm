@@ -35,7 +35,7 @@
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_005c1144
 ;   undefined4 DAT_005c11ec
@@ -347,7 +347,7 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 ; 00509d5b
         ;   XREF to: 00447670 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670()
     ADD ESP,0xc                         ; 00509d60
-    MOV EDI,dword ptr [0x005b96c4]      ; 00509d63 | DAT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 00509d63 | INT_005b96c4
     PUSH EDI                            ; 00509d69
     XOR ESI,ESI                         ; 00509d6a
     CALL core_gore.cpp_CGore_renderParticles_FUN_004afe00 ; 00509d6c
@@ -364,7 +364,7 @@ section .text
     CALL core_set.cpp_FUN_0050e080      ; 00509d82
         ;   XREF to: 0050e080 (UNCONDITIONAL_CALL)  ; undefined core_set.cpp_FUN_0050e080()
     ADD ESP,0xc                         ; 00509d87
-    MOV EDX,dword ptr [0x005b96c4]      ; 00509d8a | DAT_005b96c4
+    MOV EDX,dword ptr [0x005b96c4]      ; 00509d8a | INT_005b96c4
     PUSH EDX                            ; 00509d90
     CALL core_gore.cpp_CGore_renderParticles_FUN_004afe00 ; 00509d91
         ;   XREF to: 004afe00 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_renderParticles_FUN_004afe00()
@@ -475,7 +475,7 @@ section .text
         ;   XREF to: 00440b20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20()
     ADD ESP,0x4                         ; 00509e9b
     PUSH 0x0                            ; 00509e9e
-    MOV ECX,dword ptr [0x005b96c4]      ; 00509ea0 | DAT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 00509ea0 | INT_005b96c4
     PUSH ECX                            ; 00509ea6
     CALL FUN_004afe80                   ; 00509ea7
         ;   XREF to: 004afe80 (UNCONDITIONAL_CALL)  ; undefined FUN_004afe80()

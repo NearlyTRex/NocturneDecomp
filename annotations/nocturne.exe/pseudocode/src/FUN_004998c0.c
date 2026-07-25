@@ -72,8 +72,8 @@ void FUN_004998c0(int param_1,float param_2,int param_3)
     return;
   }
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-            (param_1 + 0x150,0,0,*(uint *)(param_1 + 0x1fa58),_DAT_01c7139c,&LAB_0051b650);
+            (param_1 + 0x150,0,0,*(uint *)(param_1 + 0x1fa58),_DAT_01c7139c,FUN_0051b650);
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-            (param_1 + 0x150,0,0,*(uint *)(param_1 + 0x1fa5c),_DAT_01c713a0,&LAB_0051b650);
+            (param_1 + 0x150,0,0,*(uint *)(param_1 + 0x1fa5c),_DAT_01c713a0,FUN_0051b650);
   return;
 }

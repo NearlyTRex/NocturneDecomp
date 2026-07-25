@@ -27,7 +27,7 @@ uint __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_00521ca0(int param
   } while (iVar2 != 0x5a00);
 LAB_00521cc3:
   do {
-    if (iVar4 + param_1 <= 0x00400000) {
+    if (iVar4 + param_1 <= DAT_005bea94) {
       return 1;
     }
     iVar3 = 0;

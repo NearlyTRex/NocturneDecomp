@@ -4,7 +4,8 @@
 ; void FUN_004675e0(int param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004673e0 at 00467400
 ;   core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00467220 at 0046722f
 ;
 ; Called Functions:

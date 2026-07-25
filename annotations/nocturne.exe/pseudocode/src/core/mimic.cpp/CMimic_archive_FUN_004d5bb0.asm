@@ -13,7 +13,7 @@
 ;   TerminatedCString s_motion_state_005894d6
 ;   TerminatedCString s_morphActorType_005894e3
 ;   TerminatedCString s_mirrorCondition_005894f2
-;   undefined4 DAT_005baf48
+;   int INT_005baf48 = 0x3
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -65,12 +65,12 @@ section .text
     PUSH EAX                            ; 004d5c1a
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 004d5c1b
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
-    MOV EDX,dword ptr [0x005baf48]      ; 004d5c20 | DAT_005baf48
+    MOV EDX,dword ptr [0x005baf48]      ; 004d5c20 | INT_005baf48
     ADD ESP,0x8                         ; 004d5c26
     CMP EDX,0x2                         ; 004d5c29
     JGE 0x004d5c3a                      ; 004d5c2c
         ;   XREF to: 004d5c3a (CONDITIONAL_JUMP)  ; LAB_004d5c3a
-    CMP dword ptr [0x005baf48],0x3      ; 004d5c2e | DAT_005baf48
+    CMP dword ptr [0x005baf48],0x3      ; 004d5c2e | INT_005baf48
     JGE 0x004d5c68                      ; 004d5c35
         ;   XREF to: 004d5c68 (CONDITIONAL_JUMP)  ; LAB_004d5c68
     POP ESI                             ; 004d5c37
@@ -88,7 +88,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 004d5c54
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
     ADD ESP,0x8                         ; 004d5c59
-    CMP dword ptr [0x005baf48],0x3      ; 004d5c5c | DAT_005baf48
+    CMP dword ptr [0x005baf48],0x3      ; 004d5c5c | INT_005baf48
     JGE 0x004d5c68                      ; 004d5c63
         ;   XREF to: 004d5c68 (CONDITIONAL_JUMP)  ; LAB_004d5c68
     POP ESI                             ; 004d5c65

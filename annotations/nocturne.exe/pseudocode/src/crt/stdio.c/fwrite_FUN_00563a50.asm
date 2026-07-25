@@ -4,8 +4,12 @@
 ; uint __cdecl crt_stdio_c_fwrite_FUN_00563a50(undefined4 *param_1,uint param_2,int param_3,int *param_4)
 ;
 ;
-; XREF[6]:
+; XREF[10]:
+;   FUN_00448f40 at 00448f86
+;   FUN_0046c410 at 0046c420
 ;   FUN_004f2990 at 004f2aa4
+;   FUN_004f4f10 at 004f4f47
+;   FUN_004f8eb0 at 004f9081
 ;   FUN_00513670 at 005136c7
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0 at 004f4c0d
 ;   engine_2d.c_FUN_00403130 at 0040315b

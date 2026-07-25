@@ -16,7 +16,7 @@ uint FUN_0052ed40(uint param_1,uint param_2,int *param_3)
   iVar2 = 0;
   FUN_00474c90(auStack_174);
   do {
-    puVar1 = (uint *)(iVar2 + 0x5bed6c);
+    puVar1 = (uint *)((int)&PTR_s_OFF_00594c3d_005bed6c + iVar2);
     iVar2 = iVar2 + 0x10;
     shape_edittool_cpp_CStrList_add_FUN_00473cb0(auStack_174,*puVar1);
   } while (iVar2 != 0x1b0);

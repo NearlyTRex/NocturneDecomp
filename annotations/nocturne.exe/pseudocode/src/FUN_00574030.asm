@@ -4,8 +4,9 @@
 ; int FUN_00574030(undefined2 *param_1,char *param_2,int param_3)
 ;
 ;
-; XREF[1]:
-;   FUN_00573a31 at 00573ac8
+; XREF[2]:
+;   FUN_00573930 at 00573ac8
+;   FUN_00574680 at 005746bc
 ;
 ; Called Functions:
 ;   FUN_0056da80

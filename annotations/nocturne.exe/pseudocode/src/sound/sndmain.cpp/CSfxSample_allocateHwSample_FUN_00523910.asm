@@ -6,8 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[2]:
+; XREF[3]:
 ;   FUN_00522480 at 005226a2
+;   FUN_005229f0 at 00522bc4
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526ac0
 ;
 ; Referenced Globals:

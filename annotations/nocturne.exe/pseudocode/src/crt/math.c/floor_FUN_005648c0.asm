@@ -8,18 +8,18 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ; undefined        Stack[-0x8]:1  local_8
 ;
-; XREF[26]:
+; XREF[27]:
 ;   FUN_00411940 at 00411969
 ;   FUN_0046b650 at 0046b66d
 ;   FUN_00494e80 at 00494faf
+;   FUN_005235b0 at 005235be
 ;   FUN_005464a0 at 00546607
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00 at 0040df4c
 ;   core_bat.cpp_CBat_updateCoursePosition_FUN_00411f20 at 00411f6c
 ;   core_bat.cpp_fmodfPositive_FUN_0043b510 at 0043b539
 ;   core_boneguy.cpp_hsvToRgb_FUN_00418480 at 00418597
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e61f
-;   core_bugs.cpp_FUN_00421b80 at 00421c27
-;   ... and 16 more
+;   ... and 17 more
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005989b0 = -1

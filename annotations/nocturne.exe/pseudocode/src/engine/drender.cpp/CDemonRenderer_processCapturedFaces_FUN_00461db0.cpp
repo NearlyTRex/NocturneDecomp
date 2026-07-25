@@ -17,6 +17,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
   byte *puVar4;
   int iVar5;
   int iVar6;
+  code *pcVar7;
   
   if (*(int *)(param_1 + 4) == 0) {
     if (0 < _DAT_01b4d7ac) {
@@ -30,12 +31,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
       } while (iVar3 < iVar6);
     }
     if (*(int *)(param_1 + 0x1c) == 1) {
-      puVar4 = &LAB_00461d80;
+      pcVar7 = FUN_00461d80;
     }
     else {
-      puVar4 = &LAB_00461d50;
+      pcVar7 = FUN_00461d50;
     }
-    _qsort(0x1b748b4,_DAT_01b4d7ac,4,puVar4);
+    _qsort(0x1b748b4,_DAT_01b4d7ac,4,pcVar7);
     *(uint *)(param_1 + 0x1c) = 0;
     if (*(int *)(param_1 + 0x10) != 0) {
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(param_1,1);

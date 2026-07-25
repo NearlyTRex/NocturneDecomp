@@ -4,6 +4,9 @@
 ; int core_door_cpp_CDoor_ctor_FUN_00455050(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00455020 at 00455033
+;
 ; Referenced Globals:
 ;   TerminatedCString s_churchd01_kfm_0057d008
 ;   TerminatedCString s_defaultDoorOpen_0057d016

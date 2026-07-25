@@ -33,6 +33,10 @@ extern dword DAT_00575080;
 extern dword DAT_00575090;
 extern dword DAT_00575094;
 
+// undefined1
+extern undefined1 DAT_0057ed1b;
+extern undefined1 DAT_0057f0fb;
+
 // undefined1*
 extern undefined1* switchdataD_005717a8;
 

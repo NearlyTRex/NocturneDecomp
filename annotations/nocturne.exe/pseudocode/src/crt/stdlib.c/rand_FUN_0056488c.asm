@@ -4,8 +4,10 @@
 ; uint __cdecl crt_stdlib_c_rand_FUN_0056488c(void)
 ;
 ;
-; XREF[37]:
+; XREF[39]:
 ;   FUN_0041f3d0 at 0041f4aa
+;   FUN_00468d00 at 004690a9
+;   FUN_004c8eb0 at 004c8ed9
 ;   FUN_004c90e0 at 004c9128
 ;   FUN_004f0360 at 004f0448
 ;   FUN_0052d030 at 0052d0d1
@@ -13,9 +15,7 @@
 ;   FUN_0052dff0 at 0052e823
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 at 0040ddeb
 ;   core_actor.cpp_getRandomInt_FUN_0040de00 at 0040de35
-;   core_actor.cpp_randomChance_FUN_0040dea0 at 0040dedd
-;   core_baron.cpp_FUN_00410cc0 at 00410e63
-;   ... and 27 more
+;   ... and 29 more
 ;
 ; Called Functions:
 ;   FUN_00564880

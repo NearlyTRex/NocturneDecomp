@@ -37,7 +37,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(int param_1)
     }
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
               (param_1 + 0x150,*(uint *)(param_1 + 0x25c0),*(uint *)(param_1 + 0x25c4),
-               local_8,*(uint *)(param_1 + 0x25bc),&LAB_0051b650);
+               local_8,*(uint *)(param_1 + 0x25bc),FUN_0051b650);
   }
   return;
 }

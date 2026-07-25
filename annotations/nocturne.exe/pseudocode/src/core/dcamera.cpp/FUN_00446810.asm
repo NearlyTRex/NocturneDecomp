@@ -36,7 +36,6 @@
 ;   FUN_004421b0 at 00442402
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00444645
 ;   TerminatedCString s_s_fog_0057b9fb
 ;   TerminatedCString s_rb_0057ba02
 ;   TerminatedCString s_backdrop_0057ba05
@@ -51,7 +50,8 @@
 ;   TerminatedCString s_Error_writing_compressed_0057bab5
 ;   double DOUBLE_0057badb = 256
 ;   undefined4 DAT_005a47a0
-;   ... and 16 more
+;   undefined4 DAT_005ad4b8
+;   ... and 15 more
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00446ea0
@@ -165,7 +165,7 @@ section .text
     PUSH EBX                            ; 0044693f
     MOV EAX,[0x005ad4b8]                ; 00446940 | DAT_005ad4b8
     PUSH 0x3                            ; 00446945
-    MOV dword ptr [ESP + 0x22c],EAX     ; 00446947 | DAT_00444645
+    MOV dword ptr [ESP + 0x22c],EAX     ; 00446947 | LAB_00444644+1
     LEA EAX,[ESP + 0x22c]               ; 0044694e
     PUSH EAX                            ; 00446955
     LEA EAX,[ESP + 0x150]               ; 00446956

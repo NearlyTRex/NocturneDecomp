@@ -4,6 +4,9 @@
 ; int core_mimic_cpp_CMimic_ctor_FUN_004d4450(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004d4420 at 004d4433
+;
 ; Referenced Globals:
 ;   TerminatedCString s_CGhoul_0058923e
 ;   undefined4 s_Ghoul_0058923e+1

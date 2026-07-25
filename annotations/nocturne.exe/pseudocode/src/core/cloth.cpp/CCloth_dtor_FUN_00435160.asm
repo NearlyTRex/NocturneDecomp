@@ -4,7 +4,8 @@
 ; void __cdecl core_cloth_cpp_CCloth_dtor_FUN_00435160(int param_1)
 ;
 ;
-; XREF[6]:
+; XREF[7]:
+;   FUN_00438410 at 00438460
 ;   FUN_0049a170 at 0049a185
 ;   FUN_004d4540 at 004d4599
 ;   FUN_00543050 at 00543065

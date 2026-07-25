@@ -17,7 +17,7 @@
 ;   TerminatedCString s_allowedVictimTypes_00596e48
 ;   TerminatedCString s_rotateDegPerSec_00596e5b
 ;   TerminatedCString s_canManualAim_00596e6b
-;   undefined4 DAT_005c1160
+;   int INT_005c1160 = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -103,7 +103,7 @@ section .text
     PUSH EAX                            ; 0054a0e1
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 0054a0e2
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
-    MOV EDX,dword ptr [0x005c1160]      ; 0054a0e7 | DAT_005c1160
+    MOV EDX,dword ptr [0x005c1160]      ; 0054a0e7 | INT_005c1160
     ADD ESP,0x8                         ; 0054a0ed
     CMP EDX,0x2                         ; 0054a0f0
     JGE 0x0054a0f7                      ; 0054a0f3

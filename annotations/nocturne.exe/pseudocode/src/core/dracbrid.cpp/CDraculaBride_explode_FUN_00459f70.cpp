@@ -78,7 +78,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_explode_FUN_00459f70(int param_1,fl
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_60,&fStack_54);
   if (*(int *)(param_1 + 0xb640) == 0) {
     core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-              (0x01C78C7C,auStack_60,param_2,100,*(uint *)(param_1 + 0x2608));
+              (INT_005b96c4,auStack_60,param_2,100,*(uint *)(param_1 + 0x2608));
     return;
   }
   *(uint *)(param_1 + 0x2f08) = 0;

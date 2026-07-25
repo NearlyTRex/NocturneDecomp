@@ -4,7 +4,8 @@
 ; int * __cdecl crt_iostream_cpp_istream_get_FUN_00564c53(int *param_1,undefined1 *param_2)
 ;
 ;
-; XREF[3]:
+; XREF[4]:
+;   FUN_00438a40 at 00438a65
 ;   support_codec.cpp_CCodec_process_FUN_00438f90 at 00438fc8
 ;   support_codec.cpp_CLZWCompress_process_FUN_004398c0 at 00439911
 ;   support_codec.cpp_readBitsFromStream_FUN_00438ab0 at 00438b69

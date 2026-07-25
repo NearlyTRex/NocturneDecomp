@@ -61,7 +61,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_004d21c0(int param_1)
       core_game_cpp_CGame_rollCredits_FUN_004a6e90(0x01C775EC);
       core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
     }
-    iVar1 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);
+    iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
   } while (iVar1 == 0);
   if (param_1 != 0) {
     core_moon_cpp_CMoon_free_FUN_004dea60(0x1cc5780);

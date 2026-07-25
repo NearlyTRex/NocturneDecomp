@@ -155,24 +155,117 @@ def scan_all(program, exec_set, fm, log):
 # Fix
 # ---------------------------------------------------------------------------
 
+def _first_defined_unit(program, start, span):
+    """First defined instruction/data code unit overlapping [start, start+span).
+
+    Used to find what obstructs disassembling the instruction at `start`: an x86
+    instruction is at most 15 bytes, so a span of 16 covers the first instruction's
+    footprint. Returns the CodeUnit or None if the whole window is undefined.
+    """
+    from ghidra.program.model.listing import Data
+    listing = program.getListing()
+    for i in range(span):
+        a = start.add(i)
+        insn = listing.getInstructionContaining(a)
+        if insn is not None:
+            return insn
+        d = listing.getDefinedDataContaining(a)
+        if d is not None:
+            return d
+    return None
+
+
+def _clear_orphan_run(program, start, monitor, cap=512):
+    """Clear the contiguous run of ORPHAN (no owning function) defined code units
+    starting at/after `start`, tolerating undefined bytes in between, and stopping
+    at the first function-owned unit (never clears code that belongs to a function)
+    or after `cap` bytes. Returns (n_cleared, clear_min, clear_max) or (0, None, None).
+    """
+    from ghidra.program.model.listing import Data
+    listing = program.getListing()
+    fm = program.getFunctionManager()
+    a = start
+    end_off = start.getOffset() + cap
+    clear_max = None
+    n = 0
+    while a is not None and a.getOffset() < end_off:
+        cu = listing.getCodeUnitAt(a)
+        if cu is None:
+            a = a.add(1)
+            continue
+        insn = listing.getInstructionAt(a)
+        defined = (insn is not None) or (isinstance(cu, Data) and cu.isDefined())
+        if defined:
+            if fm.getFunctionContaining(a) is not None:
+                break  # belongs to a function - stop, do not clear it
+            clear_max = cu.getMaxAddress()
+            n += 1
+        a = cu.getMaxAddress().add(1)
+    if clear_max is None:
+        return (0, None, None)
+    listing.clearCodeUnits(start, clear_max, False)
+    return (n, start, clear_max)
+
+
 def fixup_function(program, func, findings, monitor, fix_holes):
     """Disassemble missing targets following flow, then recompute the body.
 
     BODY_HOLE gaps are skipped unless fix_holes is set: interior holes are usually
     alignment padding (they end on 8/16-byte boundaries), and disassembling padding
     would create garbage instructions.
+
+    When a FLOW_UNDEFINED target won't disassemble because conflicting code occupies
+    its first-instruction bytes (DisassembleCommand returns True but creates nothing -
+    status "Disassembler requires a start which is an undefined code unit"), the
+    obstruction is diagnosed:
+      * an ORPHAN stale mis-disassembly (owned by no function) is cleared and the
+        target re-disassembled;
+      * an overlapping FUNCTION (a misaligned/hallucinated function whose entry sits
+        inside this function's real tail) is NOT touched - it is returned as a blocker
+        so the caller can point the user at delete_function.py.
+
+    Returns (progressed, blockers): progressed is True if any real disassembly/body
+    change happened; blockers is a list of dicts describing function-blocked tails.
     """
     from ghidra.app.cmd.disassemble import DisassembleCommand
     from ghidra.app.cmd.function import CreateFunctionCmd
+    listing = program.getListing()
+    fm = program.getFunctionManager()
 
     kinds = ("FLOW_UNDEFINED", "BODY_HOLE") if fix_holes else ("FLOW_UNDEFINED",)
-    disasm_any = False
+    progressed = False
+    blockers = []
     for f in findings:
-        if f["kind"] in kinds:
-            t = f["target"]
-            if program.getListing().getInstructionAt(t) is None:
-                DisassembleCommand(t, None, True).applyTo(program, monitor)
-                disasm_any = True
+        if f["kind"] not in kinds:
+            continue
+        t = f["target"]
+        if listing.getInstructionAt(t) is not None:
+            continue
+        DisassembleCommand(t, None, True).applyTo(program, monitor)
+        if listing.getInstructionAt(t) is not None:
+            progressed = True
+            continue
+        # blocked - diagnose the obstruction in t's first-instruction window
+        blk = _first_defined_unit(program, t, 16)
+        if blk is None:
+            continue  # undefined but still won't disassemble; leave for the report
+        owner = fm.getFunctionContaining(blk.getMinAddress())
+        if owner is not None and owner.getEntryPoint() != func.getEntryPoint():
+            blockers.append({
+                "victim": func.getEntryPoint(), "victim_name": func.getName(),
+                "target": t,
+                "blocker_entry": owner.getEntryPoint(),
+                "blocker_name": owner.getName(),
+            })
+            continue  # misaligned/overlapping function -> delete_function, not here
+        # orphan (or self) obstruction -> clear the stale run and retry
+        n, cmin, cmax = _clear_orphan_run(program, t, monitor)
+        if n:
+            DisassembleCommand(t, None, True).applyTo(program, monitor)
+            if listing.getInstructionAt(t) is not None:
+                progressed = True
+                print("    cleared %d stale orphan unit(s) [%s-%s] blocking %s, "
+                      "re-disassembled" % (n, cmin, cmax, t))
 
     # recompute body preserving the function's name/signature
     ok = False
@@ -185,7 +278,7 @@ def fixup_function(program, func, findings, monitor, fix_holes):
                 program, func.getEntryPoint(), monitor))
         except Exception:
             print("    fixup failed for %s: %s" % (func.getEntryPoint(), e))
-    return disasm_any or ok
+    return (progressed or ok, blockers)
 
 
 # ---------------------------------------------------------------------------
@@ -246,6 +339,7 @@ def run(program, out_path, do_fix, max_passes, fix_holes):
     log("Found %d fragmented functions." % len(results))
 
     changed = False
+    all_blockers = {}
     if do_fix and results:
         for p in range(1, max_passes + 1):
             log("Fix pass %d: repairing %d functions..." % (p, len(results)))
@@ -253,8 +347,13 @@ def run(program, out_path, do_fix, max_passes, fix_holes):
             ok = True
             try:
                 for func, findings in results:
-                    if fixup_function(program, func, findings, monitor, fix_holes):
+                    prog, blockers = fixup_function(
+                        program, func, findings, monitor, fix_holes)
+                    if prog:
                         changed = True
+                    for b in blockers:
+                        all_blockers[(b["victim"].getOffset(),
+                                      b["blocker_entry"].getOffset())] = b
             except Exception as e:
                 ok = False
                 log("ERROR during fix: %s" % e)
@@ -265,6 +364,26 @@ def run(program, out_path, do_fix, max_passes, fix_holes):
             log("  after pass %d: %d fragmented remain" % (p, len(results)))
             if not results:
                 break
+
+        if all_blockers:
+            log("")
+            log("!! %d fragmented tail(s) BLOCKED by an overlapping function - likely a"
+                % len(all_blockers))
+            log("   misaligned/hallucinated function whose entry sits inside a real")
+            log("   function's tail. Not auto-fixable here (would need a delete):")
+            addrs = []
+            for b in sorted(all_blockers.values(),
+                            key=lambda x: x["victim"].getOffset()):
+                log("   %s %-40s tail@%s blocked by %s @ %s" % (
+                    b["victim"], b["victim_name"], b["target"],
+                    b["blocker_name"], b["blocker_entry"]))
+                addrs.append(str(b["blocker_entry"]))
+            uniq = sorted(set(addrs))
+            log("   -> verify each is bogus, then:")
+            log("      delete_function.py <ABS>/projects <project> %s %s --apply --undefine" % (
+                program.getName(),
+                " ".join("--addr %s" % a for a in uniq)))
+            log("      then re-run validate_function_ranges.py ... --fix")
 
     write_report(out_path, program.getName(), results, do_fix)
     return changed

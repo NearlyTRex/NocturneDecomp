@@ -4,6 +4,9 @@
 ; int core_melee_cpp_CMelee_ctor_FUN_004cec60(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004cec30 at 004cec43
+;
 ; Referenced Globals:
 ;   TerminatedCString s_melee_kfm_00588362
 ;   TerminatedCString s_shovel_wav_0058836c

@@ -185,7 +185,8 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(int param_
     iStack_3c = 0;
     for (iStack_40 = 0; iStack_40 < *(int *)(0x01E57284 + 0x152b38); iStack_40 = iStack_40 + 1) {
       iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(0x01E57284 + iStack_3c + 0x152b3c),DAT_00765a98);
+                        (*(uint *)(0x01E57284 + iStack_3c + 0x152b3c),
+                         CDemonActorType_00765a60.name_hash);
       if ((iVar6 == 0) ||
          ((iVar7 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6), iVar7 == 0 &&
           (iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x68))(iVar6), iVar6 == 0)))) {

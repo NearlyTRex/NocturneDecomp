@@ -7,8 +7,9 @@
 ; undefined        Stack[-0x114]:1  local_114
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[12]:
+; XREF[13]:
 ;   FUN_004c85f0 at 004c8c3d
+;   FUN_004c8eb0 at 004c8f09
 ;   FUN_004c90e0 at 004c9158
 ;   FUN_004d23d0 at 004d240a
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a66b1
@@ -17,8 +18,7 @@
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d9c2
 ;   core_inv.cpp_loadAssets_FUN_004befa0 at 004befe6
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640 at 004c5730
-;   core_menu.cpp_showCalibrationTest_FUN_004cffa0 at 004cffb4
-;   ... and 2 more
+;   ... and 3 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_alphabit_cpp_00578099

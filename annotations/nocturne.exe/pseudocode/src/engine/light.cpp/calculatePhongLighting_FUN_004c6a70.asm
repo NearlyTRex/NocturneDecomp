@@ -8,7 +8,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004c6d70 at 004c6d80
 ;   engine_light.cpp_calculateAndStoreVertexLight_FUN_004c6d90 at 004c6da0
 ;
 ; Referenced Globals:

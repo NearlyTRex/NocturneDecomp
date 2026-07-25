@@ -280,7 +280,7 @@ section .text
     XOR EAX,EAX                         ; 0044f34c
     MOV dword ptr [ESP + 0x1c],EAX      ; 0044f34e
         ;   Label: LAB_0044f34e
-    PUSH 0x444180                       ; 0044f352 | LAB_00444180
+    PUSH 0x444180                       ; 0044f352
     LEA EAX,[ESP + 0x8]                 ; 0044f357
     PUSH EAX                            ; 0044f35b
     MOV EDX,dword ptr [0x005ae704]      ; 0044f35c | DAT_005ae704
@@ -305,7 +305,7 @@ section .text
     CALL crt_math.c_round_FUN_00563a30  ; 0044f395
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_00563a30()
     FISTP dword ptr [ESP + 0x18]        ; 0044f39a
-    PUSH 0x444180                       ; 0044f39e | LAB_00444180
+    PUSH 0x444180                       ; 0044f39e
         ;   Label: LAB_0044f39e
     LEA EAX,[ESP + 0x8]                 ; 0044f3a3
     MOV dword ptr [ESP + 0x24],EBX      ; 0044f3a7

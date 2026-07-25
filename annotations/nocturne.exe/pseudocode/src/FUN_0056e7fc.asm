@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_LAB_005c1f68 = 0056e250
+;   undefined1* PTR_FUN_005c1f68 = 0056e250
 ;
 ; Called Functions:
 ;   FUN_0056e2f8
@@ -23,19 +23,19 @@ section .text
     PUSH ESI                            ; 0056e7fd
     PUSH 0x2de54b0                      ; 0056e7fe
     MOV EBX,0x2de54d0                   ; 0056e803
-    CALL dword ptr [0x005c1f68]         ; 0056e808 | PTR_LAB_005c1f68
+    CALL dword ptr [0x005c1f68]         ; 0056e808 | PTR_FUN_005c1f68
     ADD ESP,0x4                         ; 0056e80e
     LEA ESI,[EBX + 0x100]               ; 0056e811
     PUSH EBX                            ; 0056e817
         ;   Label: LAB_0056e817
-    CALL dword ptr [0x005c1f68]         ; 0056e818 | PTR_LAB_005c1f68
+    CALL dword ptr [0x005c1f68]         ; 0056e818 | PTR_FUN_005c1f68
     ADD EBX,0x10                        ; 0056e81e
     ADD ESP,0x4                         ; 0056e821
     CMP EBX,ESI                         ; 0056e824
     JNZ 0x0056e817                      ; 0056e826
         ;   XREF to: 0056e817 (CONDITIONAL_JUMP)  ; LAB_0056e817
     PUSH 0x2de5c00                      ; 0056e828
-    CALL dword ptr [0x005c1f68]         ; 0056e82d | PTR_LAB_005c1f68
+    CALL dword ptr [0x005c1f68]         ; 0056e82d | PTR_FUN_005c1f68
     ADD ESP,0x4                         ; 0056e833
     CALL FUN_0056e324                   ; 0056e836
         ;   XREF to: 0056e324 (UNCONDITIONAL_CALL)  ; undefined FUN_0056e324()
@@ -44,16 +44,16 @@ section .text
     CALL FUN_0056f2d0                   ; 0056e840
         ;   XREF to: 0056f2d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056f2d0()
     PUSH 0x2de55d0                      ; 0056e845
-    CALL dword ptr [0x005c1f68]         ; 0056e84a | PTR_LAB_005c1f68
+    CALL dword ptr [0x005c1f68]         ; 0056e84a | PTR_FUN_005c1f68
     ADD ESP,0x4                         ; 0056e850
     PUSH 0x2de54c0                      ; 0056e853
-    CALL dword ptr [0x005c1f68]         ; 0056e858 | PTR_LAB_005c1f68
+    CALL dword ptr [0x005c1f68]         ; 0056e858 | PTR_FUN_005c1f68
     ADD ESP,0x4                         ; 0056e85e
     PUSH 0x2de5bf0                      ; 0056e861
-    CALL dword ptr [0x005c1f68]         ; 0056e866 | PTR_LAB_005c1f68
+    CALL dword ptr [0x005c1f68]         ; 0056e866 | PTR_FUN_005c1f68
     ADD ESP,0x4                         ; 0056e86c
     PUSH 0x2de5be0                      ; 0056e86f
-    CALL dword ptr [0x005c1f68]         ; 0056e874 | PTR_LAB_005c1f68
+    CALL dword ptr [0x005c1f68]         ; 0056e874 | PTR_FUN_005c1f68
     ADD ESP,0x4                         ; 0056e87a
     CALL FUN_0056e2f8                   ; 0056e87d
         ;   XREF to: 0056e2f8 (UNCONDITIONAL_CALL)  ; undefined FUN_0056e2f8()

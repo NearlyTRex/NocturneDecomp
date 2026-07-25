@@ -4,10 +4,18 @@
 ; uint FUN_0056be50(int param_1,uint param_2,ushort param_3,undefined4 param_4,uint param_5,uint param_6)
 ;
 ;
-; XREF[3]:
-;   FUN_0056c403 at 0056c40d
-;   FUN_0056c416 at 0056c420
-;   FUN_0056c429 at 0056c433
+; XREF[45]:
+;   FUN_0056bf9f at 0056bfac
+;   FUN_0056bfbb at 0056bfc7
+;   FUN_0056bfd6 at 0056bfea
+;   FUN_0056bff7 at 0056bffe
+;   FUN_0056c007 at 0056c00e
+;   FUN_0056c01b at 0056c022
+;   FUN_0056c02b at 0056c03a
+;   FUN_0056c04b at 0056c059
+;   FUN_0056c06a at 0056c080
+;   FUN_0056c08f at 0056c098
+;   ... and 35 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c3f68

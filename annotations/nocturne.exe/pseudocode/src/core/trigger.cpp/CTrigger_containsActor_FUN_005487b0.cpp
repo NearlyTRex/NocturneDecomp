@@ -42,7 +42,8 @@ uint __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(int param_1,in
     fStack_44 = fStack_2c * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_2,&fStack_40,&fStack_4c);
     if (*(int *)(param_1 + 0x210) != 0) {
-      iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,DAT_00765a98);
+      iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
+                        (param_2,CDemonActorType_00765a60.name_hash);
       if ((iVar5 != 0) && (*(int *)(iVar5 + 0x2408) == 0)) {
         return 0;
       }

@@ -4,7 +4,9 @@
 ; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 ;
 ;
-; XREF[1]:
+; XREF[3]:
+;   FUN_0045da60 at 0045da76
+;   FUN_0045da90 at 0045daea
 ;   FUN_004fe9d0 at 004feb13
 ;
 ; Called Functions:

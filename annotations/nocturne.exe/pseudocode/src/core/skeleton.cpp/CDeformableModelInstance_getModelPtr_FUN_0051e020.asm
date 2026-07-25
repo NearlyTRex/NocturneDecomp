@@ -4,18 +4,18 @@
 ; undefined4 __cdecl core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(int param_1)
 ;
 ;
-; XREF[46]:
+; XREF[50]:
+;   FUN_0051da90 at 0051daad
+;   FUN_0051dc30 at 0051dc47
+;   FUN_0051f030 at 0051f047
+;   FUN_0051f060 at 0051f06c
 ;   FUN_00535450 at 00535755
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040aabc
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00412160 at 004122f0
 ;   core_batman.cpp_CBatman_setup_FUN_004134a0 at 00413630
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0f0 at 0041a122
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_00418800 at 00418972
-;   core_bride.cpp_CBride_setup_FUN_0041fc20 at 0041fd2c
-;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 at 00422eed
-;   core_bugs.cpp_FUN_00423790 at 0042384b
-;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427b9d
-;   ... and 36 more
+;   ... and 40 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591c8b

@@ -14,11 +14,11 @@
 ;   double DOUBLE_00585435 = 1.57491875110704E-314
 ;   double DOUBLE_0058543d = 10
 ;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_005bed68
-;   undefined4 DAT_00765a98
-;   undefined4 DAT_0077bd78
+;   undefined4 CDemonActorType_00765a60.name_hash
+;   undefined4 CDemonActorType_0077bd40.name_hash
 ;   undefined4 DAT_01c7068c
 ;   undefined4 DAT_01c78c78
 ;   undefined4 DAT_01cae0e8
@@ -292,7 +292,7 @@ section .text
     CMP EAX,ECX                         ; 004b2b5a
     JNZ 0x004b2b6d                      ; 004b2b5c
         ;   XREF to: 004b2b6d (CONDITIONAL_JUMP)  ; LAB_004b2b6d
-    MOV EBX,dword ptr [0x005b9284]      ; 004b2b5e | DAT_005b9284
+    MOV EBX,dword ptr [0x005b9284]      ; 004b2b5e | INT_005b9284
     PUSH EBX                            ; 004b2b64
     CALL FUN_004940d0                   ; 004b2b65
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
@@ -338,7 +338,7 @@ section .text
     SAHF                                ; 004b2bbb
     JC 0x004b29b3                       ; 004b2bbc
         ;   XREF to: 004b29b3 (CONDITIONAL_JUMP)  ; LAB_004b29b3
-    MOV ECX,dword ptr [0x00765a98]      ; 004b2bc2 | DAT_00765a98
+    MOV ECX,dword ptr [0x00765a98]      ; 004b2bc2 | CDemonActorType_00765a60.name_hash
     MOV EAX,[0x005be368]                ; 004b2bc8 | DAT_005be368
     PUSH ECX                            ; 004b2bcd
     MOV ESI,dword ptr [EAX + 0x14cd5c]  ; 004b2bce | DAT_01fa3fe0
@@ -378,7 +378,7 @@ section .text
     ADD ESP,0x8                         ; 004b2c33
     MOV EDI,EAX                         ; 004b2c36
     MOV dword ptr [ESP + 0x124],EAX     ; 004b2c38
-    MOV EAX,[0x0077bd78]                ; 004b2c3f | DAT_0077bd78
+    MOV EAX,[0x0077bd78]                ; 004b2c3f | CDemonActorType_0077bd40.name_hash
     PUSH EAX                            ; 004b2c44
     MOV EAX,[0x005be368]                ; 004b2c45 | DAT_005be368
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 004b2c4a | DAT_01fa3fe0

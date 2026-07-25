@@ -85,7 +85,7 @@ void core_set_cpp_FUN_0050a260(int param_1)
         iVar6 = iVar6 + 4;
       } while (iVar5 < *(int *)(param_1 + 0x15f2fc));
     }
-    core_gore_cpp_CGore_renderParticles_FUN_004afe00(0x01C78C7C);
+    core_gore_cpp_CGore_renderParticles_FUN_004afe00(INT_005b96c4);
     core_fire_cpp_CFireEffect_render_FUN_0048a650(0x01C08D04);
     core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(local_14,1);
     local_5c = (int)ROUND(local_2c * _DAT_005a18f0);

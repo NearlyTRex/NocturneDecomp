@@ -168,7 +168,7 @@ section .text
     MOV dword ptr [ESP + 0x28],EAX      ; 004fd166
     FLD float ptr [ESP + 0x28]          ; 004fd16a
     ADD ESP,0xc                         ; 004fd16e
-    PUSH 0x51b650                       ; 004fd171 | LAB_0051b650
+    PUSH 0x51b650                       ; 004fd171
     MOV EDX,dword ptr [0x01e533c8]      ; 004fd176 | DAT_01e533c8
     PUSH EDX                            ; 004fd17c
     PUSH dword ptr [ESP + 0x10]         ; 004fd17d

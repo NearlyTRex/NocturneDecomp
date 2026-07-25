@@ -4,6 +4,9 @@
 ; int FUN_004b9af0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004b9ac0 at 004b9ad3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_priest_dfm_00585fe2
 ;   TerminatedCString s_killPriest_00585fed

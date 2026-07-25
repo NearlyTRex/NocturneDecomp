@@ -636,7 +636,7 @@ section .text
     CMP EAX,0x1b                        ; 00536047
     JNZ 0x005360a1                      ; 0053604a
         ;   XREF to: 005360a1 (CONDITIONAL_JUMP)  ; LAB_005360a1
-    MOV EDX,dword ptr [0x00764230]      ; 0053604c | DAT_00764230
+    MOV EDX,dword ptr [0x00764230]      ; 0053604c | CDemonActorType_007641f8.name_hash
     PUSH EDX                            ; 00536052
     MOV ECX,dword ptr [EBX + 0x1fa08]   ; 00536053
     PUSH ECX                            ; 00536059
@@ -910,7 +910,7 @@ section .text
     SAHF                                ; 005363aa
     JNC 0x00536472                      ; 005363ab
         ;   XREF to: 00536472 (CONDITIONAL_JUMP)  ; LAB_00536472
-    MOV ECX,dword ptr [0x00764838]      ; 005363b1 | DAT_00764838
+    MOV ECX,dword ptr [0x00764838]      ; 005363b1 | CDemonActorType_00764800.name_hash
     PUSH ECX                            ; 005363b7
     MOV ESI,dword ptr [EBX + 0x1fa0c]   ; 005363b8
     PUSH ESI                            ; 005363be
@@ -2313,7 +2313,7 @@ section .text
         ;   Label: LAB_0053769e
     JZ 0x00537741                       ; 005376a5
         ;   XREF to: 00537741 (CONDITIONAL_JUMP)  ; LAB_00537741
-    MOV EAX,[0x005b9284]                ; 005376ab | DAT_005b9284
+    MOV EAX,[0x005b9284]                ; 005376ab | INT_005b9284
     PUSH EAX                            ; 005376b0
     CALL FUN_004940d0                   ; 005376b1
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()

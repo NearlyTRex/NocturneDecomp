@@ -18,7 +18,7 @@
 ;   TerminatedCString s_Credits_00588cf1
 ;   TerminatedCString s_Option_Menu_00588cf9
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_005bed68
 ;   undefined4 DAT_01c775ec
 ;   undefined4 DAT_01c776a8
@@ -157,7 +157,7 @@ section .text
         ;   Label: caseD_0
     PUSH 0x1                            ; 004d22f2
         ;   Label: default
-    MOV EAX,[0x005bac64]                ; 004d22f4 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004d22f4 | INT_005bac64
     PUSH EAX                            ; 004d22f9 | DAT_01cc30e4
     MOV EBX,dword ptr [EAX]             ; 004d22fa | DAT_01cc30e4
     CALL dword ptr [EBX + 0x4]          ; 004d22fc

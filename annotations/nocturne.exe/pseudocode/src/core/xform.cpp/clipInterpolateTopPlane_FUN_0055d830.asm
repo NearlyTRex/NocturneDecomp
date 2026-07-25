@@ -4,7 +4,8 @@
 ; void __cdecl core_xform_cpp_clipInterpolateTopPlane_FUN_0055d830(int *param_1,int *param_2,int *param_3)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0055dcb0 at 0055dd86
 ;   core_xform.cpp_transformAndClipGeometry_FUN_0055e040 at 0055e60f
 ;
 ; Referenced Globals:

@@ -4,7 +4,8 @@
 ; uint __cdecl crt_stdio_c_ungetc_FUN_00564740(uint param_1,int *param_2)
 ;
 ;
-; XREF[3]:
+; XREF[4]:
+;   FUN_005632b0 at 005632be
 ;   core_actor.cpp_archiveString_FUN_0040c6d0 at 0040c73a
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 at 004526af
 ;   core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0 at 004d8b4a

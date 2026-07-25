@@ -2,12 +2,12 @@
 // Address: 00411a00
 // Address Range: [[00411a00, 00411a05]]
 // Convention: unknown
-// Signature: undefined * FUN_00411a00(void)
+// Signature: CDemonActorType * FUN_00411a00(void)
 
 #include "nocturne.h"
 
-byte * FUN_00411a00(void)
+CDemonActorType * FUN_00411a00(void)
 
 {
-  return &DAT_00764560;
+  return &CDemonActorType_00764560;
 }

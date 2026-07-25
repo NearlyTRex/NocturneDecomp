@@ -9,7 +9,7 @@
 void FUN_005718c4(void)
 
 {
-  PTR_FUN_005c1afc = &UNK_00571858;
-  PTR_FUN_005c1b00 = &UNK_0057189c;
+  PTR_FUN_005c1afc = FUN_00571858;
+  PTR_FUN_005c1b00 = FUN_0057189c;
   return;
 }

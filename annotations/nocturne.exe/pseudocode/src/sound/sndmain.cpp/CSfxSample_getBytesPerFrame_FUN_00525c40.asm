@@ -4,8 +4,9 @@
 ; int __cdecl sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(int param_1)
 ;
 ;
-; XREF[9]:
+; XREF[10]:
 ;   FUN_00522480 at 0052277a
+;   FUN_00529a00 at 00529a05
 ;   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880 at 0052b8ed
 ;   sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_0052adc0 at 0052adf5
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910 at 00523a07

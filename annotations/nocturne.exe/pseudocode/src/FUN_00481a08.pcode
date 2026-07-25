@@ -1,0 +1,47 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    FUN_00481a08
+# Entry:       00481a08
+# Signature:   void FUN_00481a08(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@00481a08 [ESP:+0]  # MOV byte ptr [ECX + 0x4], DL
+INT_ADD (unique,0x6600,4) = (register,0x4,4) /* ECX */, (const,0x4,4)
+COPY (unique,0xa100,1) = (register,0x8,1)
+STORE (const,0x1a1,4), (unique,0x6600,4), (unique,0xa100,1)
+
+@00481a0b [ESP:+0]  # MOV dword ptr [ECX], EDX
+COPY (unique,0xa300,4) = (register,0x8,4) /* EDX */
+STORE (const,0x1a1,4), (register,0x4,4) /* ECX */, (unique,0xa300,4)
+
+@00481a0d [ESP:+0]  # FMULP ST0
+COPY (register,0x10ac,4) = (const,0x481a0d,4)
+FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (register,0x1100,10)
+COPY (register,0x1100,10) = (register,0x1110,10)
+COPY (register,0x1110,10) = (register,0x1120,10)
+COPY (register,0x1120,10) = (register,0x1130,10)
+COPY (register,0x1130,10) = (register,0x1140,10)
+COPY (register,0x1140,10) = (register,0x1150,10)
+COPY (register,0x1150,10) = (register,0x1160,10)
+COPY (register,0x1160,10) = (register,0x1170,10)
+
+@00481a0f [ESP:+4](+4)  # RET 0x4
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 4 instructions, 18 P-code ops
+# ============================================================================

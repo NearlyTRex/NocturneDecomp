@@ -4,8 +4,9 @@
 ; undefined4 __cdecl cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_0045c440(undefined4 param_1,int *param_2,int *param_3,int *param_4,int *param_5,int param_6,int param_7,int param_8,int param_9)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_0045bfb0 at 0045c011
+;   FUN_0045c050 at 0045c0b1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cc4800

@@ -14,7 +14,7 @@
 ;   double DOUBLE_00588543 = 0.0000152587890625
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b761c
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bd1d8c
 ;   undefined4 DAT_01bd1d90
@@ -116,7 +116,7 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 004cfc90
     PUSH 0x4b                           ; 004cfc94
         ;   Label: LAB_004cfc94
-    MOV EAX,[0x005bac64]                ; 004cfc96 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004cfc96 | INT_005bac64
     PUSH EAX                            ; 004cfc9b | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 004cfc9c | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004cfc9e
@@ -127,7 +127,7 @@ section .text
     SUB ESI,0x2bc                       ; 004cfca8
     PUSH 0x4d                           ; 004cfcae
         ;   Label: LAB_004cfcae
-    MOV EAX,[0x005bac64]                ; 004cfcb0 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004cfcb0 | INT_005bac64
     PUSH EAX                            ; 004cfcb5 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 004cfcb6 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004cfcb8
@@ -215,7 +215,7 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004cfda6
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     PUSH 0x1                            ; 004cfdab
-    MOV EAX,[0x005bac64]                ; 004cfdad | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004cfdad | INT_005bac64
     PUSH EAX                            ; 004cfdb2 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 004cfdb3 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004cfdb5
@@ -224,7 +224,7 @@ section .text
     JNZ 0x004cfdf5                      ; 004cfdbd
         ;   XREF to: 004cfdf5 (CONDITIONAL_JUMP)  ; LAB_004cfdf5
     PUSH 0x1c                           ; 004cfdbf
-    MOV EDX,dword ptr [0x005bac64]      ; 004cfdc1 | DAT_005bac64
+    MOV EDX,dword ptr [0x005bac64]      ; 004cfdc1 | INT_005bac64
     PUSH EDX                            ; 004cfdc7 | DAT_01cc30e4
     MOV EAX,dword ptr [EDX]             ; 004cfdc8 | DAT_01cc30e4
     CALL dword ptr [EAX + 0x4]          ; 004cfdca
@@ -233,7 +233,7 @@ section .text
     JNZ 0x004cfdf0                      ; 004cfdd2
         ;   XREF to: 004cfdf0 (CONDITIONAL_JUMP)  ; LAB_004cfdf0
     PUSH 0x200                          ; 004cfdd4
-    MOV EDX,dword ptr [0x005bac64]      ; 004cfdd9 | DAT_005bac64
+    MOV EDX,dword ptr [0x005bac64]      ; 004cfdd9 | INT_005bac64
     PUSH EDX                            ; 004cfddf | DAT_01cc30e4
     MOV EAX,dword ptr [EDX]             ; 004cfde0 | DAT_01cc30e4
     CALL dword ptr [EAX + 0x4]          ; 004cfde2

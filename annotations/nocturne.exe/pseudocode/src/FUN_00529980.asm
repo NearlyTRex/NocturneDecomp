@@ -7,18 +7,18 @@
 ; undefined        Stack[-0x408]:1  local_408
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[28]:
+; XREF[32]:
 ;   FUN_00522480 at 005226f0
+;   FUN_00522e00 at 00522e61
 ;   FUN_005257e0 at 0052583a
+;   FUN_00529de0 at 00529e6e
+;   FUN_0052a280 at 0052a3d8
+;   FUN_0052bbd0 at 0052bc5a
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSample_FUN_0052ab60 at 0052acc6
 ;   sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50 at 0052b145
 ;   sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880 at 0052b976
 ;   sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0 at 0052b86e
-;   sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_0052bae0 at 0052bb02
-;   sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_0052adc0 at 0052ae73
-;   sound_snddx.cpp_CDirectSoundDevice_poll_FUN_0052a970 at 0052aa19
-;   sound_snddx.cpp_CDirectSoundDevice_reset_FUN_0052a0d0 at 0052a1c3
-;   ... and 18 more
+;   ... and 22 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_00593b86

@@ -4,8 +4,10 @@
 ; void __cdecl shape_edittool_cpp_draw3DBorder_FUN_00476260(int param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ;
-; XREF[1]:
+; XREF[3]:
 ;   FUN_00476580 at 00476615
+;   FUN_00476f40 at 00476f5c
+;   FUN_00477390 at 00477436
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c70

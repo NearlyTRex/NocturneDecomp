@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 153,
     "complexity_score": 582,
-    "cross_reference_count": 8,
+    "cross_reference_count": 10,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
@@ -19,6 +19,12 @@
   },
   "cross_references": [
     {
+      "addr": "0049a320",
+      "from_addr": "0049a58e",
+      "name": "FUN_0049a320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0049cc10",
       "from_addr": "0049d7df",
       "name": "FUN_0049cc10",
@@ -28,6 +34,12 @@
       "addr": "004f2990",
       "from_addr": "004f2af6",
       "name": "FUN_004f2990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056adf0",
+      "from_addr": "0056adfe",
+      "name": "FUN_0056adf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -116,7 +128,7 @@
     }
   ],
   "param_estimates": {
-    "call_site_count": 16,
+    "call_site_count": 20,
     "call_sites": [
       {
         "call_addr": "0049d7df",
@@ -672,7 +684,7 @@
       "type": "pointer_cast"
     },
     {
-      "call_site_count": 16,
+      "call_site_count": 20,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 2,

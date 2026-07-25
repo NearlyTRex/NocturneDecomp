@@ -24,12 +24,12 @@ bool __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_004
   if (*(int *)(param_1 + 4) == 0) {
     _DAT_01c039a0 = 0xc0;
     _DAT_01c039a4 = 6;
-    _DAT_01c00c7c = &LAB_00463f77;
+    _DAT_01c00c7c = FUN_00463f77;
   }
   else {
     _DAT_01c039a0 = 0;
     _DAT_01c039a4 = 0;
-    _DAT_01c00c7c = &LAB_00463ff5;
+    _DAT_01c00c7c = FUN_00463ff5;
   }
   uVar1 = *(uint *)(param_1 + 4);
   if (_DAT_01c02594 != 0) {

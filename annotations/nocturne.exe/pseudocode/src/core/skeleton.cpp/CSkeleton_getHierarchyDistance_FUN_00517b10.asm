@@ -4,7 +4,8 @@
 ; int __cdecl core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_00517b10(int param_1,int param_2,int param_3)
 ;
 ;
-; XREF[6]:
+; XREF[7]:
+;   FUN_0051cf60 at 0051cf8e
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0 at 0051d812
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0 at 0051d028
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 at 0051c474

@@ -4,6 +4,9 @@
 ; int engine_3d_c_processVertexLighting_FUN_00404730(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00408fc0 at 00409082
+;
 ; Referenced Globals:
 ;   undefined4 DAT_006b0264
 ;

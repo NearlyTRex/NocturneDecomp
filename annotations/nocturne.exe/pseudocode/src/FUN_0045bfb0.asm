@@ -4,6 +4,10 @@
 ; void FUN_0045bfb0(int param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ;
+; XREF[2]:
+;   FUN_0045d6d0 at 0045d700
+;   FUN_0045e370 at 0045e456
+;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0

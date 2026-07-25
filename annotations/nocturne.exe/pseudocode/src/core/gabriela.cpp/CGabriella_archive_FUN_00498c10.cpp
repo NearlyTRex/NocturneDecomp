@@ -10,13 +10,13 @@ void core_gabriela_cpp_CGabriella_archive_FUN_00498c10(int param_1)
 
 {
   FUN_004b49a0(param_1);
-  if ((1 < 0x00000003) && (0x00000003 < 4)) {
+  if ((1 < INT_005b92a8) && (INT_005b92a8 < 4)) {
     core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1fa08,"objectToPickUp");
     core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1fa04,"doorToOpen");
     core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1fa10,"leverToPull");
     core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1fa14,"ladderToClimb");
   }
-  if (0x00000003 != 2) {
+  if (INT_005b92a8 != 2) {
     return;
   }
   core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x24ac,"lhCarryObject");

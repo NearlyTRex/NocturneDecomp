@@ -423,7 +423,7 @@ section .text
     PUSH 0x0                            ; 0054b913
     LEA EAX,[EBX + 0x20]                ; 0054b915
     PUSH EAX                            ; 0054b918
-    MOV ECX,dword ptr [0x005b96c4]      ; 0054b919 | DAT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 0054b919 | INT_005b96c4
     PUSH ECX                            ; 0054b91f
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 0054b920
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200()

@@ -4,15 +4,18 @@
 ; void __fpustack_safe crt_math_c_acos_FUN_00565ca4(float10 param_1)
 ;
 ;
-; XREF[8]:
+; XREF[12]:
+;   FUN_0044db00 at 0044dbb1
 ;   FUN_0048b6f0 at 0048c0a8
 ;   FUN_005384d0 at 005389f8
+;   FUN_0053d700 at 0053d74d
+;   FUN_0053d790 at 0053d848
+;   FUN_0055b0b0 at 0055b161
 ;   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0 at 0044def8
 ;   core_fire.cpp_safeAcos_FUN_00482630 at 0048266f
 ;   core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053e320 at 0053e73f
 ;   core_xform.cpp_matrixToEulerAnglesZYX_FUN_0055b6c0 at 0055bb2b
-;   core_xform.cpp_matrixToEulerAngles_FUN_0055b180 at 0055b5eb
-;   core_xform.cpp_quaternionToAxisAngle_FUN_0055d220 at 0055d298
+;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c17ec

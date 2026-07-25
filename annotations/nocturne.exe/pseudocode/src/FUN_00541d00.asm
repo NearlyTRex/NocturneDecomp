@@ -312,7 +312,7 @@ section .text
     TEST EAX,EAX                        ; 00541fb6
     JNZ 0x00542000                      ; 00541fb8
         ;   XREF to: 00542000 (CONDITIONAL_JUMP)  ; LAB_00542000
-    PUSH 0x51b650                       ; 00541fba | LAB_0051b650
+    PUSH 0x51b650                       ; 00541fba
     MOV ESI,dword ptr [0x02dca058]      ; 00541fbf | DAT_02dca058
     PUSH ESI                            ; 00541fc5
     LEA EAX,[EBX + 0x950a8]             ; 00541fc6

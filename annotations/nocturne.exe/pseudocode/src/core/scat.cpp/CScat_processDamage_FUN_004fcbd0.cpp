@@ -51,7 +51,7 @@ void core_scat_cpp_CScat_processDamage_FUN_004fcbd0(int param_1,int param_2)
     if (*(int *)(iVar3 + 0x24) != 4) {
       *(uint *)(param_1 + 0x2590) = 0;
       core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar1,4,1);
-      core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(0x01C78C7C,param_1,0x32,0x42480000,0);
+      core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(INT_005b96c4,param_1,0x32,0x42480000,0);
     }
   }
   (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"scat-die-?.wav");

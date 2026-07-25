@@ -70,7 +70,7 @@
 ;   double DOUBLE_00579b75 = 2.5
 ;   double DOUBLE_00579b7d = 32
 ;   float FLOAT_0059ad0c = 2.5
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   ... and 8 more
 ;
 ; Called Functions:
@@ -260,7 +260,7 @@ section .text
     PUSH 0x0                            ; 00420013
     LEA EAX,[EBP + -0x4a]               ; 00420015
     PUSH EAX                            ; 00420018
-    MOV ESI,dword ptr [0x005b96c4]      ; 00420019 | DAT_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 00420019 | INT_005b96c4
     PUSH ESI                            ; 0042001f
     CALL FUN_004b0480                   ; 00420020
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()

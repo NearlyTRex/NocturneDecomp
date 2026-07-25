@@ -4,7 +4,9 @@
 ; void FUN_004f7a80(undefined4 *param_1)
 ;
 ;
-; XREF[1]:
+; XREF[3]:
+;   FUN_004f8eb0 at 004f8ed9
+;   FUN_004f9100 at 004f910a
 ;   engine_pod.cpp_CPod_mount_FUN_004f88a0 at 004f88be
 ;
 ; *****************************************************************************

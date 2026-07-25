@@ -512,7 +512,7 @@ switchD_004b7b39_default:
       local_118 = 0;
       local_114 = 0;
       core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,local_134,&local_11c);
-      core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(0x01C78C7C,local_158,local_134,0);
+      core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0(INT_005b96c4,local_158,local_134,0);
     }
   }
   core_charactr_cpp_CCharacter_preProcess_FUN_004259a0(param_1);
@@ -591,10 +591,10 @@ LAB_004b72a1:
       local_18 = local_58;
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                 (iVar7,_DAT_01cae1a0,local_58,*(uint *)(param_1 + 0x1f94c),
-                 *(uint *)(param_1 + 0x1f934),&LAB_0051b650);
+                 *(uint *)(param_1 + 0x1f934),FUN_0051b650);
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
                 (iVar7,_DAT_01cae1a0,local_58,*(uint *)(param_1 + 0x1f94c),
-                 *(uint *)(param_1 + 0x1f938),&LAB_0051b650);
+                 *(uint *)(param_1 + 0x1f938),FUN_0051b650);
       if (((1.0 <= *(float *)(param_1 + 0x1f94c)) && (0.0 < *(float *)(param_1 + 0x1f948))) &&
          (fVar1 = param_2 / local_54 + *(float *)(param_1 + 0x1f948),
          *(float *)(param_1 + 0x1f948) = fVar1, 1.0 < fVar1)) {

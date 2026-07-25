@@ -89,7 +89,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 00506f34
     PUSH EAX                            ; 00506f37
-    MOV EDX,dword ptr [0x005baca0]      ; 00506f38 | DAT_005baca0
+    MOV EDX,dword ptr [0x005baca0]      ; 00506f38 | INT_005baca0
     PUSH EDX                            ; 00506f3e
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 00506f3f
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()
@@ -778,7 +778,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 005077a5
     PUSH EAX                            ; 005077a8
-    MOV ECX,dword ptr [0x005baca0]      ; 005077a9 | DAT_005baca0
+    MOV ECX,dword ptr [0x005baca0]      ; 005077a9 | INT_005baca0
     PUSH ECX                            ; 005077af
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 005077b0
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()
@@ -839,7 +839,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 0050783d
     PUSH EAX                            ; 00507840
-    MOV EBX,dword ptr [0x005baca0]      ; 00507841 | DAT_005baca0
+    MOV EBX,dword ptr [0x005baca0]      ; 00507841 | INT_005baca0
     PUSH EBX                            ; 00507847
     LEA EDI,[ESP + 0x170]               ; 00507848
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 0050784f

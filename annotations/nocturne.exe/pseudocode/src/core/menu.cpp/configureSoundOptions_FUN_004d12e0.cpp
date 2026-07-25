@@ -813,7 +813,7 @@ LAB_004d1b85:
       uVar6 = (uint)((ulonglong)uVar20 >> 0x20);
     }
     uVar20 = CONCAT44(uVar6,1);
-    iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);
+    iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
     if (iVar3 != 0) {
       return;
     }

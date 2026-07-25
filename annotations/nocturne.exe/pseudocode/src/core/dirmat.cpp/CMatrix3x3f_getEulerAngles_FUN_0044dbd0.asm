@@ -22,7 +22,9 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[7]:
+; XREF[9]:
+;   FUN_00437ab0 at 00437ad6
+;   FUN_00450c90 at 00450cd4
 ;   core_box.cpp_CBox_processPhysics_FUN_0041ad10 at 0041b26f
 ;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 at 00423314
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350 at 00451599

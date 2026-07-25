@@ -15,8 +15,8 @@
 ;   TerminatedCString s_n_0057f480
 ;   TerminatedCString s_Error_parsing_vector_loc_0057f48e
 ;   undefined4 DAT_0059cf1c
-;   undefined4 DAT_00763e48
-;   undefined4 DAT_00763e80
+;   CDemonActorType CDemonActorType_00763e48
+;   undefined4 CDemonActorType_00763e48.name_hash
 ;   undefined4 DAT_01c08b60
 ;
 ; Called Functions:
@@ -84,8 +84,8 @@ section .text
     CMP dword ptr [ESP + 0x64],0x0      ; 0047a546
     JL 0x0047a59e                       ; 0047a54b
         ;   XREF to: 0047a59e (CONDITIONAL_JUMP)  ; LAB_0047a59e
-    PUSH 0x763e48                       ; 0047a54d | DAT_00763e48
-    MOV EDX,dword ptr [0x00763e80]      ; 0047a552 | DAT_00763e80
+    PUSH 0x763e48                       ; 0047a54d | CDemonActorType_00763e48
+    MOV EDX,dword ptr [0x00763e80]      ; 0047a552 | CDemonActorType_00763e48.name_hash
     PUSH EDX                            ; 0047a558
     LEA EAX,[ESP + 0x8]                 ; 0047a559
     PUSH EAX                            ; 0047a55d

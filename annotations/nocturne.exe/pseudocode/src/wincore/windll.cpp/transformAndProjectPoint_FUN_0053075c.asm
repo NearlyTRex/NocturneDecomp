@@ -4,18 +4,18 @@
 ; void __cdecl wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(uint *param_1,int *param_2)
 ;
 ;
-; XREF[51]:
+; XREF[66]:
 ;   FUN_0041d050 at 0041d0b3
+;   FUN_0042b510 at 0042b558
+;   FUN_00437ab0 at 00437b90
+;   FUN_00445f70 at 00445fd2
+;   FUN_0044d060 at 0044d0f9
+;   FUN_00450c90 at 00450fdb
+;   FUN_00468d00 at 00468dca
+;   FUN_0046e9f0 at 0046ea30
+;   FUN_004739e0 at 00473a18
 ;   FUN_00489990 at 00489a8c
-;   FUN_0048d5d0 at 0048d7ed
-;   FUN_0048f490 at 0048f704
-;   FUN_004ac7c0 at 004ac8a7
-;   FUN_004c9be0 at 004c9c65
-;   FUN_004ca790 at 004ca8e7
-;   FUN_005125a0 at 00512e46
-;   core_actor.cpp_FUN_0040ab70 at 0040abae
-;   core_actor.cpp_FUN_0040add0 at 0040ae5d
-;   ... and 41 more
+;   ... and 56 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bf4d8

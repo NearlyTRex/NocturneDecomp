@@ -48,11 +48,11 @@ LAB_004cfc23:
       iVar3 = (int)(((longlong)_DAT_01bd1d8c * 0x3c000) / (longlong)(DAT_005b761c + -1)) + 0x4000;
       local_18 = _DAT_01bd1d8c;
     }
-    iVar1 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x4b);
+    iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x4b);
     if (iVar1 != 0) {
       iVar3 = iVar3 + -700;
     }
-    iVar1 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x4d);
+    iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x4d);
     if (iVar1 != 0) {
       iVar3 = iVar3 + 700;
     }
@@ -77,10 +77,11 @@ LAB_004cfc23:
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
               (_DAT_01bcd070,_DAT_01c00c58,_DAT_01c00c60,(iVar2 - iVar1) / 2);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    iVar1 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4);
+    iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);
     if (iVar1 != 0) goto LAB_004cfdf5;
-    iVar1 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4);
-  } while ((iVar1 == 0) && (iVar1 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4), iVar1 == 0));
+    iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);
+  } while ((iVar1 == 0) &&
+          (iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar1 == 0));
   *param_1 = iVar3;
 LAB_004cfdf5:
   FUN_004720c0();

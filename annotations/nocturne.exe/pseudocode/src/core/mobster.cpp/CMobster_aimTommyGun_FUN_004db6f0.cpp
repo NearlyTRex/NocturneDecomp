@@ -19,7 +19,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
   byte bVar5;
   float afStackY_185c [1519];
   uint uVar6;
-  byte *puVar7;
+  code *pcVar7;
   float local_88;
   float local_84;
   uint local_80;
@@ -115,7 +115,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
         uVar6 = 6;
       }
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-                (param_1 + 0x150,uVar6,0x40c00000,uVar3,_DAT_01ccdbd0,&LAB_0051b650);
+                (param_1 + 0x150,uVar6,0x40c00000,uVar3,_DAT_01ccdbd0,FUN_0051b650);
       core_xform_cpp_FUN_0055d4a0(local_2c);
       local_80 = local_60;
       *(uint *)((int)&stack0xffffff84 + (uint)bVar5 * 0xfffffffe * 4) =
@@ -130,9 +130,9 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
       local_18 = (float)(param_1 + 0x150);
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                 (local_18,&stack0xffffff80,*(uint *)(param_1 + 0xbdf4),_DAT_01ccdbd0,
-                 &LAB_0051b650);
+                 FUN_0051b650);
       core_xform_cpp_FUN_0055d4e0(local_28);
-      puVar7 = &LAB_0051b650;
+      pcVar7 = FUN_0051b650;
       local_80 = local_70;
       *(uint *)((int)&stack0xffffff84 + (uint)bVar5 * 0xfffffffe * 4) =
            *(uint *)(local_50 + (uint)bVar5 * -8 + -0x1c);
@@ -145,7 +145,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
               ((int)(local_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + -0x18) +
               ((uint)bVar5 * -2 + 1) * 4);
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-                (local_18,&stack0xffffff80,*(uint *)(param_1 + 0xbdf4),uVar3,puVar7);
+                (local_18,&stack0xffffff80,*(uint *)(param_1 + 0xbdf4),uVar3,pcVar7);
       return;
     }
     *(uint *)(param_1 + 0xbdf4) = 0;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_0052c760(UINT_PTR param_1)
+; undefined1 * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_0052c760(UINT_PTR param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x34]:1  local_34

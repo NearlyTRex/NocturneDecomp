@@ -16,7 +16,7 @@ void FUN_004ba740(int param_1,float param_2)
   uint uVar2;
   byte bVar3;
   uint auStackY_180c [1519];
-  byte *puVar4;
+  code *pcVar4;
   uint local_30;
   uint local_20;
   
@@ -40,8 +40,8 @@ void FUN_004ba740(int param_1,float param_2)
                       (param_1 + 0x150,"shoot",1);
     uVar2 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(uVar2);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-              (param_1 + 0x150,uVar2,0,*(uint *)(param_1 + 0x1fa64),_DAT_01cae2c8,
-               &LAB_0051b650);
+              (param_1 + 0x150,uVar2,0,*(uint *)(param_1 + 0x1fa64),_DAT_01cae2c8,FUN_0051b650
+              );
     fVar1 = *(float *)(param_1 + 0xbcbc) * (float)3.1415926535000001 * (float)2 * param_2
             + *(float *)(param_1 + 0x1fa68);
     *(float *)(param_1 + 0x1fa68) = fVar1;
@@ -52,7 +52,7 @@ void FUN_004ba740(int param_1,float param_2)
       *(uint *)(param_1 + 0x1fa68) = 0xbf490fdb;
     }
     core_xform_cpp_FUN_0055d4a0(*(uint *)(param_1 + 0x1fa68));
-    puVar4 = &LAB_0051b650;
+    pcVar4 = FUN_0051b650;
     local_20 = local_30;
     *(uint *)((int)&stack0xffffffe4 + (uint)bVar3 * 0xfffffffe * 4) =
          *(uint *)(&stack0xffffffd4 + (uint)bVar3 * -8);
@@ -65,7 +65,7 @@ void FUN_004ba740(int param_1,float param_2)
           ((int)(&stack0xffffffd8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) +
           ((uint)bVar3 * -2 + 1) * 4);
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-              (param_1 + 0x150,&stack0xffffffe0,*(uint *)(param_1 + 0x1fa64),uVar2,puVar4);
+              (param_1 + 0x150,&stack0xffffffe0,*(uint *)(param_1 + 0x1fa64),uVar2,pcVar4);
   }
   return;
 }

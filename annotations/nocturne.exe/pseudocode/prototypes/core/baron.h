@@ -57,7 +57,7 @@ void FUN_00411310(void);
 
 // Original: core_baron.cpp_FUN_00411340
 // Address: 00411340
-undefined * FUN_00411340(void);
+CDemonActorType * FUN_00411340(void);
 
 // Original: core_baron.cpp_CBaronWeapon_ctor_FUN_00411350
 // Address: 00411350

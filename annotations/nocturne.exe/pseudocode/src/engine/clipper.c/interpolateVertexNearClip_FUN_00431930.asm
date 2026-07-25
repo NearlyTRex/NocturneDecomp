@@ -4,8 +4,11 @@
 ; void __cdecl engine_clipper_c_interpolateVertexNearClip_FUN_00431930(int *param_1,int *param_2,int *param_3)
 ;
 ;
-; XREF[2]:
-;   engine_clipper.c_FUN_00431f50 at 004320bf
+; XREF[5]:
+;   FUN_00432057 at 004320bf
+;   FUN_004320dc at 00432131
+;   FUN_00432b48 at 00432bbb
+;   FUN_00432bd8 at 00432c29
 ;   engine_clipper.c_FUN_00432cd0 at 004336a7
 ;
 ; Referenced Globals:

@@ -4,7 +4,8 @@
 ; void __cdecl engine_font_cpp_CBitFont_loadNewBitmap_FUN_004901d0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00490210 at 004903a9
 ;   engine_font.cpp_CBitFont_openFontFile_FUN_0048ff40 at 0048ff63
 ;
 ; Called Functions:

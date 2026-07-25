@@ -434,7 +434,7 @@ int * engine_clipper_c_FUN_00432cd0(int *param_1,int *param_2)
         }
         piVar4 = DAT_00766c70;
         iVar7 = 0;
-        if (0x7FFFFFFF != 0) {
+        if (DAT_005ad284 != 0) {
           if (0 < (int)DAT_00766c70) {
             piVar13 = (int *)0x0;
             do {
@@ -444,7 +444,7 @@ int * engine_clipper_c_FUN_00432cd0(int *param_1,int *param_2)
               piVar13 = piVar13 + 0xc;
             } while ((int)piVar13 < (int)DAT_00766c70 * 0x30);
           }
-          if (0x7FFFFFFF <= iVar7) {
+          if (DAT_005ad284 <= iVar7) {
             plVar10 = (longlong *)&DAT_00766c74;
             DAT_007672f4 = DAT_00766c70;
             plVar17 = (longlong *)&DAT_007672f8;
@@ -473,8 +473,8 @@ int * engine_clipper_c_FUN_00432cd0(int *param_1,int *param_2)
                 if (piVar4 == DAT_007672f4) {
                   piVar4 = (int *)((uint)piVar4 ^ (uint)DAT_007672f4);
                 }
-                bVar3 = 0x7FFFFFFF <= (int)plVar10[1];
-                if (0x7FFFFFFF <= (int)(&DAT_00767300)[(int)piVar4 * 0xc]) {
+                bVar3 = DAT_005ad284 <= (int)plVar10[1];
+                if (DAT_005ad284 <= (int)(&DAT_00767300)[(int)piVar4 * 0xc]) {
                   bVar3 = bVar3 | 2;
                 }
                 piVar13 = (int *)(uint)bVar3;

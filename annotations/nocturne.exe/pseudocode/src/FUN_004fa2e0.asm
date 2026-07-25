@@ -15,7 +15,7 @@
 ;   engine_clipper.c_FUN_00432cd0 at 00432ded
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005be1e4
+;   int INT_005be1e4 = 0x4b0
 ;   undefined4 DAT_005c5014
 ;   undefined4 DAT_005c501c
 ;   undefined4 DAT_005c5020
@@ -245,7 +245,7 @@ section .text
     JZ 0x004fa3b9                       ; 004fa4e7
         ;   XREF to: 004fa3b9 (CONDITIONAL_JUMP)  ; LAB_004fa3b9
     MOV EAX,[0x01e52eec]                ; 004fa4ed | DAT_01e52eec
-    MOV ECX,dword ptr [0x005be1e4]      ; 004fa4f2 | DAT_005be1e4
+    MOV ECX,dword ptr [0x005be1e4]      ; 004fa4f2 | INT_005be1e4
     MOV dword ptr [ESP + 0x4c],EAX      ; 004fa4f8
     CMP EAX,ECX                         ; 004fa4fc
     JGE 0x004fa3b9                      ; 004fa4fe
@@ -317,7 +317,7 @@ section .text
     MOV dword ptr [EBP + 0x18],EDX      ; 004fa5b3
     ADD ECX,EAX                         ; 004fa5b6
     MOV EAX,dword ptr [EBP + 0x14]      ; 004fa5b8
-    MOV EDX,dword ptr [0x005be1e4]      ; 004fa5bb | DAT_005be1e4
+    MOV EDX,dword ptr [0x005be1e4]      ; 004fa5bb | INT_005be1e4
     ADD EBX,EAX                         ; 004fa5c1
     MOV EAX,dword ptr [EBP + 0x2c]      ; 004fa5c3
     MOV dword ptr [EBP + 0x20],ECX      ; 004fa5c6

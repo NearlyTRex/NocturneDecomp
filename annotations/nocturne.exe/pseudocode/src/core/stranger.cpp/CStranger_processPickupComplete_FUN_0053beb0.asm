@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_actionPending_d_stranger_00595acf
 ;   undefined4 DAT_005b6d50
-;   undefined4 DAT_00764230
+;   undefined4 CDemonActorType_007641f8.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -32,7 +32,7 @@ section .text
     CMP ECX,0x4                         ; 0053bec5
     JNZ 0x0053bf0b                      ; 0053bec8
         ;   XREF to: 0053bf0b (CONDITIONAL_JUMP)  ; LAB_0053bf0b
-    MOV EBP,dword ptr [0x00764230]      ; 0053beca | DAT_00764230
+    MOV EBP,dword ptr [0x00764230]      ; 0053beca | CDemonActorType_007641f8.name_hash
         ;   Label: LAB_0053beca
     PUSH EBP                            ; 0053bed0
     MOV EAX,dword ptr [EBX + 0x1fa08]   ; 0053bed1

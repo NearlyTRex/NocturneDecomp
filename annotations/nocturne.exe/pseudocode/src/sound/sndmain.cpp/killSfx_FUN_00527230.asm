@@ -4,7 +4,7 @@
 ; undefined4 __cdecl sound_sndmain_cpp_killSfx_FUN_00527230(undefined4 param_1)
 ;
 ;
-; XREF[48]:
+; XREF[49]:
 ;   FUN_00414930 at 00414946
 ;   FUN_00418a00 at 00418c97
 ;   FUN_00478790 at 004789f9
@@ -13,9 +13,9 @@
 ;   FUN_004c79a0 at 004c7bbf
 ;   FUN_004da790 at 004da842
 ;   FUN_0052d790 at 0052d8ef
+;   FUN_0052dcc0 at 0052dccd
 ;   FUN_0052dff0 at 0052e3e0
-;   FUN_00535900 at 00537c08
-;   ... and 38 more
+;   ... and 39 more
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570

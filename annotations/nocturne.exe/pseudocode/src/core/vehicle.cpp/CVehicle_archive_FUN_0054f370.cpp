@@ -34,8 +34,8 @@ void core_vehicle_cpp_CVehicle_archive_FUN_0054f370(int param_1)
       iVar3 = iVar3 + 0x1b4;
     } while (iVar1 < *(int *)(param_1 + 0x930));
   }
-  if (0x00000003 < 2) {
-    if (0x00000003 < 3) {
+  if (INT_005c11a0 < 2) {
+    if (INT_005c11a0 < 3) {
       return;
     }
   }
@@ -43,7 +43,7 @@ void core_vehicle_cpp_CVehicle_archive_FUN_0054f370(int param_1)
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x1024,"curTime");
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x1028,"totalTime");
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x102c,"courseName");
-    if (0x00000003 < 3) {
+    if (INT_005c11a0 < 3) {
       return;
     }
   }

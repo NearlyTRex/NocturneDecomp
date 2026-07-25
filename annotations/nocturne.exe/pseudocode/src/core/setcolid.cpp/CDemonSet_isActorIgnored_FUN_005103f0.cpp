@@ -13,7 +13,8 @@ uint __cdecl core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_005103f0(int param_1
   int iVar2;
   
   if ((*(int *)(param_1 + 0x15f2b0) != 0) &&
-     (iVar2 = core_actor_cpp_isOfClassHash_FUN_0040d860(param_2,DAT_00765a98), iVar2 != 0)) {
+     (iVar2 = core_actor_cpp_isOfClassHash_FUN_0040d860(param_2,CDemonActorType_00765a60.name_hash),
+     iVar2 != 0)) {
     return 1;
   }
   iVar1 = 0;

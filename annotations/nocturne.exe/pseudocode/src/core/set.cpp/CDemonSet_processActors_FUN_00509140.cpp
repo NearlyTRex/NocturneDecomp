@@ -136,7 +136,7 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(int param_1)
     if (0 < *(int *)(param_1 + 0x14cd6c)) {
       do {
         iVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar6 + 0x14cd70),DAT_00765a98);
+                          (*(uint *)(iVar6 + 0x14cd70),CDemonActorType_00765a60.name_hash);
         local_38 = iVar9;
         if (((iVar9 != 0) && (iVar8 = (**(code **)(*(int *)(iVar9 + 0x14c) + 0x104))(), iVar8 == 0))
            && (iStack_48 = iVar8,

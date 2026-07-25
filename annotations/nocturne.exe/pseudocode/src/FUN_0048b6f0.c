@@ -235,8 +235,9 @@ void FUN_0048b6f0(uint param_1,float *param_2,float *param_3,float *param_4,int 
           local_18[2] = pfVar3[2];
         }
         if ((((param_5 == 0) && (param_4[6] != 0.0)) &&
-            (iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar1,DAT_00765a98), iVar4 != 0))
-           && (iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0xd8))(iVar4), iVar4 != 0)) {
+            (iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
+                               (iVar1,CDemonActorType_00765a60.name_hash), iVar4 != 0)) &&
+           (iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0xd8))(iVar4), iVar4 != 0)) {
           param_4[4] = 3.57331e-43;
           param_4[5] = 0.0;
           param_4[3] = 3.57331e-43;

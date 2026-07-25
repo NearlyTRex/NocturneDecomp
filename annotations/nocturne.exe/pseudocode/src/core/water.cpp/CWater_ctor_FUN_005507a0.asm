@@ -4,6 +4,9 @@
 ; void core_water_cpp_CWater_ctor_FUN_005507a0(undefined4 *param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00550730 at 00550735
+;
 ; *****************************************************************************
 
 section .text

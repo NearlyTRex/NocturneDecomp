@@ -4,6 +4,9 @@
 ; int core_moloch_cpp_CMoloch_ctor_FUN_004dd930(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004dd900 at 004dd913
+;
 ; Referenced Globals:
 ;   TerminatedCString s_moloch_h_dfm_0058a712
 ;   TerminatedCString s_molochToDemon_0058a71f

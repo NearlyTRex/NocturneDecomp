@@ -22,7 +22,7 @@
 ;   double DOUBLE_00579d35 = 0.0500000000000000
 ;   float FLOAT_00579d3d = 0.5
 ;   undefined4 DAT_0059aeb4
-;   undefined4 DAT_00765a98
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -94,7 +94,7 @@ section .text
     SAHF                                ; 004223e1
     JC 0x00422448                       ; 004223e2
         ;   XREF to: 00422448 (CONDITIONAL_JUMP)  ; LAB_00422448
-    MOV ECX,dword ptr [0x00765a98]      ; 004223e4 | DAT_00765a98
+    MOV ECX,dword ptr [0x00765a98]      ; 004223e4 | CDemonActorType_00765a60.name_hash
     PUSH ECX                            ; 004223ea
     MOV ESI,dword ptr [EBX + 0x12960]   ; 004223eb
     PUSH ESI                            ; 004223f1

@@ -7,7 +7,8 @@
 ; undefined4       Stack[-0x28]:4  local_28
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[14]:
+; XREF[15]:
+;   FUN_0051e860 at 0051e87e
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412de0 at 00412f35
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_004145f0 at 004146c2
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0f0 at 0041a202
@@ -17,8 +18,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0045a1a0 at 0045a1dd
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004a8330 at 004a83f2
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004ab190 at 004ab25d
-;   core_imp.cpp_CImp_processDismemberment_FUN_004bca20 at 004bcaf2
-;   ... and 4 more
+;   ... and 5 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_bodypart_cpp_00578e7a

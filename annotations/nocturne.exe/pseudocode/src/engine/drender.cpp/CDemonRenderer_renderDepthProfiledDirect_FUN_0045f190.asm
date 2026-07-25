@@ -4,8 +4,9 @@
 ; bool __cdecl engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190(int param_1,int param_2)
 ;
 ;
-; XREF[4]:
+; XREF[5]:
 ;   FUN_004d7720 at 004d7749
+;   FUN_004d77f0 at 004d7956
 ;   core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390 at 00469a7d
 ;   core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0050e490 at 0050e4b7
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800 at 00550c4e
@@ -45,7 +46,7 @@ section .text
     JZ 0x0045f240                       ; 0045f1b3
         ;   XREF to: 0045f240 (CONDITIONAL_JUMP)  ; LAB_0045f240
     XOR EDI,EDI                         ; 0045f1b9
-    MOV ECX,0x463ff5                    ; 0045f1bb | LAB_00463ff5
+    MOV ECX,0x463ff5                    ; 0045f1bb
     MOV dword ptr [0x01c039a0],EDI      ; 0045f1c0 | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EDI      ; 0045f1c6 | DAT_01c039a4
     MOV dword ptr [0x01c00c7c],ECX      ; 0045f1cc | DAT_01c00c7c
@@ -105,7 +106,7 @@ section .text
     MOV EAX,0xc0                        ; 0045f240
         ;   Label: LAB_0045f240
     MOV EDX,0x6                         ; 0045f245
-    MOV EBP,0x463f77                    ; 0045f24a | LAB_00463f77
+    MOV EBP,0x463f77                    ; 0045f24a
     MOV [0x01c039a0],EAX                ; 0045f24f | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EDX      ; 0045f254 | DAT_01c039a4
     MOV dword ptr [0x01c00c7c],EBP      ; 0045f25a | DAT_01c00c7c

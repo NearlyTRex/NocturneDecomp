@@ -1,0 +1,432 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 170,
+    "complexity_score": 225,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 65,
+    "suspect_count": 15,
+    "suspect_types": [
+      "pointer_truncation",
+      "unrolled_strchr"
+    ],
+    "total_lines": 235
+  },
+  "cross_references": [
+    {
+      "addr": "00570f60",
+      "from_addr": "00571039",
+      "name": "FUN_00570f60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00572b70",
+    "address_range": [
+      [
+        "00572b70",
+        "00572cad"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00572b70",
+    "signature": "void FUN_00572b70(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00566e10",
+      "is_variadic": false,
+      "name": "crt_env.c_getenv_FUN_00566e10"
+    },
+    {
+      "addr": "00565f70",
+      "is_variadic": false,
+      "name": "crt_string.c__strncpy_FUN_00565f70"
+    },
+    {
+      "addr": "0056e09c",
+      "is_variadic": false,
+      "name": "FUN_0056e09c"
+    },
+    {
+      "addr": "0056f278",
+      "is_variadic": false,
+      "name": "FUN_0056f278"
+    },
+    {
+      "addr": "005738ac",
+      "is_variadic": false,
+      "name": "FUN_005738ac"
+    },
+    {
+      "addr": "00573930",
+      "is_variadic": false,
+      "name": "FUN_00573930"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00571039",
+        "call_type": "direct",
+        "caller": "FUN_00570f60",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4393939393939394,
+    "instruction_count": 132,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BRANCH": 1,
+      "CALL": 10,
+      "CBRANCH": 14,
+      "COPY": 84,
+      "INT_ADD": 39,
+      "INT_AND": 83,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 82,
+      "INT_LESS": 20,
+      "INT_MULT": 3,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 41,
+      "INT_SUB": 58,
+      "INT_XOR": 3,
+      "LOAD": 13,
+      "POPCOUNT": 41,
+      "RETURN": 1,
+      "STORE": 42
+    },
+    "pcode_op_count": 586
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_00572b70.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 3,
+      "diagnostics": [
+        {
+          "check_id": "nullPointerArithmetic",
+          "column": 23,
+          "line": 37,
+          "message": "Pointer addition with NULL pointer.",
+          "severity": "error"
+        },
+        {
+          "check_id": "nullPointerArithmetic",
+          "column": 23,
+          "line": 52,
+          "message": "Pointer addition with NULL pointer.",
+          "severity": "error"
+        },
+        {
+          "check_id": "nullPointerArithmetic",
+          "column": 23,
+          "line": 69,
+          "message": "Pointer addition with NULL pointer.",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Pointer value `pcVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)pcVar4",
+      "severity": "moderate",
+      "text": "_strncpy(local_20,pcVar1,(int)pcVar4 - (int)pcVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(int)pcVar1",
+      "severity": "moderate",
+      "text": "_strncpy(local_20,pcVar1,(int)pcVar4 - (int)pcVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)pcVar4",
+      "severity": "moderate",
+      "text": "local_20[(int)pcVar4 - (int)pcVar1] = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)pcVar1",
+      "severity": "moderate",
+      "text": "local_20[(int)pcVar4 - (int)pcVar1] = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)pcVar5",
+      "severity": "moderate",
+      "text": "_strncpy(local_20,pcVar4,(int)pcVar5 - (int)pcVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)pcVar4",
+      "severity": "moderate",
+      "text": "_strncpy(local_20,pcVar4,(int)pcVar5 - (int)pcVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)pcVar5",
+      "severity": "moderate",
+      "text": "local_20[(int)pcVar5 - (int)pcVar4] = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)pcVar4",
+      "severity": "moderate",
+      "text": "local_20[(int)pcVar5 - (int)pcVar4] = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 58,
+      "match": "(int)pcVar1",
+      "severity": "moderate",
+      "text": "_strncpy(local_20,pcVar5,(int)pcVar1 - (int)pcVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 58,
+      "match": "(int)pcVar5",
+      "severity": "moderate",
+      "text": "_strncpy(local_20,pcVar5,(int)pcVar1 - (int)pcVar5);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)pcVar1",
+      "severity": "moderate",
+      "text": "local_20[(int)pcVar1 - (int)pcVar5] = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)pcVar5",
+      "severity": "moderate",
+      "text": "local_20[(int)pcVar1 - (int)pcVar5] = 0;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
+      "line": 18,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
+      "line": 33,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '*' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '*') in a .keep.",
+      "line": 48,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    },
+    {
+      "description": "Pointer addition with NULL pointer.",
+      "line": 37,
+      "match": "Cppcheck: null pointer arithmetic",
+      "severity": "major",
+      "text": "pcVar4 = pcVar4 + 1;",
+      "type": "static_null_pointer_arithmetic"
+    },
+    {
+      "description": "Pointer addition with NULL pointer.",
+      "line": 52,
+      "match": "Cppcheck: null pointer arithmetic",
+      "severity": "major",
+      "text": "pcVar5 = pcVar5 + 1;",
+      "type": "static_null_pointer_arithmetic"
+    },
+    {
+      "description": "Pointer addition with NULL pointer.",
+      "line": 69,
+      "match": "Cppcheck: null pointer arithmetic",
+      "severity": "major",
+      "text": "pcVar1 = pcVar1 + 1;",
+      "type": "static_null_pointer_arithmetic"
+    }
+  ]
+}

@@ -4,7 +4,9 @@
 ; void __cdecl wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(HWND param_1)
 ;
 ;
-; XREF[1]:
+; XREF[3]:
+;   FUN_00558d90 at 00559081
+;   FUN_0055a210 at 0055a22b
 ;   wincore_winvideo.cpp_FUN_0055a510 at 0055a58b
 ;
 ; Referenced Globals:

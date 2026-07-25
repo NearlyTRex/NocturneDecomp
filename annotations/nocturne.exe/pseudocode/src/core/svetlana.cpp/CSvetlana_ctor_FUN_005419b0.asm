@@ -4,6 +4,9 @@
 ; int core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00541980 at 00541993
+;
 ; Referenced Globals:
 ;   TerminatedCString s_svetlana_dfm_005961f3
 ;   undefined1* PTR_core_svetlana.cpp_CSvetlana_setup_FUN_00541a40_005a2a74 = 00541a40

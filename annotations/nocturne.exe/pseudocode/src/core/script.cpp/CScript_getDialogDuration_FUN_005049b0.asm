@@ -18,8 +18,8 @@
 ;   double DOUBLE_0058faa2 = 0.0200000000000000
 ;   double DOUBLE_0058faaa = 0.400000000000000
 ;   undefined4 DAT_005bed68
-;   undefined4 DAT_00765a60
-;   undefined4 DAT_00765a98
+;   CDemonActorType CDemonActorType_00765a60
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;   undefined4 DAT_01e56418
 ;   undefined4 DAT_01e56c2c
 ;
@@ -57,9 +57,9 @@ section .text
         ;   XREF to: 00504a1d (CONDITIONAL_JUMP)  ; LAB_00504a1d
     MOV EAX,dword ptr [EBX + 0x44c]     ; 005049d5
     MOV dword ptr [ESP],EAX             ; 005049db
-    PUSH 0x765a60                       ; 005049de | DAT_00765a60
+    PUSH 0x765a60                       ; 005049de | CDemonActorType_00765a60
         ;   Label: LAB_005049de
-    MOV ECX,dword ptr [0x00765a98]      ; 005049e3 | DAT_00765a98
+    MOV ECX,dword ptr [0x00765a98]      ; 005049e3 | CDemonActorType_00765a60.name_hash
     PUSH ECX                            ; 005049e9
     MOV EDI,dword ptr [EBP + 0x18]      ; 005049ea
     PUSH EDI                            ; 005049ed

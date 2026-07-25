@@ -4,7 +4,8 @@
 ; int __cdecl engine_matrix_c_interpolatedSin_FUN_004cca60(uint param_1)
 ;
 ;
-; XREF[5]:
+; XREF[6]:
+;   FUN_004cdfa0 at 004ce0e3
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 at 004c0c0c
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5adc
 ;   engine_3d.c_FUN_00404b10 at 00404bd0

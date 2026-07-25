@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_0059b568
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_01c777bc
 ;   undefined4 DAT_01c77818
 ;
@@ -111,7 +111,7 @@ section .text
     PUSH 0x42480000                     ; 0043aad7
     PUSH 0x32                           ; 0043aadc
     PUSH EBX                            ; 0043aade
-    MOV EBP,dword ptr [0x005b96c4]      ; 0043aadf | DAT_005b96c4
+    MOV EBP,dword ptr [0x005b96c4]      ; 0043aadf | INT_005b96c4
     PUSH EBP                            ; 0043aae5
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 0043aae6
         ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670()

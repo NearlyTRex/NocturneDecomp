@@ -4,6 +4,9 @@
 ; undefined4 core_weather_cpp_CWeather_ctor_FUN_00554960(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00554930 at 00554935
+;
 ; Called Functions:
 ;   core_weather.cpp_CWeather_setWeatherType_FUN_00555750
 ;

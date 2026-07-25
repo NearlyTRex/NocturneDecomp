@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_fl_throw_wav_005816a9
 ;   undefined4 DAT_0059d7a0
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_005bed68
 ;   undefined4 DAT_01cae0e8
 ;
@@ -118,7 +118,7 @@ section .text
     MOV dword ptr [EBX + 0x574],EAX     ; 0048ec37
     JMP 0x0048ebd4                      ; 0048ec3d
         ;   XREF to: 0048ebd4 (UNCONDITIONAL_JUMP)  ; LAB_0048ebd4
-    MOV ESI,dword ptr [0x005b9284]      ; 0048ec3f | DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 0048ec3f | INT_005b9284
         ;   Label: LAB_0048ec3f
     PUSH ESI                            ; 0048ec45
     CALL FUN_004940d0                   ; 0048ec46

@@ -39,7 +39,7 @@ void core_simbox_cpp_CSimBox_process_FUN_00516d80(int param_1,uint param_2)
     }
   }
   if (*(int *)(param_1 + 0x2cc) == 0) {
-    iVar1 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x13);
+    iVar1 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x13);
     if (iVar1 != 0) {
       *(uint *)(param_1 + 0x20) = *(uint *)(param_1 + 0x5ac);
       *(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x5b0);

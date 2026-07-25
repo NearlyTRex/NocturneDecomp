@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[127]:
+; XREF[128]:
 ;   FUN_00418630 at 0041875d
 ;   FUN_00418a00 at 0041900c
 ;   FUN_004196b0 at 0041973d
@@ -20,7 +20,7 @@
 ;   FUN_00462300 at 004624da
 ;   FUN_0046ecf0 at 0046ecfd
 ;   FUN_00477890 at 00477925
-;   ... and 117 more
+;   ... and 118 more
 ;
 ; Referenced Globals:
 ;   float FLOAT_00578049 = 0.00003051851

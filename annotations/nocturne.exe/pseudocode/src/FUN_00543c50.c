@@ -143,7 +143,7 @@ void FUN_00543c50(int param_1,float param_2)
                 iVar3 = iVar3 + 1;
                 fStack_18 = fStack_78;
                 core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-                          (0x01C78C7C,&fStack_a0,&uStack_7c,
+                          (INT_005b96c4,&fStack_a0,&uStack_7c,
                            *(uint *)(*(int *)(param_1 + 0xbca4) + 0x2608));
               } while (iVar3 < 0x46);
             }

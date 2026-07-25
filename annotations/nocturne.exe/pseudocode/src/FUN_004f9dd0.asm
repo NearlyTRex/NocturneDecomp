@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   void* switchdataD_004f9da8 = 004f9ee1
 ;   undefined4 DAT_005b7644
-;   undefined4 DAT_005be1e4
+;   int INT_005be1e4 = 0x4b0
 ;   undefined4 DAT_006b0278
 ;   undefined4 DAT_006b0280
 ;   undefined4 DAT_01c00c48
@@ -454,7 +454,7 @@ section .text
     JZ 0x004f9f6c                       ; 004fa1ba
         ;   XREF to: 004f9f6c (CONDITIONAL_JUMP)  ; LAB_004f9f6c
     MOV EAX,[0x01e52eec]                ; 004fa1c0 | DAT_01e52eec
-    MOV EDI,dword ptr [0x005be1e4]      ; 004fa1c5 | DAT_005be1e4
+    MOV EDI,dword ptr [0x005be1e4]      ; 004fa1c5 | INT_005be1e4
     MOV dword ptr [ESP + 0xc],EAX       ; 004fa1cb
     CMP EAX,EDI                         ; 004fa1cf
     JGE 0x004f9f6c                      ; 004fa1d1
@@ -531,7 +531,7 @@ section .text
     INC ESI                             ; 004fa294
     MOV EAX,dword ptr [EDX + 0x2c]      ; 004fa295
     MOV dword ptr [EDX + 0x10],EDI      ; 004fa298
-    MOV EDI,dword ptr [0x005be1e4]      ; 004fa29b | DAT_005be1e4
+    MOV EDI,dword ptr [0x005be1e4]      ; 004fa29b | INT_005be1e4
     ADD ECX,EAX                         ; 004fa2a1
     MOV EAX,dword ptr [EDX + 0x34]      ; 004fa2a3
     MOV dword ptr [EDX + 0x28],ECX      ; 004fa2a6

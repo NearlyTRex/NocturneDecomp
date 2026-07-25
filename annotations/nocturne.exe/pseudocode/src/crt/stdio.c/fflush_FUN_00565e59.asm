@@ -4,7 +4,8 @@
 ; void __cdecl crt_stdio_c_fflush_FUN_00565e59(int *param_1)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00456b20 at 00456b38
 ;   FUN_004a3b90 at 004a3f6a
 ;   FUN_004a4170 at 004a4511
 ;

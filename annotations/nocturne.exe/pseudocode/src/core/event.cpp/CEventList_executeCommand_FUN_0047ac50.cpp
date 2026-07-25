@@ -285,7 +285,8 @@ LAB_0047acd1:
             memmove(local_4d5 + 1);
           }
           uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                            (local_4d5 + 1,DAT_00763e80,&DAT_00763e48);
+                            (local_4d5 + 1,CDemonActorType_00763e48.name_hash,
+                             &CDemonActorType_00763e48);
           if (uVar6 == 0) {
             return 0;
           }
@@ -337,23 +338,25 @@ LAB_0047acd1:
           }
           pcVar9 = (char *)core_event_cpp_extractParenArg_FUN_0047a650(&local_ec,local_1154,200);
           if (pcVar9 != (char *)0x0) goto LAB_0047aec8;
-          uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                            (local_1154,DAT_00763e80,&DAT_00763e48);
-          uVar5 = DAT_00764838;
-          if (uVar6 == 0) {
+          uVar7 = core_event_cpp_resolveActorByName_FUN_0047a390
+                            (local_1154,CDemonActorType_00763e48.name_hash,&CDemonActorType_00763e48
+                            );
+          uVar6 = CDemonActorType_00764800.name_hash;
+          if (uVar7 == 0) {
             if (_DAT_01c08b5c != 0) {
               return 0;
             }
             local_f0 = 0;
           }
-          if ((uVar6 != 0x0FFFFFFF) && (local_f0 != 0)) {
-            *(uint *)(uVar6 + 0x70) = 2;
-            iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(uVar6,uVar5);
+          if ((uVar7 != 0x0FFFFFFF) && (local_f0 != 0)) {
+            *(uint *)(uVar7 + 0x70) = 2;
+            iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(uVar7,uVar6);
             if (iVar3 != 0) {
               *(byte *)(iVar3 + 0x2cc) = 0;
               sound_sndmain_cpp_killSfx_FUN_00527230();
             }
-            iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(uVar6,DAT_00765c68);
+            iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                              (uVar7,CDemonActorType_00765c30.name_hash);
             if (iVar3 != 0) {
               *(byte *)(iVar3 + 0x1ac) = 0;
               *(byte *)(iVar3 + 0x214) = 0;
@@ -600,7 +603,8 @@ LAB_0047aec8:
                             local_ec = local_ec + 1;
                           }
                           uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                            (local_665 + 1,DAT_00765a98,&DAT_00765a60);
+                                            (local_665 + 1,CDemonActorType_00765a60.name_hash,
+                                             &CDemonActorType_00765a60);
                           if (uVar6 == 0) {
                             return 0;
                           }
@@ -741,7 +745,8 @@ LAB_0047aec8:
                                 local_ec = local_ec + 1;
                               }
                               uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                                (local_153d + 1,DAT_00765a98,&DAT_00765a60);
+                                                (local_153d + 1,CDemonActorType_00765a60.name_hash,
+                                                 &CDemonActorType_00765a60);
                               if (uVar6 == 0) {
                                 return 0;
                               }
@@ -1410,8 +1415,9 @@ LAB_0047aec8:
                                                   }
                                                   uVar6 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
-                                                            (local_985 + 1,DAT_00765a98,
-                                                             &DAT_00765a60);
+                                                            (local_985 + 1,
+                                                             CDemonActorType_00765a60.name_hash,
+                                                             &CDemonActorType_00765a60);
                                                   if (uVar6 == 0) {
                                                     return 0;
                                                   }
@@ -1685,8 +1691,9 @@ LAB_0047aec8:
                                                     }
                                                     uVar6 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
-                                                            (local_72d + 1,DAT_00765a98,
-                                                             &DAT_00765a60);
+                                                            (local_72d + 1,
+                                                             CDemonActorType_00765a60.name_hash,
+                                                             &CDemonActorType_00765a60);
                                                   if (uVar6 == 0) {
                                                     return 0;
                                                   }
@@ -1863,8 +1870,9 @@ LAB_0047aec8:
                                                   }
                                                   uVar6 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
-                                                            (local_bdd + 1,DAT_00763e80,
-                                                             &DAT_00763e48);
+                                                            (local_bdd + 1,
+                                                             CDemonActorType_00763e48.name_hash,
+                                                             &CDemonActorType_00763e48);
                                                   if (uVar6 == 0) {
                                                     return 0;
                                                   }
@@ -1906,8 +1914,9 @@ LAB_0047aec8:
                                                   if (local_18 < 0) {
                                                     uVar7 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
-                                                            (local_59d + 1,DAT_00763e80,
-                                                             &DAT_00763e48);
+                                                            (local_59d + 1,
+                                                             CDemonActorType_00763e48.name_hash,
+                                                             &CDemonActorType_00763e48);
                                                   if (uVar7 == 0) {
                                                     return 0;
                                                   }
@@ -1946,7 +1955,8 @@ LAB_0047aec8:
                                                   if (local_f0 != 0) {
                                                     iVar3 = 
                                                   core_actor_cpp_castToClassHash_FUN_0040d890
-                                                            (uVar6,DAT_00765a98);
+                                                            (uVar6,CDemonActorType_00765a60.
+                                                                   name_hash);
                                                   if (iVar3 != 0) {
                                                     (**(code **)(*(int *)(iVar3 + 0x14c) + 0xe8))();
                                                     (**(code **)(*(int *)(iVar3 + 0x14c) + 0xf0))();

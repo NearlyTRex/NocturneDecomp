@@ -277,7 +277,7 @@ void FUN_0041fe40(int param_1,float param_2)
       uVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                         (iVar3,local_c8,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_d4,uVar5);
-      FUN_004b0480(0x01C78C7C,local_d4,0);
+      FUN_004b0480(INT_005b96c4,local_d4,0);
       (**(code **)(*(int *)(param_1 + 0x14c) + 0xa0))(param_1,0x32,0x41c80000);
       *(uint *)(param_1 + 0xbc90) = 1;
     }

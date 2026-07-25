@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
+; undefined1 * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x138]:1  local_138

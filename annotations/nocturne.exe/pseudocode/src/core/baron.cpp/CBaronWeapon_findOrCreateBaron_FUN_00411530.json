@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 150,
-        "line": 143,
+        "line": 166,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 145,
+        "line": 168,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 153,
-        "line": 146,
+        "line": 170,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 152,
-        "line": 152,
+        "line": 177,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 64,
+        "line": 76,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 66,
+        "line": 78,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 132,
+        "line": 153,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 139,
+        "line": 160,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 143,
+        "line": 165,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 87,
-        "line": 32,
+        "line": 34,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 51,
+        "line": 58,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 93,
-        "line": 53,
+        "line": 60,
         "message": "unknown type name 'code'"
       },
       {
         "category": "syntax_error",
         "column": 15,
-        "line": 117,
+        "line": 125,
         "message": "expected unqualified-id"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 172,
+        "line": 188,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 210,
+        "line": 228,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 219,
+        "line": 237,
         "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 337,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 408,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 408,
-        "message": "invalid digit 'C' in decimal constant"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 226,
+    "complexity_score": 212,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 17,
+    "pseudocode_lines": 32,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 111
+    "total_lines": 112
   },
   "cross_references": [
     {
@@ -219,7 +218,7 @@
     },
     {
       "addr": "00764368",
-      "name": "DAT_00764368",
+      "name": "CDemonActorType_00764330.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -357,16 +356,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00764368",
-      "severity": "mild",
-      "text": "(*(uint *)(iVar5 + 0x14cd70 + 0x01E57284),DAT_00764368);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x570) = iVar2;",
@@ -374,7 +365,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x570) == 0) {",
@@ -382,7 +373,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x570) = uVar3;",
@@ -390,7 +381,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 26,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)**(uint **)(*(int *)(param_1 + 0x570) + 0x14c))(*(int *)(param_1 + 0x570));",
@@ -398,7 +389,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(code *)**(uint **)(*(int *)(param_1 + 0x570) + 0x14c))(*(int *)(param_1 + 0x570));",
@@ -406,7 +397,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(code *)**(uint **)(*(int *)(param_1 + 0x570) + 0x14c))(*(int *)(param_1 + 0x570));",
@@ -414,7 +405,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x01CC9450,*(uint *)(param_1 + 0x570));",
@@ -422,7 +413,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
+      "line": 29,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(*(int *)(param_1 + 0x570) + 0x14c) + 0x60))",
@@ -430,7 +421,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(*(int *)(param_1 + 0x570) + 0x14c) + 0x60))",
@@ -438,7 +429,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(int *)(param_1 + 0x570),param_1 + 0x20,param_1 + 0x30);",
@@ -446,7 +437,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(int *)(param_1 + 0x570),param_1 + 0x20,param_1 + 0x30);",
@@ -454,7 +445,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(int *)(param_1 + 0x570),param_1 + 0x20,param_1 + 0x30);",
@@ -462,7 +453,7 @@
     },
     {
       "description": "Raw hex address 0x1cc9450 assigned to bare local `uVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 22,
+      "line": 23,
       "match": "0x1cc9450",
       "severity": "moderate",
       "text": "uVar1 = 0x01CC9450;",

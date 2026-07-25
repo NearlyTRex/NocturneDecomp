@@ -4,7 +4,9 @@
 ; char * __cdecl crt_stdio_c_fgets_FUN_00564b20(char *param_1,int param_2,int param_3)
 ;
 ;
-; XREF[19]:
+; XREF[21]:
+;   FUN_0044b660 at 0044b6a8
+;   FUN_00490210 at 00490259
 ;   FUN_004a4170 at 004a45cd
 ;   FUN_004edfc0 at 004ee039
 ;   core_box.cpp_CBox_loadFromFile_FUN_0041c850 at 0041c872
@@ -13,9 +15,7 @@
 ;   core_event.cpp_CEventList_loadState_FUN_00480f70 at 00480f9c
 ;   core_fire.cpp_CFireEffect_load_FUN_0048c7d0 at 0048c804
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a6f3c
-;   core_gore.cpp_CGore_load_FUN_004b0820 at 004b083c
-;   core_inv.cpp_CInventory_load_FUN_004c1190 at 004c11cc
-;   ... and 9 more
+;   ... and 11 more
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1ac0 = 005671e4

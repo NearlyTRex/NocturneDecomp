@@ -4,18 +4,18 @@
 ; void __cdecl crt_stdio_c_fopen_FUN_0056568c(undefined4 param_1,undefined4 param_2)
 ;
 ;
-; XREF[17]:
+; XREF[22]:
 ;   FUN_004a3b90 at 004a3c6a
 ;   FUN_004a4170 at 004a4541
 ;   FUN_004a4b50 at 004a4bdf
 ;   FUN_004c85f0 at 004c8646
 ;   FUN_004f2990 at 004f2a65
 ;   FUN_004f4b30 at 004f4b3f
+;   FUN_004f7980 at 004f79a5
 ;   FUN_004f7ae0 at 004f7b60
+;   FUN_004f8240 at 004f82a2
 ;   FUN_004f8570 at 004f85c1
-;   core_podmain.cpp_CDemonPod_load_FUN_004f92b0 at 004f92c9
-;   engine_console.cpp_CConsole_printf_FUN_0043ac60 at 0043acf7
-;   ... and 7 more
+;   ... and 12 more
 ;
 ; Called Functions:
 ;   FUN_00565630

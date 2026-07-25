@@ -9,7 +9,7 @@
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 00507a50
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ba8ec
+;   int INT_005ba8ec = 0x1cadf80
 ;   undefined4 DAT_02dd10cc
 ;
 ; Called Functions:
@@ -19,7 +19,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x005ba8ec]      ; 005492f0 | DAT_005ba8ec
+    MOV EDX,dword ptr [0x005ba8ec]      ; 005492f0 | INT_005ba8ec
         ;   Label: core_terrain.cpp_CTerrain_free_FUN_005492f0
     PUSH EDX                            ; 005492f6
     CALL core_ground.cpp_CGround_free_FUN_004b1470 ; 005492f7

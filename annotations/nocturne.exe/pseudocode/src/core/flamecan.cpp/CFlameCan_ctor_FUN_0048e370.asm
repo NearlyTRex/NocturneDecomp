@@ -4,6 +4,9 @@
 ; int core_flamecan_cpp_CFlameCan_ctor_FUN_0048e370(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0048e340 at 0048e353
+;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00581639
 ;   TerminatedCString s_none_00581646

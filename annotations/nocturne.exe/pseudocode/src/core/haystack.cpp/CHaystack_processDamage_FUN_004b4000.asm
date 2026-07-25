@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0059e878 = 0.5
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_01c777bc
 ;   undefined4 DAT_01c77818
 ;
@@ -119,7 +119,7 @@ section .text
     PUSH 0x42480000                     ; 004b40f2
     PUSH 0x32                           ; 004b40f7
     PUSH EBX                            ; 004b40f9
-    MOV EAX,[0x005b96c4]                ; 004b40fa | DAT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 004b40fa | INT_005b96c4
     PUSH EAX                            ; 004b40ff
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 004b4100
         ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670()

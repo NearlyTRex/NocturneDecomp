@@ -13,8 +13,8 @@ void FUN_00572ea0(uint *param_1,uint *param_2,uint *param_3)
   
   if (param_1 != (uint *)0x0) {
     puVar1 = (byte *)*param_1;
-    *param_1 = PTR_LAB_005c2168;
-    PTR_LAB_005c2168 = puVar1;
+    *param_1 = PTR_FUN_005c2168;
+    PTR_FUN_005c2168 = puVar1;
   }
   if (param_2 != (uint *)0x0) {
     puVar1 = (byte *)*param_2;

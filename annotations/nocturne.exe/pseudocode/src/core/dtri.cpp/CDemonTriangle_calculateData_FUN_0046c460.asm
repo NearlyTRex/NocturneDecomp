@@ -10,7 +10,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0046c300 at 0046c339
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0 at 0046c5f5
 ;
 ; *****************************************************************************

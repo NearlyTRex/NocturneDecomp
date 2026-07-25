@@ -4,6 +4,9 @@
 ; bool FUN_0056e5ac(void)
 ;
 ;
+; XREF[1]:
+;   FUN_00573ed0 at 00573ee5
+;
 ; Referenced Globals:
 ;   void* PTR_TlsAlloc_005755c0 = 00176086
 ;   undefined4 DAT_005c1ab8

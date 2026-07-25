@@ -4,6 +4,9 @@
 ; int FUN_004b2760(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004b2730 at 004b2743
+;
 ; Referenced Globals:
 ;   TerminatedCString s_gat_kfm_00585402
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059e744 = 00553f10

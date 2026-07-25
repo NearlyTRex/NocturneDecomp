@@ -56,16 +56,16 @@ section .text
         ;   XREF to: 004bf23d (CONDITIONAL_JUMP)  ; LAB_004bf23d
     PUSH EDI                            ; 004befcd
         ;   Label: LAB_004befcd
-    MOV EDX,dword ptr [0x005bab64]      ; 004befce | DAT_005bab64
+    MOV EDX,dword ptr [0x005bab64]      ; 004befce | INT_005bab64
     PUSH EDX                            ; 004befd4
-    MOV ECX,dword ptr [0x005bab60]      ; 004befd5 | DAT_005bab60
+    MOV ECX,dword ptr [0x005bab60]      ; 004befd5 | INT_005bab60
     PUSH ECX                            ; 004befdb
     PUSH 0x586dac                       ; 004befdc | = "invback"
     PUSH 0x1cb0380                      ; 004befe1
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004befe6
         ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
     ADD ESP,0x10                        ; 004befeb
-    MOV EBX,dword ptr [0x005bab64]      ; 004befee | DAT_005bab64
+    MOV EBX,dword ptr [0x005bab64]      ; 004befee | INT_005bab64
     PUSH EBX                            ; 004beff4
     PUSH EBX                            ; 004beff5
     PUSH 0x586db4                       ; 004beff6 | = "invback2"
@@ -73,16 +73,16 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004bf000
         ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
     ADD ESP,0x10                        ; 004bf005
-    MOV EDI,dword ptr [0x005bab64]      ; 004bf008 | DAT_005bab64
+    MOV EDI,dword ptr [0x005bab64]      ; 004bf008 | INT_005bab64
     PUSH EDI                            ; 004bf00e
-    MOV EBP,dword ptr [0x005bab60]      ; 004bf00f | DAT_005bab60
+    MOV EBP,dword ptr [0x005bab60]      ; 004bf00f | INT_005bab60
     PUSH EBP                            ; 004bf015
     PUSH 0x586dbd                       ; 004bf016 | = "weapback"
     PUSH 0x1cb03a8                      ; 004bf01b
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004bf020
         ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
     ADD ESP,0x10                        ; 004bf025
-    MOV EAX,[0x005bab64]                ; 004bf028 | DAT_005bab64
+    MOV EAX,[0x005bab64]                ; 004bf028 | INT_005bab64
     PUSH EAX                            ; 004bf02d
     PUSH EAX                            ; 004bf02e
     PUSH 0x586dc6                       ; 004bf02f | = "weapback2"
@@ -262,9 +262,9 @@ section .text
     INC dword ptr [0x01cb03d0]          ; 004bf235 | DAT_01cb03d0
     JMP 0x004bf212                      ; 004bf23b
         ;   XREF to: 004bf212 (UNCONDITIONAL_JUMP)  ; LAB_004bf212
-    PUSH 0x5bab64                       ; 004bf23d | DAT_005bab64
+    PUSH 0x5bab64                       ; 004bf23d | INT_005bab64
         ;   Label: LAB_004bf23d
-    PUSH 0x5bab60                       ; 004bf242 | DAT_005bab60
+    PUSH 0x5bab60                       ; 004bf242 | INT_005bab60
     PUSH 0x586da5                       ; 004bf247 | = "%d,%d\n"
     PUSH EAX                            ; 004bf24c
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004bf24d

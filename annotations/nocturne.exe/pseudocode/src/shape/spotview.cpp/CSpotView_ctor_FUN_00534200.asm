@@ -4,6 +4,9 @@
 ; undefined4 * shape_spotview_cpp_CSpotView_ctor_FUN_00534200(undefined4 *param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_005341f0 at 005341f5
+;
 ; Referenced Globals:
 ;   undefined4 DAT_005c0fa8
 ;   undefined4 DAT_005c0fac

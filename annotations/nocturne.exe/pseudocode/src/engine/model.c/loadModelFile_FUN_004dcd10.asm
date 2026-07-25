@@ -6,7 +6,8 @@
 ; Local Variables:
 ; undefined        Stack[-0x5c]:1  local_5c
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004dcf60 at 004dd374
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004c3aa0 at 004c3bf2
 ;
 ; Referenced Globals:

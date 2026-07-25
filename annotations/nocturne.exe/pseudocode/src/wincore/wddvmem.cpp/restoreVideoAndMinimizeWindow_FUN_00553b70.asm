@@ -4,6 +4,9 @@
 ; void wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_00553b70(void)
 ;
 ;
+; XREF[1]:
+;   FUN_00558d90 at 00558e8f
+;
 ; Referenced Globals:
 ;   void* PTR_ShowWindow_0057547c = 00175aa2
 ;   undefined4 DAT_02dc9d60

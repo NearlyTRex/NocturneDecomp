@@ -1,0 +1,325 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 56,
+    "complexity_score": 135,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 11,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 76
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056f480",
+    "address_range": [
+      [
+        "0056f480",
+        "0056f4ed"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0056f480",
+    "signature": "undefined1 * FUN_0056f480(uint *param_1,undefined1 *param_2,int param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056f3e0",
+      "is_variadic": false,
+      "name": "FUN_0056f3e0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.617021276595745,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 41,
+      "INT_ADD": 22,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_MULT": 4,
+      "INT_NEGATE": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 14,
+      "INT_ZEXT": 4,
+      "LOAD": 14,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 170
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0056f48f",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "byte * FUN_0056f480(uint *param_1,byte *param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "byte * FUN_0056f480(uint *param_1,byte *param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "byte * FUN_0056f480(uint *param_1,byte *param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 9,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_18 = *param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_14 = param_1[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar1 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if ((param_3 == 10) && ((local_14 & 0x80000000) != 0)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*param_2 = 0x2d;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar1 = param_2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "FUN_0056f3e0(&local_18,puVar1,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "return param_2;",
+      "type": "unnamed_param"
+    }
+  ]
+}

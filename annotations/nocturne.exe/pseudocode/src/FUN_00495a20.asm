@@ -459,7 +459,7 @@ section .text
     TEST ESI,ESI                        ; 00495df6
     JZ 0x0049695c                       ; 00495df8
         ;   XREF to: 0049695c (CONDITIONAL_JUMP)  ; LAB_0049695c
-    MOV ECX,dword ptr [0x00764ad4]      ; 00495dfe | DAT_00764ad4
+    MOV ECX,dword ptr [0x00764ad4]      ; 00495dfe | CDemonActorType_00764a9c.name_hash
         ;   Label: LAB_00495dfe
     PUSH ECX                            ; 00495e04
     MOV EDI,dword ptr [EBX + 0x24ac]    ; 00495e05
@@ -689,7 +689,7 @@ section .text
     SAHF                                ; 004960b9
     JNC 0x0049616c                      ; 004960ba
         ;   XREF to: 0049616c (CONDITIONAL_JUMP)  ; LAB_0049616c
-    MOV EAX,[0x00764838]                ; 004960c0 | DAT_00764838
+    MOV EAX,[0x00764838]                ; 004960c0 | CDemonActorType_00764800.name_hash
     PUSH EAX                            ; 004960c5
     MOV EDX,dword ptr [EBX + 0x1fa0c]   ; 004960c6
     PUSH EDX                            ; 004960cc
@@ -1277,7 +1277,7 @@ section .text
         ;   Label: LAB_0049673f
     JMP 0x004966a4                      ; 00496744
         ;   XREF to: 004966a4 (UNCONDITIONAL_JUMP)  ; LAB_004966a4
-    MOV EAX,[0x00764230]                ; 00496749 | DAT_00764230
+    MOV EAX,[0x00764230]                ; 00496749 | CDemonActorType_007641f8.name_hash
         ;   Label: LAB_00496749
     PUSH EAX                            ; 0049674e
     MOV EDX,dword ptr [EBX + 0x1fa08]   ; 0049674f

@@ -4,7 +4,8 @@
 ; void __cdecl engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0(int *param_1,int param_2,int param_3)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00437ab0 at 00437c52
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0 at 004217fd
 ;   core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_00518ec0 at 00518f09
 ;

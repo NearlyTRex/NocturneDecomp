@@ -12,8 +12,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[4]:
+; XREF[5]:
 ;   FUN_004421b0 at 004422aa
+;   FUN_00446760 at 0044679e
 ;   FUN_00447f20 at 004480f3
 ;   FUN_0049cc10 at 0049ce19
 ;   core_sound.cpp_updateListeners_FUN_0052c9d0 at 0052cea3

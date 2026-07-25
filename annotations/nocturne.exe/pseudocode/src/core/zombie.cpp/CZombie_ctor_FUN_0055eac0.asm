@@ -6,6 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
+; XREF[1]:
+;   FUN_0055ea90 at 0055eaa3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_zombie1_dfm_005983e6
 ;   TerminatedCString s_true_005983f2

@@ -8,7 +8,7 @@
 ;   core_particle.cpp_CParticle_process_FUN_004ef120 at 004ef1fb
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b6d08
+;   undefined1 DAT_005b6d08
 ;
 ; *****************************************************************************
 

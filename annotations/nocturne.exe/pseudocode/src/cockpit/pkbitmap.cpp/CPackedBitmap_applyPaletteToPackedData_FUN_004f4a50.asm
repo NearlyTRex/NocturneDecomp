@@ -4,7 +4,9 @@
 ; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50(int param_1,int param_2)
 ;
 ;
-; XREF[1]:
+; XREF[3]:
+;   FUN_004f5110 at 004f5241
+;   FUN_004f5b70 at 004f5b8e
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_004f4a00 at 004f4a24
 ;
 ; *****************************************************************************

@@ -187,7 +187,7 @@ section .text
     PUSH -0x1                           ; 004a42ca
     PUSH 0x0                            ; 004a42cc
     PUSH 0x9                            ; 004a42ce
-    MOV EDI,dword ptr [0x005baca0]      ; 004a42d0 | DAT_005baca0
+    MOV EDI,dword ptr [0x005baca0]      ; 004a42d0 | INT_005baca0
     PUSH EDI                            ; 004a42d6
     CALL core_level.cpp_CLevelLoader_show_FUN_004c5640 ; 004a42d7
         ;   XREF to: 004c5640 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_show_FUN_004c5640()
@@ -724,7 +724,7 @@ section .text
     JNZ 0x004a491d                      ; 004a490b
         ;   XREF to: 004a491d (CONDITIONAL_JUMP)  ; LAB_004a491d
     PUSH EBX                            ; 004a490d
-    MOV EDI,dword ptr [0x005b96c4]      ; 004a490e | DAT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 004a490e | INT_005b96c4
     PUSH EDI                            ; 004a4914
     CALL core_gore.cpp_CGore_load_FUN_004b0820 ; 004a4915
         ;   XREF to: 004b0820 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_load_FUN_004b0820()
@@ -849,7 +849,7 @@ section .text
     ADD ESP,0xc                         ; 004a4a96
     JMP 0x004a4289                      ; 004a4a99
         ;   XREF to: 004a4289 (UNCONDITIONAL_JUMP)  ; LAB_004a4289
-    MOV EBP,dword ptr [0x005b96c4]      ; 004a4a9e | DAT_005b96c4
+    MOV EBP,dword ptr [0x005b96c4]      ; 004a4a9e | INT_005b96c4
         ;   Label: LAB_004a4a9e
     PUSH EBP                            ; 004a4aa4
     CALL core_gore.cpp_CGore_reset_FUN_004afdb0 ; 004a4aa5

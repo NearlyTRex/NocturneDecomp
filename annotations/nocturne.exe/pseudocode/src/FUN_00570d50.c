@@ -35,7 +35,7 @@ ulonglong FUN_00570d50(void)
     FUN_0056bf67(uVar1);
                     /* WARNING: Could not recover jumptable at 0x00570ea9. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    uVar2 = (*(code *)(&PTR_LAB_005c4094)
+    uVar2 = (*(code *)(&PTR_FUN_005c4094)
                       [(extraout_EDX * 2 +
                        (uint)CARRY4((uint)uStack_1c << 0x10,(uint)uStack_1c << 0x10)) * 2 +
                        (uint)CARRY4((uint)uStack_28 << 0x10,(uint)uStack_28 << 0x10)])();

@@ -17,7 +17,7 @@
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7630
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_005c168c
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
@@ -154,7 +154,7 @@ section .text
     PUSH 0x0                            ; 0046f90a
     JMP 0x0046f843                      ; 0046f90c
         ;   XREF to: 0046f843 (UNCONDITIONAL_JUMP)  ; LAB_0046f843
-    MOV EBX,dword ptr [0x005bac64]      ; 0046f911 | DAT_005bac64
+    MOV EBX,dword ptr [0x005bac64]      ; 0046f911 | INT_005bac64
         ;   Label: LAB_0046f911
     PUSH EBX                            ; 0046f917 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0 ; 0046f918

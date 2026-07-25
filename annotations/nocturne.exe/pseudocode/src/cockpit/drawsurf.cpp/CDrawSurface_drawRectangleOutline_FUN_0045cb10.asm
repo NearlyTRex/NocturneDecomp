@@ -4,7 +4,9 @@
 ; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_0045cb10(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
 ;
 ;
-; XREF[1]:
+; XREF[3]:
+;   FUN_0045cb90 at 0045cbf0
+;   FUN_0045cc10 at 0045cc5c
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70 at 0045cb82
 ;
 ; Called Functions:

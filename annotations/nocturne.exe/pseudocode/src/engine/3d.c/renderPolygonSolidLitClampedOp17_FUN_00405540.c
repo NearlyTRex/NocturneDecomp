@@ -25,27 +25,27 @@ int engine_3d_c_renderPolygonSolidLitClampedOp17_FUN_00405540(int param_1)
     if (_DAT_01c03948 == 0) {
       if (DAT_005b7624 == 0x20) {
 LAB_00405589:
-        _DAT_01c00c7c = &LAB_005300ec;
+        _DAT_01c00c7c = FUN_005300ec;
       }
       else {
-        _DAT_01c00c7c = &LAB_00530322;
+        _DAT_01c00c7c = FUN_00530322;
       }
     }
     else if (DAT_005b7624 == 0x20) {
-      _DAT_01c00c7c = &LAB_0052f031;
+      _DAT_01c00c7c = FUN_0052f031;
     }
     else {
 LAB_00405670:
-      _DAT_01c00c7c = &LAB_0052f823;
+      _DAT_01c00c7c = FUN_0052f823;
     }
   }
   else if (_DAT_01c03948 == 0) {
     if (DAT_005b7624 == 0x20) goto LAB_00405589;
-    _DAT_01c00c7c = &LAB_00530322;
+    _DAT_01c00c7c = FUN_00530322;
   }
   else {
     if (DAT_005b7624 != 0x20) goto LAB_00405670;
-    _DAT_01c00c7c = &LAB_0052f031;
+    _DAT_01c00c7c = FUN_0052f031;
   }
   engine_3d_c_calculatePolygonLighting_FUN_00404710(param_1);
   _DAT_01c039a0 = 0x13;

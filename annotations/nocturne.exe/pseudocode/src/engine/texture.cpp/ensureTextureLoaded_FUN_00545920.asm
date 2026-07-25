@@ -4,15 +4,18 @@
 ; int __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_00545920(int param_1)
 ;
 ;
-; XREF[8]:
+; XREF[13]:
+;   FUN_00405b40 at 00405c2c
+;   FUN_00408fc0 at 004090c2
+;   FUN_0044d060 at 0044d159
 ;   FUN_0048f490 at 0048f637
+;   FUN_004dd690 at 004dd6bd
+;   FUN_00545a10 at 00545a16
 ;   core_charactr.cpp_FUN_004270e0 at 0042717f
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437e47
 ;   engine_3d.c_updateAnimatedTexture_FUN_00406690 at 004066fd
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 at 00461eb7
-;   engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0 at 0049124d
-;   engine_texture.cpp_loadAndUpdateTexture_FUN_00545a40 at 00545a46
-;   engine_texture.cpp_loadTextureAndGetData_FUN_005459d0 at 005459d5
+;   ... and 3 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006b0278

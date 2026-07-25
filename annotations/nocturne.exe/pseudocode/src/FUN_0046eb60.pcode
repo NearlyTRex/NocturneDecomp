@@ -1,0 +1,95 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    FUN_0046eb60
+# Entry:       0046eb60
+# Signature:   void FUN_0046eb60(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
+#
+# ============================================================================
+
+@0046eb60 [ESP:-4](-4)  # PUSH 0x2ddf970
+COPY (unique,0x87f00,4) = (const,0x2ddf970,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@0046eb65 [ESP:-8](-4)  # PUSH 0x1
+COPY (unique,0x87b00,4) = (const,0x1,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87b00,4)
+
+@0046eb67 [ESP:-12](-4)  # PUSH 0x5b6d24
+COPY (unique,0x87f00,4) = (const,0x5b6d24,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@0046eb6c [ESP:-16](-4)  # PUSH 0x46eba0
+COPY (unique,0x87f00,4) = (const,0x46eba0,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@0046eb71 [ESP:-20](-4)  # PUSH 0x57e4c6
+COPY (unique,0x87f00,4) = (const,0x57e4c6,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@0046eb76 [ESP:-24](-4)  # PUSH 0x1bca088
+COPY (unique,0x87f00,4) = (const,0x1bca088,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x87f00,4)
+
+@0046eb7b [ESP:-24](-4)  # CALL 0x0040d3f0
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x46eb80,4)
+CALL (ram,0x40d3f0,4)
+
+@0046eb80 [ESP:-24]  # MOV ECX, 0xc2000000
+COPY (register,0x4,4) /* ECX */ = (const,0xc2000000,4)
+
+@0046eb85 [ESP:-24]  # XOR EDX, EDX
+COPY (register,0x200,1) = (const,0x0,1)
+COPY (register,0x20b,1) = (const,0x0,1)
+INT_XOR (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */, (register,0x8,4) /* EDX */
+INT_SLESS (register,0x207,1) = (register,0x8,4) /* EDX */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x8,4) /* EDX */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0x8,4) /* EDX */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@0046eb87 [ESP:+0](+24)?  # ADD ESP, 0x18
+INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x18,4)
+INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x18,4)
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x18,4)
+INT_SLESS (register,0x207,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x10,4) /* ESP */, (const,0x0,4)
+INT_AND (unique,0x49800,4) = (register,0x10,4) /* ESP */, (const,0xff,4)
+POPCOUNT (unique,0x49900,1) = (unique,0x49800,4)
+INT_AND (unique,0x49a00,1) = (unique,0x49900,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x49a00,1), (const,0x0,1)
+
+@0046eb8a [ESP:+0]  # MOV dword ptr [0x01bca0c4], EDX
+COPY (ram,0x1bca0c4,4) = (register,0x8,4) /* EDX */
+
+@0046eb90 [ESP:+0]  # MOV dword ptr [0x01bca0c8], ECX
+COPY (ram,0x1bca0c8,4) = (register,0x4,4) /* ECX */
+
+@0046eb96 [ESP:+0]  # MOV dword ptr [0x01bca0cc], EDX
+COPY (ram,0x1bca0cc,4) = (register,0x8,4) /* EDX */
+
+@0046eb9c [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 14 instructions, 46 P-code ops
+# ============================================================================

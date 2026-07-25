@@ -4,8 +4,10 @@
 ; undefined1 __cdecl wincore_winrun_cpp_getNextKeypress_FUN_00558b00(void)
 ;
 ;
-; XREF[11]:
+; XREF[13]:
+;   FUN_0044b660 at 0044b6dc
 ;   FUN_004c8510 at 004c855c
+;   FUN_004c8eb0 at 004c9084
 ;   FUN_004c90e0 at 004c92e4
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6e6a
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e5b6
@@ -13,9 +15,7 @@
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d960d
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 00507c60
 ;   engine_2d.c_getInputWithPrompt_FUN_00403fb0 at 00404008
-;   engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0 at 004c41c0
-;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004c41d0 at 004c41d0
-;   ... and 1 more
+;   ... and 3 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de0848

@@ -36,7 +36,7 @@
 ;   float FLOAT_005822ca = 0.5
 ;   double DOUBLE_005822d2 = 0.700000000000000
 ;   double DOUBLE_005822da = 0.300000000000000
-;   undefined4 DAT_00764ad4
+;   undefined4 CDemonActorType_00764a9c.name_hash
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -75,7 +75,7 @@ section .text
     XOR ECX,ECX                         ; 00499cce
     MOV dword ptr [ESP + 0x180],EAX     ; 00499cd0
     MOV dword ptr [ESP + 0x140],ECX     ; 00499cd7
-    MOV EAX,[0x00764ad4]                ; 00499cde | DAT_00764ad4
+    MOV EAX,[0x00764ad4]                ; 00499cde | CDemonActorType_00764a9c.name_hash
     MOV dword ptr [ESP + 0x13c],ECX     ; 00499ce3
     PUSH EAX                            ; 00499cea
     MOV dword ptr [ESP + 0x13c],ECX     ; 00499ceb

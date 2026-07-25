@@ -4,9 +4,10 @@
 ; int FUN_004ee950(undefined4 param_1)
 ;
 ;
-; XREF[6]:
+; XREF[7]:
 ;   FUN_004b6610 at 004b6618
 ;   FUN_004b9af0 at 004b9af8
+;   FUN_004ee920 at 004ee933
 ;   FUN_00543150 at 00543156
 ;   FUN_005433a0 at 005433a6
 ;   core_hostage.cpp_CHostage_ctor_FUN_004b69f0 at 004b69f8

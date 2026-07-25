@@ -57,7 +57,7 @@ uint __cdecl sound_sndmain_cpp_writeIni_FUN_00528c80(uint param_1)
   uVar2 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
   iVar3 = 0;
   uVar2 = engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(param_1,"Mute",uVar2);
-  if (0 < 0x00000020) {
+  if (0 < DAT_005bea60) {
     do {
       _sprintf(local_84,"SfxChannel%dEnabled",iVar3);
       uVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00527490(iVar3);
@@ -66,7 +66,7 @@ uint __cdecl sound_sndmain_cpp_writeIni_FUN_00528c80(uint param_1)
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(iVar3);
       iVar3 = iVar3 + 1;
       uVar2 = engine_ini_cpp_CIniFile_setFloatValue_FUN_004bdb20(param_1,local_84,local_14);
-    } while (iVar3 < 0x00000020);
+    } while (iVar3 < DAT_005bea60);
   }
   return uVar2;
 }

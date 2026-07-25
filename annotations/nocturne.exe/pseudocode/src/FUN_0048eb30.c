@@ -23,7 +23,7 @@ void FUN_0048eb30(int param_1,float param_2)
     }
     iVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
     if (iVar2 == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-      FUN_004940d0(0x01C70F74);
+      FUN_004940d0(INT_005b9284);
     }
   }
   else {

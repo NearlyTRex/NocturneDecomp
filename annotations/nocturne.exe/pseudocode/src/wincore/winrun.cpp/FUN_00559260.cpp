@@ -105,7 +105,7 @@ uint wincore_winrun_cpp_FUN_00559260(HMODULE param_1,uint param_2,uint param_3,i
   (&DAT_02de2a10)[uVar11] = 0;
 LAB_005593b7:
   SetCurrentDirectoryA(&DAT_02de2a10);
-  local_58.lpfnWndProc = (WNDPROC)&LAB_00558d90;
+  local_58.lpfnWndProc = FUN_00558d90;
   local_58.cbClsExtra = 0;
   local_58.cbWndExtra = 0;
   local_58.hInstance = param_1;

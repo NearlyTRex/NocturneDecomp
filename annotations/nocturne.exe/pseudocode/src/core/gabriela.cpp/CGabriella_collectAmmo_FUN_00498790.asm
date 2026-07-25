@@ -8,7 +8,7 @@
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 004977ce
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00764230
+;   undefined4 CDemonActorType_007641f8.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -27,7 +27,7 @@ section .text
         ;   XREF to: 004987a1 (CONDITIONAL_JUMP)  ; LAB_004987a1
     POP EBX                             ; 0049879f
     RET                                 ; 004987a0
-    MOV ECX,dword ptr [0x00764230]      ; 004987a1 | DAT_00764230
+    MOV ECX,dword ptr [0x00764230]      ; 004987a1 | CDemonActorType_007641f8.name_hash
         ;   Label: LAB_004987a1
     PUSH ECX                            ; 004987a7
     PUSH EDX                            ; 004987a8

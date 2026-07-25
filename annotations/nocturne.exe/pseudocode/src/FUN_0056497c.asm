@@ -4,18 +4,18 @@
 ; int FUN_0056497c(int param_1)
 ;
 ;
-; XREF[19]:
+; XREF[129]:
+;   FUN_0040eb40 at 0040eb45
+;   FUN_0040f010 at 0040f015
 ;   FUN_0040f1a0 at 0040f1e8
-;   FUN_004120d0 at 004120d5
-;   FUN_0044c560 at 0044c569
-;   FUN_00540f50 at 005411f5
-;   FUN_005458a0 at 005458a5
-;   core_bodypart.cpp_createBodyPart_FUN_00415b30 at 00415b48
-;   core_cloth.cpp_CClothList_load_FUN_00438270 at 00438299
-;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 at 0044bd97
-;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1b18
-;   core_gore.cpp_CGore_spawnFlies_FUN_004b0580 at 004b0590
-;   ... and 9 more
+;   FUN_0040f530 at 0040f535
+;   FUN_0040f930 at 0040f935
+;   FUN_0040fea0 at 0040fea5
+;   FUN_004101a0 at 004101a5
+;   FUN_00411320 at 00411325
+;   FUN_004116e0 at 004116e5
+;   FUN_004119e0 at 004119e5
+;   ... and 119 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de5488

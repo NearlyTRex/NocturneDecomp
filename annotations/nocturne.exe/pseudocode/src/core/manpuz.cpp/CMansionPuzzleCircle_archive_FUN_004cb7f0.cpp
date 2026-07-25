@@ -15,12 +15,12 @@ void core_manpuz_cpp_CMansionPuzzleCircle_archive_FUN_004cb7f0(int param_1)
   int iVar4;
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
-  if (1 < 0x00000003) {
+  if (1 < INT_005bad50) {
     core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x5c4,"pGemPos");
     core_actor_cpp_archiveOrientation_FUN_0040c4f0(param_1 + 0x5d0,"pGemOrient");
     core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x5dc,"pEmitterPos");
   }
-  if (2 < 0x00000003) {
+  if (2 < INT_005bad50) {
     iVar2 = param_1 + 0x63c;
     iVar1 = 0;
     iVar4 = param_1 + 0x638;

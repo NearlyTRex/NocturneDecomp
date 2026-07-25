@@ -209,7 +209,7 @@ switchD_004a9c0a_caseD_e:
                                            (float10)0.25);
               local_70 = (int)ROUND(fVar13);
               core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                        (0x01C78C7C,&local_168,0,local_70,uVar15);
+                        (INT_005b96c4,&local_168,0,local_70,uVar15);
             }
             iVar5 = *(int *)(param_1 + 0xbca4);
             if (*(float *)(iVar5 + 0x2434) <= 0.0) {
@@ -238,7 +238,7 @@ switchD_004a9c0a_caseD_e:
       uVar15 = 0x4a9a56;
       fVar13 = (float10)round((float10)local_14 * (float10)0.25);
       local_58 = (int)ROUND(fVar13);
-      core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(0x01C78C7C,local_1d4,0,local_58,uVar15);
+      core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(INT_005b96c4,local_1d4,0,local_58,uVar15);
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1);
       break;
     case 0xd:
@@ -249,7 +249,7 @@ switchD_004a9c0a_caseD_e:
       uVar15 = 0x4a9ae1;
       fVar13 = (float10)round((float10)local_14 * (float10)0.25);
       local_54 = (int)ROUND(fVar13);
-      core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(0x01C78C7C,local_228,0,local_54,uVar15);
+      core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(INT_005b96c4,local_228,0,local_54,uVar15);
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1);
       break;
     case 0xe:
@@ -264,7 +264,7 @@ switchD_004a9c0a_caseD_e:
       uVar15 = 0x4a9b6c;
       fVar13 = (float10)round((float10)local_14 * (float10)0.25);
       local_84 = (int)ROUND(fVar13);
-      core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(0x01C78C7C,local_15c,0,local_84,uVar15);
+      core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(INT_005b96c4,local_15c,0,local_84,uVar15);
       iVar5 = core_actor_cpp_randomChance_FUN_0040dea0(0x3f000000);
       if (iVar5 == 0) {
         pcVar10 = "ghoul-dig-?.wav @1.3";
@@ -549,7 +549,7 @@ LAB_004aa1e6:
               local_2a4 = param_1;
               local_2a0 = param_1;
               uVar9 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                                (local_114,0x1c78bcc,_DAT_01c78c1c * 0x30 + param_1 + 0xfd0,
+                                (local_114,&DAT_01c78bcc,_DAT_01c78c1c * 0x30 + param_1 + 0xfd0,
                                  0x3e4ccccd,local_2d8);
               uVar9 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                 (param_1,local_1bc,uVar9);
@@ -571,7 +571,7 @@ LAB_004aa1e6:
         uVar9 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                           (iVar6,local_12c,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_108,uVar9);
-        FUN_004b0480(0x01C78C7C,local_108,0);
+        FUN_004b0480(INT_005b96c4,local_108,0);
         *(uint *)(param_1 + 0xbc90) = 1;
       }
       *(uint *)(param_1 + 0xbd8c) = 0;
@@ -713,8 +713,8 @@ LAB_004aaa0a:
             local_2e0 = param_1;
             local_2dc = param_1;
             uVar9 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
-                              (local_210,0x1c78bc0,_DAT_01c78c18 * 0x30 + param_1 + 0xfd0,0x3ecccccd
-                               ,local_314);
+                              (local_210,&DAT_01c78bc0,_DAT_01c78c18 * 0x30 + param_1 + 0xfd0,
+                               0x3ecccccd,local_314);
             uVar9 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                               (param_1,local_21c,uVar9);
             iVar6 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(param_1,uVar9);
@@ -829,7 +829,7 @@ LAB_004a93c4:
     local_14 = local_60;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
               (param_1 + 0x150,*(uint *)(param_1 + 0xbd3c),local_60,local_5c,_DAT_01c78c38,
-               &LAB_0051b650);
+               FUN_0051b650);
     fVar3 = *(float *)(param_1 + 0xbd38) - param_2 / 0.7f;
     *(float *)(param_1 + 0xbd38) = fVar3;
     if (fVar3 < 0.0) {

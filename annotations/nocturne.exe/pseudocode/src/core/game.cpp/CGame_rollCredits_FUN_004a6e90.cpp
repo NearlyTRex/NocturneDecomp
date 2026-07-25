@@ -158,7 +158,7 @@ LAB_004a722b:
       engine_2d_c_fillRectColor_FUN_00403e60(0x19e,0x1b7,0x27f,0x1df,0);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,1);
+    iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,1);
     if (iVar4 != 0) goto LAB_004a722b;
     core_game_cpp_CGame_updateDT_FUN_0049a8a0(unaff_retaddr);
     local_18 = local_18 - *(float *)(unaff_retaddr + 0x264) * 32.0f;

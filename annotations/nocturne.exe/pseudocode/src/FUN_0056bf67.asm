@@ -9,7 +9,7 @@
 ;   crt_math.c_pow_FUN_00565ad6 at 00565bb9
 ;
 ; Referenced Globals:
-;   undefined1* PTR_LAB_005c3f84 = 0056bf71
+;   undefined1* PTR_FUN_005c3f84 = 0056bf71
 ;
 ; *****************************************************************************
 
@@ -17,5 +17,5 @@ section .text
 
     SUB ESP,0x2c                        ; 0056bf67
         ;   Label: FUN_0056bf67
-    JMP dword ptr [EAX*0x4 + 0x5c3f84]  ; 0056bf6a | PTR_LAB_005c3f84
+    JMP dword ptr [EAX*0x4 + 0x5c3f84]  ; 0056bf6a | PTR_FUN_005c3f84
 

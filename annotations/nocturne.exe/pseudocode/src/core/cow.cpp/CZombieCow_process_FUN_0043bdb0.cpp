@@ -128,7 +128,7 @@ void core_cow_cpp_CZombieCow_process_FUN_0043bdb0(int param_1,float param_2)
         uVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                           (iVar4,local_78,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_84,uVar6);
-        FUN_004b0480(0x01C78C7C,local_84,0);
+        FUN_004b0480(INT_005b96c4,local_84,0);
         *(uint *)(param_1 + 0xbc90) = 1;
       }
     }

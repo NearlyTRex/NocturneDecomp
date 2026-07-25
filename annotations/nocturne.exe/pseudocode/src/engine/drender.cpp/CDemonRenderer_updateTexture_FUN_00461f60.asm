@@ -4,7 +4,8 @@
 ; void __cdecl engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00461f60(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00443180 at 00443242
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 0044392e
 ;
 ; Called Functions:

@@ -51,7 +51,7 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(int param_1)
     uVar9 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
                       (iVar1,uVar8,*(uint *)(param_1 + 0x2a88));
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-              (iVar1,uVar8,uVar9,fVar10,_DAT_01e533c8,&LAB_0051b650);
+              (iVar1,uVar8,uVar9,fVar10,_DAT_01e533c8,FUN_0051b650);
     if (*(int *)(param_1 + 0x2a84) == 1) {
       FUN_004fd1d0(param_1,1);
       return;

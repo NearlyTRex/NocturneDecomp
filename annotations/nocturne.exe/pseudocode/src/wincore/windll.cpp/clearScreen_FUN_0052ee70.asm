@@ -4,18 +4,18 @@
 ; undefined4 __cdecl wincore_windll_cpp_clearScreen_FUN_0052ee70(void)
 ;
 ;
-; XREF[25]:
+; XREF[28]:
+;   FUN_0044b660 at 0044b699
 ;   FUN_0049cc10 at 0049cd04
 ;   FUN_004a57c0 at 004a5989
 ;   FUN_004c8510 at 004c851b
 ;   FUN_004c85f0 at 004c8bba
+;   FUN_004c8eb0 at 004c8f11
 ;   FUN_004c90e0 at 004c9160
 ;   FUN_004d23d0 at 004d25d2
+;   FUN_00545aa0 at 00545abf
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 004404dc
-;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a66b9
-;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6a74
-;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a701a
-;   ... and 15 more
+;   ... and 18 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c

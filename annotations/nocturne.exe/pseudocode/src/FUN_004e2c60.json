@@ -1,0 +1,302 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 63,
+    "complexity_score": 141,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004e2c60",
+    "address_range": [
+      [
+        "004e2c60",
+        "004e2cd3"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_004e2c60",
+    "signature": "bool FUN_004e2c60(int param_1,uint param_2,undefined4 param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e2ac0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.510204081632653,
+    "instruction_count": 49,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 3,
+      "COPY": 45,
+      "INT_ADD": 14,
+      "INT_AND": 55,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 30,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 11,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 18,
+      "INT_SUB": 18,
+      "INT_XOR": 2,
+      "LOAD": 11,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 270
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "bool FUN_004e2c60(int param_1,uint param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "bool FUN_004e2c60(int param_1,uint param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "bool FUN_004e2c60(int param_1,uint param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)(param_1 + 0xc) & 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_1,8 - uVar1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar1 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_1,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uVar1 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_1,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "while (((uVar1 & (2 << ((byte)param_3 & 0x1f)) - 1U) != param_2 && (*(int *)(param_1 + 0x1c) == 0)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "while (((uVar1 & (2 << ((byte)param_3 & 0x1f)) - 1U) != param_2 && (*(int *)(param_1 + 0x1c) == 0)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "while (((uVar1 & (2 << ((byte)param_3 & 0x1f)) - 1U) != param_2 && (*(int *)(param_1 + 0x1c) == 0)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_1,8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "return *(int *)(param_1 + 0x1c) == 0;",
+      "type": "unnamed_param"
+    }
+  ]
+}

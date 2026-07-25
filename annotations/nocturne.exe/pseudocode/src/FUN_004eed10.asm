@@ -16,7 +16,7 @@
 ;   TerminatedCString s_motion_state_0058cb47
 ;   TerminatedCString s_shootMe_0058cb54
 ;   TerminatedCString s_poolMe_0058cb5c
-;   undefined4 DAT_005be074
+;   int INT_005be074 = 0x4
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
@@ -34,13 +34,13 @@ section .text
         ;   Label: FUN_004eed10
     PUSH ESI                            ; 004eed11
     MOV EBX,dword ptr [ESP + 0xc]       ; 004eed12
-    CMP dword ptr [0x005be074],0x2      ; 004eed16 | DAT_005be074
+    CMP dword ptr [0x005be074],0x2      ; 004eed16 | INT_005be074
     JL 0x004eed7e                       ; 004eed1d
         ;   XREF to: 004eed7e (CONDITIONAL_JUMP)  ; LAB_004eed7e
     PUSH EBX                            ; 004eed1f
     CALL core_charactr.cpp_CCharacter_archive_FUN_004244b0 ; 004eed20
         ;   XREF to: 004244b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_CCharacter_archive_FUN_004244b0()
-    MOV ECX,dword ptr [0x005be074]      ; 004eed25 | DAT_005be074
+    MOV ECX,dword ptr [0x005be074]      ; 004eed25 | INT_005be074
     ADD ESP,0x4                         ; 004eed2b
     CMP ECX,0x3                         ; 004eed2e
     JL 0x004eed55                       ; 004eed31
@@ -56,7 +56,7 @@ section .text
     CALL core_actor.cpp_FUN_0040cb00    ; 004eed4d
         ;   XREF to: 0040cb00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cb00()
     ADD ESP,0x8                         ; 004eed52
-    CMP dword ptr [0x005be074],0x4      ; 004eed55 | DAT_005be074
+    CMP dword ptr [0x005be074],0x4      ; 004eed55 | INT_005be074
         ;   Label: LAB_004eed55
     JL 0x004eed72                       ; 004eed5c
         ;   XREF to: 004eed72 (CONDITIONAL_JUMP)  ; LAB_004eed72
@@ -66,7 +66,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004eed6a
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 004eed6f
-    CMP dword ptr [0x005be074],0x5      ; 004eed72 | DAT_005be074
+    CMP dword ptr [0x005be074],0x5      ; 004eed72 | INT_005be074
         ;   Label: LAB_004eed72
     JGE 0x004eed9e                      ; 004eed79
         ;   XREF to: 004eed9e (CONDITIONAL_JUMP)  ; LAB_004eed9e

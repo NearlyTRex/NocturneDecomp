@@ -4,7 +4,8 @@
 ; uint engine_3d_c_FUN_00409590(uint param_1,uint param_2,int param_3,undefined4 param_4,uint param_5)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00409510 at 00409575
 ;   engine_3d.c_FUN_00405900 at 00405986
 ;
 ; Referenced Globals:

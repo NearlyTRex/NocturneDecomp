@@ -11,16 +11,16 @@ void core_game_cpp_joinNetworkGame_FUN_004a5e40(void)
 {
   uint uVar1;
   int iVar2;
-  uint *puVar3;
+  char *pcVar3;
   uint *puVar4;
   uint auStack_74 [25];
   byte auStack_10 [4];
   
-  puVar3 = (uint *)0x5b9568;
+  pcVar3 = "10.0.0.105";
   puVar4 = auStack_74;
   for (iVar2 = 0x19; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + 1;
+    *puVar4 = *(uint *)pcVar3;
+    pcVar3 = pcVar3 + 4;
     puVar4 = puVar4 + 1;
   }
   iVar2 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600

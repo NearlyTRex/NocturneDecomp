@@ -9,6 +9,7 @@
 
 // undefined1*
 extern undefined1* switchdataD_004f6150;
+extern undefined1* switchdataD_004fbb8c;
 extern undefined1* switchdataD_004fbee8;
 extern undefined1* switchdataD_004fcaf0;
 

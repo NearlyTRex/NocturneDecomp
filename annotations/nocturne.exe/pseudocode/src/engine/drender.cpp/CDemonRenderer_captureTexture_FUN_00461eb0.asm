@@ -4,18 +4,18 @@
 ; void engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(int param_1,int param_2)
 ;
 ;
-; XREF[67]:
+; XREF[71]:
 ;   FUN_0042c4c0 at 0042c54b
 ;   FUN_0043dad0 at 0043daf6
 ;   FUN_0043f330 at 0043f3c5
+;   FUN_00443180 at 004431f1
+;   FUN_00450c90 at 00450cfe
 ;   FUN_00489990 at 00489baa
 ;   FUN_0048d5d0 at 0048da49
 ;   FUN_004ac440 at 004ac4c5
 ;   FUN_004ac600 at 004ac67c
 ;   FUN_004ac7c0 at 004ac83b
-;   FUN_004ac9b0 at 004aca27
-;   FUN_004ada20 at 004adc6f
-;   ... and 57 more
+;   ... and 61 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057dd98

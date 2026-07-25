@@ -4,6 +4,9 @@
 ; void cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int param_1,int param_2,int param_3,int param_4,undefined4 param_5)
 ;
 ;
+; XREF[1]:
+;   FUN_0045ca50 at 0045cad4
+;
 ; Referenced Globals:
 ;   undefined4 DAT_005ad280
 ;   undefined4 DAT_01c00c58

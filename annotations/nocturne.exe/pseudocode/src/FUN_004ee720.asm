@@ -1,0 +1,23 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_004ee720(void)
+;
+;
+; Referenced Globals:
+;   undefined4 DAT_01bd1d8c
+;   undefined4 DAT_01bd1d90
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,dword ptr [ESP + 0x8]       ; 004ee720
+        ;   Label: FUN_004ee720
+    MOV EAX,[0x01bd1d8c]                ; 004ee724 | DAT_01bd1d8c
+    MOV dword ptr [EDX],EAX             ; 004ee729
+    MOV EDX,dword ptr [ESP + 0xc]       ; 004ee72b
+    MOV EAX,[0x01bd1d90]                ; 004ee72f | DAT_01bd1d90
+    MOV dword ptr [EDX],EAX             ; 004ee734
+    RET                                 ; 004ee736
+

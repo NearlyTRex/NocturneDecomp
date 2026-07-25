@@ -1,0 +1,272 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 90,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 6,
+    "suspect_types": [
+      "unnamed_param",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 48
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055bc30",
+    "address_range": [
+      [
+        "0055bc30",
+        "0055bc70"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0055bc30",
+    "signature": "undefined4 FUN_0055bc30(undefined4 param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0055bc00",
+      "is_variadic": false,
+      "name": "core_xform.cpp_getTranslation_FUN_0055bc00"
+    },
+    {
+      "addr": "0055bd00",
+      "is_variadic": false,
+      "name": "core_xform.cpp_inverse_FUN_0055bd00"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.32,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 23,
+      "INT_ADD": 15,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 9,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 12,
+      "INT_ZEXT": 2,
+      "LOAD": 7,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 108
+  },
+  "stack_frame": {
+    "frame_size": 112,
+    "local_size": 112,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_0055bc30(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint FUN_0055bc30(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_xform_cpp_inverse_FUN_0055bd00(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_xform_cpp_getTranslation_FUN_0055bc00(local_3c,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "return param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 16,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

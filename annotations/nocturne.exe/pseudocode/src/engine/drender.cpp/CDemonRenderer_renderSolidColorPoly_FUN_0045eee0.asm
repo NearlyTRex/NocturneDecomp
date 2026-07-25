@@ -4,7 +4,11 @@
 ; void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0045eee0(int param_1,int param_2)
 ;
 ;
-; XREF[3]:
+; XREF[7]:
+;   FUN_00468d00 at 00469126
+;   FUN_0046e9f0 at 0046eb2d
+;   FUN_0050dfe0 at 0050e04f
+;   FUN_00511d80 at 00512326
 ;   FUN_005125a0 at 0051329d
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510 at 00518ca1
 ;   core_water.cpp_CWater_render_FUN_00550cb0 at 0055117b
@@ -59,7 +63,7 @@ section .text
     JZ 0x0045ef68                       ; 0045ef24
         ;   XREF to: 0045ef68 (CONDITIONAL_JUMP)  ; LAB_0045ef68
     XOR EBP,EBP                         ; 0045ef26
-    MOV EBX,0x463a79                    ; 0045ef28 | LAB_00463a79
+    MOV EBX,0x463a79                    ; 0045ef28
     MOV dword ptr [0x01c039a0],EBP      ; 0045ef2d | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EBP      ; 0045ef33 | DAT_01c039a4
     MOV dword ptr [0x01c00c7c],EBX      ; 0045ef39 | DAT_01c00c7c
@@ -91,7 +95,7 @@ section .text
     MOV EDX,0xc0                        ; 0045ef68
         ;   Label: LAB_0045ef68
     MOV ECX,0x6                         ; 0045ef6d
-    MOV EAX,0x463d98                    ; 0045ef72 | LAB_00463d98
+    MOV EAX,0x463d98                    ; 0045ef72
     MOV dword ptr [0x01c039a0],EDX      ; 0045ef77 | DAT_01c039a0
     MOV dword ptr [0x01c039a4],ECX      ; 0045ef7d | DAT_01c039a4
     MOV [0x01c00c7c],EAX                ; 0045ef83 | DAT_01c00c7c

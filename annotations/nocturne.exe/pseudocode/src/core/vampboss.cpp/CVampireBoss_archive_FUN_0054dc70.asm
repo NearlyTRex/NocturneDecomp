@@ -13,7 +13,7 @@
 ;   TerminatedCString s_wayPoint3_005971b3
 ;   TerminatedCString s_form_005971bd
 ;   TerminatedCString s_morphT_005971c2
-;   undefined4 DAT_005c1188
+;   int INT_005c1188 = 0x4
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -32,12 +32,12 @@ section .text
     PUSH EBX                            ; 0054dc75
     CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 0054dc76
         ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
-    MOV EDX,dword ptr [0x005c1188]      ; 0054dc7b | DAT_005c1188
+    MOV EDX,dword ptr [0x005c1188]      ; 0054dc7b | INT_005c1188
     ADD ESP,0x4                         ; 0054dc81
     CMP EDX,0x2                         ; 0054dc84
     JGE 0x0054dced                      ; 0054dc87
         ;   XREF to: 0054dced (CONDITIONAL_JUMP)  ; LAB_0054dced
-    CMP dword ptr [0x005c1188],0x3      ; 0054dc89 | DAT_005c1188
+    CMP dword ptr [0x005c1188],0x3      ; 0054dc89 | INT_005c1188
         ;   Label: LAB_0054dc89
     JL 0x0054dce2                       ; 0054dc90
         ;   XREF to: 0054dce2 (CONDITIONAL_JUMP)  ; LAB_0054dce2
@@ -65,7 +65,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 0054dcda
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
     ADD ESP,0x8                         ; 0054dcdf
-    CMP dword ptr [0x005c1188],0x4      ; 0054dce2 | DAT_005c1188
+    CMP dword ptr [0x005c1188],0x4      ; 0054dce2 | INT_005c1188
         ;   Label: LAB_0054dce2
     JGE 0x0054dd1a                      ; 0054dce9
         ;   XREF to: 0054dd1a (CONDITIONAL_JUMP)  ; LAB_0054dd1a

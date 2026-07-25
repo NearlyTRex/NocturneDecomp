@@ -4,7 +4,8 @@
 ; char * __cdecl crt_string_c_strupr_FUN_00566ad0(char *param_1)
 ;
 ;
-; XREF[5]:
+; XREF[6]:
+;   FUN_00470730 at 00470bbd
 ;   FUN_00470eb0 at 00470faa
 ;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00480420 at 004804cb
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0 at 0048038b

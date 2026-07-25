@@ -6,7 +6,9 @@
 ; Local Variables:
 ; undefined        Stack[-0x60]:1  local_60
 ;
-; XREF[3]:
+; XREF[5]:
+;   FUN_0042d180 at 0042d19c
+;   FUN_0042d200 at 0042d21a
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0 at 004f46c1
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630 at 004f465e
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 00490099

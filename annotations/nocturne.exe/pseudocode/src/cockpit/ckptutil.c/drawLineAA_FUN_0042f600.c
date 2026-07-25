@@ -31,7 +31,7 @@ void cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int param_1,int param_2,int para
     param_3 = iVar1;
     param_4 = iVar2;
   }
-  if ((_DAT_005ad280 != 0) ||
+  if ((DAT_005ad280 != 0) ||
      (((((_DAT_01c00c58 <= param_1 || (_DAT_01c00c58 <= param_3)) &&
         ((param_1 <= _DAT_01c00c60 || (param_3 <= _DAT_01c00c60)))) &&
        ((_DAT_01c00c5c <= param_2 || (_DAT_01c00c5c <= param_4)))) &&

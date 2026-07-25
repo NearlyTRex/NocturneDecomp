@@ -32,7 +32,7 @@
 ;   double DOUBLE_0058be3a = 0.0000152587890625
 ;   double DOUBLE_0058be42 = 30
 ;   double DOUBLE_0058be4a = 0.100000000000000
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_01cc30e4
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
@@ -258,7 +258,7 @@ section .text
         ;   XREF to: 004ea594 (CONDITIONAL_JUMP)  ; LAB_004ea594
     PUSH 0x1                            ; 004ea5bd
         ;   Label: LAB_004ea5bd
-    MOV EAX,[0x005bac64]                ; 004ea5bf | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004ea5bf | INT_005bac64
     PUSH EAX                            ; 004ea5c4 | DAT_01cc30e4
     MOV EBX,dword ptr [EAX]             ; 004ea5c5 | DAT_01cc30e4
     CALL dword ptr [EBX + 0x4]          ; 004ea5c7
@@ -343,7 +343,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740 ; 004ea682
         ;   XREF to: 004ea740 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740()
     ADD ESP,0x4                         ; 004ea687
-    MOV EAX,[0x005bac64]                ; 004ea68a | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004ea68a | INT_005bac64
     PUSH 0x1                            ; 004ea68f
     MOV EBX,dword ptr [EAX]             ; 004ea691 | DAT_01cc30e4
     PUSH EAX                            ; 004ea693 | DAT_01cc30e4

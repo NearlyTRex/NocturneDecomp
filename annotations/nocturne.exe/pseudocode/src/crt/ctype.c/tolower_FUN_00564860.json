@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 11,
     "complexity_score": 87,
-    "cross_reference_count": 7,
+    "cross_reference_count": 8,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -32,6 +32,12 @@
       "addr": "0056c864",
       "from_addr": "0056c9d1",
       "name": "FUN_0056c864",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005738c8",
+      "from_addr": "005738e3",
+      "name": "FUN_005738c8",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -74,7 +80,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 8,
+    "call_site_count": 9,
     "call_sites": [
       {
         "call_addr": "0040d51b",
@@ -157,6 +163,17 @@
         "call_addr": "0040d482",
         "call_type": "direct",
         "caller": "core_actor.cpp_registerActorClass_FUN_0040d3f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005738e3",
+        "call_type": "direct",
+        "caller": "FUN_005738c8",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -253,7 +270,7 @@
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 8,
+      "call_site_count": 9,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 1,

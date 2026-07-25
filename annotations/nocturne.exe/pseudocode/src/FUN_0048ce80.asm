@@ -1,0 +1,23 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void FUN_0048ce80(undefined4 param_1)
+;
+;
+; Called Functions:
+;   crt_memory.c___arrfini_FUN_0056494f
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x59d360                       ; 0048ce80
+        ;   Label: FUN_0048ce80
+    PUSH 0x100                          ; 0048ce85
+    MOV EDX,dword ptr [ESP + 0xc]       ; 0048ce8a
+    PUSH EDX                            ; 0048ce8e
+    CALL crt_memory.c___arrfini_FUN_0056494f ; 0048ce8f
+        ;   XREF to: 0056494f (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrfini_FUN_0056494f()
+    ADD ESP,0xc                         ; 0048ce94
+    RET                                 ; 0048ce97
+

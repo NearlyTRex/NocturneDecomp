@@ -14,8 +14,8 @@
 ;   void* PTR_caseD_1_0040db24 = 0040dc6a
 ;   TerminatedCString s_footstep_s_s_wav_f_00578021
 ;   double DOUBLE_0057803d = 5.87890821882528E-39
-;   undefined4 DAT_005b9284
-;   undefined4 DAT_005b96c4
+;   int INT_005b9284 = 0x1c70f74
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_005bed68
 ;   undefined4 DAT_01cae0e8
@@ -93,7 +93,7 @@ section .text
         ;   Label: LAB_0040dbdb
     PUSH EAX                            ; 0040dbe1
     PUSH ESI                            ; 0040dbe2
-    MOV ECX,dword ptr [0x005b96c4]      ; 0040dbe3 | DAT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 0040dbe3 | INT_005b96c4
     PUSH ECX                            ; 0040dbe9
     CALL core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004b0730 ; 0040dbea
         ;   XREF to: 004b0730 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_findBloodTypeAtPosition_FUN_004b0730()
@@ -111,7 +111,7 @@ section .text
     LEA EAX,[EBX + 0x30]                ; 0040dc14
     PUSH EAX                            ; 0040dc17
     PUSH ESI                            ; 0040dc18
-    MOV EBP,dword ptr [0x005b96c4]      ; 0040dc19 | DAT_005b96c4
+    MOV EBP,dword ptr [0x005b96c4]      ; 0040dc19 | INT_005b96c4
     PUSH EBP                            ; 0040dc1f
     CALL core_gore.cpp_CGore_createFootstep_FUN_004b06b0 ; 0040dc20
         ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_createFootstep_FUN_004b06b0()
@@ -132,7 +132,7 @@ section .text
         ;   XREF to: 0040dc5b (CONDITIONAL_JUMP)  ; caseD_d
     JMP dword ptr [EDI*0x4 + 0x40db0c]  ; 0040dc54 | caseD_d | caseD_b | caseD_5
         ;   Label: switchD
-    MOV EDX,dword ptr [0x005b9284]      ; 0040dc5b | DAT_005b9284
+    MOV EDX,dword ptr [0x005b9284]      ; 0040dc5b | INT_005b9284
         ;   Label: caseD_0
     PUSH EDX                            ; 0040dc61
     CALL FUN_004940d0                   ; 0040dc62
@@ -184,7 +184,7 @@ section .text
     LEA EAX,[EBX + 0x30]                ; 0040dcd5
     PUSH EAX                            ; 0040dcd8
     PUSH ESI                            ; 0040dcd9
-    MOV EAX,[0x005b96c4]                ; 0040dcda | DAT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 0040dcda | INT_005b96c4
     PUSH EAX                            ; 0040dcdf
     CALL core_gore.cpp_CGore_createFootstep_FUN_004b06b0 ; 0040dce0
         ;   XREF to: 004b06b0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_createFootstep_FUN_004b06b0()
@@ -195,14 +195,14 @@ section .text
         ;   Label: LAB_0040dced
     JMP 0x0040dc41                      ; 0040dcf7
         ;   XREF to: 0040dc41 (UNCONDITIONAL_JUMP)  ; LAB_0040dc41
-    MOV EAX,[0x005b9284]                ; 0040dcfc | DAT_005b9284
+    MOV EAX,[0x005b9284]                ; 0040dcfc | INT_005b9284
         ;   Label: caseD_3
     PUSH EAX                            ; 0040dd01
     CALL FUN_004940d0                   ; 0040dd02
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
     JMP 0x0040dc67                      ; 0040dd07
         ;   XREF to: 0040dc67 (UNCONDITIONAL_JUMP)  ; LAB_0040dc67
-    MOV EBP,dword ptr [0x005b9284]      ; 0040dd0c | DAT_005b9284
+    MOV EBP,dword ptr [0x005b9284]      ; 0040dd0c | INT_005b9284
         ;   Label: caseD_7
     PUSH EBP                            ; 0040dd12
     CALL FUN_004940d0                   ; 0040dd13

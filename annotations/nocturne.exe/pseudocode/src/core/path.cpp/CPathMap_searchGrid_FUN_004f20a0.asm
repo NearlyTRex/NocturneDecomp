@@ -11,7 +11,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004f2050 at 004f208e
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20 at 004f1242
 ;
 ; Referenced Globals:

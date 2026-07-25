@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00765a98
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -32,7 +32,7 @@ section .text
     CALL core_actor.cpp_FUN_0040bce0    ; 004ceff8
         ;   XREF to: 0040bce0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040bce0()
     ADD ESP,0x10                        ; 004ceffd
-    MOV EDI,dword ptr [0x00765a98]      ; 004cf000 | DAT_00765a98
+    MOV EDI,dword ptr [0x00765a98]      ; 004cf000 | CDemonActorType_00765a60.name_hash
     PUSH EDI                            ; 004cf006
     PUSH ESI                            ; 004cf007
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004cf008

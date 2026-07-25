@@ -4,6 +4,9 @@
 ; void FUN_00473190(undefined4 param_1,undefined4 *param_2,undefined4 *param_3,undefined4 param_4)
 ;
 ;
+; XREF[1]:
+;   FUN_00473650 at 004736ae
+;
 ; Referenced Globals:
 ;   float FLOAT_0057eaaa = 0.2000000
 ;   double DOUBLE_0057eaae = 0.0000305175853213768

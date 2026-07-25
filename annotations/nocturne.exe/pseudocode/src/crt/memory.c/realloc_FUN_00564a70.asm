@@ -4,7 +4,9 @@
 ; void __cdecl crt_memory_c_realloc_FUN_00564a70(undefined4 param_1,undefined4 param_2)
 ;
 ;
-; XREF[23]:
+; XREF[25]:
+;   FUN_00430630 at 0043105f
+;   FUN_00474230 at 0047428e
 ;   FUN_004f49d8 at 004f49dd
 ;   FUN_004f7ae0 at 004f7fb4
 ;   FUN_004fee30 at 004fee9a
@@ -13,9 +15,7 @@
 ;   FUN_0056e254 at 0056e2b2
 ;   FUN_005711a8 at 005711df
 ;   FUN_00573afc at 00573c32
-;   FUN_00574264 at 00574399
-;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0 at 004f48d3
-;   ... and 13 more
+;   ... and 15 more
 ;
 ; Called Functions:
 ;   FUN_00564a88

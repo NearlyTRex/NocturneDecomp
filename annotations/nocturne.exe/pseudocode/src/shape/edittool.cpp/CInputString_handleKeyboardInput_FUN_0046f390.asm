@@ -9,7 +9,7 @@
 ;   FUN_00470eb0 at 0047110e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_01cc30e4
 ;
 ; Called Functions:
@@ -31,7 +31,7 @@ section .text
     PUSH EBP                            ; 0046f393
     MOV EBX,dword ptr [ESP + 0x14]      ; 0046f394
     PUSH 0x4b                           ; 0046f398
-    MOV EAX,[0x005bac64]                ; 0046f39a | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0046f39a | INT_005bac64
     PUSH EAX                            ; 0046f39f | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0046f3a0 | DAT_01cc30e4
     XOR ESI,ESI                         ; 0046f3a2
@@ -50,7 +50,7 @@ section .text
     MOV dword ptr [EBX + 0x134],ECX     ; 0046f3c1
     PUSH 0x4d                           ; 0046f3c7
         ;   Label: LAB_0046f3c7
-    MOV EAX,[0x005bac64]                ; 0046f3c9 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0046f3c9 | INT_005bac64
     PUSH EAX                            ; 0046f3ce | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0046f3cf | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 0046f3d1
@@ -68,7 +68,7 @@ section .text
     MOV dword ptr [EBX + 0x134],EBP     ; 0046f3f3
     PUSH 0x47                           ; 0046f3f9
         ;   Label: LAB_0046f3f9
-    MOV EAX,[0x005bac64]                ; 0046f3fb | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0046f3fb | INT_005bac64
     PUSH EAX                            ; 0046f400 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0046f401 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 0046f403
@@ -80,7 +80,7 @@ section .text
     MOV dword ptr [EBX + 0x134],0x0     ; 0046f412
     PUSH 0x4f                           ; 0046f41c
         ;   Label: LAB_0046f41c
-    MOV EAX,[0x005bac64]                ; 0046f41e | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0046f41e | INT_005bac64
     PUSH EAX                            ; 0046f423 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0046f424 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 0046f426
@@ -93,7 +93,7 @@ section .text
     MOV dword ptr [EBX + 0x134],EAX     ; 0046f43b
     PUSH 0x1d                           ; 0046f441
         ;   Label: LAB_0046f441
-    MOV EAX,[0x005bac64]                ; 0046f443 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0046f443 | INT_005bac64
     PUSH EAX                            ; 0046f448 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0046f449 | DAT_01cc30e4
     CALL dword ptr [EDX]                ; 0046f44b
@@ -102,7 +102,7 @@ section .text
     JZ 0x0046f507                       ; 0046f452
         ;   XREF to: 0046f507 (CONDITIONAL_JUMP)  ; LAB_0046f507
     PUSH 0x2d                           ; 0046f458
-    MOV ESI,dword ptr [0x005bac64]      ; 0046f45a | DAT_005bac64
+    MOV ESI,dword ptr [0x005bac64]      ; 0046f45a | INT_005bac64
     PUSH ESI                            ; 0046f460 | DAT_01cc30e4
     MOV EAX,dword ptr [ESI]             ; 0046f461 | DAT_01cc30e4
     CALL dword ptr [EAX + 0x4]          ; 0046f463
@@ -120,7 +120,7 @@ section .text
     ADD ESP,0x4                         ; 0046f47c
     PUSH 0x52                           ; 0046f47f
         ;   Label: LAB_0046f47f
-    MOV EAX,[0x005bac64]                ; 0046f481 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0046f481 | INT_005bac64
     PUSH EAX                            ; 0046f486 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0046f487 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 0046f489
@@ -134,7 +134,7 @@ section .text
     ADD ESP,0x4                         ; 0046f499
     PUSH 0x2e                           ; 0046f49c
         ;   Label: LAB_0046f49c
-    MOV EAX,[0x005bac64]                ; 0046f49e | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0046f49e | INT_005bac64
     PUSH EAX                            ; 0046f4a3 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0046f4a4 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 0046f4a6
@@ -148,7 +148,7 @@ section .text
     ADD ESP,0x4                         ; 0046f4b6
     PUSH 0x2f                           ; 0046f4b9
         ;   Label: LAB_0046f4b9
-    MOV EAX,[0x005bac64]                ; 0046f4bb | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0046f4bb | INT_005bac64
     PUSH EAX                            ; 0046f4c0 | DAT_01cc30e4
     MOV ESI,dword ptr [EAX]             ; 0046f4c1 | DAT_01cc30e4
     CALL dword ptr [ESI + 0x4]          ; 0046f4c3
@@ -166,7 +166,7 @@ section .text
     ADD ESP,0x4                         ; 0046f4dc
     PUSH 0x53                           ; 0046f4df
         ;   Label: LAB_0046f4df
-    MOV ESI,dword ptr [0x005bac64]      ; 0046f4e1 | DAT_005bac64
+    MOV ESI,dword ptr [0x005bac64]      ; 0046f4e1 | INT_005bac64
     PUSH ESI                            ; 0046f4e7 | DAT_01cc30e4
     MOV EAX,dword ptr [ESI]             ; 0046f4e8 | DAT_01cc30e4
     CALL dword ptr [EAX + 0x4]          ; 0046f4ea
@@ -189,7 +189,7 @@ section .text
     RET                                 ; 0046f506
     PUSH 0x2a                           ; 0046f507
         ;   Label: LAB_0046f507
-    MOV EAX,[0x005bac64]                ; 0046f509 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0046f509 | INT_005bac64
     PUSH EAX                            ; 0046f50e | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0046f50f | DAT_01cc30e4
     CALL dword ptr [EDX]                ; 0046f511
@@ -198,7 +198,7 @@ section .text
     JZ 0x0046f56b                       ; 0046f518
         ;   XREF to: 0046f56b (CONDITIONAL_JUMP)  ; LAB_0046f56b
     PUSH 0x52                           ; 0046f51a
-    MOV EAX,[0x005bac64]                ; 0046f51c | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0046f51c | INT_005bac64
     PUSH EAX                            ; 0046f521 | DAT_01cc30e4
     MOV ESI,dword ptr [EAX]             ; 0046f522 | DAT_01cc30e4
     CALL dword ptr [ESI + 0x4]          ; 0046f524
@@ -216,7 +216,7 @@ section .text
     ADD ESP,0x4                         ; 0046f53d
     PUSH 0x53                           ; 0046f540
         ;   Label: LAB_0046f540
-    MOV EAX,[0x005bac64]                ; 0046f542 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0046f542 | INT_005bac64
     PUSH EAX                            ; 0046f547 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0046f548 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 0046f54a
@@ -247,7 +247,7 @@ section .text
     ADD ESP,0x4                         ; 0046f575
     PUSH 0x53                           ; 0046f578
         ;   Label: LAB_0046f578
-    MOV ESI,dword ptr [0x005bac64]      ; 0046f57a | DAT_005bac64
+    MOV ESI,dword ptr [0x005bac64]      ; 0046f57a | INT_005bac64
     PUSH ESI                            ; 0046f580 | DAT_01cc30e4
     MOV EAX,dword ptr [ESI]             ; 0046f581 | DAT_01cc30e4
     CALL dword ptr [EAX + 0x4]          ; 0046f583

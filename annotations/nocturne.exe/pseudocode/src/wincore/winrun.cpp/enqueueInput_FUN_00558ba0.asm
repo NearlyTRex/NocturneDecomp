@@ -4,7 +4,8 @@
 ; void __cdecl wincore_winrun_cpp_enqueueInput_FUN_00558ba0(undefined4 param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00558d90 at 00558f18
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1ea2
 ;
 ; Referenced Globals:

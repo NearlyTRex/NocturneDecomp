@@ -83,7 +83,7 @@ uint core_turret_cpp_CTurret_fire_FUN_0054ab10(int param_1)
                                  (0x01E57284,&fStack_74,&fStack_98);
     if ((fStack_18 < 0.0) || (1.0 < fStack_18)) break;
     iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(0x01E57284 + 0x14cd5c),DAT_00765a98);
+                      (*(uint *)(0x01E57284 + 0x14cd5c),CDemonActorType_00765a60.name_hash);
     if ((iVar2 != 0) && (iVar3 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x104))(iVar2), 0 < iVar3))
     {
       iVar2 = 0;
@@ -94,7 +94,8 @@ uint core_turret_cpp_CTurret_fire_FUN_0054ab10(int param_1)
                       (*(uint *)(0x01E57284 + 0x14cd5c),_DAT_02dd10bc);
     iStack_2c = iVar3;
     iStack_28 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(0x01E57284 + 0x14cd5c),DAT_0077bd78);
+                          (*(uint *)(0x01E57284 + 0x14cd5c),
+                           CDemonActorType_0077bd40.name_hash);
     iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
                       (*(uint *)(0x01E57284 + 0x14cd5c),_DAT_01c7068c);
     if (iVar2 == 0) {

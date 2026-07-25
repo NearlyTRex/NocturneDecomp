@@ -4,7 +4,8 @@
 ; undefined4 __cdecl wincore_windll_cpp_sync_FUN_00532b30(void)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_0050dfe0 at 0050e06c
 ;   core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_0046af70 at 0046afca
 ;   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40 at 0050dfcc
 ;

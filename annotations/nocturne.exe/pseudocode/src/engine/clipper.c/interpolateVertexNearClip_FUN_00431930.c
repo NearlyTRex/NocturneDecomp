@@ -14,7 +14,7 @@ void __cdecl engine_clipper_c_interpolateVertexNearClip_FUN_00431930(int *param_
   int iVar3;
   
   iVar3 = param_2[2] - param_1[2];
-  uVar2 = 0x7FFFFFFF - param_1[2];
+  uVar2 = DAT_005ad284 - param_1[2];
   if ((int)uVar2 < iVar3) {
     if (-iVar3 < (int)uVar2) {
       iVar3 = (int)(CONCAT44((int)uVar2 >> 1,(uint)((uVar2 & 1) != 0) << 0x1f) / (longlong)iVar3);

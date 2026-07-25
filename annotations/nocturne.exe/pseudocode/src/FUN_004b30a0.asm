@@ -4,6 +4,9 @@
 ; int FUN_004b30a0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004b3070 at 004b3083
+;
 ; Referenced Globals:
 ;   TerminatedCString s_haystack_dfm_0058544f
 ;   undefined1* PTR_FUN_0059e884 = 004b3110

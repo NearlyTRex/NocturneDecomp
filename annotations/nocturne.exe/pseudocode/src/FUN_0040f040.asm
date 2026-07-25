@@ -4,6 +4,9 @@
 ; int FUN_0040f040(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0040f010 at 0040f023
+;
 ; Referenced Globals:
 ;   TerminatedCString s_ammobag_kfm_0057834d
 ;   TerminatedCString s_CGun_00578359

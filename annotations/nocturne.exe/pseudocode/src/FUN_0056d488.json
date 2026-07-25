@@ -1,0 +1,258 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 13,
+    "complexity_score": 61,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 6,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 19
+  },
+  "cross_references": [
+    {
+      "addr": "0056d4ab",
+      "from_addr": "0056d4bb",
+      "name": "FUN_0056d4ab",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056d488",
+    "address_range": [
+      [
+        "0056d488",
+        "0056d4aa"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0056d488",
+    "signature": "void FUN_0056d488(undefined4 *param_1,int param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056d340",
+      "is_variadic": false,
+      "name": "FUN_0056d340"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0056d4bb",
+        "call_type": "direct",
+        "caller": "FUN_0056d4ab",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4545454545454546,
+    "instruction_count": 11,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 8,
+      "INT_ADD": 5,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 5,
+      "LOAD": 4,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 38
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0056d488(uint *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_0056d488(uint *param_1,int param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)(param_2 + 0x20) = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0056d340(0x63df,*param_1,0,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "FUN_0056d340(0x63df,*param_1,0,param_2);",
+      "type": "unnamed_param"
+    }
+  ]
+}

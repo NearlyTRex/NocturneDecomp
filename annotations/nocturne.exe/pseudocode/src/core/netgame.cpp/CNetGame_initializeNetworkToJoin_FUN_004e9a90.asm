@@ -13,7 +13,7 @@
 ;   double DOUBLE_0058bbca = 0.200000000000000
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_005c1664
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01cea3fc
@@ -211,7 +211,7 @@ section .text
         ;   XREF to: 004e9cad (CONDITIONAL_JUMP)  ; LAB_004e9cad
     PUSH 0x1                            ; 004e9c74
         ;   Label: LAB_004e9c74
-    MOV EAX,[0x005bac64]                ; 004e9c76 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004e9c76 | INT_005bac64
     PUSH EAX                            ; 004e9c7b
     MOV EDX,dword ptr [EAX]             ; 004e9c7c
     CALL dword ptr [EDX + 0x4]          ; 004e9c7e

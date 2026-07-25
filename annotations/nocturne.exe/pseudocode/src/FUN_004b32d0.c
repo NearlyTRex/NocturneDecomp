@@ -240,7 +240,7 @@ LAB_004b34e4:
      (iVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(iStack_24),
      *(int *)(iVar3 + 0x24) != 0x13)) {
     core_xform_cpp_FUN_0055d610
-              (param_1 + 0x1fa44,*(uint *)(param_1 + 0x1fa50),_DAT_01cae018,&LAB_0051b650);
+              (param_1 + 0x1fa44,*(uint *)(param_1 + 0x1fa50),_DAT_01cae018,FUN_0051b650);
     iVar3 = iStack_24;
     puVar8 = &stack0xffffff84;
     uStack_7c = uStack_8c;

@@ -115,7 +115,7 @@ uint __cdecl core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(uint
           goto LAB_004e9d11;
         }
       }
-      iVar5 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);
+      iVar5 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
       if (iVar5 != 0) {
 LAB_004e9d11:
         core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(param_1,0);

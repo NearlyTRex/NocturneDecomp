@@ -4,6 +4,9 @@
 ; int FUN_004c3460(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004c3430 at 004c3443
+;
 ; Referenced Globals:
 ;   TerminatedCString s_key1_kfm_0058757e
 ;   undefined1* PTR_FUN_0059f824 = 004c34c0

@@ -255,9 +255,9 @@ LAB_004eb75b:
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_004ed170(param_1);
         }
       }
-      iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);
+      iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
       if (iVar3 != 0) goto LAB_004eb861;
-      iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);
+      iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x1c);
       if (iVar3 != 0) {
         param_1[param_1[0x45] * 0x1e + 0x19] = (uint)(param_1[param_1[0x45] * 0x1e + 0x19] == 0);
         if (*param_1 == 1) {
@@ -267,7 +267,7 @@ LAB_004eb75b:
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_004ed170(param_1);
         }
       }
-      iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1f);
+      iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x1f);
       if ((iVar3 != 0) &&
          (iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600
                             (0x01BCD074,"Send chat",0x1cea180,0x100,1), iVar3 != 0)) {

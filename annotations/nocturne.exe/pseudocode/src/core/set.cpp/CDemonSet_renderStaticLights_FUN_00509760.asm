@@ -30,7 +30,7 @@
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_014b9920
 ;   undefined4 DAT_01b4d738
@@ -234,7 +234,7 @@ section .text
     CMP EDX,ECX                         ; 00509938
     JL 0x005098c2                       ; 0050993a
         ;   XREF to: 005098c2 (CONDITIONAL_JUMP)  ; LAB_005098c2
-    MOV EBX,dword ptr [0x005b96c4]      ; 0050993c | DAT_005b96c4
+    MOV EBX,dword ptr [0x005b96c4]      ; 0050993c | INT_005b96c4
         ;   Label: LAB_0050993c
     PUSH EBX                            ; 00509942
     CALL core_gore.cpp_CGore_renderParticles_FUN_004afe00 ; 00509943
@@ -299,7 +299,7 @@ section .text
     CMP EBP,EDX                         ; 005099e1
     JL 0x005099a9                       ; 005099e3
         ;   XREF to: 005099a9 (CONDITIONAL_JUMP)  ; LAB_005099a9
-    MOV ECX,dword ptr [0x005b96c4]      ; 005099e5 | DAT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 005099e5 | INT_005b96c4
         ;   Label: LAB_005099e5
     PUSH ECX                            ; 005099eb
     CALL core_gore.cpp_CGore_renderParticles_FUN_004afe00 ; 005099ec

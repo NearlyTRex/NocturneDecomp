@@ -4,9 +4,10 @@
 ; undefined1 * FUN_0056dc68(int param_1,undefined1 *param_2,int param_3)
 ;
 ;
-; XREF[3]:
+; XREF[4]:
 ;   FUN_005696e8 at 005696f8
 ;   FUN_0056974c at 00569789
+;   FUN_00573ed0 at 00573f42
 ;   crt_time.c__strftime_FUN_00566634 at 00566894
 ;
 ; Called Functions:

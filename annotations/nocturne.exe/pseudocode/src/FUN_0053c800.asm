@@ -52,7 +52,7 @@
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_0077bd78
+;   undefined4 CDemonActorType_0077bd40.name_hash
 ;   undefined4 DAT_014b8a54
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa3ff0
@@ -648,7 +648,7 @@ section .text
     ADD EDI,0x4                         ; 0053cee1
     JMP 0x0053ce7e                      ; 0053cee4
         ;   XREF to: 0053ce7e (UNCONDITIONAL_JUMP)  ; LAB_0053ce7e
-    MOV EDX,dword ptr [0x0077bd78]      ; 0053cee6 | DAT_0077bd78
+    MOV EDX,dword ptr [0x0077bd78]      ; 0053cee6 | CDemonActorType_0077bd40.name_hash
         ;   Label: LAB_0053cee6
     PUSH EDX                            ; 0053ceec
     MOV ECX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 0053ceed | DAT_01fa3ff4

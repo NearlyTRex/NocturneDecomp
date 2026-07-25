@@ -64,7 +64,7 @@ section .text
     JZ 0x0045fad3                       ; 0045fa24
         ;   XREF to: 0045fad3 (CONDITIONAL_JUMP)  ; LAB_0045fad3
     XOR EBP,EBP                         ; 0045fa2a
-    MOV EDI,0x463a79                    ; 0045fa2c | LAB_00463a79
+    MOV EDI,0x463a79                    ; 0045fa2c
     MOV dword ptr [0x01c039a0],EBP      ; 0045fa31 | DAT_01c039a0
     MOV dword ptr [0x01c039a4],EBP      ; 0045fa37 | DAT_01c039a4
     MOV dword ptr [0x01c00c7c],EDI      ; 0045fa3d | DAT_01c00c7c
@@ -138,7 +138,7 @@ section .text
     MOV ECX,0x41                        ; 0045fad3
         ;   Label: LAB_0045fad3
     MOV ESI,0x6                         ; 0045fad8
-    MOV EDX,0x4649dd                    ; 0045fadd | LAB_004649dd
+    MOV EDX,0x4649dd                    ; 0045fadd
     MOV dword ptr [0x01c039a0],ECX      ; 0045fae2 | DAT_01c039a0
     MOV dword ptr [0x01c039a4],ESI      ; 0045fae8 | DAT_01c039a4
     MOV dword ptr [0x01c00c7c],EDX      ; 0045faee | DAT_01c00c7c

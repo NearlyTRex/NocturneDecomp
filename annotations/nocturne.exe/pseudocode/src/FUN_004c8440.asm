@@ -6,18 +6,18 @@
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[454]:
+; XREF[530]:
 ;   FUN_00401010 at 00401129
+;   FUN_00408fc0 at 00409136
+;   FUN_0040bd90 at 0040bdd3
 ;   FUN_0040f1a0 at 0040f220
+;   FUN_0041a570 at 0041a58b
+;   FUN_0041a5a0 at 0041a5c8
+;   FUN_0041a5e0 at 0041a5fb
+;   FUN_0041a910 at 0041aa8b
 ;   FUN_0042e7b0 at 0042e96f
-;   FUN_004303d0 at 004304e8
-;   FUN_00446810 at 0044690f
-;   FUN_0044ac30 at 0044ac64
-;   FUN_0044c560 at 0044c8ed
-;   FUN_00456750 at 00456791
-;   FUN_00456f60 at 00456fd5
-;   FUN_00461720 at 004619ad
-;   ... and 444 more
+;   FUN_0042eb90 at 0042ebea
+;   ... and 520 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bed68

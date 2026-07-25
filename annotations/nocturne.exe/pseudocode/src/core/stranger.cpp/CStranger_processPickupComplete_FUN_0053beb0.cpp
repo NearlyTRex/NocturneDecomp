@@ -17,7 +17,7 @@ void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0053beb0(int 
                    0xd49);
     }
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(param_1 + 0x1fa08),DAT_00764230);
+                      (*(uint *)(param_1 + 0x1fa08),CDemonActorType_007641f8.name_hash);
     if (iVar1 != 0) {
       FUN_0040f1a0(iVar1,param_1 + 0x1f5a0);
     }

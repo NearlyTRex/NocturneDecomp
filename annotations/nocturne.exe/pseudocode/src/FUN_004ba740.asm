@@ -66,7 +66,7 @@ section .text
     CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010 ; 004ba7a2
         ;   XREF to: 004e1010 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010()
     ADD ESP,0xc                         ; 004ba7a7
-    PUSH 0x51b650                       ; 004ba7aa | LAB_0051b650
+    PUSH 0x51b650                       ; 004ba7aa
     MOV EDI,dword ptr [0x01cae2c8]      ; 004ba7af | DAT_01cae2c8
     PUSH EDI                            ; 004ba7b5
     PUSH dword ptr [EBX + 0x1fa64]      ; 004ba7b6
@@ -103,7 +103,7 @@ section .text
         ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4a0()
     ADD ESP,0x4                         ; 004ba829
     LEA EDI,[ESP + 0x18]                ; 004ba82c
-    PUSH 0x51b650                       ; 004ba830 | LAB_0051b650
+    PUSH 0x51b650                       ; 004ba830
     MOV EBP,dword ptr [0x01cae2c8]      ; 004ba835 | DAT_01cae2c8
     LEA ESI,[ESP + 0xc]                 ; 004ba83b
     PUSH EBP                            ; 004ba83f

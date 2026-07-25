@@ -25,7 +25,7 @@ void core_melee_cpp_CMelee_process_FUN_004cf0c0(int param_1,float param_2)
     uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0xd8))(param_1,local_24);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_18,uVar2);
     core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-              (0x01C78C7C,auStack_18,&DAT_02dd1184,*(uint *)(param_1 + 0x584));
+              (INT_005b96c4,auStack_18,&DAT_02dd1184,*(uint *)(param_1 + 0x584));
     return;
   }
   return;

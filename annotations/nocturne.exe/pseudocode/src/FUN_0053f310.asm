@@ -33,7 +33,7 @@
 ;   float FLOAT_005a2704 = 10
 ;   float FLOAT_005a2708 = 70
 ;   undefined4 DAT_005b6d50
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_01bca0c0
 ;   undefined4 DAT_01cc56dc
@@ -918,7 +918,7 @@ section .text
         ;   XREF to: 0053f638 (CONDITIONAL_JUMP)  ; LAB_0053f638
     JMP 0x0053f642                      ; 0053fc1e
         ;   XREF to: 0053f642 (UNCONDITIONAL_JUMP)  ; LAB_0053f642
-    MOV EDX,dword ptr [0x005b9284]      ; 0053fc23 | DAT_005b9284
+    MOV EDX,dword ptr [0x005b9284]      ; 0053fc23 | INT_005b9284
         ;   Label: LAB_0053fc23
     PUSH EDX                            ; 0053fc29
     CALL FUN_004940d0                   ; 0053fc2a

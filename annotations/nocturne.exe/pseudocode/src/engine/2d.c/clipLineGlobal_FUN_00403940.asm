@@ -4,6 +4,9 @@
 ; void engine_2d_c_clipLineGlobal_FUN_00403940(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 ;
 ;
+; XREF[1]:
+;   FUN_00477390 at 0047748b
+;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c58
 ;   undefined4 DAT_01c00c5c

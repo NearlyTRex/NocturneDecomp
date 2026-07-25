@@ -4,18 +4,18 @@
 ; undefined4 __cdecl engine_3d_c_isVisiblePlane_FUN_00404610(int *param_1)
 ;
 ;
-; XREF[71]:
+; XREF[79]:
+;   FUN_00405ab0 at 00405ac7
+;   FUN_00406920 at 00406960
+;   FUN_00406a00 at 00406a40
+;   FUN_00406ae0 at 00406aee
+;   FUN_00406b80 at 00406bc0
+;   FUN_00408fc0 at 00409100
 ;   FUN_0041d050 at 0041d191
+;   FUN_004574e0 at 00457565
+;   FUN_0045f270 at 0045f339
 ;   engine_3d.c_FUN_00405200 at 00405209
-;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0 at 004060c5
-;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20 at 00407a34
-;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10 at 00405e1d
-;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00408510 at 0040852a
-;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_004083d0 at 004083ea
-;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00406c60 at 00406c6e
-;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00406d80 at 00406d8e
-;   engine_3d.c_renderPolygonBlendedLitOp63_FUN_00408270 at 0040827d
-;   ... and 61 more
+;   ... and 69 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006b026c

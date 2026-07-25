@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_nextWayPoint_005977af
 ;   TerminatedCString s_adjCount_005977bc
-;   undefined4 DAT_005c1578
+;   int INT_005c1578 = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -30,12 +30,12 @@ section .text
     PUSH EDI                            ; 005525eb
     CALL core_trigger.cpp_CTrigger_archive_FUN_00548170 ; 005525ec
         ;   XREF to: 00548170 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_CTrigger_archive_FUN_00548170()
-    MOV EDX,dword ptr [0x005c1578]      ; 005525f1 | DAT_005c1578
+    MOV EDX,dword ptr [0x005c1578]      ; 005525f1 | INT_005c1578
     ADD ESP,0x4                         ; 005525f7
     CMP EDX,0x2                         ; 005525fa
     JL 0x00552618                       ; 005525fd
         ;   XREF to: 00552618 (CONDITIONAL_JUMP)  ; LAB_00552618
-    CMP dword ptr [0x005c1578],0x2      ; 005525ff | DAT_005c1578
+    CMP dword ptr [0x005c1578],0x2      ; 005525ff | INT_005c1578
         ;   Label: LAB_005525ff
     JGE 0x0055262c                      ; 00552606
         ;   XREF to: 0055262c (CONDITIONAL_JUMP)  ; LAB_0055262c

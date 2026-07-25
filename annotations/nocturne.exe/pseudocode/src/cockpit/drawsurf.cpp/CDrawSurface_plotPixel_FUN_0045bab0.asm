@@ -4,7 +4,9 @@
 ; void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(int param_1,int param_2,int param_3)
 ;
 ;
-; XREF[3]:
+; XREF[5]:
+;   FUN_0045cde0 at 0045ce58
+;   FUN_0045e370 at 0045e635
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0 at 0045c36e
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0 at 0045c15c
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00 at 0045bf1f

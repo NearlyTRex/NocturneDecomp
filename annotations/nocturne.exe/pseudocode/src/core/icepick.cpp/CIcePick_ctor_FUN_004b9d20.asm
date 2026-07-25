@@ -4,6 +4,9 @@
 ; int core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004b9cf0 at 004b9d03
+;
 ; Referenced Globals:
 ;   TerminatedCString s_icepick_dfm_0058600b
 ;   undefined1* PTR_core_icepick.cpp_CIcePick_setup_FUN_004b9db0_0059f3e4 = 004b9db0

@@ -4,6 +4,9 @@
 ; int FUN_00543b60(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00543b30 at 00543b43
+;
 ; Referenced Globals:
 ;   TerminatedCString s_tentacle_dfm_00596512
 ;   undefined1* PTR_core_tentacle.cpp_CTentacle_setup_FUN_00543bc0_005a3104 = 00543bc0

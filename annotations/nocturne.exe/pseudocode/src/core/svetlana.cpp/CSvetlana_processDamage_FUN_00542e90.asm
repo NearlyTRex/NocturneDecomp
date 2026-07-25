@@ -9,7 +9,7 @@
 ;   TerminatedCString s_svet_hurt_wav_0059646d
 ;   undefined4 DAT_005a2a68
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_01c777bc
 ;   undefined4 DAT_01c77818
 ;
@@ -131,7 +131,7 @@ section .text
     PUSH 0x42480000                     ; 00542fa0
     PUSH 0x32                           ; 00542fa5
     PUSH EBX                            ; 00542fa7
-    MOV EDX,dword ptr [0x005b96c4]      ; 00542fa8 | DAT_005b96c4
+    MOV EDX,dword ptr [0x005b96c4]      ; 00542fa8 | INT_005b96c4
     PUSH EDX                            ; 00542fae
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 00542faf
         ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670()

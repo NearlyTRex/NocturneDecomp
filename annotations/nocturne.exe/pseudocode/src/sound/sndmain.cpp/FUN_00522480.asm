@@ -8,7 +8,8 @@
 ; undefined        Stack[-0x113]:1  local_113
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_005279b0 at 005279bd
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526923
 ;
 ; Referenced Globals:

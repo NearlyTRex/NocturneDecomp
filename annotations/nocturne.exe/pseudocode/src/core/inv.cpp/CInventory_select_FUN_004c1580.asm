@@ -27,7 +27,7 @@
 ;   double DOUBLE_00587401 = 98
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_007641f4
+;   undefined4 CDemonActorType_007641bc.name_hash
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -63,7 +63,7 @@ section .text
     TEST EAX,EAX                        ; 004c15a6
     JZ 0x004c1600                       ; 004c15a8
         ;   XREF to: 004c1600 (CONDITIONAL_JUMP)  ; LAB_004c1600
-    MOV EDX,dword ptr [0x007641f4]      ; 004c15aa | DAT_007641f4
+    MOV EDX,dword ptr [0x007641f4]      ; 004c15aa | CDemonActorType_007641bc.name_hash
     PUSH EDX                            ; 004c15b0
     PUSH EBX                            ; 004c15b1
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c15b2
@@ -309,7 +309,7 @@ section .text
     TEST EAX,EAX                        ; 004c17f1
     JZ 0x004c15f3                       ; 004c17f3
         ;   XREF to: 004c15f3 (CONDITIONAL_JUMP)  ; LAB_004c15f3
-    MOV EDX,dword ptr [0x00764838]      ; 004c17f9 | DAT_00764838
+    MOV EDX,dword ptr [0x00764838]      ; 004c17f9 | CDemonActorType_00764800.name_hash
     PUSH EDX                            ; 004c17ff
     PUSH EBX                            ; 004c1800
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004c1801

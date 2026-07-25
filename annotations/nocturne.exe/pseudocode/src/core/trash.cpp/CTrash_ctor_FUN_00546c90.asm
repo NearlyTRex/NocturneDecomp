@@ -4,6 +4,9 @@
 ; int core_trash_cpp_CTrash_ctor_FUN_00546c90(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00546c60 at 00546c73
+;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00596932
 ;   undefined1* PTR_core_trash.cpp_CTrash_setup_FUN_00546ce0_005a3544 = 00546ce0

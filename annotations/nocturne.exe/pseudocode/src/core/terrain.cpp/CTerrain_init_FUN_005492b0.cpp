@@ -11,12 +11,12 @@
 void __cdecl core_terrain_cpp_CTerrain_init_FUN_005492b0(uint *param_1)
 
 {
-  uint uVar1;
+  int iVar1;
   
-  uVar1 = 0x01CADF80;
+  iVar1 = INT_005ba8ec;
   *param_1 = 0;
-  core_ground_cpp_CGround_init_FUN_004b13d0(uVar1);
-  core_ground_cpp_CGround_load_FUN_004b14d0(0x01CADF80,"junk.jnk");
+  core_ground_cpp_CGround_init_FUN_004b13d0(iVar1);
+  core_ground_cpp_CGround_load_FUN_004b14d0(INT_005ba8ec,"junk.jnk");
   _DAT_02dd10cc = 1;
   return;
 }

@@ -182,7 +182,7 @@ void core_set_cpp_FUN_00509a80(int param_1,int param_2)
     } while (local_2c < _DAT_01fba2d8);
   }
   core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20();
-  FUN_004afe80(0x01C78C7C,0);
+  FUN_004afe80(INT_005b96c4,0);
   FUN_0048a970(0x01C08D04,0);
   if (*0x02DD1210 == 0) {
     core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,0);

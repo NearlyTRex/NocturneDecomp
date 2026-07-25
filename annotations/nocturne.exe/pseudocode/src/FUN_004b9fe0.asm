@@ -299,7 +299,7 @@ section .text
     TEST EAX,EAX                        ; 004ba299
     JNZ 0x004ba2e3                      ; 004ba29b
         ;   XREF to: 004ba2e3 (CONDITIONAL_JUMP)  ; LAB_004ba2e3
-    PUSH 0x51b650                       ; 004ba29d | LAB_0051b650
+    PUSH 0x51b650                       ; 004ba29d
     MOV ECX,dword ptr [0x01cae288]      ; 004ba2a2 | DAT_01cae288
     PUSH ECX                            ; 004ba2a8
     LEA EAX,[EBX + 0x1fa4c]             ; 004ba2a9

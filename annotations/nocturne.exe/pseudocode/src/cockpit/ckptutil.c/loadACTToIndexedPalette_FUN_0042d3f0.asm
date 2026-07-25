@@ -4,7 +4,10 @@
 ; void __cdecl cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_0042d3f0(undefined4 param_1,undefined1 *param_2)
 ;
 ;
-; XREF[1]:
+; XREF[4]:
+;   FUN_0042d370 at 0042d389
+;   FUN_004f5110 at 004f5210
+;   FUN_004f5b20 at 004f5b31
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_004f4a00 at 004f4a11
 ;
 ; Called Functions:

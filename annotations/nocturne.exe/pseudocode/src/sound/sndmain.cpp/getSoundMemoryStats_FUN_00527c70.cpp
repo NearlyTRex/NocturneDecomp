@@ -57,7 +57,7 @@ void sound_sndmain_cpp_getSoundMemoryStats_FUN_00527c70(int *param_1,int *param_
     *param_5 = 0x40 - (local_18 + local_1c);
   }
   if ((param_6 != (int *)0x0) &&
-     (iVar3 = 0x00400000 - (iVar4 + local_14), *param_6 = iVar3, iVar3 < 0)) {
+     (iVar3 = DAT_005bea94 - (iVar4 + local_14), *param_6 = iVar3, iVar3 < 0)) {
     *param_6 = 0;
     return;
   }

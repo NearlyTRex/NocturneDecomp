@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00764ad4
+;   undefined4 CDemonActorType_00764a9c.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 005383e0
         ;   Label: FUN_005383e0
     SUB ESP,0x4                         ; 005383e1
-    MOV EDX,dword ptr [0x00764ad4]      ; 005383e4 | DAT_00764ad4
+    MOV EDX,dword ptr [0x00764ad4]      ; 005383e4 | CDemonActorType_00764a9c.name_hash
     MOV EAX,dword ptr [ESP + 0xc]       ; 005383ea
     PUSH EDX                            ; 005383ee
     MOV ECX,dword ptr [EAX + 0x24ac]    ; 005383ef

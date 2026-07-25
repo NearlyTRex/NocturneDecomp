@@ -14,7 +14,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[7]:
+; XREF[8]:
+;   FUN_004e99f0 at 004e9a10
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049deb9
 ;   core_game.cpp_joinNetworkGame_FUN_004a5e40 at 004a5ed7
 ;   core_netgame.cpp_CNetGame_init_FUN_004e9910 at 004e9996

@@ -1,6 +1,6 @@
 // Name: engine_clipper.c_FUN_00431f50
 // Address: 00431f50
-// Address Range: [[00431f50, 0043204f] [00432095, 004320d5]]
+// Address Range: [[00431f50, 0043204f]]
 // Convention: unknown
 // Signature: void engine_clipper_c_FUN_00431f50(void)
 
@@ -24,7 +24,7 @@ void engine_clipper_c_FUN_00431f50(void)
   
   bVar10 = 0;
   iVar5 = 0;
-  if (0x7FFFFFFF != 0) {
+  if (DAT_005ad284 != 0) {
     if (0 < (int)DAT_00766c70) {
       iVar3 = 0;
       do {
@@ -34,7 +34,7 @@ void engine_clipper_c_FUN_00431f50(void)
         iVar3 = iVar3 + 0x30;
       } while (iVar3 < (int)(DAT_00766c70 * 0x30));
     }
-    if (0x7FFFFFFF <= iVar5) {
+    if (DAT_005ad284 <= iVar5) {
       DAT_007672f4 = DAT_00766c70;
       plVar6 = (longlong *)&DAT_00766c74;
       plVar7 = (longlong *)&DAT_007672f8;
@@ -61,8 +61,8 @@ void engine_clipper_c_FUN_00431f50(void)
           if (uVar4 == DAT_007672f4) {
             uVar4 = uVar4 ^ DAT_007672f4;
           }
-          bVar2 = 0x7FFFFFFF <= (int)plVar6[1];
-          if (0x7FFFFFFF <= (int)(&DAT_00767300)[uVar4 * 0xc]) {
+          bVar2 = DAT_005ad284 <= (int)plVar6[1];
+          if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar4 * 0xc]) {
             bVar2 = bVar2 | 2;
           }
           switch(bVar2) {

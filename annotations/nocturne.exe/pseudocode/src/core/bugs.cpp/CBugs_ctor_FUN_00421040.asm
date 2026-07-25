@@ -4,6 +4,9 @@
 ; int core_bugs_cpp_CBugs_ctor_FUN_00421040(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00421010 at 00421023
+;
 ; Referenced Globals:
 ;   TerminatedCString s_roach_kfm_00579c09
 ;   TerminatedCString s_hroach_kfm_00579c13

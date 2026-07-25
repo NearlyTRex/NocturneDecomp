@@ -11,7 +11,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00513e20 at 00513e69
 ;   core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340 at 0051435a
 ;
 ; Called Functions:

@@ -31,11 +31,11 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150(int param_
     }
     if ((*(int *)(param_1 + 0x330) != 0) && (0.0 < *(float *)(param_1 + 0x338))) {
       uVar6 = 0x50;
-      iVar5 = 0x00000060;
-      iVar4 = 0x000000D0;
+      iVar5 = INT_005bab64;
+      iVar4 = INT_005bab60;
       if ((DAT_005b7620 < 0x180) && (*(int *)(param_1 + 0x44c) == 0)) {
-        iVar4 = 0x000000D0 / 2;
-        iVar5 = 0x00000060 / 2;
+        iVar4 = INT_005bab60 / 2;
+        iVar5 = INT_005bab64 / 2;
         uVar6 = 0x28;
       }
       if (*(float *)(param_1 + 0x338) < 1.0) {
@@ -62,11 +62,11 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150(int param_
     if ((*(int *)(param_1 + 0x334) != 0) && (0.0 < *(float *)(param_1 + 0x33c))) {
       iVar1 = 0x10;
       iVar7 = 0x40;
-      iVar5 = 0x00000060;
-      iVar4 = 0x000000D0;
+      iVar5 = INT_005bab64;
+      iVar4 = INT_005bab60;
       if ((DAT_005b7620 < 0x180) && (*(int *)(param_1 + 0x44c) == 0)) {
-        iVar4 = 0x000000D0 / 2;
-        iVar5 = 0x00000060 / 2;
+        iVar4 = INT_005bab60 / 2;
+        iVar5 = INT_005bab64 / 2;
         iVar7 = 0x20;
         iVar1 = 8;
       }

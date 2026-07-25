@@ -470,7 +470,7 @@ LAB_00459978:
     uVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                        (param_1 + 0x150,local_1b4,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_1cc,uVar10);
-    FUN_004b0480(0x01C78C7C,local_1cc,0);
+    FUN_004b0480(INT_005b96c4,local_1cc,0);
     goto switchD_00459f4d_caseD_10;
   case 0x12:
     iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);

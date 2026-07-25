@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 150,
-        "line": 143,
+        "line": 166,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 145,
+        "line": 168,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 153,
-        "line": 146,
+        "line": 170,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 152,
-        "line": 152,
+        "line": 177,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 64,
+        "line": 76,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 66,
+        "line": 78,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 132,
+        "line": 153,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 139,
+        "line": 160,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 143,
+        "line": 165,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 87,
-        "line": 32,
+        "line": 34,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 51,
+        "line": 58,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 93,
-        "line": 53,
+        "line": 60,
         "message": "unknown type name 'code'"
       },
       {
         "category": "syntax_error",
         "column": 15,
-        "line": 117,
+        "line": 125,
         "message": "expected unqualified-id"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 172,
+        "line": 188,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 210,
+        "line": 228,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 219,
+        "line": 237,
         "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 337,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 408,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 408,
-        "message": "invalid digit 'C' in decimal constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 463,
+    "complexity_score": 423,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 38,
+    "suspect_count": 34,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -193,21 +193,21 @@
     },
     {
       "addr": "005ba82c",
-      "name": "DAT_005ba82c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005ba82c",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "005ba830",
-      "name": "DAT_005ba830",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005ba830",
+      "type": "float",
+      "value": "-1"
     },
     {
       "addr": "005ba83c",
-      "name": "DAT_005ba83c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005ba83c",
+      "type": "float",
+      "value": "1"
     },
     {
       "addr": "01fba938",
@@ -423,52 +423,20 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_005ba83c",
-      "severity": "mild",
-      "text": "local_40 = (float)(fVar5 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
-      "text": "-fVar6 * (float10)*(float *)((int)&DAT_005ba82c + iVar2) + (float10)*param_2)",
+      "text": "(float10)*param_2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005ba82c",
-      "severity": "mild",
-      "text": "-fVar6 * (float10)*(float *)((int)&DAT_005ba82c + iVar2) + (float10)*param_2)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005ba83c",
-      "severity": "mild",
-      "text": "local_38 = (float)(fVar6 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 30,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar5 * (float10)*(float *)((int)&DAT_005ba82c + iVar2)) + param_2[2];",
+      "text": "fVar5 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2)) + param_2[2];",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_005ba82c",
-      "severity": "mild",
-      "text": "fVar5 * (float10)*(float *)((int)&DAT_005ba82c + iVar2)) + param_2[2];",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -583,35 +551,35 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `&DAT_005ba83c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&FLOAT_005ba83c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 26,
-      "match": "(int)&DAT_005ba83c",
+      "match": "(int)&FLOAT_005ba83c",
       "severity": "moderate",
-      "text": "local_40 = (float)(fVar5 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
+      "text": "local_40 = (float)(fVar5 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_005ba82c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&FLOAT_005ba82c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 27,
-      "match": "(int)&DAT_005ba82c",
+      "match": "(int)&FLOAT_005ba82c",
       "severity": "moderate",
-      "text": "-fVar6 * (float10)*(float *)((int)&DAT_005ba82c + iVar2) + (float10)*param_2)",
+      "text": "-fVar6 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2) +",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_005ba83c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&FLOAT_005ba83c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 29,
-      "match": "(int)&DAT_005ba83c",
+      "match": "(int)&FLOAT_005ba83c",
       "severity": "moderate",
-      "text": "local_38 = (float)(fVar6 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
+      "text": "local_38 = (float)(fVar6 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_005ba82c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&FLOAT_005ba82c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 30,
-      "match": "(int)&DAT_005ba82c",
+      "match": "(int)&FLOAT_005ba82c",
       "severity": "moderate",
-      "text": "fVar5 * (float10)*(float *)((int)&DAT_005ba82c + iVar2)) + param_2[2];",
+      "text": "fVar5 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2)) + param_2[2];",
       "type": "pointer_truncation"
     },
     {
@@ -627,7 +595,7 @@
       "line": 26,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "local_40 = (float)(fVar5 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
+      "text": "local_40 = (float)(fVar5 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
       "type": "pointer_cast"
     },
     {
@@ -635,7 +603,7 @@
       "line": 27,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "-fVar6 * (float10)*(float *)((int)&DAT_005ba82c + iVar2) + (float10)*param_2)",
+      "text": "-fVar6 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2) +",
       "type": "pointer_cast"
     },
     {
@@ -643,7 +611,7 @@
       "line": 29,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "local_38 = (float)(fVar6 * (float10)*(float *)((int)&DAT_005ba83c + iVar2) +",
+      "text": "local_38 = (float)(fVar6 * (float10)*(float *)((int)&FLOAT_005ba83c + iVar2) +",
       "type": "pointer_cast"
     },
     {
@@ -651,7 +619,7 @@
       "line": 30,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "fVar5 * (float10)*(float *)((int)&DAT_005ba82c + iVar2)) + param_2[2];",
+      "text": "fVar5 * (float10)*(float *)((int)&FLOAT_005ba82c + iVar2)) + param_2[2];",
       "type": "pointer_cast"
     },
     {

@@ -9,7 +9,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00408fc0 at 00409048
 ;   engine_3d.c_flushRenderQueue_FUN_00408f50 at 00408fa8
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_004614b0 at 00461702
 ;

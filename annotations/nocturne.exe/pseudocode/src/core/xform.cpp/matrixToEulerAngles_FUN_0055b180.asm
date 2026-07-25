@@ -26,7 +26,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[25]:
+; XREF[26]:
 ;   FUN_0041f3d0 at 0041f5b4
 ;   FUN_004980d0 at 00498277
 ;   FUN_00499ca0 at 00499fbf
@@ -36,8 +36,8 @@
 ;   FUN_004d4ba0 at 004d4ef4
 ;   FUN_004f6170 at 004f6afd
 ;   FUN_004fdd00 at 004fddf9
-;   FUN_0053d100 at 0053d45c
-;   ... and 15 more
+;   FUN_00518f60 at 005190a2
+;   ... and 16 more
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0059828e = -1

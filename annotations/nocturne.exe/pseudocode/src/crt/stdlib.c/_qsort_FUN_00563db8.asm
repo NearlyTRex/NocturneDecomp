@@ -24,7 +24,8 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ; undefined4       Stack[-0x20]:4  local_20
 ;
-; XREF[3]:
+; XREF[4]:
+;   FUN_00405b40 at 00405c07
 ;   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0 at 0050d3bc
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 at 00461e0d
 ;   shape_edittool.cpp_CStrList_sort_FUN_00474010 at 00474069

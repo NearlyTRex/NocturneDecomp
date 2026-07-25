@@ -4,7 +4,8 @@
 ; int * __cdecl crt_fstream_cpp_istream_seekg_FUN_00565f14(int *param_1,undefined4 param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00456b20 at 00456be3
 ;   FUN_004a4170 at 004a4462
 ;
 ; Called Functions:

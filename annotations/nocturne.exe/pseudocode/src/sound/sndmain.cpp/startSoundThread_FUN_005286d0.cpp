@@ -25,7 +25,7 @@ int __cdecl sound_sndmain_cpp_startSoundThread_FUN_005286d0(uint param_1,uint pa
     iVar1 = 0;
     _DAT_02dc84b0 = 0;
     _DAT_02dc84b4 = 0;
-    iVar2 = wincore_winrun_cpp_createThread_FUN_00559c50(&LAB_00528670,0);
+    iVar2 = wincore_winrun_cpp_createThread_FUN_00559c50(FUN_00528670,0);
     if ((iVar2 != 0) &&
        (iVar2 = wincore_winrun_cpp_setThreadPriority_FUN_00559c80(iVar2,3), iVar2 != 0)) {
       do {

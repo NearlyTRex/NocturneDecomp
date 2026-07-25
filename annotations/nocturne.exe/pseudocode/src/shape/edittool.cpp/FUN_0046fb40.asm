@@ -20,7 +20,7 @@
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
 ;   TerminatedCString s_Warning_0057e5cf
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
@@ -175,7 +175,7 @@ section .text
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0046fc9a
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
-    MOV EBP,dword ptr [0x005bac64]      ; 0046fc9f | DAT_005bac64
+    MOV EBP,dword ptr [0x005bac64]      ; 0046fc9f | INT_005bac64
     PUSH EBP                            ; 0046fca5 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0 ; 0046fca6
         ;   XREF to: 004c41c0 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0()

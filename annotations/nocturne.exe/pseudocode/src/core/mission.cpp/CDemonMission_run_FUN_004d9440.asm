@@ -17,7 +17,7 @@
 ;   TerminatedCString s_hq_geo_00589e3b
 ;   TerminatedCString s_Press_any_key_to_continu_00589e42
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005baca0
+;   int INT_005baca0 = 0x1cc3160
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_014b9900
 ;   undefined4 DAT_01c775ec
@@ -158,7 +158,7 @@ section .text
     PUSH EBP                            ; 004d956f
     PUSH EAX                            ; 004d9570
     PUSH 0x9                            ; 004d9571
-    MOV ECX,dword ptr [0x005baca0]      ; 004d9573 | DAT_005baca0
+    MOV ECX,dword ptr [0x005baca0]      ; 004d9573 | INT_005baca0
     PUSH ECX                            ; 004d9579
     MOV EDI,EBP                         ; 004d957a
     CALL core_level.cpp_CLevelLoader_show_FUN_004c5640 ; 004d957c
@@ -229,7 +229,7 @@ section .text
     PUSH -0x1                           ; 004d9625
     PUSH EBP                            ; 004d9627
     PUSH 0x9                            ; 004d9628
-    MOV EDX,dword ptr [0x005baca0]      ; 004d962a | DAT_005baca0
+    MOV EDX,dword ptr [0x005baca0]      ; 004d962a | INT_005baca0
     PUSH EDX                            ; 004d9630
     JMP 0x004d957c                      ; 004d9631
         ;   XREF to: 004d957c (UNCONDITIONAL_JUMP)  ; LAB_004d957c

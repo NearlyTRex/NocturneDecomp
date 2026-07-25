@@ -355,7 +355,7 @@ section .text
         ;   XREF to: 004d1143 (CONDITIONAL_JUMP)  ; LAB_004d1143
     PUSH 0x1                            ; 004d1056
         ;   Label: default
-    MOV EAX,[0x005bac64]                ; 004d1058 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004d1058 | INT_005bac64
     PUSH EAX                            ; 004d105d | DAT_01cc30e4
     MOV EBX,dword ptr [EAX]             ; 004d105e | DAT_01cc30e4
     CALL dword ptr [EBX + 0x4]          ; 004d1060

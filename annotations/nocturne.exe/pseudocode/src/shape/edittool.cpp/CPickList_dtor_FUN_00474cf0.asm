@@ -4,17 +4,18 @@
 ; int __cdecl shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(int param_1,byte param_2)
 ;
 ;
-; XREF[10]:
+; XREF[12]:
 ;   FUN_00470230 at 004702fd
 ;   FUN_00470310 at 004703dd
 ;   FUN_004703f0 at 004704fb
+;   FUN_00470730 at 00470a3d
 ;   FUN_004a4b50 at 004a51e6
+;   FUN_004f8240 at 004f84f4
 ;   FUN_0052ed40 at 0052edab
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e436
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3bd9
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2176
-;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9d86
-;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 004706bf
+;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_shape_edittool.cpp_CPickList_dtor_FUN_00474cf0_0059ca94 = 00474cf0

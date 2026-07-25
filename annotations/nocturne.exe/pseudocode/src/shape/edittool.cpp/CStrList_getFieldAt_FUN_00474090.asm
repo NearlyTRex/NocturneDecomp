@@ -6,7 +6,8 @@
 ; Local Variables:
 ; undefined1       Stack[-0x134]:1  local_134
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00470730 at 00470897
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 004705e1
 ;
 ; Called Functions:

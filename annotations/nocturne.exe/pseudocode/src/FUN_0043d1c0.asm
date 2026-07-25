@@ -11,10 +11,10 @@
 ;   double DOUBLE_0057b496 = 1.5
 ;   double DOUBLE_0057b49e = 10
 ;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_005bed68
-;   undefined4 DAT_00765a98
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;   undefined4 DAT_01c78c78
 ;   undefined4 DAT_01cae0e8
 ;   undefined4 DAT_01e57284
@@ -243,7 +243,7 @@ section .text
     CMP EAX,EDX                         ; 0043d462
     JNZ 0x0043d475                      ; 0043d464
         ;   XREF to: 0043d475 (CONDITIONAL_JUMP)  ; LAB_0043d475
-    MOV ECX,dword ptr [0x005b9284]      ; 0043d466 | DAT_005b9284
+    MOV ECX,dword ptr [0x005b9284]      ; 0043d466 | INT_005b9284
     PUSH ECX                            ; 0043d46c
     CALL FUN_004940d0                   ; 0043d46d
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
@@ -272,7 +272,7 @@ section .text
     SAHF                                ; 0043d49d
     JC 0x0043d38c                       ; 0043d49e
         ;   XREF to: 0043d38c (CONDITIONAL_JUMP)  ; LAB_0043d38c
-    MOV EDX,dword ptr [0x00765a98]      ; 0043d4a4 | DAT_00765a98
+    MOV EDX,dword ptr [0x00765a98]      ; 0043d4a4 | CDemonActorType_00765a60.name_hash
     MOV EAX,[0x005be368]                ; 0043d4aa | DAT_005be368
     PUSH EDX                            ; 0043d4af
     MOV ECX,dword ptr [EAX + 0x14cd5c]  ; 0043d4b0 | DAT_01fa3fe0

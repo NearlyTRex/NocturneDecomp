@@ -6,8 +6,11 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[5]:
+; XREF[8]:
 ;   FUN_004d8720 at 004d8740
+;   FUN_004e99f0 at 004e9a05
+;   FUN_004f8240 at 004f8294
+;   FUN_004f8eb0 at 004f8ece
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3d4c
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9b62
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9d63

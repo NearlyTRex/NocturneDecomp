@@ -385,7 +385,7 @@ LAB_004a50dc:
     } while (cVar1 != '\0');
     uVar6 = 0;
   }
-  core_level_cpp_CLevelLoader_show_FUN_004c5640(0x01CC3160,10,0,iVar4);
+  core_level_cpp_CLevelLoader_show_FUN_004c5640(INT_005baca0,10,0,iVar4);
   core_mission_cpp_CDemonMission_load_FUN_004d7ee0(0x01CC9450,local_144,uVar6);
   iVar2 = core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(0x01CC9450,0);
   if (iVar2 != 0) {

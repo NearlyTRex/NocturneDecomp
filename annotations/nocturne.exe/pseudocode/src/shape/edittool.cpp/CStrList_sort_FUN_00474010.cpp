@@ -18,7 +18,7 @@ void __cdecl shape_edittool_cpp_CStrList_sort_FUN_00474010(int *param_1,int para
       FUN_004c8440("CStrList::sort - invalid range!");
     }
     _qsort
-              (param_1[2] + param_2 * 4,(param_3 - param_2) + 1,4,&LAB_00473ff0);
+              (param_1[2] + param_2 * 4,(param_3 - param_2) + 1,4,FUN_00473ff0);
   }
   return;
 }

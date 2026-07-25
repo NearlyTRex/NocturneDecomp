@@ -10,7 +10,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00470730 at 00470b78
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460 at 0047456d
 ;
 ; Referenced Globals:

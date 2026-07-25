@@ -4,6 +4,9 @@
 ; void shape_edittool_cpp_CPickList_sort_FUN_004761a0(int param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
+; XREF[1]:
+;   FUN_00470730 at 0047099c
+;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057efb6
 ;   TerminatedCString s_CPickList_sort_can_t_do_0057efcc

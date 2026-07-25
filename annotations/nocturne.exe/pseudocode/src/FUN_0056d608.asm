@@ -25,7 +25,7 @@
 ;   undefined4 DAT_005c1f14
 ;   undefined4 DAT_005c1f18
 ;   undefined4 DAT_005c1f1c
-;   undefined1 DAT_005c1f20
+;   undefined4 DAT_005c1f20
 ;
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_00566e10

@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_xplode_wav_6_0_005814f4
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_005bed68
 ;   undefined4 DAT_01c5d704
 ;
@@ -72,7 +72,7 @@ section .text
     CALL core_fire.cpp_CFireEffect_createCrater_FUN_0048c370 ; 0048c139
         ;   XREF to: 0048c370 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_CFireEffect_createCrater_FUN_0048c370()
     ADD ESP,0xc                         ; 0048c13e
-    MOV EDX,dword ptr [0x005b9284]      ; 0048c141 | DAT_005b9284
+    MOV EDX,dword ptr [0x005b9284]      ; 0048c141 | INT_005b9284
     PUSH EDX                            ; 0048c147
     CALL FUN_004940d0                   ; 0048c148
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()

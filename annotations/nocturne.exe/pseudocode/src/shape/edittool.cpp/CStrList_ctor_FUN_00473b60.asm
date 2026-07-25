@@ -4,9 +4,10 @@
 ; void __cdecl shape_edittool_cpp_CStrList_ctor_FUN_00473b60(undefined4 *param_1)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
 ;   FUN_00474c90 at 00474c95
 ;   FUN_004fe490 at 004fe498
+;   FUN_0052c8c0 at 0052c8d2
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_shape_edittool.cpp_CStrList_dtor_FUN_00473b80_0059ca74 = 00473b80

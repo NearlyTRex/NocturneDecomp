@@ -8,18 +8,18 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[35]:
+; XREF[81]:
+;   FUN_0040e300 at 0040e30c
+;   FUN_0041fb00 at 0041fb0c
 ;   FUN_0042cdc0 at 0042cdcc
 ;   FUN_0043f980 at 0043f98f
-;   FUN_0048fce0 at 0048fcef
-;   FUN_004cc020 at 004cc02c
-;   FUN_004cc040 at 004cc04c
-;   FUN_004cc060 at 004cc06c
-;   FUN_0050eb00 at 0050eb0f
-;   FUN_0050eb20 at 0050eb2f
-;   FUN_0050eb40 at 0050eb4c
-;   FUN_0050eb60 at 0050eb6f
-;   ... and 25 more
+;   FUN_004483f0 at 004483ff
+;   FUN_0044b640 at 0044b64c
+;   FUN_0044c540 at 0044c54c
+;   FUN_004545e0 at 004545ef
+;   FUN_0045b430 at 0045b43c
+;   FUN_0046c230 at 0046c23f
+;   ... and 71 more
 ;
 ; Called Functions:
 ;   FUN_00564915

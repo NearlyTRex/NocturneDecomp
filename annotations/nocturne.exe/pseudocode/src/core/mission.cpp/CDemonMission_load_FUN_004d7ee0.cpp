@@ -21,7 +21,7 @@ void __cdecl core_mission_cpp_CDemonMission_load_FUN_004d7ee0(uint param_1,uint 
     FUN_004c8440("CDemonMission::load - Unable to open file");
   }
   uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Loading mission",0);
-  core_level_cpp_CLevelLoader_update_FUN_004c59e0(0x01CC3160,uVar2);
+  core_level_cpp_CLevelLoader_update_FUN_004c59e0(INT_005baca0,uVar2);
   core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(param_1,iVar1,param_3);
   _fclose(iVar1);
   core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(param_1);

@@ -15,11 +15,11 @@
 ;   double DOUBLE_0059107d = 1.5
 ;   double DOUBLE_00591085 = 10
 ;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_005bed68
-;   undefined4 DAT_00765a98
-;   undefined4 DAT_0077bd78
+;   undefined4 CDemonActorType_00765a60.name_hash
+;   undefined4 CDemonActorType_0077bd40.name_hash
 ;   undefined4 DAT_01c7068c
 ;   undefined4 DAT_01c78c78
 ;   ... and 14 more
@@ -281,7 +281,7 @@ section .text
     CMP EAX,EBX                         ; 00516214
     JNZ 0x00516227                      ; 00516216
         ;   XREF to: 00516227 (CONDITIONAL_JUMP)  ; LAB_00516227
-    MOV ESI,dword ptr [0x005b9284]      ; 00516218 | DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 00516218 | INT_005b9284
     PUSH ESI                            ; 0051621e
     CALL FUN_004940d0                   ; 0051621f
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
@@ -327,7 +327,7 @@ section .text
     SAHF                                ; 00516275
     JC 0x0051614b                       ; 00516276
         ;   XREF to: 0051614b (CONDITIONAL_JUMP)  ; LAB_0051614b
-    MOV ECX,dword ptr [0x00765a98]      ; 0051627c | DAT_00765a98
+    MOV ECX,dword ptr [0x00765a98]      ; 0051627c | CDemonActorType_00765a60.name_hash
     MOV EAX,[0x005be368]                ; 00516282 | DAT_005be368
     PUSH ECX                            ; 00516287
     MOV ESI,dword ptr [EAX + 0x14cd5c]  ; 00516288 | DAT_01fa3fe0
@@ -367,7 +367,7 @@ section .text
     ADD ESP,0x8                         ; 005162ed
     MOV EDI,EAX                         ; 005162f0
     MOV dword ptr [ESP + 0xf4],EAX      ; 005162f2
-    MOV EAX,[0x0077bd78]                ; 005162f9 | DAT_0077bd78
+    MOV EAX,[0x0077bd78]                ; 005162f9 | CDemonActorType_0077bd40.name_hash
     PUSH EAX                            ; 005162fe
     MOV EAX,[0x005be368]                ; 005162ff | DAT_005be368
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 00516304 | DAT_01fa3fe0

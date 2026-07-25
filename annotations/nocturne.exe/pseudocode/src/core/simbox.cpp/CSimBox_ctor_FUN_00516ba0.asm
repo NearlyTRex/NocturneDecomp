@@ -4,6 +4,9 @@
 ; int core_simbox_cpp_CSimBox_ctor_FUN_00516ba0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00516b70 at 00516b83
+;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00591105
 ;   TerminatedCString s_none_00591112

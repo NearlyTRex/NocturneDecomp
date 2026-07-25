@@ -277,7 +277,7 @@ section .text
     CMP EAX,0x13                        ; 004b3524
     JZ 0x004b356c                       ; 004b3527
         ;   XREF to: 004b356c (CONDITIONAL_JUMP)  ; LAB_004b356c
-    PUSH 0x51b650                       ; 004b3529 | LAB_0051b650
+    PUSH 0x51b650                       ; 004b3529
     MOV EDI,dword ptr [0x01cae018]      ; 004b352e | DAT_01cae018
     PUSH EDI                            ; 004b3534
     LEA EAX,[EBX + 0x1fa44]             ; 004b3535

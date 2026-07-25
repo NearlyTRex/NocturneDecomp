@@ -16,8 +16,8 @@ void core_curtain_cpp_CCurtain_archive_FUN_0043f6b0(int param_1)
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x164,"curtainTexture");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x174,"opacity");
   local_8 = 0;
-  if (1 < 0x00000006) {
-    if (0x00000006 < 4) {
+  if (1 < INT_005ad3f0) {
+    if (INT_005ad3f0 < 4) {
       core_actor_cpp_archiveInteger_FUN_0040c900(&local_8,"cinched");
       *(uint *)(param_1 + 0x178) = (uint)((local_8 & 1) != 0);
       *(uint *)(param_1 + 0x184) = (uint)((local_8 & 2) != 0);
@@ -31,10 +31,10 @@ void core_curtain_cpp_CCurtain_archive_FUN_0043f6b0(int param_1)
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x65b1c,"gravity");
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x65b24,"hitFloor");
   }
-  if (2 < 0x00000006) {
+  if (2 < INT_005ad3f0) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1f0,"simulateMe");
   }
-  if (3 < 0x00000006) {
+  if (3 < INT_005ad3f0) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x178,"cinchedTop");
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x184,"cinchedBottom");
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x17c,"cinchedLeft");
@@ -42,10 +42,10 @@ void core_curtain_cpp_CCurtain_archive_FUN_0043f6b0(int param_1)
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x188,"falling");
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x18c,"letGoEvent");
   }
-  if (4 < 0x00000006) {
+  if (4 < INT_005ad3f0) {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 500,"patchSize");
   }
-  if (0x00000006 < 6) {
+  if (INT_005ad3f0 < 6) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1f8,"blockVirtualDirectorFlag");

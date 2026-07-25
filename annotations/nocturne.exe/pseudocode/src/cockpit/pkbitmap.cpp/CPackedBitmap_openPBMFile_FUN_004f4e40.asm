@@ -4,7 +4,8 @@
 ; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_004f4e40(undefined4 param_1,undefined4 param_2,int param_3)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004f5920 at 004f599c
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_004f4ef0 at 004f4efb
 ;
 ; Referenced Globals:

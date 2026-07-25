@@ -4,7 +4,7 @@
 ; undefined4 __cdecl support_newmsg_cpp_getLocalizedString_FUN_004ee370(undefined4 param_1)
 ;
 ;
-; XREF[40]:
+; XREF[41]:
 ;   FUN_00470230 at 0047027c
 ;   FUN_00470310 at 0047035c
 ;   FUN_004703f0 at 0047043d
@@ -15,7 +15,7 @@
 ;   FUN_004a4170 at 004a4654
 ;   FUN_004a4b50 at 004a4d06
 ;   FUN_004c2470 at 004c30de
-;   ... and 30 more
+;   ... and 31 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d16814

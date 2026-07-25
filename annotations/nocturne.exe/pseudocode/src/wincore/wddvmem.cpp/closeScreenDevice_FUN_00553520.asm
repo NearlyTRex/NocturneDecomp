@@ -4,10 +4,11 @@
 ; void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520(void)
 ;
 ;
-; XREF[4]:
+; XREF[5]:
 ;   FUN_0049cc10 at 0049d5ba
 ;   FUN_004a57c0 at 004a5993
 ;   FUN_00532ba0 at 00532c45
+;   FUN_00545aa0 at 00545ac4
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 005539a1
 ;
 ; Referenced Globals:

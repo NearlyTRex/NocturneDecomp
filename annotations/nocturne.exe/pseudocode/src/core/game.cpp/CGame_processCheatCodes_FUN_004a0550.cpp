@@ -213,7 +213,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(int param_1)
       core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,0,"cheat-1.wav");
     }
     if ((*(int *)(param_1 + 0x1dc) == 0) &&
-       (iVar5 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x44), iVar5 != 0)) {
+       (iVar5 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x44), iVar5 != 0)) {
       uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                         ("Enter cheat code",acStack_398,100,0);
       iVar5 = shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_00471630(0x01BCD074,uVar6);
@@ -229,7 +229,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(int param_1)
     }
     local_188 = param_1 + 0x1ec;
     while (iVar5 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(), iVar5 != 0) {
-      DAT_01c78af0 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004c41d0(0x01CC30E4);
+      DAT_01c78af0 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004c41d0(INT_005bac64);
       iVar5 = 0x13;
       do {
         iVar10 = iVar5 + -1;
@@ -1208,9 +1208,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(int param_1)
           DAT_01c78af0 = 0;
         }
         else {
-          iVar5 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);
+          iVar5 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
           if ((iVar5 == 0) ||
-             (iVar5 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x13), iVar5 == 0))
+             (iVar5 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x13), iVar5 == 0))
           goto LAB_004a2165;
         }
         core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,0,"cheat-1.wav");

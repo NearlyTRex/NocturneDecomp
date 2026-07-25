@@ -1,6 +1,6 @@
 // Name: engine_clipper.c_FUN_00433ef0
 // Address: 00433ef0
-// Address Range: [[00433ef0, 00433f51] [00433f7c, 00433fc1]]
+// Address Range: [[00433ef0, 00433f51]]
 // Convention: unknown
 // Signature: void engine_clipper_c_FUN_00433ef0(void)
 
@@ -16,14 +16,14 @@ void engine_clipper_c_FUN_00433ef0(void)
   uint *puVar5;
   uint *puVar6;
   byte bVar7;
-  int iStack_14;
+  int local_14;
   
   bVar7 = 0;
-  iStack_14 = 0;
+  local_14 = 0;
   if (0 < (int)DAT_00767b44) {
     puVar4 = &DAT_0076874c;
     do {
-      uVar2 = iStack_14 + 1;
+      uVar2 = local_14 + 1;
       if (uVar2 == DAT_00767b44) {
         uVar2 = uVar2 ^ DAT_00767b44;
       }
@@ -70,9 +70,9 @@ void engine_clipper_c_FUN_00433ef0(void)
                   (puVar4,&DAT_0076874c + uVar2 * 0xc,&DAT_00768d4c + DAT_00767b48 * 0xc);
         DAT_00767b48 = DAT_00767b48 + 1;
       }
-      iStack_14 = iStack_14 + 1;
+      local_14 = local_14 + 1;
       puVar4 = puVar4 + 0xc;
-    } while (iStack_14 < (int)DAT_00767b44);
+    } while (local_14 < (int)DAT_00767b44);
   }
   return;
 }

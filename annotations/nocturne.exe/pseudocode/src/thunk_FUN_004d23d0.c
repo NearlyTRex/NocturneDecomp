@@ -113,9 +113,10 @@ int thunk_FUN_004d23d0(void)
     case 0:
       core_moon_cpp_CMoon_free_FUN_004dea60(0x1cc5780);
       core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
-      iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x2a);
-      if ((iVar7 == 0) || (iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d), iVar7 == 0)) {
-        iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);
+      iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x2a);
+      if ((iVar7 == 0) ||
+         (iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d), iVar7 == 0)) {
+        iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
         if (iVar7 == 0) {
           uVar4 = 0;
         }
@@ -147,27 +148,28 @@ LAB_004d2665:
     case 3:
       iVar6 = 99;
     }
-    iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);
+    iVar7 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
     if (iVar7 != 0) {
       iVar6 = 99;
     }
-    iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);
-    if ((iVar7 != 0) && (iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x32), iVar7 != 0)) {
+    iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
+    if ((iVar7 != 0) &&
+       (iVar7 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x32), iVar7 != 0)) {
       iVar7 = sound_sndmain_cpp_isSoundEnabled_FUN_00526ca0();
       sound_sndmain_cpp_setSoundEnabled_FUN_00526cb0(iVar7 == 0);
       core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
     }
-    iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);
+    iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
     if ((iVar7 != 0) &&
-       ((iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x20), iVar7 != 0 ||
-        (iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x26), iVar7 != 0)))) {
+       ((iVar7 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x20), iVar7 != 0 ||
+        (iVar7 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x26), iVar7 != 0)))) {
       core_sound_cpp_CSound_reset_FUN_0052e9c0(0x02DC9450);
       FUN_004c8510();
       core_sound_cpp_CSound_configure_FUN_0052e850(0x02DC9450);
     }
-    iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);
+    iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
     if (iVar7 != 0) {
-      (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x21);
+      (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x21);
     }
     if (iStack_8 != 0) {
       iStack_8 = 0;

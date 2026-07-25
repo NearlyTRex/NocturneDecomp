@@ -4,6 +4,9 @@
 ; int core_hostage_cpp_CHostage_ctor_FUN_004b69f0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004b69c0 at 004b69d3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_hickdad_dfm_005859f3
 ;   TerminatedCString s_true_005859ff

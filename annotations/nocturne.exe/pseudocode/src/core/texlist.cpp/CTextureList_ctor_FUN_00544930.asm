@@ -4,7 +4,8 @@
 ; void __cdecl core_texlist_cpp_CTextureList_ctor_FUN_00544930(undefined4 *param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00544910 at 00544915
 ;   core_ground.cpp_CGround_init_FUN_004b13d0 at 004b1409
 ;
 ; *****************************************************************************

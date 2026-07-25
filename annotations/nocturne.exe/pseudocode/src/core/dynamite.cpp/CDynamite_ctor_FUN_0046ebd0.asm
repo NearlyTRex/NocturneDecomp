@@ -4,6 +4,9 @@
 ; int core_dynamite_cpp_CDynamite_ctor_FUN_0046ebd0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0046eba0 at 0046ebb3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_dynamitestick_kfm_0057e4d0
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059c924 = 00553f10

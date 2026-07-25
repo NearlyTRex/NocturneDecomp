@@ -3,7 +3,7 @@
   "complexity": {
     "assembly_lines": 16,
     "complexity_score": 97,
-    "cross_reference_count": 26,
+    "cross_reference_count": 37,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
@@ -16,6 +16,60 @@
     "total_lines": 23
   },
   "cross_references": [
+    {
+      "addr": "0045da90",
+      "from_addr": "0045dabc",
+      "name": "FUN_0045da90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045db60",
+      "from_addr": "0045db8c",
+      "name": "FUN_0045db60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045dc30",
+      "from_addr": "0045dc5c",
+      "name": "FUN_0045dc30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045dd00",
+      "from_addr": "0045dd2c",
+      "name": "FUN_0045dd00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045ddd0",
+      "from_addr": "0045ddfc",
+      "name": "FUN_0045ddd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045dea0",
+      "from_addr": "0045decd",
+      "name": "FUN_0045dea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045df80",
+      "from_addr": "0045dfad",
+      "name": "FUN_0045df80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045e130",
+      "from_addr": "0045e15b",
+      "name": "FUN_0045e130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045e1f0",
+      "from_addr": "0045e21b",
+      "name": "FUN_0045e1f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0046fb40",
       "from_addr": "0046fbac",
@@ -32,6 +86,12 @@
       "addr": "0046fe60",
       "from_addr": "0046fecc",
       "name": "FUN_0046fe60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004700d0",
+      "from_addr": "00470119",
+      "name": "FUN_004700d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,6 +122,12 @@
       "addr": "00490b70",
       "from_addr": "00490b8f",
       "name": "FUN_00490b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00490c70",
+      "from_addr": "00490c8f",
+      "name": "FUN_00490c70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -194,7 +260,7 @@
   ],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 26,
+    "call_site_count": 37,
     "call_sites": [
       {
         "call_addr": "004c8477",
@@ -372,7 +438,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_00569040(param_1,param_2,param_3,&LAB_005639f0);",
+      "text": "iVar1 = FUN_00569040(param_1,param_2,param_3,FUN_005639f0);",
       "type": "unnamed_param"
     },
     {
@@ -380,7 +446,7 @@
       "line": 7,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = FUN_00569040(param_1,param_2,param_3,&LAB_005639f0);",
+      "text": "iVar1 = FUN_00569040(param_1,param_2,param_3,FUN_005639f0);",
       "type": "unnamed_param"
     },
     {
@@ -388,7 +454,7 @@
       "line": 7,
       "match": "param_3",
       "severity": "mild",
-      "text": "iVar1 = FUN_00569040(param_1,param_2,param_3,&LAB_005639f0);",
+      "text": "iVar1 = FUN_00569040(param_1,param_2,param_3,FUN_005639f0);",
       "type": "unnamed_param"
     },
     {
@@ -400,7 +466,7 @@
       "type": "unnamed_param"
     },
     {
-      "call_site_count": 26,
+      "call_site_count": 37,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
       "estimated_params": 3,

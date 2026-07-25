@@ -4,7 +4,8 @@
 ; void __cdecl core_hero_cpp_CHeroPlaceholder_ctor_FUN_004b5f90(undefined4 param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004b5f60 at 004b5f73
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9d01
 ;
 ; Referenced Globals:

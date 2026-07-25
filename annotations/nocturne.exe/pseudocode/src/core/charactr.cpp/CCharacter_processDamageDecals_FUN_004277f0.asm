@@ -22,7 +22,7 @@
 ;   core_zombie.cpp_FUN_0055ef50 at 0055fb0b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -128,7 +128,7 @@ section .text
     PUSH EAX                            ; 004278be
     LEA EAX,[EBP + -0x34]               ; 004278bf
     PUSH EAX                            ; 004278c2
-    MOV EAX,[0x005b96c4]                ; 004278c3 | DAT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 004278c3 | INT_005b96c4
     PUSH EAX                            ; 004278c8
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 004278c9
         ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0()

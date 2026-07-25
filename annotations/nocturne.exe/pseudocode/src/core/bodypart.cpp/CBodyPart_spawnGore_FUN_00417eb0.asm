@@ -8,7 +8,7 @@
 ;   core_bodypart.cpp_CBodyPart_process_FUN_004168d0 at 00416913
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
     PUSH 0x2dd1184                      ; 00417ecd | DAT_02dd1184
     ADD EAX,0x20                        ; 00417ed2
     PUSH EAX                            ; 00417ed5
-    MOV ECX,dword ptr [0x005b96c4]      ; 00417ed6 | DAT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 00417ed6 | INT_005b96c4
     PUSH ECX                            ; 00417edc
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 00417edd
         ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0()

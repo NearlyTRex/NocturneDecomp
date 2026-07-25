@@ -4,6 +4,9 @@
 ; void FUN_00534d00(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00534cd0 at 00534ce3
+;
 ; Referenced Globals:
 ;   undefined1* PTR_core_boxactor.cpp_CBoxActor_setup_FUN_0041e430_005a25d4 = 0041e430
 ;

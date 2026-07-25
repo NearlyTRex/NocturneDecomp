@@ -19,9 +19,9 @@ void FUN_0056eed8(uint param_1)
   iVar2 = (*(code *)PTR_FUN_005c1abc)();
   **(uint **)(iVar2 + 0x54) = uVar1;
   iVar2 = (*(code *)PTR_FUN_005c1abc)();
-  *(byte **)(*(int *)(iVar2 + 0x54) + 4) = &LAB_0056ed08;
+  *(code **)(*(int *)(iVar2 + 0x54) + 4) = FUN_0056ed08;
   iVar2 = (*(code *)PTR_FUN_005c1abc)();
   *in_FS_OFFSET = *(uint *)(iVar2 + 0x54);
-  SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)&LAB_0056ead4);
+  SetUnhandledExceptionFilter(FUN_0056ead4);
   return;
 }

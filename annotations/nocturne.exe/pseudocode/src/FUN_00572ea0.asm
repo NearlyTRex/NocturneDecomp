@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_LAB_005c2168 = 00573ed0
+;   undefined1* PTR_FUN_005c2168 = 00573ed0
 ;   undefined1* PTR_FUN_005c216c = 00573fc8
 ;   undefined1* PTR_FUN_005c2170 = 00572e60
 ;
@@ -23,8 +23,8 @@ section .text
     JZ 0x00572ec1                       ; 00572eb0
         ;   XREF to: 00572ec1 (CONDITIONAL_JUMP)  ; LAB_00572ec1
     MOV EAX,dword ptr [EBX]             ; 00572eb2
-    MOV EDX,dword ptr [0x005c2168]      ; 00572eb4 | PTR_LAB_005c2168
-    MOV [0x005c2168],EAX                ; 00572eba | PTR_LAB_005c2168
+    MOV EDX,dword ptr [0x005c2168]      ; 00572eb4 | PTR_FUN_005c2168
+    MOV [0x005c2168],EAX                ; 00572eba | PTR_FUN_005c2168
     MOV dword ptr [EBX],EDX             ; 00572ebf
     TEST ESI,ESI                        ; 00572ec1
         ;   Label: LAB_00572ec1

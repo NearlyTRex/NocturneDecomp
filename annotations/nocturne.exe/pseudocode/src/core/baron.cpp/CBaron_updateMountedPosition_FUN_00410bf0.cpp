@@ -34,7 +34,7 @@ void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_00410bf0(int param_
     local_2c = *(float *)(iVar1 + 0x28) + pfVar2[2];
     (**(code **)(iVar3 + 0x60))(param_1,&local_34);
     iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(param_1 + 0x1fb14),DAT_00765a98);
+                      (*(uint *)(param_1 + 0x1fb14),CDemonActorType_00765a60.name_hash);
     if (iVar3 != 0) {
       iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
       if (iVar3 == 2) {

@@ -4,7 +4,9 @@
 ; void __cdecl engine_matrix_c_transformToCache_FUN_004cd210(int param_1,undefined4 param_2)
 ;
 ;
-; XREF[1]:
+; XREF[3]:
+;   FUN_00472de0 at 00472e45
+;   FUN_00473080 at 004730bd
 ;   FUN_00473190 at 00473277
 ;
 ; Called Functions:

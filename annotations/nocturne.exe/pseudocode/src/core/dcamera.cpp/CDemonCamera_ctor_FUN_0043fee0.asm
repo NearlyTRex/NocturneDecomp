@@ -4,7 +4,8 @@
 ; void __cdecl core_dcamera_cpp_CDemonCamera_ctor_FUN_0043fee0(int param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00506b40 at 00506b5f
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_0044e110 at 0044e115
 ;
 ; *****************************************************************************

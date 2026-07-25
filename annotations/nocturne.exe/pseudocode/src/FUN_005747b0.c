@@ -12,7 +12,7 @@ byte FUN_005747b0(uint param_1)
 
 {
   if (_DAT_02de5c30 != 0) {
-    if (0x00000001 == 0x3a4) {
+    if (DAT_005c2144 == 0x3a4) {
       return (&DAT_005c2201)[param_1 & 0xff] & 8;
     }
     if (param_1 != 0) {

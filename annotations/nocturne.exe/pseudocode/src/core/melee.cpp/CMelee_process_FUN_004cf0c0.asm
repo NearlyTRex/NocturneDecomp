@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00588473 = 1.15000000000000
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
@@ -76,7 +76,7 @@ section .text
     PUSH 0x2dd1184                      ; 004cf153 | DAT_02dd1184
     LEA EAX,[ESP + 0x1c]                ; 004cf158
     PUSH EAX                            ; 004cf15c
-    MOV EDI,dword ptr [0x005b96c4]      ; 004cf15d | DAT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 004cf15d | INT_005b96c4
     PUSH EDI                            ; 004cf163
     CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0 ; 004cf164
         ;   XREF to: 004b00f0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodParticles_FUN_004b00f0()

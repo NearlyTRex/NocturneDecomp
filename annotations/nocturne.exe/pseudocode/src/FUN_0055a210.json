@@ -1,0 +1,543 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 248,
+    "complexity_score": 166,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 13,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 66,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 314
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0055a210",
+    "address_range": [
+      [
+        "0055a210",
+        "0055a493"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0055a210",
+    "signature": "void FUN_0055a210(HWND param_1,undefined4 param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "00563c90",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sprintf_FUN_00563c90"
+    },
+    {
+      "addr": "00566f30",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_atoi_FUN_00566f30"
+    },
+    {
+      "addr": "EXTERNAL:00000029",
+      "is_variadic": false,
+      "name": "GetClientRect"
+    },
+    {
+      "addr": "EXTERNAL:00000016",
+      "is_variadic": false,
+      "name": "mciGetErrorStringA"
+    },
+    {
+      "addr": "EXTERNAL:00000017",
+      "is_variadic": false,
+      "name": "mciSendStringA"
+    },
+    {
+      "addr": "EXTERNAL:00000031",
+      "is_variadic": false,
+      "name": "MessageBoxA"
+    },
+    {
+      "addr": "EXTERNAL:00000032",
+      "is_variadic": false,
+      "name": "MoveWindow"
+    },
+    {
+      "addr": "EXTERNAL:0000003c",
+      "is_variadic": false,
+      "name": "SetRectEmpty"
+    },
+    {
+      "addr": "0055a1c0",
+      "is_variadic": false,
+      "name": "wincore_winvideo.cpp_closeMovie_FUN_0055a1c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005753dc",
+      "name": "PTR_mciGetErrorStringA_005753dc",
+      "type": "void*",
+      "value": "00175800"
+    },
+    {
+      "addr": "005753e0",
+      "name": "PTR_mciSendStringA_005753e0",
+      "type": "void*",
+      "value": "00175816"
+    },
+    {
+      "addr": "0057542c",
+      "name": "PTR_GetClientRect_0057542c",
+      "type": "void*",
+      "value": "0017595c"
+    },
+    {
+      "addr": "0057544c",
+      "name": "PTR_MessageBoxA_0057544c",
+      "type": "void*",
+      "value": "001759e0"
+    },
+    {
+      "addr": "00575450",
+      "name": "PTR_MoveWindow_00575450",
+      "type": "void*",
+      "value": "001759ee"
+    },
+    {
+      "addr": "00575478",
+      "name": "PTR_SetRectEmpty_00575478",
+      "type": "void*",
+      "value": "00175a92"
+    },
+    {
+      "addr": "0059817e",
+      "name": "s_where_mov_source_0059817e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00598199",
+      "name": "s_open_s_alias_mov_style_c_00598199",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005981c3",
+      "name": "s_status_mov_window_handle_005981c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005981dc",
+      "name": "s_Unable_to_open_AVI_005981dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "02de311c",
+      "name": "DAT_02de311c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de3124",
+      "name": "DAT_02de3124",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02de312c",
+      "name": "DAT_02de312c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.091370558375634,
+    "instruction_count": 197,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 30,
+      "BOOL_OR": 3,
+      "BRANCH": 8,
+      "CALL": 3,
+      "CALLIND": 9,
+      "CBRANCH": 18,
+      "COPY": 156,
+      "INT_ADD": 62,
+      "INT_AND": 163,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 117,
+      "INT_LESS": 24,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 16,
+      "INT_SBORROW": 24,
+      "INT_SCARRY": 18,
+      "INT_SEXT": 6,
+      "INT_SLESS": 56,
+      "INT_SRIGHT": 12,
+      "INT_SUB": 82,
+      "INT_XOR": 3,
+      "LOAD": 40,
+      "POPCOUNT": 56,
+      "RETURN": 3,
+      "STORE": 58,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 1003
+  },
+  "stack_frame": {
+    "frame_size": 440,
+    "local_size": 440,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1b4",
+        "offset": -436,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_af",
+        "offset": -175,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ae",
+        "offset": -174,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ad",
+        "offset": -173,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ab",
+        "offset": -171,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_aa",
+        "offset": -170,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0055a210.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 47,
+          "line": 44,
+          "message": "Uninitialized variable: local_b0",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 12,
+          "line": 54,
+          "message": "Uninitialized variable: *pbVar3",
+          "severity": "warning"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0055a210(HWND param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_0055a210(HWND param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "_sprintf(local_1b4,\"open \\\"%s\\\" alias mov style child parent %d\",param_2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_sprintf(local_1b4,\"open \\\"%s\\\" alias mov style child parent %d\",param_2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "MessageBoxA(param_1,\"Unable to open .AVI!\",(LPCSTR)0x0,0x30);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "MessageBoxA(param_1,local_1b4,(LPCSTR)0x0,0x30);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 36,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "GetClientRect(param_1,&local_20);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Uninitialized variable: local_b0",
+      "line": 44,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "mciSendStringA(\"where mov source\",(LPSTR)&local_b0,0x80,(HWND)0x0);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: *pbVar3",
+      "line": 54,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "for (; *pbVar3 == 0x20; pbVar3 = pbVar3 + 1) {",
+      "type": "static_uninitvar"
+    }
+  ]
+}

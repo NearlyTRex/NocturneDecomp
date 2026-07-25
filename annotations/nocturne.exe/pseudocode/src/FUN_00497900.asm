@@ -178,7 +178,7 @@ section .text
         ;   XREF to: 004979d0 (CONDITIONAL_JUMP)  ; LAB_004979d0
     MOV EAX,dword ptr [EBP + 0x56]      ; 004979ca
     MOV dword ptr [EBP + 0x1a],EAX      ; 004979cd
-    PUSH 0x51b650                       ; 004979d0 | LAB_0051b650
+    PUSH 0x51b650                       ; 004979d0
         ;   Label: LAB_004979d0
     MOV EAX,[0x01c71398]                ; 004979d5 | DAT_01c71398
     FLD float ptr [EBX + 0x1fa48]       ; 004979da
@@ -233,7 +233,7 @@ section .text
     JNC 0x00497a71                      ; 00497a65
         ;   XREF to: 00497a71 (CONDITIONAL_JUMP)  ; LAB_00497a71
     MOV dword ptr [0x01c71394],0x3f800000 ; 00497a67 | DAT_01c71394
-    PUSH 0x4955c0                       ; 00497a71 | LAB_004955c0
+    PUSH 0x4955c0                       ; 00497a71
         ;   Label: LAB_00497a71
     MOV ECX,dword ptr [0x01c7139c]      ; 00497a76 | DAT_01c7139c
     PUSH ECX                            ; 00497a7c
@@ -405,7 +405,7 @@ section .text
     CALL core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50 ; 00497c52
         ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50()
     ADD ESP,0xc                         ; 00497c57
-    PUSH 0x51b650                       ; 00497c5a | LAB_0051b650
+    PUSH 0x51b650                       ; 00497c5a
     MOV EDI,dword ptr [0x01c713a8]      ; 00497c5f | DAT_01c713a8
     MOV dword ptr [EBP + 0x7a],EAX      ; 00497c65
     PUSH EDI                            ; 00497c68
@@ -450,7 +450,7 @@ section .text
     CALL core_xform.cpp_multiplyQuaternion_FUN_0055d130 ; 00497ce2
         ;   XREF to: 0055d130 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_0055d130()
     ADD ESP,0x8                         ; 00497ce7
-    PUSH 0x495580                       ; 00497cea | LAB_00495580
+    PUSH 0x495580                       ; 00497cea
     MOV EDX,dword ptr [0x01c713a8]      ; 00497cef | DAT_01c713a8
     PUSH EDX                            ; 00497cf5
     LEA EAX,[EBP + 0xffffff7a]          ; 00497cf6
@@ -598,7 +598,7 @@ section .text
         ;   XREF to: 004e1f50 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_markerPositionToFrame_FUN_004e1f50()
     ADD ESP,0xc                         ; 00497e83
     MOV EDX,dword ptr [0x01c713a8]      ; 00497e86 | DAT_01c713a8
-    PUSH 0x51b650                       ; 00497e8c | LAB_0051b650
+    PUSH 0x51b650                       ; 00497e8c
     MOV ECX,dword ptr [0x01c713cc]      ; 00497e91 | DAT_01c713cc
     MOV dword ptr [EBP + 0x7a],EAX      ; 00497e97
     PUSH EDX                            ; 00497e9a
@@ -652,7 +652,7 @@ section .text
     FLD1                                ; 00497f21
     FSUB double ptr [EBP + 0x36]        ; 00497f23
     FSTP float ptr [EBP + 0x5a]         ; 00497f26
-    PUSH 0x51b650                       ; 00497f29 | LAB_0051b650
+    PUSH 0x51b650                       ; 00497f29
         ;   Label: LAB_00497f29
     MOV EDI,dword ptr [0x01c713e0]      ; 00497f2e | DAT_01c713e0
     FLD float ptr [EBP + 0x62]          ; 00497f34
@@ -710,7 +710,7 @@ section .text
     CALL core_xform.cpp_multiplyQuaternion_FUN_0055d130 ; 00497fda
         ;   XREF to: 0055d130 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_multiplyQuaternion_FUN_0055d130()
     ADD ESP,0x8                         ; 00497fdf
-    PUSH 0x495610                       ; 00497fe2 | LAB_00495610
+    PUSH 0x495610                       ; 00497fe2
     MOV ECX,dword ptr [0x01c713e4]      ; 00497fe7 | DAT_01c713e4
     LEA EDI,[EBP + -0x76]               ; 00497fed
     PUSH ECX                            ; 00497ff0

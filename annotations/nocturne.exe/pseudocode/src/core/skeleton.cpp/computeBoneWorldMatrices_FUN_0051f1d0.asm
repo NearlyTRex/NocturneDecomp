@@ -16,7 +16,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0051f3f0 at 0051f54a
 ;   core_skeleton.cpp_CDeformableModelInstance_findPatchToFrame_FUN_0051e120 at 0051e192
 ;
 ; Called Functions:

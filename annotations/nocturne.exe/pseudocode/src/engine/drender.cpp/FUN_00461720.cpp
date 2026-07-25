@@ -28,10 +28,10 @@ void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
     if (((param_1[4] == 0) && (param_1[3] == 0)) && (DAT_006b0280 != 0)) {
       if (param_1[1] == 0) {
         if (DAT_005b7624 == 0x20) {
-          _DAT_01c00c7c = &LAB_0052f031;
+          _DAT_01c00c7c = FUN_0052f031;
         }
         else {
-          _DAT_01c00c7c = &LAB_0052f823;
+          _DAT_01c00c7c = FUN_0052f823;
         }
         _DAT_01c039a0 = param_4;
         _DAT_01c039a4 = 6;
@@ -82,7 +82,7 @@ void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
         }
       }
       else {
-        _DAT_01c00c7c = &LAB_00463a79;
+        _DAT_01c00c7c = FUN_00463a79;
         _DAT_01c039a0 = 0;
         _DAT_01c039a4 = 0;
         uVar1 = 0;

@@ -6,6 +6,7 @@
 
 // undefined1*
 undefined1* switchdataD_004f6150 = (undefined1*)0x004F61C1; // caseD_0
+undefined1* switchdataD_004fbb8c = (undefined1*)0x004FBBCA; // caseD_0
 undefined1* switchdataD_004fbee8 = (undefined1*)0x004FC3BD; // caseD_0
 undefined1* switchdataD_004fcaf0 = (undefined1*)0x004FCB76; // caseD_0
 

@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   undefined4 DAT_0059d7a0
 ;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -74,7 +74,7 @@ section .text
     CMP EAX,EBP                         ; 0048eae2
     JNZ 0x0048eaf4                      ; 0048eae4
         ;   XREF to: 0048eaf4 (CONDITIONAL_JUMP)  ; LAB_0048eaf4
-    MOV EAX,[0x005b9284]                ; 0048eae6 | DAT_005b9284
+    MOV EAX,[0x005b9284]                ; 0048eae6 | INT_005b9284
     PUSH EAX                            ; 0048eaeb
     CALL FUN_004940d0                   ; 0048eaec
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()

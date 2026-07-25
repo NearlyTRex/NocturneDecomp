@@ -4,7 +4,9 @@
 ; void crt_memory_c___vec_new_FUN_00566234(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[2]:
+; XREF[4]:
+;   FUN_004f4f90 at 004f5068
+;   FUN_004f5350 at 004f539c
 ;   core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330 at 00467366
 ;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0 at 00517f81
 ;

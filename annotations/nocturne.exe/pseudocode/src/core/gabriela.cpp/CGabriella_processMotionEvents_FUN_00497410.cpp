@@ -79,7 +79,7 @@ void core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(int param_1,f
       break;
     case 2:
       iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(param_1 + 0x1fa08),DAT_00764ad4);
+                        (*(uint *)(param_1 + 0x1fa08),CDemonActorType_00764a9c.name_hash);
       if (iVar3 != 0) {
         if (*(int *)(iVar3 + 0x664) != 1) {
           *(uint *)(param_1 + 0x1fa50) = 0xbf060a92;
@@ -126,7 +126,7 @@ void core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(int param_1,f
                                      ((float10)local_9c * (float10)0.20000000000000001);
           local_1c = (int)ROUND(fVar6);
           core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                    (0x01C78C7C,&local_68,0,local_1c + 1,0,uVar4);
+                    (INT_005b96c4,&local_68,0,local_1c + 1,0,uVar4);
           (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"kick1.wav");
           *(uint *)(param_1 + 0x2590) = 0;
           break;

@@ -4,74 +4,75 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  unnamed_param                  59002 ( 72.7%)
-  undefined_data                  6943 (  8.6%)
-  param_count_too_few             2077 (  2.6%)
-  unresolved_funcptr              1719 (  2.1%)
-  warning_overlapping_globals     1353 (  1.7%)
-  pointer_cast                    1201 (  1.5%)
-  static_uninitvar                1041 (  1.3%)
-  pointer_truncation               987 (  1.2%)
-  unaffected_reg                   677 (  0.8%)
-  unrolled_memcpy                  660 (  0.8%)
-  stack_ref                        657 (  0.8%)
-  concat_reconstruction            531 (  0.7%)
-  raw_address_constant             497 (  0.6%)
-  unrolled_strcpy                  465 (  0.6%)
-  static_object_index              430 (  0.5%)
-  register_param                   409 (  0.5%)
-  unknown_field                    272 (  0.3%)
-  unrolled_strlen                  234 (  0.3%)
-  nonstandard_int                  229 (  0.3%)
-  static_legacy_uninitvar          191 (  0.2%)
-  static_shift_too_many_bits       171 (  0.2%)
-  self_copy_guard                  153 (  0.2%)
-  raw_address_pointer_store        131 (  0.2%)
-  stack_param                      109 (  0.1%)
+  unnamed_param                  64547 ( 68.0%)
+  undefined_data                  9656 ( 10.2%)
+  param_count_too_few             2181 (  2.3%)
+  unresolved_funcptr              1857 (  2.0%)
+  warning_overlapping_globals     1655 (  1.7%)
+  pointer_cast                    1628 (  1.7%)
+  stack_param                     1598 (  1.7%)
+  static_uninitvar                1590 (  1.7%)
+  pointer_truncation              1439 (  1.5%)
+  unaffected_reg                  1262 (  1.3%)
+  unrolled_memcpy                  939 (  1.0%)
+  register_param                   859 (  0.9%)
+  concat_reconstruction            779 (  0.8%)
+  stack_ref                        723 (  0.8%)
+  raw_address_constant             537 (  0.6%)
+  unrolled_strcpy                  483 (  0.5%)
+  static_object_index              435 (  0.5%)
+  unknown_field                    304 (  0.3%)
+  nonstandard_int                  275 (  0.3%)
+  unrolled_strlen                  242 (  0.3%)
+  static_shift_too_many_bits       218 (  0.2%)
+  static_legacy_uninitvar          212 (  0.2%)
+  self_copy_guard                  154 (  0.2%)
+  stack_alignment_array            108 (  0.1%)
   carry_arith_idiom                105 (  0.1%)
-  bitcast_double_pair              103 (  0.1%)
-  stack_alignment_array             95 (  0.1%)
+  bitcast_double_pair              105 (  0.1%)
   unrolled_strcat                   93 (  0.1%)
-  suspect_float                     76 (  0.1%)
-  warning_unreachable               58 (  0.1%)
-  warning_type_propagation          45 (  0.1%)
-  sub84_truncation                  37 (  0.0%)
-  pointer_stride_bytecount          32 (  0.0%)
-  unrolled_strchr                   30 (  0.0%)
+  warning_jumptable                 78 (  0.1%)
+  warning_indirect_jump             78 (  0.1%)
+  suspect_float                     77 (  0.1%)
+  warning_unreachable               67 (  0.1%)
+  warning_type_propagation          51 (  0.1%)
+  sub84_truncation                  38 (  0.0%)
+  pointer_stride_bytecount          37 (  0.0%)
+  unrolled_strchr                   36 (  0.0%)
+  raw_address_pointer_store         30 (  0.0%)
   static_array_oob                  30 (  0.0%)
   extra_output                      29 (  0.0%)
+  fpu_register_input                28 (  0.0%)
   eflags_input                      26 (  0.0%)
-  fpu_register_input                24 (  0.0%)
-  unknown_type                      22 (  0.0%)
-  sign_compare_idiom                20 (  0.0%)
+  unknown_type                      24 (  0.0%)
+  sign_compare_idiom                23 (  0.0%)
+  static_invalid_pointer_cast       20 (  0.0%)
+  warning_overlapping_instructions    20 (  0.0%)
+  fnstsw_flag_artifact              17 (  0.0%)
   bit_int_float_compare             17 (  0.0%)
-  static_self_assignment            14 (  0.0%)
+  static_self_assignment            16 (  0.0%)
   nan_function_artifact             13 (  0.0%)
-  static_invalid_pointer_cast       10 (  0.0%)
   fast_sqrt_inline                  10 (  0.0%)
+  fast_inv_sqrt_inline              10 (  0.0%)
+  undefined_ram                      9 (  0.0%)
   static_identical_inner_condition     9 (  0.0%)
   static_integer_division            9 (  0.0%)
   undefined_ptr_cast                 9 (  0.0%)
-  warning_jumptable                  8 (  0.0%)
-  warning_indirect_jump              8 (  0.0%)
-  fnstsw_flag_artifact               7 (  0.0%)
-  fast_inv_sqrt_inline               7 (  0.0%)
-  displaced_global_access            6 (  0.0%)
-  static_null_pointer                5 (  0.0%)
+  displaced_global_access            8 (  0.0%)
+  static_null_pointer                6 (  0.0%)
+  static_null_pointer_arithmetic     6 (  0.0%)
+  warning_noreturn                   6 (  0.0%)
   static_swapped_arguments           4 (  0.0%)
   bare_stack_ref                     4 (  0.0%)
-  warning_noreturn                   4 (  0.0%)
-  static_null_pointer_arithmetic     3 (  0.0%)
+  undefined_type                     4 (  0.0%)
   warning_deadcode_restart           3 (  0.0%)
   static_null_pointer_redundant_check     3 (  0.0%)
+  tautological_addr_guard            3 (  0.0%)
   dropped_loop_counter               2 (  0.0%)
   static_array_oob_cond              2 (  0.0%)
   cpuid_intrinsic                    2 (  0.0%)
-  tautological_addr_guard            2 (  0.0%)
   unrolled_memset                    2 (  0.0%)
-  undefined_type                     2 (  0.0%)
   dropped_self_copy                  2 (  0.0%)
-  undefined_ram                      1 (  0.0%)
   unresolved_register                1 (  0.0%)
   loop_clobbered_constant            1 (  0.0%)
   static_memleak                     1 (  0.0%)
@@ -79,19 +80,19 @@ SUSPECT TYPE COUNTS
   warning_spacebase                  1 (  0.0%)
 
 ====================================================================================================
-TYPE: unnamed_param (59002 occurrences)
+TYPE: unnamed_param (64547 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  38851x  param_1
-  11931x  param_2
-  4301x  param_3
-  2156x  param_4
-  1027x  param_5
-   434x  param_6
-   145x  param_7
-    71x  param_8
-    34x  param_9
+  41399x  param_1
+  13267x  param_2
+  5063x  param_3
+  2616x  param_4
+  1254x  param_5
+   548x  param_6
+   207x  param_7
+   104x  param_8
+    37x  param_9
     22x  param_10
      7x  param_11
      5x  param_12
@@ -107,11 +108,28 @@ Functions:
   FUN_004013d0
   FUN_004014a0
   FUN_004014f0
+  FUN_00405340
+  FUN_004059c0
+  FUN_00405a60
+  FUN_00405ab0
+  FUN_00405b40
+  FUN_00406920
+  FUN_00406a00
+  FUN_00406ae0
+  FUN_00406b80
+  FUN_00408fc0
+  FUN_00409210
+  FUN_00409510
+  FUN_0040bd90
+  FUN_0040e1a0
   FUN_0040e220
   FUN_0040e230
   FUN_0040e240
   FUN_0040e290
   FUN_0040e2a0
+  FUN_0040e2e1
+  FUN_0040e2f1
+  FUN_0040e300
   FUN_0040ef60
   FUN_0040ef70
   FUN_0040ef90
@@ -183,6 +201,11 @@ Functions:
   FUN_00416cb0
   FUN_00416d30
   FUN_00417ef0
+  FUN_00418010
+  FUN_0041803d
+  FUN_00418180
+  FUN_004181f0
+  FUN_004182cd
   FUN_00418630
   FUN_00418a00
   FUN_004194b0
@@ -192,9 +215,13 @@ Functions:
   FUN_0041a3e0
   FUN_0041a4d0
   FUN_0041a4e0
+  FUN_0041a910
   FUN_0041cbc0
   FUN_0041cbd0
   FUN_0041d050
+  FUN_0041d980
+  FUN_0041d9d0
+  FUN_0041daa0
   FUN_0041ea00
   FUN_0041eaf0
   FUN_0041ebe0
@@ -210,6 +237,7 @@ Functions:
   FUN_0041f6e0
   FUN_0041fa10
   FUN_0041fa90
+  FUN_0041fb00
   FUN_0041fbb0
   FUN_0041fe40
   FUN_00420eb0
@@ -219,17 +247,66 @@ Functions:
   FUN_00421840
   FUN_004219d0
   FUN_004219f0
+  FUN_00423d40
   FUN_0042c4c0
   FUN_0042cd30
   FUN_0042cda0
   FUN_0042cdb0
   FUN_0042cdc0
+  FUN_0042cde0
+  FUN_0042ceca
+  FUN_0042cef8
+  FUN_0042cff2
+  FUN_0042d100
+  FUN_0042d370
+  FUN_0042d5c0
+  FUN_0042d6c0
+  FUN_0042d900
+  FUN_0042db50
+  FUN_0042dcc0
+  FUN_0042df00
+  FUN_0042e060
+  FUN_0042e220
+  FUN_0042e290
+  FUN_0042e3d0
+  FUN_0042e4b0
+  FUN_0042e4f0
+  FUN_0042e6c0
+  FUN_0042e750
   FUN_0042e7b0
+  FUN_0042eb00
+  FUN_0042eb90
+  FUN_0042ee00
+  FUN_0042f050
+  FUN_0042f190
+  FUN_0042f330
+  FUN_0042f8c0
   FUN_0042fd60
+  FUN_00430210
   FUN_004303d0
+  FUN_00430590
+  FUN_00430630
+  FUN_004310f0
+  FUN_00431260
+  FUN_00431a50
+  FUN_00431b90
+  FUN_00431cd0
+  FUN_00431e10
+  FUN_00432210
+  FUN_00433770
+  FUN_00434210
+  FUN_00434541
+  FUN_004347cc
   FUN_00435210
+  FUN_00437a60
+  FUN_00437ab0
+  FUN_00438410
+  FUN_00438620
+  FUN_00438660
   FUN_00438980
   FUN_00438990
+  FUN_00438a40
+  FUN_00439bf0
   FUN_00439d30
   FUN_00439da0
   FUN_00439f50
@@ -238,6 +315,7 @@ Functions:
   FUN_0043ab20
   FUN_0043ab30
   FUN_0043ab60
+  FUN_0043ac50
   FUN_0043b110
   FUN_0043b310
   FUN_0043b3c0
@@ -273,29 +351,60 @@ Functions:
   FUN_0043ff30
   FUN_004401b0
   FUN_004405d0
+  FUN_00441150
   FUN_00441440
+  FUN_004418d0
   FUN_004421b0
+  FUN_004425d0
+  FUN_00443050
+  FUN_00444180
+  FUN_004442a0
+  FUN_00444440
+  FUN_00444600
   FUN_00444ef0
+  FUN_004450b0
+  FUN_004451a0
+  FUN_00445310
   FUN_00445750
+  FUN_00445f70
+  FUN_00446760
   FUN_00446810
   FUN_004470f0
   FUN_004477f0
   FUN_00447bb0
   FUN_00447c60
+  FUN_00447dd0
   FUN_00447f20
   FUN_00448310
   FUN_00448380
   FUN_00448660
   FUN_004487c0
+  FUN_00448930
+  FUN_00448a90
   FUN_00448bf0
+  FUN_00448d60
+  FUN_00448f40
+  FUN_00448fa6
+  FUN_00448fb0
+  FUN_0044a150
   FUN_0044ac30
   FUN_0044adf0
+  FUN_0044b660
   FUN_0044bbd0
   FUN_0044bcb0
+  FUN_0044c540
+  FUN_0044d060
   FUN_0044d440
+  FUN_0044d460
   FUN_0044d4c0
+  FUN_0044d4f0
+  FUN_0044d550
+  FUN_0044dfb0
+  FUN_00450c90
+  FUN_00452560
   FUN_004545c0
   FUN_004545d0
+  FUN_004545e0
   FUN_00454660
   FUN_00454dc0
   FUN_00454ee0
@@ -308,17 +417,73 @@ Functions:
   FUN_00456240
   FUN_004566b0
   FUN_00456750
+  FUN_00456b20
+  FUN_00456ef0
   FUN_00456f60
   FUN_004571f0
+  FUN_004574e0
+  FUN_00457640
+  FUN_004578a0
+  FUN_004579c0
   FUN_0045a240
   FUN_0045a260
   FUN_0045ab40
   FUN_0045b350
+  FUN_0045b430
+  FUN_0045be40
+  FUN_0045be70
+  FUN_0045bea0
+  FUN_0045bed0
   FUN_0045bfb0
+  FUN_0045c050
+  FUN_0045ca50
+  FUN_0045cb90
+  FUN_0045cc10
+  FUN_0045cc70
+  FUN_0045cd00
+  FUN_0045cd80
+  FUN_0045cde0
+  FUN_0045cfc3
+  FUN_0045cfd0
+  FUN_0045cff0
+  FUN_0045d070
   FUN_0045d2b0
+  FUN_0045d2d0
+  FUN_0045d310
+  FUN_0045d6d0
+  FUN_0045da60
+  FUN_0045da90
+  FUN_0045db00
+  FUN_0045db30
+  FUN_0045db60
+  FUN_0045dbd0
+  FUN_0045dc00
+  FUN_0045dc30
+  FUN_0045dca0
+  FUN_0045dcd0
+  FUN_0045dd00
+  FUN_0045dd70
+  FUN_0045dda0
+  FUN_0045ddd0
+  FUN_0045de40
+  FUN_0045de70
+  FUN_0045dea0
+  FUN_0045df20
+  FUN_0045df50
+  FUN_0045df80
+  FUN_0045e040
+  FUN_0045e0f0
+  FUN_0045e110
+  FUN_0045e130
+  FUN_0045e192
+  FUN_0045e1a0
+  FUN_0045e1f0
+  FUN_0045f270
   FUN_00460760
   FUN_00460c90
   FUN_00461720
+  FUN_00461d50
+  FUN_00461d80
   FUN_00462300
   FUN_00462710
   FUN_00462720
@@ -328,19 +493,33 @@ Functions:
   FUN_00463310
   FUN_0046556f
   FUN_0046568b
+  FUN_00467250
   FUN_004673a0
+  FUN_004673e0
+  FUN_00467560
   FUN_004675e0
   FUN_004676c0
   FUN_00467890
+  FUN_00468d00
+  FUN_00469240
   FUN_00469ce0
   FUN_0046b650
+  FUN_0046ba20
   FUN_0046baa0
   FUN_0046bd90
   FUN_0046bfe0
   FUN_0046c100
+  FUN_0046c3c0
+  FUN_0046c410
   FUN_0046d680
   FUN_0046d7e0
+  FUN_0046d950
+  FUN_0046dab0
   FUN_0046dc10
+  FUN_0046dd80
+  FUN_0046df40
+  FUN_0046e960
+  FUN_0046e9f0
   FUN_0046ec80
   FUN_0046ed80
   FUN_0046eda0
@@ -350,12 +529,21 @@ Functions:
   FUN_0046fb40
   FUN_0046fcd0
   FUN_0046fe60
+  FUN_004700d0
+  FUN_004701a0
   FUN_00470230
   FUN_00470310
   FUN_004703f0
   FUN_00470eb0
   FUN_004720c0
+  FUN_00472de0
+  FUN_00472fd0
+  FUN_00473080
   FUN_00473190
+  FUN_004737a0
+  FUN_00473e90
+  FUN_00473ff0
+  FUN_00474230
   FUN_00474ae0
   FUN_00474c90
   FUN_00475230
@@ -366,7 +554,15 @@ Functions:
   FUN_00476580
   FUN_00476e70
   FUN_00476e90
+  FUN_00476ef0
+  FUN_00476f40
   FUN_00477080
+  FUN_00477100
+  FUN_004772e0
+  FUN_00477300
+  FUN_00477340
+  FUN_00477370
+  FUN_00477390
   FUN_00477710
   FUN_004777a0
   FUN_00477890
@@ -380,8 +576,13 @@ Functions:
   FUN_00479420
   FUN_00479b60
   FUN_0047a000
+  FUN_0047a150
   FUN_0047a210
+  FUN_0047a5e0
   FUN_00481620
+  FUN_00481630
+  FUN_00481770
+  FUN_00481950
   FUN_00481d30
   FUN_00481d50
   FUN_00481d60
@@ -398,6 +599,7 @@ Functions:
   FUN_0048ab60
   FUN_0048b6f0
   FUN_0048c0d0
+  FUN_0048c93c
   FUN_0048c960
   FUN_0048c980
   FUN_0048c990
@@ -426,6 +628,16 @@ Functions:
   FUN_0048cc60
   FUN_0048cc70
   FUN_0048cc80
+  FUN_0048cca0
+  FUN_0048ccc0
+  FUN_0048cce0
+  FUN_0048cd60
+  FUN_0048cd80
+  FUN_0048cde0
+  FUN_0048ce00
+  FUN_0048ce40
+  FUN_0048ce80
+  FUN_0048cea0
   FUN_0048d5d0
   FUN_0048df10
   FUN_0048df20
@@ -444,17 +656,32 @@ Functions:
   FUN_0048f490
   FUN_0048fc30
   FUN_0048fce0
+  FUN_0048fd00
   FUN_0048fe30
+  FUN_00490210
   FUN_00490470
   FUN_00490b20
   FUN_00490b70
+  FUN_00490c20
+  FUN_00490c70
   FUN_00490d20
   FUN_00490d70
+  FUN_00490f50
+  FUN_00490ff0
+  FUN_00493110
+  FUN_004933c0
+  FUN_00493760
+  FUN_00494020
+  FUN_004940e0
+  FUN_00494220
   FUN_004948f0
   FUN_00494e80
   FUN_00495000
   FUN_004950a0
   FUN_00495430
+  FUN_00495580
+  FUN_004955c0
+  FUN_00495610
   FUN_00495a20
   FUN_00497810
   FUN_00497870
@@ -467,8 +694,12 @@ Functions:
   FUN_00499ca0
   FUN_0049a110
   FUN_0049a170
+  FUN_0049b3a0
+  FUN_0049b420
   FUN_0049cc10
   FUN_0049f930
+  FUN_004a0260
+  FUN_004a0430
   FUN_004a3b90
   FUN_004a4170
   FUN_004a4b50
@@ -509,10 +740,15 @@ Functions:
   FUN_004b0a20
   FUN_004b0a30
   FUN_004b0a50
+  FUN_004b0a60
+  FUN_004b0a80
+  FUN_004b0aa0
+  FUN_004b0ac0
   FUN_004b0bd0
   FUN_004b0cb0
   FUN_004b0d40
   FUN_004b1010
+  FUN_004b1090
   FUN_004b13b0
   FUN_004b2430
   FUN_004b2760
@@ -571,6 +807,7 @@ Functions:
   FUN_004bc9c0
   FUN_004bcfb0
   FUN_004bcfd0
+  FUN_004bd790
   FUN_004bdb60
   FUN_004bdb70
   FUN_004bee60
@@ -606,6 +843,8 @@ Functions:
   FUN_004c8200
   FUN_004c8380
   FUN_004c8440
+  FUN_004c8dc0
+  FUN_004c8e10
   FUN_004c9430
   FUN_004c9580
   FUN_004c9be0
@@ -624,6 +863,7 @@ Functions:
   FUN_004cbec0
   FUN_004cbf10
   FUN_004cbf20
+  FUN_004cbf30
   FUN_004cc020
   FUN_004cc040
   FUN_004cc060
@@ -631,12 +871,17 @@ Functions:
   FUN_004cc440
   FUN_004cc870
   FUN_004cc960
+  FUN_004cdd30
+  FUN_004cde10
+  FUN_004cdfa0
   FUN_004cea50
+  FUN_004ceae0
   FUN_004cef00
   FUN_004cef70
   FUN_004cef80
   FUN_004cefe0
   FUN_004cf1a0
+  FUN_004cf810
   FUN_004d4540
   FUN_004d4650
   FUN_004d49f0
@@ -651,6 +896,8 @@ Functions:
   FUN_004d74a0
   FUN_004d76e0
   FUN_004d7720
+  FUN_004d7760
+  FUN_004d77f0
   FUN_004d7d70
   FUN_004d7d80
   FUN_004d7e00
@@ -662,24 +909,54 @@ Functions:
   FUN_004d8fc0
   FUN_004d90e0
   FUN_004d9110
+  FUN_004d93d0
+  FUN_004d98c0
   FUN_004d9e50
   FUN_004d9e60
+  FUN_004da070
   FUN_004da790
   FUN_004dba70
   FUN_004dc820
   FUN_004dc920
+  FUN_004dcee0
+  FUN_004dcf60
+  FUN_004dd690
   FUN_004de550
   FUN_004de680
   FUN_004df190
   FUN_004df1a0
+  FUN_004df1d0
+  FUN_004df1f0
+  FUN_004df210
+  FUN_004df740
   FUN_004df800
+  FUN_004e0110
+  FUN_004e01f0
+  FUN_004e0240
+  FUN_004e08a0
+  FUN_004e08e0
+  FUN_004e0d20
+  FUN_004e2480
+  FUN_004e25c0
+  FUN_004e2630
+  FUN_004e27f0
+  FUN_004e2850
+  FUN_004e28a0
+  FUN_004e2c60
+  FUN_004e3f20
+  FUN_004e3f80
   FUN_004e5200
   FUN_004e6160
   FUN_004e7ed0
+  FUN_004e97e0
+  FUN_004e99f0
+  FUN_004edca0
+  FUN_004edd30
   FUN_004ede40
   FUN_004ede50
   FUN_004ede60
   FUN_004ede70
+  FUN_004edfb0
   FUN_004edfc0
   FUN_004ee950
   FUN_004ee9e0
@@ -691,6 +968,11 @@ Functions:
   FUN_004ef5c0
   FUN_004efa60
   FUN_004f0360
+  FUN_004f18c0
+  FUN_004f1ef0
+  FUN_004f1f80
+  FUN_004f2050
+  FUN_004f2530
   FUN_004f2990
   FUN_004f3b90
   FUN_004f3c00
@@ -699,7 +981,33 @@ Functions:
   FUN_004f3e40
   FUN_004f3f50
   FUN_004f3f80
+  FUN_004f3fe0
+  FUN_004f4050
+  FUN_004f4170
+  FUN_004f4310
+  FUN_004f4410
+  FUN_004f44d0
   FUN_004f4b30
+  FUN_004f4f90
+  FUN_004f5110
+  FUN_004f5290
+  FUN_004f52c0
+  FUN_004f5320
+  FUN_004f5350
+  FUN_004f53f0
+  FUN_004f54c0
+  FUN_004f5740
+  FUN_004f5920
+  FUN_004f59d0
+  FUN_004f5a20
+  FUN_004f5a50
+  FUN_004f5b20
+  FUN_004f5b70
+  FUN_004f5c31
+  FUN_004f5c40
+  FUN_004f5c60
+  FUN_004f5c80
+  FUN_004f5cf0
   FUN_004f5d90
   FUN_004f5f60
   FUN_004f6170
@@ -709,13 +1017,26 @@ Functions:
   FUN_004f7360
   FUN_004f75a0
   FUN_004f75b0
+  FUN_004f77d0
+  FUN_004f7890
+  FUN_004f78d0
+  FUN_004f7980
   FUN_004f7a80
   FUN_004f7ae0
+  FUN_004f8240
   FUN_004f8570
+  FUN_004f86a0
   FUN_004f8a10
+  FUN_004f8eb0
+  FUN_004f9170
   FUN_004f93e0
+  FUN_004f9460
+  FUN_004f9620
+  FUN_004f9bc0
   FUN_004f9dd0
   FUN_004fa2e0
+  FUN_004fa800
+  FUN_004fbbb0
   FUN_004fbc00
   FUN_004fbe80
   FUN_004fbf20
@@ -741,6 +1062,11 @@ Functions:
   FUN_00505920
   FUN_00506a60
   FUN_00506a80
+  FUN_0050bbc0
+  FUN_0050bcf0
+  FUN_0050d2a0
+  FUN_0050d640
+  FUN_0050dfe0
   FUN_0050ea40
   FUN_0050ea50
   FUN_0050ea60
@@ -750,7 +1076,10 @@ Functions:
   FUN_0050eb20
   FUN_0050eb40
   FUN_0050eb60
+  FUN_0050eba0
   FUN_0050fc90
+  FUN_00510450
+  FUN_005106a0
   FUN_00510a40
   FUN_00511740
   FUN_005117f0
@@ -763,10 +1092,12 @@ Functions:
   FUN_00511ca0
   FUN_00511d20
   FUN_00511d30
+  FUN_00511d80
   FUN_005125a0
   FUN_00513670
   FUN_00513720
   FUN_005138e0
+  FUN_00513e20
   FUN_005143e0
   FUN_00514410
   FUN_00514430
@@ -787,41 +1118,70 @@ Functions:
   FUN_00517190
   FUN_00517350
   FUN_005174e0
+  FUN_00518320
+  FUN_00518f60
+  FUN_00519120
+  FUN_0051b650
   FUN_0051b7d0
+  FUN_0051cf60
+  FUN_0051d5e0
   FUN_0051d650
+  FUN_0051da90
+  FUN_0051e860
+  FUN_0051f3f0
   FUN_0051f680
   FUN_0051f760
+  FUN_0051f880
+  FUN_0051f8a0
   FUN_0051f900
   FUN_0051f930
   FUN_005210b0
   FUN_005210d0
+  FUN_005211f0
+  FUN_005214e0
   FUN_00522480
+  FUN_005229f0
+  FUN_00522e00
   FUN_00523890
   FUN_005238f0
   FUN_005257e0
   FUN_00526120
   FUN_00526150
+  FUN_00526410
+  FUN_005273d0
   FUN_00527520
+  FUN_00527570
   FUN_005278e0
+  FUN_00527950
   FUN_005289f0
+  FUN_005293f0
   FUN_00529980
   FUN_005299e0
   FUN_00529a20
   FUN_00529a40
   FUN_00529a50
+  FUN_00529a60
+  FUN_00529de0
+  FUN_0052bbd0
   FUN_0052d030
+  FUN_0052dd00
   FUN_0052dff0
   FUN_0052ebc0
   FUN_0052ed40
   FUN_0052ee00
   FUN_0052ee10
+  FUN_00530cf0
   FUN_00532cd0
   FUN_00532d20
+  FUN_00532f50
   FUN_00533210
   FUN_00533530
   FUN_005335a0
   FUN_00533750
   FUN_00533c90
+  FUN_00533eb0
+  FUN_00534070
+  FUN_00534590
   FUN_005347b0
   FUN_00534820
   FUN_005348c0
@@ -829,6 +1189,7 @@ Functions:
   FUN_00534d00
   FUN_00534d30
   FUN_00534dc0
+  FUN_00534e90
   FUN_005350c0
   FUN_00535450
   FUN_005357d0
@@ -840,6 +1201,7 @@ Functions:
   FUN_0053a260
   FUN_0053c800
   FUN_0053d100
+  FUN_0053d790
   FUN_0053e860
   FUN_0053f210
   FUN_0053f310
@@ -880,9 +1242,11 @@ Functions:
   FUN_00544440
   FUN_005445c0
   FUN_00544850
+  FUN_00544c10
   FUN_00544de0
   FUN_00544e50
   FUN_00544e60
+  FUN_00545700
   FUN_00545c30
   FUN_005464a0
   FUN_00546820
@@ -932,6 +1296,7 @@ Functions:
   FUN_00550650
   FUN_00550670
   FUN_005506c0
+  FUN_005519c0
   FUN_00551c00
   FUN_00551e40
   FUN_005522d0
@@ -953,6 +1318,22 @@ Functions:
   FUN_005576a0
   FUN_00557c70
   FUN_00557e90
+  FUN_00558d90
+  FUN_0055a010
+  FUN_0055a210
+  FUN_0055a4a0
+  FUN_0055bc30
+  FUN_0055c180
+  FUN_0055c830
+  FUN_0055c8b0
+  FUN_0055c970
+  FUN_0055ca30
+  FUN_0055caf0
+  FUN_0055d1f0
+  FUN_00562740
+  FUN_00562880
+  FUN_00563290
+  FUN_005632b0
   FUN_005633c4
   FUN_005633ec
   FUN_005633fc
@@ -960,6 +1341,7 @@ Functions:
   FUN_005635c0
   FUN_005638d0
   FUN_005638e0
+  FUN_005639f0
   FUN_00563d20
   FUN_00564494
   FUN_00564640
@@ -968,6 +1350,7 @@ Functions:
   FUN_0056497c
   FUN_00564a88
   FUN_00564bb0
+  FUN_00564c30
   FUN_00564e3d
   FUN_00564e53
   FUN_00564faa
@@ -992,9 +1375,13 @@ Functions:
   FUN_00566570
   FUN_00566590
   FUN_00566600
+  FUN_00566af0
+  FUN_00566b18
   FUN_00566b20
   FUN_00566ba0
   FUN_00566c44
+  FUN_00566c96
+  FUN_00566ca9
   FUN_005670ed
   FUN_005671e8
   FUN_005671f8
@@ -1045,10 +1432,12 @@ Functions:
   FUN_0056a388
   FUN_0056a827
   FUN_0056aa38
+  FUN_0056adf0
   FUN_0056ae10
   FUN_0056aefc
   FUN_0056af76
   FUN_0056afc0
+  FUN_0056afd0
   FUN_0056afe8
   FUN_0056b1a4
   FUN_0056b215
@@ -1080,7 +1469,12 @@ Functions:
   FUN_0056bc70
   FUN_0056bd22
   FUN_0056be50
+  FUN_0056c4d4
+  FUN_0056c520
+  FUN_0056c56c
   FUN_0056c5f0
+  FUN_0056c6a0
+  FUN_0056c6b8
   FUN_0056c6d0
   FUN_0056c750
   FUN_0056c864
@@ -1094,6 +1488,9 @@ Functions:
   FUN_0056d034
   FUN_0056d308
   FUN_0056d340
+  FUN_0056d486
+  FUN_0056d488
+  FUN_0056d4ab
   FUN_0056d628
   FUN_0056d658
   FUN_0056d774
@@ -1120,6 +1517,10 @@ Functions:
   FUN_0056e37c
   FUN_0056e390
   FUN_0056e3f4
+  FUN_0056e43c
+  FUN_0056e458
+  FUN_0056e474
+  FUN_0056e484
   FUN_0056e56c
   FUN_0056e608
   FUN_0056e664
@@ -1128,9 +1529,12 @@ Functions:
   FUN_0056e990
   FUN_0056e9d0
   FUN_0056ea78
+  FUN_0056ead4
+  FUN_0056ed08
   FUN_0056eed8
   FUN_0056ef50
   FUN_0056f040
+  FUN_0056f170
   FUN_0056f1c0
   FUN_0056f220
   FUN_0056f278
@@ -1138,6 +1542,7 @@ Functions:
   FUN_0056f36c
   FUN_0056f3a0
   FUN_0056f3e0
+  FUN_0056f480
   FUN_0056f4f0
   FUN_0056f544
   FUN_0056f573
@@ -1198,6 +1603,7 @@ Functions:
   FUN_00571510
   FUN_00571564
   FUN_00571588
+  FUN_005715ac
   FUN_005715d0
   FUN_005716d8
   FUN_00571718
@@ -1233,22 +1639,92 @@ Functions:
   FUN_0057301c
   FUN_005733e0
   FUN_00573660
-  FUN_00573a31
+  FUN_00573720
+  FUN_005738ac
+  FUN_005738c8
+  FUN_00573930
   FUN_00573afc
   FUN_00573ca0
   FUN_00573db0
   FUN_00573e30
+  FUN_00573ed0
   FUN_00574000
   FUN_00574030
+  FUN_005740b0
   FUN_00574264
   FUN_00574404
   FUN_00574520
+  FUN_00574540
+  FUN_00574570
   FUN_005746f0
   FUN_00574710
   FUN_00574760
   FUN_005747b0
   FUN_005747f6
+  FUN_00574819
+  FUN_00574825
+  FUN_00574831
+  FUN_0057483d
+  FUN_00574849
+  FUN_00574855
+  FUN_00574861
+  FUN_00574885
+  FUN_00574891
+  FUN_0057489d
+  FUN_005748a9
+  FUN_005748b5
+  FUN_005748c1
+  FUN_005748e5
+  FUN_005748f1
+  FUN_005748fd
+  FUN_00574909
+  FUN_00574915
+  FUN_00574921
+  FUN_0057492d
+  FUN_00574939
+  FUN_00574945
+  FUN_00574951
+  FUN_0057495d
+  FUN_00574969
+  FUN_00574975
+  FUN_00574981
+  FUN_0057498d
+  FUN_00574999
+  FUN_005749a5
+  FUN_005749b1
+  FUN_005749bd
+  FUN_005749c9
+  FUN_005749d5
+  FUN_005749e1
+  FUN_005749ed
+  FUN_005749f9
+  FUN_00574a05
   FUN_00574a13
+  FUN_00574a23
+  FUN_00574a2f
+  FUN_00574a3b
+  FUN_00574a47
+  FUN_00574a53
+  FUN_00574a5f
+  FUN_00574a6b
+  FUN_00574a77
+  FUN_00574a8f
+  FUN_00574a9b
+  FUN_00574aa7
+  FUN_00574ab3
+  FUN_00574acb
+  FUN_00574af5
+  FUN_00574b01
+  FUN_00574b0d
+  FUN_00574b19
+  FUN_00574b25
+  FUN_00574b31
+  FUN_00574b3d
+  FUN_00574b49
+  FUN_00574b55
+  FUN_00574b73
+  FUN_00574b8b
+  FUN_00574b97
   cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e520
   cockpit_ckptutil.c_drawClippedEdges_FUN_0042ef60
   cockpit_ckptutil.c_drawLineAA_FUN_0042f600
@@ -1379,7 +1855,6 @@ Functions:
   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
   core_actor.cpp_randomChance_FUN_0040dea0
   core_actor.cpp_rayCylinderIntersect_FUN_00409860
-  core_actor.cpp_registerActorClass_FUN_0040d3f0
   core_actor.cpp_setRandomSeed_FUN_0040dd20
   core_ammo.cpp_CAmmo_ctor_FUN_0040eb70
   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80
@@ -3807,6 +4282,7 @@ Functions:
   support_trisock.cpp_performSocketOperation_FUN_00549090
   support_trisock.cpp_receiveSocketData_FUN_00549010
   support_trisock.cpp_setSocketBlocking_FUN_00549240
+  thunk_FUN_0056c5f0
   wincore_wddvmem.cpp_freeLibrary_FUN_00553d20
   wincore_wddvmem.cpp_getProcAddress_FUN_00553d40
   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
@@ -3849,30 +4325,30 @@ Functions:
   wincore_winvideo.cpp_closeMovie_FUN_0055a1c0
 
 ====================================================================================================
-TYPE: undefined_data (6943 occurrences)
+TYPE: undefined_data (9656 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1083x  DAT_005ae704
-   305x  DAT_005c168c
-   297x  DAT_005b7624
-   266x  DAT_005b7620
-   224x  DAT_005b761c
-   129x  DAT_01bd2fa0
-   112x  DAT_00766c70
+  1204x  DAT_005ae704
+   387x  DAT_00766c70
+   336x  DAT_005b7624
+   313x  DAT_005c168c
+   290x  DAT_005b7620
+   251x  DAT_005b761c
+   173x  DAT_00767b48
+   168x  DAT_01bd2fa0
+   153x  DAT_00767b44
+   122x  DAT_00767b40
+   119x  DAT_00766c74
    107x  DAT_01e56420
+   102x  DAT_00767b38
+    89x  DAT_005c5014
     88x  DAT_02dd1184
     82x  DAT_00763e84
-    81x  DAT_01c08b60
-    72x  DAT_005c5014
-    51x  DAT_005c5040
-    48x  DAT_01c78af0
-    44x  DAT_01c00624
-    44x  DAT_005acc90
-    42x  DAT_01c0063c
-    42x  DAT_01c00630
-    42x  DAT_00765a98
-    40x  DAT_005c502c
+    82x  DAT_01c08b60
+    70x  DAT_00768d4c
+    61x  DAT_0076874c
+    60x  DAT_01c00624
 
 Functions:
   FUN_00401010
@@ -3880,140 +4356,260 @@ Functions:
   FUN_004012d0
   FUN_004013d0
   FUN_004014f0
-  FUN_0040eb60
+  FUN_00405340
+  FUN_004059c0
+  FUN_00405ab0
+  FUN_00405b40
+  FUN_00406920
+  FUN_00406a00
+  FUN_00406ae0
+  FUN_00406b80
+  FUN_00408fc0
+  FUN_00409210
+  FUN_00409510
+  FUN_0040bd40
+  FUN_0040bd90
+  FUN_0040e300
   FUN_0040ef90
-  FUN_0040f030
   FUN_0040f4b0
-  FUN_0040f550
   FUN_0040f740
   FUN_0040f8b0
-  FUN_0040f950
   FUN_0040fc30
-  FUN_0040fec0
   FUN_004100f0
-  FUN_004101c0
+  FUN_00410140
   FUN_00411610
   FUN_00411660
-  FUN_004116b0
-  FUN_00411700
   FUN_004118c0
-  FUN_00411910
-  FUN_00411a00
-  FUN_004120a0
-  FUN_004120f0
   FUN_004132c0
-  FUN_004133d0
   FUN_00414b40
   FUN_00414c60
-  FUN_00414d70
   FUN_00414e70
   FUN_00414fa0
-  FUN_00415040
   FUN_00415250
-  FUN_00415360
   FUN_00415760
   FUN_00415a30
-  FUN_00415d10
   FUN_004161a0
   FUN_00416300
-  FUN_004182c0
   FUN_00418630
   FUN_004194b0
   FUN_00419c20
   FUN_0041d050
-  FUN_0041e2f0
+  FUN_0041e260
   FUN_0041ea00
   FUN_0041eaf0
-  FUN_0041f300
   FUN_0041f3d0
   FUN_0041f6e0
   FUN_0041fa10
   FUN_0041fa90
-  FUN_0041fba0
   FUN_0041fe40
   FUN_00420eb0
   FUN_00420f20
-  FUN_00421030
   FUN_00421540
+  FUN_00423ea0
   FUN_0042c4c0
   FUN_0042cd30
   FUN_0042cdc0
+  FUN_0042cde0
+  FUN_0042ceca
   FUN_0042d130
+  FUN_0042d5c0
+  FUN_0042d6c0
+  FUN_0042d900
+  FUN_0042db50
+  FUN_0042dcc0
+  FUN_0042df00
+  FUN_0042e060
+  FUN_0042e290
+  FUN_0042e3d0
+  FUN_0042e4f0
+  FUN_0042e6c0
+  FUN_0042e750
+  FUN_0042f330
+  FUN_0042f8c0
   FUN_0042fd60
-  FUN_00439d20
+  FUN_004301d0
+  FUN_004301e0
+  FUN_004301f0
+  FUN_00430200
+  FUN_00430630
+  FUN_004314b0
+  FUN_00431500
+  FUN_00431520
+  FUN_00431a50
+  FUN_00431b90
+  FUN_00431cd0
+  FUN_00431e10
+  FUN_00432057
+  FUN_004320dc
+  FUN_00432210
+  FUN_00432b48
+  FUN_00432bd8
+  FUN_00433c70
+  FUN_00433cd7
+  FUN_00433d43
+  FUN_00433db0
+  FUN_00433e1d
+  FUN_00433e8d
+  FUN_00433f58
+  FUN_00433fc8
+  FUN_00434030
+  FUN_0043409e
+  FUN_0043410e
+  FUN_00434160
+  FUN_00434210
+  FUN_00434492
+  FUN_00434541
+  FUN_0043469b
+  FUN_0043474d
+  FUN_004347cc
+  FUN_0043484b
+  FUN_004348ca
+  FUN_00437a60
+  FUN_00437ab0
   FUN_00439da0
   FUN_00439f50
   FUN_0043ab60
-  FUN_0043b040
+  FUN_0043abb0
   FUN_0043b420
   FUN_0043b490
-  FUN_0043bbd0
   FUN_0043c6f0
-  FUN_0043c800
   FUN_0043cbc0
   FUN_0043ce60
-  FUN_0043cf00
-  FUN_0043d1c0
   FUN_0043d870
-  FUN_0043d950
+  FUN_0043d8e0
   FUN_0043dad0
   FUN_0043f330
   FUN_0043f8e0
   FUN_0043f980
+  FUN_0043f9c0
   FUN_00441440
+  FUN_004418d0
   FUN_004421b0
+  FUN_004425d0
+  FUN_00443100
+  FUN_00443180
+  FUN_00444180
+  FUN_004442a0
+  FUN_00444440
+  FUN_00444600
+  FUN_004451a0
+  FUN_00445310
   FUN_00445750
+  FUN_00445f70
   FUN_00446810
   FUN_004470f0
   FUN_00447bb0
   FUN_00447c60
   FUN_00447f20
+  FUN_00448410
   FUN_00448660
   FUN_004487c0
+  FUN_00448930
+  FUN_00448a90
   FUN_00448bf0
+  FUN_00448d60
+  FUN_00448f40
+  FUN_0044a150
+  FUN_0044b660
   FUN_0044bbd0
+  FUN_0044bc20
   FUN_0044c560
+  FUN_0044d060
+  FUN_0044d4f0
+  FUN_0044d550
+  FUN_00450c90
+  FUN_00452530
   FUN_00454f30
   FUN_00455d50
   FUN_004566b0
+  FUN_004574e0
+  FUN_00457640
+  FUN_004578a0
+  FUN_004579c0
+  FUN_00458580
   FUN_0045a260
   FUN_0045ab40
   FUN_0045b350
+  FUN_0045cc70
+  FUN_0045cde0
+  FUN_0045d0d0
+  FUN_0045d0e0
+  FUN_0045d0f0
+  FUN_0045d100
+  FUN_0045d310
+  FUN_0045e370
+  FUN_0045ecf0
+  FUN_0045f270
   FUN_00460c26
   FUN_00461720
   FUN_00462300
   FUN_00462890
   FUN_00463310
+  FUN_00463a79
+  FUN_00463ac7
+  FUN_00463b27
+  FUN_00463c42
+  FUN_00463d98
+  FUN_00463f77
+  FUN_00463ff5
+  FUN_00464075
+  FUN_00464200
+  FUN_004649dd
   FUN_0046556f
   FUN_0046568b
+  FUN_004671c0
   FUN_004673a0
+  FUN_00468d00
+  FUN_00469240
   FUN_0046bfe0
   FUN_0046c100
+  FUN_0046c250
   FUN_0046d680
   FUN_0046d7e0
+  FUN_0046d950
+  FUN_0046dab0
   FUN_0046dc10
+  FUN_0046dd80
+  FUN_0046df40
+  FUN_0046e960
+  FUN_0046e9e0
   FUN_0046ef30
+  FUN_0046efa0
   FUN_0046f7e0
+  FUN_004701a0
+  FUN_00470730
   FUN_00470eb0
   FUN_004720c0
+  FUN_00472de0
+  FUN_00473080
   FUN_00473190
+  FUN_004737a0
+  FUN_00474230
   FUN_00475230
   FUN_00475470
-  FUN_00477890
+  FUN_00476fd0
+  FUN_00477100
+  FUN_004771f0
+  FUN_00477300
+  FUN_004774b0
   FUN_00478120
   FUN_00478310
   FUN_00478f80
   FUN_00479420
   FUN_00479b60
+  FUN_0047a1e0
   FUN_0047a210
+  FUN_0047a260
+  FUN_0047a280
+  FUN_0047a5e0
   FUN_00481d90
   FUN_004821d0
   FUN_00482310
   FUN_00482360
+  FUN_004823b0
   FUN_00489990
   FUN_0048a970
   FUN_0048ab60
-  FUN_0048b6f0
   FUN_0048d5d0
   FUN_0048df20
   FUN_0048e6d0
@@ -4024,16 +4620,29 @@ Functions:
   FUN_0048f490
   FUN_0048fc30
   FUN_0048fce0
+  FUN_00490ff0
+  FUN_004933c0
+  FUN_00493760
+  FUN_00494020
+  FUN_00494080
+  FUN_004940e0
+  FUN_00494220
   FUN_00495430
-  FUN_00495a20
-  FUN_00497810
   FUN_00497900
   FUN_004980d0
   FUN_00498de0
-  FUN_00499ca0
   FUN_0049a170
+  FUN_0049a1e0
+  FUN_0049a320
+  FUN_0049b3a0
+  FUN_0049b420
   FUN_0049cc10
+  FUN_0049ecc0
+  FUN_0049ecf0
+  FUN_0049ed20
   FUN_0049f930
+  FUN_004a0260
+  FUN_004a0430
   FUN_004a3b90
   FUN_004a4170
   FUN_004a4b50
@@ -4051,12 +4660,16 @@ Functions:
   FUN_004accf0
   FUN_004ada20
   FUN_004adef0
+  FUN_004adf90
+  FUN_004b0a80
+  FUN_004b0aa0
   FUN_004b1010
-  FUN_004b27c0
   FUN_004b2ff0
   FUN_004b4140
   FUN_004b4460
   FUN_004b49a0
+  FUN_004b6220
+  FUN_004b6370
   FUN_004b8600
   FUN_004b8b70
   FUN_004b99d0
@@ -4069,6 +4682,9 @@ Functions:
   FUN_004c47d0
   FUN_004c5540
   FUN_004c6970
+  FUN_004c6a00
+  FUN_004c6a40
+  FUN_004c6a50
   FUN_004c71a0
   FUN_004c79a0
   FUN_004c7ca0
@@ -4090,38 +4706,81 @@ Functions:
   FUN_004cc440
   FUN_004cc960
   FUN_004cea50
-  FUN_004cefe0
   FUN_004cf1a0
+  FUN_004cf1f0
   FUN_004d23d0
+  FUN_004d2880
   FUN_004d4540
   FUN_004d60d0
+  FUN_004d6140
   FUN_004d74a0
   FUN_004d76e0
   FUN_004d7720
+  FUN_004d7760
+  FUN_004d77f0
   FUN_004d7e00
   FUN_004d8720
   FUN_004da790
   FUN_004de550
+  FUN_004de770
+  FUN_004df1f0
+  FUN_004e08a0
+  FUN_004e2480
+  FUN_004e25c0
+  FUN_004e2630
+  FUN_004e28a0
+  FUN_004e3f20
   FUN_004e5200
   FUN_004e6160
+  FUN_004e78b0
+  FUN_004e7b00
   FUN_004e7ed0
+  FUN_004e94a0
+  FUN_004e97e0
+  FUN_004e99f0
   FUN_004edfc0
   FUN_004ef5c0
+  FUN_004efc50
+  FUN_004efcd0
   FUN_004f0360
+  FUN_004f16d0
+  FUN_004f18c0
+  FUN_004f1f80
+  FUN_004f2530
   FUN_004f2990
   FUN_004f3e40
+  FUN_004f4050
+  FUN_004f4170
+  FUN_004f4f10
+  FUN_004f4f90
+  FUN_004f5320
+  FUN_004f5350
   FUN_004f6c60
   FUN_004f6d90
+  FUN_004f78d0
+  FUN_004f7980
+  FUN_004f8240
+  FUN_004f86a0
+  FUN_004f8eb0
   FUN_004f93e0
+  FUN_004f9460
+  FUN_004f9620
+  FUN_004f9bc0
   FUN_004f9dd0
   FUN_004fa2e0
+  FUN_004fa800
+  FUN_004faca0
   FUN_004fd1d0
   FUN_004fda20
+  FUN_004fde80
   FUN_004fe770
   FUN_004fee30
   FUN_004fef60
   FUN_00504d90
   FUN_00506a80
+  FUN_00506b40
+  FUN_0050dd60
+  FUN_0050dfe0
   FUN_0050eb00
   FUN_0050eb20
   FUN_0050eb40
@@ -4129,40 +4788,61 @@ Functions:
   FUN_00510a40
   FUN_00511a10
   FUN_00511aa0
+  FUN_00511d60
+  FUN_00511d80
   FUN_005125a0
   FUN_00513670
   FUN_00513720
   FUN_005138e0
+  FUN_00515890
+  FUN_005159a0
   FUN_00515c40
-  FUN_00515ea0
   FUN_00516770
   FUN_00516960
   FUN_00516af0
   FUN_005170d0
+  FUN_00518f60
+  FUN_00519120
   FUN_0051f650
   FUN_0051f900
   FUN_005210d0
+  FUN_00521bf0
+  FUN_00521d80
   FUN_00522480
   FUN_00523170
+  FUN_005273d0
   FUN_00527520
   FUN_005278e0
+  FUN_00527930
   FUN_005289f0
+  FUN_0052a280
+  FUN_0052ad30
+  FUN_0052bbd0
+  FUN_0052c8c0
+  FUN_0052c900
   FUN_0052d030
+  FUN_0052d710
   FUN_0052d790
   FUN_0052dff0
   FUN_0052ebc0
+  FUN_0052ec90
+  FUN_0052f031
+  FUN_0052f823
+  FUN_005300ec
+  FUN_00530322
   FUN_00530e60
   FUN_00532320
+  FUN_005325c0
   FUN_00532ba0
+  FUN_00532f50
+  FUN_00532fa0
   FUN_00533750
   FUN_00533c90
   FUN_005347b0
   FUN_00534dc0
   FUN_00535900
-  FUN_005383e0
   FUN_005384d0
   FUN_0053a260
-  FUN_0053c800
   FUN_0053d100
   FUN_00540a90
   FUN_00541640
@@ -4172,13 +4852,13 @@ Functions:
   FUN_00543a60
   FUN_00543ab0
   FUN_00544850
-  FUN_00545c30
   FUN_00546ab0
   FUN_00546be0
   FUN_00546e10
   FUN_00547670
   FUN_00547800
   FUN_00548a50
+  FUN_00548aa0
   FUN_005496d0
   FUN_00549cd0
   FUN_0054b060
@@ -4189,24 +4869,43 @@ Functions:
   FUN_0054f8a0
   FUN_00550210
   FUN_005506c0
+  FUN_00550730
+  FUN_005511a0
   FUN_00551c00
   FUN_005522d0
   FUN_00552360
   FUN_00552830
+  FUN_00552a20
+  FUN_00552af0
   FUN_00552b40
   FUN_00552cb0
+  FUN_00552d70
   FUN_00553ba0
   FUN_00553f50
+  FUN_00554930
   FUN_005576a0
   FUN_00557e90
+  FUN_00558c40
+  FUN_00558d90
+  FUN_00559d20
+  FUN_0055d9c0
+  FUN_0055dcb0
+  FUN_0055de8e
+  FUN_0055df19
+  FUN_0055df90
+  FUN_00562740
+  FUN_00562880
   FUN_005635c0
   FUN_005638e0
+  FUN_00564c30
   FUN_005653e0
   FUN_005656a4
   FUN_00566590
   FUN_00566ba0
   FUN_00566c44
+  FUN_00566c6c
   FUN_00566ed7
+  FUN_005671c6
   FUN_0056720c
   FUN_00567458
   FUN_005674b0
@@ -4220,6 +4919,7 @@ Functions:
   FUN_0056808c
   FUN_00568560
   FUN_00568620
+  FUN_00568690
   FUN_005687bc
   FUN_005689c0
   FUN_00568a50
@@ -4228,8 +4928,10 @@ Functions:
   FUN_00568f70
   FUN_00569fb0
   FUN_0056a234
+  FUN_0056ada0
   FUN_0056af50
   FUN_0056afe8
+  FUN_0056b1ee
   FUN_0056b215
   FUN_0056b405
   FUN_0056b4a9
@@ -4250,29 +4952,39 @@ Functions:
   FUN_0056ced8
   FUN_0056d034
   FUN_0056d340
+  FUN_0056d4d0
+  FUN_0056d4e8
   FUN_0056d608
   FUN_0056d87c
   FUN_0056dd80
+  FUN_0056ddf0
   FUN_0056deac
   FUN_0056dfc0
   FUN_0056e010
   FUN_0056e09c
   FUN_0056e174
   FUN_0056e208
+  FUN_0056e230
   FUN_0056e390
+  FUN_0056e52c
   FUN_0056e5ac
   FUN_0056e608
   FUN_0056e664
+  FUN_0056e6b8
   FUN_0056e6c4
   FUN_0056e6e4
   FUN_0056e7fc
   FUN_0056e9d0
+  FUN_0056ead4
+  FUN_0056ed08
   FUN_0056ef60
   FUN_0056efb8
+  FUN_0056f040
   FUN_0056f1c0
   FUN_0056f2d0
   FUN_0056f30c
   FUN_0056f36c
+  FUN_0056f3a0
   FUN_0056f852
   FUN_0056f986
   FUN_0056fa80
@@ -4286,6 +4998,7 @@ Functions:
   FUN_005701cf
   FUN_00570449
   FUN_005705c0
+  FUN_00570630
   FUN_005706dd
   FUN_00571170
   FUN_005711a8
@@ -4297,15 +5010,22 @@ Functions:
   FUN_00571564
   FUN_00571668
   FUN_00571694
+  FUN_00571858
   FUN_005729e8
   FUN_00572ef0
   FUN_0057301c
   FUN_005733e0
+  FUN_00573720
+  FUN_00573db0
+  FUN_00573ed0
+  FUN_00574570
   FUN_00574710
   FUN_005747b0
   cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e520
+  cockpit_ckptutil.c_drawLineAA_FUN_0042f600
   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_0042d3f0
   cockpit_ckptutil.c_putPixel_FUN_00430140
+  cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730
   cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_0045c850
@@ -4354,15 +5074,11 @@ Functions:
   core_armour.cpp_CFlame_dtor_FUN_0040fdc0
   core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10
   core_armour.cpp_SFire_arrdtor_FUN_0040fe30
-  core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530
-  core_baron.cpp_CBaron_attachToOwner_FUN_00410a80
   core_baron.cpp_CBaron_ctor_FUN_004101d0
   core_baron.cpp_CBaron_setup_FUN_004102c0
-  core_baron.cpp_CBaron_updateMountedPosition_FUN_00410bf0
   core_baron.cpp_FUN_00410490
   core_baron.cpp_FUN_00410cc0
   core_baron.cpp_FUN_004110f0
-  core_baron.cpp_FUN_00411340
   core_barrier.cpp_CBarrier_getCollisionType_FUN_00411860
   core_batcreat.cpp_CBatCreature_getTargetPoints_FUN_00413250
   core_batcreat.cpp_CBatCreature_process_FUN_00412480
@@ -4400,7 +5116,6 @@ Functions:
   core_bride.cpp_CBride_getTargetPoints_FUN_00420e20
   core_bride.cpp_CBride_setup_FUN_0041fc20
   core_bugs.cpp_CBugs_archive_FUN_00421880
-  core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370
   core_bugs.cpp_CBugs_ctor_FUN_00421040
   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0
   core_bugs.cpp_FUN_00421b80
@@ -4413,7 +5128,6 @@ Functions:
   core_charactr.cpp_CCharacter_ctor_FUN_00423f40
   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0
   core_charactr.cpp_CCharacter_dtor_FUN_0042b5d0
-  core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730
   core_charactr.cpp_CCharacter_followActor_FUN_00428780
   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
   core_charactr.cpp_CCharacter_processFire_FUN_004269b0
@@ -4427,7 +5141,6 @@ Functions:
   core_charactr.cpp_FUN_004270e0
   core_charactr.cpp_FUN_00428c00
   core_charactr.cpp_FUN_0042af70
-  core_charactr.cpp_FUN_0042b740
   core_cloth.cpp_CCloth_ctor_FUN_00435100
   core_cloth.cpp_CCloth_render_FUN_00437db0
   core_cloth.cpp_CCloth_saveJoinedLight_FUN_00437cc0
@@ -4518,7 +5231,6 @@ Functions:
   core_dtrace.cpp_CDemonRaytrace_testVoxelAtCoords_FUN_0046b7f0
   core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_0046b1b0
   core_dtri.cpp_rayTriangleFloorTest_FUN_0046d110
-  core_enemy.cpp_CEnemy_processDamage_FUN_00479f70
   core_enemy.cpp_CEnemy_releaseVictim_FUN_0047a090
   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0
   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
@@ -4580,9 +5292,7 @@ Functions:
   core_flies.cpp_SFly_arrdtor_FUN_00534c80
   core_flies.cpp_SFly_ctor_FUN_0048fca0
   core_flies.cpp_drawFlyPixel_FUN_0048f3c0
-  core_gabriela.cpp_CGabriella_collectAmmo_FUN_00498790
   core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0
-  core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410
   core_gabriela.cpp_CGabriella_renderOpaque_FUN_00498cc0
   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004990c0
   core_game.cpp_CGame_beginFadeIn_FUN_004a37e0
@@ -4632,25 +5342,17 @@ Functions:
   core_hero.cpp_CHeroPlaceholder_dtor_FUN_004b5fc0
   core_hero.cpp_CHero_closestEnemy_FUN_004b5d00
   core_hero.cpp_CHero_releaseFromGrab_FUN_004b4d50
-  core_hero.cpp_CHero_stopPushingBox_FUN_004b56f0
-  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0
   core_hiram.cpp_CHiram_dtor_FUN_004b6670
   core_hostage.cpp_CHostage_renderOpaque_FUN_004b6cf0
   core_hotdemon.cpp_CHotDemon_process_FUN_004b8f20
   core_imp.cpp_CImp_process_FUN_004bbaf0
   core_inivar.cpp_writeIniData_FUN_004be2d0
-  core_inv.cpp_CInventory_addItem_FUN_004bf360
-  core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20
-  core_inv.cpp_CInventory_load_FUN_004c1190
   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40
   core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150
   core_inv.cpp_CInventory_saveItems_FUN_004c1140
   core_inv.cpp_CInventory_save_FUN_004c0fa0
-  core_inv.cpp_CInventory_select_FUN_004c1580
-  core_inv.cpp_CInventory_updateInventory_FUN_004c1850
   core_inv.cpp_drawItemIconBackground_FUN_004c1f90
   core_inv.cpp_drawWeaponIconBackground_FUN_004c1dd0
-  core_inv.cpp_getItemModel_FUN_004beb40
   core_inv.cpp_loadAssets_FUN_004befa0
   core_level.cpp_CLevelLoader_show_FUN_004c5640
   core_level.cpp_CLevelLoader_update_FUN_004c59e0
@@ -4720,7 +5422,6 @@ Functions:
   core_scat.cpp_CScat_dtor_FUN_004fde30
   core_scat.cpp_CScat_updateAiming_FUN_004fd450
   core_script.cpp_CScript_executeInitSection_FUN_004ff170
-  core_script.cpp_CScript_getDialogDuration_FUN_005049b0
   core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710
   core_script.cpp_CScript_loadState_FUN_005052c0
   core_script.cpp_CScript_process_FUN_004fe5b0
@@ -4738,7 +5439,6 @@ Functions:
   core_set.cpp_CDemonSet_addDynamicLight_FUN_0050a970
   core_set.cpp_CDemonSet_addLightFilter_FUN_0050e5d0
   core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_0050aa20
-  core_set.cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0
   core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0
   core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210
   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0
@@ -4780,7 +5480,6 @@ Functions:
   core_set.cpp_FUN_0050e370
   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00511b30
   core_setcolid.cpp_CDemonSet_getVoxelHeight_FUN_0050fab0
-  core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_005103f0
   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
   core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00
   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
@@ -4815,16 +5514,12 @@ Functions:
   core_stairs.cpp_CStairs_dtor_FUN_00412000
   core_stranger.cpp_CStranger_autoAimAtThreat_FUN_0053d910
   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
-  core_stranger.cpp_CStranger_processPickupComplete_FUN_0053beb0
-  core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0
   core_succubus.cpp_CSuccubus_dtor_FUN_00541860
   core_svetlana.cpp_CSvetlana_renderOpaque_FUN_00542d20
   core_terrain.cpp_CTerrain_render_FUN_00549310
   core_texlist.cpp_CTextureList_captureAllTextures_FUN_00544d70
   core_texlist.cpp_CTextureList_captureTexture_FUN_00544db0
   core_tommygun.cpp_CTommyGun_dtor_FUN_00546770
-  core_trigger.cpp_CTrigger_containsActor_FUN_005487b0
-  core_turret.cpp_CTurret_fire_FUN_0054ab10
   core_turret.cpp_CTurret_updateTargeting_FUN_0054a110
   core_vampboss.cpp_CVampireBoss_dtor_FUN_0054e370
   core_vehicle.cpp_CVehicle_ctor_FUN_0054e5a0
@@ -4967,6 +5662,7 @@ Functions:
   engine_clipper.c_FUN_00432cd0
   engine_clipper.c_FUN_00433ef0
   engine_clipper.c_clipPolygonToViewport_FUN_004349a0
+  engine_clipper.c_interpolateVertexNearClip_FUN_00431930
   engine_clipper.c_normalizeClippedVertices_FUN_00432150
   engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_00460e20
   engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0
@@ -5105,6 +5801,7 @@ Functions:
   sound_sndmain.cpp_countActiveSfx_FUN_005275e0
   sound_sndmain.cpp_enableHwSoundMixing_FUN_005284a0
   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40
+  sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0
   sound_sndmain.cpp_getAudioBitDepth_FUN_005281a0
   sound_sndmain.cpp_getAudioChannelCount_FUN_005281c0
   sound_sndmain.cpp_getAudioFormat_FUN_00528160
@@ -5115,6 +5812,7 @@ Functions:
   sound_sndmain.cpp_getSampleInfo_FUN_005279e0
   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0
   sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230
+  sound_sndmain.cpp_getSoundMemoryStats_FUN_00527c70
   sound_sndmain.cpp_initializeSoundDevice_FUN_00528500
   sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005284e0
   sound_sndmain.cpp_killAllSfx_FUN_005272b0
@@ -5161,42 +5859,56 @@ Functions:
   wincore_winrun.cpp_enqueueInput_FUN_00558ba0
   wincore_winrun.cpp_getTime_FUN_00558a30
   wincore_winrun.cpp_processWindowMessages_FUN_005591c0
+  wincore_winrun.cpp_setRegistryStringValue_FUN_00559da0
 
 ====================================================================================================
-TYPE: param_count_too_few (2077 occurrences)
+TYPE: param_count_too_few (2181 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   602x  declared:0 vs estimated:2
-   585x  declared:0 vs estimated:1
-   331x  declared:0 vs estimated:3
-   199x  declared:0 vs estimated:4
-   149x  declared:0 vs estimated:5
-    99x  declared:0 vs estimated:6
-    46x  declared:0 vs estimated:7
-    30x  declared:0 vs estimated:8
-    15x  declared:0 vs estimated:9
-     9x  declared:0 vs estimated:10
-     4x  declared:0 vs estimated:11
-     3x  declared:0 vs estimated:12
+   617x  declared:0 vs estimated:2
+   595x  declared:0 vs estimated:1
+   343x  declared:0 vs estimated:3
+   216x  declared:0 vs estimated:4
+   161x  declared:0 vs estimated:5
+   108x  declared:0 vs estimated:6
+    58x  declared:0 vs estimated:7
+    38x  declared:0 vs estimated:8
+    19x  declared:0 vs estimated:9
+    12x  declared:0 vs estimated:10
+     6x  declared:0 vs estimated:11
      2x  declared:0 vs estimated:26
+     2x  declared:0 vs estimated:13
      2x  declared:0 vs estimated:15
+     1x  declared:0 vs estimated:12
      1x  declared:0 vs estimated:18
 
 Functions:
   FUN_004012d0
   FUN_004013d0
+  FUN_00405340
+  FUN_004059c0
+  FUN_00405ab0
   FUN_0040ef60
   FUN_0040f1a0
   FUN_004196b0
+  FUN_0041a5a0
+  FUN_0041a5e0
   FUN_0041d050
   FUN_0041ef90
   FUN_0041f190
   FUN_0041f6e0
   FUN_004219f0
   FUN_0042cdc0
+  FUN_0042d370
+  FUN_0042eb90
+  FUN_0042f330
+  FUN_0042f8c0
   FUN_0042fd60
+  FUN_00430200
+  FUN_00431260
   FUN_00435210
+  FUN_00437ab0
   FUN_0043f980
   FUN_004401b0
   FUN_00441440
@@ -5212,26 +5924,55 @@ Functions:
   FUN_00447f20
   FUN_00448310
   FUN_00448380
+  FUN_00448fb0
   FUN_0044ac30
   FUN_0044adf0
+  FUN_0044d460
   FUN_0044d4c0
+  FUN_0044d4f0
   FUN_00456750
   FUN_00456f60
   FUN_0045ab40
+  FUN_0045be40
+  FUN_0045be70
+  FUN_0045bea0
+  FUN_0045bed0
+  FUN_0045bfb0
   FUN_0045d2b0
+  FUN_0045da60
+  FUN_0045da90
+  FUN_0045db00
+  FUN_0045db60
+  FUN_0045dbd0
+  FUN_0045dc00
+  FUN_0045dc30
+  FUN_0045dca0
+  FUN_0045dd00
+  FUN_0045dd70
+  FUN_0045ddd0
+  FUN_0045de40
+  FUN_0045de70
+  FUN_0045dea0
+  FUN_0045df20
+  FUN_0045df80
+  FUN_0045e0f0
+  FUN_0045e1a0
   FUN_00460d10
   FUN_00460d90
   FUN_00462710
   FUN_004673a0
+  FUN_00467560
   FUN_004675e0
   FUN_004676c0
   FUN_00467890
+  FUN_00468d00
   FUN_00469ce0
   FUN_0046b650
   FUN_0046baa0
   FUN_0046bd90
   FUN_0046bfe0
   FUN_0046c100
+  FUN_0046e950
   FUN_0046ed80
   FUN_0046eda0
   FUN_0046fa80
@@ -5242,12 +5983,21 @@ Functions:
   FUN_00470eb0
   FUN_004720c0
   FUN_004722b0
+  FUN_00472de0
+  FUN_00473190
+  FUN_004737a0
   FUN_00475230
   FUN_00475470
   FUN_004759d0
   FUN_00476490
   FUN_00476580
   FUN_00476e90
+  FUN_00477080
+  FUN_00477100
+  FUN_004772e0
+  FUN_00477300
+  FUN_00477340
+  FUN_00477370
   FUN_0047a210
   FUN_00481620
   FUN_0048a970
@@ -5258,8 +6008,11 @@ Functions:
   FUN_0048fce0
   FUN_0048fe30
   FUN_00490470
+  FUN_00490b20
   FUN_00490b70
+  FUN_00490c70
   FUN_00490d70
+  FUN_00493110
   FUN_004940d0
   FUN_00497810
   FUN_00497860
@@ -5301,11 +6054,14 @@ Functions:
   FUN_004cc040
   FUN_004cc060
   FUN_004cc440
+  FUN_004cdd30
+  FUN_004cde10
   FUN_004d4ba0
   FUN_004d4f30
   FUN_004d6650
   FUN_004d74a0
   FUN_004d76e0
+  FUN_004d7760
   FUN_004d7e00
   FUN_004d7e90
   FUN_004d7ea0
@@ -5315,16 +6071,37 @@ Functions:
   FUN_004d90e0
   FUN_004d9110
   FUN_004d9900
+  FUN_004dcee0
+  FUN_004df740
   FUN_004e5200
   FUN_004e6160
   FUN_004e7ed0
+  FUN_004edfb0
   FUN_004edfc0
   FUN_004ee680
   FUN_004f0360
+  FUN_004f18c0
   FUN_004f2990
   FUN_004f3f50
+  FUN_004f3f80
+  FUN_004f3fe0
+  FUN_004f4310
+  FUN_004f4410
+  FUN_004f44d0
+  FUN_004f4f90
+  FUN_004f5110
+  FUN_004f5290
+  FUN_004f52c0
+  FUN_004f5320
+  FUN_004f5350
+  FUN_004f5b70
+  FUN_004f5c40
+  FUN_004f5c60
   FUN_004f7360
+  FUN_004f77d0
   FUN_004f7ae0
+  FUN_004f8240
+  FUN_004f86a0
   FUN_004f9dd0
   FUN_004fa2e0
   FUN_004fcd90
@@ -5341,6 +6118,7 @@ Functions:
   FUN_00504d60
   FUN_00504d90
   FUN_005055f0
+  FUN_0050dfe0
   FUN_0050eb00
   FUN_0050eb20
   FUN_0050eb40
@@ -5359,6 +6137,7 @@ Functions:
   FUN_00515410
   FUN_00515c40
   FUN_005174e0
+  FUN_00518320
   FUN_0051b7d0
   FUN_0051f680
   FUN_0051f760
@@ -5368,15 +6147,19 @@ Functions:
   FUN_005257e0
   FUN_00526120
   FUN_00526150
+  FUN_005273d0
   FUN_00527520
+  FUN_005278e0
   FUN_005289f0
   FUN_00529980
   FUN_0052d030
+  FUN_0052dd00
   FUN_0052dff0
   FUN_0052ebc0
   FUN_00532cd0
   FUN_00532d20
   FUN_00533750
+  FUN_00534590
   FUN_00535900
   FUN_00538440
   FUN_005384d0
@@ -5391,6 +6174,7 @@ Functions:
   FUN_00544de0
   FUN_00544e50
   FUN_00544e60
+  FUN_00545700
   FUN_005485a0
   FUN_0054bfc0
   FUN_0054f8a0
@@ -5410,12 +6194,14 @@ Functions:
   FUN_00564915
   FUN_0056497c
   FUN_00564bb0
+  FUN_00564c30
   FUN_005653e0
   FUN_0056551c
   FUN_005656a4
   FUN_005657d0
   FUN_00565814
   FUN_00565c50
+  FUN_00565e94
   FUN_00566250
   FUN_00566450
   FUN_00566570
@@ -5481,7 +6267,6 @@ Functions:
   FUN_0056bbb0
   FUN_0056bc10
   FUN_0056c5f0
-  FUN_0056c6d0
   FUN_0056c750
   FUN_0056c864
   FUN_0056cd52
@@ -5509,9 +6294,11 @@ Functions:
   FUN_0056dcd0
   FUN_0056dd60
   FUN_0056ddc0
+  FUN_0056deac
   FUN_0056e010
+  FUN_0056e09c
   FUN_0056e174
-  FUN_0056e3f4
+  FUN_0056e37c
   FUN_0056e56c
   FUN_0056e608
   FUN_0056e664
@@ -5519,10 +6306,12 @@ Functions:
   FUN_0056e940
   FUN_0056e990
   FUN_0056e9d0
+  FUN_0056ea78
   FUN_0056eed8
   FUN_0056ef50
   FUN_0056f040
   FUN_0056f0f0
+  FUN_0056f170
   FUN_0056f1c0
   FUN_0056f220
   FUN_0056f278
@@ -5561,10 +6350,10 @@ Functions:
   FUN_00571280
   FUN_005712ec
   FUN_005713a0
+  FUN_005713e0
   FUN_00571410
   FUN_00571440
   FUN_00571510
-  FUN_00571564
   FUN_00571588
   FUN_005716d8
   FUN_005717d8
@@ -5588,6 +6377,9 @@ Functions:
   FUN_0057301c
   FUN_005733e0
   FUN_00573660
+  FUN_005738ac
+  FUN_005738c8
+  FUN_00573930
   FUN_00573afc
   FUN_00573ca0
   FUN_00573db0
@@ -5595,22 +6387,27 @@ Functions:
   FUN_00574030
   FUN_00574264
   FUN_00574404
+  FUN_00574540
+  FUN_00574570
   FUN_005746f0
   FUN_00574710
   FUN_00574760
   FUN_005747b0
+  cockpit_ckptutil.c_drawLineAA_FUN_0042f600
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480
   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_0042d3f0
   cockpit_ckptutil.c_putPixel_FUN_00430140
   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240
   cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440
+  cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_0045bd50
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_0045bc20
   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730
   cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0
   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00
-  cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_0045cb10
   cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070
   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_0045e000
   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30
   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760
@@ -5620,12 +6417,15 @@ Functions:
   cockpit_drawsurf.cpp_CDrawSurface_initFromParent_FUN_0045b480
   cockpit_drawsurf.cpp_CDrawSurface_init_FUN_0045b4c0
   cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0
+  cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_0045b800
   cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0
   cockpit_drawsurf.cpp_setCurrentFont_FUN_0045baa0
   cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_004f4a50
   cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700
   cockpit_pkbitmap.cpp_CPackedBitmap_getTotalMemoryUsage_FUN_004f3fa0
+  cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0
   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0
+  cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40
   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80
   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630
   cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20
@@ -5804,6 +6604,7 @@ Functions:
   core_cloth.cpp_CClothList_setup_FUN_00438510
   core_cloth.cpp_CCloth_allocMemory_FUN_004351b0
   core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0
+  core_cloth.cpp_CCloth_applyRotation_FUN_00438780
   core_cloth.cpp_CCloth_computeBoneTransform_FUN_00436580
   core_cloth.cpp_CCloth_ctor_FUN_00435100
   core_cloth.cpp_CCloth_dtor_FUN_00435160
@@ -6227,6 +7028,7 @@ Functions:
   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670
   core_gore.cpp_CGore_spawnFlies_FUN_004b0580
   core_grave.cpp_CGrave_startAnimation_FUN_004b0dc0
+  core_ground.cpp_CGround_ctor_FUN_004b1350
   core_ground.cpp_CGround_free_FUN_004b1470
   core_ground.cpp_CGround_getHeightAtPosition_FUN_004b21b0
   core_ground.cpp_CGround_getVertexIndex_FUN_004b1800
@@ -6267,7 +7069,6 @@ Functions:
   core_icepick.cpp_CIcePick_processMotionEvents_FUN_004bb2d0
   core_icepick.cpp_CIcePick_startThrowAttack_FUN_004baa00
   core_imp.cpp_CImp_processDismemberment_FUN_004bca20
-  core_inv.cpp_CInventory_addItem_FUN_004bf360
   core_inv.cpp_CInventory_autoUseHealthItem_FUN_004c3350
   core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20
   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004c31b0
@@ -6383,6 +7184,7 @@ Functions:
   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040
   core_moon.cpp_CMoon_render_FUN_004dec50
   core_moon.cpp_CMoon_update_FUN_004deae0
+  core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004df5b0
   core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004df610
   core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004df2f0
   core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004df460
@@ -6806,6 +7608,7 @@ Functions:
   engine_2d.c_FUN_00403500
   engine_2d.c_FUN_00403630
   engine_2d.c_clipAndDrawLine_FUN_00403990
+  engine_2d.c_clipLineGlobal_FUN_00403940
   engine_2d.c_computeOutcode_FUN_00403900
   engine_2d.c_drawCharacterHighlighted_FUN_004021a0
   engine_2d.c_drawCharacterMaskedColor_FUN_00402040
@@ -6856,6 +7659,7 @@ Functions:
   engine_clipper.c_interpolateVertexRightClip_FUN_00431630
   engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30
   engine_clipper.c_interpolateVertexTopClip_FUN_00431830
+  engine_console.cpp_CConsole_ctor_FUN_0043abe0
   engine_console.cpp_CConsole_printf_FUN_0043ac60
   engine_console.cpp_CConsole_render_FUN_0043aec0
   engine_console.cpp_CConsole_reset_FUN_0043ae00
@@ -6902,7 +7706,6 @@ Functions:
   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0
   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
-  engine_drender.cpp_CDemonRenderer_renderTriangleBatch_FUN_004613d0
   engine_drender.cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00460080
   engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_00460150
   engine_drender.cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90
@@ -6940,6 +7743,7 @@ Functions:
   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70
   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004901d0
   engine_font.cpp_CBitFont_openFontFile_FUN_0048ff40
+  engine_font.cpp_CBitFont_printCenterFV_FUN_00490f90
   engine_font.cpp_CBitFont_remapPalette_FUN_004931b0
   engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0
   engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_00493140
@@ -7230,7 +8034,7 @@ Functions:
   support_trisock.cpp_receiveSocketData_FUN_00549010
   support_trisock.cpp_setSocketBlocking_FUN_00549240
   thunk_FUN_00527e10
-  thunk_FUN_00573ffb
+  thunk_FUN_0056c5f0
   wincore_wddvmem.cpp_freeLibrary_FUN_00553d20
   wincore_wddvmem.cpp_getProcAddress_FUN_00553d40
   wincore_windll.cpp_CExternalRenderer_ctor_FUN_00532da0
@@ -7263,11 +8067,11 @@ Functions:
   wincore_winvideo.cpp_closeMovie_FUN_0055a1c0
 
 ====================================================================================================
-TYPE: unresolved_funcptr (1719 occurrences)
+TYPE: unresolved_funcptr (1857 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1719x  code *
+  1857x  code *
 
 Functions:
   FUN_004012a0
@@ -7282,6 +8086,8 @@ Functions:
   FUN_00415760
   FUN_004161a0
   FUN_00416300
+  FUN_00418180
+  FUN_004181f0
   FUN_00418a00
   FUN_004194b0
   FUN_004196b0
@@ -7294,6 +8100,18 @@ Functions:
   FUN_0041fe40
   FUN_00421540
   FUN_0042c4c0
+  FUN_0042d130
+  FUN_0042d150
+  FUN_0042d170
+  FUN_0042d6c0
+  FUN_0042d900
+  FUN_0042db50
+  FUN_0042dcc0
+  FUN_0042df00
+  FUN_0042e060
+  FUN_0042e220
+  FUN_0042e290
+  FUN_0042e3d0
   FUN_00439f50
   FUN_0043cbc0
   FUN_0043cd10
@@ -7306,6 +8124,8 @@ Functions:
   FUN_0045a260
   FUN_00462300
   FUN_00462720
+  FUN_00473e90
+  FUN_00473ef0
   FUN_00475230
   FUN_004777a0
   FUN_00477890
@@ -7313,6 +8133,7 @@ Functions:
   FUN_00478790
   FUN_004790f0
   FUN_00479b60
+  FUN_0047a150
   FUN_00481d90
   FUN_004821d0
   FUN_0048ab60
@@ -7324,15 +8145,19 @@ Functions:
   FUN_0048ea60
   FUN_0048eb30
   FUN_0048f490
+  FUN_00493390
   FUN_00494e80
   FUN_00495a20
+  FUN_00497900
   FUN_004980d0
   FUN_00498de0
   FUN_004996b0
   FUN_004998c0
   FUN_00499ca0
+  FUN_0049a320
   FUN_0049cc10
   FUN_0049f930
+  FUN_004a03a0
   FUN_004a57c0
   FUN_004a8ab0
   FUN_004a9270
@@ -7352,37 +8177,50 @@ Functions:
   FUN_004b6d80
   FUN_004b8600
   FUN_004b9fe0
+  FUN_004ba740
   FUN_004baba0
+  FUN_004c0640
   FUN_004c3590
   FUN_004c4370
   FUN_004c4970
   FUN_004c6560
+  FUN_004c6f50
   FUN_004c71a0
   FUN_004c79a0
   FUN_004c7ca0
   FUN_004c8200
+  FUN_004c8e10
+  FUN_004c8eb0
   FUN_004c90e0
   FUN_004c9be0
   FUN_004cc3d0
   FUN_004cef80
   FUN_004cefe0
   FUN_004d23d0
+  FUN_004d2c80
   FUN_004d4540
   FUN_004d4650
   FUN_004d4f30
   FUN_004d5b20
+  FUN_004d98c0
+  FUN_004da000
+  FUN_004da070
   FUN_004da790
   FUN_004de550
   FUN_004eeea0
   FUN_004ef5c0
   FUN_004efa60
   FUN_004f3b90
+  FUN_004f4050
+  FUN_004f4170
+  FUN_004f44d0
   FUN_004f6170
   FUN_004f6c60
   FUN_004f6d90
   FUN_004f7360
   FUN_004fbf20
   FUN_004fcd90
+  FUN_004fd1d0
   FUN_004fda20
   FUN_004fdd00
   FUN_00510a40
@@ -7393,10 +8231,19 @@ Functions:
   FUN_00515ea0
   FUN_00516770
   FUN_00516f50
+  FUN_00522e00
   FUN_005257e0
+  FUN_00526f00
+  FUN_00526f60
+  FUN_00527060
+  FUN_00529de0
+  FUN_0052a280
+  FUN_0052bbd0
   FUN_00530e60
   FUN_00533530
   FUN_00533750
+  FUN_005342b0
+  FUN_00534f90
   FUN_00535900
   FUN_005384d0
   FUN_0053c800
@@ -7426,6 +8273,7 @@ Functions:
   FUN_0054fa80
   FUN_00550210
   FUN_00551c00
+  FUN_00552990
   FUN_00552b40
   FUN_00552cb0
   FUN_00553ba0
@@ -7440,6 +8288,7 @@ Functions:
   FUN_0056497c
   FUN_005656a4
   FUN_005661c2
+  FUN_00566b20
   FUN_00566c44
   FUN_005670c1
   FUN_00567458
@@ -7448,6 +8297,7 @@ Functions:
   FUN_0056754c
   FUN_00567d88
   FUN_00568560
+  FUN_00568690
   FUN_00568890
   FUN_005689c0
   FUN_00568a50
@@ -7461,22 +8311,40 @@ Functions:
   FUN_0056ae10
   FUN_0056aefc
   FUN_0056b1a4
+  FUN_0056b1ee
   FUN_0056b2b4
   FUN_0056b3c2
   FUN_0056b960
   FUN_0056bc10
   FUN_0056bc70
   FUN_0056bf67
+  FUN_0056bfbb
+  FUN_0056bfd6
+  FUN_0056c04b
+  FUN_0056c06a
+  FUN_0056c0ef
+  FUN_0056c10e
+  FUN_0056c193
+  FUN_0056c1b2
+  FUN_0056c237
+  FUN_0056c256
+  FUN_0056c2db
+  FUN_0056c2fa
+  FUN_0056c37f
+  FUN_0056c39e
   FUN_0056cd52
   FUN_0056cd9b
+  FUN_0056d4ab
   FUN_0056d99b
   FUN_0056e010
   FUN_0056e09c
   FUN_0056e174
   FUN_0056e7fc
+  FUN_0056ed08
   FUN_0056eed8
   FUN_0056ef24
   FUN_0056ef50
+  FUN_0056f1a0
   FUN_0056f1c0
   FUN_0056f2d0
   FUN_0056fb98
@@ -7506,6 +8374,7 @@ Functions:
   FUN_00571588
   FUN_005716d8
   FUN_005717d8
+  FUN_00571858
   FUN_00571bd0
   FUN_00571c60
   FUN_00571cc6
@@ -7614,6 +8483,7 @@ Functions:
   core_curtain.cpp_CCurtain_process_FUN_0043ebf0
   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0
   core_dest.cpp_CActorDestination_getBoundingBox_FUN_0044ba20
+  core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0044ce80
   core_dog.cpp_CZombieDog_processDamage_FUN_00454e30
   core_dog.cpp_CZombieDog_process_FUN_00454750
   core_door.cpp_CDoor_onLocked_FUN_00456650
@@ -7721,6 +8591,7 @@ Functions:
   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020
   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0
   core_mission.cpp_CDemonMission_run_FUN_004d9440
+  core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0
   core_mobster.cpp_CMobster_playTaunt_FUN_004dc940
   core_mobster.cpp_CMobster_processDamage_FUN_004dc690
   core_mobster.cpp_CMobster_processDismemberment_FUN_004dc2d0
@@ -7790,6 +8661,7 @@ Functions:
   core_stranger.cpp_CStranger_dropRightHandObject_FUN_0053bf30
   core_stranger.cpp_CStranger_drop_FUN_00540920
   core_stranger.cpp_CStranger_getGrabbed_FUN_00540770
+  core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10
   core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0
   core_stranger.cpp_CStranger_processWeaponTick_FUN_00540660
   core_stranger.cpp_CStranger_renderTransparent_FUN_0053d6c0
@@ -7840,6 +8712,7 @@ Functions:
   engine_3d.c_FUN_00408e80
   engine_3d.c_rasterizePolygonCustom_FUN_00562de0
   engine_dosio.cpp_findFile_FUN_004567a0
+  engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
   engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60
   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
   engine_palette.cpp_CFont_drawText_FUN_004eefd0
@@ -7927,89 +8800,234 @@ Functions:
   wincore_winrun.cpp_getJoystickState_FUN_00559eb0
 
 ====================================================================================================
-TYPE: warning_overlapping_globals (1353 occurrences)
+TYPE: warning_overlapping_globals (1655 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1353x  WARNING: Globals starting with
+  1655x  WARNING: Globals starting with
 
 Functions:
   FUN_00401010
   FUN_004012a0
+  FUN_00405340
+  FUN_004059c0
+  FUN_00405b40
+  FUN_00406920
+  FUN_00406a00
+  FUN_00406ae0
+  FUN_00406b80
+  FUN_00408fc0
+  FUN_0040bd90
+  FUN_0040e1cc
   FUN_0040f1a0
   FUN_0040f610
   FUN_0040f960
   FUN_00415050
   FUN_00415760
+  FUN_0041803d
+  FUN_00418180
+  FUN_004181f0
+  FUN_004182cd
   FUN_00418630
   FUN_00418a00
+  FUN_0041a56d
+  FUN_0041a570
+  FUN_0041a5a0
+  FUN_0041a5e0
+  FUN_0041a910
   FUN_0041d050
+  FUN_0041daa0
+  FUN_0041fb20
   FUN_0041fbb0
+  FUN_00423c90
+  FUN_0042b510
   FUN_0042c4c0
+  FUN_0042cd20
   FUN_0042d130
+  FUN_0042d150
+  FUN_0042d5c0
+  FUN_0042d6c0
+  FUN_0042d900
+  FUN_0042db50
+  FUN_0042dcc0
+  FUN_0042df00
+  FUN_0042e060
+  FUN_0042e290
   FUN_0042e7b0
+  FUN_0042eb90
+  FUN_0042ee00
+  FUN_0042f050
+  FUN_0042f330
+  FUN_0042f8c0
   FUN_0042fd60
+  FUN_00430210
   FUN_004303d0
+  FUN_00430630
+  FUN_00431260
+  FUN_004314b0
+  FUN_00431a50
+  FUN_00431b90
+  FUN_00431cd0
+  FUN_00431e10
+  FUN_00432210
+  FUN_00434210
+  FUN_00437ab0
+  FUN_00438410
+  FUN_00438880
+  FUN_004388d0
+  FUN_00438900
   FUN_00439da0
   FUN_0043d1c0
   FUN_0043f330
+  FUN_00441c20
   FUN_004421b0
+  FUN_00442d9c
+  FUN_00443180
+  FUN_00444180
+  FUN_004442a0
+  FUN_00444440
+  FUN_00444600
+  FUN_004448f0
+  FUN_004450b0
+  FUN_004451a0
+  FUN_00445310
   FUN_00445750
+  FUN_00445f70
+  FUN_00446760
   FUN_00446810
   FUN_004470f0
   FUN_004477f0
   FUN_00447f20
   FUN_00448660
   FUN_004487c0
+  FUN_00448930
+  FUN_00448a90
   FUN_00448bf0
+  FUN_00448d60
+  FUN_00448f40
+  FUN_0044a150
   FUN_0044ac30
   FUN_0044c560
   FUN_0044cc00
+  FUN_0044cd80
+  FUN_0044d060
+  FUN_0044d460
+  FUN_0044d4f0
+  FUN_0044d550
+  FUN_0044db00
+  FUN_0044e0f0
+  FUN_00450c90
   FUN_00456750
   FUN_00456f60
+  FUN_004570c0
+  FUN_004570f0
+  FUN_00457640
+  FUN_004578a0
+  FUN_004579c0
+  FUN_00458580
   FUN_0045a260
   FUN_0045ab40
+  FUN_0045ca50
+  FUN_0045cde0
+  FUN_0045d310
+  FUN_0045e2e0
+  FUN_0045e340
+  FUN_0045ed40
+  FUN_0045f270
   FUN_00461720
+  FUN_004633d0
+  FUN_00463a40
+  FUN_00463b27
+  FUN_00463d98
+  FUN_00463f77
+  FUN_00463ff5
+  FUN_00464075
+  FUN_00464200
+  FUN_004649dd
   FUN_0046556f
   FUN_0046568b
+  FUN_00467250
+  FUN_00467560
   FUN_004676c0
+  FUN_00468d00
+  FUN_00469240
   FUN_00469ce0
   FUN_0046bfe0
   FUN_0046c100
   FUN_0046d680
   FUN_0046d7e0
+  FUN_0046d950
+  FUN_0046dab0
   FUN_0046dc10
+  FUN_0046dd80
+  FUN_0046df40
+  FUN_0046e94e
+  FUN_0046e950
+  FUN_0046e9d0
+  FUN_0046e9f0
+  FUN_0046eb60
+  FUN_0046efa0
+  FUN_0046f000
   FUN_0046f7e0
   FUN_0046fa20
   FUN_0046fa80
   FUN_0046fb40
   FUN_0046fcd0
   FUN_0046fe60
+  FUN_004700d0
+  FUN_004701a0
   FUN_00470eb0
   FUN_004720c0
   FUN_004722b0
+  FUN_00472de0
+  FUN_00472fd0
+  FUN_00473080
   FUN_00473190
+  FUN_004737a0
+  FUN_004739e0
+  FUN_00474230
   FUN_00475230
   FUN_00475470
   FUN_004759d0
   FUN_00476580
   FUN_00476e90
+  FUN_00476f40
+  FUN_00476fd0
   FUN_00477080
+  FUN_00477100
+  FUN_004771f0
+  FUN_004772e0
+  FUN_00477390
+  FUN_004774b0
   FUN_00477710
   FUN_004777a0
   FUN_00477890
   FUN_00478790
+  FUN_0047a150
+  FUN_00481630
+  FUN_00481770
   FUN_00489990
   FUN_0048a970
   FUN_0048ab60
   FUN_0048c0d0
+  FUN_0048c8d0
   FUN_0048d5d0
   FUN_0048df20
   FUN_0048ea60
   FUN_0048eb30
+  FUN_0048ee50
   FUN_0048f490
+  FUN_0048fd00
   FUN_00490470
+  FUN_00490ff0
+  FUN_004933c0
+  FUN_00493760
+  FUN_00494020
+  FUN_004940e0
+  FUN_00494220
   FUN_004950a0
+  FUN_004954a0
+  FUN_004955c0
   FUN_00495a20
   FUN_00497870
   FUN_00497900
@@ -8017,14 +9035,19 @@ Functions:
   FUN_00498de0
   FUN_004998c0
   FUN_00499ca0
+  FUN_0049a320
+  FUN_0049b3a0
+  FUN_0049b420
   FUN_0049cc10
   FUN_0049f930
+  FUN_004a03a0
   FUN_004a3a70
   FUN_004a3a90
   FUN_004a3b90
   FUN_004a4170
   FUN_004a4b50
   FUN_004a57c0
+  FUN_004a8c10
   FUN_004a9270
   FUN_004ab110
   FUN_004ab830
@@ -8033,56 +9056,121 @@ Functions:
   FUN_004ac7c0
   FUN_004ac9b0
   FUN_004afe80
+  FUN_004b1090
   FUN_004b27c0
   FUN_004b3110
   FUN_004b32d0
   FUN_004b5110
   FUN_004b52f0
+  FUN_004b6220
   FUN_004b6d80
   FUN_004b9fe0
   FUN_004ba740
   FUN_004baba0
   FUN_004bb760
+  FUN_004bd790
   FUN_004bdb80
+  FUN_004c0640
   FUN_004c2470
+  FUN_004c4170
   FUN_004c4970
   FUN_004c71a0
   FUN_004c79a0
   FUN_004c8440
   FUN_004c85f0
+  FUN_004c8dc0
+  FUN_004c8e10
+  FUN_004c8eb0
   FUN_004c90e0
   FUN_004c9be0
   FUN_004ca790
   FUN_004cc440
+  FUN_004cd1b0
+  FUN_004cdd30
+  FUN_004cdfa0
   FUN_004cea50
+  FUN_004ceae0
+  FUN_004ceb90
+  FUN_004cf810
   FUN_004d23d0
+  FUN_004d2880
+  FUN_004d43c0
   FUN_004d4650
   FUN_004d49f0
   FUN_004d4ba0
   FUN_004d4f30
   FUN_004d6650
   FUN_004d74a0
+  FUN_004d7760
+  FUN_004d77f0
   FUN_004d7f80
   FUN_004d8720
   FUN_004d8fc0
   FUN_004d9110
+  FUN_004da000
+  FUN_004da070
   FUN_004da790
   FUN_004dba70
   FUN_004dc820
+  FUN_004dcf60
   FUN_004de550
   FUN_004df800
+  FUN_004e1830
+  FUN_004e2480
+  FUN_004e25c0
+  FUN_004e2630
+  FUN_004e28a0
+  FUN_004e3f80
   FUN_004e5200
   FUN_004e6160
+  FUN_004e78b0
+  FUN_004e7b00
   FUN_004e7ed0
+  FUN_004e94a0
+  FUN_004e94f0
+  FUN_004e9520
+  FUN_004e9570
+  FUN_004e9630
+  FUN_004e96e0
+  FUN_004e97e0
   FUN_004edfc0
+  FUN_004ee690
+  FUN_004ee6c0
+  FUN_004ee720
+  FUN_004ee740
+  FUN_004efc10
+  FUN_004efc30
+  FUN_004efc50
+  FUN_004efcd0
   FUN_004f0360
+  FUN_004f16d0
+  FUN_004f18c0
+  FUN_004f1ef0
+  FUN_004f1f80
+  FUN_004f2050
   FUN_004f2990
+  FUN_004f3340
+  FUN_004f4310
   FUN_004f4b30
+  FUN_004f4f10
+  FUN_004f4f90
+  FUN_004f5110
+  FUN_004f5350
+  FUN_004f54c0
+  FUN_004f5740
   FUN_004f6d90
   FUN_004f7ae0
+  FUN_004f8240
   FUN_004f8570
+  FUN_004f86a0
+  FUN_004f8eb0
+  FUN_004f9280
+  FUN_004f9460
+  FUN_004f9620
   FUN_004f9dd0
   FUN_004fa2e0
+  FUN_004fa800
+  FUN_004faca0
   FUN_004fbf20
   FUN_004fd1d0
   FUN_004fda20
@@ -8094,31 +9182,86 @@ Functions:
   FUN_004feff0
   FUN_00504d90
   FUN_005055f0
+  FUN_0050bbc0
+  FUN_0050bcf0
+  FUN_0050dfe0
   FUN_00510a40
+  FUN_00511d80
   FUN_005125a0
   FUN_00513670
   FUN_005138e0
+  FUN_00515890
+  FUN_005159a0
   FUN_00515d20
   FUN_00515db0
   FUN_00515ea0
+  FUN_00518f60
+  FUN_00519120
+  FUN_0051dc30
   FUN_0051f650
   FUN_0051f680
   FUN_0051f760
+  FUN_00521190
+  FUN_005211f0
+  FUN_005214e0
+  FUN_00521bf0
+  FUN_00521c50
   FUN_00522480
+  FUN_005229f0
+  FUN_00522e00
   FUN_00523170
+  FUN_00523550
+  FUN_005235b0
   FUN_005257e0
+  FUN_00525ff0
+  FUN_00526020
+  FUN_005260c0
   FUN_00526120
   FUN_00526150
+  FUN_005262a0
+  FUN_00526310
+  FUN_00526f00
+  FUN_00526f60
+  FUN_00527060
+  FUN_00527190
+  FUN_005273d0
+  FUN_00527930
   FUN_00527e10
+  FUN_00528670
+  FUN_005293f0
+  FUN_00529a80
+  FUN_0052a280
+  FUN_0052c120
   FUN_0052d030
+  FUN_0052d710
   FUN_0052d790
+  FUN_0052dcc0
+  FUN_0052dd90
   FUN_0052dff0
+  FUN_0052f031
+  FUN_0052f823
+  FUN_005300ec
+  FUN_00530322
+  FUN_00530cf0
   FUN_00530d40
   FUN_00530e60
   FUN_00532320
+  FUN_00532380
+  FUN_005323c0
+  FUN_00532480
+  FUN_005325c0
+  FUN_00532900
+  FUN_00532930
+  FUN_00532950
+  FUN_00532980
   FUN_00532ba0
   FUN_00532cd0
   FUN_00532d20
+  FUN_00532f50
+  FUN_00532fa0
+  FUN_005342b0
+  FUN_00534590
+  FUN_00534e30
   FUN_00535450
   FUN_00538440
   FUN_005384d0
@@ -8133,27 +9276,53 @@ Functions:
   FUN_00541d00
   FUN_005423c0
   FUN_00543c50
+  FUN_00544c10
   FUN_005458a0
   FUN_005458d0
   FUN_005459f0
+  FUN_00545a10
+  FUN_00545aa0
   FUN_00545c30
   FUN_005464a0
   FUN_00547b30
+  FUN_00548e70
+  FUN_00548ea0
   FUN_005495f0
   FUN_0054c3e0
   FUN_0054dac0
   FUN_0054dd50
   FUN_0054e130
+  FUN_0054e480
+  FUN_00550750
   FUN_00551c00
+  FUN_00552990
+  FUN_00552a20
+  FUN_00552af0
   FUN_00552b40
   FUN_00552cb0
   FUN_00553ba0
+  FUN_00555a00
+  FUN_00558be0
+  FUN_00558c00
+  FUN_00558c40
+  FUN_00558d90
+  FUN_0055a010
+  FUN_0055a210
+  FUN_0055a4a0
+  FUN_0055b0b0
+  FUN_0055c180
+  FUN_0055ca30
+  FUN_0055d9c0
+  FUN_0055dcb0
+  FUN_00562740
+  FUN_00562880
   FUN_005638e0
   FUN_0056497c
   FUN_005656a4
   FUN_005671dc
   FUN_0056720c
   FUN_005674b0
+  FUN_005674f8
   FUN_00567964
   FUN_00567a5c
   FUN_00568560
@@ -8171,6 +9340,8 @@ Functions:
   FUN_0056da80
   FUN_0056dab0
   FUN_0056dbb0
+  FUN_0056ddf0
+  FUN_0056de90
   FUN_0056deac
   FUN_0056e254
   FUN_0056e2f8
@@ -8182,20 +9353,24 @@ Functions:
   FUN_00570ca0
   FUN_00570ce0
   FUN_00570d50
+  FUN_00570f60
+  FUN_0057104c
   FUN_005711a8
   FUN_00571280
   FUN_005712ec
   FUN_00571364
   FUN_00572d50
   FUN_00572e00
-  FUN_00573a31
+  FUN_00573930
   FUN_00573afc
   FUN_00573ca0
   FUN_00573db0
   FUN_00573e30
   FUN_00573fc8
+  FUN_005740b0
   FUN_00574264
   FUN_00574404
+  FUN_00574680
   FUN_00574760
   FUN_005747b0
   cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_0042e520
@@ -9289,46 +10464,102 @@ Functions:
   wincore_winvideo.cpp_closeMovie_FUN_0055a1c0
 
 ====================================================================================================
-TYPE: pointer_cast (1201 occurrences)
+TYPE: pointer_cast (1628 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   282x  (int)&NAME used in byte-offset arithmetic
-    64x  (int *)((int)param_1
-    36x  (uint *)((int)param_1
+   360x  (int)&NAME used in byte-offset arithmetic
+    65x  (int *)((int)param_1
+    44x  (uint *)((int)param_1
     33x  (float *)((int)param_1
+    29x  (uint *)((int)puVar8
+    28x  (int *)((int)piVar4
+    26x  (uint *)((int)puVar4
+    25x  (uint *)((int)puVar5
+    23x  (uint *)((int)puVar13
+    22x  (uint *)((int)param_2
+    20x  (uint *)((int)puVar6
+    20x  (uint *)((int)puVar9
     19x  (byte *)((int)param_1
-    17x  (uint *)((int)param_2
-    16x  (uint *)((int)puVar8
-    16x  (uint *)((int)puVar5
-    15x  (uint *)((int)puVar4
-    13x  (uint *)((int)puVar6
-    13x  (int *)((int)piVar12
-    11x  (float *)((int)local_44
-    11x  (uint *)((int)plVar10
-    10x  (uint *)((int)puVar7
-    10x  (int *)((int)piVar4
-    10x  (uint *)((int)plVar12
-    10x  (byte *)((int)param_1 + 0xd)
-     9x  (uint *)((int)puVar9
-     9x  (uint *)((int)auStack_50
-     9x  (uint *)((int)auStack_2c
+    19x  (int *)((int)piVar12
+    16x  (uint *)((int)puVar11
+    15x  (int *)((int)piVar5
+    14x  (uint *)((int)puVar15
+    14x  (uint *)((int)plVar10
+    13x  (uint *)((int)plVar7
+    13x  (uint *)((int)plVar8
 
 Functions:
+  FUN_00405b40
+  FUN_00406920
+  FUN_00406a00
+  FUN_00406b80
+  FUN_00408fc0
+  FUN_0040bd40
+  FUN_0040eadd
   FUN_00418a00
   FUN_004196b0
+  FUN_0042cde0
+  FUN_0042cef8
+  FUN_0042cff2
+  FUN_0042d6c0
+  FUN_0042d900
+  FUN_0042dcc0
+  FUN_0042e060
+  FUN_0042e750
+  FUN_0042f190
   FUN_004303d0
+  FUN_00430590
+  FUN_00430630
+  FUN_00431260
+  FUN_00432057
+  FUN_004320dc
+  FUN_00432210
+  FUN_00432b48
+  FUN_00432bd8
+  FUN_00433770
+  FUN_00433c70
+  FUN_00433cd7
+  FUN_00433d43
+  FUN_00433db0
+  FUN_00433e1d
+  FUN_00433e8d
+  FUN_00433f58
+  FUN_00433fc8
+  FUN_00434030
+  FUN_0043409e
+  FUN_0043410e
+  FUN_00434210
+  FUN_00434492
+  FUN_00434541
+  FUN_0043469b
+  FUN_0043474d
+  FUN_004347cc
+  FUN_0043484b
+  FUN_004348ca
+  FUN_00438410
+  FUN_00438a40
   FUN_00439f50
   FUN_00441440
   FUN_004421b0
+  FUN_00443180
+  FUN_00444600
   FUN_00445750
+  FUN_00446760
   FUN_00447f20
+  FUN_0044d060
+  FUN_0045d310
+  FUN_004673e0
   FUN_00469ce0
   FUN_0046b650
   FUN_0046bfe0
   FUN_0046c100
   FUN_004720c0
+  FUN_00472de0
   FUN_00473190
+  FUN_00481630
+  FUN_004819f8
+  FUN_00481acc
   FUN_00481b0c
   FUN_0048f490
   FUN_00495a20
@@ -9341,26 +10572,51 @@ Functions:
   FUN_004ba740
   FUN_004c2470
   FUN_004c85f0
+  FUN_004cde10
   FUN_004cea50
   FUN_004d23d0
   FUN_004d4ba0
   FUN_004d8720
+  FUN_004dd690
+  FUN_004e0d20
   FUN_004e5200
   FUN_004e6160
+  FUN_004e78b0
+  FUN_004e7b00
   FUN_004e7ed0
+  FUN_004f1f80
   FUN_004f2990
+  FUN_004f3fe0
+  FUN_004f4050
+  FUN_004f4170
+  FUN_004f44d0
+  FUN_004f4f10
+  FUN_004f5a50
   FUN_004f9dd0
   FUN_004fbf20
   FUN_004fd1d0
+  FUN_00511d80
   FUN_005125a0
   FUN_00513720
+  FUN_00518320
   FUN_0051d650
   FUN_00523170
+  FUN_0052ed40
+  FUN_0052f031
+  FUN_0052f823
+  FUN_005300ec
+  FUN_00530322
   FUN_00532ba0
   FUN_00535900
   FUN_0053a260
   FUN_00541d00
+  FUN_00548fc0
   FUN_00549cd0
+  FUN_00558d90
+  FUN_0055d9c0
+  FUN_0055dcb0
+  FUN_0055de8e
+  FUN_0055df19
   FUN_005638e0
   FUN_00563d90
   FUN_00564670
@@ -9395,6 +10651,7 @@ Functions:
   FUN_0056bc70
   FUN_0056c5f0
   FUN_0056c864
+  FUN_0056e52c
   FUN_0056e608
   FUN_0056e664
   FUN_0056e6e4
@@ -9409,6 +10666,7 @@ Functions:
   FUN_00571c60
   FUN_00571cc6
   FUN_0057301c
+  FUN_00573720
   FUN_00573afc
   FUN_00573ca0
   FUN_00573e30
@@ -9532,6 +10790,7 @@ Functions:
   engine_2d.c_FUN_00402e90
   engine_2d.c_buildColorLookupTable_FUN_00403570
   engine_2d.c_findBestPaletteMatch_FUN_00401850
+  engine_3d.c_flushRenderQueue_FUN_00408f50
   engine_3d.c_rasterizePolygonCustom_FUN_00562de0
   engine_3d.c_rasterizeTriangle_FUN_005628c0
   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10
@@ -9582,59 +10841,456 @@ Functions:
   support_codec.cpp_readBitsFromStream_FUN_00438ab0
   support_trisock.cpp_performSocketOperation_FUN_00549090
   thunk_FUN_004d23d0
+  thunk_FUN_0056c5f0
   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
   wincore_winrun.cpp_FUN_00559260
 
 ====================================================================================================
-TYPE: static_uninitvar (1041 occurrences)
+TYPE: stack_param (1598 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1041x  Cppcheck: uninitialized variable
+   779x  in_stack_00000004
+   396x  in_stack_00000008
+   160x  in_stack_0000000c
+    55x  in_stack_00000010
+    37x  in_stack_00000014
+    35x  in_stack_0000002c
+    28x  in_stack_0000003c
+    17x  in_stack_00000038
+    16x  in_stack_00000018
+    16x  in_stack_00000024
+    15x  in_stack_00000034
+    15x  in_stack_00000028
+     8x  in_stack_00000138
+     5x  in_stack_00000044
+     4x  in_stack_00000030
+     2x  in_stack_fffff7ec
+     2x  in_stack_0000001c
+     2x  in_stack_00000020
+     2x  in_stack_00000040
+     2x  in_stack_00000048
 
 Functions:
+  FUN_0040bd40
+  FUN_0041dbf0
+  FUN_0041f9f0
+  FUN_00423b70
+  FUN_00423b90
+  FUN_00423bb0
+  FUN_00423be0
+  FUN_00423c20
+  FUN_00423c90
+  FUN_00423cc0
+  FUN_00423d00
+  FUN_00423d20
+  FUN_00424730
+  FUN_00424780
+  FUN_0042b4d0
+  FUN_0042b500
+  FUN_0042b510
+  FUN_0042b570
+  FUN_0042b5a0
+  FUN_0042b5b0
+  FUN_0042b6c0
+  FUN_0042b6d0
+  FUN_0042b6e0
+  FUN_0042cd00
+  FUN_0042cd10
+  FUN_0042cd20
+  FUN_0042d180
+  FUN_0042d200
+  FUN_0042edc0
+  FUN_0042f260
+  FUN_004301f0
+  FUN_00430200
+  FUN_00431500
+  FUN_00432b48
+  FUN_00432bd8
+  FUN_00434492
+  FUN_0043469b
+  FUN_0043474d
+  FUN_0043484b
+  FUN_004348ca
+  FUN_00438880
+  FUN_004388a0
+  FUN_004388d0
+  FUN_00438900
+  FUN_00438950
+  FUN_0043b500
+  FUN_00442d9c
+  FUN_004448f0
+  FUN_004484a0
+  FUN_00449120
+  FUN_0044ae80
+  FUN_0044d430
+  FUN_0044db00
+  FUN_00452500
+  FUN_00452510
+  FUN_00452520
+  FUN_00456690
+  FUN_0045c400
+  FUN_0045d0f0
+  FUN_0045d100
+  FUN_0045e370
+  FUN_0045ed40
+  FUN_0046b7b0
+  FUN_0046d4c0
+  FUN_0046efa0
+  FUN_0046f060
+  FUN_00470730
+  FUN_004739e0
+  FUN_00473ef0
+  FUN_00476eb0
+  FUN_00476fd0
+  FUN_00477190
+  FUN_004771d0
+  FUN_004771f0
+  FUN_004774b0
+  FUN_00477670
+  FUN_0047a1e0
+  FUN_0047a260
+  FUN_0047a280
+  FUN_0047a350
+  FUN_004818e0
+  FUN_00481930
+  FUN_00481960
+  FUN_00481970
+  FUN_0048c920
+  FUN_0048c930
+  FUN_00493390
+  FUN_00494080
+  FUN_00495410
+  FUN_00495420
+  FUN_0049ecc0
+  FUN_0049ecf0
+  FUN_0049ed20
+  FUN_0049edc0
+  FUN_004a03a0
+  FUN_004bc7c0
+  FUN_004c0640
+  FUN_004c6a40
+  FUN_004c6a50
+  FUN_004c6d70
+  FUN_004c6f50
+  FUN_004cd1b0
+  FUN_004cdf70
+  FUN_004d2880
+  FUN_004da000
+  FUN_004dba50
+  FUN_004dd760
+  FUN_004e0290
+  FUN_004e0300
+  FUN_004e0890
+  FUN_004e2980
+  FUN_004e2c40
+  FUN_004e2c50
+  FUN_004e9570
+  FUN_004e96e0
+  FUN_004edc30
+  FUN_004edc50
+  FUN_004edc80
+  FUN_004edcb0
+  FUN_004edcc0
+  FUN_004edcd0
+  FUN_004edce0
+  FUN_004edcf0
+  FUN_004edd00
+  FUN_004edd10
+  FUN_004edd20
+  FUN_004edf30
+  FUN_004edf80
+  FUN_004ee690
+  FUN_004ee6c0
+  FUN_004ee720
+  FUN_004ee740
+  FUN_004efc50
+  FUN_004efcd0
+  FUN_004f16d0
+  FUN_004f3340
+  FUN_004f45e0
+  FUN_004f4f10
+  FUN_004f5bb0
+  FUN_004f5d00
+  FUN_004f76c0
+  FUN_004f9100
+  FUN_004f9440
+  FUN_004faca0
+  FUN_004fbb70
+  FUN_0050dd60
+  FUN_0050ea10
+  FUN_0050ea90
+  FUN_00514390
+  FUN_005143a0
+  FUN_005143b0
+  FUN_00515890
+  FUN_00515980
+  FUN_005159a0
+  FUN_0051dc30
+  FUN_0051e7d0
+  FUN_0051f060
+  FUN_0051f800
+  FUN_00521d80
+  FUN_00523550
+  FUN_005235b0
+  FUN_00525c10
+  FUN_00525ff0
+  FUN_00526020
+  FUN_005260c0
+  FUN_005262a0
+  FUN_00526dd0
+  FUN_00526f00
+  FUN_00526f60
+  FUN_00527060
+  FUN_00527190
+  FUN_00527200
+  FUN_00527930
+  FUN_005279b0
+  FUN_00529a00
+  FUN_0052ad30
+  FUN_0052b240
+  FUN_0052eac0
+  FUN_0052ec90
+  FUN_0052ee20
+  FUN_0052ee30
+  FUN_0052ee40
+  FUN_00530d30
+  FUN_00532f30
+  FUN_00532fa0
+  FUN_00533e70
+  FUN_00534030
+  FUN_005342b0
+  FUN_00534f90
+  FUN_0053d700
+  FUN_0053d790
+  FUN_00540970
+  FUN_005409a0
+  FUN_005409f0
+  FUN_00540a10
+  FUN_00540a20
+  FUN_00540a30
+  FUN_00540a40
+  FUN_00540a70
+  FUN_005431f0
+  FUN_00545a10
+  FUN_00548cd0
+  FUN_00548e20
+  FUN_00548e70
+  FUN_00548ea0
+  FUN_00548f00
+  FUN_00548fc0
+  FUN_00549150
+  FUN_00549170
+  FUN_0054b110
+  FUN_0054c5f0
+  FUN_00550750
+  FUN_00553600
+  FUN_00558be0
+  FUN_00558c00
+  FUN_00559d20
+  FUN_0055a9a0
+  FUN_0055b0b0
+  FUN_0055bc80
+  FUN_0055c6d0
+  FUN_00570eb0
+  FUN_00570ebb
+  FUN_00570ec8
+  FUN_00570edb
+  FUN_00570ef0
+  FUN_00570f03
+  FUN_00570f18
+  FUN_00570f2b
+  core_menu.cpp_configureSoundOptions_FUN_004d12e0
+  engine_3d.c_FUN_00409590
+  engine_3d.c_clipAndDrawLine2D_FUN_00409290
+  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_0052aa90
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10
+
+====================================================================================================
+TYPE: static_uninitvar (1590 occurrences)
+====================================================================================================
+
+Unique patterns:
+  1590x  Cppcheck: uninitialized variable
+
+Functions:
+  FUN_00406920
+  FUN_00406a00
+  FUN_00406b80
+  FUN_0040bd40
+  FUN_0040e1cc
+  FUN_0040e2ce
+  FUN_0040e2e1
+  FUN_0040e2f1
+  FUN_0040eadd
   FUN_0041206c
+  FUN_00417fec
+  FUN_0041803d
+  FUN_00418180
+  FUN_004181f0
+  FUN_004182cd
   FUN_004194b0
   FUN_004196b0
+  FUN_0041a5a0
   FUN_0041d050
+  FUN_0041dbf0
   FUN_0041ef90
   FUN_0041f3d0
   FUN_0041f6e0
+  FUN_0041f9f0
+  FUN_00423b70
+  FUN_00423b90
+  FUN_00423bb0
+  FUN_00423be0
+  FUN_00423c20
+  FUN_00423c90
+  FUN_00423cc0
+  FUN_00423d00
+  FUN_00423d20
+  FUN_00424730
+  FUN_00424780
+  FUN_0042b4d0
+  FUN_0042b500
+  FUN_0042b510
+  FUN_0042b570
+  FUN_0042b5a0
+  FUN_0042b5b0
+  FUN_0042b6c0
+  FUN_0042b6d0
+  FUN_0042b6e0
+  FUN_0042cd00
+  FUN_0042cd10
+  FUN_0042cd20
+  FUN_0042cde0
+  FUN_0042ceca
+  FUN_0042d180
+  FUN_0042d200
+  FUN_0042edc0
+  FUN_0042f260
+  FUN_004301f0
+  FUN_00430200
+  FUN_00431500
+  FUN_00432057
+  FUN_00438880
+  FUN_004388a0
+  FUN_004388d0
+  FUN_00438900
+  FUN_00438950
   FUN_0043b110
+  FUN_0043b500
   FUN_0043d1c0
   FUN_0043dad0
+  FUN_00441150
   FUN_00441440
   FUN_004421b0
+  FUN_00442d9c
+  FUN_00444600
+  FUN_004448f0
   FUN_00444ef0
   FUN_00445750
+  FUN_00446760
   FUN_00446810
   FUN_004477f0
   FUN_00447f20
-  FUN_00457440
+  FUN_004484a0
+  FUN_00449120
+  FUN_0044ae80
+  FUN_0044d430
+  FUN_0044db00
+  FUN_0044dfb0
+  FUN_00450c90
+  FUN_00452500
+  FUN_00452510
+  FUN_00452520
+  FUN_00456690
+  FUN_004569a0
+  FUN_00456b20
+  FUN_0045c400
+  FUN_0045d0f0
+  FUN_0045d100
+  FUN_0045e370
+  FUN_0045ed40
   FUN_00460d10
   FUN_00460d90
   FUN_00462300
+  FUN_00463a40
+  FUN_00463a79
+  FUN_00463ac7
+  FUN_00463b27
+  FUN_00463c42
+  FUN_00463d98
+  FUN_00463f77
+  FUN_00463ff5
+  FUN_00464075
+  FUN_00464200
+  FUN_004649dd
+  FUN_00468d00
   FUN_00469ce0
   FUN_0046b650
+  FUN_0046b7b0
   FUN_0046baa0
   FUN_0046bd90
   FUN_0046bfe0
   FUN_0046c100
+  FUN_0046d4c0
+  FUN_0046efa0
+  FUN_0046f060
+  FUN_00470730
+  FUN_004739e0
+  FUN_00473ef0
+  FUN_00476eb0
+  FUN_00476fd0
+  FUN_00477190
+  FUN_004771d0
+  FUN_004771f0
+  FUN_004774b0
+  FUN_00477670
+  FUN_0047767b
   FUN_004777a0
   FUN_00477890
   FUN_00478120
   FUN_00478f80
+  FUN_0047a1e0
+  FUN_0047a260
+  FUN_0047a280
+  FUN_0047a350
+  FUN_004818e0
+  FUN_00481930
+  FUN_00481960
+  FUN_00481970
+  FUN_004819f0
+  FUN_004819f8
+  FUN_00481a08
+  FUN_00481a14
+  FUN_00481a20
+  FUN_00481ac4
+  FUN_00481acc
+  FUN_00481ae4
+  FUN_00481af4
+  FUN_00481b04
   FUN_00481b0c
   FUN_00489990
   FUN_0048ab60
+  FUN_0048c920
+  FUN_0048c930
+  FUN_0048c93c
   FUN_0048d5d0
   FUN_0048f490
   FUN_00490470
+  FUN_00493390
+  FUN_00494080
+  FUN_00495410
+  FUN_00495420
   FUN_00497900
   FUN_004980d0
   FUN_00498de0
   FUN_00499b00
   FUN_0049cc10
+  FUN_0049ecc0
+  FUN_0049ecf0
+  FUN_0049ed20
+  FUN_0049edc0
+  FUN_004a03a0
   FUN_004a3b90
   FUN_004a4170
   FUN_004a9270
@@ -9646,46 +11302,188 @@ Functions:
   FUN_004b8700
   FUN_004ba740
   FUN_004baba0
+  FUN_004bc7c0
   FUN_004bc7e0
+  FUN_004c0640
   FUN_004c45a0
   FUN_004c46b0
+  FUN_004c6a40
+  FUN_004c6a50
+  FUN_004c6d70
+  FUN_004c6f50
   FUN_004c71a0
   FUN_004c7ca0
   FUN_004c9580
+  FUN_004cd1b0
+  FUN_004cde10
+  FUN_004cdf70
+  FUN_004cdfa0
   FUN_004cea50
+  FUN_004d2880
   FUN_004d4ba0
   FUN_004d4f30
   FUN_004d6650
+  FUN_004da000
+  FUN_004da070
   FUN_004da790
+  FUN_004dba50
   FUN_004dba70
+  FUN_004dcf60
+  FUN_004dd760
+  FUN_004e0290
+  FUN_004e0300
+  FUN_004e0890
+  FUN_004e2980
+  FUN_004e2c40
+  FUN_004e2c50
   FUN_004e7ed0
+  FUN_004e9570
+  FUN_004e96e0
+  FUN_004edc30
+  FUN_004edc50
+  FUN_004edc80
+  FUN_004edcb0
+  FUN_004edcc0
+  FUN_004edcd0
+  FUN_004edce0
+  FUN_004edcf0
+  FUN_004edd00
+  FUN_004edd10
+  FUN_004edd20
+  FUN_004edf30
+  FUN_004edf80
+  FUN_004ee690
+  FUN_004ee6c0
+  FUN_004ee720
+  FUN_004ee740
+  FUN_004efc50
+  FUN_004efcd0
   FUN_004f0360
+  FUN_004f16d0
+  FUN_004f18c0
+  FUN_004f1f80
+  FUN_004f3340
+  FUN_004f45e0
   FUN_004f49d8
+  FUN_004f4f10
+  FUN_004f5bb0
+  FUN_004f5d00
   FUN_004f5d90
   FUN_004f7360
+  FUN_004f76c0
   FUN_004f7ae0
   FUN_004f8570
+  FUN_004f942e
+  FUN_004f9440
+  FUN_004faca0
+  FUN_004fbb70
   FUN_004fd1d0
   FUN_004fda20
+  FUN_0050ea10
+  FUN_0050ea90
+  FUN_0050eba0
   FUN_00510a40
+  FUN_00511d80
+  FUN_00514390
+  FUN_005143a0
+  FUN_005143b0
+  FUN_00515890
+  FUN_00515980
+  FUN_005159a0
   FUN_00515db0
   FUN_00515ea0
   FUN_00516770
+  FUN_00518f60
+  FUN_00519120
   FUN_0051d650
+  FUN_0051dc30
+  FUN_0051e7d0
+  FUN_0051f060
+  FUN_0051f3f0
+  FUN_0051f800
+  FUN_00521d80
+  FUN_005235b0
+  FUN_00525c10
+  FUN_00525ff0
+  FUN_00526020
+  FUN_005260c0
+  FUN_005262a0
+  FUN_00526dd0
+  FUN_00526f00
+  FUN_00526f60
+  FUN_00527060
+  FUN_00527190
+  FUN_00527200
+  FUN_00527930
+  FUN_00529a00
+  FUN_0052ad30
+  FUN_0052b240
+  FUN_0052bbd0
   FUN_0052d790
   FUN_0052dff0
+  FUN_0052ec90
+  FUN_0052ee20
+  FUN_0052ee30
+  FUN_0052ee40
+  FUN_0052f031
+  FUN_0052f823
+  FUN_005300ec
+  FUN_00530322
+  FUN_00530d30
+  FUN_00532f30
+  FUN_00532fa0
   FUN_00533750
+  FUN_00533e70
+  FUN_00534030
+  FUN_005342b0
+  FUN_00534f90
   FUN_005384d0
   FUN_0053a260
+  FUN_0053d700
+  FUN_0053d790
   FUN_0053f210
+  FUN_00540970
+  FUN_005409a0
+  FUN_005409f0
+  FUN_00540a10
+  FUN_00540a20
+  FUN_00540a30
+  FUN_00540a40
+  FUN_00540a70
   FUN_005423c0
+  FUN_005431f0
   FUN_00543210
   FUN_00543c50
   FUN_005445c0
   FUN_00545c30
   FUN_005464a0
+  FUN_00548cd0
+  FUN_00548e20
+  FUN_00548f00
+  FUN_00548fc0
+  FUN_00549150
+  FUN_00549170
   FUN_00549cd0
+  FUN_0054b110
+  FUN_0054c5f0
   FUN_0054d8a0
+  FUN_00553600
+  FUN_00558be0
+  FUN_00558c00
+  FUN_00559d20
+  FUN_0055a010
+  FUN_0055a210
+  FUN_0055a9a0
+  FUN_0055b0b0
+  FUN_0055bc80
+  FUN_0055c6d0
+  FUN_0055c830
+  FUN_0055c8b0
+  FUN_0055c910
+  FUN_0055c970
+  FUN_0055ca30
+  FUN_0055caf0
+  FUN_0055d1f0
   FUN_00563d90
   FUN_00565c12
   FUN_00566ba0
@@ -9707,6 +11505,8 @@ Functions:
   FUN_0056bdc8
   FUN_0056bdd2
   FUN_0056bf67
+  FUN_0056c4d4
+  FUN_0056c520
   FUN_0056c5a8
   FUN_0056c864
   FUN_0056ced8
@@ -9719,12 +11519,12 @@ Functions:
   FUN_0056f14c
   FUN_0056f573
   FUN_00570d50
+  FUN_00571858
   FUN_00571a9d
   FUN_00571b2c
   FUN_00571b8e
   FUN_00571bdc
   FUN_00572ef0
-  FUN_00573a31
   FUN_00573afc
   FUN_00574264
   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0
@@ -9928,7 +11728,6 @@ Functions:
   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0
   engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90
-  engine_light.cpp_calculatePhongLighting_FUN_004c6a70
   engine_matrix.c_invertTransformMatrix_FUN_004ccae0
   engine_matrix.c_normalizeVector3DFloat_FUN_004cde90
   engine_matrix.c_transformWorldToView_FUN_004cd0e0
@@ -9950,44 +11749,98 @@ Functions:
   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 
 ====================================================================================================
-TYPE: pointer_truncation (987 occurrences)
+TYPE: pointer_truncation (1439 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    25x  (int)piVar4
-    23x  (int)puVar8
-    22x  (int)piVar12
-    20x  (int)puVar5
+    47x  (int)piVar4
+    36x  (int)puVar8
+    32x  (int)puVar5
+    32x  (int)piVar6
+    31x  (int)piVar5
+    28x  (int)piVar12
+    27x  (int)puVar4
+    23x  (int)puVar9
+    23x  (int)puVar13
+    22x  (int)plVar10
+    21x  (int)piVar3
+    20x  (int)puVar6
+    20x  (int)puVar7
     20x  (int)&uStack_57a
-    19x  (int)piVar5
-    18x  (int)piVar6
-    16x  (int)puVar7
+    19x  (int)plVar6
+    19x  (uint)unaff_EBX
+    18x  (int)piVar2
+    16x  (int)piVar9
+    16x  (int)puVar11
     16x  (int)(puVar3 + 1)
-    15x  (int)puVar4
-    15x  (int)plVar10
-    15x  (int)piVar1
-    13x  (int)puVar6
-    12x  (int)puVar9
-    12x  (int)piVar2
-    11x  (int)plVar6
-    11x  (int)(puVar2 + 1)
-    10x  (int)puVar3
-    10x  (int)piVar9
-    10x  (int)local_28
 
 Functions:
+  FUN_00405b40
+  FUN_00406920
+  FUN_00406a00
+  FUN_00406b80
+  FUN_00408fc0
+  FUN_0040bd40
+  FUN_0040e1cc
+  FUN_0040eadd
+  FUN_0042d6c0
+  FUN_0042d900
+  FUN_0042dcc0
+  FUN_0042e060
+  FUN_0042e750
   FUN_004303d0
+  FUN_00430590
+  FUN_00430630
+  FUN_00432057
+  FUN_004320dc
+  FUN_00432210
+  FUN_00432b48
+  FUN_00432bd8
+  FUN_00433c70
+  FUN_00433cd7
+  FUN_00433d43
+  FUN_00433db0
+  FUN_00433e1d
+  FUN_00433e8d
+  FUN_00433f58
+  FUN_00433fc8
+  FUN_00434030
+  FUN_0043409e
+  FUN_0043410e
+  FUN_00434210
+  FUN_00434492
+  FUN_00434541
+  FUN_0043469b
+  FUN_0043474d
+  FUN_004347cc
+  FUN_0043484b
+  FUN_004348ca
+  FUN_00438410
   FUN_00439f50
   FUN_0043b110
   FUN_00441440
   FUN_004421b0
+  FUN_00443180
+  FUN_00444600
   FUN_00445750
+  FUN_00446760
   FUN_00447f20
+  FUN_0044d060
+  FUN_0045d310
+  FUN_004673e0
   FUN_0046b650
   FUN_0046bfe0
   FUN_0046c100
   FUN_004720c0
+  FUN_00472de0
+  FUN_00476fd0
+  FUN_004774b0
+  FUN_0047767b
+  FUN_00481630
+  FUN_004819f8
+  FUN_00481acc
   FUN_00481b0c
+  FUN_0048c93c
   FUN_0048f490
   FUN_00497900
   FUN_004b2430
@@ -9996,26 +11849,56 @@ Functions:
   FUN_004ba740
   FUN_004c85f0
   FUN_004ca790
+  FUN_004cde10
   FUN_004cea50
   FUN_004d23d0
   FUN_004d4ba0
   FUN_004d8720
+  FUN_004dcf60
+  FUN_004dd690
+  FUN_004e0d20
   FUN_004e5200
   FUN_004e6160
+  FUN_004e78b0
+  FUN_004e7b00
   FUN_004e7ed0
+  FUN_004f16d0
+  FUN_004f18c0
+  FUN_004f1f80
   FUN_004f2990
+  FUN_004f3fe0
+  FUN_004f4050
+  FUN_004f4170
+  FUN_004f44d0
+  FUN_004f4f10
+  FUN_004f5a50
   FUN_004f5d90
+  FUN_004f942e
   FUN_004f9dd0
   FUN_004fa2e0
   FUN_004fbf20
   FUN_004fd1d0
+  FUN_00511d80
   FUN_005125a0
   FUN_00513720
+  FUN_00518320
   FUN_0051d650
+  FUN_0051f3f0
+  FUN_0052ed40
+  FUN_005300ec
+  FUN_00530322
   FUN_00532ba0
   FUN_0053a260
   FUN_00541d00
+  FUN_00548fc0
+  FUN_00558c40
+  FUN_0055d1f0
+  FUN_0055d9c0
+  FUN_0055dcb0
+  FUN_0055de8e
+  FUN_0055df19
   FUN_005638e0
+  FUN_005639f0
   FUN_00563d90
   FUN_00564a88
   FUN_00566ba0
@@ -10058,12 +11941,16 @@ Functions:
   FUN_0056ff82
   FUN_00570272
   FUN_00570bd0
+  FUN_00570f60
   FUN_005711a8
   FUN_005713e0
   FUN_00571410
   FUN_00571b2c
+  FUN_00572b70
   FUN_0057301c
   FUN_00573660
+  FUN_00573720
+  FUN_00573930
   FUN_00573afc
   FUN_00573ca0
   FUN_00573e30
@@ -10173,6 +12060,7 @@ Functions:
   engine_2d.c_findBestPaletteMatch_FUN_00401850
   engine_2d.c_wrapTextToWidth_FUN_004023b0
   engine_3d.c_FUN_00404680
+  engine_3d.c_flushRenderQueue_FUN_00408f50
   engine_3d.c_processPolygonColor_FUN_00405140
   engine_3d.c_rasterizePolygonCustom_FUN_00562de0
   engine_3d.c_rasterizeTriangle_FUN_005628c0
@@ -10215,43 +12103,98 @@ Functions:
   support_codec.cpp_extractBitsFromBuffer_FUN_00438dc0
   support_trisock.cpp_performSocketOperation_FUN_00549090
   thunk_FUN_004d23d0
+  thunk_FUN_0056c5f0
   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
   wincore_winrun.cpp_FUN_00559260
 
 ====================================================================================================
-TYPE: unaffected_reg (677 occurrences)
+TYPE: unaffected_reg (1262 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   284x  unaff_ESI
-   210x  unaff_EBX
-    97x  unaff_EDI
-    83x  unaff_EBP
+   387x  unaff_ESI
+   368x  unaff_EBX
+   285x  unaff_EDI
+   219x  unaff_EBP
      3x  unaff_SI
 
 Functions:
+  FUN_00405b40
+  FUN_0040e1cc
+  FUN_0040e2ce
   FUN_0041206c
+  FUN_00417fec
   FUN_004194b0
+  FUN_0041a5a0
+  FUN_00432057
+  FUN_004320dc
+  FUN_00432b48
+  FUN_00432bd8
+  FUN_00433cd7
+  FUN_00433d43
+  FUN_00433e1d
+  FUN_00433e8d
+  FUN_00433f58
+  FUN_00433fc8
+  FUN_0043409e
+  FUN_0043410e
+  FUN_00434492
+  FUN_00434541
+  FUN_0043469b
+  FUN_0043474d
+  FUN_004347cc
+  FUN_0043484b
+  FUN_004348ca
   FUN_0043dad0
+  FUN_00441150
   FUN_00441440
+  FUN_004418d0
+  FUN_00442d9c
   FUN_00444ef0
   FUN_00446810
-  FUN_00457440
+  FUN_0044dfb0
   FUN_00460d10
   FUN_00460d90
+  FUN_00463a79
+  FUN_00463ac7
+  FUN_00463b27
+  FUN_00463c42
+  FUN_00463d98
+  FUN_00463f77
+  FUN_00463ff5
+  FUN_00464075
+  FUN_00464200
+  FUN_004649dd
   FUN_0046b650
+  FUN_0047767b
   FUN_00499ca0
   FUN_004b2430
   FUN_004b8700
   FUN_004bc7e0
   FUN_004c8440
+  FUN_004cde10
   FUN_004dba70
+  FUN_004dcf60
   FUN_004f49d8
   FUN_004f8570
+  FUN_0052bbd0
+  FUN_0052f031
+  FUN_0052f823
+  FUN_005300ec
+  FUN_00530322
   FUN_0053f210
   FUN_00543210
   FUN_00543450
+  FUN_00549170
   FUN_0054d8a0
+  FUN_0055c830
+  FUN_0055c8b0
+  FUN_0055c910
+  FUN_0055c970
+  FUN_0055ca30
+  FUN_0055caf0
+  FUN_0055de8e
+  FUN_0055df19
   FUN_00563d90
   FUN_00567964
   FUN_00567a5c
@@ -10269,7 +12212,6 @@ Functions:
   FUN_00571a9d
   FUN_00571b8e
   FUN_00571fd1
-  FUN_00573a31
   FUN_005748d5
   FUN_00574a13
   FUN_00574ad9
@@ -10324,27 +12266,67 @@ Functions:
   wincore_windll.cpp_renderScanlineSwapped_FUN_00530716
 
 ====================================================================================================
-TYPE: unrolled_memcpy (660 occurrences)
+TYPE: unrolled_memcpy (939 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   374x  for (...; != 0; ... + -1)
-   182x  MOVSD.REP
-    91x  raw-offset struct copy
-    11x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
+   588x  for (...; != 0; ... + -1)
+   235x  MOVSD.REP
+    97x  raw-offset struct copy
+    13x  for (X = N >> 2; ...) { } for (Y = N & 3; ...)
+     4x  MOVSB.REP
      1x  for (X = N; ...) { *(uint *)d = *(uint *)s; d/s += 4; }
      1x  field-by-field struct copy
 
 Functions:
+  FUN_00409210
+  FUN_00409510
+  FUN_0040bd40
+  FUN_0040bd90
+  FUN_0040eadd
   FUN_0040f610
   FUN_004194b0
+  FUN_0041a5a0
   FUN_0041f3d0
   FUN_00420eb0
+  FUN_0042cef8
+  FUN_0042cff2
+  FUN_0042e750
   FUN_004303d0
+  FUN_00430630
+  FUN_00433770
+  FUN_00433c70
+  FUN_00433cd7
+  FUN_00433d43
+  FUN_00433db0
+  FUN_00433e1d
+  FUN_00433e8d
+  FUN_00433f58
+  FUN_00433fc8
+  FUN_00434030
+  FUN_0043409e
+  FUN_0043410e
+  FUN_00434210
+  FUN_00434492
+  FUN_00434541
+  FUN_0043469b
+  FUN_0043474d
+  FUN_004347cc
+  FUN_0043484b
+  FUN_004348ca
+  FUN_00442d9c
+  FUN_00443050
+  FUN_00443180
+  FUN_0044dfb0
+  FUN_004673e0
+  FUN_00470730
   FUN_004720c0
+  FUN_00472de0
+  FUN_00473080
   FUN_00473190
   FUN_0048ab60
   FUN_0048f490
+  FUN_004933c0
   FUN_004980d0
   FUN_00499b00
   FUN_00499ca0
@@ -10364,15 +12346,23 @@ Functions:
   FUN_004d6650
   FUN_004d74a0
   FUN_004dba70
+  FUN_004dcf60
   FUN_004e5200
+  FUN_004e78b0
+  FUN_004e7b00
+  FUN_004edd30
+  FUN_004f4f10
   FUN_004f6170
   FUN_004f8570
   FUN_004fdd00
   FUN_0050fc90
+  FUN_00511d80
   FUN_005125a0
   FUN_00513720
   FUN_005148b0
+  FUN_00518f60
   FUN_00523170
+  FUN_00526dd0
   FUN_005289f0
   FUN_0052d790
   FUN_0052dff0
@@ -10390,6 +12380,14 @@ Functions:
   FUN_0054d8a0
   FUN_0054fa80
   FUN_005576a0
+  FUN_0055bc30
+  FUN_0055bc80
+  FUN_0055c830
+  FUN_0055c8b0
+  FUN_0055c910
+  FUN_0055c970
+  FUN_0055ca30
+  FUN_0055caf0
   FUN_00564a88
   FUN_0056a827
   FUN_0056aa38
@@ -10403,6 +12401,7 @@ Functions:
   FUN_00570bd0
   FUN_005711a8
   FUN_00571410
+  FUN_00573930
   FUN_00573afc
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480
   cockpit_ckptutil.c_rotateCircularBitmap_FUN_0042e9d0
@@ -10456,7 +12455,6 @@ Functions:
   core_flamecan.cpp_CFlameCan_setup_FUN_0048e410
   core_flies.cpp_CFlies_process_FUN_0048f090
   core_game.cpp_CGame_playerControls_FUN_0049e7d0
-  core_game.cpp_joinNetworkGame_FUN_004a5e40
   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ae0a0
   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080
   core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950
@@ -10545,46 +12543,322 @@ Functions:
   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0
   sound_sndmain.cpp_pushSfxOptions_FUN_00526340
   sound_sndmain.cpp_startSfx_FUN_005265a0
+  thunk_FUN_0056c5f0
 
 ====================================================================================================
-TYPE: stack_ref (657 occurrences)
+TYPE: register_param (859 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    26x  &stack0x00000034
-    23x  &stack0x00000008
-    19x  &stack0xffffffec
-    17x  &stack0xffffffd4
-    15x  &stack0xffffffd8
-    14x  &stack0xffffffc0
-    14x  &stack0xffffffe0
-    14x  &stack0xffffff98
-    14x  &stack0xffffff84
-    13x  &stack0xffffff74
-    12x  &stack0xffffffe4
-    12x  &stack0xffffffe8
-    11x  &stack0x00000000
-    11x  &stack0xfffffff0
-    11x  &stack0xffffff88
-    10x  &stack0xffffffbc
-    10x  &stack0xffffffc4
-    10x  &stack0xffffffdc
-     9x  &stack0xffffffc8
-     9x  &stack0xffffff90
+   330x  in_EDX
+   243x  in_ECX
+   198x  in_EAX
+    21x  in_DS
+    13x  in_AX
+    11x  in_CL
+    10x  in_AL
+     4x  in_DL
+     3x  in_DX
+     2x  in_CF
+     2x  in_PF
+     2x  in_AF
+     2x  in_ZF
+     2x  in_SF
+     2x  in_TF
+     2x  in_IF
+     2x  in_OF
+     2x  in_NT
+     2x  in_AC
+     2x  in_VIF
 
 Functions:
+  FUN_0040e1cc
+  FUN_0040e2ce
+  FUN_0040e2e1
+  FUN_0040e2f1
+  FUN_0041206c
+  FUN_00417fec
+  FUN_0042cde0
+  FUN_0042ceca
+  FUN_0042cef8
+  FUN_0042cff2
+  FUN_00432057
+  FUN_004320dc
+  FUN_00432b48
+  FUN_00432bd8
+  FUN_00433cd7
+  FUN_00433d43
+  FUN_00433e1d
+  FUN_00433e8d
+  FUN_00433f58
+  FUN_00433fc8
+  FUN_0043409e
+  FUN_0043410e
+  FUN_00434492
+  FUN_00434541
+  FUN_0043469b
+  FUN_0043474d
+  FUN_004347cc
+  FUN_0043484b
+  FUN_004348ca
+  FUN_00442d9c
+  FUN_0047767b
+  FUN_004819f0
+  FUN_004819f8
+  FUN_00481a08
+  FUN_00481a14
+  FUN_00481a20
+  FUN_00481ac4
+  FUN_00481acc
+  FUN_00481ae4
+  FUN_00481af4
+  FUN_00481b04
+  FUN_00481b0c
+  FUN_0048c93c
+  FUN_004f942e
+  FUN_0055de8e
+  FUN_0055df19
+  FUN_00563d90
+  FUN_00565c12
+  FUN_00566ba0
+  FUN_005670b1
+  FUN_005670c1
+  FUN_005670ed
+  FUN_00568b00
+  FUN_00568bb0
+  FUN_00569928
+  FUN_0056a0c0
+  FUN_0056a0f7
+  FUN_0056a697
+  FUN_0056a6ad
+  FUN_0056a6c4
+  FUN_0056af76
+  FUN_0056afe8
+  FUN_0056b1a4
+  FUN_0056bdd2
+  FUN_0056bf67
+  FUN_0056c4d4
+  FUN_0056c520
+  FUN_0056c5a8
+  FUN_0056dc98
+  FUN_0056ddc0
+  FUN_0056ef60
+  FUN_0056efb8
+  FUN_0056f100
+  FUN_0056f14c
+  FUN_0056f573
+  FUN_005700d0
+  FUN_00570d50
+  FUN_00571858
+  FUN_00571a9d
+  FUN_00571b2c
+  FUN_00571b8e
+  FUN_00573afc
+  FUN_00574264
+  cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440
+  core_actor.cpp_FUN_0040e120
+  core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
+  core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004280b0
+  core_dstrender.cpp_memcpyMMX_FUN_00465341
+  core_mmx.c_detectCPUFeatures_FUN_004d9e70
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac
+  core_mmx.c_detectMMXSupport_FUN_004d9f59
+  wincore_windll.cpp_clearScreenRegion_FUN_0052ef37
+  wincore_windll.cpp_clearScreen_FUN_0052ee70
+  wincore_windll.cpp_clearZBufferNative_FUN_0052eed4
+  wincore_windll.cpp_fillDepthRegion_FUN_0052efc2
+  wincore_windll.cpp_renderAlphaRow16_FUN_005305f7
+  wincore_windll.cpp_renderAlphaRow32_FUN_0053055c
+  wincore_windll.cpp_renderScanlineSwapped_FUN_00530716
+
+====================================================================================================
+TYPE: concat_reconstruction (779 occurrences)
+====================================================================================================
+
+Unique patterns:
+   154x  CONCAT44
+   102x  CONCAT11
+    67x  CONCAT22
+    63x  CONCAT26
+    58x  CONCAT24
+    56x  CONCAT14
+    51x  CONCAT13
+    49x  CONCAT12
+    38x  CONCAT34
+    29x  CONCAT52
+    19x  CONCAT43
+    14x  CONCAT41
+    13x  CONCAT21
+    13x  CONCAT17
+    13x  CONCAT15
+     8x  CONCAT62
+     7x  CONCAT16
+     6x  CONCAT31
+     6x  CONCAT19
+     5x  CONCAT25
+
+Functions:
+  FUN_0040e1cc
+  FUN_0041206c
+  FUN_00417fec
+  FUN_0042cde0
+  FUN_0042cef8
+  FUN_0042cff2
+  FUN_0042d370
+  FUN_0042e290
+  FUN_00464200
+  FUN_0046556f
+  FUN_0046568b
+  FUN_004a9270
+  FUN_004b6220
+  FUN_004b6370
+  FUN_004c2470
+  FUN_0051f930
+  FUN_0052d790
+  FUN_0052dff0
+  FUN_0052f031
+  FUN_0052f823
+  FUN_005300ec
+  FUN_00530322
+  FUN_0053d790
+  FUN_0053e860
+  FUN_0056551c
+  FUN_00567d88
+  FUN_0056808c
+  FUN_00569928
+  FUN_0056a28c
+  FUN_0056a388
+  FUN_0056a697
+  FUN_0056a6ad
+  FUN_0056be50
+  FUN_0056d9f0
+  FUN_0056f14c
+  FUN_0056f852
+  FUN_00570d50
+  FUN_00570eb0
+  FUN_00570ebb
+  FUN_00570ec8
+  FUN_00570edb
+  FUN_00570ef0
+  FUN_00570f03
+  FUN_00570f18
+  FUN_00570f2b
+  FUN_00571a9d
+  core_actor.cpp_FUN_0040ab10
+  core_actor.cpp_FUN_0040e120
+  core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
+  core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30
+  core_bugs.cpp_FUN_00423790
+  core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810
+  core_dcamera.cpp_blendCoronaTextureSpan_FUN_00445650
+  core_dskybox.cpp_renderSkyDome_FUN_00463580
+  core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00465f50
+  core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9
+  core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
+  core_dstrender.cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930
+  core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7
+  core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94
+  core_dstrender.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b
+  core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886
+  core_dstrender.cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_004652d0
+  core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520
+  core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda
+  core_dstrender.cpp_spatialFilter9TapMMX_FUN_004654c5
+  core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00465382
+  core_flies.cpp_drawFlyPixel_FUN_0048f3c0
+  core_menu.cpp_configureCustomKeys_FUN_004d0d20
+  core_menu.cpp_configureSoundOptions_FUN_004d12e0
+  core_mmx.c_detectIntelProcessor_FUN_004d9eac
+  core_moon.cpp_CMoon_render_FUN_004dec50
+  core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0
+  core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00517da0
+  core_turret.cpp_CTurret_process_FUN_005497f0
+  core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800
+  core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0
+  core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770
+  core_xform.cpp_clipInterpolateRightPlane_FUN_0055d6b0
+  core_xform.cpp_clipInterpolateTopPlane_FUN_0055d830
+  engine_2d.c_drawVLine_FUN_00403ce0
+  engine_3d.c_FUN_00404680
+  engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00
+  engine_clipper.c_interpolateVertexBottomClip_FUN_00431730
+  engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0
+  engine_clipper.c_interpolateVertexLeftClip_FUN_00431530
+  engine_clipper.c_interpolateVertexNearClip_FUN_00431930
+  engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0
+  engine_clipper.c_interpolateVertexRightClip_FUN_00431630
+  engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30
+  engine_clipper.c_interpolateVertexTopClip_FUN_00431830
+  engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_00493140
+  engine_font.cpp_drawAlphaBlendedPixels_FUN_00491160
+  engine_matrix.c_initializeTrigTables_FUN_004cc9d0
+  sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_004e4c70
+  sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90
+  sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00524630
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10
+  support_trisock.cpp_bindSocket_FUN_00548f70
+  support_trisock.cpp_buildSockaddrIn_FUN_00548dc0
+  wincore_windll.cpp_clearZBufferNative_FUN_0052eed4
+  wincore_windll.cpp_renderAlphaRow16_FUN_005305f7
+  wincore_windll.cpp_renderAlphaRow32_FUN_0053055c
+  wincore_windll.cpp_renderScanlineSwapped_FUN_00530716
+
+====================================================================================================
+TYPE: stack_ref (723 occurrences)
+====================================================================================================
+
+Unique patterns:
+    28x  &stack0xffffffec
+    26x  &stack0x00000034
+    24x  &stack0x00000008
+    21x  &stack0xffffffe0
+    19x  &stack0xffffffd8
+    19x  &stack0xffffffd4
+    18x  &stack0xffffffe8
+    16x  &stack0xffffffdc
+    14x  &stack0x00000000
+    14x  &stack0xffffffc0
+    14x  &stack0xffffff98
+    14x  &stack0xfffffff0
+    14x  &stack0xffffff84
+    13x  &stack0xffffff74
+    13x  &stack0xffffffe4
+    12x  &stack0xffffffc4
+    11x  &stack0xffffffc8
+    11x  &stack0xffffffbc
+    11x  &stack0x0000000c
+    11x  &stack0xffffff88
+
+Functions:
+  FUN_00406920
+  FUN_00406a00
+  FUN_00406b80
+  FUN_0041a56d
   FUN_00439f50
   FUN_0043b110
   FUN_00441440
   FUN_004421b0
+  FUN_00442d9c
+  FUN_00444600
   FUN_00445750
+  FUN_00446760
   FUN_00447f20
+  FUN_0045da90
+  FUN_0045db60
+  FUN_0045dc30
+  FUN_0045dd00
+  FUN_0045ddd0
+  FUN_0045dea0
+  FUN_0045df80
+  FUN_0045e130
+  FUN_0045e1f0
   FUN_0046b650
   FUN_0046bfe0
   FUN_0046c100
   FUN_0046fb40
   FUN_0046fcd0
   FUN_0046fe60
+  FUN_004700d0
   FUN_00470230
   FUN_00470310
   FUN_004703f0
@@ -10592,25 +12866,35 @@ Functions:
   FUN_0047a210
   FUN_0048d5d0
   FUN_00490b20
+  FUN_00490c20
   FUN_00490d20
+  FUN_00490f50
   FUN_00497900
   FUN_004b2430
   FUN_004b32d0
   FUN_004b9fe0
   FUN_004ba740
   FUN_004c8440
+  FUN_004cde10
   FUN_004cea50
   FUN_004d4650
   FUN_004f0360
+  FUN_004f1f80
   FUN_004f5d90
   FUN_004fbf20
   FUN_004fd1d0
+  FUN_005159a0
   FUN_00515db0
   FUN_0051d650
+  FUN_0051f3f0
   FUN_00529980
+  FUN_0052d710
   FUN_005384d0
   FUN_0053a260
   FUN_00541d00
+  FUN_00548fc0
+  FUN_0055d1f0
+  FUN_00564c30
   FUN_005670c1
   FUN_005670e0
   FUN_005670ed
@@ -10687,125 +12971,16 @@ Functions:
   support_trisock.cpp_performSocketOperation_FUN_00549090
 
 ====================================================================================================
-TYPE: concat_reconstruction (531 occurrences)
-====================================================================================================
-
-Unique patterns:
-    91x  CONCAT44
-    56x  CONCAT11
-    49x  CONCAT14
-    49x  CONCAT22
-    37x  CONCAT13
-    35x  CONCAT34
-    35x  CONCAT12
-    31x  CONCAT26
-    30x  CONCAT24
-    20x  CONCAT52
-    17x  CONCAT43
-    13x  CONCAT17
-    13x  CONCAT15
-    13x  CONCAT41
-     7x  CONCAT16
-     7x  CONCAT62
-     6x  CONCAT21
-     6x  CONCAT19
-     5x  CONCAT25
-     5x  CONCAT28
-
-Functions:
-  FUN_0041206c
-  FUN_0046556f
-  FUN_0046568b
-  FUN_004a9270
-  FUN_004c2470
-  FUN_0051f930
-  FUN_0052d790
-  FUN_0052dff0
-  FUN_0053e860
-  FUN_0056551c
-  FUN_00567d88
-  FUN_0056808c
-  FUN_00569928
-  FUN_0056a28c
-  FUN_0056a388
-  FUN_0056a697
-  FUN_0056a6ad
-  FUN_0056be50
-  FUN_0056d9f0
-  FUN_0056f14c
-  FUN_0056f852
-  FUN_00570d50
-  FUN_00571a9d
-  core_actor.cpp_FUN_0040ab10
-  core_actor.cpp_FUN_0040e120
-  core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
-  core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30
-  core_bugs.cpp_FUN_00423790
-  core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_00444810
-  core_dcamera.cpp_blendCoronaTextureSpan_FUN_00445650
-  core_dskybox.cpp_renderSkyDome_FUN_00463580
-  core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00465f50
-  core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9
-  core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
-  core_dstrender.cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930
-  core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7
-  core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94
-  core_dstrender.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b
-  core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886
-  core_dstrender.cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_004652d0
-  core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520
-  core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda
-  core_dstrender.cpp_spatialFilter9TapMMX_FUN_004654c5
-  core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00465382
-  core_flies.cpp_drawFlyPixel_FUN_0048f3c0
-  core_menu.cpp_configureCustomKeys_FUN_004d0d20
-  core_menu.cpp_configureSoundOptions_FUN_004d12e0
-  core_mmx.c_detectIntelProcessor_FUN_004d9eac
-  core_moon.cpp_CMoon_render_FUN_004dec50
-  core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0
-  core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00517da0
-  core_turret.cpp_CTurret_process_FUN_005497f0
-  core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800
-  core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0
-  core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770
-  core_xform.cpp_clipInterpolateRightPlane_FUN_0055d6b0
-  core_xform.cpp_clipInterpolateTopPlane_FUN_0055d830
-  engine_2d.c_drawVLine_FUN_00403ce0
-  engine_3d.c_FUN_00404680
-  engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00
-  engine_clipper.c_interpolateVertexBottomClip_FUN_00431730
-  engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0
-  engine_clipper.c_interpolateVertexLeftClip_FUN_00431530
-  engine_clipper.c_interpolateVertexNearClip_FUN_00431930
-  engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0
-  engine_clipper.c_interpolateVertexRightClip_FUN_00431630
-  engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30
-  engine_clipper.c_interpolateVertexTopClip_FUN_00431830
-  engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_00493140
-  engine_font.cpp_drawAlphaBlendedPixels_FUN_00491160
-  engine_matrix.c_initializeTrigTables_FUN_004cc9d0
-  sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_004e4c70
-  sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90
-  sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00524630
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10
-  support_trisock.cpp_bindSocket_FUN_00548f70
-  support_trisock.cpp_buildSockaddrIn_FUN_00548dc0
-  wincore_windll.cpp_clearZBufferNative_FUN_0052eed4
-  wincore_windll.cpp_renderAlphaRow16_FUN_005305f7
-  wincore_windll.cpp_renderAlphaRow32_FUN_0053055c
-  wincore_windll.cpp_renderScanlineSwapped_FUN_00530716
-
-====================================================================================================
-TYPE: raw_address_constant (497 occurrences)
+TYPE: raw_address_constant (537 occurrences)
 ====================================================================================================
 
 Unique patterns:
     55x  0xf80000
     40x  0x1e57284
-    32x  0x1c775ec
+    33x  0x1c775ec
+    10x  0x1b4d738
      9x  0x1cc9450
      9x  0x1c03a10
-     7x  0x1b4d738
      5x  0x1c7ccf4
      5x  0x1c9e03c
      4x  0xa9d078
@@ -10816,19 +12991,27 @@ Unique patterns:
      3x  0x1bcd074
      3x  0x1c4f08c
      3x  0x1c6ce18
+     3x  0x1cd8c28
      3x  0x200b130
      2x  0x7f7378
      2x  0x1abb65c
-     2x  0xdc0000
 
 Functions:
   FUN_0041f3d0
   FUN_0043d1c0
   FUN_00445750
   FUN_00446810
+  FUN_0044d060
+  FUN_00450c90
+  FUN_0045cde0
+  FUN_0045e370
   FUN_00460c90
   FUN_00469ce0
   FUN_0046b650
+  FUN_0046e960
+  FUN_0046e9f0
+  FUN_00472de0
+  FUN_00473080
   FUN_00473190
   FUN_00477080
   FUN_00478790
@@ -10851,20 +13034,34 @@ Functions:
   FUN_004c79a0
   FUN_004c85f0
   FUN_004ca790
+  FUN_004cdfa0
   FUN_004d23d0
   FUN_004d8fc0
+  FUN_004e2480
+  FUN_004e2630
   FUN_004e5200
+  FUN_004e78b0
+  FUN_004e7b00
   FUN_004e7ed0
+  FUN_004e99f0
   FUN_004edfc0
+  FUN_004f16d0
+  FUN_004f18c0
   FUN_004fbf20
   FUN_004fe770
   FUN_004feff0
+  FUN_00511d80
   FUN_005125a0
+  FUN_00518f60
   FUN_0051f680
   FUN_0051f760
+  FUN_005229f0
   FUN_00523170
+  FUN_00527570
   FUN_0052dff0
   FUN_00535900
+  FUN_0053d700
+  FUN_0053d790
   FUN_0053e860
   FUN_00540f50
   FUN_005464a0
@@ -10953,7 +13150,6 @@ Functions:
   core_game.cpp_CGame_process_FUN_004a6010
   core_game.cpp_CGame_renderOverlay_FUN_0049ab50
   core_game.cpp_CGame_rollCredits_FUN_004a6e90
-  core_game.cpp_CGame_runGameSession_FUN_0049da10
   core_ghoul.cpp_CGhoul_ctor_FUN_004a8ca0
   core_gore.cpp_CBloodPool_init_FUN_004af730
   core_gore.cpp_CBloodPool_render_FUN_004af340
@@ -10985,7 +13181,6 @@ Functions:
   core_menu.cpp_showOptionsScreen_FUN_004d21c0
   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180
   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0
-  core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0
   core_mission.cpp_CDemonMission_startMission_FUN_004d9780
   core_mobster.cpp_CMobster_playTaunt_FUN_004dc940
   core_moon.cpp_CMoon_free_FUN_004dea60
@@ -11008,11 +13203,9 @@ Functions:
   core_skeleton.cpp_getDeformableModel_FUN_0051f570
   core_stranger.cpp_CStranger_aimLeftPistol_FUN_0053e320
   core_stranger.cpp_CStranger_processMotionEvents_FUN_00537cd0
-  core_terrain.cpp_CTerrain_init_FUN_005492b0
   core_terrain.cpp_CTerrain_render_FUN_00549310
   core_trigger.cpp_CTrigger_setup_FUN_00547a00
   core_turret.cpp_CTurret_process_FUN_005497f0
-  core_tvbat.cpp_CTVBat_processDamage_FUN_0054c120
   core_tvbat.cpp_CTVBat_process_FUN_0054b460
   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690
   core_vessel.cpp_CCryptVessel_renderTransparent_FUN_00550370
@@ -11056,11 +13249,11 @@ Functions:
   wincore_windll.cpp_loadExternalRenderer_FUN_00531780
 
 ====================================================================================================
-TYPE: unrolled_strcpy (465 occurrences)
+TYPE: unrolled_strcpy (483 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   465x  do {
+   483x  do {
 
 Functions:
   FUN_0040f040
@@ -11069,10 +13262,16 @@ Functions:
   FUN_0040f960
   FUN_00411a10
   FUN_00418630
+  FUN_0044d550
   FUN_00470230
   FUN_00470310
   FUN_004703f0
   FUN_00470eb0
+  FUN_00474230
+  FUN_00476ef0
+  FUN_004771f0
+  FUN_0047a1e0
+  FUN_00481630
   FUN_0049cc10
   FUN_0049f930
   FUN_004a3b90
@@ -11082,12 +13281,16 @@ Functions:
   FUN_004a9270
   FUN_004abb50
   FUN_004ada20
+  FUN_004b1090
   FUN_004b6610
   FUN_004b9af0
+  FUN_004c0640
   FUN_004c2470
   FUN_004c85f0
   FUN_004c9430
   FUN_004d23d0
+  FUN_004d2880
+  FUN_004d93d0
   FUN_004edfc0
   FUN_004f6170
   FUN_004f7ae0
@@ -11098,11 +13301,15 @@ Functions:
   FUN_004feff0
   FUN_005148b0
   FUN_00522480
+  FUN_005229f0
+  FUN_0052bbd0
   FUN_0052d030
   FUN_0052d790
   FUN_0052dff0
+  FUN_00532f50
   FUN_00540b40
   FUN_00540f50
+  FUN_00544c10
   FUN_005633fc
   FUN_005687bc
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480
@@ -11257,15 +13464,17 @@ Functions:
   wincore_winrun.cpp_FUN_00559260
 
 ====================================================================================================
-TYPE: static_object_index (430 occurrences)
+TYPE: static_object_index (435 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   430x  Cppcheck: pointer-to-object indexed past bounds
+   435x  Cppcheck: pointer-to-object indexed past bounds
 
 Functions:
   FUN_0048b6f0
   FUN_004accf0
+  FUN_004f18c0
+  FUN_00573ed0
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350
   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430
@@ -11274,103 +13483,26 @@ Functions:
   core_sound.cpp_updateListeners_FUN_0052c9d0
 
 ====================================================================================================
-TYPE: register_param (409 occurrences)
+TYPE: unknown_field (304 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   156x  in_EAX
-    94x  in_EDX
-    85x  in_ECX
-    19x  in_DS
-    13x  in_AX
-    10x  in_AL
-     4x  in_CL
-     2x  in_CF
-     2x  in_PF
-     2x  in_AF
-     2x  in_ZF
-     2x  in_SF
-     2x  in_TF
-     2x  in_IF
-     2x  in_OF
-     2x  in_NT
-     2x  in_AC
-     2x  in_VIF
-     2x  in_VIP
-     2x  in_ID
-
-Functions:
-  FUN_0041206c
-  FUN_00481b0c
-  FUN_00563d90
-  FUN_00565c12
-  FUN_00566ba0
-  FUN_005670b1
-  FUN_005670c1
-  FUN_005670ed
-  FUN_00568b00
-  FUN_00568bb0
-  FUN_00569928
-  FUN_0056a0c0
-  FUN_0056a0f7
-  FUN_0056a697
-  FUN_0056a6ad
-  FUN_0056a6c4
-  FUN_0056af76
-  FUN_0056afe8
-  FUN_0056b1a4
-  FUN_0056bdd2
-  FUN_0056bf67
-  FUN_0056c5a8
-  FUN_0056dc98
-  FUN_0056ddc0
-  FUN_0056ef60
-  FUN_0056efb8
-  FUN_0056f100
-  FUN_0056f14c
-  FUN_0056f573
-  FUN_005700d0
-  FUN_00570d50
-  FUN_00571a9d
-  FUN_00571b2c
-  FUN_00571b8e
-  FUN_00573a31
-  FUN_00573afc
-  FUN_00574264
-  cockpit_drawsurf.cpp_CDrawSurface_clipLine_FUN_0045c440
-  core_actor.cpp_FUN_0040e120
-  core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
-  core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004280b0
-  core_dstrender.cpp_memcpyMMX_FUN_00465341
-  core_mmx.c_detectCPUFeatures_FUN_004d9e70
-  core_mmx.c_detectIntelProcessor_FUN_004d9eac
-  core_mmx.c_detectMMXSupport_FUN_004d9f59
-  wincore_windll.cpp_clearScreenRegion_FUN_0052ef37
-  wincore_windll.cpp_clearScreen_FUN_0052ee70
-  wincore_windll.cpp_clearZBufferNative_FUN_0052eed4
-  wincore_windll.cpp_fillDepthRegion_FUN_0052efc2
-  wincore_windll.cpp_renderAlphaRow16_FUN_005305f7
-  wincore_windll.cpp_renderAlphaRow32_FUN_0053055c
-  wincore_windll.cpp_renderScanlineSwapped_FUN_00530716
-
-====================================================================================================
-TYPE: unknown_field (272 occurrences)
-====================================================================================================
-
-Unique patterns:
-   176x  ._0_4_
-    63x  ._4_4_
+   187x  ._0_4_
+    83x  ._4_4_
     21x  ._2_2_
      7x  ._0_2_
      3x  ._2_1_
      1x  ._3_1_
+     1x  ._0_1_
      1x  ._1_1_
 
 Functions:
   FUN_00418a00
   FUN_004194b0
   FUN_00439f50
+  FUN_00468d00
   FUN_00469ce0
+  FUN_00473080
   FUN_00473190
   FUN_00477890
   FUN_00478790
@@ -11381,12 +13513,15 @@ Functions:
   FUN_004b32d0
   FUN_004b9fe0
   FUN_004fbf20
+  FUN_0052f031
+  FUN_0052f823
   FUN_00541d00
   FUN_00567964
   FUN_00567a5c
   FUN_00567d88
   FUN_0056974c
   FUN_00569928
+  FUN_0056d608
   FUN_0056f852
   FUN_0056fa80
   core_actor.cpp_FUN_0040db50
@@ -11449,16 +13584,65 @@ Functions:
   support_trisock.cpp_bindSocket_FUN_00548f70
 
 ====================================================================================================
-TYPE: unrolled_strlen (234 occurrences)
+TYPE: nonstandard_int (275 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   234x  do { if (v==0) break; v=v-1; ... }
+   133x  uint7
+    70x  uint5
+    56x  int3
+     8x  int5
+     4x  uint6
+     3x  uint3
+     1x  int6
+
+Functions:
+  FUN_0040e1cc
+  FUN_0041206c
+  FUN_00417fec
+  FUN_0046556f
+  FUN_0046568b
+  FUN_0052f031
+  FUN_0052f823
+  FUN_00569928
+  FUN_0056a0c0
+  FUN_0056a697
+  FUN_0056a6ad
+  core_dcamera.cpp_blendCoronaTextureSpan_FUN_00445650
+  core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00465f50
+  core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9
+  core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
+  core_dstrender.cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930
+  core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7
+  core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94
+  core_dstrender.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b
+  core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886
+  core_dstrender.cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_004652d0
+  core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520
+  core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda
+  core_dstrender.cpp_spatialFilter9TapMMX_FUN_004654c5
+  core_flies.cpp_drawFlyPixel_FUN_0048f3c0
+  engine_font.cpp_drawAlphaBlendedPixels_FUN_00491160
+  engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005580b0
+  wincore_windll.cpp_renderAlphaRow16_FUN_005305f7
+  wincore_windll.cpp_renderAlphaRow32_FUN_0053055c
+
+====================================================================================================
+TYPE: unrolled_strlen (242 occurrences)
+====================================================================================================
+
+Unique patterns:
+   242x  do { if (v==0) break; v=v-1; ... }
 
 Functions:
   FUN_004014a0
   FUN_004014f0
+  FUN_00470730
   FUN_00470eb0
+  FUN_00474230
+  FUN_0047a5e0
+  FUN_004a0260
+  FUN_004a0430
   FUN_004a57c0
   FUN_004c2470
   FUN_004c85f0
@@ -11466,11 +13650,13 @@ Functions:
   FUN_004febd0
   FUN_004fee30
   FUN_004feff0
+  FUN_00521d80
   FUN_00522480
   FUN_005633fc
   FUN_005687bc
   FUN_005696e8
   FUN_0056e940
+  FUN_0056ead4
   FUN_0056fe65
   core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
@@ -11526,148 +13712,38 @@ Functions:
   wincore_winrun.cpp_setRegistryStringValue_FUN_00559da0
 
 ====================================================================================================
-TYPE: nonstandard_int (229 occurrences)
+TYPE: static_shift_too_many_bits (218 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   107x  uint7
-    66x  uint5
-    46x  int3
-     5x  int5
-     2x  uint3
-     2x  uint6
-     1x  int6
+   218x  Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)
 
 Functions:
-  FUN_0041206c
-  FUN_0046556f
-  FUN_0046568b
-  FUN_00569928
-  FUN_0056a0c0
-  FUN_0056a697
-  FUN_0056a6ad
-  core_dcamera.cpp_blendCoronaTextureSpan_FUN_00445650
-  core_dstrender.cpp_alphaBlendPixelsMMX_FUN_00465f50
-  core_dstrender.cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN_00465fc9
-  core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
-  core_dstrender.cpp_blendLightmapPerPxU32toU16pBB12Px2MMX_FUN_00466930
-  core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7
-  core_dstrender.cpp_blendLightmapPerPxU64toU16pAmbientPx2MMX_FUN_00466e94
-  core_dstrender.cpp_blendLightmapPerPxU64toU32AmbientPx2MMX_FUN_00465c9b
-  core_dstrender.cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886
-  core_dstrender.cpp_blendLightmapSharedU32toU32NoBiasPx1MMX_FUN_004652d0
-  core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU16pBB34Px2MMX_FUN_00466520
-  core_dstrender.cpp_blendVHBilerpLightmapSharedU64toU64pAmbientPx2MMX_FUN_00464fda
-  core_dstrender.cpp_spatialFilter9TapMMX_FUN_004654c5
-  core_flies.cpp_drawFlyPixel_FUN_0048f3c0
-  engine_font.cpp_drawAlphaBlendedPixels_FUN_00491160
-  engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005580b0
-  wincore_windll.cpp_renderAlphaRow16_FUN_005305f7
-  wincore_windll.cpp_renderAlphaRow32_FUN_0053055c
-
-====================================================================================================
-TYPE: static_legacy_uninitvar (191 occurrences)
-====================================================================================================
-
-Unique patterns:
-   191x  Cppcheck: uninitialized variable (legacy detector)
-
-Functions:
-  FUN_00418a00
-  FUN_00446810
-  FUN_00447f20
-  FUN_00469ce0
-  FUN_00477890
-  FUN_00489990
-  FUN_0048d5d0
-  FUN_00494e80
-  FUN_00495a20
-  FUN_00499ca0
-  FUN_004c2470
-  FUN_004d4f30
-  FUN_004e6160
-  FUN_004fd1d0
-  FUN_00510a40
-  FUN_00515ea0
-  FUN_00533750
-  FUN_005384d0
-  FUN_005396d0
-  FUN_0053a260
-  FUN_00563d90
-  FUN_00568bb0
-  FUN_00569040
-  FUN_0056afe8
-  FUN_0056f14c
-  FUN_005706dd
-  FUN_00571a9d
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80
-  core_actor.cpp_FUN_0040b300
-  core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
-  core_box.cpp_CBox_processPhysics_FUN_0041ad10
-  core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730
-  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50
-  core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
-  core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
-  core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350
-  core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430
-  core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520
-  core_dlight.cpp_FUN_0044f9b0
-  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
-  core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0
-  core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0
-  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004990c0
-  core_game.cpp_CGame_beginFadeOut_FUN_004a3820
-  core_game.cpp_calculateIrisFadeCenter_FUN_004a3860
-  core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200
-  core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0
-  core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0
-  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_004ec600
-  core_particle.cpp_CParticle_process_FUN_004ef120
-  core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20
-  core_path.cpp_CPathMap_isLineWalkable_FUN_004f0540
-  core_scat.cpp_CScat_updateAI_FUN_004fc610
-  core_scat.cpp_CScat_updateAiming_FUN_004fd450
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0
-  core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350
-  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920
-  core_sound.cpp_playSfxInternal_FUN_0052d120
-  core_sound.cpp_updateListeners_FUN_0052c9d0
-  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
-  core_stranger.cpp_CStranger_tryClimbLadder_FUN_0053bf90
-  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0053c3b0
-  core_turret.cpp_CTurret_updateTargeting_FUN_0054a110
-  core_vampboss.cpp_CVampireBoss_process_FUN_0054c690
-  core_wateract.cpp_CWaterActor_setup_FUN_00551370
-  core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_00557cc0
-  core_xform.cpp_matrixToQuaternion_FUN_0055cf10
-  core_xform.cpp_slerpQuaternion_FUN_0055d2d0
-  core_zombie.cpp_FUN_00561010
-  engine_2d.c_findBestPaletteMatch_FUN_00401850
-  shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0
-  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_0052aa90
-  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10
-  wincore_wddvmem.cpp_swapBuffers_FUN_00553910
-
-====================================================================================================
-TYPE: static_shift_too_many_bits (171 occurrences)
-====================================================================================================
-
-Unique patterns:
-   171x  Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)
-
-Functions:
+  FUN_0042df00
+  FUN_0042e290
+  FUN_0042f8c0
   FUN_0042fd60
   FUN_004421b0
+  FUN_00443180
+  FUN_004442a0
+  FUN_004450b0
+  FUN_004451a0
+  FUN_00445310
   FUN_00445750
+  FUN_00464200
   FUN_00469ce0
   FUN_004720c0
+  FUN_00477300
+  FUN_00477340
   FUN_00478790
   FUN_004accf0
+  FUN_004dcf60
+  FUN_004ee740
+  FUN_00525c10
+  FUN_0052f031
+  FUN_0052f823
+  FUN_005300ec
+  FUN_00530322
   FUN_0056d87c
   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0
   core_bugs.cpp_FUN_00423790
@@ -11725,17 +13801,121 @@ Functions:
   sound_sndwav.cpp_CWavOutDevice_setMode_FUN_0052c460
 
 ====================================================================================================
-TYPE: self_copy_guard (153 occurrences)
+TYPE: static_legacy_uninitvar (212 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   153x  if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }
+   212x  Cppcheck: uninitialized variable (legacy detector)
+
+Functions:
+  FUN_00418a00
+  FUN_0042cde0
+  FUN_00446810
+  FUN_00447f20
+  FUN_0044ae80
+  FUN_0044db00
+  FUN_00450c90
+  FUN_00469ce0
+  FUN_0046f060
+  FUN_00477890
+  FUN_00489990
+  FUN_0048d5d0
+  FUN_00494080
+  FUN_00494e80
+  FUN_00495a20
+  FUN_00499ca0
+  FUN_0049ecf0
+  FUN_0049ed20
+  FUN_004c2470
+  FUN_004d4f30
+  FUN_004dcf60
+  FUN_004e6160
+  FUN_004fd1d0
+  FUN_00510a40
+  FUN_00515ea0
+  FUN_0052bbd0
+  FUN_0052eac0
+  FUN_00533750
+  FUN_005384d0
+  FUN_005396d0
+  FUN_0053a260
+  FUN_0053d700
+  FUN_00550750
+  FUN_0055b0b0
+  FUN_00563d90
+  FUN_00568bb0
+  FUN_00569040
+  FUN_0056afe8
+  FUN_0056f14c
+  FUN_005706dd
+  FUN_00571a9d
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80
+  core_actor.cpp_FUN_0040b300
+  core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
+  core_box.cpp_CBox_processPhysics_FUN_0041ad10
+  core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730
+  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50
+  core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_004410c0
+  core_dcamera.cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
+  core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350
+  core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430
+  core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520
+  core_dlight.cpp_FUN_0044f9b0
+  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_004687e0
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
+  core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0
+  core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0
+  core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004990c0
+  core_game.cpp_CGame_beginFadeOut_FUN_004a3820
+  core_game.cpp_calculateIrisFadeCenter_FUN_004a3860
+  core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200
+  core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0
+  core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0
+  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_004ec600
+  core_particle.cpp_CParticle_process_FUN_004ef120
+  core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20
+  core_path.cpp_CPathMap_isLineWalkable_FUN_004f0540
+  core_scat.cpp_CScat_updateAI_FUN_004fc610
+  core_scat.cpp_CScat_updateAiming_FUN_004fd450
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0
+  core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_0051e350
+  core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920
+  core_sound.cpp_playSfxInternal_FUN_0052d120
+  core_sound.cpp_updateListeners_FUN_0052c9d0
+  core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760
+  core_stranger.cpp_CStranger_tryClimbLadder_FUN_0053bf90
+  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0053c3b0
+  core_turret.cpp_CTurret_updateTargeting_FUN_0054a110
+  core_vampboss.cpp_CVampireBoss_process_FUN_0054c690
+  core_wateract.cpp_CWaterActor_setup_FUN_00551370
+  core_werewolf.cpp_CWerewolf_processChainConstraint_FUN_00557cc0
+  core_xform.cpp_matrixToQuaternion_FUN_0055cf10
+  core_xform.cpp_slerpQuaternion_FUN_0055d2d0
+  core_zombie.cpp_FUN_00561010
+  engine_2d.c_findBestPaletteMatch_FUN_00401850
+  engine_light.cpp_calculatePhongLighting_FUN_004c6a70
+  shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0
+  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_0052aa90
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10
+  wincore_wddvmem.cpp_swapBuffers_FUN_00553910
+
+====================================================================================================
+TYPE: self_copy_guard (154 occurrences)
+====================================================================================================
+
+Unique patterns:
+   154x  if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }
 
 Functions:
   FUN_00418a00
   FUN_004194b0
   FUN_00421540
   FUN_0043d1c0
+  FUN_00468d00
   FUN_0046baa0
   FUN_0046bd90
   FUN_00477890
@@ -11817,213 +13997,45 @@ Functions:
   core_zombie.cpp_FUN_00561010
 
 ====================================================================================================
-TYPE: raw_address_pointer_store (131 occurrences)
-====================================================================================================
-
-Unique patterns:
-   105x  *(code **)(*0x01CC30E4
-     2x  *(byte **)(iVar7 + 0x1cc8110
-     2x  *(int **)(iVar6 * 4 + 0x2dc92a8
-     2x  *(int **)(iVar1 * 4 + 0x2dc92a8
-     2x  *(int **)(iVar2 * 4 + 0x2dc92a8
-     1x  *(char **)(param_1 * 4 + 0x6afe3c
-     1x  *(byte **)(param_1 * 4 + 0x6afe3c
-     1x  *(uint **)(iVar7 * 4 + 0x767270
-     1x  *(uint **)(iVar3 * 4 + 0x767270
-     1x  *(uint **)(iVar5 + 0x121660c
-     1x  *(code **)(iVar3 + 0x1af4edc
-     1x  *(byte **)(iVar3 + 0x1b748b4
-     1x  *(int **)(iVar5 + 0x1b748b4
-     1x  *(uint **)(iVar1 + 0x1bcd248
-     1x  *(byte **)(iVar3 + 0x1cc78d8
-     1x  *(uint **)(iVar18 + 0x2dc8360
-     1x  *(int **)(iVar5 + 0x2dc92a8
-     1x  *(uint **)(iVar3 + 0x2dc92a8
-     1x  *(int **)(iVar4 * 4 + 0x2dc92a8
-     1x  *(int **)(iVar4 * 4 + 0x2dc9324
-
-Functions:
-  FUN_004012d0
-  FUN_004013d0
-  FUN_00445750
-  FUN_004720c0
-  FUN_0049cc10
-  FUN_0049f930
-  FUN_004d23d0
-  FUN_00573e30
-  core_game.cpp_CGame_processCheatCodes_FUN_004a0550
-  core_game.cpp_CGame_processFudge_FUN_0049b260
-  core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30
-  core_game.cpp_CGame_runGameSession_FUN_0049da10
-  core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0
-  core_menu.cpp_calibrateGamepad_FUN_004cf8d0
-  core_menu.cpp_configureCustomKeys_FUN_004d0d20
-  core_menu.cpp_configureGraphicsOptions_FUN_004d0080
-  core_menu.cpp_configureSoundOptions_FUN_004d12e0
-  core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440
-  core_menu.cpp_showOptionsScreen_FUN_004d21c0
-  core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90
-  core_netgame.cpp_CNetGame_runLobby_FUN_004eb520
-  core_netgame.cpp_CNetGame_syncPlayers_FUN_004ea370
-  engine_clipper.c_FUN_00432cd0
-  engine_clipper.c_clipPolygonToViewport_FUN_004349a0
-  engine_dosio.cpp_findFile_FUN_004567a0
-  engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
-  shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0046f390
-  shape_edittool.cpp_CPickList_handleInput_FUN_00474ea0
-  sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50
-  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880
-  sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0
-  sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_0052bae0
-  sound_snddx.cpp_CDirectSoundDevice_reset_FUN_0052a0d0
-  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270
-  sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0
-  sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e60
-  sound_sndwav.cpp_CWavOutDevice_start_FUN_0052c340
-  thunk_FUN_004d23d0
-  wincore_winrun.cpp_FUN_00559260
-
-====================================================================================================
-TYPE: stack_param (109 occurrences)
-====================================================================================================
-
-Unique patterns:
-    28x  in_stack_0000003c
-    19x  in_stack_0000002c
-    17x  in_stack_00000038
-    15x  in_stack_00000034
-     9x  in_stack_00000028
-     5x  in_stack_00000044
-     4x  in_stack_00000030
-     4x  in_stack_00000024
-     2x  in_stack_fffff7ec
-     2x  in_stack_00000020
-     2x  in_stack_00000040
-     2x  in_stack_00000048
-
-Functions:
-  FUN_00573a31
-  core_menu.cpp_configureSoundOptions_FUN_004d12e0
-  engine_3d.c_FUN_00409590
-  engine_3d.c_clipAndDrawLine2D_FUN_00409290
-  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOrient_FUN_0052aa90
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10
-
-====================================================================================================
-TYPE: carry_arith_idiom (105 occurrences)
-====================================================================================================
-
-Unique patterns:
-    36x  CARRY4(uVar3,uVar3)
-    23x  CARRY4(uVar4,uVar4)
-    21x  CARRY4(uVar2,uVar2)
-     3x  CARRY4(uVar1,(uint)
-     2x  CARRY4(uVar8,local_34._0_4_)
-     2x  CARRY4(param_5,param_5)
-     2x  CARRY4(in_EAX,in_EAX)
-     2x  CARRY4((uint)
-     2x  CARRY4(uVar2,uVar1)
-     1x  CARRY4(param_2,param_2)
-     1x  CARRY4(in_EDX,in_EDX)
-     1x  CARRY4(in_EDX * 2,(uint)
-     1x  CARRY4(uVar2 * 2,uVar2 * 2)
-     1x  CARRY4(uStack_2c,uStack_2c)
-     1x  CARRY4(uStack_20,uStack_20)
-     1x  CARRY4(unaff_EBX,unaff_EBX)
-     1x  CARRY4(in_ECX,in_ECX)
-     1x  CARRY4(uVar5,uVar5)
-     1x  CARRY4(uVar5 * 2,uVar1)
-     1x  CARRY4(in_EAX,unaff_EBX)
-
-Functions:
-  FUN_0056be50
-  FUN_0056f100
-  FUN_00570d50
-  FUN_00571a9d
-  FUN_00571b8e
-  core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0
-  core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770
-  core_xform.cpp_clipInterpolateRightPlane_FUN_0055d6b0
-  core_xform.cpp_clipInterpolateTopPlane_FUN_0055d830
-  engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00
-  engine_clipper.c_interpolateVertexBottomClip_FUN_00431730
-  engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0
-  engine_clipper.c_interpolateVertexLeftClip_FUN_00431530
-  engine_clipper.c_interpolateVertexNearClip_FUN_00431930
-  engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0
-  engine_clipper.c_interpolateVertexRightClip_FUN_00431630
-  engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30
-  engine_clipper.c_interpolateVertexTopClip_FUN_00431830
-  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_00523610
-  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00523750
-
-====================================================================================================
-TYPE: bitcast_double_pair (103 occurrences)
-====================================================================================================
-
-Unique patterns:
-   103x  __BITCAST_DOUBLE(CONCAT44(
-
-Functions:
-  FUN_00469ce0
-  FUN_00494e80
-  FUN_005464a0
-  FUN_0056f852
-  FUN_005706dd
-  FUN_00571bdc
-  core_dcube.cpp_clipEdgeToPlane_FUN_004484c0
-  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
-  core_dtri.cpp_clipLineToPlane_FUN_0046d4e0
-  core_menu.cpp_configureSoundOptions_FUN_004d12e0
-  core_script.cpp_CScript_step_FUN_004ff2c0
-  core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-  core_xform.cpp_matrixToEulerAnglesZYX_FUN_0055b6c0
-  core_xform.cpp_matrixToEulerAngles_FUN_0055b180
-  core_xform.cpp_slerpQuaternion_FUN_0055d2d0
-  shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760
-  sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00524520
-  sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10
-  sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870
-  sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e60
-  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_00523610
-  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00523750
-  sound_sndmain.cpp_startSoundThread_FUN_005286d0
-
-====================================================================================================
-TYPE: stack_alignment_array (95 occurrences)
+TYPE: stack_alignment_array (108 occurrences)
 ====================================================================================================
 
 Unique patterns:
      6x  uStackY_30
+     5x  aiStackY_1028
+     4x  auStackY_1010
      4x  aiStackY_1018
      4x  aiStackY_100c
      4x  afStackY_1000
      3x  afStackY_1870
-     3x  aiStackY_1028
+     3x  auStackY_17f8
+     3x  auStackY_1804
      2x  aiStackY_1030
      2x  afStackY_1064
-     2x  auStackY_17f8
      2x  auStackY_1000
      2x  aiStackY_1020
      2x  aiStackY_1024
      2x  auStackY_180c
      2x  aiStackY_101c
      2x  afStackY_1860
-     2x  auStackY_1804
      2x  uStackY_38
      2x  auStackY_34
      1x  auStackY_1880
-     1x  afStackY_1090
 
 Functions:
+  FUN_00406920
+  FUN_00406a00
+  FUN_00406b80
   FUN_00418a00
   FUN_00439f50
   FUN_0043b110
   FUN_00441440
   FUN_004421b0
+  FUN_00444600
   FUN_00445750
+  FUN_00446760
   FUN_00447f20
+  FUN_0045d310
   FUN_00469ce0
   FUN_0046b650
   FUN_0046bfe0
@@ -12037,17 +14049,24 @@ Functions:
   FUN_004b32d0
   FUN_004b9fe0
   FUN_004ba740
+  FUN_004cde10
   FUN_004cea50
   FUN_004d4650
   FUN_004f0360
+  FUN_004f18c0
+  FUN_004f1f80
   FUN_004f5d90
   FUN_004f7ae0
   FUN_004fbf20
   FUN_004fd1d0
   FUN_0051d650
+  FUN_0051f3f0
   FUN_0053a260
   FUN_00541d00
+  FUN_00548fc0
+  FUN_0055d1f0
   FUN_00573e30
+  FUN_00573ed0
   core_baron.cpp_FUN_00410490
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041a310
@@ -12105,6 +14124,89 @@ Functions:
   support_trisock.cpp_performSocketOperation_FUN_00549090
 
 ====================================================================================================
+TYPE: carry_arith_idiom (105 occurrences)
+====================================================================================================
+
+Unique patterns:
+    36x  CARRY4(uVar3,uVar3)
+    23x  CARRY4(uVar4,uVar4)
+    21x  CARRY4(uVar2,uVar2)
+     3x  CARRY4(uVar1,(uint)
+     2x  CARRY4(uVar8,local_34._0_4_)
+     2x  CARRY4(param_5,param_5)
+     2x  CARRY4(in_EAX,in_EAX)
+     2x  CARRY4((uint)
+     2x  CARRY4(uVar2,uVar1)
+     1x  CARRY4(param_2,param_2)
+     1x  CARRY4(in_EDX,in_EDX)
+     1x  CARRY4(in_EDX * 2,(uint)
+     1x  CARRY4(uVar2 * 2,uVar2 * 2)
+     1x  CARRY4(uStack_2c,uStack_2c)
+     1x  CARRY4(uStack_20,uStack_20)
+     1x  CARRY4(unaff_EBX,unaff_EBX)
+     1x  CARRY4(in_ECX,in_ECX)
+     1x  CARRY4(uVar5,uVar5)
+     1x  CARRY4(uVar5 * 2,uVar1)
+     1x  CARRY4(in_EAX,unaff_EBX)
+
+Functions:
+  FUN_0056be50
+  FUN_0056f100
+  FUN_00570d50
+  FUN_00571a9d
+  FUN_00571b8e
+  core_xform.cpp_clipInterpolateBottomPlane_FUN_0055d8f0
+  core_xform.cpp_clipInterpolateLeftPlane_FUN_0055d770
+  core_xform.cpp_clipInterpolateRightPlane_FUN_0055d6b0
+  core_xform.cpp_clipInterpolateTopPlane_FUN_0055d830
+  engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00
+  engine_clipper.c_interpolateVertexBottomClip_FUN_00431730
+  engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_004337a0
+  engine_clipper.c_interpolateVertexLeftClip_FUN_00431530
+  engine_clipper.c_interpolateVertexNearClip_FUN_00431930
+  engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_004338d0
+  engine_clipper.c_interpolateVertexRightClip_FUN_00431630
+  engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00433b30
+  engine_clipper.c_interpolateVertexTopClip_FUN_00431830
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_00523610
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00523750
+
+====================================================================================================
+TYPE: bitcast_double_pair (105 occurrences)
+====================================================================================================
+
+Unique patterns:
+   105x  __BITCAST_DOUBLE(CONCAT44(
+
+Functions:
+  FUN_00469ce0
+  FUN_00494e80
+  FUN_005235b0
+  FUN_005464a0
+  FUN_0056c56c
+  FUN_0056f852
+  FUN_005706dd
+  FUN_00571bdc
+  core_dcube.cpp_clipEdgeToPlane_FUN_004484c0
+  core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
+  core_dtri.cpp_clipLineToPlane_FUN_0046d4e0
+  core_menu.cpp_configureSoundOptions_FUN_004d12e0
+  core_script.cpp_CScript_step_FUN_004ff2c0
+  core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
+  core_xform.cpp_matrixToEulerAnglesZYX_FUN_0055b6c0
+  core_xform.cpp_matrixToEulerAngles_FUN_0055b180
+  core_xform.cpp_slerpQuaternion_FUN_0055d2d0
+  shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760
+  sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00524520
+  sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10
+  sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_00525870
+  sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e60
+  sound_sndmain.cpp_mixResampleMonoToStereo_FUN_00523610
+  sound_sndmain.cpp_mixResampleStereoToStereo_FUN_00523750
+  sound_sndmain.cpp_startSoundThread_FUN_005286d0
+
+====================================================================================================
 TYPE: unrolled_strcat (93 occurrences)
 ====================================================================================================
 
@@ -12131,7 +14233,181 @@ Functions:
   core_sound.cpp_playSfxInternal_FUN_0052d120
 
 ====================================================================================================
-TYPE: suspect_float (76 occurrences)
+TYPE: warning_jumptable (78 occurrences)
+====================================================================================================
+
+Unique patterns:
+    78x  WARNING: Could not recover jumptable
+
+Functions:
+  FUN_0056bf67
+  FUN_00570d50
+  FUN_00574819
+  FUN_00574825
+  FUN_00574831
+  FUN_0057483d
+  FUN_00574849
+  FUN_00574855
+  FUN_00574861
+  FUN_0057486d
+  FUN_00574879
+  FUN_00574885
+  FUN_00574891
+  FUN_0057489d
+  FUN_005748a9
+  FUN_005748b5
+  FUN_005748c1
+  FUN_005748d5
+  FUN_005748e5
+  FUN_005748f1
+  FUN_005748fd
+  FUN_00574909
+  FUN_00574915
+  FUN_00574921
+  FUN_0057492d
+  FUN_00574939
+  FUN_00574945
+  FUN_00574951
+  FUN_0057495d
+  FUN_00574969
+  FUN_00574975
+  FUN_00574981
+  FUN_0057498d
+  FUN_00574999
+  FUN_005749a5
+  FUN_005749b1
+  FUN_005749bd
+  FUN_005749c9
+  FUN_005749d5
+  FUN_005749e1
+  FUN_005749ed
+  FUN_005749f9
+  FUN_00574a05
+  FUN_00574a13
+  FUN_00574a23
+  FUN_00574a2f
+  FUN_00574a3b
+  FUN_00574a47
+  FUN_00574a53
+  FUN_00574a5f
+  FUN_00574a6b
+  FUN_00574a77
+  FUN_00574a83
+  FUN_00574a8f
+  FUN_00574a9b
+  FUN_00574aa7
+  FUN_00574ab3
+  FUN_00574abf
+  FUN_00574acb
+  FUN_00574ad9
+  FUN_00574ae9
+  FUN_00574af5
+  FUN_00574b01
+  FUN_00574b0d
+  FUN_00574b19
+  FUN_00574b25
+  FUN_00574b31
+  FUN_00574b3d
+  FUN_00574b49
+  FUN_00574b55
+  FUN_00574b63
+  FUN_00574b73
+  FUN_00574b7f
+  FUN_00574b8b
+  FUN_00574b97
+  FUN_00574ba3
+  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0
+  wincore_windll.cpp_renderScanline_FUN_00530710
+
+====================================================================================================
+TYPE: warning_indirect_jump (78 occurrences)
+====================================================================================================
+
+Unique patterns:
+    78x  WARNING: Treating indirect jump as call
+
+Functions:
+  FUN_0056bf67
+  FUN_00570d50
+  FUN_00574819
+  FUN_00574825
+  FUN_00574831
+  FUN_0057483d
+  FUN_00574849
+  FUN_00574855
+  FUN_00574861
+  FUN_0057486d
+  FUN_00574879
+  FUN_00574885
+  FUN_00574891
+  FUN_0057489d
+  FUN_005748a9
+  FUN_005748b5
+  FUN_005748c1
+  FUN_005748d5
+  FUN_005748e5
+  FUN_005748f1
+  FUN_005748fd
+  FUN_00574909
+  FUN_00574915
+  FUN_00574921
+  FUN_0057492d
+  FUN_00574939
+  FUN_00574945
+  FUN_00574951
+  FUN_0057495d
+  FUN_00574969
+  FUN_00574975
+  FUN_00574981
+  FUN_0057498d
+  FUN_00574999
+  FUN_005749a5
+  FUN_005749b1
+  FUN_005749bd
+  FUN_005749c9
+  FUN_005749d5
+  FUN_005749e1
+  FUN_005749ed
+  FUN_005749f9
+  FUN_00574a05
+  FUN_00574a13
+  FUN_00574a23
+  FUN_00574a2f
+  FUN_00574a3b
+  FUN_00574a47
+  FUN_00574a53
+  FUN_00574a5f
+  FUN_00574a6b
+  FUN_00574a77
+  FUN_00574a83
+  FUN_00574a8f
+  FUN_00574a9b
+  FUN_00574aa7
+  FUN_00574ab3
+  FUN_00574abf
+  FUN_00574acb
+  FUN_00574ad9
+  FUN_00574ae9
+  FUN_00574af5
+  FUN_00574b01
+  FUN_00574b0d
+  FUN_00574b19
+  FUN_00574b25
+  FUN_00574b31
+  FUN_00574b3d
+  FUN_00574b49
+  FUN_00574b55
+  FUN_00574b63
+  FUN_00574b73
+  FUN_00574b7f
+  FUN_00574b8b
+  FUN_00574b97
+  FUN_00574ba3
+  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0
+  wincore_windll.cpp_renderScanline_FUN_00530710
+
+====================================================================================================
+TYPE: suspect_float (77 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -12160,6 +14436,7 @@ Functions:
   FUN_0043dad0
   FUN_0048b6f0
   FUN_00499ca0
+  FUN_004f16d0
   core_actor.cpp_FUN_0040db50
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
   core_box.cpp_CBox_updateTransform_FUN_0041aaa0
@@ -12193,18 +14470,25 @@ Functions:
   engine_matrix.c_invertTransformMatrix_FUN_004ccae0
 
 ====================================================================================================
-TYPE: warning_unreachable (58 occurrences)
+TYPE: warning_unreachable (67 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    58x  WARNING: Removing unreachable block
+    67x  WARNING: Removing unreachable block
 
 Functions:
+  FUN_0042d5c0
+  FUN_00432210
+  FUN_00490ff0
   FUN_004b8700
   FUN_004b9fe0
   FUN_004c4970
+  FUN_005214e0
   FUN_0053f310
   FUN_00540f50
+  FUN_0055d9c0
+  FUN_0055dcb0
+  FUN_0056ed08
   cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_0045b800
   cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_0045b5f0
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
@@ -12229,16 +14513,21 @@ Functions:
   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0
 
 ====================================================================================================
-TYPE: warning_type_propagation (45 occurrences)
+TYPE: warning_type_propagation (51 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    45x  WARNING: Type propagation algorithm not settling
+    51x  WARNING: Type propagation algorithm not settling
 
 Functions:
+  FUN_00406920
+  FUN_00406a00
+  FUN_00406b80
   FUN_0040fa20
+  FUN_00432210
   FUN_00439f50
   FUN_004421b0
+  FUN_00446760
   FUN_00497900
   FUN_004b2430
   FUN_004b32d0
@@ -12251,6 +14540,7 @@ Functions:
   FUN_0051d650
   FUN_0053a260
   FUN_00541d00
+  FUN_00548fc0
   FUN_00569040
   core_baron.cpp_FUN_00410490
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730
@@ -12283,14 +14573,15 @@ Functions:
   support_trisock.cpp_performSocketOperation_FUN_00549090
 
 ====================================================================================================
-TYPE: sub84_truncation (37 occurrences)
+TYPE: sub84_truncation (38 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    37x  SUB84(
+    38x  SUB84(
 
 Functions:
   FUN_0046b650
+  FUN_0056c56c
   core_dcube.cpp_clipEdgeToPlane_FUN_004484c0
   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
@@ -12309,14 +14600,17 @@ Functions:
   sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e60
 
 ====================================================================================================
-TYPE: pointer_stride_bytecount (32 occurrences)
+TYPE: pointer_stride_bytecount (37 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    25x  memmove
+    30x  memmove
      7x  memset
 
 Functions:
+  FUN_00481630
+  FUN_00481770
+  FUN_004e97e0
   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00453620
   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00480420
@@ -12343,16 +14637,20 @@ Functions:
   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40
 
 ====================================================================================================
-TYPE: unrolled_strchr (30 occurrences)
+TYPE: unrolled_strchr (36 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    30x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
+    36x  do { snap; if (*p=='X') goto; if (*p=='\0') break; ... }
 
 Functions:
+  FUN_0044d550
   FUN_00470eb0
+  FUN_004b1090
   FUN_004c8440
+  FUN_00544c10
   FUN_0056c750
+  FUN_00572b70
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480
   cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0
   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250
@@ -12372,6 +14670,60 @@ Functions:
   engine_pcx.c_saveScreenRaw16_FUN_004f2620
   engine_pcx.c_saveScreenRaw32_FUN_004f27e0
   engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0
+
+====================================================================================================
+TYPE: raw_address_pointer_store (30 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  *(byte **)(iVar7 + 0x1cc8110
+     2x  *(int **)(iVar6 * 4 + 0x2dc92a8
+     2x  *(int **)(iVar1 * 4 + 0x2dc92a8
+     2x  *(int **)(iVar2 * 4 + 0x2dc92a8
+     1x  *(char **)(param_1 * 4 + 0x6afe3c
+     1x  *(byte **)(param_1 * 4 + 0x6afe3c
+     1x  *(uint **)(iVar4 * 4 + 0x767270
+     1x  *(uint **)(iVar7 * 4 + 0x767270
+     1x  *(uint **)(iVar6 * 4 + 0x767270
+     1x  *(uint **)(iVar3 * 4 + 0x767270
+     1x  *(uint **)(iVar5 + 0x121660c
+     1x  *(code **)(iVar3 + 0x1af4edc
+     1x  *(byte **)(iVar3 + 0x1b748b4
+     1x  *(int **)(iVar5 + 0x1b748b4
+     1x  *(uint **)(iVar1 + 0x1bcd248
+     1x  *(byte **)(iVar3 + 0x1cc78d8
+     1x  *(uint **)(iVar18 + 0x2dc8360
+     1x  *(float **)(param_1 * 4 + 0x2dc8360
+     1x  *(int **)(param_1 * 4 + 0x2dc92a8
+     1x  *(int **)(iVar5 + 0x2dc92a8
+
+Functions:
+  FUN_004012d0
+  FUN_004013d0
+  FUN_00432210
+  FUN_00434210
+  FUN_00445750
+  FUN_004720c0
+  FUN_004d23d0
+  FUN_005293f0
+  FUN_00529de0
+  FUN_00573e30
+  core_menu.cpp_configureSoundOptions_FUN_004d12e0
+  engine_clipper.c_FUN_00432cd0
+  engine_clipper.c_clipPolygonToViewport_FUN_004349a0
+  engine_dosio.cpp_findFile_FUN_004567a0
+  engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
+  sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_0052af50
+  sound_snddx.cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_0052b880
+  sound_snddx.cpp_CDirectSoundDevice_isSfxPlaying_FUN_0052b7e0
+  sound_snddx.cpp_CDirectSoundDevice_killSfx_FUN_0052bae0
+  sound_snddx.cpp_CDirectSoundDevice_reset_FUN_0052a0d0
+  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270
+  sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_0052b9a0
+  sound_sndmain.cpp_analyzeFrequencyBand_FUN_00528e60
+  sound_sndwav.cpp_CWavOutDevice_start_FUN_0052c340
+  thunk_FUN_004d23d0
+  wincore_winrun.cpp_FUN_00559260
 
 ====================================================================================================
 TYPE: static_array_oob (30 occurrences)
@@ -12407,6 +14759,22 @@ Functions:
   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
 
 ====================================================================================================
+TYPE: fpu_register_input (28 occurrences)
+====================================================================================================
+
+Unique patterns:
+    22x  in_ST0
+     6x  in_ST1
+
+Functions:
+  FUN_004819f0
+  FUN_00566c6c
+  FUN_0056bdc8
+  FUN_0056bdd2
+  FUN_0056c5a8
+  FUN_00570d50
+
+====================================================================================================
 TYPE: eflags_input (26 occurrences)
 ====================================================================================================
 
@@ -12429,29 +14797,17 @@ Functions:
   core_mmx.c_detectIntelProcessor_FUN_004d9eac
 
 ====================================================================================================
-TYPE: fpu_register_input (24 occurrences)
-====================================================================================================
-
-Unique patterns:
-    18x  in_ST0
-     6x  in_ST1
-
-Functions:
-  FUN_0056bdc8
-  FUN_0056bdd2
-  FUN_0056c5a8
-  FUN_00570d50
-
-====================================================================================================
-TYPE: unknown_type (22 occurrences)
+TYPE: unknown_type (24 occurrences)
 ====================================================================================================
 
 Unique patterns:
     14x  unkuint10
-     8x  unkbyte10
+    10x  unkbyte10
 
 Functions:
+  FUN_00450c90
   FUN_004c4970
+  FUN_00566c6c
   FUN_0056a388
   FUN_0056be50
   FUN_00570d50
@@ -12460,23 +14816,122 @@ Functions:
   core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_004785a0
 
 ====================================================================================================
-TYPE: sign_compare_idiom (20 occurrences)
+TYPE: sign_compare_idiom (23 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    20x  SBORROW4
+    22x  SBORROW4
+     1x  SBORROW1
 
 Functions:
   FUN_00445750
   FUN_00469ce0
+  FUN_004f9bc0
   FUN_004f9dd0
   FUN_004fa2e0
+  FUN_00570630
   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00444920
   core_water.cpp_CWater_calculateVisibleTiles_FUN_00550800
   engine_3d.c_isVisiblePlane_FUN_00404610
   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
   engine_prim.c_getTriangleWindingFromIndices1_FUN_004f9ad0
   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
+
+====================================================================================================
+TYPE: static_invalid_pointer_cast (20 occurrences)
+====================================================================================================
+
+Unique patterns:
+    20x  Cppcheck: invalid pointer cast
+
+Functions:
+  FUN_0040bd90
+  FUN_0048f490
+  FUN_004950a0
+  FUN_004e0d20
+  FUN_005125a0
+  FUN_005148b0
+  FUN_00518f60
+  core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0
+  core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90
+  core_fire.cpp_CToss_process_FUN_004874d0
+  core_weather.cpp_CWeather_setOriginAndRotation_FUN_005557d0
+
+====================================================================================================
+TYPE: warning_overlapping_instructions (20 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  WARNING: Instruction at (ram,0x004320dd) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x00432b49) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x00432bd9) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x00433cd8) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x00433d44) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x00433e1e) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x00433e8e) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x00433f59) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x00433fc9) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x0043409f) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x0043410f) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x00434493) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x00434542) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x0043469c) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x0043474e) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x004347cd) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x0043484c) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x004348cb) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x0055de8f) overlaps instruction at
+     1x  WARNING: Instruction at (ram,0x0055df1a) overlaps instruction at
+
+Functions:
+  FUN_004320dc
+  FUN_00432b48
+  FUN_00432bd8
+  FUN_00433cd7
+  FUN_00433d43
+  FUN_00433e1d
+  FUN_00433e8d
+  FUN_00433f58
+  FUN_00433fc8
+  FUN_0043409e
+  FUN_0043410e
+  FUN_00434492
+  FUN_00434541
+  FUN_0043469b
+  FUN_0043474d
+  FUN_004347cc
+  FUN_0043484b
+  FUN_004348ca
+  FUN_0055de8e
+  FUN_0055df19
+
+====================================================================================================
+TYPE: fnstsw_flag_artifact (17 occurrences)
+====================================================================================================
+
+Unique patterns:
+     6x  CONCAT22(-(ushort)((short)((ulonglong)DAT_005bf48c >> 0x10
+     1x  CONCAT22((short)(in_EDX >> 0x10
+     1x  CONCAT22((short)((uint)local_24 >> 0x10
+     1x  CONCAT22((short)((uint)iVar2 >> 0x10
+     1x  CONCAT22((short)((uint)iVar3 >> 0x10
+     1x  CONCAT22((short)((uint)fVar3 >> 0x10
+     1x  CONCAT22((short)uVar7 * (short)(uVar44 >> 0x10
+     1x  CONCAT22((short)(uVar44 >> 0x10
+     1x  CONCAT22((short)uVar9 * (short)(uVar46 >> 0x10
+     1x  CONCAT22((short)(uVar46 >> 0x10
+     1x  CONCAT22((short)((uint)puVar8 >> 0x10
+     1x  CONCAT22((short)((uint)iVar4 >> 0x10
+
+Functions:
+  FUN_004421b0
+  FUN_0052f031
+  FUN_0052f823
+  FUN_00569928
+  FUN_0056f573
+  core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
+  core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_004e2070
+  core_set.cpp_CDemonSet_processActors_FUN_00509140
 
 ====================================================================================================
 TYPE: bit_int_float_compare (17 occurrences)
@@ -12517,13 +14972,14 @@ Functions:
   core_turret.cpp_CTurret_updateTargeting_FUN_0054a110
 
 ====================================================================================================
-TYPE: static_self_assignment (14 occurrences)
+TYPE: static_self_assignment (16 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    14x  Cppcheck: redundant self-assignment
+    16x  Cppcheck: redundant self-assignment
 
 Functions:
+  FUN_00430630
   FUN_005700d0
   FUN_00571fd1
   core_batman.cpp_CBatman_processDismemberment_FUN_004145f0
@@ -12554,23 +15010,6 @@ Functions:
   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00524630
 
 ====================================================================================================
-TYPE: static_invalid_pointer_cast (10 occurrences)
-====================================================================================================
-
-Unique patterns:
-    10x  Cppcheck: invalid pointer cast
-
-Functions:
-  FUN_0048f490
-  FUN_004950a0
-  FUN_005125a0
-  FUN_005148b0
-  core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0
-  core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd90
-  core_fire.cpp_CToss_process_FUN_004874d0
-  core_weather.cpp_CWeather_setOriginAndRotation_FUN_005557d0
-
-====================================================================================================
 TYPE: fast_sqrt_inline (10 occurrences)
 ====================================================================================================
 
@@ -12595,6 +15034,46 @@ Functions:
   core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0
   core_zombie.cpp_FUN_0055ef50
+
+====================================================================================================
+TYPE: fast_inv_sqrt_inline (10 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  fVar3 = (float)(_DAT_01c70710 - ((int)(fVar4 * fVar4 + fVar5 * fVar5 + fVar2 * f
+     1x  local_44 = (float)(_DAT_01c70710 - ((int)local_48 >> 1));
+     1x  fVar1 = (float)(_DAT_01c70710 - ((int)(in_stack_00000004[2] * in_stack_00000004[
+     1x  fVar9 = (float)(_DAT_01c70710 - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * f
+     1x  fVar1 = (float)(_DAT_01c70710 - ((int)fVar1 >> 1));
+     1x  local_8c = (float)(_DAT_01c70710 - ((int)local_90 >> 1));
+     1x  local_28 = (float)(_DAT_01c70710 - ((int)local_2c >> 1));
+     1x  local_70 = (float)(_DAT_01c70710 - ((int)local_74 >> 1));
+     1x  local_7c = (float)(_DAT_01c70710 - ((int)local_80 >> 1));
+
+Functions:
+  FUN_00438900
+  FUN_0050bbc0
+  FUN_0050bcf0
+  core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0
+  core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50
+  core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0
+  core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0
+
+====================================================================================================
+TYPE: undefined_ram (9 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  uRam005bf50c
+     2x  uRam005bf514
+     2x  uRam005bf52c
+     2x  uRam005bf534
+     1x  uRam01bd1ea0
+
+Functions:
+  FUN_0052f031
+  FUN_0052f823
+  engine_2d.c_FUN_00402e90
 
 ====================================================================================================
 TYPE: static_identical_inner_condition (9 occurrences)
@@ -12645,91 +15124,21 @@ Functions:
   FUN_00569040
 
 ====================================================================================================
-TYPE: warning_jumptable (8 occurrences)
-====================================================================================================
-
-Unique patterns:
-     8x  WARNING: Could not recover jumptable
-
-Functions:
-  FUN_0056bf67
-  FUN_00570d50
-  FUN_005748d5
-  FUN_00574a13
-  FUN_00574ad9
-  FUN_00574b63
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0
-  wincore_windll.cpp_renderScanline_FUN_00530710
-
-====================================================================================================
-TYPE: warning_indirect_jump (8 occurrences)
-====================================================================================================
-
-Unique patterns:
-     8x  WARNING: Treating indirect jump as call
-
-Functions:
-  FUN_0056bf67
-  FUN_00570d50
-  FUN_005748d5
-  FUN_00574a13
-  FUN_00574ad9
-  FUN_00574b63
-  core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0
-  wincore_windll.cpp_renderScanline_FUN_00530710
-
-====================================================================================================
-TYPE: fnstsw_flag_artifact (7 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  CONCAT22((short)(in_EDX >> 0x10
-     1x  CONCAT22((short)((uint)local_24 >> 0x10
-     1x  CONCAT22((short)((uint)iVar2 >> 0x10
-     1x  CONCAT22((short)((uint)iVar3 >> 0x10
-     1x  CONCAT22((short)((uint)fVar3 >> 0x10
-     1x  CONCAT22((short)((uint)puVar8 >> 0x10
-     1x  CONCAT22((short)((uint)iVar4 >> 0x10
-
-Functions:
-  FUN_004421b0
-  FUN_00569928
-  FUN_0056f573
-  core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
-  core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_004e2070
-  core_set.cpp_CDemonSet_processActors_FUN_00509140
-
-====================================================================================================
-TYPE: fast_inv_sqrt_inline (7 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  local_44 = (float)(_DAT_01c70710 - ((int)local_48 >> 1));
-     1x  fVar9 = (float)(_DAT_01c70710 - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * f
-     1x  fVar1 = (float)(_DAT_01c70710 - ((int)fVar1 >> 1));
-     1x  local_8c = (float)(_DAT_01c70710 - ((int)local_90 >> 1));
-     1x  local_28 = (float)(_DAT_01c70710 - ((int)local_2c >> 1));
-     1x  local_70 = (float)(_DAT_01c70710 - ((int)local_74 >> 1));
-     1x  local_7c = (float)(_DAT_01c70710 - ((int)local_80 >> 1));
-
-Functions:
-  core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0
-  core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50
-  core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0
-  core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0
-
-====================================================================================================
-TYPE: displaced_global_access (6 occurrences)
+TYPE: displaced_global_access (8 occurrences)
 ====================================================================================================
 
 Unique patterns:
      2x  0x765aa0
+     1x  0x6b415c
+     1x  0x761ec8
      1x  0x763e98
      1x  0x764d98
      1x  0x5be0b8
      1x  0x5be4fc
 
 Functions:
+  FUN_00405ab0
+  FUN_00408fc0
   core_actor.cpp_registerActorClass_FUN_0040d3f0
   core_bugs.cpp_FUN_00423790
   core_charactr.cpp_CCharacter_processFire_FUN_004269b0
@@ -12738,18 +15147,47 @@ Functions:
   core_set.cpp_FUN_0050aa70
 
 ====================================================================================================
-TYPE: static_null_pointer (5 occurrences)
+TYPE: static_null_pointer (6 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     5x  Cppcheck: null pointer dereference
+     6x  Cppcheck: null pointer dereference
 
 Functions:
   FUN_00445750
+  FUN_00521d80
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480
   core_script.cpp_trimLine_FUN_004fdf60
   engine_clipper.c_FUN_00432cd0
   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10
+
+====================================================================================================
+TYPE: static_null_pointer_arithmetic (6 occurrences)
+====================================================================================================
+
+Unique patterns:
+     6x  Cppcheck: null pointer arithmetic
+
+Functions:
+  FUN_00445750
+  FUN_004c8440
+  FUN_00572b70
+  engine_clipper.c_FUN_00432cd0
+
+====================================================================================================
+TYPE: warning_noreturn (6 occurrences)
+====================================================================================================
+
+Unique patterns:
+     6x  WARNING: Subroutine does not return
+
+Functions:
+  FUN_0056720c
+  FUN_005674b0
+  FUN_0056ed08
+  FUN_00573fc8
+  FUN_00574909
+  wincore_winrun.cpp_FUN_00559500
 
 ====================================================================================================
 TYPE: static_swapped_arguments (4 occurrences)
@@ -12775,29 +15213,20 @@ Functions:
   sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_0052b270
 
 ====================================================================================================
-TYPE: warning_noreturn (4 occurrences)
+TYPE: undefined_type (4 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     4x  WARNING: Subroutine does not return
+     1x  undefined6 uVar7
+     1x  undefined5 uVar9
+     1x  undefined7 uVar4
+     1x  undefined6 uVar4
 
 Functions:
-  FUN_0056720c
-  FUN_005674b0
-  FUN_00573fc8
-  wincore_winrun.cpp_FUN_00559500
-
-====================================================================================================
-TYPE: static_null_pointer_arithmetic (3 occurrences)
-====================================================================================================
-
-Unique patterns:
-     3x  Cppcheck: null pointer arithmetic
-
-Functions:
-  FUN_00445750
-  FUN_004c8440
-  engine_clipper.c_FUN_00432cd0
+  FUN_0052f031
+  FUN_0052f823
+  FUN_0056a0c0
+  wincore_windll.cpp_renderAlphaRow16_FUN_005305f7
 
 ====================================================================================================
 TYPE: warning_deadcode_restart (3 occurrences)
@@ -12822,6 +15251,20 @@ Functions:
   FUN_005638e0
   engine_pod.cpp_CPod_init_FUN_004f8af0
   engine_prim.c_renderScanlinePolygon_FUN_004fad00
+
+====================================================================================================
+TYPE: tautological_addr_guard (3 occurrences)
+====================================================================================================
+
+Unique patterns:
+     1x  if ((T *)0x0 == &DAT_02dc9d50)
+     1x  if ((T *)0x0 != &DAT_02dc9d58)
+     1x  if ((T *)0x0 != &DAT_02dca09c)
+
+Functions:
+  FUN_0052d710
+  FUN_005384d0
+  core_sound.cpp_CSound_init_FUN_0052ddf0
 
 ====================================================================================================
 TYPE: dropped_loop_counter (2 occurrences)
@@ -12856,18 +15299,6 @@ Functions:
   core_mmx.c_detectIntelProcessor_FUN_004d9eac
 
 ====================================================================================================
-TYPE: tautological_addr_guard (2 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  if ((T *)0x0 != &DAT_02dc9d58)
-     1x  if ((T *)0x0 != &DAT_02dca09c)
-
-Functions:
-  FUN_005384d0
-  core_sound.cpp_CSound_init_FUN_0052ddf0
-
-====================================================================================================
 TYPE: unrolled_memset (2 occurrences)
 ====================================================================================================
 
@@ -12879,18 +15310,6 @@ Functions:
   wincore_windll.cpp_clearScreenRegion_FUN_0052ef37
 
 ====================================================================================================
-TYPE: undefined_type (2 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  undefined7 uVar4
-     1x  undefined6 uVar4
-
-Functions:
-  FUN_0056a0c0
-  wincore_windll.cpp_renderAlphaRow16_FUN_005305f7
-
-====================================================================================================
 TYPE: dropped_self_copy (2 occurrences)
 ====================================================================================================
 
@@ -12899,16 +15318,6 @@ Unique patterns:
 
 Functions:
   FUN_00543450
-
-====================================================================================================
-TYPE: undefined_ram (1 occurrences)
-====================================================================================================
-
-Unique patterns:
-     1x  uRam01bd1ea0
-
-Functions:
-  engine_2d.c_FUN_00402e90
 
 ====================================================================================================
 TYPE: unresolved_register (1 occurrences)

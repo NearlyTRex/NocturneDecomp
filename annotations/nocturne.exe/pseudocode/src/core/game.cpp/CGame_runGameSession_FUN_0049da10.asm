@@ -303,7 +303,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_processServerFrame_FUN_004ed2d0 ; 0049dda1
         ;   XREF to: 004ed2d0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_processServerFrame_FUN_004ed2d0()
     ADD ESP,0x4                         ; 0049dda6
-    MOV EAX,[0x005baca0]                ; 0049dda9 | DAT_005baca0
+    MOV EAX,[0x005baca0]                ; 0049dda9 | INT_005baca0
     PUSH EAX                            ; 0049ddae
     CALL core_level.cpp_CLevelLoader_cleanup_FUN_004c5fa0 ; 0049ddaf
         ;   XREF to: 004c5fa0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_cleanup_FUN_004c5fa0()
@@ -324,7 +324,7 @@ section .text
         ;   Label: LAB_0049ddf4
     PUSH EAX                            ; 0049ddf6
         ;   Label: LAB_0049ddf6
-    MOV EBX,dword ptr [0x005bac64]      ; 0049ddf7 | DAT_005bac64
+    MOV EBX,dword ptr [0x005bac64]      ; 0049ddf7 | INT_005bac64
     PUSH EBX                            ; 0049ddfd | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210 ; 0049ddfe
         ;   XREF to: 004c4210 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210()
@@ -475,7 +475,7 @@ section .text
         ;   XREF to: 004d9df0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_CDemonMission_countDamageableEnemies_FUN_004d9df0()
     ADD ESP,0x4                         ; 0049df8f
     PUSH 0x0                            ; 0049df92
-    MOV ECX,dword ptr [0x005bac64]      ; 0049df94 | DAT_005bac64
+    MOV ECX,dword ptr [0x005bac64]      ; 0049df94 | INT_005bac64
     MOV EDX,dword ptr [EBP + 0x14]      ; 0049df9a
     PUSH ECX                            ; 0049df9d | DAT_01cc30e4
     MOV dword ptr [EDX + 0x24c],EAX     ; 0049df9e
@@ -487,7 +487,7 @@ section .text
     CALL core_sound.cpp_CSound_shutdown_FUN_0052df90 ; 0049dfb3
         ;   XREF to: 0052df90 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_shutdown_FUN_0052df90()
     ADD ESP,0x4                         ; 0049dfb8
-    MOV ESI,dword ptr [0x005b9284]      ; 0049dfbb | DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 0049dfbb | INT_005b9284
     PUSH ESI                            ; 0049dfc1
     CALL FUN_004940d0                   ; 0049dfc2
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
@@ -497,7 +497,7 @@ section .text
     CALL core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 ; 0049dfce
         ;   XREF to: 0049d960 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960()
     ADD ESP,0x4                         ; 0049dfd3
-    MOV EAX,[0x005bac64]                ; 0049dfd6 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0049dfd6 | INT_005bac64
     PUSH EAX                            ; 0049dfdb | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0049dfdc | DAT_01cc30e4
     CALL dword ptr [EDX + 0x8]          ; 0049dfde
@@ -629,7 +629,7 @@ section .text
         ;   XREF to: 0049dec1 (UNCONDITIONAL_JUMP)  ; LAB_0049dec1
     PUSH ESI                            ; 0049e156
         ;   Label: LAB_0049e156
-    MOV EAX,[0x005bac64]                ; 0049e157 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0049e157 | INT_005bac64
     PUSH EAX                            ; 0049e15c | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0049e15d | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 0049e15f
@@ -665,7 +665,7 @@ section .text
     CALL core_sound.cpp_CSound_shutdown_FUN_0052df90 ; 0049e1c3
         ;   XREF to: 0052df90 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_shutdown_FUN_0052df90()
     ADD ESP,0x4                         ; 0049e1c8
-    MOV EAX,[0x005b9284]                ; 0049e1cb | DAT_005b9284
+    MOV EAX,[0x005b9284]                ; 0049e1cb | INT_005b9284
     PUSH EAX                            ; 0049e1d0
     CALL FUN_004940d0                   ; 0049e1d1
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
@@ -769,7 +769,7 @@ section .text
     JNZ 0x0049e36f                      ; 0049e2e6
         ;   XREF to: 0049e36f (CONDITIONAL_JUMP)  ; LAB_0049e36f
     PUSH 0x0                            ; 0049e2ec
-    MOV EAX,[0x005bac64]                ; 0049e2ee | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0049e2ee | INT_005bac64
     PUSH EAX                            ; 0049e2f3 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210 ; 0049e2f4
         ;   XREF to: 004c4210 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210()
@@ -794,7 +794,7 @@ section .text
     SETZ AL                             ; 0049e328
     AND EAX,0xff                        ; 0049e32b
     PUSH EAX                            ; 0049e330
-    MOV ECX,dword ptr [0x005bac64]      ; 0049e331 | DAT_005bac64
+    MOV ECX,dword ptr [0x005bac64]      ; 0049e331 | INT_005bac64
     PUSH ECX                            ; 0049e337 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210 ; 0049e338
         ;   XREF to: 004c4210 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_toggleInputMask_FUN_004c4210()
@@ -875,7 +875,7 @@ section .text
     CALL core_sound.cpp_CSound_init_FUN_0052ddf0 ; 0049e3fb
         ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_init_FUN_0052ddf0()
     ADD ESP,0x4                         ; 0049e400
-    MOV EAX,[0x005b9284]                ; 0049e403 | DAT_005b9284
+    MOV EAX,[0x005b9284]                ; 0049e403 | INT_005b9284
     PUSH EAX                            ; 0049e408
     CALL FUN_004940d0                   ; 0049e409
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
@@ -985,7 +985,7 @@ section .text
         ;   XREF to: 0049e0f1 (UNCONDITIONAL_JUMP)  ; LAB_0049e0f1
     PUSH 0x1c                           ; 0049e529
         ;   Label: LAB_0049e529
-    MOV EAX,[0x005bac64]                ; 0049e52b | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0049e52b | INT_005bac64
     PUSH EAX                            ; 0049e530 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0049e531 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 0049e533
@@ -1062,7 +1062,7 @@ section .text
     CALL core_sound.cpp_CSound_init_FUN_0052ddf0 ; 0049e5e5
         ;   XREF to: 0052ddf0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_CSound_init_FUN_0052ddf0()
     ADD ESP,0x4                         ; 0049e5ea
-    MOV EDX,dword ptr [0x005b9284]      ; 0049e5ed | DAT_005b9284
+    MOV EDX,dword ptr [0x005b9284]      ; 0049e5ed | INT_005b9284
     PUSH EDX                            ; 0049e5f3
     CALL FUN_004940d0                   ; 0049e5f4
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()

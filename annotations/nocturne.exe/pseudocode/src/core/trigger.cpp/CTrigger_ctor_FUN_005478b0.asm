@@ -4,7 +4,8 @@
 ; int __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005478b0(undefined4 param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00547880 at 00547893
 ;   FUN_005524d0 at 005524d5
 ;
 ; Referenced Globals:

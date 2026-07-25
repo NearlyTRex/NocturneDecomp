@@ -4,6 +4,9 @@
 ; int core_gargoyle_cpp_CGargoyle_ctor_FUN_004a7350(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004a7320 at 004a7333
+;
 ; Referenced Globals:
 ;   TerminatedCString s_gargoyle_dfm_0058482a
 ;   float FLOAT_0059df40 = 50

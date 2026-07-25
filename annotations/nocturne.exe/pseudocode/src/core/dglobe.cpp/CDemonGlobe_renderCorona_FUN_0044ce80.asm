@@ -170,7 +170,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x5ad894]  ; 0044cfd2 | DAT_005ad894 | DAT_005ad8b8
     MOV dword ptr [ESP + 0x24],EAX      ; 0044cfd8
     MOV EAX,dword ptr [EBX + 0x5ad898]  ; 0044cfdc | DAT_005ad898 | DAT_005ad8bc
-    PUSH 0x444180                       ; 0044cfe2 | LAB_00444180
+    PUSH 0x444180                       ; 0044cfe2
     MOV dword ptr [ESP + 0x2c],EAX      ; 0044cfe7
     MOV EAX,dword ptr [EBX + 0x5ad89c]  ; 0044cfeb | DAT_005ad89c
     MOV ESI,dword ptr [0x005ae700]      ; 0044cff1 | DAT_005ae700

@@ -6,8 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[2]:
+; XREF[3]:
 ;   FUN_00566590 at 005665af
+;   FUN_0056d488 at 0056d4a2
 ;   crt_time.c__mktime_FUN_00565fb0 at 005660c3
 ;
 ; Referenced Globals:

@@ -8,18 +8,18 @@
 ; undefined        Stack[-0x120]:1  local_120
 ; undefined4       Stack[-0x20]:4  local_20
 ;
-; XREF[48]:
+; XREF[61]:
 ;   FUN_00401010 at 0040109f
+;   FUN_0042eb90 at 0042ebaa
+;   FUN_0042ee00 at 0042ee25
+;   FUN_00430210 at 00430241
 ;   FUN_00446810 at 00446894
+;   FUN_0044b660 at 0044b688
+;   FUN_0044d550 at 0044d593
 ;   FUN_00467890 at 004678a0
-;   FUN_0049cc10 at 0049d692
-;   FUN_0049f930 at 0049fffb
-;   FUN_004a4170 at 004a42f1
-;   FUN_004a4b50 at 004a4b69
-;   FUN_004a57c0 at 004a5889
-;   FUN_004c90e0 at 004c90f9
-;   FUN_004d7f80 at 004d7f91
-;   ... and 38 more
+;   FUN_00490210 at 00490232
+;   FUN_0049a320 at 0049a3e2
+;   ... and 51 more
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_00565e20

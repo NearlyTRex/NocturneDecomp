@@ -6,8 +6,9 @@
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
 ;
-; XREF[142]:
+; XREF[144]:
 ;   FUN_00414930 at 00414993
+;   FUN_004181f0 at 0041828b
 ;   FUN_00418a00 at 004190fc
 ;   FUN_004196b0 at 004198e5
 ;   FUN_0041f190 at 0041f214
@@ -16,8 +17,7 @@
 ;   FUN_0043d1c0 at 0043d1f4
 ;   FUN_0045ab40 at 0045abda
 ;   FUN_004777a0 at 004777fa
-;   FUN_00477890 at 004778be
-;   ... and 132 more
+;   ... and 134 more
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40

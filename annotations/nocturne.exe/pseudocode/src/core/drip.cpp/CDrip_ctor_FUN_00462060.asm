@@ -4,6 +4,9 @@
 ; int core_drip_cpp_CDrip_ctor_FUN_00462060(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00462030 at 00462043
+;
 ; Referenced Globals:
 ;   TerminatedCString s_stalag_kfm_0057ddde
 ;   TerminatedCString s_rock_x_wav_0057dde9

@@ -354,6 +354,6 @@ LAB_0053f61d:
     return;
   }
 LAB_0053fc23:
-  FUN_004940d0(0x01C70F74);
+  FUN_004940d0(INT_005b9284);
   return;
 }

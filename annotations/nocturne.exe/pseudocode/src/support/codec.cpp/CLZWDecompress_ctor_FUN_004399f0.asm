@@ -4,7 +4,8 @@
 ; void __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_004399f0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0043f9c0 at 0043f9e3
 ;   FUN_004a4170 at 004a44b1
 ;
 ; Referenced Globals:

@@ -17,8 +17,8 @@
 ;   TerminatedCString s_rb_00587ec4
 ;   TerminatedCString s_enemy_pod_00587ec7
 ;   undefined4 DAT_00587ed1
-;   undefined4 DAT_005b9284
-;   undefined4 DAT_005bac64
+;   int INT_005b9284 = 0x1c70f74
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_005bdee0
 ;   undefined4 DAT_005be060
@@ -184,7 +184,7 @@ section .text
         ;   Label: LAB_004c9258
     PUSH 0x2a                           ; 004c925d
     SUB EBX,EAX                         ; 004c925f
-    MOV EAX,[0x005bac64]                ; 004c9261 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004c9261 | INT_005bac64
     PUSH EAX                            ; 004c9266 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 004c9267 | DAT_01cc30e4
     CALL dword ptr [EDX]                ; 004c9269
@@ -193,7 +193,7 @@ section .text
     JZ 0x004c9285                       ; 004c9270
         ;   XREF to: 004c9285 (CONDITIONAL_JUMP)  ; LAB_004c9285
     PUSH 0x1                            ; 004c9272
-    MOV EAX,[0x005bac64]                ; 004c9274 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004c9274 | INT_005bac64
     PUSH EAX                            ; 004c9279 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 004c927a | DAT_01cc30e4
     CALL dword ptr [EDX]                ; 004c927c
@@ -259,7 +259,7 @@ section .text
     CALL core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0 ; 004c930f
         ;   XREF to: 004e99c0 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0()
     ADD ESP,0x4                         ; 004c9314
-    MOV ESI,dword ptr [0x005b9284]      ; 004c9317 | DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 004c9317 | INT_005b9284
     PUSH ESI                            ; 004c931d
     CALL FUN_004940d0                   ; 004c931e
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()

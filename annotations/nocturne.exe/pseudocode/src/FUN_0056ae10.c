@@ -35,7 +35,7 @@ uint FUN_0056ae10(int param_1,uint param_2,uint param_3)
     *(byte *)(param_1 + 0xd) = bVar4;
     *(byte *)(param_1 + 0xd) = bVar4 | 1;
   }
-  uVar3 = FUN_00569040(param_1,param_2,param_3,&LAB_0056adf0);
+  uVar3 = FUN_00569040(param_1,param_2,param_3,FUN_0056adf0);
   if (bVar5) {
     bVar4 = *(byte *)(param_1 + 0xd) & 0xfa;
     *(byte *)(param_1 + 0xd) = bVar4;

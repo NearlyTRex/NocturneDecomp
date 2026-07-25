@@ -4,7 +4,9 @@
 ; undefined4 __cdecl wincore_windll_cpp_drawPolygon2_FUN_00532650(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[6]:
+; XREF[8]:
+;   FUN_00432210 at 0043236c
+;   FUN_00434210 at 0043434a
 ;   FUN_004fa2e0 at 004fa3b1
 ;   engine_clipper.c_FUN_00432cd0 at 00432e3f
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0 at 00434ae0

@@ -276,7 +276,7 @@ LAB_004fc138:
   if ((iVar13 == 0) &&
      (iVar13 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1), iVar13 == 0)) {
     core_xform_cpp_FUN_0055d610
-              (param_1 + 0x1fa40,*(uint *)(param_1 + 0x1fa4c),_DAT_01e53388,&LAB_0051b650);
+              (param_1 + 0x1fa40,*(uint *)(param_1 + 0x1fa4c),_DAT_01e53388,FUN_0051b650);
     iVar13 = iStack_20;
     puVar15 = &stack0xffffff7c;
     uStack_84 = uStack_74;

@@ -4,18 +4,18 @@
 ; void __cdecl engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(int param_1,int param_2)
 ;
 ;
-; XREF[14]:
+; XREF[19]:
 ;   FUN_0042c4c0 at 0042c55b
 ;   FUN_0043f330 at 0043f440
+;   FUN_004574e0 at 004574f4
+;   FUN_00468d00 at 004690f1
+;   FUN_004d77f0 at 004d790a
+;   FUN_00511d80 at 005121ef
 ;   FUN_005125a0 at 00513170
+;   FUN_005159a0 at 00515ba7
 ;   FUN_00551c00 at 00551de8
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 at 0041dd56
-;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437de5
-;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0 at 0044b03b
-;   core_dlight.cpp_FUN_0044f0b0 at 0044f211
-;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170 at 004531aa
-;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 00485cf7
-;   ... and 4 more
+;   ... and 9 more
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00460fa0

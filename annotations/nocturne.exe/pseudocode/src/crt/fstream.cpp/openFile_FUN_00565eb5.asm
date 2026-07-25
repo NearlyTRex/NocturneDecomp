@@ -4,7 +4,8 @@
 ; void __cdecl crt_fstream_cpp_openFile_FUN_00565eb5(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00456b20 at 00456b93
 ;   FUN_004a3b90 at 004a3e85
 ;   FUN_004a4170 at 004a4450
 ;

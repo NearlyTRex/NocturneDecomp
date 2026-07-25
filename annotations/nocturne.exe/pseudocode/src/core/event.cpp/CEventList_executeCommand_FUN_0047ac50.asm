@@ -709,9 +709,9 @@ section .text
         ;   XREF to: 0047b084 (CONDITIONAL_JUMP)  ; LAB_0047b084
     JMP 0x0047b098                      ; 0047b0c7
         ;   XREF to: 0047b098 (UNCONDITIONAL_JUMP)  ; LAB_0047b098
-    PUSH 0x763e48                       ; 0047b0c9 | DAT_00763e48
+    PUSH 0x763e48                       ; 0047b0c9 | CDemonActorType_00763e48
         ;   Label: LAB_0047b0c9
-    MOV EBX,dword ptr [0x00763e80]      ; 0047b0ce | DAT_00763e80
+    MOV EBX,dword ptr [0x00763e80]      ; 0047b0ce | CDemonActorType_00763e48.name_hash
     PUSH EBX                            ; 0047b0d4
     LEA EAX,[EBP + 0xfffffbba]          ; 0047b0d5
     PUSH EAX                            ; 0047b0db
@@ -879,8 +879,8 @@ section .text
     TEST EAX,EAX                        ; 0047b265
     JNZ 0x0047aec8                      ; 0047b267
         ;   XREF to: 0047aec8 (CONDITIONAL_JUMP)  ; LAB_0047aec8
-    PUSH 0x763e48                       ; 0047b26d | DAT_00763e48
-    MOV EBX,dword ptr [0x00763e80]      ; 0047b272 | DAT_00763e80
+    PUSH 0x763e48                       ; 0047b26d | CDemonActorType_00763e48
+    MOV EBX,dword ptr [0x00763e80]      ; 0047b272 | CDemonActorType_00763e48.name_hash
     PUSH EBX                            ; 0047b278
     LEA EAX,[EBP + 0xffffef3a]          ; 0047b279
     PUSH EAX                            ; 0047b27f
@@ -902,7 +902,7 @@ section .text
     CMP dword ptr [EBP + -0x62],0x0     ; 0047b2aa
     JZ 0x0047aead                       ; 0047b2ae
         ;   XREF to: 0047aead (CONDITIONAL_JUMP)  ; LAB_0047aead
-    MOV ECX,dword ptr [0x00764838]      ; 0047b2b4 | DAT_00764838
+    MOV ECX,dword ptr [0x00764838]      ; 0047b2b4 | CDemonActorType_00764800.name_hash
     PUSH ECX                            ; 0047b2ba
     PUSH EBX                            ; 0047b2bb
     MOV dword ptr [EBX + 0x70],0x2      ; 0047b2bc
@@ -918,7 +918,7 @@ section .text
     CALL sound_sndmain.cpp_killSfx_FUN_00527230 ; 0047b2dd
         ;   XREF to: 00527230 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_killSfx_FUN_00527230()
     ADD ESP,0x4                         ; 0047b2e2
-    MOV EDI,dword ptr [0x00765c68]      ; 0047b2e5 | DAT_00765c68
+    MOV EDI,dword ptr [0x00765c68]      ; 0047b2e5 | CDemonActorType_00765c30.name_hash
         ;   Label: LAB_0047b2e5
     PUSH EDI                            ; 0047b2eb
     PUSH EBX                            ; 0047b2ec
@@ -1679,9 +1679,9 @@ section .text
     INC EAX                             ; 0047b9e7
     JMP 0x0047b9d6                      ; 0047b9e8
         ;   XREF to: 0047b9d6 (UNCONDITIONAL_JUMP)  ; LAB_0047b9d6
-    PUSH 0x765a60                       ; 0047b9ea | DAT_00765a60
+    PUSH 0x765a60                       ; 0047b9ea | CDemonActorType_00765a60
         ;   Label: LAB_0047b9ea
-    MOV ESI,dword ptr [0x00765a98]      ; 0047b9ef | DAT_00765a98
+    MOV ESI,dword ptr [0x00765a98]      ; 0047b9ef | CDemonActorType_00765a60.name_hash
     PUSH ESI                            ; 0047b9f5
     MOV dword ptr [EBP + -0x5e],EAX     ; 0047b9f6
     LEA EAX,[EBP + 0xfffffa2a]          ; 0047b9f9
@@ -2100,9 +2100,9 @@ section .text
     INC EAX                             ; 0047bdea
     JMP 0x0047bdd9                      ; 0047bdeb
         ;   XREF to: 0047bdd9 (UNCONDITIONAL_JUMP)  ; LAB_0047bdd9
-    PUSH 0x765a60                       ; 0047bded | DAT_00765a60
+    PUSH 0x765a60                       ; 0047bded | CDemonActorType_00765a60
         ;   Label: LAB_0047bded
-    MOV ECX,dword ptr [0x00765a98]      ; 0047bdf2 | DAT_00765a98
+    MOV ECX,dword ptr [0x00765a98]      ; 0047bdf2 | CDemonActorType_00765a60.name_hash
     PUSH ECX                            ; 0047bdf8
     MOV dword ptr [EBP + -0x5e],EAX     ; 0047bdf9
     LEA EAX,[EBP + 0xffffeb52]          ; 0047bdfc
@@ -3926,9 +3926,9 @@ section .text
         ;   XREF to: 0047ceb0 (CONDITIONAL_JUMP)  ; LAB_0047ceb0
     JMP 0x0047cec4                      ; 0047cef3
         ;   XREF to: 0047cec4 (UNCONDITIONAL_JUMP)  ; LAB_0047cec4
-    PUSH 0x765a60                       ; 0047cef5 | DAT_00765a60
+    PUSH 0x765a60                       ; 0047cef5 | CDemonActorType_00765a60
         ;   Label: LAB_0047cef5
-    MOV EDI,dword ptr [0x00765a98]      ; 0047cefa | DAT_00765a98
+    MOV EDI,dword ptr [0x00765a98]      ; 0047cefa | CDemonActorType_00765a60.name_hash
     PUSH EDI                            ; 0047cf00
     LEA EAX,[EBP + 0xfffff70a]          ; 0047cf01
     PUSH EAX                            ; 0047cf07
@@ -4573,9 +4573,9 @@ section .text
         ;   XREF to: 0047d4a7 (CONDITIONAL_JUMP)  ; LAB_0047d4a7
     JMP 0x0047d4bb                      ; 0047d4ea
         ;   XREF to: 0047d4bb (UNCONDITIONAL_JUMP)  ; LAB_0047d4bb
-    PUSH 0x765a60                       ; 0047d4ec | DAT_00765a60
+    PUSH 0x765a60                       ; 0047d4ec | CDemonActorType_00765a60
         ;   Label: LAB_0047d4ec
-    MOV ESI,dword ptr [0x00765a98]      ; 0047d4f1 | DAT_00765a98
+    MOV ESI,dword ptr [0x00765a98]      ; 0047d4f1 | CDemonActorType_00765a60.name_hash
     PUSH ESI                            ; 0047d4f7
     LEA EAX,[EBP + 0xfffff962]          ; 0047d4f8
     PUSH EAX                            ; 0047d4fe
@@ -4994,10 +4994,10 @@ section .text
     INC EAX                             ; 0047d8b9
     JMP 0x0047d8a8                      ; 0047d8ba
         ;   XREF to: 0047d8a8 (UNCONDITIONAL_JUMP)  ; LAB_0047d8a8
-    PUSH 0x763e48                       ; 0047d8bc | DAT_00763e48
+    PUSH 0x763e48                       ; 0047d8bc | CDemonActorType_00763e48
         ;   Label: LAB_0047d8bc
     MOV dword ptr [EBP + -0x5e],EAX     ; 0047d8c1
-    MOV EAX,[0x00763e80]                ; 0047d8c4 | DAT_00763e80
+    MOV EAX,[0x00763e80]                ; 0047d8c4 | CDemonActorType_00763e48.name_hash
     PUSH EAX                            ; 0047d8c9
     LEA EAX,[EBP + 0xfffff4b2]          ; 0047d8ca
     PUSH EAX                            ; 0047d8d0
@@ -5059,7 +5059,7 @@ section .text
     CMP dword ptr [EBP + -0x62],0x0     ; 0047d972
     JZ 0x0047aead                       ; 0047d976
         ;   XREF to: 0047aead (CONDITIONAL_JUMP)  ; LAB_0047aead
-    MOV EAX,[0x00765a98]                ; 0047d97c | DAT_00765a98
+    MOV EAX,[0x00765a98]                ; 0047d97c | CDemonActorType_00765a60.name_hash
     PUSH EAX                            ; 0047d981
     PUSH EBX                            ; 0047d982
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0047d983
@@ -5160,9 +5160,9 @@ section .text
     ADD ESP,0x18                        ; 0047daa5
     JMP 0x0047d94f                      ; 0047daa8
         ;   XREF to: 0047d94f (UNCONDITIONAL_JUMP)  ; LAB_0047d94f
-    PUSH 0x763e48                       ; 0047daad | DAT_00763e48
+    PUSH 0x763e48                       ; 0047daad | CDemonActorType_00763e48
         ;   Label: LAB_0047daad
-    MOV EDI,dword ptr [0x00763e80]      ; 0047dab2 | DAT_00763e80
+    MOV EDI,dword ptr [0x00763e80]      ; 0047dab2 | CDemonActorType_00763e48.name_hash
     PUSH EDI                            ; 0047dab8
     LEA EAX,[EBP + 0xfffffaf2]          ; 0047dab9
     PUSH EAX                            ; 0047dabf

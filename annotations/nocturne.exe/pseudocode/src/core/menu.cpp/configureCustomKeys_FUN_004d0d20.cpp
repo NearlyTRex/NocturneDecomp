@@ -197,7 +197,7 @@ LAB_004d0e3b:
         core_menu_cpp_calibrateGamepad_FUN_004cf8d0();
       }
     }
-    iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4);
+    iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64);
     if ((iVar3 != 0) &&
        (((*(int *)(0x01C775EC + 0xbc) != 2 || (*(int *)(0x01C775EC + 0xa4) != 0)) ||
         (iVar3 = core_menu_cpp_calibrateGamepad_FUN_004cf8d0(), iVar3 != 0)))) {

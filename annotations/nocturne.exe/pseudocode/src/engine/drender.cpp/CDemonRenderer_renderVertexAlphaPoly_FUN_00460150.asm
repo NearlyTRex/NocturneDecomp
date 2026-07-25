@@ -6,8 +6,10 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[2]:
+; XREF[4]:
 ;   FUN_004ca790 at 004cab7b
+;   FUN_004f16d0 at 004f18ab
+;   FUN_004f18c0 at 004f1c7e
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 0048684e
 ;
 ; Referenced Globals:
@@ -77,7 +79,7 @@ section .text
     JZ 0x00460217                       ; 004601c1
         ;   XREF to: 00460217 (CONDITIONAL_JUMP)  ; LAB_00460217
     XOR ESI,ESI                         ; 004601c3
-    MOV ECX,0x463a79                    ; 004601c5 | LAB_00463a79
+    MOV ECX,0x463a79                    ; 004601c5
     MOV dword ptr [0x01c039a0],ESI      ; 004601ca | DAT_01c039a0
     MOV dword ptr [0x01c039a4],ESI      ; 004601d0 | DAT_01c039a4
     MOV dword ptr [0x01c00c7c],ECX      ; 004601d6 | DAT_01c00c7c
@@ -114,7 +116,7 @@ section .text
         ;   Label: LAB_00460217
     JNZ 0x00460289                      ; 0046021e
         ;   XREF to: 00460289 (CONDITIONAL_JUMP)  ; LAB_00460289
-    MOV dword ptr [0x01c00c7c],0x52f031 ; 00460220 | DAT_01c00c7c | LAB_0052f031
+    MOV dword ptr [0x01c00c7c],0x52f031 ; 00460220 | DAT_01c00c7c
     MOV EBP,0x6                         ; 0046022a
         ;   Label: LAB_0046022a
     MOV EDI,0x367                       ; 0046022f
@@ -151,7 +153,7 @@ section .text
         ;   XREF to: 00460256 (CONDITIONAL_JUMP)  ; LAB_00460256
     JMP 0x004601e0                      ; 00460284
         ;   XREF to: 004601e0 (UNCONDITIONAL_JUMP)  ; LAB_004601e0
-    MOV dword ptr [0x01c00c7c],0x52f823 ; 00460289 | DAT_01c00c7c | LAB_0052f823
+    MOV dword ptr [0x01c00c7c],0x52f823 ; 00460289 | DAT_01c00c7c
         ;   Label: LAB_00460289
     JMP 0x0046022a                      ; 00460293
         ;   XREF to: 0046022a (UNCONDITIONAL_JUMP)  ; LAB_0046022a

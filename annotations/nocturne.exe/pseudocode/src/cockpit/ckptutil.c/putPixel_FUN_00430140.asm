@@ -4,7 +4,8 @@
 ; void __cdecl cockpit_ckptutil_c_putPixel_FUN_00430140(int param_1,int param_2,int param_3)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0042f330 at 0042f3f3
 ;   cockpit_ckptutil.c_drawLineAA_FUN_0042f600 at 0042f680
 ;
 ; Referenced Globals:

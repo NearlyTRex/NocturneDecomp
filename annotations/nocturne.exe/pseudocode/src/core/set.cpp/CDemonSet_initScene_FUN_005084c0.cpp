@@ -18,7 +18,7 @@ void core_set_cpp_CDemonSet_initScene_FUN_005084c0(int *param_1)
   int *piVar5;
   
   uVar1 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Initializing scene",0);
-  core_level_cpp_CLevelLoader_update_FUN_004c59e0(0x01CC3160,uVar1);
+  core_level_cpp_CLevelLoader_update_FUN_004c59e0(INT_005baca0,uVar1);
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_0044e3b0();
   core_dfilter_cpp_CFilterCache_free_FUN_0044bcd0(0x014B8DE8);
   _DAT_01fba2d8 = 0;

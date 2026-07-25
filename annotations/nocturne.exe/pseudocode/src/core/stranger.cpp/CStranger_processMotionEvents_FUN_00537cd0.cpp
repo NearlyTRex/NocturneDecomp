@@ -193,7 +193,7 @@ LAB_00537df4:
                                        ((float10)local_ac * (float10)0.20000000000000001);
             local_18 = (int)ROUND(fVar7);
             core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                      (0x01C78C7C,auStack_3c,0,local_18 + 1,0,uVar3);
+                      (INT_005b96c4,auStack_3c,0,local_18 + 1,0,uVar3);
             (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"kick1.wav");
           }
         }

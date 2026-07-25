@@ -157,7 +157,7 @@ section .text
     MOV dword ptr [ESP + 0x1d4],EAX     ; 0053a368
     FLD float ptr [ESP + 0x1d4]         ; 0053a36f
     ADD ESP,0xc                         ; 0053a376
-    PUSH 0x51b650                       ; 0053a379 | LAB_0051b650
+    PUSH 0x51b650                       ; 0053a379
     MOV EAX,dword ptr [ESP + 0x1c0]     ; 0053a37e
     PUSH EAX                            ; 0053a385
     PUSH dword ptr [ESP + 0x8]          ; 0053a386
@@ -284,7 +284,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0053a519
     MOVSD ES:EDI,ESI                    ; 0053a51a
     MOVSD ES:EDI,ESI                    ; 0053a51b
-    PUSH 0x51b650                       ; 0053a51c | LAB_0051b650
+    PUSH 0x51b650                       ; 0053a51c
     MOV ESI,dword ptr [ESP + 0x1bc]     ; 0053a521
     PUSH ESI                            ; 0053a528
     LEA EAX,[ESP + 0xac]                ; 0053a529

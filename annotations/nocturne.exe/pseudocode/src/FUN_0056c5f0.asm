@@ -4,10 +4,11 @@
 ; undefined4 * FUN_0056c5f0(undefined4 *param_1,uint param_2)
 ;
 ;
-; XREF[3]:
+; XREF[4]:
 ;   FUN_005687bc at 00568828
 ;   FUN_0056c864 at 0056c8b7
 ;   crt_stdlib.c__fullpath_FUN_00565d00 at 00565d49
+;   thunk_FUN_0056c5f0 at 00566440
 ;
 ; Referenced Globals:
 ;   void* PTR_GetCurrentDirectoryA_005754f4 = 00175ca6

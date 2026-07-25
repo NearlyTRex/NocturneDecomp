@@ -1,0 +1,302 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 25,
+    "complexity_score": 105,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 7,
+    "suspect_types": [
+      "stack_param",
+      "undefined_data",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 45
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0047a1e0",
+    "address_range": [
+      [
+        "0047a1e0",
+        "0047a20c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0047a1e0",
+    "signature": "undefined4 FUN_0047a1e0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c08b60",
+      "name": "DAT_01c08b60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c08b61",
+      "name": "DAT_01c08b61",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c08b62",
+      "name": "DAT_01c08b62",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c08b63",
+      "name": "DAT_01c08b63",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CBRANCH": 2,
+      "COPY": 16,
+      "INT_ADD": 9,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 5,
+      "LOAD": 7,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 78
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0047a1e0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 14,
+          "line": 20,
+          "message": "Uninitialized variable: in_stack_0000000c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_01c08b60",
+      "severity": "mild",
+      "text": "pcVar2 = &DAT_01c08b60;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "cVar1 = *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "cVar1 = in_stack_0000000c[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 12,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_0000000c",
+      "line": 20,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "cVar1 = *in_stack_0000000c;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

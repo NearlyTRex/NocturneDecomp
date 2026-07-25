@@ -4,7 +4,8 @@
 ; undefined4 FUN_00565e94(int param_1,undefined4 param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00456b20 at 00456b4a
 ;   crt_fstream.cpp_openFile_FUN_00565eb5 at 00565f0d
 ;
 ; Called Functions:

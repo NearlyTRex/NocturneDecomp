@@ -2,12 +2,12 @@
 // Address: 0042b740
 // Address Range: [[0042b740, 0042b745]]
 // Convention: unknown
-// Signature: undefined * core_charactr_cpp_FUN_0042b740(void)
+// Signature: CDemonActorType * core_charactr_cpp_FUN_0042b740(void)
 
 #include "nocturne.h"
 
-byte * core_charactr_cpp_FUN_0042b740(void)
+CDemonActorType * core_charactr_cpp_FUN_0042b740(void)
 
 {
-  return &DAT_00765c30;
+  return &CDemonActorType_00765c30;
 }

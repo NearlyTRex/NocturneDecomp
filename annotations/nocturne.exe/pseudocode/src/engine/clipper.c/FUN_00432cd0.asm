@@ -25,18 +25,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[48]:
+; XREF[53]:
+;   FUN_00405340 at 00405413
+;   FUN_00406920 at 004069a9
+;   FUN_00406a00 at 00406a8c
+;   FUN_00406ae0 at 00406b3b
+;   FUN_00406b80 at 00406c0c
 ;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0 at 00406140
 ;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20 at 00407c8d
 ;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10 at 00405fe5
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00408510 at 00408579
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_004083d0 at 00408439
-;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00406c60 at 00406cbd
-;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00406d80 at 00406ddd
-;   engine_3d.c_renderPolygonBlendedLitOp63_FUN_00408270 at 004082e0
-;   engine_3d.c_renderPolygonDepthWritePass_FUN_00406f30 at 00406f82
-;   engine_3d.c_renderPolygonDestReadBlendDepthLitOp55_FUN_00407d90 at 00407e07
-;   ... and 38 more
+;   ... and 43 more
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00432c7c = 00432f87

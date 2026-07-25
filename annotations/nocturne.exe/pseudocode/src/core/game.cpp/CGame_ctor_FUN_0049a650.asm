@@ -4,6 +4,9 @@
 ; undefined4 * core_game_cpp_CGame_ctor_FUN_0049a650(undefined4 *param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0049a1e0 at 0049a209
+;
 ; Referenced Globals:
 ;   undefined4 DAT_01c78598
 ;

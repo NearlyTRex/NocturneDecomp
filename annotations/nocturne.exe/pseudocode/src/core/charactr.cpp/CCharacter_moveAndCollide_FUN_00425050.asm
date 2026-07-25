@@ -65,7 +65,7 @@
 ;   TerminatedCString s_noCollision_005ad1f0
 ;   undefined4 s_llision_005ad1f0+4
 ;   undefined4 s_ion_005ad1f0+8
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_006e6f69
@@ -637,7 +637,7 @@ section .text
         ;   XREF to: 0040a220 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220()
     ADD ESP,0xc                         ; 00425790
     PUSH dword ptr [ESP + 0x24]         ; 00425793
-    MOV ECX,dword ptr [0x005b9284]      ; 00425797 | DAT_005b9284
+    MOV ECX,dword ptr [0x005b9284]      ; 00425797 | INT_005b9284
     PUSH dword ptr [ESP + 0x20]         ; 0042579d
     PUSH ECX                            ; 004257a1
     CALL FUN_004940d0                   ; 004257a2

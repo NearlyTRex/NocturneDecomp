@@ -342,7 +342,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1c]      ; 004d8a40
         ;   Label: LAB_004d8a40
     PUSH ECX                            ; 004d8a44
-    MOV ESI,dword ptr [0x005b96c4]      ; 004d8a45 | DAT_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 004d8a45 | INT_005b96c4
     PUSH ESI                            ; 004d8a4b
     CALL core_gore.cpp_CGore_save_FUN_004b08d0 ; 004d8a4c
         ;   XREF to: 004b08d0 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_save_FUN_004b08d0()

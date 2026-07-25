@@ -10,7 +10,7 @@
 ;   TerminatedCString s_state_00587af1
 ;   TerminatedCString s_onEvent_00587af7
 ;   TerminatedCString s_offEvent_00587aff
-;   undefined4 DAT_005bacf8
+;   int INT_005bacf8 = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveFloat_FUN_0040c880
@@ -40,7 +40,7 @@ section .text
     PUSH EAX                            ; 004c830d
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004c830e
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
-    MOV EDX,dword ptr [0x005bacf8]      ; 004c8313 | DAT_005bacf8
+    MOV EDX,dword ptr [0x005bacf8]      ; 004c8313 | INT_005bacf8
     ADD ESP,0x8                         ; 004c8319
     CMP EDX,0x2                         ; 004c831c
     JGE 0x004c8323                      ; 004c831f

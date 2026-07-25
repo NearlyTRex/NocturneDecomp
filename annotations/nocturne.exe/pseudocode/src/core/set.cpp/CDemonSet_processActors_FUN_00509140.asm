@@ -33,7 +33,7 @@
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_00763e44
-;   undefined4 DAT_00765a98
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_01c7068c
 ;   undefined4 DAT_01c777f8
@@ -292,7 +292,7 @@ section .text
     JLE 0x005095bb                      ; 005093e1
         ;   XREF to: 005095bb (CONDITIONAL_JUMP)  ; LAB_005095bb
     MOV ESI,EAX                         ; 005093e7
-    MOV EDX,dword ptr [0x00765a98]      ; 005093e9 | DAT_00765a98
+    MOV EDX,dword ptr [0x00765a98]      ; 005093e9 | CDemonActorType_00765a60.name_hash
         ;   Label: LAB_005093e9
     PUSH EDX                            ; 005093ef
     MOV ECX,dword ptr [ESI + 0x14cd70]  ; 005093f0

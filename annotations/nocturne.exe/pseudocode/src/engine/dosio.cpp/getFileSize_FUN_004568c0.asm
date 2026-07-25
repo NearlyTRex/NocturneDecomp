@@ -7,18 +7,18 @@
 ; undefined        Stack[-0x214]:1  local_214
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[22]:
+; XREF[27]:
 ;   FUN_00401010 at 004010f0
 ;   FUN_004a3b90 at 004a3e2c
 ;   FUN_004a4170 at 004a43e2
 ;   FUN_004a57c0 at 004a57fb
 ;   FUN_004edfc0 at 004edfe0
+;   FUN_004f54c0 at 004f54ee
+;   FUN_004f7980 at 004f7995
+;   FUN_004f8240 at 004f82ee
+;   FUN_004f8eb0 at 004f8f4e
 ;   FUN_004febd0 at 004fec08
-;   FUN_00522480 at 00522547
-;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 0044346c
-;   core_dfilter.cpp_CDemonFilter_load_FUN_0044bf90 at 0044bfcb
-;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b3d4
-;   ... and 12 more
+;   ... and 17 more
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_findFile_FUN_004567a0

@@ -25,7 +25,8 @@ uint __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(int param_1,int *pa
     _sprintf(&DAT_01c08b60,"Error parsing vector location");
     return 0xffffffff;
   }
-  iVar1 = core_event_cpp_resolveActorByName_FUN_0047a390(local_78,DAT_00763e80,&DAT_00763e48);
+  iVar1 = core_event_cpp_resolveActorByName_FUN_0047a390
+                    (local_78,CDemonActorType_00763e48.name_hash,&CDemonActorType_00763e48);
   if (iVar1 == 0) {
     return 0xffffffff;
   }

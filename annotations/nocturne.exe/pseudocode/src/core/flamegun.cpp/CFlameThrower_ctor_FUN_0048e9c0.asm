@@ -4,6 +4,9 @@
 ; int core_flamegun_cpp_CFlameThrower_ctor_FUN_0048e9c0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0048e990 at 0048e9a3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_flamegun_kfm_0058169c
 ;   undefined4 DAT_0059d79c

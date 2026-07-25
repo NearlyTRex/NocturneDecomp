@@ -4,16 +4,18 @@
 ; void __cdecl sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(undefined1 *param_1)
 ;
 ;
-; XREF[9]:
+; XREF[12]:
 ;   FUN_00522480 at 005224f9
+;   FUN_005229f0 at 00522cec
+;   FUN_00522e00 at 00522e89
 ;   FUN_005238f0 at 005238f6
+;   FUN_00527950 at 00527984
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910 at 005239f8
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 00524108
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 at 00525688
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_005285b0 at 005285c7
 ;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0 at 00521d54
-;   sound_sndmain.cpp_freeAllSamples_FUN_00527c30 at 00527c48
-;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526c0f
+;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00592956

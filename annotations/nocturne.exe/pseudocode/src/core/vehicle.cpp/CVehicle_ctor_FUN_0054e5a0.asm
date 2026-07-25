@@ -4,6 +4,9 @@
 ; int core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0054e570 at 0054e583
+;
 ; Referenced Globals:
 ;   TerminatedCString s_s_32ford_kfm_005972c1
 ;   TerminatedCString s_s_32ltire_kfm_005972cc

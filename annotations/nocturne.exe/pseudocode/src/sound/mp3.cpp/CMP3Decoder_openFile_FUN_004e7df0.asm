@@ -4,8 +4,9 @@
 ; void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(char *param_1,char *param_2)
 ;
 ;
-; XREF[3]:
+; XREF[4]:
 ;   FUN_00522480 at 0052280e
+;   FUN_005229f0 at 00522afe
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527b8b
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 005269f5
 ;

@@ -1,17 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * FUN_00414d70(void)
+; CDemonActorType * FUN_00414d70(void)
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00764674
+;   CDemonActorType CDemonActorType_00764674
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x764674                    ; 00414d70 | DAT_00764674
+    MOV EAX,0x764674                    ; 00414d70 | CDemonActorType_00764674
         ;   Label: FUN_00414d70
     RET                                 ; 00414d75
 

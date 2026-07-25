@@ -4,7 +4,8 @@
 ; int __cdecl core_hotdemon_cpp_CHotDemon_ctor_FUN_004b8ca0(undefined4 param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004b8c70 at 004b8c83
 ;   FUN_00540f50 at 00541202
 ;
 ; Referenced Globals:

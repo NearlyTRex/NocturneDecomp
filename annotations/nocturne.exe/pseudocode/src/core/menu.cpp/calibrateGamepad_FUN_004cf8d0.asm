@@ -17,7 +17,7 @@
 ;   TerminatedCString s_Center_gamepad_press_ENT_005884f5
 ;   TerminatedCString s_Move_gamepad_in_all_dire_00588511
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_014b98f8
 ;   undefined4 DAT_01c038f8
 ;   undefined4 DAT_01c038fc
@@ -128,7 +128,7 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004cf9b0
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     PUSH 0x1c                           ; 004cf9b5
-    MOV EAX,[0x005bac64]                ; 004cf9b7 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004cf9b7 | INT_005bac64
     PUSH EAX                            ; 004cf9bc
     MOV EDX,dword ptr [EAX]             ; 004cf9bd | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004cf9bf
@@ -209,7 +209,7 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004cfa99
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     PUSH 0x1c                           ; 004cfa9e
-    MOV EAX,[0x005bac64]                ; 004cfaa0 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004cfaa0 | INT_005bac64
     PUSH EAX                            ; 004cfaa5 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 004cfaa6 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004cfaa8
@@ -218,7 +218,7 @@ section .text
     JNZ 0x004cfb69                      ; 004cfab0
         ;   XREF to: 004cfb69 (CONDITIONAL_JUMP)  ; LAB_004cfb69
     PUSH 0x1                            ; 004cfab6
-    MOV EDX,dword ptr [0x005bac64]      ; 004cfab8 | DAT_005bac64
+    MOV EDX,dword ptr [0x005bac64]      ; 004cfab8 | INT_005bac64
     PUSH EDX                            ; 004cfabe | DAT_01cc30e4
     MOV EAX,dword ptr [EDX]             ; 004cfabf | DAT_01cc30e4
     CALL dword ptr [EAX + 0x4]          ; 004cfac1
@@ -254,7 +254,7 @@ section .text
         ;   XREF to: 004cf9cd (UNCONDITIONAL_JUMP)  ; LAB_004cf9cd
     PUSH 0x1                            ; 004cfb12
         ;   Label: LAB_004cfb12
-    MOV EAX,[0x005bac64]                ; 004cfb14 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004cfb14 | INT_005bac64
     PUSH EAX                            ; 004cfb19 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 004cfb1a | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 004cfb1c

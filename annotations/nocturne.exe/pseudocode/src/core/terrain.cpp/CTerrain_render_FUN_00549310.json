@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 150,
-        "line": 143,
+        "line": 166,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 145,
+        "line": 168,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 153,
-        "line": 146,
+        "line": 170,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 152,
-        "line": 152,
+        "line": 177,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 64,
+        "line": 76,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 66,
+        "line": 78,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 132,
+        "line": 153,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 139,
+        "line": 160,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 143,
+        "line": 165,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 87,
-        "line": 32,
+        "line": 34,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 51,
+        "line": 58,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 93,
-        "line": 53,
+        "line": 60,
         "message": "unknown type name 'code'"
       },
       {
         "category": "syntax_error",
         "column": 15,
-        "line": 117,
+        "line": 125,
         "message": "expected unqualified-id"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 172,
+        "line": 188,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 210,
+        "line": 228,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 219,
+        "line": 237,
         "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 337,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 408,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 408,
-        "message": "invalid digit 'C' in decimal constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 187,
+    "complexity_score": 177,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
@@ -212,9 +212,9 @@
     },
     {
       "addr": "005ba8ec",
-      "name": "DAT_005ba8ec",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_005ba8ec",
+      "type": "int",
+      "value": "0x1cadf80"
     },
     {
       "addr": "01b4d738",
@@ -442,23 +442,15 @@
       "line": 54,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "(DAT_005ae704,&uStack_3c);",
+      "text": "(DAT_005ae704,&iStack_3c);",
       "type": "undefined_data"
     },
     {
-      "description": "Raw hex address 0x54933b assigned to bare local `uStack_3c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_3c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x54933b assigned to bare local `iStack_3c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_3c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 28,
       "match": "0x54933b",
       "severity": "moderate",
-      "text": "uStack_3c = 0x54933b;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x1cadf80 assigned to bare local `uStack_3c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_3c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 32,
-      "match": "0x1cadf80",
-      "severity": "moderate",
-      "text": "uStack_3c = 0x01CADF80;",
+      "text": "iStack_3c = 0x54933b;",
       "type": "raw_address_constant"
     },
     {
@@ -470,11 +462,11 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x5493aa assigned to bare local `uStack_3c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_3c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "description": "Raw hex address 0x5493aa assigned to bare local `iStack_3c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_3c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 44,
       "match": "0x5493aa",
       "severity": "moderate",
-      "text": "uStack_3c = 0x5493aa;",
+      "text": "iStack_3c = 0x5493aa;",
       "type": "raw_address_constant"
     },
     {

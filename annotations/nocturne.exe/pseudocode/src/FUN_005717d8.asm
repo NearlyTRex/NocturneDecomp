@@ -4,8 +4,9 @@
 ; undefined4 FUN_005717d8(undefined4 param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
 ;   FUN_005715d0 at 005715f2
+;   FUN_00571858 at 00571886
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_005717a8 = 0057180b

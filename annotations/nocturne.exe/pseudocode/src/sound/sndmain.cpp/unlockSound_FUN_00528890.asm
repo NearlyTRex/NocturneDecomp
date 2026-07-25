@@ -4,18 +4,18 @@
 ; void __cdecl sound_sndmain_cpp_unlockSound_FUN_00528890(void)
 ;
 ;
-; XREF[22]:
+; XREF[32]:
+;   FUN_00526dd0 at 00526dff
+;   FUN_00526f00 at 00526f4f
+;   FUN_00526f60 at 00526fe1
+;   FUN_00527060 at 005270b7
+;   FUN_00527190 at 005271e5
+;   FUN_00527200 at 0052721e
+;   FUN_00527570 at 00527596
 ;   FUN_005278e0 at 00527905
-;   FUN_005464a0 at 005466e4
-;   sound_sndmain.cpp_enableSfxChannel_FUN_00527410 at 0052747d
-;   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 at 0052805d
-;   sound_sndmain.cpp_freeAllSamples_FUN_00527c30 at 00527c5a
-;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527a0f
-;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 at 00526d78
-;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0 at 00526cf4
-;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0 at 0052352e
-;   sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 at 0052824b
-;   ... and 12 more
+;   FUN_00527950 at 0052799a
+;   FUN_005279b0 at 005279ce
+;   ... and 22 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00593979

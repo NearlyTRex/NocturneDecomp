@@ -34,7 +34,7 @@ void core_colonel_cpp_CColonel_processDamage_FUN_0043aa00(int param_1,int param_
       if (*(int *)(iVar3 + 0x24) != 5) {
         *(uint *)(param_1 + 0x2590) = 0;
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar1,5,1);
-        core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(0x01C78C7C,param_1,0x32,0x42480000,0);
+        core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(INT_005b96c4,param_1,0x32,0x42480000,0);
         core_charactr_cpp_CCharacter_processDamage_FUN_00428510(param_1,param_2);
         return;
       }

@@ -13,7 +13,7 @@ void core_hostage_cpp_CHostage_archive_FUN_004b8320(int param_1)
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1f91c,"followState");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1f924,"hostageState");
   core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1f928,"goalWayPoint");
-  if (0x0000000C < 10) {
+  if (INT_005ba980 < 10) {
     core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(param_1 + 0x150,"modelName")
     ;
     core_actor_cpp_FUN_0040cb00(param_1 + 0x150,"motion state");
@@ -21,32 +21,32 @@ void core_hostage_cpp_CHostage_archive_FUN_004b8320(int param_1)
   core_actor_cpp_archivePartStatus_FUN_0040cbf0(param_1 + 0x150,"partStatus");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x1f570,"rescueDistance");
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f574,"rescueCondition");
-  if ((1 < 0x0000000C) && (0x0000000C < 5)) {
+  if ((1 < INT_005ba980) && (INT_005ba980 < 5)) {
     core_actor_cpp_archiveClothList_FUN_0040cf70(param_1 + 0x2a8c,"clothList");
   }
-  if (2 < 0x0000000C) {
+  if (2 < INT_005ba980) {
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f5d8,"rescueEvent");
   }
-  if (3 < 0x0000000C) {
+  if (3 < INT_005ba980) {
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f5f8,"heroFoundMeEvent");
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f65c,"heroLeftMeEvent");
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f6c0,"heroCameBackEvent");
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f788,"goingToSitDownEvent");
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f7ec,"sitDownEvent");
   }
-  if (5 < 0x0000000C) {
+  if (5 < INT_005ba980) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1f944,"noShadowsWhenSaved");
   }
-  if (6 < 0x0000000C) {
+  if (6 < INT_005ba980) {
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f724,"getEatenEvent");
   }
-  if ((7 < 0x0000000C) && (0x0000000C < 0xc)) {
+  if ((7 < INT_005ba980) && (INT_005ba980 < 0xc)) {
     core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(param_1 + 0x2440,"descriptiveName");
   }
-  if (8 < 0x0000000C) {
+  if (8 < INT_005ba980) {
     core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1f92c,"sitDownWayPoint");
   }
-  if (0x0000000C < 0xb) {
+  if (INT_005ba980 < 0xb) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f850,"damageSound");

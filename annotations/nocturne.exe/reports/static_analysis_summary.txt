@@ -9,7 +9,7 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 513
+  Functions with static analysis data: 823
   Functions flagged by multiple tools: 2
 
   Clang-Tidy (quick):
@@ -18,9 +18,9 @@ SUMMARY
     Total diagnostics:   17
 
   Cppcheck (quick):
-    Files analyzed:      507
-    Files with findings: 507
-    Total diagnostics:   2104
+    Files analyzed:      817
+    Files with findings: 817
+    Total diagnostics:   2782
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
@@ -34,18 +34,18 @@ TOP FINDINGS - Clang-Tidy (quick)
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                1041  [likely decompiler artifact]
-  objectIndex                                               430  [likely decompiler artifact]
-  legacyUninitvar                                           191
-  shiftTooManyBitsSigned                                    171
-  invalidscanf                                               54
+  uninitvar                                                1590  [likely decompiler artifact]
+  objectIndex                                               435  [likely decompiler artifact]
+  shiftTooManyBitsSigned                                    218
+  legacyUninitvar                                           212
+  invalidscanf                                               76
+  AssignmentAddressToInteger                                 57
   pointerOutOfBounds                                         46
-  AssignmentAddressToInteger                                 45
   arrayIndexOutOfBounds                                      30
-  ignoredReturnValue                                         26
-  selfAssignment                                             14
-  invalidPointerCast                                         10
+  ignoredReturnValue                                         28
+  invalidPointerCast                                         20
+  selfAssignment                                             16
   identicalInnerCondition                                     9
   shiftNegativeLHS                                            7
-  nullPointer                                                 5
-  nullPointerArithmetic                                       3
+  nullPointer                                                 6
+  nullPointerArithmetic                                       6

@@ -4,6 +4,9 @@
 ; int core_biggs_cpp_CBiggs_ctor_FUN_00415370(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00415340 at 00415353
+;
 ; Referenced Globals:
 ;   TerminatedCString s_biggs_dfm_00578dcd
 ;   TerminatedCString s_question_kfm_00578dd7

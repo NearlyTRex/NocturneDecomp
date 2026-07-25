@@ -17,7 +17,7 @@
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005baca0
+;   int INT_005baca0 = 0x1cc3160
 ;   undefined4 DAT_005be220
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01c77814
@@ -88,7 +88,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004d9816
     PUSH EAX                            ; 004d9819
-    MOV EBP,dword ptr [0x005baca0]      ; 004d981a | DAT_005baca0
+    MOV EBP,dword ptr [0x005baca0]      ; 004d981a | INT_005baca0
     PUSH EBP                            ; 004d9820
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d9821
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()

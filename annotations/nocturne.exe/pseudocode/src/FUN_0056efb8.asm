@@ -16,7 +16,7 @@
 ;   undefined1 DAT_005c26cf
 ;   undefined1 DAT_005c26d4
 ;   undefined1 DAT_005c26d5
-;   void* PTR_LAB_005c26d6 = 0056b1ee
+;   void* PTR_FUN_005c26d6 = 0056b1ee
 ;   undefined1 DAT_005c26f8
 ;   undefined1 DAT_005c26f9
 ;   undefined4 DAT_005c26fa
@@ -66,8 +66,8 @@ section .text
     CMP AL,byte ptr [ESP]               ; 0056effe
     JA 0x0056f00f                       ; 0056f001
         ;   XREF to: 0056f00f (CONDITIONAL_JUMP)  ; LAB_0056f00f
-    LEA EAX,[EBX + 0x2]                 ; 0056f003 | PTR_LAB_005c26d6
-    PUSH EAX                            ; 0056f006 | PTR_LAB_005c26d6 | DAT_005c26fa
+    LEA EAX,[EBX + 0x2]                 ; 0056f003 | PTR_FUN_005c26d6
+    PUSH EAX                            ; 0056f006 | PTR_FUN_005c26d6 | DAT_005c26fa
     CALL FUN_0056ef50                   ; 0056f007
         ;   XREF to: 0056ef50 (UNCONDITIONAL_CALL)  ; undefined FUN_0056ef50()
     ADD ESP,0x4                         ; 0056f00c

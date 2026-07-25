@@ -104,7 +104,7 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
           } while (iVar2 < param_1[7]);
         }
       }
-      iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);
+      iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
       if (iVar2 != 0) {
         engine_2d_c_clearInputAndWait_FUN_00403f50();
         return 0;
@@ -121,7 +121,7 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
       engine_2d_c_drawText_FUN_00402600(local_94,0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
       core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);
-      iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);
+      iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
       if (iVar2 != 0) {
         engine_2d_c_clearInputAndWait_FUN_00403f50();
         return 0;

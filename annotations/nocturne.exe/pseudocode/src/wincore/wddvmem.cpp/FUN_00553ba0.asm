@@ -4,7 +4,8 @@
 ; void FUN_00553ba0(void)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00558d90 at 00558e69
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 00553b4c
 ;
 ; Referenced Globals:

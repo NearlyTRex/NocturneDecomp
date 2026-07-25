@@ -19,18 +19,18 @@
 ; undefined4       Stack[-0x34]:4  local_34
 ; undefined8       Stack[-0x18]:8  local_18
 ;
-; XREF[14]:
+; XREF[15]:
 ;   FUN_00418a00 at 00418bb6
 ;   FUN_00497900 at 00497bba
 ;   FUN_004fd1d0 at 004fd349
+;   FUN_0051f3f0 at 0051f4f6
 ;   FUN_0053a260 at 0053a431
 ;   core_charactr.cpp_FUN_00429e60 at 00429f09
 ;   core_course.cpp_CCourse_interpolate_FUN_0043b890 at 0043b9d5
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_004f5ff0 at 004f60d4
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0 at 0051d082
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 at 0051c4fa
-;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0051cae0 at 0051cbc8
-;   ... and 4 more
+;   ... and 5 more
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0059836e = 0.999990000000000

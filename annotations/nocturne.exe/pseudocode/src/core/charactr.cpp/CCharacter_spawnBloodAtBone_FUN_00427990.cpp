@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427990(int para
       local_c = 0x40e00000;
       local_8 = 0;
       core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-                (0x01C78C7C,local_28,&local_10,*(uint *)(param_1 + 0x2608));
+                (INT_005b96c4,local_28,&local_10,*(uint *)(param_1 + 0x2608));
       return;
     }
   }

@@ -6,8 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[3]:
+; XREF[4]:
 ;   FUN_004d8720 at 004d8749
+;   FUN_004d93d0 at 004d9415
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020 at 004d908f
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780 at 004d97a9
 ;
@@ -16,7 +17,7 @@
 ;   TerminatedCString s_Setting_up_actors_00589c6e
 ;   TerminatedCString s_Setting_up_actors_00589c80
 ;   TerminatedCString s_Setting_up_actors_00589c92
-;   undefined4 DAT_005baca0
+;   int INT_005baca0 = 0x1cc3160
 ;
 ; Called Functions:
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0
@@ -39,7 +40,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004d8dc4
     PUSH EAX                            ; 004d8dc7
-    MOV EDX,dword ptr [0x005baca0]      ; 004d8dc8 | DAT_005baca0
+    MOV EDX,dword ptr [0x005baca0]      ; 004d8dc8 | INT_005baca0
     PUSH EDX                            ; 004d8dce
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d8dcf
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()
@@ -102,7 +103,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004d8e5c
     PUSH EAX                            ; 004d8e5f
-    MOV EAX,[0x005baca0]                ; 004d8e60 | DAT_005baca0
+    MOV EAX,[0x005baca0]                ; 004d8e60 | INT_005baca0
     PUSH EAX                            ; 004d8e65
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d8e66
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()
@@ -117,7 +118,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004d8e7f
     PUSH EAX                            ; 004d8e82
-    MOV ECX,dword ptr [0x005baca0]      ; 004d8e83 | DAT_005baca0
+    MOV ECX,dword ptr [0x005baca0]      ; 004d8e83 | INT_005baca0
     PUSH ECX                            ; 004d8e89
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d8e8a
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()
@@ -143,7 +144,7 @@ section .text
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
     ADD ESP,0x4                         ; 004d8ebe
     PUSH EAX                            ; 004d8ec1
-    MOV ECX,dword ptr [0x005baca0]      ; 004d8ec2 | DAT_005baca0
+    MOV ECX,dword ptr [0x005baca0]      ; 004d8ec2 | INT_005baca0
     PUSH ECX                            ; 004d8ec8
     CALL core_level.cpp_CLevelLoader_update_FUN_004c59e0 ; 004d8ec9
         ;   XREF to: 004c59e0 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_update_FUN_004c59e0()

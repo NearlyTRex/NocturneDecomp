@@ -76,7 +76,7 @@ section .text
         ;   XREF to: 00429601 (CONDITIONAL_JUMP)  ; LAB_00429601
     MOV EAX,dword ptr [ESP + 0xc]       ; 004295f9
     MOV dword ptr [ESP + 0x10],EAX      ; 004295fd
-    PUSH 0x51b650                       ; 00429601 | LAB_0051b650
+    PUSH 0x51b650                       ; 00429601
         ;   Label: LAB_00429601
     MOV EDX,dword ptr [EBX + 0x25bc]    ; 00429606
     PUSH EDX                            ; 0042960c

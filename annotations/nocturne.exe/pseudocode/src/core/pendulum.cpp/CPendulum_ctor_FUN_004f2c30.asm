@@ -4,6 +4,9 @@
 ; int core_pendulum_cpp_CPendulum_ctor_FUN_004f2c30(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004f2c00 at 004f2c13
+;
 ; Referenced Globals:
 ;   TerminatedCString s_pend_kfm_0058cff2
 ;   TerminatedCString s_true_0058cffb

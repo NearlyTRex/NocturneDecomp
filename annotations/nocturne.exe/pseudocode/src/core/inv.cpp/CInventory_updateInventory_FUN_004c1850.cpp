@@ -33,7 +33,8 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1
     pfVar5 = param_1;
     if (0 < (int)param_1[2]) {
       do {
-        iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(pfVar5[3],DAT_007646ac);
+        iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
+                          (pfVar5[3],CDemonActorType_00764674.name_hash);
         if (iVar4 != 0) {
           local_20 = 1.0 / *(float *)(iVar4 + 0x2d0) + local_20;
         }
@@ -54,7 +55,8 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1
     pfVar5 = param_1;
     if (0 < (int)param_1[2]) {
       do {
-        iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(pfVar5[3],DAT_007646ac);
+        iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
+                          (pfVar5[3],CDemonActorType_00764674.name_hash);
         if (iVar4 != 0) {
           local_1c = local_1c + *(float *)(iVar4 + 0x2d4);
         }

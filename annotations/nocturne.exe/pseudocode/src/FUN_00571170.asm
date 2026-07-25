@@ -4,6 +4,9 @@
 ; LPVOID FUN_00571170(void)
 ;
 ;
+; XREF[1]:
+;   FUN_0056e52c at 0056e54b
+;
 ; Referenced Globals:
 ;   void* PTR_TlsGetValue_005755c8 = 0017609c
 ;   TerminatedCString s_Thread_has_no_thread_spe_00599174

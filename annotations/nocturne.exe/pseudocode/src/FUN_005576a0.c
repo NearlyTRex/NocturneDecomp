@@ -40,8 +40,8 @@ uint FUN_005576a0(int param_1)
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
                 (DAT_005ae704,&DAT_02dd1184,local_20);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(DAT_005ae704,local_14,0);
-      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(param_1,0x2de0774);
-      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(param_1,0x2de0780);
+      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(param_1,&DAT_02de0774);
+      core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(param_1,&DAT_02de0780);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);

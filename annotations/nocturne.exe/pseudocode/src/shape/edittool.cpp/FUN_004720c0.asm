@@ -8,16 +8,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[9]:
+; XREF[11]:
+;   FUN_004673e0 at 0046754e
 ;   FUN_0046f7e0 at 0046f945
 ;   FUN_0046fb40 at 0046fcaf
 ;   FUN_0046fcd0 at 0046fe3f
 ;   FUN_0046fe60 at 0046ffcf
 ;   FUN_00470eb0 at 00471171
+;   FUN_004f8240 at 004f84df
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de90
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfdfc
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004ea00b
-;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 at 00474e3e
+;   ... and 1 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e952

@@ -52,7 +52,7 @@ section .text
     XOR EBX,EBX                         ; 00528714
         ;   Label: LAB_00528714
     PUSH EBX                            ; 00528716
-    PUSH 0x528670                       ; 00528717 | LAB_00528670
+    PUSH 0x528670                       ; 00528717
     MOV dword ptr [0x02dc84b0],EBX      ; 0052871c | DAT_02dc84b0
     MOV dword ptr [0x02dc84b4],EBX      ; 00528722 | DAT_02dc84b4
     CALL wincore_winrun.cpp_createThread_FUN_00559c50 ; 00528728

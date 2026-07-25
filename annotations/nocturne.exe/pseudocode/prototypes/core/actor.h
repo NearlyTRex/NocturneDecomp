@@ -293,7 +293,7 @@ void __cdecl CDemonActor::archive(int param_1);
 
 // Original: core_actor.cpp_registerActorClass_FUN_0040d3f0
 // Address: 0040d3f0
-char * registerActorClass(char *param_1,char *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+CDemonActorType * __cdecl registerActorClass(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func,int *max_version,int version,CDemonActorType *parent_class_info);
 
 // Original: core_actor.cpp_getActorClassByName_FUN_0040d4d0
 // Address: 0040d4d0

@@ -310,7 +310,7 @@ section .text
         ;   Label: LAB_004a4e77
     PUSH 0x0                            ; 004a4e78
     PUSH 0xa                            ; 004a4e7a
-    MOV ECX,dword ptr [0x005baca0]      ; 004a4e7c | DAT_005baca0
+    MOV ECX,dword ptr [0x005baca0]      ; 004a4e7c | INT_005baca0
     PUSH ECX                            ; 004a4e82
     CALL core_level.cpp_CLevelLoader_show_FUN_004c5640 ; 004a4e83
         ;   XREF to: 004c5640 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_CLevelLoader_show_FUN_004c5640()

@@ -4,18 +4,18 @@
 ; void __cdecl crt_string_c_memmove_FUN_00566170(undefined4 *param_1,undefined4 *param_2,uint param_3)
 ;
 ;
-; XREF[38]:
+; XREF[45]:
+;   FUN_0045d310 at 0045d57a
+;   FUN_00470730 at 00470b50
+;   FUN_0047a5e0 at 0047a63b
+;   FUN_00481630 at 004816c0
+;   FUN_00481770 at 004817d6
+;   FUN_004e97e0 at 004e9834
+;   FUN_00521d80 at 00521e04
 ;   FUN_00522480 at 005225b0
 ;   FUN_00523170 at 005231e3
 ;   FUN_00571fd1 at 00572193
-;   FUN_00573afc at 00573c5c
-;   FUN_00573ca0 at 00573d4a
-;   FUN_00574264 at 005743bf
-;   FUN_00574404 at 005744b3
-;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00480420 at 00480538
-;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0 at 004803f8
-;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047e398
-;   ... and 28 more
+;   ... and 35 more
 ;
 ; *****************************************************************************
 

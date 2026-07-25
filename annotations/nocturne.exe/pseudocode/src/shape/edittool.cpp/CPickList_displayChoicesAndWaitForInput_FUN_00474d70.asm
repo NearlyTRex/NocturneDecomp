@@ -6,17 +6,18 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[10]:
+; XREF[12]:
 ;   FUN_00470230 at 004702e6
 ;   FUN_00470310 at 004703c6
 ;   FUN_004703f0 at 004704dd
+;   FUN_00470730 at 004709c7
 ;   FUN_004a4b50 at 004a5055
+;   FUN_004f8240 at 004f850d
 ;   FUN_0052ed40 at 0052ed8a
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049df56
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3baa
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2125
-;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9c9d
-;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 00470651
+;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa

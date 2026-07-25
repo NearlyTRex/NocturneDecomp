@@ -4,6 +4,9 @@
 ; int core_filmreel_cpp_CFilmReel_ctor_FUN_00481c30(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00481c00 at 00481c13
+;
 ; Referenced Globals:
 ;   TerminatedCString s_filmreel_kfm_00580f8c
 ;   TerminatedCString s_movie3_00580f99

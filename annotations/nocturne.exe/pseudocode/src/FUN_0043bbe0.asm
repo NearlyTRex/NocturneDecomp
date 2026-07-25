@@ -4,6 +4,9 @@
 ; int FUN_0043bbe0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0043bbb0 at 0043bbc3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_cow_dfm_0057b2d5
 ;   float FLOAT_0059b88c = 50

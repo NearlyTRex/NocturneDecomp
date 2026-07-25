@@ -4,18 +4,18 @@
 ; undefined4 __cdecl crt_stdio_c_fseek_FUN_0056582c(undefined4 *param_1,int param_2,uint param_3)
 ;
 ;
-; XREF[12]:
+; XREF[19]:
 ;   FUN_004a4170 at 004a4385
+;   FUN_004e2850 at 004e285e
+;   FUN_004e28a0 at 004e2904
 ;   FUN_004e7ed0 at 004e7f8a
+;   FUN_004f5740 at 004f57fa
+;   FUN_004f7980 at 004f79be
 ;   FUN_004f7ae0 at 004f7ec6
+;   FUN_004f8240 at 004f82c2
 ;   FUN_004f8570 at 004f85f3
-;   FUN_00522480 at 005226bf
-;   FUN_0056551c at 00565616
-;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80 at 004f4e27
-;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 00443a70
-;   engine_dosio.cpp_getFile_FUN_00456a60 at 00456b09
-;   sound_mp3.cpp_CMP3Decoder_seek_FUN_004e8410 at 004e843f
-;   ... and 2 more
+;   FUN_004f86a0 at 004f8737
+;   ... and 9 more
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1ac0 = 005671e4

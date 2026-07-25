@@ -1,0 +1,307 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 94,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 7,
+    "suspect_types": [
+      "register_param",
+      "unnamed_param"
+    ],
+    "total_lines": 46
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056c520",
+    "address_range": [
+      [
+        "0056c520",
+        "0056c56b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0056c520",
+    "signature": "undefined4 FUN_0056c520(undefined4 param_1,uint param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056c416",
+      "is_variadic": false,
+      "name": "FUN_0056c416"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.72,
+    "instruction_count": 25,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 60,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_DIV": 1,
+      "INT_ADD": 14,
+      "INT_AND": 12,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "LOAD": 11,
+      "POPCOUNT": 5,
+      "RETURN": 3,
+      "STORE": 4
+    },
+    "pcode_op_count": 143
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 10,
+        "type": "undefined1[10]"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0056c520.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 12,
+          "line": 16,
+          "message": "Uninitialized variable: in_EAX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 8,
+          "line": 18,
+          "message": "Uninitialized variable: in_FPUStatusWord",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_0056c520(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint FUN_0056c520(uint param_1,uint param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "uint in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_2 & 0x7ff00000) == 0x7ff00000) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "return in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "return in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 16,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "return in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Uninitialized variable: in_EAX",
+      "line": 16,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "return in_EAX;",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_FPUStatusWord",
+      "line": 18,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if ((in_FPUStatusWord & 0x3800) != 0) {",
+      "type": "static_uninitvar"
+    }
+  ]
+}

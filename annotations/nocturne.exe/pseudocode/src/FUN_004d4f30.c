@@ -219,7 +219,7 @@ LAB_004d4fed:
         uVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                           (local_18,local_a0,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_7c,uVar2);
-        FUN_004b0480(0x01C78C7C,local_7c,0);
+        FUN_004b0480(INT_005b96c4,local_7c,0);
         *(uint *)(param_1 + 0xbc90) = 1;
       }
       goto LAB_004d5024;

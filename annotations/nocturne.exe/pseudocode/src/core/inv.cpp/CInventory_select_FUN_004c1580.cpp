@@ -39,7 +39,8 @@ uint __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(int param_1,uint param_
       }
       iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CBoxActor");
       if (iVar2 != 0) {
-        iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,DAT_00764838);
+        iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
+                          (param_2,CDemonActorType_00764800.name_hash);
         core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,iVar2 + 0x5f8);
         return 0;
       }
@@ -117,7 +118,7 @@ uint __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(int param_1,uint param_
     }
   }
   else {
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,DAT_007641f4);
+    iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,CDemonActorType_007641bc.name_hash);
     if (iVar2 == 0) {
       _DAT_01cc4800 = "..\\core\\inv.cpp";
       _DAT_01cc4804 = 0x5c3;

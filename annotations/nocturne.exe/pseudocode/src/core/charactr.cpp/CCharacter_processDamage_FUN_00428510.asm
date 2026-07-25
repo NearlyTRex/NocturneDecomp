@@ -23,7 +23,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_01c775ec
 ;   undefined4 DAT_01cae0e8
 ;
@@ -147,7 +147,7 @@ section .text
     PUSH ESI                            ; 004285e9
     LEA EAX,[ESP + 0x1c]                ; 004285ea
     PUSH EAX                            ; 004285ee
-    MOV EAX,[0x005b96c4]                ; 004285ef | DAT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 004285ef | INT_005b96c4
     PUSH EAX                            ; 004285f4
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 004285f5
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200()

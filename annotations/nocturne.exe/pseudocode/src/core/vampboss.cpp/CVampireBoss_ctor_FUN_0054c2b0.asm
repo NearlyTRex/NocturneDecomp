@@ -4,6 +4,9 @@
 ; int core_vampboss_cpp_CVampireBoss_ctor_FUN_0054c2b0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0054c280 at 0054c293
+;
 ; Referenced Globals:
 ;   TerminatedCString s_nosfer_dfm_0059702a
 ;   TerminatedCString s_batboss_dfm_00597035

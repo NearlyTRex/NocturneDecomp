@@ -4,6 +4,9 @@
 ; int core_werewolf_cpp_CWerewolf_ctor_FUN_00555a90(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00555a60 at 00555a73
+;
 ; Referenced Globals:
 ;   TerminatedCString s_wolfbrn_dfm_00597cd3
 ;   float FLOAT_005a42f0 = 50

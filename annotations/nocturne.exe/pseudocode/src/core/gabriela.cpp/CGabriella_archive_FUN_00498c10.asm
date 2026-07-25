@@ -11,7 +11,7 @@
 ;   TerminatedCString s_ladderToClimb_005821d0
 ;   TerminatedCString s_lhCarryObject_005821de
 ;   TerminatedCString s_rhCarryObject_005821ec
-;   undefined4 DAT_005b92a8
+;   int INT_005b92a8 = 0x3
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -27,7 +27,7 @@ section .text
     PUSH EBX                            ; 00498c15
     CALL FUN_004b49a0                   ; 00498c16
         ;   XREF to: 004b49a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b49a0()
-    MOV EDX,dword ptr [0x005b92a8]      ; 00498c1b | DAT_005b92a8
+    MOV EDX,dword ptr [0x005b92a8]      ; 00498c1b | INT_005b92a8
     ADD ESP,0x4                         ; 00498c21
     CMP EDX,0x2                         ; 00498c24
     JL 0x00498c7e                       ; 00498c27
@@ -59,7 +59,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 00498c76
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
     ADD ESP,0x8                         ; 00498c7b
-    CMP dword ptr [0x005b92a8],0x2      ; 00498c7e | DAT_005b92a8
+    CMP dword ptr [0x005b92a8],0x2      ; 00498c7e | INT_005b92a8
         ;   Label: LAB_00498c7e
     JZ 0x00498c89                       ; 00498c85
         ;   XREF to: 00498c89 (CONDITIONAL_JUMP)  ; LAB_00498c89

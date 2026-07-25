@@ -89,12 +89,76 @@ bugprone-swapped-arguments (4)
     argument with implicit conversion from 'int' to 'float' followed by argument converted from 'double' to 'undefined4' (aka 'unsigned int'), potentially swapped arguments.
 
 ====================================================================================================
-Cppcheck (quick) (2104 diagnostics)
+Cppcheck (quick) (2782 diagnostics)
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
-uninitvar (1041)
+uninitvar (1590)
 ----------------------------------------------------------------------------------------------------
+
+  FUN_00406920                                       line 28
+    File: .
+    Uninitialized variable: local_1c
+
+  FUN_00406a00                                       line 28
+    File: .
+    Uninitialized variable: local_1c
+
+  FUN_00406b80                                       line 28
+    File: .
+    Uninitialized variable: local_1c
+
+  FUN_0040bd40                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0040e1cc                                       line 21
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_0040e1cc                                       line 21
+    File: .
+    Uninitialized variable: in_CL
+
+  FUN_0040e1cc                                       line 22
+    File: .
+    Uninitialized variable: in_EAX
+
+  FUN_0040e1cc                                       line 26
+    File: .
+    Uninitialized variable: unaff_retaddr
+
+  FUN_0040e1cc                                       line 26
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_0040e2ce                                       line 17
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_0040e2ce                                       line 17
+    File: .
+    Uninitialized variable: in_CL
+
+  FUN_0040e2ce                                       line 18
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_0040e2ce                                       line 18
+    File: .
+    Uninitialized variable: in_EAX
+
+  FUN_0040e2e1                                       line 14
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_0040e2f1                                       line 14
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_0040eadd                                       line 19
+    File: .
+    Uninitialized variable: unaff_retaddr
 
   FUN_0041206c                                       line 17
     File: .
@@ -111,6 +175,66 @@ uninitvar (1041)
   FUN_0041206c                                       line 18
     File: .
     Uninitialized variable: in_EAX
+
+  FUN_00417fec                                       line 18
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00417fec                                       line 18
+    File: .
+    Uninitialized variable: in_CL
+
+  FUN_00417fec                                       line 19
+    File: .
+    Uninitialized variable: in_EAX
+
+  FUN_00417fec                                       line 20
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_0041803d                                       line 22
+    File: .
+    Uninitialized variable: unaff_retaddr
+
+  FUN_00418180                                       line 23
+    File: .
+    Uninitialized variable: fStack_24
+
+  FUN_00418180                                       line 24
+    File: .
+    Uninitialized variable: fStack_2c
+
+  FUN_00418180                                       line 24
+    File: .
+    Uninitialized variable: fStack_20
+
+  FUN_00418180                                       line 25
+    File: .
+    Uninitialized variable: fStack_28
+
+  FUN_004181f0                                       line 29
+    File: .
+    Uninitialized variable: fStack_34
+
+  FUN_004181f0                                       line 30
+    File: .
+    Uninitialized variable: fStack_3c
+
+  FUN_004181f0                                       line 30
+    File: .
+    Uninitialized variable: fStack_30
+
+  FUN_004181f0                                       line 31
+    File: .
+    Uninitialized variable: fStack_38
+
+  FUN_004181f0                                       line 31
+    File: .
+    Uninitialized variable: fStack_2c
+
+  FUN_004182cd                                       line 66
+    File: .
+    Uninitialized variable: unaff_retaddr
 
   FUN_004194b0                                       line 66
     File: .
@@ -172,6 +296,10 @@ uninitvar (1041)
     File: .
     Uninitialized variable: local_24
 
+  FUN_0041dbf0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
   FUN_0041ef90                                       line 28
     File: .
     Uninitialized variable: local_1c
@@ -224,9 +352,305 @@ uninitvar (1041)
     File: .
     Uninitialized variable: fStack_94
 
+  FUN_0041f9f0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00423b70                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00423b70                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00423b70                                       line 20
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00423b70                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_00423b90                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00423b90                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00423bb0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00423bb0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00423be0                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00423be0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00423be0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00423c20                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00423c90                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00423c90                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00423cc0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00423cc0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00423d00                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00423d00                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00423d20                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00424730                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00424730                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00424780                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042b4d0                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042b4d0                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042b4d0                                       line 18
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0042b500                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042b500                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042b510                                       line 22
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0042b510                                       line 26
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042b510                                       line 26
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042b570                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042b570                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042b5a0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042b5b0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042b6c0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042b6c0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042b6d0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042b6d0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042b6e0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042b6e0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042cd00                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042cd10                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042cd20                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042cde0                                       line 34
+    File: .
+    Uninitialized variable: in_EAX
+
+  FUN_0042ceca                                       line 26
+    File: .
+    Uninitialized variable: in_EAX
+
+  FUN_0042d180                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_0042d180                                       line 22
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042d180                                       line 29
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_0042d200                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042edc0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042edc0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0042edc0                                       line 20
+    File: .
+    Uninitialized variable: local_4
+
+  FUN_0042f260                                       line 27
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0042f260                                       line 27
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0042f260                                       line 29
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0042f260                                       line 35
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_0042f260                                       line 35
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_004301f0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00430200                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00431500                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00432057                                       line 29
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00432057                                       line 31
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_00432057                                       line 54
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00432057                                       line 56
+    File: .
+    Uninitialized variable: unaff_EBP
+
+  FUN_00438880                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004388a0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004388a0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004388d0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00438900                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00438950                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00438950                                       line 18
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
   FUN_0043b110                                       line 34
     File: .
     Uninitialized variable: local_1c
+
+  FUN_0043b500                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0043b500                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
 
   FUN_0043d1c0                                       line 84
     File: .
@@ -280,6 +704,10 @@ uninitvar (1041)
     File: .
     Uninitialized variable: local_14
 
+  FUN_00441150                                       line 24
+    File: .
+    Uninitialized variable: unaff_ESI
+
   FUN_00441440                                       line 76
     File: .
     Uninitialized variable: unaff_ESI
@@ -300,6 +728,30 @@ uninitvar (1041)
     File: .
     Uninitialized variable: local_58
 
+  FUN_00442d9c                                       line 25
+    File: .
+    Uninitialized variable: unaff_EBP
+
+  FUN_00442d9c                                       line 42
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_00444600                                       line 40
+    File: .
+    Uninitialized variable: local_34
+
+  FUN_00444600                                       line 45
+    File: .
+    Uninitialized variable: local_38
+
+  FUN_00444600                                       line 49
+    File: .
+    Uninitialized variable: local_3c
+
+  FUN_004448f0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
   FUN_00444ef0                                       line 44
     File: .
     Uninitialized variable: unaff_ESI
@@ -307,6 +759,22 @@ uninitvar (1041)
   FUN_00445750                                       line 64
     File: .
     Uninitialized variable: local_94
+
+  FUN_00446760                                       line 27
+    File: .
+    Uninitialized variable: local_34
+
+  FUN_00446760                                       line 33
+    File: .
+    Uninitialized variable: local_28
+
+  FUN_00446760                                       line 40
+    File: .
+    Uninitialized variable: local_3c
+
+  FUN_00446760                                       line 41
+    File: .
+    Uninitialized variable: local_38
 
   FUN_004477f0                                       line 23
     File: .
@@ -336,9 +804,149 @@ uninitvar (1041)
     File: .
     Uninitialized variable: iStack_c0
 
-  FUN_00457440                                       line 17
+  FUN_004484a0                                       line 17
     File: .
-    Uninitialized variable: unaff_EBX
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004484a0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00449120                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00449120                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00449120                                       line 20
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00449120                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_0044ae80                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0044ae80                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0044ae80                                       line 19
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0044d430                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0044db00                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0044db00                                       line 21
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0044dfb0                                       line 33
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_00450c90                                       line 117
+    File: .
+    Uninitialized variable: local_20
+
+  FUN_00450c90                                       line 127
+    File: .
+    Uninitialized variable: local_50
+
+  FUN_00450c90                                       line 155
+    File: .
+    Uninitialized variable: local_3c
+
+  FUN_00450c90                                       line 159
+    File: .
+    Uninitialized variable: local_54
+
+  FUN_00450c90                                       line 225
+    File: .
+    Uninitialized variable: local_5c
+
+  FUN_00452500                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00452500                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00452510                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00452510                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00452520                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00452520                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00456690                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004569a0                                       line 24
+    File: .
+    Uninitialized variable: local_18
+
+  FUN_00456b20                                       line 24
+    File: .
+    Uninitialized variable: local_20
+
+  FUN_0045c400                                       line 22
+    File: .
+    Uninitialized variable: in_stack_00000018
+
+  FUN_0045c400                                       line 22
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0045c400                                       line 23
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_0045c400                                       line 26
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_0045c400                                       line 26
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0045c400                                       line 29
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0045d0f0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0045d100                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0045e370                                       line 57
+    File: .
+    Uninitialized variable: in_stack_00000004
 
   FUN_00460d10                                       line 18
     File: .
@@ -360,6 +968,166 @@ uninitvar (1041)
     File: .
     Uninitialized variable: fStack_74
 
+  FUN_00463a40                                       line 24
+    File: .
+    Uninitialized variable: in_MM0
+
+  FUN_00463a40                                       line 25
+    File: .
+    Uninitialized variable: in_MM1
+
+  FUN_00463a40                                       line 26
+    File: .
+    Uninitialized variable: in_MM2
+
+  FUN_00463a40                                       line 27
+    File: .
+    Uninitialized variable: in_MM3
+
+  FUN_00463a40                                       line 28
+    File: .
+    Uninitialized variable: in_MM4
+
+  FUN_00463a40                                       line 29
+    File: .
+    Uninitialized variable: in_MM5
+
+  FUN_00463a40                                       line 30
+    File: .
+    Uninitialized variable: in_MM6
+
+  FUN_00463a40                                       line 31
+    File: .
+    Uninitialized variable: in_MM7
+
+  FUN_00463a79                                       line 27
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_00463a79                                       line 28
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00463a79                                       line 40
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00463ac7                                       line 27
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_00463ac7                                       line 28
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00463ac7                                       line 40
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00463b27                                       line 24
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_00463b27                                       line 25
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00463b27                                       line 38
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00463c42                                       line 24
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_00463c42                                       line 25
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00463c42                                       line 37
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00463d98                                       line 30
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_00463d98                                       line 31
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00463d98                                       line 43
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00463f77                                       line 27
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00463f77                                       line 30
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_00463f77                                       line 31
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00463ff5                                       line 27
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00463ff5                                       line 30
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_00463ff5                                       line 31
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00464075                                       line 26
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_00464075                                       line 27
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00464075                                       line 39
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00464200                                       line 35
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_00464200                                       line 36
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00464200                                       line 48
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_004649dd                                       line 23
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_004649dd                                       line 24
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_004649dd                                       line 36
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00468d00                                       line 81
+    File: .
+    Uninitialized variable: local_44
+
+  FUN_00468d00                                       line 94
+    File: .
+    Uninitialized variable: local_48
+
   FUN_00469ce0                                       line 127
     File: .
     Uninitialized variable: local_150
@@ -379,6 +1147,18 @@ uninitvar (1041)
   FUN_0046b650                                       line 47
     File: .
     Uninitialized variable: unaff_ESI
+
+  FUN_0046b7b0                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0046b7b0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0046b7b0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
 
   FUN_0046baa0                                       line 57
     File: .
@@ -403,6 +1183,106 @@ uninitvar (1041)
   FUN_0046bd90                                       line 70
     File: .
     Uninitialized variable: iStack_30
+
+  FUN_0046d4c0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0046d4c0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0046efa0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0046efa0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0046efa0                                       line 21
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0046f060                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0046f060                                       line 22
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00470730                                       line 78
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_00470730                                       line 99
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00470730                                       line 104
+    File: .
+    Uninitialized variable: local_17f0
+
+  FUN_00470730                                       line 115
+    File: .
+    Uninitialized variable: local_4c3
+
+  FUN_004739e0                                       line 25
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004739e0                                       line 29
+    File: .
+    Uninitialized variable: local_30
+
+  FUN_004739e0                                       line 32
+    File: .
+    Uninitialized variable: local_2c
+
+  FUN_00473ef0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00476eb0                                       line 21
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00476fd0                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00477190                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004771d0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004774b0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00477670                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0047767b                                       line 17
+    File: .
+    Uninitialized variable: in_EAX
+
+  FUN_0047767b                                       line 19
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_0047767b                                       line 19
+    File: .
+    Uninitialized variable: in_CL
+
+  FUN_0047767b                                       line 20
+    File: .
+    Uninitialized variable: in_EDX
 
   FUN_004777a0                                       line 24
     File: .
@@ -504,6 +1384,130 @@ uninitvar (1041)
     File: .
     Uninitialized variable: local_7c
 
+  FUN_0047a1e0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0047a260                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0047a280                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0047a280                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0047a350                                       line 21
+    File: .
+    Uninitialized variable: local_4
+
+  FUN_004818e0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004818e0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00481930                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00481960                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00481960                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00481970                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00481970                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004819f0                                       line 15
+    File: .
+    Uninitialized variable: in_ECX
+
+  FUN_004819f8                                       line 15
+    File: .
+    Uninitialized variable: in_ECX
+
+  FUN_004819f8                                       line 15
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_00481a08                                       line 15
+    File: .
+    Uninitialized variable: in_ECX
+
+  FUN_00481a08                                       line 15
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_00481a14                                       line 15
+    File: .
+    Uninitialized variable: in_ECX
+
+  FUN_00481a14                                       line 15
+    File: .
+    Uninitialized variable: in_DX
+
+  FUN_00481a20                                       line 15
+    File: .
+    Uninitialized variable: in_ECX
+
+  FUN_00481a20                                       line 15
+    File: .
+    Uninitialized variable: in_DL
+
+  FUN_00481ac4                                       line 15
+    File: .
+    Uninitialized variable: in_ECX
+
+  FUN_00481ac4                                       line 15
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_00481acc                                       line 15
+    File: .
+    Uninitialized variable: in_ECX
+
+  FUN_00481acc                                       line 15
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_00481ae4                                       line 15
+    File: .
+    Uninitialized variable: in_ECX
+
+  FUN_00481ae4                                       line 15
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_00481af4                                       line 15
+    File: .
+    Uninitialized variable: in_ECX
+
+  FUN_00481af4                                       line 15
+    File: .
+    Uninitialized variable: in_EDX
+
+  FUN_00481b04                                       line 15
+    File: .
+    Uninitialized variable: in_ECX
+
+  FUN_00481b04                                       line 15
+    File: .
+    Uninitialized variable: in_EDX
+
   FUN_00481b0c                                       line 19
     File: .
     Uninitialized variable: in_EDX
@@ -528,6 +1532,18 @@ uninitvar (1041)
     File: .
     Uninitialized variable: fStack_28
 
+  FUN_0048c920                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0048c930                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0048c93c                                       line 14
+    File: .
+    Uninitialized variable: in_EAX
+
   FUN_0048d5d0                                       line 103
     File: .
     Uninitialized variable: iStack_30
@@ -539,6 +1555,30 @@ uninitvar (1041)
   FUN_0048f490                                       line 142
     File: .
     Uninitialized variable: fStack_3c
+
+  FUN_00493390                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00494080                                       line 19
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00494080                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00494080                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00495410                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00495420                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
 
   FUN_00497900                                       line 78
     File: .
@@ -623,6 +1663,58 @@ uninitvar (1041)
   FUN_0049cc10                                       line 137
     File: .
     Uninitialized variable: local_74
+
+  FUN_0049ecc0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0049ecc0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0049ecf0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0049ecf0                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0049ed20                                       line 22
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0049ed20                                       line 23
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0049ed20                                       line 23
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0049ed20                                       line 23
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_0049ed20                                       line 24
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_0049edc0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0049edc0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0049edc0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004a03a0                                       line 27
+    File: .
+    Uninitialized variable: in_stack_00000008
 
   FUN_004a3b90                                       line 137
     File: .
@@ -712,6 +1804,22 @@ uninitvar (1041)
     File: .
     Uninitialized variable: fStack_44
 
+  FUN_004bc7c0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004bc7c0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004bc7c0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_004bc7c0                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000010
+
   FUN_004bc7e0                                       line 79
     File: .
     Uninitialized variable: unaff_ESI
@@ -747,6 +1855,26 @@ uninitvar (1041)
   FUN_004c46b0                                       line 52
     File: .
     Uninitialized variable: *puVar1
+
+  FUN_004c6a40                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004c6a50                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004c6a50                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004c6d70                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004c6f50                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
 
   FUN_004c71a0                                       line 78
     File: .
@@ -796,6 +1924,18 @@ uninitvar (1041)
     File: .
     Uninitialized variable: *puVar6
 
+  FUN_004cd1b0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004cde10                                       line 25
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_004cdf70                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
   FUN_004cea50                                       line 30
     File: .
     Uninitialized variable: uStack_44
@@ -836,6 +1976,54 @@ uninitvar (1041)
     File: .
     Uninitialized variable: *puVar3
 
+  FUN_004da000                                       line 24
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004da000                                       line 26
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004da000                                       line 26
+    File: .
+    Uninitialized variable: fStack_30
+
+  FUN_004da000                                       line 26
+    File: .
+    Uninitialized variable: fStack_24
+
+  FUN_004da000                                       line 27
+    File: .
+    Uninitialized variable: fStack_2c
+
+  FUN_004da000                                       line 27
+    File: .
+    Uninitialized variable: fStack_20
+
+  FUN_004da000                                       line 28
+    File: .
+    Uninitialized variable: fStack_28
+
+  FUN_004da070                                       line 29
+    File: .
+    Uninitialized variable: fStack_34
+
+  FUN_004da070                                       line 30
+    File: .
+    Uninitialized variable: fStack_3c
+
+  FUN_004da070                                       line 30
+    File: .
+    Uninitialized variable: fStack_30
+
+  FUN_004da070                                       line 31
+    File: .
+    Uninitialized variable: fStack_38
+
+  FUN_004da070                                       line 31
+    File: .
+    Uninitialized variable: fStack_2c
+
   FUN_004da790                                       line 198
     File: .
     Uninitialized variable: local_6c
@@ -848,17 +2036,265 @@ uninitvar (1041)
     File: .
     Uninitialized variable: local_54
 
+  FUN_004dba50                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004dba50                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004dba50                                       line 20
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_004dba50                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000010
+
   FUN_004dba70                                       line 111
     File: .
     Uninitialized variable: unaff_ESI
+
+  FUN_004dd760                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004e0290                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004e0290                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004e0300                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004e0300                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004e0890                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004e0890                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004e2980                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004e2c40                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004e2c50                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004e9570                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004e9570                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004e96e0                                       line 23
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edc30                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edc30                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004edc50                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004edc50                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edc80                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edc80                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004edc80                                       line 19
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_004edcb0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edcc0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edcd0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edce0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edcf0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edd00                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edd10                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edd20                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edf30                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edf30                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004edf80                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004edf80                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004ee690                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004ee690                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004ee6c0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004ee6c0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004ee6c0                                       line 21
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_004ee720                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004ee720                                       line 19
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_004ee740                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004efc50                                       line 21
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_004efc50                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004efc50                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_004efc50                                       line 24
+    File: .
+    Uninitialized variable: in_stack_00000008
 
   FUN_004f0360                                       line 50
     File: .
     Uninitialized variable: local_1c
 
+  FUN_004f16d0                                       line 53
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004f16d0                                       line 55
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_004f16d0                                       line 61
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004f16d0                                       line 75
+    File: .
+    Uninitialized variable: local_2c
+
+  FUN_004f16d0                                       line 83
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_004f16d0                                       line 84
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_004f16d0                                       line 85
+    File: .
+    Uninitialized variable: in_stack_00000018
+
+  FUN_004f18c0                                       line 153
+    File: .
+    Uninitialized variable: local_34
+
+  FUN_004f3340                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004f3340                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004f3340                                       line 26
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_004f45e0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000008
+
   FUN_004f49d8                                       line 15
     File: .
     Uninitialized variable: unaff_EBP
+
+  FUN_004f5bb0                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004f5d00                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
 
   FUN_004f5d90                                       line 55
     File: .
@@ -903,6 +2339,34 @@ uninitvar (1041)
   FUN_004f7360                                       line 54
     File: .
     Uninitialized variable: fStack_50
+
+  FUN_004f76c0                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004f76c0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004f942e                                       line 14
+    File: .
+    Uninitialized variable: in_EAX
+
+  FUN_004f9440                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004faca0                                       line 24
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004faca0                                       line 24
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004fbb70                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
 
   FUN_004fd1d0                                       line 52
     File: .
@@ -952,6 +2416,102 @@ uninitvar (1041)
     File: .
     Uninitialized variable: fStack_4c
 
+  FUN_0050ea10                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0050ea10                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0050ea90                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0050ea90                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0050eba0                                       line 27
+    File: .
+    Uninitialized variable: local_30
+
+  FUN_0050eba0                                       line 28
+    File: .
+    Uninitialized variable: local_2c
+
+  FUN_0050eba0                                       line 29
+    File: .
+    Uninitialized variable: local_28
+
+  FUN_00511d80                                       line 160
+    File: .
+    Uninitialized variable: local_84
+
+  FUN_00511d80                                       line 161
+    File: .
+    Uninitialized variable: local_80
+
+  FUN_00514390                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00514390                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_005143a0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_005143a0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_005143b0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_005143b0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00515890                                       line 30
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00515890                                       line 34
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_00515890                                       line 35
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00515890                                       line 39
+    File: .
+    Uninitialized variable: fVar5
+
+  FUN_00515890                                       line 42
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00515980                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00515980                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_005159a0                                       line 40
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_005159a0                                       line 93
+    File: .
+    Uninitialized variable: local_24
+
   FUN_00515db0                                       line 24
     File: .
     Uninitialized variable: uStack_20
@@ -996,6 +2556,26 @@ uninitvar (1041)
     File: .
     Uninitialized variable: fStack_4c
 
+  FUN_00518f60                                       line 55
+    File: .
+    Uninitialized variable: local_28
+
+  FUN_00518f60                                       line 56
+    File: .
+    Uninitialized variable: local_24
+
+  FUN_00518f60                                       line 57
+    File: .
+    Uninitialized variable: local_20
+
+  FUN_00519120                                       line 32
+    File: .
+    Uninitialized variable: local_1c
+
+  FUN_00519120                                       line 33
+    File: .
+    Uninitialized variable: local_18
+
   FUN_0051d650                                       line 46
     File: .
     Uninitialized variable: uStack_3c
@@ -1012,6 +2592,154 @@ uninitvar (1041)
     File: .
     Uninitialized variable: uStack_4c
 
+  FUN_0051e7d0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0051f060                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0051f3f0                                       line 63
+    File: .
+    Uninitialized variable: local_54
+
+  FUN_0051f800                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0051f800                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00521d80                                       line 24
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_005235b0                                       line 29
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_005235b0                                       line 34
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00525c10                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00525ff0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00526020                                       line 24
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00526020                                       line 25
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00526020                                       line 26
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00526020                                       line 27
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_00526020                                       line 28
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_00526020                                       line 29
+    File: .
+    Uninitialized variable: in_stack_00000018
+
+  FUN_005260c0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_005262a0                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00526dd0                                       line 26
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00526f00                                       line 23
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00526f60                                       line 30
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00526f60                                       line 31
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00526f60                                       line 32
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_00526f60                                       line 33
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_00526f60                                       line 34
+    File: .
+    Uninitialized variable: in_stack_00000018
+
+  FUN_00526f60                                       line 36
+    File: .
+    Uninitialized variable: in_stack_0000001c
+
+  FUN_00527060                                       line 25
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00527200                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00527930                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00527930                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00529a00                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0052ad30                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0052b240                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0052bbd0                                       line 56
+    File: .
+    Uninitialized variable: piStack_1c
+
+  FUN_0052bbd0                                       line 89
+    File: .
+    Uninitialized variable: bStack_80
+
+  FUN_0052bbd0                                       line 90
+    File: .
+    Uninitialized variable: iStack_6c
+
+  FUN_0052bbd0                                       line 93
+    File: .
+    Uninitialized variable: unaff_EBP
+
   FUN_0052d790                                       line 131
     File: .
     Uninitialized variable: extraout_var
@@ -1019,6 +2747,98 @@ uninitvar (1041)
   FUN_0052dff0                                       line 213
     File: .
     Uninitialized variable: extraout_var
+
+  FUN_0052ec90                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0052ee20                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0052ee20                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0052ee30                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0052ee30                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0052ee40                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0052ee40                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0052f031                                       line 67
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_0052f031                                       line 68
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_0052f031                                       line 80
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_0052f823                                       line 69
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_0052f823                                       line 70
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_0052f823                                       line 82
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_005300ec                                       line 27
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_005300ec                                       line 28
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_005300ec                                       line 40
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00530322                                       line 27
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_00530322                                       line 28
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00530322                                       line 40
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00530d30                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00530d30                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00532f30                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00532fa0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
 
   FUN_00533750                                       line 79
     File: .
@@ -1063,6 +2883,58 @@ uninitvar (1041)
   FUN_00533750                                       line 158
     File: .
     Uninitialized variable: uStack_9c
+
+  FUN_00533e70                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_00533e70                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00533e70                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_00533e70                                       line 22
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00533e70                                       line 22
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00534030                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_00534030                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00534030                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_00534030                                       line 22
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00534030                                       line 23
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_005342b0                                       line 38
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_005342b0                                       line 48
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00534f90                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
 
   FUN_005384d0                                       line 176
     File: .
@@ -1164,13 +3036,97 @@ uninitvar (1041)
     File: .
     Uninitialized variable: local_dc
 
+  FUN_0053d700                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0053d700                                       line 22
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0053d700                                       line 27
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0053d790                                       line 21
+    File: .
+    Uninitialized variable: in_stack_ffffffac
+
+  FUN_0053d790                                       line 31
+    File: .
+    Uninitialized variable: local_24
+
   FUN_0053f210                                       line 23
     File: .
     Uninitialized variable: unaff_ESI
 
+  FUN_00540970                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00540970                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_005409a0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_005409a0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_005409f0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_005409f0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00540a10                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00540a20                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00540a30                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00540a40                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00540a40                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00540a70                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
   FUN_005423c0                                       line 119
     File: .
     Uninitialized variable: fStack_44
+
+  FUN_005431f0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_005431f0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_005431f0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_005431f0                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000010
 
   FUN_00543210                                       line 55
     File: .
@@ -1212,13 +3168,169 @@ uninitvar (1041)
     File: .
     Uninitialized variable: local_a4
 
+  FUN_00548cd0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00548cd0                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00548cd0                                       line 23
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00548cd0                                       line 26
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_00548cd0                                       line 29
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_00548e20                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00548f00                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00548fc0                                       line 28
+    File: .
+    Uninitialized variable: local_18
+
+  FUN_00548fc0                                       line 38
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00549150                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00549170                                       line 31
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00549170                                       line 33
+    File: .
+    Uninitialized variable: unaff_EDI
+
+  FUN_00549170                                       line 37
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
   FUN_00549cd0                                       line 73
     File: .
     Uninitialized variable: *puVar2
 
+  FUN_0054b110                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0054c5f0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
   FUN_0054d8a0                                       line 53
     File: .
     Uninitialized variable: unaff_ESI
+
+  FUN_00553600                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00558be0                                       line 17
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00558c00                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00558c00                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00559d20                                       line 21
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0055a010                                       line 26
+    File: .
+    Uninitialized variable: local_a4
+
+  FUN_0055a010                                       line 36
+    File: .
+    Uninitialized variable: *pbVar3
+
+  FUN_0055a210                                       line 44
+    File: .
+    Uninitialized variable: local_b0
+
+  FUN_0055a210                                       line 54
+    File: .
+    Uninitialized variable: *pbVar3
+
+  FUN_0055a9a0                                       line 18
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0055a9a0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0055a9a0                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0055b0b0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0055b0b0                                       line 21
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0055bc80                                       line 24
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0055c6d0                                       line 16
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0055c830                                       line 46
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_0055c8b0                                       line 39
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_0055c910                                       line 35
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_0055c970                                       line 37
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_0055ca30                                       line 37
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_0055caf0                                       line 53
+    File: .
+    Uninitialized variable: *puVar3
+
+  FUN_0055caf0                                       line 68
+    File: .
+    Uninitialized variable: unaff_ESI
+
+  FUN_0055d1f0                                       line 20
+    File: .
+    Uninitialized variable: local_1c
 
   FUN_00563d90                                       line 20
     File: .
@@ -1384,6 +3496,22 @@ uninitvar (1041)
     File: .
     Uninitialized variable: in_EAX
 
+  FUN_0056c4d4                                       line 16
+    File: .
+    Uninitialized variable: in_EAX
+
+  FUN_0056c4d4                                       line 18
+    File: .
+    Uninitialized variable: in_FPUStatusWord
+
+  FUN_0056c520                                       line 16
+    File: .
+    Uninitialized variable: in_EAX
+
+  FUN_0056c520                                       line 18
+    File: .
+    Uninitialized variable: in_FPUStatusWord
+
   FUN_0056c5a8                                       line 20
     File: .
     Uninitialized variable: in_ST0
@@ -1496,6 +3624,10 @@ uninitvar (1041)
     File: .
     Uninitialized variable: extraout_EDX
 
+  FUN_00571858                                       line 30
+    File: .
+    Uninitialized variable: in_DS
+
   FUN_00571a9d                                       line 25
     File: .
     Uninitialized variable: in_ECX
@@ -1544,26 +3676,6 @@ uninitvar (1041)
     File: .
     Uninitialized variable: in_FPUControlWord
 
-  FUN_00573a31                                       line 24
-    File: .
-    Uninitialized variable: unaff_EBX
-
-  FUN_00573a31                                       line 24
-    File: .
-    Uninitialized variable: in_CL
-
-  FUN_00573a31                                       line 27
-    File: .
-    Uninitialized variable: in_EAX
-
-  FUN_00573a31                                       line 37
-    File: .
-    Uninitialized variable: unaff_retaddr
-
-  FUN_00573a31                                       line 42
-    File: .
-    Uninitialized variable: unaff_EBP
-
   FUN_00573afc                                       line 38
     File: .
     Uninitialized variable: in_EAX
@@ -1571,6 +3683,10 @@ uninitvar (1041)
   FUN_00574264                                       line 36
     File: .
     Uninitialized variable: in_EAX
+
+  FUN_004f4f10                                       line 34
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: in_stack_00000008
 
   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0 line 30
     File: core/actor.cpp
@@ -1612,11 +3728,11 @@ uninitvar (1041)
     File: core/batcreat.cpp
     Uninitialized variable: local_60
 
-  core_batman.cpp_CBatman_process_FUN_00413800       line 149
+  core_batman.cpp_CBatman_process_FUN_00413800       line 150
     File: core/batman.cpp
     Uninitialized variable: local_7c
 
-  core_batman.cpp_CBatman_process_FUN_00413800       line 196
+  core_batman.cpp_CBatman_process_FUN_00413800       line 197
     File: core/batman.cpp
     Uninitialized variable: local_94
 
@@ -2820,31 +4936,31 @@ uninitvar (1041)
     File: core/hero.cpp
     Uninitialized variable: fStack_4c
 
-  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 51
+  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 52
     File: core/hero.cpp
     Uninitialized variable: fStack_74
 
-  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 52
+  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 53
     File: core/hero.cpp
     Uninitialized variable: fStack_7c
 
-  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 52
+  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 53
     File: core/hero.cpp
     Uninitialized variable: fStack_70
 
-  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 55
+  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 56
     File: core/hero.cpp
     Uninitialized variable: fStack_78
 
-  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 55
+  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 56
     File: core/hero.cpp
     Uninitialized variable: fStack_6c
 
-  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 65
+  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 66
     File: core/hero.cpp
     Uninitialized variable: fStack_30
 
-  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 66
+  core_hero.cpp_CHero_tryPushNearbyBox_FUN_004b54c0  line 67
     File: core/hero.cpp
     Uninitialized variable: fStack_34
 
@@ -2860,6 +4976,10 @@ uninitvar (1041)
     File: core/icepick.cpp
     Uninitialized variable: unaff_ESI
 
+  FUN_004c0640                                       line 24
+    File: core/inv.cpp
+    Uninitialized variable: in_stack_00000008
+
   core_lever.cpp_CLever_isAccessibleFrom_FUN_004c68f line 17
     File: core/lever.cpp
     Uninitialized variable: local_18
@@ -2871,6 +4991,10 @@ uninitvar (1041)
   core_marquee.cpp_CMarquee_computeBoundingBox_FUN_0 line 48
     File: core/marquee.cpp
     Uninitialized variable: local_18
+
+  FUN_004d2880                                       line 30
+    File: core/menu.cpp
+    Uninitialized variable: in_stack_00000008
 
   core_menu.cpp_configureSoundOptions_FUN_004d12e0   line 183
     File: core/menu.cpp
@@ -2991,6 +5115,30 @@ uninitvar (1041)
   core_particle.cpp_CParticle_process_FUN_004ef120   line 81
     File: core/particle.cpp
     Uninitialized variable: fStack_24
+
+  FUN_004efcd0                                       line 25
+    File: core/path.cpp
+    Uninitialized variable: in_stack_00000004
+
+  FUN_004efcd0                                       line 26
+    File: core/path.cpp
+    Uninitialized variable: in_stack_00000008
+
+  FUN_004efcd0                                       line 28
+    File: core/path.cpp
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_004f1f80                                       line 26
+    File: core/path.cpp
+    Uninitialized variable: local_1c
+
+  FUN_004f1f80                                       line 42
+    File: core/path.cpp
+    Uninitialized variable: local_24
+
+  FUN_004f1f80                                       line 42
+    File: core/path.cpp
+    Uninitialized variable: local_20
 
   core_path.cpp_CPathMap_findPathToDestination_FUN_0 line 75
     File: core/path.cpp
@@ -3316,6 +5464,10 @@ uninitvar (1041)
     File: core/simbox.cpp
     Uninitialized variable: fStack_24
 
+  FUN_0051dc30                                       line 19
+    File: core/skeleton.cpp
+    Uninitialized variable: in_stack_00000004
+
   core_skeleton.cpp_CDeformableModelInstance_compute line 47
     File: core/skeleton.cpp
     Uninitialized variable: local_5c
@@ -3496,23 +5648,23 @@ uninitvar (1041)
     File: core/stranger.cpp
     Uninitialized variable: fStack_30
 
-  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 line 202
+  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 line 203
     File: core/stranger.cpp
     Uninitialized variable: fStack_d8
 
-  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 line 203
+  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 line 204
     File: core/stranger.cpp
     Uninitialized variable: fStack_d4
 
-  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 line 211
+  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 line 212
     File: core/stranger.cpp
     Uninitialized variable: fStack_f0
 
-  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 line 220
+  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 line 221
     File: core/stranger.cpp
     Uninitialized variable: fStack_c8
 
-  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 line 220
+  core_stranger.cpp_CStranger_autoAimAtThreat_FUN_00 line 221
     File: core/stranger.cpp
     Uninitialized variable: fStack_cc
 
@@ -3580,19 +5732,19 @@ uninitvar (1041)
     File: core/trash.cpp
     Uninitialized variable: local_18
 
-  core_trigger.cpp_CTrigger_containsActor_FUN_005487 line 52
+  core_trigger.cpp_CTrigger_containsActor_FUN_005487 line 53
     File: core/trigger.cpp
     Uninitialized variable: fStack_3c
 
-  core_trigger.cpp_CTrigger_containsActor_FUN_005487 line 53
+  core_trigger.cpp_CTrigger_containsActor_FUN_005487 line 54
     File: core/trigger.cpp
     Uninitialized variable: fStack_38
 
-  core_trigger.cpp_CTrigger_containsActor_FUN_005487 line 82
+  core_trigger.cpp_CTrigger_containsActor_FUN_005487 line 83
     File: core/trigger.cpp
     Uninitialized variable: fStack_90
 
-  core_trigger.cpp_CTrigger_containsActor_FUN_005487 line 82
+  core_trigger.cpp_CTrigger_containsActor_FUN_005487 line 83
     File: core/trigger.cpp
     Uninitialized variable: fStack_84
 
@@ -4044,9 +6196,21 @@ uninitvar (1041)
     File: engine/3d.c
     Uninitialized variable: in_stack_00000038
 
+  FUN_0041a5a0                                       line 26
+    File: engine/boss.c
+    Uninitialized variable: unaff_ESI
+
   engine_dosio.cpp_getFile_FUN_00456a60              line 38
     File: engine/dosio.cpp
     Uninitialized variable: local_20
+
+  FUN_0045ed40                                       line 18
+    File: engine/drender.cpp
+    Uninitialized variable: in_stack_00000004
+
+  FUN_0045ed40                                       line 18
+    File: engine/drender.cpp
+    Uninitialized variable: in_stack_00000008
 
   engine_drender.cpp_CDemonRenderer_getCameraOriginW line 20
     File: engine/drender.cpp
@@ -4072,9 +6236,17 @@ uninitvar (1041)
     File: engine/keyframe.c
     Uninitialized variable: local_2c
 
-  engine_light.cpp_calculatePhongLighting_FUN_004c6a line 67
-    File: engine/light.cpp
-    Uninitialized variable: local_24
+  FUN_004cdfa0                                       line 115
+    File: engine/matrix.c
+    Uninitialized variable: local_4c
+
+  FUN_004cdfa0                                       line 117
+    File: engine/matrix.c
+    Uninitialized variable: local_48
+
+  FUN_004cdfa0                                       line 119
+    File: engine/matrix.c
+    Uninitialized variable: local_44
 
   engine_matrix.c_invertTransformMatrix_FUN_004ccae0 line 57
     File: engine/matrix.c
@@ -4086,6 +6258,18 @@ uninitvar (1041)
 
   engine_matrix.c_transformWorldToView_FUN_004cd0e0  line 34
     File: engine/matrix.c
+    Uninitialized variable: unaff_ESI
+
+  FUN_004dcf60                                       line 148
+    File: engine/model.c
+    Uninitialized variable: local_38
+
+  FUN_004dcf60                                       line 176
+    File: engine/model.c
+    Uninitialized variable: *puVar10
+
+  FUN_004dcf60                                       line 181
+    File: engine/model.c
     Uninitialized variable: unaff_ESI
 
   FUN_004f7ae0                                       line 71
@@ -4103,6 +6287,14 @@ uninitvar (1041)
   FUN_004f8570                                       line 37
     File: engine/pod.cpp
     Uninitialized variable: unaff_ESI
+
+  FUN_004771f0                                       line 26
+    File: shape/edittool.cpp
+    Uninitialized variable: in_stack_00000010
+
+  FUN_004771f0                                       line 29
+    File: shape/edittool.cpp
+    Uninitialized variable: in_stack_00000004
 
   shape_edittool.cpp_CEditorTools_displayMemoryDiagn line 25
     File: shape/edittool.cpp
@@ -4163,6 +6355,10 @@ uninitvar (1041)
   sound_snddx.cpp_fillStreamBuffer_FUN_00529c10      line 58
     File: sound/snddx.cpp
     Uninitialized variable: iStack_3c
+
+  FUN_00527190                                       line 20
+    File: sound/sndmain.cpp
+    Uninitialized variable: in_stack_00000008
 
   sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10        line 68
     File: sound/sndmain.cpp
@@ -4261,7 +6457,7 @@ uninitvar (1041)
     Uninitialized variable: local_7c
 
 ----------------------------------------------------------------------------------------------------
-objectIndex (430)
+objectIndex (435)
 ----------------------------------------------------------------------------------------------------
 
   FUN_0048b6f0                                       line 220
@@ -5927,6 +8123,26 @@ objectIndex (430)
   FUN_004accf0                                       line 362
     File: .
     The address of local variable 'local_1a4' is accessed at non-zero index.
+
+  FUN_004f18c0                                       line 108
+    File: .
+    The address of local variable 'local_48' might be accessed at non-zero index.
+
+  FUN_004f18c0                                       line 108
+    File: .
+    The address of local variable 'local_54' might be accessed at non-zero index.
+
+  FUN_004f18c0                                       line 109
+    File: .
+    The address of local variable 'local_44' might be accessed at non-zero index.
+
+  FUN_004f18c0                                       line 110
+    File: .
+    The address of local variable 'local_50' might be accessed at non-zero index.
+
+  FUN_00573ed0                                       line 44
+    File: .
+    The address of local variable 'uStack_48' might be accessed at non-zero index.
 
   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 169
     File: core/bodypart.cpp
@@ -5985,776 +8201,28 @@ objectIndex (430)
     The address of local variable 'local_8c' might be accessed at non-zero index.
 
 ----------------------------------------------------------------------------------------------------
-legacyUninitvar (191)
+shiftTooManyBitsSigned (218)
 ----------------------------------------------------------------------------------------------------
 
-  FUN_00418a00                                       line 143
+  FUN_0042df00                                       line 59
     File: .
-    Uninitialized variable: afStack_128[3]
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  FUN_00418a00                                       line 156
+  FUN_0042e290                                       line 47
     File: .
-    Uninitialized variable: local_84
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  FUN_00418a00                                       line 157
+  FUN_0042f8c0                                       line 54
     File: .
-    Uninitialized variable: local_80
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  FUN_00447f20                                       line 124
+  FUN_0042f8c0                                       line 59
     File: .
-    Uninitialized variable: uStack_ec
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
-  FUN_00447f20                                       line 129
+  FUN_0042f8c0                                       line 63
     File: .
-    Uninitialized variable: iStack_a8
-
-  FUN_00447f20                                       line 84
-    File: .
-    Uninitialized variable: iStack_78
-
-  FUN_00447f20                                       line 152
-    File: .
-    Uninitialized variable: iStack_6c
-
-  FUN_00447f20                                       line 148
-    File: .
-    Uninitialized variable: uStack_44
-
-  FUN_00469ce0                                       line 128
-    File: .
-    Uninitialized variable: aiStack_14c
-
-  FUN_00477890                                       line 226
-    File: .
-    Uninitialized variable: fStack_d0
-
-  FUN_00477890                                       line 225
-    File: .
-    Uninitialized variable: fStack_cc
-
-  FUN_00489990                                       line 64
-    File: .
-    Uninitialized variable: aiStack_2c
-
-  FUN_0048d5d0                                       line 104
-    File: .
-    Uninitialized variable: aiStack_2c
-
-  FUN_0048d5d0                                       line 217
-    File: .
-    Uninitialized variable: fStack_18
-
-  FUN_00494e80                                       line 39
-    File: .
-    Uninitialized variable: uStack_1c
-
-  FUN_00494e80                                       line 43
-    File: .
-    Uninitialized variable: uStack_1c
-
-  FUN_00494e80                                       line 47
-    File: .
-    Uninitialized variable: uStack_1c
-
-  FUN_00495a20                                       line 293
-    File: .
-    Uninitialized variable: local_1b0
-
-  FUN_00495a20                                       line 296
-    File: .
-    Uninitialized variable: local_1ac
-
-  FUN_00495a20                                       line 292
-    File: .
-    Uninitialized variable: local_1a8
-
-  FUN_00495a20                                       line 293
-    File: .
-    Uninitialized variable: local_1a4
-
-  FUN_00495a20                                       line 296
-    File: .
-    Uninitialized variable: local_1a0
-
-  FUN_00495a20                                       line 311
-    File: .
-    Uninitialized variable: local_b4
-
-  FUN_00495a20                                       line 310
-    File: .
-    Uninitialized variable: local_b0
-
-  FUN_004c2470                                       line 166
-    File: .
-    Uninitialized variable: local_4c
-
-  FUN_004d4f30                                       line 199
-    File: .
-    Uninitialized variable: local_a9
-
-  FUN_004fd1d0                                       line 71
-    File: .
-    Uninitialized variable: auStack_a8
-
-  FUN_004fd1d0                                       line 94
-    File: .
-    Uninitialized variable: auStack_88
-
-  FUN_00515ea0                                       line 227
-    File: .
-    Uninitialized variable: fStack_7c
-
-  FUN_00515ea0                                       line 226
-    File: .
-    Uninitialized variable: fStack_78
-
-  FUN_00533750                                       line 133
-    File: .
-    Uninitialized variable: fStack_64
-
-  FUN_005384d0                                       line 190
-    File: .
-    Uninitialized variable: auStack_32c
-
-  FUN_005384d0                                       line 234
-    File: .
-    Uninitialized variable: auStack_2bc
-
-  FUN_005396d0                                       line 32
-    File: .
-    Uninitialized variable: auStack_1818[0x5fb]
-
-  FUN_0053a260                                       line 65
-    File: .
-    Uninitialized variable: auStack_198
-
-  FUN_0053a260                                       line 118
-    File: .
-    Uninitialized variable: auStack_d8
-
-  FUN_00563d90                                       line 29
-    File: .
-    Uninitialized variable: in_ECX
-
-  FUN_00568bb0                                       line 44
-    File: .
-    Uninitialized variable: unaff_EBX
-
-  FUN_00569040                                       line 75
-    File: .
-    Uninitialized variable: iStack_84
-
-  FUN_00569040                                       line 76
-    File: .
-    Uninitialized variable: iStack_64
-
-  FUN_00569040                                       line 76
-    File: .
-    Uninitialized variable: iStack_60
-
-  FUN_0056afe8                                       line 81
-    File: .
-    Uninitialized variable: in_DS
-
-  FUN_0056f14c                                       line 20
-    File: .
-    Uninitialized variable: in_EAX
-
-  FUN_0056f14c                                       line 20
-    File: .
-    Uninitialized variable: unaff_EBX
-
-  FUN_005706dd                                       line 79
-    File: .
-    Uninitialized variable: unaff_EBX
-
-  FUN_00571a9d                                       line 37
-    File: .
-    Uninitialized variable: in_EDX
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 53
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: iStack_28
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 53
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: iStack_24
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 56
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: iStack_20
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 56
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: iStack_1c
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 57
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: iStack_18
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 58
-    File: cockpit/pkbitmap.cpp
-    Uninitialized variable: iStack_14
-
-  core_actor.cpp_FUN_0040b300                        line 222
-    File: core/actor.cpp
-    Uninitialized variable: fStack_160
-
-  core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 85
-    File: core/bodypart.cpp
-    Uninitialized variable: (float10)local_a4[1]
-
-  core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 163
-    File: core/bodypart.cpp
-    Uninitialized variable: local_9c
-
-  core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 164
-    File: core/bodypart.cpp
-    Uninitialized variable: local_98
-
-  core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 163
-    File: core/bodypart.cpp
-    Uninitialized variable: local_84
-
-  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 435
-    File: core/box.cpp
-    Uninitialized variable: local_3d0
-
-  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 679
-    File: core/box.cpp
-    Uninitialized variable: local_380
-
-  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 680
-    File: core/box.cpp
-    Uninitialized variable: local_37c
-
-  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 682
-    File: core/box.cpp
-    Uninitialized variable: local_378
-
-  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 695
-    File: core/box.cpp
-    Uninitialized variable: local_2a4
-
-  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 696
-    File: core/box.cpp
-    Uninitialized variable: local_2a0
-
-  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 688
-    File: core/box.cpp
-    Uninitialized variable: local_274
-
-  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 688
-    File: core/box.cpp
-    Uninitialized variable: local_270
-
-  core_charactr.cpp_CCharacter_findSomethingToLookAt line 226
-    File: core/charactr.cpp
-    Uninitialized variable: fStack_d4
-
-  core_charactr.cpp_CCharacter_findSomethingToLookAt line 222
-    File: core/charactr.cpp
-    Uninitialized variable: fStack_d0
-
-  FUN_00446810                                       line 107
-    File: core/dcamera.cpp
-    Uninitialized variable: unaff_EDI
-
-  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_ line 111
-    File: core/dcamera.cpp
-    Uninitialized variable: local_74
-
-  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_ line 170
-    File: core/dcamera.cpp
-    Uninitialized variable: local_60
-
-  core_dcamera.cpp_CDemonCamera_screenToWorldCoord_F line 28
-    File: core/dcamera.cpp
-    Uninitialized variable: unaff_ESI
-
-  core_dcamera.cpp_CDemonCamera_worldToScreenWithFru line 113
-    File: core/dcamera.cpp
-    Uninitialized variable: unaff_ESI
-
-  core_dlight.cpp_CDemonLight_renderExternalVolumetr line 104
-    File: core/dlight.cpp
-    Uninitialized variable: afStack_ec
-
-  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 64
-    File: core/dlight.cpp
-    Uninitialized variable: afStack_78
-
-  core_dlight.cpp_CDemonLight_renderVolumetricLightS line 105
-    File: core/dlight.cpp
-    Uninitialized variable: aiStack_d0
-
-  core_dlight.cpp_FUN_0044f9b0                       line 110
-    File: core/dlight.cpp
-    Uninitialized variable: afStack_e4
-
-  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck line 104
-    File: core/dtrace.cpp
-    Uninitialized variable: unaff_EBX
-
-  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck line 120
-    File: core/dtrace.cpp
-    Uninitialized variable: unaff_EBX
-
-  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck line 109
-    File: core/dtrace.cpp
-    Uninitialized variable: unaff_ESI
-
-  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck line 117
-    File: core/dtrace.cpp
-    Uninitialized variable: unaff_ESI
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FU line 131
-    File: core/dtrace.cpp
-    Uninitialized variable: local_70
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 102
-    File: core/dtrace.cpp
-    Uninitialized variable: local_b0
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 174
-    File: core/dtrace.cpp
-    Uninitialized variable: iStack_6c
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 189
-    File: core/dtrace.cpp
-    Uninitialized variable: local_64
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 153
-    File: core/dtrace.cpp
-    Uninitialized variable: local_60
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 157
-    File: core/dtrace.cpp
-    Uninitialized variable: local_60
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 142
-    File: core/dtrace.cpp
-    Uninitialized variable: local_5c
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 147
-    File: core/dtrace.cpp
-    Uninitialized variable: local_5c
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 190
-    File: core/dtrace.cpp
-    Uninitialized variable: local_5c
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 163
-    File: core/dtrace.cpp
-    Uninitialized variable: local_58
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 167
-    File: core/dtrace.cpp
-    Uninitialized variable: local_58
-
-  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 191
-    File: core/dtrace.cpp
-    Uninitialized variable: local_58
-
-  core_dtrace.cpp_CDemonRaytrace_testCylinderCollisi line 67
-    File: core/dtrace.cpp
-    Uninitialized variable: unaff_EDI
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 716
-    File: core/event.cpp
-    Uninitialized variable: local_100
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 715
-    File: core/event.cpp
-    Uninitialized variable: local_fc
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 716
-    File: core/event.cpp
-    Uninitialized variable: local_e8
-
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 715
-    File: core/event.cpp
-    Uninitialized variable: local_e4
-
-  FUN_00499ca0                                       line 76
-    File: core/gabriela.cpp
-    Uninitialized variable: fStack_9c
-
-  FUN_00499ca0                                       line 77
-    File: core/gabriela.cpp
-    Uninitialized variable: fStack_98
-
-  FUN_00499ca0                                       line 74
-    File: core/gabriela.cpp
-    Uninitialized variable: fStack_94
-
-  FUN_00499ca0                                       line 76
-    File: core/gabriela.cpp
-    Uninitialized variable: fStack_90
-
-  FUN_00499ca0                                       line 77
-    File: core/gabriela.cpp
-    Uninitialized variable: fStack_8c
-
-  core_gabriela.cpp_CGabriella_findAndPickupNearbyOb line 98
-    File: core/gabriela.cpp
-    Uninitialized variable: fStack_64
-
-  core_gabriela.cpp_CGabriella_findAndPickupNearbyOb line 98
-    File: core/gabriela.cpp
-    Uninitialized variable: fStack_60
-
-  core_gabriela.cpp_CGabriella_updateAimTracking_FUN line 122
-    File: core/gabriela.cpp
-    Uninitialized variable: fStack_70
-
-  core_gabriela.cpp_CGabriella_updateAimTracking_FUN line 123
-    File: core/gabriela.cpp
-    Uninitialized variable: fStack_6c
-
-  core_game.cpp_CGame_beginFadeOut_FUN_004a3820      line 54
-    File: core/game.cpp
-    Uninitialized variable: aiStack_2c
-
-  core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 line 50
-    File: core/game.cpp
-    Uninitialized variable: aiStack_2c
-
-  core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200   line 75
-    File: core/gore.cpp
-    Uninitialized variable: local_44
-
-  core_mission.cpp_CDemonMission_loadActor_FUN_004d8 line 61
-    File: core/mission.cpp
-    Uninitialized variable: unaff_ESI
-
-  core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0 line 78
-    File: core/mobster.cpp
-    Uninitialized variable: local_28
-
-  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN line 154
-    File: core/netgame.cpp
-    Uninitialized variable: aiStack_f3[iVar5*10+2]
-
-  core_particle.cpp_CParticle_process_FUN_004ef120   line 57
-    File: core/particle.cpp
-    Uninitialized variable: afStack_34
-
-  core_path.cpp_CPathMap_findPathToDestination_FUN_0 line 76
-    File: core/path.cpp
-    Uninitialized variable: afStack_54
-
-  core_path.cpp_CPathMap_isLineWalkable_FUN_004f0540 line 114
-    File: core/path.cpp
-    Uninitialized variable: local_38
-
-  core_scat.cpp_CScat_updateAI_FUN_004fc610          line 109
-    File: core/scat.cpp
-    Uninitialized variable: fStack_50
-
-  core_scat.cpp_CScat_updateAiming_FUN_004fd450      line 125
-    File: core/scat.cpp
-    Uninitialized variable: fStack_134
-
-  core_scat.cpp_CScat_updateAiming_FUN_004fd450      line 139
-    File: core/scat.cpp
-    Uninitialized variable: fStack_98
-
-  core_scat.cpp_CScat_updateAiming_FUN_004fd450      line 140
-    File: core/scat.cpp
-    Uninitialized variable: fStack_94
-
-  core_scat.cpp_CScat_updateAiming_FUN_004fd450      line 143
-    File: core/scat.cpp
-    Uninitialized variable: fStack_50
-
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 88
-    File: core/set.cpp
-    Uninitialized variable: fStack_6c
-
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 87
-    File: core/set.cpp
-    Uninitialized variable: fStack_68
-
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 86
-    File: core/set.cpp
-    Uninitialized variable: fStack_64
-
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 87
-    File: core/set.cpp
-    Uninitialized variable: fStack_5c
-
-  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 86
-    File: core/set.cpp
-    Uninitialized variable: fStack_58
-
-  FUN_00510a40                                       line 242
-    File: core/setcolid.cpp
-    Uninitialized variable: fStack_1fc
-
-  FUN_00510a40                                       line 243
-    File: core/setcolid.cpp
-    Uninitialized variable: fStack_1f8
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 60
-    File: core/skeleton.cpp
-    Uninitialized variable: local_60
-
-  core_skeleton.cpp_CDeformableModelInstance_compute line 49
-    File: core/skeleton.cpp
-    Uninitialized variable: local_40[(uint)bVar9*-2+(uint)bVar9*-2-5]
-
-  core_skeleton.cpp_CDeformableModelInstance_updateM line 122
-    File: core/skeleton.cpp
-    Uninitialized variable: local_1870
-
-  core_sound.cpp_playSfxInternal_FUN_0052d120        line 56
-    File: core/sound.cpp
-    Uninitialized variable: local_30
-
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 122
-    File: core/sound.cpp
-    Uninitialized variable: local_cc
-
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 122
-    File: core/sound.cpp
-    Uninitialized variable: local_c8
-
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 122
-    File: core/sound.cpp
-    Uninitialized variable: local_c4
-
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 136
-    File: core/sound.cpp
-    Uninitialized variable: local_c0
-
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 137
-    File: core/sound.cpp
-    Uninitialized variable: local_bc
-
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 137
-    File: core/sound.cpp
-    Uninitialized variable: local_b8
-
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 137
-    File: core/sound.cpp
-    Uninitialized variable: local_78
-
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 137
-    File: core/sound.cpp
-    Uninitialized variable: local_74
-
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 137
-    File: core/sound.cpp
-    Uninitialized variable: local_70
-
-  core_sound.cpp_updateListeners_FUN_0052c9d0        line 136
-    File: core/sound.cpp
-    Uninitialized variable: local_28
-
-  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 488
-    File: core/stranger.cpp
-    Uninitialized variable: local_218
-
-  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 489
-    File: core/stranger.cpp
-    Uninitialized variable: local_214
-
-  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 486
-    File: core/stranger.cpp
-    Uninitialized variable: local_210
-
-  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 488
-    File: core/stranger.cpp
-    Uninitialized variable: local_20c
-
-  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 489
-    File: core/stranger.cpp
-    Uninitialized variable: local_208
-
-  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 453
-    File: core/stranger.cpp
-    Uninitialized variable: local_200
-
-  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 453
-    File: core/stranger.cpp
-    Uninitialized variable: local_1f4
-
-  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005 line 91
-    File: core/stranger.cpp
-    Uninitialized variable: fStack_dc
-
-  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005 line 90
-    File: core/stranger.cpp
-    Uninitialized variable: fStack_d8
-
-  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005 line 91
-    File: core/stranger.cpp
-    Uninitialized variable: fStack_d0
-
-  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005 line 90
-    File: core/stranger.cpp
-    Uninitialized variable: fStack_cc
-
-  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0 line 91
-    File: core/stranger.cpp
-    Uninitialized variable: fStack_e4
-
-  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0 line 90
-    File: core/stranger.cpp
-    Uninitialized variable: fStack_e0
-
-  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0 line 91
-    File: core/stranger.cpp
-    Uninitialized variable: fStack_d8
-
-  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0 line 90
-    File: core/stranger.cpp
-    Uninitialized variable: fStack_d4
-
-  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 134
-    File: core/turret.cpp
-    Uninitialized variable: fStack_b0
-
-  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 135
-    File: core/turret.cpp
-    Uninitialized variable: fStack_ac
-
-  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 136
-    File: core/turret.cpp
-    Uninitialized variable: fStack_a8
-
-  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 136
-    File: core/turret.cpp
-    Uninitialized variable: fStack_a4
-
-  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 136
-    File: core/turret.cpp
-    Uninitialized variable: fStack_a0
-
-  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 143
-    File: core/turret.cpp
-    Uninitialized variable: fStack_44
-
-  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 143
-    File: core/turret.cpp
-    Uninitialized variable: fStack_40
-
-  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 204
-    File: core/vampboss.cpp
-    Uninitialized variable: local_ec
-
-  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 198
-    File: core/vampboss.cpp
-    Uninitialized variable: local_b4
-
-  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 201
-    File: core/vampboss.cpp
-    Uninitialized variable: local_b0
-
-  core_wateract.cpp_CWaterActor_setup_FUN_00551370   line 83
-    File: core/wateract.cpp
-    Uninitialized variable: local_18
-
-  core_werewolf.cpp_CWerewolf_processChainConstraint line 52
-    File: core/werewolf.cpp
-    Uninitialized variable: local_60
-
-  core_xform.cpp_matrixToQuaternion_FUN_0055cf10     line 70
-    File: core/xform.cpp
-    Uninitialized variable: unaff_ESI
-
-  core_xform.cpp_slerpQuaternion_FUN_0055d2d0        line 104
-    File: core/xform.cpp
-    Uninitialized variable: local_54
-
-  core_zombie.cpp_FUN_00561010                       line 217
-    File: core/zombie.cpp
-    Uninitialized variable: fStack_f0
-
-  engine_2d.c_findBestPaletteMatch_FUN_00401850      line 48
-    File: engine/2d.c
-    Uninitialized variable: unaff_EDI
-
-  shape_edittool.cpp_CEditorTools_promptForValidFloa line 33
-    File: shape/edittool.cpp
-    Uninitialized variable: local_18
-
-  FUN_004e6160                                       line 502
-    File: sound/mp3.cpp
-    Uninitialized variable: local_2078[local_f8]
-
-  FUN_004e6160                                       line 503
-    File: sound/mp3.cpp
-    Uninitialized variable: afStack_1778[local_f8]
-
-  FUN_004e6160                                       line 498
-    File: sound/mp3.cpp
-    Uninitialized variable: afStack_e78[local_f8]
-
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 614
-    File: sound/mp3.cpp
-    Uninitialized variable: iStack_108
-
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 213
-    File: sound/mp3.cpp
-    Uninitialized variable: piStack_e4
-
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 149
-    File: sound/mp3.cpp
-    Uninitialized variable: local_c8
-
-  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 434
-    File: sound/mp3.cpp
-    Uninitialized variable: local_b8
-
-  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 26
-    File: sound/snddx.cpp
-    Uninitialized variable: in_stack_00000020
-
-  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 26
-    File: sound/snddx.cpp
-    Uninitialized variable: in_stack_00000028
-
-  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 27
-    File: sound/snddx.cpp
-    Uninitialized variable: in_stack_00000030
-
-  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 25
-    File: sound/snddx.cpp
-    Uninitialized variable: in_stack_00000038
-
-  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 25
-    File: sound/snddx.cpp
-    Uninitialized variable: in_stack_00000040
-
-  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 26
-    File: sound/snddx.cpp
-    Uninitialized variable: in_stack_00000048
-
-  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523e line 66
-    File: sound/sndmain.cpp
-    Uninitialized variable: local_28
-
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10        line 88
-    File: sound/sndmain.cpp
-    Uninitialized variable: in_stack_0000002c
-
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10        line 116
-    File: sound/sndmain.cpp
-    Uninitialized variable: in_stack_00000030
-
-  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10        line 279
-    File: sound/sndmain.cpp
-    Uninitialized variable: local_30
-
-  wincore_wddvmem.cpp_swapBuffers_FUN_00553910       line 53
-    File: wincore/wddvmem.cpp
-    Uninitialized variable: local_68
-
-----------------------------------------------------------------------------------------------------
-shiftTooManyBitsSigned (171)
-----------------------------------------------------------------------------------------------------
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   FUN_0042fd60                                       line 41
     File: .
@@ -6773,6 +8241,46 @@ shiftTooManyBitsSigned (171)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   FUN_004421b0                                       line 152
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00443180                                       line 31
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00443180                                       line 37
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004442a0                                       line 46
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004442a0                                       line 49
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004442a0                                       line 51
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004450b0                                       line 33
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004451a0                                       line 31
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004451a0                                       line 33
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004451a0                                       line 35
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00445310                                       line 72
     File: .
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -6804,6 +8312,30 @@ shiftTooManyBitsSigned (171)
     File: .
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  FUN_00464200                                       line 67
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00464200                                       line 69
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00464200                                       line 79
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00464200                                       line 81
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00464200                                       line 190
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00464200                                       line 192
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
   FUN_00469ce0                                       line 329
     File: .
     Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -6813,6 +8345,14 @@ shiftTooManyBitsSigned (171)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   FUN_00469ce0                                       line 331
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00477300                                       line 17
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00477340                                       line 16
     File: .
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -6861,6 +8401,78 @@ shiftTooManyBitsSigned (171)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
   FUN_004accf0                                       line 359
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004ee740                                       line 22
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00525c10                                       line 19
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_0052f031                                       line 104
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_0052f031                                       line 110
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_0052f031                                       line 114
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_0052f031                                       line 120
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_0052f823                                       line 106
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_0052f823                                       line 112
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_0052f823                                       line 116
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_0052f823                                       line 122
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_005300ec                                       line 64
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_005300ec                                       line 70
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_005300ec                                       line 74
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_005300ec                                       line 80
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00530322                                       line 64
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00530322                                       line 70
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00530322                                       line 74
+    File: .
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_00530322                                       line 80
     File: .
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
@@ -7384,6 +8996,30 @@ shiftTooManyBitsSigned (171)
     File: engine/matrix.c
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
+  FUN_004dcf60                                       line 151
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004dcf60                                       line 152
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004dcf60                                       line 156
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004dcf60                                       line 157
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004dcf60                                       line 161
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
+  FUN_004dcf60                                       line 162
+    File: engine/model.c
+    Shifting signed 32-bit value by 31 bits is undefined behaviour
+
   FUN_004720c0                                       line 36
     File: shape/edittool.cpp
     Shifting signed 32-bit value by 31 bits is undefined behaviour
@@ -7441,70 +9077,1010 @@ shiftTooManyBitsSigned (171)
     Shifting signed 32-bit value by 31 bits is undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-invalidscanf (54)
+legacyUninitvar (212)
+----------------------------------------------------------------------------------------------------
+
+  FUN_00418a00                                       line 143
+    File: .
+    Uninitialized variable: afStack_128[3]
+
+  FUN_00418a00                                       line 156
+    File: .
+    Uninitialized variable: local_84
+
+  FUN_00418a00                                       line 157
+    File: .
+    Uninitialized variable: local_80
+
+  FUN_0042cde0                                       line 54
+    File: .
+    Uninitialized variable: in_EAX
+
+  FUN_00447f20                                       line 124
+    File: .
+    Uninitialized variable: uStack_ec
+
+  FUN_00447f20                                       line 129
+    File: .
+    Uninitialized variable: iStack_a8
+
+  FUN_00447f20                                       line 84
+    File: .
+    Uninitialized variable: iStack_78
+
+  FUN_00447f20                                       line 152
+    File: .
+    Uninitialized variable: iStack_6c
+
+  FUN_00447f20                                       line 148
+    File: .
+    Uninitialized variable: uStack_44
+
+  FUN_0044ae80                                       line 27
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0044db00                                       line 32
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00450c90                                       line 226
+    File: .
+    Uninitialized variable: local_5c
+
+  FUN_00469ce0                                       line 128
+    File: .
+    Uninitialized variable: aiStack_14c
+
+  FUN_0046f060                                       line 27
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00477890                                       line 228
+    File: .
+    Uninitialized variable: fStack_d0
+
+  FUN_00477890                                       line 227
+    File: .
+    Uninitialized variable: fStack_cc
+
+  FUN_00489990                                       line 64
+    File: .
+    Uninitialized variable: aiStack_2c
+
+  FUN_0048d5d0                                       line 104
+    File: .
+    Uninitialized variable: aiStack_2c
+
+  FUN_0048d5d0                                       line 217
+    File: .
+    Uninitialized variable: fStack_18
+
+  FUN_00494080                                       line 22
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00494080                                       line 22
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_00494080                                       line 22
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00494e80                                       line 39
+    File: .
+    Uninitialized variable: uStack_1c
+
+  FUN_00494e80                                       line 43
+    File: .
+    Uninitialized variable: uStack_1c
+
+  FUN_00494e80                                       line 47
+    File: .
+    Uninitialized variable: uStack_1c
+
+  FUN_00495a20                                       line 294
+    File: .
+    Uninitialized variable: local_1b0
+
+  FUN_00495a20                                       line 297
+    File: .
+    Uninitialized variable: local_1ac
+
+  FUN_00495a20                                       line 293
+    File: .
+    Uninitialized variable: local_1a8
+
+  FUN_00495a20                                       line 294
+    File: .
+    Uninitialized variable: local_1a4
+
+  FUN_00495a20                                       line 297
+    File: .
+    Uninitialized variable: local_1a0
+
+  FUN_00495a20                                       line 312
+    File: .
+    Uninitialized variable: local_b4
+
+  FUN_00495a20                                       line 311
+    File: .
+    Uninitialized variable: local_b0
+
+  FUN_0049ecf0                                       line 21
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0049ed20                                       line 32
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_0049ed20                                       line 34
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_0049ed20                                       line 31
+    File: .
+    Uninitialized variable: in_stack_00000014
+
+  FUN_004c2470                                       line 166
+    File: .
+    Uninitialized variable: local_4c
+
+  FUN_004d4f30                                       line 199
+    File: .
+    Uninitialized variable: local_a9
+
+  FUN_004fd1d0                                       line 71
+    File: .
+    Uninitialized variable: auStack_a8
+
+  FUN_004fd1d0                                       line 94
+    File: .
+    Uninitialized variable: auStack_88
+
+  FUN_00515ea0                                       line 229
+    File: .
+    Uninitialized variable: fStack_7c
+
+  FUN_00515ea0                                       line 228
+    File: .
+    Uninitialized variable: fStack_78
+
+  FUN_0052bbd0                                       line 70
+    File: .
+    Uninitialized variable: piStack_24
+
+  FUN_0052eac0                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000010
+
+  FUN_00533750                                       line 133
+    File: .
+    Uninitialized variable: fStack_64
+
+  FUN_005384d0                                       line 190
+    File: .
+    Uninitialized variable: auStack_32c
+
+  FUN_005384d0                                       line 234
+    File: .
+    Uninitialized variable: auStack_2bc
+
+  FUN_005396d0                                       line 32
+    File: .
+    Uninitialized variable: auStack_1818[0x5fb]
+
+  FUN_0053a260                                       line 65
+    File: .
+    Uninitialized variable: auStack_198
+
+  FUN_0053a260                                       line 118
+    File: .
+    Uninitialized variable: auStack_d8
+
+  FUN_0053d700                                       line 30
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00550750                                       line 20
+    File: .
+    Uninitialized variable: in_stack_00000004
+
+  FUN_00550750                                       line 19
+    File: .
+    Uninitialized variable: in_stack_00000008
+
+  FUN_0055b0b0                                       line 32
+    File: .
+    Uninitialized variable: in_stack_0000000c
+
+  FUN_00563d90                                       line 29
+    File: .
+    Uninitialized variable: in_ECX
+
+  FUN_00568bb0                                       line 44
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00569040                                       line 75
+    File: .
+    Uninitialized variable: iStack_84
+
+  FUN_00569040                                       line 76
+    File: .
+    Uninitialized variable: iStack_64
+
+  FUN_00569040                                       line 76
+    File: .
+    Uninitialized variable: iStack_60
+
+  FUN_0056afe8                                       line 81
+    File: .
+    Uninitialized variable: in_DS
+
+  FUN_0056f14c                                       line 20
+    File: .
+    Uninitialized variable: in_EAX
+
+  FUN_0056f14c                                       line 20
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_005706dd                                       line 79
+    File: .
+    Uninitialized variable: unaff_EBX
+
+  FUN_00571a9d                                       line 37
+    File: .
+    Uninitialized variable: in_EDX
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 53
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: iStack_28
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 53
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: iStack_24
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 56
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: iStack_20
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 56
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: iStack_1c
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 57
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: iStack_18
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 58
+    File: cockpit/pkbitmap.cpp
+    Uninitialized variable: iStack_14
+
+  core_actor.cpp_FUN_0040b300                        line 222
+    File: core/actor.cpp
+    Uninitialized variable: fStack_160
+
+  core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 85
+    File: core/bodypart.cpp
+    Uninitialized variable: (float10)local_a4[1]
+
+  core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 163
+    File: core/bodypart.cpp
+    Uninitialized variable: local_9c
+
+  core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 164
+    File: core/bodypart.cpp
+    Uninitialized variable: local_98
+
+  core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRot line 163
+    File: core/bodypart.cpp
+    Uninitialized variable: local_84
+
+  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 435
+    File: core/box.cpp
+    Uninitialized variable: local_3d0
+
+  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 679
+    File: core/box.cpp
+    Uninitialized variable: local_380
+
+  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 680
+    File: core/box.cpp
+    Uninitialized variable: local_37c
+
+  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 682
+    File: core/box.cpp
+    Uninitialized variable: local_378
+
+  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 695
+    File: core/box.cpp
+    Uninitialized variable: local_2a4
+
+  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 696
+    File: core/box.cpp
+    Uninitialized variable: local_2a0
+
+  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 688
+    File: core/box.cpp
+    Uninitialized variable: local_274
+
+  core_box.cpp_CBox_processPhysics_FUN_0041ad10      line 688
+    File: core/box.cpp
+    Uninitialized variable: local_270
+
+  core_charactr.cpp_CCharacter_findSomethingToLookAt line 226
+    File: core/charactr.cpp
+    Uninitialized variable: fStack_d4
+
+  core_charactr.cpp_CCharacter_findSomethingToLookAt line 222
+    File: core/charactr.cpp
+    Uninitialized variable: fStack_d0
+
+  FUN_00446810                                       line 107
+    File: core/dcamera.cpp
+    Uninitialized variable: unaff_EDI
+
+  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_ line 111
+    File: core/dcamera.cpp
+    Uninitialized variable: local_74
+
+  core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_ line 170
+    File: core/dcamera.cpp
+    Uninitialized variable: local_60
+
+  core_dcamera.cpp_CDemonCamera_screenToWorldCoord_F line 28
+    File: core/dcamera.cpp
+    Uninitialized variable: unaff_ESI
+
+  core_dcamera.cpp_CDemonCamera_worldToScreenWithFru line 113
+    File: core/dcamera.cpp
+    Uninitialized variable: unaff_ESI
+
+  core_dlight.cpp_CDemonLight_renderExternalVolumetr line 104
+    File: core/dlight.cpp
+    Uninitialized variable: afStack_ec
+
+  core_dlight.cpp_CDemonLight_renderLightBloomQuad_F line 64
+    File: core/dlight.cpp
+    Uninitialized variable: afStack_78
+
+  core_dlight.cpp_CDemonLight_renderVolumetricLightS line 105
+    File: core/dlight.cpp
+    Uninitialized variable: aiStack_d0
+
+  core_dlight.cpp_FUN_0044f9b0                       line 110
+    File: core/dlight.cpp
+    Uninitialized variable: afStack_e4
+
+  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck line 104
+    File: core/dtrace.cpp
+    Uninitialized variable: unaff_EBX
+
+  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck line 120
+    File: core/dtrace.cpp
+    Uninitialized variable: unaff_EBX
+
+  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck line 109
+    File: core/dtrace.cpp
+    Uninitialized variable: unaff_ESI
+
+  core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck line 117
+    File: core/dtrace.cpp
+    Uninitialized variable: unaff_ESI
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FU line 131
+    File: core/dtrace.cpp
+    Uninitialized variable: local_70
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 102
+    File: core/dtrace.cpp
+    Uninitialized variable: local_b0
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 174
+    File: core/dtrace.cpp
+    Uninitialized variable: iStack_6c
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 189
+    File: core/dtrace.cpp
+    Uninitialized variable: local_64
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 153
+    File: core/dtrace.cpp
+    Uninitialized variable: local_60
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 157
+    File: core/dtrace.cpp
+    Uninitialized variable: local_60
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 142
+    File: core/dtrace.cpp
+    Uninitialized variable: local_5c
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 147
+    File: core/dtrace.cpp
+    Uninitialized variable: local_5c
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 190
+    File: core/dtrace.cpp
+    Uninitialized variable: local_5c
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 163
+    File: core/dtrace.cpp
+    Uninitialized variable: local_58
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 167
+    File: core/dtrace.cpp
+    Uninitialized variable: local_58
+
+  core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersectio line 191
+    File: core/dtrace.cpp
+    Uninitialized variable: local_58
+
+  core_dtrace.cpp_CDemonRaytrace_testCylinderCollisi line 67
+    File: core/dtrace.cpp
+    Uninitialized variable: unaff_EDI
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 718
+    File: core/event.cpp
+    Uninitialized variable: local_100
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 717
+    File: core/event.cpp
+    Uninitialized variable: local_fc
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 718
+    File: core/event.cpp
+    Uninitialized variable: local_e8
+
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 717
+    File: core/event.cpp
+    Uninitialized variable: local_e4
+
+  FUN_00499ca0                                       line 76
+    File: core/gabriela.cpp
+    Uninitialized variable: fStack_9c
+
+  FUN_00499ca0                                       line 77
+    File: core/gabriela.cpp
+    Uninitialized variable: fStack_98
+
+  FUN_00499ca0                                       line 74
+    File: core/gabriela.cpp
+    Uninitialized variable: fStack_94
+
+  FUN_00499ca0                                       line 76
+    File: core/gabriela.cpp
+    Uninitialized variable: fStack_90
+
+  FUN_00499ca0                                       line 77
+    File: core/gabriela.cpp
+    Uninitialized variable: fStack_8c
+
+  core_gabriela.cpp_CGabriella_findAndPickupNearbyOb line 98
+    File: core/gabriela.cpp
+    Uninitialized variable: fStack_64
+
+  core_gabriela.cpp_CGabriella_findAndPickupNearbyOb line 98
+    File: core/gabriela.cpp
+    Uninitialized variable: fStack_60
+
+  core_gabriela.cpp_CGabriella_updateAimTracking_FUN line 122
+    File: core/gabriela.cpp
+    Uninitialized variable: fStack_70
+
+  core_gabriela.cpp_CGabriella_updateAimTracking_FUN line 123
+    File: core/gabriela.cpp
+    Uninitialized variable: fStack_6c
+
+  core_game.cpp_CGame_beginFadeOut_FUN_004a3820      line 54
+    File: core/game.cpp
+    Uninitialized variable: aiStack_2c
+
+  core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 line 50
+    File: core/game.cpp
+    Uninitialized variable: aiStack_2c
+
+  core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200   line 75
+    File: core/gore.cpp
+    Uninitialized variable: local_44
+
+  core_mission.cpp_CDemonMission_loadActor_FUN_004d8 line 61
+    File: core/mission.cpp
+    Uninitialized variable: unaff_ESI
+
+  core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0 line 78
+    File: core/mobster.cpp
+    Uninitialized variable: local_28
+
+  core_netgame.cpp_CNetGame_applyNewGameSettings_FUN line 154
+    File: core/netgame.cpp
+    Uninitialized variable: aiStack_f3[iVar5*10+2]
+
+  core_particle.cpp_CParticle_process_FUN_004ef120   line 57
+    File: core/particle.cpp
+    Uninitialized variable: afStack_34
+
+  core_path.cpp_CPathMap_findPathToDestination_FUN_0 line 76
+    File: core/path.cpp
+    Uninitialized variable: afStack_54
+
+  core_path.cpp_CPathMap_isLineWalkable_FUN_004f0540 line 114
+    File: core/path.cpp
+    Uninitialized variable: local_38
+
+  core_scat.cpp_CScat_updateAI_FUN_004fc610          line 109
+    File: core/scat.cpp
+    Uninitialized variable: fStack_50
+
+  core_scat.cpp_CScat_updateAiming_FUN_004fd450      line 125
+    File: core/scat.cpp
+    Uninitialized variable: fStack_134
+
+  core_scat.cpp_CScat_updateAiming_FUN_004fd450      line 139
+    File: core/scat.cpp
+    Uninitialized variable: fStack_98
+
+  core_scat.cpp_CScat_updateAiming_FUN_004fd450      line 140
+    File: core/scat.cpp
+    Uninitialized variable: fStack_94
+
+  core_scat.cpp_CScat_updateAiming_FUN_004fd450      line 143
+    File: core/scat.cpp
+    Uninitialized variable: fStack_50
+
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 88
+    File: core/set.cpp
+    Uninitialized variable: fStack_6c
+
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 87
+    File: core/set.cpp
+    Uninitialized variable: fStack_68
+
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 86
+    File: core/set.cpp
+    Uninitialized variable: fStack_64
+
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 87
+    File: core/set.cpp
+    Uninitialized variable: fStack_5c
+
+  core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2 line 86
+    File: core/set.cpp
+    Uninitialized variable: fStack_58
+
+  FUN_00510a40                                       line 242
+    File: core/setcolid.cpp
+    Uninitialized variable: fStack_1fc
+
+  FUN_00510a40                                       line 243
+    File: core/setcolid.cpp
+    Uninitialized variable: fStack_1f8
+
+  core_skeleton.cpp_CDeformableModelInstance_compute line 60
+    File: core/skeleton.cpp
+    Uninitialized variable: local_60
+
+  core_skeleton.cpp_CDeformableModelInstance_compute line 49
+    File: core/skeleton.cpp
+    Uninitialized variable: local_40[(uint)bVar9*-2+(uint)bVar9*-2-5]
+
+  core_skeleton.cpp_CDeformableModelInstance_updateM line 122
+    File: core/skeleton.cpp
+    Uninitialized variable: local_1870
+
+  core_sound.cpp_playSfxInternal_FUN_0052d120        line 56
+    File: core/sound.cpp
+    Uninitialized variable: local_30
+
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 122
+    File: core/sound.cpp
+    Uninitialized variable: local_cc
+
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 122
+    File: core/sound.cpp
+    Uninitialized variable: local_c8
+
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 122
+    File: core/sound.cpp
+    Uninitialized variable: local_c4
+
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 136
+    File: core/sound.cpp
+    Uninitialized variable: local_c0
+
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 137
+    File: core/sound.cpp
+    Uninitialized variable: local_bc
+
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 137
+    File: core/sound.cpp
+    Uninitialized variable: local_b8
+
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 137
+    File: core/sound.cpp
+    Uninitialized variable: local_78
+
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 137
+    File: core/sound.cpp
+    Uninitialized variable: local_74
+
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 137
+    File: core/sound.cpp
+    Uninitialized variable: local_70
+
+  core_sound.cpp_updateListeners_FUN_0052c9d0        line 136
+    File: core/sound.cpp
+    Uninitialized variable: local_28
+
+  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 488
+    File: core/stranger.cpp
+    Uninitialized variable: local_218
+
+  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 489
+    File: core/stranger.cpp
+    Uninitialized variable: local_214
+
+  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 486
+    File: core/stranger.cpp
+    Uninitialized variable: local_210
+
+  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 488
+    File: core/stranger.cpp
+    Uninitialized variable: local_20c
+
+  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 489
+    File: core/stranger.cpp
+    Uninitialized variable: local_208
+
+  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 453
+    File: core/stranger.cpp
+    Uninitialized variable: local_200
+
+  core_stranger.cpp_CStranger_computeWeaponAttachXFo line 453
+    File: core/stranger.cpp
+    Uninitialized variable: local_1f4
+
+  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005 line 91
+    File: core/stranger.cpp
+    Uninitialized variable: fStack_dc
+
+  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005 line 90
+    File: core/stranger.cpp
+    Uninitialized variable: fStack_d8
+
+  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005 line 91
+    File: core/stranger.cpp
+    Uninitialized variable: fStack_d0
+
+  core_stranger.cpp_CStranger_tryClimbLadder_FUN_005 line 90
+    File: core/stranger.cpp
+    Uninitialized variable: fStack_cc
+
+  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0 line 91
+    File: core/stranger.cpp
+    Uninitialized variable: fStack_e4
+
+  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0 line 90
+    File: core/stranger.cpp
+    Uninitialized variable: fStack_e0
+
+  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0 line 91
+    File: core/stranger.cpp
+    Uninitialized variable: fStack_d8
+
+  core_stranger.cpp_CStranger_tryDescendLadder_FUN_0 line 90
+    File: core/stranger.cpp
+    Uninitialized variable: fStack_d4
+
+  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 134
+    File: core/turret.cpp
+    Uninitialized variable: fStack_b0
+
+  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 135
+    File: core/turret.cpp
+    Uninitialized variable: fStack_ac
+
+  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 136
+    File: core/turret.cpp
+    Uninitialized variable: fStack_a8
+
+  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 136
+    File: core/turret.cpp
+    Uninitialized variable: fStack_a4
+
+  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 136
+    File: core/turret.cpp
+    Uninitialized variable: fStack_a0
+
+  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 143
+    File: core/turret.cpp
+    Uninitialized variable: fStack_44
+
+  core_turret.cpp_CTurret_updateTargeting_FUN_0054a1 line 143
+    File: core/turret.cpp
+    Uninitialized variable: fStack_40
+
+  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 204
+    File: core/vampboss.cpp
+    Uninitialized variable: local_ec
+
+  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 198
+    File: core/vampboss.cpp
+    Uninitialized variable: local_b4
+
+  core_vampboss.cpp_CVampireBoss_process_FUN_0054c69 line 201
+    File: core/vampboss.cpp
+    Uninitialized variable: local_b0
+
+  core_wateract.cpp_CWaterActor_setup_FUN_00551370   line 83
+    File: core/wateract.cpp
+    Uninitialized variable: local_18
+
+  core_werewolf.cpp_CWerewolf_processChainConstraint line 52
+    File: core/werewolf.cpp
+    Uninitialized variable: local_60
+
+  core_xform.cpp_matrixToQuaternion_FUN_0055cf10     line 70
+    File: core/xform.cpp
+    Uninitialized variable: unaff_ESI
+
+  core_xform.cpp_slerpQuaternion_FUN_0055d2d0        line 104
+    File: core/xform.cpp
+    Uninitialized variable: local_54
+
+  core_zombie.cpp_FUN_00561010                       line 217
+    File: core/zombie.cpp
+    Uninitialized variable: fStack_f0
+
+  engine_2d.c_findBestPaletteMatch_FUN_00401850      line 48
+    File: engine/2d.c
+    Uninitialized variable: unaff_EDI
+
+  engine_light.cpp_calculatePhongLighting_FUN_004c6a line 67
+    File: engine/light.cpp
+    Uninitialized variable: local_24
+
+  FUN_004dcf60                                       line 157
+    File: engine/model.c
+    Uninitialized variable: local_b0
+
+  FUN_004dcf60                                       line 162
+    File: engine/model.c
+    Uninitialized variable: local_ac
+
+  shape_edittool.cpp_CEditorTools_promptForValidFloa line 33
+    File: shape/edittool.cpp
+    Uninitialized variable: local_18
+
+  FUN_004e6160                                       line 502
+    File: sound/mp3.cpp
+    Uninitialized variable: local_2078[local_f8]
+
+  FUN_004e6160                                       line 503
+    File: sound/mp3.cpp
+    Uninitialized variable: afStack_1778[local_f8]
+
+  FUN_004e6160                                       line 498
+    File: sound/mp3.cpp
+    Uninitialized variable: afStack_e78[local_f8]
+
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 614
+    File: sound/mp3.cpp
+    Uninitialized variable: iStack_108
+
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 213
+    File: sound/mp3.cpp
+    Uninitialized variable: piStack_e4
+
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 149
+    File: sound/mp3.cpp
+    Uninitialized variable: local_c8
+
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 line 434
+    File: sound/mp3.cpp
+    Uninitialized variable: local_b8
+
+  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 26
+    File: sound/snddx.cpp
+    Uninitialized variable: in_stack_00000020
+
+  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 26
+    File: sound/snddx.cpp
+    Uninitialized variable: in_stack_00000028
+
+  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 27
+    File: sound/snddx.cpp
+    Uninitialized variable: in_stack_00000030
+
+  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 25
+    File: sound/snddx.cpp
+    Uninitialized variable: in_stack_00000038
+
+  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 25
+    File: sound/snddx.cpp
+    Uninitialized variable: in_stack_00000040
+
+  sound_snddx.cpp_CDirectSoundDevice_set3DListenerOr line 26
+    File: sound/snddx.cpp
+    Uninitialized variable: in_stack_00000048
+
+  sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523e line 66
+    File: sound/sndmain.cpp
+    Uninitialized variable: local_28
+
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10        line 88
+    File: sound/sndmain.cpp
+    Uninitialized variable: in_stack_0000002c
+
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10        line 116
+    File: sound/sndmain.cpp
+    Uninitialized variable: in_stack_00000030
+
+  sound_sndmain.cpp_CSfxSlot_mix_FUN_00524d10        line 279
+    File: sound/sndmain.cpp
+    Uninitialized variable: local_30
+
+  wincore_wddvmem.cpp_swapBuffers_FUN_00553910       line 53
+    File: wincore/wddvmem.cpp
+    Uninitialized variable: local_68
+
+----------------------------------------------------------------------------------------------------
+invalidscanf (76)
 ----------------------------------------------------------------------------------------------------
 
   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 206
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 277
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 278
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 331
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 332
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 494
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 495
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 555
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 556
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 585
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 586
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 728
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 730
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 812
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 815
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 964
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 969
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1032
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1037
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1086
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1091
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1124
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1130
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1178
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1185
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1214
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1221
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1269
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1276
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1340
+  core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d line 1348
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 264
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 375
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 426
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 552
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 634
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 681
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 687
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 693
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 782
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 815
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 908
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 948
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1044
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1108
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1213
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1260
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1359
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1456
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1528
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1634
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1748
+    File: core/event.cpp
+    sscanf() without field width limits can crash with huge input data.
+
+  core_event.cpp_CEventList_executeCommand_FUN_0047a line 1811
     File: core/event.cpp
     sscanf() without field width limits can crash with huge input data.
 
@@ -7516,139 +10092,139 @@ invalidscanf (54)
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 366
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 367
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 453
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 454
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 648
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 651
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 710
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 713
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 784
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 787
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 914
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 918
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 975
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 979
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1026
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1030
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1150
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1156
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1202
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1210
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1240
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1248
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1362
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1370
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1627
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1635
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1651
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1661
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1691
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1703
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1733
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1745
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1781
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1795
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1872
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1886
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1921
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1935
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 1952
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 1966
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2088
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2102
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2132
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2146
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2193
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2207
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2255
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2271
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2292
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2308
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2360
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2380
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2430
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2450
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2617
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2639
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2635
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2657
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2679
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2703
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2741
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2769
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2824
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2852
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 2944
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 2972
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
-  core_script.cpp_CScript_step_FUN_004ff2c0          line 3030
+  core_script.cpp_CScript_step_FUN_004ff2c0          line 3062
     File: core/script.cpp
     sscanf() without field width limits can crash with huge input data.
 
@@ -7659,6 +10235,238 @@ invalidscanf (54)
   core_setutil.cpp_C3DSCamera_load_FUN_005144e0      line 20
     File: core/setutil.cpp
     sscanf() without field width limits can crash with huge input data.
+
+----------------------------------------------------------------------------------------------------
+AssignmentAddressToInteger (57)
+----------------------------------------------------------------------------------------------------
+
+  FUN_0042d180                                       line 22
+    File: .
+    Assigning a pointer to an integer is not portable.
+
+  FUN_0049cc10                                       line 164
+    File: .
+    Assigning a pointer to an integer is not portable.
+
+  FUN_0056497c                                       line 21
+    File: .
+    Assigning a pointer to an integer is not portable.
+
+  FUN_00565c50                                       line 14
+    File: .
+    Assigning a pointer to an integer is not portable.
+
+  FUN_0056e990                                       line 17
+    File: .
+    Assigning a pointer to an integer is not portable.
+
+  FUN_00573930                                       line 94
+    File: .
+    Assigning a pointer to an integer is not portable.
+
+  FUN_005740b0                                       line 34
+    File: .
+    Assigning a pointer to an integer is not portable.
+
+  FUN_005740b0                                       line 47
+    File: .
+    Assigning a pointer to an integer is not portable.
+
+  FUN_005740b0                                       line 69
+    File: .
+    Assigning a pointer to an integer is not portable.
+
+  FUN_00574680                                       line 26
+    File: .
+    Assigning a pointer to an integer is not portable.
+
+  FUN_0042eb90                                       line 58
+    File: cockpit/ckptutil.c
+    Assigning a pointer to an integer is not portable.
+
+  FUN_00430210                                       line 24
+    File: cockpit/ckptutil.c
+    Assigning a pointer to an integer is not portable.
+
+  FUN_00430630                                       line 338
+    File: cockpit/ckptutil.c
+    Assigning a pointer to an integer is not portable.
+
+  cockpit_ckptutil.c_readBitmapFile_FUN_0042d240     line 19
+    File: cockpit/ckptutil.c
+    Assigning a pointer to an integer is not portable.
+
+  cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLi line 37
+    File: cockpit/drawsurf.cpp
+    Assigning a pointer to an integer is not portable.
+
+  cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FU line 45
+    File: cockpit/drawsurf.cpp
+    Assigning a pointer to an integer is not portable.
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47 line 79
+    File: cockpit/pkbitmap.cpp
+    Assigning a pointer to an integer is not portable.
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 79
+    File: cockpit/pkbitmap.cpp
+    Assigning a pointer to an integer is not portable.
+
+  FUN_004f54c0                                       line 46
+    File: cockpit/pkbmpset.cpp
+    Assigning a pointer to an integer is not portable.
+
+  FUN_004f5740                                       line 33
+    File: cockpit/pkbmpset.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_dcamera.cpp_CDemonCamera_init_FUN_00440010    line 34
+    File: core/dcamera.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_dcamera.cpp_CDemonCamera_init_FUN_00440010    line 42
+    File: core/dcamera.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_ line 38
+    File: core/dcube.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_ line 45
+    File: core/dcube.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_ line 52
+    File: core/dcube.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0044 line 17
+    File: core/dfilter.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310  line 29
+    File: core/dfilter.cpp
+    Assigning a pointer to an integer is not portable.
+
+  FUN_0044d460                                       line 17
+    File: core/dimage.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_dlight.cpp_CDemonLight_allocateFilter_FUN_004 line 16
+    File: core/dlight.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_dlight.cpp_CDemonLight_init_FUN_0044e1e0      line 20
+    File: core/dlight.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae4 line 27
+    File: core/dtrace.cpp
+    Assigning a pointer to an integer is not portable.
+
+  FUN_004a57c0                                       line 118
+    File: core/game.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_game.cpp_CGame_rollCredits_FUN_004a6e90       line 67
+    File: core/game.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_game.cpp_CGame_runGameSession_FUN_0049da10    line 79
+    File: core/game.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_ground.cpp_CGround_init_FUN_004b13d0          line 18
+    File: core/ground.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_ line 37
+    File: core/morph.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_ line 39
+    File: core/morph.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_morph.cpp_CMorphModel_addPartFromVertexBuffer line 27
+    File: core/morph.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_morph.cpp_CMorphModel_addPartFromVertexBuffer line 29
+    File: core/morph.cpp
+    Assigning a pointer to an integer is not portable.
+
+  FUN_004fee30                                       line 35
+    File: core/script.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_script.cpp_CScript_dbLoad_FUN_00504e70        line 109
+    File: core/script.cpp
+    Assigning a pointer to an integer is not portable.
+
+  core_setutil.cpp_C3DSCamera_loadPVS_FUN_00514800   line 19
+    File: core/setutil.cpp
+    Assigning a pointer to an integer is not portable.
+
+  engine_2d.c_drawHLine_FUN_00403bd0                 line 38
+    File: engine/2d.c
+    Assigning a pointer to an integer is not portable.
+
+  engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 line 25
+    File: engine/alphabit.cpp
+    Assigning a pointer to an integer is not portable.
+
+  engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 line 32
+    File: engine/alphabit.cpp
+    Assigning a pointer to an integer is not portable.
+
+  engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 line 39
+    File: engine/alphabit.cpp
+    Assigning a pointer to an integer is not portable.
+
+  FUN_004f7ae0                                       line 86
+    File: engine/pod.cpp
+    Assigning a pointer to an integer is not portable.
+
+  FUN_004f7ae0                                       line 92
+    File: engine/pod.cpp
+    Assigning a pointer to an integer is not portable.
+
+  FUN_004f7ae0                                       line 122
+    File: engine/pod.cpp
+    Assigning a pointer to an integer is not portable.
+
+  FUN_004f7ae0                                       line 141
+    File: engine/pod.cpp
+    Assigning a pointer to an integer is not portable.
+
+  shape_edittool.cpp_CEditorTools_createModalWindow_ line 132
+    File: shape/edittool.cpp
+    Assigning a pointer to an integer is not portable.
+
+  shape_edittool.cpp_CPickList_enableItem_FUN_00475f line 22
+    File: shape/edittool.cpp
+    Assigning a pointer to an integer is not portable.
+
+  shape_edittool.cpp_CStrList_allocate_FUN_00473de0  line 28
+    File: shape/edittool.cpp
+    Assigning a pointer to an integer is not portable.
+
+  FUN_004e28a0                                       line 29
+    File: sound/mp3.cpp
+    Assigning a pointer to an integer is not portable.
+
+  FUN_004e7ed0                                       line 56
+    File: sound/mp3.cpp
+    Assigning a pointer to an integer is not portable.
+
+  sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_ line 29
+    File: sound/sndmain.cpp
+    Assigning a pointer to an integer is not portable.
+
+  support_codec.cpp_CLZWDictionary_init_FUN_004393d0 line 18
+    File: support/codec.cpp
+    Assigning a pointer to an integer is not portable.
 
 ----------------------------------------------------------------------------------------------------
 pointerOutOfBounds (46)
@@ -7849,190 +10657,6 @@ pointerOutOfBounds (46)
     Undefined behaviour, pointer arithmetic 'auStack_8c+0xf' is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
-AssignmentAddressToInteger (45)
-----------------------------------------------------------------------------------------------------
-
-  FUN_0049cc10                                       line 164
-    File: .
-    Assigning a pointer to an integer is not portable.
-
-  FUN_0056497c                                       line 21
-    File: .
-    Assigning a pointer to an integer is not portable.
-
-  FUN_00565c50                                       line 14
-    File: .
-    Assigning a pointer to an integer is not portable.
-
-  FUN_0056e990                                       line 17
-    File: .
-    Assigning a pointer to an integer is not portable.
-
-  FUN_00573a31                                       line 37
-    File: .
-    Assigning a pointer to an integer is not portable.
-
-  cockpit_ckptutil.c_readBitmapFile_FUN_0042d240     line 19
-    File: cockpit/ckptutil.c
-    Assigning a pointer to an integer is not portable.
-
-  cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLi line 37
-    File: cockpit/drawsurf.cpp
-    Assigning a pointer to an integer is not portable.
-
-  cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FU line 45
-    File: cockpit/drawsurf.cpp
-    Assigning a pointer to an integer is not portable.
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47 line 79
-    File: cockpit/pkbitmap.cpp
-    Assigning a pointer to an integer is not portable.
-
-  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN line 79
-    File: cockpit/pkbitmap.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_dcamera.cpp_CDemonCamera_init_FUN_00440010    line 34
-    File: core/dcamera.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_dcamera.cpp_CDemonCamera_init_FUN_00440010    line 42
-    File: core/dcamera.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_ line 38
-    File: core/dcube.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_ line 45
-    File: core/dcube.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_ line 52
-    File: core/dcube.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0044 line 17
-    File: core/dfilter.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310  line 29
-    File: core/dfilter.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_dlight.cpp_CDemonLight_allocateFilter_FUN_004 line 16
-    File: core/dlight.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_dlight.cpp_CDemonLight_init_FUN_0044e1e0      line 20
-    File: core/dlight.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae4 line 27
-    File: core/dtrace.cpp
-    Assigning a pointer to an integer is not portable.
-
-  FUN_004a57c0                                       line 118
-    File: core/game.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_game.cpp_CGame_rollCredits_FUN_004a6e90       line 67
-    File: core/game.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_game.cpp_CGame_runGameSession_FUN_0049da10    line 80
-    File: core/game.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_ground.cpp_CGround_init_FUN_004b13d0          line 18
-    File: core/ground.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_ line 37
-    File: core/morph.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_ line 39
-    File: core/morph.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_morph.cpp_CMorphModel_addPartFromVertexBuffer line 27
-    File: core/morph.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_morph.cpp_CMorphModel_addPartFromVertexBuffer line 29
-    File: core/morph.cpp
-    Assigning a pointer to an integer is not portable.
-
-  FUN_004fee30                                       line 35
-    File: core/script.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_script.cpp_CScript_dbLoad_FUN_00504e70        line 109
-    File: core/script.cpp
-    Assigning a pointer to an integer is not portable.
-
-  core_setutil.cpp_C3DSCamera_loadPVS_FUN_00514800   line 19
-    File: core/setutil.cpp
-    Assigning a pointer to an integer is not portable.
-
-  engine_2d.c_drawHLine_FUN_00403bd0                 line 38
-    File: engine/2d.c
-    Assigning a pointer to an integer is not portable.
-
-  engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 line 25
-    File: engine/alphabit.cpp
-    Assigning a pointer to an integer is not portable.
-
-  engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 line 32
-    File: engine/alphabit.cpp
-    Assigning a pointer to an integer is not portable.
-
-  engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 line 39
-    File: engine/alphabit.cpp
-    Assigning a pointer to an integer is not portable.
-
-  FUN_004f7ae0                                       line 86
-    File: engine/pod.cpp
-    Assigning a pointer to an integer is not portable.
-
-  FUN_004f7ae0                                       line 92
-    File: engine/pod.cpp
-    Assigning a pointer to an integer is not portable.
-
-  FUN_004f7ae0                                       line 122
-    File: engine/pod.cpp
-    Assigning a pointer to an integer is not portable.
-
-  FUN_004f7ae0                                       line 141
-    File: engine/pod.cpp
-    Assigning a pointer to an integer is not portable.
-
-  shape_edittool.cpp_CEditorTools_createModalWindow_ line 132
-    File: shape/edittool.cpp
-    Assigning a pointer to an integer is not portable.
-
-  shape_edittool.cpp_CPickList_enableItem_FUN_00475f line 22
-    File: shape/edittool.cpp
-    Assigning a pointer to an integer is not portable.
-
-  shape_edittool.cpp_CStrList_allocate_FUN_00473de0  line 28
-    File: shape/edittool.cpp
-    Assigning a pointer to an integer is not portable.
-
-  FUN_004e7ed0                                       line 56
-    File: sound/mp3.cpp
-    Assigning a pointer to an integer is not portable.
-
-  sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_ line 29
-    File: sound/sndmain.cpp
-    Assigning a pointer to an integer is not portable.
-
-  support_codec.cpp_CLZWDictionary_init_FUN_004393d0 line 18
-    File: support/codec.cpp
-    Assigning a pointer to an integer is not portable.
-
-----------------------------------------------------------------------------------------------------
 arrayIndexOutOfBounds (30)
 ----------------------------------------------------------------------------------------------------
 
@@ -8157,7 +10781,7 @@ arrayIndexOutOfBounds (30)
     Array 'local_94[18]' accessed at index 19, which is out of bounds.
 
 ----------------------------------------------------------------------------------------------------
-ignoredReturnValue (26)
+ignoredReturnValue (28)
 ----------------------------------------------------------------------------------------------------
 
   core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_004 line 81
@@ -8248,9 +10872,17 @@ ignoredReturnValue (26)
     File: core/xform.cpp
     Return value of function asin() is not used.
 
+  FUN_004bd790                                       line 26
+    File: engine/ini.cpp
+    Return value of function atoi() is not used.
+
   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00 line 15
     File: engine/keys.cpp
     Return value of function toupper() is not used.
+
+  FUN_004cdfa0                                       line 59
+    File: engine/matrix.c
+    Return value of function atan2() is not used.
 
   engine_matrix.c_initializeTrigTables_FUN_004cc9d0  line 31
     File: engine/matrix.c
@@ -8265,7 +10897,91 @@ ignoredReturnValue (26)
     Return value of function round() is not used.
 
 ----------------------------------------------------------------------------------------------------
-selfAssignment (14)
+invalidPointerCast (20)
+----------------------------------------------------------------------------------------------------
+
+  FUN_0048f490                                       line 124
+    File: .
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  FUN_004e0d20                                       line 59
+    File: .
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  FUN_004e0d20                                       line 60
+    File: .
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  FUN_005125a0                                       line 378
+    File: .
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  FUN_005148b0                                       line 43
+    File: .
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  FUN_005148b0                                       line 47
+    File: .
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  FUN_00518f60                                       line 61
+    File: .
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  FUN_0040bd90                                       line 52
+    File: core/actor.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  FUN_0040bd90                                       line 53
+    File: core/actor.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  FUN_0040bd90                                       line 54
+    File: core/actor.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  FUN_0040bd90                                       line 58
+    File: core/actor.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  FUN_0040bd90                                       line 59
+    File: core/actor.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  FUN_0040bd90                                       line 82
+    File: core/actor.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  FUN_0040bd90                                       line 83
+    File: core/actor.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422 line 50
+    File: core/bugs.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422 line 113
+    File: core/bugs.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd line 15
+    File: core/dglobe.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  core_fire.cpp_CToss_process_FUN_004874d0           line 30
+    File: core/fire.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+  FUN_004950a0                                       line 77
+    File: core/frankgen.cpp
+    Casting between signed char * and float * which have an incompatible binary data representation.
+
+  core_weather.cpp_CWeather_setOriginAndRotation_FUN line 30
+    File: core/weather.cpp
+    Casting between signed int * and float * which have an incompatible binary data representation.
+
+----------------------------------------------------------------------------------------------------
+selfAssignment (16)
 ----------------------------------------------------------------------------------------------------
 
   FUN_005700d0                                       line 39
@@ -8279,6 +10995,14 @@ selfAssignment (14)
   FUN_00571fd1                                       line 79
     File: .
     Redundant assignment of '*(uint*)(param_1+0x1c)' to itself.
+
+  FUN_00430630                                       line 179
+    File: cockpit/ckptutil.c
+    Redundant assignment of '(&DAT_00765c72)[uVar8*4]' to itself.
+
+  FUN_00430630                                       line 281
+    File: cockpit/ckptutil.c
+    Redundant assignment of '(&DAT_00765c72)[uVar8*4]' to itself.
 
   core_batman.cpp_CBatman_processDismemberment_FUN_0 line 109
     File: core/batman.cpp
@@ -8323,50 +11047,6 @@ selfAssignment (14)
   core_zombie.cpp_CZombie_processDismemberment_FUN_0 line 108
     File: core/zombie.cpp
     Redundant assignment of 'param_2[1]' to itself.
-
-----------------------------------------------------------------------------------------------------
-invalidPointerCast (10)
-----------------------------------------------------------------------------------------------------
-
-  FUN_0048f490                                       line 124
-    File: .
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  FUN_005125a0                                       line 378
-    File: .
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  FUN_005148b0                                       line 43
-    File: .
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  FUN_005148b0                                       line 47
-    File: .
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422 line 50
-    File: core/bugs.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_bugs.cpp_CBugs_updateBugPathfinding_FUN_00422 line 113
-    File: core/bugs.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_dglobe.cpp_CDemonGlobe_setPosition_FUN_0044cd line 15
-    File: core/dglobe.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  core_fire.cpp_CToss_process_FUN_004874d0           line 30
-    File: core/fire.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
-
-  FUN_004950a0                                       line 77
-    File: core/frankgen.cpp
-    Casting between signed char * and float * which have an incompatible binary data representation.
-
-  core_weather.cpp_CWeather_setOriginAndRotation_FUN line 30
-    File: core/weather.cpp
-    Casting between signed int * and float * which have an incompatible binary data representation.
 
 ----------------------------------------------------------------------------------------------------
 identicalInnerCondition (9)
@@ -8441,12 +11121,16 @@ shiftNegativeLHS (7)
     Shifting a negative value is technically undefined behaviour
 
 ----------------------------------------------------------------------------------------------------
-nullPointer (5)
+nullPointer (6)
 ----------------------------------------------------------------------------------------------------
 
   FUN_00445750                                       line 233
     File: .
     Possible null pointer dereference: local_58
+
+  FUN_00521d80                                       line 38
+    File: .
+    Possible null pointer dereference: pcVar5
 
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 line 64
     File: cockpit/ckptutil.c
@@ -8465,7 +11149,7 @@ nullPointer (5)
     Possible null pointer dereference: pcVar10
 
 ----------------------------------------------------------------------------------------------------
-nullPointerArithmetic (3)
+nullPointerArithmetic (6)
 ----------------------------------------------------------------------------------------------------
 
   FUN_00445750                                       line 270
@@ -8476,9 +11160,37 @@ nullPointerArithmetic (3)
     File: .
     Pointer addition with NULL pointer.
 
+  FUN_00572b70                                       line 37
+    File: .
+    Pointer addition with NULL pointer.
+
+  FUN_00572b70                                       line 52
+    File: .
+    Pointer addition with NULL pointer.
+
+  FUN_00572b70                                       line 69
+    File: .
+    Pointer addition with NULL pointer.
+
   engine_clipper.c_FUN_00432cd0                      line 444
     File: engine/clipper.c
     Pointer addition with NULL pointer.
+
+----------------------------------------------------------------------------------------------------
+invalidScanfArgType_int (3)
+----------------------------------------------------------------------------------------------------
+
+  FUN_004e5200                                       line 56
+    File: sound/mp3.cpp
+    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+  FUN_004e78b0                                       line 41
+    File: sound/mp3.cpp
+    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+
+  FUN_004e7b00                                       line 42
+    File: sound/mp3.cpp
+    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
 nullPointerRedundantCheck (3)
@@ -8537,6 +11249,18 @@ oppositeInnerCondition (2)
     Opposite inner 'if' condition leads to a dead code block.
 
 ----------------------------------------------------------------------------------------------------
+pointerOutOfBoundsCond (2)
+----------------------------------------------------------------------------------------------------
+
+  FUN_004e25c0                                       line 15
+    File: sound/mp3.cpp
+    Undefined behaviour, when 'param_1*0x10' is 48 the pointer arithmetic '"$CMotionController$$"+param_1*0x10' is out of bounds.
+
+  FUN_004e25c0                                       line 20
+    File: sound/mp3.cpp
+    Undefined behaviour, when 'param_1*0x10' is 64 the pointer arithmetic '"$CMotionController$$"+param_1*0x10' is out of bounds.
+
+----------------------------------------------------------------------------------------------------
 wrongPrintfScanfArgNum (2)
 ----------------------------------------------------------------------------------------------------
 
@@ -8571,14 +11295,6 @@ floatConversionOverflow (1)
   FUN_004950a0                                       line 34
     File: core/frankgen.cpp
     Undefined behaviour: float (2300) to integer conversion overflow.
-
-----------------------------------------------------------------------------------------------------
-invalidScanfArgType_int (1)
-----------------------------------------------------------------------------------------------------
-
-  FUN_004e5200                                       line 56
-    File: sound/mp3.cpp
-    %u in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
 
 ----------------------------------------------------------------------------------------------------
 integerOverflow (1)

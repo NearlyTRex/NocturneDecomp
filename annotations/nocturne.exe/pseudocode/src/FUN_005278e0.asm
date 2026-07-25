@@ -4,6 +4,9 @@
 ; void FUN_005278e0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00527950 at 005279a4
+;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_00564520
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570

@@ -4,7 +4,8 @@
 ; void __cdecl shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_00471600(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
 ;
 ;
-; XREF[6]:
+; XREF[7]:
+;   FUN_00470730 at 00470a11
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1e04
 ;   core_game.cpp_joinNetworkGame_FUN_004a5e40 at 004a5e6b
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebde0

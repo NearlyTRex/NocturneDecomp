@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_junk_jnk_00596cc5
-;   undefined4 DAT_005ba8ec
+;   int INT_005ba8ec = 0x1cadf80
 ;   undefined4 DAT_02dd10cc
 ;
 ; Called Functions:
@@ -22,7 +22,7 @@ section .text
 
     PUSH EBX                            ; 005492b0
         ;   Label: core_terrain.cpp_CTerrain_init_FUN_005492b0
-    MOV EDX,dword ptr [0x005ba8ec]      ; 005492b1 | DAT_005ba8ec
+    MOV EDX,dword ptr [0x005ba8ec]      ; 005492b1 | INT_005ba8ec
     MOV EAX,dword ptr [ESP + 0x8]       ; 005492b7
     PUSH EDX                            ; 005492bb
     MOV dword ptr [EAX],0x0             ; 005492bc
@@ -30,7 +30,7 @@ section .text
         ;   XREF to: 004b13d0 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_init_FUN_004b13d0()
     ADD ESP,0x4                         ; 005492c7
     PUSH 0x596cc5                       ; 005492ca | = "junk.jnk"
-    MOV ECX,dword ptr [0x005ba8ec]      ; 005492cf | DAT_005ba8ec
+    MOV ECX,dword ptr [0x005ba8ec]      ; 005492cf | INT_005ba8ec
     PUSH ECX                            ; 005492d5
     MOV EBX,0x1                         ; 005492d6
     CALL core_ground.cpp_CGround_load_FUN_004b14d0 ; 005492db

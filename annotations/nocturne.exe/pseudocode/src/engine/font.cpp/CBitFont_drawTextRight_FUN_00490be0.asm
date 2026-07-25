@@ -4,7 +4,8 @@
 ; void engine_font_cpp_CBitFont_drawTextRight_FUN_00490be0(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00490c70 at 00490cc2
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760 at 0045d879
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d95fb
 ;

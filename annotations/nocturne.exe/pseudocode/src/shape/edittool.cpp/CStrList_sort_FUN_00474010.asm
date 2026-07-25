@@ -49,7 +49,7 @@ section .text
     POP EDI                             ; 0047404e
     MOV EAX,ESI                         ; 0047404f
         ;   Label: LAB_0047404f
-    PUSH 0x473ff0                       ; 00474051 | LAB_00473ff0
+    PUSH 0x473ff0                       ; 00474051
     SUB EAX,EBX                         ; 00474056
     PUSH 0x4                            ; 00474058
     INC EAX                             ; 0047405a

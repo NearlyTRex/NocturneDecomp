@@ -13,7 +13,8 @@
 ; undefined        Stack[-0x20]:1  local_20
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0050d640 at 0050d658
 ;   core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670 at 0050d688
 ;
 ; Referenced Globals:

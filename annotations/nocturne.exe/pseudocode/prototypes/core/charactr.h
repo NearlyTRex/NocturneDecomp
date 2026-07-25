@@ -377,4 +377,4 @@ undefined4 FUN_0042b6b0(undefined4 param_1);
 
 // Original: core_charactr.cpp_FUN_0042b740
 // Address: 0042b740
-undefined * FUN_0042b740(void);
+CDemonActorType * FUN_0042b740(void);

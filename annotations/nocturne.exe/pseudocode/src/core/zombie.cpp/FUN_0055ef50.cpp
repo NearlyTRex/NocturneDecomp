@@ -297,7 +297,7 @@ LAB_0055f021:
                                        (float10)0.25);
           local_80 = (int)ROUND(fVar13);
           core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                    (0x01C78C7C,local_248,0,local_80,uVar4,uVar15);
+                    (INT_005b96c4,local_248,0,local_80,uVar4,uVar15);
         }
         iVar3 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0x104))
                           (*(int *)(param_1 + 0xbca4));
@@ -406,7 +406,7 @@ LAB_0055f021:
         uVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                           (iVar3,local_11c,*(uint *)(param_1 + 0xbdb4));
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_104,uVar4);
-        core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(0x01C78C7C,local_104,0,3,0);
+        core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(INT_005b96c4,local_104,0,3,0);
         iVar3 = core_actor_cpp_randomChance_FUN_0040dea0(0x3f000000);
         if (iVar3 == 0) {
           pcVar10 = "ghoul-dig-?.wav";
@@ -689,7 +689,7 @@ LAB_00560776:
         uVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                           (iVar3,local_a4,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_1c4,uVar4);
-        FUN_004b0480(0x01C78C7C,local_1c4,0);
+        FUN_004b0480(INT_005b96c4,local_1c4,0);
         *(uint *)(param_1 + 0xbc90) = 1;
       }
     }

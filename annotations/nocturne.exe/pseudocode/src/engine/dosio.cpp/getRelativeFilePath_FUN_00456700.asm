@@ -4,7 +4,10 @@
 ; void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_00456700(char *param_1,char *param_2,char *param_3)
 ;
 ;
-; XREF[3]:
+; XREF[6]:
+;   FUN_004569a0 at 004569bc
+;   FUN_00456b20 at 00456b60
+;   FUN_004f9170 at 004f9198
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0 at 004568db
 ;   engine_dosio.cpp_getFileTimestamp_FUN_00456910 at 0045692b
 ;   engine_dosio.cpp_getFile_FUN_00456a60 at 00456a87

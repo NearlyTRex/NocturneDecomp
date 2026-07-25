@@ -6,7 +6,8 @@
 ; Local Variables:
 ; undefined        Stack[-0x28]:1  local_28
 ;
-; XREF[8]:
+; XREF[9]:
+;   FUN_00511d80 at 00511e54
 ;   FUN_005125a0 at 00512dbe
 ;   FUN_00513720 at 005137dc
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 at 004c0d95

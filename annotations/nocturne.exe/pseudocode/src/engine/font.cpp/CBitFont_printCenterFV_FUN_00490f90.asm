@@ -4,6 +4,9 @@
 ; void engine_font_cpp_CBitFont_printCenterFV_FUN_00490f90(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
 ;
 ;
+; XREF[1]:
+;   FUN_00490f50 at 00490f7c
+;
 ; Called Functions:
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   engine_font.cpp_CBitFont_drawTextCenterInClip_FUN_00490ef0

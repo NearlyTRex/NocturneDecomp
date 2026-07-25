@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 150,
-        "line": 143,
+        "line": 166,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 145,
+        "line": 168,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 153,
-        "line": 146,
+        "line": 170,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 152,
-        "line": 152,
+        "line": 177,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 64,
+        "line": 76,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 66,
+        "line": 78,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 132,
+        "line": 153,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 139,
+        "line": 160,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 143,
+        "line": 165,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 87,
-        "line": 32,
+        "line": 34,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 51,
+        "line": 58,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 93,
-        "line": 53,
+        "line": 60,
         "message": "unknown type name 'code'"
       },
       {
         "category": "syntax_error",
         "column": 15,
-        "line": 117,
+        "line": 125,
         "message": "expected unqualified-id"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 172,
+        "line": 188,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 210,
+        "line": 228,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 219,
+        "line": 237,
         "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 337,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 408,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 408,
-        "message": "invalid digit 'C' in decimal constant"
       }
     ],
     "success": false,
@@ -122,14 +122,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 74,
-    "cross_reference_count": 2,
+    "complexity_score": 89,
+    "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 14,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "param_count_too_few",
       "pointer_truncation",
       "unnamed_param"
     ],
@@ -146,6 +147,18 @@
       "addr": "0056e990",
       "from_addr": "0056e997",
       "name": "FUN_0056e990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005740b0",
+      "from_addr": "00574138",
+      "name": "FUN_005740b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00574570",
+      "from_addr": "0057459a",
+      "name": "FUN_00574570",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -164,7 +177,7 @@
   "function_calls": [],
   "globals": [],
   "param_estimates": {
-    "call_site_count": 2,
+    "call_site_count": 6,
     "call_sites": [
       {
         "call_addr": "0056e927",
@@ -189,13 +202,62 @@
         ],
         "stack_bytes": 4,
         "stack_params": 1
+      },
+      {
+        "call_addr": "0057459a",
+        "call_type": "direct",
+        "caller": "FUN_00574570",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005745c5",
+        "call_type": "direct",
+        "caller": "FUN_00574570",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EBX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00574138",
+        "call_type": "direct",
+        "caller": "FUN_005740b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005741ee",
+        "call_type": "direct",
+        "caller": "FUN_005740b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
       }
     ],
-    "confidence": "medium",
+    "confidence": "low",
     "declared_params": 0,
     "declared_stack_bytes": 0,
-    "estimated_params": 0,
-    "matches_declared": true
+    "estimated_params": 2,
+    "matches_declared": false
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.857142857142857,
@@ -270,6 +332,17 @@
       "severity": "moderate",
       "text": "return (int)psVar3 - (int)param_1 >> 1;",
       "type": "pointer_truncation"
+    },
+    {
+      "call_site_count": 6,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

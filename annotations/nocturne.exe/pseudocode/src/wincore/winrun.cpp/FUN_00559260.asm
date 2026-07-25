@@ -205,12 +205,12 @@ section .text
     MOV byte ptr [EAX + 0x2de2a10],BH   ; 005593b1 | DAT_02de2a10 | DAT_02de2a11
     PUSH 0x2de2a10                      ; 005593b7 | DAT_02de2a10
         ;   Label: LAB_005593b7
-    MOV EBX,0x558d90                    ; 005593bc | LAB_00558d90
+    MOV EBX,0x558d90                    ; 005593bc
     CALL dword ptr CS:[0x57558c]        ; 005593c1 | PTR_SetCurrentDirectoryA_0057558c
     XOR ESI,ESI                         ; 005593c8
     MOV ECX,0x3                         ; 005593ca
     PUSH 0x65                           ; 005593cf
-    MOV dword ptr [ESP + 0x8],EBX       ; 005593d1 | LAB_00558d90
+    MOV dword ptr [ESP + 0x8],EBX       ; 005593d1
     MOV dword ptr [ESP + 0xc],ESI       ; 005593d5
     MOV dword ptr [ESP + 0x10],ESI      ; 005593d9
     PUSH EBP                            ; 005593dd

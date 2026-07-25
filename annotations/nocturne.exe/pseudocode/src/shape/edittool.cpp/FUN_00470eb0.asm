@@ -28,7 +28,7 @@
 ;   TerminatedCString s_d_0057e751
 ;   undefined4 s_d_0057e751+1
 ;   undefined4 DAT_005b7630
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_005c168c
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
@@ -316,7 +316,7 @@ section .text
     POP ESI                             ; 00471192
     POP EBX                             ; 00471193
     RET                                 ; 00471194
-    MOV EBX,dword ptr [0x005bac64]      ; 00471195 | DAT_005bac64
+    MOV EBX,dword ptr [0x005bac64]      ; 00471195 | INT_005bac64
         ;   Label: LAB_00471195
     PUSH EBX                            ; 0047119b | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0 ; 0047119c

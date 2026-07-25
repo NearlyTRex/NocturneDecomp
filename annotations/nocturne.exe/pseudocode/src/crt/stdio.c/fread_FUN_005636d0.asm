@@ -4,18 +4,18 @@
 ; uint __cdecl crt_stdio_c_fread_FUN_005636d0(char *param_1,uint param_2,int param_3,int *param_4)
 ;
 ;
-; XREF[31]:
+; XREF[43]:
 ;   FUN_00401010 at 0040115d
+;   FUN_0042eb90 at 0042ec00
+;   FUN_0044d550 at 0044d5e0
 ;   FUN_004571f0 at 00457205
 ;   FUN_004676c0 at 004676ea
+;   FUN_0046c3c0 at 0046c3d0
 ;   FUN_004a4170 at 004a436d
 ;   FUN_004a57c0 at 004a58ab
-;   FUN_004f7ae0 at 004f7bb0
-;   FUN_004f8570 at 004f8608
-;   FUN_00522480 at 00522784
-;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d538
-;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d2a8
-;   ... and 21 more
+;   FUN_004e27f0 at 004e2837
+;   FUN_004f4f90 at 004f4faa
+;   ... and 33 more
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1ac0 = 005671e4

@@ -4,6 +4,9 @@
 ; undefined4 * core_set_cpp_CDemonSet_ctor_FUN_00506bc0(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00506b40 at 00506b45
+;
 ; Referenced Globals:
 ;   TerminatedCString s_none_005900ee
 ;   undefined4 s_one_005900ee+1

@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 150,
-        "line": 143,
+        "line": 166,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 145,
+        "line": 168,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 153,
-        "line": 146,
+        "line": 170,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 152,
-        "line": 152,
+        "line": 177,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 64,
+        "line": 76,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 66,
+        "line": 78,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 132,
+        "line": 153,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 139,
+        "line": 160,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 143,
+        "line": 165,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 87,
-        "line": 32,
+        "line": 34,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 51,
+        "line": 58,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 93,
-        "line": 53,
+        "line": 60,
         "message": "unknown type name 'code'"
       },
       {
         "category": "syntax_error",
         "column": 15,
-        "line": 117,
+        "line": 125,
         "message": "expected unqualified-id"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 172,
+        "line": 188,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 210,
+        "line": 228,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 219,
+        "line": 237,
         "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 337,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 408,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 408,
-        "message": "invalid digit 'C' in decimal constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 532,
+    "complexity_score": 484,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 172,
-    "suspect_count": 32,
+    "pseudocode_lines": 174,
+    "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -139,7 +139,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 175
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -293,15 +293,7 @@
       "line": 109,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x2a);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 110,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if ((iVar7 == 0) || (iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d), iVar7 == 0)) {",
+      "text": "iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x2a);",
       "type": "unresolved_funcptr"
     },
     {
@@ -309,111 +301,79 @@
       "line": 111,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 143,
-      "match": "*(code **)(*0x01CC30E4",
-      "severity": "moderate",
-      "text": "iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 143,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);",
+      "text": "(iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d), iVar7 == 0)) {",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 147,
+      "line": 112,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);",
+      "text": "iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 148,
-      "match": "*(code **)(*0x01CC30E4",
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 144,
+      "match": "code *",
       "severity": "moderate",
-      "text": "if ((iVar7 != 0) && (iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x32), iVar7 != 0)) {",
-      "type": "raw_address_pointer_store"
+      "text": "iVar7 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 148,
       "match": "code *",
       "severity": "moderate",
-      "text": "if ((iVar7 != 0) && (iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x32), iVar7 != 0)) {",
+      "text": "iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 153,
+      "line": 150,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);",
+      "text": "(iVar7 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x32), iVar7 != 0)) {",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 155,
-      "match": "*(code **)(*0x01CC30E4",
-      "severity": "moderate",
-      "text": "((iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x20), iVar7 != 0 ||",
-      "type": "raw_address_pointer_store"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 155,
       "match": "code *",
       "severity": "moderate",
-      "text": "((iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x20), iVar7 != 0 ||",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 156,
-      "match": "*(code **)(*0x01CC30E4",
-      "severity": "moderate",
-      "text": "(iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x26), iVar7 != 0)))) {",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 156,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar7 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x26), iVar7 != 0)))) {",
+      "text": "iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 161,
+      "line": 157,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar7 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);",
+      "text": "((iVar7 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x20), iVar7 != 0 ||",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 163,
-      "match": "*(code **)(*0x01CC30E4",
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 158,
+      "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x21);",
-      "type": "raw_address_pointer_store"
+      "text": "(iVar7 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x26), iVar7 != 0)))) {",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 163,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x21);",
+      "text": "iVar7 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 165,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x21);",
       "type": "unresolved_funcptr"
     },
     {

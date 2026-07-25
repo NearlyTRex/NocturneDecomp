@@ -4,18 +4,18 @@
 ; void __cdecl engine_3d_c_calculatePolygonLighting_FUN_00404710(int param_1)
 ;
 ;
-; XREF[16]:
+; XREF[21]:
+;   FUN_00405340 at 00405387
+;   FUN_00406920 at 0040699c
+;   FUN_00406a00 at 00406a7f
+;   FUN_00406ae0 at 00406b2e
+;   FUN_00406b80 at 00406bff
 ;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_00405e10 at 00405f14
 ;   engine_3d.c_renderPolygonBlendedLitOp63_FUN_00408270 at 004082c8
 ;   engine_3d.c_renderPolygonDestReadBlendDepthLitOp55_FUN_00407d90 at 00407dfa
 ;   engine_3d.c_renderPolygonFullEffectsLitOp57_FUN_00408130 at 0040817e
 ;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedOp26_FUN_00406230 at 00406289
-;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90 at 00405cd3
-;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp56_FUN_00407e50 at 00407ea7
-;   engine_3d.c_renderPolygonLitNearPlaneOp35_FUN_00406010 at 0040605e
-;   engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00405540 at 0040559d
-;   engine_3d.c_renderPolygonSolidLitOp62_FUN_00408010 at 0040805f
-;   ... and 6 more
+;   ... and 11 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c74

@@ -31,7 +31,7 @@ void __cdecl core_set_cpp_CDemonSet_buildActorTypeLists_FUN_0050e6b0(int param_1
         *(int *)(param_1 + 0x158908 + *(int *)(param_1 + 0x158904) * 4) = iVar1;
         *(int *)(param_1 + 0x158904) = *(int *)(param_1 + 0x158904) + 1;
       }
-      uVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar1,DAT_00765a98);
+      uVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar1,CDemonActorType_00765a60.name_hash);
       *(uint *)(param_1 + 0x14ecb4 + *(int *)(param_1 + 0x14ecb0) * 4) = uVar2;
       uVar2 = _DAT_01bcdef4;
       if (*(int *)(param_1 + 0x14ecb4 + *(int *)(param_1 + 0x14ecb0) * 4) == 0) {

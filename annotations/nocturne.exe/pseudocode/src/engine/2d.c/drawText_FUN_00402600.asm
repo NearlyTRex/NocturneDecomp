@@ -4,18 +4,18 @@
 ; void __cdecl engine_2d_c_drawText_FUN_00402600(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[20]:
+; XREF[24]:
+;   FUN_0044b660 at 0044b6be
+;   FUN_0049a320 at 0049a5fd
 ;   FUN_0049cc10 at 0049d0f6
 ;   FUN_004c8510 at 004c8527
+;   FUN_004cf810 at 004cf8ae
 ;   FUN_005138e0 at 00513b56
+;   FUN_00519120 at 005191e6
 ;   core_event.cpp_CEventList_render_FUN_0047dd80 at 0047ddd0
 ;   core_menu.cpp_calibrateGamepad_FUN_004cf8d0 at 004cf999
 ;   core_mission.cpp_CDemonMission_process_FUN_004d92a0 at 004d9370
-;   core_motion.cpp_CMotionController_render_FUN_004e22b0 at 004e237e
-;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004eb5e1
-;   core_netgame.cpp_CNetGame_syncPlayers_FUN_004ea370 at 004ea441
-;   core_path.cpp_CPathMap_previewPathfinding_FUN_004f1500 at 004f15a7
-;   ... and 10 more
+;   ... and 14 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005acaa4

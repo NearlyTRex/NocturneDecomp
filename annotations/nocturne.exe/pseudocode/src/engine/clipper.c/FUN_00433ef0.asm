@@ -3,22 +3,21 @@
 ; *****************************************************************************
 ; void engine_clipper_c_FUN_00433ef0(void)
 ;
+; Local Variables:
+; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00433ee0 = 00433f52
 ;   undefined1* PTR_caseD_1_00433ee4 = 00433f9c
 ;   undefined1* PTR_caseD_3_00433eec = 00433f7c
 ;   string caseD_0
+;   undefined4 caseD_3
+;   undefined4 caseD_1
 ;   string caseD_2
 ;   undefined4 DAT_00767b44
-;   undefined4 DAT_00767b48
 ;   undefined4 DAT_0076874c
 ;   undefined4 DAT_00768750
 ;   undefined4 DAT_00768754
-;   undefined4 DAT_00768d4c
-;
-; Called Functions:
-;   engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00
 ;
 ; *****************************************************************************
 
@@ -69,34 +68,4 @@ section .text
         ;   XREF to: 00433f7c (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [EAX*0x4 + 0x433ee0]  ; 00433f4b | = "k=H{v" | caseD_1 | caseD_2
         ;   Label: switchD
-    MOV ESI,dword ptr [ESP]             ; 00433f7c
-        ;   Label: caseD_3
-    MOV EDI,dword ptr [0x00767b44]      ; 00433f7f | DAT_00767b44
-    INC ESI                             ; 00433f85
-    ADD EBX,0x30                        ; 00433f86
-    MOV dword ptr [ESP],ESI             ; 00433f89
-    CMP ESI,EDI                         ; 00433f8c
-    JL 0x00433f0f                       ; 00433f8e
-        ;   XREF to: 00433f0f (CONDITIONAL_JUMP)  ; LAB_00433f0f
-    ADD ESP,0x4                         ; 00433f94
-        ;   Label: LAB_00433f94
-    POP EBP                             ; 00433f97
-    POP EDI                             ; 00433f98
-    POP ESI                             ; 00433f99
-    POP EBX                             ; 00433f9a
-    RET                                 ; 00433f9b
-    IMUL EAX,dword ptr [0x00767b48],0x30 ; 00433f9c | DAT_00767b48
-        ;   Label: caseD_1
-    ADD EAX,0x768d4c                    ; 00433fa3 | DAT_00768d4c
-    PUSH EAX                            ; 00433fa8
-    PUSH EDX                            ; 00433fa9
-    PUSH EBP                            ; 00433faa
-    CALL engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00 ; 00433fab
-        ;   XREF to: 00433a00 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00()
-    MOV ESI,dword ptr [0x00767b48]      ; 00433fb0 | DAT_00767b48
-    INC ESI                             ; 00433fb6
-    ADD ESP,0xc                         ; 00433fb7
-    MOV dword ptr [0x00767b48],ESI      ; 00433fba | DAT_00767b48
-    JMP 0x00433f7c                      ; 00433fc0
-        ;   XREF to: 00433f7c (UNCONDITIONAL_JUMP)  ; caseD_3
 

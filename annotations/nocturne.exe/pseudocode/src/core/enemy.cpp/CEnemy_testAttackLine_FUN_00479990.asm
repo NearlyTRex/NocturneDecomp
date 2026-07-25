@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057f34f = 1.20000000000000
 ;   double DOUBLE_0057f357 = 0.25
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;
 ; Called Functions:
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200
@@ -78,7 +78,7 @@ section .text
     PUSH 0x0                            ; 00479a07
     LEA EAX,[ESP + 0x14]                ; 00479a09
     PUSH EAX                            ; 00479a0d
-    MOV EAX,[0x005b96c4]                ; 00479a0e | DAT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 00479a0e | INT_005b96c4
     PUSH EAX                            ; 00479a13
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 00479a14
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200()

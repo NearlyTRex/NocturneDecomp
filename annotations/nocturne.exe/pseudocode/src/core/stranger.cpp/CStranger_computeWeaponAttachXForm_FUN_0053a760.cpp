@@ -354,7 +354,7 @@ uint * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(int par
     }
     else if (param_3 == 0) {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-                (local_75c,0x2dc9f40,&DAT_02dd1184);
+                (local_75c,&DAT_02dc9f40,&DAT_02dd1184);
       core_xform_cpp_buildRotationX_FUN_0055c730(0x3fc90fdb,local_75c,iVar6);
       puVar8 = local_66c;
       puVar7 = local_c6c;
@@ -392,7 +392,7 @@ uint * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(int par
     }
     else {
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
-                (local_aec,0x2dc9f34,&DAT_02dd1184);
+                (local_aec,&DAT_02dc9f34,&DAT_02dd1184);
       core_xform_cpp_buildRotationX_FUN_0055c730(0x3fc90fdb,local_aec,iVar6);
       puVar8 = local_72c;
       puVar7 = local_36c;
@@ -480,7 +480,7 @@ uint * core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(int par
     puVar7 = local_2ac;
     goto LAB_0053a8f6;
   }
-  iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,DAT_00764ad4);
+  iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,CDemonActorType_00764a9c.name_hash);
   if (iVar6 != 0) {
     (**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,&local_21c);
     local_144[3] = local_21c + local_210;

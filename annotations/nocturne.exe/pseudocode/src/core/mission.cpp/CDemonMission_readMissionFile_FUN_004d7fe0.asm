@@ -497,7 +497,7 @@ section .text
     CMP EAX,0xa                         ; 004d84a0
     JNZ 0x004d8493                      ; 004d84a3
         ;   XREF to: 004d8493 (CONDITIONAL_JUMP)  ; LAB_004d8493
-    MOV ESI,dword ptr [0x005b96c4]      ; 004d84a5 | DAT_005b96c4
+    MOV ESI,dword ptr [0x005b96c4]      ; 004d84a5 | INT_005b96c4
         ;   Label: LAB_004d84a5
     PUSH ESI                            ; 004d84ab
     MOV dword ptr [EBX],0xffffffff      ; 004d84ac
@@ -617,7 +617,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x160]     ; 004d8610
         ;   Label: LAB_004d8610
     PUSH EBP                            ; 004d8617
-    MOV EAX,[0x005b96c4]                ; 004d8618 | DAT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 004d8618 | INT_005b96c4
     PUSH EAX                            ; 004d861d
     CALL core_gore.cpp_CGore_load_FUN_004b0820 ; 004d861e
         ;   XREF to: 004b0820 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_load_FUN_004b0820()

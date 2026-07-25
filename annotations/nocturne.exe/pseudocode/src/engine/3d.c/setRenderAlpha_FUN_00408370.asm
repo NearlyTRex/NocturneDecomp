@@ -4,18 +4,18 @@
 ; void __cdecl engine_3d_c_setRenderAlpha_FUN_00408370(int param_1)
 ;
 ;
-; XREF[26]:
+; XREF[28]:
 ;   FUN_0046fb40 at 0046fc3c
 ;   FUN_0046fcd0 at 0046fdcc
 ;   FUN_0046fe60 at 0046ff5c
+;   FUN_004700d0 at 00470139
 ;   FUN_00470eb0 at 0047101d
 ;   FUN_004722b0 at 004723d9
+;   FUN_00472de0 at 00472f9d
 ;   FUN_004759d0 at 00475ca9
 ;   FUN_004c2470 at 004c2cc0
 ;   FUN_004fe770 at 004fe911
-;   core_baron.cpp_FUN_004110f0 at 00411185
-;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a6950
-;   ... and 16 more
+;   ... and 18 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005acab4

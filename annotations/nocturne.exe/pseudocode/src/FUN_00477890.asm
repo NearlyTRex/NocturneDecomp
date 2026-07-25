@@ -15,11 +15,11 @@
 ;   double DOUBLE_0057f154 = 1.5
 ;   double DOUBLE_0057f15c = 10
 ;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_005bed68
-;   undefined4 DAT_00765a98
-;   undefined4 DAT_0077bd78
+;   undefined4 CDemonActorType_00765a60.name_hash
+;   undefined4 CDemonActorType_0077bd40.name_hash
 ;   undefined4 DAT_01c7068c
 ;   undefined4 DAT_01c78c78
 ;   ... and 14 more
@@ -276,7 +276,7 @@ section .text
     CMP EAX,ECX                         ; 00477baf
     JNZ 0x00477bc2                      ; 00477bb1
         ;   XREF to: 00477bc2 (CONDITIONAL_JUMP)  ; LAB_00477bc2
-    MOV EBX,dword ptr [0x005b9284]      ; 00477bb3 | DAT_005b9284
+    MOV EBX,dword ptr [0x005b9284]      ; 00477bb3 | INT_005b9284
     PUSH EBX                            ; 00477bb9
     CALL FUN_004940d0                   ; 00477bba
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
@@ -322,7 +322,7 @@ section .text
     SAHF                                ; 00477c0d
     JC 0x00477b01                       ; 00477c0e
         ;   XREF to: 00477b01 (CONDITIONAL_JUMP)  ; LAB_00477b01
-    MOV EDX,dword ptr [0x00765a98]      ; 00477c14 | DAT_00765a98
+    MOV EDX,dword ptr [0x00765a98]      ; 00477c14 | CDemonActorType_00765a60.name_hash
     MOV EAX,[0x005be368]                ; 00477c1a | DAT_005be368
     PUSH EDX                            ; 00477c1f
     MOV ECX,dword ptr [EAX + 0x14cd5c]  ; 00477c20 | DAT_01fa3fe0
@@ -362,7 +362,7 @@ section .text
     ADD ESP,0x8                         ; 00477c85
     MOV EDI,EAX                         ; 00477c88
     MOV dword ptr [ESP + 0xf4],EAX      ; 00477c8a
-    MOV EAX,[0x0077bd78]                ; 00477c91 | DAT_0077bd78
+    MOV EAX,[0x0077bd78]                ; 00477c91 | CDemonActorType_0077bd40.name_hash
     PUSH EAX                            ; 00477c96
     MOV EAX,[0x005be368]                ; 00477c97 | DAT_005be368
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 00477c9c | DAT_01fa3fe0

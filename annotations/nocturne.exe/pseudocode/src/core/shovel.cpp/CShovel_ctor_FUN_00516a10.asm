@@ -4,6 +4,9 @@
 ; int core_shovel_cpp_CShovel_ctor_FUN_00516a10(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_005169e0 at 005169f3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_shoveit_kfm_005910c5
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_005a1c34 = 00553f10

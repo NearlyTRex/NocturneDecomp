@@ -4,18 +4,18 @@
 ; void __cdecl crt_stdio_c_vsprintf_FUN_00563a08(int param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[26]:
+; XREF[37]:
+;   FUN_0045da90 at 0045dabc
+;   FUN_0045db60 at 0045db8c
+;   FUN_0045dc30 at 0045dc5c
+;   FUN_0045dd00 at 0045dd2c
+;   FUN_0045ddd0 at 0045ddfc
+;   FUN_0045dea0 at 0045decd
+;   FUN_0045df80 at 0045dfad
+;   FUN_0045e130 at 0045e15b
+;   FUN_0045e1f0 at 0045e21b
 ;   FUN_0046fb40 at 0046fbac
-;   FUN_0046fcd0 at 0046fd3c
-;   FUN_0046fe60 at 0046fecc
-;   FUN_00470230 at 0047025b
-;   FUN_00470310 at 0047033b
-;   FUN_004703f0 at 0047041c
-;   FUN_0047a210 at 0047a23f
-;   FUN_00490b70 at 00490b8f
-;   FUN_00490d70 at 00490d8f
-;   FUN_004c8440 at 004c8477
-;   ... and 16 more
+;   ... and 27 more
 ;
 ; Called Functions:
 ;   FUN_00569040
@@ -26,7 +26,7 @@ section .text
 
     PUSH EBX                            ; 00563a08
         ;   Label: crt_stdio.c_vsprintf_FUN_00563a08
-    PUSH 0x5639f0                       ; 00563a09 | LAB_005639f0
+    PUSH 0x5639f0                       ; 00563a09
     MOV EDX,dword ptr [ESP + 0x14]      ; 00563a0e
     PUSH EDX                            ; 00563a12
     MOV EBX,dword ptr [ESP + 0x14]      ; 00563a13

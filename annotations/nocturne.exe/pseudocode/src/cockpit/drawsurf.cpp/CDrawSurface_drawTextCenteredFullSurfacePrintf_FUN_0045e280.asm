@@ -4,6 +4,9 @@
 ; void cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280(undefined4 param_1,undefined4 param_2)
 ;
 ;
+; XREF[1]:
+;   FUN_0045e370 at 0045e95c
+;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0045e260
 ;   crt_stdio.c_vsprintf_FUN_00563a08

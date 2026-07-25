@@ -1,0 +1,306 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 50,
+    "complexity_score": 145,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 11,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 80
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0051cf60",
+    "address_range": [
+      [
+        "0051cf60",
+        "0051cfc0"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0051cf60",
+    "signature": "void FUN_0051cf60(int param_1,undefined4 *param_2,undefined4 param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "0051e0a0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0"
+    },
+    {
+      "addr": "00517b10",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00517b10"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.414634146341464,
+    "instruction_count": 41,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 44,
+      "INT_ADD": 25,
+      "INT_AND": 22,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "INT_ZEXT": 8,
+      "LOAD": 16,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 222
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_0051cf60(int param_1,uint *param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void FUN_0051cf60(int param_1,uint *param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void FUN_0051cf60(int param_1,uint *param_2,uint param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar2 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_00517b10(iVar1,iVar3,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "puVar5 = (uint *)(param_1 + 0x6b4 + (uint)bVar7 * -8);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 21,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "puVar4 = param_2 + (uint)bVar7 * -2 + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x6b0) = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x6b0) = *param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + 0x10;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 + 0x10;",
+      "type": "unnamed_param"
+    }
+  ]
+}

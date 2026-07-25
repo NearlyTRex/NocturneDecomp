@@ -104,7 +104,7 @@ uint FUN_00470eb0(uint param_1,uint param_2,char *param_3,char *param_4,char *pa
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     if (local_14 != 0) break;
     while (iVar4 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(), iVar4 != 0) {
-      iVar4 = engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(0x01CC30E4);
+      iVar4 = engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(INT_005bac64);
       if (iVar4 == 0x1b) {
         *param_5 = '\0';
         FUN_004720c0(param_1);

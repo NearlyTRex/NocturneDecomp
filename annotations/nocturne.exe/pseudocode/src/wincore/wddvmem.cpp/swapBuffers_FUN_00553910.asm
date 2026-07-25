@@ -12,18 +12,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[39]:
+; XREF[44]:
+;   FUN_0044b660 at 0044b6d7
 ;   FUN_0046f7e0 at 0046f8c5
 ;   FUN_0046fb40 at 0046fc95
 ;   FUN_0046fcd0 at 0046fe25
 ;   FUN_0046fe60 at 0046ffb5
+;   FUN_004700d0 at 0047016b
 ;   FUN_00470eb0 at 004710ea
 ;   FUN_004a57c0 at 004a5998
 ;   FUN_004c8510 at 004c8552
 ;   FUN_004c85f0 at 004c8c5e
-;   FUN_004c90e0 at 004c9207
-;   FUN_004d23d0 at 004d25d7
-;   ... and 29 more
+;   ... and 34 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_00597ae0

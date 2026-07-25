@@ -6,10 +6,11 @@
 ; Local Variables:
 ; undefined4       Stack[-0x74]:4  local_74
 ;
-; XREF[4]:
+; XREF[5]:
 ;   FUN_0049cc10 at 0049cce5
 ;   FUN_004a57c0 at 004a597f
 ;   FUN_00532ba0 at 00532be7
+;   FUN_00545aa0 at 00545aab
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 0055394e
 ;
 ; Referenced Globals:

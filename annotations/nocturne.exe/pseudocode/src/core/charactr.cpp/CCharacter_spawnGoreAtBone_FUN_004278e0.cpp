@@ -29,7 +29,7 @@ void core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(int param_1,int p
       local_2c = 0;
       core_actor_cpp_CDemonActor_transformVector_FUN_0040a200(param_1,local_1c,&local_34);
       core_gore_cpp_CGore_spawnBloodParticles_FUN_004b00f0
-                (0x01C78C7C,local_10,local_1c,*(uint *)(param_1 + 0x2608));
+                (INT_005b96c4,local_10,local_1c,*(uint *)(param_1 + 0x2608));
       return;
     }
   }

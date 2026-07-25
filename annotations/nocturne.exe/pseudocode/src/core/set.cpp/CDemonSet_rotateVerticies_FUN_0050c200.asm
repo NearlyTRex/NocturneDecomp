@@ -6,8 +6,9 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[10]:
+; XREF[11]:
 ;   FUN_0043f330 at 0043f42f
+;   FUN_004574e0 at 0045753f
 ;   FUN_004ac440 at 004ac52f
 ;   FUN_004ac600 at 004ac6ee
 ;   FUN_004ac9b0 at 004acaa1
@@ -16,7 +17,7 @@
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 at 0041dd2b
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437dd4
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0 at 004530f5
-;   core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_00518440 at 0051845f
+;   ... and 1 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_00590652

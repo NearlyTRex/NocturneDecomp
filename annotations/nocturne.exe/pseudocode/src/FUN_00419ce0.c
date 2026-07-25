@@ -21,11 +21,11 @@ int FUN_00419ce0(int param_1)
   core_enemy_cpp_CEnemy_archive_FUN_004796c0(param_1);
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbc8c,"speed");
   core_actor_cpp_archiveDeformableModelInstance_FUN_0040ca80(param_1 + 0x150,"modelName");
-  if (0x00000005 < 4) {
+  if (INT_005ad054 < 4) {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbc9c,"guardDistance");
   }
   iVar1 = core_actor_cpp_FUN_0040cb00(param_1 + 0x150,"motion state");
-  if (1 < 0x00000005) {
+  if (1 < INT_005ad054) {
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0xbd38,"deathEvent");
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbd9c,"recombineTime");
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xc344,"blownUp");
@@ -58,7 +58,7 @@ int FUN_00419ce0(int param_1)
       } while (iVar5 < *(int *)(param_1 + 0xbda0));
     }
   }
-  if ((2 < 0x00000005) && (0x00000005 < 5)) {
+  if ((2 < INT_005ad054) && (INT_005ad054 < 5)) {
     iVar1 = core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbd18,"victimHeight");
     return iVar1;
   }

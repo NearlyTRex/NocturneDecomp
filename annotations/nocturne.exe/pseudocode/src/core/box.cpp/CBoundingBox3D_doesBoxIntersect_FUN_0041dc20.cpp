@@ -1,6 +1,6 @@
 // Name: core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20
 // Address: 0041dc20
-// Address Range: [[0041dc14, 0041dc19] [0041dc20, 0041dc6a]]
+// Address Range: [[0041dc20, 0041dc6a]]
 // Convention: __cdecl
 // Signature: undefined4 __cdecl core_box_cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20(float *param_1,float *param_2)
 

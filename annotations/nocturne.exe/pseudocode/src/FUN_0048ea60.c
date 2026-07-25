@@ -31,7 +31,7 @@ uint FUN_0048ea60(int param_1)
   }
   iVar3 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
   if (iVar3 == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-    FUN_004940d0(0x01C70F74);
+    FUN_004940d0(INT_005b9284);
   }
   *(uint *)(param_1 + 0x570) = 1;
   return 1;

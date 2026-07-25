@@ -24,9 +24,9 @@
 ;   float FLOAT_00595da7 = 50
 ;   float FLOAT_005a26f8 = 2
 ;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_01c775ec
 ;   ... and 4 more
@@ -226,7 +226,7 @@ section .text
     FMUL ST2                            ; 0053ea21
     FLD float ptr [EBP + -0x10]         ; 0053ea23
     FMULP ST3                           ; 0053ea26
-    MOV EDI,dword ptr [0x005b9284]      ; 0053ea28 | DAT_005b9284
+    MOV EDI,dword ptr [0x005b9284]      ; 0053ea28 | INT_005b9284
     FXCH ST2                            ; 0053ea2e
     FSTP float ptr [EBP + -0x10]        ; 0053ea30
     PUSH dword ptr [EBP + -0x10]        ; 0053ea33
@@ -300,7 +300,7 @@ section .text
     PUSH 0x42480000                     ; 0053eb0a
     PUSH 0x32                           ; 0053eb0f
     PUSH EBX                            ; 0053eb11
-    MOV EDX,dword ptr [0x005b96c4]      ; 0053eb12 | DAT_005b96c4
+    MOV EDX,dword ptr [0x005b96c4]      ; 0053eb12 | INT_005b96c4
     PUSH EDX                            ; 0053eb18
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 0053eb19
         ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670()

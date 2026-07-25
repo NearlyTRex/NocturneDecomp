@@ -4,6 +4,9 @@
 ; int FUN_00543150(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00543120 at 00543133
+;
 ; Referenced Globals:
 ;   TerminatedCString s_bassplayer_dfm_00596491
 ;   undefined1* PTR_core_tbplayer.cpp_CBassPlayer_setup_FUN_00543180_005a2c04 = 00543180

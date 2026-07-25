@@ -941,9 +941,9 @@ section .text
         ;   XREF to: 0047e792 (CONDITIONAL_JUMP)  ; LAB_0047e792
     JMP 0x0047e7a6                      ; 0047e817
         ;   XREF to: 0047e7a6 (UNCONDITIONAL_JUMP)  ; LAB_0047e7a6
-    PUSH 0x763e48                       ; 0047e819 | DAT_00763e48
+    PUSH 0x763e48                       ; 0047e819 | CDemonActorType_00763e48
         ;   Label: LAB_0047e819
-    MOV EBX,dword ptr [0x00763e80]      ; 0047e81e | DAT_00763e80
+    MOV EBX,dword ptr [0x00763e80]      ; 0047e81e | CDemonActorType_00763e48.name_hash
     PUSH EBX                            ; 0047e824
     LEA EAX,[ESP + 0x7b8]               ; 0047e825
     PUSH EAX                            ; 0047e82c
@@ -1735,9 +1735,9 @@ section .text
     CMP dword ptr [ESP + 0xa00],0x3     ; 0047f011
     JL 0x0047f05b                       ; 0047f019
         ;   XREF to: 0047f05b (CONDITIONAL_JUMP)  ; LAB_0047f05b
-    MOV EAX,0x765a60                    ; 0047f01b | DAT_00765a60
-    PUSH EAX                            ; 0047f020 | DAT_00765a60
-    MOV EDX,dword ptr [0x00765a98]      ; 0047f021 | DAT_00765a98
+    MOV EAX,0x765a60                    ; 0047f01b | CDemonActorType_00765a60
+    PUSH EAX                            ; 0047f020 | CDemonActorType_00765a60
+    MOV EDX,dword ptr [0x00765a98]      ; 0047f021 | CDemonActorType_00765a60.name_hash
     PUSH EDX                            ; 0047f027
     LEA EAX,[ESP + 0x498]               ; 0047f028
     PUSH EAX                            ; 0047f02f
@@ -2228,9 +2228,9 @@ section .text
         ;   XREF to: 0047f497 (CONDITIONAL_JUMP)  ; LAB_0047f497
     JMP 0x0047f4ab                      ; 0047f4e8
         ;   XREF to: 0047f4ab (UNCONDITIONAL_JUMP)  ; LAB_0047f4ab
-    PUSH 0x763e48                       ; 0047f4ea | DAT_00763e48
+    PUSH 0x763e48                       ; 0047f4ea | CDemonActorType_00763e48
         ;   Label: LAB_0047f4ea
-    MOV ECX,dword ptr [0x00763e80]      ; 0047f4ef | DAT_00763e80
+    MOV ECX,dword ptr [0x00763e80]      ; 0047f4ef | CDemonActorType_00763e48.name_hash
     PUSH ECX                            ; 0047f4f5
     LEA EAX,[ESP + 0x68c]               ; 0047f4f6
     PUSH EAX                            ; 0047f4fd
@@ -2419,9 +2419,9 @@ section .text
         ;   XREF to: 0047f677 (CONDITIONAL_JUMP)  ; LAB_0047f677
     JMP 0x0047f68b                      ; 0047f6c8
         ;   XREF to: 0047f68b (UNCONDITIONAL_JUMP)  ; LAB_0047f68b
-    PUSH 0x763e48                       ; 0047f6ca | DAT_00763e48
+    PUSH 0x763e48                       ; 0047f6ca | CDemonActorType_00763e48
         ;   Label: LAB_0047f6ca
-    MOV ECX,dword ptr [0x00763e80]      ; 0047f6cf | DAT_00763e80
+    MOV ECX,dword ptr [0x00763e80]      ; 0047f6cf | CDemonActorType_00763e48.name_hash
     PUSH ECX                            ; 0047f6d5
     LEA EAX,[ESP + 0x5c4]               ; 0047f6d6
     PUSH EAX                            ; 0047f6dd
@@ -2440,9 +2440,9 @@ section .text
     POP ESI                             ; 0047f6f5
     POP EBX                             ; 0047f6f6
     RET                                 ; 0047f6f7
-    PUSH 0x763e48                       ; 0047f6f8 | DAT_00763e48
+    PUSH 0x763e48                       ; 0047f6f8 | CDemonActorType_00763e48
         ;   Label: LAB_0047f6f8
-    MOV EBX,dword ptr [0x00763e80]      ; 0047f6fd | DAT_00763e80
+    MOV EBX,dword ptr [0x00763e80]      ; 0047f6fd | CDemonActorType_00763e48.name_hash
     PUSH EBX                            ; 0047f703
     LEA EAX,[ESP + 0x6f0]               ; 0047f704
     PUSH EAX                            ; 0047f70b
@@ -2961,9 +2961,9 @@ section .text
     CMP dword ptr [ESP + 0xa58],0x3     ; 0047fc24
     JL 0x0047fc70                       ; 0047fc2c
         ;   XREF to: 0047fc70 (CONDITIONAL_JUMP)  ; LAB_0047fc70
-    MOV EAX,0x765a60                    ; 0047fc2e | DAT_00765a60
-    PUSH EAX                            ; 0047fc33 | DAT_00765a60
-    MOV EBX,dword ptr [0x00765a98]      ; 0047fc34 | DAT_00765a98
+    MOV EAX,0x765a60                    ; 0047fc2e | CDemonActorType_00765a60
+    PUSH EAX                            ; 0047fc33 | CDemonActorType_00765a60
+    MOV EBX,dword ptr [0x00765a98]      ; 0047fc34 | CDemonActorType_00765a60.name_hash
     PUSH EBX                            ; 0047fc3a
     LEA EAX,[ESP + 0x81c]               ; 0047fc3b
     PUSH EAX                            ; 0047fc42
@@ -3061,9 +3061,9 @@ section .text
     CMP dword ptr [ESP + 0x9b0],0x3     ; 0047fd12
     JL 0x0047fdbd                       ; 0047fd1a
         ;   XREF to: 0047fdbd (CONDITIONAL_JUMP)  ; LAB_0047fdbd
-    MOV EAX,0x765a60                    ; 0047fd20 | DAT_00765a60
-    PUSH EAX                            ; 0047fd25 | DAT_00765a60
-    MOV EAX,[0x00765a98]                ; 0047fd26 | DAT_00765a98
+    MOV EAX,0x765a60                    ; 0047fd20 | CDemonActorType_00765a60
+    PUSH EAX                            ; 0047fd25 | CDemonActorType_00765a60
+    MOV EAX,[0x00765a98]                ; 0047fd26 | CDemonActorType_00765a60.name_hash
     PUSH EAX                            ; 0047fd2b
     LEA EAX,[ESP + 0x8e4]               ; 0047fd2c
     PUSH EAX                            ; 0047fd33
@@ -3429,8 +3429,8 @@ section .text
     CMP dword ptr [ESP + 0xa78],0x3     ; 00480130
     JL 0x00480179                       ; 00480138
         ;   XREF to: 00480179 (CONDITIONAL_JUMP)  ; LAB_00480179
-    PUSH 0x765a60                       ; 0048013a | DAT_00765a60
-    MOV EDI,dword ptr [0x00765a98]      ; 0048013f | DAT_00765a98
+    PUSH 0x765a60                       ; 0048013a | CDemonActorType_00765a60
+    MOV EDI,dword ptr [0x00765a98]      ; 0048013f | CDemonActorType_00765a60.name_hash
     PUSH EDI                            ; 00480145
     LEA EAX,[ESP + 0x434]               ; 00480146
     PUSH EAX                            ; 0048014d

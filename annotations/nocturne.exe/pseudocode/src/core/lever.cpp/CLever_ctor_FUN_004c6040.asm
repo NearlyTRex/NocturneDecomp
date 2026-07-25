@@ -4,6 +4,9 @@
 ; int core_lever_cpp_CLever_ctor_FUN_004c6040(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004c6010 at 004c6023
+;
 ; Referenced Globals:
 ;   TerminatedCString s_glever_kfm_005878f4
 ;   undefined1* PTR_core_lever.cpp_CLever_setup_FUN_004c6110_0059fc44 = 004c6110

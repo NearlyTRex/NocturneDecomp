@@ -17,7 +17,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00472fd0 at 0047304a
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 at 00460a6d
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 at 00460b0e
 ;

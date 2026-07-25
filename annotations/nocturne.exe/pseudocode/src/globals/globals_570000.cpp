@@ -30,6 +30,10 @@ dword DAT_00575080 = 0;
 dword DAT_00575090 = 0;
 dword DAT_00575094 = 0;
 
+// undefined1
+undefined1 DAT_0057ed1b = 0x00;
+undefined1 DAT_0057f0fb = 0x00;
+
 // undefined1*
 undefined1* switchdataD_005717a8 = (undefined1*)0x0057180B; // caseD_1
 

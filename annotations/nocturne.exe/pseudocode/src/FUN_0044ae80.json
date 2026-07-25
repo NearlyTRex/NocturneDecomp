@@ -1,0 +1,432 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 239,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 21,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 61
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0044ae80",
+    "address_range": [
+      [
+        "0044ae80",
+        "0044aecd"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0044ae80",
+    "signature": "void FUN_0044ae80(void)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.064516129032258,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CBRANCH": 3,
+      "COPY": 23,
+      "INT_ADD": 20,
+      "INT_AND": 12,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 4,
+      "LOAD": 15,
+      "POPCOUNT": 6,
+      "RETURN": 3,
+      "STORE": 7
+    },
+    "pcode_op_count": 126
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0044ae80.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 4,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 16,
+          "line": 18,
+          "message": "Uninitialized variable: in_stack_00000004",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 42,
+          "line": 18,
+          "message": "Uninitialized variable: in_stack_00000008",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 47,
+          "line": 19,
+          "message": "Uninitialized variable: in_stack_0000000c",
+          "severity": "error"
+        },
+        {
+          "check_id": "legacyUninitvar",
+          "column": 47,
+          "line": 27,
+          "message": "Uninitialized variable: in_stack_0000000c",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "uint *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "uint *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if ((uint *)(in_stack_00000004 + 8) == in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "if ((uint *)(in_stack_00000004 + 8) == in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if ((uint *)(in_stack_00000004 + 0x14) == in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "if ((uint *)(in_stack_00000004 + 0x14) == in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 8) = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 8) = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 0xc) = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 0xc) = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 0x10) = in_stack_00000008[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 0x10) = in_stack_00000008[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "if ((uint *)(in_stack_00000004 + 0x14) == in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "if ((uint *)(in_stack_00000004 + 0x14) == in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 0x14) = *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 0x14) = *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 0x18) = in_stack_0000000c[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 0x18) = in_stack_0000000c[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 0x1c) = in_stack_0000000c[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_0000000c",
+      "severity": "moderate",
+      "text": "*(uint *)(in_stack_00000004 + 0x1c) = in_stack_0000000c[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000004",
+      "line": 18,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if ((uint *)(in_stack_00000004 + 8) == in_stack_00000008) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_00000008",
+      "line": 18,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if ((uint *)(in_stack_00000004 + 8) == in_stack_00000008) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_0000000c",
+      "line": 19,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "if ((uint *)(in_stack_00000004 + 0x14) == in_stack_0000000c) {",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_stack_0000000c",
+      "line": 27,
+      "match": "Cppcheck: uninitialized variable (legacy detector)",
+      "severity": "major",
+      "text": "if ((uint *)(in_stack_00000004 + 0x14) == in_stack_0000000c) {",
+      "type": "static_legacy_uninitvar"
+    }
+  ]
+}

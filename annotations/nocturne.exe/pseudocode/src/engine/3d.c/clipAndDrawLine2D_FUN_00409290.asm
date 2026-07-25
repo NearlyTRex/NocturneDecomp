@@ -6,8 +6,12 @@
 ; Local Variables:
 ; undefined        Stack[-0x40]:1  local_40
 ;
-; XREF[2]:
+; XREF[6]:
+;   FUN_00409210 at 00409275
+;   FUN_00472de0 at 00472e8e
+;   FUN_00473080 at 00473180
 ;   FUN_00473190 at 00473380
+;   FUN_00518f60 at 00519054
 ;   engine_3d.c_drawLineStrip2D_FUN_00405870 at 004058f6
 ;
 ; Referenced Globals:

@@ -4,7 +4,9 @@
 ; void engine_clipper_c_interpolateVertexBottomClip_FUN_00431730(int *param_1,int *param_2,int *param_3)
 ;
 ;
-; XREF[4]:
+; XREF[6]:
+;   FUN_00431cd0 at 00431d93
+;   FUN_00432210 at 0043293b
 ;   engine_3d.c_FUN_00409590 at 00409637
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00409290 at 00409337
 ;   engine_clipper.c_FUN_00432cd0 at 00433428

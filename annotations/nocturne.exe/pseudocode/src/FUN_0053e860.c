@@ -85,7 +85,7 @@ void FUN_0053e860(int param_1,int param_2)
   local_28 = local_28 * local_18;
   local_24 = local_24 * local_18;
   local_20 = local_20 * local_18;
-  FUN_004940d0(0x01C70F74,local_28,local_20);
+  FUN_004940d0(INT_005b9284,local_28,local_20);
   if (*(float *)(param_1 + 0x2434) <= 0.0) {
     *(uint *)(param_1 + 0x2434) = 0;
     (**(code **)(*(int *)(param_1 + 0x14c) + 0xe8))();
@@ -115,7 +115,7 @@ void FUN_0053e860(int param_1,int param_2)
                             (param_1,"stranger_die??.wav");
           *(uint *)(param_1 + 0x1fcd0) = uVar5;
         }
-        core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(0x01C78C7C,param_1,0x32,0x42480000,0);
+        core_gore_cpp_CGore_spawnFliesOnActor_FUN_004b0670(INT_005b96c4,param_1,0x32,0x42480000,0);
       }
     }
     if (*(int *)(param_1 + 0x1fa94) == *(int *)(param_1 + 0x24ac)) {

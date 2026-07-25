@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 150,
-        "line": 143,
+        "line": 166,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 145,
+        "line": 168,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 153,
-        "line": 146,
+        "line": 170,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 152,
-        "line": 152,
+        "line": 177,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 64,
+        "line": 76,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 66,
+        "line": 78,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 132,
+        "line": 153,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 139,
+        "line": 160,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 143,
+        "line": 165,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 87,
-        "line": 32,
+        "line": 34,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 51,
+        "line": 58,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 93,
-        "line": 53,
+        "line": 60,
         "message": "unknown type name 'code'"
       },
       {
         "category": "syntax_error",
         "column": 15,
-        "line": 117,
+        "line": 125,
         "message": "expected unqualified-id"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 172,
+        "line": 188,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 210,
+        "line": 228,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 219,
+        "line": 237,
         "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 337,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 408,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 408,
-        "message": "invalid digit 'C' in decimal constant"
       }
     ],
     "success": false,
@@ -122,21 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 218,
+    "complexity_score": 234,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
-    "suspect_count": 14,
+    "pseudocode_lines": 54,
+    "suspect_count": 15,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_pointer_store",
       "undefined_data",
       "unnamed_param",
+      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 157
+    "total_lines": 158
   },
   "cross_references": [
     {
@@ -380,8 +381,16 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "code *pcVar7;",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 4) == 0) {",
@@ -389,7 +398,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 17,
       "match": "DAT_01b4d7b4",
       "severity": "mild",
       "text": "puVar4 = &DAT_01b4d7b4;",
@@ -397,7 +406,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 20,
+      "line": 21,
       "match": "*(byte **)(iVar3 + 0x1b748b4",
       "severity": "moderate",
       "text": "*(byte **)(iVar3 + 0x1b748b4) = puVar4;",
@@ -405,7 +414,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1c) == 1) {",
@@ -413,7 +422,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1c) = 0;",
@@ -421,7 +430,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x10) != 0) {",
@@ -429,7 +438,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(param_1,1);",
@@ -437,7 +446,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 41,
+      "line": 42,
       "match": "*(int **)(iVar5 + 0x1b748b4",
       "severity": "moderate",
       "text": "iVar2 = **(int **)(iVar5 + 0x1b748b4);",
@@ -445,7 +454,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,iVar2 * 0x48 + 0x1b796d4);",
@@ -453,7 +462,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,*piVar1 + 0xc,*(uint *)(*piVar1 + 4));",
@@ -461,7 +470,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(param_1,0);",

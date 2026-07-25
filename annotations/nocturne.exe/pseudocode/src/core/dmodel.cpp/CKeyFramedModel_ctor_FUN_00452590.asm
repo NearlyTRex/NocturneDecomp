@@ -4,7 +4,10 @@
 ; void __cdecl core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00452590(undefined1 *param_1)
 ;
 ;
-; XREF[2]:
+; XREF[5]:
+;   FUN_004c5600 at 004c5612
+;   FUN_004de770 at 004de7e5
+;   FUN_00506b40 at 00506b93
 ;   core_cloth.cpp_CCloth_ctor_FUN_00435100 at 00435105
 ;   core_moon.cpp_CMoon_ctor_FUN_004de800 at 004de808
 ;

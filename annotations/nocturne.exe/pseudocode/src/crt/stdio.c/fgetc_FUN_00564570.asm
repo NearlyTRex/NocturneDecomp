@@ -4,18 +4,18 @@
 ; uint __cdecl crt_stdio_c_fgetc_FUN_00564570(undefined4 *param_1)
 ;
 ;
-; XREF[22]:
+; XREF[28]:
+;   FUN_00430210 at 0043027b
+;   FUN_0043b5b0 at 0043b5b6
+;   FUN_00452560 at 0045256f
+;   FUN_004d7de0 at 004d7de6
+;   FUN_004e08e0 at 004e08e6
 ;   FUN_004febd0 at 004fed79
 ;   FUN_00517190 at 00517196
+;   FUN_00563290 at 00563299
 ;   core_actor.cpp_FUN_0040cb00 at 0040cb1b
 ;   core_actor.cpp_FUN_0040ce80 at 0040ce9b
-;   core_actor.cpp_archiveClothList_FUN_0040cf70 at 0040cf90
-;   core_actor.cpp_archiveDescription_FUN_0040c3a0 at 0040c3bb
-;   core_actor.cpp_archivePartStatus_FUN_0040cbf0 at 0040cc13
-;   core_actor.cpp_archiveRules_FUN_0040d110 at 0040d12c
-;   core_actor.cpp_archiveString_FUN_0040c6d0 at 0040c6f0
-;   core_course.cpp_CCourse_load_FUN_0043b690 at 0043b6c8
-;   ... and 12 more
+;   ... and 18 more
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1ac0 = 005671e4

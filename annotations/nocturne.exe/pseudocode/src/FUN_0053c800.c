@@ -154,7 +154,8 @@ uint FUN_0053c800(int param_1)
             return 1;
           }
           iVar13 = core_actor_cpp_castToClassHash_FUN_0040d890
-                             (*(uint *)(iVar9 + 0x14cd70 + 0x01E57284),DAT_0077bd78);
+                             (*(uint *)(iVar9 + 0x14cd70 + 0x01E57284),
+                              CDemonActorType_0077bd40.name_hash);
           if ((iVar13 != 0) &&
              (fVar12 = *(float *)(iVar13 + 0x20) - fVar5, fVar2 = *(float *)(iVar13 + 0x24) - fVar8,
              fVar3 = *(float *)(iVar13 + 0x28) - fVar1,

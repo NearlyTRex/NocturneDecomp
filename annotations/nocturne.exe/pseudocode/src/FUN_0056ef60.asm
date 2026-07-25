@@ -15,9 +15,9 @@
 ;   undefined1 DAT_005c2303
 ;   undefined1 DAT_005c2308
 ;   undefined1 DAT_005c2309
-;   void* PTR_LAB_005c230a = 0040eb10
+;   void* PTR_FUN_005c230a = 0040eb10
 ;   undefined1 DAT_005c26ce
-;   void* PTR_LAB_005c26d0 = 00563d13
+;   void* PTR_FUN_005c26d0 = 00563d13
 ;
 ; Called Functions:
 ;   FUN_0056ef50
@@ -59,8 +59,8 @@ section .text
         ;   Label: LAB_0056ef96
     JZ 0x0056efaf                       ; 0056ef9c
         ;   XREF to: 0056efaf (CONDITIONAL_JUMP)  ; LAB_0056efaf
-    LEA EAX,[EBX + 0x2]                 ; 0056ef9e | PTR_LAB_005c230a
-    PUSH EAX                            ; 0056efa1 | PTR_LAB_005c230a | PTR_LAB_005c26d0
+    LEA EAX,[EBX + 0x2]                 ; 0056ef9e | PTR_FUN_005c230a
+    PUSH EAX                            ; 0056efa1 | PTR_FUN_005c230a | PTR_FUN_005c26d0
     CALL FUN_0056ef50                   ; 0056efa2
         ;   XREF to: 0056ef50 (UNCONDITIONAL_CALL)  ; undefined FUN_0056ef50()
     ADD ESP,0x4                         ; 0056efa7

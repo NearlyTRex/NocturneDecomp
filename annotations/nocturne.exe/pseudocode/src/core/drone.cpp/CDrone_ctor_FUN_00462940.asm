@@ -4,6 +4,9 @@
 ; int core_drone_cpp_CDrone_ctor_FUN_00462940(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00462910 at 00462923
+;
 ; Referenced Globals:
 ;   TerminatedCString s_drone_dfm_0057de8b
 ;   float FLOAT_0059c6fc = 50

@@ -4,6 +4,9 @@
 ; void core_dfilter_cpp_CFilterCache_ctor_FUN_0044bca0(undefined4 *param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0044bc20 at 0044bc67
+;
 ; *****************************************************************************
 
 section .text

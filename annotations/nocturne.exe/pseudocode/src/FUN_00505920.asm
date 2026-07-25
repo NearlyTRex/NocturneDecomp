@@ -4,6 +4,9 @@
 ; int FUN_00505920(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_005058f0 at 00505903
+;
 ; Referenced Globals:
 ;   TerminatedCString s_sentinel_dfm_0058ff27
 ;   float FLOAT_005a173c = 50

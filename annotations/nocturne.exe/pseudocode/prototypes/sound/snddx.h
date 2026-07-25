@@ -101,4 +101,4 @@ undefined4 enumerateDirectSoundDevice(int param_1,int param_2);
 
 // Original: sound_snddx.cpp_getDirectSoundDevice_FUN_0052bef0
 // Address: 0052bef0
-undefined4 __cdecl getDirectSoundDevice(int param_1);
+undefined1 * __cdecl getDirectSoundDevice(int param_1);

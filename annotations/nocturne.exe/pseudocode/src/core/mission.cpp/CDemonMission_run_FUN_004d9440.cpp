@@ -46,7 +46,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(uint param_1)
     else {
       uVar4 = 1;
     }
-    core_level_cpp_CLevelLoader_show_FUN_004c5640(0x01CC3160,9,bVar3,uVar4);
+    core_level_cpp_CLevelLoader_show_FUN_004c5640(INT_005baca0,9,bVar3,uVar4);
     core_mission_cpp_CDemonMission_load_FUN_004d7ee0(param_1,&DAT_01ccbbf0,0);
     iVar2 = core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(param_1,iVar2);
     if (iVar2 == 0) goto LAB_004d950e;

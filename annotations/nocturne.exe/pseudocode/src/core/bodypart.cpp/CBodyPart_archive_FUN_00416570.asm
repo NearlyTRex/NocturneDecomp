@@ -175,7 +175,7 @@ section .text
     LEA EAX,[EAX]                       ; 004166d5
     LEA EDX,[EDX]                       ; 004166db
     MOV EBX,EBX                         ; 004166de
-    CMP dword ptr [0x005ad00c],0x2      ; 004166e0 | DAT_005ad00c
+    CMP dword ptr [0x005ad00c],0x2      ; 004166e0 | INT_005ad00c
         ;   Label: LAB_004166e0
     JL 0x00416711                       ; 004166e7
         ;   XREF to: 00416711 (CONDITIONAL_JUMP)  ; LAB_00416711
@@ -191,7 +191,7 @@ section .text
     CALL core_actor.cpp_archiveActor_FUN_0040c980 ; 00416709
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
     ADD ESP,0x8                         ; 0041670e
-    CMP dword ptr [0x005ad00c],0x3      ; 00416711 | DAT_005ad00c
+    CMP dword ptr [0x005ad00c],0x3      ; 00416711 | INT_005ad00c
         ;   Label: LAB_00416711
     JL 0x00416756                       ; 00416718
         ;   XREF to: 00416756 (CONDITIONAL_JUMP)  ; LAB_00416756
@@ -213,7 +213,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0041674e
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 00416753
-    CMP dword ptr [0x005ad00c],0x4      ; 00416756 | DAT_005ad00c
+    CMP dword ptr [0x005ad00c],0x4      ; 00416756 | INT_005ad00c
         ;   Label: LAB_00416756
     JL 0x00416773                       ; 0041675d
         ;   XREF to: 00416773 (CONDITIONAL_JUMP)  ; LAB_00416773
@@ -223,7 +223,7 @@ section .text
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 0041676b
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveInteger_FUN_0040c900()
     ADD ESP,0x8                         ; 00416770
-    CMP dword ptr [0x005ad00c],0x5      ; 00416773 | DAT_005ad00c
+    CMP dword ptr [0x005ad00c],0x5      ; 00416773 | INT_005ad00c
         ;   Label: LAB_00416773
     JGE 0x004168ae                      ; 0041677a
         ;   XREF to: 004168ae (CONDITIONAL_JUMP)  ; LAB_004168ae

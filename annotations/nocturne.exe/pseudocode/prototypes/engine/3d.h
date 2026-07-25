@@ -5,7 +5,7 @@
 
 // Original: engine_3d.c_FUN_00404430
 // Address: 00404430
-undefined * FUN_00404430(undefined4 *param_1);
+undefined4 * FUN_00404430(undefined4 *param_1);
 
 // Original: engine_3d.c_badMRGLStruct_FUN_004044a0
 // Address: 004044a0
@@ -81,7 +81,7 @@ int renderPolygonSolidTexturedOp15(int param_1);
 
 // Original: engine_3d.c_oldFunction5_FUN_004054f0
 // Address: 004054f0
-undefined * oldFunction5(undefined4 *param_1);
+undefined4 * oldFunction5(undefined4 *param_1);
 
 // Original: engine_3d.c_renderPolygonSolidLitClampedOp17_FUN_00405540
 // Address: 00405540
@@ -141,7 +141,7 @@ int renderPolygonFogColorDepthOp27(int param_1);
 
 // Original: engine_3d.c_oldFunction8_FUN_004063c0
 // Address: 004063c0
-undefined * oldFunction8(undefined4 *param_1);
+undefined4 * oldFunction8(undefined4 *param_1);
 
 // Original: engine_3d.c_updateAnimatedTexture_FUN_00406690
 // Address: 00406690
@@ -177,11 +177,11 @@ int __cdecl renderPolygonDepthWritePass(int param_1);
 
 // Original: engine_3d.c_renderPolygonTexturedHardwareOp40_FUN_00406fd0
 // Address: 00406fd0
-undefined * renderPolygonTexturedHardwareOp40(int param_1);
+undefined4 * renderPolygonTexturedHardwareOp40(int param_1);
 
 // Original: engine_3d.c_renderPolygonSolidTexturedHardwareOp53_FUN_00407070
 // Address: 00407070
-undefined * renderPolygonSolidTexturedHardwareOp53(int param_1);
+undefined4 * renderPolygonSolidTexturedHardwareOp53(int param_1);
 
 // Original: engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120
 // Address: 00407120

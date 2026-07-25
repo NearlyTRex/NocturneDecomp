@@ -3,22 +3,22 @@
 ; *****************************************************************************
 ; void engine_clipper_c_FUN_00431f50(void)
 ;
+; Local Variables:
+; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00431f40 = 00432050
 ;   undefined1* PTR_caseD_1_00431f44 = 004320ac
 ;   undefined1* PTR_caseD_3_00431f4c = 00432095
 ;   string caseD_0
+;   undefined4 caseD_3
+;   undefined4 caseD_1
 ;   string caseD_2
 ;   undefined4 DAT_005ad284
 ;   undefined4 DAT_00766c70
-;   undefined4 DAT_00766c74
 ;   undefined4 DAT_007672f4
 ;   undefined4 DAT_007672f8
 ;   undefined4 DAT_00767300
-;
-; Called Functions:
-;   engine_clipper.c_interpolateVertexNearClip_FUN_00431930
 ;
 ; *****************************************************************************
 
@@ -141,28 +141,4 @@ section .text
         ;   XREF to: 00432095 (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [EAX*0x4 + 0x431f40]  ; 00432049 | = "k=plv" | caseD_1 | caseD_2
         ;   Label: switchD
-    MOV ECX,dword ptr [0x007672f4]      ; 00432095 | DAT_007672f4
-        ;   Label: caseD_3
-    INC EBX                             ; 0043209b
-    ADD EBP,0x30                        ; 0043209c
-    CMP EBX,ECX                         ; 0043209f
-    JGE 0x00431f96                      ; 004320a1
-        ;   XREF to: 00431f96 (CONDITIONAL_JUMP)  ; LAB_00431f96
-    JMP 0x00432002                      ; 004320a7
-        ;   XREF to: 00432002 (UNCONDITIONAL_JUMP)  ; LAB_00432002
-    IMUL EAX,dword ptr [0x00766c70],0x30 ; 004320ac | DAT_00766c70
-        ;   Label: caseD_1
-    ADD EAX,0x766c74                    ; 004320b3 | DAT_00766c74
-    PUSH EAX                            ; 004320b8
-    PUSH EDX                            ; 004320b9
-    MOV ESI,dword ptr [ESP + 0x8]       ; 004320ba
-    PUSH ESI                            ; 004320be
-    CALL engine_clipper.c_interpolateVertexNearClip_FUN_00431930 ; 004320bf
-        ;   XREF to: 00431930 (UNCONDITIONAL_CALL)  ; undefined engine_clipper.c_interpolateVertexNearClip_FUN_00431930()
-    MOV EDI,dword ptr [0x00766c70]      ; 004320c4 | DAT_00766c70
-    INC EDI                             ; 004320ca
-    ADD ESP,0xc                         ; 004320cb
-    MOV dword ptr [0x00766c70],EDI      ; 004320ce | DAT_00766c70
-    JMP 0x00432095                      ; 004320d4
-        ;   XREF to: 00432095 (UNCONDITIONAL_JUMP)  ; caseD_3
 

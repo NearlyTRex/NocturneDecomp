@@ -14,10 +14,10 @@
 ;   float FLOAT_005968c1 = -0.125
 ;   double DOUBLE_005968c9 = 10
 ;   undefined4 DAT_005b80f0
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_00765a98
-;   undefined4 DAT_0077bd78
+;   undefined4 CDemonActorType_00765a60.name_hash
+;   undefined4 CDemonActorType_0077bd40.name_hash
 ;   undefined4 DAT_01c7068c
 ;   undefined4 DAT_01c78c78
 ;   undefined4 DAT_01cae0e8
@@ -114,7 +114,7 @@ section .text
     CMP EAX,ECX                         ; 00545cf1
     JNZ 0x00545d04                      ; 00545cf3
         ;   XREF to: 00545d04 (CONDITIONAL_JUMP)  ; LAB_00545d04
-    MOV ESI,dword ptr [0x005b9284]      ; 00545cf5 | DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 00545cf5 | INT_005b9284
     PUSH ESI                            ; 00545cfb
     CALL FUN_004940d0                   ; 00545cfc
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
@@ -356,7 +356,7 @@ section .text
     SAHF                                ; 00546072
     JC 0x00545ebe                       ; 00546073
         ;   XREF to: 00545ebe (CONDITIONAL_JUMP)  ; LAB_00545ebe
-    MOV EDI,dword ptr [0x00765a98]      ; 00546079 | DAT_00765a98
+    MOV EDI,dword ptr [0x00765a98]      ; 00546079 | CDemonActorType_00765a60.name_hash
     MOV EAX,[0x005be368]                ; 0054607f | DAT_005be368
     PUSH EDI                            ; 00546084
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 00546085 | DAT_01fa3fe0
@@ -393,7 +393,7 @@ section .text
     PUSH EDX                            ; 005460e3
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 005460e4
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
-    MOV ECX,dword ptr [0x0077bd78]      ; 005460e9 | DAT_0077bd78
+    MOV ECX,dword ptr [0x0077bd78]      ; 005460e9 | CDemonActorType_0077bd40.name_hash
     ADD ESP,0x8                         ; 005460ef
     MOV EDI,EAX                         ; 005460f2
     MOV dword ptr [ESP + 0x128],EAX     ; 005460f4

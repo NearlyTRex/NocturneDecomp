@@ -4,6 +4,9 @@
 ; void core_moon_cpp_CMoon_ctor_FUN_004de800(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004cf1f0 at 004cf216
+;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00452590
 ;

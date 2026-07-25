@@ -33,7 +33,7 @@ undefined4 enumerateWavOutDevice(UINT_PTR param_1,char *param_2);
 
 // Original: sound_sndwav.cpp_getWavOutDevice_FUN_0052c760
 // Address: 0052c760
-undefined4 __cdecl getWavOutDevice(UINT_PTR param_1);
+undefined1 * __cdecl getWavOutDevice(UINT_PTR param_1);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_hasHardware3D_FUN_0052c7b0
 // Address: 0052c7b0

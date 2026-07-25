@@ -40,7 +40,7 @@ uint FUN_0046f7e0(uint param_1,char *param_2,uint param_3,byte param_4,uint para
     shape_edittool_cpp_CInputString_draw_FUN_0046f680(local_150,_DAT_01c00c58,_DAT_01c00c5c);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     while (iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70(), iVar3 != 0) {
-      iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(0x01CC30E4);
+      iVar3 = engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(INT_005bac64);
       if (iVar3 == 0x1b) {
         FUN_004720c0(0x01BCD074);
         engine_2d_c_clearInputAndWait_FUN_00403f50();

@@ -35,7 +35,7 @@ uint __cdecl core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(int param_1,uin
       uStack_1c = param_2[2];
       uStack_20 = uVar2;
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                (0x01C78C7C,(int)&uStack_28 + 4,0,iStack_18,uVar4,uVar5);
+                (INT_005b96c4,(int)&uStack_28 + 4,0,iStack_18,uVar4,uVar5);
       return 1;
     }
   }

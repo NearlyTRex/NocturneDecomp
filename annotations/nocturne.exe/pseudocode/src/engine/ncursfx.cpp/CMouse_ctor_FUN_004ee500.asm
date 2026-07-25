@@ -4,6 +4,9 @@
 ; int engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004ee4e0 at 004ee4e5
+;
 ; Referenced Globals:
 ;   undefined4 DAT_0059df00
 ;

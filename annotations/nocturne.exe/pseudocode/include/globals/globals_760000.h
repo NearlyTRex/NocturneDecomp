@@ -2,12 +2,39 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActorType.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x760000
 // =============================================================================
 
+// CDemonActorType
+extern CDemonActorType CDemonActorType_00763e48;
+extern CDemonActorType CDemonActorType_007641bc;
+extern CDemonActorType CDemonActorType_007641f8;
+extern CDemonActorType CDemonActorType_00764234;
+extern CDemonActorType CDemonActorType_00764270;
+extern CDemonActorType CDemonActorType_007642ac;
+extern CDemonActorType CDemonActorType_00764330;
+extern CDemonActorType CDemonActorType_007644e8;
+extern CDemonActorType CDemonActorType_00764524;
+extern CDemonActorType CDemonActorType_00764560;
+extern CDemonActorType CDemonActorType_007645cc;
+extern CDemonActorType CDemonActorType_00764638;
+extern CDemonActorType CDemonActorType_00764674;
+extern CDemonActorType CDemonActorType_007646b0;
+extern CDemonActorType CDemonActorType_0076471c;
+extern CDemonActorType CDemonActorType_00764758;
+extern CDemonActorType CDemonActorType_007647c0;
+extern CDemonActorType CDemonActorType_00764800;
+extern CDemonActorType CDemonActorType_00764a9c;
+extern CDemonActorType CDemonActorType_00764af0;
+extern CDemonActorType CDemonActorType_00765888;
+extern CDemonActorType CDemonActorType_00765a60;
+extern CDemonActorType CDemonActorType_00765c30;
+
 // undefined1
+extern undefined1 DAT_00763e14;
 extern undefined1 DAT_00764b5c;
 extern undefined1 DAT_007658cc;
 extern undefined1 DAT_007658cd;
@@ -17,9 +44,22 @@ extern undefined1 DAT_00767b50;
 extern undefined1 DAT_00768150;
 extern undefined1 DAT_00768180;
 
+// undefined2
+extern undefined2 DAT_00765c6c;
+extern undefined2 DAT_00765c6e;
+extern undefined2 DAT_00765c70;
+extern undefined2 DAT_00765c72;
+extern undefined2 DAT_00765c74;
+extern undefined2 DAT_00765c76;
+extern undefined2 DAT_00765c78;
+extern undefined2 DAT_00765c7a;
+
 // undefined4
+extern undefined4 DAT_00761ec4;
+extern undefined4 DAT_00761ec8;
+extern undefined4 DAT_00761ecc;
+extern undefined4 DAT_00763e10;
 extern undefined4 DAT_00763e44;
-extern undefined4 DAT_00763e80;
 extern undefined4 DAT_00763e84;
 extern undefined4 DAT_00763e88;
 extern undefined4 DAT_00763e8c;
@@ -28,21 +68,16 @@ extern undefined4 DAT_00763e94;
 extern undefined4 DAT_00763e98;
 extern undefined4 DAT_00763e9c;
 extern undefined4 DAT_007641b8;
-extern undefined4 DAT_007641f4;
-extern undefined4 DAT_00764230;
 extern undefined4 DAT_007642e8;
 extern undefined4 DAT_0076431c;
 extern undefined4 DAT_00764320;
 extern undefined4 DAT_0076432c;
-extern undefined4 DAT_00764368;
 extern undefined4 DAT_0076459c;
 extern undefined4 DAT_007645a4;
 extern undefined4 DAT_00764608;
 extern undefined4 DAT_00764610;
 extern undefined4 DAT_0076462c;
 extern undefined4 DAT_00764634;
-extern undefined4 DAT_00764670;
-extern undefined4 DAT_007646ac;
 extern undefined4 DAT_00764794;
 extern undefined4 DAT_00764798;
 extern undefined4 DAT_0076479c;
@@ -51,8 +86,6 @@ extern undefined4 DAT_007647ac;
 extern undefined4 DAT_007647b8;
 extern undefined4 DAT_007647bc;
 extern undefined4 DAT_007647fc;
-extern undefined4 DAT_00764838;
-extern undefined4 DAT_00764ad4;
 extern undefined4 DAT_00764b2c;
 extern undefined4 DAT_00764b30;
 extern undefined4 DAT_00764b34;
@@ -66,11 +99,10 @@ extern undefined4 DAT_00764d98;
 extern undefined4 DAT_00764d9c;
 extern undefined4 DAT_00764da0;
 extern undefined4 DAT_007658dc;
-extern undefined4 DAT_00765a98;
 extern undefined4 DAT_00765a9c;
 extern undefined4 DAT_00765aa0;
 extern undefined4 DAT_00765aa4;
-extern undefined4 DAT_00765c68;
+extern undefined4 DAT_00766c6c;
 extern undefined4 DAT_00766c70;
 extern undefined4 DAT_00766c74;
 extern undefined4 DAT_00766c78;

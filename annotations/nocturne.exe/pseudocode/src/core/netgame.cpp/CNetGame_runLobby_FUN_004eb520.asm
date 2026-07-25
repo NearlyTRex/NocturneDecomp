@@ -15,7 +15,7 @@
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
-;   undefined4 DAT_005bac64
+;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_005bdee0
 ;   undefined4 DAT_005bdee4
@@ -694,7 +694,7 @@ section .text
     ADD ESP,0x4                         ; 004ebc1a
     PUSH 0x1                            ; 004ebc1d
         ;   Label: LAB_004ebc1d
-    MOV EAX,[0x005bac64]                ; 004ebc1f | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004ebc1f | INT_005bac64
     PUSH EAX                            ; 004ebc24
     MOV EDX,dword ptr [EAX]             ; 004ebc25
     CALL dword ptr [EDX + 0x4]          ; 004ebc27
@@ -703,7 +703,7 @@ section .text
     JNZ 0x004eb861                      ; 004ebc2f
         ;   XREF to: 004eb861 (CONDITIONAL_JUMP)  ; LAB_004eb861
     PUSH 0x1c                           ; 004ebc35
-    MOV EAX,[0x005bac64]                ; 004ebc37 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004ebc37 | INT_005bac64
     PUSH EAX                            ; 004ebc3c
     MOV EDX,dword ptr [EAX]             ; 004ebc3d
     CALL dword ptr [EDX + 0x4]          ; 004ebc3f
@@ -729,7 +729,7 @@ section .text
         ;   Label: LAB_004ebc78
     PUSH 0x1f                           ; 004ebc7b
         ;   Label: LAB_004ebc7b
-    MOV EAX,[0x005bac64]                ; 004ebc7d | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004ebc7d | INT_005bac64
     PUSH EAX                            ; 004ebc82
     MOV EDX,dword ptr [EAX]             ; 004ebc83
     CALL dword ptr [EDX + 0x4]          ; 004ebc85

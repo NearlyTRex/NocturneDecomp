@@ -4,7 +4,8 @@
 ; int FUN_004a8a10(undefined4 param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004a89e0 at 004a89f3
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a3094
 ;
 ; Referenced Globals:

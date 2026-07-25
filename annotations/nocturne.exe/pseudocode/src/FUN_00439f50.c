@@ -216,7 +216,7 @@ LAB_0043a164:
   iVar4 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x104))(param_1);
   if (iVar4 == 0) {
     core_xform_cpp_FUN_0055d610
-              (param_1 + 0x1fa44,*(uint *)(param_1 + 0x1fa50),DAT_0077ac8c,&LAB_0051b650);
+              (param_1 + 0x1fa44,*(uint *)(param_1 + 0x1fa50),DAT_0077ac8c,FUN_0051b650);
     iVar4 = iStack_18;
     puVar8 = &stack0xffffff7c;
     uStack_84 = uStack_94;

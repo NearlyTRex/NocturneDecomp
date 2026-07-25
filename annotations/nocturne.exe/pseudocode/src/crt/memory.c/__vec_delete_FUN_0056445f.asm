@@ -4,7 +4,7 @@
 ; undefined4 * __cdecl crt_memory_c___vec_delete_FUN_0056445f(int param_1,undefined4 param_2)
 ;
 ;
-; XREF[136]:
+; XREF[137]:
 ;   FUN_0040ef90 at 0040efbc
 ;   FUN_0040f4b0 at 0040f4dc
 ;   FUN_0040f8b0 at 0040f8dc
@@ -15,7 +15,7 @@
 ;   FUN_004118c0 at 004118ec
 ;   FUN_004132c0 at 00413357
 ;   FUN_00414c60 at 00414cf7
-;   ... and 126 more
+;   ... and 127 more
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f

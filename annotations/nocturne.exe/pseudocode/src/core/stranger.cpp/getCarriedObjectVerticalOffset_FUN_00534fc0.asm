@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005951e7 = 0.00390625
-;   undefined4 DAT_00764838
+;   undefined4 CDemonActorType_00764800.name_hash
 ;   undefined4 DAT_02dd1204
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     PUSH EBP                            ; 00534fc2
     SUB ESP,0xc                         ; 00534fc3
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00534fc6
-    MOV EDX,dword ptr [0x00764838]      ; 00534fca | DAT_00764838
+    MOV EDX,dword ptr [0x00764838]      ; 00534fca | CDemonActorType_00764800.name_hash
     PUSH EDX                            ; 00534fd0
     PUSH ESI                            ; 00534fd1
     XOR EBX,EBX                         ; 00534fd2

@@ -4,6 +4,9 @@
 ; int core_batman_cpp_CBatman_ctor_FUN_004133e0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004133b0 at 004133c3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_batman_dfm_00578a97
 ;   TerminatedCString s_none_00578aa2

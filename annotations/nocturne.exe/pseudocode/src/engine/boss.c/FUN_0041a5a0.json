@@ -1,0 +1,352 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 120,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
+    "suspect_count": 8,
+    "suspect_types": [
+      "param_count_too_few",
+      "unaffected_reg",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 42
+  },
+  "cross_references": [
+    {
+      "addr": "004dcf60",
+      "from_addr": "004dd3ca",
+      "name": "FUN_004dcf60",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041a5a0",
+    "address_range": [
+      [
+        "0041a5a0",
+        "0041a5de"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_0041a5a0",
+    "signature": "void FUN_0041a5a0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "FUN_004c8440"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005795f7",
+      "name": "s_engine_boss_c_005795f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00579608",
+      "name": "s_modelStruct_not_supporte_00579608",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cc4800",
+      "name": "DAT_01cc4800",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cc4804",
+      "name": "DAT_01cc4804",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004dd3ca",
+        "call_type": "direct",
+        "caller": "FUN_004dcf60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 2,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.85,
+    "instruction_count": 20,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 19,
+      "INT_ADD": 8,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 7,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 8,
+      "INT_ZEXT": 2,
+      "LOAD": 4,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 77
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 64,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_0041a5a0.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 1,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 6,
+          "line": 26,
+          "message": "Uninitialized variable: unaff_ESI",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = *puVar2;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 18,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0041a5d5, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 17,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0041a5d5: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
+    },
+    {
+      "description": "Uninitialized variable: unaff_ESI",
+      "line": 26,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*unaff_ESI = *puVar2;",
+      "type": "static_uninitvar"
+    }
+  ]
+}

@@ -267,7 +267,7 @@ section .text
     TEST EAX,EAX                        ; 0043a193
     JNZ 0x0043a1dd                      ; 0043a195
         ;   XREF to: 0043a1dd (CONDITIONAL_JUMP)  ; LAB_0043a1dd
-    PUSH 0x51b650                       ; 0043a197 | LAB_0051b650
+    PUSH 0x51b650                       ; 0043a197
     MOV EDI,dword ptr [0x0077ac8c]      ; 0043a19c | DAT_0077ac8c
     PUSH EDI                            ; 0043a1a2
     LEA EAX,[EBX + 0x1fa44]             ; 0043a1a3

@@ -1113,6 +1113,31 @@ def estimate_call_site_params(currentProgram, function, vtable_data=None):
     return result
 
 
+# Extensions that mark the source-file component of a namespaced function name
+# ("core_box.cpp_DAT_00423310") or of an embedded __FILE__ path literal.
+SOURCE_EXTENSIONS = (".c", ".cpp")
+
+
+def _split_on_source_component(func_name, file_extension):
+    """Split a namespaced function name on its <file>.c/.cpp component.
+
+    "crt_wsock32.c_inet_addr"    -> "crt/wsock32.c/inet_addr.c"
+    "core_box.cpp_DAT_00423310"  -> "core/box.cpp/DAT_00423310.cpp"
+
+    Returns None when the name has no source-file component.
+    """
+    parts = func_name.split("_")
+    for i, part in enumerate(parts):
+        if part.endswith(SOURCE_EXTENSIONS):
+            directory = "/".join(parts[:i + 1])
+            remainder = "_".join(parts[i + 1:])
+            if not remainder:
+                # The name is only a file path; it already carries an extension.
+                return directory
+            return os.path.join(directory, remainder + file_extension)
+    return None
+
+
 def generate_source_filename(func_name, decompiled_code):
     """Generate source filename from function name and decompiled code.
 
@@ -1132,9 +1157,9 @@ def generate_source_filename(func_name, decompiled_code):
         return os.path.join("entry", func_name + file_extension)
 
     if "FUN_" not in func_name:
-        for potential_type in [".c", ".cpp"]:
-            if potential_type in func_name:
-                return func_name.replace("_", "/")
+        split_path = _split_on_source_component(func_name, file_extension)
+        if split_path:
+            return split_path
 
     def process_hybrid_path(func_name, separator):
         parts = func_name.split(separator)
@@ -1158,16 +1183,23 @@ def generate_source_filename(func_name, decompiled_code):
     elif "_FUN_" in func_name:
         return process_hybrid_path(func_name, "_FUN_")
 
-    if "..\\" in decompiled_code:
-        matches = re.finditer(r'"[^"]*(\.\.[\\/][^"]*)"', decompiled_code)
+    # Fall back to a __FILE__-style path literal embedded in the code, e.g.
+    # "..\\shape\\edittool.cpp". Ghidra escapes backslashes in string literals,
+    # so a genuine path separator always shows up doubled. A single backslash is
+    # a C escape sequence -- "..\t\t(DIR)" is two tabs, not ../t/t(DIR) -- and
+    # reading it as a path lands the function outside the src/ tree entirely.
+    if "..\\\\" in decompiled_code or "../" in decompiled_code:
+        matches = re.finditer(r'"[^"]*(\.\.(?:\\\\|/)[^"]*)"', decompiled_code)
         for match in matches:
-            guessed_path = match.group(1)
-            if guessed_path.endswith(".txt"):
+            guessed_path = match.group(1).replace("\\\\", "/")
+            guessed_path = os.path.normpath(guessed_path).replace(os.sep, "/")
+            # Drop the leading "../" hops so the result stays under src/.
+            guessed_path = re.sub(r'^(?:\.\./)+', '', guessed_path)
+            # Only a real source path names a directory; skip "..\\shape\\cramlog.txt"
+            # and anything else that merely happens to start with "..".
+            if not guessed_path.endswith(SOURCE_EXTENSIONS):
                 continue
-            guessed_path = guessed_path.replace("..\\\\", "")
-            guessed_path = guessed_path.replace("\\", "/")
-            guessed_path = os.path.normpath(guessed_path)
-            if ".cpp" in guessed_path:
+            if guessed_path.endswith(".cpp"):
                 file_extension = ".cpp"
             return os.path.join(guessed_path, func_name + file_extension)
 

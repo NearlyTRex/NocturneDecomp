@@ -4,6 +4,9 @@
 ; int FUN_00546820(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_005467f0 at 00546803
+;
 ; Referenced Globals:
 ;   TerminatedCString s_beartrap_kfm_00596903
 ;   undefined1* PTR_FUN_005a3424 = 00546870

@@ -4,6 +4,9 @@
 ; int FUN_004fe490(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004fde80 at 004fde9f
+;
 ; Called Functions:
 ;   shape_edittool.cpp_CStrList_ctor_FUN_00473b60
 ;

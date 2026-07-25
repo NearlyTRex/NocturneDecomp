@@ -100,7 +100,7 @@ void FUN_0049cc10(int param_1)
   if (*(int *)(param_1 + 0x1fc) == 0) {
     core_game_cpp_CGame_process_FUN_004a6010(param_1);
     FUN_0052dff0(0x02DC9450);
-    FUN_004940d0(0x01C70F74);
+    FUN_004940d0(INT_005b9284);
   }
   else {
     FUN_0051f930(&local_b0);
@@ -166,7 +166,7 @@ void FUN_0049cc10(int param_1)
   }
   else {
 LAB_0049cf70:
-    iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x3e);
+    iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x3e);
     if (iVar4 != 0) {
       _DAT_01c780b8 = _DAT_01c780b8 + 1;
       _sprintf(0x1c780c0,"demon%d.pcx",_DAT_01c780b8);
@@ -179,8 +179,9 @@ LAB_0049cf70:
   }
   core_game_cpp_CGame_drawScreenBorder_FUN_0049a960(param_1);
   if (_DAT_01c78ac8 != 0) {
-    iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);
-    if ((iVar4 != 0) && (iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x2f), iVar4 != 0)) {
+    iVar4 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
+    if ((iVar4 != 0) &&
+       (iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x2f), iVar4 != 0)) {
       iVar4 = _DAT_01c78acc;
       if (_DAT_01c78acc == 0) {
         _DAT_01c78acc = 1;

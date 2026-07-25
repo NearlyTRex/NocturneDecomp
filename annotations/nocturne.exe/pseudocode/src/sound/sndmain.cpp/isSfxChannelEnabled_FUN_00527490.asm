@@ -4,8 +4,9 @@
 ; undefined4 __cdecl sound_sndmain_cpp_isSfxChannelEnabled_FUN_00527490(int param_1)
 ;
 ;
-; XREF[8]:
+; XREF[9]:
 ;   FUN_005289f0 at 00528bc2
+;   FUN_0052dd90 at 0052dd95
 ;   FUN_0052dff0 at 0052e23d
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c4d9
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a6f7f

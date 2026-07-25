@@ -598,7 +598,7 @@ LAB_004d0b7a:
     }
     _DAT_01cc64a8 = iVar7;
     _DAT_01cc64a4 = iVar4;
-    iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);
+    iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
     if (iVar4 != 0) {
       return;
     }

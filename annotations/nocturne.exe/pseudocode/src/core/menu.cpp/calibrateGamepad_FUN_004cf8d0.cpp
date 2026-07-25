@@ -40,10 +40,10 @@ uint __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)
     engine_2d_c_drawText_FUN_00402600(local_224,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(0x01C775EC);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);
+    iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x1c);
     iVar2 = 0;
     if (iVar3 != 0) break;
-    iVar2 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);
+    iVar2 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
     if (iVar2 != 0) goto LAB_004cfb43;
     iStack_1c = _DAT_01c038f8;
     iStack_18 = _DAT_01c038fc;
@@ -60,7 +60,7 @@ uint __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)
     engine_2d_c_drawText_FUN_00402600(auStack_124,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(0x01C775EC);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
-    iVar4 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);
+    iVar4 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x1c);
     iVar3 = 0x01C775EC;
     if (iVar4 != 0) {
       *(int *)(0x01C775EC + 0xa4) = iStack_1c;
@@ -71,7 +71,7 @@ uint __cdecl core_menu_cpp_calibrateGamepad_FUN_004cf8d0(void)
       *(int *)(iVar3 + 0xb4) = local_14;
       return 1;
     }
-    iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);
+    iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
     if (iVar3 != 0) break;
     if (_DAT_01c038f8 < iVar6) {
       iVar6 = _DAT_01c038f8;

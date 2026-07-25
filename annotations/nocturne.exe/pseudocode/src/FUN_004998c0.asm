@@ -204,7 +204,7 @@ section .text
         ;   Label: LAB_00499aa0
     JMP 0x00499a44                      ; 00499aa8
         ;   XREF to: 00499a44 (UNCONDITIONAL_JUMP)  ; LAB_00499a44
-    PUSH 0x51b650                       ; 00499aaa | LAB_0051b650
+    PUSH 0x51b650                       ; 00499aaa
         ;   Label: LAB_00499aaa
     MOV ECX,dword ptr [0x01c7139c]      ; 00499aaf | DAT_01c7139c
     PUSH ECX                            ; 00499ab5
@@ -216,7 +216,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 ; 00499ac6
         ;   XREF to: 0051c3d0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0()
     ADD ESP,0x18                        ; 00499acb
-    PUSH 0x51b650                       ; 00499ace | LAB_0051b650
+    PUSH 0x51b650                       ; 00499ace
     MOV EDI,dword ptr [0x01c713a0]      ; 00499ad3 | DAT_01c713a0
     PUSH EDI                            ; 00499ad9
     PUSH dword ptr [EBX + 0x1fa5c]      ; 00499ada

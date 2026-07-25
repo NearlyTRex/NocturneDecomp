@@ -627,7 +627,7 @@ section .text
     PUSH ESI                            ; 00413dc0
     LEA EAX,[EBP + 0x16]                ; 00413dc1
     PUSH EAX                            ; 00413dc4
-    MOV EDI,dword ptr [0x005b96c4]      ; 00413dc5 | DAT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 00413dc5 | INT_005b96c4
     PUSH EDI                            ; 00413dcb
     CALL FUN_004b0480                   ; 00413dcc
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()
@@ -874,7 +874,7 @@ section .text
     CMP ESI,dword ptr [EAX + 0x150bf4]  ; 0041406f | DAT_01fa7e78
     JGE 0x004140a1                      ; 00414075
         ;   XREF to: 004140a1 (CONDITIONAL_JUMP)  ; LAB_004140a1
-    MOV EDX,dword ptr [0x00764670]      ; 00414077 | DAT_00764670
+    MOV EDX,dword ptr [0x00764670]      ; 00414077 | CDemonActorType_00764638.name_hash
     PUSH EDX                            ; 0041407d
     MOV ECX,dword ptr [EDI + EAX*0x1 + 0x150bf8] ; 0041407e
     PUSH ECX                            ; 00414085

@@ -7,18 +7,18 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[12]:
+; XREF[15]:
 ;   FUN_004980d0 at 00498264
 ;   FUN_004c9580 at 004c98d1
 ;   FUN_004fdd00 at 004fde0a
+;   FUN_00518f60 at 00518fa8
+;   FUN_00519120 at 0051915c
 ;   FUN_0053d100 at 0053d46c
 ;   FUN_00543c50 at 00543e27
 ;   FUN_005445c0 at 005446c4
 ;   FUN_005576a0 at 00557743
-;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 at 00429354
-;   core_fire.cpp_CBulletHole_init_FUN_00482c80 at 00482dff
-;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5a21
-;   ... and 2 more
+;   FUN_0055bc30 at 0055bc60
+;   ... and 5 more
 ;
 ; *****************************************************************************
 

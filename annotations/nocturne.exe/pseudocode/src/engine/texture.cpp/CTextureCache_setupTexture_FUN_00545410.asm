@@ -9,7 +9,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00545700 at 0054572a
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920 at 00545987
 ;
 ; Referenced Globals:

@@ -22,7 +22,7 @@
 ;   float FLOAT_0059fd80 = 1
 ;   float FLOAT_0059fd84 = 1.580000
 ;   undefined4 DAT_005ad54c
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_005be368
 ;   ... and 5 more
 ;
@@ -147,7 +147,7 @@ section .text
     FMUL float ptr [EBX + 0x57c]        ; 004c7aef
     FXCH ST3                            ; 004c7af5
     FMUL float ptr [EBX + 0x57c]        ; 004c7af7
-    MOV EAX,[0x005b9284]                ; 004c7afd | DAT_005b9284
+    MOV EAX,[0x005b9284]                ; 004c7afd | INT_005b9284
     FXCH ST3                            ; 004c7b02
     FADDP ST2,ST0                       ; 004c7b04
     FADDP ST2,ST0                       ; 004c7b06
@@ -226,7 +226,7 @@ section .text
     CMP EAX,ECX                         ; 004c7be4
     JNZ 0x004c7bf7                      ; 004c7be6
         ;   XREF to: 004c7bf7 (CONDITIONAL_JUMP)  ; LAB_004c7bf7
-    MOV ESI,dword ptr [0x005b9284]      ; 004c7be8 | DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 004c7be8 | INT_005b9284
     PUSH ESI                            ; 004c7bee
     CALL FUN_004940d0                   ; 004c7bef
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()

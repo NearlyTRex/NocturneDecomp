@@ -11,7 +11,7 @@ void FUN_00481e20(int param_1)
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,"modelName");
-  if (0x00000002 < 2) {
+  if (INT_005b8018 < 2) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x2d0,"movieName");

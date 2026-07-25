@@ -381,7 +381,7 @@ section .text
         ;   XREF to: 0049d605 (CONDITIONAL_JUMP)  ; LAB_0049d605
     PUSH 0x3e                           ; 0049cf70
         ;   Label: LAB_0049cf70
-    MOV EAX,[0x005bac64]                ; 0049cf72 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0049cf72 | INT_005bac64
     PUSH EAX                            ; 0049cf77 | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0049cf78 | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 0049cf7a
@@ -431,7 +431,7 @@ section .text
     JZ 0x0049d066                       ; 0049d001
         ;   XREF to: 0049d066 (CONDITIONAL_JUMP)  ; LAB_0049d066
     PUSH 0x1d                           ; 0049d003
-    MOV EAX,[0x005bac64]                ; 0049d005 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0049d005 | INT_005bac64
     PUSH EAX                            ; 0049d00a | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0049d00b | DAT_01cc30e4
     CALL dword ptr [EDX]                ; 0049d00d
@@ -440,7 +440,7 @@ section .text
     JZ 0x0049d040                       ; 0049d014
         ;   XREF to: 0049d040 (CONDITIONAL_JUMP)  ; LAB_0049d040
     PUSH 0x2f                           ; 0049d016
-    MOV EAX,[0x005bac64]                ; 0049d018 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 0049d018 | INT_005bac64
     PUSH EAX                            ; 0049d01d | DAT_01cc30e4
     MOV EDX,dword ptr [EAX]             ; 0049d01e | DAT_01cc30e4
     CALL dword ptr [EDX + 0x4]          ; 0049d020
@@ -955,7 +955,7 @@ section .text
     CALL FUN_0052dff0                   ; 0049d5e9
         ;   XREF to: 0052dff0 (UNCONDITIONAL_CALL)  ; undefined FUN_0052dff0()
     ADD ESP,0x4                         ; 0049d5ee
-    MOV ESI,dword ptr [0x005b9284]      ; 0049d5f1 | DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 0049d5f1 | INT_005b9284
     PUSH ESI                            ; 0049d5f7
     CALL FUN_004940d0                   ; 0049d5f8
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()

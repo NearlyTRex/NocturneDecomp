@@ -4,10 +4,11 @@
 ; int __cdecl crt_ctype_c_tolower_FUN_00564860(int param_1)
 ;
 ;
-; XREF[7]:
+; XREF[8]:
 ;   FUN_0056551c at 0056553b
 ;   FUN_005684f8 at 0056850b
 ;   FUN_0056c864 at 0056c9d1
+;   FUN_005738c8 at 005738e3
 ;   core_actor.cpp_getActorClassByName_FUN_0040d4d0 at 0040d51b
 ;   core_actor.cpp_matchClassTerm_FUN_0040d600 at 0040d6c2
 ;   core_actor.cpp_registerActorClass_FUN_0040d3f0 at 0040d482

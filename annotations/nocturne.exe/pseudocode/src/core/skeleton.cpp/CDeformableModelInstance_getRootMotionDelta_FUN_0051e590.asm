@@ -21,7 +21,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ; undefined4       Stack[-0xc]:4  local_c
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0051e7d0 at 0051e841
 ;   core_skeleton.cpp_CDeformableModelInstance_accumulateScaledRootMotion_FUN_0051e510 at 0051e525
 ;
 ; Referenced Globals:

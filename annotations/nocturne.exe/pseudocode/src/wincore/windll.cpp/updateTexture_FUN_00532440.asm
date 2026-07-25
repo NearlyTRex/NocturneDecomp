@@ -4,7 +4,8 @@
 ; undefined4 __cdecl wincore_windll_cpp_updateTexture_FUN_00532440(undefined4 param_1,undefined4 param_2)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00545a10 at 00545a2a
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920 at 005459bc
 ;   engine_texture.cpp_loadAndUpdateTexture_FUN_00545a40 at 00545a58
 ;

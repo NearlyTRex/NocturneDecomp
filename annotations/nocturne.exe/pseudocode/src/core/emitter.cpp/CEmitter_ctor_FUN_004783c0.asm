@@ -4,6 +4,9 @@
 ; int core_emitter_cpp_CEmitter_ctor_FUN_004783c0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00478390 at 004783a3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_none_0057f195
 ;   undefined4 s_one_0057f195+1

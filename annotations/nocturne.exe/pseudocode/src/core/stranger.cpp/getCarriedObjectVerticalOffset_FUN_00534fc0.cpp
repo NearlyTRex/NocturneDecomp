@@ -20,7 +20,7 @@ float core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(uint param_1
   int local_14;
   
   iVar5 = 0;
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890(param_1,DAT_00764838);
+  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890(param_1,CDemonActorType_00764800.name_hash);
   if (iVar1 != 0) {
     iVar5 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(iVar1 + 0x150);
   }

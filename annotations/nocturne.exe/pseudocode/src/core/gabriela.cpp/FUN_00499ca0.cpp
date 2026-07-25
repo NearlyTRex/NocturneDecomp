@@ -68,7 +68,7 @@ void FUN_00499ca0(int param_1,float param_2)
   local_14 = 0.0;
   local_18 = 0.0;
   local_1c = 0.0;
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar4,DAT_00764ad4);
+  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar4,CDemonActorType_00764a9c.name_hash);
   if (iVar1 == 0) goto LAB_00499d1a;
   (**(code **)(*(int *)(iVar4 + 0x14c) + 0x14))(iVar4,&local_a0);
   fStack_28 = local_a0 + fStack_94;

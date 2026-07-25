@@ -80,7 +80,7 @@ section .text
     JZ 0x00460437                       ; 004603e1
         ;   XREF to: 00460437 (CONDITIONAL_JUMP)  ; LAB_00460437
     XOR ESI,ESI                         ; 004603e3
-    MOV ECX,0x463a79                    ; 004603e5 | LAB_00463a79
+    MOV ECX,0x463a79                    ; 004603e5
     MOV dword ptr [0x01c039a0],ESI      ; 004603ea | DAT_01c039a0
     MOV dword ptr [0x01c039a4],ESI      ; 004603f0 | DAT_01c039a4
     MOV dword ptr [0x01c00c7c],ECX      ; 004603f6 | DAT_01c00c7c
@@ -117,7 +117,7 @@ section .text
         ;   Label: LAB_00460437
     JNZ 0x004604a9                      ; 0046043e
         ;   XREF to: 004604a9 (CONDITIONAL_JUMP)  ; LAB_004604a9
-    MOV dword ptr [0x01c00c7c],0x52f031 ; 00460440 | DAT_01c00c7c | LAB_0052f031
+    MOV dword ptr [0x01c00c7c],0x52f031 ; 00460440 | DAT_01c00c7c
     MOV EBP,0x6                         ; 0046044a
         ;   Label: LAB_0046044a
     MOV EDI,0x267                       ; 0046044f
@@ -154,7 +154,7 @@ section .text
         ;   XREF to: 00460476 (CONDITIONAL_JUMP)  ; LAB_00460476
     JMP 0x00460400                      ; 004604a4
         ;   XREF to: 00460400 (UNCONDITIONAL_JUMP)  ; LAB_00460400
-    MOV dword ptr [0x01c00c7c],0x52f823 ; 004604a9 | DAT_01c00c7c | LAB_0052f823
+    MOV dword ptr [0x01c00c7c],0x52f823 ; 004604a9 | DAT_01c00c7c
         ;   Label: LAB_004604a9
     JMP 0x0046044a                      ; 004604b3
         ;   XREF to: 0046044a (UNCONDITIONAL_JUMP)  ; LAB_0046044a

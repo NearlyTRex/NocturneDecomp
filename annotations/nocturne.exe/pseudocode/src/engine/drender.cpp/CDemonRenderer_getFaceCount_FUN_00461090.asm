@@ -4,7 +4,7 @@
 ; undefined4 __cdecl engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(int param_1)
 ;
 ;
-; XREF[60]:
+; XREF[62]:
 ;   FUN_00415760 at 00415828
 ;   FUN_004161a0 at 004162e3
 ;   FUN_00416300 at 00416418
@@ -15,7 +15,7 @@
 ;   FUN_00455d50 at 00455da6
 ;   FUN_0045a260 at 0045a2a5
 ;   FUN_00478120 at 00478135
-;   ... and 50 more
+;   ... and 52 more
 ;
 ; *****************************************************************************
 

@@ -9,7 +9,7 @@
 void core_tvbat_cpp_CTVBat_archive_FUN_0054b310(int param_1)
 
 {
-  if (0x00000005 < 3) {
+  if (INT_005c1174 < 3) {
     core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
   }
   else {
@@ -17,7 +17,7 @@ void core_tvbat_cpp_CTVBat_archive_FUN_0054b310(int param_1)
   }
   core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0xbeac,"homePos");
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0xbd28,"modelName");
-  if (1 < 0x00000005) {
+  if (1 < INT_005c1174) {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbea4,"speed");
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbeb8,"maxDistance");
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbebc,"maxHeight");
@@ -25,15 +25,15 @@ void core_tvbat_cpp_CTVBat_archive_FUN_0054b310(int param_1)
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0xbec4,"moveSpeed");
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbecc,"followOrders");
   }
-  if (0x00000005 < 4) {
+  if (INT_005c1174 < 4) {
     *(uint *)(param_1 + 0xbee0) = 0;
-    if (0x00000005 < 5) {
+    if (INT_005c1174 < 5) {
       return;
     }
   }
   else {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0xbee0,"state");
-    if (0x00000005 < 5) {
+    if (INT_005c1174 < 5) {
       return;
     }
   }

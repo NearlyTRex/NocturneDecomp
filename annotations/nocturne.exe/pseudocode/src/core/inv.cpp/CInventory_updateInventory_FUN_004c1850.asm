@@ -18,7 +18,7 @@
 ;   float FLOAT_0059f7f0 = 30
 ;   float FLOAT_0059f7f4 = 120
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_007646ac
+;   undefined4 CDemonActorType_00764674.name_hash
 ;   undefined4 DAT_01c7782c
 ;   undefined4 DAT_01c77830
 ;   undefined4 DAT_01c77850
@@ -82,7 +82,7 @@ section .text
     JLE 0x004c18f5                      ; 004c18cb
         ;   XREF to: 004c18f5 (CONDITIONAL_JUMP)  ; LAB_004c18f5
     MOV EDI,EBX                         ; 004c18cd
-    MOV EDX,dword ptr [0x007646ac]      ; 004c18cf | DAT_007646ac
+    MOV EDX,dword ptr [0x007646ac]      ; 004c18cf | CDemonActorType_00764674.name_hash
         ;   Label: LAB_004c18cf
     PUSH EDX                            ; 004c18d5
     MOV ECX,dword ptr [EDI + 0xc]       ; 004c18d6
@@ -229,7 +229,7 @@ section .text
     JLE 0x004c1a88                      ; 004c1a62
         ;   XREF to: 004c1a88 (CONDITIONAL_JUMP)  ; LAB_004c1a88
     MOV EDI,EBX                         ; 004c1a64
-    MOV EDX,dword ptr [0x007646ac]      ; 004c1a66 | DAT_007646ac
+    MOV EDX,dword ptr [0x007646ac]      ; 004c1a66 | CDemonActorType_00764674.name_hash
         ;   Label: LAB_004c1a66
     PUSH EDX                            ; 004c1a6c
     MOV ECX,dword ptr [EDI + 0xc]       ; 004c1a6d

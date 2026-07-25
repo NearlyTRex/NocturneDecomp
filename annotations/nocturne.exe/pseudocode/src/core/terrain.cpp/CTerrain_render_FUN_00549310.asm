@@ -19,7 +19,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00596cd5 = 256
 ;   undefined4 DAT_005ae704
-;   undefined4 DAT_005ba8ec
+;   int INT_005ba8ec = 0x1cadf80
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_02dd10cc
 ;
@@ -64,7 +64,7 @@ section .text
     PUSH EBX                            ; 00549343
     XOR ESI,ESI                         ; 00549344
     PUSH ESI                            ; 00549346
-    MOV EDI,dword ptr [0x005ba8ec]      ; 00549347 | DAT_005ba8ec
+    MOV EDI,dword ptr [0x005ba8ec]      ; 00549347 | INT_005ba8ec
     PUSH EDI                            ; 0054934d
     MOV dword ptr [ESP + 0x18],EBX      ; 0054934e
     MOV dword ptr [ESP + 0x20],ESI      ; 00549352
@@ -114,7 +114,7 @@ section .text
     CALL engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0 ; 005493d9
         ;   XREF to: 004606e0 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0()
     ADD ESP,0x8                         ; 005493de
-    MOV EAX,[0x005ba8ec]                ; 005493e1 | DAT_005ba8ec
+    MOV EAX,[0x005ba8ec]                ; 005493e1 | INT_005ba8ec
     PUSH EAX                            ; 005493e6
     CALL core_ground.cpp_CGround_render_FUN_004b2110 ; 005493e7
         ;   XREF to: 004b2110 (UNCONDITIONAL_CALL)  ; undefined core_ground.cpp_CGround_render_FUN_004b2110()

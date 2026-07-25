@@ -4,7 +4,8 @@
 ; void __cdecl engine_2d_c_clearInputAndWait_FUN_00403f50(void)
 ;
 ;
-; XREF[25]:
+; XREF[28]:
+;   FUN_0044b660 at 0044b673
 ;   FUN_0046f7e0 at 0046f82d
 ;   FUN_0046fb40 at 0046fc9a
 ;   FUN_0046fcd0 at 0046fe2a
@@ -13,9 +14,8 @@
 ;   FUN_00475470 at 0047594a
 ;   FUN_004a57c0 at 004a5b60
 ;   FUN_004c8510 at 004c8557
-;   FUN_004c90e0 at 004c9123
-;   FUN_004d23d0 at 004d246d
-;   ... and 15 more
+;   FUN_004c8eb0 at 004c8ed4
+;   ... and 18 more
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_clearKeypresses_FUN_00558ae0

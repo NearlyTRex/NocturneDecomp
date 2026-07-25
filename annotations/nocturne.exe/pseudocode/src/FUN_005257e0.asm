@@ -4,7 +4,8 @@
 ; undefined4 FUN_005257e0(int param_1)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00527570 at 005275aa
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 00523f23
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 at 00526d40
 ;

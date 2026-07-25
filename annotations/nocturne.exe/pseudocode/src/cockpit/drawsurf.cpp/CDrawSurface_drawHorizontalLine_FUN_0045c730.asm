@@ -4,7 +4,8 @@
 ; int __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(int param_1,int param_2,int param_3,int param_4)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0045d310 at 0045d522
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_0045cb10 at 0045cb2c
 ;
 ; Referenced Globals:

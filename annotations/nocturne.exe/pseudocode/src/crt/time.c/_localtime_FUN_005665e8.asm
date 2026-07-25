@@ -4,7 +4,8 @@
 ; void __cdecl crt_time_c__localtime_FUN_005665e8(undefined4 param_1)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00470730 at 00470b60
 ;   FUN_0056cb60 at 0056cbe4
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460 at 00474549
 ;

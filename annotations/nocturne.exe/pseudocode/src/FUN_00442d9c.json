@@ -1,0 +1,1042 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 193,
+    "complexity_score": 1090,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 100,
+    "suspect_count": 96,
+    "suspect_types": [
+      "register_param",
+      "stack_param",
+      "stack_ref",
+      "unaffected_reg",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 293
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00442d9c",
+    "address_range": [
+      [
+        "00442d9c",
+        "00443047"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00442d9c",
+    "signature": "void FUN_00442d9c(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044daa0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0"
+    },
+    {
+      "addr": "00563a30",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_00563a30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0059bddc",
+      "name": "DAT_0059bddc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.786516853932584,
+    "instruction_count": 178,
+    "opcode_distribution": {
+      "CALL": 10,
+      "CBRANCH": 2,
+      "COPY": 725,
+      "FLOAT2FLOAT": 42,
+      "FLOAT_ADD": 18,
+      "FLOAT_MULT": 30,
+      "FLOAT_SUB": 3,
+      "INT2FLOAT": 27,
+      "INT_ADD": 121,
+      "INT_AND": 8,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_LESS": 2,
+      "INT_MULT": 6,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 24,
+      "INT_ZEXT": 6,
+      "LOAD": 88,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "ROUND": 12,
+      "STORE": 49,
+      "TRUNC": 12
+    },
+    "pcode_op_count": 1208
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "local_res0",
+        "offset": 0,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_00442d9c.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 25,
+          "message": "Uninitialized variable: unaff_EBP",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 31,
+          "line": 42,
+          "message": "Uninitialized variable: in_EDX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "int in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "float *in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x148c) = *(uint *)(unaff_EBP + 0x16c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x148c) = *(uint *)(unaff_EBP + 0x16c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1490) = *(uint *)(unaff_EBP + 0x170);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1490) = *(uint *)(unaff_EBP + 0x170);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1494) = *(uint *)(unaff_EBP + 0x174);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1494) = *(uint *)(unaff_EBP + 0x174);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if ((uint *)(unaff_EBP + 0x1498) != (uint *)(unaff_EBP + 0x104)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if ((uint *)(unaff_EBP + 0x1498) != (uint *)(unaff_EBP + 0x104)) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1498) = *(uint *)(unaff_EBP + 0x104);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1498) = *(uint *)(unaff_EBP + 0x104);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x149c) = *(uint *)(unaff_EBP + 0x108);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x149c) = *(uint *)(unaff_EBP + 0x108);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a0) = *(uint *)(unaff_EBP + 0x10c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a0) = *(uint *)(unaff_EBP + 0x10c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a4) = *(uint *)(unaff_EBP + 0x178);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a4) = *(uint *)(unaff_EBP + 0x178);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a8) = *(uint *)(unaff_EBP + 0x17c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a8) = *(uint *)(unaff_EBP + 0x17c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14ac) = *(uint *)(unaff_EBP + 0x180);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14ac) = *(uint *)(unaff_EBP + 0x180);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b0) = *(uint *)(unaff_EBP + 0x184);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b0) = *(uint *)(unaff_EBP + 0x184);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b4) = *(uint *)(unaff_EBP + 0x188);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b4) = *(uint *)(unaff_EBP + 0x188);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b8) = *(uint *)(unaff_EBP + 0x18c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14b8) = *(uint *)(unaff_EBP + 0x18c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14bc) = *(uint *)(unaff_EBP + 400);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14bc) = *(uint *)(unaff_EBP + 400);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14c0) = *(uint *)(unaff_EBP + 0x194);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14c0) = *(uint *)(unaff_EBP + 0x194);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14c4) = *(uint *)(unaff_EBP + 0x198);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14c4) = *(uint *)(unaff_EBP + 0x198);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 35,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "fStack00000004 = *(float *)(in_EDX + 4) - *(float *)(unaff_EBP + 0x108);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "fStack00000004 = *(float *)(in_EDX + 4) - *(float *)(unaff_EBP + 0x108);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 36,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "fStack00000008 = *(float *)(in_EDX + 8) - *(float *)(unaff_EBP + 0x10c);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 36,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "fStack00000008 = *(float *)(in_EDX + 8) - *(float *)(unaff_EBP + 0x10c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(in_stack_00000028,&stack0x0000000c,&stack0x00000000);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 39,
+      "match": "&stack0x0000000c",
+      "severity": "moderate",
+      "text": "(in_stack_00000028,&stack0x0000000c,&stack0x00000000);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 39,
+      "match": "&stack0x00000000",
+      "severity": "moderate",
+      "text": "(in_stack_00000028,&stack0x0000000c,&stack0x00000000);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "pfVar3 = in_stack_00000028;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 41,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if ((uint *)(unaff_EBP + 0x104) != puVar4) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 42,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x104) = *puVar4;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 43,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x108) = puVar4[1];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x10c) = puVar4[2];",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x16c) = (int)ROUND(*(float *)(unaff_EBP + 0x104) * _DAT_0059bddc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x16c) = (int)ROUND(*(float *)(unaff_EBP + 0x104) * _DAT_0059bddc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 47,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x170) = (int)ROUND(*(float *)(unaff_EBP + 0x108) * _DAT_0059bddc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 47,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x170) = (int)ROUND(*(float *)(unaff_EBP + 0x108) * _DAT_0059bddc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x174) = (int)ROUND(*(float *)(unaff_EBP + 0x10c) * _DAT_0059bddc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x174) = (int)ROUND(*(float *)(unaff_EBP + 0x10c) * _DAT_0059bddc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 49,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(unaff_EBP + 0x14a4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "((float10)*(int *)(unaff_EBP + 0x14ac) * (float10)in_stack_00000028[6]",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((float10)*(int *)(unaff_EBP + 0x14ac) * (float10)in_stack_00000028[6]",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "+ (float10)*(int *)(unaff_EBP + 0x14a4) * (float10)*in_stack_00000028",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "+ (float10)*(int *)(unaff_EBP + 0x14a4) * (float10)*in_stack_00000028",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 53,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "+ (float10)*(int *)(unaff_EBP + 0x14a8) *",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000028",
+      "severity": "moderate",
+      "text": "(float10)in_stack_00000028[3]);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 55,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x178) = (int)ROUND(fVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_EBP + 0x14a4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 58,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((float10)*(int *)(unaff_EBP + 0x14ac) * (float10)pfVar3[7] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 59,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float10)*(int *)(unaff_EBP + 0x14a8) * (float10)pfVar3[4] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 61,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x17c) = (int)ROUND(fVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 62,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(unaff_EBP + 0x14b4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 64,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((float10)*(int *)(unaff_EBP + 0x14ac) * (float10)pfVar3[8] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 65,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float10)*(int *)(unaff_EBP + 0x14a8) * (float10)pfVar3[5] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 67,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x180) = (int)ROUND(fVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 68,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_EBP + 0x14b0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 70,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((float10)*(int *)(unaff_EBP + 0x14b8) * (float10)pfVar3[6] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 71,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float10)*(int *)(unaff_EBP + 0x14b0) * (float10)*pfVar3 +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 73,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x184) = (int)ROUND(fVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 74,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(unaff_EBP + 0x14b0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 76,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((float10)*(int *)(unaff_EBP + 0x14b8) * (float10)pfVar3[7] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 77,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float10)*(int *)(unaff_EBP + 0x14b4) * (float10)pfVar3[4] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 79,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x188) = (int)ROUND(fVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 80,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_EBP + 0x14c0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 82,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((float10)*(int *)(unaff_EBP + 0x14b8) * (float10)pfVar3[8] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 83,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float10)*(int *)(unaff_EBP + 0x14b4) * (float10)pfVar3[5] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 85,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x18c) = (int)ROUND(fVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 86,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)(unaff_EBP + 0x14bc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 88,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((float10)*(int *)(unaff_EBP + 0x14c4) * (float10)pfVar3[6] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 89,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float10)*(int *)(unaff_EBP + 0x14bc) * (float10)*pfVar3 +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 91,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 400) = (int)ROUND(fVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 92,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)(unaff_EBP + 0x14bc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 94,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((float10)*(int *)(unaff_EBP + 0x14c4) * (float10)pfVar3[7] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 95,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float10)*(int *)(unaff_EBP + 0x14c0) * (float10)pfVar3[4] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 97,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x194) = (int)ROUND(fVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 99,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "((float10)*(int *)(unaff_EBP + 0x14c4) * (float10)pfVar3[8] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 100,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "(float10)*(int *)(unaff_EBP + 0x14c0) * (float10)pfVar3[5] +",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 102,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*(int *)(unaff_EBP + 0x198) = (int)ROUND(fVar5);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 18,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x148c) = *(uint *)(unaff_EBP + 0x16c);",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 22,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x1498) = *(uint *)(unaff_EBP + 0x104);",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (9 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 26,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(unaff_EBP + 0x14a4) = *(uint *)(unaff_EBP + 0x178);",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Uninitialized variable: unaff_EBP",
+      "line": 25,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*(uint *)(unaff_EBP + 0x148c) = *(uint *)(unaff_EBP + 0x16c);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_EDX",
+      "line": 42,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "fStack00000004 = *(float *)(in_EDX + 4) - *(float *)(unaff_EBP + 0x108);",
+      "type": "static_uninitvar"
+    }
+  ]
+}

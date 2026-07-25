@@ -4,6 +4,9 @@
 ; undefined4 FUN_004afd80(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004adf90 at 004adf95
+;
 ; Called Functions:
 ;   core_gore.cpp_CGore_reset_FUN_004afdb0
 ;

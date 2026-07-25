@@ -6,7 +6,8 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[10]:
+; XREF[11]:
+;   FUN_004e2c60 at 004e2c84
 ;   FUN_004e7ed0 at 004e7fdf
 ;   sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_004e3320 at 004e3364
 ;   sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_004e31f0 at 004e3248
@@ -16,7 +17,7 @@
 ;   sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004e3460 at 004e3627
 ;   sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_004e33d0 at 004e3437
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e862e
-;   sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320 at 004e4344
+;   ... and 1 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0058b591

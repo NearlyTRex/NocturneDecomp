@@ -64,7 +64,7 @@ section .text
         ;   XREF to: 0055d5b0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0()
     ADD ESP,0x8                         ; 00539734
     LEA ESI,[ESP + 0x1aac]              ; 00539737
-    PUSH 0x51b650                       ; 0053973e | LAB_0051b650
+    PUSH 0x51b650                       ; 0053973e
     FLD float ptr [EAX + 0x4]           ; 00539743
     PUSH -0x1                           ; 00539746
     FCHS                                ; 00539748

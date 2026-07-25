@@ -32,12 +32,12 @@ uint core_actor_cpp_FUN_0040db50(int param_1,float *param_2,int param_3,float pa
     param_3 = 6;
   }
   iVar1 = core_gore_cpp_CGore_findBloodTypeAtPosition_FUN_004b0730
-                    (0x01C78C7C,param_2,param_1 + 0x118);
+                    (INT_005b96c4,param_2,param_1 + 0x118);
   if (iVar1 == 0) {
     if (*(int *)(param_1 + 0x114) < 1) {
       if (param_3 == 3) {
         core_gore_cpp_CGore_createFootstep_FUN_004b06b0
-                  (0x01C78C7C,param_2,param_1 + 0x30,3,0x4000,0);
+                  (INT_005b96c4,param_2,param_1 + 0x30,3,0x4000,0);
       }
       goto LAB_0040dc41;
     }
@@ -46,7 +46,7 @@ uint core_actor_cpp_FUN_0040db50(int param_1,float *param_2,int param_3,float pa
     *(uint *)(param_1 + 0x114) = 0xffff;
   }
   core_gore_cpp_CGore_createFootstep_FUN_004b06b0
-            (0x01C78C7C,param_2,param_1 + 0x30,0xb,*(uint *)(param_1 + 0x114),
+            (INT_005b96c4,param_2,param_1 + 0x30,0xb,*(uint *)(param_1 + 0x114),
              *(uint *)(param_1 + 0x118));
   iVar1 = *(int *)(param_1 + 0x114) + -0x2000;
   *(int *)(param_1 + 0x114) = iVar1;

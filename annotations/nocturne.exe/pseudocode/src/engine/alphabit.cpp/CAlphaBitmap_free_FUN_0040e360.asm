@@ -4,7 +4,8 @@
 ; void __cdecl engine_alphabit_cpp_CAlphaBitmap_free_FUN_0040e360(int *param_1)
 ;
 ;
-; XREF[6]:
+; XREF[7]:
+;   FUN_004c8eb0 at 004c9093
 ;   FUN_004c90e0 at 004c92f3
 ;   core_inv.cpp_freeInventory_FUN_004bf270 at 004bf275
 ;   core_menu.cpp_showCalibrationTest_FUN_004cffa0 at 004d0040

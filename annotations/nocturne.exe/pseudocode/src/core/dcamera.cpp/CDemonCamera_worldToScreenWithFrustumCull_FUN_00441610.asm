@@ -11,7 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[4]:
+; XREF[5]:
+;   FUN_00444600 at 004446f0
 ;   FUN_00445750 at 0044579e
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50 at 00442098
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00444920 at 00444b76

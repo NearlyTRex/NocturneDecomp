@@ -4,7 +4,8 @@
 ; void __cdecl sound_sndmain_cpp_set3DListenerVelocity_FUN_005277b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00527d80 at 00527e06
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e94b
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052de25
 ;

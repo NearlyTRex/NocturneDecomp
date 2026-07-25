@@ -43,7 +43,7 @@ section .text
     XOR ECX,ECX                         ; 0052be64
         ;   Label: LAB_0052be64
     PUSH ECX                            ; 0052be66
-    PUSH 0x52bbd0                       ; 0052be67 | LAB_0052bbd0
+    PUSH 0x52bbd0                       ; 0052be67
     MOV dword ptr [0x005bed40],ECX      ; 0052be6c | DAT_005bed40
     CALL Ordinal_2                      ; 0052be72
         ;   XREF to: 00574c0e (UNCONDITIONAL_CALL)  ; undefined Ordinal_2()

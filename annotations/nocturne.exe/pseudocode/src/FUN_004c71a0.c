@@ -99,7 +99,8 @@ uint FUN_004c71a0(int param_1)
     if (((float)pfStack_14 < 0.0) || (1.0 < (float)pfStack_14)) break;
     *(float *)(param_1 + 0x584) = *(float *)(param_1 + 0x2e0) * (float)pfStack_14;
     iStack_1c = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(0x01E57284 + 0x14cd5c),DAT_00765a98);
+                          (*(uint *)(0x01E57284 + 0x14cd5c),
+                           CDemonActorType_00765a60.name_hash);
     if ((iStack_1c != 0) &&
        (iVar2 = (**(code **)(*(int *)(iStack_1c + 0x14c) + 0x104))(iStack_1c), 0 < iVar2)) {
       iStack_1c = 0;
@@ -149,7 +150,7 @@ uint FUN_004c71a0(int param_1)
       sound_sndmain_cpp_setSfxVolume_FUN_005270d0(*(uint *)(param_1 + 0x574),2.0f);
       iVar5 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);
       if (iVar5 == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
-        FUN_004940d0(0x01C70F74);
+        FUN_004940d0(INT_005b9284);
       }
       *(uint *)(param_1 + 0x580) = 1;
       *(uint *)(param_1 + 0x570) = 1;

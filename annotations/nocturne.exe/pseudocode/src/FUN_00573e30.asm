@@ -7,6 +7,9 @@
 ; undefined        Stack[-0x28]:1  local_28
 ; undefined4       Stack[-0x20]:4  local_20
 ;
+; XREF[1]:
+;   FUN_00573ed0 at 00573f6a
+;
 ; Referenced Globals:
 ;   void* PTR_SetEvent_00575598 = 00175fd2
 ;   void* PTR_FUN_005c1abc = 005671dc

@@ -268,7 +268,7 @@ section .text
     PUSH 0x0                            ; 004d50e9
     LEA EAX,[EBP + 0xe]                 ; 004d50eb
     PUSH EAX                            ; 004d50ee
-    MOV EDI,dword ptr [0x005b96c4]      ; 004d50ef | DAT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 004d50ef | INT_005b96c4
     PUSH EDI                            ; 004d50f5
     CALL FUN_004b0480                   ; 004d50f6
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()

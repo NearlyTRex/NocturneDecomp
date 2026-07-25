@@ -4,6 +4,9 @@
 ; void FUN_00543840(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00543810 at 00543823
+;
 ; Referenced Globals:
 ;   void* PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_005a2ee4 = 00409fc0
 ;

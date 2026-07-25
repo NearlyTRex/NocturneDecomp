@@ -4,17 +4,18 @@
 ; int sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005234b0(uint param_1,int param_2)
 ;
 ;
-; XREF[10]:
+; XREF[16]:
+;   FUN_00526dd0 at 00526dd8
+;   FUN_00526f00 at 00526f08
+;   FUN_00526f60 at 00526f68
+;   FUN_00527060 at 00527068
+;   FUN_00527190 at 005271ca
+;   FUN_00527200 at 00527207
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 at 00526d22
 ;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0 at 00526cd7
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 at 00526c60
 ;   sound_sndmain.cpp_killSfx_FUN_00527230 at 00527237
-;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_00527130 at 00527138
-;   sound_sndmain.cpp_setSfxFade_FUN_00527260 at 0052726a
-;   sound_sndmain.cpp_setSfxPosition_FUN_00526e10 at 00526e18
-;   sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_00526ea0 at 00526ea8
-;   sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_00526ff0 at 00526ff8
-;   sound_sndmain.cpp_setSfxVolume_FUN_005270d0 at 005270d8
+;   ... and 6 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dbd3e4

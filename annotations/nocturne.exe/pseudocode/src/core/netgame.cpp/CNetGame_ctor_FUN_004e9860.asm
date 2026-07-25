@@ -4,6 +4,9 @@
 ; undefined4 * core_netgame_cpp_CNetGame_ctor_FUN_004e9860(int param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004e94a0 at 004e94a5
+;
 ; Referenced Globals:
 ;   TerminatedCString s_MyComputer_0058ba8e
 ;   undefined4 s_yComputer_0058ba8e+1

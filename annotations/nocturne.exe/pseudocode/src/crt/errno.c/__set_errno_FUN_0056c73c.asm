@@ -4,7 +4,7 @@
 ; void __cdecl crt_errno_c___set_errno_FUN_0056c73c(void)
 ;
 ;
-; XREF[17]:
+; XREF[18]:
 ;   FUN_00566570 at 0056657e
 ;   FUN_005689c0 at 00568a3f
 ;   FUN_00568f70 at 00569017
@@ -15,7 +15,7 @@
 ;   FUN_0056c5f0 at 0056c61c
 ;   FUN_0056c864 at 0056c999
 ;   FUN_0056cb60 at 0056cb8e
-;   ... and 7 more
+;   ... and 8 more
 ;
 ; Referenced Globals:
 ;   void* PTR_GetLastError_0057551c = 00175d70

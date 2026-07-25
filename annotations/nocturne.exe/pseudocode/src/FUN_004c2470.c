@@ -81,14 +81,14 @@ void FUN_004c2470(float *param_1)
     local_44 = _DAT_014b990c;
   }
   if ((param_1[0xcc] == 0.0) || (param_1[0xce] <= 0.0)) goto LAB_004c27a0;
-  local_50 = 0x000000D0;
+  local_50 = INT_005bab60;
   local_48 = (byte *)0x10;
   local_58 = 0x70;
   iVar10 = 0x24;
-  local_54 = 0x00000060;
+  local_54 = INT_005bab64;
   if ((DAT_005b7620 < 0x180) && (param_1[0x113] == 0.0)) {
-    local_50 = 0x000000D0 / 2;
-    local_54 = 0x00000060 / 2;
+    local_50 = INT_005bab60 / 2;
+    local_54 = INT_005bab64 / 2;
     iVar10 = 0x12;
     local_58 = 0x28;
     local_48 = (byte *)0x8;
@@ -242,11 +242,11 @@ LAB_004c27a0:
   if ((param_1[0xcd] != 0.0) && (0.0 < param_1[0xcf])) {
     local_60 = 0x70;
     local_50 = 0x10;
-    iVar10 = 0x000000D0;
-    iVar3 = 0x00000060;
+    iVar10 = INT_005bab60;
+    iVar3 = INT_005bab64;
     if ((DAT_005b7620 < 0x180) && (param_1[0x113] == 0.0)) {
-      iVar10 = 0x000000D0 / 2;
-      iVar3 = 0x00000060 / 2;
+      iVar10 = INT_005bab60 / 2;
+      iVar3 = INT_005bab64 / 2;
       local_60 = 0x28;
       local_50 = 8;
     }
@@ -352,9 +352,9 @@ LAB_004c27a0:
     }
     engine_3d_c_setRenderAlpha_FUN_00408370();
     local_1c = _DAT_014b9904;
-    iVar10 = 0x00000060;
+    iVar10 = INT_005bab64;
     if (DAT_005b7620 < 0x180) {
-      iVar10 = 0x00000060 / 2;
+      iVar10 = INT_005bab64 / 2;
       local_1c = _DAT_014b990c;
     }
     iVar3 = local_1c;

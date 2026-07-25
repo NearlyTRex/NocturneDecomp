@@ -4,6 +4,9 @@
 ; int FUN_0040fed0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0040fea0 at 0040feb3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_candle_kfm_005784ca
 ;   undefined1* PTR_core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30_005999a4 = 0040ff30

@@ -56,7 +56,7 @@ section .text
         ;   Label: LAB_00461df0
     JZ 0x00461e95                       ; 00461df4
         ;   XREF to: 00461e95 (CONDITIONAL_JUMP)  ; LAB_00461e95
-    PUSH 0x461d50                       ; 00461dfa | LAB_00461d50
+    PUSH 0x461d50                       ; 00461dfa
     PUSH 0x4                            ; 00461dff
     MOV ESI,dword ptr [0x01b4d7ac]      ; 00461e01 | DAT_01b4d7ac
     PUSH ESI                            ; 00461e07
@@ -125,7 +125,7 @@ section .text
     POP EBP                             ; 00461e93
         ;   Label: LAB_00461e93
     RET                                 ; 00461e94
-    PUSH 0x461d80                       ; 00461e95 | LAB_00461d80
+    PUSH 0x461d80                       ; 00461e95
         ;   Label: LAB_00461e95
     PUSH 0x4                            ; 00461e9a
     MOV EDI,dword ptr [0x01b4d7ac]      ; 00461e9c | DAT_01b4d7ac

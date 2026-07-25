@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 150,
-        "line": 143,
+        "line": 166,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 145,
+        "line": 168,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 153,
-        "line": 146,
+        "line": 170,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 152,
-        "line": 152,
+        "line": 177,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 64,
+        "line": 76,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 66,
+        "line": 78,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 132,
+        "line": 153,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 139,
+        "line": 160,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 143,
+        "line": 165,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 87,
-        "line": 32,
+        "line": 34,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 51,
+        "line": 58,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 93,
-        "line": 53,
+        "line": 60,
         "message": "unknown type name 'code'"
       },
       {
         "category": "syntax_error",
         "column": 15,
-        "line": 117,
+        "line": 125,
         "message": "expected unqualified-id"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 172,
+        "line": 188,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 210,
+        "line": 228,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 219,
+        "line": 237,
         "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 337,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 408,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 408,
-        "message": "invalid digit 'C' in decimal constant"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 397,
-    "complexity_score": 503,
+    "complexity_score": 479,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 168,
-    "suspect_count": 31,
+    "pseudocode_lines": 169,
+    "suspect_count": 29,
     "suspect_types": [
       "self_copy_guard",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 565
+    "total_lines": 566
   },
   "cross_references": [],
   "function": {
@@ -266,13 +265,13 @@
     },
     {
       "addr": "00765a98",
-      "name": "DAT_00765a98",
+      "name": "CDemonActorType_00765a60.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0077bd78",
-      "name": "DAT_0077bd78",
+      "name": "CDemonActorType_0077bd40.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -563,14 +562,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 79,
-      "match": "DAT_00765a98",
-      "severity": "mild",
-      "text": "(*(uint *)(0x01E57284 + 0x14cd5c),DAT_00765a98);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 80,
       "match": "code *",
@@ -579,16 +570,8 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_0077bd78",
-      "severity": "mild",
-      "text": "(*(uint *)(0x01E57284 + 0x14cd5c),DAT_0077bd78);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 98,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = FUN_005485a0(iVar3,param_1);",
@@ -596,7 +579,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 100,
+      "line": 101,
       "match": "code *",
       "severity": "moderate",
       "text": "fStack_18 = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
@@ -604,7 +587,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_18 = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
@@ -612,7 +595,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 101,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_18 = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
@@ -620,7 +603,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 128,
+      "line": 129,
       "match": "code *",
       "severity": "moderate",
       "text": "fStack_dc = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
@@ -628,7 +611,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
+      "line": 129,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_dc = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
@@ -636,7 +619,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
+      "line": 129,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_dc = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
@@ -644,7 +627,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 152,
+      "line": 153,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_b8 = *(uint *)(param_1 + 0x564);",
@@ -652,7 +635,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 154,
+      "line": 155,
       "match": "param_1",
       "severity": "mild",
       "text": "iStack_ac = param_1;",
@@ -660,7 +643,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 156,
+      "line": 157,
       "match": "code *",
       "severity": "moderate",
       "text": "uStack_a8 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
@@ -668,7 +651,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 156,
+      "line": 157,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_a8 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
@@ -676,7 +659,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 156,
+      "line": 157,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_a8 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
@@ -684,7 +667,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 157,
+      "line": 158,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar2 + 0x14c) + 0x100))(iVar2,&uStack_e0);",
@@ -692,7 +675,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 159,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2dc) == 0) break;",
@@ -700,7 +683,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 168,
+      "line": 169,
       "match": "param_1",
       "severity": "mild",
       "text": "core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_0048af20(0x01C08D04,&fStack_44,param_1 + 0x3c);",
@@ -708,7 +691,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 169,
+      "line": 170,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x8a8) = 2;",
@@ -716,7 +699,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 170,
+      "line": 171,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2f8) = *(uint *)(param_1 + 0x76c);",
@@ -724,7 +707,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 170,
+      "line": 171,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2f8) = *(uint *)(param_1 + 0x76c);",
@@ -732,7 +715,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&fStack_d4 != &fStack_50)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 138,
+      "line": 139,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&fStack_d4 != &fStack_50) {",

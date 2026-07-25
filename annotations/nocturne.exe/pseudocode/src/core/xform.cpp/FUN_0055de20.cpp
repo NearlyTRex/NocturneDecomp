@@ -1,6 +1,6 @@
 // Name: core_xform.cpp_FUN_0055de20
 // Address: 0055de20
-// Address Range: [[0055de20, 0055de87] [0055decd, 0055df12]]
+// Address Range: [[0055de20, 0055de87]]
 // Convention: unknown
 // Signature: void core_xform_cpp_FUN_0055de20(void)
 
@@ -21,14 +21,14 @@ void core_xform_cpp_FUN_0055de20(void)
   longlong *plVar8;
   longlong *plVar9;
   byte bVar10;
-  int iStack_14;
+  int local_14;
   
   bVar10 = 0;
-  iStack_14 = 0;
+  local_14 = 0;
   if (0 < (int)_DAT_02de313c) {
     plVar6 = (longlong *)&DAT_02de4340;
     do {
-      uVar3 = iStack_14 + 1;
+      uVar3 = local_14 + 1;
       if (uVar3 == _DAT_02de313c) {
         uVar3 = uVar3 ^ _DAT_02de313c;
       }
@@ -100,9 +100,9 @@ void core_xform_cpp_FUN_0055de20(void)
                   (plVar6,&DAT_02de4340 + iVar4,&DAT_00766c74 + DAT_00766c70 * 0xc);
         DAT_00766c70 = DAT_00766c70 + 1;
       }
-      iStack_14 = iStack_14 + 1;
+      local_14 = local_14 + 1;
       plVar6 = plVar6 + 6;
-    } while (iStack_14 < (int)_DAT_02de313c);
+    } while (local_14 < (int)_DAT_02de313c);
   }
   return;
 }

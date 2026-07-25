@@ -102,7 +102,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0051ee60 ; 00499bb5
         ;   XREF to: 0051ee60 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0051ee60()
     ADD ESP,0x8                         ; 00499bba
-    PUSH 0x51b650                       ; 00499bbd | LAB_0051b650
+    PUSH 0x51b650                       ; 00499bbd
     MOV EDI,dword ptr [EBP + 0x24]      ; 00499bc2
     MOV EAX,dword ptr [EBP + 0x1c]      ; 00499bc5
     PUSH EDI                            ; 00499bc8

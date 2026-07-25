@@ -4,18 +4,18 @@
 ; void __cdecl core_actor_cpp_isOfClass_FUN_0040d7e0(int param_1,undefined4 param_2)
 ;
 ;
-; XREF[53]:
+; XREF[56]:
 ;   FUN_0040ef70 at 0040ef7a
 ;   FUN_0040f480 at 0040f49a
 ;   FUN_00414e10 at 00414e1a
 ;   FUN_004196b0 at 00419ac0
+;   FUN_0047a150 at 0047a190
 ;   FUN_00481d30 at 00481d3a
 ;   FUN_00497900 at 00497b74
 ;   FUN_004980d0 at 0049824d
 ;   FUN_004b43d0 at 004b43da
 ;   FUN_004b5b00 at 004b5b22
-;   FUN_004b8700 at 004b8868
-;   ... and 43 more
+;   ... and 46 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_matchesClassName_FUN_0040d840

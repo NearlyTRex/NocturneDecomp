@@ -21,7 +21,7 @@ uint shape_edittool_cpp_CPickList_handleInput_FUN_00474ea0(int *param_1)
   char cStack_14;
   
   bVar9 = 0;
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x1c);
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x1c);
   if ((iVar3 != 0) &&
      (iVar3 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_00476040(param_1,param_1[0x46]),
      iVar3 != 0)) {
@@ -29,17 +29,17 @@ LAB_0047509f:
     param_1[0x43] = 1;
     return 0;
   }
-  iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,1);
+  iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
   if (iVar3 != 0) {
     return 0xffffffff;
   }
-  iVar3 = (**(code **)*0x01CC30E4)(0x01CC30E4,0x1d);
+  iVar3 = (*(code *)**(uint **)INT_005bac64)(INT_005bac64,0x1d);
   if (iVar3 != 0) {
-    iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x52);
+    iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x52);
     if (iVar3 != 0) {
       shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(param_1);
     }
-    iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x2e);
+    iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x2e);
     if (iVar3 != 0) {
       shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(param_1);
     }
@@ -50,51 +50,51 @@ LAB_0047509f:
       while( true ) {
         iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70();
         if (iVar3 == 0) {
-          iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x48);
+          iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x48);
           if (iVar3 != 0) {
             *(byte *)(param_1 + 0x2a) = 0;
             param_1[0x46] = param_1[0x46] + -1;
           }
-          iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x50);
+          iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x50);
           if (iVar3 != 0) {
             *(byte *)(param_1 + 0x2a) = 0;
             param_1[0x46] = param_1[0x46] + 1;
           }
-          iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x47);
+          iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x47);
           if (iVar3 != 0) {
             *(byte *)(param_1 + 0x2a) = 0;
             param_1[0x46] = 0;
           }
-          iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x4f);
+          iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x4f);
           if (iVar3 != 0) {
             *(byte *)(param_1 + 0x2a) = 0;
             param_1[0x46] = *param_1;
           }
-          iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x49);
+          iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x49);
           if (iVar3 != 0) {
             *(byte *)(param_1 + 0x2a) = 0;
             param_1[0x46] = param_1[0x46] - param_1[0x48];
             param_1[0x47] = param_1[0x47] - param_1[0x48];
           }
-          iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x51);
+          iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x51);
           if (iVar3 != 0) {
             *(byte *)(param_1 + 0x2a) = 0;
             param_1[0x46] = param_1[0x46] + param_1[0x48];
             param_1[0x47] = param_1[0x47] + param_1[0x48];
           }
-          iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x4b);
+          iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x4b);
           if (iVar3 != 0) {
             *(byte *)(param_1 + 0x2a) = 0;
             param_1[0x46] = param_1[0x46] - param_1[0x49];
           }
-          iVar3 = (**(code **)(*0x01CC30E4 + 4))(0x01CC30E4,0x4d);
+          iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,0x4d);
           if (iVar3 != 0) {
             *(byte *)(param_1 + 0x2a) = 0;
             param_1[0x46] = param_1[0x46] + param_1[0x49];
           }
           return 0;
         }
-        iVar3 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004c41d0(0x01CC30E4);
+        iVar3 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_004c41d0(INT_005bac64);
         if (iVar3 == 8) {
           *(byte *)(param_1 + 0x2a) = 0;
         }

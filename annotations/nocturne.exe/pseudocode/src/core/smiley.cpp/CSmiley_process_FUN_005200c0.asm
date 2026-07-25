@@ -65,7 +65,7 @@
 ;   float FLOAT_005a1f98 = 2.5
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_0077ad0c
 ;   undefined4 DAT_01e57284
@@ -622,7 +622,7 @@ section .text
     PUSH EDI                            ; 00520685
     LEA EAX,[EBP + 0x3e]                ; 00520686
     PUSH EAX                            ; 00520689
-    MOV EAX,[0x005b96c4]                ; 0052068a | DAT_005b96c4
+    MOV EAX,[0x005b96c4]                ; 0052068a | INT_005b96c4
     PUSH EAX                            ; 0052068f
     CALL FUN_004b0480                   ; 00520690
         ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()

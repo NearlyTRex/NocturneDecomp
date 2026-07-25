@@ -35,7 +35,7 @@ int engine_3d_c_transformAndBufferVertices_FUN_00404530(int param_1)
     } while (iVar1 < *(int *)(param_1 + 8));
   }
   if (DAT_006b0264 == 0) {
-    _DAT_006b0268 = DAT_006b0264;
+    DAT_006b0268 = DAT_006b0264;
   }
   if (local_14 == *(int *)(param_1 + 8)) {
     DAT_005b7644 = 0;

@@ -4,7 +4,8 @@
 ; void __cdecl sound_sndmain_cpp_CSfxOptions_reset_FUN_00525eb0(undefined4 *param_1)
 ;
 ;
-; XREF[3]:
+; XREF[4]:
+;   FUN_00526310 at 0052632f
 ;   FUN_005299e0 at 005299e6
 ;   FUN_00529a20 at 00529a26
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 005265e4

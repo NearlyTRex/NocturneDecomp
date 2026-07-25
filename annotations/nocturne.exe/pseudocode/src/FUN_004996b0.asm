@@ -13,7 +13,7 @@
 ;   float FLOAT_00582282 = 50
 ;   float FLOAT_0059dcb4 = 0.5
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_01c775ec
 ;   undefined4 DAT_01c776ac
 ;   undefined4 DAT_01c777bc
@@ -130,7 +130,7 @@ section .text
     PUSH 0x42480000                     ; 004997df
     PUSH 0x32                           ; 004997e4
     PUSH EBX                            ; 004997e6
-    MOV EDI,dword ptr [0x005b96c4]      ; 004997e7 | DAT_005b96c4
+    MOV EDI,dword ptr [0x005b96c4]      ; 004997e7 | INT_005b96c4
     PUSH EDI                            ; 004997ed
     CALL core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670 ; 004997ee
         ;   XREF to: 004b0670 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnFliesOnActor_FUN_004b0670()

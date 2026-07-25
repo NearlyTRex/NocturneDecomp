@@ -65,7 +65,7 @@ void core_larva_cpp_CLarva_processDamage_FUN_004c5310(int param_1,int param_2)
   }
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_20,param_2 + 0x1c);
   core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-            (0x01C78C7C,auStack_20,0,10,*(uint *)(param_1 + 0x2608));
+            (INT_005b96c4,auStack_20,0,10,*(uint *)(param_1 + 0x2608));
   core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
   return;
 }

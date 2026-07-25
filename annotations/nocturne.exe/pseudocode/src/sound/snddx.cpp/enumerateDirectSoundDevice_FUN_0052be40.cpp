@@ -13,7 +13,7 @@ uint sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0052be40(int param_1,int par
   
   if (DAT_005bed40 < 0) {
     DAT_005bed40 = 0;
-    Ordinal_2(&LAB_0052bbd0,0);
+    Ordinal_2(FUN_0052bbd0,0);
   }
   if ((-1 < param_1) && (param_1 < DAT_005bed40)) {
     *(int *)(param_2 + 0x104) = param_1;

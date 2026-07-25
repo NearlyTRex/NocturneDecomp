@@ -4,7 +4,8 @@
 ; undefined4 __cdecl sound_sndmain_cpp_ensureSoundMemoryAvailable_FUN_00521ca0(int param_1)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00527930 at 00527944
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910 at 00523a17
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 at 00525692
 ;

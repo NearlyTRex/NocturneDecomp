@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 150,
-        "line": 143,
+        "line": 166,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 145,
+        "line": 168,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 153,
-        "line": 146,
+        "line": 170,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 152,
-        "line": 152,
+        "line": 177,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 64,
+        "line": 76,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 66,
+        "line": 78,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 132,
+        "line": 153,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 139,
+        "line": 160,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 143,
+        "line": 165,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 87,
-        "line": 32,
+        "line": 34,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 51,
+        "line": 58,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 93,
-        "line": 53,
+        "line": 60,
         "message": "unknown type name 'code'"
       },
       {
         "category": "syntax_error",
         "column": 15,
-        "line": 117,
+        "line": 125,
         "message": "expected unqualified-id"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 172,
+        "line": 188,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 210,
+        "line": 228,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 219,
+        "line": 237,
         "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 337,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 408,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 408,
-        "message": "invalid digit 'C' in decimal constant"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 644,
-    "complexity_score": 681,
+    "complexity_score": 672,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 31,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 216,
-    "suspect_count": 44,
+    "pseudocode_lines": 217,
+    "suspect_count": 43,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
@@ -136,7 +136,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 860
+    "total_lines": 861
   },
   "cross_references": [],
   "function": {
@@ -369,9 +369,9 @@
     },
     {
       "addr": "005b9284",
-      "name": "DAT_005b9284",
-      "type": "undefined4",
-      "value": null
+      "name": "INT_005b9284",
+      "type": "int",
+      "value": "0x1c70f74"
     },
     {
       "addr": "005be368",
@@ -387,7 +387,7 @@
     },
     {
       "addr": "00765a98",
-      "name": "DAT_00765a98",
+      "name": "CDemonActorType_00765a60.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -720,16 +720,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_00765a98",
-      "severity": "mild",
-      "text": "(*(uint *)(0x01E57284 + 0x14cd5c),DAT_00765a98);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 97,
+      "line": 98,
       "match": "code *",
       "severity": "moderate",
       "text": "(iVar2 = (**(code **)(*(int *)(iStack_1c + 0x14c) + 0x104))(iStack_1c), 0 < iVar2)) {",
@@ -737,7 +729,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 106,
+      "line": 107,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*(int *)(iStack_1c + 0x14c) + 0xd8))(iStack_1c);",
@@ -745,7 +737,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x578) = 30.0f;",
@@ -753,7 +745,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 120,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = FUN_005485a0(iVar4,param_1);",
@@ -761,7 +753,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 121,
+      "line": 122,
       "match": "code *",
       "severity": "moderate",
       "text": "pfStack_14 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
@@ -769,7 +761,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 122,
       "match": "param_1",
       "severity": "mild",
       "text": "pfStack_14 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
@@ -777,7 +769,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 122,
       "match": "param_1",
       "severity": "mild",
       "text": "pfStack_14 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);",
@@ -785,7 +777,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 135,
       "match": "param_1",
       "severity": "mild",
       "text": "core_lightgun_cpp_CLightGun_updateBeamLight_FUN_004c6ff0(param_1);",
@@ -793,7 +785,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 141,
+      "line": 142,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x02DC9450,param_1,\"cre-fire.wav\",&fStack_a8);",
@@ -801,7 +793,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 142,
+      "line": 143,
       "match": "param_1",
       "severity": "mild",
       "text": "sound_sndmain_cpp_setSfxVolume_FUN_005270d0(*(uint *)(param_1 + 0x574),2.0f);",
@@ -809,7 +801,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 143,
+      "line": 144,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar5 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
@@ -817,7 +809,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 143,
+      "line": 144,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
@@ -825,18 +817,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 143,
+      "line": 144,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 147,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x580) = 1;",
       "type": "unnamed_param"
     },
     {
@@ -844,12 +828,20 @@
       "line": 148,
       "match": "param_1",
       "severity": "mild",
+      "text": "*(uint *)(param_1 + 0x580) = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 149,
+      "match": "param_1",
+      "severity": "mild",
       "text": "*(uint *)(param_1 + 0x570) = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 152,
+      "line": 153,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*(int *)(iVar5 + 0x14c) + 0xd8))(iVar5);",
@@ -857,7 +849,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 167,
+      "line": 168,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar5 + 0x14c) + 0x14))(iVar5,auStack_c0);",
@@ -865,7 +857,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 169,
+      "line": 170,
       "match": "DAT_01c74640",
       "severity": "mild",
       "text": "(&DAT_01c74640,iVar5 + 0x20,iVar5 + 0x30,auStack_c0,auStack_b4);",
@@ -873,7 +865,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 175,
+      "line": 176,
       "match": "code *",
       "severity": "moderate",
       "text": "pfVar3 = (float *)(**(code **)(*(int *)(iVar5 + 0x14c) + 0x14))(iVar5,auStack_d8);",
@@ -881,7 +873,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 211,
+      "line": 212,
       "match": "param_1",
       "severity": "mild",
       "text": "iStack_e0 = param_1;",
@@ -889,7 +881,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 212,
+      "line": 213,
       "match": "code *",
       "severity": "moderate",
       "text": "uStack_dc = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
@@ -897,7 +889,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 212,
+      "line": 213,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_dc = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
@@ -905,7 +897,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 212,
+      "line": 213,
       "match": "param_1",
       "severity": "mild",
       "text": "uStack_dc = (**(code **)(*(int *)(param_1 + 0x14c) + 0x8c))(param_1);",
@@ -913,7 +905,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 213,
+      "line": 214,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar5 + 0x14c) + 0x100))(iVar5,auStack_114);",
@@ -921,7 +913,7 @@
     },
     {
       "description": "Raw hex address 0x1e57284 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 107,
+      "line": 108,
       "match": "0x1e57284",
       "severity": "moderate",
       "text": "iVar2 = 0x01E57284;",

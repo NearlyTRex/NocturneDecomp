@@ -3,117 +3,117 @@
     "errors": [
       {
         "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
         "column": 150,
-        "line": 143,
+        "line": 166,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 164,
-        "line": 145,
+        "line": 168,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 153,
-        "line": 146,
+        "line": 170,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 152,
-        "line": 152,
+        "line": 177,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 51,
-        "line": 64,
+        "line": 76,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 66,
+        "line": 78,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 132,
+        "line": 153,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 139,
+        "line": 160,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 143,
+        "line": 165,
         "message": "unknown type name 'MMRESULT'"
       },
       {
         "category": "other",
         "column": 87,
-        "line": 32,
+        "line": 34,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 82,
-        "line": 51,
+        "line": 58,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 93,
-        "line": 53,
+        "line": 60,
         "message": "unknown type name 'code'"
       },
       {
         "category": "syntax_error",
         "column": 15,
-        "line": 117,
+        "line": 125,
         "message": "expected unqualified-id"
       },
       {
         "category": "other",
         "column": 56,
-        "line": 172,
+        "line": 188,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 71,
-        "line": 210,
+        "line": 228,
         "message": "unknown type name 'code'"
       },
       {
         "category": "other",
         "column": 70,
-        "line": 219,
+        "line": 237,
         "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 20,
-        "line": 337,
-        "message": "unknown type name 'HMODULE'"
-      },
-      {
-        "category": "other",
-        "column": 35,
-        "line": 408,
-        "message": "invalid suffix 'x' on integer constant"
-      },
-      {
-        "category": "other",
-        "column": 40,
-        "line": 408,
-        "message": "invalid digit 'C' in decimal constant"
       }
     ],
     "success": false,
@@ -121,10 +121,10 @@
   },
   "compile_source": "c",
   "complexity": {
-    "assembly_lines": 75,
+    "assembly_lines": 45,
     "complexity_score": 458,
     "cross_reference_count": 0,
-    "function_call_count": 1,
+    "function_call_count": 0,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
@@ -135,7 +135,7 @@
       "undefined_data",
       "unrolled_memcpy"
     ],
-    "total_lines": 143
+    "total_lines": 113
   },
   "cross_references": [],
   "function": {
@@ -144,23 +144,13 @@
       [
         "00433ef0",
         "00433f51"
-      ],
-      [
-        "00433f7c",
-        "00433fc1"
       ]
     ],
     "convention": "unknown",
     "name": "engine_clipper.c_FUN_00433ef0",
     "signature": "void engine_clipper_c_FUN_00433ef0(void)"
   },
-  "function_calls": [
-    {
-      "addr": "00433a00",
-      "is_variadic": false,
-      "name": "engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00433a00"
-    }
-  ],
+  "function_calls": [],
   "globals": [
     {
       "addr": "00433ee0",
@@ -187,6 +177,18 @@
       "value": null
     },
     {
+      "addr": "00433f7c",
+      "name": "caseD_3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00433f9c",
+      "name": "caseD_1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
       "addr": "00433fc2",
       "name": "caseD_2",
       "type": "string",
@@ -195,12 +197,6 @@
     {
       "addr": "00767b44",
       "name": "DAT_00767b44",
-      "type": "undefined4",
-      "value": null
-    },
-    {
-      "addr": "00767b48",
-      "name": "DAT_00767b48",
       "type": "undefined4",
       "value": null
     },
@@ -221,12 +217,6 @@
       "name": "DAT_00768754",
       "type": "undefined4",
       "value": null
-    },
-    {
-      "addr": "00768d4c",
-      "name": "DAT_00768d4c",
-      "type": "undefined4",
-      "value": null
     }
   ],
   "param_estimates": {
@@ -239,46 +229,51 @@
     "matches_declared": true
   },
   "pcode_summary": {
-    "avg_pcode_per_instr": 4.844827586206897,
-    "instruction_count": 58,
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 34,
     "opcode_distribution": {
       "BOOL_AND": 1,
       "BOOL_NEGATE": 3,
       "BOOL_OR": 2,
-      "BRANCH": 1,
       "BRANCHIND": 1,
-      "CALL": 1,
-      "CBRANCH": 6,
-      "COPY": 48,
-      "INT_ADD": 18,
-      "INT_AND": 39,
-      "INT_CARRY": 5,
-      "INT_EQUAL": 39,
-      "INT_LESS": 6,
-      "INT_MULT": 3,
-      "INT_NOTEQUAL": 5,
+      "CBRANCH": 5,
+      "COPY": 30,
+      "INT_ADD": 7,
+      "INT_AND": 25,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 25,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
       "INT_OR": 1,
-      "INT_SBORROW": 6,
-      "INT_SCARRY": 8,
-      "INT_SEXT": 6,
-      "INT_SLESS": 19,
-      "INT_SUB": 14,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 2,
+      "INT_SEXT": 3,
+      "INT_SLESS": 12,
+      "INT_SUB": 9,
       "INT_XOR": 3,
-      "LOAD": 12,
-      "POPCOUNT": 19,
-      "RETURN": 1,
-      "STORE": 10,
-      "SUBPIECE": 4
+      "LOAD": 6,
+      "POPCOUNT": 12,
+      "STORE": 5,
+      "SUBPIECE": 2
     },
-    "pcode_op_count": 281
+    "pcode_op_count": 170
   },
   "stack_frame": {
-    "frame_size": 4,
-    "local_size": 4,
+    "frame_size": 24,
+    "local_size": 24,
     "param_offset": 4,
     "param_size": 0,
     "return_addr_offset": 0,
-    "variables": []
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
   },
   "suspects": [
     {
@@ -510,7 +505,7 @@
       "line": 68,
       "match": "DAT_00767b44",
       "severity": "mild",
-      "text": "} while (iStack_14 < (int)DAT_00767b44);",
+      "text": "} while (local_14 < (int)DAT_00767b44);",
       "type": "undefined_data"
     },
     {

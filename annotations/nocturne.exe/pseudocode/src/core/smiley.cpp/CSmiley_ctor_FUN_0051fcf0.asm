@@ -4,6 +4,9 @@
 ; int core_smiley_cpp_CSmiley_ctor_FUN_0051fcf0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0051fcc0 at 0051fcd3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_smiley_dfm_00591eed
 ;   float FLOAT_005a1f9c = 50

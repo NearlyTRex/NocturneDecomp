@@ -11,8 +11,8 @@
 ;   double DOUBLE_00596ec5 = 10
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_00765a98
-;   undefined4 DAT_0077bd78
+;   undefined4 CDemonActorType_00765a60.name_hash
+;   undefined4 CDemonActorType_0077bd40.name_hash
 ;   undefined4 DAT_01c7068c
 ;   undefined4 DAT_01c78c78
 ;   undefined4 DAT_01e57284
@@ -141,7 +141,7 @@ section .text
     SAHF                                ; 0054ac3f
     JC 0x0054aec3                       ; 0054ac40
         ;   XREF to: 0054aec3 (CONDITIONAL_JUMP)  ; LAB_0054aec3
-    MOV ECX,dword ptr [0x00765a98]      ; 0054ac46 | DAT_00765a98
+    MOV ECX,dword ptr [0x00765a98]      ; 0054ac46 | CDemonActorType_00765a60.name_hash
     MOV EAX,[0x005be368]                ; 0054ac4c | DAT_005be368
     PUSH ECX                            ; 0054ac51
     MOV ESI,dword ptr [EAX + 0x14cd5c]  ; 0054ac52 | DAT_01fa3fe0
@@ -181,7 +181,7 @@ section .text
     ADD ESP,0x8                         ; 0054acb6
     MOV ESI,EAX                         ; 0054acb9
     MOV dword ptr [ESP + 0xbc],EAX      ; 0054acbb
-    MOV EAX,[0x0077bd78]                ; 0054acc2 | DAT_0077bd78
+    MOV EAX,[0x0077bd78]                ; 0054acc2 | CDemonActorType_0077bd40.name_hash
     PUSH EAX                            ; 0054acc7
     MOV EAX,[0x005be368]                ; 0054acc8 | DAT_005be368
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 0054accd | DAT_01fa3fe0

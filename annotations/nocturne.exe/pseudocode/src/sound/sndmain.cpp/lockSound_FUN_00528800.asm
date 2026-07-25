@@ -4,18 +4,18 @@
 ; void __cdecl sound_sndmain_cpp_lockSound_FUN_00528800(void)
 ;
 ;
-; XREF[12]:
+; XREF[16]:
+;   FUN_00527570 at 00527574
 ;   FUN_005278e0 at 005278e6
+;   FUN_00527950 at 00527957
+;   FUN_005279b0 at 005279b1
+;   FUN_005293f0 at 00529437
 ;   FUN_005464a0 at 005465dd
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00527410 at 00527452
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 at 00527e78
 ;   sound_sndmain.cpp_freeAllSamples_FUN_00527c30 at 00527c32
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 005279f1
-;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0 at 005234fb
-;   sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 at 00528246
-;   sound_sndmain.cpp_killAllSfx_FUN_005272b0 at 005272b7
-;   sound_sndmain.cpp_pollAllStreams_FUN_005298f0 at 005298fb
-;   ... and 2 more
+;   ... and 6 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00593909

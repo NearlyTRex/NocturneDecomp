@@ -8,7 +8,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ; undefined4       Stack[-0x4]:4  local_4
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0048eec0 at 0048eed3
 ;   core_gore.cpp_CGore_spawnFlies_FUN_004b0580 at 004b065b
 ;
 ; Referenced Globals:

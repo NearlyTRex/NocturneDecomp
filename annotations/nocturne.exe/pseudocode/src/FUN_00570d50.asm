@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c4084
-;   undefined1* PTR_LAB_005c4094 = 00570eb0
+;   undefined1* PTR_FUN_005c4094 = 00570eb0
 ;   undefined4 DAT_005c40c8
 ;   undefined4 DAT_005c40cc
 ;   undefined4 DAT_005c40d0
@@ -154,7 +154,7 @@ section .text
     FADDP                               ; 00570e9f
     FLD extended double ptr [ECX + 0x5c410c] ; 00570ea1 | DAT_005c410c
     FADDP                               ; 00570ea7
-    JMP dword ptr [EDX*0x4 + 0x5c4094]  ; 00570ea9 | PTR_LAB_005c4094
+    JMP dword ptr [EDX*0x4 + 0x5c4094]  ; 00570ea9 | PTR_FUN_005c4094
     FLD extended double ptr [ESP]       ; 00570f40
         ;   Label: LAB_00570f40
     FLD extended double ptr [ESP + 0xc] ; 00570f43

@@ -21,9 +21,9 @@
 ;   TerminatedCString s_CBattery_00586d00
 ;   TerminatedCString s_core_inv_cpp_00586d09
 ;   TerminatedCString s_getModel_Can_t_classify_00586d19
-;   undefined4 DAT_007641f4
-;   undefined4 DAT_007646ac
-;   undefined4 DAT_00764838
+;   undefined4 CDemonActorType_007641bc.name_hash
+;   undefined4 CDemonActorType_00764674.name_hash
+;   undefined4 CDemonActorType_00764800.name_hash
 ;   undefined4 DAT_01c08cc4
 ;   ... and 7 more
 ;
@@ -114,7 +114,7 @@ section .text
     TEST EAX,EAX                        ; 004bec06
     JZ 0x004bec6a                       ; 004bec08
         ;   XREF to: 004bec6a (CONDITIONAL_JUMP)  ; LAB_004bec6a
-    MOV ESI,dword ptr [0x007646ac]      ; 004bec0a | DAT_007646ac
+    MOV ESI,dword ptr [0x007646ac]      ; 004bec0a | CDemonActorType_00764674.name_hash
     PUSH ESI                            ; 004bec10
         ;   Label: LAB_004bec10
     PUSH EBX                            ; 004bec11
@@ -133,7 +133,7 @@ section .text
     PUSH EBP                            ; 004bec2a
     JMP 0x004bec11                      ; 004bec2b
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV EDI,dword ptr [0x007641f4]      ; 004bec2d | DAT_007641f4
+    MOV EDI,dword ptr [0x007641f4]      ; 004bec2d | CDemonActorType_007641bc.name_hash
         ;   Label: LAB_004bec2d
     PUSH EDI                            ; 004bec33
     JMP 0x004bec11                      ; 004bec34
@@ -142,7 +142,7 @@ section .text
         ;   Label: LAB_004bec36
     JMP 0x004bec10                      ; 004bec3c
         ;   XREF to: 004bec10 (UNCONDITIONAL_JUMP)  ; LAB_004bec10
-    MOV ECX,dword ptr [0x00764838]      ; 004bec3e | DAT_00764838
+    MOV ECX,dword ptr [0x00764838]      ; 004bec3e | CDemonActorType_00764800.name_hash
         ;   Label: LAB_004bec3e
     PUSH ECX                            ; 004bec44
     JMP 0x004bec11                      ; 004bec45

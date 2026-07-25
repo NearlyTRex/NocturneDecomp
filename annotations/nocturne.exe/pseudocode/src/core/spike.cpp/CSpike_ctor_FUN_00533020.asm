@@ -4,6 +4,9 @@
 ; int core_spike_cpp_CSpike_ctor_FUN_00533020(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00532ff0 at 00533003
+;
 ; Referenced Globals:
 ;   TerminatedCString s_bgate_kfm_00595011
 ;   TerminatedCString s_none_0059501b

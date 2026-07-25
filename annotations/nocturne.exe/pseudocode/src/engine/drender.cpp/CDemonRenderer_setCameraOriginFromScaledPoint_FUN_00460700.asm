@@ -7,7 +7,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[12]:
+; XREF[13]:
+;   FUN_00511d80 at 00511e29
 ;   FUN_005125a0 at 00512d93
 ;   FUN_00513720 at 005137b1
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 00440498
@@ -17,8 +18,7 @@
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_004d6610 at 004d6620
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 at 004df05d
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec77
-;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 at 0050e19f
-;   ... and 2 more
+;   ... and 3 more
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057dc05 = 256

@@ -4,6 +4,9 @@
 ; int core_curtain_cpp_CCurtain_ctor_FUN_0043d960(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0043d930 at 0043d943
+;
 ; Referenced Globals:
 ;   TerminatedCString s_SGLASS_RAW_0057b4c7
 ;   undefined4 s_SGLASS_RAW_0057b4c7+1

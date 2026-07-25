@@ -17,11 +17,11 @@
 ;   double DOUBLE_00577809 = 0.5
 ;   double DOUBLE_00577811 = 10
 ;   void* PTR_DAT_005ad350 = 0077ad0c
-;   undefined4 DAT_005b96c4
+;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_00765a98
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_0077bd78
+;   undefined4 CDemonActorType_0077bd40.name_hash
 ;   undefined4 DAT_01c7068c
 ;   undefined4 DAT_01c78c78
 ;   undefined4 DAT_01e57284
@@ -171,7 +171,7 @@ section .text
         ;   Label: LAB_0040b4df
     JZ 0x0040b4bd                       ; 0040b4e6
         ;   XREF to: 0040b4bd (CONDITIONAL_JUMP)  ; LAB_0040b4bd
-    MOV EAX,[0x00765a98]                ; 0040b4e8 | DAT_00765a98
+    MOV EAX,[0x00765a98]                ; 0040b4e8 | CDemonActorType_00765a60.name_hash
     PUSH EAX                            ; 0040b4ed
     MOV EDX,dword ptr [ESP + 0x280]     ; 0040b4ee
     PUSH EDX                            ; 0040b4f5
@@ -247,7 +247,7 @@ section .text
     PUSH EAX                            ; 0040b5d9
     LEA EAX,[ESP + 0x1e4]               ; 0040b5da
     PUSH EAX                            ; 0040b5e1
-    MOV ECX,dword ptr [0x005b96c4]      ; 0040b5e2 | DAT_005b96c4
+    MOV ECX,dword ptr [0x005b96c4]      ; 0040b5e2 | INT_005b96c4
     PUSH ECX                            ; 0040b5e8
     CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 ; 0040b5e9
         ;   XREF to: 004b0200 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200()
@@ -479,7 +479,7 @@ section .text
     SAHF                                ; 0040b84f
     JC 0x0040b7b9                       ; 0040b850
         ;   XREF to: 0040b7b9 (CONDITIONAL_JUMP)  ; LAB_0040b7b9
-    MOV ECX,dword ptr [0x00765a98]      ; 0040b856 | DAT_00765a98
+    MOV ECX,dword ptr [0x00765a98]      ; 0040b856 | CDemonActorType_00765a60.name_hash
     MOV EAX,[0x005be368]                ; 0040b85c | DAT_005be368
     PUSH ECX                            ; 0040b861
     MOV EDI,dword ptr [EAX + 0x14cd5c]  ; 0040b862 | DAT_01fa3fe0
@@ -518,7 +518,7 @@ section .text
         ;   XREF to: 0040d890 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040d890()
     MOV dword ptr [ESP + 0x288],EAX     ; 0040b8c6
     ADD ESP,0x8                         ; 0040b8cd
-    MOV ECX,dword ptr [0x0077bd78]      ; 0040b8d0 | DAT_0077bd78
+    MOV ECX,dword ptr [0x0077bd78]      ; 0040b8d0 | CDemonActorType_0077bd40.name_hash
     MOV dword ptr [ESP + 0x260],EAX     ; 0040b8d6
     MOV EAX,[0x005be368]                ; 0040b8dd | DAT_005be368
     PUSH ECX                            ; 0040b8e2

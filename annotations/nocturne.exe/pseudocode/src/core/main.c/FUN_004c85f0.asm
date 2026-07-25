@@ -799,7 +799,7 @@ section .text
     CALL engine_ncursfx.cpp_CMouse_load_FUN_004ee5a0 ; 004c8d2c
         ;   XREF to: 004ee5a0 (UNCONDITIONAL_CALL)  ; undefined engine_ncursfx.cpp_CMouse_load_FUN_004ee5a0()
     ADD ESP,0x4                         ; 004c8d31
-    MOV ECX,dword ptr [0x005b9284]      ; 004c8d34 | DAT_005b9284
+    MOV ECX,dword ptr [0x005b9284]      ; 004c8d34 | INT_005b9284
     PUSH ECX                            ; 004c8d3a
     CALL FUN_004940d0                   ; 004c8d3b
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()

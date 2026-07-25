@@ -4,7 +4,8 @@
 ; int __cdecl core_dest_cpp_CActorDestination_ctor_FUN_0044b7a0(undefined4 param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_0044b770 at 0044b783
 ;   core_filmreel.cpp_CFilmProjector_ctor_FUN_00481f10 at 00481f18
 ;
 ; Referenced Globals:

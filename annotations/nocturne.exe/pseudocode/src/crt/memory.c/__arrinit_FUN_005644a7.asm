@@ -8,18 +8,18 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[53]:
+; XREF[76]:
 ;   FUN_00418630 at 00418650
-;   FUN_00473190 at 004731b4
-;   FUN_0048eef0 at 0048ef10
-;   FUN_00498de0 at 00498e13
-;   FUN_004abb50 at 004abb7a
-;   FUN_004accf0 at 004acd22
-;   FUN_004ada20 at 004ada62
-;   FUN_004c9430 at 004c9477
-;   FUN_004c9580 at 004c9924
-;   FUN_004fda20 at 004fda53
-;   ... and 43 more
+;   FUN_0041e260 at 0041e28f
+;   FUN_0043d8e0 at 0043d8ec
+;   FUN_0043f9c0 at 0043f9cf
+;   FUN_00448410 at 0044841c
+;   FUN_0044bc20 at 0044bc2c
+;   FUN_00452530 at 0045253f
+;   FUN_00458580 at 004585f6
+;   FUN_004671c0 at 004671cf
+;   FUN_0046c250 at 0046c25c
+;   ... and 66 more
 ;
 ; *****************************************************************************
 

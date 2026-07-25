@@ -122,7 +122,7 @@ section .text
     TEST EAX,EAX                        ; 004a0604
     JZ 0x004a0568                       ; 004a0606
         ;   XREF to: 004a0568 (CONDITIONAL_JUMP)  ; LAB_004a0568
-    MOV EBX,dword ptr [0x005bac64]      ; 004a060c | DAT_005bac64
+    MOV EBX,dword ptr [0x005bac64]      ; 004a060c | INT_005bac64
     PUSH EBX                            ; 004a0612 | DAT_01cc30e4
     CALL engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004c41d0 ; 004a0613
         ;   XREF to: 004c41d0 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004c41d0()
@@ -2251,7 +2251,7 @@ section .text
         ;   XREF to: 004a1df4 (UNCONDITIONAL_JUMP)  ; LAB_004a1df4
     PUSH 0x44                           ; 004a1e3e
         ;   Label: LAB_004a1e3e
-    MOV EAX,[0x005bac64]                ; 004a1e40 | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004a1e40 | INT_005bac64
     PUSH EAX                            ; 004a1e45 | DAT_01cc30e4
     MOV EBX,dword ptr [EAX]             ; 004a1e46 | DAT_01cc30e4
     CALL dword ptr [EBX + 0x4]          ; 004a1e48
@@ -2501,7 +2501,7 @@ section .text
         ;   XREF to: 004a1bdb (UNCONDITIONAL_JUMP)  ; LAB_004a1bdb
     PUSH 0x1d                           ; 004a213a
         ;   Label: LAB_004a213a
-    MOV EAX,[0x005bac64]                ; 004a213c | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004a213c | INT_005bac64
     PUSH EAX                            ; 004a2141 | DAT_01cc30e4
     MOV EBX,dword ptr [EAX]             ; 004a2142 | DAT_01cc30e4
     CALL dword ptr [EBX]                ; 004a2144
@@ -2510,7 +2510,7 @@ section .text
     JZ 0x004a2165                       ; 004a214b
         ;   XREF to: 004a2165 (CONDITIONAL_JUMP)  ; LAB_004a2165
     PUSH 0x13                           ; 004a214d
-    MOV EAX,[0x005bac64]                ; 004a214f | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004a214f | INT_005bac64
     PUSH EAX                            ; 004a2154 | DAT_01cc30e4
     MOV EBX,dword ptr [EAX]             ; 004a2155 | DAT_01cc30e4
     CALL dword ptr [EBX + 0x4]          ; 004a2157

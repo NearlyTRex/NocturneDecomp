@@ -4,7 +4,8 @@
 ; void __cdecl shape_spotview_cpp_CSpotView_reset_FUN_00534260(undefined4 *param_1,uint param_2)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_005342b0 at 00534577
 ;   shape_spotview.cpp_CSpotView_ctor_FUN_00534200 at 00534252
 ;
 ; *****************************************************************************

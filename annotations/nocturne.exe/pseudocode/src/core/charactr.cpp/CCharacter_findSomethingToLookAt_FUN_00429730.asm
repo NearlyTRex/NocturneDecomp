@@ -22,7 +22,7 @@
 ;   double DOUBLE_0057a30a = 20
 ;   float FLOAT_0057a312 = -1
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_00765a98
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -436,7 +436,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00429bcc
         ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
     ADD ESP,0xc                         ; 00429bd1
-    MOV EBX,dword ptr [0x00765a98]      ; 00429bd4 | DAT_00765a98
+    MOV EBX,dword ptr [0x00765a98]      ; 00429bd4 | CDemonActorType_00765a60.name_hash
     PUSH EBX                            ; 00429bda
     MOV EDI,dword ptr [ESI + 0x25c8]    ; 00429bdb
     PUSH EDI                            ; 00429be1

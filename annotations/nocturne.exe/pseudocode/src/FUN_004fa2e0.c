@@ -170,8 +170,8 @@ void FUN_004fa2e0(int *param_1,int param_2)
        (puVar4 = (uint *)engine_prim_c_findEdgeInBuffer_FUN_004f9830(_DAT_01e52eec),
        puVar4 != (uint *)0x0)) {
       local_18 = _DAT_01e52eec;
-      iVar3 = _DAT_01e52eec - 0x000004B0;
-      bVar13 = SBORROW4(_DAT_01e52eec,0x000004B0);
+      iVar3 = _DAT_01e52eec - INT_005be1e4;
+      bVar13 = SBORROW4(_DAT_01e52eec,INT_005be1e4);
       while (bVar13 != iVar3 < 0) {
         if ((int)local_14[1] <= local_18) {
           *local_14 = 0xffffffff;
@@ -197,7 +197,7 @@ void FUN_004fa2e0(int *param_1,int param_2)
         *(int *)(local_18 + 0x30) = *(int *)(local_18 + 0x30) + *(int *)(local_18 + 0x34);
         puVar4[2] = puVar4[2] + puVar4[3];
         puVar4[6] = puVar4[6] + puVar4[7];
-        iVar9 = 0x000004B0;
+        iVar9 = INT_005be1e4;
         puVar4[8] = puVar4[8] + puVar4[9];
         puVar4[4] = puVar4[4] + puVar4[5];
         puVar4[10] = puVar4[10] + puVar4[0xb];

@@ -4,6 +4,9 @@
 ; int FUN_00477710(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004776e0 at 004776f3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_elephantgun_kfm_0057f109
 ;   undefined4 DAT_0059cb2c

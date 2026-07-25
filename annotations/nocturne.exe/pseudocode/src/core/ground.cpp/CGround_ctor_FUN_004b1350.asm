@@ -4,6 +4,9 @@
 ; void core_ground_cpp_CGround_ctor_FUN_004b1350(int *param_1,int param_2,int param_3)
 ;
 ;
+; XREF[1]:
+;   FUN_004b1060 at 004b106f
+;
 ; *****************************************************************************
 
 section .text

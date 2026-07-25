@@ -4,7 +4,8 @@
 ; void sound_sndmain_cpp_set3DListenerOrient_FUN_00527690(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,undefined4 param_10,undefined4 param_11,undefined4 param_12,undefined4 param_13,undefined4 param_14,undefined4 param_15,undefined4 param_16,undefined4 param_17,undefined4 param_18)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00527d80 at 00527df2
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e937
 ;   core_sound.cpp_updateListeners_FUN_0052c9d0 at 0052cc2f
 ;

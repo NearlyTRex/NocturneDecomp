@@ -238,7 +238,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(int param_
       if ((param_1 == iVar8) && (local_c8 < 1.0)) {
         core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
                   (iVar8,auStack_c4,0x01E57284 + 0x14cd40);
-        FUN_004940d0(0x01C70F74,auStack_c4[0],uStack_bc);
+        FUN_004940d0(INT_005b9284,auStack_c4[0],uStack_bc);
       }
       if (*(float *)(param_1 + 0x24) < *(float *)(param_1 + 0x240c)) {
         *(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x240c);

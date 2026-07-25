@@ -6,8 +6,10 @@
 ; Local Variables:
 ; undefined        Stack[-0x14]:1  local_14
 ;
-; XREF[2]:
+; XREF[4]:
+;   FUN_004d5fe0 at 004d5ff3
 ;   FUN_004d60b0 at 004d60b5
+;   FUN_004f5d60 at 004f5d73
 ;   core_conveyor.cpp_CConveyor_ctor_FUN_0043b050 at 0043b057
 ;
 ; Referenced Globals:

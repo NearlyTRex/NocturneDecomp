@@ -4,7 +4,8 @@
 ; void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_004f3fc0(int param_1,undefined4 param_2)
 ;
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_004f5110 at 004f518b
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40 at 004f4e58
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630 at 004f464b
 ;

@@ -17,14 +17,14 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(int param_1,uint param_2)
   int iVar4;
   int iVar5;
   int iVar6;
-  uint *puVar7;
+  int *piVar7;
   char *pcVar8;
-  uint *puVar9;
+  int *piVar9;
   char *pcVar10;
   byte bVar11;
   byte local_1dc [256];
-  uint local_dc [25];
-  char local_78 [100];
+  int local_dc [25];
+  uint local_78;
   int local_14;
   
   bVar11 = 0;
@@ -46,23 +46,23 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(int param_1,uint param_2)
   iVar5 = param_1;
   if (0 < *(int *)(param_1 + 8)) {
     do {
-      puVar7 = &DAT_005bab68;
-      puVar9 = local_dc;
+      piVar7 = &INT_005bab68;
+      piVar9 = local_dc;
       for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar9 = *puVar7;
-        puVar7 = puVar7 + (uint)bVar11 * -2 + 1;
-        puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
+        *piVar9 = *piVar7;
+        piVar7 = piVar7 + (uint)bVar11 * -2 + 1;
+        piVar9 = piVar9 + (uint)bVar11 * -2 + 1;
       }
-      puVar7 = &DAT_005babd0;
-      pcVar8 = local_78;
+      piVar7 = &INT_005babd0;
+      piVar9 = &local_78;
       for (iVar4 = 0x19; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *(uint *)pcVar8 = *puVar7;
-        puVar7 = puVar7 + (uint)bVar11 * -2 + 1;
-        pcVar8 = pcVar8 + ((uint)bVar11 * -2 + 1) * 4;
+        *piVar9 = *piVar7;
+        piVar7 = piVar7 + (uint)bVar11 * -2 + 1;
+        piVar9 = piVar9 + (uint)bVar11 * -2 + 1;
       }
-      _fscanf(param_2," %s \"%[^\"]\"\n",local_dc,local_78);
+      _fscanf(param_2," %s \"%[^\"]\"\n",local_dc,&local_78);
       if (*(int *)(0x01CC9450 + 0xc) == 0) {
-        pcVar8 = local_78;
+        pcVar8 = (char *)&local_78;
         pcVar3 = (char *)core_actor_cpp_createActorByName_FUN_0040d540(local_dc);
         pcVar10 = pcVar3;
         do {
@@ -78,7 +78,7 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(int param_1,uint param_2)
       }
       else {
         uVar2 = core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004d8640
-                          (0x01CC9450,local_78);
+                          (0x01CC9450,&local_78);
         *(uint *)(iVar5 + 0xc) = uVar2;
       }
       iVar6 = iVar6 + 1;

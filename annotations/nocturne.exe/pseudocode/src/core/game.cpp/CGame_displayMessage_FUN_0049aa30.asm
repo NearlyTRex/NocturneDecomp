@@ -4,8 +4,9 @@
 ; void __cdecl core_game_cpp_CGame_displayMessage_FUN_0049aa30(int param_1,char *param_2,undefined4 param_3)
 ;
 ;
-; XREF[8]:
+; XREF[9]:
 ;   FUN_0049f930 at 0049fc97
+;   FUN_004a0430 at 004a04b5
 ;   core_door.cpp_CDoor_getMoveType_FUN_004564b0 at 0045651a
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a05b9
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bfed3

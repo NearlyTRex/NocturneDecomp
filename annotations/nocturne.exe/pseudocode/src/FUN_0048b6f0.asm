@@ -166,7 +166,7 @@
 ;   double DOUBLE_005814e4 = 0.25
 ;   double DOUBLE_005814ec = -1
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_00765a98
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa3fc4
 ;   undefined4 DAT_01fa3fc8
@@ -404,7 +404,7 @@ section .text
     CMP dword ptr [EBX + 0x18],0x0      ; 0048b96f
     JZ 0x0048b9b2                       ; 0048b973
         ;   XREF to: 0048b9b2 (CONDITIONAL_JUMP)  ; LAB_0048b9b2
-    MOV EDX,dword ptr [0x00765a98]      ; 0048b975 | DAT_00765a98
+    MOV EDX,dword ptr [0x00765a98]      ; 0048b975 | CDemonActorType_00765a60.name_hash
     PUSH EDX                            ; 0048b97b
     PUSH EDI                            ; 0048b97c
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 0048b97d

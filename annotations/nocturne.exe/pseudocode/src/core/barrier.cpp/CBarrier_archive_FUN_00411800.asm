@@ -8,7 +8,7 @@
 ;   TerminatedCString s_size_00578750
 ;   TerminatedCString s_effectClassNameList_00578755
 ;   TerminatedCString s_addToPathGrid_00578769
-;   undefined4 DAT_005acf80
+;   int INT_005acf80 = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveInteger_FUN_0040c900
@@ -32,7 +32,7 @@ section .text
     PUSH EAX                            ; 00411819
     CALL core_actor.cpp_archiveVector_FUN_0040c450 ; 0041181a
         ;   XREF to: 0040c450 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveVector_FUN_0040c450()
-    MOV EDX,dword ptr [0x005acf80]      ; 0041181f | DAT_005acf80
+    MOV EDX,dword ptr [0x005acf80]      ; 0041181f | INT_005acf80
     ADD ESP,0x8                         ; 00411825
     CMP EDX,0x2                         ; 00411828
     JGE 0x0041182f                      ; 0041182b

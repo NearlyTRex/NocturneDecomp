@@ -4,7 +4,8 @@
 ; void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(int param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
-; XREF[23]:
+; XREF[24]:
+;   FUN_0045f270 at 0045f321
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f090 at 0045f130
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_0045f700 at 0045f73b
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0045f8d0 at 0045f951
@@ -14,8 +15,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0 at 0045fa51
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190 at 0045f1f2
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendDirect_FUN_0045fe40 at 0045feb9
-;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20 at 0045ffce
-;   ... and 13 more
+;   ... and 14 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057db72

@@ -4,6 +4,9 @@
 ; int core_marquee_cpp_CMarquee_ctor_FUN_004cc0e0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004cc0b0 at 004cc0c3
+;
 ; Referenced Globals:
 ;   TerminatedCString s_menu1_pth_00588193
 ;   undefined4 s_menu1_pth_00588193+1

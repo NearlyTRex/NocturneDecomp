@@ -245,7 +245,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
         iVar7 = iVar7 + -1;
       }
       uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                        (acStack_2e1 + 1,DAT_00763e80,&DAT_00763e48);
+                        (acStack_2e1 + 1,CDemonActorType_00763e48.name_hash,
+                         &CDemonActorType_00763e48);
       if ((uVar6 == 0) || (uVar6 == 0x0FFFFFFF)) {
         local_dc = 0;
       }
@@ -600,7 +601,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
               }
               else {
                 uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                  (local_600,DAT_00765a98,&DAT_00765a60);
+                                  (local_600,CDemonActorType_00765a60.name_hash,
+                                   &CDemonActorType_00765a60);
                 if (uVar6 != 0) {
                   if (uVar6 == 0x0FFFFFFF) {
                     local_dc = 0;
@@ -791,7 +793,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                     iVar7 = iVar7 + -1;
                   }
                   uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                    (acStack_40d + 1,DAT_00763e80,&DAT_00763e48);
+                                    (acStack_40d + 1,CDemonActorType_00763e48.name_hash,
+                                     &CDemonActorType_00763e48);
                   if (uVar6 != 0) {
                     if (uVar6 == 0x0FFFFFFF) {
                       local_dc = 0;
@@ -875,10 +878,12 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                   iVar7 = iVar7 + -1;
                 }
                 uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                  (acStack_4d5 + 1,DAT_00763e80,&DAT_00763e48);
+                                  (acStack_4d5 + 1,CDemonActorType_00763e48.name_hash,
+                                   &CDemonActorType_00763e48);
                 if ((uVar6 == 0) ||
                    (uVar10 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                       (local_3a9 + 1,DAT_00763e80,&DAT_00763e48), uVar10 == 0)) {
+                                       (local_3a9 + 1,CDemonActorType_00763e48.name_hash,
+                                        &CDemonActorType_00763e48), uVar10 == 0)) {
                   return 0xffffffff;
                 }
                 *param_3 = *param_3 + local_60;
@@ -1102,7 +1107,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                           return 0xffffffff;
                         }
                         local_dc = core_event_cpp_resolveActorByName_FUN_0047a390
-                                             (local_27c,DAT_00765a98,&DAT_00765a60);
+                                             (local_27c,CDemonActorType_00765a60.name_hash,
+                                              &CDemonActorType_00765a60);
                         if (local_dc == 0) {
                           return 0xffffffff;
                         }
@@ -1140,7 +1146,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                           }
                           else {
                             local_b4 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                                 (local_1b4,DAT_00765a98,&DAT_00765a60);
+                                                 (local_1b4,CDemonActorType_00765a60.name_hash,
+                                                  &CDemonActorType_00765a60);
                             if (local_b4 != 0) {
                               local_dc = 0;
                               if (local_b4 != 0x0FFFFFFF) {
@@ -1285,7 +1292,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                               }
                               else {
                                 uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                                  (local_664,DAT_00765a98,&DAT_00765a60);
+                                                  (local_664,CDemonActorType_00765a60.name_hash,
+                                                   &CDemonActorType_00765a60);
                                 if (uVar6 != 0) {
                                   if (uVar6 == 0x0FFFFFFF) {
                                     local_dc = 0;

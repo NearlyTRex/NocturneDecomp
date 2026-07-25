@@ -16,7 +16,7 @@
 ;   TerminatedCString s_Hell_froze_00596b85
 ;   float FLOAT_00596b93 = 0.5
 ;   double DOUBLE_00596b97 = 0.25
-;   undefined4 DAT_00765a98
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;   undefined4 DAT_01cc4800
 ;   undefined4 DAT_01cc4804
 ;
@@ -175,7 +175,7 @@ section .text
     POP ESI                             ; 00548937
     POP EBX                             ; 00548938
     RET                                 ; 00548939
-    MOV ECX,dword ptr [0x00765a98]      ; 0054893a | DAT_00765a98
+    MOV ECX,dword ptr [0x00765a98]      ; 0054893a | CDemonActorType_00765a60.name_hash
         ;   Label: LAB_0054893a
     PUSH ECX                            ; 00548940
     PUSH ESI                            ; 00548941

@@ -4,7 +4,8 @@
 ; void __cdecl core_game_cpp_giveHeroWeapon_FUN_004a02e0(undefined4 param_1)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_004a0430 at 004a049c
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a13f8
 ;
 ; Referenced Globals:

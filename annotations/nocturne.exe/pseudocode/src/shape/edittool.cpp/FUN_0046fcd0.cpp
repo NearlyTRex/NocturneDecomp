@@ -43,7 +43,7 @@ void FUN_0046fcd0(uint param_1,uint param_2)
              ((_DAT_01c00c5c + _DAT_01c00c64) - iVar3) / 2,_DAT_01bcddd4,0xffffffff);
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   engine_2d_c_clearInputAndWait_FUN_00403f50();
-  engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(0x01CC30E4);
+  engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(INT_005bac64);
   FUN_004720c0(param_1);
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   engine_2d_c_clearInputAndWait_FUN_00403f50();

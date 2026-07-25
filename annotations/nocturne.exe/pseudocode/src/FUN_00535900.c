@@ -759,7 +759,8 @@ switchD_005371ce_caseD_6:
   iVar5 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660();
   if ((*(int *)(iVar5 + 0x24) == 0x1b) &&
      (iStack_78 = core_actor_cpp_castToClassHash_FUN_0040d890
-                            (*(uint *)(param_1 + 0x1fa08),DAT_00764230), iStack_78 != 0)) {
+                            (*(uint *)(param_1 + 0x1fa08),CDemonActorType_007641f8.name_hash),
+     iStack_78 != 0)) {
     fStack_14 = (float)core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60();
     core_ammobox_cpp_CAmmoBox_openBox_FUN_0040f130(iStack_78,fStack_14);
   }
@@ -1055,7 +1056,8 @@ LAB_00536144:
     fStack_14 = (float)core_motion_cpp_CMotionController_frameToMarkerPosition_FUN_004e1e60();
     if ((1.0 < fStack_14) &&
        (iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(param_1 + 0x1fa0c),DAT_00764838), iVar5 != 0)) {
+                          (*(uint *)(param_1 + 0x1fa0c),CDemonActorType_00764800.name_hash),
+       iVar5 != 0)) {
       FUN_00538440(param_1,auStack_184);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,afStack_118,auStack_184);
       uStack_1e0 = 0;

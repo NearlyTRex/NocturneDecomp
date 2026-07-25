@@ -10,6 +10,7 @@ void FUN_004120a0(void)
 
 {
   core_actor_cpp_registerActorClass_FUN_0040d3f0
-            (&DAT_007645cc,"CBatCreature",FUN_004120d0,&DAT_005acfa4,1,0x1bcdebc);
+            (&CDemonActorType_007645cc,"CBatCreature",FUN_004120d0,&INT_005acfa4,1,
+             (CDemonActorType *)0x1bcdebc);
   return;
 }

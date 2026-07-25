@@ -1,0 +1,271 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 6,
+    "complexity_score": 73,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 6,
+    "suspect_types": [
+      "register_param"
+    ],
+    "total_lines": 14
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00481ae4",
+    "address_range": [
+      [
+        "00481ae4",
+        "00481af0"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00481ae4",
+    "signature": "void FUN_00481ae4(void)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.8,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "COPY": 4,
+      "INT_ADD": 4,
+      "LOAD": 3,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 14
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "static_analysis": {
+    "analyzed_file": "FUN_00481ae4.c",
+    "cppcheck_quick": {
+      "diagnostic_count": 2,
+      "diagnostics": [
+        {
+          "check_id": "uninitvar",
+          "column": 13,
+          "line": 15,
+          "message": "Uninitialized variable: in_ECX",
+          "severity": "error"
+        },
+        {
+          "check_id": "uninitvar",
+          "column": 37,
+          "line": 15,
+          "message": "Uninitialized variable: in_EDX",
+          "severity": "error"
+        }
+      ],
+      "error": null
+    },
+    "file_variant": "raw"
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "uint *in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uint *in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(byte *)(in_ECX + 1) = *(byte *)(in_EDX + 1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "*(byte *)(in_ECX + 1) = *(byte *)(in_EDX + 1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*in_ECX = *in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "*in_ECX = *in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Uninitialized variable: in_ECX",
+      "line": 15,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*(byte *)(in_ECX + 1) = *(byte *)(in_EDX + 1);",
+      "type": "static_uninitvar"
+    },
+    {
+      "description": "Uninitialized variable: in_EDX",
+      "line": 15,
+      "match": "Cppcheck: uninitialized variable",
+      "severity": "major",
+      "text": "*(byte *)(in_ECX + 1) = *(byte *)(in_EDX + 1);",
+      "type": "static_uninitvar"
+    }
+  ]
+}

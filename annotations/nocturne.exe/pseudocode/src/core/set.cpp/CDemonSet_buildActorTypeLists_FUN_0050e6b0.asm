@@ -9,7 +9,7 @@
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0 at 004d8f32
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00765a98
+;   undefined4 CDemonActorType_00765a60.name_hash
 ;   undefined4 DAT_01bcdef4
 ;   undefined4 DAT_02dd10bc
 ;   undefined4 DAT_02ddf54c
@@ -50,7 +50,7 @@ section .text
         ;   Label: LAB_0050e714
     MOV dword ptr [EBX + EAX*0x4 + 0x158908],ESI ; 0050e71a
     INC dword ptr [EBX + 0x158904]      ; 0050e721
-    MOV EAX,[0x00765a98]                ; 0050e727 | DAT_00765a98
+    MOV EAX,[0x00765a98]                ; 0050e727 | CDemonActorType_00765a60.name_hash
         ;   Label: LAB_0050e727
     PUSH EAX                            ; 0050e72c
     PUSH ESI                            ; 0050e72d

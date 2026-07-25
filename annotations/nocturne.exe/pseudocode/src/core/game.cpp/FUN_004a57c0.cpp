@@ -164,11 +164,12 @@ void FUN_004a57c0(int param_1)
         }
         iVar4 = wincore_winrun_cpp_wasKeyPressed_FUN_00558b70();
       } while (((iVar4 == 0) &&
-               (iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,*(uint *)(param_1 + 0x48)),
-               iVar4 == 0)) && (_DAT_01bd1d94 == 0));
+               (iVar4 = (*(code *)**(uint **)INT_005bac64)
+                                  (INT_005bac64,*(uint *)(param_1 + 0x48)), iVar4 == 0)) &&
+              (_DAT_01bd1d94 == 0));
       while ((_DAT_01bd1d94 != 0 ||
-             (iVar4 = (**(code **)*0x01CC30E4)(0x01CC30E4,*(uint *)(param_1 + 0x48)),
-             iVar4 != 0))) {
+             (iVar4 = (*(code *)**(uint **)INT_005bac64)
+                                (INT_005bac64,*(uint *)(param_1 + 0x48)), iVar4 != 0))) {
         if (*(int *)(param_1 + 0xbc) == 2) {
           core_game_cpp_CGame_resetKeyState_FUN_0049e8b0(param_1);
           wincore_wddvmem_cpp_swapBuffers_FUN_00553910();

@@ -4,8 +4,10 @@
 ; void __cdecl sound_sndmain_cpp_enableSfxChannel_FUN_00527410(int param_1,int param_2)
 ;
 ;
-; XREF[4]:
+; XREF[6]:
+;   FUN_00527d80 at 00527d94
 ;   FUN_005289f0 at 00528bf3
+;   FUN_0052dd90 at 0052dda5
 ;   FUN_0052dff0 at 0052e251
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1cd1
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052de96

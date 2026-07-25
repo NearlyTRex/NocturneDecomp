@@ -12,7 +12,7 @@
 ;   undefined1 DAT_005c18a0
 ;   undefined4 DAT_005c18ae
 ;   undefined1 DAT_005c18ba
-;   undefined4 DAT_005c1a9c
+;   undefined1 DAT_005c1a9c
 ;   void* PTR_FUN_005c1ad0 = 005671e4
 ;   void* PTR_FUN_005c1ad4 = 005671e4
 ;   undefined4 DAT_02de4e20

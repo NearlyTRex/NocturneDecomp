@@ -4,7 +4,8 @@
 ; undefined4 __cdecl engine_dosio_cpp_findFile_FUN_004567a0(undefined4 param_1)
 ;
 ;
-; XREF[3]:
+; XREF[4]:
+;   FUN_00456b20 at 00456ba8
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0 at 004568e6
 ;   engine_dosio.cpp_getFileTimestamp_FUN_00456910 at 00456936
 ;   engine_dosio.cpp_getFile_FUN_00456a60 at 00456ad7

@@ -167,7 +167,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(int
     uStack_c4 = 0x40b00000;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&fStack_8c,&uStack_c8);
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(param_1 + 0x25c8),DAT_00765a98);
+                      (*(uint *)(param_1 + 0x25c8),CDemonActorType_00765a60.name_hash);
     if (iVar1 == 0) {
       _DAT_01cc4800 = "..\\core\\charactr.cpp";
       _DAT_01cc4804 = 0xdb4;

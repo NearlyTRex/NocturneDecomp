@@ -9,7 +9,7 @@
 ;   TerminatedCString s_ladderSize_00587752
 ;   TerminatedCString s_masterActor_0058775d
 ;   TerminatedCString s_groundType_00587769
-;   undefined4 DAT_005bac68
+;   int INT_005bac68 = 0x2
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040c980
@@ -51,7 +51,7 @@ section .text
     PUSH EBX                            ; 004c453a
     CALL FUN_004c46b0                   ; 004c453b
         ;   XREF to: 004c46b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004c46b0()
-    MOV EDX,dword ptr [0x005bac68]      ; 004c4540 | DAT_005bac68
+    MOV EDX,dword ptr [0x005bac68]      ; 004c4540 | INT_005bac68
     ADD ESP,0x4                         ; 004c4546
     CMP EDX,0x2                         ; 004c4549
     JGE 0x004c4550                      ; 004c454c

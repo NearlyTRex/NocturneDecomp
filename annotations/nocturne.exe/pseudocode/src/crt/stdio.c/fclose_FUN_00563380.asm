@@ -4,18 +4,18 @@
 ; undefined4 __cdecl crt_stdio_c_fclose_FUN_00563380(int param_1)
 ;
 ;
-; XREF[64]:
+; XREF[82]:
 ;   FUN_00401010 at 004010de
+;   FUN_0042eb90 at 0042ed7a
+;   FUN_0042ee00 at 0042ef4f
+;   FUN_00430210 at 004302a4
 ;   FUN_00446810 at 00446dee
+;   FUN_0044b660 at 0044b6f8
+;   FUN_0044d550 at 0044d5e9
 ;   FUN_00467890 at 004678bf
-;   FUN_0049cc10 at 0049d82c
-;   FUN_0049f930 at 004a0008
-;   FUN_004a3b90 at 004a3e03
-;   FUN_004a4170 at 004a43cd
-;   FUN_004a4b50 at 004a4bf1
-;   FUN_004a57c0 at 004a58b4
-;   FUN_004c85f0 at 004c8653
-;   ... and 54 more
+;   FUN_00490210 at 00490369
+;   FUN_0049a320 at 0049a5ec
+;   ... and 72 more
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1ad0 = 005671e4

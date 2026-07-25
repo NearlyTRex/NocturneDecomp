@@ -1,0 +1,266 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 166,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 168,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 153,
+        "line": 170,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 152,
+        "line": 177,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 76,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 78,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 153,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 160,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 165,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 82,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 93,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 6,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 49
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00494220",
+    "address_range": [
+      [
+        "00494220",
+        "00494255"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "FUN_00494220",
+    "signature": "int * FUN_00494220(int param_1,int *param_2)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c70f78",
+      "name": "DAT_01c70f78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c70f7c",
+      "name": "DAT_01c70f7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c70fb4",
+      "name": "DAT_01c70fb4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 20,
+      "INT_ADD": 7,
+      "INT_AND": 17,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 8,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "LOAD": 6,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 110
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int * FUN_00494220(int param_1,int *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "int * FUN_00494220(int param_1,int *param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_01c70f7c",
+      "severity": "mild",
+      "text": "piVar1 = (int *)&DAT_01c70f7c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1 == *piVar1) && (piVar1 != param_2)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((param_1 == *piVar1) && (piVar1 != param_2)) {",
+      "type": "unnamed_param"
+    }
+  ]
+}

@@ -54,7 +54,7 @@ uint __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_00527e40(void)
     (**(code **)(*_DAT_02dc8318 + 0x20))
               (_DAT_02dc8318,_DAT_02dc78f8,_DAT_02dc78fc,_DAT_02dc7900,_DAT_02dc7904,_DAT_02dc7908,
                _DAT_02dc790c);
-    (**(code **)(*_DAT_02dc8318 + 0x24))(_DAT_02dc8318,DAT_005bea80,0x3FF00000);
+    (**(code **)(*_DAT_02dc8318 + 0x24))(_DAT_02dc8318,DAT_005bea80,DAT_005bea84);
     (**(code **)(*_DAT_02dc8318 + 0x28))(_DAT_02dc8318,_DAT_02dc8498,_DAT_02dc849c,_DAT_02dc84a0);
     _DAT_02dc84c0 = wincore_winrun_cpp_getTime_FUN_00558a30();
     iVar2 = (**(code **)(*_DAT_02dc8318 + 4))(_DAT_02dc8318);

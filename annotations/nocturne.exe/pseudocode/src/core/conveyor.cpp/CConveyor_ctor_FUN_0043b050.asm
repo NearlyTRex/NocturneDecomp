@@ -4,6 +4,9 @@
 ; int core_conveyor_cpp_CConveyor_ctor_FUN_0043b050(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0043b020 at 0043b033
+;
 ; Referenced Globals:
 ;   TerminatedCString s_none_0057b1d4
 ;   undefined4 s_one_0057b1d4+1

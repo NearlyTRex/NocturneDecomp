@@ -8,7 +8,7 @@
 ;   FUN_004cefe0 at 004ceff8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b9284
+;   int INT_005b9284 = 0x1c70f74
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -42,7 +42,7 @@ section .text
     POP EBX                             ; 0040bd16
         ;   Label: LAB_0040bd16
     RET                                 ; 0040bd17
-    MOV EBX,dword ptr [0x005b9284]      ; 0040bd18 | DAT_005b9284
+    MOV EBX,dword ptr [0x005b9284]      ; 0040bd18 | INT_005b9284
         ;   Label: LAB_0040bd18
     PUSH EBX                            ; 0040bd1e
     CALL FUN_004940d0                   ; 0040bd1f
@@ -52,7 +52,7 @@ section .text
     RET                                 ; 0040bd28
     PUSH ESI                            ; 0040bd29
         ;   Label: LAB_0040bd29
-    MOV ESI,dword ptr [0x005b9284]      ; 0040bd2a | DAT_005b9284
+    MOV ESI,dword ptr [0x005b9284]      ; 0040bd2a | INT_005b9284
     PUSH ESI                            ; 0040bd30
     CALL FUN_004940d0                   ; 0040bd31
         ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()

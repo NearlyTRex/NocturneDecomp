@@ -151,7 +151,7 @@ LAB_004bbb59:
                                     (float10)0.25);
         local_3c = (int)ROUND(fVar9);
         core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200
-                  (0x01C78C7C,local_8c,0,local_3c,uVar6,uVar10);
+                  (INT_005b96c4,local_8c,0,local_3c,uVar6,uVar10);
         iVar7 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0x104))
                           (*(int *)(param_1 + 0xbca4));
         if (iVar7 < 1) {
@@ -377,7 +377,7 @@ LAB_004bbb59:
         uVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                           (iVar4,local_f8,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_c8,uVar6);
-        FUN_004b0480(0x01C78C7C,local_c8,0);
+        FUN_004b0480(INT_005b96c4,local_c8,0);
         *(uint *)(param_1 + 0xbc90) = 1;
       }
       break;

@@ -110,7 +110,7 @@ LAB_004a4674:
       } while (cVar1 != '\0');
     }
     core_event_cpp_CEventList_resetGameFlags_FUN_00480410(0x01C03A10);
-    core_level_cpp_CLevelLoader_show_FUN_004c5640(0x01CC3160,9,0,0xffffffff);
+    core_level_cpp_CLevelLoader_show_FUN_004c5640(INT_005baca0,9,0,0xffffffff);
     iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("save",local_534,"rt");
     local_18 = _ftell(iVar3);
     uVar6 = 1;
@@ -271,10 +271,10 @@ LAB_004a43cc:
         core_event_cpp_CEventList_loadState_FUN_00480f70(0x01C03A10,iVar3);
         core_script_cpp_CScript_loadState_FUN_005052c0(0x01E56DA0,iVar3);
         if (local_38 < 4) {
-          core_gore_cpp_CGore_reset_FUN_004afdb0(0x01C78C7C);
+          core_gore_cpp_CGore_reset_FUN_004afdb0(INT_005b96c4);
         }
         else if (local_38 == 4) {
-          core_gore_cpp_CGore_load_FUN_004b0820(0x01C78C7C,iVar3);
+          core_gore_cpp_CGore_load_FUN_004b0820(INT_005b96c4,iVar3);
         }
         if (local_38 < 7) {
           core_fire_cpp_CFireEffect_init_FUN_0048a150(0x01C08D04);

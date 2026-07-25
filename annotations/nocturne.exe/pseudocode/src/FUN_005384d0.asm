@@ -233,7 +233,7 @@ section .text
         ;   XREF to: 005396d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005396d0()
     ADD ESP,0x8                         ; 00538583
     XOR EAX,EAX                         ; 00538586
-    PUSH 0x51b650                       ; 00538588 | LAB_0051b650
+    PUSH 0x51b650                       ; 00538588
     MOV dword ptr [ESP + 0x88],EAX      ; 0053858d
     PUSH -0x1                           ; 00538594
     MOV dword ptr [ESP + 0x94],EAX      ; 00538596
@@ -321,7 +321,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005386d1
     MOVSD ES:EDI,ESI                    ; 005386d2
     MOVSD ES:EDI,ESI                    ; 005386d3
-    PUSH 0x51b650                       ; 005386d4 | LAB_0051b650
+    PUSH 0x51b650                       ; 005386d4
     MOV ESI,dword ptr [0x02dc9f94]      ; 005386d9 | DAT_02dc9f94
     PUSH ESI                            ; 005386df
     LEA EAX,[ESP + 0x1bf8]              ; 005386e0
@@ -338,7 +338,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4e0    ; 00538710
         ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 00538715
-    PUSH 0x51b650                       ; 00538718 | LAB_0051b650
+    PUSH 0x51b650                       ; 00538718
     MOV EAX,[0x02dc9f60]                ; 0053871d | DAT_02dc9f60
     PUSH EAX                            ; 00538722
     PUSH dword ptr [ESP + 0x78]         ; 00538723
@@ -374,7 +374,7 @@ section .text
         ;   XREF to: 00538799 (CONDITIONAL_JUMP)  ; LAB_00538799
     MOV EAX,dword ptr [EBX + 0x1fa58]   ; 0053878c
     MOV dword ptr [ESP + 0x1ec8],EAX    ; 00538792
-    PUSH 0x51b650                       ; 00538799 | LAB_0051b650
+    PUSH 0x51b650                       ; 00538799
         ;   Label: LAB_00538799
     MOV ESI,dword ptr [0x02dc9f50]      ; 0053879e | DAT_02dc9f50
     PUSH ESI                            ; 005387a4
@@ -559,7 +559,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4e0    ; 00538a12
         ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 00538a17
-    PUSH 0x51b650                       ; 00538a1a | LAB_0051b650
+    PUSH 0x51b650                       ; 00538a1a
     MOV EAX,[0x02dc9f60]                ; 00538a1f | DAT_02dc9f60
     PUSH EAX                            ; 00538a24
     PUSH dword ptr [ESP + 0x54]         ; 00538a25
@@ -585,7 +585,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4e0    ; 00538a6f
         ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 00538a74
-    PUSH 0x51b650                       ; 00538a77 | LAB_0051b650
+    PUSH 0x51b650                       ; 00538a77
     MOV ECX,dword ptr [0x02dc9f68]      ; 00538a7c | DAT_02dc9f68
     LEA EDI,[ESP + 0x1d94]              ; 00538a82
     PUSH ECX                            ; 00538a89
@@ -614,7 +614,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00538ad6
     MOVSD ES:EDI,ESI                    ; 00538ad7
     MOVSD ES:EDI,ESI                    ; 00538ad8
-    PUSH 0x51b650                       ; 00538ad9 | LAB_0051b650
+    PUSH 0x51b650                       ; 00538ad9
     MOV EDI,dword ptr [0x02dc9f60]      ; 00538ade | DAT_02dc9f60
     PUSH EDI                            ; 00538ae4
     LEA EAX,[ESP + 0x1ba8]              ; 00538ae5
@@ -631,7 +631,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4e0    ; 00538b15
         ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 00538b1a
-    PUSH 0x51b650                       ; 00538b1d | LAB_0051b650
+    PUSH 0x51b650                       ; 00538b1d
     MOV EDX,dword ptr [0x02dc9f60]      ; 00538b22 | DAT_02dc9f60
     PUSH EDX                            ; 00538b28
     LEA EAX,[ESP + 0x1d08]              ; 00538b29
@@ -700,7 +700,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4a0    ; 00538c25
         ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4a0()
     ADD ESP,0x4                         ; 00538c2a
-    PUSH 0x51b650                       ; 00538c2d | LAB_0051b650
+    PUSH 0x51b650                       ; 00538c2d
     MOV ECX,dword ptr [0x02dc9f60]      ; 00538c32 | DAT_02dc9f60
     PUSH ECX                            ; 00538c38
     LEA EAX,[ESP + 0x1d28]              ; 00538c39
@@ -729,7 +729,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00538c92
     MOVSD ES:EDI,ESI                    ; 00538c93
     MOVSD ES:EDI,ESI                    ; 00538c94
-    PUSH 0x51b650                       ; 00538c95 | LAB_0051b650
+    PUSH 0x51b650                       ; 00538c95
     MOV EDI,dword ptr [0x02dc9f60]      ; 00538c9a | DAT_02dc9f60
     PUSH EDI                            ; 00538ca0
     LEA EAX,[ESP + 0x1d78]              ; 00538ca1
@@ -889,7 +889,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4a0    ; 00538ed8
         ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4a0()
     ADD ESP,0x4                         ; 00538edd
-    PUSH 0x51b650                       ; 00538ee0 | LAB_0051b650
+    PUSH 0x51b650                       ; 00538ee0
     MOV EDX,dword ptr [0x02dc9f94]      ; 00538ee5 | DAT_02dc9f94
     PUSH EDX                            ; 00538eeb
     LEA EAX,[ESP + 0x1cd8]              ; 00538eec
@@ -918,7 +918,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00538f48
     MOVSD ES:EDI,ESI                    ; 00538f49
     MOVSD ES:EDI,ESI                    ; 00538f4a
-    PUSH 0x51b650                       ; 00538f4b | LAB_0051b650
+    PUSH 0x51b650                       ; 00538f4b
     MOV ESI,dword ptr [0x02dc9f60]      ; 00538f50 | DAT_02dc9f60
     PUSH ESI                            ; 00538f56
     LEA EAX,[ESP + 0x1ce8]              ; 00538f57
@@ -1035,7 +1035,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005390a7
     MOVSD ES:EDI,ESI                    ; 005390a8
     MOVSD ES:EDI,ESI                    ; 005390a9
-    PUSH 0x51b650                       ; 005390aa | LAB_0051b650
+    PUSH 0x51b650                       ; 005390aa
     MOV EDI,dword ptr [0x02dc9f60]      ; 005390af | DAT_02dc9f60
     PUSH EDI                            ; 005390b5
     LEA EAX,[ESP + 0x1c28]              ; 005390b6
@@ -1055,7 +1055,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4e0    ; 005390ee
         ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 005390f3
-    PUSH 0x51b650                       ; 005390f6 | LAB_0051b650
+    PUSH 0x51b650                       ; 005390f6
     MOV EDX,dword ptr [0x02dc9f5c]      ; 005390fb | DAT_02dc9f5c
     PUSH EDX                            ; 00539101
     LEA EAX,[ESP + 0x1c28]              ; 00539102
@@ -1144,7 +1144,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4a0    ; 00539221
         ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4a0()
     ADD ESP,0x4                         ; 00539226
-    PUSH 0x51b650                       ; 00539229 | LAB_0051b650
+    PUSH 0x51b650                       ; 00539229
     MOV EAX,[0x02dc9f60]                ; 0053922e | DAT_02dc9f60
     PUSH EAX                            ; 00539233
     PUSH dword ptr [ESP + 0x7c]         ; 00539234
@@ -1162,7 +1162,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0 ; 00539260
         ;   XREF to: 0051d7a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0()
     ADD ESP,0x14                        ; 00539265
-    PUSH 0x51b650                       ; 00539268 | LAB_0051b650
+    PUSH 0x51b650                       ; 00539268
     MOV ECX,dword ptr [0x02dc9f5c]      ; 0053926d | DAT_02dc9f5c
     PUSH ECX                            ; 00539273
     LEA EAX,[ESP + 0x1cc8]              ; 00539274
@@ -1189,7 +1189,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005392cc
     MOVSD ES:EDI,ESI                    ; 005392cd
     MOVSD ES:EDI,ESI                    ; 005392ce
-    PUSH 0x51b650                       ; 005392cf | LAB_0051b650
+    PUSH 0x51b650                       ; 005392cf
     MOV EDI,dword ptr [0x02dc9f60]      ; 005392d4 | DAT_02dc9f60
     PUSH EDI                            ; 005392da
     LEA EAX,[ESP + 0x1db8]              ; 005392db
@@ -1208,7 +1208,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4e0    ; 0053930d
         ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 00539312
-    PUSH 0x51b650                       ; 00539315 | LAB_0051b650
+    PUSH 0x51b650                       ; 00539315
     MOV EDX,dword ptr [0x02dc9f5c]      ; 0053931a | DAT_02dc9f5c
     PUSH EDX                            ; 00539320
     LEA EAX,[ESP + 0x1db8]              ; 00539321
@@ -1266,7 +1266,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4e0    ; 005393ca
         ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 005393cf
-    PUSH 0x51b650                       ; 005393d2 | LAB_0051b650
+    PUSH 0x51b650                       ; 005393d2
     MOV EDX,dword ptr [0x02dc9f60]      ; 005393d7 | DAT_02dc9f60
     PUSH EDX                            ; 005393dd
     LEA EDI,[ESP + 0x1d68]              ; 005393de
@@ -1298,7 +1298,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0053943f
     MOVSD ES:EDI,ESI                    ; 00539440
     MOVSD ES:EDI,ESI                    ; 00539441
-    PUSH 0x51b650                       ; 00539442 | LAB_0051b650
+    PUSH 0x51b650                       ; 00539442
     MOV ESI,dword ptr [0x02dc9f5c]      ; 00539447 | DAT_02dc9f5c
     PUSH ESI                            ; 0053944d
     LEA EAX,[ESP + 0x1d68]              ; 0053944e
@@ -1369,7 +1369,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4a0    ; 00539520
         ;   XREF to: 0055d4a0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4a0()
     ADD ESP,0x4                         ; 00539525
-    PUSH 0x51b650                       ; 00539528 | LAB_0051b650
+    PUSH 0x51b650                       ; 00539528
     MOV EDX,dword ptr [0x02dc9f60]      ; 0053952d | DAT_02dc9f60
     PUSH EDX                            ; 00539533
     LEA EAX,[ESP + 0x1b78]              ; 00539534
@@ -1386,7 +1386,7 @@ section .text
     CALL core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0 ; 0053955a
         ;   XREF to: 0051d7a0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0()
     ADD ESP,0x14                        ; 0053955f
-    PUSH 0x51b650                       ; 00539562 | LAB_0051b650
+    PUSH 0x51b650                       ; 00539562
     MOV ESI,dword ptr [0x02dc9f5c]      ; 00539567 | DAT_02dc9f5c
     PUSH ESI                            ; 0053956d
     LEA EAX,[ESP + 0x1b78]              ; 0053956e
@@ -1407,7 +1407,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4e0    ; 005395af
         ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 005395b4
-    PUSH 0x51b650                       ; 005395b7 | LAB_0051b650
+    PUSH 0x51b650                       ; 005395b7
     MOV EAX,[0x02dc9f60]                ; 005395bc | DAT_02dc9f60
     PUSH EAX                            ; 005395c1
     PUSH dword ptr [ESP + 0x68]         ; 005395c2
@@ -1432,7 +1432,7 @@ section .text
     CALL core_xform.cpp_FUN_0055d4e0    ; 00539606
         ;   XREF to: 0055d4e0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_0055d4e0()
     ADD ESP,0x4                         ; 0053960b
-    PUSH 0x51b650                       ; 0053960e | LAB_0051b650
+    PUSH 0x51b650                       ; 0053960e
     MOV ECX,dword ptr [0x02dc9f5c]      ; 00539613 | DAT_02dc9f5c
     LEA EDI,[ESP + 0x1d44]              ; 00539619
     PUSH ECX                            ; 00539620
@@ -1474,7 +1474,7 @@ section .text
     MOV dword ptr [ESP + 0x1f44],EAX    ; 00539681
     FLD float ptr [ESP + 0x1f44]        ; 00539688
     ADD ESP,0xc                         ; 0053968f
-    PUSH 0x51b650                       ; 00539692 | LAB_0051b650
+    PUSH 0x51b650                       ; 00539692
     MOV EAX,[0x02dc9f90]                ; 00539697 | DAT_02dc9f90
     PUSH EAX                            ; 0053969c
     PUSH dword ptr [EBX + 0x1faac]      ; 0053969d

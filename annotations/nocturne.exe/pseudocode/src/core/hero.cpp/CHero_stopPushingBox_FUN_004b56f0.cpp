@@ -14,7 +14,8 @@ void __cdecl core_hero_cpp_CHero_stopPushingBox_FUN_004b56f0(int param_1)
   if (*(int *)(param_1 + 0x1fa0c) == 0) {
     return;
   }
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890(*(int *)(param_1 + 0x1fa0c),DAT_00764838);
+  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
+                    (*(int *)(param_1 + 0x1fa0c),CDemonActorType_00764800.name_hash);
   if (param_1 == *(int *)(iVar1 + 0x318)) {
     *(uint *)(iVar1 + 0x318) = 0;
     sound_sndmain_cpp_killSfx_FUN_00527230(*(uint *)(iVar1 + 800));

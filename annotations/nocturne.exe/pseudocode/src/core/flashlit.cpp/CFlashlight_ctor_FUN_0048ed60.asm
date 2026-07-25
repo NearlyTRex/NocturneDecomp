@@ -4,6 +4,9 @@
 ; int core_flashlit_cpp_CFlashlight_ctor_FUN_0048ed60(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_0048ed30 at 0048ed43
+;
 ; Referenced Globals:
 ;   TerminatedCString s_flashlit_kfm_005816c2
 ;   undefined4 DAT_0059d8ec

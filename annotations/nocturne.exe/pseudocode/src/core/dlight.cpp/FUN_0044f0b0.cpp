@@ -119,7 +119,7 @@ void core_dlight_cpp_FUN_0044f0b0(int param_1)
       iVar5 = iVar4 + 1;
       local_88 = iVar4;
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-                (DAT_005ae704,local_a4,&LAB_00444180);
+                (DAT_005ae704,local_a4,FUN_00444180);
       iVar4 = iVar5;
     } while (iVar5 < 0x10);
   }
@@ -137,7 +137,7 @@ void core_dlight_cpp_FUN_0044f0b0(int param_1)
     local_8c = iVar4;
     local_88 = iVar5;
     engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-              (DAT_005ae704,&local_a8,&LAB_00444180,uVar8);
+              (DAT_005ae704,&local_a8,FUN_00444180,uVar8);
     iVar4 = iVar5;
   } while (iVar5 < 0xe);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);

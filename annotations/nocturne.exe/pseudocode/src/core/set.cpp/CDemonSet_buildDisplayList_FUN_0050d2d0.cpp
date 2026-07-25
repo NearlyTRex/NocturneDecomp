@@ -93,7 +93,7 @@ LAB_0050d39b:
       iVar3 = iVar3 + 4;
     } while (iVar7 < *(int *)(param_1 + 0x158904));
   }
-  _qsort(&DAT_02080434,_DAT_02080430,8,&LAB_0050d2a0);
+  _qsort(&DAT_02080434,_DAT_02080430,8,FUN_0050d2a0);
   iVar7 = _DAT_02080430;
   iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   if (iVar3 == 0) {

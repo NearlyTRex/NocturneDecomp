@@ -4,18 +4,18 @@
 ; int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(int param_1,int param_2)
 ;
 ;
-; XREF[28]:
+; XREF[37]:
+;   FUN_0046f000 at 0046f01d
 ;   FUN_0046f7e0 at 0046f820
 ;   FUN_0046fb40 at 0046fb8b
 ;   FUN_0046fcd0 at 0046fd1b
 ;   FUN_0046fe60 at 0046feab
+;   FUN_004700d0 at 004700f8
+;   FUN_004701a0 at 004701bf
 ;   FUN_00470eb0 at 00470f0f
 ;   FUN_004722b0 at 004722d8
-;   FUN_00477080 at 004770c8
-;   FUN_004c2470 at 004c2608
-;   FUN_004c85f0 at 004c8c0e
-;   FUN_004c90e0 at 004c9112
-;   ... and 18 more
+;   FUN_00472de0 at 00472e08
+;   ... and 27 more
 ;
 ; *****************************************************************************
 

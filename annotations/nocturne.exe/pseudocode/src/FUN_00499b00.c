@@ -45,7 +45,7 @@ void FUN_00499b00(int param_1,float param_2,float *param_3,uint param_4,uint par
     iVar2 = local_14;
     core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_0051ee60(local_14,local_1b44);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-              (iVar2,0,0,*param_3,param_5,&LAB_0051b650);
+              (iVar2,0,0,*param_3,param_5,FUN_0051b650);
     core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0051d0a0(iVar2,param_4);
     puVar4 = local_78;
     puVar5 = local_a8;

@@ -4,6 +4,9 @@
 ; int FUN_00414d80(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00414d50 at 00414d63
+;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00578d60
 ;   undefined1* PTR_FUN_0059a2f4 = 00414de0

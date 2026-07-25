@@ -43,7 +43,7 @@ void core_set_cpp_FUN_0050ddd0(int param_1,int param_2,int param_3,uint param_4)
         iVar1 = iVar1 + 0x48;
         iVar2 = iVar2 + 1;
         engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-                  (DAT_005ae704,local_38,&DAT_00444440);
+                  (DAT_005ae704,local_38,FUN_00444440);
       } while (iVar2 < param_3);
     }
     engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_00461440

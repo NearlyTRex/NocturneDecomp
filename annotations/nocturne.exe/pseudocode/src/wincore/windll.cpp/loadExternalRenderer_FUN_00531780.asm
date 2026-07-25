@@ -6,7 +6,8 @@
 ; Local Variables:
 ; undefined        Stack[-0x1e64]:1  local_1e64
 ;
-; XREF[3]:
+; XREF[4]:
+;   FUN_00532f50 at 00532f8a
 ;   FUN_00552b40 at 00552c55
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004d0080 at 004d0234
 ;   wincore_windll.cpp_setResolutionAndColorTable_FUN_005324a0 at 005324ca

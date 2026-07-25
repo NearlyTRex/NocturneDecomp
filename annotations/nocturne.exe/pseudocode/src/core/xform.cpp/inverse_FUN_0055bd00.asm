@@ -27,9 +27,12 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ; undefined4       Stack[-0x10]:4  local_10
 ;
-; XREF[6]:
+; XREF[9]:
 ;   FUN_004d6650 at 004d6a37
 ;   FUN_00543c50 at 00543f2e
+;   FUN_0055bc30 at 0055bc47
+;   FUN_0055bc80 at 0055bc8e
+;   FUN_0055caf0 at 0055cb95
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 at 0042766e
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00429010 at 004290f3
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 at 004293db

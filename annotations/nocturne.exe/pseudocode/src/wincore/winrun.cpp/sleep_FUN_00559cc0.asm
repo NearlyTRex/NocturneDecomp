@@ -7,7 +7,8 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ; undefined8       Stack[-0x8]:8  local_8
 ;
-; XREF[2]:
+; XREF[3]:
+;   FUN_00528670 at 005286af
 ;   sound_sndmain.cpp_killSoundThread_FUN_00528780 at 005287a9
 ;   sound_sndmain.cpp_startSoundThread_FUN_005286d0 at 0052875c
 ;

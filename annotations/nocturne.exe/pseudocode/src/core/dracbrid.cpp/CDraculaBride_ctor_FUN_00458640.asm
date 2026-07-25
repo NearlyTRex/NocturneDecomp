@@ -4,6 +4,9 @@
 ; int core_dracbrid_cpp_CDraculaBride_ctor_FUN_00458640(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00458610 at 00458623
+;
 ; Referenced Globals:
 ;   TerminatedCString s_nbride2_dfm_0057d4ac
 ;   float FLOAT_0059c3f0 = 50

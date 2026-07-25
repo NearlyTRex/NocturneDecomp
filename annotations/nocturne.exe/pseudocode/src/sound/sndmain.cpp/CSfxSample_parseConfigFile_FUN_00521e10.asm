@@ -25,8 +25,9 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[3]:
+; XREF[4]:
 ;   FUN_00522480 at 00522659
+;   FUN_005229f0 at 00522b65
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527b19
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526a61
 ;

@@ -4,6 +4,9 @@
 ; int core_ladder_cpp_CLadder_ctor_FUN_004c4290(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004c4260 at 004c4273
+;
 ; Referenced Globals:
 ;   TerminatedCString s_null_kfm_0058772c
 ;   undefined1* PTR_FUN_0059f954 = 004c4340

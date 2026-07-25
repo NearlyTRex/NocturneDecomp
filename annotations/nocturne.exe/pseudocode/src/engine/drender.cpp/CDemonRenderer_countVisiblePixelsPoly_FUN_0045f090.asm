@@ -6,7 +6,8 @@
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00511d80 at 00512283
 ;   FUN_005125a0 at 00513209
 ;
 ; Referenced Globals:
@@ -123,7 +124,7 @@ section .text
     MOV EDX,0xc0                        ; 0045f15f
         ;   Label: LAB_0045f15f
     MOV ECX,0x6                         ; 0045f164
-    MOV EAX,0x464075                    ; 0045f169 | LAB_00464075
+    MOV EAX,0x464075                    ; 0045f169
     MOV dword ptr [0x01c039a0],EDX      ; 0045f16e | DAT_01c039a0
     MOV dword ptr [0x01c039a4],ECX      ; 0045f174 | DAT_01c039a4
     MOV [0x01c00c7c],EAX                ; 0045f17a | DAT_01c00c7c

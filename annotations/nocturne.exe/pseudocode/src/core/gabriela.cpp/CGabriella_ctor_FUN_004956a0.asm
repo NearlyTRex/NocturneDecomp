@@ -4,6 +4,9 @@
 ; int core_gabriela_cpp_CGabriella_ctor_FUN_004956a0(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_00495670 at 00495683
+;
 ; Referenced Globals:
 ;   TerminatedCString s_gabriela_dfm_00581e4a
 ;   TerminatedCString s_gabgun_kfm_00581e57

@@ -4,6 +4,9 @@
 ; int core_lightgun_cpp_CLightGun_ctor_FUN_004c6e30(undefined4 param_1)
 ;
 ;
+; XREF[1]:
+;   FUN_004c6e00 at 004c6e13
+;
 ; Referenced Globals:
 ;   TerminatedCString s_cre_kfm_005879e7
 ;   float FLOAT_0059fd5c = 8

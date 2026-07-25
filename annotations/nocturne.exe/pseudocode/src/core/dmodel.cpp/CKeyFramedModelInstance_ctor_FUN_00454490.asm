@@ -4,18 +4,18 @@
 ; int __cdecl core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(int param_1)
 ;
 ;
-; XREF[39]:
+; XREF[43]:
 ;   FUN_0040f040 at 0040f056
 ;   FUN_0040f560 at 0040f576
 ;   FUN_0040fed0 at 0040fee4
+;   FUN_00410140 at 00410168
 ;   FUN_00411a10 at 00411a32
 ;   FUN_00414d80 at 00414d94
+;   FUN_00423ea0 at 00423ea5
 ;   FUN_0043c810 at 0043c824
-;   FUN_004a8a10 at 004a8a24
-;   FUN_004b41f0 at 004b4204
-;   FUN_004c3460 at 004c3474
-;   FUN_004c9430 at 004c9446
-;   ... and 29 more
+;   FUN_00461ff0 at 00462018
+;   FUN_004823b0 at 004823c2
+;   ... and 33 more
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_init_FUN_004544b0

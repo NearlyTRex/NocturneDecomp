@@ -9,7 +9,8 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ; undefined4       Stack[-0x8]:4  local_8
 ;
-; XREF[54]:
+; XREF[58]:
+;   FUN_00424780 at 00424787
 ;   FUN_00439f50 at 0043a069
 ;   FUN_00495a20 at 004962e5
 ;   FUN_004b32d0 at 004b33f2
@@ -19,8 +20,7 @@
 ;   FUN_004c4970 at 004c4f0f
 ;   FUN_004d4f30 at 004d5173
 ;   FUN_004da790 at 004db21f
-;   FUN_004f6170 at 004f6b94
-;   ... and 44 more
+;   ... and 48 more
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00578069 = -3.14159265350000

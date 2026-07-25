@@ -4,7 +4,8 @@
 ; void __cdecl engine_matrix_c_pop_FUN_004cdbc0(void)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   FUN_00472fd0 at 00473068
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 at 00460bf0
 ;
 ; Referenced Globals:

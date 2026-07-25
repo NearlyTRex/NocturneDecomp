@@ -9,6 +9,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ; undefined4       Stack[-0x10]:4  local_10
 ;
+; XREF[1]:
+;   FUN_00549470 at 00549483
+;
 ; Referenced Globals:
 ;   TerminatedCString s_gturret_head_kfm_00596ce5
 ;   TerminatedCString s_gturret_tripod_kfm_00596cf6

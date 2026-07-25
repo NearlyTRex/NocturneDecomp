@@ -465,7 +465,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xa34]     ; 004a5ce4
         ;   Label: LAB_004a5ce4
     MOV EBP,dword ptr [ECX + 0x48]      ; 004a5ceb
-    MOV EAX,[0x005bac64]                ; 004a5cee | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004a5cee | INT_005bac64
     PUSH EBP                            ; 004a5cf3
     MOV EDX,dword ptr [EAX]             ; 004a5cf4 | DAT_01cc30e4
     PUSH EAX                            ; 004a5cf6 | DAT_01cc30e4
@@ -482,7 +482,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0xa34]     ; 004a5d15
         ;   Label: LAB_004a5d15
     MOV ESI,dword ptr [ECX + 0x48]      ; 004a5d1c
-    MOV EAX,[0x005bac64]                ; 004a5d1f | DAT_005bac64
+    MOV EAX,[0x005bac64]                ; 004a5d1f | INT_005bac64
     PUSH ESI                            ; 004a5d24
     MOV EDX,dword ptr [EAX]             ; 004a5d25 | DAT_01cc30e4
     PUSH EAX                            ; 004a5d27 | DAT_01cc30e4
