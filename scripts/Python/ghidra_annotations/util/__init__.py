@@ -1,6 +1,7 @@
 from ghidra_annotations.util.annotations import *
 from ghidra_annotations.util.data_type import *
 from ghidra_annotations.util.functions import *
+from ghidra_annotations.util.label import *
 from ghidra_annotations.util.log import *
 from ghidra_annotations.util.memory import *
 from ghidra_annotations.util.namespace import *
