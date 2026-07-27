@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0044d550(undefined1 *param_1,char *param_2,undefined4 param_3,undefined4 param_4)
+; void core_dimage_cpp_FUN_0044d550(undefined1 *param_1,char *param_2,undefined4 param_3,undefined4 param_4)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x11c]:1  local_11c
@@ -25,23 +25,23 @@
 ;   TerminatedCString s_art_0057c463
 ;   TerminatedCString s_core_dimage_cpp_0057c467
 ;   TerminatedCString s_CDemonImage_load_Unable_0057c47a
-;   undefined4 DAT_01cc4800
+;   char* PTR_01cc4800
 ;   ... and 1 more
 ;
 ; Called Functions:
+;   core_dimage.cpp_FUN_0044d460
+;   core_dimage.cpp_FUN_0044d4f0
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_0044d460
-;   FUN_0044d4f0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0044d550
-        ;   Label: FUN_0044d550
+        ;   Label: core_dimage.cpp_FUN_0044d550
     PUSH ESI                            ; 0044d551
     PUSH EDI                            ; 0044d552
     PUSH EBP                            ; 0044d553
@@ -83,8 +83,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x12c]     ; 0044d5b9
     PUSH ESI                            ; 0044d5c0
     MOV dword ptr [ESI + 0x308],EAX     ; 0044d5c1
-    CALL FUN_0044d460                   ; 0044d5c7
-        ;   XREF to: 0044d460 (UNCONDITIONAL_CALL)  ; undefined FUN_0044d460()
+    CALL core_dimage.cpp_FUN_0044d460   ; 0044d5c7
+        ;   XREF to: 0044d460 (UNCONDITIONAL_CALL)  ; undefined core_dimage.cpp_FUN_0044d460()
     ADD ESP,0x4                         ; 0044d5cc
     PUSH EBX                            ; 0044d5cf
     MOV EDI,dword ptr [ESP + 0x130]     ; 0044d5d0
@@ -128,10 +128,10 @@ section .text
     MOV EAX,0x57c41a                    ; 0044d613 | = "..\\core\\dimage.cpp"
     MOV EDX,0x7b                        ; 0044d618
     PUSH 0x57c42d                       ; 0044d61d | = "CDemonImage::load - Unable to find ex..."
-    MOV [0x01cc4800],EAX                ; 0044d622 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0044d627 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044d62d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0044d622 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0044d627 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044d62d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044d632
     MOV ESI,0x57c45b                    ; 0044d635 | = ".ACT"
         ;   Label: LAB_0044d635
@@ -195,8 +195,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x12c]     ; 0044d6db
     PUSH ECX                            ; 0044d6e2
     MOV dword ptr [ESP + 0x114],EAX     ; 0044d6e3
-    CALL FUN_0044d4f0                   ; 0044d6ea
-        ;   XREF to: 0044d4f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0044d4f0()
+    CALL core_dimage.cpp_FUN_0044d4f0   ; 0044d6ea
+        ;   XREF to: 0044d4f0 (UNCONDITIONAL_CALL)  ; undefined core_dimage.cpp_FUN_0044d4f0()
     ADD ESP,0x10                        ; 0044d6ef
     MOV word ptr [ESI + 0x100],AX       ; 0044d6f2
     MOV EAX,dword ptr [ESP + 0x100]     ; 0044d6f9
@@ -226,10 +226,10 @@ section .text
         ;   Label: LAB_0044d743
     MOV ECX,0x68                        ; 0044d748
     PUSH 0x57c3f0                       ; 0044d74d | = "CDemonImage::load - Unable to load im..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0044d752 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0044d758 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044d75e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0044d752 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0044d758 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044d75e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044d763
     JMP 0x0044d5a5                      ; 0044d766
         ;   XREF to: 0044d5a5 (UNCONDITIONAL_JUMP)  ; LAB_0044d5a5
@@ -237,10 +237,10 @@ section .text
         ;   Label: LAB_0044d76b
     MOV ESI,0x7f                        ; 0044d770
     PUSH 0x57c47a                       ; 0044d775 | = "CDemonImage::load - Unable to load pa..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0044d77a | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0044d780 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044d786
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0044d77a | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0044d780 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044d786
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044d78b
     JMP 0x0044d675                      ; 0044d78e
         ;   XREF to: 0044d675 (UNCONDITIONAL_JUMP)  ; LAB_0044d675

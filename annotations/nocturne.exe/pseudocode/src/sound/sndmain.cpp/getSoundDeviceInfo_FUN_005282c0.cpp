@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_getSoundDeviceInfo_FUN_005282c0(int param_1,uint *param_2)
 
 {
@@ -18,9 +16,9 @@ void __cdecl sound_sndmain_cpp_getSoundDeviceInfo_FUN_005282c0(int param_1,uint 
   bVar3 = 0;
   iVar1 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00528230();
   if ((param_1 < 0) || (iVar1 <= param_1)) {
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x11d1;
-    FUN_004c8440("getSoundDeviceInfo - invalid index");
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x11d1;
+    core_main_c_FUN_004c8440("getSoundDeviceInfo - invalid index");
   }
   puVar2 = (uint *)(param_1 * 0x118 + 0x2dc7a58);
   for (iVar1 = 0x46; iVar1 != 0; iVar1 = iVar1 + -1) {

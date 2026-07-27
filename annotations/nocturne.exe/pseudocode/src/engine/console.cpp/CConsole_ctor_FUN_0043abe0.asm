@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0043abb0 at 0043abbd
+;   core_console.cpp_staticInit_FUN_0043abb0 at 0043abbd
 ;
 ; Called Functions:
 ;   engine_console.cpp_CConsole_reset_FUN_0043ae00

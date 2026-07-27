@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0055ea90 at 0055eaa3
+;   core_zombie.cpp_FUN_0055ea90 at 0055eaa3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_zombie1_dfm_005983e6
@@ -16,8 +16,8 @@
 ;   undefined4 s_ue_005983f2+2
 ;   undefined4 s_e_005983f2+3
 ;   TerminatedCString s_mine_geo_005983f7
-;   undefined4 DAT_005a453c
-;   undefined4 DAT_005a4540
+;   float FLOAT_005a453c = 50
+;   float FLOAT_005a4540 = 100
 ;   undefined1* PTR_core_zombie.cpp_CZombie_setup_FUN_0055ec20_005a4554 = 0055ec20
 ;   undefined4 DAT_005be368
 ;
@@ -54,9 +54,9 @@ section .text
     MOV dword ptr [EBX + 0x2dd4],0x3f000000 ; 0055eaf2
     LEA EDI,[EBX + 0xbd44]              ; 0055eafc
     MOV dword ptr [EBX + 0x2dd8],0x3f800000 ; 0055eb02
-    FLD float ptr [0x005a453c]          ; 0055eb0c | DAT_005a453c
+    FLD float ptr [0x005a453c]          ; 0055eb0c | FLOAT_005a453c
     MOV dword ptr [EBX + 0xbd34],0x0    ; 0055eb12
-    FLD float ptr [0x005a4540]          ; 0055eb1c | DAT_005a4540
+    FLD float ptr [0x005a4540]          ; 0055eb1c | FLOAT_005a4540
     MOV dword ptr [EBX + 0xbd30],0x0    ; 0055eb22
     ADD ESP,0x8                         ; 0055eb2c
     FXCH                                ; 0055eb2f

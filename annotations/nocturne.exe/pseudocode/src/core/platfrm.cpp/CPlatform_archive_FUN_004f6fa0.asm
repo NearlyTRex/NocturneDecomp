@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0043b310 at 0043b316
+;   core_conveyor.cpp_FUN_0043b310 at 0043b316
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_modelName_0058d785
@@ -38,7 +38,7 @@
 ;   core_actor.cpp_archiveString_FUN_0040c6d0
 ;   core_actor.cpp_archiveVector_FUN_0040c450
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -329,10 +329,10 @@ section .text
     MOV EBP,0x58d8d2                    ; 004f72dd | = "..\\core\\platfrm.cpp"
     MOV EAX,0x316                       ; 004f72e2
     PUSH 0x58d8e6                       ; 004f72e7 | = "CPlatform::archive - too many attache..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004f72ec | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f72f2 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f72f7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004f72ec | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004f72f2 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f72f7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f72fc
     MOV EDX,dword ptr [ESP]             ; 004f72ff
         ;   Label: LAB_004f72ff

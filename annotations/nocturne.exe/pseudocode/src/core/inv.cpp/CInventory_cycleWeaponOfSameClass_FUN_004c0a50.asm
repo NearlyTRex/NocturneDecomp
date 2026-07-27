@@ -10,7 +10,7 @@
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30 at 0049f1e3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02ddf9a8
+;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -60,7 +60,7 @@ section .text
     JL 0x004c0ace                       ; 004c0a93
         ;   XREF to: 004c0ace (CONDITIONAL_JUMP)  ; LAB_004c0ace
     XOR EBX,EBX                         ; 004c0a95
-    MOV EAX,[0x02ddf9a8]                ; 004c0a97 | DAT_02ddf9a8
+    MOV EAX,[0x02ddf9a8]                ; 004c0a97 | g_CWeaponActorType_02ddf970.name_hash
         ;   Label: LAB_004c0a97
     PUSH EAX                            ; 004c0a9c
     MOV EDX,dword ptr [ESI + EBX*0x4 + 0xc] ; 004c0a9d

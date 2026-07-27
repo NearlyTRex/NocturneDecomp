@@ -1,14 +1,14 @@
-// Name: FUN_00408fc0
+// Name: engine_3d.c_FUN_00408fc0
 // Address: 00408fc0
 // Address Range: [[00408fc0, 00409209]]
 // Convention: unknown
-// Signature: void FUN_00408fc0(byte *param_1)
+// Signature: void engine_3d_c_FUN_00408fc0(byte *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00408fc0(byte *param_1)
+void engine_3d_c_FUN_00408fc0(byte *param_1)
 
 {
   uint *puVar1;
@@ -35,7 +35,7 @@ void FUN_00408fc0(byte *param_1)
           }
         }
         else {
-          wincore_windll_cpp_drawPolyList_FUN_00532680
+          engine_special_cpp_drawPolyList_FUN_00532680
                     (&DAT_005c5014,&DAT_00761ec8,DAT_00761ec4,0xcd);
         }
         DAT_00761ec4 = 0;
@@ -56,9 +56,9 @@ void FUN_00408fc0(byte *param_1)
         else {
 LAB_004091a2:
           _sprintf(local_110,"Unknown primitive : %d",*param_1);
-          _DAT_01cc4804 = 0xdd3;
-          _DAT_01cc4800 = "..\\engine\\3d.c";
-          FUN_004c8440(local_110);
+          INT_01cc4804 = 0xdd3;
+          PTR_01cc4800 = "..\\engine\\3d.c";
+          core_main_c_FUN_004c8440(local_110);
         }
       }
       else if (bVar2 < 4) {
@@ -80,7 +80,7 @@ LAB_004091a2:
             }
           }
           else {
-            wincore_windll_cpp_drawPolyList_FUN_00532680
+            engine_special_cpp_drawPolyList_FUN_00532680
                       (&DAT_005c5014,&DAT_00761ec8,DAT_00761ec4,0xcd);
           }
           DAT_00761ec4 = 0;
@@ -97,9 +97,9 @@ LAB_004091a2:
         iVar3 = engine_3d_c_isVisiblePlane_FUN_00404610(param_1 + 8);
         if (iVar3 != 0) {
           if (1999 < DAT_00761ec4) {
-            _DAT_01cc4800 = "..\\engine\\3d.c";
-            _DAT_01cc4804 = 0xd89;
-            FUN_004c8440("renderFaceList - too many faces");
+            PTR_01cc4800 = "..\\engine\\3d.c";
+            INT_01cc4804 = 0xd89;
+            core_main_c_FUN_004c8440("renderFaceList - too many faces");
           }
           (&DAT_00761ec8)[DAT_00761ec4] = param_1;
           DAT_00761ec4 = DAT_00761ec4 + 1;

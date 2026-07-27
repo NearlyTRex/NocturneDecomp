@@ -7,25 +7,25 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   FUN_004d49f0 at 004d4ab5
 ;   core_mimic.cpp_CMimic_beginMorph_FUN_004d5d00 at 004d5db9
+;   core_mimic.cpp_FUN_004d49f0 at 004d4ab5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_00589588
 ;   TerminatedCString s_CMimic_processMorph_can_0058959a
 ;   float FLOAT_005a05e4 = 1
 ;   undefined4 DAT_005baf90
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
+;   core_mission.cpp_FUN_004d9110
 ;   core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
-;   FUN_004c8440
-;   FUN_004d9110
 ;
 ; *****************************************************************************
 
@@ -77,10 +77,10 @@ section .text
         ;   Label: LAB_004d5e80
     MOV ESI,0x4c9                       ; 004d5e85
     PUSH 0x58959a                       ; 004d5e8a | = "CMimic::processMorph - can't process ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d5e8f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d5e95 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d5e9b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d5e8f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d5e95 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d5e9b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d5ea0
     JMP 0x004d5e38                      ; 004d5ea3
         ;   XREF to: 004d5e38 (UNCONDITIONAL_JUMP)  ; LAB_004d5e38
@@ -104,8 +104,8 @@ section .text
     MOV dword ptr [EBX + 0x4757c],0x0   ; 004d5ed3
     MOV EBX,dword ptr [0x005baf90]      ; 004d5edd | DAT_005baf90
     PUSH EBX                            ; 004d5ee3 | DAT_01cc9450
-    CALL FUN_004d9110                   ; 004d5ee4
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined FUN_004d9110()
+    CALL core_mission.cpp_FUN_004d9110  ; 004d5ee4
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
     ADD ESP,0xc                         ; 004d5ee9
     LEA EAX,[EAX]                       ; 004d5eec
     MOV ESP,EBP                         ; 004d5ef0

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(uint *param_1,char *param_2)
 
 {
@@ -50,9 +48,9 @@ void __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_00544ef0(uint *par
     }
   }
   _sprintf(local_114,"CTextureCache::load - Bad texture length : %s,%d",param_2,local_14);
-  _DAT_01cc4804 = 0xf3;
-  _DAT_01cc4800 = "..\\engine\\texture.cpp";
-  FUN_004c8440(local_114);
+  INT_01cc4804 = 0xf3;
+  PTR_01cc4800 = "..\\engine\\texture.cpp";
+  core_main_c_FUN_004c8440(local_114);
 LAB_00544f38:
   pcVar8 = local_114;
   pcVar6 = local_114;
@@ -79,9 +77,9 @@ LAB_00544f38:
   pcVar4 = (char *)0x0;
 LAB_00544f77:
   if (pcVar4 == (char *)0x0) {
-    _DAT_01cc4800 = "..\\engine\\texture.cpp";
-    _DAT_01cc4804 = 0xfa;
-    FUN_004c8440("CTextureCache::load - Can't find extension");
+    PTR_01cc4800 = "..\\engine\\texture.cpp";
+    INT_01cc4804 = 0xfa;
+    core_main_c_FUN_004c8440("CTextureCache::load - Can't find extension");
   }
   _sprintf(pcVar4,".act");
   iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
@@ -128,9 +126,9 @@ LAB_00544f77:
     param_1[param_1[0x34c02] + 0x402] = uVar3;
     pcVar8 = local_114;
     if (param_1[param_1[0x34c02] + 0x402] == 0) {
-      _DAT_01cc4800 = "..\\engine\\texture.cpp";
-      _DAT_01cc4804 = 0x115;
-      FUN_004c8440("CTextureCache::load - Out of memory.  Heap is probably trashed or you're out of VM");
+      PTR_01cc4800 = "..\\engine\\texture.cpp";
+      INT_01cc4804 = 0x115;
+      core_main_c_FUN_004c8440("CTextureCache::load - Out of memory.  Heap is probably trashed or you're out of VM");
       pcVar8 = local_114;
     }
   }

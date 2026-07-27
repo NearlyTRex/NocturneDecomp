@@ -11,13 +11,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_0057ce07
 ;   TerminatedCString s_CKeyFramedModel_buildCol_0057ce1a
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00454100
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
@@ -90,10 +90,10 @@ section .text
     MOV ESI,0x57ce07                    ; 004540ac | = "..\\core\\dmodel.cpp"
     MOV EDI,0x470                       ; 004540b1
     PUSH 0x57ce1a                       ; 004540b6 | = "CKeyFramedModel::buildCollisionTriLis..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004540bb | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004540c1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004540c7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004540bb | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004540c1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004540c7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004540cc
     PUSH 0x2dd1184                      ; 004540cf | DAT_02dd1184
         ;   Label: LAB_004540cf

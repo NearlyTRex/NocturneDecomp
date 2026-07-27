@@ -17,7 +17,7 @@ void __cdecl core_inv_cpp_CInventory_loadItems_FUN_004c14d0(int param_1)
   if (0 < *(int *)(param_1 + 8)) {
     do {
       iVar1 = iVar1 + 1;
-      FUN_004d8cd0(0x01CC9450,*(uint *)(iVar2 + 0xc));
+      core_mission_cpp_FUN_004d8cd0(0x01CC9450,*(uint *)(iVar2 + 0xc));
       iVar2 = iVar2 + 4;
     } while (iVar1 < *(int *)(param_1 + 8));
   }

@@ -6,15 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_stone_cpp_CTempleStone_canPickup_FUN_00534d60(int param_1,uint param_2)
 
 {
   int iVar1;
   
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                    (*(uint *)(param_1 + 0x664),_DAT_014b8a54);
+                    (*(uint *)(param_1 + 0x664),
+                     g_CActorDestinationActorType_014b8a1c.name_hash);
   if ((iVar1 != 0) && (*(int *)(iVar1 + 0x17c) != 0)) {
     return 0;
   }

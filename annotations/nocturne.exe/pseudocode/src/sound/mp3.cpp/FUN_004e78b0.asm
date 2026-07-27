@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_004e78b0(void)
+; int sound_mp3_cpp_FUN_004e78b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -27,16 +27,16 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_stdio.c_sscanf_FUN_00566b5c
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004e78b0
-        ;   Label: FUN_004e78b0
+        ;   Label: sound_mp3.cpp_FUN_004e78b0
     PUSH ESI                            ; 004e78b1
     PUSH EDI                            ; 004e78b2
     PUSH EBP                            ; 004e78b3
@@ -116,10 +116,10 @@ section .text
     MOV EDI,0x58b7b4                    ; 004e79b4 | = "..\\sound\\mp3.cpp"
     MOV EAX,0xd76                       ; 004e79b9
     PUSH 0x58b7c5                       ; 004e79be | = "wrong table %u reference.  File: %s"
-    MOV dword ptr [0x01cc4800],EDI      ; 004e79c3 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e79c9 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e79ce
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004e79c3 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004e79c9 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e79ce
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
         ;   Label: LAB_004e79ce
     ADD ESP,0xc                         ; 004e79d3
     MOV ESI,dword ptr [ESP + 0x8]       ; 004e79d6
@@ -147,10 +147,10 @@ section .text
     MOV EDX,0x58b782                    ; 004e7a0f | = "..\\sound\\mp3.cpp"
     MOV ECX,0xd6b                       ; 004e7a14
     PUSH 0x58b793                       ; 004e7a19 | = "wrong table number %u.  File: %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 004e7a1e | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004e7a24 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e7a2a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004e7a1e | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004e7a24 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e7a2a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004e7a2f
     JMP 0x004e7949                      ; 004e7a32
         ;   XREF to: 004e7949 (UNCONDITIONAL_JUMP)  ; LAB_004e7949
@@ -202,10 +202,10 @@ section .text
     MOV ECX,0x58b7e9                    ; 004e7ab5 | = "..\\sound\\mp3.cpp"
     MOV ESI,0xd7e                       ; 004e7aba
     PUSH 0x58b7fa                       ; 004e7abf | = "MP3 Huffman tree overflow!  File: %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 004e7ac4 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004e7aca | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e7ad0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004e7ac4 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004e7aca | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e7ad0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e7ad5
     JMP 0x004e7a68                      ; 004e7ad8
         ;   XREF to: 004e7a68 (UNCONDITIONAL_JUMP)  ; LAB_004e7a68
@@ -215,8 +215,8 @@ section .text
     MOV ESI,0x58b81f                    ; 004e7ae0 | = "..\\sound\\mp3.cpp"
     MOV EDI,0xd8d                       ; 004e7ae5
     PUSH 0x58b830                       ; 004e7aea | = "huffman decodertable error at table %..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004e7aef | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004e7af5 | DAT_01cc4804
+    MOV dword ptr [0x01cc4800],ESI      ; 004e7aef | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004e7af5 | INT_01cc4804
     JMP 0x004e79ce                      ; 004e7afb
         ;   XREF to: 004e79ce (UNCONDITIONAL_JUMP)  ; LAB_004e79ce
 

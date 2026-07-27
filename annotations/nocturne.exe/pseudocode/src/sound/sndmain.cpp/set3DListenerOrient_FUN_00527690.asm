@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00527d80 at 00527df2
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e937
 ;   core_sound.cpp_updateListeners_FUN_0052c9d0 at 0052cc2f
+;   sound_sndmain.cpp_FUN_00527d80 at 00527df2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc7910

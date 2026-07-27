@@ -12,12 +12,12 @@
 ;   TerminatedCString s_core_netgame_cpp_0058c74a
 ;   TerminatedCString s_CNetGame_applySimFrameHi_0058c75e
 ;   undefined4 DAT_005b9354
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_slamDT_FUN_004a5f00
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -84,10 +84,10 @@ section .text
         ;   Label: LAB_004eda10
     MOV EBX,0x9cd                       ; 004eda15
     PUSH 0x58c75e                       ; 004eda1a | = "CNetGame::applySimFrameHistory - I'm ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004eda1f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004eda25 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004eda2b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004eda1f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004eda25 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004eda2b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004eda30
     JMP 0x004ed995                      ; 004eda33
         ;   XREF to: 004ed995 (UNCONDITIONAL_JUMP)  ; LAB_004ed995

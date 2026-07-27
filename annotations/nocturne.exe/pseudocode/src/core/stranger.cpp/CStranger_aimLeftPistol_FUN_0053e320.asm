@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x9c]:1  local_9c
 ;
 ; XREF[1]:
-;   FUN_00535900 at 0053632e
+;   core_stranger.cpp_FUN_00535900 at 0053632e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_00595cf7
@@ -16,8 +16,8 @@
 ;   float FLOAT_005a2730 = -1.047198
 ;   float FLOAT_005a2734 = 1.221730
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_02dc9f5c
 ;
@@ -26,6 +26,7 @@
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
+;   core_main.c_FUN_004c8440
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
 ;   core_setcolid.cpp_CDemonSet_raycast_FUN_0050fb00
@@ -33,7 +34,6 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
 ;   crt_math.c_acos_FUN_00565ca4
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -316,10 +316,10 @@ section .text
         ;   Label: LAB_0053e6c5
     MOV ESI,0x10b4                      ; 0053e6ca
     PUSH 0x595d0c                       ; 0053e6cf | = "CStranger::aimLeftPistol - no weapon?"
-    MOV dword ptr [0x01cc4800],ECX      ; 0053e6d4 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0053e6da | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0053e6e0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0053e6d4 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0053e6da | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0053e6e0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0053e6e5
     JMP 0x0053e33f                      ; 0053e6e8
         ;   XREF to: 0053e33f (UNCONDITIONAL_JUMP)  ; LAB_0053e33f

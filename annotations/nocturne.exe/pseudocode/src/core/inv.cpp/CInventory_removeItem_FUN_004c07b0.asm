@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_0053f310 at 0053f58d
-;   FUN_0054dd50 at 0054df0e
 ;   core_inv.cpp_CInventory_clear_FUN_004bee80 at 004beea3
 ;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_004c3280 at 004c32bc
 ;   core_inv.cpp_CInventory_select_FUN_004c1580 at 004c177e
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00502f0a
+;   core_stranger.cpp_FUN_0053f310 at 0053f58d
+;   core_vampboss.cpp_FUN_0054dd50 at 0054df0e
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409cd0

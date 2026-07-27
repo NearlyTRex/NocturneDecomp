@@ -23,6 +23,6 @@ void engine_2d_c_setSolidColor_FUN_00404090(int param_1,int param_2,uint param_3
   if (_DAT_01c02594 == 0) {
     return;
   }
-  wincore_windll_cpp_setFogColor_FUN_00532af0(param_1,param_2,param_3);
+  engine_special_cpp_setFogColor_FUN_00532af0(param_1,param_2,param_3);
   return;
 }

@@ -37,7 +37,7 @@ LAB_00507e84:
 LAB_00507d02:
     uVar2 = 0;
   }
-  FUN_00469ce0(&DAT_01fba938,param_2,uVar2);
+  core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,uVar2);
   if (param_3 == 2) {
     iVar3 = *(int *)(param_1 + 0x15aabc) * 0x1a0 + param_1 + 4;
     core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_0046ae40(&DAT_01fba938,iVar3 + 400,iVar3 + 0x194);
@@ -77,10 +77,10 @@ LAB_00507d51:
         core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980
                   (*(int *)(iVar3 + 0x15a8d0) + 0x1e4);
         if (*(int *)(*(int *)(iVar3 + 0x15a8d0) + 0x178) != 0) {
-          FUN_004ac7c0(*(int *)(iVar3 + 0x15a8d0));
+          core_glass_cpp_FUN_004ac7c0(*(int *)(iVar3 + 0x15a8d0));
         }
         core_set_cpp_FUN_0050e080(param_1,iVar1,1);
-        FUN_00469ce0(&DAT_01fba938,param_2,0);
+        core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,0);
         iVar1 = iVar1 + 1;
         core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(param_1);
         iVar3 = iVar3 + 4;
@@ -92,10 +92,10 @@ LAB_00507d51:
       core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980(*(int *)(iVar3 + 0x15a8d0) + 0x1e4)
       ;
       if (*(int *)(*(int *)(iVar3 + 0x15a8d0) + 0x178) != 0) {
-        FUN_004ac7c0(*(int *)(iVar3 + 0x15a8d0));
+        core_glass_cpp_FUN_004ac7c0(*(int *)(iVar3 + 0x15a8d0));
       }
       core_set_cpp_FUN_0050e080(param_1,iVar1,0);
-      FUN_00469ce0(&DAT_01fba938,param_2,0);
+      core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,0);
       iVar3 = iVar3 + 4;
       iVar1 = iVar1 + 1;
       core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(param_1);

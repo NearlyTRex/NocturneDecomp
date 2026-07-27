@@ -5,18 +5,24 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004e99f0 at 004e9a64
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9af0
+;   core_netgame.cpp_FUN_004e99f0 at 004e9a64
 ;
 ; Referenced Globals:
+;   TerminatedCString s_Initializing_network_0058bbd2
+;   TerminatedCString s_Can_t_create_datagram_so_0058bbea
+;   TerminatedCString s_Can_t_turn_off_blocking_0058bc07
+;   TerminatedCString s_Can_t_bind_UDP_socket_0058bc2f
+;   TerminatedCString s_Can_t_querry_back_for_so_0058bc45
+;   TerminatedCString s_Initializing_network_OK_0058bc6a
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0
-;   FUN_0046fcd0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
+;   shape_edittool.cpp_FUN_0046fcd0
 ;   support_trisock.cpp_bindAndInvalidateSocket_FUN_00549110
 ;   support_trisock.cpp_bindSocket_FUN_00548f70
 ;   support_trisock.cpp_createUDPSocket_FUN_00548f30
@@ -33,7 +39,7 @@ section .text
     PUSH ESI                            ; 004e9d51
     PUSH EBP                            ; 004e9d52
     MOV ESI,dword ptr [ESP + 0x10]      ; 004e9d53
-    PUSH 0x58bbd2                       ; 004e9d57
+    PUSH 0x58bbd2                       ; 004e9d57 | = "Initializing network..."
     MOV EDX,dword ptr [0x005b6d50]      ; 004e9d5c | DAT_005b6d50
     PUSH EDX                            ; 004e9d62
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004e9d63
@@ -95,7 +101,7 @@ section .text
     MOV EBX,0x12                        ; 004e9df9
     SAR EDX,0x1f                        ; 004e9dfe
     IDIV EBX                            ; 004e9e01
-    PUSH 0x58bc6a                       ; 004e9e03
+    PUSH 0x58bc6a                       ; 004e9e03 | = "Initializing network...OK"
     MOV [0x01cea3f4],EAX                ; 004e9e08 | DAT_01cea3f4
     MOV EAX,[0x005b6d50]                ; 004e9e0d | DAT_005b6d50
     PUSH EAX                            ; 004e9e12
@@ -107,36 +113,36 @@ section .text
     POP ESI                             ; 004e9e1e
     POP EBX                             ; 004e9e1f
     RET                                 ; 004e9e20
-    PUSH 0x58bbea                       ; 004e9e21
+    PUSH 0x58bbea                       ; 004e9e21 | = "Can't create datagram socket"
         ;   Label: LAB_004e9e21
     MOV ECX,dword ptr [0x005b6d50]      ; 004e9e26 | DAT_005b6d50
     PUSH ECX                            ; 004e9e2c
-    CALL FUN_0046fcd0                   ; 004e9e2d
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004e9e2d
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x8                         ; 004e9e32
     XOR EAX,EAX                         ; 004e9e35
     POP EBP                             ; 004e9e37
     POP ESI                             ; 004e9e38
     POP EBX                             ; 004e9e39
     RET                                 ; 004e9e3a
-    PUSH 0x58bc07                       ; 004e9e3b
+    PUSH 0x58bc07                       ; 004e9e3b | = "Can't turn off blocking mode for socket"
         ;   Label: LAB_004e9e3b
     MOV EBX,dword ptr [0x005b6d50]      ; 004e9e40 | DAT_005b6d50
     PUSH EBX                            ; 004e9e46
-    CALL FUN_0046fcd0                   ; 004e9e47
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004e9e47
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x8                         ; 004e9e4c
     XOR EAX,EAX                         ; 004e9e4f
     POP EBP                             ; 004e9e51
     POP ESI                             ; 004e9e52
     POP EBX                             ; 004e9e53
     RET                                 ; 004e9e54
-    PUSH 0x58bc2f                       ; 004e9e55
+    PUSH 0x58bc2f                       ; 004e9e55 | = "Can't bind UDP socket"
         ;   Label: LAB_004e9e55
     MOV ESI,dword ptr [0x005b6d50]      ; 004e9e5a | DAT_005b6d50
     PUSH ESI                            ; 004e9e60
-    CALL FUN_0046fcd0                   ; 004e9e61
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004e9e61
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x8                         ; 004e9e66
     XOR EAX,EAX                         ; 004e9e69
     POP EBP                             ; 004e9e6b
@@ -145,11 +151,11 @@ section .text
     RET                                 ; 004e9e6e
     PUSH EDI                            ; 004e9e6f
         ;   Label: LAB_004e9e6f
-    PUSH 0x58bc45                       ; 004e9e70
+    PUSH 0x58bc45                       ; 004e9e70 | = "Can't querry back for socket address"
     MOV EDI,dword ptr [0x005b6d50]      ; 004e9e75 | DAT_005b6d50
     PUSH EDI                            ; 004e9e7b
-    CALL FUN_0046fcd0                   ; 004e9e7c
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004e9e7c
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x8                         ; 004e9e81
     XOR EAX,EAX                         ; 004e9e84
     POP EDI                             ; 004e9e86

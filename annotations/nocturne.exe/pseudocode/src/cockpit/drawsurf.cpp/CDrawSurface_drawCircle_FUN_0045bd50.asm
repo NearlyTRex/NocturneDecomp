@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_0045be40 at 0045be58
-;   FUN_0045be70 at 0045be88
-;   FUN_0045bea0 at 0045beb8
-;   FUN_0045bed0 at 0045bee8
-;   FUN_0045e370 at 0045e469
+;   cockpit_drawsurf.cpp_FUN_0045be40 at 0045be58
+;   cockpit_drawsurf.cpp_FUN_0045be70 at 0045be88
+;   cockpit_drawsurf.cpp_FUN_0045bea0 at 0045beb8
+;   cockpit_drawsurf.cpp_FUN_0045bed0 at 0045bee8
+;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e469
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00

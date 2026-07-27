@@ -3,25 +3,81 @@
 // Function prototypes for core/platfrm.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_platfrm.cpp_staticInit_FUN_004f5d30
+// Address: 004f5d30
+void __cdecl staticInit(void);
+
+// Original: core_platfrm.cpp_FUN_004f5d60
+// Address: 004f5d60
+void FUN_004f5d60(void);
+
+// Original: core_platfrm.cpp_FUN_004f5d80
+// Address: 004f5d80
+CDemonActorType * FUN_004f5d80(void);
+
+// Original: core_platfrm.cpp_FUN_004f5d90
+// Address: 004f5d90
+int FUN_004f5d90(undefined4 param_1);
+
+// Original: core_platfrm.cpp_FUN_004f5f60
+// Address: 004f5f60
+void FUN_004f5f60(int param_1);
+
 // Original: core_platfrm.cpp_CPlatform_evaluatePosition_FUN_004f5ff0
 // Address: 004f5ff0
 void __cdecl CPlatform::evaluatePosition(int param_1);
+
+// Original: core_platfrm.cpp_FUN_004f6170
+// Address: 004f6170
+void FUN_004f6170(int param_1,float param_2);
 
 // Original: core_platfrm.cpp_CPlatform_startMovement_FUN_004f6bd0
 // Address: 004f6bd0
 void __cdecl CPlatform::startMovement(int param_1,float param_2,undefined4 param_3);
 
+// Original: core_platfrm.cpp_FUN_004f6c60
+// Address: 004f6c60
+int FUN_004f6c60(int param_1);
+
+// Original: core_platfrm.cpp_FUN_004f6d90
+// Address: 004f6d90
+void FUN_004f6d90(int param_1,int param_2);
+
+// Original: core_platfrm.cpp_FUN_004f6f50
+// Address: 004f6f50
+undefined4 * FUN_004f6f50(int param_1,undefined4 *param_2);
+
 // Original: core_platfrm.cpp_CPlatform_archive_FUN_004f6fa0
 // Address: 004f6fa0
 void __cdecl CPlatform::archive(int param_1);
+
+// Original: core_platfrm.cpp_FUN_004f7360
+// Address: 004f7360
+undefined4 FUN_004f7360(int param_1,int param_2);
 
 // Original: core_platfrm.cpp_CPlatform_getCollisionType_FUN_004f7560
 // Address: 004f7560
 undefined4 CPlatform::getCollisionType(int param_1,int param_2);
 
+// Original: core_platfrm.cpp_FUN_004f7580
+// Address: 004f7580
+undefined4 FUN_004f7580(void);
+
+// Original: core_platfrm.cpp_FUN_004f75a0
+// Address: 004f75a0
+undefined4 FUN_004f75a0(int param_1);
+
+// Original: core_platfrm.cpp_FUN_004f75b0
+// Address: 004f75b0
+undefined4 FUN_004f75b0(int param_1);
+
 // Original: core_platfrm.cpp_CPlatform_attachActor_FUN_004f75c0
 // Address: 004f75c0
 void __cdecl CPlatform::attachActor(int param_1,int param_2);
+
+// Original: core_platfrm.cpp_FUN_004f76c0
+// Address: 004f76c0
+void FUN_004f76c0(void);
 
 // Original: core_platfrm.cpp_CPlatform_updateAttachedActors_FUN_004f7700
 // Address: 004f7700

@@ -13,7 +13,7 @@ void core_baron_cpp_CBaron_setup_FUN_004102c0(int param_1)
 {
   uint uVar1;
   
-  FUN_004b48d0(param_1);
+  core_hero_cpp_FUN_004b48d0(param_1);
   uVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1 + 0x150);
   DAT_007642e8 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 head",1);
   _DAT_007642ec =

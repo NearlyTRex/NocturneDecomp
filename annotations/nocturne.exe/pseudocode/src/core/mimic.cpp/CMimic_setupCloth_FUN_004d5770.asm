@@ -7,13 +7,13 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   FUN_004d49f0 at 004d4b4b
+;   core_mimic.cpp_FUN_004d49f0 at 004d4b4b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_attacking_hero_00589487
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_01c71420
+;   undefined4 g_CGabriellaActorType_01c713e8.name_hash
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
     CALL core_cloth.cpp_CCloth_setup_FUN_004359e0 ; 004d5796
         ;   XREF to: 004359e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_setup_FUN_004359e0()
     ADD ESP,0x10                        ; 004d579b
-    MOV EDX,dword ptr [0x01c71420]      ; 004d579e | DAT_01c71420
+    MOV EDX,dword ptr [0x01c71420]      ; 004d579e | g_CGabriellaActorType_01c713e8.name_hash
     MOV EAX,[0x01cae0e8]                ; 004d57a4 | DAT_01cae0e8
     PUSH EDX                            ; 004d57a9
     MOV ECX,dword ptr [EAX*0x4 + 0x1cae0d8] ; 004d57aa

@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005992b0
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   undefined4 DAT_005ae700
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
@@ -19,7 +19,7 @@
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005644a7
 ;   engine_2d.c_plotPixel_FUN_00401530
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     PUSH EBP                            ; 0040add3
     SUB ESP,0x8c                        ; 0040add4
     MOV EBX,dword ptr [ESP + 0xa0]      ; 0040adda
-    PUSH 0x5993b0                       ; 0040ade1 | DAT_005993b0
+    PUSH 0x5993b0                       ; 0040ade1 | g_CVectorTypeInfo_005993b0
     PUSH 0xa                            ; 0040ade6
     LEA EAX,[ESP + 0x8]                 ; 0040ade8
     PUSH EAX                            ; 0040adec
@@ -72,8 +72,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0040ae55 | DAT_01b4d738
     ADD EAX,0xea5d0                     ; 0040ae57
     PUSH EAX                            ; 0040ae5c
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0040ae5d
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0040ae5d
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV ESI,dword ptr [0x005ae700]      ; 0040ae62 | DAT_005ae700
     MOV ESI,dword ptr [ESI]             ; 0040ae68 | DAT_01b4d738
     MOV AH,byte ptr [ESI + 0xea5e3]     ; 0040ae6a

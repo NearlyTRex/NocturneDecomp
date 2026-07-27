@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CGunFlame_render_FUN_00488580(float *param_1)
 
 {
@@ -65,7 +63,7 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_00488580(float *param_1)
             (DAT_005ae704,param_1 + 1);
   engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0(DAT_005ae704,auStack_88);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(DAT_005ae704,auStack_88,0);
-  fVar8 = ((float10)_DAT_0059d214 - (float10)*param_1) / (float10)_DAT_0059d214;
+  fVar8 = ((float10)2.0f - (float10)*param_1) / (float10)2.0f;
   dVar19 = (double)fVar8;
   fVar1 = (float)(fVar8 * (float10)4 + (float10)0.40000000000000002);
   fStack_d4 = fVar1;
@@ -93,26 +91,26 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_00488580(float *param_1)
   local_78 = fVar1 * 5.5536608591669236e-315._0_4_ * (float)0.00390625;
   fStack_7c = -fStack_d4 * 5.5536608591669236e-315._0_4_ * (float)0.00390625;
   local_74 = 0.0;
-  local_4c = (int)ROUND(fStack_7c * _DAT_0059d1f8);
-  local_48 = (int)ROUND(local_78 * _DAT_0059d1f8);
-  local_44 = (int)ROUND(_DAT_0059d1f8 * 0.0);
+  local_4c = (int)ROUND(fStack_7c * 256.0f);
+  local_48 = (int)ROUND(local_78 * 256.0f);
+  local_44 = (int)ROUND(256.0f * 0.0);
   fStack_2c = fStack_7c;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_4c);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_4c);
   fStack_7c = fStack_d4 * (float)128 * (float)0.00390625;
-  local_58 = (int)ROUND(fStack_7c * _DAT_0059d1f8);
-  local_54 = (int)ROUND(local_78 * _DAT_0059d1f8);
-  local_50 = (int)ROUND(local_74 * _DAT_0059d1f8);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_58);
+  local_58 = (int)ROUND(fStack_7c * 256.0f);
+  local_54 = (int)ROUND(local_78 * 256.0f);
+  local_50 = (int)ROUND(local_74 * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_58);
   local_78 = -fVar1 * (float)128 * (float)0.00390625;
-  local_64 = (int)ROUND(fStack_7c * _DAT_0059d1f8);
-  local_60 = (int)ROUND(local_78 * _DAT_0059d1f8);
-  local_5c = (int)ROUND(local_74 * _DAT_0059d1f8);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_64);
+  local_64 = (int)ROUND(fStack_7c * 256.0f);
+  local_60 = (int)ROUND(local_78 * 256.0f);
+  local_5c = (int)ROUND(local_74 * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_64);
   fStack_7c = fStack_2c;
-  local_70 = (int)ROUND(fStack_2c * _DAT_0059d1f8);
-  local_6c = (int)ROUND(local_78 * _DAT_0059d1f8);
-  local_68 = (int)ROUND(local_74 * _DAT_0059d1f8);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_70);
+  local_70 = (int)ROUND(fStack_2c * 256.0f);
+  local_6c = (int)ROUND(local_78 * 256.0f);
+  local_68 = (int)ROUND(local_74 * 256.0f);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_70);
   piVar6 = DAT_005ae704;
   fVar14 = ((float10)2.0f - (float10)(float)fVar8) * (float10)(float)fVar8;
   fVar8 = (float10)200.0f;

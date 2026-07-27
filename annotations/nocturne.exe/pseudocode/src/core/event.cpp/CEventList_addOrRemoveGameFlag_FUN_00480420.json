@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 388,
+    "complexity_score": 372,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
-    "suspect_count": 30,
+    "pseudocode_lines": 57,
+    "suspect_count": 29,
     "suspect_types": [
       "param_count_too_few",
       "pointer_stride_bytecount",
       "unnamed_param",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 183
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -166,6 +165,11 @@
       "name": "core_event.cpp_CEventList_findGameFlag_FUN_00480860"
     },
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "00566170",
       "is_variadic": false,
       "name": "crt_string.c_memmove_FUN_00566170"
@@ -174,11 +178,6 @@
       "addr": "00566ad0",
       "is_variadic": false,
       "name": "crt_string.c_strupr_FUN_00566ad0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -208,14 +207,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -293,16 +292,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_00480420(int param_1,char *param_2,int param_3)",
@@ -310,7 +301,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_00480420(int param_1,char *param_2,int param_3)",
@@ -318,7 +309,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_00480420(int param_1,char *param_2,int param_3)",
@@ -326,7 +317,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 != (char *)0x0) && (*param_2 != '\\0')) {",
@@ -334,7 +325,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 != (char *)0x0) && (*param_2 != '\\0')) {",
@@ -342,7 +333,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = core_event_cpp_CEventList_findGameFlag_FUN_00480860(param_1,param_2);",
@@ -350,7 +341,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = core_event_cpp_CEventList_findGameFlag_FUN_00480860(param_1,param_2);",
@@ -358,7 +349,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0) {",
@@ -366,7 +357,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = *(int *)(param_1 + 0x1908) + -1;",
@@ -374,7 +365,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x1908) = iVar4;",
@@ -382,7 +373,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar2 * 0x20 + param_1 + 0x190c,iVar2 * 0x20 + 0x20 + param_1 + 0x190c,",
@@ -390,7 +381,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar2 * 0x20 + param_1 + 0x190c,iVar2 * 0x20 + 0x20 + param_1 + 0x190c,",
@@ -398,7 +389,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "if (9 < *(int *)(param_1 + 0x1908)) {",
@@ -406,7 +397,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_2",
       "severity": "mild",
       "text": "pcVar5 = param_2;",
@@ -414,15 +405,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Event name %s too long!\",param_2);",
+      "text": "core_main_c_FUN_004c8440(\"Event name %s too long!\",param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar5 = (char *)(*(int *)(param_1 + 0x1908) * 0x20 + param_1 + 0x190c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar5 = (char *)(*(int *)(param_1 + 0x1908) * 0x20 + param_1 + 0x190c);",
@@ -431,14 +430,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar5 = (char *)(*(int *)(param_1 + 0x1908) * 0x20 + param_1 + 0x190c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
       "match": "param_2",
       "severity": "mild",
       "text": "cVar1 = *param_2;",
@@ -446,7 +437,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_2",
       "severity": "mild",
       "text": "cVar1 = param_2[1];",
@@ -454,7 +445,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 2;",
@@ -462,7 +453,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 2;",
@@ -470,7 +461,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "strupr(param_1 + 0x190c + *(int *)(param_1 + 0x1908) * 0x20);",
@@ -478,7 +469,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "strupr(param_1 + 0x190c + *(int *)(param_1 + 0x1908) * 0x20);",
@@ -486,7 +477,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x1908) = *(int *)(param_1 + 0x1908) + 1;",
@@ -494,7 +485,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x1908) = *(int *)(param_1 + 0x1908) + 1;",
@@ -502,7 +493,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 47,
+      "line": 45,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -510,7 +501,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 35,
+      "line": 33,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -518,7 +509,7 @@
     },
     {
       "description": "mem* byte count hardcodes an element stride ((iVar4 - iVar2) * 0x20) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 21,
+      "line": 19,
       "match": "memmove",
       "severity": "moderate",
       "text": "memmove",

@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_00448310 at 0044835b
-;   FUN_00448380 at 004483cb
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 at 00440ab3
 ;   core_dcamera.cpp_CDemonCamera_processCorona_FUN_00444f90 at 00445013
+;   core_dcamera.cpp_FUN_00448310 at 0044835b
+;   core_dcamera.cpp_FUN_00448380 at 004483cb
 ;   core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_0044e3c0 at 0044e409
 ;
 ; Referenced Globals:

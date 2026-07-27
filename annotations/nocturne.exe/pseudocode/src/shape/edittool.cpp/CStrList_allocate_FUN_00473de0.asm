@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00473e90 at 00473ea4
 ;   shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00 at 00473c25
 ;   shape_edittool.cpp_CStrList_insert_FUN_00473cf0 at 00473d38
+;   shape_edittool.cpp_FUN_00473e90 at 00473ea4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057ebc8
@@ -16,12 +16,12 @@
 ;   TerminatedCString s_CStrList_allocate_invali_0057ec1c
 ;   TerminatedCString s_shape_edittool_cpp_0057ec43
 ;   TerminatedCString s_CStrList_insert_out_of_m_0057ec59
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_realloc_FUN_00564a70
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -45,10 +45,10 @@ section .text
     MOV EBP,0x57ec06                    ; 00473df6 | = "..\\shape\\edittool.cpp"
     MOV EAX,0x9d5                       ; 00473dfb
     PUSH 0x57ec1c                       ; 00473e00 | = "CStrList::allocate - invalid count: %d"
-    MOV dword ptr [0x01cc4800],EBP      ; 00473e05 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00473e0b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00473e10
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00473e05 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00473e0b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00473e10
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00473e15
     CMP ESI,dword ptr [EBX + 0x4]       ; 00473e18
         ;   Label: LAB_00473e18
@@ -64,10 +64,10 @@ section .text
         ;   Label: LAB_00473e22
     MOV EDI,0x9d4                       ; 00473e27
     PUSH 0x57ebde                       ; 00473e2c | = "CStrList::allocate - Can't shrink list!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00473e31 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00473e37 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00473e3d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00473e31 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00473e37 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00473e3d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00473e42
     JMP 0x00473df0                      ; 00473e45
         ;   XREF to: 00473df0 (UNCONDITIONAL_JUMP)  ; LAB_00473df0
@@ -87,10 +87,10 @@ section .text
     MOV EDI,0x57ec43                    ; 00473e65 | = "..\\shape\\edittool.cpp"
     MOV EBP,0x9d9                       ; 00473e6a
     PUSH 0x57ec59                       ; 00473e6f | = "CStrList::insert - out of memory"
-    MOV dword ptr [0x01cc4800],EDI      ; 00473e74 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00473e7a | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00473e80
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00473e74 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00473e7a | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00473e80
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00473e85
     POP EBP                             ; 00473e88
     POP EDI                             ; 00473e89

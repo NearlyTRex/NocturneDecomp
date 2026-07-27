@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_0041a910 at 0041aa60
 ;   core_box.cpp_CBox_setupCorners_FUN_0041a6e0 at 0041a905
+;   core_box.cpp_FUN_0041a910 at 0041aa60
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057968d = 0.03125

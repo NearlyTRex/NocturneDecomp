@@ -36,18 +36,18 @@
 ;   undefined4 DAT_014b8488
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01b4d750
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dd1184
 ;
 ; Called Functions:
 ;   core_dcube.cpp_buildAndRenderTrianglePrimitive_FUN_0044ab60
+;   core_main.c_FUN_004c8440
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
-;   FUN_004c8440
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -111,8 +111,8 @@ section .text
     LEA EAX,[EBP + -0x38]               ; 0044b087
     PUSH EAX                            ; 0044b08a
     PUSH EDI                            ; 0044b08b
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0044b08c
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0044b08c
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV DH,byte ptr [EDI + 0x13]        ; 0044b091
     ADD ESP,0x8                         ; 0044b094
     TEST DH,0x80                        ; 0044b097
@@ -263,10 +263,10 @@ section .text
     MOV EBX,0x57bd80                    ; 0044b204 | = "..\\core\\dcube.cpp"
     MOV ESI,0x7bb                       ; 0044b209
     PUSH 0x57bd92                       ; 0044b20e | = "CDemonCube::rotateVerticies - tried t..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0044b213 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0044b219 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044b21f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0044b213 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0044b219 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044b21f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0044b224
     JMP 0x0044b01f                      ; 0044b227
         ;   XREF to: 0044b01f (UNCONDITIONAL_JUMP)  ; LAB_0044b01f

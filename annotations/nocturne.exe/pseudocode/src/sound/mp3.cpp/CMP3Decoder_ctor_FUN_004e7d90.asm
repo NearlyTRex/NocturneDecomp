@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_00522480 at 0052251c
-;   FUN_005229f0 at 00522ac2
+;   sound_sndmain.cpp_FUN_00522480 at 0052251c
+;   sound_sndmain.cpp_FUN_005229f0 at 00522ac2
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527b70
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 005269ab
 ;

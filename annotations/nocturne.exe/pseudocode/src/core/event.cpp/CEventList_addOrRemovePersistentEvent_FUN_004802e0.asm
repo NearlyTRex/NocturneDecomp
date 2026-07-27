@@ -5,22 +5,22 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004b6d80 at 004b7ac4
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b6d1
+;   core_hostage.cpp_FUN_004b6d80 at 004b7ac4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_event_cpp_00580a07
 ;   TerminatedCString s_Too_many_persistent_even_00580a19
 ;   TerminatedCString s_core_event_cpp_00580a35
 ;   TerminatedCString s_Event_name_s_too_long_00580a47
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_findPersistentEvent_FUN_00480810
+;   core_main.c_FUN_004c8440
 ;   crt_string.c_memmove_FUN_00566170
 ;   crt_string.c_strupr_FUN_00566ad0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -74,10 +74,10 @@ section .text
     MOV EDX,0x580a35                    ; 00480331 | = "..\\core\\event.cpp"
     MOV ECX,0x9fb                       ; 00480336
     PUSH 0x580a47                       ; 0048033b | = "Event name %s too long!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00480340 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00480346 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0048034c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00480340 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00480346 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0048034c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00480351
     MOV EDI,dword ptr [EBX + 0x258c]    ; 00480354
         ;   Label: LAB_00480354
@@ -119,10 +119,10 @@ section .text
         ;   Label: LAB_004803a5
     MOV EAX,0x9f5                       ; 004803aa
     PUSH 0x580a19                       ; 004803af | = "Too many persistent events!"
-    MOV dword ptr [0x01cc4800],EBP      ; 004803b4 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004803ba | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004803bf
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004803b4 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004803ba | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004803bf
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004803c4
     JMP 0x0048031e                      ; 004803c7
         ;   XREF to: 0048031e (UNCONDITIONAL_JUMP)  ; LAB_0048031e

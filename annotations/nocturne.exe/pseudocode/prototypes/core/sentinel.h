@@ -3,6 +3,22 @@
 // Function prototypes for core/sentinel.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_sentinel.cpp_staticInit_FUN_005058c0
+// Address: 005058c0
+void __cdecl staticInit(void);
+
+// Original: core_sentinel.cpp_FUN_005058f0
+// Address: 005058f0
+void FUN_005058f0(void);
+
+// Original: core_sentinel.cpp_FUN_00505910
+// Address: 00505910
+CDemonActorType * FUN_00505910(void);
+
+// Original: core_sentinel.cpp_FUN_00505920
+// Address: 00505920
+int FUN_00505920(undefined4 param_1);
+
 // Original: core_sentinel.cpp_CSentinel_setup_FUN_00505990
 // Address: 00505990
 void CSentinel::setup(int param_1);
@@ -26,3 +42,11 @@ void CSentinel::processDamage(int param_1,int param_2);
 // Original: core_sentinel.cpp_CSentinel_getTargetPoints_FUN_00506940
 // Address: 00506940
 undefined4 CSentinel::getTargetPoints(int param_1,undefined4 *param_2);
+
+// Original: core_sentinel.cpp_FUN_00506a60
+// Address: 00506a60
+void FUN_00506a60(undefined4 param_1,undefined4 param_2);
+
+// Original: core_sentinel.cpp_FUN_00506a80
+// Address: 00506a80
+int FUN_00506a80(int param_1,byte param_2);

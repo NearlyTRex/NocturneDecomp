@@ -23,7 +23,8 @@ void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004d5770(int param_1)
   core_cloth_cpp_CCloth_setup_FUN_004359e0
             (param_1 + 0xbdec,param_1 + 0x20,param_1 + 0x30,param_1 + 0x150);
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                    (*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),_DAT_01c71420);
+                    (*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),
+                     g_CGabriellaActorType_01c713e8.name_hash);
   if (iVar1 != 0) {
     puVar4 = (uint *)(iVar1 + 0x1fe14);
     puVar5 = (uint *)(param_1 + 0xc184);

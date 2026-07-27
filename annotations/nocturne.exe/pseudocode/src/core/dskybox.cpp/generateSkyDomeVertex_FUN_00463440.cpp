@@ -57,7 +57,7 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_00463440(uint *param_1,i
   fVar4 = (float10)round(fVar3 * fVar6 * fVar4 * fVar7);
   uVar9 = 0x46351a;
   fVar8 = (float10)round(fVar5 * fVar6 * fVar8 * fVar7);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (*piVar1 + param_4 * 0x30,uVar9,uVar10,(int)ROUND(fVar4),piVar11,(int)ROUND(fVar8));
   uVar9 = *param_1;
   (&DAT_005c5034)[param_4 * 0xc] = uVar9;

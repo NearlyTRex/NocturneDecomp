@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00445750 at 004459f8
+;   core_dcamera.cpp_FUN_00445750 at 004459f8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_014b8458

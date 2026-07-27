@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004ee740 at 004ee833
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004defd2
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000 at 00461005
+;   engine_ncursfx.cpp_FUN_004ee740 at 004ee833
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c03998

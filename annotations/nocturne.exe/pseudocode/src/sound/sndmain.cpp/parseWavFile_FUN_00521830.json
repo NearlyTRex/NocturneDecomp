@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,31 +122,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 449,
+    "complexity_score": 453,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 118,
     "suspect_count": 32,
     "suspect_types": [
       "param_count_too_few",
       "unknown_field",
       "unnamed_param"
     ],
-    "total_lines": 483
+    "total_lines": 487
   },
   "cross_references": [
     {
       "addr": "00522480",
       "from_addr": "00522648",
-      "name": "FUN_00522480",
+      "name": "sound_sndmain.cpp_FUN_00522480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005229f0",
       "from_addr": "00522c6f",
-      "name": "FUN_005229f0",
+      "name": "sound_sndmain.cpp_FUN_005229f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -198,7 +198,7 @@
     {
       "addr": "00529980",
       "is_variadic": false,
-      "name": "FUN_00529980"
+      "name": "sound_sndmain.cpp_FUN_00529980"
     }
   ],
   "globals": [
@@ -280,7 +280,7 @@
       {
         "call_addr": "00522648",
         "call_type": "direct",
-        "caller": "FUN_00522480",
+        "caller": "sound_sndmain.cpp_FUN_00522480",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -302,7 +302,7 @@
       {
         "call_addr": "00522c6f",
         "call_type": "direct",
-        "caller": "FUN_005229f0",
+        "caller": "sound_sndmain.cpp_FUN_005229f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -457,7 +457,7 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 41,
-          "line": 103,
+          "line": 107,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
@@ -591,7 +591,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = _fread(&local_24,10,1,param_1);",
@@ -599,15 +599,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 57,
-      "match": "._2_2_",
-      "severity": "mild",
-      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 57,
+      "line": 58,
       "match": "._2_2_",
       "severity": "mild",
       "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
@@ -618,12 +610,20 @@
       "line": 58,
       "match": "._2_2_",
       "severity": "mild",
+      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 59,
+      "match": "._2_2_",
+      "severity": "mild",
       "text": "_sprintf(&local_88,\"Invalid number of channels: %u  (must be 1 or 2)\",local_24._2_2_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 62,
+      "line": 63,
       "match": "._2_2_",
       "severity": "mild",
       "text": "sVar1 = local_24._2_2_ * (short)local_20;",
@@ -631,7 +631,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 65,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x104) = 8;",
@@ -639,7 +639,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 69,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x104) = 0x10;",
@@ -647,7 +647,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = _fread(&local_18,8,1,param_1);",
@@ -655,7 +655,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 98,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = *param_2 + iVar2 + 8;",
@@ -663,7 +663,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 98,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_2 = *param_2 + iVar2 + 8;",
@@ -671,7 +671,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 95,
+      "line": 99,
       "match": "._2_2_",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x108) = (uint)local_24._2_2_;",
@@ -679,7 +679,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 99,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x108) = (uint)local_24._2_2_;",
@@ -687,7 +687,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 100,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_3 + 0x104) >> 0x1f;",
@@ -695,7 +695,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 101,
       "match": "param_3",
       "severity": "mild",
       "text": "*(int *)(param_3 + 0x110) =",
@@ -703,7 +703,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 102,
       "match": "._2_2_",
       "severity": "mild",
       "text": "(int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /",
@@ -711,7 +711,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 104,
       "match": "param_3",
       "severity": "mild",
       "text": "(uint)((int)((*(int *)(param_3 + 0x104) + iVar2 * -8) - (uint)(iVar2 << 2 < 0)) >> 3",
@@ -719,7 +719,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 106,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_3 + 0x10c) = local_20 & 0xffff;",
@@ -727,7 +727,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = _fseek(param_1,*param_2 + iVar2,0);",
@@ -735,7 +735,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 112,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar3 = _fseek(param_1,*param_2 + iVar2,0);",
@@ -743,7 +743,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 != 0) {",
@@ -751,7 +751,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 118,
       "match": "param_1",
       "severity": "mild",
       "text": "_fclose(param_1);",
@@ -770,7 +770,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 103,
+      "line": 107,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "iVar2 = *(int *)(param_3 + 0x104) >> 0x1f;",

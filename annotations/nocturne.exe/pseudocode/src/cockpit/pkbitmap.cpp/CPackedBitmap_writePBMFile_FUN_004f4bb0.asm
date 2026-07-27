@@ -5,15 +5,17 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004f4b30 at 004f4b53
+;   cockpit_pkbitmap.cpp_FUN_004f4b30 at 004f4b53
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d228
+;   TerminatedCString s_Error_writing_PBM_0058d240
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fwrite_FUN_00563a50
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -90,14 +92,14 @@ section .text
     POP ESI                             ; 004f4c4f
     POP EBX                             ; 004f4c50
     RET                                 ; 004f4c51
-    MOV EBX,0x58d228                    ; 004f4c52
+    MOV EBX,0x58d228                    ; 004f4c52 | = "..\\cockpit\\pkbitmap.cpp"
         ;   Label: LAB_004f4c52
     MOV ESI,0x49d                       ; 004f4c57
-    PUSH 0x58d240                       ; 004f4c5c
-    MOV dword ptr [0x01cc4800],EBX      ; 004f4c61 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f4c67 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f4c6d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x58d240                       ; 004f4c5c | = "Error writing PBM"
+    MOV dword ptr [0x01cc4800],EBX      ; 004f4c61 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004f4c67 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f4c6d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f4c72
     ADD ESP,0x1c                        ; 004f4c75
     POP EBP                             ; 004f4c78

@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00527930 at 00527944
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910 at 00523a17
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 at 00525692
+;   sound_sndmain.cpp_FUN_00527930 at 00527944
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bea94

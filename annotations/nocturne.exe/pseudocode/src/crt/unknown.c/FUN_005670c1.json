@@ -1,0 +1,182 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 133,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "register_param",
+      "stack_ref",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 47
+  },
+  "cross_references": [
+    {
+      "addr": "005670b1",
+      "from_addr": "005670b5",
+      "name": "crt_unknown.c_FUN_005670b1",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005670c1",
+    "address_range": [
+      [
+        "005670c1",
+        "005670df"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005670c1",
+    "signature": "undefined4 crt_unknown_c_FUN_005670c1(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005670ed",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005670ed"
+    },
+    {
+      "addr": "005671dc",
+      "is_variadic": false,
+      "name": "FUN_005671dc"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c1abc",
+      "name": "PTR_FUN_005c1abc",
+      "type": "void*",
+      "value": "005671dc"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005670b5",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005670b1",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.733333333333333,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 11,
+      "INT_2COMP": 1,
+      "INT_ADD": 3,
+      "INT_AND": 8,
+      "INT_EQUAL": 8,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 71
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "byte *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (in_EAX < &iStack_4) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 14,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)(*(code *)PTR_FUN_005c1abc)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 15,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "if (*puVar2 < (uint)-((int)in_EAX - (int)&iStack_4)) {",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 24,
+      "match": "&stack0xfffffff0",
+      "severity": "moderate",
+      "text": "*(int *)(&stack0xfffffff0 + iVar5) = iVar5;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Pointer value `in_EAX` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)in_EAX",
+      "severity": "moderate",
+      "text": "if (*puVar2 < (uint)-((int)in_EAX - (int)&iStack_4)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&iStack_4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)&iStack_4",
+      "severity": "moderate",
+      "text": "if (*puVar2 < (uint)-((int)in_EAX - (int)&iStack_4)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 15,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (*puVar2 < (uint)-((int)in_EAX - (int)&iStack_4)) {",
+      "type": "pointer_cast"
+    }
+  ]
+}

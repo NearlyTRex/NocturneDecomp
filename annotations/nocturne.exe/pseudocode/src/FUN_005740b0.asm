@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005635b0
-;   FUN_005638d0
+;   crt_unknown.c_FUN_005638d0
 ;   FUN_0056c6d0
 ;   FUN_00570bd0
 ;   FUN_005713e0
@@ -115,8 +115,8 @@ section .text
     JNZ 0x0057416e                      ; 0057415c
         ;   XREF to: 0057416e (CONDITIONAL_JUMP)  ; LAB_0057416e
     PUSH EBX                            ; 0057415e
-    CALL FUN_005638d0                   ; 0057415f
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 0057415f
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     MOV EAX,0xffffffff                  ; 00574164
     JMP 0x00574256                      ; 00574169
         ;   XREF to: 00574256 (UNCONDITIONAL_JUMP)  ; LAB_00574256
@@ -145,12 +145,12 @@ section .text
     MOV ESI,dword ptr [ESP + 0x8]       ; 0057419c
     PUSH ESI                            ; 005741a0
     MOV EBX,EAX                         ; 005741a1
-    CALL FUN_005638d0                   ; 005741a3
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 005741a3
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 005741a8
     PUSH EBP                            ; 005741ab
-    CALL FUN_005638d0                   ; 005741ac
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 005741ac
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 005741b1
     TEST EBX,EBX                        ; 005741b4
     JNZ 0x005741c5                      ; 005741b6
@@ -222,8 +222,8 @@ section .text
     JNZ 0x00574250                      ; 00574238
         ;   XREF to: 00574250 (CONDITIONAL_JUMP)  ; LAB_00574250
     PUSH EBX                            ; 0057423a
-    CALL FUN_005638d0                   ; 0057423b
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 0057423b
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     MOV EAX,0xffffffff                  ; 00574240
     ADD ESP,0x4                         ; 00574245
     ADD ESP,0x14                        ; 00574248

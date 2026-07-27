@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00431b90 at 00431c57
-;   FUN_00432210 at 0043288c
 ;   engine_3d.c_FUN_00409590 at 00409606
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00409290 at 00409306
+;   engine_clipper.c_FUN_00431b90 at 00431c57
+;   engine_clipper.c_FUN_00432210 at 0043288c
 ;   engine_clipper.c_FUN_00432cd0 at 00433379
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_004610a0 at 00461167
 ;

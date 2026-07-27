@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(int param_1,uint param_2,uint param_3,float param_4,int param_5,code *param_6)
 
 {
@@ -198,9 +196,9 @@ void core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0(int par
       }
     }
     else {
-      _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-      _DAT_01cc4804 = 0xa82;
-      FUN_004c8440("Write me!");
+      PTR_01cc4800 = "..\\core\\skeleton.cpp";
+      INT_01cc4804 = 0xa82;
+      core_main_c_FUN_004c8440("Write me!");
     }
     if (param_5 < 0) {
       local_5c = local_5c * 0xc;

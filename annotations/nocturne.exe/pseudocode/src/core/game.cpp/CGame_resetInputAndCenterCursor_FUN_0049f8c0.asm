@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_004a57c0 at 004a5b66
 ;   core_game.cpp_CGame_playerControls_FUN_0049e7d0 at 0049e7f9
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dd90
+;   core_game.cpp_FUN_004a57c0 at 004a5b66
 ;   core_script.cpp_CScript_executeInitSection_FUN_004ff170 at 004ff20d
 ;   core_script.cpp_CScript_process_FUN_004fe5b0 at 004fe633
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00502b04

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00475470(int *param_1,undefined4 param_2,undefined4 param_3)
+; void shape_edittool_cpp_FUN_00475470(int *param_1,undefined4 param_2,undefined4 param_3)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x144]:1  local_144
@@ -24,14 +24,14 @@
 ;   undefined4 DAT_01c00c5c
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
-;   FUN_004c8440
 ;   shape_edittool.cpp_calculateGridHeight_FUN_00476e10
 ;   shape_edittool.cpp_calculateGridWidth_FUN_00476df0
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80
@@ -43,7 +43,7 @@
 section .text
 
     PUSH EBX                            ; 00475470
-        ;   Label: FUN_00475470
+        ;   Label: shape_edittool.cpp_FUN_00475470
     PUSH ESI                            ; 00475471
     PUSH EDI                            ; 00475472
     PUSH EBP                            ; 00475473
@@ -122,10 +122,10 @@ section .text
     MOV EAX,0x57ee2a                    ; 0047553c | = "..\\shape\\edittool.cpp"
     MOV EDX,0xd01                       ; 00475541
     PUSH 0x57ee40                       ; 00475546 | = "Too many picklist columns!"
-    MOV [0x01cc4800],EAX                ; 0047554b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00475550 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00475556
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0047554b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00475550 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00475556
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0047555b
     JMP 0x004754f0                      ; 0047555e
         ;   XREF to: 004754f0 (UNCONDITIONAL_JUMP)  ; LAB_004754f0

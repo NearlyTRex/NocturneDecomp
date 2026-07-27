@@ -5,27 +5,27 @@
 ;
 ;
 ; XREF[39]:
-;   FUN_0041f3d0 at 0041f4aa
-;   FUN_00468d00 at 004690a9
-;   FUN_004c8eb0 at 004c8ed9
-;   FUN_004c90e0 at 004c9128
-;   FUN_004f0360 at 004f0448
-;   FUN_0052d030 at 0052d0d1
-;   FUN_0052d790 at 0052dc93
-;   FUN_0052dff0 at 0052e823
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 at 0040ddeb
 ;   core_actor.cpp_getRandomInt_FUN_0040de00 at 0040de35
+;   core_actor.cpp_randomChance_FUN_0040dea0 at 0040dedd
+;   core_baron.cpp_FUN_00410cc0 at 00410e63
+;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412de0 at 00412e00
+;   core_batman.cpp_CBatman_processDismemberment_FUN_004145f0 at 00414610
+;   core_boxactor.cpp_FUN_0041f3d0 at 0041f4aa
+;   core_bride.cpp_CBride_processDismemberment_FUN_00420a10 at 00420a33
+;   core_charactr.cpp_FUN_004270e0 at 0042714a
+;   core_cow.cpp_CZombieCow_processDismemberment_FUN_0043c360 at 0043c380
 ;   ... and 29 more
 ;
 ; Called Functions:
-;   FUN_00564880
+;   crt_unknown.c_FUN_00564880
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL FUN_00564880                   ; 0056488c
-        ;   XREF to: 00564880 (UNCONDITIONAL_CALL)  ; undefined FUN_00564880()
+    CALL crt_unknown.c_FUN_00564880     ; 0056488c
+        ;   XREF to: 00564880 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564880()
         ;   Label: crt_stdlib.c_rand_FUN_0056488c
     TEST EAX,EAX                        ; 00564891
     JNZ 0x00564896                      ; 00564893

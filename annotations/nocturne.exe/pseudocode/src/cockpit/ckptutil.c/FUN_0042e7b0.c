@@ -1,14 +1,12 @@
-// Name: FUN_0042e7b0
+// Name: cockpit_ckptutil.c_FUN_0042e7b0
 // Address: 0042e7b0
 // Address Range: [[0042e7b0, 0042e9c2]]
 // Convention: unknown
-// Signature: void FUN_0042e7b0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
+// Signature: void cockpit_ckptutil_c_FUN_0042e7b0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_0042e7b0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
+void cockpit_ckptutil_c_FUN_0042e7b0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
 
 {
   int *piVar1;
@@ -24,15 +22,15 @@ void FUN_0042e7b0(int param_1,int param_2,int param_3,int param_4,int *param_5,i
   
   if (param_1 != 0) {
     if (param_6 < (param_2 - param_4) + 1) {
-      _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-      _DAT_01cc4804 = 0x3f0;
-      FUN_004c8440("Invalid height array size.");
+      PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+      INT_01cc4804 = 0x3f0;
+      core_main_c_FUN_004c8440("Invalid height array size.");
     }
     piVar1 = (int *)shape_memdbg_cpp_malloc_FUN_00564c18(param_4 * 4);
     if (piVar1 == (int *)0x0) {
-      _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-      _DAT_01cc4804 = 0x3f6;
-      FUN_004c8440("No room for scroll bitmap height table.");
+      PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+      INT_01cc4804 = 0x3f6;
+      core_main_c_FUN_004c8440("No room for scroll bitmap height table.");
     }
     iVar6 = 0;
     iStack_24 = 0;

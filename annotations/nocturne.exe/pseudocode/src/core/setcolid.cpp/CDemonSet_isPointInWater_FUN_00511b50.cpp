@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(int param_1,int param_2)
 
 {
@@ -32,7 +30,8 @@ uint __cdecl core_setcolid_cpp_CDemonSet_isPointInWater_FUN_00511b50(int param_1
     if (0 < *(int *)(param_1 + 0x14cd6c)) {
       do {
         iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar4 + 0x14cd70),_DAT_02ddd5d0);
+                          (*(uint *)(iVar4 + 0x14cd70),
+                           g_CWaterActorActorType_02ddd598.name_hash);
         if (iVar1 != 0) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(iVar1,&local_1c,param_2);
           (**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,&fStack_34);

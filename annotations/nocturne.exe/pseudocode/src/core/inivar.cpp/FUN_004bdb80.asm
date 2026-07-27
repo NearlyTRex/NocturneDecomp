@@ -1,13 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004bdb80(void)
+; void core_inivar_cpp_FUN_004bdb80(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x204]:1  local_204
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c86bb
+;   core_main.c_FUN_004c85f0 at 004c86bb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_inivar_cpp_00586744
@@ -29,20 +29,20 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610
+;   core_main.c_FUN_004c8440
 ;   engine_dosio.cpp_setReadonlyAttribute_FUN_00565dd0
 ;   engine_ini.cpp_CIniFile_ctor_FUN_004bd860
 ;   engine_ini.cpp_CIniFile_getInteger_FUN_004bda20
 ;   engine_ini.cpp_CIniFile_getString_FUN_004bd910
 ;   engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0
-;   FUN_004c8440
-;   FUN_005289f0
+;   sound_sndmain.cpp_FUN_005289f0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBP                            ; 004bdb80
-        ;   Label: FUN_004bdb80
+        ;   Label: core_inivar.cpp_FUN_004bdb80
     SUB ESP,0x200                       ; 004bdb81
     PUSH EDI                            ; 004bdb87
     PUSH ESI                            ; 004bdb88
@@ -95,7 +95,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_getInteger_FUN_004bda20 ; 004bdc11
         ;   XREF to: 004bda20 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_getInteger_FUN_004bda20()
     ADD ESP,0xc                         ; 004bdc16
-    PUSH 0x2dc9d60                      ; 004bdc19 | DAT_02dc9d60
+    PUSH 0x2dc9d60                      ; 004bdc19 | INT_02dc9d60
     PUSH 0x586799                       ; 004bdc1e | = "useDirect3D"
     LEA EAX,[ESP + 0x14]                ; 004bdc23
     PUSH EAX                            ; 004bdc27
@@ -232,8 +232,8 @@ section .text
     ADD ESP,0x8                         ; 004bddc1
     LEA EAX,[ESP + 0x8]                 ; 004bddc4
     PUSH EAX                            ; 004bddc8
-    CALL FUN_005289f0                   ; 004bddc9
-        ;   XREF to: 005289f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005289f0()
+    CALL sound_sndmain.cpp_FUN_005289f0 ; 004bddc9
+        ;   XREF to: 005289f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005289f0()
     ADD ESP,0x4                         ; 004bddce
     PUSH 0x5baa38                       ; 004bddd1 | = "Control"
     LEA EAX,[ESP + 0xc]                 ; 004bddd6
@@ -638,10 +638,10 @@ section .text
         ;   Label: LAB_004be29f
     MOV ECX,0x54                        ; 004be2a4
     PUSH 0x586757                       ; 004be2a9 | = "Please copy Nocturne to your hard drive"
-    MOV dword ptr [0x01cc4800],EDX      ; 004be2ae | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004be2b4 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004be2ba
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004be2ae | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004be2b4 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004be2ba
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004be2bf
     JMP 0x004bdba3                      ; 004be2c2
         ;   XREF to: 004bdba3 (UNCONDITIONAL_JUMP)  ; LAB_004bdba3

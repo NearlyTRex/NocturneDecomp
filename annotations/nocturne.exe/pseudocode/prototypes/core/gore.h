@@ -3,6 +3,10 @@
 // Function prototypes for core/gore.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_gore.cpp_staticInit_FUN_004adf90
+// Address: 004adf90
+void __cdecl staticInit(void);
+
 // Original: core_gore.cpp_CBloodParticle_setup_FUN_004ae070
 // Address: 004ae070
 void __cdecl CBloodParticle::setup(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
@@ -79,6 +83,14 @@ void __cdecl CFootstep::init(undefined4 *param_1,float *param_2,int param_3,unde
 // Address: 004afa20
 void CFootstep::render(undefined4 *param_1);
 
+// Original: core_gore.cpp_FUN_004afd80
+// Address: 004afd80
+undefined4 FUN_004afd80(undefined4 param_1);
+
+// Original: core_gore.cpp_FUN_004afda0
+// Address: 004afda0
+undefined4 FUN_004afda0(undefined4 param_1);
+
 // Original: core_gore.cpp_CGore_reset_FUN_004afdb0
 // Address: 004afdb0
 void __cdecl CGore::reset(void);
@@ -86,6 +98,10 @@ void __cdecl CGore::reset(void);
 // Original: core_gore.cpp_CGore_renderParticles_FUN_004afe00
 // Address: 004afe00
 void __cdecl CGore::renderParticles(void);
+
+// Original: core_gore.cpp_FUN_004afe80
+// Address: 004afe80
+int FUN_004afe80(undefined4 param_1,int param_2);
 
 // Original: core_gore.cpp_CGore_process_FUN_004b0030
 // Address: 004b0030
@@ -114,6 +130,10 @@ void __cdecl CGore::spawnBloodBurst(undefined4 param_1,undefined4 param_2,float 
 // Original: core_gore.cpp_CGore_allocateBloodPool_FUN_004b0430
 // Address: 004b0430
 int __cdecl CGore::allocateBloodPool(void);
+
+// Original: core_gore.cpp_FUN_004b0480
+// Address: 004b0480
+void FUN_004b0480(undefined4 param_1,undefined4 param_2,int param_3);
 
 // Original: core_gore.cpp_CGore_loadAssets_FUN_004b04b0
 // Address: 004b04b0
@@ -150,3 +170,43 @@ int CFootstep::ctor(int param_1);
 // Original: core_gore.cpp_CFootstep_dtor_FUN_004b09d0
 // Address: 004b09d0
 int CFootstep::dtor(int param_1);
+
+// Original: core_gore.cpp_FUN_004b09f0
+// Address: 004b09f0
+undefined4 FUN_004b09f0(undefined4 param_1);
+
+// Original: core_gore.cpp_FUN_004b0a00
+// Address: 004b0a00
+undefined4 FUN_004b0a00(undefined4 param_1);
+
+// Original: core_gore.cpp_FUN_004b0a10
+// Address: 004b0a10
+undefined4 FUN_004b0a10(undefined4 param_1);
+
+// Original: core_gore.cpp_FUN_004b0a20
+// Address: 004b0a20
+undefined4 FUN_004b0a20(undefined4 param_1);
+
+// Original: core_gore.cpp_FUN_004b0a30
+// Address: 004b0a30
+void FUN_004b0a30(undefined4 param_1);
+
+// Original: core_gore.cpp_FUN_004b0a50
+// Address: 004b0a50
+void FUN_004b0a50(undefined4 param_1);
+
+// Original: core_gore.cpp_FUN_004b0a60
+// Address: 004b0a60
+void FUN_004b0a60(undefined4 param_1);
+
+// Original: core_gore.cpp_FUN_004b0a80
+// Address: 004b0a80
+void FUN_004b0a80(undefined4 param_1);
+
+// Original: core_gore.cpp_FUN_004b0aa0
+// Address: 004b0aa0
+void FUN_004b0aa0(undefined4 param_1);
+
+// Original: core_gore.cpp_FUN_004b0ac0
+// Address: 004b0ac0
+void FUN_004b0ac0(undefined4 param_1);

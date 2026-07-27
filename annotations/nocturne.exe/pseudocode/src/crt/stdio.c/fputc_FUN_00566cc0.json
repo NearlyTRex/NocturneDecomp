@@ -19,24 +19,6 @@
   },
   "cross_references": [
     {
-      "addr": "0049a320",
-      "from_addr": "0049a58e",
-      "name": "FUN_0049a320",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049cc10",
-      "from_addr": "0049d7df",
-      "name": "FUN_0049cc10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f2990",
-      "from_addr": "004f2af6",
-      "name": "FUN_004f2990",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0056adf0",
       "from_addr": "0056adfe",
       "name": "FUN_0056adf0",
@@ -55,9 +37,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0049a320",
+      "from_addr": "0049a58e",
+      "name": "core_game.cpp_FUN_0049a320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049cc10",
+      "from_addr": "0049d7df",
+      "name": "core_game.cpp_FUN_0049cc10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00563a50",
       "from_addr": "00563c0e",
       "name": "crt_stdio.c_fwrite_FUN_00563a50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f2990",
+      "from_addr": "004f2af6",
+      "name": "engine_pcx.c_FUN_004f2990",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -133,7 +133,7 @@
       {
         "call_addr": "0049d7df",
         "call_type": "direct",
-        "caller": "FUN_0049cc10",
+        "caller": "core_game.cpp_FUN_0049cc10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,7 +144,7 @@
       {
         "call_addr": "0049d7ec",
         "call_type": "direct",
-        "caller": "FUN_0049cc10",
+        "caller": "core_game.cpp_FUN_0049cc10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -155,7 +155,7 @@
       {
         "call_addr": "0049d7f6",
         "call_type": "direct",
-        "caller": "FUN_0049cc10",
+        "caller": "core_game.cpp_FUN_0049cc10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +166,7 @@
       {
         "call_addr": "004f2af6",
         "call_type": "direct",
-        "caller": "FUN_004f2990",
+        "caller": "engine_pcx.c_FUN_004f2990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,7 +177,7 @@
       {
         "call_addr": "004f2b14",
         "call_type": "direct",
-        "caller": "FUN_004f2990",
+        "caller": "engine_pcx.c_FUN_004f2990",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

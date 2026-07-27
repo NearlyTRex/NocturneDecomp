@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00408fc0 at 004090e7
+;   engine_3d.c_FUN_00408fc0 at 004090e7
 ;   engine_3d.c_flushRenderQueue_FUN_00408f50 at 00408f7a
 ;
 ; Referenced Globals:

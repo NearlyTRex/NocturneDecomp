@@ -18,8 +18,8 @@
 ;   double DOUBLE_0057d0b2 = 5.22209901682860E-315
 ;   double DOUBLE_0057d0ba = -0.300000000000000
 ;   double DOUBLE_0057d0c2 = 0.300000000000000
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -27,7 +27,7 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -256,10 +256,10 @@ section .text
         ;   Label: default
     MOV ECX,0xf8                        ; 0045555e
     PUSH 0x57d088                       ; 00455563 | = "CDoor::reposition - Unknown type"
-    MOV dword ptr [0x01cc4800],EDX      ; 00455568 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0045556e | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00455574
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00455568 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0045556e | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00455574
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00455579
     JMP 0x00455399                      ; 0045557c
         ;   XREF to: 00455399 (UNCONDITIONAL_JUMP)  ; LAB_00455399

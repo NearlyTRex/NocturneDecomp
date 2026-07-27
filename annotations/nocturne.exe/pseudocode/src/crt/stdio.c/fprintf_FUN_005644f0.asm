@@ -7,16 +7,16 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[39]:
-;   FUN_0042ee00 at 0042ee6d
-;   FUN_00447dd0 at 00447de1
-;   FUN_0046c350 at 0046c3ae
-;   FUN_004a3b90 at 004a3c84
-;   FUN_004d8720 at 004d8762
-;   FUN_004e0d20 at 004e0d31
-;   FUN_005055f0 at 00505602
-;   FUN_00544c10 at 00544ce1
+;   cockpit_ckptutil.c_FUN_0042ee00 at 0042ee6d
 ;   core_actor.cpp_CDemonActor_save_FUN_0040c040 at 0040c096
 ;   core_actor.cpp_FUN_0040cb00 at 0040cb99
+;   core_actor.cpp_FUN_0040ce80 at 0040cf19
+;   core_actor.cpp_archiveActor_FUN_0040c980 at 0040c9ca
+;   core_actor.cpp_archiveClothList_FUN_0040cf70 at 0040d078
+;   core_actor.cpp_archiveDescription_FUN_0040c3a0 at 0040c404
+;   core_actor.cpp_archiveFloat_FUN_0040c880 at 0040c8ed
+;   core_actor.cpp_archiveInteger_FUN_0040c900 at 0040c969
+;   core_actor.cpp_archiveLocation_FUN_0040c590 at 0040c620
 ;   ... and 29 more
 ;
 ; Called Functions:

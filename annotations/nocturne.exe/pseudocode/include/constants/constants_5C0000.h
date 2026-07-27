@@ -93,6 +93,7 @@ static TerminatedCString s_s_0123456789abcdefghijkl_005c1ff0 = "0123456789abcdef
 static TerminatedCString s_s_0123456789abcdefghijkl_005c2018 = "0123456789abcdefghijklmnopqrstuvwxyz";
 
 // int constants
+static int DAT_005C0F90 = 0x1;
 static int DAT_005C0FC4 = 0x2;
 static int DAT_005C0FD8 = 0x1;
 static int DAT_005C1008 = 0x1;
@@ -105,14 +106,14 @@ static int DAT_005C10F0 = 0x1;
 static int DAT_005C1108 = 0x1;
 static int DAT_005C111C = 0x1;
 
+// string constants
+static string s_CWater_005c13c0 = "$CWater$$";
+static string s_ios_005c17c0 = "$ios$$";
+static string s_filebuf_005c2060 = "$filebuf$$";
+
 // undefined1 constants
 static undefined1 DAT_005c18a0 = 0x01;
 static undefined1 DAT_005c18ba = 0x02;
-static undefined1 DAT_005c2303 = 0x40;
-static undefined1 DAT_005c2309 = 0x40;
-static undefined1 DAT_005c26cf = 0x01;
-static undefined1 DAT_005c26d5 = 0x28;
-static undefined1 DAT_005c26f9 = 0x0E;
 
 // undefined1* constants
 static undefined1* DAT_005C0E70 = (undefined1*)s_anon_00595005;

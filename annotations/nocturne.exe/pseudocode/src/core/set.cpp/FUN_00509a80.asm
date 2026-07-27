@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0049cc10 at 0049cd21
+;   core_game.cpp_FUN_0049cc10 at 0049cd21
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_comp_3_2f_3_2f_actren_3_00590532
@@ -57,10 +57,10 @@
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00444920
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_00440710
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
+;   core_dcamera.cpp_FUN_00445750
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430
 ;   core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970
 ;   core_dlight.cpp_FUN_0044f9b0
-;   core_fire.cpp_CFireEffect_render_FUN_0048a650
 ;   ... and 20 more
 ;
 ; *****************************************************************************
@@ -231,8 +231,8 @@ section .text
     PUSH EDX                            ; 00509c2c
     PUSH 0x1fb8508                      ; 00509c2d
     XOR ESI,ESI                         ; 00509c32
-    CALL FUN_00445750                   ; 00509c34
-        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined FUN_00445750()
+    CALL core_dcamera.cpp_FUN_00445750  ; 00509c34
+        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00445750()
     MOV ECX,dword ptr [EBX + 0x15a8cc]  ; 00509c39
     ADD ESP,0xc                         ; 00509c3f
     TEST ECX,ECX                        ; 00509c42
@@ -250,8 +250,8 @@ section .text
     MOV EAX,dword ptr [EDI + 0x1fba2f0] ; 00509c57
     PUSH EAX                            ; 00509c5d
     PUSH 0x1fb8508                      ; 00509c5e
-    CALL FUN_00445750                   ; 00509c63
-        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined FUN_00445750()
+    CALL core_dcamera.cpp_FUN_00445750  ; 00509c63
+        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00445750()
     ADD ESP,0xc                         ; 00509c68
     PUSH EBX                            ; 00509c6b
     INC ESI                             ; 00509c6c
@@ -291,8 +291,8 @@ section .text
     PUSH EAX                            ; 00509cc4
     PUSH EDI                            ; 00509cc5
     PUSH 0x1fb8508                      ; 00509cc6
-    CALL FUN_00445750                   ; 00509ccb
-        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined FUN_00445750()
+    CALL core_dcamera.cpp_FUN_00445750  ; 00509ccb
+        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00445750()
     MOV EAX,[0x01fba7a4]                ; 00509cd0 | DAT_01fba7a4
     MOV dword ptr [EAX*0x4 + 0x1fba7a8],EDI ; 00509cd5 | DAT_01fba7a8
     LEA EDI,[EAX + 0x1]                 ; 00509cdc
@@ -477,14 +477,14 @@ section .text
     PUSH 0x0                            ; 00509e9e
     MOV ECX,dword ptr [0x005b96c4]      ; 00509ea0 | INT_005b96c4
     PUSH ECX                            ; 00509ea6
-    CALL FUN_004afe80                   ; 00509ea7
-        ;   XREF to: 004afe80 (UNCONDITIONAL_CALL)  ; undefined FUN_004afe80()
+    CALL core_gore.cpp_FUN_004afe80     ; 00509ea7
+        ;   XREF to: 004afe80 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004afe80()
     ADD ESP,0x8                         ; 00509eac
     PUSH 0x0                            ; 00509eaf
     MOV ESI,dword ptr [0x005b80f0]      ; 00509eb1 | DAT_005b80f0
     PUSH ESI                            ; 00509eb7
-    CALL FUN_0048a970                   ; 00509eb8
-        ;   XREF to: 0048a970 (UNCONDITIONAL_CALL)  ; undefined FUN_0048a970()
+    CALL core_fire.cpp_FUN_0048a970     ; 00509eb8
+        ;   XREF to: 0048a970 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048a970()
     MOV EAX,[0x005c11ec]                ; 00509ebd | DAT_005c11ec
     MOV EDI,dword ptr [EAX]             ; 00509ec2 | DAT_02dd1210
     ADD ESP,0x8                         ; 00509ec4
@@ -503,7 +503,7 @@ section .text
     JLE 0x00509f19                      ; 00509edf
         ;   XREF to: 00509f19 (CONDITIONAL_JUMP)  ; LAB_00509f19
     MOV ESI,EBX                         ; 00509ee1
-    MOV EAX,[0x01c78c78]                ; 00509ee3 | DAT_01c78c78
+    MOV EAX,[0x01c78c78]                ; 00509ee3 | g_CGlassActorType_01c78c40.name_hash
         ;   Label: LAB_00509ee3
     PUSH EAX                            ; 00509ee8
     MOV EDX,dword ptr [ESI + 0x14cd70]  ; 00509ee9
@@ -662,8 +662,8 @@ section .text
     JZ 0x0050a096                       ; 0050a08b
         ;   XREF to: 0050a096 (CONDITIONAL_JUMP)  ; LAB_0050a096
     PUSH EBX                            ; 0050a08d
-    CALL FUN_005138e0                   ; 0050a08e
-        ;   XREF to: 005138e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005138e0()
+    CALL core_setdir.cpp_FUN_005138e0   ; 0050a08e
+        ;   XREF to: 005138e0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005138e0()
     ADD ESP,0x4                         ; 0050a093
     MOV EAX,dword ptr [EBX + 0x14cd6c]  ; 0050a096
         ;   Label: LAB_0050a096
@@ -740,8 +740,8 @@ section .text
     PUSH 0x1                            ; 0050a12b
     PUSH EDI                            ; 0050a12d
     PUSH 0x1fb8508                      ; 0050a12e
-    CALL FUN_00445750                   ; 0050a133
-        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined FUN_00445750()
+    CALL core_dcamera.cpp_FUN_00445750  ; 0050a133
+        ;   XREF to: 00445750 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00445750()
     ADD ESP,0xc                         ; 0050a138
     PUSH EBX                            ; 0050a13b
     CALL core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 ; 0050a13c

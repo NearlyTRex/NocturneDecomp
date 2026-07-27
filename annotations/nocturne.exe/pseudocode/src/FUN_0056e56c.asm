@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005c20cc
 ;
 ; Called Functions:
-;   FUN_00565c50
+;   crt_unknown.c_FUN_00565c50
 ;   FUN_005713a0
 ;
 ; *****************************************************************************
@@ -28,8 +28,8 @@ section .text
     MOV EDX,dword ptr [0x005c20cc]      ; 0056e575 | DAT_005c20cc
     PUSH EDX                            ; 0056e57b
     PUSH 0x1                            ; 0056e57c
-    CALL FUN_00565c50                   ; 0056e57e
-        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined FUN_00565c50()
+    CALL crt_unknown.c_FUN_00565c50     ; 0056e57e
+        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565c50()
     ADD ESP,0x8                         ; 0056e583
     MOV EBX,EAX                         ; 0056e586
     TEST EAX,EAX                        ; 0056e588

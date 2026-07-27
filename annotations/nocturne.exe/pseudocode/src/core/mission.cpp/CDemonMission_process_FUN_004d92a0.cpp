@@ -35,7 +35,7 @@ void __cdecl core_mission_cpp_CDemonMission_process_FUN_004d92a0(int *param_1)
     *(int *)(iVar2 + 0x28) = param_1[0x149];
     *(int *)(iVar2 + 0x2c) = param_1[0x14a];
     if (param_1[0x14a] != *param_1) {
-      wincore_windll_cpp_clearScreen_FUN_0052ee70();
+      engine_special_cpp_clearScreen_FUN_0052ee70();
       engine_2d_c_drawText_FUN_00402600("Changing sets...",0,0);
       engine_2d_c_drawText_FUN_00402600("Insert wipe here...",0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();

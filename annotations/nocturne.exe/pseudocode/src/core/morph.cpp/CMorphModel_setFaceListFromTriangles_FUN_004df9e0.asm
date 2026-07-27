@@ -19,13 +19,13 @@
 ;   TerminatedCString s_CMorphModel_setFaceList_0058ac68
 ;   TerminatedCString s_core_morph_cpp_0058ac96
 ;   TerminatedCString s_CMorphModel_setFaceList_0058aca8
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cd4314
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_morph.cpp_CMorphModel_findOrAddTexture_FUN_004dfba0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -50,10 +50,10 @@ section .text
         ;   Label: LAB_004df9fb
     MOV EBP,0x191                       ; 004dfa00
     PUSH 0x58ac68                       ; 004dfa05 | = "CMorphModel::setFaceList - invalid pa..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004dfa0a | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004dfa10 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004dfa16
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004dfa0a | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004dfa10 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004dfa16
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004dfa1b
     MOV EAX,ESI                         ; 004dfa1e
         ;   Label: LAB_004dfa1e
@@ -70,10 +70,10 @@ section .text
     MOV EBP,0x58ac96                    ; 004dfa39 | = "..\\core\\morph.cpp"
     MOV EAX,0x198                       ; 004dfa3e
     PUSH 0x58aca8                       ; 004dfa43 | = "CMorphModel::setFaceList - invalid ve..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004dfa48 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004dfa4e | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004dfa53
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004dfa48 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004dfa4e | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004dfa53
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004dfa58
     MOV EAX,dword ptr [ESP + 0x34]      ; 004dfa5b
         ;   Label: LAB_004dfa5b

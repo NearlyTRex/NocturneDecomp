@@ -22,13 +22,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   FUN_0053c800 at 0053ce36
-;   FUN_00546e10 at 00547456
 ;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0 at 0040da81
 ;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040d930 at 0040d9ab
 ;   core_actor.cpp_FUN_0040a140 at 0040a18c
 ;   core_fire.cpp_CCrater_activate_FUN_004876d0 at 00487725
 ;   core_gore.cpp_CBloodPool_init_FUN_004af730 at 004af75b
+;   core_stranger.cpp_FUN_0053c800 at 0053ce36
+;   core_trash.cpp_FUN_00546e10 at 00547456
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_0059097d
@@ -37,11 +37,11 @@
 ;   TerminatedCString s_Invalid_collision_type_005909f3
 ;   float FLOAT_00590a0d = 2
 ;   float FLOAT_00590a11 = -10
-;   undefined4 DAT_005993b0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01fba938
-;   undefined4 DAT_02dc9e60
+;   undefined4 g_CSpikeActorType_02dc9e28.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -57,8 +57,8 @@
 ;   core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_00468580
 ;   core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0046c5b0
 ;   core_dtri.cpp_rayTriangleFloorTest_FUN_0046d110
+;   core_main.c_FUN_004c8440
 ;   core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_005103f0
-;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -238,7 +238,7 @@ section .text
     ADD ESP,0x14                        ; 0050ef37
     JMP 0x0050ecdd                      ; 0050ef3a
         ;   XREF to: 0050ecdd (UNCONDITIONAL_JUMP)  ; LAB_0050ecdd
-    MOV EAX,[0x02dc9e60]                ; 0050ef3f | DAT_02dc9e60
+    MOV EAX,[0x02dc9e60]                ; 0050ef3f | g_CSpikeActorType_02dc9e28.name_hash
         ;   Label: LAB_0050ef3f
     PUSH EAX                            ; 0050ef44
     PUSH EDI                            ; 0050ef45
@@ -288,7 +288,7 @@ section .text
     CMP EBX,0x1                         ; 0050efcc
     JNZ 0x0050f8bc                      ; 0050efcf
         ;   XREF to: 0050f8bc (CONDITIONAL_JUMP)  ; LAB_0050f8bc
-    PUSH 0x5993b0                       ; 0050efd5 | DAT_005993b0
+    PUSH 0x5993b0                       ; 0050efd5 | g_CVectorTypeInfo_005993b0
     PUSH 0x8                            ; 0050efda
     LEA EAX,[ESP + 0x8]                 ; 0050efdc
     PUSH EAX                            ; 0050efe0
@@ -814,10 +814,10 @@ section .text
     MOV ESI,0x59097d                    ; 0050f6ed | = "..\\core\\setcolid.cpp"
     MOV EDX,0xcb                        ; 0050f6f2
     PUSH 0x590992                       ; 0050f6f7 | = "info.keyFramedModelInstancePtr != NUL..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0050f6fc | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0050f702 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050f708
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0050f6fc | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0050f702 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050f708
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0050f70d
     LEA EAX,[EDI + 0x20]                ; 0050f710
         ;   Label: LAB_0050f710
@@ -927,10 +927,10 @@ section .text
         ;   Label: LAB_0050f8bc
     MOV EBX,0x12b                       ; 0050f8c1
     PUSH 0x5909f3                       ; 0050f8c6 | = "Invalid collision type!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050f8cb | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050f8d1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050f8d7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0050f8cb | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0050f8d1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050f8d7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050f8dc
     JMP 0x0050eebd                      ; 0050f8df
         ;   XREF to: 0050eebd (UNCONDITIONAL_JUMP)  ; LAB_0050eebd

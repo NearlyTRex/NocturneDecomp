@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   FUN_004c85f0 at 004c8cc4
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 at 0044be0e
+;   core_main.c_FUN_004c85f0 at 004c8cc4
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057c05d = 256

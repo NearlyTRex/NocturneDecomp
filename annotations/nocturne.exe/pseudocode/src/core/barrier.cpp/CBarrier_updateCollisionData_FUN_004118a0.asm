@@ -9,7 +9,7 @@
 ;   undefined4 DAT_01e57284
 ;
 ; Called Functions:
-;   FUN_00511a10
+;   core_setcolid.cpp_FUN_00511a10
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   Label: LAB_004118ae
     MOV ECX,dword ptr [0x005be368]      ; 004118af | DAT_005be368
     PUSH ECX                            ; 004118b5 | DAT_01e57284
-    CALL FUN_00511a10                   ; 004118b6
-        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; undefined FUN_00511a10()
+    CALL core_setcolid.cpp_FUN_00511a10 ; 004118b6
+        ;   XREF to: 00511a10 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00511a10()
     ADD ESP,0x8                         ; 004118bb
     RET                                 ; 004118be
 

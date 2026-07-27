@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 398,
-    "complexity_score": 562,
+    "complexity_score": 546,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 19,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 137,
-    "suspect_count": 41,
+    "pseudocode_lines": 136,
+    "suspect_count": 40,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 535
+    "total_lines": 534
   },
   "cross_references": [
     {
@@ -158,6 +157,11 @@
   },
   "function_calls": [
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "004e0920",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionList_load_FUN_004e0920"
@@ -168,6 +172,11 @@
       "name": "core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0"
     },
     {
+      "addr": "005174e0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_005174e0"
+    },
+    {
       "addr": "00564570",
       "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_00564570"
@@ -176,16 +185,6 @@
       "addr": "00563350",
       "is_variadic": false,
       "name": "crt_stdio.c_fscanf_FUN_00563350"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
-      "addr": "005174e0",
-      "is_variadic": false,
-      "name": "FUN_005174e0"
     }
   ],
   "globals": [
@@ -293,14 +292,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -403,16 +402,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int param_2)",
@@ -420,7 +411,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int param_2)",
@@ -428,15 +419,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005174e0(param_1);",
+      "text": "core_skeleton_cpp_FUN_005174e0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = _fgetc(param_2);",
@@ -444,7 +435,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"%d\\n\",&local_24);",
@@ -452,7 +443,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = _fgetc(param_2);",
@@ -460,7 +451,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"%d,%d\\n\",&local_20,&local_1c);",
@@ -468,7 +459,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "core_skeleton_cpp_CSkeleton_allocMemory_FUN_005173c0(param_1,local_20,local_1c);",
@@ -476,7 +467,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = _fgetc(param_2);",
@@ -484,7 +475,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x28558)) {",
@@ -492,7 +483,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = param_1 + 0x2857c;",
@@ -500,7 +491,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"\\\"%[^\\\"]\\\",%d\\n\",iVar1 * 0x24 + param_1 + 0x2855c,iVar3);",
@@ -508,7 +499,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "_fscanf(param_2,\"\\\"%[^\\\"]\\\",%d\\n\",iVar1 * 0x24 + param_1 + 0x2855c,iVar3);",
@@ -516,7 +507,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar1 < *(int *)(param_1 + 0x28558));",
@@ -524,7 +515,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 57,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = _fgetc(param_2);",
@@ -532,7 +523,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = *(int *)(param_1 + 0x29370);",
@@ -540,7 +531,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x2936c)) {",
@@ -548,7 +539,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x28558)) {",
@@ -556,7 +547,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 71,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"%f,%f,%f,%f\\n\",iVar1,local_14,iVar4,iVar2);",
@@ -564,7 +555,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar3 < *(int *)(param_1 + 0x28558));",
@@ -572,7 +563,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 79,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_18 < *(int *)(param_1 + 0x2936c));",
@@ -580,7 +571,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 82,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = _fgetc(param_2);",
@@ -588,7 +579,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 86,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x2936c)) {",
@@ -596,7 +587,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = *(int *)(param_1 + 0x29374) + iVar3;",
@@ -604,7 +595,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 90,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"%f,%f,%f\\n\",iVar4,iVar4 + 4,iVar4 + 8);",
@@ -612,7 +603,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 93,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar1 < *(int *)(param_1 + 0x2936c));",
@@ -620,7 +611,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 96,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = _fgetc(param_2);",
@@ -628,7 +619,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 102,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x2936c)) {",
@@ -636,7 +627,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = *(int *)(param_1 + 0x29378) + iVar3;",
@@ -644,7 +635,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 104,
       "match": "param_2",
       "severity": "mild",
       "text": "_fscanf(param_2,\"%f,%f,%f\\n\",iVar4,iVar4 + 4,iVar4 + 8);",
@@ -652,7 +643,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar1 < *(int *)(param_1 + 0x2936c));",
@@ -660,7 +651,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 109,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((*(byte *)(param_2 + 0xc) & 0x20) != 0) {",
@@ -668,7 +659,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionList_load_FUN_004e0920(param_1,param_2);",
@@ -676,7 +667,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 114,
       "match": "param_2",
       "severity": "mild",
       "text": "core_motion_cpp_CMotionList_load_FUN_004e0920(param_1,param_2);",
@@ -684,7 +675,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 119,
+      "line": 117,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = _fgetc(param_2);",
@@ -692,7 +683,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 123,
+      "line": 121,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x28558)) {",
@@ -700,7 +691,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 124,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar3 = _fgetc(param_2);",
@@ -708,7 +699,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 131,
+      "line": 129,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar1 < *(int *)(param_1 + 0x28558));",
@@ -716,7 +707,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 132,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((*(byte *)(param_2 + 0xc) & 0x20) != 0) {",

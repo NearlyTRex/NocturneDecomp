@@ -111,13 +111,13 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
   core_set_cpp_CDemonSet_setGamma_FUN_0050e400(0x01E57284,*(uint *)(param_1 + 0x224));
   core_game_cpp_CGame_setGameRes_FUN_0049d870(param_1);
   core_game_cpp_CGame_clearOverlay_FUN_0049aa90(param_1);
-  FUN_00476160(&DAT_01c78424);
+  shape_edittool_cpp_FUN_00476160(&DAT_01c78424);
   if (*(int *)(param_1 + 0x274) == 0) {
     core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(0x01E57284,*(uint *)(param_1 + 0x270))
     ;
   }
   else {
-    FUN_005125a0(0x01E57284,0x01E56DA0[3],1);
+    core_setdir_cpp_FUN_005125a0(0x01E57284,0x01E56DA0[3],1);
   }
   core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(param_1);
   core_game_cpp_CGame_loadAssets_FUN_004a3660(param_1);
@@ -137,23 +137,23 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
         uVar2 = 0;
       }
       engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(INT_005bac64,uVar2);
-      FUN_0049f930(param_1);
+      core_game_cpp_FUN_0049f930(param_1);
       core_game_cpp_CGame_updateStatusDisplays_FUN_0049b0b0(param_1);
       core_game_cpp_CGame_processFudge_FUN_0049b260(param_1);
       core_game_cpp_CGame_playerControls_FUN_0049e7d0(param_1);
       if ((((*(int *)(param_1 + 0x274) != 0) && (*(int *)(param_1 + 0xcc) == 0)) &&
           (0x01CEA280[0x5a] == 0)) && (*(int *)(param_1 + 0x240) == 0)) {
-        iVar3 = FUN_005125a0(0x01E57284,0x01E56DA0[3],0x01E56DA0[4]);
+        iVar3 = core_setdir_cpp_FUN_005125a0(0x01E57284,0x01E56DA0[3],0x01E56DA0[4]);
         if (iVar3 != 0) {
           core_game_cpp_CGame_saveClockTime_FUN_0049a890(param_1);
         }
         0x01E56DA0[4] = 0;
       }
-      FUN_0049cc10(param_1);
+      core_game_cpp_FUN_0049cc10(param_1);
       if (_DAT_01c78420 == 0) {
         iVar3 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64,1);
         if (iVar3 != 0) {
-          FUN_00476160(&DAT_01c78424);
+          shape_edittool_cpp_FUN_00476160(&DAT_01c78424);
           *(uint *)(param_1 + 0x200) = 0;
           iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
           iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
@@ -182,8 +182,8 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
           }
           else {
             core_sound_cpp_CSound_shutdown_FUN_0052df90(0x02DC9450);
-            FUN_004940d0(INT_005b9284);
-            FUN_00474c90(local_290);
+            xxx_unk_c_FUN_004940d0(INT_005b9284);
+            shape_edittool_cpp_FUN_00474c90(local_290);
             uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Return");
             shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_290,uVar2);
             uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Options");
@@ -223,24 +223,24 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
               core_game_cpp_CGame_promptLoadGame_FUN_004a6570(param_1);
             }
             if (iVar3 == 3) {
-              FUN_004a3b90(param_1,0);
+              core_game_cpp_FUN_004a3b90(param_1,0);
             }
             if (iVar3 == 4) {
               uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
-              iVar4 = FUN_00470230(0x01BCD074,uVar2);
+              iVar4 = shape_edittool_cpp_FUN_00470230(0x01BCD074,uVar2);
               if (iVar4 != 0) {
                 shape_edittool_cpp_CPickList_dtor_FUN_00474cf0(local_290,0);
                 goto LAB_0049dec1;
               }
             }
             if (iVar3 == 5) {
-              iVar3 = FUN_00504d90(0x01E56DA0);
+              iVar3 = core_script_cpp_FUN_00504d90(0x01E56DA0);
               *(uint *)(param_1 + 0xcc) = (uint)(iVar3 == 0);
             }
             engine_2d_c_clearInputAndWait_FUN_00403f50();
             if (*(int *)(param_1 + 0xcc) == 0) {
               core_sound_cpp_CSound_init_FUN_0052ddf0(0x02DC9450);
-              FUN_004940d0(INT_005b9284);
+              xxx_unk_c_FUN_004940d0(INT_005b9284);
             }
             *(uint *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f59c) =
                  *(uint *)(param_1 + 0xc4);
@@ -252,11 +252,11 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
         _DAT_01c78420 = 0;
       }
       else {
-        iVar3 = FUN_00475230(&DAT_01c78424);
+        iVar3 = shape_edittool_cpp_FUN_00475230(&DAT_01c78424);
         if (iVar3 != -2) {
           engine_2d_c_clearInputAndWait_FUN_00403f50();
-          FUN_004720c0(0x01BCD074);
-          FUN_00476160(&DAT_01c78424);
+          shape_edittool_cpp_FUN_004720c0(0x01BCD074);
+          shape_edittool_cpp_FUN_00476160(&DAT_01c78424);
           _DAT_01c78420 = 0;
         }
         if (iVar3 == 0) {
@@ -297,7 +297,7 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
         local_1c = 1;
         goto LAB_0049dec1;
       }
-      FUN_004a57c0(param_1);
+      core_game_cpp_FUN_004a57c0(param_1);
       if (*(int *)(param_1 + 0x200) != 0) {
         wincore_winrun_cpp_getNextKeypress_FUN_00558b00();
       }
@@ -305,7 +305,7 @@ uint __cdecl core_game_cpp_CGame_runGameSession_FUN_0049da10(int param_1)
       if (local_18 != 0) {
         local_18 = *(int *)(param_1 + 0x9c4);
         core_sound_cpp_CSound_init_FUN_0052ddf0(0x02DC9450);
-        FUN_004940d0(INT_005b9284);
+        xxx_unk_c_FUN_004940d0(INT_005b9284);
       }
     }
     local_1c = 0;
@@ -314,7 +314,7 @@ LAB_0049dec1:
   iVar3 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   iVar3 = (**(code **)(*(int *)(iVar3 + 0x14c) + 0x104))(iVar3);
   if ((iVar3 == 2) && (*(int *)(param_1 + 0x9c4) == 0)) {
-    FUN_00474c90(local_400);
+    shape_edittool_cpp_FUN_00474c90(local_400);
     uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Load game");
     shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_400,uVar2);
     uVar2 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("Quit");
@@ -335,12 +335,12 @@ LAB_0049dec1:
   *(uint *)(param_1 + 0x24c) = uVar2;
   engine_keys_cpp_CKeys_toggleInputMask_FUN_004c4210(iVar3,0);
   core_sound_cpp_CSound_shutdown_FUN_0052df90(0x02DC9450);
-  FUN_004940d0(INT_005b9284);
+  xxx_unk_c_FUN_004940d0(INT_005b9284);
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960(param_1);
   (**(code **)(*(int *)INT_005bac64 + 8))(INT_005bac64);
   core_set_cpp_FUN_0050ad20(0x01E57284);
   *(uint *)(param_1 + 0x1ec) = 0x3f800000;
-  FUN_00476160(&DAT_01c78424);
+  shape_edittool_cpp_FUN_00476160(&DAT_01c78424);
   core_inv_cpp_freeInventory_FUN_004bf270();
   return local_1c;
 }

@@ -3,6 +3,10 @@
 // Function prototypes for core/dlight.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_dlight.cpp_staticInit_FUN_0044e0f0
+// Address: 0044e0f0
+void __cdecl staticInit(void);
+
 // Original: core_dlight.cpp_CDemonLight_ctor_FUN_0044e110
 // Address: 0044e110
 void CDemonLight::ctor(undefined4 param_1,undefined4 param_2,undefined4 param_3);
@@ -103,6 +107,10 @@ void __cdecl captureLightTextures(void);
 // Address: 00450520
 void __cdecl CDemonLight::renderVolumetricLightShaft(int param_1);
 
+// Original: core_dlight.cpp_FUN_00450c90
+// Address: 00450c90
+void FUN_00450c90(int param_1);
+
 // Original: core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350
 // Address: 00451350
 void __cdecl CDemonLight::renderExternalVolumetricShafts(int param_1);
@@ -126,3 +134,15 @@ void __cdecl CDemonLight::setVolumetricIntensity(int param_1,undefined4 param_2)
 // Original: core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110
 // Address: 00452110
 void __cdecl CDemonLight::drawShadowDepthBuffer(int param_1,int param_2,int param_3,int param_4);
+
+// Original: core_dlight.cpp_FUN_00452500
+// Address: 00452500
+undefined4 * FUN_00452500(void);
+
+// Original: core_dlight.cpp_FUN_00452510
+// Address: 00452510
+undefined4 * FUN_00452510(void);
+
+// Original: core_dlight.cpp_FUN_00452520
+// Address: 00452520
+undefined4 * FUN_00452520(void);

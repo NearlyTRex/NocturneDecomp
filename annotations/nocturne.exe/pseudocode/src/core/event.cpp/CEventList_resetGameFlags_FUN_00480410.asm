@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004a4170 at 004a42c2
-;   FUN_004a4b50 at 004a4e29
 ;   core_event.cpp_CEventList_ctor_FUN_0047a9e0 at 0047a9ef
+;   core_game.cpp_FUN_004a4170 at 004a42c2
+;   core_game.cpp_FUN_004a4b50 at 004a4e29
 ;
 ; *****************************************************************************
 

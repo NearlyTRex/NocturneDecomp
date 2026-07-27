@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_00415430 at 00415468
-;   FUN_004d4650 at 004d48c3
-;   FUN_00540c20 at 00540e89
-;   FUN_0054c3e0 at 0054c4d0
+;   core_biggs.cpp_FUN_00415430 at 00415468
+;   core_mimic.cpp_FUN_004d4650 at 004d48c3
 ;   core_moloch.cpp_CMoloch_process_FUN_004ddb20 at 004de130
 ;   core_moloch.cpp_CMoloch_setup_FUN_004dda70 at 004ddadb
 ;   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 at 004ef741
+;   core_succubus.cpp_FUN_00540c20 at 00540e89
+;   core_vampboss.cpp_FUN_0054c3e0 at 0054c4d0
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_004df5b0

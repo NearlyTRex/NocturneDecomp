@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0049cc10 at 0049cf55
+;   core_game.cpp_FUN_0049cc10 at 0049cf55
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_00590572
@@ -373,8 +373,8 @@ section .text
     MOV ECX,0x1                         ; 0050a5b9
     ADD ESP,0x8                         ; 0050a5be
     MOV dword ptr [0x01fba938],ECX      ; 0050a5c1 | DAT_01fba938
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_0052eed4 ; 0050a5c7
-        ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearZBufferNative_FUN_0052eed4()
+    CALL engine_special.cpp_clearZBufferNative_FUN_0052eed4 ; 0050a5c7
+        ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearZBufferNative_FUN_0052eed4()
     PUSH 0x0                            ; 0050a5cc
     MOV EBX,dword ptr [0x005be368]      ; 0050a5ce | DAT_005be368
     PUSH 0x461c3f9a                     ; 0050a5d4
@@ -408,8 +408,8 @@ section .text
     MOV EAX,EDX                         ; 0050a624
     JMP 0x0050a537                      ; 0050a626
         ;   XREF to: 0050a537 (UNCONDITIONAL_JUMP)  ; LAB_0050a537
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 0050a62b
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 0050a62b
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
         ;   Label: LAB_0050a62b
     MOV ESP,EBP                         ; 0050a630
     POP EBP                             ; 0050a632

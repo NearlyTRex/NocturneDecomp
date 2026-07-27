@@ -21,12 +21,12 @@
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_00592d97
 ;   double DOUBLE_00592dbe = 0.0500000000000000
 ;   undefined4 DAT_005bea68
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dc84bc
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   sound_sndmain.cpp_getSfxChannelVol_FUN_00527380
 ;
 ; *****************************************************************************
@@ -97,10 +97,10 @@ section .text
         ;   Label: LAB_005246cd
     MOV EDI,0x917                       ; 005246d2
     PUSH 0x592d97                       ; 005246d7 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 005246dc | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005246e2 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005246e8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 005246dc | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 005246e2 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005246e8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005246ed
     JMP 0x00524652                      ; 005246f0
         ;   XREF to: 00524652 (UNCONDITIONAL_JUMP)  ; LAB_00524652

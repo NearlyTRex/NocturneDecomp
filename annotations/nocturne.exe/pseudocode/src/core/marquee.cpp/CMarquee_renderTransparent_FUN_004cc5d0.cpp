@@ -64,7 +64,7 @@ uint core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(int param_1)
               local_60 = puVar2[2];
             }
             iVar4 = iVar4 + 1;
-            FUN_004cc440(param_1,&uStack_68);
+            core_marquee_cpp_FUN_004cc440(param_1,&uStack_68);
           } while (iVar4 < iVar3);
         }
       }
@@ -90,7 +90,7 @@ uint core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(int param_1)
                 local_88 = puVar2[1];
                 local_84 = puVar2[2];
               }
-              FUN_004cc440(param_1,&uStack_8c);
+              core_marquee_cpp_FUN_004cc440(param_1,&uStack_8c);
             }
             iVar4 = iVar4 + 1;
             iVar3 = iVar3 + 1;
@@ -116,7 +116,7 @@ uint core_marquee_cpp_CMarquee_renderTransparent_FUN_004cc5d0(int param_1)
             local_44[0] = puVar2[2];
           }
           iVar4 = iVar4 + 1;
-          FUN_004cc440(param_1,&local_4c);
+          core_marquee_cpp_FUN_004cc440(param_1,&local_4c);
           piVar1 = local_18;
         } while (iVar4 < iVar3);
       }

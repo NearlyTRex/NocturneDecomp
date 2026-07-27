@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00541d00 at 00541dc6
+;   core_svetlana.cpp_FUN_00541d00 at 00541dc6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dca09c

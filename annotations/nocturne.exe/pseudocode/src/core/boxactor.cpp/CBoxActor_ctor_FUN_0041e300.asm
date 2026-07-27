@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0041e2d0 at 0041e2e3
-;   FUN_00534d00 at 00534d05
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 at 0041f315
+;   core_boxactor.cpp_FUN_0041e2d0 at 0041e2e3
+;   core_stone.cpp_FUN_00534d00 at 00534d05
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_005797f9

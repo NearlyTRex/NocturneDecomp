@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(int param_1)
 
 {
@@ -19,9 +17,9 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(int param_1)
   
   if (-1 < *(int *)(param_1 + 0x25c0)) {
     if (*(int *)(param_1 + 0x25bc) < -1) {
-      _DAT_01cc4800 = "..\\core\\charactr.cpp";
-      _DAT_01cc4804 = 0xcdb;
-      FUN_004c8440("CCharacter::applyGesture - never set gestureBranchRoot for actor %s",param_1);
+      PTR_01cc4800 = "..\\core\\charactr.cpp";
+      INT_01cc4804 = 0xcdb;
+      core_main_c_FUN_004c8440("CCharacter::applyGesture - never set gestureBranchRoot for actor %s",param_1);
     }
     iVar4 = *(int *)(param_1 + 0x25c0) * 0x54c;
     iVar3 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(param_1 + 0x150);
@@ -37,7 +35,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_00429560(int param_1)
     }
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
               (param_1 + 0x150,*(uint *)(param_1 + 0x25c0),*(uint *)(param_1 + 0x25c4),
-               local_8,*(uint *)(param_1 + 0x25bc),FUN_0051b650);
+               local_8,*(uint *)(param_1 + 0x25bc),core_skeleton_cpp_FUN_0051b650);
   }
   return;
 }

@@ -16,14 +16,14 @@
 ;   double DOUBLE_00591dcb = 2670176.85779676
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
 ;   crt_math.c_atan2_FUN_00566c81
 ;   crt_math.c_round_FUN_00563a30
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -128,10 +128,10 @@ section .text
         ;   Label: LAB_0051f164
     MOV EBX,0xfa7                       ; 0051f169
     PUSH 0x591d84                       ; 0051f16e | = "CDeformableModelInstance::computeCyli..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0051f173 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0051f179 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0051f17f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0051f173 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0051f179 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0051f17f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051f184
     JMP 0x0051f098                      ; 0051f187
         ;   XREF to: 0051f098 (UNCONDITIONAL_JUMP)  ; LAB_0051f098

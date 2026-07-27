@@ -16,7 +16,7 @@ int core_door_cpp_CDoor_ctor_FUN_00455050(uint param_1)
   
   iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
-  FUN_00481620(iVar2 + 800);
+  core_event_cpp_FUN_00481620(iVar2 + 800);
   *(byte ***)(iVar2 + -4) = &PTR_core_door_cpp_CDoor_setup_FUN_004551f0_0059c284;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar2,"churchd01.kfm");
   *(uint *)(iVar2 + 0x180) = 0;

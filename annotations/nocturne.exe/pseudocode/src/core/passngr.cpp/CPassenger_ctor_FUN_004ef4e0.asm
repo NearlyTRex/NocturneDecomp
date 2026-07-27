@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004ef4b0 at 004ef4c3
+;   core_passngr.cpp_FUN_004ef4b0 at 004ef4c3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wolfbrn_dfm_0058cbd0
@@ -25,8 +25,8 @@
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorph_ctor_FUN_004e0050
+;   core_npc.cpp_FUN_004ee950
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
-;   FUN_004ee950
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH EDI                            ; 004ef4e2
     MOV EBX,dword ptr [ESP + 0x10]      ; 004ef4e3
     PUSH EBX                            ; 004ef4e7
-    CALL FUN_004ee950                   ; 004ef4e8
-        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; undefined FUN_004ee950()
+    CALL core_npc.cpp_FUN_004ee950      ; 004ef4e8
+        ;   XREF to: 004ee950 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004ee950()
     ADD ESP,0x4                         ; 004ef4ed
     ADD EAX,0x1f67c                     ; 004ef4f0
     PUSH EAX                            ; 004ef4f5

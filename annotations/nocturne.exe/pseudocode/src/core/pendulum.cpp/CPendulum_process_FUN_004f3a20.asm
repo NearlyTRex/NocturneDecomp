@@ -9,8 +9,8 @@
 ;   double DOUBLE_0058d088 = 0.100000000000000
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_01bcdef4
-;   undefined4 DAT_01cae124
+;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
+;   undefined4 g_CHeroActorType_01cae0ec.name_hash
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa5f34
 ;   undefined4 DAT_01fa5f38
@@ -126,7 +126,7 @@ section .text
     POP ESI                             ; 004f3b28
     POP EBX                             ; 004f3b29
     RET                                 ; 004f3b2a
-    MOV EAX,[0x01cae124]                ; 004f3b2b | DAT_01cae124
+    MOV EAX,[0x01cae124]                ; 004f3b2b | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: LAB_004f3b2b
     PUSH EAX                            ; 004f3b30
     PUSH EBX                            ; 004f3b31
@@ -145,7 +145,7 @@ section .text
     ADD ESP,0x10                        ; 004f3b48
     JMP 0x004f3aee                      ; 004f3b4b
         ;   XREF to: 004f3aee (UNCONDITIONAL_JUMP)  ; LAB_004f3aee
-    MOV ECX,dword ptr [0x01bcdef4]      ; 004f3b4d | DAT_01bcdef4
+    MOV ECX,dword ptr [0x01bcdef4]      ; 004f3b4d | g_CEnemyActorType_01bcdebc.name_hash
         ;   Label: LAB_004f3b4d
     PUSH ECX                            ; 004f3b53
     PUSH EBX                            ; 004f3b54

@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
-;   FUN_004ada20
+;   core_glass.cpp_FUN_004ada20
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 004ac424
     PUSH EAX                            ; 004ac427
     PUSH EBX                            ; 004ac428
-    CALL FUN_004ada20                   ; 004ac429
-        ;   XREF to: 004ada20 (UNCONDITIONAL_CALL)  ; undefined FUN_004ada20()
+    CALL core_glass.cpp_FUN_004ada20    ; 004ac429
+        ;   XREF to: 004ada20 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004ada20()
     ADD ESP,0x8                         ; 004ac42e
     POP EBX                             ; 004ac431
     RET                                 ; 004ac432

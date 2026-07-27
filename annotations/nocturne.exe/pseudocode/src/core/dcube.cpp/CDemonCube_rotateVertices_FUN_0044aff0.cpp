@@ -32,9 +32,9 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(int param_1,u
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (DAT_005ae704,&DAT_02dd1184);
   if (20000 < *(int *)(param_1 + 0x20)) {
-    _DAT_01cc4800 = "..\\core\\dcube.cpp";
-    _DAT_01cc4804 = 0x7bb;
-    FUN_004c8440("CDemonCube::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d",*(int *)(param_1 + 0x20),20000);
+    PTR_01cc4800 = "..\\core\\dcube.cpp";
+    INT_01cc4804 = 0x7bb;
+    core_main_c_FUN_004c8440("CDemonCube::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d",*(int *)(param_1 + 0x20),20000);
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(DAT_005ae704,1);
@@ -47,7 +47,7 @@ void __cdecl core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(int param_1,u
       local_48 = (int)ROUND(*pfVar1 * _DAT_0059be10);
       local_44 = (int)ROUND(pfVar1[1] * _DAT_0059be10);
       local_40 = (int)ROUND(pfVar1[2] * _DAT_0059be10);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(iVar3,&local_48);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(iVar3,&local_48);
       if ((*(byte *)(iVar3 + 0x13) & 0x80) == 0) {
         local_20 = local_20 + 1;
       }

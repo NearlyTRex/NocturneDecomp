@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_0045e2e0 at 0045e2f3
-;   FUN_00493760 at 00493c18
+;   cockpit_drawsurf.cpp_FUN_0045e2e0 at 0045e2f3
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049abeb
 ;   core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0 at 0049b523
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 at 00492e2d
+;   engine_font.cpp_FUN_00493760 at 00493c18
 ;
 ; *****************************************************************************
 

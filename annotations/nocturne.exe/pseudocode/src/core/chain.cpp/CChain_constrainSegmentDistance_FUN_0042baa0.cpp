@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042baa0(int param_1,float *param_2,float *param_3)
 
 {
@@ -34,7 +32,7 @@ void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_0042baa0(int par
     local_30 = param_2[2] - param_3[2];
   }
   fVar6 = (float)(((int)(local_30 * local_30 + local_38 * local_38 + local_34 * local_34) >> 1) +
-                 _DAT_01c7070c);
+                 (int)CVector3f_01c70708.y);
   if (fVar6 <= *(float *)(param_1 + 0x158)) {
     return;
   }

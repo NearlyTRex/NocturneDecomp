@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[48]:
-;   FUN_0040f0f0 at 0040f0fc
-;   FUN_0040f5f0 at 0040f607
-;   FUN_00414de0 at 00414df5
-;   FUN_00415430 at 00415456
-;   FUN_0041f6e0 at 0041f737
-;   FUN_004a8a60 at 004a8a77
-;   FUN_004b0bd0 at 004b0bda
-;   FUN_004b4250 at 004b425a
-;   FUN_004c34c0 at 004c34ca
-;   FUN_004c4340 at 004c4357
+;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80 at 0040eebc
+;   core_ammo.cpp_FUN_0040ec00 at 0040ec0a
+;   core_ammobox.cpp_FUN_0040f0f0 at 0040f0fc
+;   core_anvil.cpp_FUN_0040f5f0 at 0040f607
+;   core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30 at 0040ff3c
+;   core_baron.cpp_CBaron_setup_FUN_004102c0 at 0041046a
+;   core_bat.cpp_CBat_setup_FUN_00411ae0 at 00411aef
+;   core_battery.cpp_FUN_00414de0 at 00414df5
+;   core_biggs.cpp_FUN_00415430 at 00415456
+;   core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_00417ac0 at 00417b1e
 ;   ... and 38 more
 ;
 ; Called Functions:

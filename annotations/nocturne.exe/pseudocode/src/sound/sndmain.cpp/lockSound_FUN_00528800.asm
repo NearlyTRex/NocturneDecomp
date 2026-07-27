@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[16]:
-;   FUN_00527570 at 00527574
-;   FUN_005278e0 at 005278e6
-;   FUN_00527950 at 00527957
-;   FUN_005279b0 at 005279b1
-;   FUN_005293f0 at 00529437
-;   FUN_005464a0 at 005465dd
+;   core_tommygun.cpp_FUN_005464a0 at 005465dd
+;   sound_sndmain.cpp_FUN_00527570 at 00527574
+;   sound_sndmain.cpp_FUN_005278e0 at 005278e6
+;   sound_sndmain.cpp_FUN_00527950 at 00527957
+;   sound_sndmain.cpp_FUN_005279b0 at 005279b1
+;   sound_sndmain.cpp_FUN_005293f0 at 00529437
 ;   sound_sndmain.cpp_enableSfxChannel_FUN_00527410 at 00527452
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 at 00527e78
 ;   sound_sndmain.cpp_freeAllSamples_FUN_00527c30 at 00527c32
@@ -22,13 +22,13 @@
 ;   TerminatedCString s_lockSound_unable_to_crea_0059391e
 ;   TerminatedCString s_sound_sndmain_cpp_00593948
 ;   TerminatedCString s_lockSound_lock_imbalance_0059395d
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dc84b8
 ;   undefined4 DAT_02dc84bc
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   wincore_winrun.cpp_createMutex_FUN_00559bc0
 ;   wincore_winrun.cpp_waitForMutex_FUN_00559bd0
 ;
@@ -52,10 +52,10 @@ section .text
     MOV ECX,0x593909                    ; 0052881a | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x12fc                      ; 0052881f
     PUSH 0x59391e                       ; 00528824 | = "lockSound - unable to create mutex ob..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00528829 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0052882f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00528835
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00528829 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0052882f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00528835
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052883a
     POP EBX                             ; 0052883d
     MOV ESI,dword ptr [0x02dc84b8]      ; 0052883e | DAT_02dc84b8
@@ -77,10 +77,10 @@ section .text
         ;   Label: LAB_00528862
     MOV EDX,0x1306                      ; 00528867
     PUSH 0x59395d                       ; 0052886c | = "lockSound - lock imbalance?"
-    MOV [0x01cc4800],EAX                ; 00528871 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00528876 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0052887c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00528871 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00528876 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0052887c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00528881
     POP EDI                             ; 00528884
     POP ESI                             ; 00528885

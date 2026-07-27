@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00541980 at 00541993
+;   core_svetlana.cpp_FUN_00541980 at 00541993
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_svetlana_dfm_005961f3
@@ -13,8 +13,8 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00435100
+;   core_hero.cpp_FUN_004b46d0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
-;   FUN_004b46d0
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
         ;   Label: core_svetlana.cpp_CSvetlana_ctor_FUN_005419b0
     MOV EBX,dword ptr [ESP + 0x8]       ; 005419b1
     PUSH EBX                            ; 005419b5
-    CALL FUN_004b46d0                   ; 005419b6
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b46d0()
+    CALL core_hero.cpp_FUN_004b46d0     ; 005419b6
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b46d0()
     ADD ESP,0x4                         ; 005419bb
     ADD EAX,0x1fa44                     ; 005419be
     PUSH EAX                            ; 005419c3

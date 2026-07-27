@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
-;   FUN_005638d0
+;   crt_unknown.c_FUN_005638d0
 ;   FUN_00572b70
 ;
 ; *****************************************************************************
@@ -121,8 +121,8 @@ section .text
         ;   XREF to: 00571039 (UNCONDITIONAL_JUMP)  ; LAB_00571039
     PUSH EBX                            ; 00571030
         ;   Label: LAB_00571030
-    CALL FUN_005638d0                   ; 00571031
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 00571031
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 00571036
     CALL FUN_00572b70                   ; 00571039
         ;   XREF to: 00572b70 (UNCONDITIONAL_CALL)  ; undefined FUN_00572b70()

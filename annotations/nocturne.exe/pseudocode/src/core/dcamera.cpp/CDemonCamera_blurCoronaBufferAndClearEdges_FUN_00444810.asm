@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004470f0 at 0044715b
+;   core_dcamera.cpp_FUN_004470f0 at 0044715b
 ;
 ; Called Functions:
 ;   core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00465382

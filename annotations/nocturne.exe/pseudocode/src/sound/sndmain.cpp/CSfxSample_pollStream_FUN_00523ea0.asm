@@ -37,12 +37,10 @@
 ;   ... and 10 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_stdio.c_fread_FUN_005636d0
-;   FUN_004c8440
-;   FUN_005257e0
-;   FUN_00529980
 ;   sound_mp3.cpp_CMP3Decoder_read_FUN_004e82d0
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60
 ;   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
@@ -50,6 +48,8 @@
 ;   sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_00523d10
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570
+;   sound_sndmain.cpp_FUN_005257e0
+;   sound_sndmain.cpp_FUN_00529980
 ;
 ; *****************************************************************************
 
@@ -84,10 +84,10 @@ section .text
         ;   Label: LAB_00523ee8
     MOV ESI,0x7cb                       ; 00523eed
     PUSH 0x592b77                       ; 00523ef2 | = "SfxSample::pollStream - my sfx isn't ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00523ef7 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00523efd | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00523f03
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00523ef7 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00523efd | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00523f03
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00523f08
     CMP dword ptr [0x02dc8318],0x0      ; 00523f0b | DAT_02dc8318
         ;   Label: LAB_00523f0b
@@ -98,8 +98,8 @@ section .text
     JZ 0x00523f40                       ; 00523f20
         ;   XREF to: 00523f40 (CONDITIONAL_JUMP)  ; LAB_00523f40
     PUSH EAX                            ; 00523f22
-    CALL FUN_005257e0                   ; 00523f23
-        ;   XREF to: 005257e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005257e0()
+    CALL sound_sndmain.cpp_FUN_005257e0 ; 00523f23
+        ;   XREF to: 005257e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005257e0()
     ADD ESP,0x4                         ; 00523f28
     TEST EAX,EAX                        ; 00523f2b
     JZ 0x0052416c                       ; 00523f2d
@@ -186,10 +186,10 @@ section .text
     MOV EDI,0x592c14                    ; 0052401a | = "..\\sound\\sndmain.cpp"
     MOV EBP,0x81a                       ; 0052401f
     PUSH 0x592c29                       ; 00524024 | = "nextLoadSampleDest = %d, allocLength ..."
-    MOV dword ptr [0x01cc4800],EDI      ; 00524029 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0052402f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00524035
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00524029 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 0052402f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00524035
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0052403a
     MOV ECX,dword ptr [EBX + 0x140]     ; 0052403d
         ;   Label: LAB_0052403d
@@ -254,8 +254,8 @@ section .text
         ;   XREF to: 005241e9 (CONDITIONAL_JUMP)  ; LAB_005241e9
     PUSH EBX                            ; 005240ec
     PUSH 0x592c53                       ; 005240ed | = "Error locking %s while streaming\n"
-    CALL FUN_00529980                   ; 005240f2
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 005240f2
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
         ;   Label: LAB_005240f2
     ADD ESP,0x8                         ; 005240f7
     MOV ECX,dword ptr [ESP + 0x10]      ; 005240fa
@@ -279,10 +279,10 @@ section .text
         ;   Label: LAB_0052411a
     MOV ESI,0x7be                       ; 0052411f
     PUSH 0x592b42                       ; 00524124 | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00524129 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0052412f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00524135
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00524129 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0052412f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00524135
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052413a
     JMP 0x00523eb8                      ; 0052413d
         ;   XREF to: 00523eb8 (UNCONDITIONAL_JUMP)  ; LAB_00523eb8
@@ -302,15 +302,15 @@ section .text
         ;   XREF to: 00523f0b (UNCONDITIONAL_JUMP)  ; LAB_00523f0b
     PUSH 0x592bac                       ; 0052415d | = "SfxSample::pollStream - no sound devi..."
         ;   Label: LAB_0052415d
-    CALL FUN_00529980                   ; 00524162
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 00524162
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x4                         ; 00524167
     JMP 0x005240fa                      ; 0052416a
         ;   XREF to: 005240fa (UNCONDITIONAL_JUMP)  ; LAB_005240fa
     PUSH 0x592bd6                       ; 0052416c | = "SfxSample::pollStream - error querryi..."
         ;   Label: LAB_0052416c
-    CALL FUN_00529980                   ; 00524171
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 00524171
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x4                         ; 00524176
     JMP 0x005240fa                      ; 00524179
         ;   XREF to: 005240fa (UNCONDITIONAL_JUMP)  ; LAB_005240fa
@@ -368,10 +368,10 @@ section .text
         ;   Label: LAB_00524219
     MOV ECX,0x5c4                       ; 0052421e
     PUSH 0x592917                       ; 00524223 | = "generateSilence - invalid bit depth!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00524228 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0052422e | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00524234
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00524228 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0052422e | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00524234
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00524239
     MOV dword ptr [ESP + 0x20],EBP      ; 0052423c
         ;   Label: LAB_0052423c
@@ -424,10 +424,10 @@ section .text
     MOV ESI,0x592d08                    ; 005242a5 | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x893                       ; 005242aa
     PUSH 0x592d1d                       ; 005242af | = "MP3 decoded more than batch: r = %d, ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 005242b4 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005242ba | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005242c0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 005242b4 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 005242ba | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005242c0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 005242c5
     MOV EDX,dword ptr [ESP + 0x20]      ; 005242c8
         ;   Label: LAB_005242c8
@@ -503,10 +503,10 @@ section .text
     MOV EDX,0x592c75                    ; 0052437a | = "..\\sound\\sndmain.cpp"
     MOV ECX,0x86c                       ; 0052437f
     PUSH 0x592c8a                       ; 00524384 | = "Can't stream unless we have mp3 decod..."
-    MOV dword ptr [0x01cc4800],EDX      ; 00524389 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0052438f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00524395
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00524389 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0052438f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00524395
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052439a
     MOV EAX,dword ptr [EBX + 0x14c]     ; 0052439d
         ;   Label: LAB_0052439d

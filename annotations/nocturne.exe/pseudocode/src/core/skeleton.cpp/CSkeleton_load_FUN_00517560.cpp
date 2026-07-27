@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00517560(int param_1,char *param_2)
 
 {
@@ -29,9 +27,9 @@ void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00517560(int param_1,char *par
   } while (cVar1 != '\0');
   iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("data",param_2,"rt");
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-    _DAT_01cc4804 = 0xf6;
-    FUN_004c8440("CSkeleton::load - Can't open %s",param_2);
+    PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    INT_01cc4804 = 0xf6;
+    core_main_c_FUN_004c8440("CSkeleton::load - Can't open %s",param_2);
   }
   core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(param_1,iVar2);
   _fclose(iVar2);

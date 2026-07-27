@@ -14,7 +14,7 @@ int core_passngr_cpp_CPassenger_ctor_FUN_004ef4e0(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_004ee950(param_1);
+  iVar2 = core_npc_cpp_FUN_004ee950(param_1);
   pcVar3 = "wolfbrn.dfm";
   iVar2 = core_morph_cpp_CMorph_ctor_FUN_004e0050(iVar2 + 0x1f67c);
   pcVar4 = (char *)(iVar2 + -0xa8);

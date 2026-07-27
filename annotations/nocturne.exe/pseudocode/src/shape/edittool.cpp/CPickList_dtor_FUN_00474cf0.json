@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,66 +122,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 129,
+    "complexity_score": 114,
     "cross_reference_count": 12,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 19,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 71
   },
   "cross_references": [
     {
-      "addr": "00470230",
-      "from_addr": "004702fd",
-      "name": "FUN_00470230",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00470310",
-      "from_addr": "004703dd",
-      "name": "FUN_00470310",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004703f0",
-      "from_addr": "004704fb",
-      "name": "FUN_004703f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00470730",
-      "from_addr": "00470a3d",
-      "name": "FUN_00470730",
+      "addr": "0049da10",
+      "from_addr": "0049e436",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a4b50",
       "from_addr": "004a51e6",
-      "name": "FUN_004a4b50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f8240",
-      "from_addr": "004f84f4",
-      "name": "FUN_004f8240",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0052ed40",
-      "from_addr": "0052edab",
-      "name": "FUN_0052ed40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049da10",
-      "from_addr": "0049e436",
-      "name": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
+      "name": "core_game.cpp_FUN_004a4b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -203,9 +166,45 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0052ed40",
+      "from_addr": "0052edab",
+      "name": "core_sound.cpp_FUN_0052ed40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f8240",
+      "from_addr": "004f84f4",
+      "name": "engine_pod.cpp_FUN_004f8240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00470550",
       "from_addr": "004706bf",
       "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00470230",
+      "from_addr": "004702fd",
+      "name": "shape_edittool.cpp_FUN_00470230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00470310",
+      "from_addr": "004703dd",
+      "name": "shape_edittool.cpp_FUN_00470310",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004703f0",
+      "from_addr": "004704fb",
+      "name": "shape_edittool.cpp_FUN_004703f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00470730",
+      "from_addr": "00470a3d",
+      "name": "shape_edittool.cpp_FUN_00470730",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -228,24 +227,24 @@
       "name": "crt_memory.c___vec_delete_FUN_0056445f"
     },
     {
-      "addr": "00476160",
-      "is_variadic": false,
-      "name": "FUN_00476160"
-    },
-    {
-      "addr": "00476490",
-      "is_variadic": false,
-      "name": "FUN_00476490"
-    },
-    {
       "addr": "00564494",
       "is_variadic": false,
-      "name": "FUN_00564494"
+      "name": "crt_unknown.c_FUN_00564494"
     },
     {
       "addr": "00473b80",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_dtor_FUN_00473b80"
+    },
+    {
+      "addr": "00476160",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_00476160"
+    },
+    {
+      "addr": "00476490",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_00476490"
     },
     {
       "addr": "00564486",
@@ -262,8 +261,8 @@
     },
     {
       "addr": "0059cad0",
-      "name": "DAT_0059cad0",
-      "type": "undefined4",
+      "name": "g_CPickListTypeInfo_0059cad0",
+      "type": "WatcomTypeInfo",
       "value": null
     }
   ],
@@ -273,7 +272,7 @@
       {
         "call_addr": "004a51e6",
         "call_type": "direct",
-        "caller": "FUN_004a4b50",
+        "caller": "core_game.cpp_FUN_004a4b50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -284,7 +283,7 @@
       {
         "call_addr": "004a5213",
         "call_type": "direct",
-        "caller": "FUN_004a4b50",
+        "caller": "core_game.cpp_FUN_004a4b50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -339,7 +338,7 @@
       {
         "call_addr": "004702fd",
         "call_type": "direct",
-        "caller": "FUN_00470230",
+        "caller": "shape_edittool.cpp_FUN_00470230",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -447,16 +446,8 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = __vec_delete(param_1,&DAT_0059cad0);",
+      "text": "uVar2 = __vec_delete(param_1,&g_CPickListTypeInfo_0059cad0);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_0059cad0",
-      "severity": "mild",
-      "text": "uVar2 = __vec_delete(param_1,&DAT_0059cad0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
@@ -479,7 +470,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00476160(param_1);",
+      "text": "shape_edittool_cpp_FUN_00476160(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -487,7 +478,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_00476490(param_1 + 0x138,0);",
+      "text": "iVar1 = shape_edittool_cpp_FUN_00476490(param_1 + 0x138,0);",
       "type": "unnamed_param"
     },
     {

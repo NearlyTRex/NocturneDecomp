@@ -80,9 +80,9 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005265a0(char *param_1)
   sound_sndmain_cpp_lockSound_FUN_00528800();
   if (_DAT_02dc84bc < 1) {
     ppppcStack_390 = (char ****)"SfxSlot::kill - must be locked!";
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x1f6;
-    FUN_004c8440();
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x1f6;
+    core_main_c_FUN_004c8440();
   }
   local_1c = (char **)0x0;
   iVar8 = 0;
@@ -122,7 +122,7 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005265a0(char *param_1)
     iVar8 = _stricmp(local_18c);
     if (iVar8 == 0) goto LAB_005266dc;
     ppppcStack_390 = (char ****)&local_38c;
-    pppcVar7 = (char ***)FUN_00522480();
+    pppcVar7 = (char ***)sound_sndmain_cpp_FUN_00522480();
   }
   else {
 LAB_005266dc:
@@ -163,9 +163,9 @@ LAB_00526983:
           local_14[0x51] = ppcVar6;
           if (ppcVar6 == (char **)0x0) {
             ppppcStack_390 = (char ****)"Out of memory.";
-            _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-            _DAT_01cc4804 = 0x3c8;
-            FUN_004c8440();
+            PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+            INT_01cc4804 = 0x3c8;
+            core_main_c_FUN_004c8440();
           }
           ppppcStack_390 = (char ****)&local_38c;
           sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(local_14[0x51]);
@@ -261,7 +261,7 @@ LAB_0052673b:
   *(char ****)(&DAT_02dbd3e8 + iVar2) = pppcVar7;
   iVar8 = *(int *)(&DAT_02dbd3e8 + iVar2);
   if (iVar8 == 0) {
-    FUN_00529980("startSfx - can't get sample %s\n",&ppppcStack_390);
+    sound_sndmain_cpp_FUN_00529980("startSfx - can't get sample %s\n",&ppppcStack_390);
   }
   else {
     *(int *)(iVar8 + 300) = *(int *)(iVar8 + 300) + 1;

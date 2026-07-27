@@ -14,7 +14,7 @@ int core_hostage_cpp_CHostage_ctor_FUN_004b69f0(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_004ee950(param_1);
+  iVar2 = core_npc_cpp_FUN_004ee950(param_1);
   *(byte ***)(iVar2 + 0x14c) = &PTR_core_hostage_cpp_CHostage_setup_FUN_004b6b20_0059ef44;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar2 + 0x150,"hickdad.dfm")
   ;

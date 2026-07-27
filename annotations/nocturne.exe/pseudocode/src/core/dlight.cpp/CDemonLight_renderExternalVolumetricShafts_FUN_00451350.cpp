@@ -99,7 +99,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
   if (((*(int *)(param_1 + 0x1cbc) != 0) &&
       ((float)0.10000000000000001 <= *(float *)(0x01E57284 + 0x15a888))) &&
      (*(int *)(0x01C775EC + 0xc) != 0)) {
-    FUN_00460d10(DAT_005ae704);
+    engine_drender_cpp_FUN_00460d10(DAT_005ae704);
     local_9c = local_f0;
     (&local_98)[(uint)bVar6 * -2] = afStack_ec[(uint)bVar6 * -2];
     (&local_98)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
@@ -207,7 +207,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               local_12c = (int)ROUND(local_fc * _DAT_0059c030);
               local_128 = (int)ROUND(local_f8 * _DAT_0059c030);
               local_124 = (int)ROUND(local_f4 * _DAT_0059c030);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c
+              engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (*DAT_005ae704,&local_12c,puVar13,uVar14);
               local_f4 = local_2c;
               if (local_20 < local_2c) {
@@ -218,7 +218,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               local_a8 = (int)ROUND(local_fc * _DAT_0059c030);
               local_a4 = (int)ROUND(local_f8 * _DAT_0059c030);
               local_a0 = (int)ROUND(local_f4 * _DAT_0059c030);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c
+              engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (*DAT_005ae704 + 0x30,&local_a8,puVar13,uVar14);
               local_f4 = local_2c;
               if (local_1c < local_2c) {
@@ -229,7 +229,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               local_d8 = (int)ROUND(local_fc * _DAT_0059c030);
               local_d4 = (int)ROUND(local_f8 * _DAT_0059c030);
               local_d0 = (int)ROUND(local_f4 * _DAT_0059c030);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c
+              engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (*DAT_005ae704 + 0x60,&local_d8);
               local_f4 = local_28;
               if (local_1c < local_28) {
@@ -240,7 +240,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               local_c0 = (int)ROUND(local_fc * _DAT_0059c030);
               local_bc = (int)ROUND(local_f8 * _DAT_0059c030);
               local_b8 = (int)ROUND(local_f4 * _DAT_0059c030);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c
+              engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (*DAT_005ae704 + 0x90,&local_c0);
               piVar3 = DAT_005ae704;
               *(int *)(*DAT_005ae704 + 0x20) = local_68;
@@ -259,7 +259,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0045
               local_148 = 3;
               local_24 = iVar5;
               engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-                        (piVar3,&local_160,FUN_004442a0);
+                        (piVar3,&local_160,core_dcamera_cpp_FUN_004442a0);
             } while (iVar5 < 4);
             local_48 = local_48 + 1;
           } while (local_48 < 0x10);

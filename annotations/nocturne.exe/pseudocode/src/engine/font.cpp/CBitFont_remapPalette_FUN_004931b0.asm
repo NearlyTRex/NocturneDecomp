@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_0044cd80 at 0044cd87
+;   core_dfont.cpp_FUN_0044cd80 at 0044cd87
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 0049018d
 ;
 ; Referenced Globals:
@@ -31,11 +31,11 @@
 ;   undefined4 DAT_01c00634
 ;   undefined4 DAT_01c0063c
 ;   undefined4 DAT_01c00640
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -192,10 +192,10 @@ section .text
         ;   Label: LAB_00493368
     MOV EDX,0x686                       ; 0049336d
     PUSH 0x581967                       ; 00493372 | = "CBitFont::remapPalette - Invalid bits..."
-    MOV [0x01cc4800],EAX                ; 00493377 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0049337c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00493382
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00493377 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0049337c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00493382
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00493387
     JMP 0x0049324c                      ; 0049338a
         ;   XREF to: 0049324c (UNCONDITIONAL_JUMP)  ; LAB_0049324c

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00430210(undefined4 param_1,int param_2,uint param_3,uint param_4,int param_5,undefined4 param_6)
+; int cockpit_ckptutil_c_FUN_00430210(undefined4 param_1,int param_2,uint param_3,uint param_4,int param_5,undefined4 param_6)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c
@@ -18,24 +18,24 @@
 ;   TerminatedCString s_cockpit_ckptutil_c_0057aa5e
 ;   TerminatedCString s_Unable_to_read_bitmap_fi_0057aa74
 ;   TerminatedCString s_cockpit_ckptutil_c_0057aa95
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   cockpit_ckptutil.c_FUN_0042d370
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgetc_FUN_00564570
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_0042d370
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00430210
-        ;   Label: FUN_00430210
+        ;   Label: cockpit_ckptutil.c_FUN_00430210
     PUSH ESI                            ; 00430211
     PUSH EDI                            ; 00430212
     PUSH EBP                            ; 00430213
@@ -100,13 +100,13 @@ section .text
         ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     MOV EAX,0x7ce                       ; 004302a9
     ADD ESP,0x4                         ; 004302ae
-    MOV [0x01cc4804],EAX                ; 004302b1 | DAT_01cc4804
+    MOV [0x01cc4804],EAX                ; 004302b1 | INT_01cc4804
     MOV EAX,ESP                         ; 004302b6
     MOV ECX,0x57aa95                    ; 004302b8 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 004302bd
-    MOV dword ptr [0x01cc4800],ECX      ; 004302be | DAT_01cc4800
-    CALL FUN_004c8440                   ; 004302c4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004302be | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 004302c4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004302c9
     MOV AL,byte ptr [ESP + 0x58]        ; 004302cc
         ;   Label: LAB_004302cc
@@ -159,13 +159,13 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x7b8                       ; 0043033f
     ADD ESP,0x10                        ; 00430344
-    MOV [0x01cc4804],EAX                ; 00430347 | DAT_01cc4804
+    MOV [0x01cc4804],EAX                ; 00430347 | INT_01cc4804
     MOV EAX,ESP                         ; 0043034c
     MOV EDI,0x57aa20                    ; 0043034e | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 00430353
-    MOV dword ptr [0x01cc4800],EDI      ; 00430354 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 0043035a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00430354 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 0043035a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0043035f
     JMP 0x00430232                      ; 00430362
         ;   XREF to: 00430232 (UNCONDITIONAL_JUMP)  ; LAB_00430232
@@ -182,10 +182,10 @@ section .text
     MOV EAX,ESP                         ; 00430383
     MOV ESI,0x7c1                       ; 00430385
     PUSH EAX                            ; 0043038a
-    MOV dword ptr [0x01cc4800],EBX      ; 0043038b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00430391 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00430397
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0043038b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00430391 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00430397
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0043039c
     JMP 0x00430253                      ; 0043039f
         ;   XREF to: 00430253 (UNCONDITIONAL_JUMP)  ; LAB_00430253
@@ -198,8 +198,8 @@ section .text
     PUSH EBP                            ; 004303b5
     MOV EAX,dword ptr [ESP + 0x7c]      ; 004303b6
     PUSH EAX                            ; 004303ba
-    CALL FUN_0042d370                   ; 004303bb
-        ;   XREF to: 0042d370 (UNCONDITIONAL_CALL)  ; undefined FUN_0042d370()
+    CALL cockpit_ckptutil.c_FUN_0042d370 ; 004303bb
+        ;   XREF to: 0042d370 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042d370()
     ADD ESP,0x10                        ; 004303c0
     MOV EAX,dword ptr [ESP + 0x74]      ; 004303c3
     ADD ESP,0x5c                        ; 004303c7

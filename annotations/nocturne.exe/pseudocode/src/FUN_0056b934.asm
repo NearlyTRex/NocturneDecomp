@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   FUN_0056551c at 005655b1
 ;   FUN_00570ad0 at 00570bb4
+;   crt_unknown.c_FUN_0056551c at 005655b1
 ;
 ; Called Functions:
 ;   FUN_0056b960

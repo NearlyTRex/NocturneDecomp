@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[13]:
-;   FUN_004a0260 at 004a0298
-;   FUN_004a0430 at 004a046b
-;   FUN_004c8510 at 004c8567
 ;   FUN_00569f8c at 00569f9c
 ;   FUN_00573ca0 at 00573cc1
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047adec
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a0683
+;   core_game.cpp_FUN_004a0260 at 004a0298
+;   core_game.cpp_FUN_004a0430 at 004a046b
+;   core_main.c_FUN_004c8510 at 004c8567
 ;   core_texlist.cpp_CTextureList_load_FUN_00544950 at 00544b18
 ;   engine_dosio.cpp_getFile_FUN_00456a60 at 00456a9a
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004c41d0 at 004c41db

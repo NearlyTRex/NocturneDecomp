@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00478390 at 004783a3
+;   core_emitter.cpp_FUN_00478390 at 004783a3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_0057f195

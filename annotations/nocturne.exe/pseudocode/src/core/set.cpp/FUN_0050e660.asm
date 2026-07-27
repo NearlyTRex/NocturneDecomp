@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[6]:
-;   FUN_00462300 at 00462498
+;   core_drip.cpp_FUN_00462300 at 00462498
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047d354
 ;   core_fire.cpp_CExplosion_activate_FUN_00486e40 at 00486e86
 ;   core_fire.cpp_CFireEffect_createLightningBoltDirectional_FUN_0048c4a0 at 0048c51a
@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00447e80
-;   FUN_004940d0
+;   xxx_unk.c_FUN_004940d0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     MOV EDX,dword ptr [0x005b9284]      ; 0050e68f | INT_005b9284
     PUSH 0x3f800000                     ; 0050e695
     PUSH EDX                            ; 0050e69a
-    CALL FUN_004940d0                   ; 0050e69b
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
+    CALL xxx_unk.c_FUN_004940d0         ; 0050e69b
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
     ADD ESP,0xc                         ; 0050e6a0
     RET                                 ; 0050e6a3
 

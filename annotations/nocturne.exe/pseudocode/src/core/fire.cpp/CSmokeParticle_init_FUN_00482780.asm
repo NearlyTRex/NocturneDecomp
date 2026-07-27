@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   FUN_0048ab60 at 0048ac94
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0048afe0 at 0048b02c
+;   core_fire.cpp_FUN_0048ab60 at 0048ac94
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0

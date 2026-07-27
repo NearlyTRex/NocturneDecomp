@@ -9,16 +9,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[37]:
-;   FUN_00475230 at 004753a2
-;   FUN_0049cc10 at 0049ccc4
-;   FUN_004c8e10 at 004c8e18
-;   FUN_004c8eb0 at 004c8ecf
-;   FUN_004c90e0 at 004c911e
-;   FUN_004e94f0 at 004e94fa
-;   FUN_004e9520 at 004e9520
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a08bf
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a64bd
 ;   core_game.cpp_CGame_saveClockTime_FUN_0049a890 at 0049a890
+;   core_game.cpp_CGame_updateDT_FUN_0049a8a0 at 0049a8a7
+;   core_game.cpp_FUN_0049cc10 at 0049ccc4
+;   core_main.c_FUN_004c8e10 at 004c8e18
+;   core_main.c_FUN_004c8eb0 at 004c8ecf
+;   core_main.c_FUN_004c90e0 at 004c911e
+;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004e9f19
+;   core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_004ece70 at 004ece9a
 ;   ... and 27 more
 ;
 ; Referenced Globals:

@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 965,
+    "complexity_score": 949,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 105,
-    "suspect_count": 84,
+    "pseudocode_lines": 104,
+    "suspect_count": 83,
     "suspect_types": [
       "param_count_too_few",
       "unaffected_reg",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 351
+    "total_lines": 350
   },
   "cross_references": [
     {
@@ -159,6 +158,11 @@
   },
   "function_calls": [
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "00403900",
       "is_variadic": false,
       "name": "engine_2d.c_computeOutcode_FUN_00403900"
@@ -167,11 +171,6 @@
       "addr": "004015a0",
       "is_variadic": false,
       "name": "engine_2d.c_drawLine_FUN_004015a0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -189,14 +188,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -296,16 +295,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
@@ -313,7 +304,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
@@ -321,7 +312,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
@@ -329,7 +320,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
@@ -337,7 +328,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
       "text": "void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
@@ -345,7 +336,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_6",
       "severity": "mild",
       "text": "void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
@@ -353,7 +344,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_7",
       "severity": "mild",
       "text": "void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
@@ -361,7 +352,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_8",
       "severity": "mild",
       "text": "void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)",
@@ -369,7 +360,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 8,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "int unaff_EBX;",
@@ -377,7 +368,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 10,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "int unaff_EDI;",
@@ -385,7 +376,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,param_2,param_5,param_6,param_7,param_8);",
@@ -393,7 +384,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_1,param_2,param_5,param_6,param_7,param_8);",
@@ -401,7 +392,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_5",
       "severity": "mild",
       "text": "(param_1,param_2,param_5,param_6,param_7,param_8);",
@@ -409,7 +400,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_6",
       "severity": "mild",
       "text": "(param_1,param_2,param_5,param_6,param_7,param_8);",
@@ -417,7 +408,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_7",
       "severity": "mild",
       "text": "(param_1,param_2,param_5,param_6,param_7,param_8);",
@@ -425,7 +416,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_8",
       "severity": "mild",
       "text": "(param_1,param_2,param_5,param_6,param_7,param_8);",
@@ -433,7 +424,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_3",
       "severity": "mild",
       "text": "(param_3,param_4,param_5,param_6,param_7,param_8);",
@@ -441,7 +432,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_4",
       "severity": "mild",
       "text": "(param_3,param_4,param_5,param_6,param_7,param_8);",
@@ -449,7 +440,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_5",
       "severity": "mild",
       "text": "(param_3,param_4,param_5,param_6,param_7,param_8);",
@@ -457,7 +448,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_6",
       "severity": "mild",
       "text": "(param_3,param_4,param_5,param_6,param_7,param_8);",
@@ -465,7 +456,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_7",
       "severity": "mild",
       "text": "(param_3,param_4,param_5,param_6,param_7,param_8);",
@@ -473,7 +464,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_8",
       "severity": "mild",
       "text": "(param_3,param_4,param_5,param_6,param_7,param_8);",
@@ -481,7 +472,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_4",
       "severity": "mild",
       "text": "iVar4 = param_4 - param_2;",
@@ -489,7 +480,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar4 = param_4 - param_2;",
@@ -497,7 +488,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar3 = param_3 - param_1;",
@@ -505,7 +496,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = param_3 - param_1;",
@@ -513,7 +504,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 41,
+      "line": 39,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if (((uVar2 & 8) != 0) && (unaff_EBX = param_5, iVar3 != 0)) {",
@@ -521,7 +512,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
       "match": "param_5",
       "severity": "mild",
       "text": "if (((uVar2 & 8) != 0) && (unaff_EBX = param_5, iVar3 != 0)) {",
@@ -529,7 +520,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_5",
       "severity": "mild",
       "text": "((((longlong)(param_5 - param_1) & 0xffffffffffffU) >> 0x10) << 0x20 |",
@@ -537,7 +528,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "((((longlong)(param_5 - param_1) & 0xffffffffffffU) >> 0x10) << 0x20 |",
@@ -545,7 +536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_5",
       "severity": "mild",
       "text": "(longlong)(param_5 - param_1) * 0x10000 & 0xffffffffU) / (longlong)iVar3)",
@@ -553,7 +544,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "(longlong)(param_5 - param_1) * 0x10000 & 0xffffffffU) / (longlong)iVar3)",
@@ -561,7 +552,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 47,
+      "line": 45,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "unaff_EDI = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + param_2;",
@@ -569,7 +560,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_2",
       "severity": "mild",
       "text": "unaff_EDI = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + param_2;",
@@ -577,7 +568,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 49,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = param_7;",
@@ -585,7 +576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_7",
       "severity": "mild",
       "text": "unaff_EBX = param_7;",
@@ -593,7 +584,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_7",
       "severity": "mild",
       "text": "((((longlong)(param_7 - param_1) & 0xffffffffffffU) >> 0x10) << 0x20 |",
@@ -601,7 +592,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "((((longlong)(param_7 - param_1) & 0xffffffffffffU) >> 0x10) << 0x20 |",
@@ -609,7 +600,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_7",
       "severity": "mild",
       "text": "(longlong)(param_7 - param_1) * 0x10000 & 0xffffffffU) / (longlong)iVar3)",
@@ -617,7 +608,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "(longlong)(param_7 - param_1) * 0x10000 & 0xffffffffU) / (longlong)iVar3)",
@@ -625,7 +616,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 58,
+      "line": 56,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "unaff_EDI = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + param_2;",
@@ -633,7 +624,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_2",
       "severity": "mild",
       "text": "unaff_EDI = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) + param_2;",
@@ -641,7 +632,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 63,
+      "line": 61,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "unaff_EDI = param_6;",
@@ -649,7 +640,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 61,
       "match": "param_6",
       "severity": "mild",
       "text": "unaff_EDI = param_6;",
@@ -657,7 +648,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 65,
       "match": "param_6",
       "severity": "mild",
       "text": "((((longlong)(param_6 - param_2) & 0xffffffffffffU) >> 0x10) << 0x20 |",
@@ -665,7 +656,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 65,
       "match": "param_2",
       "severity": "mild",
       "text": "((((longlong)(param_6 - param_2) & 0xffffffffffffU) >> 0x10) << 0x20 |",
@@ -673,7 +664,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_6",
       "severity": "mild",
       "text": "(longlong)(param_6 - param_2) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *",
@@ -681,7 +672,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_2",
       "severity": "mild",
       "text": "(longlong)(param_6 - param_2) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *",
@@ -689,7 +680,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 70,
+      "line": 68,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = param_1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
@@ -697,7 +688,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
       "text": "unaff_EBX = param_1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
@@ -705,7 +696,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 75,
+      "line": 73,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "unaff_EDI = param_8;",
@@ -713,7 +704,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 73,
       "match": "param_8",
       "severity": "mild",
       "text": "unaff_EDI = param_8;",
@@ -721,7 +712,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_8",
       "severity": "mild",
       "text": "((((longlong)(param_8 - param_2) & 0xffffffffffffU) >> 0x10) << 0x20 |",
@@ -729,7 +720,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_2",
       "severity": "mild",
       "text": "((((longlong)(param_8 - param_2) & 0xffffffffffffU) >> 0x10) << 0x20 |",
@@ -737,7 +728,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 78,
       "match": "param_8",
       "severity": "mild",
       "text": "(longlong)(param_8 - param_2) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *",
@@ -745,7 +736,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 78,
       "match": "param_2",
       "severity": "mild",
       "text": "(longlong)(param_8 - param_2) * 0x10000 & 0xffffffffU) / (longlong)iVar4) *",
@@ -753,7 +744,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 82,
+      "line": 80,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "unaff_EBX = param_1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
@@ -761,7 +752,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
       "text": "unaff_EBX = param_1 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
@@ -769,7 +760,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 87,
+      "line": 85,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -777,7 +768,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 87,
+      "line": 85,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -785,7 +776,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 85,
       "match": "param_5",
       "severity": "mild",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -793,7 +784,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 85,
       "match": "param_6",
       "severity": "mild",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -801,7 +792,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 85,
       "match": "param_7",
       "severity": "mild",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -809,7 +800,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 85,
       "match": "param_8",
       "severity": "mild",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -817,7 +808,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 88,
+      "line": 86,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "param_3 = unaff_EBX;",
@@ -825,7 +816,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 88,
+      "line": 86,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = unaff_EBX;",
@@ -833,7 +824,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 89,
+      "line": 87,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "param_4 = unaff_EDI;",
@@ -841,7 +832,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 87,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4 = unaff_EDI;",
@@ -849,7 +840,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 93,
+      "line": 91,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -857,7 +848,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 93,
+      "line": 91,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -865,7 +856,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 91,
       "match": "param_5",
       "severity": "mild",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -873,7 +864,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 91,
       "match": "param_6",
       "severity": "mild",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -881,7 +872,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 91,
       "match": "param_7",
       "severity": "mild",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -889,7 +880,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 91,
       "match": "param_8",
       "severity": "mild",
       "text": "(unaff_EBX,unaff_EDI,param_5,param_6,param_7,param_8);",
@@ -897,7 +888,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 94,
+      "line": 92,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "param_2 = unaff_EDI;",
@@ -905,7 +896,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 92,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = unaff_EDI;",
@@ -913,7 +904,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 95,
+      "line": 93,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "param_1 = unaff_EBX;",
@@ -921,7 +912,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 93,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = unaff_EBX;",
@@ -929,7 +920,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_2d_c_drawLine_FUN_004015a0(param_1,param_2,param_3,param_4);",
@@ -937,7 +928,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 103,
       "match": "param_2",
       "severity": "mild",
       "text": "engine_2d_c_drawLine_FUN_004015a0(param_1,param_2,param_3,param_4);",
@@ -945,7 +936,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 103,
       "match": "param_3",
       "severity": "mild",
       "text": "engine_2d_c_drawLine_FUN_004015a0(param_1,param_2,param_3,param_4);",
@@ -953,7 +944,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 103,
       "match": "param_4",
       "severity": "mild",
       "text": "engine_2d_c_drawLine_FUN_004015a0(param_1,param_2,param_3,param_4);",

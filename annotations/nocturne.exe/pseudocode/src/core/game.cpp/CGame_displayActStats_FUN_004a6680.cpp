@@ -54,7 +54,7 @@ void __cdecl core_game_cpp_CGame_displayActStats_FUN_004a6680(int param_1)
   uStack_558 = local_48;
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0();
   puStack_54c = (byte *)0x4a66be;
-  wincore_windll_cpp_clearScreen_FUN_0052ee70();
+  engine_special_cpp_clearScreen_FUN_0052ee70();
   puStack_54c = (byte *)0xffff;
   uStack_550 = 0;
   pcStack_554 = (char *)0x0;

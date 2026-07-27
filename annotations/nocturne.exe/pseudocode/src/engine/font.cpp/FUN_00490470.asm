@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void engine_font_cpp_FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x16c]:1  local_16c
@@ -28,13 +28,13 @@
 ;   TerminatedCString s_engine_font_cpp_00581878
 ;   TerminatedCString s_Too_many_chars_fontfile_0058188b
 ;   TerminatedCString s_engine_font_cpp_005818b1
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_00490920
-;   FUN_004c8440
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
@@ -43,7 +43,7 @@
 section .text
 
     PUSH EBX                            ; 00490470
-        ;   Label: FUN_00490470
+        ;   Label: engine_font.cpp_FUN_00490470
     PUSH ESI                            ; 00490471
     PUSH EDI                            ; 00490472
     PUSH EBP                            ; 00490473
@@ -100,10 +100,10 @@ section .text
     MOV EAX,ESP                         ; 0049052a
     MOV ECX,0x581878                    ; 0049052c | = "..\\engine\\font.cpp"
     PUSH EAX                            ; 00490531
-    MOV dword ptr [0x01cc4804],EBX      ; 00490532 | DAT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 00490538 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 0049053e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EBX      ; 00490532 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00490538 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 0049053e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00490543
     MOV EAX,dword ptr [ESP + 0x174]     ; 00490546
         ;   Label: LAB_00490546
@@ -216,10 +216,10 @@ section .text
         ;   Label: LAB_004906e1
     MOV EDI,0x1b9                       ; 004906e6
     PUSH 0x58183c                       ; 004906eb | = "Out of memory"
-    MOV dword ptr [0x01cc4800],ECX      ; 004906f0 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004906f6 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004906fc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004906f0 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004906f6 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004906fc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00490701
     JMP 0x004904b1                      ; 00490704
         ;   XREF to: 004904b1 (UNCONDITIONAL_JUMP)  ; LAB_004904b1
@@ -257,13 +257,13 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x202                       ; 00490761
     ADD ESP,0x10                        ; 00490766
-    MOV [0x01cc4804],EAX                ; 00490769 | DAT_01cc4804
+    MOV [0x01cc4804],EAX                ; 00490769 | INT_01cc4804
     MOV EAX,ESP                         ; 0049076e
     MOV ECX,0x5818b1                    ; 00490770 | = "..\\engine\\font.cpp"
     PUSH EAX                            ; 00490775
-    MOV dword ptr [0x01cc4800],ECX      ; 00490776 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 0049077c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00490776 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 0049077c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00490781
     MOV EAX,dword ptr [ESP + 0x150]     ; 00490784
         ;   Label: LAB_00490784

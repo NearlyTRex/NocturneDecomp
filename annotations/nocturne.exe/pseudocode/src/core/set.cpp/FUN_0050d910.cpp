@@ -54,7 +54,7 @@ void core_set_cpp_FUN_0050d910(int param_1,ushort *param_2,int param_3,int param
               (DAT_005ae704,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
   }
-  FUN_00460d10(DAT_005ae704);
+  engine_drender_cpp_FUN_00460d10(DAT_005ae704);
   local_20 = 0;
   if (0 < param_3) {
     do {

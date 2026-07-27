@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,27 +122,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 505,
+    "complexity_score": 489,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 42,
+    "pseudocode_lines": 59,
+    "suspect_count": 41,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "raw_address_constant",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 259
+    "total_lines": 258
   },
   "cross_references": [
     {
       "addr": "0041f6e0",
       "from_addr": "0041f9b3",
-      "name": "FUN_0041f6e0",
+      "name": "core_boxactor.cpp_FUN_0041f6e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -177,6 +176,11 @@
       "name": "core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0044bf20"
     },
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "00563a30",
       "is_variadic": false,
       "name": "crt_math.c_round_FUN_00563a30"
@@ -200,11 +204,6 @@
       "addr": "004568c0",
       "is_variadic": false,
       "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -300,14 +299,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -328,7 +327,7 @@
       {
         "call_addr": "0041f9b3",
         "call_type": "direct",
-        "caller": "FUN_0041f6e0",
+        "caller": "core_boxactor.cpp_FUN_0041f6e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -415,16 +414,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(int *param_1,char *param_2)",
@@ -432,7 +423,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(int *param_1,char *param_2)",
@@ -440,7 +431,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_2,\"rb\");",
@@ -448,15 +439,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004c8440(\"CDemonFilter::load - Bad filename : %s\",param_2);",
+      "text": "core_main_c_FUN_004c8440(\"CDemonFilter::load - Bad filename : %s\",param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0(\"art\",param_2);",
@@ -464,7 +455,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = (int)ROUND(fVar3);",
@@ -472,7 +463,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = iVar2 / *param_1;",
@@ -480,7 +471,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = iVar2 / *param_1;",
@@ -488,7 +479,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 != param_1[1]) {",
@@ -496,7 +487,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 != param_1[1]) {",
@@ -504,10 +495,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"CDemonFilter::load - Non-square filter %dx%d\",*param_1,param_1[1],uVar4);",
+      "text": "core_main_c_FUN_004c8440(\"CDemonFilter::load - Non-square filter %dx%d\",*param_1,param_1[1],uVar4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_main_c_FUN_004c8440(\"CDemonFilter::load - Non-square filter %dx%d\",*param_1,param_1[1],uVar4);",
       "type": "unnamed_param"
     },
     {
@@ -515,12 +514,12 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"CDemonFilter::load - Non-square filter %dx%d\",*param_1,param_1[1],uVar4);",
+      "text": "if ((*param_1 < 0x40) || (0x100 < *param_1)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*param_1 < 0x40) || (0x100 < *param_1)) {",
@@ -528,10 +527,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*param_1 < 0x40) || (0x100 < *param_1)) {",
+      "text": "core_main_c_FUN_004c8440(\"CDemonFilter::load - Bad filter size %d\",*param_1);",
       "type": "unnamed_param"
     },
     {
@@ -539,12 +538,12 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"CDemonFilter::load - Bad filter size %d\",*param_1);",
+      "text": "if ((param_1[1] < 0x40) || (0x100 < param_1[1])) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1[1] < 0x40) || (0x100 < param_1[1])) {",
@@ -552,10 +551,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((param_1[1] < 0x40) || (0x100 < param_1[1])) {",
+      "text": "core_main_c_FUN_004c8440(\"CDemonFilter::load - Bad filter size %d\",param_1[1]);",
       "type": "unnamed_param"
     },
     {
@@ -563,20 +562,12 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"CDemonFilter::load - Bad filter size %d\",param_1[1]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
       "text": "core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_2,\"rb\");",
@@ -584,7 +575,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fread(param_1[0x12],*param_1,param_1[1],iVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_fread(param_1[0x12],*param_1,param_1[1],iVar2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(param_1[0x12],*param_1,param_1[1],iVar2);",
@@ -593,22 +600,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fread(param_1[0x12],*param_1,param_1[1],iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fread(param_1[0x12],*param_1,param_1[1],iVar2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 48,
       "match": "param_1",
       "severity": "mild",
       "text": "for (iVar2 = 0; iVar2 < *param_1 * param_1[1]; iVar2 = iVar2 + 1) {",
@@ -616,7 +607,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "for (iVar2 = 0; iVar2 < *param_1 * param_1[1]; iVar2 = iVar2 + 1) {",
@@ -624,7 +615,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(char *)(iVar2 + param_1[0x12]) = (char)((int)(uint)*(byte *)(iVar2 + param_1[0x12]) >> 2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "*(char *)(iVar2 + param_1[0x12]) = (char)((int)(uint)*(byte *)(iVar2 + param_1[0x12]) >> 2);",
@@ -635,12 +634,12 @@
       "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(char *)(iVar2 + param_1[0x12]) = (char)((int)(uint)*(byte *)(iVar2 + param_1[0x12]) >> 2);",
+      "text": "param_1 = param_1 + 2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + 2;",
@@ -649,14 +648,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 51,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = param_1 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
       "match": "param_2",
       "severity": "mild",
       "text": "cVar1 = *param_2;",
@@ -664,7 +655,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "*(char *)param_1 = cVar1;",
@@ -672,7 +663,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_2",
       "severity": "mild",
       "text": "cVar1 = param_2[1];",
@@ -680,7 +671,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 57,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 2;",
@@ -688,7 +679,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 57,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 2;",
@@ -696,7 +687,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(char *)((int)param_1",
       "severity": "moderate",
       "text": "*(char *)((int)param_1 + 1) = cVar1;",
@@ -704,7 +695,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "*(char *)((int)param_1 + 1) = cVar1;",
@@ -712,7 +703,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 59,
       "match": "(int *)((int)param_1",
       "severity": "moderate",
       "text": "param_1 = (int *)((int)param_1 + 2);",
@@ -720,7 +711,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (int *)((int)param_1 + 2);",
@@ -728,7 +719,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (int *)((int)param_1 + 2);",
@@ -736,7 +727,7 @@
     },
     {
       "description": "Raw hex address 0x44bfe2 assigned to bare local `uVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 20,
+      "line": 18,
       "match": "0x44bfe2",
       "severity": "moderate",
       "text": "uVar4 = 0x44bfe2;",

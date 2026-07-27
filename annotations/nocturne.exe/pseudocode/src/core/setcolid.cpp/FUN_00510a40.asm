@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float FUN_00510a40(int param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,float param_8)
+; float core_setcolid_cpp_FUN_00510a40(int param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,float param_8)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x208]:4  local_208
@@ -33,10 +33,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   FUN_004a9270 at 004a9f71
-;   FUN_0053c800 at 0053cdce
-;   FUN_00546e10 at 005473a0
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 at 004252cf
+;   core_ghoul.cpp_FUN_004a9270 at 004a9f71
+;   core_stranger.cpp_FUN_0053c800 at 0053cdce
+;   core_trash.cpp_FUN_00546e10 at 005473a0
 ;   core_zombie.cpp_FUN_0055ef50 at 0055fef4
 ;
 ; Referenced Globals:
@@ -45,8 +45,8 @@
 ;   TerminatedCString s_core_setcolid_cpp_00590a8e
 ;   TerminatedCString s_Invalid_collision_type_00590aa3
 ;   double DOUBLE_00590abd = -0.00100000000000000
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01fba938
 ;
 ; Called Functions:
@@ -59,17 +59,17 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
 ;   core_dtrace.cpp_CDemonRaytrace_testCylinderCollision_FUN_00468af0
 ;   core_dtrace.cpp_initIntersectionCylinder_FUN_00468a20
+;   core_main.c_FUN_004c8440
 ;   core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_005103f0
 ;   core_setcolid.cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00510a40
-        ;   Label: FUN_00510a40
+        ;   Label: core_setcolid.cpp_FUN_00510a40
     PUSH ESI                            ; 00510a41
     PUSH EDI                            ; 00510a42
     PUSH EBP                            ; 00510a43
@@ -305,10 +305,10 @@ section .text
     MOV ECX,0x590a2d                    ; 00510d8c | = "..\\core\\setcolid.cpp"
     MOV EDX,0x389                       ; 00510d91
     PUSH 0x590a42                       ; 00510d96 | = "info.keyFramedModelInstancePtr != NUL..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00510d9b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00510da1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00510da7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00510d9b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00510da1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00510da7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00510dac
     FLD float ptr [EBP + 0x30]          ; 00510daf
         ;   Label: LAB_00510daf
@@ -700,10 +700,10 @@ section .text
         ;   Label: LAB_0051133f
     MOV EDX,0x3f1                       ; 00511344
     PUSH 0x590aa3                       ; 00511349 | = "Invalid collision type!"
-    MOV [0x01cc4800],EAX                ; 0051134e | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00511353 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00511359
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0051134e | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00511353 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00511359
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051135e
     JMP 0x00510c2a                      ; 00511361
         ;   XREF to: 00510c2a (UNCONDITIONAL_JUMP)  ; LAB_00510c2a

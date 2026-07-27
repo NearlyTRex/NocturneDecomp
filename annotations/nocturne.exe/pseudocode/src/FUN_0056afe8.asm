@@ -16,7 +16,7 @@
 ;   undefined4 DAT_02de5461
 ;
 ; Called Functions:
-;   FUN_005638e0
+;   crt_unknown.c_FUN_005638e0
 ;
 ; *****************************************************************************
 
@@ -211,8 +211,8 @@ section .text
     MOV EAX,dword ptr [ESP]             ; 0056b189
     ADD EAX,0x4                         ; 0056b18c
     PUSH EAX                            ; 0056b18f
-    CALL FUN_005638e0                   ; 0056b190
-        ;   XREF to: 005638e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638e0()
+    CALL crt_unknown.c_FUN_005638e0     ; 0056b190
+        ;   XREF to: 005638e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638e0()
     ADD ESP,0x4                         ; 0056b195
     XOR EAX,EAX                         ; 0056b198
         ;   Label: LAB_0056b198

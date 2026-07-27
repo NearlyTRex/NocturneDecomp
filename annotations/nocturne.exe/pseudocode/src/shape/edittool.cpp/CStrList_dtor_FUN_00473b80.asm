@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004fe4d0 at 004fe4e4
+;   core_script.cpp_FUN_004fe4d0 at 004fe4e4
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0 at 00474d26
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_shape_edittool.cpp_CStrList_dtor_FUN_00473b80_0059ca74 = 00473b80
-;   undefined4 DAT_0059caf0
+;   WatcomTypeInfo g_CStrListTypeInfo_0059caf0
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_edittool.cpp_CStrList_clear_FUN_00473c50
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
@@ -39,7 +39,7 @@ section .text
     MOV EAX,EBX                         ; 00473ba3
     POP EBX                             ; 00473ba5
     RET                                 ; 00473ba6
-    PUSH 0x59caf0                       ; 00473ba7 | DAT_0059caf0
+    PUSH 0x59caf0                       ; 00473ba7 | g_CStrListTypeInfo_0059caf0
         ;   Label: LAB_00473ba7
     PUSH EBX                            ; 00473bac
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00473bad
@@ -54,8 +54,8 @@ section .text
     RET                                 ; 00473bc1
     PUSH EBX                            ; 00473bc2
         ;   Label: LAB_00473bc2
-    CALL FUN_00564494                   ; 00473bc3
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 00473bc3
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 00473bc8
     MOV EAX,EBX                         ; 00473bcb
     POP EBX                             ; 00473bcd

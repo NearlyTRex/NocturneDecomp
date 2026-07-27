@@ -5,12 +5,12 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType CDemonActorType_0077acd0 = {};
-CDemonActorType CDemonActorType_0077bcc8 = {};
-CDemonActorType CDemonActorType_0077bd04 = {};
-CDemonActorType CDemonActorType_0077bd40 = {};
-CDemonActorType CDemonActorType_0077bd7c = {};
-CDemonActorType CDemonActorType_0077d20c = {};
+CDemonActorType g_CColonelActorType_0077acd0 = {};
+CDemonActorType g_CConveyorActorType_0077bcc8 = {};
+CDemonActorType g_CZombieCowActorType_0077bd04 = {};
+CDemonActorType g_CCrateActorType_0077bd40 = {};
+CDemonActorType g_CCrossbowActorType_0077bd7c = {};
+CDemonActorType g_CCurtainActorType_0077d20c = {};
 
 // undefined4
 undefined4 DAT_0077ac8c = {};

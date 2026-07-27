@@ -5,26 +5,26 @@
 ;
 ;
 ; XREF[38]:
-;   FUN_00418a00 at 00418ec2
-;   FUN_0043d1c0 at 0043d330
-;   FUN_00477890 at 00477aa2
-;   FUN_00478f80 at 00478fd8
-;   FUN_0048b6f0 at 0048be91
-;   FUN_00498de0 at 00499025
-;   FUN_004998c0 at 00499939
-;   FUN_004a9270 at 004a942b
-;   FUN_004b27c0 at 004b2954
-;   FUN_004c4970 at 004c4af3
+;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0 at 0040da6b
+;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040d930 at 0040d999
+;   core_actor.cpp_FUN_0040a140 at 0040a166
+;   core_actor.cpp_FUN_0040b300 at 0040b7da
+;   core_boneguy.cpp_FUN_00418a00 at 00418ec2
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 00429a8d
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 at 00425193
+;   core_cow.cpp_CZombieCow_process_FUN_0043bdb0 at 0043bf09
+;   core_crossbow.cpp_FUN_0043d1c0 at 0043d330
+;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 004548c0
 ;   ... and 28 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_00590b43
 ;   TerminatedCString s_CDemonSet_ignore_ignore_00590b58
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -58,10 +58,10 @@ section .text
     MOV EDI,0x590b43                    ; 005117b7 | = "..\\core\\setcolid.cpp"
     MOV EBP,0x473                       ; 005117bc
     PUSH 0x590b58                       ; 005117c1 | = "CDemonSet::ignore - ignore list is full"
-    MOV dword ptr [0x01cc4800],EDI      ; 005117c6 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 005117cc | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005117d2
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 005117c6 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 005117cc | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005117d2
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005117d7
     POP EDI                             ; 005117da
     JMP 0x0051179c                      ; 005117db

@@ -2,7 +2,7 @@
 // Address: 0048a0e0
 // Address Range: [[0048a0e0, 0048a126]]
 // Convention: __cdecl
-// Signature: undefined1 * __cdecl core_fire_cpp_allocateBulletHole_FUN_0048a0e0(void)
+// Signature: undefined * __cdecl core_fire_cpp_allocateBulletHole_FUN_0048a0e0(void)
 
 #include "nocturne.h"
 

@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_004f5bb0 at 004f5bce
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0 at 004f46f1
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40 at 004f4ed4
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630 at 004f4694
+;   cockpit_pkbmpset.cpp_FUN_004f5bb0 at 004f5bce
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_004f4a00

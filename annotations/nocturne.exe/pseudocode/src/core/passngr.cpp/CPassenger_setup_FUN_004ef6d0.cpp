@@ -16,7 +16,7 @@ void core_passngr_cpp_CPassenger_setup_FUN_004ef6d0(int param_1)
   uint uVar5;
   char *pcVar6;
   
-  FUN_004ee9e0(param_1);
+  core_npc_cpp_FUN_004ee9e0(param_1);
   if (*(int *)(param_1 + 0x1f678) == 0) {
     pcVar4 = (char *)core_actor_cpp_createActorByName_FUN_0040d540("CWerewolf");
     pcVar6 = (char *)(param_1 + 0x1f5f4);

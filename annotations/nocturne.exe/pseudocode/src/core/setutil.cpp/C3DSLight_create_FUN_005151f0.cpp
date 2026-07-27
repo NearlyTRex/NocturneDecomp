@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(int param_1)
 
 {
@@ -28,9 +26,9 @@ char * __cdecl core_setutil_cpp_C3DSLight_create_FUN_005151f0(int param_1)
                                 *(uint *)(param_1 + 0x180c));
   }
   if (pcVar4 == (char *)0x0) {
-    _DAT_01cc4800 = "..\\core\\setutil.cpp";
-    _DAT_01cc4804 = 0x2c6;
-    FUN_004c8440("C3DSLight::create - Out of memory!");
+    PTR_01cc4800 = "..\\core\\setutil.cpp";
+    INT_01cc4804 = 0x2c6;
+    core_main_c_FUN_004c8440("C3DSLight::create - Out of memory!");
   }
   core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(pcVar4);
   if (*(int *)(param_1 + 0x11ec) < 1) {

@@ -9,10 +9,10 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_004fbf20 at 004fbfa2
+;   core_scat.cpp_FUN_004fbf20 at 004fbfa2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bcdef4
+;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -64,7 +64,7 @@ section .text
     POP ESI                             ; 004fca91
     POP EBX                             ; 004fca92
     RET                                 ; 004fca93
-    MOV EDX,dword ptr [0x01bcdef4]      ; 004fca94 | DAT_01bcdef4
+    MOV EDX,dword ptr [0x01bcdef4]      ; 004fca94 | g_CEnemyActorType_01bcdebc.name_hash
         ;   Label: LAB_004fca94
     PUSH EDX                            ; 004fca9a
     MOV ECX,dword ptr [ESI + 0x2590]    ; 004fca9b

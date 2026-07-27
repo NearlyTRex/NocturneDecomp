@@ -23,7 +23,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   FUN_004d23d0 at 004d24d2
+;   core_menu.cpp_FUN_004d23d0 at 004d24d2
 ;   core_menu.cpp_configureCustomKeys_FUN_004d0d20 at 004d0d8f
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004d0080 at 004d018e
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1354
@@ -61,8 +61,8 @@
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
-;   sound_sndmain.cpp_processAudio_FUN_005288f0
-;   wincore_windll.cpp_clearScreen_FUN_0052ee70
+;   engine_special.cpp_clearScreen_FUN_0052ee70
+;   engine_special.cpp_clearZBufferNative_FUN_0052eed4
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -79,10 +79,10 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 004dec59
     CALL sound_sndmain.cpp_processAudio_FUN_005288f0 ; 004dec5c
         ;   XREF to: 005288f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_processAudio_FUN_005288f0()
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004dec61
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_0052eed4 ; 004dec66
-        ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearZBufferNative_FUN_0052eed4()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004dec61
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearZBufferNative_FUN_0052eed4 ; 004dec66
+        ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearZBufferNative_FUN_0052eed4()
     PUSH 0x2dd1184                      ; 004dec6b | DAT_02dd1184
     MOV EDX,dword ptr [0x005ae704]      ; 004dec70 | DAT_005ae704
     PUSH EDX                            ; 004dec76 | DAT_01b4d738

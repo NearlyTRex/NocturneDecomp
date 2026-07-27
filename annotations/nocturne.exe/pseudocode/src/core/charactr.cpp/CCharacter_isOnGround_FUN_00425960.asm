@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[18]:
-;   FUN_00418a00 at 00418e86
-;   FUN_0041fe40 at 004207ca
-;   FUN_004a9270 at 004a93ef
-;   FUN_004c4970 at 004c4ab7
-;   FUN_004da790 at 004dab16
-;   FUN_00540f50 at 005410af
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 0041259d
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413922
 ;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 004155aa
+;   core_boneguy.cpp_FUN_00418a00 at 00418e86
+;   core_bride.cpp_FUN_0041fe40 at 004207ca
 ;   core_cow.cpp_CZombieCow_process_FUN_0043bdb0 at 0043becd
+;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 00454884
+;   core_drone.cpp_CDrone_process_FUN_00462a60 at 00462be1
+;   core_gargoyle.cpp_CGargoyle_process_FUN_004a7870 at 004a79bf
+;   core_ghoul.cpp_FUN_004a9270 at 004a93ef
 ;   ... and 8 more
 ;
 ; *****************************************************************************

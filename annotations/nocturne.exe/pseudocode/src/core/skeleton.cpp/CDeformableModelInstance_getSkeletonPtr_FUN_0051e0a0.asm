@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[74]:
-;   FUN_00439da0 at 00439db6
-;   FUN_004b3110 at 004b3126
-;   FUN_004b6d80 at 004b71c2
-;   FUN_004d4650 at 004d46a5
-;   FUN_004d4ba0 at 004d4bb7
-;   FUN_0051cf60 at 0051cf6c
-;   FUN_0051d5e0 at 0051d5ed
-;   FUN_0051d650 at 0051d683
-;   FUN_0051f3f0 at 0051f4ba
-;   FUN_00535450 at 0053546a
+;   core_baron.cpp_CBaron_setup_FUN_004102c0 at 004102d6
+;   core_batcreat.cpp_CBatCreature_setup_FUN_00412160 at 00412180
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413ae7
+;   core_batman.cpp_CBatman_setup_FUN_004134a0 at 004134c0
+;   core_boneguy.cpp_CBoneGuy_setup_FUN_00418800 at 00418817
+;   core_bride.cpp_CBride_setup_FUN_0041fc20 at 0041fc3a
+;   core_charactr.cpp_CCharacter_processFire_FUN_004269b0 at 004269c6
+;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0 at 0042ae0a
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042abd0 at 0042ac56
+;   core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80 at 00426ece
 ;   ... and 64 more
 ;
 ; Called Functions:

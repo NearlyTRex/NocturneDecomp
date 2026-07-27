@@ -15,9 +15,9 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   FUN_0045ab40 at 0045af24
-;   FUN_0048f490 at 0048f53f
 ;   core_dracbrid.cpp_CDraculaBride_updateFreakySounds_FUN_0045b020 at 0045b23b
+;   core_dracbrid.cpp_FUN_0045ab40 at 0045af24
+;   core_flies.cpp_FUN_0048f490 at 0048f53f
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005950fe = 0.5

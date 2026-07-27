@@ -5,18 +5,18 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004676c0 at 004677d7
+;   core_dtrace.cpp_FUN_004676c0 at 004677d7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_0057e010
 ;   TerminatedCString s_CDemonRaytrace_allocNewC_0057e023
-;   undefined4 DAT_0059c8c0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   WatcomTypeInfo g_CDemonCubeTypeInfo_0059c8c0
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c___vec_new_FUN_00566234
-;   FUN_004c8440
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
 ; *****************************************************************************
@@ -30,7 +30,7 @@ section .text
     IMUL EAX,dword ptr [EBX + 0x44]     ; 00467338
     MOV EDX,dword ptr [EBX + 0x48]      ; 0046733c
     IMUL EDX,EAX                        ; 0046733f
-    PUSH 0x59c8c0                       ; 00467342 | DAT_0059c8c0
+    PUSH 0x59c8c0                       ; 00467342 | g_CDemonCubeTypeInfo_0059c8c0
     PUSH EDX                            ; 00467347
     LEA EAX,[EDX*0x4 + 0x0]             ; 00467348
     SUB EAX,EDX                         ; 0046734f
@@ -57,10 +57,10 @@ section .text
     MOV EBX,0x57e010                    ; 00467378 | = "..\\core\\dtrace.cpp"
     MOV ESI,0xae                        ; 0046737d
     PUSH 0x57e023                       ; 00467382 | = "CDemonRaytrace::allocNewCubeList - Ou..."
-    MOV dword ptr [0x01cc4800],EBX      ; 00467387 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0046738d | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00467393
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00467387 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0046738d | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00467393
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00467398
     POP ESI                             ; 0046739b
     POP EBX                             ; 0046739c

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0049a1e0 at 0049a209
+;   core_game.cpp_staticInit_FUN_0049a1e0 at 0049a209
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c78598

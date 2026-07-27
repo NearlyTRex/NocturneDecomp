@@ -24,7 +24,7 @@ int engine_3d_c_transformAndBufferVertices_FUN_00404530(int param_1)
   _DAT_006b0298 = iVar3;
   if (0 < *(int *)(param_1 + 8)) {
     do {
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(puVar2,iVar3);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(puVar2,iVar3);
       puVar2[0xb] = _DAT_01c038f4;
       if ((*(byte *)((int)puVar2 + 0x13) & 0x80) == 0) {
         local_14 = local_14 + 1;

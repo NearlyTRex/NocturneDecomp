@@ -1,14 +1,14 @@
-// Name: FUN_0044c560
+// Name: core_dfont.cpp_FUN_0044c560
 // Address: 0044c560
 // Address Range: [[0044c560, 0044cbff]]
 // Convention: unknown
-// Signature: void FUN_0044c560(void)
+// Signature: void core_dfont_cpp_FUN_0044c560(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0044c560(void)
+void core_dfont_cpp_FUN_0044c560(void)
 
 {
   int iVar1;
@@ -21,9 +21,9 @@ void FUN_0044c560(void)
   }
   _DAT_014b98f8 = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfont.cpp";
-    _DAT_01cc4804 = 0x41;
-    FUN_004c8440("Medium font object not allocated!");
+    PTR_01cc4800 = "..\\core\\dfont.cpp";
+    INT_01cc4804 = 0x41;
+    core_main_c_FUN_004c8440("Medium font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40
             (_DAT_014b98f8,"nocfont.raw",0x136,0x1ae,0);
@@ -43,9 +43,9 @@ void FUN_0044c560(void)
   }
   _DAT_014b98fc = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfont.cpp";
-    _DAT_01cc4804 = 0x51;
-    FUN_004c8440("Tiny font object not allocated!");
+    PTR_01cc4800 = "..\\core\\dfont.cpp";
+    INT_01cc4804 = 0x51;
+    core_main_c_FUN_004c8440("Tiny font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40
             (_DAT_014b98fc,"nocsmall.raw",0xf8,0x158,0);
@@ -64,9 +64,9 @@ void FUN_0044c560(void)
   }
   _DAT_014b9900 = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfont.cpp";
-    _DAT_01cc4804 = 0x60;
-    FUN_004c8440("Theme font object not allocated!");
+    PTR_01cc4800 = "..\\core\\dfont.cpp";
+    INT_01cc4804 = 0x60;
+    core_main_c_FUN_004c8440("Theme font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40
             (_DAT_014b9900,"menufont.raw",0xfa,0x23f,0);
@@ -87,9 +87,9 @@ void FUN_0044c560(void)
   }
   _DAT_014b9904 = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfont.cpp";
-    _DAT_01cc4804 = 0x71;
-    FUN_004c8440("Debug font object not allocated!");
+    PTR_01cc4800 = "..\\core\\dfont.cpp";
+    INT_01cc4804 = 0x71;
+    core_main_c_FUN_004c8440("Debug font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40
             (_DAT_014b9904,"fnte_pfd.RAW",0x94,0xec,0);
@@ -109,9 +109,9 @@ void FUN_0044c560(void)
   }
   _DAT_014b9908 = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfont.cpp";
-    _DAT_01cc4804 = 0x84;
-    FUN_004c8440("Console font object not allocated!");
+    PTR_01cc4800 = "..\\core\\dfont.cpp";
+    INT_01cc4804 = 0x84;
+    core_main_c_FUN_004c8440("Console font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40
             (_DAT_014b9908,"fnte_f.RAW",0x94,0xec,0xff);
@@ -130,9 +130,9 @@ void FUN_0044c560(void)
   }
   _DAT_014b990c = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfont.cpp";
-    _DAT_01cc4804 = 0x96;
-    FUN_004c8440("Micro font object not allocated!");
+    PTR_01cc4800 = "..\\core\\dfont.cpp";
+    INT_01cc4804 = 0x96;
+    core_main_c_FUN_004c8440("Micro font object not allocated!");
   }
   engine_font_cpp_CBitFont_openFontFile_FUN_0048ff40(_DAT_014b990c,"micro.raw",0x94,0xec,0)
   ;
@@ -154,9 +154,9 @@ void FUN_0044c560(void)
   }
   _DAT_014b9910 = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfont.cpp";
-    _DAT_01cc4804 = 0xa6;
-    FUN_004c8440("initFonts - Can't allocate gMediumOSFont");
+    PTR_01cc4800 = "..\\core\\dfont.cpp";
+    INT_01cc4804 = 0xa6;
+    core_main_c_FUN_004c8440("initFonts - Can't allocate gMediumOSFont");
   }
   iVar1 = _DAT_014b9910;
   iVar2 = _DAT_014b98f8;
@@ -169,9 +169,9 @@ void FUN_0044c560(void)
   }
   _DAT_014b9918 = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfont.cpp";
-    _DAT_01cc4804 = 0xac;
-    FUN_004c8440("initFonts - Can't allocate gThemeOSFont");
+    PTR_01cc4800 = "..\\core\\dfont.cpp";
+    INT_01cc4804 = 0xac;
+    core_main_c_FUN_004c8440("initFonts - Can't allocate gThemeOSFont");
   }
   iVar1 = _DAT_014b9918;
   iVar2 = _DAT_014b9900;
@@ -184,9 +184,9 @@ void FUN_0044c560(void)
   }
   _DAT_014b9914 = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfont.cpp";
-    _DAT_01cc4804 = 0xb2;
-    FUN_004c8440("initFonts - Can't allocate gTinyOSFont");
+    PTR_01cc4800 = "..\\core\\dfont.cpp";
+    INT_01cc4804 = 0xb2;
+    core_main_c_FUN_004c8440("initFonts - Can't allocate gTinyOSFont");
   }
   iVar1 = _DAT_014b9914;
   iVar2 = _DAT_014b98fc;
@@ -199,9 +199,9 @@ void FUN_0044c560(void)
   }
   _DAT_014b991c = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfont.cpp";
-    _DAT_01cc4804 = 0xb8;
-    FUN_004c8440("initFonts - Can't allocate gDebugOSFont");
+    PTR_01cc4800 = "..\\core\\dfont.cpp";
+    INT_01cc4804 = 0xb8;
+    core_main_c_FUN_004c8440("initFonts - Can't allocate gDebugOSFont");
   }
   iVar1 = _DAT_014b991c;
   iVar2 = _DAT_014b9904;

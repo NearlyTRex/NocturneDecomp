@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004fee30 at 004fee78
+;   core_script.cpp_FUN_004fee30 at 004fee78
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_0058e01d

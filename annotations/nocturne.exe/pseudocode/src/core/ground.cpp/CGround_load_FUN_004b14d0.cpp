@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_ground_cpp_CGround_load_FUN_004b14d0(int *param_1,char *param_2)
 
 {
@@ -56,9 +54,9 @@ uint __cdecl core_ground_cpp_CGround_load_FUN_004b14d0(int *param_1,char *param_
   pcVar7 = (char *)0x0;
 LAB_004b153d:
   if (pcVar7 == (char *)0x0) {
-    _DAT_01cc4800 = "..\\core\\ground.cpp";
-    _DAT_01cc4804 = 0x40;
-    FUN_004c8440("eopen - ext not found!");
+    PTR_01cc4800 = "..\\core\\ground.cpp";
+    INT_01cc4804 = 0x40;
+    core_main_c_FUN_004c8440("eopen - ext not found!");
   }
   pcVar9 = local_20;
   pcVar7 = pcVar7 + 1;
@@ -74,9 +72,9 @@ LAB_004b153d:
   } while (cVar1 != '\0');
   piVar4 = (int *)engine_dosio_cpp_getFile_FUN_00456a60(local_24,local_cc,pcVar9);
   if (piVar4 == (int *)0x0) {
-    _DAT_01cc4800 = "..\\core\\ground.cpp";
-    _DAT_01cc4804 = 0x44;
-    FUN_004c8440("eopen - Cannot open file");
+    PTR_01cc4800 = "..\\core\\ground.cpp";
+    INT_01cc4804 = 0x44;
+    core_main_c_FUN_004c8440("eopen - Cannot open file");
   }
   local_18 = 0;
   if (0 < param_1[1]) {
@@ -126,9 +124,9 @@ LAB_004b153d:
   pcVar9 = (char *)0x0;
 LAB_004b1687:
   if (pcVar9 == (char *)0x0) {
-    _DAT_01cc4800 = "..\\core\\ground.cpp";
-    _DAT_01cc4804 = 0x40;
-    FUN_004c8440("eopen - ext not found!");
+    PTR_01cc4800 = "..\\core\\ground.cpp";
+    INT_01cc4804 = 0x40;
+    core_main_c_FUN_004c8440("eopen - ext not found!");
   }
   pcVar9 = pcVar9 + 1;
   pcVar7 = "clr";
@@ -143,9 +141,9 @@ LAB_004b1687:
   } while (cVar1 != '\0');
   local_1c = engine_dosio_cpp_getFile_FUN_00456a60(local_28,local_7c,local_2c);
   if (local_1c == 0) {
-    _DAT_01cc4800 = "..\\core\\ground.cpp";
-    _DAT_01cc4804 = 0x44;
-    FUN_004c8440("eopen - Cannot open file");
+    PTR_01cc4800 = "..\\core\\ground.cpp";
+    INT_01cc4804 = 0x44;
+    core_main_c_FUN_004c8440("eopen - Cannot open file");
   }
   local_14 = 0;
   if (0 < param_1[1]) {

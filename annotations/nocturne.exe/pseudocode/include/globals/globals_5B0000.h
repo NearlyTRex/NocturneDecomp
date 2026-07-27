@@ -8,8 +8,8 @@
 // =============================================================================
 
 // int
-extern int INT_005b064c;
-extern int INT_005b0660;
+extern int g_INT_005b064c;
+extern int g_INT_005b0660;
 extern int INT_005b75dc;
 extern int INT_005b7604;
 extern int INT_005b8018;
@@ -17,6 +17,7 @@ extern int INT_005b801c;
 extern int INT_005b91c0;
 extern int INT_005b9210;
 extern int INT_005b9284;
+extern int g_INT_005b9288;
 extern int INT_005b92a8;
 extern int INT_005b9624;
 extern int INT_005b9650;

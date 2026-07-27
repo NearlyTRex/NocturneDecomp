@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x60]:1  local_60
 ;
 ; XREF[5]:
-;   FUN_0042d180 at 0042d19c
-;   FUN_0042d200 at 0042d21a
+;   cockpit_ckptutil.c_FUN_0042d180 at 0042d19c
+;   cockpit_ckptutil.c_FUN_0042d200 at 0042d21a
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0 at 004f46c1
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f4630 at 004f465e
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 00490099
@@ -22,16 +22,16 @@
 ;   TerminatedCString s_cockpit_ckptutil_c_0057a695
 ;   TerminatedCString s_Unable_to_read_bitmap_fi_0057a6ab
 ;   TerminatedCString s_cockpit_ckptutil_c_0057a6cc
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -68,13 +68,13 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x57a695                    ; 0042d280 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 0042d285
-    MOV [0x01cc4800],EAX                ; 0042d288 | DAT_01cc4800
+    MOV [0x01cc4800],EAX                ; 0042d288 | PTR_01cc4800
     MOV EAX,ESP                         ; 0042d28d
     MOV EDX,0xdb                        ; 0042d28f
     PUSH EAX                            ; 0042d294
-    MOV dword ptr [0x01cc4804],EDX      ; 0042d295 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0042d29b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EDX      ; 0042d295 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0042d29b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042d2a0
     PUSH EBX                            ; 0042d2a3
         ;   Label: LAB_0042d2a3
@@ -119,10 +119,10 @@ section .text
     MOV EAX,ESP                         ; 0042d2f0
     MOV ECX,0xd2                        ; 0042d2f2
     PUSH EAX                            ; 0042d2f7
-    MOV dword ptr [0x01cc4800],EDX      ; 0042d2f8 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0042d2fe | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0042d304
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0042d2f8 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0042d2fe | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0042d304
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042d309
     JMP 0x0042d257                      ; 0042d30c
         ;   XREF to: 0042d257 (UNCONDITIONAL_JUMP)  ; LAB_0042d257
@@ -142,10 +142,10 @@ section .text
     MOV EAX,ESP                         ; 0042d332
     MOV ECX,0x57a6cc                    ; 0042d334 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 0042d339
-    MOV dword ptr [0x01cc4804],EDI      ; 0042d33a | DAT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 0042d340 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 0042d346
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EDI      ; 0042d33a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 0042d340 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 0042d346
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042d34b
     PUSH EBX                            ; 0042d34e
     CALL crt_stdio.c_fclose_FUN_00563380 ; 0042d34f

@@ -5,28 +5,28 @@
 ;
 ;
 ; XREF[32]:
-;   FUN_00526dd0 at 00526dff
-;   FUN_00526f00 at 00526f4f
-;   FUN_00526f60 at 00526fe1
-;   FUN_00527060 at 005270b7
-;   FUN_00527190 at 005271e5
-;   FUN_00527200 at 0052721e
-;   FUN_00527570 at 00527596
-;   FUN_005278e0 at 00527905
-;   FUN_00527950 at 0052799a
-;   FUN_005279b0 at 005279ce
+;   core_tommygun.cpp_FUN_005464a0 at 005466e4
+;   sound_sndmain.cpp_FUN_00526dd0 at 00526dff
+;   sound_sndmain.cpp_FUN_00526f00 at 00526f4f
+;   sound_sndmain.cpp_FUN_00526f60 at 00526fe1
+;   sound_sndmain.cpp_FUN_00527060 at 005270b7
+;   sound_sndmain.cpp_FUN_00527190 at 005271e5
+;   sound_sndmain.cpp_FUN_00527200 at 0052721e
+;   sound_sndmain.cpp_FUN_00527570 at 00527596
+;   sound_sndmain.cpp_FUN_005278e0 at 00527905
+;   sound_sndmain.cpp_FUN_00527950 at 0052799a
 ;   ... and 22 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00593979
 ;   TerminatedCString s_unlockSound_sound_was_no_0059398e
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dc84b8
 ;   undefined4 DAT_02dc84bc
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   wincore_winrun.cpp_releaseMutex_FUN_00559c30
 ;
 ; *****************************************************************************
@@ -56,10 +56,10 @@ section .text
     MOV ECX,0x593979                    ; 005288bb | = "..\\sound\\sndmain.cpp"
     MOV EBX,0x130d                      ; 005288c0
     PUSH 0x59398e                       ; 005288c5 | = "unlockSound - sound was not locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 005288ca | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 005288d0 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005288d6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 005288ca | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 005288d0 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005288d6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005288db
     POP EBX                             ; 005288de
     JMP 0x0052889b                      ; 005288df

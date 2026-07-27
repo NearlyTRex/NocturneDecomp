@@ -8,7 +8,7 @@
 ;   core_morph.cpp_CMorph_dtor_FUN_004e0070 at 004e0084
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a0ce0
+;   WatcomTypeInfo g_CMorphModelTypeInfo_005a0ce0
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f
@@ -17,7 +17,7 @@
 
 section .text
 
-    PUSH 0x5a0ce0                       ; 004e08c0 | DAT_005a0ce0
+    PUSH 0x5a0ce0                       ; 004e08c0 | g_CMorphModelTypeInfo_005a0ce0
         ;   Label: core_morph.cpp_CMorphModel_arrdtor_FUN_004e08c0
     PUSH 0x2                            ; 004e08c5
     MOV EDX,dword ptr [ESP + 0xc]       ; 004e08c7

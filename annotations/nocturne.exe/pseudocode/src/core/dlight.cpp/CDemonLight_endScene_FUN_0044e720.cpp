@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(int param_1)
 
 {
@@ -18,9 +16,9 @@ void __cdecl core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(int param_1)
   ushort uVar5;
   
   if (*(int *)(param_1 + 0x11e4) == 0) {
-    _DAT_01cc4800 = "..\\core\\dlight.cpp";
-    _DAT_01cc4804 = 0x164;
-    FUN_004c8440("CDemonLight::endScene - Scene not open");
+    PTR_01cc4800 = "..\\core\\dlight.cpp";
+    INT_01cc4804 = 0x164;
+    core_main_c_FUN_004c8440("CDemonLight::endScene - Scene not open");
   }
   if (*(int *)(param_1 + 0x168) == 0) {
     puVar3 = *(ushort **)(param_1 + 0x2f94);

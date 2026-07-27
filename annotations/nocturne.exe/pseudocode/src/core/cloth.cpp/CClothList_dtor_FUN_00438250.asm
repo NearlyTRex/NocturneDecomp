@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[37]:
-;   FUN_0040fc30 at 0040fc89
-;   FUN_004132c0 at 00413319
-;   FUN_00414c60 at 00414cb9
-;   FUN_00415250 at 004152a9
-;   FUN_00415a30 at 00415a99
-;   FUN_00420f20 at 00420f79
-;   FUN_0043c6f0 at 0043c749
-;   FUN_00454f30 at 00454f89
-;   FUN_0045b350 at 0045b3a9
-;   FUN_00463310 at 00463369
+;   core_armour.cpp_CEnemy_dtor_FUN_0040fcf0 at 0040fd49
+;   core_armour.cpp_FUN_0040fc30 at 0040fc89
+;   core_batcreat.cpp_FUN_004132c0 at 00413319
+;   core_batman.cpp_FUN_00414c60 at 00414cb9
+;   core_beast.cpp_FUN_00415250 at 004152a9
+;   core_biggs.cpp_FUN_00415a30 at 00415a99
+;   core_boneguy.cpp_CBoneGuy_dtor_FUN_0041a400 at 0041a469
+;   core_bride.cpp_FUN_00420f20 at 00420f79
+;   core_bugs.cpp_FUN_00423d90 at 00423df9
+;   core_charactr.cpp_CCharacter_dtor_FUN_0042b5d0 at 0042b629
 ;   ... and 27 more
 ;
 ; Called Functions:

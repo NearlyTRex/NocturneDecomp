@@ -14,8 +14,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_0050d640 at 0050d658
 ;   core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670 at 0050d688
+;   core_set.cpp_FUN_0050d640 at 0050d658
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
@@ -35,7 +35,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
-;   FUN_00460d10
+;   engine_drender.cpp_FUN_00460d10
 ;
 ; *****************************************************************************
 
@@ -66,8 +66,8 @@ section .text
         ;   Label: LAB_0050d6e8
     PUSH EAX                            ; 0050d6ed | DAT_01b4d738
     LEA ESI,[ESP + 0xd8]                ; 0050d6ee
-    CALL FUN_00460d10                   ; 0050d6f5
-        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined FUN_00460d10()
+    CALL engine_drender.cpp_FUN_00460d10 ; 0050d6f5
+        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00460d10()
     ADD ESP,0x4                         ; 0050d6fa
     XOR EDX,EDX                         ; 0050d6fd
     MOV ECX,dword ptr [ESP + 0x100]     ; 0050d6ff

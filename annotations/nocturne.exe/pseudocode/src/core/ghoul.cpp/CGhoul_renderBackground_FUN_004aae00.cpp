@@ -10,7 +10,7 @@ void core_ghoul_cpp_CGhoul_renderBackground_FUN_004aae00(int param_1,uint param_
 
 {
   if ((*(int *)(param_1 + 0xbd44) == 0) && (*(int *)(param_1 + 0xbd40) < 1)) {
-    FUN_0047a000(param_1,param_2);
+    core_enemy_cpp_FUN_0047a000(param_1,param_2);
     return;
   }
   return;

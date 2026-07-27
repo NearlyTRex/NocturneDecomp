@@ -11,7 +11,7 @@ void __cdecl core_box_cpp_CBox_ctor_FUN_0041a610(int param_1)
 {
   int iVar1;
   
-  iVar1 = __arrinit(param_1 + 0xb4,8,&DAT_0059aa60);
+  iVar1 = __arrinit(param_1 + 0xb4,8,&g_SScrapeTypeInfo_0059aa60);
   *(uint *)(iVar1 + -0xac) = 0;
   *(uint *)(iVar1 + -0xb0) = *(uint *)(iVar1 + -0xac);
   *(uint *)(iVar1 + -0xb4) = *(uint *)(iVar1 + -0xac);

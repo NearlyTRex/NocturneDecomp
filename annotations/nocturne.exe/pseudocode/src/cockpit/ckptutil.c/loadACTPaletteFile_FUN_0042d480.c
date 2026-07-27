@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_0042d480(char *param_1,uint *param_2)
 
 {
@@ -86,9 +84,9 @@ LAB_0042d4f3:
   iVar3 = _fread(param_2,0x100,3,iVar2);
   if (iVar3 != 3) {
     _sprintf(auStack_5c,"Error reading %s.",acStack_ac);
-    _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-    _DAT_01cc4804 = 0x135;
-    FUN_004c8440(auStack_5c);
+    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    INT_01cc4804 = 0x135;
+    core_main_c_FUN_004c8440(auStack_5c);
   }
   _fclose(iVar2);
   return;

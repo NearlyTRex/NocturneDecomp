@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004a3b90 at 004a3e44
-;   FUN_004a4170 at 004a43fe
+;   core_game.cpp_FUN_004a3b90 at 004a3e44
+;   core_game.cpp_FUN_004a4170 at 004a43fe
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a47a4
 ;   undefined4 DAT_005a47ac
 ;   void* PTR_crt_fstream.cpp_ifstream_dtor_FUN_00565264_005a47b8 = 00565264
-;   void* PTR_FUN_005a47c0 = 005650f0
-;   void* PTR_FUN_005a47c8 = 00565106
+;   void* PTR_crt_unknown.c_FUN_005650f0_005a47c0 = 005650f0
+;   void* PTR_crt_unknown.c_FUN_00565106_005a47c8 = 00565106
 ;
 ; Called Functions:
 ;   FUN_0056b503
@@ -47,10 +47,10 @@ section .text
     MOV dword ptr [ECX + -0x4],EDX      ; 0056532a
     MOV dword ptr [EAX + 0x40],0x5a47b8 ; 0056532d | PTR_crt_fstream.cpp_ifstream_dtor_FUN_00565264_005a47b8
     MOV EDX,dword ptr [EAX]             ; 00565334
-    MOV dword ptr [EAX + 0x4c],0x5a47c0 ; 00565336 | PTR_FUN_005a47c0
+    MOV dword ptr [EAX + 0x4c],0x5a47c0 ; 00565336 | PTR_crt_unknown.c_FUN_005650f0_005a47c0
     MOV EDX,dword ptr [EDX + 0x4]       ; 0056533d
     ADD ESP,0x8                         ; 00565340
-    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a47c8 ; 00565343 | PTR_FUN_005a47c8
+    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a47c8 ; 00565343 | PTR_crt_unknown.c_FUN_00565106_005a47c8
     RET                                 ; 0056534b
     MOV dword ptr [EAX],0x5a47a4        ; 0056534c | DAT_005a47a4
         ;   Label: LAB_0056534c

@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00474ae0 at 00474c63
 ;   core_podmain.cpp_CDemonPod_load_FUN_004f92b0 at 004f9323
 ;   engine_dosio.cpp_CFileFinder_dtor_FUN_00456c20 at 00456c26
 ;   engine_dosio.cpp_CFileFinder_openSearch_FUN_00456c40 at 00456c4f
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0 at 00474858
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0 at 00474a57
+;   shape_edittool.cpp_FUN_00474ae0 at 00474c63
 ;
 ; Referenced Globals:
 ;   void* PTR_FindClose_005754c8 = 00175bf0

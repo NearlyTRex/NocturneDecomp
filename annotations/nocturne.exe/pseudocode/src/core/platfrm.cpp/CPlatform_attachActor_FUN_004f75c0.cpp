@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(int param_1,int param_2)
 
 {
@@ -54,9 +52,9 @@ void __cdecl core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(int param_1,int
           iVar3 = *(int *)(iVar1 + 0x548);
           iVar1 = iVar1 + 0x34;
         }
-        _DAT_01cc4800 = "..\\core\\platfrm.cpp";
-        _DAT_01cc4804 = 0x3d0;
-        FUN_004c8440("CPlatform::attachActor - too many!");
+        PTR_01cc4800 = "..\\core\\platfrm.cpp";
+        INT_01cc4804 = 0x3d0;
+        core_main_c_FUN_004c8440("CPlatform::attachActor - too many!");
         return;
       }
       iVar3 = *(int *)(iVar1 + 0x548);

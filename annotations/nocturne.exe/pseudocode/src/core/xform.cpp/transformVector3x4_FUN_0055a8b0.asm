@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[52]:
-;   FUN_00418a00 at 004190ee
-;   FUN_004194b0 at 004195dc
-;   FUN_0041fe40 at 0042036f
-;   FUN_00420eb0 at 00420f02
-;   FUN_00499b00 at 00499c15
-;   FUN_00499ca0 at 00499dd2
-;   FUN_004a9270 at 004aa9aa
-;   FUN_004ab110 at 004ab162
-;   FUN_004c9580 at 004c996e
-;   FUN_004d4f30 at 004d520d
+;   core_baron.cpp_FUN_00410490 at 0041087b
+;   core_baron.cpp_FUN_00410cc0 at 00410f4a
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004127ac
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413f2e
+;   core_boneguy.cpp_FUN_00418a00 at 004190ee
+;   core_boneguy.cpp_FUN_004194b0 at 004195dc
+;   core_bride.cpp_FUN_0041fe40 at 0042036f
+;   core_bride.cpp_FUN_00420eb0 at 00420f02
+;   core_bugs.cpp_CBugs_updateBugRenderingData_FUN_00422c70 at 00422e5e
+;   core_chain.cpp_CChain_getTargetBoneWorldPosition_FUN_0042b890 at 0042b8c8
 ;   ... and 42 more
 ;
 ; *****************************************************************************

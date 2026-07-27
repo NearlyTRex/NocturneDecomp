@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void engine_2d_c_FUN_00403070(uint param_1,uint param_2)
 
 {
@@ -21,9 +19,9 @@ void engine_2d_c_FUN_00403070(uint param_1,uint param_2)
     iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("fog",param_1,"rb");
   }
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0x69c;
-    FUN_004c8440("Unable to read fog table.");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0x69c;
+    core_main_c_FUN_004c8440("Unable to read fog table.");
   }
   else {
     _fread(0x1bd1ea0,0x100,0x10,iVar1);
@@ -37,6 +35,6 @@ void engine_2d_c_FUN_00403070(uint param_1,uint param_2)
     *(byte *)(iVar1 + 0x1bd1da0) = *(byte *)(iVar1 + 0x1bd1ea0);
     iVar1 = iVar2;
   } while (iVar2 < 0x100);
-  wincore_windll_cpp_setFogColorFromPalette_FUN_00532a80(param_2);
+  engine_special_cpp_setFogColorFromPalette_FUN_00532a80(param_2);
   return;
 }

@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[17]:
-;   FUN_00470230 at 0047028a
-;   FUN_00470310 at 0047036a
-;   FUN_004703f0 at 0047044b
-;   FUN_00470730 at 00470968
-;   FUN_00474ae0 at 00474c3d
-;   FUN_004a4b50 at 004a4f59
-;   FUN_004f8240 at 004f84bf
-;   FUN_004febd0 at 004fece4
-;   FUN_0052ed40 at 0052ed63
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049df1a
+;   core_game.cpp_FUN_004a4b50 at 004a4f59
+;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3b17
+;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d210b
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9c5d
+;   core_script.cpp_CScript_getDialogDuration_FUN_005049b0 at 00504a7c
+;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501011
+;   core_script.cpp_FUN_004febd0 at 004fece4
+;   core_sound.cpp_FUN_0052ed40 at 0052ed63
+;   engine_pod.cpp_FUN_004f8240 at 004f84bf
 ;   ... and 7 more
 ;
 ; *****************************************************************************

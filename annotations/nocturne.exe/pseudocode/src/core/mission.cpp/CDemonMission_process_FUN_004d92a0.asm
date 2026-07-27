@@ -23,8 +23,8 @@
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0
 ;   core_set.cpp_FUN_0050ad20
 ;   engine_2d.c_drawText_FUN_00402600
+;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
-;   wincore_windll.cpp_clearScreen_FUN_0052ee70
 ;
 ; *****************************************************************************
 
@@ -100,8 +100,8 @@ section .text
     POP ESI                             ; 004d935f
     POP EBX                             ; 004d9360
     RET                                 ; 004d9361
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004d9362
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004d9362
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
         ;   Label: LAB_004d9362
     PUSH 0x0                            ; 004d9367
     PUSH 0x0                            ; 004d9369

@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_00495a20 at 00496013
+;   core_gabriela.cpp_FUN_00495a20 at 00496013
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058223a = 3.14159265350000
@@ -28,7 +28,7 @@
 ;   float FLOAT_0058224e = 0.5
 ;   double DOUBLE_00582252 = 0.5
 ;   double DOUBLE_0058225a = 1.5
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   float FLOAT_0059dcb0 = 0.3000000
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01c713b0
@@ -40,11 +40,11 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
+;   core_gabriela.cpp_FUN_00498de0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   FUN_00498de0
 ;
 ; *****************************************************************************
 
@@ -208,8 +208,8 @@ section .text
     PUSH EAX                            ; 004992ea
     PUSH ESI                            ; 004992eb
     PUSH EBX                            ; 004992ec
-    CALL FUN_00498de0                   ; 004992ed
-        ;   XREF to: 00498de0 (UNCONDITIONAL_CALL)  ; undefined FUN_00498de0()
+    CALL core_gabriela.cpp_FUN_00498de0 ; 004992ed
+        ;   XREF to: 00498de0 (UNCONDITIONAL_CALL)  ; undefined core_gabriela.cpp_FUN_00498de0()
     MOV dword ptr [ESP + 0x12c],EAX     ; 004992f2
     FLD float ptr [ESP + 0x12c]         ; 004992f9
     ADD ESP,0xc                         ; 00499300
@@ -248,7 +248,7 @@ section .text
         ;   Label: LAB_00499357
     JZ 0x00499540                       ; 0049935e
         ;   XREF to: 00499540 (CONDITIONAL_JUMP)  ; LAB_00499540
-    PUSH 0x5993b0                       ; 00499364 | DAT_005993b0
+    PUSH 0x5993b0                       ; 00499364 | g_CVectorTypeInfo_005993b0
     PUSH 0xa                            ; 00499369
     LEA EAX,[ESP + 0xc]                 ; 0049936b
     PUSH EAX                            ; 0049936f

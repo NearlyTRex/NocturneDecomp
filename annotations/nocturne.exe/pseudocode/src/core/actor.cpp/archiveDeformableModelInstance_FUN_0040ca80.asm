@@ -8,16 +8,16 @@
 ; undefined1       Stack[-0xcf]:1  local_cf
 ;
 ; XREF[27]:
-;   FUN_0040fb60 at 0040fb8f
-;   FUN_00415160 at 0041518f
-;   FUN_00419ce0 at 00419d1a
-;   FUN_0043c2e0 at 0043c30e
-;   FUN_00454dc0 at 00454dee
-;   FUN_004630e0 at 0046310e
-;   FUN_004bc9c0 at 004bc9ef
-;   FUN_004c5250 at 004c527e
-;   FUN_004eed10 at 004eed3f
-;   FUN_005417c0 at 005417ef
+;   core_armour.cpp_FUN_0040fb60 at 0040fb8f
+;   core_batcreat.cpp_FUN_00412d80 at 00412daf
+;   core_batman.cpp_CBatman_archive_FUN_00414510 at 0041453f
+;   core_beast.cpp_FUN_00415160 at 0041518f
+;   core_biggs.cpp_CBiggs_archive_FUN_00415870 at 0041589f
+;   core_boneguy.cpp_FUN_00419ce0 at 00419d1a
+;   core_bride.cpp_CBride_archive_FUN_00420970 at 00420995
+;   core_cow.cpp_FUN_0043c2e0 at 0043c30e
+;   core_dog.cpp_FUN_00454dc0 at 00454dee
+;   core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450 at 0045a47f
 ;   ... and 17 more
 ;
 ; Referenced Globals:

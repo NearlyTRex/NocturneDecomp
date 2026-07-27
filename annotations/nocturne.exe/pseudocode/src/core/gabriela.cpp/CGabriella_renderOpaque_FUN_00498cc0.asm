@@ -8,7 +8,7 @@
 ;   double DOUBLE_005821fa = 0.900000000000000
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01bca0c0
+;   undefined4 g_CDynamiteActorType_01bca088.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -81,7 +81,7 @@ section .text
     SAHF                                ; 00498d39
     JBE 0x00498cec                      ; 00498d3a
         ;   XREF to: 00498cec (CONDITIONAL_JUMP)  ; LAB_00498cec
-    MOV ECX,dword ptr [0x01bca0c0]      ; 00498d3c | DAT_01bca0c0
+    MOV ECX,dword ptr [0x01bca0c0]      ; 00498d3c | g_CDynamiteActorType_01bca088.name_hash
     PUSH ECX                            ; 00498d42
     MOV EAX,dword ptr [EDI + 0x330]     ; 00498d43
     PUSH EAX                            ; 00498d49

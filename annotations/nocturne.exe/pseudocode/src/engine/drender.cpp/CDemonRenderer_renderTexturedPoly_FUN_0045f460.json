@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -139,24 +139,6 @@
   },
   "cross_references": [
     {
-      "addr": "0048f490",
-      "from_addr": "0048f832",
-      "name": "FUN_0048f490",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ac9b0",
-      "from_addr": "004acaf3",
-      "name": "FUN_004ac9b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00551c00",
-      "from_addr": "00551e1f",
-      "name": "FUN_00551c00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00416030",
       "from_addr": "00416175",
       "name": "core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030",
@@ -169,9 +151,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0048f490",
+      "from_addr": "0048f832",
+      "name": "core_flies.cpp_FUN_0048f490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ac9b0",
+      "from_addr": "004acaf3",
+      "name": "core_glass.cpp_FUN_004ac9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004dfea0",
       "from_addr": "004dff69",
       "name": "core_morph.cpp_CMorphModel_renderFaces_FUN_004dfea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551c00",
+      "from_addr": "00551e1f",
+      "name": "core_wateract.cpp_FUN_00551c00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -298,7 +298,7 @@
       {
         "call_addr": "0048f832",
         "call_type": "direct",
-        "caller": "FUN_0048f490",
+        "caller": "core_flies.cpp_FUN_0048f490",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -320,7 +320,7 @@
       {
         "call_addr": "004acaf3",
         "call_type": "direct",
-        "caller": "FUN_004ac9b0",
+        "caller": "core_glass.cpp_FUN_004ac9b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -331,7 +331,7 @@
       {
         "call_addr": "00551e1f",
         "call_type": "direct",
-        "caller": "FUN_00551c00",
+        "caller": "core_wateract.cpp_FUN_00551c00",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[11]:
-;   FUN_004b4c20 at 004b4c4f
 ;   core_charactr.cpp_CCharacter_canLookAt_FUN_00429fe0 at 0042a02e
 ;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00428ab0 at 00428b35
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047cf3f
 ;   core_hero.cpp_CHero_getGrabbed_FUN_004b4c70 at 004b4cb6
 ;   core_hero.cpp_CHero_releaseFromGrab_FUN_004b4d50 at 004b4d88
+;   core_hero.cpp_FUN_004b4c20 at 004b4c4f
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740 at 004e1750
 ;   core_npc.cpp_CNPC_process_FUN_004eea20 at 004eeca7
 ;   core_npc.cpp_CNPC_setRandomMotionVariant_FUN_004eedc0 at 004eee05
@@ -20,12 +20,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_0058b1ba
 ;   TerminatedCString s_Can_t_find_state_s_in_mo_0058b1cd
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_string.c__stricmp_FUN_00564520
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -81,10 +81,10 @@ section .text
     MOV ESI,0x58b1ba                    ; 004e10e8 | = "..\\core\\motion.cpp"
     MOV EDI,0x113                       ; 004e10ed
     PUSH 0x58b1cd                       ; 004e10f2 | = "Can't find state \"%s\" in motion list"
-    MOV dword ptr [0x01cc4800],ESI      ; 004e10f7 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004e10fd | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e1103
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004e10f7 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004e10fd | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e1103
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e1108
     MOV EAX,0xffffffff                  ; 004e110b
     POP EBP                             ; 004e1110

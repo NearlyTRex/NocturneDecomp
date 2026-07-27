@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 70,
         "line": 237,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
         "message": "unknown type name 'code'"
       }
     ],
@@ -169,15 +169,15 @@
   "globals": [
     {
       "addr": "005a0884",
-      "name": "DAT_005a0884",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a0884",
+      "type": "float",
+      "value": "65536"
     },
     {
       "addr": "005a0888",
-      "name": "DAT_005a0888",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a0888",
+      "type": "float",
+      "value": "0.00390625"
     },
     {
       "addr": "005a088c",
@@ -441,7 +441,7 @@
       "line": 29,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_24 = (float)*param_2 * _DAT_005a0888;",
+      "text": "local_24 = (float)*param_2 * 0.00390625f;",
       "type": "unnamed_param"
     },
     {
@@ -449,7 +449,7 @@
       "line": 30,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_20 = (float)param_2[1] * _DAT_005a0888;",
+      "text": "local_20 = (float)param_2[1] * 0.00390625f;",
       "type": "unnamed_param"
     },
     {
@@ -457,7 +457,7 @@
       "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_1c = (float)param_2[2] * _DAT_005a0888;",
+      "text": "local_1c = (float)param_2[2] * 0.00390625f;",
       "type": "unnamed_param"
     },
     {
@@ -505,7 +505,7 @@
       "line": 68,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "*unaff_ESI = (int)ROUND(local_54 * _DAT_005a0884);",
+      "text": "*unaff_ESI = (int)ROUND(local_54 * 65536.0f);",
       "type": "unaffected_reg"
     },
     {
@@ -548,7 +548,7 @@
       "line": 75,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*unaff_ESI = (int)ROUND(local_54 * _DAT_005a0884);",
+      "text": "*unaff_ESI = (int)ROUND(local_54 * 65536.0f);",
       "type": "static_uninitvar"
     }
   ]

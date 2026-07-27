@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[10]:
-;   FUN_0043d1c0 at 0043d433
-;   FUN_00477890 at 00477b80
-;   FUN_0048c0d0 at 0048c12b
-;   FUN_004b27c0 at 004b2a1d
-;   FUN_004c71a0 at 004c792a
-;   FUN_00515ea0 at 005161e5
 ;   core_actor.cpp_FUN_0040a2e0 at 0040a2f6
 ;   core_actor.cpp_FUN_0040db50 at 0040dca8
+;   core_crossbow.cpp_FUN_0043d1c0 at 0043d433
+;   core_elephant.cpp_FUN_00477890 at 00477b80
 ;   core_fire.cpp_CShell_onCollision_FUN_00489850 at 00489924
+;   core_fire.cpp_FUN_0048c0d0 at 0048c12b
+;   core_gun.cpp_FUN_004b27c0 at 004b2a1d
+;   core_lightgun.cpp_FUN_004c71a0 at 004c792a
+;   core_shotgun.cpp_FUN_00515ea0 at 005161e5
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_00554d40 at 00554fb4
 ;
 ; Called Functions:

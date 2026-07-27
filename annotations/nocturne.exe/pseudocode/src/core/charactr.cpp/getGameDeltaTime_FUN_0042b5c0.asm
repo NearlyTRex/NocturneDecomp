@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004fe770 at 004fe78f
 ;   core_script.cpp_CScript_process_FUN_004fe5b0 at 004fe5f6
+;   core_script.cpp_FUN_004fe770 at 004fe78f
 ;
 ; *****************************************************************************
 

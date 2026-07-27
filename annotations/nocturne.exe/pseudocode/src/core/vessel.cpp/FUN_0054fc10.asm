@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void core_vessel_cpp_FUN_0054fc10(int param_1)
+;
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 0054fc10
+        ;   Label: core_vessel.cpp_FUN_0054fc10
+    MOV dword ptr [EAX + 0x30],0x0      ; 0054fc14
+    MOV dword ptr [EAX + 0x38],0x0      ; 0054fc1b
+    MOV dword ptr [EAX + 0x2cc],0x0     ; 0054fc22
+    RET                                 ; 0054fc2c
+

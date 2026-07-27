@@ -22,16 +22,16 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[71]:
-;   FUN_0040f2b0 at 0040f2d9
-;   FUN_0040f740 at 0040f797
-;   FUN_00414e70 at 00414eb6
-;   FUN_00415760 at 0041579a
-;   FUN_004161a0 at 00416206
-;   FUN_00416300 at 0041638c
-;   FUN_00419c20 at 00419c59
-;   FUN_0041ea00 at 0041ea91
-;   FUN_0041eaf0 at 0041eb5a
-;   FUN_00421540 at 0042158e
+;   core_ammo.cpp_FUN_0040ec30 at 0040ec57
+;   core_ammobox.cpp_FUN_0040f2b0 at 0040f2d9
+;   core_anvil.cpp_FUN_0040f740 at 0040f797
+;   core_backgnd.cpp_FUN_0040ff80 at 0040ffb2
+;   core_baron.cpp_FUN_004110f0 at 00411205
+;   core_bat.cpp_FUN_00411e30 at 00411e57
+;   core_batman.cpp_FUN_00414340 at 004143c4
+;   core_battery.cpp_FUN_00414e70 at 00414eb6
+;   core_biggs.cpp_FUN_00415760 at 0041579a
+;   core_bodypart.cpp_FUN_004161a0 at 00416206
 ;   ... and 61 more
 ;
 ; Referenced Globals:
@@ -48,10 +48,10 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0
+;   core_box.cpp_FUN_0041d050
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
-;   FUN_0041d050
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     SUB ESP,0x6c                        ; 0041ceb2
     MOV EBX,dword ptr [ESP + 0x78]      ; 0041ceb5
     PUSH EBX                            ; 0041ceb9
-    CALL FUN_0041d050                   ; 0041ceba
-        ;   XREF to: 0041d050 (UNCONDITIONAL_CALL)  ; undefined FUN_0041d050()
+    CALL core_box.cpp_FUN_0041d050      ; 0041ceba
+        ;   XREF to: 0041d050 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041d050()
     ADD ESP,0x4                         ; 0041cebf
     CMP EAX,-0x1                        ; 0041cec2
     JZ 0x0041ced1                       ; 0041cec5
@@ -152,8 +152,8 @@ section .text
     PUSH EAX                            ; 0041cfae
     LEA EAX,[ESP + 0x4]                 ; 0041cfaf
     PUSH EAX                            ; 0041cfb3
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0041cfb4
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0041cfb4
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     ADD ESP,0x8                         ; 0041cfb9
     MOV EBX,dword ptr [0x007f7370]      ; 0041cfbc | DAT_007f7370
     FLD float ptr [ESP + 0x60]          ; 0041cfc2

@@ -18,8 +18,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_004b6d80 at 004b784a
 ;   core_charactr.cpp_FUN_00428c00 at 00428e98
+;   core_hostage.cpp_FUN_004b6d80 at 004b784a
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d822
 ;
 ; Referenced Globals:

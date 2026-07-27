@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void engine_2d_c_FUN_00403630(char *param_1)
 
 {
@@ -40,9 +38,9 @@ void engine_2d_c_FUN_00403630(char *param_1)
   pcVar4 = (char *)0x0;
 LAB_00403672:
   if (pcVar4 == (char *)0x0) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0x76e;
-    FUN_004c8440("hose!");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0x76e;
+    core_main_c_FUN_004c8440("hose!");
   }
   _sprintf(pcVar4,".map");
   iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("fog",local_5c,"rb");
@@ -54,9 +52,9 @@ LAB_00403672:
   engine_2d_c_buildColorLookupTable_FUN_00403570();
   iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("fog",local_5c,"wb");
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0x775;
-    FUN_004c8440("Unable to write quick map!");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0x775;
+    core_main_c_FUN_004c8440("Unable to write quick map!");
   }
   _fwrite(&DAT_01bf7720,1,0x8000,iVar2);
   _fclose(iVar2);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00480550(int param_1,char *param_2,float param_3)
 
 {
@@ -18,17 +16,17 @@ void __cdecl core_event_cpp_CEventList_setTimerEvent_FUN_00480550(int param_1,ch
   char *pcVar5;
   
   if ((double)param_3 < 0.0) {
-    _DAT_01cc4800 = "..\\core\\event.cpp";
-    _DAT_01cc4804 = 0xa5d;
-    FUN_004c8440("CEventList::setTimerEvent - invalid duration for %s: %f",param_2,(double)param_3);
+    PTR_01cc4800 = "..\\core\\event.cpp";
+    INT_01cc4804 = 0xa5d;
+    core_main_c_FUN_004c8440("CEventList::setTimerEvent - invalid duration for %s: %f",param_2,(double)param_3);
   }
   iVar3 = core_event_cpp_CEventList_findTimer_FUN_004808b0(param_1,param_2);
   if (iVar3 < 0) {
     if (0.0 < param_3) {
       if (9 < *(int *)(param_1 + 0x3210)) {
-        _DAT_01cc4800 = "..\\core\\event.cpp";
-        _DAT_01cc4804 = 0xa7e;
-        FUN_004c8440("CEventList::setTimerEvent - too many timers!");
+        PTR_01cc4800 = "..\\core\\event.cpp";
+        INT_01cc4804 = 0xa7e;
+        core_main_c_FUN_004c8440("CEventList::setTimerEvent - too many timers!");
       }
       pcVar5 = (char *)(*(int *)(param_1 + 0x3210) * 0x20 + param_1 + 0x3214);
       do {

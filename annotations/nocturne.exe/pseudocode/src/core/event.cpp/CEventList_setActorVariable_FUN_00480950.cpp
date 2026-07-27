@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00480950(int param_1,char *param_2,char *param_3)
 
 {
@@ -20,18 +18,18 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00480950(int param_1
   int iVar7;
   
   if ((param_3 != (char *)0x0) && (*param_3 == '\0')) {
-    _DAT_01cc4800 = "..\\core\\event.cpp";
-    _DAT_01cc4804 = 0xb2b;
+    PTR_01cc4800 = "..\\core\\event.cpp";
+    INT_01cc4804 = 0xb2b;
     uVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(param_3);
-    FUN_004c8440("Tried to assign actor var %s an actor of type %s with no name",param_2,uVar3);
+    core_main_c_FUN_004c8440("Tried to assign actor var %s an actor of type %s with no name",param_2,uVar3);
   }
   iVar4 = core_event_cpp_CEventList_findActorVariable_FUN_00480ba0(param_1,param_2);
   if (iVar4 < 0) {
     if (param_3 != (char *)0x0) {
       if (0x18 < *(int *)(param_1 + 0x34e8)) {
-        _DAT_01cc4800 = "..\\core\\event.cpp";
-        _DAT_01cc4804 = 0xb38;
-        FUN_004c8440("CEventList::setActorVariable - already too many actor variables.  Max is %d.",0x19);
+        PTR_01cc4800 = "..\\core\\event.cpp";
+        INT_01cc4804 = 0xb38;
+        core_main_c_FUN_004c8440("CEventList::setActorVariable - already too many actor variables.  Max is %d.",0x19);
       }
       pcVar6 = (char *)(param_1 + 0x34ec + *(int *)(param_1 + 0x34e8) * 0x1e);
       do {

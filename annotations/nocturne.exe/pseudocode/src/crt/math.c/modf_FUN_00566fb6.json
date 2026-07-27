@@ -18,12 +18,6 @@
   },
   "cross_references": [
     {
-      "addr": "004e3f80",
-      "from_addr": "004e3ff1",
-      "name": "FUN_004e3f80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005648c0",
       "from_addr": "005648d3",
       "name": "crt_math.c_floor_FUN_005648c0",
@@ -33,6 +27,12 @@
       "addr": "004e4070",
       "from_addr": "004e429e",
       "name": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e3f80",
+      "from_addr": "004e3ff1",
+      "name": "sound_mp3.cpp_FUN_004e3f80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -103,7 +103,7 @@
       {
         "call_addr": "004e3ff1",
         "call_type": "direct",
-        "caller": "FUN_004e3f80",
+        "caller": "sound_mp3.cpp_FUN_004e3f80",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -118,7 +118,7 @@
       {
         "call_addr": "004e405b",
         "call_type": "direct",
-        "caller": "FUN_004e3f80",
+        "caller": "sound_mp3.cpp_FUN_004e3f80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

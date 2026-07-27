@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00495670 at 00495683
+;   core_gabriela.cpp_FUN_00495670 at 00495683
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gabriela_dfm_00581e4a
@@ -16,8 +16,8 @@
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00435100
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+;   core_hero.cpp_FUN_004b46d0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
-;   FUN_004b46d0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EBP,ESP                         ; 004956a2
     MOV EBX,dword ptr [EBP + 0xc]       ; 004956a4
     PUSH EBX                            ; 004956a7
-    CALL FUN_004b46d0                   ; 004956a8
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b46d0()
+    CALL core_hero.cpp_FUN_004b46d0     ; 004956a8
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b46d0()
     ADD ESP,0x4                         ; 004956ad
     ADD EAX,0x1fa7c                     ; 004956b0
     PUSH EAX                            ; 004956b5

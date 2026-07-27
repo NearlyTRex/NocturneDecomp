@@ -3,6 +3,10 @@
 // Function prototypes for core/menu.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_menu.cpp_staticInit_FUN_004cf1f0
+// Address: 004cf1f0
+void __cdecl staticInit(void);
+
 // Original: core_menu.cpp_renderAudioSpectrumBar_FUN_004cf2b0
 // Address: 004cf2b0
 void __cdecl renderAudioSpectrumBar(int param_1,int param_2,int param_3);
@@ -10,6 +14,10 @@ void __cdecl renderAudioSpectrumBar(int param_1,int param_2,int param_3);
 // Original: core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440
 // Address: 004cf440
 int __cdecl renderMenuAndGetChoice(undefined4 *param_1,int param_2,int *param_3,int param_4,int param_5);
+
+// Original: core_menu.cpp_FUN_004cf810
+// Address: 004cf810
+void FUN_004cf810(undefined4 param_1);
 
 // Original: core_menu.cpp_calibrateGamepad_FUN_004cf8d0
 // Address: 004cf8d0
@@ -35,6 +43,10 @@ void __cdecl configureGraphicsOptions(void);
 // Address: 004d0d20
 void __cdecl configureCustomKeys(void);
 
+// Original: core_menu.cpp_FUN_004d1290
+// Address: 004d1290
+void FUN_004d1290(void);
+
 // Original: core_menu.cpp_configureSoundOptions_FUN_004d12e0
 // Address: 004d12e0
 void __cdecl configureSoundOptions(void);
@@ -43,6 +55,14 @@ void __cdecl configureSoundOptions(void);
 // Address: 004d21c0
 void __cdecl showOptionsScreen(int param_1);
 
+// Original: core_menu.cpp_FUN_004d23d0
+// Address: 004d23d0
+int FUN_004d23d0(void);
+
+// Original: core_menu.cpp_FUN_004d2880
+// Address: 004d2880
+void FUN_004d2880(void);
+
 // Original: core_menu.cpp_getKeyDisplayName_FUN_004d2900
 // Address: 004d2900
 char * __cdecl getKeyDisplayName(int param_1);
@@ -50,6 +70,10 @@ char * __cdecl getKeyDisplayName(int param_1);
 // Original: core_menu.cpp_isKeyCodeValidForMode_FUN_004d2b40
 // Address: 004d2b40
 undefined4 __cdecl isKeyCodeValidForMode(uint *param_1);
+
+// Original: core_menu.cpp_FUN_004d2c80
+// Address: 004d2c80
+int FUN_004d2c80(void);
 
 // Original: core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00
 // Address: 004d2d00

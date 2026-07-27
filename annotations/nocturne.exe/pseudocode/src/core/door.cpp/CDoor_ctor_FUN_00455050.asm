@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00455020 at 00455033
+;   core_door.cpp_FUN_00455020 at 00455033
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_churchd01_kfm_0057d008
@@ -27,7 +27,7 @@
 ;   core_actor.cpp_FUN_00409d30
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   FUN_00481620
+;   core_event.cpp_FUN_00481620
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     ADD ESP,0x4                         ; 0045506b
     LEA EBX,[EAX + 0x320]               ; 0045506e
     PUSH EBX                            ; 00455074
-    CALL FUN_00481620                   ; 00455075
-        ;   XREF to: 00481620 (UNCONDITIONAL_CALL)  ; undefined FUN_00481620()
+    CALL core_event.cpp_FUN_00481620    ; 00455075
+        ;   XREF to: 00481620 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_00481620()
     ADD ESP,0x4                         ; 0045507a
     SUB EBX,0x470                       ; 0045507d
     PUSH 0x57d008                       ; 00455083 | = "churchd01.kfm"

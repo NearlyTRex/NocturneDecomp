@@ -14,9 +14,9 @@
 ;   float FLOAT_00596e95 = -15
 ;   float FLOAT_00596e99 = 15
 ;   float FLOAT_00596e9d = 0.5
-;   undefined4 DAT_005993b0
-;   undefined4 DAT_005a379c
-;   undefined4 DAT_005a37a0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
+;   float FLOAT_005a379c = -0.5235988
+;   float FLOAT_005a37a0 = 1.221730
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_0077ad0c
@@ -215,7 +215,7 @@ section .text
     TEST EAX,EAX                        ; 0054a328
     JZ 0x0054a296                       ; 0054a32a
         ;   XREF to: 0054a296 (CONDITIONAL_JUMP)  ; LAB_0054a296
-    PUSH 0x5993b0                       ; 0054a330 | DAT_005993b0
+    PUSH 0x5993b0                       ; 0054a330 | g_CVectorTypeInfo_005993b0
     PUSH 0xa                            ; 0054a335
     LEA EAX,[ESP + 0x8]                 ; 0054a337
     PUSH EAX                            ; 0054a33b
@@ -342,13 +342,13 @@ section .text
         ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
     ADD ESP,0x8                         ; 0054a4bf
     FLD float ptr [ESP + 0x114]         ; 0054a4c2
-    FCOMP float ptr [0x005a379c]        ; 0054a4c9 | DAT_005a379c
+    FCOMP float ptr [0x005a379c]        ; 0054a4c9 | FLOAT_005a379c
     FNSTSW AX                           ; 0054a4cf
     SAHF                                ; 0054a4d1
     JC 0x0054a296                       ; 0054a4d2
         ;   XREF to: 0054a296 (CONDITIONAL_JUMP)  ; LAB_0054a296
     FLD float ptr [ESP + 0x114]         ; 0054a4d8
-    FCOMP float ptr [0x005a37a0]        ; 0054a4df | DAT_005a37a0
+    FCOMP float ptr [0x005a37a0]        ; 0054a4df | FLOAT_005a37a0
     FNSTSW AX                           ; 0054a4e5
     SAHF                                ; 0054a4e7
     JA 0x0054a296                       ; 0054a4e8

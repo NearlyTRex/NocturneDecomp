@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00477100(int param_1)
+; int shape_edittool_cpp_FUN_00477100(int param_1)
 ;
 ;
 ; XREF[1]:
-;   FUN_00476eb0 at 00476eb8
+;   shape_edittool.cpp_FUN_00476eb0 at 00476eb8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
@@ -14,20 +14,20 @@
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00477100
-        ;   Label: FUN_00477100
+        ;   Label: shape_edittool.cpp_FUN_00477100
     PUSH EDI                            ; 00477101
     MOV EBX,dword ptr [ESP + 0xc]       ; 00477102
     CMP dword ptr [0x01bcd070],0x0      ; 00477106 | DAT_01bcd070
@@ -37,10 +37,10 @@ section .text
     MOV ECX,0x57e4fa                    ; 00477110 | = "..\\shape\\edittool.cpp"
     MOV ESI,0x8b                        ; 00477115
     PUSH 0x57e510                       ; 0047711a | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0047711f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00477125 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0047712b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0047711f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00477125 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0047712b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00477130
     POP ESI                             ; 00477133
     MOV EAX,[0x01bcd070]                ; 00477134 | DAT_01bcd070

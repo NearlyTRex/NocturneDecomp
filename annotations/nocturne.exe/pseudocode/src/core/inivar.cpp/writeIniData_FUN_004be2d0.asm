@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x210]:1  local_210
 ;
 ; XREF[2]:
-;   FUN_004c90e0 at 004c938e
+;   core_main.c_FUN_004c90e0 at 004c938e
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d2315
 ;
 ; Referenced Globals:
@@ -85,7 +85,7 @@ section .text
     CALL engine_ini.cpp_CIniFile_setInteger_FUN_004bda80 ; 004be348
         ;   XREF to: 004bda80 (UNCONDITIONAL_CALL)  ; undefined engine_ini.cpp_CIniFile_setInteger_FUN_004bda80()
     ADD ESP,0xc                         ; 004be34d
-    MOV ESI,dword ptr [0x02dc9d60]      ; 004be350 | DAT_02dc9d60
+    MOV ESI,dword ptr [0x02dc9d60]      ; 004be350 | INT_02dc9d60
     PUSH ESI                            ; 004be356
     PUSH 0x586a36                       ; 004be357 | = "useDirect3D"
     LEA EAX,[ESP + 0x8]                 ; 004be35c

@@ -31,9 +31,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   FUN_0050eba0 at 0050ebda
 ;   core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00453f00 at 00453fa3
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80 at 0050f08a
+;   core_setcolid.cpp_FUN_0050eba0 at 0050ebda
 ;   core_stairs.cpp_CStairs_customGetFloorHeight_FUN_00534a70 at 00534aa4
 ;
 ; Referenced Globals:

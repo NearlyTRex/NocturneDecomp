@@ -11,8 +11,8 @@
 void wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_00553b70(void)
 
 {
-  if ((_DAT_02dc9d60 != 0) && (_DAT_02ddf568 != 0)) {
-    wincore_windll_cpp_restoreVideoMode_FUN_005325f0();
+  if ((INT_02dc9d60 != 0) && (_DAT_02ddf568 != 0)) {
+    engine_special_cpp_restoreVideoMode_FUN_005325f0();
     ShowWindow(_DAT_02de2098,6);
     return;
   }

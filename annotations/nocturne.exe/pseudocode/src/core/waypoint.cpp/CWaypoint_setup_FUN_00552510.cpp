@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_waypoint_cpp_CWaypoint_setup_FUN_00552510(int param_1)
 
 {
@@ -36,9 +34,9 @@ void core_waypoint_cpp_CWaypoint_setup_FUN_00552510(int param_1)
     iVar6 = _stricmp(param_1 + 0x78,"none");
     if ((iVar6 != 0) &&
        (iVar6 = _stricmp(param_1 + 0x78,"true"), iVar6 != 0)) {
-      _DAT_01cc4800 = "..\\core\\waypoint.cpp";
-      _DAT_01cc4804 = 0x79;
-      FUN_004c8440("Can't have creation event for waypoint.");
+      PTR_01cc4800 = "..\\core\\waypoint.cpp";
+      INT_01cc4804 = 0x79;
+      core_main_c_FUN_004c8440("Can't have creation event for waypoint.");
       return;
     }
   }

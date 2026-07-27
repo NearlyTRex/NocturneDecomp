@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004e99f0 at 004e9a45
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9ad7
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004eb0f6
+;   core_netgame.cpp_FUN_004e99f0 at 004e9a45
 ;
 ; *****************************************************************************
 

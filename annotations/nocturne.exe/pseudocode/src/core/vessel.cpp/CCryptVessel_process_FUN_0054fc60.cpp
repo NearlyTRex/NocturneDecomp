@@ -62,7 +62,7 @@ void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2
       }
       *(uint *)(param_1 + 0x3b4) = 0x3f800000;
       if (*(int *)(param_1 + 0x2d0) == 0) {
-        iVar9 = FUN_0054fc40(*(uint *)(param_1 + 0x2d4));
+        iVar9 = core_vessel_cpp_FUN_0054fc40(*(uint *)(param_1 + 0x2d4));
         if (iVar9 != 0) {
           iVar9 = *(int *)(param_1 + 0x3a0);
           *(uint *)(param_1 + 0x3b0) = 2;
@@ -79,10 +79,12 @@ void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2
         }
       }
       else {
-        iVar9 = FUN_0054fc40(*(int *)(param_1 + 0x2d0));
-        if (((iVar9 == 0) || (iVar9 = FUN_0054fc40(*(uint *)(param_1 + 0x2d4)), iVar9 == 0))
-           && ((iVar9 = FUN_0054fc40(*(uint *)(param_1 + 0x2d0)), iVar9 != 0 ||
-               (iVar9 = FUN_0054fc40(*(uint *)(param_1 + 0x2d4)), iVar9 != 0)))) {
+        iVar9 = core_vessel_cpp_FUN_0054fc40(*(int *)(param_1 + 0x2d0));
+        if (((iVar9 == 0) ||
+            (iVar9 = core_vessel_cpp_FUN_0054fc40(*(uint *)(param_1 + 0x2d4)), iVar9 == 0)) &&
+           ((iVar9 = core_vessel_cpp_FUN_0054fc40(*(uint *)(param_1 + 0x2d0)), iVar9 != 0 ||
+            (iVar9 = core_vessel_cpp_FUN_0054fc40(*(uint *)(param_1 + 0x2d4)), iVar9 != 0))))
+        {
           *(uint *)(param_1 + 0x24) = 0x461c3f9a;
           *(uint *)(param_1 + 0x28) = 0x461c3f9a;
           *(uint *)(param_1 + 0x20) = 0x461c3f9a;
@@ -120,7 +122,7 @@ void core_vessel_cpp_CCryptVessel_process_FUN_0054fc60(int param_1,float param_2
         if (0.0 <= param_2) {
           return;
         }
-        FUN_0048c0d0(0x01C08D04,puVar2,0x41000000,0x44bb8000,0x40800000);
+        core_fire_cpp_FUN_0048c0d0(0x01C08D04,puVar2,0x41000000,0x44bb8000,0x40800000);
         iVar9 = *(int *)(param_1 + 0x3a0);
         *(uint *)(param_1 + 0x3b4) = 0x3f800000;
         *puVar2 = *(uint *)(iVar9 + 0x20);

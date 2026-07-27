@@ -12,14 +12,14 @@
 ;   TerminatedCString s_SfxSlot_pollHwHandle_no_005930a1
 ;   TerminatedCString s_Killing_looped_sfx_s_whi_005930c4
 ;   TerminatedCString s_Error_setting_hw_sfx_d_o_005930e9
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:
-;   FUN_004c8440
-;   FUN_00529980
+;   core_main.c_FUN_004c8440
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570
+;   sound_sndmain.cpp_FUN_00529980
 ;
 ; *****************************************************************************
 
@@ -42,10 +42,10 @@ section .text
     MOV EDI,0x59308c                    ; 0052570c | = "..\\sound\\sndmain.cpp"
     MOV EBP,0xb63                       ; 00525711
     PUSH 0x5930a1                       ; 00525716 | = "SfxSlot::pollHwHandle - no sample?"
-    MOV dword ptr [0x01cc4800],EDI      ; 0052571b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00525721 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00525727
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0052571b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00525721 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00525727
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052572c
     PUSH EBX                            ; 0052572f
         ;   Label: LAB_0052572f
@@ -87,8 +87,8 @@ section .text
         ;   XREF to: 0052577b (CONDITIONAL_JUMP)  ; LAB_0052577b
     PUSH EAX                            ; 0052576d
     PUSH 0x5930c4                       ; 0052576e | = "Killing looped sfx %s, which died??\n"
-    CALL FUN_00529980                   ; 00525773
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 00525773
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x8                         ; 00525778
     PUSH EBX                            ; 0052577b
         ;   Label: LAB_0052577b
@@ -132,8 +132,8 @@ section .text
     MOV EBP,dword ptr [EBX + 0x6c]      ; 005257bc
     PUSH EBP                            ; 005257bf
     PUSH 0x5930e9                       ; 005257c0 | = "Error setting hw sfx %d options (samp..."
-    CALL FUN_00529980                   ; 005257c5
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 005257c5
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0xc                         ; 005257ca
     PUSH EBX                            ; 005257cd
     CALL sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 ; 005257ce

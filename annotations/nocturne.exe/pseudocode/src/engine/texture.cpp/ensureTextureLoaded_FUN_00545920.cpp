@@ -26,10 +26,10 @@ int __cdecl engine_texture_cpp_ensureTextureLoaded_FUN_00545920(int param_1)
     engine_texture_cpp_CTextureCache_setupTexture_FUN_00545410(_DAT_02dd0f84,iVar1);
     if (_DAT_01c02594 != 0) {
       if (bVar2) {
-        wincore_windll_cpp_updateTexture_FUN_00532440(param_1,_DAT_01c00020);
+        engine_special_cpp_updateTexture_FUN_00532440(param_1,_DAT_01c00020);
         return param_1 + 0x18;
       }
-      wincore_windll_cpp_selectTexture_FUN_00532400(param_1,_DAT_01c00020);
+      engine_special_cpp_selectTexture_FUN_00532400(param_1,_DAT_01c00020);
     }
     return param_1 + 0x18;
   }

@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059d1f8
+;   float FLOAT_0059d1f8 = 256
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_007f7370
@@ -26,7 +26,7 @@
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-;   wincore_windll.cpp_transformPoint_FUN_00530a25
+;   engine_special.cpp_transformPoint_FUN_00530a25
 ;
 ; *****************************************************************************
 
@@ -59,19 +59,19 @@ section .text
     MOV EAX,ESI                         ; 004896f7
     MOV EDI,dword ptr [EDI]             ; 004896f9 | DAT_01b4d738
     FLD float ptr [EAX]                 ; 004896fb
-    FMUL float ptr [0x0059d1f8]         ; 004896fd | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 004896fd | FLOAT_0059d1f8
     FISTP dword ptr [EBX]               ; 00489703
     FLD float ptr [EAX + 0x4]           ; 00489705
-    FMUL float ptr [0x0059d1f8]         ; 00489708 | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 00489708 | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x4]         ; 0048970e
     FLD float ptr [EAX + 0x8]           ; 00489711
-    FMUL float ptr [0x0059d1f8]         ; 00489714 | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 00489714 | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x8]         ; 0048971a
     MOV EAX,ESP                         ; 0048971d
     PUSH EAX                            ; 0048971f
     PUSH EDI                            ; 00489720
-    CALL wincore_windll.cpp_transformPoint_FUN_00530a25 ; 00489721
-        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformPoint_FUN_00530a25()
+    CALL engine_special.cpp_transformPoint_FUN_00530a25 ; 00489721
+        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformPoint_FUN_00530a25()
     ADD ESP,0x8                         ; 00489726
     PUSH EDI                            ; 00489729
     MOV EDX,dword ptr [0x005ae704]      ; 0048972a | DAT_005ae704

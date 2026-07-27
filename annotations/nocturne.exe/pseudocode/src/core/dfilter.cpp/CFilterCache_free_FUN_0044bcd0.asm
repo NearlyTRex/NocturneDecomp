@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0044bcb0 at 0044bcb6
+;   core_dfilter.cpp_FUN_0044bcb0 at 0044bcb6
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 005084f6
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_dtor_FUN_0044bf00
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
         ;   XREF to: 0044bf00 (UNCONDITIONAL_CALL)  ; undefined core_dfilter.cpp_CDemonFilter_dtor_FUN_0044bf00()
     ADD ESP,0x8                         ; 0044bd07
     PUSH EAX                            ; 0044bd0a
-    CALL FUN_00564494                   ; 0044bd0b
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 0044bd0b
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 0044bd10
     JMP 0x0044bceb                      ; 0044bd13
         ;   XREF to: 0044bceb (UNCONDITIONAL_JUMP)  ; LAB_0044bceb

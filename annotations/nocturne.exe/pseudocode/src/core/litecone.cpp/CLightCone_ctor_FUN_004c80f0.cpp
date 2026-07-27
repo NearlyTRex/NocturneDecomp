@@ -15,7 +15,7 @@ int core_litecone_cpp_CLightCone_ctor_FUN_004c80f0(uint param_1)
   char *pcVar4;
   
   iVar2 = core_actor_cpp_FUN_00409d30(param_1);
-  *(byte ***)(iVar2 + 0x14c) = &PTR_FUN_0059fed4;
+  *(byte ***)(iVar2 + 0x14c) = &PTR_core_litecone_cpp_FUN_004c8190_0059fed4;
   pcVar3 = "none";
   *(uint *)(iVar2 + 0x150) = 0x42600000;
   *(uint *)(iVar2 + 0x154) = 0x40c00000;

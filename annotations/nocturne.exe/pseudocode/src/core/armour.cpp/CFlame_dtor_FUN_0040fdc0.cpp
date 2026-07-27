@@ -12,7 +12,7 @@ uint core_armour_cpp_CFlame_dtor_FUN_0040fdc0(uint param_1,byte param_2)
   uint uVar1;
   
   if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&DAT_00599940);
+    uVar1 = __vec_delete(param_1,&g_CFlameTypeInfo_00599940);
     shape_memdbg_cpp_free_FUN_00564486(uVar1);
     return param_1;
   }

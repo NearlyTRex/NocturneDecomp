@@ -9,7 +9,7 @@
 ;   core_skeleton.cpp_CDeformableModel_dtor_FUN_00517c80 at 00517ca7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f
@@ -18,7 +18,7 @@
 
 section .text
 
-    PUSH 0x5993b0                       ; 0043f9a0 | DAT_005993b0
+    PUSH 0x5993b0                       ; 0043f9a0 | g_CVectorTypeInfo_005993b0
         ;   Label: core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0
     PUSH 0x64                           ; 0043f9a5
     MOV EDX,dword ptr [ESP + 0xc]       ; 0043f9a7

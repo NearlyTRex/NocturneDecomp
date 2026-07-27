@@ -103,7 +103,7 @@ void core_set_cpp_FUN_0050a260(int param_1)
       iVar2 = *(int *)(local_14 + 0x1cc4) * -2;
     }
     if (*(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x1f5a0) <= 0.0) {
-      wincore_windll_cpp_clearScreen_FUN_0052ee70();
+      engine_special_cpp_clearScreen_FUN_0052ee70();
       return;
     }
     core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110
@@ -118,7 +118,7 @@ void core_set_cpp_FUN_0050a260(int param_1)
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,0x42000000);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00460780(DAT_005ae704,&local_20);
   _DAT_01fba938 = 1;
-  wincore_windll_cpp_clearZBufferNative_FUN_0052eed4();
+  engine_special_cpp_clearZBufferNative_FUN_0052eed4();
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(0x01E57284,0x461c3f9a,0);
   _DAT_01fba938 = 0;
   _DAT_01c02594 = uVar4;

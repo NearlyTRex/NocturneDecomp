@@ -1,14 +1,12 @@
-// Name: FUN_004303d0
+// Name: cockpit_ckptutil.c_FUN_004303d0
 // Address: 004303d0
 // Address Range: [[004303d0, 0043058d]]
 // Convention: unknown
-// Signature: void FUN_004303d0(undefined4 *param_1,int param_2,uint param_3,uint param_4)
+// Signature: void cockpit_ckptutil_c_FUN_004303d0(undefined4 *param_1,int param_2,uint param_3,uint param_4)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_004303d0(uint *param_1,int param_2,uint param_3,uint param_4)
+void cockpit_ckptutil_c_FUN_004303d0(uint *param_1,int param_2,uint param_3,uint param_4)
 
 {
   uint uVar1;
@@ -35,9 +33,9 @@ void FUN_004303d0(uint *param_1,int param_2,uint param_3,uint param_4)
   puStack_24 = (uint *)malloc(iVar4);
   if (puStack_24 == (uint *)0x0) {
     _sprintf(auStack_78,"Unable to allocate %u bytes for temporary rotated bitmap.",iVar4);
-    _DAT_01cc4804 = 0x802;
-    _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-    FUN_004c8440(auStack_78);
+    INT_01cc4804 = 0x802;
+    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    core_main_c_FUN_004c8440(auStack_78);
   }
   if (param_4 == 1) {
     uVar7 = 0;

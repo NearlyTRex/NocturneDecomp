@@ -1,14 +1,14 @@
-// Name: FUN_004a4170
+// Name: core_game.cpp_FUN_004a4170
 // Address: 004a4170
 // Address Range: [[004a4170, 004a4ad3]]
 // Convention: unknown
-// Signature: void FUN_004a4170(int param_1,char *param_2,int param_3)
+// Signature: void core_game_cpp_FUN_004a4170(int param_1,char *param_2,int param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004a4170(int param_1,char *param_2,int param_3)
+void core_game_cpp_FUN_004a4170(int param_1,char *param_2,int param_3)
 
 {
   char cVar1;
@@ -165,7 +165,7 @@ LAB_004a43cc:
       if (local_104 != 0) {
         uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                           ("Can't open saved game file.");
-        FUN_0046fcd0(0x01BCD074,uVar6);
+        shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,uVar6);
         crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_e8,0);
         crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_168,0);
         return;
@@ -174,7 +174,7 @@ LAB_004a43cc:
       if (local_88 != 0) {
         uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                           ("Can't create temp file to load saved game file.");
-        FUN_0046fcd0(0x01BCD074,uVar6);
+        shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,uVar6);
         crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_e8,0);
         crt_fstream_cpp_ifstream_dtor_FUN_00565264(local_168,0);
         return;
@@ -188,7 +188,7 @@ LAB_004a43cc:
       if (local_34 != 0) {
         uVar6 = support_newmsg_cpp_getLocalizedString_FUN_004ee370
                           ("Error writing temp file to load saved game.");
-        FUN_0046fcd0(0x01BCD074,uVar6);
+        shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,uVar6);
         support_codec_cpp_CLZWDictionary_dtor_FUN_00439370(local_68,0);
         support_codec_cpp_CCodec_dtor_FUN_00438f30(local_6c,1);
         crt_fstream_cpp_ofstream_dtor_FUN_005651ca(local_e8,0);
@@ -197,9 +197,9 @@ LAB_004a43cc:
       }
       iVar3 = _fopen("save\\$$SAVE$$.TMP","rt");
       if (iVar3 == 0) {
-        _DAT_01cc4800 = "..\\core\\game.cpp";
-        _DAT_01cc4804 = 0xe2f;
-        FUN_004c8440("Can't reopen %s","save\\$$SAVE$$.TMP");
+        PTR_01cc4800 = "..\\core\\game.cpp";
+        INT_01cc4804 = 0xe2f;
+        core_main_c_FUN_004c8440("Can't reopen %s","save\\$$SAVE$$.TMP");
       }
       support_codec_cpp_CLZWDictionary_dtor_FUN_00439370(local_68,0);
       support_codec_cpp_CCodec_dtor_FUN_00438f30(local_6c,1);
@@ -230,13 +230,13 @@ LAB_004a43cc:
     iVar4 = _strnicmp(local_330,"CInventory",10);
     if (iVar4 == 0) {
       _fclose(iVar3);
-      FUN_0046fe60(0x01BCD074,"Can't load old save game file %s.  Sorry.",local_534);
+      shape_edittool_cpp_FUN_0046fe60(0x01BCD074,"Can't load old save game file %s.  Sorry.",local_534);
     }
     else {
       _fscanf(iVar3,"%d\n",&local_38);
       if (local_38 < 3) {
         _fclose(iVar3);
-        FUN_0046fe60(0x01BCD074,"Can't load old save game file %s.  Sorry.",local_534);
+        shape_edittool_cpp_FUN_0046fe60(0x01BCD074,"Can't load old save game file %s.  Sorry.",local_534);
       }
       else {
         core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(0x01CC9450,iVar3,uVar6);
@@ -255,12 +255,13 @@ LAB_004a43cc:
             }
             _fscanf(iVar3,"%[^\n]\n",local_230);
             uVar6 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0
-                              (0x01CC9450,local_230,_DAT_01cae124);
+                              (0x01CC9450,local_230,g_CHeroActorType_01cae0ec.name_hash);
             iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(uVar6);
             *(int *)(iVar4 + 0x1cae0d8) = iVar5;
             if (iVar5 == 0) {
               _fclose(iVar3);
-              FUN_0046fcd0(0x01BCD074,"Can't find hero %s.  Sorry.",local_230);
+              shape_edittool_cpp_FUN_0046fcd0
+                        (0x01BCD074,"Can't find hero %s.  Sorry.",local_230);
             }
             local_14 = local_14 + 1;
             iVar4 = iVar4 + 4;

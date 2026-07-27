@@ -11,8 +11,8 @@
 ; undefined        Stack[-0x3c]:1  local_3c
 ;
 ; XREF[2]:
-;   FUN_00543c50 at 00543e04
-;   FUN_005445c0 at 00544647
+;   core_tentacle.cpp_FUN_00543c50 at 00543e04
+;   core_tentacle.cpp_FUN_005445c0 at 00544647
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dca1d0

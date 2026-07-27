@@ -30,12 +30,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_0048a970 at 0048a9ac
 ;   core_fire.cpp_CFireEffect_render_FUN_0048a650 at 0048a757
+;   core_fire.cpp_FUN_0048a970 at 0048a9ac
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059d1f8
-;   undefined4 DAT_0059d1fc
+;   float FLOAT_0059d1f8 = 256
+;   float FLOAT_0059d1fc = 65536
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_005c5014
@@ -61,7 +61,7 @@
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -120,13 +120,13 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 00482ff8
     MOV EDX,dword ptr [0x005ae704]      ; 00482ffc | DAT_005ae704
     FLD float ptr [EAX]                 ; 00483002
-    FMUL float ptr [0x0059d1f8]         ; 00483004 | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 00483004 | FLOAT_0059d1f8
     FISTP dword ptr [EBX]               ; 0048300a
     FLD float ptr [EAX + 0x4]           ; 0048300c
-    FMUL float ptr [0x0059d1f8]         ; 0048300f | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 0048300f | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x4]         ; 00483015
     FLD float ptr [EAX + 0x8]           ; 00483018
-    FMUL float ptr [0x0059d1f8]         ; 0048301b | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 0048301b | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x8]         ; 00483021
     LEA EAX,[ESP + 0x30]                ; 00483024
     PUSH EAX                            ; 00483028
@@ -134,8 +134,8 @@ section .text
     PUSH EAX                            ; 0048302b
     MOV EDI,0xbe2e147b                  ; 0048302c
     XOR EBP,EBP                         ; 00483031
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 00483033
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00483033
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV EBX,0x3e2e147b                  ; 00483038
     LEA EAX,[ESP + 0x20]                ; 0048303d
     ADD ESP,0x8                         ; 00483041
@@ -145,21 +145,21 @@ section .text
     MOV EBX,ESP                         ; 00483052
     MOV dword ptr [ESP + 0x20],EBP      ; 00483054
     FLD float ptr [EAX]                 ; 00483058
-    FMUL float ptr [0x0059d1f8]         ; 0048305a | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 0048305a | FLOAT_0059d1f8
     FISTP dword ptr [EBX]               ; 00483060
     FLD float ptr [EAX + 0x4]           ; 00483062
-    FMUL float ptr [0x0059d1f8]         ; 00483065 | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 00483065 | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x4]         ; 0048306b
     FLD float ptr [EAX + 0x8]           ; 0048306e
-    FMUL float ptr [0x0059d1f8]         ; 00483071 | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 00483071 | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x8]         ; 00483077
     MOV EAX,ESP                         ; 0048307a
     PUSH EAX                            ; 0048307c
     MOV EAX,dword ptr [EDX]             ; 0048307d | DAT_01b4d738
     ADD EAX,0x30                        ; 0048307f
     PUSH EAX                            ; 00483082
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 00483083
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00483083
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV EAX,0x3e2e147b                  ; 00483088
     LEA EBX,[ESP + 0x5c]                ; 0048308d
     ADD ESP,0x8                         ; 00483091
@@ -169,21 +169,21 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 004830a2
     MOV dword ptr [ESP + 0x20],EBP      ; 004830a6
     FLD float ptr [EAX]                 ; 004830aa
-    FMUL float ptr [0x0059d1f8]         ; 004830ac | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 004830ac | FLOAT_0059d1f8
     FISTP dword ptr [EBX]               ; 004830b2
     FLD float ptr [EAX + 0x4]           ; 004830b4
-    FMUL float ptr [0x0059d1f8]         ; 004830b7 | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 004830b7 | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x4]         ; 004830bd
     FLD float ptr [EAX + 0x8]           ; 004830c0
-    FMUL float ptr [0x0059d1f8]         ; 004830c3 | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 004830c3 | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x8]         ; 004830c9
     LEA EAX,[ESP + 0x54]                ; 004830cc
     PUSH EAX                            ; 004830d0
     MOV EAX,dword ptr [EDX]             ; 004830d1 | DAT_01b4d738
     ADD EAX,0x60                        ; 004830d3
     PUSH EAX                            ; 004830d6
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 004830d7
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 004830d7
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     LEA EBX,[ESP + 0x50]                ; 004830dc
     LEA EAX,[ESP + 0x20]                ; 004830e0
     ADD ESP,0x8                         ; 004830e4
@@ -193,21 +193,21 @@ section .text
     MOV dword ptr [ESP + 0x20],EBP      ; 004830f6
     MOV dword ptr [ESP + 0x1c],EDI      ; 004830fa
     FLD float ptr [EAX]                 ; 004830fe
-    FMUL float ptr [0x0059d1f8]         ; 00483100 | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 00483100 | FLOAT_0059d1f8
     FISTP dword ptr [EBX]               ; 00483106
     FLD float ptr [EAX + 0x4]           ; 00483108
-    FMUL float ptr [0x0059d1f8]         ; 0048310b | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 0048310b | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x4]         ; 00483111
     FLD float ptr [EAX + 0x8]           ; 00483114
-    FMUL float ptr [0x0059d1f8]         ; 00483117 | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 00483117 | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x8]         ; 0048311d
     LEA EAX,[ESP + 0x48]                ; 00483120
     PUSH EAX                            ; 00483124
     MOV EAX,dword ptr [EDX]             ; 00483125 | DAT_01b4d738
     ADD EAX,0x90                        ; 00483127
     PUSH EAX                            ; 0048312c
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0048312d
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0048312d
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV EAX,dword ptr [ESI + 0x10]      ; 00483132
     ADD ESP,0x8                         ; 00483135
     TEST EAX,EAX                        ; 00483138
@@ -285,24 +285,24 @@ section .text
     LEA EBX,[ESP + 0xc]                 ; 004831f9
     MOV EAX,ESI                         ; 004831fd
     FLD float ptr [EAX]                 ; 004831ff
-    FMUL float ptr [0x0059d1f8]         ; 00483201 | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 00483201 | FLOAT_0059d1f8
     FISTP dword ptr [EBX]               ; 00483207
     FLD float ptr [EAX + 0x4]           ; 00483209
-    FMUL float ptr [0x0059d1f8]         ; 0048320c | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 0048320c | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x4]         ; 00483212
     FLD float ptr [EAX + 0x8]           ; 00483215
-    FMUL float ptr [0x0059d1f8]         ; 00483218 | DAT_0059d1f8
+    FMUL float ptr [0x0059d1f8]         ; 00483218 | FLOAT_0059d1f8
     FISTP dword ptr [EBX + 0x8]         ; 0048321e
     LEA EBX,[ESP + 0x24]                ; 00483221
     LEA EAX,[ESP + 0x3c]                ; 00483225
     FLD float ptr [EAX]                 ; 00483229
-    FMUL float ptr [0x0059d1fc]         ; 0048322b | DAT_0059d1fc
+    FMUL float ptr [0x0059d1fc]         ; 0048322b | FLOAT_0059d1fc
     FISTP dword ptr [EBX]               ; 00483231
     FLD float ptr [EAX + 0x4]           ; 00483233
-    FMUL float ptr [0x0059d1fc]         ; 00483236 | DAT_0059d1fc
+    FMUL float ptr [0x0059d1fc]         ; 00483236 | FLOAT_0059d1fc
     FISTP dword ptr [EBX + 0x4]         ; 0048323c
     FLD float ptr [EAX + 0x8]           ; 0048323f
-    FMUL float ptr [0x0059d1fc]         ; 00483242 | DAT_0059d1fc
+    FMUL float ptr [0x0059d1fc]         ; 00483242 | FLOAT_0059d1fc
     FISTP dword ptr [EBX + 0x8]         ; 00483248
     PUSH 0x4                            ; 0048324b
     PUSH EBP                            ; 0048324d

@@ -45,9 +45,9 @@ void core_boneguy_cpp_CBoneGuy_setup_FUN_00418800(int param_1)
   iVar2 = *(int *)(iVar2 + 0xc00);
   *(int *)(param_1 + 0xbda0) = iVar2;
   if (0x14 < iVar2) {
-    _DAT_01cc4800 = "..\\core\\boneguy.cpp";
-    _DAT_01cc4804 = 0x12f;
-    FUN_004c8440("CBoneGuy::explode - Not enough containers");
+    PTR_01cc4800 = "..\\core\\boneguy.cpp";
+    INT_01cc4804 = 0x12f;
+    core_main_c_FUN_004c8440("CBoneGuy::explode - Not enough containers");
   }
   *(uint *)(param_1 + 0x24a4) = DAT_00764798;
   *(uint *)(param_1 + 0x24e8) = DAT_0076479c;

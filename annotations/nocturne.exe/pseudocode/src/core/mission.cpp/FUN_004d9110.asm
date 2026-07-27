@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004d9110(int param_1,undefined4 param_2,undefined4 param_3)
+; void core_mission_cpp_FUN_004d9110(int param_1,undefined4 param_2,undefined4 param_3)
 ;
 ;
 ; XREF[8]:
-;   FUN_00418a00 at 00418ced
+;   core_boneguy.cpp_FUN_00418a00 at 00418ced
 ;   core_crate.cpp_CCrate_explode_FUN_0043cdb0 at 0043ce46
 ;   core_flamecan.cpp_CFlameCan_process_FUN_0048e5a0 at 0048e61f
 ;   core_hiram.cpp_CHiram_process_FUN_004b6770 at 004b6802
@@ -17,18 +17,18 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_00589cfb
 ;   TerminatedCString s_CDemonMission_markActorT_00589d0f
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 004d9110
-        ;   Label: FUN_004d9110
+        ;   Label: core_mission.cpp_FUN_004d9110
     MOV EDX,dword ptr [EAX + 0x52c]     ; 004d9114
     MOV ECX,dword ptr [ESP + 0x8]       ; 004d911a
     MOV dword ptr [EAX + EDX*0x4 + 0x530],ECX ; 004d911e
@@ -48,10 +48,10 @@ section .text
     MOV EBX,0x589cfb                    ; 004d914b | = "..\\core\\mission.cpp"
     MOV ESI,0x408                       ; 004d9150
     PUSH 0x589d0f                       ; 004d9155 | = "CDemonMission::markActorToDelete - To..."
-    MOV dword ptr [0x01cc4800],EBX      ; 004d915a | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d9160 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d9166
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004d915a | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d9160 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d9166
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d916b
     POP EBX                             ; 004d916e
     POP ESI                             ; 004d916f

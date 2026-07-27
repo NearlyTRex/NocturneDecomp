@@ -91,16 +91,16 @@ ulonglong __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(int p
             local_54 = 0.0;
             local_50 = 0.0;
             local_4c = 0.0;
-            wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704);
+            engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704);
             local_54 = *(float *)(param_1 + 8);
-            wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30);
+            engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30);
             local_4c = *(float *)(param_1 + 8);
             local_3c = (float)(int)ROUND(local_54 * _DAT_005a3e8c);
             local_38 = (int)ROUND(local_50 * _DAT_005a3e8c);
             local_34 = (int)ROUND(local_4c * _DAT_005a3e8c);
-            wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60);
+            engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60);
             local_54 = 0.0;
-            wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c();
+            engine_special_cpp_transformAndProjectPoint_FUN_0053075c();
             uVar3 = DAT_005ae708;
             uVar5 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4;
             if (((uVar5 & 0x80000000) == 0) || ((char)uVar5 == '\0')) {
@@ -108,9 +108,9 @@ ulonglong __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(int p
               iVar7 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190();
               if (iVar7 != 0) {
                 if (0xfff < _DAT_02dd1234) {
-                  _DAT_01cc4800 = "..\\core\\water.cpp";
-                  _DAT_01cc4804 = 0x136;
-                  FUN_004c8440();
+                  PTR_01cc4800 = "..\\core\\water.cpp";
+                  INT_01cc4804 = 0x136;
+                  core_main_c_FUN_004c8440();
                 }
                 *(int *)(&DAT_02dd1238 + _DAT_02dd1234 * 4) = iVar8;
                 *(int *)(&DAT_02dd5238 + _DAT_02dd1234 * 4) = iVar6;

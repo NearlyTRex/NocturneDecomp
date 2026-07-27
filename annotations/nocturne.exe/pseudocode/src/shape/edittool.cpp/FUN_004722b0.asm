@@ -1,21 +1,21 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004722b0(void)
+; void shape_edittool_cpp_FUN_004722b0(void)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[9]:
-;   FUN_0046f7e0 at 0046f8a2
-;   FUN_0046fb40 at 0046fc2f
-;   FUN_0046fcd0 at 0046fdbf
-;   FUN_0046fe60 at 0046ff4f
-;   FUN_004700d0 at 0047012c
-;   FUN_00470eb0 at 00470f9a
-;   FUN_004759d0 at 004759e1
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfc5f
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 at 00471816
+;   shape_edittool.cpp_FUN_0046f7e0 at 0046f8a2
+;   shape_edittool.cpp_FUN_0046fb40 at 0046fc2f
+;   shape_edittool.cpp_FUN_0046fcd0 at 0046fdbf
+;   shape_edittool.cpp_FUN_0046fe60 at 0046ff4f
+;   shape_edittool.cpp_FUN_004700d0 at 0047012c
+;   shape_edittool.cpp_FUN_00470eb0 at 00470f9a
+;   shape_edittool.cpp_FUN_004759d0 at 004759e1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
@@ -31,10 +31,11 @@
 ;   undefined4 DAT_01bcddd0
 ;   undefined4 DAT_01c00c5c
 ;   undefined4 DAT_01c00c70
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_2d.c_drawHLine_FUN_00403bd0
 ;   engine_2d.c_fillRectWithBorder_FUN_00403ef0
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
@@ -44,14 +45,13 @@
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
 ;   engine_matrix.c_popViewport_FUN_004ce920
 ;   engine_matrix.c_pushViewport_FUN_004ce7c0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004722b0
-        ;   Label: FUN_004722b0
+        ;   Label: shape_edittool.cpp_FUN_004722b0
     PUSH ESI                            ; 004722b1
     PUSH EDI                            ; 004722b2
     PUSH EBP                            ; 004722b3
@@ -76,10 +76,10 @@ section .text
     MOV EDI,0x57e9f6                    ; 004722f0 | = "..\\shape\\edittool.cpp"
     MOV EBP,0x749                       ; 004722f5
     PUSH 0x57ea0c                       ; 004722fa | = "CEditorTools::paintWindow() called bu..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004722ff | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00472305 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0047230b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004722ff | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00472305 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0047230b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00472310
     MOV EDX,dword ptr [0x01bcd07c]      ; 00472313 | DAT_01bcd07c
         ;   Label: LAB_00472313
@@ -145,10 +145,10 @@ section .text
         ;   Label: LAB_0047239e
     MOV EBX,0x8b                        ; 004723a3
     PUSH 0x57e510                       ; 004723a8 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 004723ad | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004723b3 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004723b9
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004723ad | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004723b3 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004723b9
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004723be
     JMP 0x004722c4                      ; 004723c1
         ;   XREF to: 004722c4 (UNCONDITIONAL_JUMP)  ; LAB_004722c4

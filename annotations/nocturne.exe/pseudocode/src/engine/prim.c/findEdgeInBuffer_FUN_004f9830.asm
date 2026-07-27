@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004f9dd0 at 004f9f5a
-;   FUN_004fa2e0 at 004fa4bf
+;   engine_prim.c_FUN_004f9dd0 at 004f9f5a
+;   engine_prim.c_FUN_004fa2e0 at 004fa4bf
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01e52a68

@@ -34,8 +34,8 @@
 ;   core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_00494dd0
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30
 ;   core_frankgen.cpp_findLeader_FUN_00495240
-;   FUN_004950a0
-;   FUN_004c8440
+;   core_frankgen.cpp_FUN_004950a0
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     FSTP float ptr [0x01c71340]         ; 0049499d | DAT_01c71340
     PUSH ESI                            ; 004949a3
         ;   Label: LAB_004949a3
-    CALL FUN_004950a0                   ; 004949a4
-        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004950a0()
+    CALL core_frankgen.cpp_FUN_004950a0 ; 004949a4
+        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004950a0()
     MOV EAX,dword ptr [ESI + 0x150]     ; 004949a9
     ADD ESP,0x4                         ; 004949af
     CMP EAX,0x8                         ; 004949b2
@@ -398,10 +398,10 @@ section .text
         ;   Label: default
     MOV ECX,0x13e                       ; 00494d9d
     PUSH 0x581cfa                       ; 00494da2 | = "WTF!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00494da7 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00494dad | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00494db3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00494da7 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00494dad | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00494db3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00494db8
     ADD ESP,0x78                        ; 00494dbb
     POP EBP                             ; 00494dbe

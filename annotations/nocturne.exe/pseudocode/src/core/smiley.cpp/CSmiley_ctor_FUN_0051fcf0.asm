@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0051fcc0 at 0051fcd3
+;   core_smiley.cpp_FUN_0051fcc0 at 0051fcd3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_smiley_dfm_00591eed

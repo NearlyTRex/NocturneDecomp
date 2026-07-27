@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 211,
+    "complexity_score": 195,
     "cross_reference_count": 0,
     "function_call_count": 5,
-    "global_count": 2,
+    "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 31,
-    "suspect_count": 16,
+    "pseudocode_lines": 30,
+    "suspect_count": 15,
     "suspect_types": [
       "unaffected_reg",
       "unnamed_param",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 114
+    "total_lines": 113
   },
   "cross_references": [],
   "function": {
@@ -147,10 +146,15 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004f8570",
-    "signature": "void FUN_004f8570(int param_1,int param_2)"
+    "name": "engine_pod.cpp_FUN_004f8570",
+    "signature": "void engine_pod_cpp_FUN_004f8570(int param_1,int param_2)"
   },
   "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
     {
       "addr": "00563380",
       "is_variadic": false,
@@ -170,24 +174,49 @@
       "addr": "0056582c",
       "is_variadic": false,
       "name": "crt_stdio.c_fseek_FUN_0056582c"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
     {
+      "addr": "0058da77",
+      "name": "s_engine_pod_cpp_0058da77",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058da89",
+      "name": "s_CPodFile_getAuditRecord_0058da89",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058dac5",
+      "name": "s_rb_0058dac5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058dac8",
+      "name": "s_engine_pod_cpp_0058dac8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058dada",
+      "name": "s_CPodFile_getAuditRecord_0058dada",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -247,7 +276,7 @@
         {
           "check_id": "uninitvar",
           "column": 6,
-          "line": 37,
+          "line": 35,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
@@ -258,32 +287,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004f8570(int param_1,int param_2)",
+      "text": "void engine_pod_cpp_FUN_004f8570(int param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004f8570(int param_1,int param_2)",
+      "text": "void engine_pod_cpp_FUN_004f8570(int param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 6,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "uint *unaff_ESI;",
@@ -291,7 +312,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 < 0) || (*(int *)(param_1 + 0x214) <= param_2)) {",
@@ -299,7 +320,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_2 < 0) || (*(int *)(param_1 + 0x214) <= param_2)) {",
@@ -307,7 +328,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 < 0) || (*(int *)(param_1 + 0x214) <= param_2)) {",
@@ -315,7 +336,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = _fopen(param_1 + 4,\"rb\");",
@@ -323,15 +344,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"CPodFile::getAuditRecord - can't open %s\",param_1 + 4);",
+      "text": "core_main_c_FUN_004c8440(\"CPodFile::getAuditRecord - can't open %s\",param_1 + 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "_fseek(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x218),0);",
@@ -339,7 +360,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "_fseek(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x218),0);",
@@ -347,7 +368,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 30,
+      "line": 28,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = *puVar2;",
@@ -355,7 +376,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 32,
+      "line": 30,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
@@ -363,7 +384,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 32,
+      "line": 30,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
@@ -371,7 +392,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 29,
+      "line": 27,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -387,7 +408,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 37,
+      "line": 35,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*unaff_ESI = *puVar2;",

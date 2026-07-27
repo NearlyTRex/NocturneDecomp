@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0048f490 at 0048f878
+;   core_flies.cpp_FUN_0048f490 at 0048f878
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624

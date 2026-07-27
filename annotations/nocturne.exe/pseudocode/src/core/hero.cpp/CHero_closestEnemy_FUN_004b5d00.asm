@@ -8,21 +8,21 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   FUN_004baba0 at 004bacbe
-;   FUN_005423c0 at 005424de
 ;   core_baron.cpp_FUN_00410cc0 at 00410cdb
 ;   core_colonel.cpp_CColonel_processAI_FUN_0043a470 at 0043a533
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 at 00496de9
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004b3880 at 004b394c
+;   core_icepick.cpp_FUN_004baba0 at 004bacbe
 ;   core_scat.cpp_CScat_updateAI_FUN_004fc610 at 004fc6c6
+;   core_svetlana.cpp_FUN_005423c0 at 005424de
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005858eb = 2
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_01ccdc10
+;   undefined4 g_CMobsterActorType_01ccdbd8.name_hash
 ;   undefined4 DAT_01fa7e78
-;   undefined4 DAT_02dd11c8
+;   undefined4 g_CVehicleActorType_02dd1190.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -66,7 +66,7 @@ section .text
     RET                                 ; 004b5d5a
     MOV EBX,dword ptr [ESI + EAX*0x1 + 0x150bf8] ; 004b5d5b
         ;   Label: LAB_004b5d5b
-    MOV EAX,[0x02dd11c8]                ; 004b5d62 | DAT_02dd11c8
+    MOV EAX,[0x02dd11c8]                ; 004b5d62 | g_CVehicleActorType_02dd1190.name_hash
     PUSH EAX                            ; 004b5d67
     PUSH EBX                            ; 004b5d68
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b5d69
@@ -75,7 +75,7 @@ section .text
     TEST EAX,EAX                        ; 004b5d71
     JNZ 0x004b5e65                      ; 004b5d73
         ;   XREF to: 004b5e65 (CONDITIONAL_JUMP)  ; LAB_004b5e65
-    MOV EDX,dword ptr [0x01ccdc10]      ; 004b5d79 | DAT_01ccdc10
+    MOV EDX,dword ptr [0x01ccdc10]      ; 004b5d79 | g_CMobsterActorType_01ccdbd8.name_hash
     PUSH EDX                            ; 004b5d7f
     PUSH EBX                            ; 004b5d80
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b5d81
@@ -102,7 +102,7 @@ section .text
     TEST EAX,EAX                        ; 004b5dbf
     JNZ 0x004b5e65                      ; 004b5dc1
         ;   XREF to: 004b5e65 (CONDITIONAL_JUMP)  ; LAB_004b5e65
-    PUSH 0x5993b0                       ; 004b5dc7 | DAT_005993b0
+    PUSH 0x5993b0                       ; 004b5dc7 | g_CVectorTypeInfo_005993b0
     PUSH 0xa                            ; 004b5dcc
     LEA EAX,[ESP + 0x8]                 ; 004b5dce
     PUSH EAX                            ; 004b5dd2

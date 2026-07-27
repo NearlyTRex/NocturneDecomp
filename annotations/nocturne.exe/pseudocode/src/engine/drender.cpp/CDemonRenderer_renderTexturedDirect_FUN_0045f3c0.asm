@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[10]:
-;   FUN_0048d5d0 at 0048de91
-;   FUN_004cc440 at 004cc5b7
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 at 0041df34
 ;   core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0 at 00425e98
 ;   core_fire.cpp_CExplosion_render_FUN_00486fe0 at 0048732d
+;   core_flame.cpp_FUN_0048d5d0 at 0048de91
 ;   core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004b1df0 at 004b1e01
 ;   core_inv.cpp_drawItemIconBackground_FUN_004c1f90 at 004c2102
 ;   core_inv.cpp_drawWeaponIconBackground_FUN_004c1dd0 at 004c1f42
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5dd8
+;   core_marquee.cpp_FUN_004cc440 at 004cc5b7
 ;   core_menu.cpp_renderAudioSpectrumBar_FUN_004cf2b0 at 004cf407
 ;
 ; Referenced Globals:

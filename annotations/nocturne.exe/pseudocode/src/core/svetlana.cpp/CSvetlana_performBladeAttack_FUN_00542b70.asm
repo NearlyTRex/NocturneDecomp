@@ -25,8 +25,8 @@
 ;   TerminatedCString s_svetlana_attack_wav_00596438
 ;   TerminatedCString s_svetlana_miss_wav_0059644d
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01fa5f34
 ;   undefined4 DAT_01fa5f38
 ;   undefined4 DAT_01fa5f3c
@@ -35,9 +35,9 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
+;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -135,10 +135,10 @@ section .text
         ;   Label: LAB_00542c4b
     MOV EAX,0x2f0                       ; 00542c50
     PUSH 0x596416                       ; 00542c55 | = "Can't find svetlana's parent bone"
-    MOV dword ptr [0x01cc4800],ESI      ; 00542c5a | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00542c60 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00542c65
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00542c5a | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00542c60 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00542c65
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00542c6a
     JMP 0x00542bd0                      ; 00542c6d
         ;   XREF to: 00542bd0 (UNCONDITIONAL_JUMP)  ; LAB_00542bd0

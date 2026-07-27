@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00421480 at 004214c0
+;   core_bugs.cpp_FUN_00421480 at 004214c0
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00579d1d = 2
 ;   double DOUBLE_00579d25 = 5.22209901682860E-315
-;   undefined4 DAT_0059aeb4
+;   float FLOAT_0059aeb4 = 2
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_applySwarmTranslation_FUN_00423a50
@@ -179,7 +179,7 @@ section .text
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 004221d1
         ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
     ADD ESP,0x8                         ; 004221d6
-    FLD float ptr [0x0059aeb4]          ; 004221d9 | DAT_0059aeb4
+    FLD float ptr [0x0059aeb4]          ; 004221d9 | FLOAT_0059aeb4
     FMUL float ptr [EBP + 0x18]         ; 004221df
     FSTP float ptr [ESP + 0x94]         ; 004221e2
     MOV EAX,dword ptr [ESP + 0x94]      ; 004221e9

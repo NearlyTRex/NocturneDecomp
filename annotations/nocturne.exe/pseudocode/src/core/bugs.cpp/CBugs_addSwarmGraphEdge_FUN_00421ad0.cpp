@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(int param_1,int param_2,int param_3,int param_4)
 
 {
@@ -20,9 +18,9 @@ void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421ad0(int param_1,int 
     *(int *)(param_1 + 0x1299c) = param_2 + 1;
   }
   if (700 < *(int *)(param_1 + 0x1299c)) {
-    _DAT_01cc4800 = "..\\core\\bugs.cpp";
-    _DAT_01cc4804 = 0x1b8;
-    FUN_004c8440("CBugs::addSwarmGraphEdge - Too many verts in swarm graph.");
+    PTR_01cc4800 = "..\\core\\bugs.cpp";
+    INT_01cc4804 = 0x1b8;
+    core_main_c_FUN_004c8440("CBugs::addSwarmGraphEdge - Too many verts in swarm graph.");
   }
   piVar3 = (int *)(param_1 + 0x129a0 + param_2 * 0x28);
   iVar1 = *piVar3;

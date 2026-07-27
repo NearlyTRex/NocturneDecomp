@@ -40,9 +40,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_00461bd0(int *par
     }
   }
   if (4999 < _DAT_01b4d7ac) {
-    _DAT_01cc4800 = "..\\engine\\drender.cpp";
-    _DAT_01cc4804 = 0xa81;
-    FUN_004c8440("CDR::captureFace - too many faces captured");
+    PTR_01cc4800 = "..\\engine\\drender.cpp";
+    INT_01cc4804 = 0xa81;
+    core_main_c_FUN_004c8440("CDR::captureFace - too many faces captured");
   }
   uVar3 = _DAT_01b4d7b0;
   iVar6 = _DAT_01b4d7ac * 0x20;

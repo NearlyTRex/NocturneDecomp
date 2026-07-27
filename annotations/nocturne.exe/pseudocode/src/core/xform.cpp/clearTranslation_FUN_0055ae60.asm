@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00543c50 at 00543fc0
+;   core_tentacle.cpp_FUN_00543c50 at 00543fc0
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_0055ced0 at 0055cef2
 ;
 ; *****************************************************************************

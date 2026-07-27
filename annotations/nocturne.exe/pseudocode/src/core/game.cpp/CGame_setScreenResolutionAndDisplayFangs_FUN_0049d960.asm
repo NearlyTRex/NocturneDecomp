@@ -23,9 +23,9 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040e340
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0
+;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
-;   wincore_windll.cpp_clearScreen_FUN_0052ee70
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     CMP dword ptr [EAX + 0x4],0x0       ; 0049d998 | DAT_01cc9454
     JZ 0x0049d9f9                       ; 0049d99c
         ;   XREF to: 0049d9f9 (CONDITIONAL_JUMP)  ; LAB_0049d9f9
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 0049d99e
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 0049d99e
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
         ;   Label: LAB_0049d99e
     MOV EAX,ESP                         ; 0049d9a3
     PUSH EAX                            ; 0049d9a5

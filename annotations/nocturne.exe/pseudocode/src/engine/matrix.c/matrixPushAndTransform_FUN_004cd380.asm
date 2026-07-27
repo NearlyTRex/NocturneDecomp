@@ -18,9 +18,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_00472fd0 at 0047304a
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00460a50 at 00460a6d
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 at 00460b0e
+;   shape_edittool.cpp_FUN_00472fd0 at 0047304a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005881eb
@@ -41,9 +41,9 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_matrix.c_interpolatedCos_FUN_004ccaa0
 ;   engine_matrix.c_interpolatedSin_FUN_004cca60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -548,10 +548,10 @@ section .text
         ;   Label: LAB_004cda95
     MOV ESI,0x31c                       ; 004cda9a
     PUSH 0x5881fe                       ; 004cda9f | = "Matrix unbalance"
-    MOV dword ptr [0x01cc4800],EBX      ; 004cdaa4 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004cdaaa | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004cdab0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004cdaa4 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004cdaaa | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004cdab0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004cdab5
     ADD ESP,0x30                        ; 004cdab8
     POP EBP                             ; 004cdabb

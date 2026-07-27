@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[37]:
-;   FUN_0046f000 at 0046f01d
-;   FUN_0046f7e0 at 0046f820
-;   FUN_0046fb40 at 0046fb8b
-;   FUN_0046fcd0 at 0046fd1b
-;   FUN_0046fe60 at 0046feab
-;   FUN_004700d0 at 004700f8
-;   FUN_004701a0 at 004701bf
-;   FUN_00470eb0 at 00470f0f
-;   FUN_004722b0 at 004722d8
-;   FUN_00472de0 at 00472e08
+;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a6985
+;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6a4a
+;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049abde
+;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a6fa7
+;   core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0 at 0049b50d
+;   core_inv.cpp_FUN_004c2470 at 004c2608
+;   core_main.c_FUN_004c85f0 at 004c8c0e
+;   core_main.c_FUN_004c8eb0 at 004c8ec3
+;   core_main.c_FUN_004c90e0 at 004c9112
+;   core_menu.cpp_FUN_004cf810 at 004cf84a
 ;   ... and 27 more
 ;
 ; *****************************************************************************

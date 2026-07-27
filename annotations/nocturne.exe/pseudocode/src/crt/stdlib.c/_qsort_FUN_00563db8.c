@@ -68,13 +68,16 @@ LAB_00563e2d:
             iVar3 = (param_2 >> 3) * param_3;
             local_68 = iVar3 * 2;
             local_5c = (uint *)
-                       FUN_00563d20(local_48,(uint *)((int)local_48 + iVar3),
-                                    (byte *)((int)local_48 + local_68),local_3c);
+                       FUN_00563d20
+                                 (local_48,(uint *)((int)local_48 + iVar3),
+                                  (byte *)((int)local_48 + local_68),local_3c);
             puVar9 = (uint *)
-                     FUN_00563d20((int)puVar9 - iVar3,puVar9,(uint *)((int)puVar9 + iVar3),
-                                  local_3c);
+                     FUN_00563d20
+                               ((int)puVar9 - iVar3,puVar9,(uint *)((int)puVar9 + iVar3),
+                                local_3c);
             puVar7 = (uint *)
-                     FUN_00563d20((int)puVar7 - local_68,(int)puVar7 - iVar3,puVar7,local_3c);
+                     FUN_00563d20
+                               ((int)puVar7 - local_68,(int)puVar7 - iVar3,puVar7,local_3c);
           }
           puVar9 = (uint *)FUN_00563d20(local_5c,puVar9,puVar7,local_3c);
         }

@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_004b52f0 at 004b53f5
+;   core_hero.cpp_FUN_004b52f0 at 004b53f5
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290

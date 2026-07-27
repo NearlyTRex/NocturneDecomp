@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004e7ed0(int param_1,int param_2,int param_3)
+; void sound_mp3_cpp_FUN_004e7ed0(int param_1,int param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x78]:4  local_78
@@ -38,17 +38,17 @@
 ;   undefined4 s_CMotionController_005bb246+0xa
 ;   undefined4 DAT_005bbc48
 ;   undefined4 DAT_005bbc88
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fseek_FUN_0056582c
 ;   crt_stdio.c_ftell_FUN_00566e70
-;   FUN_004c8440
-;   FUN_005638d0
+;   crt_unknown.c_FUN_005638d0
 ;   sound_mp3.cpp_CFileBitStream_readBits_FUN_004e2ac0
 ;   sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004e3130
 ;   sound_mp3.cpp_CMP3Decoder_free_FUN_004e8260
@@ -59,7 +59,7 @@
 section .text
 
     PUSH EBX                            ; 004e7ed0
-        ;   Label: FUN_004e7ed0
+        ;   Label: sound_mp3.cpp_FUN_004e7ed0
     PUSH ESI                            ; 004e7ed1
     PUSH EDI                            ; 004e7ed2
     PUSH EBP                            ; 004e7ed3
@@ -88,8 +88,8 @@ section .text
     JZ 0x004e7f2e                       ; 004e7f1c
         ;   XREF to: 004e7f2e (CONDITIONAL_JUMP)  ; LAB_004e7f2e
     PUSH ECX                            ; 004e7f1e
-    CALL FUN_005638d0                   ; 004e7f1f
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 004e7f1f
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 004e7f24
     MOV dword ptr [EDI + 0x4],0x0       ; 004e7f27
     PUSH EBP                            ; 004e7f2e
@@ -115,10 +115,10 @@ section .text
     MOV EAX,0x58b567                    ; 004e7f5f | = "..\\sound\\mp3.cpp"
     MOV EDX,0x1ff                       ; 004e7f64
     PUSH 0x58b578                       ; 004e7f69 | = "Out of memory.  File: %s"
-    MOV [0x01cc4800],EAX                ; 004e7f6e | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004e7f73 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e7f79
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004e7f6e | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004e7f73 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e7f79
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e7f7e
     PUSH 0x0                            ; 004e7f81
         ;   Label: LAB_004e7f81
@@ -269,10 +269,10 @@ section .text
     MOV ESI,0x58b4e0                    ; 004e8116 | = "..\\sound\\mp3.cpp"
     MOV EBP,0x1a1                       ; 004e811b
     PUSH 0x58b4f1                       ; 004e8120 | = "MPEG Layer 2 - pick_table - can't loa..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004e8125 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004e812b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e8131
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004e8125 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004e812b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e8131
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e8136
     MOV EAX,dword ptr [ESP + 0x60]      ; 004e8139
         ;   Label: LAB_004e8139
@@ -297,10 +297,10 @@ section .text
     MOV EDX,0x58b52a                    ; 004e8166 | = "..\\sound\\mp3.cpp"
     MOV ECX,0x1b1                       ; 004e816b
     PUSH 0x58b53b                       ; 004e8170 | = "js_bound bad layer/modext (%d/%d)  Fi..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004e8175 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004e817b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e8181
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004e8175 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004e817b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e8181
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x10                        ; 004e8186
     SHL ESI,0x2                         ; 004e8189
         ;   Label: LAB_004e8189

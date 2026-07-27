@@ -5,22 +5,22 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_004e99f0 at 004e9a4f
 ;   core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_004ec600 at 004ecc48
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9ae1
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830 at 004eaa18
+;   core_netgame.cpp_FUN_004e99f0 at 004e9a4f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c124
 ;   TerminatedCString s_CNetGame_addPlayer_too_m_0058c138
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01cea404
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -102,10 +102,10 @@ section .text
         ;   Label: LAB_004eb4f8
     MOV EBX,0x5ff                       ; 004eb4fd
     PUSH 0x58c138                       ; 004eb502 | = "CNetGame::addPlayer - too many players!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004eb507 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004eb50d | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004eb513
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004eb507 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004eb50d | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004eb513
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004eb518
     JMP 0x004eb452                      ; 004eb51b
         ;   XREF to: 004eb452 (UNCONDITIONAL_JUMP)  ; LAB_004eb452

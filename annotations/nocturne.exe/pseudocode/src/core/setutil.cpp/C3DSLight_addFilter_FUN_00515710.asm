@@ -11,12 +11,12 @@
 ;   TerminatedCString s_core_setutil_cpp_00590f8a
 ;   TerminatedCString s_C3DSLight_addFilter_too_00590f9e
 ;   undefined4 DAT_005ad54c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -89,10 +89,10 @@ section .text
     MOV ECX,0x590f8a                    ; 005157cc | = "..\\core\\setutil.cpp"
     MOV ESI,0x383                       ; 005157d1
     PUSH 0x590f9e                       ; 005157d6 | = "C3DSLight::addFilter - too many filte..."
-    MOV dword ptr [0x01cc4800],ECX      ; 005157db | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005157e1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005157e7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 005157db | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 005157e1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005157e7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 005157ec
     JMP 0x00515725                      ; 005157ef
         ;   XREF to: 00515725 (UNCONDITIONAL_JUMP)  ; LAB_00515725

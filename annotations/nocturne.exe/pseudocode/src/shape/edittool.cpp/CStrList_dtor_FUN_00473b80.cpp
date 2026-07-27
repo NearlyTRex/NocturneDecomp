@@ -12,7 +12,7 @@ int __cdecl shape_edittool_cpp_CStrList_dtor_FUN_00473b80(int param_1,byte param
   uint uVar1;
   
   if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&DAT_0059caf0);
+    uVar1 = __vec_delete(param_1,&g_CStrListTypeInfo_0059caf0);
     shape_memdbg_cpp_free_FUN_00564486(uVar1);
     return param_1;
   }

@@ -52,7 +52,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(int p
         } while (iVar4 < *(int *)(param_1 + 0x140));
       }
       if (_DAT_01c02594 != 0) {
-        wincore_windll_cpp_masterZBuffer_FUN_00532c70(0);
+        engine_special_cpp_masterZBuffer_FUN_00532c70(0);
         return;
       }
     }

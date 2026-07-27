@@ -13,8 +13,8 @@ void __cdecl core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00513610(uint *param_1,
   
   iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("data",param_2,"rb");
   if (iVar1 == 0) {
-    FUN_00513720(param_1);
-    FUN_00513670(param_1,param_2);
+    core_setdir_cpp_FUN_00513720(param_1);
+    core_setdir_cpp_FUN_00513670(param_1,param_2);
     return;
   }
   _fread(&DAT_020875f8,0x3000,*param_1,iVar1);

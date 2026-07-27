@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004d4650(int param_1)
+; void core_mimic_cpp_FUN_004d4650(int param_1)
 ;
 ;
 ; Referenced Globals:
@@ -28,6 +28,7 @@
 ;   core_cloth.cpp_CCloth_load_FUN_00435240
 ;   core_cloth.cpp_CCloth_setup_FUN_004359e0
 ;   core_enemy.cpp_CEnemy_setup_FUN_004796b0
+;   core_main.c_FUN_004c8440
 ;   core_morph.cpp_CMorph_getReady_FUN_004e03c0
 ;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_004e0170
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0
@@ -37,14 +38,13 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004d4650
-        ;   Label: FUN_004d4650
+        ;   Label: core_mimic.cpp_FUN_004d4650
     PUSH ESI                            ; 004d4651
     PUSH EDI                            ; 004d4652
     PUSH EBP                            ; 004d4653
@@ -217,7 +217,7 @@ section .text
     CALL core_cloth.cpp_CCloth_setup_FUN_004359e0 ; 004d483b
         ;   XREF to: 004359e0 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_setup_FUN_004359e0()
     ADD ESP,0x10                        ; 004d4840
-    MOV EBP,dword ptr [0x01bcdef4]      ; 004d4843 | DAT_01bcdef4
+    MOV EBP,dword ptr [0x01bcdef4]      ; 004d4843 | g_CEnemyActorType_01bcdebc.name_hash
     PUSH EBP                            ; 004d4849
     LEA EAX,[EBX + 0x46924]             ; 004d484a
     PUSH EAX                            ; 004d4850
@@ -235,10 +235,10 @@ section .text
     MOV EDX,0x589393                    ; 004d486c | = "..\\core\\mimic.cpp"
     MOV ECX,0x101                       ; 004d4871
     PUSH 0x5893a5                       ; 004d4876 | = "CMimic failed to create morph target ..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004d487b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004d4881 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d4887
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004d487b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004d4881 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d4887
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d488c
     MOV EAX,dword ptr [EBX + 0x4757c]   ; 004d488f
         ;   Label: LAB_004d488f
@@ -361,10 +361,10 @@ section .text
         ;   Label: LAB_004d49ba
     MOV ESI,0xb6                        ; 004d49bf
     PUSH 0x589257                       ; 004d49c4 | = "CMimic::setup - can't use mimic in mu..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d49c9 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d49cf | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d49d5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d49c9 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d49cf | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d49d5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d49da
     JMP 0x004d4669                      ; 004d49dd
         ;   XREF to: 004d4669 (UNCONDITIONAL_JUMP)  ; LAB_004d4669

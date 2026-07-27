@@ -12,15 +12,15 @@
 ;   TerminatedCString s_sound_snddx_cpp_005946ae
 ;   TerminatedCString s_DirectSoundDevice_getSfx_005946c1
 ;   TerminatedCString s_Get_playback_cursor_of_h_005946f7
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_004c8440
-;   FUN_00529980
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90
 ;   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
+;   sound_sndmain.cpp_FUN_00529980
 ;
 ; *****************************************************************************
 
@@ -46,10 +46,10 @@ section .text
         ;   Label: LAB_0052b8a2
     MOV EDI,0x3a7                       ; 0052b8a7
     PUSH 0x5946c1                       ; 0052b8ac | = "DirectSoundDevice::getSfxPlaybackPos ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0052b8b1 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0052b8b7 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0052b8bd
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0052b8b1 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0052b8b7 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0052b8bd
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0052b8c2
     LEA EDX,[ESP + 0x1a0]               ; 0052b8c5
         ;   Label: LAB_0052b8c5
@@ -111,8 +111,8 @@ section .text
     ADD ESP,0x10                        ; 0052b96e
     LEA EAX,[ESP + 0x8]                 ; 0052b971
     PUSH EAX                            ; 0052b975
-    CALL FUN_00529980                   ; 0052b976
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 0052b976
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x4                         ; 0052b97b
     XOR EAX,EAX                         ; 0052b97e
     MOV EDX,0xbff00000                  ; 0052b980

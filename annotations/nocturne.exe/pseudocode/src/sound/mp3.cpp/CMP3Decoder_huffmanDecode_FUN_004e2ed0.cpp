@@ -49,9 +49,9 @@ uint sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0(uint param_1,char *par
     }
     uVar3 = uVar3 >> 1;
   } while ((uVar3 != 0) || (uVar2 < _DAT_01cd944c));
-  _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-  _DAT_01cc4804 = 800;
-  FUN_004c8440("Illegal Huffman code in data.  File: %s",&DAT_01cd8b28);
+  PTR_01cc4800 = "..\\sound\\mp3.cpp";
+  INT_01cc4804 = 800;
+  core_main_c_FUN_004c8440("Illegal Huffman code in data.  File: %s",&DAT_01cd8b28);
 LAB_004e2f39:
   if ((*param_2 == '3') && ((param_2[1] == '2' || (param_2[1] == '3')))) {
     *param_5 = (int)*param_4 >> 3 & 1;

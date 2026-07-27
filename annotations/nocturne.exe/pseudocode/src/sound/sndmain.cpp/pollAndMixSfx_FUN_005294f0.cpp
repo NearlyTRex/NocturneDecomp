@@ -39,10 +39,10 @@ void sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(int *param_1,int param_2,int p
   bVar9 = 0;
   if (_DAT_02dc84bc < 1) {
     pcStack_70 = "pollSfx - must be locked!";
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x1442;
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x1442;
     puStack_74 = (byte *)0x5297cb;
-    FUN_004c8440();
+    core_main_c_FUN_004c8440();
   }
   if (0 < param_3) {
     iVar1 = 0;
@@ -71,17 +71,17 @@ void sound_sndmain_cpp_pollAndMixSfx_FUN_005294f0(int *param_1,int param_2,int p
       if (_DAT_02dc8328 < 1) {
         if (_DAT_02dc84bc < 1) {
           pcStack_70 = "SfxSlot::kill - must be locked!";
-          _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-          _DAT_01cc4804 = 0x4e0;
+          PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+          INT_01cc4804 = 0x4e0;
           puStack_74 = (byte *)0x5297f3;
-          FUN_004c8440();
+          core_main_c_FUN_004c8440();
         }
         if (0 < _DAT_02dc8328) {
           pcStack_70 = "nextMixingBuffer - shouldn't have any data pending!";
-          _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-          _DAT_01cc4804 = 0x4e4;
+          PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+          INT_01cc4804 = 0x4e4;
           puStack_74 = (byte *)0x5295ee;
-          FUN_004c8440();
+          core_main_c_FUN_004c8440();
         }
         iVar7 = 0;
         iVar1 = _DAT_02dc8330 * 4;

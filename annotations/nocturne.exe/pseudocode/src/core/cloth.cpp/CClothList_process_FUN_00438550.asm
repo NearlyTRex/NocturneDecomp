@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_00540c20 at 00540cd1
-;   FUN_00540f50 at 00541347
 ;   core_charactr.cpp_CCharacter_setup_FUN_00424260 at 004243de
 ;   core_charactr.cpp_FUN_0042a150 at 0042a1cd
+;   core_succubus.cpp_FUN_00540c20 at 00540cd1
+;   core_succubus.cpp_FUN_00540f50 at 00541347
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_process_FUN_00436e50

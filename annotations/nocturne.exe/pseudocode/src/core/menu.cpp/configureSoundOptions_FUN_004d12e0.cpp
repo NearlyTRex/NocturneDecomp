@@ -776,7 +776,7 @@ LAB_004d1fd6:
     case 7:
       uVar20 = CONCAT44(uVar6,local_7e8);
       iVar3 = 0;
-      FUN_00474c90(local_7e8);
+      shape_edittool_cpp_FUN_00474c90(local_7e8);
       while( true ) {
         uVar6 = (uint)((ulonglong)uVar20 >> 0x20);
         iVar11 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00528230();

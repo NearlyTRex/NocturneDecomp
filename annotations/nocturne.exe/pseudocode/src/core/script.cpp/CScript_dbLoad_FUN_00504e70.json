@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,27 +122,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 288,
-    "complexity_score": 369,
+    "complexity_score": 355,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 23,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 114,
-    "suspect_count": 23,
+    "pseudocode_lines": 115,
+    "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "unrolled_memcpy",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 402
+    "total_lines": 403
   },
   "cross_references": [
     {
       "addr": "004febd0",
       "from_addr": "004fec82",
-      "name": "FUN_004febd0",
+      "name": "core_script.cpp_FUN_004febd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -159,6 +158,11 @@
     "signature": "void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,undefined4 param_2)"
   },
   "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
     {
       "addr": "00505180",
       "is_variadic": false,
@@ -217,12 +221,7 @@
     {
       "addr": "0046fcd0",
       "is_variadic": false,
-      "name": "FUN_0046fcd0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
+      "name": "shape_edittool.cpp_FUN_0046fcd0"
     }
   ],
   "globals": [
@@ -354,14 +353,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -371,7 +370,7 @@
       {
         "call_addr": "004fec82",
         "call_type": "direct",
-        "caller": "FUN_004febd0",
+        "caller": "core_script.cpp_FUN_004febd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -516,16 +515,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,uint param_2)",
@@ -533,7 +524,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,uint param_2)",
@@ -541,7 +532,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1c) = 0;",
@@ -549,7 +540,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
       "text": "local_c = engine_dosio_cpp_getFileSize_FUN_004568c0(\"world\",param_2);",
@@ -557,7 +548,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = engine_dosio_cpp_getFile_FUN_00456a60(\"world\",param_2,\"rt\");",
@@ -565,31 +556,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Can't open world\\\\%s\",param_2);",
+      "text": "core_main_c_FUN_004c8440(\"Can't open world\\\\%s\",param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 45,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004c8440(\"SCScipt::dbLoad - error parsing %s record %d\",param_2,*(uint *)(param_1 + 0x1c));",
+      "text": "(\"SCScipt::dbLoad - error parsing %s record %d\",param_2,*(uint *)(param_1 + 0x1c));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"SCScipt::dbLoad - error parsing %s record %d\",param_2,*(uint *)(param_1 + 0x1c));",
+      "text": "(\"SCScipt::dbLoad - error parsing %s record %d\",param_2,*(uint *)(param_1 + 0x1c));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = core_script_cpp_CScript_findDialogEntry_FUN_00505180(param_1,local_334);",
@@ -600,7 +591,7 @@
       "line": 79,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_0046fcd0(0x01BCD074,\"Warning! Duplicate wav string %s detected in %s\",local_334,param_2);",
+      "text": "(0x01BCD074,\"Warning! Duplicate wav string %s detected in %s\",local_334,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -653,7 +644,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 55,
+      "line": 54,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -661,7 +652,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 68,
+      "line": 67,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

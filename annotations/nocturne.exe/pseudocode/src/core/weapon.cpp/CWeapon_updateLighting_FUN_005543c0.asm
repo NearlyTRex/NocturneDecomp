@@ -88,7 +88,7 @@ section .text
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00554460
         ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
     ADD ESP,0x8                         ; 00554465
-    MOV EDX,dword ptr [0x01cae124]      ; 00554468 | DAT_01cae124
+    MOV EDX,dword ptr [0x01cae124]      ; 00554468 | g_CHeroActorType_01cae0ec.name_hash
     MOV EAX,0x3f800000                  ; 0055446e
     PUSH EDX                            ; 00554473
     MOV dword ptr [0x01c74740],ESI      ; 00554474 | DAT_01c74740

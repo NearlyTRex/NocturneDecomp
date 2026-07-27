@@ -17,7 +17,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_free_FUN_00517cc0(int *param_1)
   piVar2 = param_1;
   if (0 < *param_1) {
     do {
-      uVar1 = __vec_delete(piVar2[0x10],&DAT_005a1ee0);
+      uVar1 = __vec_delete(piVar2[0x10],&g_SVertTypeInfo_005a1ee0);
       shape_memdbg_cpp_free_FUN_00564486(uVar1);
       piVar2[0x10] = 0;
       shape_memdbg_cpp_free_FUN_00564486(piVar2[0x1f]);

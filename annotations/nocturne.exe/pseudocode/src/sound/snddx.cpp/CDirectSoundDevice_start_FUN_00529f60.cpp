@@ -59,7 +59,7 @@ uint sound_snddx_cpp_CDirectSoundDevice_start_FUN_00529f60(int *param_1)
                  uVar2);
       puVar3 = auStack_1a0;
     }
-    FUN_00529980(puVar3);
+    sound_sndmain_cpp_FUN_00529980(puVar3);
   }
 LAB_0052a05b:
   (**(code **)(*param_1 + 8))(param_1);

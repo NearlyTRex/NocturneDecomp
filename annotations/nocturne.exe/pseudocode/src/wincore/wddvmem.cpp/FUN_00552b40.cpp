@@ -1,14 +1,14 @@
-// Name: FUN_00552b40
+// Name: wincore_wddvmem.cpp_FUN_00552b40
 // Address: 00552b40
 // Address Range: [[00552b40, 00552ca4]]
 // Convention: unknown
-// Signature: undefined4 FUN_00552b40(void)
+// Signature: undefined4 wincore_wddvmem_cpp_FUN_00552b40(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint FUN_00552b40(void)
+uint wincore_wddvmem_cpp_FUN_00552b40(void)
 
 {
   int iVar1;
@@ -18,15 +18,15 @@ uint FUN_00552b40(void)
                                   (uint)((DAT_005b7624 >> 0x1f) << 2 < 0)) >> 3) *
                             DAT_005b761c * DAT_005b7620);
   if (DAT_005c5010 == 0) {
-    _DAT_01cc4800 = "..\\wincore\\wddvmem.cpp";
-    _DAT_01cc4804 = 0xea;
-    FUN_004c8440("WDDVMEM: Fatal - out of frame buffer memory");
+    PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
+    INT_01cc4804 = 0xea;
+    core_main_c_FUN_004c8440("WDDVMEM: Fatal - out of frame buffer memory");
   }
   _DAT_02ddf560 = malloc(DAT_005b761c * DAT_005b7620 * 4 + 0x40);
   if (_DAT_02ddf560 == 0) {
-    _DAT_01cc4800 = "..\\wincore\\wddvmem.cpp";
-    _DAT_01cc4804 = 0xef;
-    FUN_004c8440("WDDVMEM: Fatal - out of Z buffer memory");
+    PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
+    INT_01cc4804 = 0xef;
+    core_main_c_FUN_004c8440("WDDVMEM: Fatal - out of Z buffer memory");
   }
   DAT_006af62c = _DAT_02ddf560 + 0x10U & 0xfffffff0;
   if (_DAT_02ddf55c != (int *)0x0) {
@@ -50,6 +50,6 @@ uint FUN_00552b40(void)
   if (iVar1 == 0) {
     (**(code **)(*_DAT_02ddf550 + 0x50))(_DAT_02ddf550,_DAT_02de2098,0x11);
   }
-  wincore_windll_cpp_loadExternalRenderer_FUN_00531780(_DAT_02de2098);
+  engine_special_cpp_loadExternalRenderer_FUN_00531780(_DAT_02de2098);
   return 1;
 }

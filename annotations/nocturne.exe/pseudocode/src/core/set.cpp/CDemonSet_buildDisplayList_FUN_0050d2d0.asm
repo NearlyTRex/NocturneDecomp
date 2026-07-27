@@ -38,11 +38,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
+;   core_main.c_FUN_004c8440
 ;   crt_stdlib.c__qsort_FUN_00563db8
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
-;   FUN_00460d10
-;   FUN_004c8440
+;   engine_drender.cpp_FUN_00460d10
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
 ; *****************************************************************************
@@ -66,8 +66,8 @@ section .text
     PUSH EBX                            ; 0050d2f8 | DAT_01b4d738
     LEA ESI,[ESP + 0x4c]                ; 0050d2f9
     MOV dword ptr [0x02080430],ECX      ; 0050d2fd | DAT_02080430
-    CALL FUN_00460d10                   ; 0050d303
-        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined FUN_00460d10()
+    CALL engine_drender.cpp_FUN_00460d10 ; 0050d303
+        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00460d10()
     ADD ESP,0x4                         ; 0050d308
     LEA EAX,[ESP + 0x24]                ; 0050d30b
     PUSH EAX                            ; 0050d30f
@@ -83,10 +83,10 @@ section .text
     MOV EAX,0x5907aa                    ; 0050d329 | = "..\\core\\set.cpp"
     MOV EDX,0xedb                       ; 0050d32e
     PUSH 0x5907ba                       ; 0050d333 | = "CSet::buildActorDisplayList - Don't h..."
-    MOV [0x01cc4800],EAX                ; 0050d338 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0050d33d | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050d343
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0050d338 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0050d33d | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050d343
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050d348
     MOV ECX,0xc                         ; 0050d34b
         ;   Label: LAB_0050d34b

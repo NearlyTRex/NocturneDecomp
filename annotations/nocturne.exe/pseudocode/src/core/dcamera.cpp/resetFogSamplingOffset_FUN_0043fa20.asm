@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00446810 at 0044683c
+;   core_dcamera.cpp_FUN_00446810 at 0044683c
 ;   core_dcamera.cpp_generateFogGrid_FUN_0043fa50 at 0043fc69
 ;
 ; *****************************************************************************

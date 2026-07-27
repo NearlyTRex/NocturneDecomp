@@ -79,7 +79,8 @@ void core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(int param_1,f
       break;
     case 2:
       iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(param_1 + 0x1fa08),CDemonActorType_00764a9c.name_hash);
+                        (*(uint *)(param_1 + 0x1fa08),
+                         g_CLightActorActorType_00764a9c.name_hash);
       if (iVar3 != 0) {
         if (*(int *)(iVar3 + 0x664) != 1) {
           *(uint *)(param_1 + 0x1fa50) = 0xbf060a92;
@@ -100,7 +101,7 @@ void core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(int param_1,f
       break;
     case 6:
       iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(param_1 + 0x2590),_DAT_01bcdef4);
+                        (*(uint *)(param_1 + 0x2590),g_CEnemyActorType_01bcdebc.name_hash);
       local_1c = iVar3;
       if (iVar3 != 0) {
         uVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
@@ -154,7 +155,7 @@ void core_gabriela_cpp_CGabriella_processMotionEvents_FUN_00497410(int param_1,f
       core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004b5c70(param_1,0);
       break;
     case 0x16:
-      iVar3 = FUN_004b5270(param_1);
+      iVar3 = core_hero_cpp_FUN_004b5270(param_1);
       if (iVar3 == 0) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar1,0,1);
       }

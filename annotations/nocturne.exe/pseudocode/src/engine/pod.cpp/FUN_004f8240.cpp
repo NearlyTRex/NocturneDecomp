@@ -1,14 +1,12 @@
-// Name: FUN_004f8240
+// Name: engine_pod.cpp_FUN_004f8240
 // Address: 004f8240
 // Address Range: [[004f8240, 004f856e]]
 // Convention: unknown
-// Signature: bool FUN_004f8240(int *param_1)
+// Signature: bool engine_pod_cpp_FUN_004f8240(int *param_1)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-bool FUN_004f8240(int *param_1)
+bool engine_pod_cpp_FUN_004f8240(int *param_1)
 
 {
   byte uVar1;
@@ -36,7 +34,7 @@ bool FUN_004f8240(int *param_1)
     shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660
               (0x01BCD074,"Checking individual file CRCs");
     iVar3 = 0;
-    FUN_00474c90(local_198);
+    shape_edittool_cpp_FUN_00474c90(local_198);
     if (0 < param_1[0x82]) {
       iVar4 = 0;
       do {
@@ -48,7 +46,7 @@ bool FUN_004f8240(int *param_1)
                    (float)((*(int *)(iVar6 + 8 + iVar2) + *(int *)(iVar6 + 4 + iVar2)) -
                           *(int *)(iVar2 + 8)));
         iVar2 = param_1[0x83];
-        iVar6 = FUN_004f86a0(param_1,iVar3);
+        iVar6 = engine_pod_cpp_FUN_004f86a0(param_1,iVar3);
         if (iVar6 != *(int *)(iVar4 + 0x10 + iVar2)) {
           shape_edittool_cpp_CStrList_add_FUN_00473cb0
                     (local_198,*(uint *)(iVar4 + param_1[0x83]));
@@ -57,7 +55,7 @@ bool FUN_004f8240(int *param_1)
         iVar4 = iVar4 + 0x14;
       } while (iVar3 < param_1[0x82]);
     }
-    FUN_004720c0(0x01BCD074);
+    shape_edittool_cpp_FUN_004720c0(0x01BCD074);
     if (local_198[0] != 0) {
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
                 (local_198,"!!!CRC CHECK FAILED!! on these files:",0xffffffff);
@@ -73,9 +71,9 @@ bool FUN_004f8240(int *param_1)
     local_1c = 8;
   }
   else {
-    _DAT_01cc4800 = "..\\engine\\pod.cpp";
-    _DAT_01cc4804 = 0x1cf;
-    FUN_004c8440("Invalid pod version!");
+    PTR_01cc4800 = "..\\engine\\pod.cpp";
+    INT_01cc4804 = 0x1cf;
+    core_main_c_FUN_004c8440("Invalid pod version!");
   }
   param_1 = param_1 + 1;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
@@ -101,7 +99,7 @@ bool FUN_004f8240(int *param_1)
         uVar1 = *puVar8;
         puVar8 = puVar8 + 1;
         uVar7 = uVar7 + 1;
-        iVar3 = FUN_004f77d0(iVar3,uVar1);
+        iVar3 = engine_pod_cpp_FUN_004f77d0(iVar3,uVar1);
       } while (uVar7 < 0x10000);
     }
     puVar8 = &DAT_01e428d0;
@@ -112,7 +110,7 @@ bool FUN_004f8240(int *param_1)
       do {
         uVar1 = *puVar8;
         puVar8 = puVar8 + 1;
-        iVar3 = FUN_004f77d0(iVar3,uVar1);
+        iVar3 = engine_pod_cpp_FUN_004f77d0(iVar3,uVar1);
         uVar7 = uVar7 + 1;
       } while (uVar7 < local_18);
     }

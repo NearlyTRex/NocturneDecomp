@@ -19,6 +19,14 @@ float * CMatrix3x3f::transformVector(float *param_1,float *param_2,float *param_
 // Address: 0044daa0
 float * CMatrix3x3f::transformVectorTranspose(float *param_1,float *param_2,float *param_3);
 
+// Original: core_dirmat.cpp_FUN_0044db00
+// Address: 0044db00
+float FUN_0044db00(void);
+
 // Original: core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0
 // Address: 0044dbd0
 float * CMatrix3x3f::getEulerAngles(float *param_1,float *param_2);
+
+// Original: core_dirmat.cpp_FUN_0044dfb0
+// Address: 0044dfb0
+void FUN_0044dfb0(float *param_1,float *param_2);

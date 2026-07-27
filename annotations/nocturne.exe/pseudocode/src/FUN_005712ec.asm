@@ -13,7 +13,7 @@
 ;   undefined4 DAT_02de5d70
 ;
 ; Called Functions:
-;   FUN_005638d0
+;   crt_unknown.c_FUN_005638d0
 ;   FUN_005671e4
 ;
 ; *****************************************************************************
@@ -40,15 +40,15 @@ section .text
         ;   XREF to: 0057131f (CONDITIONAL_JUMP)  ; LAB_0057131f
     MOV EDI,dword ptr [EBX + 0x8]       ; 00571313
     PUSH EDI                            ; 00571316
-    CALL FUN_005638d0                   ; 00571317
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 00571317
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 0057131c
     MOV EDI,dword ptr [EBX]             ; 0057131f
         ;   Label: LAB_0057131f
     PUSH EBX                            ; 00571321
     MOV dword ptr [ESI],EDI             ; 00571322 | DAT_02de5d70
-    CALL FUN_005638d0                   ; 00571324
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 00571324
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 00571329
     JMP 0x00571336                      ; 0057132c
         ;   XREF to: 00571336 (UNCONDITIONAL_JUMP)  ; LAB_00571336

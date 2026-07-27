@@ -1,14 +1,12 @@
-// Name: FUN_0041a910
+// Name: core_box.cpp_FUN_0041a910
 // Address: 0041a910
 // Address Range: [[0041a910, 0041aa97]]
 // Convention: unknown
-// Signature: void FUN_0041a910(int param_1,undefined4 param_2,undefined4 param_3,int param_4,float *param_5,undefined4 param_6)
+// Signature: void core_box_cpp_FUN_0041a910(int param_1,undefined4 param_2,undefined4 param_3,int param_4,float *param_5,undefined4 param_6)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_0041a910(int param_1,uint param_2,uint param_3,int param_4,float *param_5,uint param_6)
+void core_box_cpp_FUN_0041a910(int param_1,uint param_2,uint param_3,int param_4,float *param_5,uint param_6)
 
 {
   int iVar1;
@@ -24,9 +22,9 @@ void FUN_0041a910(int param_1,uint param_2,uint param_3,int param_4,float *param
   float local_14;
   
   if (8 < param_4) {
-    _DAT_01cc4800 = "..\\core\\box.cpp";
-    _DAT_01cc4804 = 0x80;
-    FUN_004c8440("CBox::setupN - Too many scrape points");
+    PTR_01cc4800 = "..\\core\\box.cpp";
+    INT_01cc4804 = 0x80;
+    core_main_c_FUN_004c8440("CBox::setupN - Too many scrape points");
   }
   local_18 = 999.0;
   local_14 = 999.0;

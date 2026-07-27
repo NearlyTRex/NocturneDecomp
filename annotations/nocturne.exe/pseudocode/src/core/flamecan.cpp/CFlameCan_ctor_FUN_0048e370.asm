@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0048e340 at 0048e353
+;   core_flamecan.cpp_FUN_0048e340 at 0048e353
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00581639

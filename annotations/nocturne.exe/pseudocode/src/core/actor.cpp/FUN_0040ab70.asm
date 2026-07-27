@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401530
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0040aba6 | DAT_01b4d738
     ADD EAX,0xea5d0                     ; 0040aba8
     PUSH EAX                            ; 0040abad
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0040abae
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0040abae
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV EBX,dword ptr [0x005ae700]      ; 0040abb3 | DAT_005ae700
     MOV EBX,dword ptr [EBX]             ; 0040abb9 | DAT_01b4d738
     MOV AH,byte ptr [EBX + 0xea5e3]     ; 0040abbb

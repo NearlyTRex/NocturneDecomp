@@ -29,12 +29,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   FUN_0052eac0 at 0052eaec
 ;   core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_0052eb00 at 0052eb32
 ;   core_sound.cpp_CSound_playActorSound_FUN_0052ea60 at 0052ea7a
 ;   core_sound.cpp_CSound_playSound_FUN_0052ea40 at 0052ea54
 ;   core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_0052eb50 at 0052eb7f
 ;   core_sound.cpp_CSound_playTrackedActorSound_FUN_0052ea90 at 0052eaa8
+;   core_sound.cpp_FUN_0052eac0 at 0052eaec
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_n_00594a1a
@@ -55,14 +55,14 @@
 ;   ... and 13 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_set.cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0
+;   core_sound.cpp_FUN_0052d030
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_stdio.c_sscanf_FUN_00566b5c
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   FUN_004c8440
-;   FUN_00526120
-;   FUN_00526150
-;   FUN_0052d030
+;   sound_sndmain.cpp_FUN_00526120
+;   sound_sndmain.cpp_FUN_00526150
 ;   sound_sndmain.cpp_isSoundEnabled_FUN_00526ca0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005263c0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00526340
@@ -287,16 +287,16 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 0052d32a
     PUSH EAX                            ; 0052d32d
     PUSH 0x0                            ; 0052d32e
-    CALL FUN_00526150                   ; 0052d330
-        ;   XREF to: 00526150 (UNCONDITIONAL_CALL)  ; undefined FUN_00526150()
+    CALL sound_sndmain.cpp_FUN_00526150 ; 0052d330
+        ;   XREF to: 00526150 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00526150()
     ADD ESP,0x8                         ; 0052d335
     PUSH dword ptr [ESP]                ; 0052d338
     CALL sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0 ; 0052d33b
         ;   XREF to: 005260f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_setNextSfxVolume_FUN_005260f0()
     ADD ESP,0x4                         ; 0052d340
     PUSH dword ptr [ESP + 0x4]          ; 0052d343
-    CALL FUN_00526120                   ; 0052d347
-        ;   XREF to: 00526120 (UNCONDITIONAL_CALL)  ; undefined FUN_00526120()
+    CALL sound_sndmain.cpp_FUN_00526120 ; 0052d347
+        ;   XREF to: 00526120 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00526120()
     ADD ESP,0x4                         ; 0052d34c
     LEA EAX,[ESP + 0xd0]                ; 0052d34f
     PUSH EAX                            ; 0052d356
@@ -357,10 +357,10 @@ section .text
     MOV ECX,0x594a24                    ; 0052d3e3 | = "..\\core\\sound.cpp"
     MOV EBX,0x137                       ; 0052d3e8
     PUSH 0x594a36                       ; 0052d3ed | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 0052d3f2 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0052d3f8 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0052d3fe
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0052d3f2 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0052d3f8 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0052d3fe
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052d403
     PUSH 0x594a4d                       ; 0052d406 | = "?"
         ;   Label: LAB_0052d406
@@ -463,8 +463,8 @@ section .text
     MOV EAX,[0x005bed68]                ; 0052d519 | DAT_005bed68
     PUSH EAX                            ; 0052d51e
     MOV byte ptr [EDX],0x0              ; 0052d51f
-    CALL FUN_0052d030                   ; 0052d522
-        ;   XREF to: 0052d030 (UNCONDITIONAL_CALL)  ; undefined FUN_0052d030()
+    CALL core_sound.cpp_FUN_0052d030    ; 0052d522
+        ;   XREF to: 0052d030 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_FUN_0052d030()
     ADD ESP,0xc                         ; 0052d527
     CMP byte ptr [ESP + 0xd0],0x0       ; 0052d52a
     JNZ 0x0052d298                      ; 0052d532
@@ -478,8 +478,8 @@ section .text
     PUSH EAX                            ; 0052d549
     MOV ECX,dword ptr [0x005bed68]      ; 0052d54a | DAT_005bed68
     PUSH ECX                            ; 0052d550
-    CALL FUN_0052d030                   ; 0052d551
-        ;   XREF to: 0052d030 (UNCONDITIONAL_CALL)  ; undefined FUN_0052d030()
+    CALL core_sound.cpp_FUN_0052d030    ; 0052d551
+        ;   XREF to: 0052d030 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_FUN_0052d030()
     ADD ESP,0xc                         ; 0052d556
     JMP 0x0052d2a6                      ; 0052d559
         ;   XREF to: 0052d2a6 (UNCONDITIONAL_JUMP)  ; LAB_0052d2a6
@@ -525,10 +525,10 @@ section .text
     MOV EDX,0x594a70                    ; 0052d5c8 | = "..\\core\\sound.cpp"
     MOV ECX,0x1a4                       ; 0052d5cd
     PUSH 0x594a82                       ; 0052d5d2 | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 0052d5d7 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0052d5dd | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0052d5e3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0052d5d7 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0052d5dd | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0052d5e3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052d5e8
     MOV EAX,dword ptr [ESP + 0x154]     ; 0052d5eb
     ADD dword ptr [ESP + 0x164],EAX     ; 0052d5f2
@@ -570,10 +570,10 @@ section .text
     MOV EDI,0x594a9f                    ; 0052d65c | = "..\\core\\sound.cpp"
     MOV EAX,0x1aa                       ; 0052d661
     PUSH 0x594ab1                       ; 0052d666 | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01cc4800],EDI      ; 0052d66b | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0052d671 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0052d676
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0052d66b | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0052d671 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0052d676
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052d67b
     MOV EAX,dword ptr [ESP + 0x158]     ; 0052d67e
     ADD dword ptr [ESP + 0x164],EAX     ; 0052d685
@@ -597,10 +597,10 @@ section .text
     MOV ECX,0x594ac8                    ; 0052d6b5 | = "..\\core\\sound.cpp"
     MOV EDI,0x1ad                       ; 0052d6ba
     PUSH 0x594ada                       ; 0052d6bf | = "Invalid sfx string: %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 0052d6c4 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0052d6ca | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0052d6d0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0052d6c4 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0052d6ca | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0052d6d0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052d6d5
     JMP 0x0052d2f9                      ; 0052d6d8
         ;   XREF to: 0052d2f9 (UNCONDITIONAL_JUMP)  ; LAB_0052d2f9

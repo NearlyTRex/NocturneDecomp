@@ -1,14 +1,12 @@
-// Name: FUN_004e6160
+// Name: sound_mp3.cpp_FUN_004e6160
 // Address: 004e6160
 // Address Range: [[004e6160, 004e7028]]
 // Convention: unknown
-// Signature: void FUN_004e6160(undefined4 *param_1,undefined4 *param_2,int param_3,int param_4,int *param_5)
+// Signature: void sound_mp3_cpp_FUN_004e6160(undefined4 *param_1,undefined4 *param_2,int param_3,int param_4,int *param_5)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_004e6160(uint *param_1,uint *param_2,int param_3,int param_4,int *param_5)
+void sound_mp3_cpp_FUN_004e6160(uint *param_1,uint *param_2,int param_3,int param_4,int *param_5)
 
 {
   int *piVar1;
@@ -504,9 +502,9 @@ LAB_004e6377:
             }
             goto LAB_004e6377;
           }
-          _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-          _DAT_01cc4804 = 0x9b8;
-          FUN_004c8440("Error in streo processing.  File: %s",&DAT_01cd8b28);
+          PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          INT_01cc4804 = 0x9b8;
+          core_main_c_FUN_004c8440("Error in streo processing.  File: %s",&DAT_01cd8b28);
         }
         iVar12 = iVar12 + 1;
         iVar7 = iVar7 + 4;

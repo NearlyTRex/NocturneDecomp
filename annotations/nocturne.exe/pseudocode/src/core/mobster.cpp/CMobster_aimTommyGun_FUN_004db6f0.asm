@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_004da790 at 004dacae
+;   core_mobster.cpp_FUN_004da790 at 004dacae
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mobster_cpp_0058a361
@@ -30,26 +30,26 @@
 ;   float FLOAT_0058a3a5 = 3
 ;   double DOUBLE_0058a3a9 = 5.34643470770547E-315
 ;   double DOUBLE_0058a3b1 = 2
-;   undefined4 DAT_01cae124
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   undefined4 g_CHeroActorType_01cae0ec.name_hash
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01ccdbb0
 ;   undefined4 DAT_01ccdbd0
 ;   undefined4 DAT_02dd1184
-;   undefined4 DAT_02ddf9a8
+;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
 ;   core_enemy.cpp_CEnemy_canSeeTarget_FUN_00479ab0
+;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
 ;   core_xform.cpp_FUN_0055d4a0
 ;   core_xform.cpp_FUN_0055d4e0
 ;   core_xform.cpp_transformVector3x4_FUN_0055a8b0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -93,7 +93,7 @@ section .text
     TEST EAX,EAX                        ; 004db732
     JZ 0x004db9dc                       ; 004db734
         ;   XREF to: 004db9dc (CONDITIONAL_JUMP)  ; LAB_004db9dc
-    MOV EAX,[0x02ddf9a8]                ; 004db73a | DAT_02ddf9a8
+    MOV EAX,[0x02ddf9a8]                ; 004db73a | g_CWeaponActorType_02ddf970.name_hash
         ;   Label: LAB_004db73a
     PUSH EAX                            ; 004db73f
     MOV EDX,dword ptr [EBX + 0x24f0]    ; 004db740
@@ -107,10 +107,10 @@ section .text
     MOV ECX,0x58a361                    ; 004db753 | = "..\\core\\mobster.cpp"
     MOV ESI,0x323                       ; 004db758
     PUSH 0x58a375                       ; 004db75d | = "CMobster::aimTommyGun - I'm not carry..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004db762 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004db768 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004db76e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004db762 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004db768 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004db76e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004db773
     MOV EDI,0x3f490fdb                  ; 004db776
         ;   Label: LAB_004db776
@@ -148,7 +148,7 @@ section .text
     FSTP float ptr [ESP + 0x50]         ; 004db7d8
     FLD float ptr [EDX + 0x24]          ; 004db7dc
     FSUB float ptr [EAX + 0x4]          ; 004db7df
-    MOV ECX,dword ptr [0x01cae124]      ; 004db7e2 | DAT_01cae124
+    MOV ECX,dword ptr [0x01cae124]      ; 004db7e2 | g_CHeroActorType_01cae0ec.name_hash
     FSTP float ptr [ESP + 0x54]         ; 004db7e8
     FLD float ptr [EDX + 0x28]          ; 004db7ec
     FSUB float ptr [EAX + 0x8]          ; 004db7ef

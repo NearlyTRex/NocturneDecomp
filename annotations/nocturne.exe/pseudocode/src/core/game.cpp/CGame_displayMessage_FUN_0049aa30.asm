@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[9]:
-;   FUN_0049f930 at 0049fc97
-;   FUN_004a0430 at 004a04b5
 ;   core_door.cpp_CDoor_getMoveType_FUN_004564b0 at 0045651a
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a05b9
+;   core_game.cpp_FUN_0049f930 at 0049fc97
+;   core_game.cpp_FUN_004a0430 at 004a04b5
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bfed3
 ;   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004c31b0 at 004c3212
 ;   core_inv.cpp_CInventory_select_FUN_004c1580 at 004c174d

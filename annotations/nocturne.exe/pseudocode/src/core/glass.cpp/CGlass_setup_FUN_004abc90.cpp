@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_glass_cpp_CGlass_setup_FUN_004abc90(int param_1)
 
 {
@@ -145,10 +143,11 @@ void core_glass_cpp_CGlass_setup_FUN_004abc90(int param_1)
   *(int *)(param_1 + 0xb2c) = (*(int *)(param_1 + 0xb24) + 1) * (*(int *)(param_1 + 0xb28) + 1);
   *(int *)(param_1 + 0xb30) = iVar3;
   if ((0x19 < *(int *)(param_1 + 0xb2c)) || (0x10 < iVar3)) {
-    _DAT_01cc4800 = "..\\core\\glass.cpp";
-    _DAT_01cc4804 = 0x86;
-    FUN_004c8440("CGlass::setup - Too many verticies(%d) or faces(%d)!",*(uint *)(param_1 + 0xb2c),
-                 *(uint *)(param_1 + 0xb30));
+    PTR_01cc4800 = "..\\core\\glass.cpp";
+    INT_01cc4804 = 0x86;
+    core_main_c_FUN_004c8440
+              ("CGlass::setup - Too many verticies(%d) or faces(%d)!",*(uint *)(param_1 + 0xb2c),
+               *(uint *)(param_1 + 0xb30));
   }
   local_2c = *(float *)(param_1 + 0x150) / (float)*(int *)(param_1 + 0xb24);
   local_38 = *(float *)(param_1 + 0x154) / (float)*(int *)(param_1 + 0xb28);

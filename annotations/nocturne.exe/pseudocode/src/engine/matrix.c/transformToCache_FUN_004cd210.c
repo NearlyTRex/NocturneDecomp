@@ -9,6 +9,6 @@
 void __cdecl engine_matrix_c_transformToCache_FUN_004cd210(int param_1,uint param_2)
 
 {
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(&DAT_005c5014 + param_1 * 0xc,param_2);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(&DAT_005c5014 + param_1 * 0xc,param_2);
   return;
 }

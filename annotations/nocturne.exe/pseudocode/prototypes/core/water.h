@@ -3,6 +3,14 @@
 // Function prototypes for core/water.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_water.cpp_staticInit_FUN_00550730
+// Address: 00550730
+void __cdecl staticInit(void);
+
+// Original: core_water.cpp_FUN_00550750
+// Address: 00550750
+float FUN_00550750(void);
+
 // Original: core_water.cpp_CWater_ctor_FUN_005507a0
 // Address: 005507a0
 void CWater::ctor(undefined4 *param_1);

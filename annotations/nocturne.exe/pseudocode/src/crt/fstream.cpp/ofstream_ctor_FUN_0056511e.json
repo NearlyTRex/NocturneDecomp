@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 244,
+    "complexity_score": 245,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 20,
     "suspect_count": 20,
     "suspect_types": [
       "param_count_too_few",
@@ -16,13 +16,13 @@
       "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 65
+    "total_lines": 66
   },
   "cross_references": [
     {
       "addr": "00446810",
       "from_addr": "004468da",
-      "name": "FUN_00446810",
+      "name": "core_dcamera.cpp_FUN_00446810",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -82,13 +82,13 @@
     },
     {
       "addr": "005a482c",
-      "name": "PTR_FUN_005a482c",
+      "name": "PTR_crt_unknown.c_FUN_0056519c_005a482c",
       "type": "void*",
       "value": "0056519c"
     },
     {
       "addr": "005a4834",
-      "name": "PTR_FUN_005a4834",
+      "name": "PTR_crt_unknown.c_FUN_005651b2_005a4834",
       "type": "void*",
       "value": "005651b2"
     }
@@ -99,7 +99,7 @@
       {
         "call_addr": "004468da",
         "call_type": "direct",
-        "caller": "FUN_00446810",
+        "caller": "core_dcamera.cpp_FUN_00446810",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -309,7 +309,7 @@
       "line": 20,
       "match": "(int)piVar2",
       "severity": "moderate",
-      "text": "*(byte ***)(*(int *)(*piVar2 + 4) + 0x28 + (int)piVar2) = &PTR_FUN_005a4834;",
+      "text": "*(byte ***)(*(int *)(*piVar2 + 4) + 0x28 + (int)piVar2) =",
       "type": "pointer_truncation"
     },
     {

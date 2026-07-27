@@ -57,7 +57,7 @@ LAB_0040dc41:
   if (param_1 == *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
     switch(param_3) {
     default:
-      FUN_004940d0();
+      xxx_unk_c_FUN_004940d0();
       break;
     case 1:
     case 6:
@@ -67,11 +67,11 @@ LAB_0040dc41:
     case 3:
     case 4:
     case 5:
-      FUN_004940d0();
+      xxx_unk_c_FUN_004940d0();
       break;
     case 7:
     case 10:
-      FUN_004940d0();
+      xxx_unk_c_FUN_004940d0();
     }
   }
   uVar2 = core_ground_cpp_getGroundTypeCode_FUN_004b11b0(param_3,(double)param_4);

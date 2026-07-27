@@ -13,7 +13,7 @@ int core_succubus_cpp_CSuccubus_dtor_FUN_00541860(int param_1,byte param_2)
   uint uVar2;
   
   if ((param_2 & 4) != 0) {
-    uVar2 = __vec_delete(param_1,&DAT_005a2a30);
+    uVar2 = __vec_delete(param_1,&g_CSuccubusTypeInfo_005a2a30);
     shape_memdbg_cpp_free_FUN_00564486(uVar2);
     return param_1;
   }

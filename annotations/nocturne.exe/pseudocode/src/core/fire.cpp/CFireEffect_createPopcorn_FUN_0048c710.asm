@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00478790 at 00478c60
+;   core_emitter.cpp_FUN_00478790 at 00478c60
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c69610

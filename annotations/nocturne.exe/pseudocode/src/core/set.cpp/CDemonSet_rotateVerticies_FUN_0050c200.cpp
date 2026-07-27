@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200(uint param_1,int param_2,int param_3)
 
 {
@@ -16,9 +14,9 @@ void core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200(uint param_1,int param_
   int local_14;
   
   if (20000 < param_2) {
-    _DAT_01cc4800 = "..\\core\\set.cpp";
-    _DAT_01cc4804 = 0xce7;
-    FUN_004c8440("CDemonSet::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d",param_2,20000);
+    PTR_01cc4800 = "..\\core\\set.cpp";
+    INT_01cc4804 = 0xce7;
+    core_main_c_FUN_004c8440("CDemonSet::rotateVerticies - tried to rotate %d vertices, but GLOBAL_VERTEX_COUNT = %d",param_2,20000);
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(DAT_005ae704,1);
   iVar2 = 0;
@@ -26,7 +24,7 @@ void core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200(uint param_1,int param_
   iVar1 = *DAT_005ae704;
   if (0 < param_2) {
     do {
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(iVar1,param_3);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(iVar1,param_3);
       if ((*(byte *)(iVar1 + 0x13) & 0x80) == 0) {
         local_14 = local_14 + 1;
       }

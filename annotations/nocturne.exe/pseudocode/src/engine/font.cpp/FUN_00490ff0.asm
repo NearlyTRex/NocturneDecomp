@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00490ff0(uint param_1,uint param_2,uint param_3)
+; void engine_font_cpp_FUN_00490ff0(uint param_1,uint param_2,uint param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -27,14 +27,14 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00490ff0
-        ;   Label: FUN_00490ff0
+        ;   Label: engine_font.cpp_FUN_00490ff0
     PUSH ESI                            ; 00490ff1
     PUSH EDI                            ; 00490ff2
     PUSH EBP                            ; 00490ff3
@@ -139,10 +139,10 @@ section .text
         ;   Label: LAB_0049110c
     MOV EDX,0x399                       ; 00491111
     PUSH 0x581925                       ; 00491116 | = "Invalid bitsPerPixel in CBitFont::set..."
-    MOV [0x01cc4800],EAX                ; 0049111b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00491120 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00491126
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0049111b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00491120 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00491126
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0049112b
     JMP 0x0049104e                      ; 0049112e
         ;   XREF to: 0049104e (UNCONDITIONAL_JUMP)  ; LAB_0049104e

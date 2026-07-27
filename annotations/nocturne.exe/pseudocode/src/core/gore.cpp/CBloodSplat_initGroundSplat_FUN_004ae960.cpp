@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ae960(uint *param_1,float *param_2,uint param_3)
 
 {
@@ -22,9 +20,9 @@ void __cdecl core_gore_cpp_CBloodSplat_initGroundSplat_FUN_004ae960(uint *param_
   uVar1 = core_actor_cpp_getRandomInt_FUN_0040de00(0,3);
   param_1[10] = uVar1;
   param_1[9] = 0;
-  param_1[0xb] = (int)ROUND(*param_2 * _DAT_0059e4d4);
-  param_1[0xc] = (int)ROUND(param_2[1] * _DAT_0059e4d4);
-  param_1[0xd] = (int)ROUND(param_2[2] * _DAT_0059e4d4);
+  param_1[0xb] = (int)ROUND(*param_2 * 256.0f);
+  param_1[0xc] = (int)ROUND(param_2[1] * 256.0f);
+  param_1[0xd] = (int)ROUND(param_2[2] * 256.0f);
   param_1[0xe] = 0;
   param_1[0xf] = 0xffff;
   param_1[0x10] = 0;

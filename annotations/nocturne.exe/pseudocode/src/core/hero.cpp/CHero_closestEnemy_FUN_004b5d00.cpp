@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(int param_1,float *param_2)
 
 {
@@ -29,15 +27,17 @@ int core_hero_cpp_CHero_closestEnemy_FUN_004b5d00(int param_1,float *param_2)
   local_1c = 0;
   for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x150bf4); iVar4 = iVar4 + 1) {
     iVar1 = *(int *)(iVar3 + 0x150bf8 + 0x01E57284);
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar1,_DAT_02dd11c8);
+    iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
+                      (iVar1,g_CVehicleActorType_02dd1190.name_hash);
     if (iVar2 == 0) {
-      iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar1,_DAT_01ccdc10);
+      iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
+                        (iVar1,g_CMobsterActorType_01ccdbd8.name_hash);
       if ((iVar2 == 0) || (*(int *)(iVar2 + 0xbd48) == 0)) {
         iVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x104))(iVar1);
         if (iVar2 == 0) {
           iVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x68))(iVar1);
           if (iVar2 == 0) {
-            __arrinit(auStack_a8,10,&DAT_005993b0);
+            __arrinit(auStack_a8,10,&g_CVectorTypeInfo_005993b0);
             iVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x4c))(iVar1,auStack_a8);
             if (0 < iVar2) {
               fStack_30 = *local_14 - *(float *)(iVar1 + 0x20);

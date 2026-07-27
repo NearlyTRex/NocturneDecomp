@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[13]:
-;   FUN_00479b60 at 00479d96
-;   FUN_004baba0 at 004bb15b
-;   FUN_005423c0 at 0054297b
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 00422638
 ;   core_bugs.cpp_FUN_00422050 at 004221b7
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 at 00424978
 ;   core_colonel.cpp_CColonel_processAI_FUN_0043a470 at 0043a8a9
+;   core_enemy.cpp_FUN_00479b60 at 00479d96
 ;   core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 at 00497277
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004a9040 at 004a918c
 ;   core_haystack.cpp_CHaystack_updateAI_FUN_004b3880 at 004b3d09
+;   core_icepick.cpp_FUN_004baba0 at 004bb15b
+;   core_moloch.cpp_CMoloch_processAI_FUN_004de1b0 at 004de2c1
 ;   ... and 3 more
 ;
 ; Referenced Globals:

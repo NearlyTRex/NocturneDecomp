@@ -15,15 +15,15 @@ void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660(int
   int iVar2;
   
   if ((param_2 < 0) || (*param_1 <= param_2)) {
-    _DAT_01cc4800 = "..\\core\\morph.cpp";
-    _DAT_01cc4804 = 0x112;
-    FUN_004c8440("CMorphModel::animate - invalid part index");
+    PTR_01cc4800 = "..\\core\\morph.cpp";
+    INT_01cc4804 = 0x112;
+    core_main_c_FUN_004c8440("CMorphModel::animate - invalid part index");
   }
   param_4 = param_4 + param_1[param_2 * 4 + 3];
   if (param_1[param_2 * 4 + 3] + param_1[param_2 * 4 + 1] < param_4 + param_5) {
-    _DAT_01cc4800 = "..\\core\\morph.cpp";
-    _DAT_01cc4804 = 0x119;
-    FUN_004c8440("CMorphModel::animate - invalid vertex range");
+    PTR_01cc4800 = "..\\core\\morph.cpp";
+    INT_01cc4804 = 0x119;
+    core_main_c_FUN_004c8440("CMorphModel::animate - invalid vertex range");
   }
   iVar1 = 0;
   if (0 < param_5) {

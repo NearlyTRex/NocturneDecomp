@@ -3,6 +3,10 @@
 // Function prototypes for core/fire.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_fire.cpp_staticInit_FUN_004823b0
+// Address: 004823b0
+void __cdecl staticInit(void);
+
 // Original: core_fire.cpp_safeAcos_FUN_00482630
 // Address: 00482630
 float safeAcos(float param_1);
@@ -331,13 +335,21 @@ undefined4 CShell::onCollision(int param_1);
 // Address: 00489980
 undefined4 CRainDrop::onCollision(void);
 
+// Original: core_fire.cpp_FUN_00489990
+// Address: 00489990
+void FUN_00489990(float *param_1);
+
 // Original: core_fire.cpp_CRainDrop_render_FUN_00489d00
 // Address: 00489d00
 void CRainDrop::render(float *param_1);
 
 // Original: core_fire.cpp_allocateBulletHole_FUN_0048a0e0
 // Address: 0048a0e0
-undefined1 * __cdecl allocateBulletHole(void);
+undefined * __cdecl allocateBulletHole(void);
+
+// Original: core_fire.cpp_FUN_0048a130
+// Address: 0048a130
+undefined4 FUN_0048a130(undefined4 param_1);
 
 // Original: core_fire.cpp_CFireEffect_init_FUN_0048a150
 // Address: 0048a150
@@ -351,9 +363,17 @@ void __cdecl CFireEffect::process(void);
 // Address: 0048a650
 void __cdecl CFireEffect::render(void);
 
+// Original: core_fire.cpp_FUN_0048a970
+// Address: 0048a970
+int FUN_0048a970(undefined4 param_1,int param_2);
+
 // Original: core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_0048aae0
 // Address: 0048aae0
 void __cdecl CFireEffect::createDefaultSmoke(undefined4 param_1,undefined4 param_2);
+
+// Original: core_fire.cpp_FUN_0048ab60
+// Address: 0048ab60
+void FUN_0048ab60(undefined4 param_1,float *param_2,int param_3,undefined4 param_4,int param_5);
 
 // Original: core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
 // Address: 0048ae90
@@ -402,6 +422,14 @@ void __cdecl CFireEffect::createLaserPath(undefined4 param_1,float *param_2,floa
 // Original: core_fire.cpp_SLaserInfo_ctor_FUN_0048b6b0
 // Address: 0048b6b0
 void SLaserInfo::ctor(undefined4 *param_1);
+
+// Original: core_fire.cpp_FUN_0048b6f0
+// Address: 0048b6f0
+void FUN_0048b6f0(undefined4 param_1,float *param_2,float *param_3,float *param_4,int param_5);
+
+// Original: core_fire.cpp_FUN_0048c0d0
+// Address: 0048c0d0
+void FUN_0048c0d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
 
 // Original: core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0048c160
 // Address: 0048c160
@@ -463,6 +491,70 @@ void __cdecl CFireEffect::save(undefined4 param_1,undefined4 param_2);
 // Address: 0048c8a0
 undefined4 CFireEffect::hasActiveMuzzleFlash(void);
 
+// Original: core_fire.cpp_FUN_0048c8d0
+// Address: 0048c8d0
+void FUN_0048c8d0(void);
+
+// Original: core_fire.cpp_FUN_0048c920
+// Address: 0048c920
+int FUN_0048c920(void);
+
+// Original: core_fire.cpp_FUN_0048c930
+// Address: 0048c930
+void FUN_0048c930(void);
+
+// Original: core_fire.cpp_FUN_0048c93c
+// Address: 0048c93c
+void FUN_0048c93c(undefined4 *param_1);
+
+// Original: core_fire.cpp_FUN_0048c960
+// Address: 0048c960
+void FUN_0048c960(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048c980
+// Address: 0048c980
+void FUN_0048c980(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048c990
+// Address: 0048c990
+void FUN_0048c990(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048c9b0
+// Address: 0048c9b0
+void FUN_0048c9b0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048c9c0
+// Address: 0048c9c0
+void FUN_0048c9c0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048c9e0
+// Address: 0048c9e0
+void FUN_0048c9e0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048c9f0
+// Address: 0048c9f0
+undefined4 FUN_0048c9f0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048ca00
+// Address: 0048ca00
+undefined4 FUN_0048ca00(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048ca10
+// Address: 0048ca10
+undefined4 FUN_0048ca10(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048ca20
+// Address: 0048ca20
+undefined4 FUN_0048ca20(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048ca30
+// Address: 0048ca30
+undefined4 FUN_0048ca30(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048ca40
+// Address: 0048ca40
+undefined4 FUN_0048ca40(undefined4 param_1);
+
 // Original: core_fire.cpp_CCrater_ctor_FUN_0048ca50
 // Address: 0048ca50
 int CCrater::ctor(int param_1);
@@ -479,6 +571,22 @@ int CToss::dtor(int param_1);
 // Address: 0048cab0
 undefined4 CExplosion::dtor(undefined4 param_1);
 
+// Original: core_fire.cpp_FUN_0048cac0
+// Address: 0048cac0
+undefined4 FUN_0048cac0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cad0
+// Address: 0048cad0
+undefined4 FUN_0048cad0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cae0
+// Address: 0048cae0
+undefined4 FUN_0048cae0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048caf0
+// Address: 0048caf0
+undefined4 FUN_0048caf0(undefined4 param_1);
+
 // Original: core_fire.cpp_CGlassParticle_ctor_FUN_0048cb00
 // Address: 0048cb00
 int CGlassParticle::ctor(undefined4 param_1);
@@ -486,6 +594,38 @@ int CGlassParticle::ctor(undefined4 param_1);
 // Original: core_fire.cpp_CGlassParticle_dtor_FUN_0048cb30
 // Address: 0048cb30
 void CGlassParticle::dtor(int param_1);
+
+// Original: core_fire.cpp_FUN_0048cb60
+// Address: 0048cb60
+undefined4 FUN_0048cb60(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cb70
+// Address: 0048cb70
+undefined4 FUN_0048cb70(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cb80
+// Address: 0048cb80
+void FUN_0048cb80(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cba0
+// Address: 0048cba0
+void FUN_0048cba0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cbb0
+// Address: 0048cbb0
+void FUN_0048cbb0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cbd0
+// Address: 0048cbd0
+void FUN_0048cbd0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cbe0
+// Address: 0048cbe0
+void FUN_0048cbe0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cc00
+// Address: 0048cc00
+void FUN_0048cc00(undefined4 param_1);
 
 // Original: core_fire.cpp_CStake_ctor_FUN_0048cc10
 // Address: 0048cc10
@@ -495,6 +635,98 @@ int CStake::ctor(int param_1);
 // Address: 0048cc30
 int CStake::dtor(int param_1);
 
+// Original: core_fire.cpp_FUN_0048cc50
+// Address: 0048cc50
+undefined4 FUN_0048cc50(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cc60
+// Address: 0048cc60
+undefined4 FUN_0048cc60(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cc70
+// Address: 0048cc70
+undefined4 FUN_0048cc70(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cc80
+// Address: 0048cc80
+undefined4 FUN_0048cc80(undefined4 param_1);
+
 // Original: core_fire.cpp_CKeyFramedModelInstance_dtor_FUN_0048cc90
 // Address: 0048cc90
 undefined4 CKeyFramedModelInstance::dtor(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cca0
+// Address: 0048cca0
+void FUN_0048cca0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048ccc0
+// Address: 0048ccc0
+void FUN_0048ccc0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cce0
+// Address: 0048cce0
+void FUN_0048cce0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cd00
+// Address: 0048cd00
+void FUN_0048cd00(void);
+
+// Original: core_fire.cpp_FUN_0048cd20
+// Address: 0048cd20
+void FUN_0048cd20(void);
+
+// Original: core_fire.cpp_FUN_0048cd40
+// Address: 0048cd40
+void FUN_0048cd40(void);
+
+// Original: core_fire.cpp_FUN_0048cd60
+// Address: 0048cd60
+void FUN_0048cd60(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cd80
+// Address: 0048cd80
+void FUN_0048cd80(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cda0
+// Address: 0048cda0
+void FUN_0048cda0(void);
+
+// Original: core_fire.cpp_FUN_0048cdc0
+// Address: 0048cdc0
+void FUN_0048cdc0(void);
+
+// Original: core_fire.cpp_FUN_0048cde0
+// Address: 0048cde0
+void FUN_0048cde0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048ce00
+// Address: 0048ce00
+void FUN_0048ce00(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048ce20
+// Address: 0048ce20
+void FUN_0048ce20(void);
+
+// Original: core_fire.cpp_FUN_0048ce40
+// Address: 0048ce40
+void FUN_0048ce40(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048ce60
+// Address: 0048ce60
+void FUN_0048ce60(void);
+
+// Original: core_fire.cpp_FUN_0048ce80
+// Address: 0048ce80
+void FUN_0048ce80(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cea0
+// Address: 0048cea0
+void FUN_0048cea0(undefined4 param_1);
+
+// Original: core_fire.cpp_FUN_0048cec0
+// Address: 0048cec0
+void FUN_0048cec0(void);
+
+// Original: core_fire.cpp_FUN_0048cee0
+// Address: 0048cee0
+void FUN_0048cee0(void);

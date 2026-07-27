@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_00433cd7 at 00433d26
-;   FUN_00433d43 at 00433d79
-;   FUN_0043474d at 0043472d
+;   engine_clipper.c_FUN_00433cd7 at 00433d26
+;   engine_clipper.c_FUN_00433d43 at 00433d79
+;   engine_clipper.c_FUN_0043474d at 0043472d
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0 at 00434ecf
 ;
 ; *****************************************************************************

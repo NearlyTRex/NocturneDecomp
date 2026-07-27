@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[53]:
-;   FUN_00414930 at 00414a35
-;   FUN_00418a00 at 00418fee
-;   FUN_0041fe40 at 0041ff02
-;   FUN_0045ab40 at 0045ab8c
-;   FUN_00478790 at 00478931
-;   FUN_004a9270 at 004aa23c
-;   FUN_004ab450 at 004ab5ab
-;   FUN_004b8600 at 004b8675
-;   FUN_004b9fe0 at 004ba479
-;   FUN_004c4970 at 004c4aa6
+;   core_bat.cpp_CBat_process_FUN_00411c40 at 00411dab
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004129db
+;   core_batcreat.cpp_FUN_00413040 at 00413145
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413e1d
+;   core_batman.cpp_FUN_00414930 at 00414a35
+;   core_boneguy.cpp_FUN_00418a00 at 00418fee
+;   core_bride.cpp_CBride_processDamage_FUN_00420c40 at 00420e01
+;   core_bride.cpp_FUN_0041fe40 at 0041ff02
+;   core_chain.cpp_CChain_process_FUN_0042bca0 at 0042c3b9
+;   core_door.cpp_CDoor_onLocked_FUN_00456650 at 0045665c
 ;   ... and 43 more
 ;
 ; Called Functions:

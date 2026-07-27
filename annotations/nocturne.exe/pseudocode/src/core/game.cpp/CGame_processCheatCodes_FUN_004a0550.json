@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 4316,
-    "complexity_score": 4242,
+    "complexity_score": 4244,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 195,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 2057,
+    "pseudocode_lines": 2059,
     "suspect_count": 214,
     "suspect_types": [
       "bit_int_float_compare",
@@ -140,7 +140,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 6373
+    "total_lines": 6375
   },
   "cross_references": [
     {
@@ -245,6 +245,11 @@
       "name": "core_game.cpp_scaleBoneRecursive_FUN_004a04e0"
     },
     {
+      "addr": "004a8a10",
+      "is_variadic": false,
+      "name": "core_gasmask.cpp_FUN_004a8a10"
+    },
+    {
       "addr": "004bf360",
       "is_variadic": false,
       "name": "core_inv.cpp_CInventory_addItem_FUN_004bf360"
@@ -300,29 +305,14 @@
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
+      "addr": "0056497c",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_0056497c"
+    },
+    {
       "addr": "004c41d0",
       "is_variadic": false,
       "name": "engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004c41d0"
-    },
-    {
-      "addr": "0046fcd0",
-      "is_variadic": false,
-      "name": "FUN_0046fcd0"
-    },
-    {
-      "addr": "0046fe60",
-      "is_variadic": false,
-      "name": "FUN_0046fe60"
-    },
-    {
-      "addr": "004a8a10",
-      "is_variadic": false,
-      "name": "FUN_004a8a10"
-    },
-    {
-      "addr": "0056497c",
-      "is_variadic": false,
-      "name": "FUN_0056497c"
     },
     {
       "addr": "00471430",
@@ -343,6 +333,16 @@
       "addr": "00471600",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600"
+    },
+    {
+      "addr": "0046fcd0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0046fcd0"
+    },
+    {
+      "addr": "0046fe60",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0046fe60"
     },
     {
       "addr": "004ee3f0",
@@ -1537,7 +1537,7 @@
     },
     {
       "addr": "02dc9fe4",
-      "name": "DAT_02dc9fe4",
+      "name": "g_CStrangerActorType_02dc9fac.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -2832,7 +2832,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1756,
+      "line": 1757,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x204) == 0) {",
@@ -2840,7 +2840,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1767,
+      "line": 1768,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x210) != 0) {",
@@ -2848,7 +2848,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1793,
+      "line": 1794,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2856,7 +2856,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1794,
+      "line": 1795,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x218) = (uint)(*(int *)(param_1 + 0x218) == 0);",
@@ -2864,7 +2864,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1794,
+      "line": 1795,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x218) = (uint)(*(int *)(param_1 + 0x218) == 0);",
@@ -2872,7 +2872,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1822,
+      "line": 1823,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2880,7 +2880,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1829,
+      "line": 1830,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)**(uint **)(iVar5 + 0x14c))(iVar5);",
@@ -2888,7 +2888,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1834,
+      "line": 1835,
       "match": "param_1",
       "severity": "mild",
       "text": "core_game_cpp_CGame_displayMessage_FUN_0049aa30(param_1,uVar6);",
@@ -2896,7 +2896,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1861,
+      "line": 1862,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2904,7 +2904,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 1865,
+      "line": 1866,
       "match": "param_1",
       "severity": "mild",
       "text": "core_game_cpp_CGame_displayMessage_FUN_0049aa30(param_1,uVar6);",
@@ -2912,7 +2912,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1892,
+      "line": 1893,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2920,7 +2920,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1927,
+      "line": 1929,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2928,7 +2928,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1935,
+      "line": 1937,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)**(uint **)(iVar5 + 0x14c))(iVar5);",
@@ -2936,7 +2936,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 1969,
+      "line": 1971,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2944,7 +2944,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1977,
+      "line": 1979,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)**(uint **)(iVar5 + 0x14c))(iVar5);",
@@ -2952,7 +2952,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2011,
+      "line": 2013,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -2960,7 +2960,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 2019,
+      "line": 2021,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)**(uint **)(iVar5 + 0x14c))(iVar5);",
@@ -2968,7 +2968,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 2028,
+      "line": 2030,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x210) != 0) {",
@@ -2976,7 +2976,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 2054,
+      "line": 2056,
       "match": "DAT_01c78af0",
       "severity": "mild",
       "text": "DAT_01c78af0 = 0;",
@@ -3312,7 +3312,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1772,
+      "line": 1773,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3320,7 +3320,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1801,
+      "line": 1802,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3328,7 +3328,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1840,
+      "line": 1841,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3336,7 +3336,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1871,
+      "line": 1872,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3344,7 +3344,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1906,
+      "line": 1908,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3352,7 +3352,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1947,
+      "line": 1949,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3360,7 +3360,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 1989,
+      "line": 1991,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -3368,7 +3368,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 2033,
+      "line": 2035,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

@@ -9,6 +9,6 @@
 void core_baron_cpp_FUN_004113f0(uint param_1)
 
 {
-  FUN_00553f50(param_1);
+  core_weapon_cpp_FUN_00553f50(param_1);
   return;
 }

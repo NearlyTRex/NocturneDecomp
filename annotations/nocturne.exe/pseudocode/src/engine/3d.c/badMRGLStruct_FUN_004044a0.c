@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint engine_3d_c_badMRGLStruct_FUN_004044a0(uint param_1)
 
 {
-  _DAT_01cc4800 = "..\\engine\\3d.c";
-  _DAT_01cc4804 = 0x119;
-  FUN_004c8440("Bad MRGL struct");
+  PTR_01cc4800 = "..\\engine\\3d.c";
+  INT_01cc4804 = 0x119;
+  core_main_c_FUN_004c8440("Bad MRGL struct");
   return param_1;
 }

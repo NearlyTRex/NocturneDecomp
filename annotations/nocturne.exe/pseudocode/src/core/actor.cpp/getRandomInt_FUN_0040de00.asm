@@ -10,16 +10,16 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[37]:
-;   FUN_00414930 at 004149e4
-;   FUN_00418630 at 0041871e
-;   FUN_004196b0 at 00419b8b
-;   FUN_0041f3d0 at 0041f443
-;   FUN_00477890 at 004778fe
-;   FUN_00478790 at 004788d4
-;   FUN_004ab450 at 004ab7c5
-;   FUN_00515ea0 at 00515f14
-;   FUN_0054dd50 at 0054ddaf
 ;   core_batcreat.cpp_FUN_00413040 at 004130f4
+;   core_batman.cpp_FUN_00414930 at 004149e4
+;   core_biggs.cpp_CBiggs_processDamage_FUN_00415900 at 0041592d
+;   core_boneguy.cpp_FUN_00418630 at 0041871e
+;   core_boneguy.cpp_FUN_004196b0 at 00419b8b
+;   core_boxactor.cpp_FUN_0041f3d0 at 0041f443
+;   core_bugs.cpp_CBugs_setup_FUN_004211e0 at 0042133f
+;   core_bugs.cpp_FUN_00423480 at 0042365b
+;   core_bugs.cpp_FUN_00423790 at 004239cb
+;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0 at 0042a435
 ;   ... and 27 more
 ;
 ; Referenced Globals:

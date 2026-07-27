@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00544910 at 00544915
 ;   core_ground.cpp_CGround_init_FUN_004b13d0 at 004b1409
+;   core_texlist.cpp_staticInit_FUN_00544910 at 00544915
 ;
 ; *****************************************************************************
 

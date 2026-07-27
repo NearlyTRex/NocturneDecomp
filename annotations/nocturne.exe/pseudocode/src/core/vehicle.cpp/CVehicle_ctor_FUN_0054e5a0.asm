@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0054e570 at 0054e583
+;   core_vehicle.cpp_FUN_0054e570 at 0054e583
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_32ford_kfm_005972c1
@@ -17,9 +17,9 @@
 ;   undefined4 s_chicpath_pth_005972fc+1
 ;   undefined4 s_chicpath_pth_005972fc+2
 ;   undefined4 s_chicpath_pth_005972fc+3
-;   undefined4 DAT_0059b030
+;   WatcomTypeInfo g_CKeyFramedModelInstanceTypeInfo_0059b030
 ;   undefined1* PTR_core_vehicle.cpp_CVehicle_setup_FUN_0054e7f0_005a3c44 = 0054e7f0
-;   undefined4 DAT_005a3d20
+;   WatcomTypeInfo g_CTireTypeInfo_005a3d20
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -46,14 +46,14 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490 ; 0054e5b6
         ;   XREF to: 00454490 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490()
     ADD ESP,0x4                         ; 0054e5bb
-    PUSH 0x59b030                       ; 0054e5be | DAT_0059b030
+    PUSH 0x59b030                       ; 0054e5be | g_CKeyFramedModelInstanceTypeInfo_0059b030
     PUSH 0x4                            ; 0054e5c3
     ADD EAX,0x17c                       ; 0054e5c5
     PUSH EAX                            ; 0054e5ca
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0054e5cb
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 0054e5d0
-    PUSH 0x5a3d20                       ; 0054e5d3 | DAT_005a3d20
+    PUSH 0x5a3d20                       ; 0054e5d3 | g_CTireTypeInfo_005a3d20
     PUSH 0x4                            ; 0054e5d8
     ADD EAX,0x668                       ; 0054e5da
     PUSH EAX                            ; 0054e5df

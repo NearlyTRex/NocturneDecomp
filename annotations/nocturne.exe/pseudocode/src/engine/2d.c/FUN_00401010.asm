@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00401010(void)
+; void engine_2d_c_FUN_00401010(void)
 ;
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c8745
+;   core_main.c_FUN_004c85f0 at 004c8745
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_00577004
@@ -26,6 +26,7 @@
 ;   ... and 25 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
@@ -36,8 +37,7 @@
 ;   engine_2d.c_FUN_00403630
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
-;   FUN_004c8440
-;   FUN_00552b40
+;   wincore_wddvmem.cpp_FUN_00552b40
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
 ;   wincore_wddvmem.cpp_setupColorPalette_FUN_005537e0
 ;
@@ -46,7 +46,7 @@
 section .text
 
     PUSH EBX                            ; 00401010
-        ;   Label: FUN_00401010
+        ;   Label: engine_2d.c_FUN_00401010
     PUSH ESI                            ; 00401011
     PUSH EBP                            ; 00401012
     MOV EBP,dword ptr [0x006afa38]      ; 00401013 | DAT_006afa38
@@ -54,8 +54,8 @@ section .text
     PUSH EDX                            ; 0040101f
     MOV ECX,dword ptr [0x005b761c]      ; 00401020 | DAT_005b761c
     PUSH ECX                            ; 00401026
-    CALL FUN_00552b40                   ; 00401027
-        ;   XREF to: 00552b40 (UNCONDITIONAL_CALL)  ; undefined FUN_00552b40()
+    CALL wincore_wddvmem.cpp_FUN_00552b40 ; 00401027
+        ;   XREF to: 00552b40 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_00552b40()
     ADD ESP,0x8                         ; 0040102c
     TEST EAX,EAX                        ; 0040102f
     JZ 0x004011fd                       ; 00401031
@@ -137,10 +137,10 @@ section .text
     MOV EDX,0x5770af                    ; 0040110e | = "..\\engine\\2d.c"
     MOV ECX,0xaa                        ; 00401113
     PUSH 0x5770be                       ; 00401118 | = "Unable to malloc font memory"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040111d | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00401123 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00401129
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0040111d | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00401123 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00401129
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040112e
     PUSH 0x5770db                       ; 00401131 | = "rb"
         ;   Label: LAB_00401131
@@ -215,10 +215,10 @@ section .text
         ;   Label: LAB_004011fd
     MOV ESI,0x84                        ; 00401202
     PUSH 0x577013                       ; 00401207 | = "No room for frame buffer.  Please run..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0040120c | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00401212 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00401218
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0040120c | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00401212 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00401218
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040121d
     JMP 0x00401037                      ; 00401220
         ;   XREF to: 00401037 (UNCONDITIONAL_JUMP)  ; LAB_00401037
@@ -226,10 +226,10 @@ section .text
         ;   Label: LAB_00401225
     MOV EAX,0xa1                        ; 0040122a
     PUSH 0x577082                       ; 0040122f | = "Unable to open font.ndx"
-    MOV dword ptr [0x01cc4800],EDI      ; 00401234 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0040123a | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0040123f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00401234 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0040123a | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0040123f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00401244
     JMP 0x004010b1                      ; 00401247
         ;   XREF to: 004010b1 (UNCONDITIONAL_JUMP)  ; LAB_004010b1
@@ -237,10 +237,10 @@ section .text
         ;   Label: LAB_0040124c
     MOV EAX,0xac                        ; 00401251
     PUSH 0x5770fe                       ; 00401256 | = "Unable to open font.bin"
-    MOV dword ptr [0x01cc4800],EDI      ; 0040125b | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00401261 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00401266
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0040125b | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00401261 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00401266
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040126b
     JMP 0x00401152                      ; 0040126e
         ;   XREF to: 00401152 (UNCONDITIONAL_JUMP)  ; LAB_00401152

@@ -1,15 +1,14 @@
-// Name: FUN_004f4f10
+// Name: cockpit_pkbitmap.cpp_FUN_004f4f10
 // Address: 004f4f10
 // Address Range: [[004f4f10, 004f4f89]]
 // Convention: unknown
-// Signature: void FUN_004f4f10(void)
+// Signature: void cockpit_pkbitmap_cpp_FUN_004f4f10(void)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void FUN_004f4f10(void)
+void cockpit_pkbitmap_cpp_FUN_004f4f10(void)
 
 {
   int iVar1;
@@ -34,8 +33,8 @@ void FUN_004f4f10(void)
   if ((*(byte *)(in_stack_00000008 + 0xc) & 0x20) == 0) {
     return;
   }
-  _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-  _DAT_01cc4804 = 0x53b;
-  FUN_004c8440("Error writing PBG header");
+  PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+  INT_01cc4804 = 0x53b;
+  core_main_c_FUN_004c8440("Error writing PBG header");
   return;
 }

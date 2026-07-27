@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004ba8a0(int param_1)
 
 {
@@ -37,7 +35,8 @@ uint __cdecl core_icepick_cpp_CIcePick_findAndPickupGun_FUN_004ba8a0(int param_1
     iVar1 = *(int *)(iVar6 + 0x14cd70 + 0x01E57284);
     iVar4 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x8c))(iVar1);
     if (iVar4 == 0) {
-      iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar1,_DAT_02dd1008);
+      iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
+                        (iVar1,g_CTommyGunActorType_02dd0fd0.name_hash);
       if (iVar4 != 0) {
         fVar2 = *(float *)(iVar1 + 0x20) - local_34;
         fVar3 = *(float *)(iVar1 + 0x28) - local_2c;

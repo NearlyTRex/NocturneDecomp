@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(int *param_1)
 
 {
@@ -40,9 +38,9 @@ void __cdecl shape_edittool_cpp_CStrList_copyToClipboard_FUN_00474380(int *param
   }
   puVar3 = (byte *)shape_memdbg_cpp_malloc_FUN_00564c18(iVar6 + 1);
   if (puVar3 == (byte *)0x0) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0xad9;
-    FUN_004c8440("CStrList::copyToClipboard - out of memory for %d items, %d bytes",*param_1,iVar6 + 1);
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0xad9;
+    core_main_c_FUN_004c8440("CStrList::copyToClipboard - out of memory for %d items, %d bytes",*param_1,iVar6 + 1);
   }
   iVar6 = 0;
   puVar8 = puVar3;

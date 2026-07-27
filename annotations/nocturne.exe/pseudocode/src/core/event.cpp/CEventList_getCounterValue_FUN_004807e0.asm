@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_0047a350 at 0047a381
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047e695
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047bb8c
+;   core_event.cpp_FUN_0047a350 at 0047a381
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501d03
 ;
 ; Called Functions:

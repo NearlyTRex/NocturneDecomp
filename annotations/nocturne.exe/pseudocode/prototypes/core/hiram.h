@@ -3,10 +3,34 @@
 // Function prototypes for core/hiram.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_hiram.cpp_staticInit_FUN_004b65b0
+// Address: 004b65b0
+void __cdecl staticInit(void);
+
+// Original: core_hiram.cpp_FUN_004b65e0
+// Address: 004b65e0
+void FUN_004b65e0(void);
+
+// Original: core_hiram.cpp_FUN_004b6600
+// Address: 004b6600
+CDemonActorType * FUN_004b6600(void);
+
+// Original: core_hiram.cpp_FUN_004b6610
+// Address: 004b6610
+int FUN_004b6610(undefined4 param_1);
+
 // Original: core_hiram.cpp_CHiram_dtor_FUN_004b6670
 // Address: 004b6670
 int CHiram::dtor(int param_1,byte param_2);
 
+// Original: core_hiram.cpp_FUN_004b6750
+// Address: 004b6750
+void FUN_004b6750(int param_1);
+
 // Original: core_hiram.cpp_CHiram_process_FUN_004b6770
 // Address: 004b6770
 void CHiram::process(int param_1,float param_2);
+
+// Original: core_hiram.cpp_FUN_004b68b0
+// Address: 004b68b0
+void FUN_004b68b0(undefined4 param_1);

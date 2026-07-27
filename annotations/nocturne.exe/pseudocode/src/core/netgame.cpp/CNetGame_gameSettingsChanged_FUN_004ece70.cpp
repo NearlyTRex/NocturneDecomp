@@ -17,9 +17,9 @@ void __cdecl core_netgame_cpp_CNetGame_gameSettingsChanged_FUN_004ece70(int *par
   int *piVar4;
   
   if (*param_1 != 1) {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 0x88c;
-    FUN_004c8440("CNetGame::gameSettingsChanged - should only call this in server mode");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 0x88c;
+    core_main_c_FUN_004c8440("CNetGame::gameSettingsChanged - should only call this in server mode");
   }
   _DAT_01cea404 = _DAT_01cea404 + 1;
   iVar1 = wincore_winrun_cpp_getTime_FUN_00558a30();

@@ -55,7 +55,7 @@
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_wrapText_FUN_00492f30
-;   support_newmsg.cpp_getLocalizedString_FUN_004ee370
+;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -102,8 +102,8 @@ section .text
     SAHF                                ; 004a6a71
     JNC 0x004a6ad4                      ; 004a6a72
         ;   XREF to: 004a6ad4 (CONDITIONAL_JUMP)  ; LAB_004a6ad4
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004a6a74
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004a6a74
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
     PUSH 0x5845f2                       ; 004a6a79 | = "To be continued..."
     CALL support_newmsg.cpp_getLocalizedString_FUN_004ee370 ; 004a6a7e
         ;   XREF to: 004ee370 (UNCONDITIONAL_CALL)  ; undefined support_newmsg.cpp_getLocalizedString_FUN_004ee370()
@@ -175,8 +175,8 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004a6b3c
         ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
     ADD ESP,0x10                        ; 004a6b41
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004a6b44
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004a6b44
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
     PUSH 0xffff                         ; 004a6b49
     PUSH 0x0                            ; 004a6b4e
     PUSH 0x0                            ; 004a6b50

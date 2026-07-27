@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_turret_cpp_CTurret_fire_FUN_0054ab10(int param_1)
 
 {
@@ -83,26 +81,30 @@ uint core_turret_cpp_CTurret_fire_FUN_0054ab10(int param_1)
                                  (0x01E57284,&fStack_74,&fStack_98);
     if ((fStack_18 < 0.0) || (1.0 < fStack_18)) break;
     iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(0x01E57284 + 0x14cd5c),CDemonActorType_00765a60.name_hash);
+                      (*(uint *)(0x01E57284 + 0x14cd5c),
+                       g_CCharacterActorType_00765a60.name_hash);
     if ((iVar2 != 0) && (iVar3 = (**(code **)(*(int *)(iVar2 + 0x14c) + 0x104))(iVar2), 0 < iVar3))
     {
       iVar2 = 0;
     }
     iStack_20 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(0x01E57284 + 0x14cd5c),_DAT_01c78c78);
+                          (*(uint *)(0x01E57284 + 0x14cd5c),
+                           g_CGlassActorType_01c78c40.name_hash);
     iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(0x01E57284 + 0x14cd5c),_DAT_02dd10bc);
+                      (*(uint *)(0x01E57284 + 0x14cd5c),
+                       g_CTriggerActorType_02dd1084.name_hash);
     iStack_2c = iVar3;
     iStack_28 = core_actor_cpp_castToClassHash_FUN_0040d890
                           (*(uint *)(0x01E57284 + 0x14cd5c),
-                           CDemonActorType_0077bd40.name_hash);
+                           g_CCrateActorType_0077bd40.name_hash);
     iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(0x01E57284 + 0x14cd5c),_DAT_01c7068c);
+                      (*(uint *)(0x01E57284 + 0x14cd5c),
+                       g_CFlameCanActorType_01c70654.name_hash);
     if (iVar2 == 0) {
       if (iStack_20 == 0) {
         if (iVar3 != 0) {
           core_trigger_cpp_CTrigger_onProjectileHit_FUN_00548580(iVar3);
-          iVar4 = FUN_005485a0(iVar3,param_1);
+          iVar4 = core_trigger_cpp_FUN_005485a0(iVar3,param_1);
           iVar2 = iStack_2c;
           if (iVar4 != 0) {
             fStack_18 = (float)(**(code **)(*(int *)(param_1 + 0x14c) + 0xe4))(param_1);
@@ -113,9 +115,10 @@ uint core_turret_cpp_CTurret_fire_FUN_0054ab10(int param_1)
         }
         if (iStack_28 == 0) {
           if (iVar4 == 0) {
-            FUN_0048ab60(0x01C08D04,0x01E57284 + 0x14cd50,0x01E57284 + 0x14cd40,
-                         *(uint *)(0x01E57284 + 0x14cd4c),
-                         *(uint *)(0x01E57284 + 0x14cd5c));
+            core_fire_cpp_FUN_0048ab60
+                      (0x01C08D04,0x01E57284 + 0x14cd50,0x01E57284 + 0x14cd40,
+                       *(uint *)(0x01E57284 + 0x14cd4c),
+                       *(uint *)(0x01E57284 + 0x14cd5c));
             break;
           }
           core_flamecan_cpp_CFlameCan_ignite_FUN_0048e550(iVar4);
@@ -125,9 +128,9 @@ uint core_turret_cpp_CTurret_fire_FUN_0054ab10(int param_1)
         }
       }
       else {
-        iVar2 = FUN_004aded0(iStack_20);
+        iVar2 = core_glass_cpp_FUN_004aded0(iStack_20);
         if (iVar2 == 0) break;
-        FUN_004ada20(iStack_20,0x01E57284 + 0x14cd50);
+        core_glass_cpp_FUN_004ada20(iStack_20,0x01E57284 + 0x14cd50);
       }
     }
     else {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00470eb0(undefined4 param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5,byte param_6)
+; undefined4 shape_edittool_cpp_FUN_00470eb0(undefined4 param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5,byte param_6)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x360]:1  local_360
@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004a3b90 at 004a4075
+;   core_game.cpp_FUN_004a3b90 at 004a4075
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
@@ -35,6 +35,7 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_string.c_strupr_FUN_00566ad0
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
@@ -42,14 +43,13 @@
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0
-;   FUN_004720c0
-;   FUN_004722b0
-;   FUN_004c8440
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80
 ;   shape_edittool.cpp_CInputString_backspace_FUN_0046f2a0
 ;   shape_edittool.cpp_CInputString_deleteSelection_FUN_0046f250
 ;   shape_edittool.cpp_CInputString_draw_FUN_0046f680
 ;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0046f390
+;   shape_edittool.cpp_CInputString_init_FUN_0046f0a0
+;   shape_edittool.cpp_CInputString_insertChar_FUN_0046f150
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -57,7 +57,7 @@
 section .text
 
     PUSH EBX                            ; 00470eb0
-        ;   Label: FUN_00470eb0
+        ;   Label: shape_edittool.cpp_FUN_00470eb0
     PUSH ESI                            ; 00470eb1
     PUSH EDI                            ; 00470eb2
     PUSH EBP                            ; 00470eb3
@@ -73,10 +73,10 @@ section .text
     MOV ESI,0x57e4fa                    ; 00470ed8 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x8b                        ; 00470edd
     PUSH 0x57e510                       ; 00470ee2 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ESI      ; 00470ee7 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00470eed | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00470ef3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00470ee7 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00470eed | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00470ef3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00470ef8
     MOV EAX,[0x01bcd070]                ; 00470efb | DAT_01bcd070
         ;   Label: LAB_00470efb
@@ -126,8 +126,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x364]     ; 00470f92
         ;   Label: LAB_00470f92
     PUSH EAX                            ; 00470f99
-    CALL FUN_004722b0                   ; 00470f9a
-        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004722b0()
+    CALL shape_edittool.cpp_FUN_004722b0 ; 00470f9a
+        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004722b0()
     ADD ESP,0x4                         ; 00470f9f
     LEA EAX,[ESP + 0x208]               ; 00470fa2
     PUSH EAX                            ; 00470fa9
@@ -304,8 +304,8 @@ section .text
     POP EDI                             ; 0047116f
         ;   Label: LAB_0047116f
     PUSH ECX                            ; 00471170
-    CALL FUN_004720c0                   ; 00471171
-        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004720c0()
+    CALL shape_edittool.cpp_FUN_004720c0 ; 00471171
+        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
     ADD ESP,0x4                         ; 00471176
     MOV EAX,dword ptr [ESP + 0x348]     ; 00471179
     MOV [0x005b7630],EAX                ; 00471180 | DAT_005b7630
@@ -470,8 +470,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x374]     ; 00471308
     PUSH EDI                            ; 0047130f
     MOV byte ptr [EAX],0x0              ; 00471310
-    CALL FUN_004720c0                   ; 00471313
-        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004720c0()
+    CALL shape_edittool.cpp_FUN_004720c0 ; 00471313
+        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
     ADD ESP,0x4                         ; 00471318
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0047131b
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()

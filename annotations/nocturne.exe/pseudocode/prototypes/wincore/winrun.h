@@ -31,6 +31,18 @@ bool __cdecl wasKeyPressed(void);
 // Address: 00558ba0
 void __cdecl enqueueInput(undefined4 param_1);
 
+// Original: wincore_winrun.cpp_FUN_00558be0
+// Address: 00558be0
+void FUN_00558be0(void);
+
+// Original: wincore_winrun.cpp_FUN_00558c00
+// Address: 00558c00
+void FUN_00558c00(void);
+
+// Original: wincore_winrun.cpp_FUN_00558c40
+// Address: 00558c40
+void FUN_00558c40(void);
+
 // Original: wincore_winrun.cpp_clearMouseClicks_FUN_00558d50
 // Address: 00558d50
 void __cdecl clearMouseClicks(void);
@@ -38,6 +50,10 @@ void __cdecl clearMouseClicks(void);
 // Original: wincore_winrun.cpp_setCursorPosition_FUN_00558d60
 // Address: 00558d60
 void setCursorPosition(int param_1,int param_2);
+
+// Original: wincore_winrun.cpp_FUN_00558d90
+// Address: 00558d90
+LRESULT FUN_00558d90(HWND param_1,uint param_2,HWND param_3,uint param_4);
 
 // Original: wincore_winrun.cpp_processWindowMessages_FUN_005591c0
 // Address: 005591c0
@@ -82,6 +98,10 @@ void __cdecl setThreadPriority(HANDLE param_1,uint param_2);
 // Original: wincore_winrun.cpp_sleep_FUN_00559cc0
 // Address: 00559cc0
 void __cdecl sleep(double param_1);
+
+// Original: wincore_winrun.cpp_FUN_00559d20
+// Address: 00559d20
+void FUN_00559d20(void);
 
 // Original: wincore_winrun.cpp_setRegistryStringValue_FUN_00559da0
 // Address: 00559da0

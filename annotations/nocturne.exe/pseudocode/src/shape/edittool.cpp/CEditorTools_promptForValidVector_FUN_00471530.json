@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -125,7 +125,7 @@
     "complexity_score": 164,
     "cross_reference_count": 0,
     "function_call_count": 4,
-    "global_count": 0,
+    "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 29,
     "suspect_count": 13,
@@ -159,17 +159,36 @@
       "name": "crt_stdio.c_sscanf_FUN_00566b5c"
     },
     {
-      "addr": "0046fcd0",
-      "is_variadic": false,
-      "name": "FUN_0046fcd0"
-    },
-    {
       "addr": "00471600",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600"
+    },
+    {
+      "addr": "0046fcd0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0046fcd0"
     }
   ],
-  "globals": [],
+  "globals": [
+    {
+      "addr": "0057e7fa",
+      "name": "s_g_g_g_0057e7fa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057e803",
+      "name": "s_f_f_f_0057e803",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057e816",
+      "name": "s_Please_enter_a_valid_vec_0057e816",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
   "param_estimates": {
     "call_site_count": 0,
     "call_sites": [],
@@ -315,7 +334,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0046fcd0(param_1,\"Please enter a valid vector.\");",
+      "text": "shape_edittool_cpp_FUN_0046fcd0(param_1,\"Please enter a valid vector.\");",
       "type": "unnamed_param"
     },
     {

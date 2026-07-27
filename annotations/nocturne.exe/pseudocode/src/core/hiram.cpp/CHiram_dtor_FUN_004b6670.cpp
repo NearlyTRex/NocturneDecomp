@@ -13,11 +13,11 @@ int core_hiram_cpp_CHiram_dtor_FUN_004b6670(int param_1,byte param_2)
   uint uVar2;
   
   if ((param_2 & 4) != 0) {
-    uVar2 = __vec_delete(param_1,&DAT_0059eee0);
+    uVar2 = __vec_delete(param_1,&g_CHiramTypeInfo_0059eee0);
     shape_memdbg_cpp_free_FUN_00564486(uVar2);
     return param_1;
   }
-  *(byte ***)(param_1 + 0x14c) = &PTR_FUN_0059eda4;
+  *(byte ***)(param_1 + 0x14c) = &PTR_core_hiram_cpp_FUN_004b6750_0059eda4;
   iVar1 = core_path_cpp_CPathMap_dtor_FUN_004efdd0(param_1 + 0xbc8c,0);
   iVar1 = core_armour_cpp_CFlame_arrdtor_FUN_0040fe50(iVar1 + -0x88c8,0);
   iVar1 = core_armour_cpp_SFire_arrdtor_FUN_0040fe30(iVar1 + -0x4b0,0);

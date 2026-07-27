@@ -1,29 +1,32 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004f4b30(undefined4 param_1,undefined4 param_2)
+; void cockpit_pkbitmap_cpp_FUN_004f4b30(undefined4 param_1,undefined4 param_2)
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_wb_0058d1f0
+;   TerminatedCString s_Unable_to_create_PBM_fil_0058d1f3
+;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d210
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f4b30
-        ;   Label: FUN_004f4b30
+        ;   Label: cockpit_pkbitmap.cpp_FUN_004f4b30
     PUSH EBP                            ; 004f4b31
     SUB ESP,0x64                        ; 004f4b32
-    PUSH 0x58d1f0                       ; 004f4b35
+    PUSH 0x58d1f0                       ; 004f4b35 | = "wb"
     MOV EDX,dword ptr [ESP + 0x78]      ; 004f4b3a
     PUSH EDX                            ; 004f4b3e
     CALL crt_stdio.c_fopen_FUN_0056568c ; 004f4b3f
@@ -53,20 +56,20 @@ section .text
     PUSH ESI                            ; 004f4b6b
     MOV ECX,dword ptr [ESP + 0x7c]      ; 004f4b6c
     PUSH ECX                            ; 004f4b70
-    PUSH 0x58d1f3                       ; 004f4b71
+    PUSH 0x58d1f3                       ; 004f4b71 | = "Unable to create PBM file %s"
     LEA EAX,[ESP + 0x10]                ; 004f4b76
     PUSH EAX                            ; 004f4b7a
-    MOV ESI,0x58d210                    ; 004f4b7b
+    MOV ESI,0x58d210                    ; 004f4b7b | = "..\\cockpit\\pkbitmap.cpp"
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f4b80
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 004f4b85
     LEA EAX,[ESP + 0x8]                 ; 004f4b88
     MOV EDI,0x473                       ; 004f4b8c
     PUSH EAX                            ; 004f4b91
-    MOV dword ptr [0x01cc4800],ESI      ; 004f4b92 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004f4b98 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f4b9e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004f4b92 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004f4b98 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f4b9e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f4ba3
     POP ESI                             ; 004f4ba6
     POP EDI                             ; 004f4ba7

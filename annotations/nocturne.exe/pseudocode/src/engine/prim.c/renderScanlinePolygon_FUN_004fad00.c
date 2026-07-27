@@ -68,7 +68,7 @@ void __cdecl engine_prim_c_renderScanlinePolygon_FUN_004fad00(int *param_1,int p
   }
   _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
   if ((_DAT_01c02594 != 0) && (DAT_006b0278 == 0)) {
-    wincore_windll_cpp_drawPolygon_FUN_00532620(param_1,param_2,_DAT_01c039a0);
+    engine_special_cpp_drawPolygon_FUN_00532620(param_1,param_2,_DAT_01c039a0);
     return;
   }
   switch(_DAT_01c039a4) {
@@ -243,7 +243,7 @@ LAB_004faf43:
             return;
           }
         }
-        wincore_windll_cpp_renderScanline_FUN_00530710(local_14,piVar3,iVar7);
+        engine_special_cpp_renderScanline_FUN_00530710(local_14,piVar3,iVar7);
         piVar3[2] = piVar3[2] + piVar3[3];
         piVar3[6] = piVar3[6] + piVar3[7];
         piVar3[8] = piVar3[8] + piVar3[9];

@@ -25,7 +25,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0059bff8 = 0.00390625
 ;   undefined4 DAT_0059bffc
-;   undefined4 DAT_01c70710
+;   undefined4 CVector3f_01c70708.z
 ;
 ; *****************************************************************************
 
@@ -94,7 +94,7 @@ section .text
     JZ 0x0044d3f4                       ; 0044d36d
         ;   XREF to: 0044d3f4 (CONDITIONAL_JUMP)  ; LAB_0044d3f4
     MOV EAX,dword ptr [EBP + -0x4]      ; 0044d373
-    MOV EDX,dword ptr [0x01c70710]      ; 0044d376 | DAT_01c70710
+    MOV EDX,dword ptr [0x01c70710]      ; 0044d376 | CVector3f_01c70708.z
     SAR EAX,0x1                         ; 0044d37c
     SUB EDX,EAX                         ; 0044d37e
     MOV dword ptr [EBP + -0xc],EDX      ; 0044d380

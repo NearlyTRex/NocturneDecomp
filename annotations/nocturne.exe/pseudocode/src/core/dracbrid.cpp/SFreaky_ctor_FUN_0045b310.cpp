@@ -11,6 +11,6 @@ int core_dracbrid_cpp_SFreaky_ctor_FUN_0045b310(int param_1)
 {
   int iVar1;
   
-  iVar1 = __arrinit(param_1 + 0x20,4,&DAT_005993b0);
+  iVar1 = __arrinit(param_1 + 0x20,4,&g_CVectorTypeInfo_005993b0);
   return iVar1 + -0x20;
 }

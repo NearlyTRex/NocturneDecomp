@@ -9,7 +9,7 @@
 ; undefined8       Stack[-0x20]:8  local_20
 ;
 ; XREF[1]:
-;   FUN_004b32d0 at 004b336d
+;   core_haystack.cpp_FUN_004b32d0 at 004b336d
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004b3dd4 = 004b3e34

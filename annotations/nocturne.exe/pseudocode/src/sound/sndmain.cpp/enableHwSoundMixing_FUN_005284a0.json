@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,32 +122,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 105,
+    "complexity_score": 89,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
-    "suspect_count": 7,
+    "pseudocode_lines": 14,
+    "suspect_count": 6,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 36
+    "total_lines": 35
   },
   "cross_references": [
-    {
-      "addr": "005289f0",
-      "from_addr": "00528b02",
-      "name": "FUN_005289f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "004d12e0",
       "from_addr": "004d2198",
       "name": "core_menu.cpp_configureSoundOptions_FUN_004d12e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005289f0",
+      "from_addr": "00528b02",
+      "name": "sound_sndmain.cpp_FUN_005289f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -167,7 +166,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "FUN_004c8440"
+      "name": "core_main.c_FUN_004c8440"
     },
     {
       "addr": "00528480",
@@ -196,14 +195,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -213,7 +212,7 @@
       {
         "call_addr": "00528b02",
         "call_type": "direct",
-        "caller": "FUN_005289f0",
+        "caller": "sound_sndmain.cpp_FUN_005289f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -271,16 +270,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl sound_sndmain_cpp_enableHwSoundMixing_FUN_005284a0(uint param_1)",
@@ -288,7 +279,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
       "text": "DAT_005bea78 = param_1;",
@@ -296,7 +287,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 11,
+      "line": 9,
       "match": "DAT_005bea78",
       "severity": "mild",
       "text": "DAT_005bea78 = param_1;",
@@ -304,7 +295,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "DAT_005bea78 = param_1;",
@@ -312,7 +303,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 17,
+      "line": 15,
       "match": "DAT_005bea78",
       "severity": "mild",
       "text": "DAT_005bea78 = param_1;",

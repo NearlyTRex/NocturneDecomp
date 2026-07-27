@@ -18,14 +18,14 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(uint param_1)
   
   while( true ) {
     if (_DAT_01cae0d4 < 1) {
-      _DAT_01cc4800 = "..\\core\\mission.cpp";
-      _DAT_01cc4804 = 0x4c7;
-      FUN_004c8440("CDemonMission::run - hero list empty");
+      PTR_01cc4800 = "..\\core\\mission.cpp";
+      INT_01cc4804 = 0x4c7;
+      core_main_c_FUN_004c8440("CDemonMission::run - hero list empty");
     }
     if (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) == 0) {
-      _DAT_01cc4800 = "..\\core\\mission.cpp";
-      _DAT_01cc4804 = 0x4c8;
-      FUN_004c8440("CDemonMission::run - no gLocalHero");
+      PTR_01cc4800 = "..\\core\\mission.cpp";
+      INT_01cc4804 = 0x4c8;
+      core_main_c_FUN_004c8440("CDemonMission::run - no gLocalHero");
     }
     core_mission_cpp_CDemonMission_loadSet_FUN_004d9020
               (param_1,*(uint *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2c));
@@ -33,9 +33,9 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(uint param_1)
     core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(param_1);
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_0049da10(0x01C775EC);
     iVar2 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
-    FUN_004d8cd0(param_1,iVar2);
+    core_mission_cpp_FUN_004d8cd0(param_1,iVar2);
     (**(code **)(*(int *)(iVar2 + 0x14c) + 0x144))(iVar2);
-    FUN_004d7ea0(param_1);
+    core_mission_cpp_FUN_004d7ea0(param_1);
     if ((iVar1 == 0) || (DAT_01ccbbf0 == '\0')) break;
     iVar1 = _stricmp(0x01E57284 + 0x14cd08,"hq.geo");
     bVar3 = iVar1 != 0;

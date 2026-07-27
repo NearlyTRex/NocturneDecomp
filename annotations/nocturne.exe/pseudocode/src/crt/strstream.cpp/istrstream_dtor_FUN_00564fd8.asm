@@ -5,20 +5,20 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_00564faa at 00564fb7
-;   FUN_00564fc0 at 00564fcf
+;   crt_unknown.c_FUN_00564faa at 00564fb7
+;   crt_unknown.c_FUN_00564fc0 at 00564fcf
 ;   support_codec.cpp_CCodec_processBuffer_FUN_00439120 at 00439190
 ;   support_codec.cpp_CCodec_processFromBuffer_FUN_004390b0 at 00439108
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059b4b0
 ;   void* PTR_crt_strstream.cpp_istrstream_dtor_FUN_00564fd8_005a4744 = 00564fd8
-;   void* PTR_FUN_005a474c = 00564faa
-;   void* PTR_FUN_005a4754 = 00564fc0
+;   void* PTR_crt_unknown.c_FUN_00564faa_005a474c = 00564faa
+;   void* PTR_crt_unknown.c_FUN_00564fc0_005a4754 = 00564fc0
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   FUN_0056b5ad
 ;   FUN_0056b633
 ;   FUN_0056b6e8
@@ -41,11 +41,11 @@ section .text
     MOV dword ptr [EBX + 0x44],0x5a4744 ; 00564fef | PTR_crt_strstream.cpp_istrstream_dtor_FUN_00564fd8_005a4744
     PUSH 0x1                            ; 00564ff6
     MOV EAX,dword ptr [EBX]             ; 00564ff8
-    MOV dword ptr [EBX + 0x50],0x5a474c ; 00564ffa | PTR_FUN_005a474c
+    MOV dword ptr [EBX + 0x50],0x5a474c ; 00564ffa | PTR_crt_unknown.c_FUN_00564faa_005a474c
     ADD EBX,0x48                        ; 00565001
     MOV EAX,dword ptr [EAX + 0x4]       ; 00565004
     PUSH EBX                            ; 00565007
-    MOV dword ptr [EBX + EAX*0x1 + -0x20],0x5a4754 ; 00565008 | PTR_FUN_005a4754
+    MOV dword ptr [EBX + EAX*0x1 + -0x20],0x5a4754 ; 00565008 | PTR_crt_unknown.c_FUN_00564fc0_005a4754
     CALL FUN_0056b6e8                   ; 00565010
         ;   XREF to: 0056b6e8 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b6e8()
     ADD ESP,0x8                         ; 00565015
@@ -93,8 +93,8 @@ section .text
         ;   XREF to: 00565031 (UNCONDITIONAL_JUMP)  ; LAB_00565031
     PUSH EBX                            ; 0056506a
         ;   Label: LAB_0056506a
-    CALL FUN_00564494                   ; 0056506b
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 0056506b
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     JMP 0x00565050                      ; 00565070
         ;   XREF to: 00565050 (UNCONDITIONAL_JUMP)  ; LAB_00565050
 

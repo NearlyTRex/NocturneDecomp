@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_00534820 at 00534832
+;   core_stairs.cpp_FUN_00534820 at 00534832
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005951a2 = 0.5

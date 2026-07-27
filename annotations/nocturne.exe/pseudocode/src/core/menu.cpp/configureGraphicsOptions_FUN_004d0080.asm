@@ -43,12 +43,12 @@
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_string.c__stricmp_FUN_00564520
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
-;   FUN_00532cd0
-;   FUN_00532d20
+;   engine_special.cpp_FUN_00532cd0
+;   engine_special.cpp_FUN_00532d20
+;   engine_special.cpp_kill_FUN_005322b0
+;   engine_special.cpp_loadExternalRenderer_FUN_00531780
+;   engine_special.cpp_selectCard_FUN_00532d00
 ;   support_newmsg.cpp_getLocalizedString_FUN_004ee370
-;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
-;   wincore_windll.cpp_kill_FUN_005322b0
-;   wincore_windll.cpp_loadExternalRenderer_FUN_00531780
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -83,8 +83,8 @@ section .text
     PUSH 0x1cc64ac                      ; 004d00cc
     PUSH 0x1cc64a8                      ; 004d00d1 | DAT_01cc64a8
     XOR EBP,EBP                         ; 004d00d6
-    CALL FUN_00532d20                   ; 004d00d8
-        ;   XREF to: 00532d20 (UNCONDITIONAL_CALL)  ; undefined FUN_00532d20()
+    CALL engine_special.cpp_FUN_00532d20 ; 004d00d8
+        ;   XREF to: 00532d20 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532d20()
     MOV EAX,[0x01cc64a4]                ; 004d00dd | DAT_01cc64a4
     MOV EBX,dword ptr [0x01cc64a8]      ; 004d00e2 | DAT_01cc64a8
     ADD ESP,0x14                        ; 004d00e8
@@ -103,8 +103,8 @@ section .text
     PUSH EAX                            ; 004d0115
     MOV dword ptr [ESP + 0x114],EDI     ; 004d0116
     MOV dword ptr [ESP + 0x118],EDI     ; 004d011d
-    CALL FUN_00532cd0                   ; 004d0124
-        ;   XREF to: 00532cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00532cd0()
+    CALL engine_special.cpp_FUN_00532cd0 ; 004d0124
+        ;   XREF to: 00532cd0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532cd0()
     ADD ESP,0xc                         ; 004d0129
     PUSH 0x588693                       ; 004d012c | = "tridx6.dll"
     PUSH 0x58869e                       ; 004d0131 | CHAR_00h_0058869e
@@ -143,7 +143,7 @@ section .text
     TEST ESI,ESI                        ; 004d019c
     JLE 0x004d032f                      ; 004d019e
         ;   XREF to: 004d032f (CONDITIONAL_JUMP)  ; LAB_004d032f
-    CMP dword ptr [0x02dc9d60],0x0      ; 004d01a4 | DAT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 004d01a4 | INT_02dc9d60
     JZ 0x004d032f                       ; 004d01ab
         ;   XREF to: 004d032f (CONDITIONAL_JUMP)  ; LAB_004d032f
     MOV EAX,[0x01cc64a4]                ; 004d01b1 | DAT_01cc64a4
@@ -184,12 +184,12 @@ section .text
         ;   XREF to: 004d0214 (CONDITIONAL_JUMP)  ; LAB_004d0214
     POP EDI                             ; 004d022c
         ;   Label: LAB_004d022c
-    CALL wincore_windll.cpp_kill_FUN_005322b0 ; 004d022d
-        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_kill_FUN_005322b0()
+    CALL engine_special.cpp_kill_FUN_005322b0 ; 004d022d
+        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_kill_FUN_005322b0()
     PUSH 0x0                            ; 004d0232
-    CALL wincore_windll.cpp_loadExternalRenderer_FUN_00531780 ; 004d0234
-        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_loadExternalRenderer_FUN_00531780()
-    MOV EAX,[0x02dc9d60]                ; 004d0239 | DAT_02dc9d60
+    CALL engine_special.cpp_loadExternalRenderer_FUN_00531780 ; 004d0234
+        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_loadExternalRenderer_FUN_00531780()
+    MOV EAX,[0x02dc9d60]                ; 004d0239 | INT_02dc9d60
     ADD ESP,0x4                         ; 004d023e
     TEST EAX,EAX                        ; 004d0241
     JZ 0x004d0658                       ; 004d0243
@@ -200,8 +200,8 @@ section .text
     PUSH 0x1cc64ec                      ; 004d0253 | DAT_01cc64ec
     PUSH 0x1cc64ac                      ; 004d0258
     PUSH 0x1cc64a8                      ; 004d025d | DAT_01cc64a8
-    CALL FUN_00532d20                   ; 004d0262
-        ;   XREF to: 00532d20 (UNCONDITIONAL_CALL)  ; undefined FUN_00532d20()
+    CALL engine_special.cpp_FUN_00532d20 ; 004d0262
+        ;   XREF to: 00532d20 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532d20()
     ADD ESP,0x14                        ; 004d0267
     LEA EAX,[ESP + 0x10c]               ; 004d026a
     PUSH EAX                            ; 004d0271
@@ -209,8 +209,8 @@ section .text
     PUSH EAX                            ; 004d0279
     LEA EAX,[ESP + 0x10c]               ; 004d027a
     PUSH EAX                            ; 004d0281
-    CALL FUN_00532cd0                   ; 004d0282
-        ;   XREF to: 00532cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00532cd0()
+    CALL engine_special.cpp_FUN_00532cd0 ; 004d0282
+        ;   XREF to: 00532cd0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532cd0()
     ADD ESP,0xc                         ; 004d0287
     MOV EAX,[0x01cc64a4]                ; 004d028a | DAT_01cc64a4
         ;   Label: LAB_004d028a
@@ -251,7 +251,7 @@ section .text
     MOV dword ptr [EAX + 0x8],0x10      ; 004d031b | DAT_01c775f4
     MOV dword ptr [EAX],0x280           ; 004d0322 | DAT_01c775ec
     MOV dword ptr [EAX + 0x4],0x1e0     ; 004d0328 | DAT_01c775f0
-    CMP dword ptr [0x02dc9d60],0x0      ; 004d032f | DAT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 004d032f | INT_02dc9d60
         ;   Label: LAB_004d032f
     JNZ 0x004d0353                      ; 004d0336
         ;   XREF to: 004d0353 (CONDITIONAL_JUMP)  ; LAB_004d0353
@@ -301,7 +301,7 @@ section .text
         ;   XREF to: 004d0768 (CONDITIONAL_JUMP)  ; LAB_004d0768
     XOR EDX,EDX                         ; 004d03ba
     MOV ECX,dword ptr [0x01cc64a8]      ; 004d03bc | DAT_01cc64a8
-    MOV dword ptr [0x02dc9d60],EDX      ; 004d03c2 | DAT_02dc9d60
+    MOV dword ptr [0x02dc9d60],EDX      ; 004d03c2 | INT_02dc9d60
     TEST ECX,ECX                        ; 004d03c8
     JNZ 0x004d075e                      ; 004d03ca
         ;   XREF to: 004d075e (CONDITIONAL_JUMP)  ; LAB_004d075e
@@ -576,12 +576,12 @@ section .text
         ;   XREF to: 004d0687 (CONDITIONAL_JUMP)  ; LAB_004d0687
     POP EDI                             ; 004d069f
         ;   Label: LAB_004d069f
-    CALL wincore_windll.cpp_kill_FUN_005322b0 ; 004d06a0
-        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_kill_FUN_005322b0()
+    CALL engine_special.cpp_kill_FUN_005322b0 ; 004d06a0
+        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_kill_FUN_005322b0()
     PUSH 0x0                            ; 004d06a5
-    CALL wincore_windll.cpp_loadExternalRenderer_FUN_00531780 ; 004d06a7
-        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_loadExternalRenderer_FUN_00531780()
-    MOV ESI,dword ptr [0x02dc9d60]      ; 004d06ac | DAT_02dc9d60
+    CALL engine_special.cpp_loadExternalRenderer_FUN_00531780 ; 004d06a7
+        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_loadExternalRenderer_FUN_00531780()
+    MOV ESI,dword ptr [0x02dc9d60]      ; 004d06ac | INT_02dc9d60
     ADD ESP,0x4                         ; 004d06b2
     TEST ESI,ESI                        ; 004d06b5
     JNZ 0x004d0249                      ; 004d06b7
@@ -655,7 +655,7 @@ section .text
         ;   Label: LAB_004d075e
     JMP 0x004d03d5                      ; 004d0763
         ;   XREF to: 004d03d5 (UNCONDITIONAL_JUMP)  ; LAB_004d03d5
-    CMP dword ptr [0x02dc9d60],0x0      ; 004d0768 | DAT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 004d0768 | INT_02dc9d60
         ;   Label: LAB_004d0768
     JZ 0x004d077b                       ; 004d076f
         ;   XREF to: 004d077b (CONDITIONAL_JUMP)  ; LAB_004d077b
@@ -981,17 +981,17 @@ section .text
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
     MOV EAX,0x1                         ; 004d0ac1
         ;   Label: caseD_2
-    MOV EDX,dword ptr [0x02dc9d60]      ; 004d0ac6 | DAT_02dc9d60
+    MOV EDX,dword ptr [0x02dc9d60]      ; 004d0ac6 | INT_02dc9d60
     SUB EAX,EDX                         ; 004d0acc
-    MOV [0x02dc9d60],EAX                ; 004d0ace | DAT_02dc9d60
+    MOV [0x02dc9d60],EAX                ; 004d0ace | INT_02dc9d60
     JZ 0x004d0b3f                       ; 004d0ad3
         ;   XREF to: 004d0b3f (CONDITIONAL_JUMP)  ; LAB_004d0b3f
-    CALL wincore_windll.cpp_kill_FUN_005322b0 ; 004d0ad5
-        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_kill_FUN_005322b0()
+    CALL engine_special.cpp_kill_FUN_005322b0 ; 004d0ad5
+        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_kill_FUN_005322b0()
     PUSH 0x0                            ; 004d0ada
-    CALL wincore_windll.cpp_loadExternalRenderer_FUN_00531780 ; 004d0adc
-        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_loadExternalRenderer_FUN_00531780()
-    MOV EDI,dword ptr [0x02dc9d60]      ; 004d0ae1 | DAT_02dc9d60
+    CALL engine_special.cpp_loadExternalRenderer_FUN_00531780 ; 004d0adc
+        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_loadExternalRenderer_FUN_00531780()
+    MOV EDI,dword ptr [0x02dc9d60]      ; 004d0ae1 | INT_02dc9d60
     ADD ESP,0x4                         ; 004d0ae7
     TEST EDI,EDI                        ; 004d0aea
     JNZ 0x004d0af9                      ; 004d0aec
@@ -1005,8 +1005,8 @@ section .text
     PUSH 0x1cc64ec                      ; 004d0b03
     PUSH 0x1cc64ac                      ; 004d0b08
     PUSH 0x1cc64a8                      ; 004d0b0d | DAT_01cc64a8
-    CALL FUN_00532d20                   ; 004d0b12
-        ;   XREF to: 00532d20 (UNCONDITIONAL_CALL)  ; undefined FUN_00532d20()
+    CALL engine_special.cpp_FUN_00532d20 ; 004d0b12
+        ;   XREF to: 00532d20 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532d20()
     ADD ESP,0x14                        ; 004d0b17
     LEA EAX,[ESP + 0x10c]               ; 004d0b1a
     PUSH EAX                            ; 004d0b21
@@ -1014,8 +1014,8 @@ section .text
     PUSH EAX                            ; 004d0b29
     LEA EAX,[ESP + 0x10c]               ; 004d0b2a
     PUSH EAX                            ; 004d0b31
-    CALL FUN_00532cd0                   ; 004d0b32
-        ;   XREF to: 00532cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_00532cd0()
+    CALL engine_special.cpp_FUN_00532cd0 ; 004d0b32
+        ;   XREF to: 00532cd0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532cd0()
     ADD ESP,0xc                         ; 004d0b37
     JMP 0x004d062b                      ; 004d0b3a
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default
@@ -1055,13 +1055,13 @@ section .text
         ;   XREF to: 004d0b80 (CONDITIONAL_JUMP)  ; LAB_004d0b80
     POP EDI                             ; 004d0b98
         ;   Label: LAB_004d0b98
-    CALL wincore_windll.cpp_kill_FUN_005322b0 ; 004d0b99
-        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_kill_FUN_005322b0()
+    CALL engine_special.cpp_kill_FUN_005322b0 ; 004d0b99
+        ;   XREF to: 005322b0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_kill_FUN_005322b0()
         ;   Label: LAB_004d0b99
     PUSH 0x0                            ; 004d0b9e
-    CALL wincore_windll.cpp_loadExternalRenderer_FUN_00531780 ; 004d0ba0
-        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_loadExternalRenderer_FUN_00531780()
-    MOV EDI,dword ptr [0x02dc9d60]      ; 004d0ba5 | DAT_02dc9d60
+    CALL engine_special.cpp_loadExternalRenderer_FUN_00531780 ; 004d0ba0
+        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_loadExternalRenderer_FUN_00531780()
+    MOV EDI,dword ptr [0x02dc9d60]      ; 004d0ba5 | INT_02dc9d60
     ADD ESP,0x4                         ; 004d0bab
     TEST EDI,EDI                        ; 004d0bae
     JNZ 0x004d0af9                      ; 004d0bb0
@@ -1125,8 +1125,8 @@ section .text
     MOV EDX,dword ptr [0x01cc64a4]      ; 004d0c4b | DAT_01cc64a4
         ;   Label: LAB_004d0c4b
     PUSH EDX                            ; 004d0c51
-    CALL wincore_windll.cpp_selectCard_FUN_00532d00 ; 004d0c52
-        ;   XREF to: 00532d00 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_selectCard_FUN_00532d00()
+    CALL engine_special.cpp_selectCard_FUN_00532d00 ; 004d0c52
+        ;   XREF to: 00532d00 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_selectCard_FUN_00532d00()
     ADD ESP,0x4                         ; 004d0c57
     JMP 0x004d062b                      ; 004d0c5a
         ;   XREF to: 004d062b (UNCONDITIONAL_JUMP)  ; default

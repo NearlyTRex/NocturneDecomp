@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_0046f7e0 at 0046f918
-;   FUN_0046fb40 at 0046fca6
-;   FUN_0046fcd0 at 0046fe36
-;   FUN_0046fe60 at 0046ffc6
-;   FUN_00470eb0 at 0047119c
+;   shape_edittool.cpp_FUN_0046f7e0 at 0046f918
+;   shape_edittool.cpp_FUN_0046fb40 at 0046fca6
+;   shape_edittool.cpp_FUN_0046fcd0 at 0046fe36
+;   shape_edittool.cpp_FUN_0046fe60 at 0046ffc6
+;   shape_edittool.cpp_FUN_00470eb0 at 0047119c
 ;
 ; Called Functions:
 ;   wincore_winrun.cpp_getNextKeypress_FUN_00558b00

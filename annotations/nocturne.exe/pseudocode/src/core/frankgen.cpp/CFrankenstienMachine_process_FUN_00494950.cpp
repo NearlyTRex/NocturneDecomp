@@ -55,7 +55,7 @@ void core_frankgen_cpp_CFrankenstienMachine_process_FUN_00494950(int param_1,flo
   if (*(float *)(param_1 + 0x154) < _DAT_01c71340) {
     _DAT_01c71340 = _DAT_01c71340 - 2300.0f;
   }
-  FUN_004950a0(param_1);
+  core_frankgen_cpp_FUN_004950a0(param_1);
   switch(*(uint *)(param_1 + 0x150)) {
   case 0:
     iVar2 = *(int *)(param_1 + 0x154);
@@ -161,9 +161,9 @@ switchD_004949bb_caseD_4:
               (param_1,0x44f3c000,"frankx-big-ramp.wav");
     return;
   default:
-    _DAT_01cc4800 = "..\\core\\frankgen.cpp";
-    _DAT_01cc4804 = 0x13e;
-    FUN_004c8440("WTF!");
+    PTR_01cc4800 = "..\\core\\frankgen.cpp";
+    INT_01cc4804 = 0x13e;
+    core_main_c_FUN_004c8440("WTF!");
     return;
   }
 }

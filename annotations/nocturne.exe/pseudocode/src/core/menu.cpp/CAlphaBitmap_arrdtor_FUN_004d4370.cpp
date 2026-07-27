@@ -9,6 +9,6 @@
 void __cdecl core_menu_cpp_CAlphaBitmap_arrdtor_FUN_004d4370(uint param_1)
 
 {
-  __arrfini(param_1,8,&DAT_0059df00);
+  __arrfini(param_1,8,&g_CAlphaBitmapTypeInfo_0059df00);
   return;
 }

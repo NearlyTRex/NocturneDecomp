@@ -5,8 +5,11 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00548e20 at 00548e2c
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004eb894
+;   support_trisock.cpp_FUN_00548e20 at 00548e2c
+;
+; Referenced Globals:
+;   TerminatedCString s_d_d_d_d_00596c11
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -29,7 +32,7 @@ section .text
     MOV AL,byte ptr [EAX]               ; 00548bc6
     AND EAX,0xff                        ; 00548bc8
     PUSH EAX                            ; 00548bcd
-    PUSH 0x596c11                       ; 00548bce
+    PUSH 0x596c11                       ; 00548bce | = "%d.%d.%d.%d"
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00548bd3
     PUSH EDX                            ; 00548bd7
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00548bd8

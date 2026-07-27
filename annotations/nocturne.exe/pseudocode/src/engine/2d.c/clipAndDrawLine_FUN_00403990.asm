@@ -15,13 +15,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_2d_c_005772d1
 ;   TerminatedCString s_s_2d_line_clipping_excee_005772e0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_2d.c_computeOutcode_FUN_00403900
 ;   engine_2d.c_drawLine_FUN_004015a0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -92,10 +92,10 @@ section .text
     MOV ESI,0x5772d1                    ; 00403a21 | = "..\\engine\\2d.c"
     MOV EDI,0x86e                       ; 00403a26
     PUSH 0x5772e0                       ; 00403a2b | = "2d line clipping exceeded max iterations"
-    MOV dword ptr [0x01cc4800],ESI      ; 00403a30 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00403a36 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00403a3c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00403a30 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00403a36 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00403a3c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00403a41
     CMP dword ptr [ESP],0x0             ; 00403a44
         ;   Label: LAB_00403a44

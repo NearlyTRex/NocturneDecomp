@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004764d0(int param_1,uint param_2,uint param_3,int param_4,int param_5)
 
 {
@@ -35,8 +33,8 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004764d0(int param_
   if (((3 < iVar1) && (3 < iVar2)) && (3 < *(int *)(param_1 + 0x28) - *(int *)(param_1 + 0x24))) {
     return;
   }
-  _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-  _DAT_01cc4804 = 0xeac;
-  FUN_004c8440("CEdScrollBar::setPosition - invalid dimensions.");
+  PTR_01cc4800 = "..\\shape\\edittool.cpp";
+  INT_01cc4804 = 0xeac;
+  core_main_c_FUN_004c8440("CEdScrollBar::setPosition - invalid dimensions.");
   return;
 }

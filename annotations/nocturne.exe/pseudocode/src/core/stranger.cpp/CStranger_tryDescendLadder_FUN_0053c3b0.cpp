@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(int param_1)
 
 {
@@ -70,7 +68,8 @@ uint __cdecl core_stranger_cpp_CStranger_tryDescendLadder_FUN_0053c3b0(int param
     local_20 = 0;
     for (local_1c = 0; local_1c < *(int *)(0x01E57284 + 0x14cd6c); local_1c = local_1c + 1) {
       iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(0x01E57284 + local_20 + 0x14cd70),_DAT_01cc3120);
+                        (*(uint *)(0x01E57284 + local_20 + 0x14cd70),
+                         g_CLadderActorType_01cc30e8.name_hash);
       if ((iVar2 != 0) &&
          (ABS(*(float *)(param_1 + 0x24) - (*(float *)(iVar2 + 0x24) + *(float *)(iVar2 + 0x2d0)))
           <= (float)2)) {

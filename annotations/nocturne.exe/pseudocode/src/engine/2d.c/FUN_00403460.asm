@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00401010 at 00401069
+;   engine_2d.c_FUN_00401010 at 00401069
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fog_005771fc

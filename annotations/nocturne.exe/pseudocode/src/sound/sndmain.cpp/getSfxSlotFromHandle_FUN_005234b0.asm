@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[16]:
-;   FUN_00526dd0 at 00526dd8
-;   FUN_00526f00 at 00526f08
-;   FUN_00526f60 at 00526f68
-;   FUN_00527060 at 00527068
-;   FUN_00527190 at 005271ca
-;   FUN_00527200 at 00527207
+;   sound_sndmain.cpp_FUN_00526dd0 at 00526dd8
+;   sound_sndmain.cpp_FUN_00526f00 at 00526f08
+;   sound_sndmain.cpp_FUN_00526f60 at 00526f68
+;   sound_sndmain.cpp_FUN_00527060 at 00527068
+;   sound_sndmain.cpp_FUN_00527190 at 005271ca
+;   sound_sndmain.cpp_FUN_00527200 at 00527207
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10 at 00526d22
 ;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00526cd0 at 00526cd7
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50 at 00526c60

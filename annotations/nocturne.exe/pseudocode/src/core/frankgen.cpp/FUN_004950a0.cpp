@@ -1,14 +1,14 @@
-// Name: FUN_004950a0
+// Name: core_frankgen.cpp_FUN_004950a0
 // Address: 004950a0
 // Address Range: [[004950a0, 0049523c]]
 // Convention: unknown
-// Signature: void FUN_004950a0(char *param_1)
+// Signature: void core_frankgen_cpp_FUN_004950a0(char *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004950a0(char *param_1)
+void core_frankgen_cpp_FUN_004950a0(char *param_1)
 
 {
   int iVar1;
@@ -67,9 +67,9 @@ LAB_004950c9:
     break;
   default:
     apcStack_3c[0] = "WTF!";
-    _DAT_01cc4800 = "..\\core\\frankgen.cpp";
-    _DAT_01cc4804 = 0x1bb;
-    FUN_004c8440();
+    PTR_01cc4800 = "..\\core\\frankgen.cpp";
+    INT_01cc4804 = 0x1bb;
+    core_main_c_FUN_004c8440();
   }
   apcStack_3c[0] = param_1;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000();

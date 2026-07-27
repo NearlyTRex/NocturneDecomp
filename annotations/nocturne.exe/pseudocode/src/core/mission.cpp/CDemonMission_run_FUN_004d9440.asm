@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004a4170 at 004a4a34
-;   FUN_004a4b50 at 004a4ece
+;   core_game.cpp_FUN_004a4170 at 004a4a34
+;   core_game.cpp_FUN_004a4b50 at 004a4ece
 ;   core_game.cpp_joinNetworkGame_FUN_004a5e40 at 004a5ec4
 ;
 ; Referenced Globals:
@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01c77844
 ;   undefined4 DAT_01cae0d4
 ;   undefined4 DAT_01cae0e8
-;   undefined4 DAT_01cc4800
+;   char* PTR_01cc4800
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -32,17 +32,17 @@
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640
+;   core_main.c_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004d9a80
 ;   core_mission.cpp_CDemonMission_load_FUN_004d7ee0
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780
+;   core_mission.cpp_FUN_004d7ea0
+;   core_mission.cpp_FUN_004d8cd0
 ;   crt_string.c__stricmp_FUN_00566fb0
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
-;   engine_font.cpp_CBitFont_drawTextRight_FUN_00490be0
-;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
-;   FUN_004c8440
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -68,10 +68,10 @@ section .text
     MOV EAX,0x589e04                    ; 004d9468 | = "..\\core\\mission.cpp"
     MOV EDX,0x4c8                       ; 004d946d
     PUSH 0x589e18                       ; 004d9472 | = "CDemonMission::run - no gLocalHero"
-    MOV [0x01cc4800],EAX                ; 004d9477 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004d947c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d9482
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004d9477 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004d947c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d9482
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d9487
     MOV EAX,[0x01cae0e8]                ; 004d948a | DAT_01cae0e8
         ;   Label: LAB_004d948a
@@ -98,16 +98,16 @@ section .text
     PUSH ESI                            ; 004d94d0
     PUSH EBX                            ; 004d94d1
     MOV EDI,EAX                         ; 004d94d2
-    CALL FUN_004d8cd0                   ; 004d94d4
-        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_004d8cd0()
+    CALL core_mission.cpp_FUN_004d8cd0  ; 004d94d4
+        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d8cd0()
     ADD ESP,0x8                         ; 004d94d9
     MOV EAX,dword ptr [ESI + 0x14c]     ; 004d94dc
     PUSH ESI                            ; 004d94e2
     CALL dword ptr [EAX + 0x144]        ; 004d94e3
     ADD ESP,0x4                         ; 004d94e9
     PUSH EBX                            ; 004d94ec
-    CALL FUN_004d7ea0                   ; 004d94ed
-        ;   XREF to: 004d7ea0 (UNCONDITIONAL_CALL)  ; undefined FUN_004d7ea0()
+    CALL core_mission.cpp_FUN_004d7ea0  ; 004d94ed
+        ;   XREF to: 004d7ea0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d7ea0()
     ADD ESP,0x4                         ; 004d94f2
     TEST EDI,EDI                        ; 004d94f5
     JZ 0x004d9502                       ; 004d94f7
@@ -136,10 +136,10 @@ section .text
         ;   Label: LAB_004d9525
     MOV ESI,0x4c7                       ; 004d952a
     PUSH 0x589ddf                       ; 004d952f | = "CDemonMission::run - hero list empty"
-    MOV dword ptr [0x01cc4800],ECX      ; 004d9534 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d953a | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d9540
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d9534 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d953a | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d9540
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d9545
     JMP 0x004d9459                      ; 004d9548
         ;   XREF to: 004d9459 (UNCONDITIONAL_JUMP)  ; LAB_004d9459

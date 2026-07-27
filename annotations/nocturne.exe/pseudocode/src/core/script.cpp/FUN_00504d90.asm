@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00504d90(int *param_1)
+; undefined4 core_script_cpp_FUN_00504d90(int *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -16,21 +16,21 @@
 ;   undefined4 DAT_005b6d50
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77814
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_script.cpp_CScript_step_FUN_004ff2c0
-;   FUN_0046fcd0
-;   FUN_004c8440
-;   FUN_00504d60
+;   core_script.cpp_FUN_00504d60
+;   shape_edittool.cpp_FUN_0046fcd0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00504d90
-        ;   Label: FUN_00504d90
+        ;   Label: core_script.cpp_FUN_00504d90
     PUSH EBP                            ; 00504d91
     SUB ESP,0x4                         ; 00504d92
     MOV EBX,dword ptr [ESP + 0x10]      ; 00504d95
@@ -46,8 +46,8 @@ section .text
         ;   Label: LAB_00504daa
     PUSH ESI                            ; 00504dab
     PUSH EBX                            ; 00504dac
-    CALL FUN_00504d60                   ; 00504dad
-        ;   XREF to: 00504d60 (UNCONDITIONAL_CALL)  ; undefined FUN_00504d60()
+    CALL core_script.cpp_FUN_00504d60   ; 00504dad
+        ;   XREF to: 00504d60 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00504d60()
     XOR ESI,ESI                         ; 00504db2
     MOV EAX,dword ptr [EBX + 0x450]     ; 00504db4
     ADD ESP,0x4                         ; 00504dba
@@ -80,14 +80,14 @@ section .text
     MOV EBP,0x58fb46                    ; 00504e02 | = "..\\core\\script.cpp"
     MOV EAX,0xea5                       ; 00504e07
     MOV EDI,dword ptr [EBX + 0x40]      ; 00504e0c
-    MOV [0x01cc4804],EAX                ; 00504e0f | DAT_01cc4804
+    MOV [0x01cc4804],EAX                ; 00504e0f | INT_01cc4804
     MOV EAX,dword ptr [EBX + 0x2c]      ; 00504e14
-    MOV dword ptr [0x01cc4800],EBP      ; 00504e17 | DAT_01cc4800
+    MOV dword ptr [0x01cc4800],EBP      ; 00504e17 | PTR_01cc4800
     MOV EDX,dword ptr [EAX + EDI*0x8]   ; 00504e1d
     PUSH EDX                            ; 00504e20
     PUSH 0x58fb59                       ; 00504e21 | = "Infinite loop detected trying to skip..."
-    CALL FUN_004c8440                   ; 00504e26
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    CALL core_main.c_FUN_004c8440       ; 00504e26
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00504e2b
     JMP 0x00504dc0                      ; 00504e2e
         ;   XREF to: 00504dc0 (UNCONDITIONAL_JUMP)  ; LAB_00504dc0
@@ -101,8 +101,8 @@ section .text
     PUSH 0x58faf7                       ; 00504e41 | = "Error processing script to skip cinem..."
     MOV EDI,dword ptr [0x005b6d50]      ; 00504e46 | DAT_005b6d50
     PUSH EDI                            ; 00504e4c
-    CALL FUN_0046fcd0                   ; 00504e4d
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 00504e4d
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x14                        ; 00504e52
     JMP 0x00504df9                      ; 00504e55
         ;   XREF to: 00504df9 (UNCONDITIONAL_JUMP)  ; LAB_00504df9

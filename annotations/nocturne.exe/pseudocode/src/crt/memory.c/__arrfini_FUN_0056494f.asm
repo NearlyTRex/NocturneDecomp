@@ -9,20 +9,20 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[81]:
-;   FUN_0040e300 at 0040e30c
-;   FUN_0041fb00 at 0041fb0c
-;   FUN_0042cdc0 at 0042cdcc
-;   FUN_0043f980 at 0043f98f
-;   FUN_004483f0 at 004483ff
-;   FUN_0044b640 at 0044b64c
-;   FUN_0044c540 at 0044c54c
-;   FUN_004545e0 at 004545ef
-;   FUN_0045b430 at 0045b43c
-;   FUN_0046c230 at 0046c23f
+;   core_actor.cpp_FUN_0040e300 at 0040e30c
+;   core_armour.cpp_CFlame_arrdtor_FUN_0040fe50 at 0040fe5c
+;   core_armour.cpp_CVector3f_arrdtor_FUN_0040fe10 at 0040fe1c
+;   core_armour.cpp_SFire_arrdtor_FUN_0040fe30 at 0040fe3c
+;   core_bodypart.cpp_SBodyPartFire_arrdtor_FUN_00418130 at 0041813c
+;   core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110 at 0041811c
+;   core_boneguy.cpp_SBoneGuyBox_arrdtor_FUN_0041a4f0 at 0041a4fc
+;   core_box.cpp_SScrape_arrdtor_FUN_0041cbe0 at 0041cbec
+;   core_boxactor.cpp_FUN_0041fb00 at 0041fb0c
+;   core_bugs.cpp_FUN_00423e80 at 00423e8f
 ;   ... and 71 more
 ;
 ; Called Functions:
-;   FUN_00564915
+;   crt_unknown.c_FUN_00564915
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     MOV dword ptr [ESP + 0x8],EAX       ; 00564965
     MOV EAX,ESP                         ; 00564969
     PUSH EAX                            ; 0056496b
-    CALL FUN_00564915                   ; 0056496c
-        ;   XREF to: 00564915 (UNCONDITIONAL_CALL)  ; undefined FUN_00564915()
+    CALL crt_unknown.c_FUN_00564915     ; 0056496c
+        ;   XREF to: 00564915 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564915()
     ADD ESP,0x4                         ; 00564971
     MOV EAX,dword ptr [ESP + 0x10]      ; 00564974
     ADD ESP,0xc                         ; 00564978

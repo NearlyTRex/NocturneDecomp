@@ -11,7 +11,7 @@
 ;   undefined4 DAT_005baf90
 ;
 ; Called Functions:
-;   FUN_004d8cd0
+;   core_mission.cpp_FUN_004d8cd0
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH EBP                            ; 004c14ed
     ADD ESI,0x4                         ; 004c14ee
     INC EBX                             ; 004c14f1
-    CALL FUN_004d8cd0                   ; 004c14f2
-        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; undefined FUN_004d8cd0()
+    CALL core_mission.cpp_FUN_004d8cd0  ; 004c14f2
+        ;   XREF to: 004d8cd0 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d8cd0()
     MOV EAX,dword ptr [EDI + 0x8]       ; 004c14f7
     ADD ESP,0x8                         ; 004c14fa
     CMP EBX,EAX                         ; 004c14fd

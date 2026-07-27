@@ -14,15 +14,15 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   FUN_00421480 at 0042151c
+;   core_bugs.cpp_FUN_00421480 at 0042151c
 ;   core_bugs.cpp_FUN_00422050 at 0042235a
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00579d2d = 2
 ;   double DOUBLE_00579d35 = 0.0500000000000000
 ;   float FLOAT_00579d3d = 0.5
-;   undefined4 DAT_0059aeb4
-;   undefined4 CDemonActorType_00765a60.name_hash
+;   float FLOAT_0059aeb4 = 2
+;   undefined4 g_CCharacterActorType_00765a60.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -94,7 +94,7 @@ section .text
     SAHF                                ; 004223e1
     JC 0x00422448                       ; 004223e2
         ;   XREF to: 00422448 (CONDITIONAL_JUMP)  ; LAB_00422448
-    MOV ECX,dword ptr [0x00765a98]      ; 004223e4 | CDemonActorType_00765a60.name_hash
+    MOV ECX,dword ptr [0x00765a98]      ; 004223e4 | g_CCharacterActorType_00765a60.name_hash
     PUSH ECX                            ; 004223ea
     MOV ESI,dword ptr [EBX + 0x12960]   ; 004223eb
     PUSH ESI                            ; 004223f1
@@ -302,7 +302,7 @@ section .text
     PUSH EAX                            ; 00422657
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 00422658
         ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; undefined core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0()
-    FLD float ptr [0x0059aeb4]          ; 0042265d | DAT_0059aeb4
+    FLD float ptr [0x0059aeb4]          ; 0042265d | FLOAT_0059aeb4
     ADD ESP,0x8                         ; 00422663
     XOR EAX,EAX                         ; 00422666
     FMUL float ptr [EBP + 0x18]         ; 00422668

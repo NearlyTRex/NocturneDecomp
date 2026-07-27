@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,20 +122,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 355,
-    "complexity_score": 491,
+    "complexity_score": 475,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 18,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 201,
-    "suspect_count": 27,
+    "pseudocode_lines": 200,
+    "suspect_count": 26,
     "suspect_types": [
       "param_count_too_few",
       "unknown_field",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 556
+    "total_lines": 555
   },
   "cross_references": [
     {
@@ -160,14 +159,14 @@
   },
   "function_calls": [
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "0054e4a0",
       "is_variadic": false,
       "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -269,14 +268,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -753,16 +752,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
@@ -770,7 +761,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
@@ -778,7 +769,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
@@ -786,7 +777,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
@@ -794,7 +785,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
       "text": "float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_2,int param_3,int param_4,float *param_5)",
@@ -802,7 +793,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "local_98 = *param_1 - *param_5;",
@@ -810,7 +801,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_5",
       "severity": "mild",
       "text": "local_98 = *param_1 - *param_5;",
@@ -818,7 +809,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "local_94 = param_1[1] - param_5[1];",
@@ -826,7 +817,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_5",
       "severity": "mild",
       "text": "local_94 = param_1[1] - param_5[1];",
@@ -834,7 +825,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "local_90 = param_1[2] - param_5[2];",
@@ -842,7 +833,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_5",
       "severity": "mild",
       "text": "local_90 = param_1[2] - param_5[2];",
@@ -850,7 +841,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_2",
       "severity": "mild",
       "text": "switch(param_2) {",
@@ -858,7 +849,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 81,
       "match": "param_3",
       "severity": "mild",
       "text": "switch(param_3) {",
@@ -866,7 +857,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 98,
       "match": "param_3",
       "severity": "mild",
       "text": "switch(param_3) {",
@@ -874,7 +865,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 110,
       "match": "param_3",
       "severity": "mild",
       "text": "switch(param_3) {",
@@ -882,7 +873,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 124,
+      "line": 122,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_48 = local_48 + 1.5873523201947252e-314._0_4_;",
@@ -890,7 +881,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 142,
+      "line": 140,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_50 = local_50 + 1.5873523201947252e-314._0_4_;",
@@ -898,7 +889,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 145,
       "match": "param_2",
       "severity": "mild",
       "text": "switch(param_2) {",
@@ -906,7 +897,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 170,
+      "line": 168,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 != param_4) && (param_4 != param_3)) goto switchD_004f0211_default;",
@@ -914,7 +905,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 170,
+      "line": 168,
       "match": "param_4",
       "severity": "mild",
       "text": "if ((param_2 != param_4) && (param_4 != param_3)) goto switchD_004f0211_default;",
@@ -922,7 +913,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 170,
+      "line": 168,
       "match": "param_4",
       "severity": "mild",
       "text": "if ((param_2 != param_4) && (param_4 != param_3)) goto switchD_004f0211_default;",
@@ -930,7 +921,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 170,
+      "line": 168,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((param_2 != param_4) && (param_4 != param_3)) goto switchD_004f0211_default;",
@@ -938,7 +929,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 171,
+      "line": 169,
       "match": "param_4",
       "severity": "mild",
       "text": "switch(param_4) {",
@@ -946,7 +937,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 178,
+      "line": 176,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_48 = local_48 + 1.5873523201947252e-314._0_4_;",
@@ -954,7 +945,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 194,
+      "line": 192,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_50 = local_50 + 1.5873523201947252e-314._0_4_;",

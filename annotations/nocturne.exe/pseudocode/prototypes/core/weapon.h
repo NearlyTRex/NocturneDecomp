@@ -3,6 +3,10 @@
 // Function prototypes for core/weapon.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_weapon.cpp_staticInit_FUN_00553d60
+// Address: 00553d60
+void __cdecl staticInit(void);
+
 // Original: core_weapon.cpp_CWeapon_ctor_FUN_00553d90
 // Address: 00553d90
 int __cdecl CWeapon::ctor(undefined4 param_1);
@@ -15,6 +19,14 @@ int __cdecl CWeapon::dtor(int param_1,byte param_2);
 // Address: 00553f10
 void __cdecl CWeapon::setup(int param_1);
 
+// Original: core_weapon.cpp_FUN_00553f50
+// Address: 00553f50
+int FUN_00553f50(int param_1);
+
+// Original: core_weapon.cpp_FUN_00553fe0
+// Address: 00553fe0
+undefined4 * FUN_00553fe0(int param_1,undefined4 *param_2);
+
 // Original: core_weapon.cpp_CWeapon_process_FUN_00554030
 // Address: 00554030
 void __cdecl CWeapon::process(int param_1,float param_2);
@@ -23,9 +35,25 @@ void __cdecl CWeapon::process(int param_1,float param_2);
 // Address: 00554170
 void __cdecl CWeapon::archive(int param_1);
 
+// Original: core_weapon.cpp_FUN_00554250
+// Address: 00554250
+undefined4 FUN_00554250(void);
+
 // Original: core_weapon.cpp_CWeapon_canPickup_FUN_00554260
 // Address: 00554260
 undefined4 __cdecl CWeapon::canPickup(int param_1,undefined4 param_2);
+
+// Original: core_weapon.cpp_FUN_00554300
+// Address: 00554300
+void FUN_00554300(int param_1,undefined4 param_2);
+
+// Original: core_weapon.cpp_FUN_00554310
+// Address: 00554310
+void FUN_00554310(int param_1,undefined4 *param_2);
+
+// Original: core_weapon.cpp_CLadder_getGroundType_FUN_005543b0
+// Address: 005543b0
+undefined4 CLadder::getGroundType(int param_1);
 
 // Original: core_weapon.cpp_CWeapon_updateLighting_FUN_005543c0
 // Address: 005543c0
@@ -35,9 +63,25 @@ void CWeapon::updateLighting(int param_1);
 // Address: 00554560
 void __cdecl CWeapon::setWeaponState(int param_1,undefined4 param_2);
 
+// Original: core_weapon.cpp_FUN_00554570
+// Address: 00554570
+void FUN_00554570(undefined4 param_1,undefined4 param_2);
+
+// Original: core_weapon.cpp_FUN_00554590
+// Address: 00554590
+undefined4 * FUN_00554590(int param_1,undefined4 *param_2);
+
 // Original: core_weapon.cpp_CWeapon_fire_FUN_00554600
 // Address: 00554600
 undefined4 __cdecl CWeapon::fire(int param_1);
+
+// Original: core_weapon.cpp_FUN_00554630
+// Address: 00554630
+bool FUN_00554630(int param_1);
+
+// Original: core_weapon.cpp_FUN_00554650
+// Address: 00554650
+undefined4 FUN_00554650(void);
 
 // Original: core_weapon.cpp_CWeapon_setupPhysicsBox_FUN_00554660
 // Address: 00554660
@@ -46,3 +90,15 @@ void __cdecl CWeapon::setupPhysicsBox(int param_1);
 // Original: core_weapon.cpp_CWeapon_fireProjectile_FUN_00554750
 // Address: 00554750
 void CWeapon::fireProjectile(int param_1);
+
+// Original: core_weapon.cpp_FUN_00554780
+// Address: 00554780
+void FUN_00554780(void);
+
+// Original: core_weapon.cpp_FUN_00554910
+// Address: 00554910
+undefined4 FUN_00554910(undefined4 param_1);
+
+// Original: core_weapon.cpp_FUN_00554920
+// Address: 00554920
+undefined4 FUN_00554920(undefined4 param_1);

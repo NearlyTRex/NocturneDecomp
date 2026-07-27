@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00564670 at 0056469c
 ;   FUN_0056aef0 at 0056aef2
+;   crt_unknown.c_FUN_00564670 at 0056469c
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1ad0 = 005671e4

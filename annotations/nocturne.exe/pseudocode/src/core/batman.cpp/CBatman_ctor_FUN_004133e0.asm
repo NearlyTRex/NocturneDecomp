@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004133b0 at 004133c3
+;   core_batman.cpp_FUN_004133b0 at 004133c3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_batman_dfm_00578a97
@@ -13,8 +13,8 @@
 ;   undefined4 s_one_00578aa2+1
 ;   undefined4 s_ne_00578aa2+2
 ;   undefined4 s_e_00578aa2+3
-;   undefined4 DAT_0059a150
-;   undefined4 DAT_0059a154
+;   float FLOAT_0059a150 = 50
+;   float FLOAT_0059a154 = 100
 ;   undefined1* PTR_core_batman.cpp_CBatman_setup_FUN_004134a0_0059a164 = 004134a0
 ;
 ; Called Functions:
@@ -43,9 +43,9 @@ section .text
     LEA EDI,[EBX + 0xbd24]              ; 00413409
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0041340f
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
-    FLD float ptr [0x0059a150]          ; 00413414 | DAT_0059a150
+    FLD float ptr [0x0059a150]          ; 00413414 | FLOAT_0059a150
     MOV dword ptr [EBX + 0x2dd4],0x3f19999a ; 0041341a
-    FLD float ptr [0x0059a154]          ; 00413424 | DAT_0059a154
+    FLD float ptr [0x0059a154]          ; 00413424 | FLOAT_0059a154
     MOV dword ptr [EBX + 0x2dd8],0x40000000 ; 0041342a
     ADD ESP,0x8                         ; 00413434
     FXCH                                ; 00413437

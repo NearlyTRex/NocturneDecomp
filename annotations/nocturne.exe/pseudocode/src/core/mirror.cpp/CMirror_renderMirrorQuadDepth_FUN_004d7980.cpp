@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980(float *param_1)
 
 {
@@ -37,22 +35,22 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980(float *p
   int local_18;
   int local_14;
   
-  local_34 = (int)ROUND(*param_1 * _DAT_005a0880);
-  local_30 = (int)ROUND(param_1[1] * _DAT_005a0880);
-  local_2c = (int)ROUND(param_1[2] * _DAT_005a0880);
-  wincore_windll_cpp_transformPoint_FUN_00530a25(*DAT_005ae704,&local_34);
-  local_40 = (int)ROUND(param_1[3] * _DAT_005a0880);
-  local_3c = (int)ROUND(param_1[4] * _DAT_005a0880);
-  local_38 = (int)ROUND(param_1[5] * _DAT_005a0880);
-  wincore_windll_cpp_transformPoint_FUN_00530a25(*DAT_005ae704 + 0x30,&local_40);
-  local_1c = (int)ROUND(param_1[6] * _DAT_005a0880);
-  local_18 = (int)ROUND(param_1[7] * _DAT_005a0880);
-  local_14 = (int)ROUND(param_1[8] * _DAT_005a0880);
-  wincore_windll_cpp_transformPoint_FUN_00530a25(*DAT_005ae704 + 0x60,&local_1c);
-  local_28 = (int)ROUND(param_1[9] * _DAT_005a0880);
-  local_24 = (int)ROUND(param_1[10] * _DAT_005a0880);
-  local_20 = (int)ROUND(param_1[0xb] * _DAT_005a0880);
-  wincore_windll_cpp_transformPoint_FUN_00530a25(*DAT_005ae704 + 0x90,&local_28);
+  local_34 = (int)ROUND(*param_1 * 256.0f);
+  local_30 = (int)ROUND(param_1[1] * 256.0f);
+  local_2c = (int)ROUND(param_1[2] * 256.0f);
+  engine_special_cpp_transformPoint_FUN_00530a25(*DAT_005ae704,&local_34);
+  local_40 = (int)ROUND(param_1[3] * 256.0f);
+  local_3c = (int)ROUND(param_1[4] * 256.0f);
+  local_38 = (int)ROUND(param_1[5] * 256.0f);
+  engine_special_cpp_transformPoint_FUN_00530a25(*DAT_005ae704 + 0x30,&local_40);
+  local_1c = (int)ROUND(param_1[6] * 256.0f);
+  local_18 = (int)ROUND(param_1[7] * 256.0f);
+  local_14 = (int)ROUND(param_1[8] * 256.0f);
+  engine_special_cpp_transformPoint_FUN_00530a25(*DAT_005ae704 + 0x60,&local_1c);
+  local_28 = (int)ROUND(param_1[9] * 256.0f);
+  local_24 = (int)ROUND(param_1[10] * 256.0f);
+  local_20 = (int)ROUND(param_1[0xb] * 256.0f);
+  engine_special_cpp_transformPoint_FUN_00530a25(*DAT_005ae704 + 0x90,&local_28);
   iVar3 = 0;
   do {
     *(int *)(*DAT_005ae704 + iVar3) = *(int *)(*DAT_005ae704 + iVar3) << 4;

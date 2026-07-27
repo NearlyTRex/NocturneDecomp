@@ -319,7 +319,7 @@ section .text
     FLD float ptr [EBP + -0x28]         ; 004c0e10
     FADD float ptr [0x005871ed]         ; 004c0e13 | FLOAT_005871ed
     FSTP float ptr [EBP + -0x28]        ; 004c0e19
-    MOV EAX,[0x01cc56dc]                ; 004c0e1c | DAT_01cc56dc
+    MOV EAX,[0x01cc56dc]                ; 004c0e1c | g_CMeleeActorType_01cc56a4.name_hash
         ;   Label: LAB_004c0e1c
     PUSH EAX                            ; 004c0e21
     PUSH EBX                            ; 004c0e22

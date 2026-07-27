@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_dstrender.cpp_memcpyMMX_FUN_00465341
-;   wincore_windll.cpp_restoreZBuffer_FUN_00532c90
+;   engine_special.cpp_restoreZBuffer_FUN_00532c90
 ;
 ; *****************************************************************************
 
@@ -110,8 +110,8 @@ section .text
     PUSH 0x0                            ; 004406f6
     PUSH 0x0                            ; 004406f8
     PUSH 0x0                            ; 004406fa
-    CALL wincore_windll.cpp_restoreZBuffer_FUN_00532c90 ; 004406fc
-        ;   XREF to: 00532c90 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_restoreZBuffer_FUN_00532c90()
+    CALL engine_special.cpp_restoreZBuffer_FUN_00532c90 ; 004406fc
+        ;   XREF to: 00532c90 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_restoreZBuffer_FUN_00532c90()
     ADD ESP,0x14                        ; 00440701
     ADD ESP,0x4                         ; 00440704
     POP EBP                             ; 00440707

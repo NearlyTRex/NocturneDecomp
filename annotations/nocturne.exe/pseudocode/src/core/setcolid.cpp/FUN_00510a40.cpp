@@ -1,14 +1,12 @@
-// Name: FUN_00510a40
+// Name: core_setcolid.cpp_FUN_00510a40
 // Address: 00510a40
 // Address Range: [[00510a40, 005113d4]]
 // Convention: unknown
-// Signature: float FUN_00510a40(int param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,float param_8)
+// Signature: float core_setcolid_cpp_FUN_00510a40(int param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,float param_8)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-float FUN_00510a40(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,float param_7,float param_8)
+float core_setcolid_cpp_FUN_00510a40(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6,float param_7,float param_8)
 
 {
   int iVar1;
@@ -133,9 +131,9 @@ float FUN_00510a40(int param_1,uint param_2,uint param_3,uint param_4,uint param
                 }
                 else {
 LAB_0051133f:
-                  _DAT_01cc4800 = "..\\core\\setcolid.cpp";
-                  _DAT_01cc4804 = 0x3f1;
-                  FUN_004c8440("Invalid collision type!");
+                  PTR_01cc4800 = "..\\core\\setcolid.cpp";
+                  INT_01cc4804 = 0x3f1;
+                  core_main_c_FUN_004c8440("Invalid collision type!");
                 }
               }
               else if (uVar10 < 3) {
@@ -225,9 +223,9 @@ LAB_0051133f:
             else {
               iVar9 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530(local_cc);
               if (*(int *)(iVar9 + 0x358) == 0) {
-                _DAT_01cc4800 = "..\\core\\setcolid.cpp";
-                _DAT_01cc4804 = 0x389;
-                FUN_004c8440("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",iVar9);
+                PTR_01cc4800 = "..\\core\\setcolid.cpp";
+                INT_01cc4804 = 0x389;
+                core_main_c_FUN_004c8440("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",iVar9);
               }
               core_dtrace_cpp_initIntersectionCylinder_FUN_00468a20
                         (&fStack_204,local_13c - *(float *)(iVar1 + 0x20),

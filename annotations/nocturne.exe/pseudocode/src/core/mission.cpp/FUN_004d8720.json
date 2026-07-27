@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,34 +122,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 685,
+    "complexity_score": 669,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 30,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 95,
-    "suspect_count": 56,
+    "pseudocode_lines": 94,
+    "suspect_count": 55,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 424
+    "total_lines": 423
   },
   "cross_references": [
     {
       "addr": "004a3b90",
       "from_addr": "004a3ca4",
-      "name": "FUN_004a3b90",
+      "name": "core_game.cpp_FUN_004a3b90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d7f80",
       "from_addr": "004d7fa5",
-      "name": "FUN_004d7f80",
+      "name": "core_mission.cpp_FUN_004d7f80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -162,8 +161,8 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004d8720",
-    "signature": "void FUN_004d8720(int param_1,undefined4 param_2)"
+    "name": "core_mission.cpp_FUN_004d8720",
+    "signature": "void core_mission_cpp_FUN_004d8720(int param_1,undefined4 param_2)"
   },
   "function_calls": [
     {
@@ -197,6 +196,11 @@
       "name": "core_inv.cpp_CInventory_saveItems_FUN_004c1140"
     },
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "004d8d80",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_countActors_FUN_004d8d80"
@@ -210,11 +214,6 @@
       "addr": "005644f0",
       "is_variadic": false,
       "name": "crt_stdio.c_fprintf_FUN_005644f0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     },
     {
       "addr": "0046fff0",
@@ -387,20 +386,20 @@
     },
     {
       "addr": "01cae124",
-      "name": "DAT_01cae124",
+      "name": "g_CHeroActorType_01cae0ec.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -410,7 +409,7 @@
       {
         "call_addr": "004a3ca4",
         "call_type": "direct",
-        "caller": "FUN_004a3b90",
+        "caller": "core_game.cpp_FUN_004a3b90",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -423,7 +422,7 @@
       {
         "call_addr": "004d7fa5",
         "call_type": "direct",
-        "caller": "FUN_004d7f80",
+        "caller": "core_mission.cpp_FUN_004d7f80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -488,32 +487,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004d8720(int param_1,uint param_2)",
+      "text": "void core_mission_cpp_FUN_004d8720(int param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004d8720(int param_1,uint param_2)",
+      "text": "void core_mission_cpp_FUN_004d8720(int param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x850) == 0) {",
@@ -521,7 +512,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_prepareAllActors_FUN_004d8db0(param_1);",
@@ -529,7 +520,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 8) = 7;",
@@ -537,7 +528,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"// mission version, actor version\\n\");",
@@ -545,7 +536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%d,%d\\n\",*(uint *)(param_1 + 8),4);",
@@ -553,7 +544,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%d,%d\\n\",*(uint *)(param_1 + 8),4);",
@@ -561,7 +552,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"// Root name of mission\\n\");",
@@ -569,7 +560,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%s\\n\",param_1 + 0x10);",
@@ -577,7 +568,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%s\\n\",param_1 + 0x10);",
@@ -585,7 +576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"// setList\\n\");",
@@ -593,7 +584,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%d\\n\",*(uint *)(param_1 + 0x110));",
@@ -601,7 +592,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%d\\n\",*(uint *)(param_1 + 0x110));",
@@ -609,7 +600,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x110)) {",
@@ -617,7 +608,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = param_1 + 0x114;",
@@ -625,7 +616,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%s\\n\",iVar5);",
@@ -633,7 +624,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar4 < *(int *)(param_1 + 0x110));",
@@ -641,7 +632,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"// actorTypeList\\n\");",
@@ -649,7 +640,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%d\\n\",DAT_00763e94);",
@@ -657,7 +648,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 34,
       "match": "DAT_00763e94",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%d\\n\",DAT_00763e94);",
@@ -665,7 +656,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 37,
       "match": "DAT_00763e94",
       "severity": "mild",
       "text": "if (0 < DAT_00763e94) {",
@@ -673,7 +664,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 40,
       "match": "DAT_00763e98",
       "severity": "mild",
       "text": "piVar1 = (int *)((int)&DAT_00763e98 + iVar5);",
@@ -681,7 +672,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%s %d\\n\",*piVar1,*(uint *)(*piVar1 + 0x34));",
@@ -689,7 +680,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 44,
       "match": "DAT_00763e94",
       "severity": "mild",
       "text": "} while (iVar4 < DAT_00763e94);",
@@ -697,7 +688,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"// actor count\\n\");",
@@ -705,7 +696,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar2 = core_mission_cpp_CDemonMission_countActors_FUN_004d8d80(param_1);",
@@ -713,7 +704,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%d\\n\",uVar2);",
@@ -721,7 +712,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"// inventory actor count\\n\");",
@@ -729,7 +720,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "for (iVar4 = *(int *)(param_1 + 0x514); iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x144)) {",
@@ -737,7 +728,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 57,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%d\\n\",iVar5);",
@@ -745,7 +736,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 58,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"// actor name list\\n\");",
@@ -753,7 +744,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = *(int *)(param_1 + 0x514);",
@@ -761,7 +752,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x858) = 0;",
@@ -769,7 +760,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 63,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"%s \\\"%s\\\"\\n\",uVar2);",
@@ -777,7 +768,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "if (1999 < *(int *)(param_1 + 0x858)) {",
@@ -785,7 +776,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x85c + *(int *)(param_1 + 0x858) * 4) = iVar4;",
@@ -793,7 +784,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x85c + *(int *)(param_1 + 0x858) * 4) = iVar4;",
@@ -801,7 +792,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 70,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x858) = *(int *)(param_1 + 0x858) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x858) = *(int *)(param_1 + 0x858) + 1;",
@@ -810,14 +809,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 72,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x858) = *(int *)(param_1 + 0x858) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "for (iVar4 = *(int *)(param_1 + 0x514); iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x144)) {",
@@ -825,7 +816,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "if (1999 < *(int *)(param_1 + 0x858)) {",
@@ -833,7 +824,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x85c + *(int *)(param_1 + 0x858) * 4) =",
@@ -841,7 +832,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x85c + *(int *)(param_1 + 0x858) * 4) =",
@@ -849,7 +840,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 85,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0x858) = *(int *)(param_1 + 0x858) + 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x858) = *(int *)(param_1 + 0x858) + 1;",
@@ -858,14 +857,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 87,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x858) = *(int *)(param_1 + 0x858) + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 89,
       "match": "param_2",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_saveItems_FUN_004c1140(iVar5 + 0x1f5a0,param_2);",
@@ -873,7 +864,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 90,
       "match": "param_2",
       "severity": "mild",
       "text": "_fprintf(param_2,\"// actor data list\\n\");",
@@ -881,7 +872,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "for (iVar4 = *(int *)(param_1 + 0x514); iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x144)) {",
@@ -889,7 +880,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 92,
       "match": "param_2",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_save_FUN_0040c040(iVar4,param_2);",
@@ -897,7 +888,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 94,
       "match": "param_2",
       "severity": "mild",
       "text": "core_gore_cpp_CGore_save_FUN_004b08d0(INT_005b96c4,param_2);",
@@ -905,7 +896,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 95,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x858) = 0;",
@@ -913,7 +904,7 @@
     },
     {
       "description": "Pointer value `&DAT_00763e98` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 42,
+      "line": 40,
       "match": "(int)&DAT_00763e98",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&DAT_00763e98 + iVar5);",
@@ -921,7 +912,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 42,
+      "line": 40,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar1 = (int *)((int)&DAT_00763e98 + iVar5);",

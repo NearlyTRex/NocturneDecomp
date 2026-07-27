@@ -27,8 +27,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_0043ff50(uint par
     uVar1 = 0x1e0;
   }
   core_dcamera_cpp_CDemonCamera_init_FUN_00440010(param_1,uVar1);
-  FUN_004401b0(param_1,0,0);
-  FUN_00446800(param_1);
+  core_dcamera_cpp_FUN_004401b0(param_1,0,0);
+  core_dcamera_cpp_FUN_00446800(param_1);
   iVar7 = 0;
   local_18 = 0x40;
   local_14 = 0;

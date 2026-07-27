@@ -9,7 +9,7 @@ Only .cpp and .keep.cpp files are analyzed (not .mmx.cpp or .byval.cpp).
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Functions with static analysis data: 823
+  Functions with static analysis data: 757
   Functions flagged by multiple tools: 2
 
   Clang-Tidy (quick):
@@ -18,9 +18,9 @@ SUMMARY
     Total diagnostics:   17
 
   Cppcheck (quick):
-    Files analyzed:      817
-    Files with findings: 817
-    Total diagnostics:   2782
+    Files analyzed:      751
+    Files with findings: 751
+    Total diagnostics:   2537
 
 ====================================================================================================
 TOP FINDINGS - Clang-Tidy (quick)
@@ -34,16 +34,16 @@ TOP FINDINGS - Clang-Tidy (quick)
 TOP FINDINGS - Cppcheck (quick)
 ====================================================================================================
 
-  uninitvar                                                1590  [likely decompiler artifact]
+  uninitvar                                                1366  [likely decompiler artifact]
   objectIndex                                               435  [likely decompiler artifact]
   shiftTooManyBitsSigned                                    218
-  legacyUninitvar                                           212
+  legacyUninitvar                                           195
   invalidscanf                                               76
-  AssignmentAddressToInteger                                 57
+  AssignmentAddressToInteger                                 55
   pointerOutOfBounds                                         46
   arrayIndexOutOfBounds                                      30
   ignoredReturnValue                                         28
-  invalidPointerCast                                         20
+  invalidPointerCast                                         21
   selfAssignment                                             16
   identicalInnerCondition                                     9
   shiftNegativeLHS                                            7

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void engine_keyframe_c_recomputeKeyFrameNormals_FUN_004c4080(uint *param_1)
 
 {
@@ -29,14 +27,14 @@ void engine_keyframe_c_recomputeKeyFrameNormals_FUN_004c4080(uint *param_1)
     uVar1 = *param_1;
   }
   if (puVar2 == (uint *)0x0) {
-    _DAT_01cc4800 = "..\\engine\\keyframe.c";
-    _DAT_01cc4804 = 0x1f5;
-    FUN_004c8440("recomputeKeyFrameNormals: Cannot find vptr");
+    PTR_01cc4800 = "..\\engine\\keyframe.c";
+    INT_01cc4804 = 0x1f5;
+    core_main_c_FUN_004c8440("recomputeKeyFrameNormals: Cannot find vptr");
   }
   if (puVar3 == (uint *)0x0) {
-    _DAT_01cc4800 = "..\\engine\\keyframe.c";
-    _DAT_01cc4804 = 0x1f6;
-    FUN_004c8440("recomputeKeyFrameNormals: Cannot find fptr");
+    PTR_01cc4800 = "..\\engine\\keyframe.c";
+    INT_01cc4804 = 0x1f6;
+    core_main_c_FUN_004c8440("recomputeKeyFrameNormals: Cannot find fptr");
   }
   do {
     uVar1 = *param_1;

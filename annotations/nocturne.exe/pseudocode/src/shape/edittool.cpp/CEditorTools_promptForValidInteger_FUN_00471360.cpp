@@ -28,10 +28,10 @@ uint __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360(
       }
       iVar1 = sscanf(local_34,"%d",&local_14);
       if (iVar1 == 1) break;
-      FUN_0046fcd0(param_1,"Please enter a valid integer.");
+      shape_edittool_cpp_FUN_0046fcd0(param_1,"Please enter a valid integer.");
     }
     if ((param_4 == 0) || ((param_5 <= local_14 && (local_14 <= param_6)))) break;
-    FUN_0046fcd0(param_1,"Please enter a valid integer between %d and %d.",param_5,param_6);
+    shape_edittool_cpp_FUN_0046fcd0(param_1,"Please enter a valid integer between %d and %d.",param_5,param_6);
   }
   *param_3 = local_14;
   return 1;

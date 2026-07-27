@@ -32,7 +32,8 @@ uint __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(int param_1,uint param_
     if (iVar2 == 0) {
       iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CGasMask");
       if (iVar2 != 0) {
-        iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,_DAT_01c78bbc);
+        iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
+                          (param_2,g_CGasMaskActorType_01c78b84.name_hash);
         *(uint *)(iVar2 + 0x2cc) = (uint)(*(int *)(iVar2 + 0x2cc) == 0);
         *(int *)(param_1 + 0x454) = iVar2;
         return 0;
@@ -40,17 +41,18 @@ uint __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(int param_1,uint param_
       iVar2 = core_actor_cpp_isOfClass_FUN_0040d7e0(param_2,"CBoxActor");
       if (iVar2 != 0) {
         iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (param_2,CDemonActorType_00764800.name_hash);
+                          (param_2,g_CBoxActorActorType_00764800.name_hash);
         core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,iVar2 + 0x5f8);
         return 0;
       }
     }
     else {
-      local_14 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,_DAT_01cae0d0);
+      local_14 = core_actor_cpp_castToClassHash_FUN_0040d890
+                           (param_2,g_CHealthItemActorType_01cae098.name_hash);
       if (local_14 == 0) {
-        _DAT_01cc4800 = "..\\core\\inv.cpp";
-        _DAT_01cc4804 = 0x5c9;
-        FUN_004c8440("CInventory::select - Catch 22");
+        PTR_01cc4800 = "..\\core\\inv.cpp";
+        INT_01cc4804 = 0x5c9;
+        core_main_c_FUN_004c8440("CInventory::select - Catch 22");
       }
       if ((float)98 < *(float *)(*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) + 0x2434)) {
         return 1;
@@ -118,11 +120,12 @@ uint __cdecl core_inv_cpp_CInventory_select_FUN_004c1580(int param_1,uint param_
     }
   }
   else {
-    iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,CDemonActorType_007641bc.name_hash);
+    iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,g_CAmmoActorType_007641bc.name_hash)
+    ;
     if (iVar2 == 0) {
-      _DAT_01cc4800 = "..\\core\\inv.cpp";
-      _DAT_01cc4804 = 0x5c3;
-      FUN_004c8440("CInventory::select - Catch 22");
+      PTR_01cc4800 = "..\\core\\inv.cpp";
+      INT_01cc4804 = 0x5c3;
+      core_main_c_FUN_004c8440("CInventory::select - Catch 22");
     }
     core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90
               (param_1,*(uint *)(iVar2 + 0x310));

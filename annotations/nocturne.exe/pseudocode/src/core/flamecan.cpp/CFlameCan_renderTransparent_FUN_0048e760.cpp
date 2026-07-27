@@ -12,6 +12,6 @@ uint core_flamecan_cpp_CFlameCan_renderTransparent_FUN_0048e760(int param_1)
   if (*(int *)(param_1 + 0x5d4) == 0) {
     return *(uint *)(param_1 + 0x5d4);
   }
-  FUN_0048d5d0(param_1 + 0x338);
+  core_flame_cpp_FUN_0048d5d0(param_1 + 0x338);
   return *(uint *)(param_1 + 0x5d4);
 }

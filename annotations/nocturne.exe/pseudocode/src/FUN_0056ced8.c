@@ -27,7 +27,8 @@ int FUN_0056ced8(int param_1,int param_2)
     iVar1 = FUN_0056cea0(param_2 + 0x76c);
     if (iVar1 == 0) {
       iVar1 = *(int *)(&DAT_005a4a78 + *(int *)(param_1 + 0x10) * 2);
-      iVar2 = *(int *)(&DAT_005a4a76 + *(int *)(param_1 + 0x10) * 2);
+      iVar2 = *(int *)((int)&g_fstreambaseTypeInfo_005a4a60.class_name +
+                      *(int *)(param_1 + 0x10) * 2 + 2);
     }
     else {
       iVar1 = *(int *)(&DAT_005a4a92 + *(int *)(param_1 + 0x10) * 2);

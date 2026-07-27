@@ -9,6 +9,6 @@
 void __cdecl core_boneguy_cpp_SBoneGuyBox_arrdtor_FUN_0041a4f0(uint param_1)
 
 {
-  __arrfini(param_1,0x14,&DAT_0059aa00);
+  __arrfini(param_1,0x14,&g_SBoneGuyBoxTypeInfo_0059aa00);
   return;
 }

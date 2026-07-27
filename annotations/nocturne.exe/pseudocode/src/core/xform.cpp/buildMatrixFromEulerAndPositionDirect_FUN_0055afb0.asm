@@ -11,16 +11,16 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[35]:
-;   FUN_004194b0 at 0041950b
-;   FUN_0041f3d0 at 0041f561
-;   FUN_004980d0 at 00498109
-;   FUN_00499ca0 at 00499daf
-;   FUN_004b8700 at 004b87fd
-;   FUN_004bc7e0 at 004bc8c7
-;   FUN_004c45a0 at 004c45d4
-;   FUN_004c46b0 at 004c46e0
-;   FUN_004c9580 at 004c9718
-;   FUN_004d4ba0 at 004d4d5f
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 at 004176aa
+;   core_boneguy.cpp_FUN_004194b0 at 0041950b
+;   core_boxactor.cpp_FUN_0041f3d0 at 0041f561
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 0042245b
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 at 0042752e
+;   core_charactr.cpp_CCharacter_computePickup_FUN_00429010 at 0042906e
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 at 00429311
+;   core_fire.cpp_CBulletHole_init_FUN_00482c80 at 00482da7
+;   core_gabriela.cpp_FUN_004980d0 at 00498109
+;   core_gabriela.cpp_FUN_00499ca0 at 00499daf
 ;   ... and 25 more
 ;
 ; *****************************************************************************

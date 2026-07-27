@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_004c71a0 at 004c793f
-;   FUN_004c79a0 at 004c7a91
-;   FUN_0052d790 at 0052db01
-;   FUN_0052dff0 at 0052e0d3
 ;   core_charactr.cpp_CCharacter_processFire_FUN_004269b0 at 00426b55
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047b64c
+;   core_lightgun.cpp_FUN_004c71a0 at 004c793f
+;   core_lightgun.cpp_FUN_004c79a0 at 004c7a91
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 at 004caf89
+;   core_sound.cpp_FUN_0052d790 at 0052db01
+;   core_sound.cpp_FUN_0052dff0 at 0052e0d3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc8318

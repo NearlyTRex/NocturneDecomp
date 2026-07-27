@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0046f7e0 at 0046f8d6
-;   FUN_00470eb0 at 0047110e
+;   shape_edittool.cpp_FUN_0046f7e0 at 0046f8d6
+;   shape_edittool.cpp_FUN_00470eb0 at 0047110e
 ;
 ; Referenced Globals:
 ;   int INT_005bac64 = 0x1cc30e4

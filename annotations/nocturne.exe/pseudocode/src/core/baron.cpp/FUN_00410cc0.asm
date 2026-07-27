@@ -25,7 +25,7 @@
 ;   TerminatedCString s_baron_attack_wav_00578670
 ;   double DOUBLE_00578688 = -0.785398163375000
 ;   double DOUBLE_00578690 = 0.785398163375000
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_0076431c
 ;   undefined4 DAT_00764320
@@ -176,7 +176,7 @@ section .text
     SAHF                                ; 00410e2d
     JA 0x00410d7d                       ; 00410e2e
         ;   XREF to: 00410d7d (CONDITIONAL_JUMP)  ; LAB_00410d7d
-    PUSH 0x5993b0                       ; 00410e34 | DAT_005993b0
+    PUSH 0x5993b0                       ; 00410e34 | g_CVectorTypeInfo_005993b0
     PUSH 0xa                            ; 00410e39
     LEA EAX,[ESP + 0x10]                ; 00410e3b
     PUSH EAX                            ; 00410e3f

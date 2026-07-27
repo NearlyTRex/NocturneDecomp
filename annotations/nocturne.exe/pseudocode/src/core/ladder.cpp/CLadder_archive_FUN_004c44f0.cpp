@@ -13,7 +13,7 @@ void core_ladder_cpp_CLadder_archive_FUN_004c44f0(int param_1)
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x150,"model");
   core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x2cc,"ladderSize");
   core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x2d8,"masterActor");
-  FUN_004c46b0(param_1);
+  core_ladder_cpp_FUN_004c46b0(param_1);
   if (INT_005bac68 < 2) {
     return;
   }

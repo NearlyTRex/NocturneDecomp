@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004a9270 at 004aa38d
+;   core_ghoul.cpp_FUN_004a9270 at 004aa38d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_ghoul_cpp_00584be4
@@ -19,21 +19,21 @@
 ;   TerminatedCString s_darkPoint_00584ead
 ;   void* PTR_s_darkPoint_00584ead_005b9654 = 00584ead
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_01c78c10
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   undefined4 g_CGhoulActorType_01c78bd8.name_hash
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
 ;   undefined4 DAT_01fa7e78
-;   undefined4 DAT_02ddf54c
+;   undefined4 g_CWayPointActorType_02ddf514.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
+;   core_main.c_FUN_004c8440
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600
 ;   core_path.cpp_getPathMap_FUN_004f1e00
-;   FUN_004c8440
 ;   shape_edittool.cpp_wildcardStringMatch_FUN_004775b0
 ;
 ; *****************************************************************************
@@ -88,7 +88,7 @@ section .text
     JGE 0x004a906d                      ; 004a90bb
         ;   XREF to: 004a906d (CONDITIONAL_JUMP)  ; LAB_004a906d
     MOV EDX,dword ptr [ESP + 0x14]      ; 004a90bd
-    MOV EDI,dword ptr [0x02ddf54c]      ; 004a90c1 | DAT_02ddf54c
+    MOV EDI,dword ptr [0x02ddf54c]      ; 004a90c1 | g_CWayPointActorType_02ddf514.name_hash
     ADD EAX,EDX                         ; 004a90c7
     PUSH EDI                            ; 004a90c9
     MOV ECX,dword ptr [EAX + 0x14cd70]  ; 004a90ca | DAT_01fa3ff4
@@ -147,10 +147,10 @@ section .text
     MOV ESI,0x584be4                    ; 004a914e | = "..\\core\\ghoul.cpp"
     MOV EAX,0x12c                       ; 004a9153
     PUSH 0x584bf6                       ; 004a9158 | = "CGhoul::findDarkWayPoint - Can't get ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004a915d | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004a9163 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004a9168
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004a915d | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004a9163 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004a9168
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004a916d
     XOR EDX,EDX                         ; 004a9170
         ;   Label: LAB_004a9170
@@ -178,7 +178,7 @@ section .text
     ADD EBX,0x4                         ; 004a91a8
     JMP 0x004a9118                      ; 004a91ab
         ;   XREF to: 004a9118 (UNCONDITIONAL_JUMP)  ; LAB_004a9118
-    MOV ECX,dword ptr [0x01c78c10]      ; 004a91b0 | DAT_01c78c10
+    MOV ECX,dword ptr [0x01c78c10]      ; 004a91b0 | g_CGhoulActorType_01c78bd8.name_hash
         ;   Label: LAB_004a91b0
     PUSH ECX                            ; 004a91b6
     MOV EDX,dword ptr [EBX + EAX*0x1 + 0x150bf8] ; 004a91b7

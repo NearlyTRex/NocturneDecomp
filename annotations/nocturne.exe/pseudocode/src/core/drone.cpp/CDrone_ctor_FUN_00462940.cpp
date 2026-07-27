@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_drone_cpp_CDrone_ctor_FUN_00462940(uint param_1)
 
 {
   float fVar1;
-  uint uVar2;
+  float fVar2;
   int iVar3;
   
   iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
@@ -21,10 +19,10 @@ int core_drone_cpp_CDrone_ctor_FUN_00462940(uint param_1)
   *(uint *)(iVar3 + 0x2dd4) = 0x3f400000;
   fVar1 = 50.0f;
   *(uint *)(iVar3 + 0x2dd8) = 0x3fc00000;
-  uVar2 = _DAT_0059c700;
+  fVar2 = 100.0f;
   *(uint *)(iVar3 + 0x2608) = 1;
   *(uint *)(iVar3 + 0x2434) = 0x42960000;
   *(float *)(iVar3 + 0x2ddc) = fVar1;
-  *(uint *)(iVar3 + 0x2de0) = uVar2;
+  *(float *)(iVar3 + 0x2de0) = fVar2;
   return iVar3;
 }

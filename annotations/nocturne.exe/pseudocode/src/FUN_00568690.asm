@@ -13,7 +13,7 @@
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_rename_FUN_00566f00
-;   FUN_005633fc
+;   crt_unknown.c_FUN_005633fc
 ;   FUN_005671dc
 ;   FUN_00568e80
 ;   FUN_0056f170
@@ -36,8 +36,8 @@ section .text
         ;   Label: LAB_005686a5
     LEA EAX,[ESP + 0x118]               ; 005686a6
     PUSH EAX                            ; 005686ad
-    CALL FUN_005633fc                   ; 005686ae
-        ;   XREF to: 005633fc (UNCONDITIONAL_CALL)  ; undefined FUN_005633fc()
+    CALL crt_unknown.c_FUN_005633fc     ; 005686ae
+        ;   XREF to: 005633fc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005633fc()
     ADD ESP,0x8                         ; 005686b3
     PUSH 0x2                            ; 005686b6
     LEA EAX,[ESP + 0x118]               ; 005686b8
@@ -83,8 +83,8 @@ section .text
         ;   Label: LAB_00568712
     LEA EAX,[ESP + 0x4]                 ; 00568713
     PUSH EAX                            ; 00568717
-    CALL FUN_005633fc                   ; 00568718
-        ;   XREF to: 005633fc (UNCONDITIONAL_CALL)  ; undefined FUN_005633fc()
+    CALL crt_unknown.c_FUN_005633fc     ; 00568718
+        ;   XREF to: 005633fc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005633fc()
     ADD ESP,0x8                         ; 0056871d
     MOV EAX,ESP                         ; 00568720
     PUSH EAX                            ; 00568722

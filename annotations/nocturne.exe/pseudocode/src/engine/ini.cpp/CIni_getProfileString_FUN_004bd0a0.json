@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,29 +122,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 231,
-    "complexity_score": 553,
+    "complexity_score": 537,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 108,
-    "suspect_count": 41,
+    "pseudocode_lines": 107,
+    "suspect_count": 40,
     "suspect_types": [
       "param_count_too_few",
       "unaffected_reg",
       "unnamed_param",
       "unrolled_strchr",
       "unrolled_strcpy",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 339
+    "total_lines": 338
   },
   "cross_references": [
     {
       "addr": "004bd790",
       "from_addr": "004bd7e5",
-      "name": "FUN_004bd790",
+      "name": "engine_ini.cpp_FUN_004bd790",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -167,6 +166,11 @@
     "signature": "undefined4 __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4,char *param_5,int param_6,undefined4 param_7)"
   },
   "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
     {
       "addr": "00563380",
       "is_variadic": false,
@@ -191,11 +195,6 @@
       "addr": "005649c0",
       "is_variadic": false,
       "name": "crt_string.c__strcmp_FUN_005649c0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -225,14 +224,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -253,7 +252,7 @@
       {
         "call_addr": "004bd7e5",
         "call_type": "direct",
-        "caller": "FUN_004bd790",
+        "caller": "engine_ini.cpp_FUN_004bd790",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -354,16 +353,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(uint param_1,uint param_2,uint param_3,char *param_4,char *param_5,int param_6,uint param_7)",
@@ -371,7 +362,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(uint param_1,uint param_2,uint param_3,char *param_4,char *param_5,int param_6,uint param_7)",
@@ -379,7 +370,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "uint __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(uint param_1,uint param_2,uint param_3,char *param_4,char *param_5,int param_6,uint param_7)",
@@ -387,7 +378,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "uint __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(uint param_1,uint param_2,uint param_3,char *param_4,char *param_5,int param_6,uint param_7)",
@@ -395,7 +386,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
       "text": "uint __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(uint param_1,uint param_2,uint param_3,char *param_4,char *param_5,int param_6,uint param_7)",
@@ -403,7 +394,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_6",
       "severity": "mild",
       "text": "uint __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(uint param_1,uint param_2,uint param_3,char *param_4,char *param_5,int param_6,uint param_7)",
@@ -411,7 +402,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_7",
       "severity": "mild",
       "text": "uint __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(uint param_1,uint param_2,uint param_3,char *param_4,char *param_5,int param_6,uint param_7)",
@@ -419,7 +410,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 11,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "char *unaff_EBP;",
@@ -427,7 +418,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_7",
       "severity": "mild",
       "text": "iVar4 = _fopen(param_7,\"rt\");",
@@ -435,7 +426,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
       "text": "_sprintf(local_110,\"[%s]\\n\",param_2);",
@@ -443,7 +434,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 42,
+      "line": 40,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = pcVar8;",
@@ -451,7 +442,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 45,
+      "line": 43,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = pcVar8 + 1;",
@@ -459,7 +450,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
+      "line": 44,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "if (*unaff_EBP == '=') goto LAB_004bd1ee;",
@@ -467,7 +458,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 46,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "} while (*unaff_EBP != '\\0');",
@@ -475,7 +466,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 47,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP = (char *)0x0;",
@@ -483,7 +474,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 49,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "if (unaff_EBP != (char *)0x0) {",
@@ -491,7 +482,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 52,
+      "line": 50,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "*unaff_EBP = '\\0';",
@@ -499,7 +490,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar5 = _strcmp(local_210,param_3);",
@@ -507,7 +498,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 62,
+      "line": 60,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "pcVar7 = unaff_EBP + 1;",
@@ -515,7 +506,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 70,
       "match": "param_6",
       "severity": "mild",
       "text": "if ((int)(~uVar6 - 2) < param_6) {",
@@ -523,7 +514,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 73,
       "match": "param_5",
       "severity": "mild",
       "text": "*param_5 = cVar1;",
@@ -531,7 +522,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 79,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5[1] = cVar1;",
@@ -539,7 +530,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 80,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5 = param_5 + 2;",
@@ -547,7 +538,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 80,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5 = param_5 + 2;",
@@ -555,7 +546,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 87,
       "match": "param_4",
       "severity": "mild",
       "text": "pcVar8 = param_4;",
@@ -563,7 +554,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 94,
       "match": "param_6",
       "severity": "mild",
       "text": "if ((int)(~uVar6 - 1) < param_6) {",
@@ -571,7 +562,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 96,
       "match": "param_4",
       "severity": "mild",
       "text": "cVar1 = *param_4;",
@@ -579,7 +570,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 97,
       "match": "param_5",
       "severity": "mild",
       "text": "*param_5 = cVar1;",
@@ -587,7 +578,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 101,
       "match": "param_4",
       "severity": "mild",
       "text": "cVar1 = param_4[1];",
@@ -595,7 +586,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 102,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4 = param_4 + 2;",
@@ -603,7 +594,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 102,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4 = param_4 + 2;",
@@ -611,7 +602,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 103,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5[1] = cVar1;",
@@ -619,7 +610,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 104,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5 = param_5 + 2;",
@@ -627,7 +618,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 104,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5 = param_5 + 2;",
@@ -635,7 +626,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 73,
+      "line": 71,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -643,7 +634,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 97,
+      "line": 95,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -651,7 +642,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 65,
+      "line": 63,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -659,7 +650,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 90,
+      "line": 88,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -667,7 +658,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '=' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '=') in a .keep.",
-      "line": 41,
+      "line": 39,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

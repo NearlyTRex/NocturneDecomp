@@ -7,9 +7,9 @@
 ; undefined        Stack[-0x34]:1  local_34
 ;
 ; XREF[4]:
-;   FUN_00418a00 at 00418bd9
-;   FUN_005396d0 at 0053972f
+;   core_boneguy.cpp_FUN_00418a00 at 00418bd9
 ;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_004f5ff0 at 004f60ee
+;   core_stranger.cpp_FUN_005396d0 at 0053972f
 ;   core_turret.cpp_CTurret_process_FUN_005497f0 at 00549bdf
 ;
 ; Called Functions:

@@ -9,6 +9,10 @@
 ; XREF[1]:
 ;   FUN_00570f60 at 00571039
 ;
+; Referenced Globals:
+;   TerminatedCString s_C_FILE_INFO_00599288
+;   TerminatedCString s_C_FILE_INFO_00599294
+;
 ; Called Functions:
 ;   crt_env.c_getenv_FUN_00566e10
 ;   crt_string.c__strncpy_FUN_00565f70
@@ -27,7 +31,7 @@ section .text
     PUSH EDI                            ; 00572b72
     PUSH EBP                            ; 00572b73
     SUB ESP,0x10                        ; 00572b74
-    PUSH 0x599288                       ; 00572b77
+    PUSH 0x599288                       ; 00572b77 | = "C_FILE_INFO"
     CALL crt_env.c_getenv_FUN_00566e10  ; 00572b7c
         ;   XREF to: 00566e10 (UNCONDITIONAL_CALL)  ; undefined crt_env.c_getenv_FUN_00566e10()
     ADD ESP,0x4                         ; 00572b81
@@ -179,7 +183,7 @@ section .text
     ADD ESP,0x8                         ; 00572c91
     JMP 0x00572b8e                      ; 00572c94
         ;   XREF to: 00572b8e (UNCONDITIONAL_JUMP)  ; LAB_00572b8e
-    PUSH 0x599294                       ; 00572c99
+    PUSH 0x599294                       ; 00572c99 | = "C_FILE_INFO="
         ;   Label: LAB_00572c99
     CALL FUN_00573930                   ; 00572c9e
         ;   XREF to: 00573930 (UNCONDITIONAL_CALL)  ; undefined FUN_00573930()

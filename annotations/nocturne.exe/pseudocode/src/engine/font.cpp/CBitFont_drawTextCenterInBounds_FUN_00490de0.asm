@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_0049cc10 at 0049d537
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760 at 0045d8f4
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a69b7
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6aaa
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7092
+;   core_game.cpp_FUN_0049cc10 at 0049d537
 ;   engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_00490e80 at 00490eda
 ;
 ; Called Functions:

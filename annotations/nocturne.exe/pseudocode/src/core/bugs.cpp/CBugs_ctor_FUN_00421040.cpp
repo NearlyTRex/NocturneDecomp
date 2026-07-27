@@ -15,8 +15,9 @@ int core_bugs_cpp_CBugs_ctor_FUN_00421040(uint param_1)
   char *pcVar4;
   
   iVar2 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
-  iVar2 = __arrinit(iVar2 + 0xbd2c,400,&DAT_0059b010);
-  iVar2 = __arrinit(iVar2 + 0x6404,4,&DAT_0059b030);
+  iVar2 = __arrinit(iVar2 + 0xbd2c,400,&g_SBugsTypeInfo_0059b010);
+  iVar2 = __arrinit
+                    (iVar2 + 0x6404,4,&g_CKeyFramedModelInstanceTypeInfo_0059b030);
   *(byte ***)(iVar2 + -0x11fe4) = &PTR_core_bugs_cpp_CBugs_setup_FUN_004211e0_0059aec4;
   *(uint *)(iVar2 + -0x640c) = 0;
   *(uint *)(iVar2 + -0x6408) = 0x32;

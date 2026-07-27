@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -140,18 +140,6 @@
   },
   "cross_references": [
     {
-      "addr": "004d4650",
-      "from_addr": "004d483b",
-      "name": "FUN_004d4650",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054c3e0",
-      "from_addr": "0054c43c",
-      "name": "FUN_0054c3e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00438510",
       "from_addr": "0043853c",
       "name": "core_cloth.cpp_CClothList_setup_FUN_00438510",
@@ -170,9 +158,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d4650",
+      "from_addr": "004d483b",
+      "name": "core_mimic.cpp_FUN_004d4650",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00541a40",
       "from_addr": "00541c49",
       "name": "core_svetlana.cpp_CSvetlana_setup_FUN_00541a40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054c3e0",
+      "from_addr": "0054c43c",
+      "name": "core_vampboss.cpp_FUN_0054c3e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -266,7 +266,7 @@
       {
         "call_addr": "004d483b",
         "call_type": "direct",
-        "caller": "FUN_004d4650",
+        "caller": "core_mimic.cpp_FUN_004d4650",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -310,7 +310,7 @@
       {
         "call_addr": "0054c43c",
         "call_type": "direct",
-        "caller": "FUN_0054c3e0",
+        "caller": "core_vampboss.cpp_FUN_0054c3e0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -321,7 +321,7 @@
       {
         "call_addr": "0054c468",
         "call_type": "direct",
-        "caller": "FUN_0054c3e0",
+        "caller": "core_vampboss.cpp_FUN_0054c3e0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -332,7 +332,7 @@
       {
         "call_addr": "0054c494",
         "call_type": "direct",
-        "caller": "FUN_0054c3e0",
+        "caller": "core_vampboss.cpp_FUN_0054c3e0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

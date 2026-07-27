@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   crt_math.c_pow_FUN_00565ad6
 ;   crt_math.c_round_FUN_00563a30
-;   wincore_windll.cpp_setFogColor_FUN_00532af0
+;   engine_special.cpp_setFogColor_FUN_00532af0
 ;
 ; *****************************************************************************
 
@@ -88,8 +88,8 @@ section .text
     FSTP ST0                            ; 00447b18
     PUSH EAX                            ; 00447b1a
     FSTP ST0                            ; 00447b1b
-    CALL wincore_windll.cpp_setFogColor_FUN_00532af0 ; 00447b1d
-        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_setFogColor_FUN_00532af0()
+    CALL engine_special.cpp_setFogColor_FUN_00532af0 ; 00447b1d
+        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_setFogColor_FUN_00532af0()
     ADD ESP,0xc                         ; 00447b22
     MOV ESP,EBP                         ; 00447b25
     POP EBP                             ; 00447b27

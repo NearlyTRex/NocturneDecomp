@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(int param_1)
 
 {
@@ -37,9 +35,9 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041a0f0(int param_1)
   iVar1 = *(int *)(local_24 + 0xc00);
   *(int *)(param_1 + 0xbda0) = iVar1;
   if (0x14 < iVar1) {
-    _DAT_01cc4800 = "..\\core\\boneguy.cpp";
-    _DAT_01cc4804 = 0x443;
-    FUN_004c8440("CBoneGuy::explode - Not enough containers");
+    PTR_01cc4800 = "..\\core\\boneguy.cpp";
+    INT_01cc4804 = 0x443;
+    core_main_c_FUN_004c8440("CBoneGuy::explode - Not enough containers");
   }
   local_18 = 0;
   if (0 < *(int *)(local_24 + 0xc00)) {

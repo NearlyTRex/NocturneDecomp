@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -137,12 +137,6 @@
   },
   "cross_references": [
     {
-      "addr": "0053c800",
-      "from_addr": "0053c9a7",
-      "name": "FUN_0053c800",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0044b850",
       "from_addr": "0044b8e5",
       "name": "core_dest.cpp_CActorDestination_process_FUN_0044b850",
@@ -152,6 +146,12 @@
       "addr": "004b5950",
       "from_addr": "004b59f0",
       "name": "core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053c800",
+      "from_addr": "0053c9a7",
+      "name": "core_stranger.cpp_FUN_0053c800",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -181,7 +181,7 @@
       {
         "call_addr": "0053c9a7",
         "call_type": "direct",
-        "caller": "FUN_0053c800",
+        "caller": "core_stranger.cpp_FUN_0053c800",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,7 +192,7 @@
       {
         "call_addr": "0053cb6c",
         "call_type": "direct",
-        "caller": "FUN_0053c800",
+        "caller": "core_stranger.cpp_FUN_0053c800",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

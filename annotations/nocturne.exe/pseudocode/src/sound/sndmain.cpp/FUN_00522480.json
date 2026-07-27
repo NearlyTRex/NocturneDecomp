@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -143,7 +143,7 @@
     {
       "addr": "005279b0",
       "from_addr": "005279bd",
-      "name": "FUN_005279b0",
+      "name": "sound_sndmain.cpp_FUN_005279b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -162,10 +162,15 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00522480",
-    "signature": "char * FUN_00522480(char *param_1)"
+    "name": "sound_sndmain.cpp_FUN_00522480",
+    "signature": "char * sound_sndmain_cpp_FUN_00522480(char *param_1)"
   },
   "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
     {
       "addr": "00563380",
       "is_variadic": false,
@@ -202,6 +207,11 @@
       "name": "crt_string.c_splitpath_FUN_00566498"
     },
     {
+      "addr": "00564bb0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_00564bb0"
+    },
+    {
       "addr": "00456a60",
       "is_variadic": false,
       "name": "engine_dosio.cpp_getFile_FUN_00456a60"
@@ -210,21 +220,6 @@
       "addr": "004568c0",
       "is_variadic": false,
       "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
-      "addr": "00529980",
-      "is_variadic": false,
-      "name": "FUN_00529980"
-    },
-    {
-      "addr": "00564bb0",
-      "is_variadic": false,
-      "name": "FUN_00564bb0"
     },
     {
       "addr": "004e7d90",
@@ -275,6 +270,11 @@
       "addr": "00523cb0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0"
+    },
+    {
+      "addr": "00529980",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00529980"
     },
     {
       "addr": "00521830",
@@ -381,14 +381,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -447,7 +447,7 @@
       {
         "call_addr": "005279bd",
         "call_type": "direct",
-        "caller": "FUN_005279b0",
+        "caller": "sound_sndmain.cpp_FUN_005279b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -560,7 +560,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "char * FUN_00522480(char *param_1)",
+      "text": "char * sound_sndmain_cpp_FUN_00522480(char *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -640,7 +640,7 @@
       "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Can't open %s\",param_1);",
+      "text": "core_main_c_FUN_004c8440(\"Can't open %s\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -648,7 +648,7 @@
       "line": 142,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Unknown sample file format extension: %s\",param_1);",
+      "text": "core_main_c_FUN_004c8440(\"Unknown sample file format extension: %s\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -664,7 +664,7 @@
       "line": 161,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Don't know length of sample %s\",param_1);",
+      "text": "core_main_c_FUN_004c8440(\"Don't know length of sample %s\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -672,7 +672,7 @@
       "line": 200,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_00529980(pcVar10,param_1);",
+      "text": "sound_sndmain_cpp_FUN_00529980(pcVar10,param_1);",
       "type": "unnamed_param"
     },
     {

@@ -2,7 +2,7 @@
 // Address: 0047dc90
 // Address Range: [[0047dc90, 0047dcc9]]
 // Convention: __cdecl
-// Signature: undefined1 * __cdecl core_event_cpp_CEventList_validateCondition_FUN_0047dc90(undefined4 param_1,char *param_2)
+// Signature: undefined * __cdecl core_event_cpp_CEventList_validateCondition_FUN_0047dc90(undefined4 param_1,char *param_2)
 
 #include "nocturne.h"
 

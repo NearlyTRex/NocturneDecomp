@@ -5,19 +5,19 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_00446810 at 00446dc8
-;   FUN_004a3b90 at 004a3f9d
-;   FUN_004a4170 at 004a4593
+;   core_dcamera.cpp_FUN_00446810 at 00446dc8
+;   core_game.cpp_FUN_004a3b90 at 004a3f9d
+;   core_game.cpp_FUN_004a4170 at 004a4593
 ;   support_codec.cpp_CLZWCompress_dtor_FUN_00439c70 at 00439c90
 ;   support_codec.cpp_CLZWDecompress_dtor_FUN_00439c10 at 00439c30
 ;
 ; Referenced Globals:
 ;   void* PTR_support_codec.cpp_CCodec_dtor_FUN_00438f30_0059b3e4 = 00438f30
-;   undefined4 DAT_0059b470
+;   WatcomTypeInfo g_CCodecTypeInfo_0059b470
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -38,7 +38,7 @@ section .text
     MOV EAX,EBX                         ; 00438f47
     POP EBX                             ; 00438f49
     LEA EAX,[EAX]                       ; 00438f4a
-    PUSH 0x59b470                       ; 00438f51 | DAT_0059b470
+    PUSH 0x59b470                       ; 00438f51 | g_CCodecTypeInfo_0059b470
         ;   Label: LAB_00438f51
     PUSH EBX                            ; 00438f56
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00438f57
@@ -53,8 +53,8 @@ section .text
     RET                                 ; 00438f6b
     PUSH EBX                            ; 00438f6c
         ;   Label: LAB_00438f6c
-    CALL FUN_00564494                   ; 00438f6d
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 00438f6d
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 00438f72
     MOV EAX,EBX                         ; 00438f75
     POP EBX                             ; 00438f77

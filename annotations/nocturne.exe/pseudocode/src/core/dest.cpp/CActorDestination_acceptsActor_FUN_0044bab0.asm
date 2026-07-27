@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0053c800 at 0053c9a7
 ;   core_dest.cpp_CActorDestination_process_FUN_0044b850 at 0044b8e5
 ;   core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950 at 004b59f0
+;   core_stranger.cpp_FUN_0053c800 at 0053c9a7
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0

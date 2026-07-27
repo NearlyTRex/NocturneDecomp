@@ -11,7 +11,7 @@ void __cdecl core_morph_cpp_CMorph_ctor_FUN_004e0050(uint param_1)
 {
   int iVar1;
   
-  iVar1 = __arrinit(param_1,2,&DAT_005a0ce0);
+  iVar1 = __arrinit(param_1,2,&g_CMorphModelTypeInfo_005a0ce0);
   *(uint *)(iVar1 + 0xc28) = 1;
   return;
 }

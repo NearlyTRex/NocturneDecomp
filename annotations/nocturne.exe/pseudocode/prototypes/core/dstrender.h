@@ -3,6 +3,50 @@
 // Function prototypes for core/dstrender.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_dstrender.cpp_FUN_00463a40
+// Address: 00463a40
+void FUN_00463a40(void);
+
+// Original: core_dstrender.cpp_FUN_00463a79
+// Address: 00463a79
+void FUN_00463a79(void);
+
+// Original: core_dstrender.cpp_FUN_00463ac7
+// Address: 00463ac7
+void FUN_00463ac7(void);
+
+// Original: core_dstrender.cpp_FUN_00463b27
+// Address: 00463b27
+void FUN_00463b27(void);
+
+// Original: core_dstrender.cpp_FUN_00463c42
+// Address: 00463c42
+uint FUN_00463c42(void);
+
+// Original: core_dstrender.cpp_FUN_00463d98
+// Address: 00463d98
+void FUN_00463d98(void);
+
+// Original: core_dstrender.cpp_FUN_00463f77
+// Address: 00463f77
+void FUN_00463f77(void);
+
+// Original: core_dstrender.cpp_FUN_00463ff5
+// Address: 00463ff5
+void FUN_00463ff5(void);
+
+// Original: core_dstrender.cpp_FUN_00464075
+// Address: 00464075
+void FUN_00464075(void);
+
+// Original: core_dstrender.cpp_FUN_00464200
+// Address: 00464200
+void FUN_00464200(void);
+
+// Original: core_dstrender.cpp_FUN_004649dd
+// Address: 004649dd
+void FUN_004649dd(void);
+
 // Original: core_dstrender.cpp_blendHBilerpLightmapSharedU64toU64pBB12Px2MMX_FUN_00464afc
 // Address: 00464afc
 void __cdecl blendHBilerpLightmapSharedU64toU64pBB12Px2MMX(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
@@ -26,6 +70,14 @@ void __cdecl verticalBlur3TapMMXStride320(undefined8 *param_1,undefined8 *param_
 // Original: core_dstrender.cpp_spatialFilter9TapMMX_FUN_004654c5
 // Address: 004654c5
 void spatialFilter9TapMMX(undefined4 *param_1,undefined4 *param_2,int param_3);
+
+// Original: core_dstrender.cpp_FUN_0046556f
+// Address: 0046556f
+void FUN_0046556f(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+
+// Original: core_dstrender.cpp_FUN_0046568b
+// Address: 0046568b
+void FUN_0046568b(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
 
 // Original: core_dstrender.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_004657a7
 // Address: 004657a7

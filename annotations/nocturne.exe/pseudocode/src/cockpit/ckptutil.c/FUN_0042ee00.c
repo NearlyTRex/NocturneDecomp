@@ -1,14 +1,12 @@
-// Name: FUN_0042ee00
+// Name: cockpit_ckptutil.c_FUN_0042ee00
 // Address: 0042ee00
 // Address Range: [[0042ee00, 0042ef5e]]
 // Convention: unknown
-// Signature: void FUN_0042ee00(undefined4 param_1,int param_2,int param_3)
+// Signature: void cockpit_ckptutil_c_FUN_0042ee00(undefined4 param_1,int param_2,int param_3)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_0042ee00(uint param_1,int param_2,int param_3)
+void cockpit_ckptutil_c_FUN_0042ee00(uint param_1,int param_2,int param_3)
 
 {
   short *psVar1;
@@ -26,16 +24,16 @@ void FUN_0042ee00(uint param_1,int param_2,int param_3)
   int local_14;
   
   if (param_2 == 0) {
-    _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-    _DAT_01cc4804 = 0x4f8;
-    FUN_004c8440("Edge list array is empty!");
+    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    INT_01cc4804 = 0x4f8;
+    core_main_c_FUN_004c8440("Edge list array is empty!");
   }
   iVar7 = engine_dosio_cpp_getFile_FUN_00456a60("art",param_1,"wt");
   if (iVar7 == 0) {
     _sprintf(local_6c,"Could not create output file (%s).",param_1);
-    _DAT_01cc4804 = 0x4ff;
-    _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-    FUN_004c8440(local_6c);
+    INT_01cc4804 = 0x4ff;
+    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    core_main_c_FUN_004c8440(local_6c);
   }
   _fprintf(iVar7,"%d\n",param_3);
   if (0 < param_3) {

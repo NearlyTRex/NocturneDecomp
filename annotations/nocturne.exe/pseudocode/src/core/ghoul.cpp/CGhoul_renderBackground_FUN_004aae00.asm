@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_0047a000
+;   core_enemy.cpp_FUN_0047a000
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 004aae18
     PUSH EBX                            ; 004aae1c
     PUSH EAX                            ; 004aae1d
-    CALL FUN_0047a000                   ; 004aae1e
-        ;   XREF to: 0047a000 (UNCONDITIONAL_CALL)  ; undefined FUN_0047a000()
+    CALL core_enemy.cpp_FUN_0047a000    ; 004aae1e
+        ;   XREF to: 0047a000 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_0047a000()
     ADD ESP,0x8                         ; 004aae23
     POP EBX                             ; 004aae26
     RET                                 ; 004aae27

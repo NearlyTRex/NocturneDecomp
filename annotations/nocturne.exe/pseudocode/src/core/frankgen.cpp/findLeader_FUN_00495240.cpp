@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_frankgen_cpp_findLeader_FUN_00495240(void)
 
 {
@@ -19,13 +17,14 @@ int __cdecl core_frankgen_cpp_findLeader_FUN_00495240(void)
   iVar2 = 0;
   while( true ) {
     if (*(int *)(0x01E57284 + 0x14cd6c) <= iVar2) {
-      _DAT_01cc4800 = "..\\core\\frankgen.cpp";
-      _DAT_01cc4804 = 0x1cf;
-      FUN_004c8440("CFrankenstienMachine::findLeader - no leader found!");
+      PTR_01cc4800 = "..\\core\\frankgen.cpp";
+      INT_01cc4804 = 0x1cf;
+      core_main_c_FUN_004c8440("CFrankenstienMachine::findLeader - no leader found!");
       return 0;
     }
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(iVar3 + 0x14cd70 + 0x01E57284),_DAT_01c7133c);
+                      (*(uint *)(iVar3 + 0x14cd70 + 0x01E57284),
+                       g_CFrankenstienMachineActorType_01c71304.name_hash);
     if (iVar1 != 0) break;
     iVar2 = iVar2 + 1;
     iVar3 = iVar3 + 4;

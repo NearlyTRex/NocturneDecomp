@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_flamegun_cpp_CFlameThrower_ctor_FUN_0048e9c0(uint param_1)
 
 {
-  uint uVar1;
+  float fVar1;
   int iVar2;
   
   iVar2 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
@@ -26,9 +24,9 @@ int core_flamegun_cpp_CFlameThrower_ctor_FUN_0048e9c0(uint param_1)
   *(uint *)(iVar2 + 0x2dc) = 0;
   *(uint *)(iVar2 + 0x2e0) = 0x41700000;
   *(uint *)(iVar2 + 0x2e4) = 1;
-  uVar1 = _DAT_0059d79c;
+  fVar1 = 8.0f;
   *(uint *)(iVar2 + 0x57c) = 0;
   *(uint *)(iVar2 + 0x578) = 0;
-  *(uint *)(iVar2 + 0x55c) = uVar1;
+  *(float *)(iVar2 + 0x55c) = fVar1;
   return iVar2;
 }

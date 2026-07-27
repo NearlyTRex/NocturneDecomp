@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00437ab0 at 00437c94
+;   core_cloth.cpp_FUN_00437ab0 at 00437c94
 ;   shape_edittool.cpp_CEditorTools_drawMousePointer_FUN_004724e0 at 004724f0
 ;
 ; Referenced Globals:

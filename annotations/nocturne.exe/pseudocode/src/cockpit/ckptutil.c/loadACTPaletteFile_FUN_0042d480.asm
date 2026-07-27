@@ -8,15 +8,20 @@
 ;   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_0042d3f0 at 0042d404
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_ACT_0057a6e2
+;   TerminatedCString s_rb_0057a6e7
+;   TerminatedCString s_art_0057a6ea
+;   TerminatedCString s_Error_reading_s_0057a6ee
+;   TerminatedCString s_cockpit_ckptutil_c_0057a700
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -95,7 +100,7 @@ section .text
         ;   Label: LAB_0042d4ef
     MOV EDI,ESI                         ; 0042d4f1
         ;   Label: LAB_0042d4f1
-    MOV ESI,0x57a6e2                    ; 0042d4f3
+    MOV ESI,0x57a6e2                    ; 0042d4f3 | = ".ACT"
         ;   Label: LAB_0042d4f3
     PUSH EDI                            ; 0042d4f8
     MOV AL,byte ptr [ESI]               ; 0042d4f9
@@ -113,10 +118,10 @@ section .text
         ;   XREF to: 0042d4f9 (CONDITIONAL_JUMP)  ; LAB_0042d4f9
     POP EDI                             ; 0042d511
         ;   Label: LAB_0042d511
-    PUSH 0x57a6e7                       ; 0042d512
+    PUSH 0x57a6e7                       ; 0042d512 | = "rb"
     LEA EAX,[ESP + 0x4]                 ; 0042d517
     PUSH EAX                            ; 0042d51b
-    PUSH 0x57a6ea                       ; 0042d51c
+    PUSH 0x57a6ea                       ; 0042d51c | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 0042d521
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 0042d526
@@ -136,20 +141,20 @@ section .text
         ;   XREF to: 0042d57d (CONDITIONAL_JUMP)  ; LAB_0042d57d
     MOV EAX,ESP                         ; 0042d545
     PUSH EAX                            ; 0042d547
-    PUSH 0x57a6ee                       ; 0042d548
+    PUSH 0x57a6ee                       ; 0042d548 | = "Error reading %s."
     LEA EAX,[ESP + 0x58]                ; 0042d54d
     PUSH EAX                            ; 0042d551
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0042d552
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
-    MOV EDX,0x57a700                    ; 0042d557
+    MOV EDX,0x57a700                    ; 0042d557 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0xc                         ; 0042d55c
     LEA EAX,[ESP + 0x50]                ; 0042d55f
     MOV ECX,0x135                       ; 0042d563
     PUSH EAX                            ; 0042d568
-    MOV dword ptr [0x01cc4800],EDX      ; 0042d569 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0042d56f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0042d575
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0042d569 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0042d56f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0042d575
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042d57a
     PUSH ESI                            ; 0042d57d
         ;   Label: LAB_0042d57d

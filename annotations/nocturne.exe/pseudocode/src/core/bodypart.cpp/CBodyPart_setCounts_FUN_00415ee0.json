@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 338,
+    "complexity_score": 322,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
-    "suspect_count": 29,
+    "pseudocode_lines": 32,
+    "suspect_count": 28,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 139
+    "total_lines": 138
   },
   "cross_references": [
     {
@@ -188,14 +187,14 @@
   },
   "function_calls": [
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "00564a70",
       "is_variadic": false,
       "name": "crt_memory.c_realloc_FUN_00564a70"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -225,14 +224,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -364,16 +363,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "void core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(int param_1,uint param_2,uint param_3)",
@@ -381,7 +372,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(int param_1,uint param_2,uint param_3)",
@@ -389,7 +380,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(int param_1,uint param_2,uint param_3)",
@@ -397,7 +388,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 7,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x16c) = param_2;",
@@ -405,7 +396,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 7,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x16c) = param_2;",
@@ -413,7 +404,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x178) = param_3;",
@@ -421,7 +412,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x178) = param_3;",
@@ -429,7 +420,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0x170),*(int *)(param_1 + 0x16c) * 0xc);",
@@ -437,7 +428,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0x170),*(int *)(param_1 + 0x16c) * 0xc);",
@@ -445,7 +436,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x170) = uVar1;",
@@ -453,7 +444,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0x174),*(int *)(param_1 + 0x16c) * 0xc);",
@@ -461,7 +452,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0x174),*(int *)(param_1 + 0x16c) * 0xc);",
@@ -469,7 +460,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x174) = uVar1;",
@@ -477,7 +468,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0x17c),*(int *)(param_1 + 0x178) * 0x3c);",
@@ -485,7 +476,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0x17c),*(int *)(param_1 + 0x178) * 0x3c);",
@@ -493,7 +484,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x17c) = uVar1;",
@@ -501,7 +492,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0x180),*(int *)(param_1 + 0x178) << 2);",
@@ -509,7 +500,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0x180),*(int *)(param_1 + 0x178) << 2);",
@@ -517,7 +508,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x180) = uVar1;",
@@ -525,7 +516,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((0 < *(int *)(param_1 + 0x16c)) &&",
@@ -533,7 +524,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "((*(int *)(param_1 + 0x170) == 0 || (*(int *)(param_1 + 0x174) == 0)))) {",
@@ -541,10 +532,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "((*(int *)(param_1 + 0x170) == 0 || (*(int *)(param_1 + 0x174) == 0)))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_main_c_FUN_004c8440(\"CBodyPart::setCounts - out of memory for vertices - vertexCount = %d\",*(uint *)(param_1 + 0x16c));",
       "type": "unnamed_param"
     },
     {
@@ -552,20 +551,12 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"CBodyPart::setCounts - out of memory for vertices - vertexCount = %d\",*(uint *)(param_1 + 0x16c));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_1",
-      "severity": "mild",
       "text": "if ((0 < *(int *)(param_1 + 0x178)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "((*(int *)(param_1 + 0x17c) == 0 || (*(int *)(param_1 + 0x180) == 0)))) {",
@@ -573,7 +564,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "((*(int *)(param_1 + 0x17c) == 0 || (*(int *)(param_1 + 0x180) == 0)))) {",
@@ -581,10 +572,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"CBodyPart::setCounts - out of memory for triangles - triCount = %d\",*(uint *)(param_1 + 0x178));",
+      "text": "core_main_c_FUN_004c8440(\"CBodyPart::setCounts - out of memory for triangles - triCount = %d\",*(uint *)(param_1 + 0x178));",
       "type": "unnamed_param"
     },
     {

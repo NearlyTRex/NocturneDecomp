@@ -9,19 +9,19 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[10]:
-;   FUN_00489990 at 00489bc0
-;   FUN_0048d5d0 at 0048d905
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0 at 0041d001
 ;   core_fire.cpp_CFireball_render_FUN_00484390 at 00484a63
 ;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 00489f2b
 ;   core_fire.cpp_CShell_render_FUN_004896d0 at 00489759
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00482950 at 00482c25
 ;   core_fire.cpp_CSpark_render_FUN_004838c0 at 00483958
+;   core_fire.cpp_FUN_00489990 at 00489bc0
+;   core_flame.cpp_FUN_0048d5d0 at 0048d905
 ;   core_gore.cpp_CBloodParticle_render_FUN_004ae190 at 004ae4c8
 ;   core_set.cpp_FUN_00509a80 at 00509d5b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059bddc
+;   float FLOAT_0059bddc = 256
 ;   undefined4 DAT_005ad450
 ;   undefined4 DAT_005ad454
 ;   undefined4 DAT_005ad458
@@ -68,13 +68,13 @@ section .text
     LEA EBX,[ESP + 0xc]                 ; 0044769f
     MOV ECX,dword ptr [ESP + 0x28]      ; 004476a3
     FLD float ptr [EAX]                 ; 004476a7
-    FMUL float ptr [0x0059bddc]         ; 004476a9 | DAT_0059bddc
+    FMUL float ptr [0x0059bddc]         ; 004476a9 | FLOAT_0059bddc
     FISTP dword ptr [EBX]               ; 004476af
     FLD float ptr [EAX + 0x4]           ; 004476b1
-    FMUL float ptr [0x0059bddc]         ; 004476b4 | DAT_0059bddc
+    FMUL float ptr [0x0059bddc]         ; 004476b4 | FLOAT_0059bddc
     FISTP dword ptr [EBX + 0x4]         ; 004476ba
     FLD float ptr [EAX + 0x8]           ; 004476bd
-    FMUL float ptr [0x0059bddc]         ; 004476c0 | DAT_0059bddc
+    FMUL float ptr [0x0059bddc]         ; 004476c0 | FLOAT_0059bddc
     FISTP dword ptr [EBX + 0x8]         ; 004476c6
     PUSH ECX                            ; 004476c9
     LEA EAX,[ESP + 0x10]                ; 004476ca

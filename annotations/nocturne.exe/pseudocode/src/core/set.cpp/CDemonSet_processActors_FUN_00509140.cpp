@@ -108,7 +108,7 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(int param_1)
                 }
                 iVar8 = (**(code **)(*(int *)(DAT_00763e44 + 0x14c) + 0xbc))();
                 if (iVar8 != 0) {
-                  FUN_004f0360(iVar8);
+                  core_path_cpp_FUN_004f0360(iVar8);
                 }
                 if (((local_58 == *(float *)(DAT_00763e44 + 0x34)) &&
                     (local_5c == *(float *)(DAT_00763e44 + 0x30))) &&
@@ -136,7 +136,8 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(int param_1)
     if (0 < *(int *)(param_1 + 0x14cd6c)) {
       do {
         iVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar6 + 0x14cd70),CDemonActorType_00765a60.name_hash);
+                          (*(uint *)(iVar6 + 0x14cd70),
+                           g_CCharacterActorType_00765a60.name_hash);
         local_38 = iVar9;
         if (((iVar9 != 0) && (iVar8 = (**(code **)(*(int *)(iVar9 + 0x14c) + 0x104))(), iVar8 == 0))
            && (iStack_48 = iVar8,
@@ -152,17 +153,18 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(int param_1)
           (**(code **)(*(int *)(local_38 + 0x14c) + 0x100))(local_38);
         }
         iVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar6 + 0x14cd70),_DAT_01c78c78);
+                          (*(uint *)(iVar6 + 0x14cd70),g_CGlassActorType_01c78c40.name_hash);
         if (iVar9 != 0) {
           iStack_34 = iVar9 + 0x20;
           iVar8 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
                             (0x01C08D04,iStack_34,0,0);
-          if ((iVar8 != 0) && (iVar8 = FUN_004aded0(), iVar8 != 0)) {
-            FUN_004ada20(iVar9);
+          if ((iVar8 != 0) && (iVar8 = core_glass_cpp_FUN_004aded0(), iVar8 != 0)) {
+            core_glass_cpp_FUN_004ada20(iVar9);
           }
         }
         iVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar6 + 0x14cd70),_DAT_02dd10bc);
+                          (*(uint *)(iVar6 + 0x14cd70),g_CTriggerActorType_02dd1084.name_hash)
+        ;
         if (((iVar9 != 0) && (*(int *)(iVar9 + 0x16c) == 7)) && (*(char *)(iVar9 + 0x2fc) == '\0'))
         {
           uStack_4c = 0;
@@ -173,7 +175,8 @@ int __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(int param_1)
           }
         }
         iVar9 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar6 + 0x14cd70),_DAT_01c7068c);
+                          (*(uint *)(iVar6 + 0x14cd70),g_CFlameCanActorType_01c70654.name_hash
+                          );
         if ((iVar9 != 0) &&
            (iVar9 = core_fire_cpp_CFireEffect_getExplosionEffect_FUN_0048c160
                               (0x01C08D04,iVar9 + 0x20,0), iVar9 != 0)) {

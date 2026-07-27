@@ -10,11 +10,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0058b60b
 ;   TerminatedCString s_hputbuf_Not_Supported_ye_0058b61c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -40,10 +40,10 @@ section .text
     MOV ECX,0x58b60b                    ; 004e2e10 | = "..\\sound\\mp3.cpp"
     MOV ESI,0x2d4                       ; 004e2e15
     PUSH 0x58b61c                       ; 004e2e1a | = "hputbuf - Not Supported yet!!  File: %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 004e2e1f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004e2e25 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e2e2b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004e2e1f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004e2e25 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e2e2b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e2e30
     POP ESI                             ; 004e2e33
     JMP 0x004e2dec                      ; 004e2e34

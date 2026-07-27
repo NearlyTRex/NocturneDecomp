@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint * support_trisock_cpp_convertSockAddr_FUN_00548d50(uint *param_1,short *param_2)
 
 {
@@ -17,9 +15,9 @@ uint * support_trisock_cpp_convertSockAddr_FUN_00548d50(uint *param_1,short *par
   
   if (*param_2 != 2) {
     apcStack_10[0] = "sockaddr is not of AF_INET family!";
-    _DAT_01cc4800 = "..\\support\\trisock.cpp";
-    _DAT_01cc4804 = 0xa5;
-    FUN_004c8440();
+    PTR_01cc4800 = "..\\support\\trisock.cpp";
+    INT_01cc4804 = 0xa5;
+    core_main_c_FUN_004c8440();
   }
   apcStack_10[0] = (char *)(uint)(ushort)param_2[1];
   uVar1 = Ordinal_15();

@@ -106,8 +106,8 @@
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-;   FUN_00460d10
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_drender.cpp_FUN_00460d10
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -148,8 +148,8 @@ section .text
     PUSH EBX                            ; 0045139d | DAT_01b4d738
     LEA ESI,[EBP + -0x62]               ; 0045139e
     LEA EDI,[EBP + -0xe]                ; 004513a1
-    CALL FUN_00460d10                   ; 004513a4
-        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined FUN_00460d10()
+    CALL engine_drender.cpp_FUN_00460d10 ; 004513a4
+        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00460d10()
     LEA ESI,[EBP + -0x62]               ; 004513a9
     LEA EAX,[EBP + -0xe]                ; 004513ac
     LEA EBX,[EBP + 0xffffff7a]          ; 004513af
@@ -511,8 +511,8 @@ section .text
     PUSH EAX                            ; 00451812
     MOV EAX,dword ptr [EDX]             ; 00451813 | DAT_01b4d738
     PUSH EAX                            ; 00451815
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 00451816
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00451816
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     FLD float ptr [EBP + 0x6e]          ; 0045181b
     ADD ESP,0x8                         ; 0045181e
     FCOMP float ptr [EBP + 0x62]        ; 00451821
@@ -547,8 +547,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00451879 | DAT_01b4d738
     ADD EAX,0x30                        ; 0045187b
     PUSH EAX                            ; 0045187e
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0045187f
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0045187f
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     FLD float ptr [EBP + 0x72]          ; 00451884
     ADD ESP,0x8                         ; 00451887
     FCOMP float ptr [EBP + 0x62]        ; 0045188a
@@ -583,8 +583,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004518e2 | DAT_01b4d738
     ADD EAX,0x60                        ; 004518e4
     PUSH EAX                            ; 004518e7
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 004518e8
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 004518e8
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     FLD float ptr [EBP + 0x72]          ; 004518ed
     ADD ESP,0x8                         ; 004518f0
     FCOMP float ptr [EBP + 0x66]        ; 004518f3
@@ -619,8 +619,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0045194b | DAT_01b4d738
     ADD EAX,0x90                        ; 0045194d
     PUSH EAX                            ; 00451952
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 00451953
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00451953
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV EDX,dword ptr [0x005ae704]      ; 00451958 | DAT_005ae704
     ADD ESP,0x8                         ; 0045195e
     MOV EBX,dword ptr [EDX]             ; 00451961 | DAT_01b4d738

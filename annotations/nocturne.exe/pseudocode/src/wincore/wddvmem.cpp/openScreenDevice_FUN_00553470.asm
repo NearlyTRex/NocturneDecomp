@@ -7,10 +7,10 @@
 ; undefined4       Stack[-0x74]:4  local_74
 ;
 ; XREF[5]:
-;   FUN_0049cc10 at 0049cce5
-;   FUN_004a57c0 at 004a597f
-;   FUN_00532ba0 at 00532be7
-;   FUN_00545aa0 at 00545aab
+;   core_game.cpp_FUN_0049cc10 at 0049cce5
+;   core_game.cpp_FUN_004a57c0 at 004a597f
+;   engine_special.cpp_FUN_00532ba0 at 00532be7
+;   engine_texture.cpp_FUN_00545aa0 at 00545aab
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 0055394e
 ;
 ; Referenced Globals:
@@ -20,14 +20,14 @@
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01c02594
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02ddf558
 ;   undefined4 DAT_02ddf56c
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -78,10 +78,10 @@ section .text
     MOV ESI,0x597954                    ; 005534cb | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x255                       ; 005534d0
     PUSH 0x59796b                       ; 005534d5 | = "openScreenDevice - Unable to lock scr..."
-    MOV dword ptr [0x01cc4800],ESI      ; 005534da | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005534e0 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005534e6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 005534da | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 005534e0 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005534e6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005534eb
     POP ESI                             ; 005534ee
     POP EDI                             ; 005534ef

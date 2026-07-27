@@ -1,14 +1,14 @@
-// Name: FUN_004f1f80
+// Name: core_path.cpp_FUN_004f1f80
 // Address: 004f1f80
 // Address Range: [[004f1f80, 004f2044]]
 // Convention: unknown
-// Signature: void FUN_004f1f80(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+// Signature: void core_path_cpp_FUN_004f1f80(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004f1f80(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)
+void core_path_cpp_FUN_004f1f80(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)
 
 {
   int iVar1;
@@ -33,14 +33,14 @@ void FUN_004f1f80(uint param_1,uint param_2,uint param_3,uint param_4,uint param
     iVar2 = 0;
     do {
       if (*(int *)(iVar2 + 0x1e312fc) == 0) {
-        _DAT_01cc4800 = "..\\core\\path.cpp";
-        _DAT_01cc4804 = 0x6b5;
-        FUN_004c8440("Global pathmap list corruption");
+        PTR_01cc4800 = "..\\core\\path.cpp";
+        INT_01cc4804 = 0x6b5;
+        core_main_c_FUN_004c8440("Global pathmap list corruption");
       }
       iVar1 = *(int *)(iVar2 + 0x1e312fc);
       if ((((*(int *)(iVar1 + 0x138c0) < 0x461c3c01) && (local_28 == *(int *)(iVar1 + 0xc))) &&
           (local_24 == *(int *)(iVar1 + 0x10))) && (local_20 == *(int *)(iVar1 + 0x14))) {
-        FUN_004f18c0(iVar1,param_2,param_3,param_4,param_5);
+        core_path_cpp_FUN_004f18c0(iVar1,param_2,param_3,param_4,param_5);
       }
       iVar3 = iVar3 + 1;
       iVar2 = iVar2 + 4;

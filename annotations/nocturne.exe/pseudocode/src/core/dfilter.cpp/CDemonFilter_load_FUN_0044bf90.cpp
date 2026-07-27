@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(int *param_1,char *param_2)
 
 {
@@ -18,9 +16,9 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(int *param_1,char *
   
   iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("art",param_2,"rb");
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfilter.cpp";
-    _DAT_01cc4804 = 0xab;
-    FUN_004c8440("CDemonFilter::load - Bad filename : %s",param_2);
+    PTR_01cc4800 = "..\\core\\dfilter.cpp";
+    INT_01cc4804 = 0xab;
+    core_main_c_FUN_004c8440("CDemonFilter::load - Bad filename : %s",param_2);
   }
   _fclose(iVar2);
   iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",param_2);
@@ -29,26 +27,26 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(int *param_1,char *
   *param_1 = (int)ROUND(fVar3);
   param_1[1] = iVar2 / *param_1;
   if (*param_1 != param_1[1]) {
-    _DAT_01cc4800 = "..\\core\\dfilter.cpp";
-    _DAT_01cc4804 = 0xb7;
-    FUN_004c8440("CDemonFilter::load - Non-square filter %dx%d",*param_1,param_1[1],uVar4);
+    PTR_01cc4800 = "..\\core\\dfilter.cpp";
+    INT_01cc4804 = 0xb7;
+    core_main_c_FUN_004c8440("CDemonFilter::load - Non-square filter %dx%d",*param_1,param_1[1],uVar4);
   }
   if ((*param_1 < 0x40) || (0x100 < *param_1)) {
-    _DAT_01cc4800 = "..\\core\\dfilter.cpp";
-    _DAT_01cc4804 = 0xb9;
-    FUN_004c8440("CDemonFilter::load - Bad filter size %d",*param_1);
+    PTR_01cc4800 = "..\\core\\dfilter.cpp";
+    INT_01cc4804 = 0xb9;
+    core_main_c_FUN_004c8440("CDemonFilter::load - Bad filter size %d",*param_1);
   }
   if ((param_1[1] < 0x40) || (0x100 < param_1[1])) {
-    _DAT_01cc4800 = "..\\core\\dfilter.cpp";
-    _DAT_01cc4804 = 0xbc;
-    FUN_004c8440("CDemonFilter::load - Bad filter size %d",param_1[1]);
+    PTR_01cc4800 = "..\\core\\dfilter.cpp";
+    INT_01cc4804 = 0xbc;
+    core_main_c_FUN_004c8440("CDemonFilter::load - Bad filter size %d",param_1[1]);
   }
   core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(param_1);
   iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("art",param_2,"rb");
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfilter.cpp";
-    _DAT_01cc4804 = 0xc6;
-    FUN_004c8440("CDemonFilter::load - Bad filename");
+    PTR_01cc4800 = "..\\core\\dfilter.cpp";
+    INT_01cc4804 = 0xc6;
+    core_main_c_FUN_004c8440("CDemonFilter::load - Bad filename");
   }
   _fread(param_1[0x12],*param_1,param_1[1],iVar2);
   _fclose(iVar2);

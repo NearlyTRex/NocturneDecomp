@@ -7,9 +7,9 @@
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[3]:
-;   FUN_004e3f80 at 004e3ff1
 ;   crt_math.c_floor_FUN_005648c0 at 005648d3
 ;   sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_004e4070 at 004e429e
+;   sound_mp3.cpp_FUN_004e3f80 at 004e3ff1
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30

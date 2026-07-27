@@ -1,14 +1,14 @@
-// Name: FUN_004676c0
+// Name: core_dtrace.cpp_FUN_004676c0
 // Address: 004676c0
 // Address Range: [[004676c0, 0046788b]]
 // Convention: unknown
-// Signature: void FUN_004676c0(int param_1,int param_2)
+// Signature: void core_dtrace_cpp_FUN_004676c0(int param_1,int param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004676c0(int param_1,int param_2)
+void core_dtrace_cpp_FUN_004676c0(int param_1,int param_2)
 
 {
   int iVar1;
@@ -18,18 +18,18 @@ void FUN_004676c0(int param_1,int param_2)
   float local_18;
   int local_14;
   
-  FUN_004673a0(param_1);
+  core_dtrace_cpp_FUN_004673a0(param_1);
   _DAT_01bc994c = 0;
   _fread(&local_14,4,1,param_2);
   if (local_14 < 1) {
-    _DAT_01cc4800 = "..\\core\\dtrace.cpp";
-    _DAT_01cc4804 = 0x148;
-    FUN_004c8440("CDemonRaytrace::loadBinary - invalid version");
+    PTR_01cc4800 = "..\\core\\dtrace.cpp";
+    INT_01cc4804 = 0x148;
+    core_main_c_FUN_004c8440("CDemonRaytrace::loadBinary - invalid version");
   }
   if (0x00000004 < local_14) {
-    _DAT_01cc4800 = "..\\core\\dtrace.cpp";
-    _DAT_01cc4804 = 0x14b;
-    FUN_004c8440("CDemonRaytrace::loadBinary - file is newer than .exe!");
+    PTR_01cc4800 = "..\\core\\dtrace.cpp";
+    INT_01cc4804 = 0x14b;
+    core_main_c_FUN_004c8440("CDemonRaytrace::loadBinary - file is newer than .exe!");
   }
   _fread(param_1 + 0x40,4,1,param_2);
   _fread(param_1 + 0x44,4,1,param_2);
@@ -46,9 +46,9 @@ void FUN_004676c0(int param_1,int param_2)
     *(float *)(param_1 + 0x3c) = local_18;
   }
   if (local_14 < 4) {
-    _DAT_01cc4800 = "..\\core\\dtrace.cpp";
-    _DAT_01cc4804 = 0x1e2;
-    FUN_004c8440("Release build doesn't support old geometry");
+    PTR_01cc4800 = "..\\core\\dtrace.cpp";
+    INT_01cc4804 = 0x1e2;
+    core_main_c_FUN_004c8440("Release build doesn't support old geometry");
   }
   else {
     core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00467330(param_1);
@@ -63,8 +63,8 @@ void FUN_004676c0(int param_1,int param_2)
   if ((*(byte *)(param_2 + 0xc) & 0x20) == 0) {
     return;
   }
-  _DAT_01cc4800 = "..\\core\\dtrace.cpp";
-  _DAT_01cc4804 = 0x1ff;
-  FUN_004c8440("CDemonRaytrace::loadBinary - error reading file");
+  PTR_01cc4800 = "..\\core\\dtrace.cpp";
+  INT_01cc4804 = 0x1ff;
+  core_main_c_FUN_004c8440("CDemonRaytrace::loadBinary - error reading file");
   return;
 }

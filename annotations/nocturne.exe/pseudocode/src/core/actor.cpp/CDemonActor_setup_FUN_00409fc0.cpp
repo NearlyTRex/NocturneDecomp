@@ -17,6 +17,6 @@ void __cdecl core_actor_cpp_CDemonActor_setup_FUN_00409fc0(int param_1)
   if (iVar1 == 0) {
     return;
   }
-  FUN_004f0360(iVar1,param_1 + 0x20,1);
+  core_path_cpp_FUN_004f0360(iVar1,param_1 + 0x20,1);
   return;
 }

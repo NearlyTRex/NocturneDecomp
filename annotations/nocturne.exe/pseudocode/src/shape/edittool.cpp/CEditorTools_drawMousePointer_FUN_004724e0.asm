@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_004759d0 at 00475d8f
-;   FUN_0049cc10 at 0049d5a3
+;   core_game.cpp_FUN_0049cc10 at 0049d5a3
+;   shape_edittool.cpp_FUN_004759d0 at 00475d8f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057ea49
@@ -28,12 +28,12 @@
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
 ;   undefined4 DAT_01c00c70
-;   undefined4 DAT_01cc4800
+;   char* PTR_01cc4800
 ;   ... and 1 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_2d.c_plotPixel_FUN_00401530
-;   FUN_004c8440
 ;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00472490
 ;
 ; *****************************************************************************
@@ -766,10 +766,10 @@ section .text
         ;   Label: LAB_00472c59
     MOV EBP,0x7ba                       ; 00472c5e
     PUSH 0x57ea5f                       ; 00472c63 | = "CEditorTools::setMousePointerType - i..."
-    MOV dword ptr [0x01cc4800],EDI      ; 00472c68 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00472c6e | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00472c74
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00472c68 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00472c6e | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00472c74
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00472c79
     ADD ESP,0x10                        ; 00472c7c
         ;   Label: LAB_00472c7c

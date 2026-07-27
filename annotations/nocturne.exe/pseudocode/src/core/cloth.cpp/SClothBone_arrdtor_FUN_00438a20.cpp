@@ -9,6 +9,6 @@
 void __cdecl core_cloth_cpp_SClothBone_arrdtor_FUN_00438a20(uint param_1)
 
 {
-  __arrfini(param_1,0x32,&DAT_0059b3c0);
+  __arrfini(param_1,0x32,&g_SClothBoneTypeInfo_0059b3c0);
   return;
 }

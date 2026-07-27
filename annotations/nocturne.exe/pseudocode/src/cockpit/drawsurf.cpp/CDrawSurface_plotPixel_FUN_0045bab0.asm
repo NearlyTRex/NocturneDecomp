@@ -5,23 +5,27 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_0045cde0 at 0045ce58
-;   FUN_0045e370 at 0045e635
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_0045c1e0 at 0045c36e
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_0045c0f0 at 0045c15c
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_0045bf00 at 0045bf1f
+;   cockpit_drawsurf.cpp_FUN_0045cde0 at 0045ce58
+;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e635
 ;
 ; Referenced Globals:
+;   TerminatedCString s_cockpit_drawsurf_cpp_0057d914
+;   TerminatedCString s_Invalid_bitsPerPixel_0057d92c
+;   TerminatedCString s_cockpit_drawsurf_cpp_0057d942
+;   TerminatedCString s_Invalid_bitsPerPixel_0057d95a
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_01b4d710
 ;   undefined4 DAT_01b4d71c
 ;   undefined4 DAT_01b4d720
 ;   undefined4 DAT_01b4d730
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -95,14 +99,14 @@ section .text
     POP ESI                             ; 0045bb4b
     POP EBX                             ; 0045bb4c
     RET                                 ; 0045bb4d
-    MOV ECX,0x57d914                    ; 0045bb4e
+    MOV ECX,0x57d914                    ; 0045bb4e | = "..\\cockpit\\drawsurf.cpp"
         ;   Label: LAB_0045bb4e
     MOV EBX,0x18d                       ; 0045bb53
-    PUSH 0x57d92c                       ; 0045bb58
-    MOV dword ptr [0x01cc4800],ECX      ; 0045bb5d | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0045bb63 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0045bb69
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x57d92c                       ; 0045bb58 | = "Invalid bitsPerPixel!"
+    MOV dword ptr [0x01cc4800],ECX      ; 0045bb5d | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0045bb63 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0045bb69
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045bb6e
     POP EBP                             ; 0045bb71
     POP EDI                             ; 0045bb72
@@ -172,14 +176,14 @@ section .text
     CMP EDX,0x20                        ; 0045bbf2
     JZ 0x0045bbbd                       ; 0045bbf5
         ;   XREF to: 0045bbbd (CONDITIONAL_JUMP)  ; LAB_0045bbbd
-    MOV EAX,0x57d942                    ; 0045bbf7
+    MOV EAX,0x57d942                    ; 0045bbf7 | = "..\\cockpit\\drawsurf.cpp"
         ;   Label: LAB_0045bbf7
     MOV EDX,0x19e                       ; 0045bbfc
-    PUSH 0x57d95a                       ; 0045bc01
-    MOV [0x01cc4800],EAX                ; 0045bc06 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0045bc0b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0045bc11
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x57d95a                       ; 0045bc01 | = "Invalid bitsPerPixel!"
+    MOV [0x01cc4800],EAX                ; 0045bc06 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0045bc0b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0045bc11
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045bc16
     POP EBP                             ; 0045bc19
     POP EDI                             ; 0045bc1a

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50(int param_1,int param_2)
 
 {
@@ -40,7 +38,8 @@ void __cdecl core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004c0a50(int par
         iVar4 = 0;
       }
       iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(param_1 + 0xc + iVar4 * 4),_DAT_02ddf9a8);
+                        (*(uint *)(param_1 + 0xc + iVar4 * 4),
+                         g_CWeaponActorType_02ddf970.name_hash);
       if (iVar1 != 0) {
         uVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0
                           (*(uint *)(param_1 + 0x330));

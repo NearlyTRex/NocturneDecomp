@@ -29,7 +29,7 @@
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
-;   FUN_0048c0d0
+;   core_fire.cpp_FUN_0048c0d0
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;
 ; *****************************************************************************
@@ -77,8 +77,8 @@ section .text
     PUSH ESI                            ; 00487535
     MOV ECX,dword ptr [0x005b80f0]      ; 00487536 | DAT_005b80f0
     PUSH ECX                            ; 0048753c
-    CALL FUN_0048c0d0                   ; 0048753d
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048c0d0()
+    CALL core_fire.cpp_FUN_0048c0d0     ; 0048753d
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048c0d0()
     ADD ESP,0x14                        ; 00487542
     MOV ESI,dword ptr [EBX + 0x3e0]     ; 00487545
     PUSH ESI                            ; 0048754b

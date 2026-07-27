@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[116]:
-;   FUN_0043d1c0 at 0043d4b7
-;   FUN_00477890 at 00477c27
-;   FUN_0048b6f0 at 0048b97d
-;   FUN_0048df20 at 0048e038
-;   FUN_00495a20 at 004960cd
-;   FUN_00497810 at 00497826
-;   FUN_00498de0 at 00498dfd
-;   FUN_00499ca0 at 00499d08
-;   FUN_004a4170 at 004a486e
-;   FUN_004b27c0 at 004b2bd5
+;   core_actor.cpp_FUN_0040a140 at 0040a1b2
+;   core_actor.cpp_FUN_0040b300 at 0040b4f6
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530 at 0041156f
+;   core_baron.cpp_CBaron_attachToOwner_FUN_00410a80 at 00410ab1
+;   core_baron.cpp_CBaron_updateMountedPosition_FUN_00410bf0 at 00410c77
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00414086
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 004223fc
+;   core_bugs.cpp_FUN_00423790 at 004237bb
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 004299b7
+;   core_charactr.cpp_FUN_00428c00 at 00428e67
 ;   ... and 106 more
 ;
 ; Called Functions:

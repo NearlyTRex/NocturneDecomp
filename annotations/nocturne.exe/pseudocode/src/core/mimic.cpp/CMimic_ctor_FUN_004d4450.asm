@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004d4420 at 004d4433
+;   core_mimic.cpp_FUN_004d4420 at 004d4433
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CGhoul_0058923e
@@ -14,7 +14,7 @@
 ;   undefined4 s_oul_0058923e+3
 ;   float FLOAT_005a05dc = 50
 ;   float FLOAT_005a05e0 = 100
-;   undefined1* PTR_FUN_005a05f4 = 004d4650
+;   undefined1* PTR_core_mimic.cpp_FUN_004d4650_005a05f4 = 004d4650
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00435100
@@ -43,7 +43,7 @@ section .text
     CALL core_morph.cpp_CMorph_ctor_FUN_004e0050 ; 004d4473
         ;   XREF to: 004e0050 (UNCONDITIONAL_CALL)  ; undefined core_morph.cpp_CMorph_ctor_FUN_004e0050()
     LEA EDX,[EAX + 0xfffb96b4]          ; 004d4478
-    MOV dword ptr [EDX + 0x14c],0x5a05f4 ; 004d447e | PTR_FUN_005a05f4
+    MOV dword ptr [EDX + 0x14c],0x5a05f4 ; 004d447e | PTR_core_mimic.cpp_FUN_004d4650_005a05f4
     MOV dword ptr [EDX + 0x2dd4],0x3f000000 ; 004d4488
     MOV ESI,0x58923e                    ; 004d4492 | = "CGhoul"
     MOV dword ptr [EDX + 0x2dd8],0x3f800000 ; 004d4497

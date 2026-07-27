@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_005633c4 at 005633de
-;   FUN_0056551c at 005655c3
+;   crt_unknown.c_FUN_005633c4 at 005633de
+;   crt_unknown.c_FUN_0056551c at 005655c3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02de4e20

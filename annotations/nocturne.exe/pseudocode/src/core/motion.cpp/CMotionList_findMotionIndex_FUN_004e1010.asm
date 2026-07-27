@@ -5,27 +5,27 @@
 ;
 ;
 ; XREF[18]:
-;   FUN_004ab450 at 004ab7f5
-;   FUN_004ba740 at 004ba7a2
-;   FUN_00535450 at 0053563f
-;   FUN_005384d0 at 0053966b
-;   FUN_0053a260 at 0053a34a
 ;   core_charactr.cpp_CCharacter_buildLayerActionTransitionCosts_FUN_0042a800 at 0042a888
 ;   core_charactr.cpp_CCharacter_initGesture_FUN_00429520 at 00429546
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047d536
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004957c0 at 00495994
+;   core_ghoul.cpp_FUN_004ab450 at 004ab7f5
 ;   core_hostage.cpp_CHostage_setup_FUN_004b6b20 at 004b6cda
+;   core_icepick.cpp_FUN_004ba740 at 004ba7a2
+;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004e1960 at 004e196f
+;   core_motion.cpp_CMotionController_setMotionList_FUN_004e1860 at 004e187c
+;   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 at 004ef864
 ;   ... and 8 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_0058b181
 ;   TerminatedCString s_Can_t_find_motion_s_in_m_0058b194
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_string.c__stricmp_FUN_00564520
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -81,10 +81,10 @@ section .text
     MOV ESI,0x58b181                    ; 004e1066 | = "..\\core\\motion.cpp"
     MOV EDI,0x100                       ; 004e106b
     PUSH 0x58b194                       ; 004e1070 | = "Can't find motion \"%s\" in motion list"
-    MOV dword ptr [0x01cc4800],ESI      ; 004e1075 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004e107b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e1081
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004e1075 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004e107b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e1081
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e1086
     MOV EAX,0xffffffff                  ; 004e1089
     POP EBP                             ; 004e108e

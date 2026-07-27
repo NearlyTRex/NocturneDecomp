@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,51 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 111,
+    "complexity_score": 95,
     "cross_reference_count": 50,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
-    "suspect_count": 8,
+    "pseudocode_lines": 15,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 59
+    "total_lines": 58
   },
   "cross_references": [
-    {
-      "addr": "0051da90",
-      "from_addr": "0051daad",
-      "name": "FUN_0051da90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051dc30",
-      "from_addr": "0051dc47",
-      "name": "FUN_0051dc30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051f030",
-      "from_addr": "0051f047",
-      "name": "FUN_0051f030",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0051f060",
-      "from_addr": "0051f06c",
-      "name": "FUN_0051f060",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00535450",
-      "from_addr": "00535755",
-      "name": "FUN_00535450",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0040a740",
       "from_addr": "0040aabc",
@@ -420,9 +389,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0051da90",
+      "from_addr": "0051daad",
+      "name": "core_skeleton.cpp_FUN_0051da90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051dc30",
+      "from_addr": "0051dc47",
+      "name": "core_skeleton.cpp_FUN_0051dc30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051f030",
+      "from_addr": "0051f047",
+      "name": "core_skeleton.cpp_FUN_0051f030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051f060",
+      "from_addr": "0051f06c",
+      "name": "core_skeleton.cpp_FUN_0051f060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0051fd90",
       "from_addr": "0051ff22",
       "name": "core_smiley.cpp_CSmiley_setup_FUN_0051fd90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00535450",
+      "from_addr": "00535755",
+      "name": "core_stranger.cpp_FUN_00535450",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -454,7 +453,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "FUN_004c8440"
+      "name": "core_main.c_FUN_004c8440"
     }
   ],
   "globals": [
@@ -484,14 +483,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -649,16 +648,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint __cdecl core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(int param_1)",
@@ -666,7 +657,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 7,
+      "line": 5,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x22b0) == 0) {",
@@ -674,7 +665,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 8,
+      "line": 6,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(char *)(param_1 + 0x2260) != '\\0') {",
@@ -682,15 +673,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.\",param_1 + 0x2260);",
+      "text": "core_main_c_FUN_004c8440(\"Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.\",param_1 + 0x2260);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "return *(uint *)(param_1 + 0x22b0);",
@@ -698,7 +689,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "return *(uint *)(param_1 + 0x22b0);",

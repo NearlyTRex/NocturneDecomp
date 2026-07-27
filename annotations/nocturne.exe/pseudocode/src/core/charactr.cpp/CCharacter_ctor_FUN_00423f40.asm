@@ -9,14 +9,14 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[3]:
-;   FUN_004b46d0 at 004b46d6
-;   FUN_004ee950 at 004ee956
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00479560 at 0047956b
+;   core_hero.cpp_FUN_004b46d0 at 004b46d6
+;   core_npc.cpp_FUN_004ee950 at 004ee956
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005993b0
-;   undefined4 DAT_00599940
-;   undefined4 DAT_00599960
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
+;   WatcomTypeInfo g_CFlameTypeInfo_00599940
+;   WatcomTypeInfo g_SFireTypeInfo_00599960
 ;   void* PTR_core_charactr.cpp_CCharacter_setup_FUN_00424260_0059b0a4 = 00424260
 ;
 ; Called Functions:
@@ -46,28 +46,28 @@ section .text
     CALL core_cloth.cpp_CClothList_ctor_FUN_00438210 ; 00423f64
         ;   XREF to: 00438210 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CClothList_ctor_FUN_00438210()
     ADD ESP,0x4                         ; 00423f69
-    PUSH 0x5993b0                       ; 00423f6c | DAT_005993b0
+    PUSH 0x5993b0                       ; 00423f6c | g_CVectorTypeInfo_005993b0
     PUSH 0xf                            ; 00423f71
     ADD EAX,0x1c8                       ; 00423f73
     PUSH EAX                            ; 00423f78
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00423f79
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 00423f7e
-    PUSH 0x5993b0                       ; 00423f81 | DAT_005993b0
+    PUSH 0x5993b0                       ; 00423f81 | g_CVectorTypeInfo_005993b0
     PUSH 0xf                            ; 00423f86
     ADD EAX,0xb4                        ; 00423f88
     PUSH EAX                            ; 00423f8d
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00423f8e
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 00423f93
-    PUSH 0x599960                       ; 00423f96 | DAT_00599960
+    PUSH 0x599960                       ; 00423f96 | g_SFireTypeInfo_00599960
     PUSH 0x32                           ; 00423f9b
     ADD EAX,0x20c                       ; 00423f9d
     PUSH EAX                            ; 00423fa2
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00423fa3
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 00423fa8
-    PUSH 0x599940                       ; 00423fab | DAT_00599940
+    PUSH 0x599940                       ; 00423fab | g_CFlameTypeInfo_00599940
     PUSH 0x32                           ; 00423fb0
     ADD EAX,0x4b0                       ; 00423fb2
     PUSH EAX                            ; 00423fb7

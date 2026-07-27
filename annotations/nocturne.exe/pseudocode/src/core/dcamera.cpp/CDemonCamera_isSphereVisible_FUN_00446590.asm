@@ -14,10 +14,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0048ab60 at 0048ac50
+;   core_fire.cpp_FUN_0048ab60 at 0048ac50
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059bddc
+;   float FLOAT_0059bddc = 256
 ;
 ; *****************************************************************************
 
@@ -33,16 +33,16 @@ section .text
     MOV EAX,dword ptr [EBP + 0x18]      ; 00446599
     LEA EBX,[EBP + -0x20]               ; 0044659c
     FLD float ptr [EAX]                 ; 0044659f
-    FMUL float ptr [0x0059bddc]         ; 004465a1 | DAT_0059bddc
+    FMUL float ptr [0x0059bddc]         ; 004465a1 | FLOAT_0059bddc
     FISTP dword ptr [EBX]               ; 004465a7
     FLD float ptr [EAX + 0x4]           ; 004465a9
-    FMUL float ptr [0x0059bddc]         ; 004465ac | DAT_0059bddc
+    FMUL float ptr [0x0059bddc]         ; 004465ac | FLOAT_0059bddc
     FISTP dword ptr [EBX + 0x4]         ; 004465b2
     FLD float ptr [EAX + 0x8]           ; 004465b5
-    FMUL float ptr [0x0059bddc]         ; 004465b8 | DAT_0059bddc
+    FMUL float ptr [0x0059bddc]         ; 004465b8 | FLOAT_0059bddc
     FISTP dword ptr [EBX + 0x8]         ; 004465be
     FLD float ptr [EBP + 0x1c]          ; 004465c1
-    FLD float ptr [0x0059bddc]          ; 004465c7 | DAT_0059bddc
+    FLD float ptr [0x0059bddc]          ; 004465c7 | FLOAT_0059bddc
     FMULP                               ; 004465cd
     FIST dword ptr [EBP + 0xfffffff8]   ; 004465cf
     FISTP dword ptr [EBP + 0xfffffffc]  ; 004465d5

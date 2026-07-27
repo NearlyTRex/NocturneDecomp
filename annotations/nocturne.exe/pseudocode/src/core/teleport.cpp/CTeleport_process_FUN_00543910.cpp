@@ -22,7 +22,7 @@ void core_teleport_cpp_CTeleport_process_FUN_00543910(int param_1)
     pfVar2 = (float *)(**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_2c);
     if ((((*pfVar2 <= *pfVar1) && (pfVar2[1] <= pfVar1[1])) && (pfVar2[2] <= pfVar1[2])) &&
        (((*pfVar1 <= pfVar2[3] && (pfVar1[1] <= pfVar2[4])) && (pfVar1[2] <= pfVar2[5])))) {
-      FUN_004d90e0(0x01CC9450,*(int *)(param_1 + 0x15c) + 0x20);
+      core_mission_cpp_FUN_004d90e0(0x01CC9450,*(int *)(param_1 + 0x15c) + 0x20);
       return;
     }
   }

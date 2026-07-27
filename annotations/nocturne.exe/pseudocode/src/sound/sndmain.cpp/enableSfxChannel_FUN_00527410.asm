@@ -5,22 +5,22 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00527d80 at 00527d94
-;   FUN_005289f0 at 00528bf3
-;   FUN_0052dd90 at 0052dda5
-;   FUN_0052dff0 at 0052e251
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1cd1
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052de96
+;   core_sound.cpp_FUN_0052dd90 at 0052dda5
+;   core_sound.cpp_FUN_0052dff0 at 0052e251
+;   sound_sndmain.cpp_FUN_00527d80 at 00527d94
+;   sound_sndmain.cpp_FUN_005289f0 at 00528bf3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_0059368b
 ;   TerminatedCString s_enableSfxChannel_invalid_005936a0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dbd494
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570
 ;   sound_sndmain.cpp_lockSound_FUN_00528800
 ;   sound_sndmain.cpp_unlockSound_FUN_00528890
@@ -45,10 +45,10 @@ section .text
     MOV EDX,0x59368b                    ; 00527424 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0xf52                       ; 00527429
     PUSH 0x5936a0                       ; 0052742e | = "enableSfxChannel - invalid channel in..."
-    MOV dword ptr [0x01cc4800],EDX      ; 00527433 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00527439 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0052743f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00527433 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00527439 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0052743f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00527444
     MOV dword ptr [ESI*0x4 + 0x2dc79d8],EBX ; 00527447
         ;   Label: LAB_00527447

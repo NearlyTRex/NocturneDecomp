@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_004a4170 at 004a4aba
+;   core_game.cpp_FUN_004a4170 at 004a4aba
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0058152c

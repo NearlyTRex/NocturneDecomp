@@ -17,10 +17,10 @@ void engine_drender_cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_0045f700(int
      (iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(param_2 + 8), iVar1 != 0)) {
     if (*(int *)(param_1 + 4) == 0) {
       if (DAT_005b7624 == 0x20) {
-        _DAT_01c00c7c = FUN_0052f031;
+        _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
       }
       else {
-        _DAT_01c00c7c = FUN_0052f823;
+        _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
       }
       _DAT_01c039a4 = 6;
       _DAT_01c039a0 = 0x2cd;
@@ -28,7 +28,7 @@ void engine_drender_cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_0045f700(int
     else {
       _DAT_01c039a0 = 0;
       _DAT_01c039a4 = 0;
-      _DAT_01c00c7c = FUN_00463a79;
+      _DAT_01c00c7c = core_dstrender_cpp_FUN_00463a79;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
               (param_1,*(uint *)(param_2 + 4),param_2 + 0x18);

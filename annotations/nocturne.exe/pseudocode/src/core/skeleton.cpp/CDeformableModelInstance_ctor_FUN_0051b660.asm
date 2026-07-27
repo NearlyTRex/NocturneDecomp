@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00540b40 at 00540b56
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00423f40 at 00423f56
 ;   core_moloch.cpp_CMoloch_ctor_FUN_004dd930 at 004dd946
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_00519be0 at 00519c2b
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20 at 0051ad9c
+;   core_succubus.cpp_FUN_00540b40 at 00540b56
 ;   core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0 at 0054c2c4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   undefined1* PTR_core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0_005a1ed4 = 0051b6e0
 ;
 ; Called Functions:
@@ -30,7 +30,7 @@ section .text
     CALL core_motion.cpp_CMotionController_ctor_FUN_004e1120 ; 0051b665
         ;   XREF to: 004e1120 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_ctor_FUN_004e1120()
     ADD ESP,0x4                         ; 0051b66a
-    PUSH 0x5993b0                       ; 0051b66d | DAT_005993b0
+    PUSH 0x5993b0                       ; 0051b66d | g_CVectorTypeInfo_005993b0
     PUSH 0x64                           ; 0051b672
     ADD EAX,0x58                        ; 0051b674
     PUSH EAX                            ; 0051b677

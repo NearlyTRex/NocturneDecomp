@@ -8,8 +8,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00522480 at 005228f2
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 005243e3
+;   sound_sndmain.cpp_FUN_00522480 at 005228f2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cd8b28

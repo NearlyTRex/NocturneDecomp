@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_0041f190 at 0041f1dc
-;   FUN_004f6170 at 004f67c9
 ;   core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_0041e200 at 0041e213
+;   core_boxactor.cpp_FUN_0041f190 at 0041f1dc
 ;   core_enemy.cpp_CEnemy_canSeeTarget_FUN_00479ab0 at 00479b1b
+;   core_platfrm.cpp_FUN_004f6170 at 004f67c9
 ;
 ; *****************************************************************************
 

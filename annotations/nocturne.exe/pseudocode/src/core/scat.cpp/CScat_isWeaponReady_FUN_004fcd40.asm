@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004fbf20 at 004fc26b
 ;   core_scat.cpp_CScat_processDamage_FUN_004fcbd0 at 004fcce0
+;   core_scat.cpp_FUN_004fbf20 at 004fc26b
 ;
 ; *****************************************************************************
 

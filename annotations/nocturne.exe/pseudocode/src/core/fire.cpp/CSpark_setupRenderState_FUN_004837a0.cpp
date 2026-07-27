@@ -42,7 +42,7 @@ void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_004837a0(void)
   _DAT_005c50c0 = 0x80000;
   _DAT_01c08d40 = 2;
   _DAT_01c08d44 = 3;
-  FUN_00460d90(DAT_005ae704);
+  engine_drender_cpp_FUN_00460d90(DAT_005ae704);
   _DAT_01c08d08 = local_18;
   *(uint *)(&DAT_01c08d0c + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffffec + (uint)bVar4 * -8);

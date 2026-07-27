@@ -15,12 +15,12 @@
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_004e1990
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010
+;   core_npc.cpp_FUN_004ee9e0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0051b880
-;   FUN_004ee9e0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH EDI                            ; 004ef6d2
     MOV EBX,dword ptr [ESP + 0x10]      ; 004ef6d3
     PUSH EBX                            ; 004ef6d7
-    CALL FUN_004ee9e0                   ; 004ef6d8
-        ;   XREF to: 004ee9e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004ee9e0()
+    CALL core_npc.cpp_FUN_004ee9e0      ; 004ef6d8
+        ;   XREF to: 004ee9e0 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004ee9e0()
     MOV EDX,dword ptr [EBX + 0x1f678]   ; 004ef6dd
     ADD ESP,0x4                         ; 004ef6e3
     TEST EDX,EDX                        ; 004ef6e6

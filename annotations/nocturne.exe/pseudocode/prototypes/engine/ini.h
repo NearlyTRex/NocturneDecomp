@@ -3,6 +3,10 @@
 // Function prototypes for engine/ini.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_ini.cpp_staticInit_FUN_004bd090
+// Address: 004bd090
+void __cdecl staticInit(void);
+
 // Original: engine_ini.cpp_CIni_getProfileString_FUN_004bd0a0
 // Address: 004bd0a0
 undefined4 __cdecl CIni::getProfileString(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4,char *param_5,int param_6,undefined4 param_7);
@@ -18,6 +22,10 @@ undefined4 __cdecl CIni::writeProfileString(int *param_1,undefined4 param_2,unde
 // Original: engine_ini.cpp_getProfileString_FUN_004bd750
 // Address: 004bd750
 void __cdecl getProfileString(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+
+// Original: engine_ini.cpp_FUN_004bd790
+// Address: 004bd790
+void FUN_004bd790(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 
 // Original: engine_ini.cpp_writeProfileString_FUN_004bd830
 // Address: 004bd830
@@ -58,3 +66,11 @@ void __cdecl CIniFile::getFloat(undefined4 param_1,undefined4 param_2,float *par
 // Original: engine_ini.cpp_CIniFile_setFloatValue_FUN_004bdb20
 // Address: 004bdb20
 void CIniFile::setFloatValue(undefined4 param_1,undefined4 param_2,float param_3);
+
+// Original: engine_ini.cpp_FUN_004bdb60
+// Address: 004bdb60
+undefined4 FUN_004bdb60(undefined4 param_1);
+
+// Original: engine_ini.cpp_FUN_004bdb70
+// Address: 004bdb70
+undefined4 FUN_004bdb70(undefined4 param_1);

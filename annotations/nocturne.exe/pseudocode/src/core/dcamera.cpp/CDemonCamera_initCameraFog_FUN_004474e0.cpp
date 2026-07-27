@@ -23,7 +23,7 @@ void core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(uint param_1,int *
   DAT_005ad450 = *param_2;
   DAT_005ad454 = param_2[1];
   DAT_005ad458 = param_2[2];
-  wincore_windll_cpp_setFogColor_FUN_00532af0
+  engine_special_cpp_setFogColor_FUN_00532af0
             (*(uint *)(&DAT_00b0e1fc + *param_2 * 4) & 0xff,
              *(uint *)(&DAT_00b0e1fc + param_2[1] * 4) & 0xff,
              *(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff);

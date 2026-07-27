@@ -7,22 +7,22 @@
 ; undefined8       Stack[-0x28]:8  local_28
 ;
 ; XREF[7]:
-;   FUN_0046d680 at 0046d75c
-;   FUN_0046d7e0 at 0046d8c2
-;   FUN_0046d950 at 0046da2a
-;   FUN_0046dab0 at 0046db90
-;   FUN_0046dc10 at 0046dcf2
-;   FUN_0046dd80 at 0046de62
-;   FUN_0046df40 at 0046e553
+;   core_dtri.cpp_FUN_0046d680 at 0046d75c
+;   core_dtri.cpp_FUN_0046d7e0 at 0046d8c2
+;   core_dtri.cpp_FUN_0046d950 at 0046da2a
+;   core_dtri.cpp_FUN_0046dab0 at 0046db90
+;   core_dtri.cpp_FUN_0046dc10 at 0046dcf2
+;   core_dtri.cpp_FUN_0046dd80 at 0046de62
+;   core_dtri.cpp_FUN_0046df40 at 0046e553
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtri_cpp_0057e48e
 ;   TerminatedCString s_Bad_clip_0057e49f
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -186,10 +186,10 @@ section .text
         ;   Label: LAB_0046d636
     MOV EDX,0x457                       ; 0046d63b
     PUSH 0x57e49f                       ; 0046d640 | = "Bad clip!"
-    MOV [0x01cc4800],EAX                ; 0046d645 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0046d64a | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0046d650
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0046d645 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0046d64a | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0046d650
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046d655
     JMP 0x0046d52c                      ; 0046d658
         ;   XREF to: 0046d52c (UNCONDITIONAL_JUMP)  ; LAB_0046d52c

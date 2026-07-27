@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004c90e0 at 004c930f
+;   core_main.c_FUN_004c90e0 at 004c930f
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90

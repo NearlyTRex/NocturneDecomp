@@ -35,7 +35,7 @@ void core_set_cpp_FUN_0050ad20(int param_1)
   if (0 < *(int *)(param_1 + 0x19644)) {
     iVar3 = param_1 + 0x19648;
     do {
-      FUN_00515410(iVar3);
+      core_setutil_cpp_FUN_00515410(iVar3);
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + 0x1898;
     } while (iVar4 < *(int *)(param_1 + 0x19644));

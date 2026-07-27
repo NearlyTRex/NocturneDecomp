@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(uint *param_1,int param_2)
 
 {
@@ -17,9 +15,9 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(uint *param_1,in
   
   local_14 = 0;
   if (0x20 < param_2) {
-    _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-    _DAT_01cc4804 = 0x266;
-    FUN_004c8440("Cannot read or write more than %d bits at a time.  File: %s",0x20,&DAT_01cd8b28);
+    PTR_01cc4800 = "..\\sound\\mp3.cpp";
+    INT_01cc4804 = 0x266;
+    core_main_c_FUN_004c8440("Cannot read or write more than %d bits at a time.  File: %s",0x20,&DAT_01cd8b28);
   }
   param_1[3] = param_1[3] + param_2;
   do {

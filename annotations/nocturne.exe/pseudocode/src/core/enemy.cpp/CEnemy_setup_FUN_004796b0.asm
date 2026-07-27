@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[27]:
-;   FUN_0040fa00 at 0040fa05
-;   FUN_004150b0 at 004150c7
-;   FUN_00415430 at 00415438
-;   FUN_004d4650 at 004d4815
-;   FUN_00540c20 at 00540c65
-;   FUN_0054c3e0 at 0054c3ec
+;   core_armour.cpp_FUN_0040fa00 at 0040fa05
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00412160 at 00412168
 ;   core_batman.cpp_CBatman_setup_FUN_004134a0 at 004134a8
+;   core_beast.cpp_FUN_004150b0 at 004150c7
+;   core_biggs.cpp_FUN_00415430 at 00415438
 ;   core_boneguy.cpp_CBoneGuy_setup_FUN_00418800 at 004189a2
 ;   core_bride.cpp_CBride_setup_FUN_0041fc20 at 0041fdfe
+;   core_bugs.cpp_CBugs_setup_FUN_004211e0 at 00421203
+;   core_cow.cpp_CZombieCow_setup_FUN_0043bc50 at 0043bc9e
+;   core_dog.cpp_CZombieDog_setup_FUN_004546d0 at 0045471d
 ;   ... and 17 more
 ;
 ; Called Functions:

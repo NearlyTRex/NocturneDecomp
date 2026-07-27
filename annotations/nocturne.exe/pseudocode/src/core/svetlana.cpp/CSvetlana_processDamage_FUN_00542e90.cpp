@@ -23,7 +23,7 @@ void core_svetlana_cpp_CSvetlana_processDamage_FUN_00542e90(int param_1,int para
   if (*(int *)(0x01C775EC + 0x22c) == 0) {
     *(uint *)(param_2 + 4) = 0;
   }
-  *(uint *)(param_1 + 0xbc8c) = 0x40400000;
+  *(float *)(param_1 + 0xbc8c) = 3.0f;
   fVar1 = *(float *)(param_1 + 0x2434) - *(float *)(param_2 + 4);
   iVar2 = param_1 + 0x150;
   *(float *)(param_1 + 0x2434) = fVar1;

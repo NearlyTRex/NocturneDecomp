@@ -8,8 +8,8 @@
 ;   TerminatedCString s_ScatDazzle_00585cb2
 ;
 ; Called Functions:
+;   core_npc.cpp_FUN_004eece0
 ;   crt_string.c__stricmp_FUN_00564520
-;   FUN_004eece0
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
         ;   Label: LAB_004b830f
     PUSH ECX                            ; 004b8313
     PUSH EBX                            ; 004b8314
-    CALL FUN_004eece0                   ; 004b8315
-        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; undefined FUN_004eece0()
+    CALL core_npc.cpp_FUN_004eece0      ; 004b8315
+        ;   XREF to: 004eece0 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004eece0()
     ADD ESP,0x8                         ; 004b831a
     POP EBX                             ; 004b831d
     RET                                 ; 004b831e

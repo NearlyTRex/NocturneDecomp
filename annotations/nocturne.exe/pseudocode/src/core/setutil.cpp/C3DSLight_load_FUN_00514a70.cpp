@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(int param_1,uint param_2)
 
 {
@@ -175,9 +173,9 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00514a70(int param_1,uint param
       do {
         _fscanf(param_2,"%d,%d,%d,%d,%d\n",&local_3c,&local_38,&local_30,&local_34,&local_2c);
         if (0xf9 < local_3c) {
-          _DAT_01cc4800 = "..\\core\\setutil.cpp";
-          _DAT_01cc4804 = 0x2a5;
-          FUN_004c8440("Invalid camera number in visiblilty list!");
+          PTR_01cc4800 = "..\\core\\setutil.cpp";
+          INT_01cc4804 = 0x2a5;
+          core_main_c_FUN_004c8440("Invalid camera number in visiblilty list!");
         }
         *(byte *)(param_1 + 0x128 + local_3c) = 1;
         *(uint *)(local_3c * 0x10 + 0x224 + param_1) = local_38;

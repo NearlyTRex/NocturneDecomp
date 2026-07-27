@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00513e20 at 00513e34
 ;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0 at 00514253
 ;   core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340 at 0051437a
+;   core_setdir.cpp_FUN_00513e20 at 00513e34
 ;
 ; *****************************************************************************
 

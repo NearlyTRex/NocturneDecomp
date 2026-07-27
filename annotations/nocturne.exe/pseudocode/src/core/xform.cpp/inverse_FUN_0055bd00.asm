@@ -28,25 +28,25 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[9]:
-;   FUN_004d6650 at 004d6a37
-;   FUN_00543c50 at 00543f2e
-;   FUN_0055bc30 at 0055bc47
-;   FUN_0055bc80 at 0055bc8e
-;   FUN_0055caf0 at 0055cb95
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 at 0042766e
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00429010 at 004290f3
 ;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00429220 at 004293db
 ;   core_cloth.cpp_CCloth_computeBoneTransform_FUN_00436580 at 004365d0
+;   core_mirror.cpp_FUN_004d6650 at 004d6a37
+;   core_tentacle.cpp_FUN_00543c50 at 00543f2e
+;   core_xform.cpp_FUN_0055bc30 at 0055bc47
+;   core_xform.cpp_FUN_0055bc80 at 0055bc8e
+;   core_xform.cpp_FUN_0055caf0 at 0055cb95
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_xform_cpp_005982fa
 ;   TerminatedCString s_inverse_Singular_matrix_0059830c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_xform.cpp_determinant_FUN_0055bcb0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -248,10 +248,10 @@ section .text
         ;   Label: LAB_0055bf21
     MOV EDI,0x23e                       ; 0055bf26
     PUSH 0x59830c                       ; 0055bf2b | = "inverse() - Singular matrix"
-    MOV dword ptr [0x01cc4800],ESI      ; 0055bf30 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0055bf36 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0055bf3c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0055bf30 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0055bf36 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0055bf3c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0055bf41
     JMP 0x0055bd4a                      ; 0055bf44
         ;   XREF to: 0055bd4a (UNCONDITIONAL_JUMP)  ; LAB_0055bd4a

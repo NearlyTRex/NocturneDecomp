@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -142,7 +142,7 @@
     {
       "addr": "004c71a0",
       "from_addr": "004c7473",
-      "name": "FUN_004c71a0",
+      "name": "core_lightgun.cpp_FUN_004c71a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -188,7 +188,7 @@
     {
       "addr": "0053075c",
       "is_variadic": false,
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0053075c"
     }
   ],
   "globals": [
@@ -200,9 +200,9 @@
     },
     {
       "addr": "0059bddc",
-      "name": "DAT_0059bddc",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059bddc",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005ae704",
@@ -317,7 +317,7 @@
       {
         "call_addr": "004c7473",
         "call_type": "direct",
-        "caller": "FUN_004c71a0",
+        "caller": "core_lightgun.cpp_FUN_004c71a0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1098,7 +1098,7 @@
       "line": 136,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea480,&local_f4);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea480,&local_f4);",
       "type": "undefined_data"
     },
     {
@@ -1130,7 +1130,7 @@
       "line": 146,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea4b0,&local_dc);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea4b0,&local_dc);",
       "type": "undefined_data"
     },
     {
@@ -1162,7 +1162,7 @@
       "line": 156,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea4e0,&local_100);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea4e0,&local_100);",
       "type": "undefined_data"
     },
     {
@@ -1194,7 +1194,7 @@
       "line": 166,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea510,&local_118);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea510,&local_118);",
       "type": "undefined_data"
     },
     {
@@ -1226,7 +1226,7 @@
       "line": 176,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea540,&iStack_13c);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea540,&iStack_13c);",
       "type": "undefined_data"
     },
     {
@@ -1258,7 +1258,7 @@
       "line": 186,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea570,&local_b8);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea570,&local_b8);",
       "type": "undefined_data"
     },
     {
@@ -1290,7 +1290,7 @@
       "line": 196,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea5a0,&local_88);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea5a0,&local_88);",
       "type": "undefined_data"
     },
     {
@@ -1322,7 +1322,7 @@
       "line": 206,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea5d0,&local_c4);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea5d0,&local_c4);",
       "type": "undefined_data"
     },
     {

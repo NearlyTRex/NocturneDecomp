@@ -1,14 +1,12 @@
-// Name: FUN_00474230
+// Name: shape_edittool.cpp_FUN_00474230
 // Address: 00474230
 // Address Range: [[00474230, 004742f3]]
 // Convention: unknown
-// Signature: void FUN_00474230(int *param_1,int param_2,char *param_3)
+// Signature: void shape_edittool_cpp_FUN_00474230(int *param_1,int param_2,char *param_3)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00474230(int *param_1,int param_2,char *param_3)
+void shape_edittool_cpp_FUN_00474230(int *param_1,int param_2,char *param_3)
 
 {
   char cVar1;
@@ -19,9 +17,9 @@ void FUN_00474230(int *param_1,int param_2,char *param_3)
   
   bVar5 = 0;
   if ((param_2 < 0) || (*param_1 <= param_2)) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0xa9b;
-    FUN_004c8440("CStrList::set - invalid index");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0xa9b;
+    core_main_c_FUN_004c8440("CStrList::set - invalid index");
   }
   if (param_3 == (char *)0x0) {
     param_3 = &DAT_0057ed1b;
@@ -37,9 +35,9 @@ void FUN_00474230(int *param_1,int param_2,char *param_3)
   uVar2 = realloc(*(uint *)(param_1[2] + param_2 * 4),~uVar3);
   *(uint *)(param_1[2] + param_2 * 4) = uVar2;
   if (*(int *)(param_1[2] + param_2 * 4) == 0) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0xaa4;
-    FUN_004c8440("CStrList::set - out of memory!");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0xaa4;
+    core_main_c_FUN_004c8440("CStrList::set - out of memory!");
   }
   pcVar4 = *(char **)(param_1[2] + param_2 * 4);
   do {

@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,26 +122,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 264,
+    "complexity_score": 250,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 64,
-    "suspect_count": 18,
+    "pseudocode_lines": 65,
+    "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 230
+    "total_lines": 231
   },
   "cross_references": [
     {
       "addr": "004a9270",
       "from_addr": "004aa38d",
-      "name": "FUN_004a9270",
+      "name": "core_ghoul.cpp_FUN_004a9270",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -169,6 +168,11 @@
       "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0"
     },
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "004f1600",
       "is_variadic": false,
       "name": "core_path.cpp_CPathMap_findPathWithRetry_FUN_004f1600"
@@ -177,11 +181,6 @@
       "addr": "004f1e00",
       "is_variadic": false,
       "name": "core_path.cpp_getPathMap_FUN_004f1e00"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     },
     {
       "addr": "004775b0",
@@ -222,20 +221,20 @@
     },
     {
       "addr": "01c78c10",
-      "name": "DAT_01c78c10",
+      "name": "g_CGhoulActorType_01c78bd8.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -264,7 +263,7 @@
     },
     {
       "addr": "02ddf54c",
-      "name": "DAT_02ddf54c",
+      "name": "g_CWayPointActorType_02ddf514.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -275,7 +274,7 @@
       {
         "call_addr": "004aa38d",
         "call_type": "direct",
-        "caller": "FUN_004a9270",
+        "caller": "core_ghoul.cpp_FUN_004a9270",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -376,16 +375,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(int param_1,float param_2)",
@@ -393,7 +384,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(int param_1,float param_2)",
@@ -401,7 +392,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)(param_1 + 0xbd8c) == 0) &&",
@@ -409,7 +400,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2 = *(float *)(param_1 + 0xbd88) - param_2, *(float *)(param_1 + 0xbd88) = param_2,",
@@ -417,7 +408,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_2 = *(float *)(param_1 + 0xbd88) - param_2, *(float *)(param_1 + 0xbd88) = param_2,",
@@ -425,7 +416,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2 = *(float *)(param_1 + 0xbd88) - param_2, *(float *)(param_1 + 0xbd88) = param_2,",
@@ -433,7 +424,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_2 = *(float *)(param_1 + 0xbd88) - param_2, *(float *)(param_1 + 0xbd88) = param_2,",
@@ -441,7 +432,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_2 = *(float *)(param_1 + 0xbd88) - param_2, *(float *)(param_1 + 0xbd88) = param_2,",
@@ -449,7 +440,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 <= 0.0)) {",
@@ -457,7 +448,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
       "text": "local_24 = param_1 + 0x20;",
@@ -465,7 +456,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0xbd88) = local_14 + *(float *)(param_1 + 0xbd88);",
@@ -473,7 +464,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0xbd88) = local_14 + *(float *)(param_1 + 0xbd88);",

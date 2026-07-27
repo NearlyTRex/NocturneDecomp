@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(int param_1,uint param_2,int param_3)
 
 {
@@ -26,9 +24,9 @@ void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_004386b0(int param_1,uint param
     } while (iVar2 < *(int *)(param_1 + 0x37b4c));
   }
   if (iVar2 == *(int *)(param_1 + 0x37b4c)) {
-    _DAT_01cc4800 = "..\\core\\cloth.cpp";
-    _DAT_01cc4804 = 0xaa7;
-    FUN_004c8440("CCloth::grabCloth - Can't find bone %s",param_2);
+    PTR_01cc4800 = "..\\core\\cloth.cpp";
+    INT_01cc4804 = 0xaa7;
+    core_main_c_FUN_004c8440("CCloth::grabCloth - Can't find bone %s",param_2);
   }
   *(uint *)(param_1 + 0x40c + param_3 * 0x11c) = 1;
   *(int *)(param_1 + 0x470 + param_3 * 0x11c) = iVar2;

@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01c039b4
 ;
 ; Called Functions:
-;   wincore_windll.cpp_setFogColor_FUN_00532af0
+;   engine_special.cpp_setFogColor_FUN_00532af0
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
         ;   Label: LAB_00404105
     PUSH EBX                            ; 00404106
     PUSH EAX                            ; 00404107
-    CALL wincore_windll.cpp_setFogColor_FUN_00532af0 ; 00404108
-        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_setFogColor_FUN_00532af0()
+    CALL engine_special.cpp_setFogColor_FUN_00532af0 ; 00404108
+        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_setFogColor_FUN_00532af0()
     ADD ESP,0xc                         ; 0040410d
     POP ESI                             ; 00404110
     POP EBX                             ; 00404111

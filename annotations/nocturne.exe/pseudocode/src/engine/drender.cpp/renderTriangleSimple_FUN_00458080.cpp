@@ -189,7 +189,7 @@ LAB_00458358:
             }
           }
           apuStack_78[1] = (uint *)0x45837b;
-          wincore_windll_cpp_renderScanline_FUN_00530710(local_18,local_14,local_1c);
+          engine_special_cpp_renderScanline_FUN_00530710(local_18,local_14,local_1c);
           if (_DAT_01b4d768 != 0) {
             return;
           }
@@ -213,7 +213,7 @@ LAB_00458358:
       } while (iVar8 < param_2);
     }
     apuStack_78[0] = _DAT_01c039a0;
-    wincore_windll_cpp_drawPolygon2_FUN_00532650(apuStack_78 + 1,param_2);
+    engine_special_cpp_drawPolygon2_FUN_00532650(apuStack_78 + 1,param_2);
   }
   return;
 }

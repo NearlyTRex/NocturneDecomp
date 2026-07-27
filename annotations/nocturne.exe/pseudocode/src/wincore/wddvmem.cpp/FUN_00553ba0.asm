@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00553ba0(void)
+; void wincore_wddvmem_cpp_FUN_00553ba0(void)
 ;
 ;
 ; XREF[2]:
-;   FUN_00558d90 at 00558e69
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 00553b4c
+;   wincore_winrun.cpp_FUN_00558d90 at 00558e69
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFocus_00575470 = 00175a70
@@ -15,9 +15,9 @@
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
-;   undefined4 DAT_02dc9d60
+;   char* PTR_01cc4800
+;   int INT_01cc4804
+;   int INT_02dc9d60
 ;   undefined4 DAT_02ddf550
 ;   undefined4 DAT_02ddf554
 ;   undefined4 DAT_02ddf558
@@ -26,21 +26,21 @@
 ;   undefined4 DAT_02de2098
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   DirectDrawCreate
-;   FUN_004c8440
+;   engine_special.cpp_setResolutionAndColorTable_FUN_005324a0
 ;   SetFocus
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
-;   wincore_windll.cpp_setResolutionAndColorTable_FUN_005324a0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00553ba0
-        ;   Label: FUN_00553ba0
+        ;   Label: wincore_wddvmem.cpp_FUN_00553ba0
     PUSH ESI                            ; 00553ba1
     PUSH EBP                            ; 00553ba2
-    CMP dword ptr [0x02dc9d60],0x0      ; 00553ba3 | DAT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 00553ba3 | INT_02dc9d60
     JZ 0x00553cb7                       ; 00553baa
         ;   XREF to: 00553cb7 (CONDITIONAL_JUMP)  ; LAB_00553cb7
     CMP dword ptr [0x02ddf568],0x0      ; 00553bb0 | DAT_02ddf568
@@ -52,15 +52,15 @@ section .text
     PUSH ECX                            ; 00553bca
     MOV EBX,dword ptr [0x005b761c]      ; 00553bcb | DAT_005b761c
     PUSH EBX                            ; 00553bd1
-    CALL wincore_windll.cpp_setResolutionAndColorTable_FUN_005324a0 ; 00553bd2
-        ;   XREF to: 005324a0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_setResolutionAndColorTable_FUN_005324a0()
+    CALL engine_special.cpp_setResolutionAndColorTable_FUN_005324a0 ; 00553bd2
+        ;   XREF to: 005324a0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_setResolutionAndColorTable_FUN_005324a0()
     ADD ESP,0xc                         ; 00553bd7
     TEST EAX,EAX                        ; 00553bda
     JNZ 0x00553c81                      ; 00553bdc
         ;   XREF to: 00553c81 (CONDITIONAL_JUMP)  ; LAB_00553c81
     PUSH EDI                            ; 00553be2
     MOV EDI,dword ptr [0x02ddf55c]      ; 00553be3 | DAT_02ddf55c
-    MOV [0x02dc9d60],EAX                ; 00553be9 | DAT_02dc9d60
+    MOV [0x02dc9d60],EAX                ; 00553be9 | INT_02dc9d60
     TEST EDI,EDI                        ; 00553bee
     JZ 0x00553c00                       ; 00553bf0
         ;   XREF to: 00553c00 (CONDITIONAL_JUMP)  ; LAB_00553c00
@@ -171,10 +171,10 @@ section .text
     MOV EBP,0x597b48                    ; 00553cec | = "..\\wincore\\wddvmem.cpp"
     MOV EAX,0x3df                       ; 00553cf1
     PUSH 0x597b5f                       ; 00553cf6 | = "videoRestore - Unable to set front bu..."
-    MOV dword ptr [0x01cc4800],EBP      ; 00553cfb | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00553d01 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00553d06
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00553cfb | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00553d01 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00553d06
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00553d0b
     POP EBP                             ; 00553d0e
     POP ESI                             ; 00553d0f

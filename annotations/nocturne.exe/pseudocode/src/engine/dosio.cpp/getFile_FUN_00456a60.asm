@@ -9,16 +9,16 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ;
 ; XREF[61]:
-;   FUN_00401010 at 0040109f
-;   FUN_0042eb90 at 0042ebaa
-;   FUN_0042ee00 at 0042ee25
-;   FUN_00430210 at 00430241
-;   FUN_00446810 at 00446894
-;   FUN_0044b660 at 0044b688
-;   FUN_0044d550 at 0044d593
-;   FUN_00467890 at 004678a0
-;   FUN_00490210 at 00490232
-;   FUN_0049a320 at 0049a3e2
+;   cockpit_ckptutil.c_FUN_0042eb90 at 0042ebaa
+;   cockpit_ckptutil.c_FUN_0042ee00 at 0042ee25
+;   cockpit_ckptutil.c_FUN_00430210 at 00430241
+;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d521
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d262
+;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40 at 004f4e6b
+;   cockpit_pkbitmap.cpp_FUN_004f5110 at 004f513a
+;   cockpit_pkbmpset.cpp_FUN_004f54c0 at 004f550a
+;   cockpit_pkbmpset.cpp_FUN_004f5740 at 004f575f
+;   core_cloth.cpp_CCloth_load_FUN_00435240 at 00435263
 ;   ... and 51 more
 ;
 ; Called Functions:

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004a7320 at 004a7333
+;   core_gargoyle.cpp_FUN_004a7320 at 004a7333
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gargoyle_dfm_0058482a

@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00495a20 at 00496bf5
-;   FUN_00535900 at 00536ed3
+;   core_gabriela.cpp_FUN_00495a20 at 00496bf5
+;   core_stranger.cpp_FUN_00535900 at 00536ed3
 ;
 ; Referenced Globals:
-;   undefined4 CDemonActorType_00764800.name_hash
+;   undefined4 g_CBoxActorActorType_00764800.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -32,7 +32,7 @@ section .text
     RET                                 ; 004b5702
     PUSH EDI                            ; 004b5703
         ;   Label: LAB_004b5703
-    MOV ECX,dword ptr [0x00764838]      ; 004b5704 | CDemonActorType_00764800.name_hash
+    MOV ECX,dword ptr [0x00764838]      ; 004b5704 | g_CBoxActorActorType_00764800.name_hash
     PUSH ECX                            ; 004b570a
     PUSH EDX                            ; 004b570b
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b570c

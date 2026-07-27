@@ -3,6 +3,10 @@
 // Function prototypes for core/actor.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_actor.cpp_staticInit_FUN_00409840
+// Address: 00409840
+void __cdecl staticInit(void);
+
 // Original: core_actor.cpp_rayCylinderIntersect_FUN_00409860
 // Address: 00409860
 float rayCylinderIntersect(int param_1,float *param_2,float *param_3,float *param_4);
@@ -202,6 +206,14 @@ void FUN_0040bca0(int param_1,undefined4 param_2,int param_3);
 // Original: core_actor.cpp_FUN_0040bce0
 // Address: 0040bce0
 void FUN_0040bce0(int param_1,uint param_2);
+
+// Original: core_actor.cpp_FUN_0040bd40
+// Address: 0040bd40
+undefined4 * FUN_0040bd40(void);
+
+// Original: core_actor.cpp_FUN_0040bd90
+// Address: 0040bd90
+void FUN_0040bd90(char *param_1,undefined4 param_2,undefined4 param_3);
 
 // Original: core_actor.cpp_adjustIndentationLevel_FUN_0040bff0
 // Address: 0040bff0
@@ -410,3 +422,47 @@ undefined4 FUN_0040e170(undefined4 param_1);
 // Original: core_actor.cpp_copyVector_FUN_0040e180
 // Address: 0040e180
 void __cdecl copyVector(undefined4 *param_1,undefined4 *param_2);
+
+// Original: core_actor.cpp_FUN_0040e1a0
+// Address: 0040e1a0
+float FUN_0040e1a0(float *param_1);
+
+// Original: core_actor.cpp_FUN_0040e1cc
+// Address: 0040e1cc
+void FUN_0040e1cc(void);
+
+// Original: core_actor.cpp_FUN_0040e220
+// Address: 0040e220
+undefined4 FUN_0040e220(undefined4 param_1);
+
+// Original: core_actor.cpp_FUN_0040e230
+// Address: 0040e230
+undefined4 FUN_0040e230(undefined4 param_1);
+
+// Original: core_actor.cpp_FUN_0040e240
+// Address: 0040e240
+undefined4 * FUN_0040e240(undefined4 *param_1,undefined4 *param_2);
+
+// Original: core_actor.cpp_FUN_0040e290
+// Address: 0040e290
+undefined4 FUN_0040e290(undefined4 param_1);
+
+// Original: core_actor.cpp_FUN_0040e2a0
+// Address: 0040e2a0
+void FUN_0040e2a0(undefined4 *param_1,undefined4 *param_2);
+
+// Original: core_actor.cpp_FUN_0040e2ce
+// Address: 0040e2ce
+void FUN_0040e2ce(void);
+
+// Original: core_actor.cpp_FUN_0040e2e1
+// Address: 0040e2e1
+void FUN_0040e2e1(undefined4 *param_1);
+
+// Original: core_actor.cpp_FUN_0040e2f1
+// Address: 0040e2f1
+void FUN_0040e2f1(undefined4 *param_1);
+
+// Original: core_actor.cpp_FUN_0040e300
+// Address: 0040e300
+void FUN_0040e300(undefined4 param_1);

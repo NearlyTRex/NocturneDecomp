@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00552a20(void)
+; void wincore_wddvmem_cpp_FUN_00552a20(void)
 ;
 ;
 ; Referenced Globals:
@@ -14,20 +14,20 @@
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_005c5010
 ;   undefined4 DAT_006af62c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02ddf560
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EDI                            ; 00552a20
-        ;   Label: FUN_00552a20
+        ;   Label: wincore_wddvmem.cpp_FUN_00552a20
     PUSH EBP                            ; 00552a21
     MOV ECX,dword ptr [0x005b761c]      ; 00552a22 | DAT_005b761c
     IMUL ECX,dword ptr [0x005b7620]     ; 00552a28 | DAT_005b7620
@@ -50,10 +50,10 @@ section .text
     MOV ECX,0x5977c5                    ; 00552a57 | = "..\\wincore\\wddvmem.cpp"
     MOV EBX,0xea                        ; 00552a5c
     PUSH 0x5977dc                       ; 00552a61 | = "WDDVMEM: Fatal - out of frame buffer ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00552a66 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00552a6c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00552a72
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00552a66 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00552a6c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00552a72
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00552a77
     POP EBX                             ; 00552a7a
     MOV EAX,[0x005b761c]                ; 00552a7b | DAT_005b761c
@@ -80,10 +80,10 @@ section .text
         ;   Label: LAB_00552ab1
     MOV EBP,0xef                        ; 00552ab6
     PUSH 0x59781f                       ; 00552abb | = "WDDVMEM: Fatal - out of Z buffer memory"
-    MOV dword ptr [0x01cc4800],EDI      ; 00552ac0 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00552ac6 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00552acc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00552ac0 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00552ac6 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00552acc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00552ad1
     MOV EAX,[0x02ddf560]                ; 00552ad4 | DAT_02ddf560
     ADD EAX,0x10                        ; 00552ad9

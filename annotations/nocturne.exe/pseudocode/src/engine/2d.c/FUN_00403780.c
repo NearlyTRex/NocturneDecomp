@@ -19,9 +19,9 @@ void engine_2d_c_FUN_00403780(int param_1,int param_2,int param_3)
     if (DAT_005b7620 < 400) {
       if (DAT_005b7620 != 200) {
 LAB_004038d6:
-        _DAT_01cc4800 = "..\\engine\\2d.c";
-        _DAT_01cc4804 = 0x7dd;
-        FUN_004c8440("draw320x200SizeDot: unknown graphics option");
+        PTR_01cc4800 = "..\\engine\\2d.c";
+        INT_01cc4804 = 0x7dd;
+        core_main_c_FUN_004c8440("draw320x200SizeDot: unknown graphics option");
         return;
       }
       engine_2d_c_project3DPointToScreen_FUN_00401da0(param_1,param_2,param_3);

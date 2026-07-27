@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00432210(uint param_1,int *param_2)
+; undefined4 engine_clipper_c_FUN_00432210(uint param_1,int *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14c]:4  local_14c
@@ -43,20 +43,20 @@
 ;   ... and 40 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_clipper.c_interpolateVertexBottomClip_FUN_00431730
 ;   engine_clipper.c_interpolateVertexLeftClip_FUN_00431530
 ;   engine_clipper.c_interpolateVertexRightClip_FUN_00431630
 ;   engine_clipper.c_interpolateVertexTopClip_FUN_00431830
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
-;   FUN_004c8440
-;   wincore_windll.cpp_drawPolygon2_FUN_00532650
+;   engine_special.cpp_drawPolygon2_FUN_00532650
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00432210
-        ;   Label: FUN_00432210
+        ;   Label: engine_clipper.c_FUN_00432210
     PUSH ESI                            ; 00432211
     PUSH EDI                            ; 00432212
     PUSH EBP                            ; 00432213
@@ -195,8 +195,8 @@ section .text
     INC ESI                             ; 00432360
     PUSH 0x767274                       ; 00432361 | DAT_00767274
     MOV dword ptr [0x01e52ef8],ESI      ; 00432366 | DAT_01e52ef8
-    CALL wincore_windll.cpp_drawPolygon2_FUN_00532650 ; 0043236c
-        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolygon2_FUN_00532650()
+    CALL engine_special.cpp_drawPolygon2_FUN_00532650 ; 0043236c
+        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon2_FUN_00532650()
     MOV EAX,0x1                         ; 00432371
     ADD ESP,0xc                         ; 00432376
     ADD ESP,0x13c                       ; 00432379
@@ -593,10 +593,10 @@ section .text
     MOV EAX,0x57ac47                    ; 00432775 | = "..\\engine\\clipper.c"
     MOV EDX,0x5e                        ; 0043277a
     PUSH 0x57ac5b                       ; 0043277f | = "Ran out of clipped verts!"
-    MOV [0x01cc4800],EAX                ; 00432784 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00432789 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0043278f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00432784 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00432789 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0043278f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00432794
     MOV EAX,[0x00767b38]                ; 00432797 | DAT_00767b38
         ;   Label: LAB_00432797
@@ -630,10 +630,10 @@ section .text
     MOV EAX,0x57ac47                    ; 004327ec | = "..\\engine\\clipper.c"
     MOV EDX,0x5e                        ; 004327f1
     PUSH 0x57ac5b                       ; 004327f6 | = "Ran out of clipped verts!"
-    MOV [0x01cc4800],EAX                ; 004327fb | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00432800 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00432806
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004327fb | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00432800 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00432806
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0043280b
     MOV EAX,[0x00767b38]                ; 0043280e | DAT_00767b38
         ;   Label: LAB_0043280e
@@ -661,10 +661,10 @@ section .text
     MOV ECX,0x57ac47                    ; 0043284e | = "..\\engine\\clipper.c"
     MOV EAX,0x5e                        ; 00432853
     PUSH 0x57ac5b                       ; 00432858 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0043285d | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00432863 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00432868
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0043285d | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00432863 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00432868
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0043286d
     MOV EAX,[0x00767b38]                ; 00432870 | DAT_00767b38
         ;   Label: LAB_00432870
@@ -692,10 +692,10 @@ section .text
     MOV EDX,0x57ac47                    ; 004328a8 | = "..\\engine\\clipper.c"
     MOV ECX,0x5e                        ; 004328ad
     PUSH 0x57ac5b                       ; 004328b2 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004328b7 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004328bd | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004328c3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004328b7 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004328bd | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004328c3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004328c8
     MOV EAX,[0x00767b38]                ; 004328cb | DAT_00767b38
         ;   Label: LAB_004328cb
@@ -720,10 +720,10 @@ section .text
     MOV ECX,0x57ac47                    ; 004328fd | = "..\\engine\\clipper.c"
     MOV EAX,0x5e                        ; 00432902
     PUSH 0x57ac5b                       ; 00432907 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0043290c | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00432912 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00432917
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0043290c | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00432912 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00432917
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0043291c
     MOV EAX,[0x00767b38]                ; 0043291f | DAT_00767b38
         ;   Label: LAB_0043291f
@@ -751,10 +751,10 @@ section .text
     MOV EDX,0x57ac47                    ; 00432957 | = "..\\engine\\clipper.c"
     MOV ECX,0x5e                        ; 0043295c
     PUSH 0x57ac5b                       ; 00432961 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00432966 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0043296c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00432972
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00432966 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0043296c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00432972
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00432977
     MOV EAX,[0x00767b38]                ; 0043297a | DAT_00767b38
         ;   Label: LAB_0043297a
@@ -779,10 +779,10 @@ section .text
     MOV ECX,0x57ac47                    ; 004329ac | = "..\\engine\\clipper.c"
     MOV EAX,0x5e                        ; 004329b1
     PUSH 0x57ac5b                       ; 004329b6 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004329bb | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004329c1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004329c6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004329bb | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004329c1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004329c6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004329cb
     MOV EAX,[0x00767b38]                ; 004329ce | DAT_00767b38
         ;   Label: LAB_004329ce
@@ -810,10 +810,10 @@ section .text
     MOV EDX,0x57ac47                    ; 00432a06 | = "..\\engine\\clipper.c"
     MOV ECX,0x5e                        ; 00432a0b
     PUSH 0x57ac5b                       ; 00432a10 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00432a15 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00432a1b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00432a21
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00432a15 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00432a1b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00432a21
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00432a26
     MOV EAX,[0x00767b38]                ; 00432a29 | DAT_00767b38
         ;   Label: LAB_00432a29

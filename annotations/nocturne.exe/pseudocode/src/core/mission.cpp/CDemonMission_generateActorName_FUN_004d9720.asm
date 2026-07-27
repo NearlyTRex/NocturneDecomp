@@ -8,16 +8,16 @@
 ; undefined1       Stack[-0x2b]:1  local_2b
 ;
 ; XREF[13]:
-;   FUN_004a03a0 at 004a03d3
-;   FUN_00540f50 at 00541226
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530 at 004115a2
 ;   core_bodypart.cpp_createBodyPart_FUN_00415b30 at 00415be3
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1fe3
+;   core_game.cpp_FUN_004a03a0 at 004a03d3
 ;   core_game.cpp_giveHeroWeapon_FUN_004a02e0 at 004a02fd
 ;   core_gore.cpp_CGore_spawnFlies_FUN_004b0580 at 004b063c
 ;   core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080 at 004b60e7
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004c0050
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004d5e20 at 004d5eb2
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60 at 004d8c9a
 ;   ... and 3 more
 ;
 ; Called Functions:

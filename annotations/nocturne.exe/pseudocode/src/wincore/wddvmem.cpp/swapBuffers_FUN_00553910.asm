@@ -13,16 +13,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[44]:
-;   FUN_0044b660 at 0044b6d7
-;   FUN_0046f7e0 at 0046f8c5
-;   FUN_0046fb40 at 0046fc95
-;   FUN_0046fcd0 at 0046fe25
-;   FUN_0046fe60 at 0046ffb5
-;   FUN_004700d0 at 0047016b
-;   FUN_00470eb0 at 004710ea
-;   FUN_004a57c0 at 004a5998
-;   FUN_004c8510 at 004c8552
-;   FUN_004c85f0 at 004c8c5e
+;   core_dcube.cpp_FUN_0044b660 at 0044b6d7
+;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6ab2
+;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7103
+;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e516
+;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d9e0
+;   core_game.cpp_FUN_004a57c0 at 004a5998
+;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5f68
+;   core_main.c_FUN_004c8510 at 004c8552
+;   core_main.c_FUN_004c85f0 at 004c8c5e
+;   core_main.c_FUN_004c8e10 at 004c8e28
 ;   ... and 34 more
 ;
 ; Referenced Globals:
@@ -37,18 +37,18 @@
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01c02594
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02ddf554
 ;   undefined4 DAT_02ddf564
 ;   ... and 1 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
-;   FUN_004c8440
-;   FUN_00532ba0
-;   FUN_00553ba0
+;   engine_special.cpp_FUN_00532ba0
 ;   wincore_wddvmem.cpp_closeScreenDevice_FUN_00553520
+;   wincore_wddvmem.cpp_FUN_00553ba0
 ;   wincore_wddvmem.cpp_openScreenDevice_FUN_00553470
 ;   wincore_winrun.cpp_processWindowMessages_FUN_005591c0
 ;
@@ -132,8 +132,8 @@ section .text
     POP ESI                             ; 005539cf
     POP EBX                             ; 005539d0
     RET                                 ; 005539d1
-    CALL FUN_00532ba0                   ; 005539d2
-        ;   XREF to: 00532ba0 (UNCONDITIONAL_CALL)  ; undefined FUN_00532ba0()
+    CALL engine_special.cpp_FUN_00532ba0 ; 005539d2
+        ;   XREF to: 00532ba0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532ba0()
         ;   Label: LAB_005539d2
     XOR ESI,ESI                         ; 005539d7
     MOV dword ptr [0x02ddf564],ESI      ; 005539d9 | DAT_02ddf564
@@ -181,10 +181,10 @@ section .text
     MOV EDI,0x597ae0                    ; 00553a41 | = "..\\wincore\\wddvmem.cpp"
     MOV EAX,0x346                       ; 00553a46
     PUSH 0x597af7                       ; 00553a4b | = "Unable to lock front buffer"
-    MOV dword ptr [0x01cc4800],EDI      ; 00553a50 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00553a56 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00553a5b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00553a50 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00553a56 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00553a5b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00553a60
     MOV EAX,dword ptr [EBP + -0x58]     ; 00553a63
         ;   Label: LAB_00553a63
@@ -240,10 +240,10 @@ section .text
     MOV ESI,0x597b13                    ; 00553af8 | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x368                       ; 00553afd
     PUSH 0x597b2a                       ; 00553b02 | = "Unable to unlock front buffer"
-    MOV dword ptr [0x01cc4800],ESI      ; 00553b07 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00553b0d | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00553b13
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00553b07 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00553b0d | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00553b13
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00553b18
     XOR ESI,ESI                         ; 00553b1b
     MOV dword ptr [0x02ddf564],ESI      ; 00553b1d | DAT_02ddf564
@@ -267,8 +267,8 @@ section .text
     CMP EAX,0x887601c2                  ; 00553b41
     JNZ 0x005539be                      ; 00553b46
         ;   XREF to: 005539be (CONDITIONAL_JUMP)  ; LAB_005539be
-    CALL FUN_00553ba0                   ; 00553b4c
-        ;   XREF to: 00553ba0 (UNCONDITIONAL_CALL)  ; undefined FUN_00553ba0()
+    CALL wincore_wddvmem.cpp_FUN_00553ba0 ; 00553b4c
+        ;   XREF to: 00553ba0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_00553ba0()
     XOR ESI,ESI                         ; 00553b51
     MOV dword ptr [0x02ddf564],ESI      ; 00553b53 | DAT_02ddf564
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 00553b59

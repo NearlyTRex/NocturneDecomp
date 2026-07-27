@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0048ab60 at 0048ad6f
 ;   core_actor.cpp_FUN_0040db50 at 0040dc78
+;   core_fire.cpp_FUN_0048ab60 at 0048ad6f
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004b1170 = 004b11c1

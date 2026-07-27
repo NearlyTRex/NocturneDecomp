@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 335,
-    "complexity_score": 456,
+    "complexity_score": 440,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 156,
-    "suspect_count": 27,
+    "pseudocode_lines": 155,
+    "suspect_count": 26,
     "suspect_types": [
       "param_count_too_few",
       "pointer_truncation",
       "unnamed_param",
       "unrolled_strchr",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 491
+    "total_lines": 490
   },
   "cross_references": [
     {
@@ -160,6 +159,11 @@
     "signature": "undefined4 __cdecl core_ground_cpp_CGround_load_FUN_004b14d0(int *param_1,char *param_2)"
   },
   "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
     {
       "addr": "00544950",
       "is_variadic": false,
@@ -184,11 +188,6 @@
       "addr": "00456a60",
       "is_variadic": false,
       "name": "engine_dosio.cpp_getFile_FUN_00456a60"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -290,14 +289,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -480,7 +479,7 @@
         {
           "check_id": "uninitvar",
           "column": 9,
-          "line": 50,
+          "line": 48,
           "message": "Uninitialized variable: *pcVar8",
           "severity": "error"
         }
@@ -491,16 +490,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint __cdecl core_ground_cpp_CGround_load_FUN_004b14d0(int *param_1,char *param_2)",
@@ -508,7 +499,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint __cdecl core_ground_cpp_CGround_load_FUN_004b14d0(int *param_1,char *param_2)",
@@ -516,7 +507,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_2",
       "severity": "mild",
       "text": "pcVar7 = param_2;",
@@ -524,7 +515,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1[1]) {",
@@ -532,7 +523,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *param_1) {",
@@ -540,7 +531,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 87,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(ushort *)(param_1[9] + (local_18 * *param_1 + iVar10) * 4) = uVar3 << 7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
       "match": "param_1",
       "severity": "mild",
       "text": "*(ushort *)(param_1[9] + (local_18 * *param_1 + iVar10) * 4) = uVar3 << 7;",
@@ -549,14 +548,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 89,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(ushort *)(param_1[9] + (local_18 * *param_1 + iVar10) * 4) = uVar3 << 7;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar10 < *param_1);",
@@ -564,7 +555,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_18 < param_1[1]);",
@@ -572,7 +563,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 98,
       "match": "param_2",
       "severity": "mild",
       "text": "pcVar9 = param_2;",
@@ -580,7 +571,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 144,
+      "line": 142,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1[1]) {",
@@ -588,7 +579,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 145,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *param_1) {",
@@ -596,7 +587,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 149,
+      "line": 147,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar5 = local_14 * *param_1 + iVar10;",
@@ -604,7 +595,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 151,
+      "line": 149,
       "match": "param_1",
       "severity": "mild",
       "text": "_fread(iVar5 * 4 + param_1[9] + 2,1,2,local_1c);",
@@ -612,7 +603,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 152,
+      "line": 150,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar10 < *param_1);",
@@ -620,7 +611,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 155,
+      "line": 153,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_14 < param_1[1]);",
@@ -628,7 +619,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 156,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar6 = core_texlist_cpp_CTextureList_load_FUN_00544950(param_1[10],param_2);",
@@ -636,7 +627,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 156,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar6 = core_texlist_cpp_CTextureList_load_FUN_00544950(param_1[10],param_2);",
@@ -644,7 +635,7 @@
     },
     {
       "description": "Pointer value `(pbVar2 + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 86,
+      "line": 84,
       "match": "(int)(pbVar2 + 1)",
       "severity": "moderate",
       "text": "*piVar4 = (int)(pbVar2 + 1);",
@@ -652,7 +643,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 30,
+      "line": 28,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -660,7 +651,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 59,
+      "line": 57,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -668,7 +659,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 101,
+      "line": 99,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -676,7 +667,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 128,
+      "line": 126,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -684,7 +675,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 41,
+      "line": 39,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -692,7 +683,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 111,
+      "line": 109,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -711,7 +702,7 @@
     },
     {
       "description": "Uninitialized variable: *pcVar8",
-      "line": 50,
+      "line": 48,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (*pcVar8 == '.') goto LAB_004b153d;",

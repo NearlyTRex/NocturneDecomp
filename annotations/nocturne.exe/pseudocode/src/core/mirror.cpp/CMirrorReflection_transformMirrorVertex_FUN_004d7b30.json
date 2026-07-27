@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 191,
+    "complexity_score": 175,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 36,
-    "suspect_count": 13,
+    "pseudocode_lines": 35,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "stack_alignment_array",
       "unaffected_reg",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 96
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -168,15 +167,15 @@
   "globals": [
     {
       "addr": "005a0880",
-      "name": "DAT_005a0880",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a0880",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005a0888",
-      "name": "DAT_005a0888",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a0888",
+      "type": "float",
+      "value": "0.00390625"
     }
   ],
   "param_estimates": {
@@ -321,21 +320,21 @@
         {
           "check_id": "uninitvar",
           "column": 28,
-          "line": 40,
+          "line": 38,
           "message": "Uninitialized variable: local_2c",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 28,
-          "line": 41,
+          "line": 39,
           "message": "Uninitialized variable: local_28",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 4,
-          "line": 42,
+          "line": 40,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         }
@@ -346,16 +345,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(uint param_1,int *param_2)",
@@ -363,7 +354,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(uint param_1,int *param_2)",
@@ -371,7 +362,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 6,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "int *unaff_ESI;",
@@ -379,7 +370,7 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 10,
+      "line": 8,
       "match": "aiStackY_100c",
       "severity": "moderate",
       "text": "int aiStackY_100c [1009];",
@@ -387,31 +378,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_3c = (float)*param_2 * _DAT_005a0888;",
+      "text": "local_3c = (float)*param_2 * 0.00390625f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_38 = (float)param_2[1] * _DAT_005a0888;",
+      "text": "local_38 = (float)param_2[1] * 0.00390625f;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_34 = (float)param_2[2] * 0.00390625f;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 24,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_34 = (float)param_2[2] * _DAT_005a0888;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,local_18,&local_3c);",
@@ -419,15 +410,15 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 35,
+      "line": 33,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "*unaff_ESI = (int)ROUND(local_30 * _DAT_005a0880);",
+      "text": "*unaff_ESI = (int)ROUND(local_30 * 256.0f);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 36,
+      "line": 34,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = local_20[(uint)bVar2 * -2];",
@@ -435,7 +426,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 37,
+      "line": 35,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
@@ -454,26 +445,26 @@
     },
     {
       "description": "Uninitialized variable: local_2c",
-      "line": 40,
+      "line": 38,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "local_20[0] = (int)ROUND(local_2c * _DAT_005a0880);",
+      "text": "local_20[0] = (int)ROUND(local_2c * 256.0f);",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: local_28",
-      "line": 41,
+      "line": 39,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "local_20[1] = (int)ROUND(local_28 * _DAT_005a0880);",
+      "text": "local_20[1] = (int)ROUND(local_28 * 256.0f);",
       "type": "static_uninitvar"
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 42,
+      "line": 40,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
-      "text": "*unaff_ESI = (int)ROUND(local_30 * _DAT_005a0880);",
+      "text": "*unaff_ESI = (int)ROUND(local_30 * 256.0f);",
       "type": "static_uninitvar"
     }
   ]

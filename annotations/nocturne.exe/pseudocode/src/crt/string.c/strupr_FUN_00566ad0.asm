@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00470730 at 00470bbd
-;   FUN_00470eb0 at 00470faa
 ;   core_event.cpp_CEventList_addOrRemoveGameFlag_FUN_00480420 at 004804cb
 ;   core_event.cpp_CEventList_addOrRemovePersistentEvent_FUN_004802e0 at 0048038b
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 0048ffd2
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460 at 00474665
+;   shape_edittool.cpp_FUN_00470730 at 00470bbd
+;   shape_edittool.cpp_FUN_00470eb0 at 00470faa
 ;
 ; *****************************************************************************
 

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int param_2)
 
 {
@@ -21,7 +19,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int
   int local_18;
   int local_14;
   
-  FUN_005174e0(param_1);
+  core_skeleton_cpp_FUN_005174e0(param_1);
   local_24 = -1;
   do {
     iVar1 = _fgetc(param_2);
@@ -29,19 +27,19 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int
   } while (iVar1 != 10);
   _fscanf(param_2,"%d\n",&local_24);
   if (local_24 < 1) {
-    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-    _DAT_01cc4804 = 0x10d;
-    FUN_004c8440("Invalid skeleton version");
+    PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    INT_01cc4804 = 0x10d;
+    core_main_c_FUN_004c8440("Invalid skeleton version");
   }
   if (local_24 < 2) {
-    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-    _DAT_01cc4804 = 0x10e;
-    FUN_004c8440("Old skeleton version %d not supported",local_24);
+    PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    INT_01cc4804 = 0x10e;
+    core_main_c_FUN_004c8440("Old skeleton version %d not supported",local_24);
   }
   if (0x00000003 < local_24) {
-    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-    _DAT_01cc4804 = 0x10f;
-    FUN_004c8440("Skeleton version %d is newer than .EXE, which can only process up to version %d",local_24,0x00000003);
+    PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    INT_01cc4804 = 0x10f;
+    core_main_c_FUN_004c8440("Skeleton version %d is newer than .EXE, which can only process up to version %d",local_24,0x00000003);
   }
   do {
     iVar1 = _fgetc(param_2);
@@ -116,9 +114,9 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_005175f0(int param_1,int
     } while (iVar1 < *(int *)(param_1 + 0x2936c));
   }
   if ((*(byte *)(param_2 + 0xc) & 0x20) != 0) {
-    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-    _DAT_01cc4804 = 0x144;
-    FUN_004c8440("CSkeleton::loadStream - error reading file.");
+    PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    INT_01cc4804 = 0x144;
+    core_main_c_FUN_004c8440("CSkeleton::loadStream - error reading file.");
   }
   core_motion_cpp_CMotionList_load_FUN_004e0920(param_1,param_2);
   if (2 < local_24) {
@@ -139,9 +137,9 @@ LAB_0051793e:
     }
   }
   if ((*(byte *)(param_2 + 0xc) & 0x20) != 0) {
-    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-    _DAT_01cc4804 = 0x15f;
-    FUN_004c8440("CSkeleton::loadStream - error reading file.");
+    PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    INT_01cc4804 = 0x15f;
+    core_main_c_FUN_004c8440("CSkeleton::loadStream - error reading file.");
     return;
   }
   return;

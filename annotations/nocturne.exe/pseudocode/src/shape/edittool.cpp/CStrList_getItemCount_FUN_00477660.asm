@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004fe9d0 at 004feabb
-;   FUN_004febd0 at 004fedc0
-;   FUN_004fee30 at 004fee50
+;   core_script.cpp_FUN_004fe9d0 at 004feabb
+;   core_script.cpp_FUN_004febd0 at 004fedc0
+;   core_script.cpp_FUN_004fee30 at 004fee50
 ;
 ; *****************************************************************************
 

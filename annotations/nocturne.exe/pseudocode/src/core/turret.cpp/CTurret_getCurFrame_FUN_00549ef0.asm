@@ -10,19 +10,19 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
-;   FUN_005496d0 at 0054970b
-;   FUN_00549cd0 at 00549ce9
+;   core_turret.cpp_FUN_005496d0 at 0054970b
+;   core_turret.cpp_FUN_00549cd0 at 00549ce9
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00549ed4 = 00549f8d
 ;   TerminatedCString s_core_turret_cpp_00596da5
 ;   TerminatedCString s_CTurret_getCurFrame_inva_00596db8
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -80,10 +80,10 @@ section .text
         ;   Label: default
     MOV ESI,0x1c1                       ; 00549f6f
     PUSH 0x596db8                       ; 00549f74 | = "CTurret::getCurFrame - invalid state"
-    MOV dword ptr [0x01cc4800],ECX      ; 00549f79 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00549f7f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00549f85
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00549f79 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00549f7f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00549f85
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00549f8a
     FLD float ptr [ESP + 0x8]           ; 00549f8d
         ;   Label: caseD_0

@@ -5,20 +5,20 @@
 ;
 ;
 ; XREF[22]:
-;   FUN_004a3b90 at 004a3c6a
-;   FUN_004a4170 at 004a4541
-;   FUN_004a4b50 at 004a4bdf
-;   FUN_004c85f0 at 004c8646
-;   FUN_004f2990 at 004f2a65
-;   FUN_004f4b30 at 004f4b3f
-;   FUN_004f7980 at 004f79a5
-;   FUN_004f7ae0 at 004f7b60
-;   FUN_004f8240 at 004f82a2
-;   FUN_004f8570 at 004f85c1
+;   FUN_00568690 at 005686da
+;   cockpit_pkbitmap.cpp_FUN_004f4b30 at 004f4b3f
+;   core_game.cpp_FUN_004a3b90 at 004a3c6a
+;   core_game.cpp_FUN_004a4170 at 004a4541
+;   core_game.cpp_FUN_004a4b50 at 004a4bdf
+;   core_main.c_FUN_004c85f0 at 004c8646
+;   core_podmain.cpp_CDemonPod_load_FUN_004f92b0 at 004f92c9
+;   engine_console.cpp_CConsole_printf_FUN_0043ac60 at 0043acf7
+;   engine_dosio.cpp_getFile_FUN_00456a60 at 00456aba
+;   engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0 at 004bd2d8
 ;   ... and 12 more
 ;
 ; Called Functions:
-;   FUN_00565630
+;   crt_unknown.c_FUN_00565630
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH EDX                            ; 00565693
     MOV EBX,dword ptr [ESP + 0x10]      ; 00565694
     PUSH EBX                            ; 00565698
-    CALL FUN_00565630                   ; 00565699
-        ;   XREF to: 00565630 (UNCONDITIONAL_CALL)  ; undefined FUN_00565630()
+    CALL crt_unknown.c_FUN_00565630     ; 00565699
+        ;   XREF to: 00565630 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565630()
     ADD ESP,0xc                         ; 0056569e
     POP EBX                             ; 005656a1
     RET                                 ; 005656a2

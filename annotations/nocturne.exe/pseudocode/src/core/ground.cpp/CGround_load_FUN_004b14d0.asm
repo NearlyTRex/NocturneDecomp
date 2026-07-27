@@ -39,12 +39,12 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_texlist.cpp_CTextureList_load_FUN_00544950
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgetc_FUN_00564570
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -141,10 +141,10 @@ section .text
     MOV EDI,0x585287                    ; 004b1587 | = "..\\core\\ground.cpp"
     MOV EBP,0x44                        ; 004b158c
     PUSH 0x58529a                       ; 004b1591 | = "eopen - Cannot open file"
-    MOV dword ptr [0x01cc4800],EDI      ; 004b1596 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004b159c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004b15a2
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004b1596 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004b159c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004b15a2
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b15a7
     XOR EAX,EAX                         ; 004b15aa
         ;   Label: LAB_004b15aa
@@ -254,10 +254,10 @@ section .text
     MOV EDX,0x58525d                    ; 004b168d | = "..\\core\\ground.cpp"
     MOV ECX,0x40                        ; 004b1692
     PUSH 0x585270                       ; 004b1697 | = "eopen - ext not found!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004b169c | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004b16a2 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004b16a8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004b169c | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004b16a2 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004b16a8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b16ad
     INC EDI                             ; 004b16b0
         ;   Label: LAB_004b16b0
@@ -294,10 +294,10 @@ section .text
     MOV EBP,0x585287                    ; 004b16f0 | = "..\\core\\ground.cpp"
     MOV EAX,0x44                        ; 004b16f5
     PUSH 0x58529a                       ; 004b16fa | = "eopen - Cannot open file"
-    MOV dword ptr [0x01cc4800],EBP      ; 004b16ff | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004b1705 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004b170a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004b16ff | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004b1705 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004b170a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b170f
     MOV dword ptr [ESP + 0xb0],ESI      ; 004b1712
         ;   Label: LAB_004b1712
@@ -368,10 +368,10 @@ section .text
         ;   Label: LAB_004b17b1
     MOV EAX,0x40                        ; 004b17b6
     PUSH 0x585270                       ; 004b17bb | = "eopen - ext not found!"
-    MOV dword ptr [0x01cc4800],ESI      ; 004b17c0 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004b17c6 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004b17cb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004b17c0 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004b17c6 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004b17cb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b17d0
     JMP 0x004b1547                      ; 004b17d3
         ;   XREF to: 004b1547 (UNCONDITIONAL_JUMP)  ; LAB_004b1547

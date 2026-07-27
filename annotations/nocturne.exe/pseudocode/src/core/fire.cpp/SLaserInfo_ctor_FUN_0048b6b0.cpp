@@ -16,6 +16,6 @@ void core_fire_cpp_SLaserInfo_ctor_FUN_0048b6b0(uint *param_1)
   param_1[5] = 0;
   param_1[6] = 0;
   param_1[7] = 0;
-  param_1[1] = 0x3CA3D70A;
+  param_1[1] = 0.02f;
   return;
 }

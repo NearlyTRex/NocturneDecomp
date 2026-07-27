@@ -9,13 +9,13 @@
 ;   TerminatedCString s_true_0059776d
 ;   TerminatedCString s_core_waypoint_cpp_00597772
 ;   TerminatedCString s_Can_t_have_creation_even_00597787
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_trigger.cpp_CTrigger_setup_FUN_00547a00
 ;   crt_string.c__stricmp_FUN_00564520
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -93,10 +93,10 @@ section .text
     MOV EBP,0x597772                    ; 005525a3 | = "..\\core\\waypoint.cpp"
     MOV EAX,0x79                        ; 005525a8
     PUSH 0x597787                       ; 005525ad | = "Can't have creation event for waypoint."
-    MOV dword ptr [0x01cc4800],EBP      ; 005525b2 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 005525b8 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005525bd
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 005525b2 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 005525b8 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005525bd
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005525c2
     ADD ESP,0xc                         ; 005525c5
     POP EBP                             ; 005525c8

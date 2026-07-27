@@ -11,7 +11,7 @@
 ;   undefined4 DAT_01c00c64
 ;
 ; Called Functions:
-;   FUN_0042d130
+;   cockpit_ckptutil.c_FUN_0042d130
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH EBP                            ; 0042e523
     SUB ESP,0x30                        ; 0042e524
     MOV EBP,dword ptr [ESP + 0x48]      ; 0042e527
-    CALL FUN_0042d130                   ; 0042e52b
-        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; undefined FUN_0042d130()
+    CALL cockpit_ckptutil.c_FUN_0042d130 ; 0042e52b
+        ;   XREF to: 0042d130 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042d130()
     MOV EDX,dword ptr [0x005b7624]      ; 0042e530 | DAT_005b7624
     MOV EDI,EAX                         ; 0042e536
     CMP EDX,0x8                         ; 0042e538

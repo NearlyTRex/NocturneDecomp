@@ -4,6 +4,11 @@
 ; undefined4 sound_sndmain_cpp_isStreamableFile_FUN_00522970(undefined4 param_1)
 ;
 ;
+; Referenced Globals:
+;   TerminatedCString s_sound_00592778
+;   TerminatedCString s_mp3_0059277e
+;   TerminatedCString s_mp3_00592782
+;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_00564520
 ;   crt_string.c_splitpath_FUN_00566498
@@ -17,7 +22,7 @@ section .text
         ;   Label: sound_sndmain.cpp_isStreamableFile_FUN_00522970
     MOV EDX,dword ptr [ESP + 0x104]     ; 00522976
     PUSH EDX                            ; 0052297d
-    PUSH 0x592778                       ; 0052297e
+    PUSH 0x592778                       ; 0052297e | = "sound"
     CALL engine_dosio.cpp_getFileSize_FUN_004568c0 ; 00522983
         ;   XREF to: 004568c0 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFileSize_FUN_004568c0()
     ADD ESP,0x8                         ; 00522988
@@ -39,7 +44,7 @@ section .text
     CALL crt_string.c_splitpath_FUN_00566498 ; 005229af
         ;   XREF to: 00566498 (UNCONDITIONAL_CALL)  ; undefined crt_string.c_splitpath_FUN_00566498()
     ADD ESP,0x14                        ; 005229b4
-    PUSH 0x59277e                       ; 005229b7
+    PUSH 0x59277e                       ; 005229b7 | = "mp3"
     LEA EAX,[ESP + 0x4]                 ; 005229bc
     PUSH EAX                            ; 005229c0
     CALL crt_string.c__stricmp_FUN_00564520 ; 005229c1
@@ -48,7 +53,7 @@ section .text
     TEST EAX,EAX                        ; 005229c9
     JZ 0x00522992                       ; 005229cb
         ;   XREF to: 00522992 (CONDITIONAL_JUMP)  ; LAB_00522992
-    PUSH 0x592782                       ; 005229cd
+    PUSH 0x592782                       ; 005229cd | = ".mp3"
     LEA EAX,[ESP + 0x4]                 ; 005229d2
     PUSH EAX                            ; 005229d6
     CALL crt_string.c__stricmp_FUN_00564520 ; 005229d7

@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c86d2
+;   core_main.c_FUN_004c85f0 at 004c86d2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_0058dc31
 ;   TerminatedCString s_CPod_init_No_POD_to_init_0058dc43
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -35,10 +35,10 @@ section .text
         ;   Label: LAB_004f8b00
     MOV ECX,0x2be                       ; 004f8b05
     PUSH 0x58dc43                       ; 004f8b0a | = "CPod::init - No .POD to init!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004f8b0f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f8b15 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f8b1b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004f8b0f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004f8b15 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f8b1b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f8b20
     CMP dword ptr [EBX],0x0             ; 004f8b23
     JZ 0x004f8b2a                       ; 004f8b26

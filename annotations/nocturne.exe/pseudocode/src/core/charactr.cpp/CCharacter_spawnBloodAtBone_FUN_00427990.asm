@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[3]:
-;   FUN_0041fe40 at 00420951
-;   FUN_004a9270 at 004aadac
+;   core_bride.cpp_FUN_0041fe40 at 00420951
+;   core_ghoul.cpp_FUN_004a9270 at 004aadac
 ;   core_zombie.cpp_FUN_0055ef50 at 0055faf5
 ;
 ; Referenced Globals:

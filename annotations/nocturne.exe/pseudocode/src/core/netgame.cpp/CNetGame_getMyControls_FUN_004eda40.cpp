@@ -13,9 +13,9 @@ int * __cdecl core_netgame_cpp_CNetGame_getMyControls_FUN_004eda40(int *param_1)
 {
   if (*param_1 != 0) {
     if (param_1[0x45] < 0) {
-      _DAT_01cc4800 = "..\\core\\netgame.cpp";
-      _DAT_01cc4804 = 0xa0f;
-      FUN_004c8440("CNetGame::getMyControls - I'm not in the player list!");
+      PTR_01cc4800 = "..\\core\\netgame.cpp";
+      INT_01cc4804 = 0xa0f;
+      core_main_c_FUN_004c8440("CNetGame::getMyControls - I'm not in the player list!");
     }
     return param_1 + param_1[0x45] * 0x1e + 0x1b;
   }

@@ -9,10 +9,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004afe80 at 004aff4e
+;   core_gore.cpp_FUN_004afe80 at 004aff4e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059e4d4
+;   float FLOAT_0059e4d4 = 256
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005ba84c
 ;   undefined4 DAT_005c5014
@@ -33,7 +33,7 @@
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
-;   wincore_windll.cpp_transformPoint_FUN_00530a25
+;   engine_special.cpp_transformPoint_FUN_00530a25
 ;
 ; *****************************************************************************
 
@@ -92,20 +92,20 @@ section .text
         ;   Label: LAB_004afae7
     MOV EAX,ESI                         ; 004afae9
     FLD float ptr [EAX]                 ; 004afaeb
-    FMUL float ptr [0x0059e4d4]         ; 004afaed | DAT_0059e4d4
+    FMUL float ptr [0x0059e4d4]         ; 004afaed | FLOAT_0059e4d4
     FISTP dword ptr [EBX]               ; 004afaf3
     FLD float ptr [EAX + 0x4]           ; 004afaf5
-    FMUL float ptr [0x0059e4d4]         ; 004afaf8 | DAT_0059e4d4
+    FMUL float ptr [0x0059e4d4]         ; 004afaf8 | FLOAT_0059e4d4
     FISTP dword ptr [EBX + 0x4]         ; 004afafe
     FLD float ptr [EAX + 0x8]           ; 004afb01
-    FMUL float ptr [0x0059e4d4]         ; 004afb04 | DAT_0059e4d4
+    FMUL float ptr [0x0059e4d4]         ; 004afb04 | FLOAT_0059e4d4
     FISTP dword ptr [EBX + 0x8]         ; 004afb0a
     MOV EBX,ESP                         ; 004afb0d
     PUSH EBX                            ; 004afb0f
     PUSH EDI                            ; 004afb10 | DAT_005c5014 | DAT_005c5044
     ADD ESI,0xc                         ; 004afb11
-    CALL wincore_windll.cpp_transformPoint_FUN_00530a25 ; 004afb14
-        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformPoint_FUN_00530a25()
+    CALL engine_special.cpp_transformPoint_FUN_00530a25 ; 004afb14
+        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformPoint_FUN_00530a25()
     ADD ESP,0x8                         ; 004afb19
     ADD EDI,0x30                        ; 004afb1c
     CMP ESI,EBP                         ; 004afb1f

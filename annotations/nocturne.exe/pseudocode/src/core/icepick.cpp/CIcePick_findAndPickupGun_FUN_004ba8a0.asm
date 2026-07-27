@@ -12,14 +12,14 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:
-;   FUN_004b9fe0 at 004ba4a9
+;   core_icepick.cpp_FUN_004b9fe0 at 004ba4a9
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005861b2 = 2
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
-;   undefined4 DAT_02dd1008
+;   undefined4 g_CTommyGunActorType_02dd0fd0.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -85,7 +85,7 @@ section .text
     TEST EAX,EAX                        ; 004ba932
     JNZ 0x004ba9a7                      ; 004ba934
         ;   XREF to: 004ba9a7 (CONDITIONAL_JUMP)  ; LAB_004ba9a7
-    MOV EAX,[0x02dd1008]                ; 004ba936 | DAT_02dd1008
+    MOV EAX,[0x02dd1008]                ; 004ba936 | g_CTommyGunActorType_02dd0fd0.name_hash
     PUSH EAX                            ; 004ba93b
     PUSH EBX                            ; 004ba93c
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004ba93d

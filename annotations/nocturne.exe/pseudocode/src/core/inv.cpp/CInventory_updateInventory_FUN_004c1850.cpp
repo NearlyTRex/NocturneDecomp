@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1)
 
 {
@@ -22,7 +20,8 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1
   fVar1 = param_1[0xcc];
   if (fVar1 != 0.0) {
     if ((param_1[0x117] != *(float *)((int)fVar1 + 0x560)) &&
-       (iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(fVar1,_DAT_01cc36c0), iVar3 == 0)) {
+       (iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                          (fVar1,g_CLightGunActorType_01cc3688.name_hash), iVar3 == 0)) {
       core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004c1d20(param_1,0);
     }
     param_1[0x117] = *(float *)((int)param_1[0xcc] + 0x560);
@@ -34,7 +33,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1
     if (0 < (int)param_1[2]) {
       do {
         iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (pfVar5[3],CDemonActorType_00764674.name_hash);
+                          (pfVar5[3],g_CBatteryActorType_00764674.name_hash);
         if (iVar4 != 0) {
           local_20 = 1.0 / *(float *)(iVar4 + 0x2d0) + local_20;
         }
@@ -56,7 +55,7 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1
     if (0 < (int)param_1[2]) {
       do {
         iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (pfVar5[3],CDemonActorType_00764674.name_hash);
+                          (pfVar5[3],g_CBatteryActorType_00764674.name_hash);
         if (iVar4 != 0) {
           local_1c = local_1c + *(float *)(iVar4 + 0x2d4);
         }
@@ -74,7 +73,8 @@ void __cdecl core_inv_cpp_CInventory_updateInventory_FUN_004c1850(float *param_1
   pfVar5 = param_1;
   if (0 < (int)param_1[2]) {
     do {
-      iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(pfVar5[3],_DAT_01cc36c0);
+      iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
+                        (pfVar5[3],g_CLightGunActorType_01cc3688.name_hash);
       if ((iVar4 != 0) && (*(int *)(iVar4 + 0x2cc) != 2)) {
         (**(code **)(*(int *)(iVar4 + 0x14c) + 4))(iVar4,*(uint *)(0x01C775EC + 0x264));
       }

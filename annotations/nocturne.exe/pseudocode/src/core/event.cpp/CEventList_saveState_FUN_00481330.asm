@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004a3b90 at 004a3d18
+;   core_game.cpp_FUN_004a3b90 at 004a3d18
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CEventList_version_00580d9b

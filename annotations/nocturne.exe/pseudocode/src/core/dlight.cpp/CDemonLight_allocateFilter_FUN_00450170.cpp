@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_00450170(int param_1)
 
 {
@@ -18,8 +16,8 @@ void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_00450170(int param_1
   if (iVar1 != 0) {
     return;
   }
-  _DAT_01cc4800 = "..\\core\\dlight.cpp";
-  _DAT_01cc4804 = 0x541;
-  FUN_004c8440("CDemonLight::allocateFilter - Out of memory");
+  PTR_01cc4800 = "..\\core\\dlight.cpp";
+  INT_01cc4804 = 0x541;
+  core_main_c_FUN_004c8440("CDemonLight::allocateFilter - Out of memory");
   return;
 }

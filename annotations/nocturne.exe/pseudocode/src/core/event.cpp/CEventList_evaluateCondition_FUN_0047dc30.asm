@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[49]:
-;   FUN_0040f610 at 0040f626
-;   FUN_0040fa20 at 0040fafa
-;   FUN_00418a00 at 00418a23
-;   FUN_00421480 at 004214d9
-;   FUN_00478790 at 004787d2
-;   FUN_00479b60 at 00479bff
-;   FUN_004aded0 at 004adee1
-;   FUN_004b6d80 at 004b817a
-;   FUN_004d49f0 at 004d4acf
-;   FUN_004da790 at 004daa08
+;   core_anvil.cpp_FUN_0040f610 at 0040f626
+;   core_armour.cpp_FUN_0040fa20 at 0040fafa
+;   core_baron.cpp_FUN_00410490 at 004104be
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413e86
+;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 004156b1
+;   core_bodypart.cpp_CBodyPart_process_FUN_004168d0 at 00416a7e
+;   core_boneguy.cpp_FUN_00418a00 at 00418a23
+;   core_bugs.cpp_FUN_00421480 at 004214d9
+;   core_conveyor.cpp_CConveyor_process_FUN_0043b1a0 at 0043b1b9
+;   core_curtain.cpp_CCurtain_process_FUN_0043ebf0 at 0043ec3e
 ;   ... and 39 more
 ;
 ; Referenced Globals:

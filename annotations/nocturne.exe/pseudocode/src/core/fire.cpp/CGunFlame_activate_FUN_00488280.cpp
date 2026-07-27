@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_fire_cpp_CGunFlame_activate_FUN_00488280(float *param_1,float *param_2,float *param_3,float param_4)
 
 {
@@ -30,7 +28,7 @@ void core_fire_cpp_CGunFlame_activate_FUN_00488280(float *param_1,float *param_2
     param_1[3] = param_2[2];
   }
   local_c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0x3f666666,0x3f800000);
-  *param_1 = _DAT_0059d214 * local_c;
+  *param_1 = 2.0f * local_c;
   local_c = (float)core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0,0x41980000);
   param_1[7] = local_c;
   local_20 = *param_3;

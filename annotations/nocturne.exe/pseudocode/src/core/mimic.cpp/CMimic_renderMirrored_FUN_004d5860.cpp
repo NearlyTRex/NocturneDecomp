@@ -52,7 +52,8 @@ int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004d5860(int param_1)
                   (param_1 + 0x150,0xffffffff,0xffffffff,1,0);
         core_cloth_cpp_CCloth_render_FUN_00437db0(param_1 + 0xbdec,0);
         local_14 = core_actor_cpp_castToClassHash_FUN_0040d890
-                             (*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),_DAT_02dc9fe4);
+                             (*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),
+                              g_CStrangerActorType_02dc9fac.name_hash);
         if (local_14 != 0) {
           local_28 = 0;
           local_20 = 0;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004c3aa0(int param_1)
 
 {
@@ -51,14 +49,14 @@ void __cdecl engine_keyframe_c_loadAndInterpolateKeyframes_FUN_004c3aa0(int para
     do {
       iVar11 = *(int *)(iVar3 + 0x118);
       if (*(int *)(iVar11 + 8) != 2) {
-        _DAT_01cc4800 = "..\\engine\\keyframe.c";
-        _DAT_01cc4804 = 0xfd;
-        FUN_004c8440("Bad key frame");
+        PTR_01cc4800 = "..\\engine\\keyframe.c";
+        INT_01cc4804 = 0xfd;
+        core_main_c_FUN_004c8440("Bad key frame");
       }
       if (*(int *)(iVar11 + 0x10) != *(int *)(iVar2 + 0x10)) {
-        _DAT_01cc4800 = "..\\engine\\keyframe.c";
-        _DAT_01cc4804 = 0xfe;
-        FUN_004c8440("Key frame vertex mismatch");
+        PTR_01cc4800 = "..\\engine\\keyframe.c";
+        INT_01cc4804 = 0xfe;
+        core_main_c_FUN_004c8440("Key frame vertex mismatch");
       }
       iVar10 = iVar10 + 1;
       iVar3 = iVar3 + 4;

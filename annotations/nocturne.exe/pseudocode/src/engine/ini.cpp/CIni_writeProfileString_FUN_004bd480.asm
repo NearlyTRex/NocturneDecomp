@@ -24,10 +24,11 @@
 ;   TerminatedCString s_s_s_0058660c
 ;   TerminatedCString s_s_s_00586613
 ;   TerminatedCString s_s_s_0058661a
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgets_FUN_00564b20
 ;   crt_stdio.c_fopen_FUN_0056568c
@@ -37,7 +38,6 @@
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_string.c__strcmp_FUN_005649c0
 ;   engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004bd2b0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -89,10 +89,10 @@ section .text
     MOV ECX,0x586580                    ; 004bd4ef | = "..\\engine\\ini.cpp"
     MOV ESI,0x182                       ; 004bd4f4
     PUSH 0x586592                       ; 004bd4f9 | = "cIni::writeProfileString: Unable to o..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004bd4fe | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004bd504 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004bd50a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004bd4fe | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004bd504 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004bd50a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004bd50f
     MOV ESI,dword ptr [ESP + 0x328]     ; 004bd512
         ;   Label: LAB_004bd512
@@ -135,10 +135,10 @@ section .text
     MOV EDI,0x5865c4                    ; 004bd56f | = "..\\engine\\ini.cpp"
     MOV EAX,0x186                       ; 004bd574
     PUSH 0x5865d6                       ; 004bd579 | = "cIni::writeProfileString: Unable to o..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004bd57e | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004bd584 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004bd589
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004bd57e | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004bd584 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004bd589
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004bd58e
     TEST EBP,EBP                        ; 004bd591
         ;   Label: LAB_004bd591

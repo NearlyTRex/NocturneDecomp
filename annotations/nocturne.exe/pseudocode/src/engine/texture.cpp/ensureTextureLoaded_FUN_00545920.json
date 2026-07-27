@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -138,42 +138,6 @@
   },
   "cross_references": [
     {
-      "addr": "00405b40",
-      "from_addr": "00405c2c",
-      "name": "FUN_00405b40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00408fc0",
-      "from_addr": "004090c2",
-      "name": "FUN_00408fc0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0044d060",
-      "from_addr": "0044d159",
-      "name": "FUN_0044d060",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0048f490",
-      "from_addr": "0048f637",
-      "name": "FUN_0048f490",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dd690",
-      "from_addr": "004dd6bd",
-      "name": "FUN_004dd690",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00545a10",
-      "from_addr": "00545a16",
-      "name": "FUN_00545a10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004270e0",
       "from_addr": "0042717f",
       "name": "core_charactr.cpp_FUN_004270e0",
@@ -183,6 +147,30 @@
       "addr": "00437db0",
       "from_addr": "00437e47",
       "name": "core_cloth.cpp_CCloth_render_FUN_00437db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044d060",
+      "from_addr": "0044d159",
+      "name": "core_dglobe.cpp_FUN_0044d060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048f490",
+      "from_addr": "0048f637",
+      "name": "core_flies.cpp_FUN_0048f490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00405b40",
+      "from_addr": "00405c2c",
+      "name": "engine_3d.c_FUN_00405b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00408fc0",
+      "from_addr": "004090c2",
+      "name": "engine_3d.c_FUN_00408fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -201,6 +189,18 @@
       "addr": "004911f0",
       "from_addr": "0049124d",
       "name": "engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dd690",
+      "from_addr": "004dd6bd",
+      "name": "engine_model.c_FUN_004dd690",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00545a10",
+      "from_addr": "00545a16",
+      "name": "engine_texture.cpp_FUN_00545a10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -230,6 +230,16 @@
   },
   "function_calls": [
     {
+      "addr": "00532400",
+      "is_variadic": false,
+      "name": "engine_special.cpp_selectTexture_FUN_00532400"
+    },
+    {
+      "addr": "00532440",
+      "is_variadic": false,
+      "name": "engine_special.cpp_updateTexture_FUN_00532440"
+    },
+    {
       "addr": "00545390",
       "is_variadic": false,
       "name": "engine_texture.cpp_CTextureCache_findTexture_FUN_00545390"
@@ -243,16 +253,6 @@
       "addr": "00545410",
       "is_variadic": false,
       "name": "engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410"
-    },
-    {
-      "addr": "00532400",
-      "is_variadic": false,
-      "name": "wincore_windll.cpp_selectTexture_FUN_00532400"
-    },
-    {
-      "addr": "00532440",
-      "is_variadic": false,
-      "name": "wincore_windll.cpp_updateTexture_FUN_00532440"
     }
   ],
   "globals": [
@@ -326,7 +326,7 @@
       {
         "call_addr": "0048f637",
         "call_type": "direct",
-        "caller": "FUN_0048f490",
+        "caller": "core_flies.cpp_FUN_0048f490",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -381,7 +381,7 @@
       {
         "call_addr": "0044d159",
         "call_type": "direct",
-        "caller": "FUN_0044d060",
+        "caller": "core_dglobe.cpp_FUN_0044d060",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -392,7 +392,7 @@
       {
         "call_addr": "00405c2c",
         "call_type": "direct",
-        "caller": "FUN_00405b40",
+        "caller": "engine_3d.c_FUN_00405b40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -510,7 +510,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "wincore_windll_cpp_updateTexture_FUN_00532440(param_1,_DAT_01c00020);",
+      "text": "engine_special_cpp_updateTexture_FUN_00532440(param_1,_DAT_01c00020);",
       "type": "unnamed_param"
     },
     {
@@ -526,7 +526,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "wincore_windll_cpp_selectTexture_FUN_00532400(param_1,_DAT_01c00020);",
+      "text": "engine_special_cpp_selectTexture_FUN_00532400(param_1,_DAT_01c00020);",
       "type": "unnamed_param"
     },
     {

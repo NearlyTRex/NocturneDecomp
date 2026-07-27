@@ -1,14 +1,12 @@
-// Name: FUN_004f8570
+// Name: engine_pod.cpp_FUN_004f8570
 // Address: 004f8570
 // Address Range: [[004f8570, 004f8659]]
 // Convention: unknown
-// Signature: void FUN_004f8570(int param_1,int param_2)
+// Signature: void engine_pod_cpp_FUN_004f8570(int param_1,int param_2)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_004f8570(int param_1,int param_2)
+void engine_pod_cpp_FUN_004f8570(int param_1,int param_2)
 
 {
   int iVar1;
@@ -19,15 +17,15 @@ void FUN_004f8570(int param_1,int param_2)
   
   bVar3 = 0;
   if ((param_2 < 0) || (*(int *)(param_1 + 0x214) <= param_2)) {
-    _DAT_01cc4800 = "..\\engine\\pod.cpp";
-    _DAT_01cc4804 = 0x1f1;
-    FUN_004c8440("CPodFile::getAuditRecord - invalid index.  Pod not mounted?");
+    PTR_01cc4800 = "..\\engine\\pod.cpp";
+    INT_01cc4804 = 0x1f1;
+    core_main_c_FUN_004c8440("CPodFile::getAuditRecord - invalid index.  Pod not mounted?");
   }
   iVar1 = _fopen(param_1 + 4,"rb");
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "..\\engine\\pod.cpp";
-    _DAT_01cc4804 = 0x1f6;
-    FUN_004c8440("CPodFile::getAuditRecord - can't open %s",param_1 + 4);
+    PTR_01cc4800 = "..\\engine\\pod.cpp";
+    INT_01cc4804 = 0x1f6;
+    core_main_c_FUN_004c8440("CPodFile::getAuditRecord - can't open %s",param_1 + 4);
   }
   _fseek(iVar1,param_2 * 0x138 + *(int *)(param_1 + 0x218),0);
   _fread(auStack_144,0x138,1,iVar1);

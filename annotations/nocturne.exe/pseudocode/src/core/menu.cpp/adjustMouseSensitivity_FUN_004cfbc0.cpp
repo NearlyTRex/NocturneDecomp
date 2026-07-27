@@ -43,7 +43,7 @@ LAB_004cfc23:
              _DAT_01bd1d90);
   local_18 = 0;
   do {
-    FUN_004722b0();
+    shape_edittool_cpp_FUN_004722b0();
     if (_DAT_01bd1d8c != local_18) {
       iVar3 = (int)(((longlong)_DAT_01bd1d8c * 0x3c000) / (longlong)(DAT_005b761c + -1)) + 0x4000;
       local_18 = _DAT_01bd1d8c;
@@ -84,6 +84,6 @@ LAB_004cfc23:
           (iVar1 = (**(code **)(*(int *)INT_005bac64 + 4))(INT_005bac64), iVar1 == 0));
   *param_1 = iVar3;
 LAB_004cfdf5:
-  FUN_004720c0();
+  shape_edittool_cpp_FUN_004720c0();
   return;
 }

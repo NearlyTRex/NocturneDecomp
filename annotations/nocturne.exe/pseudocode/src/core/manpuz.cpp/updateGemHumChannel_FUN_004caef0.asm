@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004cb010 at 004cb07c
+;   core_manpuz.cpp_FUN_004cb010 at 004cb07c
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00587fc2 = 0.00392156862745098

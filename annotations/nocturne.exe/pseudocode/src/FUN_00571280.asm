@@ -14,8 +14,8 @@
 ;   undefined4 DAT_02de5d70
 ;
 ; Called Functions:
-;   FUN_005638d0
-;   FUN_00565c50
+;   crt_unknown.c_FUN_005638d0
+;   crt_unknown.c_FUN_00565c50
 ;   FUN_005671e4
 ;   FUN_00572e90
 ;
@@ -32,8 +32,8 @@ section .text
     PUSH 0x10                           ; 0057128d
     MOV ESI,0x1                         ; 0057128f
     PUSH ESI                            ; 00571294
-    CALL FUN_00565c50                   ; 00571295
-        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined FUN_00565c50()
+    CALL crt_unknown.c_FUN_00565c50     ; 00571295
+        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565c50()
     MOV EBX,EAX                         ; 0057129a
     ADD ESP,0x8                         ; 0057129c
     TEST EAX,EAX                        ; 0057129f
@@ -47,8 +47,8 @@ section .text
     JZ 0x005712bd                       ; 005712ae
         ;   XREF to: 005712bd (CONDITIONAL_JUMP)  ; LAB_005712bd
     PUSH EBX                            ; 005712b0
-    CALL FUN_005638d0                   ; 005712b1
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 005712b1
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     XOR ESI,ESI                         ; 005712b6
     ADD ESP,0x4                         ; 005712b8
     JMP 0x005712e0                      ; 005712bb

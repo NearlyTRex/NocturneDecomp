@@ -3,6 +3,14 @@
 // Function prototypes for wincore/wddvmem.cpp
 // Generated from Ghidra function signatures
 
+// Original: wincore_wddvmem.cpp_FUN_004b6220
+// Address: 004b6220
+undefined8 FUN_004b6220(void);
+
+// Original: wincore_wddvmem.cpp_FUN_004b6370
+// Address: 004b6370
+undefined8 FUN_004b6370(void);
+
 // Original: wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004b63f0
 // Address: 004b63f0
 void __cdecl convertPaletteToDirectColor(void);
@@ -10,6 +18,30 @@ void __cdecl convertPaletteToDirectColor(void);
 // Original: wincore_wddvmem.cpp_reinitializeDirectDraw_FUN_005528e0
 // Address: 005528e0
 undefined4 reinitializeDirectDraw(void);
+
+// Original: wincore_wddvmem.cpp_FUN_00552990
+// Address: 00552990
+undefined4 FUN_00552990(void);
+
+// Original: wincore_wddvmem.cpp_FUN_00552a20
+// Address: 00552a20
+void FUN_00552a20(void);
+
+// Original: wincore_wddvmem.cpp_FUN_00552af0
+// Address: 00552af0
+void FUN_00552af0(void);
+
+// Original: wincore_wddvmem.cpp_FUN_00552b40
+// Address: 00552b40
+undefined4 FUN_00552b40(void);
+
+// Original: wincore_wddvmem.cpp_FUN_00552cb0
+// Address: 00552cb0
+void FUN_00552cb0(void);
+
+// Original: wincore_wddvmem.cpp_FUN_00552d70
+// Address: 00552d70
+void FUN_00552d70(void);
 
 // Original: wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
 // Address: 00552e00
@@ -31,6 +63,10 @@ void __cdecl openScreenDevice(void);
 // Address: 00553520
 void __cdecl closeScreenDevice(void);
 
+// Original: wincore_wddvmem.cpp_FUN_00553600
+// Address: 00553600
+int FUN_00553600(void);
+
 // Original: wincore_wddvmem.cpp_analyzePixelFormat_FUN_00553620
 // Address: 00553620
 void __cdecl analyzePixelFormat(void);
@@ -47,9 +83,21 @@ void __cdecl swapBuffers(void);
 // Address: 00553b70
 void restoreVideoAndMinimizeWindow(void);
 
+// Original: wincore_wddvmem.cpp_FUN_00553ba0
+// Address: 00553ba0
+void FUN_00553ba0(void);
+
+// Original: wincore_wddvmem.cpp_FUN_00553ca0
+// Address: 00553ca0
+void FUN_00553ca0(void);
+
 // Original: wincore_wddvmem.cpp_freeLibrary_FUN_00553d20
 // Address: 00553d20
 void freeLibrary(HMODULE param_1);
+
+// Original: wincore_wddvmem.cpp_FUN_00553d30
+// Address: 00553d30
+void FUN_00553d30(LPCSTR param_1);
 
 // Original: wincore_wddvmem.cpp_getProcAddress_FUN_00553d40
 // Address: 00553d40

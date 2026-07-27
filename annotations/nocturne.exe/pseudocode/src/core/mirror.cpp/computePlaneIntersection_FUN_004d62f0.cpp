@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004d62f0(float *param_1,float *param_2,float *param_3,float *param_4)
 
 {
@@ -23,9 +21,9 @@ void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004d62f0(float *param_
   local_18 = (param_3[2] - param_2[2]) * param_1[2] +
              (*param_3 - *param_2) * *param_1 + (param_3[1] - param_2[1]) * param_1[1];
   if (ABS(local_18) == 0.0) {
-    _DAT_01cc4800 = "..\\core\\mirror.cpp";
-    _DAT_01cc4804 = 0x42;
-    FUN_004c8440("Bad clip!");
+    PTR_01cc4800 = "..\\core\\mirror.cpp";
+    INT_01cc4804 = 0x42;
+    core_main_c_FUN_004c8440("Bad clip!");
   }
   local_18 = -(param_1[2] * param_2[2] + param_1[1] * param_2[1] + *param_1 * *param_2 + param_1[3])
              / local_18;

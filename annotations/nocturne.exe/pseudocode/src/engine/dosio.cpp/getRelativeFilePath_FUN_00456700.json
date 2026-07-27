@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -140,19 +140,13 @@
     {
       "addr": "004569a0",
       "from_addr": "004569bc",
-      "name": "FUN_004569a0",
+      "name": "engine_dosio.cpp_FUN_004569a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00456b20",
       "from_addr": "00456b60",
-      "name": "FUN_00456b20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f9170",
-      "from_addr": "004f9198",
-      "name": "FUN_004f9170",
+      "name": "engine_dosio.cpp_FUN_00456b20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -171,6 +165,12 @@
       "addr": "00456a60",
       "from_addr": "00456a87",
       "name": "engine_dosio.cpp_getFile_FUN_00456a60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f9170",
+      "from_addr": "004f9198",
+      "name": "engine_pod.cpp_FUN_004f9170",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -240,7 +240,7 @@
       {
         "call_addr": "004569bc",
         "call_type": "direct",
-        "caller": "FUN_004569a0",
+        "caller": "engine_dosio.cpp_FUN_004569a0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -251,7 +251,7 @@
       {
         "call_addr": "00456b60",
         "call_type": "direct",
-        "caller": "FUN_00456b20",
+        "caller": "engine_dosio.cpp_FUN_00456b20",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -262,7 +262,7 @@
       {
         "call_addr": "004f9198",
         "call_type": "direct",
-        "caller": "FUN_004f9170",
+        "caller": "engine_pod.cpp_FUN_004f9170",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -138,18 +138,6 @@
     "total_lines": 117
   },
   "cross_references": [
-    {
-      "addr": "00489990",
-      "from_addr": "00489bc0",
-      "name": "FUN_00489990",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0048d5d0",
-      "from_addr": "0048d905",
-      "name": "FUN_0048d5d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0041ceb0",
       "from_addr": "0041d001",
@@ -187,6 +175,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00489990",
+      "from_addr": "00489bc0",
+      "name": "core_fire.cpp_FUN_00489990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048d5d0",
+      "from_addr": "0048d905",
+      "name": "core_flame.cpp_FUN_0048d5d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004ae190",
       "from_addr": "004ae4c8",
       "name": "core_gore.cpp_CBloodParticle_render_FUN_004ae190",
@@ -221,9 +221,9 @@
   "globals": [
     {
       "addr": "0059bddc",
-      "name": "DAT_0059bddc",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059bddc",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005ad450",
@@ -362,7 +362,7 @@
       {
         "call_addr": "0048d905",
         "call_type": "direct",
-        "caller": "FUN_0048d5d0",
+        "caller": "core_flame.cpp_FUN_0048d5d0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -388,7 +388,7 @@
       {
         "call_addr": "00489bc0",
         "call_type": "direct",
-        "caller": "FUN_00489990",
+        "caller": "core_fire.cpp_FUN_00489990",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -550,7 +550,7 @@
       "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_10 = (int)ROUND(*param_2 * _DAT_0059bddc);",
+      "text": "local_10 = (int)ROUND(*param_2 * 256.0f);",
       "type": "unnamed_param"
     },
     {
@@ -558,7 +558,7 @@
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_c = (int)ROUND(param_2[1] * _DAT_0059bddc);",
+      "text": "local_c = (int)ROUND(param_2[1] * 256.0f);",
       "type": "unnamed_param"
     },
     {
@@ -566,7 +566,7 @@
       "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_8 = (int)ROUND(param_2[2] * _DAT_0059bddc);",
+      "text": "local_8 = (int)ROUND(param_2[2] * 256.0f);",
       "type": "unnamed_param"
     },
     {

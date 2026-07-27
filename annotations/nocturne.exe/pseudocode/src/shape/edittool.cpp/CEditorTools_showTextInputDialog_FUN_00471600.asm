@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_00470730 at 00470a11
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1e04
 ;   core_game.cpp_joinNetworkGame_FUN_004a5e40 at 004a5e6b
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebde0
 ;   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_00471430 at 00471469
 ;   shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_00471360 at 0047138e
 ;   shape_edittool.cpp_CEditorTools_promptForValidVector_FUN_00471530 at 00471559
+;   shape_edittool.cpp_FUN_00470730 at 00470a11
 ;
 ; Called Functions:
-;   FUN_0046f7e0
+;   shape_edittool.cpp_FUN_0046f7e0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH EBX                            ; 00471612
     MOV ESI,dword ptr [ESP + 0x20]      ; 00471613
     PUSH ESI                            ; 00471617
-    CALL FUN_0046f7e0                   ; 00471618
-        ;   XREF to: 0046f7e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046f7e0()
+    CALL shape_edittool.cpp_FUN_0046f7e0 ; 00471618
+        ;   XREF to: 0046f7e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046f7e0()
     ADD ESP,0x14                        ; 0047161d
     POP ESI                             ; 00471620
     POP EBX                             ; 00471621

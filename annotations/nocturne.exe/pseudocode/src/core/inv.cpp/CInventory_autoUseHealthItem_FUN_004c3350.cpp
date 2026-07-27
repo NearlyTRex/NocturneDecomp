@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_autoUseHealthItem_FUN_004c3350(int param_1)
 
 {
@@ -16,14 +14,15 @@ void __cdecl core_inv_cpp_CInventory_autoUseHealthItem_FUN_004c3350(int param_1)
   int iVar3;
   
   if ((*(int *)(param_1 + 0x334) == 0) ||
-     (iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(*(int *)(param_1 + 0x334),_DAT_01cae0d0),
+     (iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
+                        (*(int *)(param_1 + 0x334),g_CHealthItemActorType_01cae098.name_hash),
      iVar2 == 0)) {
     iVar3 = 0;
     iVar2 = param_1;
     if (0 < *(int *)(param_1 + 8)) {
       do {
         iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(iVar2 + 0xc),_DAT_01cae0d0);
+                          (*(uint *)(iVar2 + 0xc),g_CHealthItemActorType_01cae098.name_hash);
         if (iVar1 != 0) {
           core_inv_cpp_CInventory_select_FUN_004c1580(param_1,iVar1);
           engine_console_cpp_CConsole_printf_FUN_0043ac60

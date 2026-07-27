@@ -1,14 +1,12 @@
-// Name: FUN_004e78b0
+// Name: sound_mp3.cpp_FUN_004e78b0
 // Address: 004e78b0
 // Address Range: [[004e78b0, 004e7aff]]
 // Convention: unknown
-// Signature: int FUN_004e78b0(void)
+// Signature: int sound_mp3_cpp_FUN_004e78b0(void)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int FUN_004e78b0(void)
+int sound_mp3_cpp_FUN_004e78b0(void)
 
 {
   byte *puVar1;
@@ -40,24 +38,24 @@ int FUN_004e78b0(void)
     *(int *)(iVar4 + 0x1cd8c38) = (1 << (*(byte *)(iVar4 + 0x1cd8c34) & 0x1f)) + -1;
     sscanf(iVar3,"%u",&local_1c);
     if (iVar5 != local_1c) {
-      _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-      _DAT_01cc4804 = 0xd6b;
-      FUN_004c8440("wrong table number %u.  File: %s",iVar5,&DAT_01cd8b28);
+      PTR_01cc4800 = "..\\sound\\mp3.cpp";
+      INT_01cc4804 = 0xd6b;
+      core_main_c_FUN_004c8440("wrong table number %u.  File: %s",iVar5,&DAT_01cd8b28);
     }
     iVar3 = *(int *)(&DAT_005bdbb0 + local_14);
     if (iVar3 < 0) {
       if (iVar3 != -1) {
         pcVar10 = "huffman decodertable error at table %d.  File: %s";
-        _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-        _DAT_01cc4804 = 0xd8d;
+        PTR_01cc4800 = "..\\sound\\mp3.cpp";
+        INT_01cc4804 = 0xd8d;
         goto LAB_004e79ce;
       }
       uVar7 = *(uint *)(&DAT_01cd944c + iVar4);
       *(uint *)(iVar4 + 0x1cd8c3c) = 0xffffffff;
       if (0x400 < uVar7) {
-        _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-        _DAT_01cc4804 = 0xd7e;
-        FUN_004c8440("MP3 Huffman tree overflow!  File: %s",&DAT_01cd8b28);
+        PTR_01cc4800 = "..\\sound\\mp3.cpp";
+        INT_01cc4804 = 0xd7e;
+        core_main_c_FUN_004c8440("MP3 Huffman tree overflow!  File: %s",&DAT_01cd8b28);
       }
       uVar7 = 0;
       puVar1 = *(byte **)(&DAT_005bdbb4 + local_14);
@@ -91,10 +89,10 @@ int FUN_004e78b0(void)
       if ((*(int *)(iVar4 + 0x1cd8c2c) != *(int *)(iVar3 + 0x1cd8c2c)) ||
          (*(int *)(iVar3 + 0x1cd8c30) != *(int *)(iVar4 + 0x1cd8c30))) {
         pcVar10 = "wrong table %u reference.  File: %s";
-        _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-        _DAT_01cc4804 = 0xd76;
+        PTR_01cc4800 = "..\\sound\\mp3.cpp";
+        INT_01cc4804 = 0xd76;
 LAB_004e79ce:
-        FUN_004c8440(pcVar10,iVar5,&DAT_01cd8b28);
+        core_main_c_FUN_004c8440(pcVar10,iVar5,&DAT_01cd8b28);
       }
     }
     iVar4 = iVar4 + 0x828;

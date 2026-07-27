@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[28]:
-;   FUN_0044b660 at 0044b673
-;   FUN_0046f7e0 at 0046f82d
-;   FUN_0046fb40 at 0046fc9a
-;   FUN_0046fcd0 at 0046fe2a
-;   FUN_0046fe60 at 0046ffba
-;   FUN_00470eb0 at 00471281
-;   FUN_00475470 at 0047594a
-;   FUN_004a57c0 at 004a5b60
-;   FUN_004c8510 at 004c8557
-;   FUN_004c8eb0 at 004c8ed4
+;   core_dcube.cpp_FUN_0044b660 at 0044b673
+;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6ad7
+;   core_game.cpp_CGame_process_FUN_004a6010 at 004a6186
+;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a6ead
+;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de84
+;   core_game.cpp_FUN_004a57c0 at 004a5b60
+;   core_main.c_FUN_004c8510 at 004c8557
+;   core_main.c_FUN_004c8eb0 at 004c8ed4
+;   core_main.c_FUN_004c90e0 at 004c9123
+;   core_menu.cpp_FUN_004d23d0 at 004d246d
 ;   ... and 18 more
 ;
 ; Called Functions:

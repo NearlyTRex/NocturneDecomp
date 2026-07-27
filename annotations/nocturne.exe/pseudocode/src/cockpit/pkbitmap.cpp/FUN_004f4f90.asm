@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_004f4f90(uint *param_1,undefined4 param_2,uint param_3,undefined4 param_4,int param_5)
+; int cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,undefined4 param_2,uint param_3,undefined4 param_4,int param_5)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x20]:1  local_20
@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004f5110 at 004f515f
+;   cockpit_pkbitmap.cpp_FUN_004f5110 at 004f515f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d370
@@ -19,19 +19,19 @@
 ;   TerminatedCString s_Corrupt_data_detected_re_0058d3ce
 ;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d3f1
 ;   TerminatedCString s_Out_of_memory_reading_PB_0058d409
-;   undefined4 DAT_005a1340
+;   WatcomTypeInfo g_CPackedBitmapTypeInfo_005a1340
 ;   undefined4 DAT_005be180
 ;   undefined4 DAT_005be180+1
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_004f3e90
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_004f3f00
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c___vec_new_FUN_00566234
 ;   crt_stdio.c_fread_FUN_005636d0
-;   FUN_004c8440
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
 ; *****************************************************************************
@@ -39,7 +39,7 @@
 section .text
 
     PUSH EBX                            ; 004f4f90
-        ;   Label: FUN_004f4f90
+        ;   Label: cockpit_pkbitmap.cpp_FUN_004f4f90
     PUSH ESI                            ; 004f4f91
     PUSH EDI                            ; 004f4f92
     PUSH EBP                            ; 004f4f93
@@ -75,19 +75,19 @@ section .text
         ;   Label: LAB_004f4fd1
     MOV EDX,0x557                       ; 004f4fd6
     PUSH 0x58d3ce                       ; 004f4fdb | = "Corrupt data detected reading PBG."
-    MOV [0x01cc4800],EAX                ; 004f4fe0 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004f4fe5 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f4feb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004f4fe0 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004f4fe5 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f4feb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f4ff0
     MOV ECX,0x58d3f1                    ; 004f4ff3 | = "..\\cockpit\\pkbitmap.cpp"
         ;   Label: LAB_004f4ff3
     MOV ESI,0x558                       ; 004f4ff8
     PUSH 0x58d409                       ; 004f4ffd | = "Out of memory reading PBG"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f5002 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f5008 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f500e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004f5002 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004f5008 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f500e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f5013
     JMP 0x004f4fa0                      ; 004f5016
         ;   XREF to: 004f4fa0 (UNCONDITIONAL_JUMP)  ; LAB_004f4fa0
@@ -95,10 +95,10 @@ section .text
         ;   Label: LAB_004f5018
     MOV EDI,0x556                       ; 004f501d
     PUSH 0x58d388                       ; 004f5022 | = "IO error reading PBG (possibly corrup..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004f5027 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004f502d | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f5033
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004f5027 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004f502d | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f5033
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f5038
     JMP 0x004f4fd1                      ; 004f503b
         ;   XREF to: 004f4fd1 (UNCONDITIONAL_JUMP)  ; LAB_004f4fd1
@@ -110,7 +110,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x50]      ; 004f5048
     XOR EDX,EDX                         ; 004f504c
     DIV ECX                             ; 004f504e
-    PUSH 0x5a1340                       ; 004f5050 | DAT_005a1340
+    PUSH 0x5a1340                       ; 004f5050 | g_CPackedBitmapTypeInfo_005a1340
     MOV ESI,EAX                         ; 004f5055
     PUSH EAX                            ; 004f5057
     IMUL EAX,EAX,0x24                   ; 004f5058

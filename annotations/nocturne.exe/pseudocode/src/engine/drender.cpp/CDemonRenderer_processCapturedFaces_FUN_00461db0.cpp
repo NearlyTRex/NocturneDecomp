@@ -31,10 +31,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
       } while (iVar3 < iVar6);
     }
     if (*(int *)(param_1 + 0x1c) == 1) {
-      pcVar7 = FUN_00461d80;
+      pcVar7 = engine_drender_cpp_FUN_00461d80;
     }
     else {
-      pcVar7 = FUN_00461d50;
+      pcVar7 = engine_drender_cpp_FUN_00461d50;
     }
     _qsort(0x1b748b4,_DAT_01b4d7ac,4,pcVar7);
     *(uint *)(param_1 + 0x1c) = 0;

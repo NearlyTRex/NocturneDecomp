@@ -15,6 +15,10 @@ void __cdecl CDemonGlobe::precomputeAttenuation(int param_1,float param_2);
 // Address: 0044ce80
 void __cdecl CDemonGlobe::renderCorona(int param_1);
 
+// Original: core_dglobe.cpp_FUN_0044d060
+// Address: 0044d060
+void FUN_0044d060(int param_1);
+
 // Original: core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_0044d1f0
 // Address: 0044d1f0
 undefined4 __cdecl CDemonGlobe::intersectAABB(int param_1,float *param_2,undefined4 param_3,float *param_4,float *param_5);

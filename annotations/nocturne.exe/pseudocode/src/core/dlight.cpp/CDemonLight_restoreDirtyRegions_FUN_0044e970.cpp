@@ -38,9 +38,9 @@ void core_dlight_cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(int param_1)
       return;
     }
     if (*(int *)(param_1 + 0x2f9c) == 0) {
-      _DAT_01cc4800 = "..\\core\\dlight.cpp";
-      _DAT_01cc4804 = 0x202;
-      FUN_004c8440("CDemonLight::blitZBuffer - No master Z buffer");
+      PTR_01cc4800 = "..\\core\\dlight.cpp";
+      INT_01cc4804 = 0x202;
+      core_main_c_FUN_004c8440("CDemonLight::blitZBuffer - No master Z buffer");
     }
     iVar4 = 0;
     if (0 < *(int *)(param_1 + 0x1d0)) {

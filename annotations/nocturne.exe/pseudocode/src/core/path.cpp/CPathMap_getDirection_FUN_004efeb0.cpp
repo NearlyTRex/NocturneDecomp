@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float core_path_cpp_CPathMap_getDirection_FUN_004efeb0(float *param_1,int param_2,int param_3,int param_4,float *param_5)
 
 {
@@ -169,9 +167,9 @@ switchD_004eff7e_default:
     case 8:
       return local_a0 + (float)-2.356194490125;
     default:
-      _DAT_01cc4800 = "..\\core\\path.cpp";
-      _DAT_01cc4804 = 0x183;
-      FUN_004c8440("CPathMap::getDirection - Should never get here either");
+      PTR_01cc4800 = "..\\core\\path.cpp";
+      INT_01cc4804 = 0x183;
+      core_main_c_FUN_004c8440("CPathMap::getDirection - Should never get here either");
     }
   }
   if ((param_2 != param_4) && (param_4 != param_3)) goto switchD_004f0211_default;

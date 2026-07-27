@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(int param_1,uint param_2,uint param_3)
 
 {
@@ -29,15 +27,15 @@ void core_bodypart_cpp_CBodyPart_setCounts_FUN_00415ee0(int param_1,uint param_2
   *(uint *)(param_1 + 0x180) = uVar1;
   if ((0 < *(int *)(param_1 + 0x16c)) &&
      ((*(int *)(param_1 + 0x170) == 0 || (*(int *)(param_1 + 0x174) == 0)))) {
-    _DAT_01cc4800 = "..\\core\\bodypart.cpp";
-    _DAT_01cc4804 = 0xb2;
-    FUN_004c8440("CBodyPart::setCounts - out of memory for vertices - vertexCount = %d",*(uint *)(param_1 + 0x16c));
+    PTR_01cc4800 = "..\\core\\bodypart.cpp";
+    INT_01cc4804 = 0xb2;
+    core_main_c_FUN_004c8440("CBodyPart::setCounts - out of memory for vertices - vertexCount = %d",*(uint *)(param_1 + 0x16c));
   }
   if ((0 < *(int *)(param_1 + 0x178)) &&
      ((*(int *)(param_1 + 0x17c) == 0 || (*(int *)(param_1 + 0x180) == 0)))) {
-    _DAT_01cc4800 = "..\\core\\bodypart.cpp";
-    _DAT_01cc4804 = 0xb7;
-    FUN_004c8440("CBodyPart::setCounts - out of memory for triangles - triCount = %d",*(uint *)(param_1 + 0x178));
+    PTR_01cc4800 = "..\\core\\bodypart.cpp";
+    INT_01cc4804 = 0xb7;
+    core_main_c_FUN_004c8440("CBodyPart::setCounts - out of memory for triangles - triCount = %d",*(uint *)(param_1 + 0x178));
     return;
   }
   return;

@@ -13,7 +13,7 @@ int core_zombie_cpp_FUN_00562550(int param_1,byte param_2)
   uint uVar2;
   
   if ((param_2 & 4) != 0) {
-    uVar2 = __vec_delete(param_1,&DAT_005a46a0);
+    uVar2 = __vec_delete(param_1,&g_CZombieTypeInfo_005a46a0);
     shape_memdbg_cpp_free_FUN_00564486(uVar2);
     return param_1;
   }

@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 255,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 65,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
     "total_lines": 236
   },
@@ -141,7 +140,7 @@
     {
       "addr": "004b5b00",
       "from_addr": "004b5b5d",
-      "name": "FUN_004b5b00",
+      "name": "core_hero.cpp_FUN_004b5b00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -224,7 +223,7 @@
     },
     {
       "addr": "014b8a54",
-      "name": "DAT_014b8a54",
+      "name": "g_CActorDestinationActorType_014b8a1c.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -247,7 +246,7 @@
       {
         "call_addr": "004b5b5d",
         "call_type": "direct",
-        "caller": "FUN_004b5b00",
+        "caller": "core_hero.cpp_FUN_004b5b00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -387,14 +386,14 @@
         {
           "check_id": "uninitvar",
           "column": 28,
-          "line": 50,
+          "line": 49,
           "message": "Uninitialized variable: local_38",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 33,
-          "line": 52,
+          "line": 51,
           "message": "Uninitialized variable: local_34",
           "severity": "error"
         }
@@ -405,16 +404,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004b5950(int param_1)",
@@ -422,7 +413,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "local_20 = param_1 + 0x1f5a0;",
@@ -430,7 +421,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1fa1c) = 0;",
@@ -438,7 +429,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1fa1c) = *(uint *)(local_20 + 0x334);",
@@ -446,7 +437,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,&local_3c,local_1c);",
@@ -454,7 +445,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "(iVar1 = *(int *)(iVar1 + 0x150), *(int *)(param_1 + 0x1fa1c) = iVar1, iVar1 != 0)) {",
@@ -462,7 +453,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((uint *)(param_1 + 0x1fa20) != local_1c) {",
@@ -470,7 +461,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1fa20) = *local_1c;",
@@ -478,7 +469,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1fa24) = local_1c[1];",
@@ -486,7 +477,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1fa28) = local_1c[2];",
@@ -494,7 +485,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((uint *)(param_1 + 0x1fa2c) != (uint *)(local_14 + 0x30)) {",
@@ -502,7 +493,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1fa2c) = *(uint *)(local_14 + 0x30);",
@@ -510,7 +501,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1fa30) = *(uint *)(local_14 + 0x34);",
@@ -518,7 +509,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1fa34) = *(uint *)(local_14 + 0x38);",
@@ -526,7 +517,7 @@
     },
     {
       "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 57,
+      "line": 56,
       "match": "raw-offset struct copy",
       "severity": "moderate",
       "text": "*(uint *)(param_1 + 0x1fa2c) = *(uint *)(local_14 + 0x30);",
@@ -545,7 +536,7 @@
     },
     {
       "description": "Uninitialized variable: local_38",
-      "line": 50,
+      "line": 49,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_30 = (double)local_38;",
@@ -553,7 +544,7 @@
     },
     {
       "description": "Uninitialized variable: local_34",
-      "line": 52,
+      "line": 51,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "(local_28 = (double)local_34, (float)0.5 <= local_34)) &&",

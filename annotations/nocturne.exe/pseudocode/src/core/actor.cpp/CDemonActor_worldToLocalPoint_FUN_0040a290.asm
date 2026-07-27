@@ -9,16 +9,16 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[76]:
-;   FUN_0041ef90 at 0041efab
-;   FUN_0041f190 at 0041f1b1
-;   FUN_00439f50 at 0043a050
-;   FUN_0043d1c0 at 0043d6fc
-;   FUN_00477890 at 00477e91
-;   FUN_00478790 at 00478c21
-;   FUN_0048b6f0 at 0048b8e6
-;   FUN_00495a20 at 004962ca
-;   FUN_00498de0 at 00498e6f
-;   FUN_004a9270 at 004a98dc
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a828
+;   core_actor.cpp_FUN_0040b300 at 0040b656
+;   core_baron.cpp_FUN_00410cc0 at 00410cfd
+;   core_boxactor.cpp_FUN_0041ef90 at 0041efab
+;   core_boxactor.cpp_FUN_0041f190 at 0041f1b1
+;   core_chain.cpp_CChain_getBoundingBox_FUN_0042ca90 at 0042cb5f
+;   core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_00428260 at 00428273
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0 at 00425e04
+;   core_charactr.cpp_CCharacter_testDamageLine_FUN_004282d0 at 004282ef
+;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00424e90 at 00424ea3
 ;   ... and 66 more
 ;
 ; Called Functions:

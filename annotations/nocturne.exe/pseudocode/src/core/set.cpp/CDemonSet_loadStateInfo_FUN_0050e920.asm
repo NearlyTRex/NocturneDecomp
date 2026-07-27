@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004a4170 at 004a4a0e
+;   core_game.cpp_FUN_004a4170 at 004a4a0e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_005908c2
@@ -21,13 +21,13 @@
 ;   TerminatedCString s_The_set_has_changed_sinc_00590913
 ;   TerminatedCString s_d_00590979
 ;   undefined4 DAT_005b6d50
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fscanf_FUN_00563350
-;   FUN_0046fb40
-;   FUN_004c8440
+;   shape_edittool.cpp_FUN_0046fb40
 ;
 ; *****************************************************************************
 
@@ -77,8 +77,8 @@ section .text
     PUSH 0x590913                       ; 0050e984 | = "The set has changed since you saved y..."
     MOV ECX,dword ptr [0x005b6d50]      ; 0050e989 | DAT_005b6d50
     PUSH ECX                            ; 0050e98f
-    CALL FUN_0046fb40                   ; 0050e990
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fb40()
+    CALL shape_edittool.cpp_FUN_0046fb40 ; 0050e990
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
     ADD ESP,0x8                         ; 0050e995
     MOV ESI,dword ptr [ESP + 0x4]       ; 0050e998
         ;   Label: LAB_0050e998
@@ -118,10 +118,10 @@ section .text
     MOV ECX,0x5908ce                    ; 0050e9d6 | = "..\\core\\set.cpp"
     MOV EBX,0x12af                      ; 0050e9db
     PUSH 0x5908de                       ; 0050e9e0 | = "Set saveState info is invalid version %d"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050e9e5 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050e9eb | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050e9f1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0050e9e5 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0050e9eb | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050e9f1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0050e9f6
     JMP 0x0050e95a                      ; 0050e9f9
         ;   XREF to: 0050e95a (UNCONDITIONAL_JUMP)  ; LAB_0050e95a

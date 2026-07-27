@@ -44,7 +44,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0(uint par
               (DAT_005ae704,(uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0);
   }
-  FUN_00460d10(DAT_005ae704);
+  engine_drender_cpp_FUN_00460d10(DAT_005ae704);
   local_14 = 0;
   if (0 < param_3) {
     do {

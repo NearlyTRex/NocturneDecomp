@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x7c]:1  local_7c
 ;
 ; XREF[1]:
-;   FUN_00547b30 at 00547ba1
+;   core_trigger.cpp_FUN_00547b30 at 00547ba1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_trigger_cpp_00596b23
@@ -16,15 +16,15 @@
 ;   TerminatedCString s_Hell_froze_00596b85
 ;   float FLOAT_00596b93 = 0.5
 ;   double DOUBLE_00596b97 = 0.25
-;   undefined4 CDemonActorType_00765a60.name_hash
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   undefined4 g_CCharacterActorType_00765a60.name_hash
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -175,7 +175,7 @@ section .text
     POP ESI                             ; 00548937
     POP EBX                             ; 00548938
     RET                                 ; 00548939
-    MOV ECX,dword ptr [0x00765a98]      ; 0054893a | CDemonActorType_00765a60.name_hash
+    MOV ECX,dword ptr [0x00765a98]      ; 0054893a | g_CCharacterActorType_00765a60.name_hash
         ;   Label: LAB_0054893a
     PUSH ECX                            ; 00548940
     PUSH ESI                            ; 00548941
@@ -251,18 +251,18 @@ section .text
     MOV EBP,0x596b23                    ; 005489f1 | = "..\\core\\trigger.cpp"
     MOV EAX,0x37d                       ; 005489f6
     PUSH 0x596b37                       ; 005489fb | = "CTrigger::containsActor - invalid tri..."
-    MOV dword ptr [0x01cc4800],EBP      ; 00548a00 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00548a06 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00548a0b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00548a00 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00548a06 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00548a0b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 00548a10
     MOV EBX,0x383                       ; 00548a13
     MOV ECX,0x596b71                    ; 00548a18 | = "..\\core\\trigger.cpp"
     PUSH 0x596b85                       ; 00548a1d | = "Hell froze..."
-    MOV dword ptr [0x01cc4804],EBX      ; 00548a22 | DAT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 00548a28 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 00548a2e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EBX      ; 00548a22 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00548a28 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 00548a2e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00548a33
     XOR EAX,EAX                         ; 00548a36
     ADD ESP,0x88                        ; 00548a38

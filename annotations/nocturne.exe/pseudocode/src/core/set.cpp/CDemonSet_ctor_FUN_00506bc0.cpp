@@ -15,10 +15,10 @@ uint * core_set_cpp_CDemonSet_ctor_FUN_00506bc0(int param_1)
   char *pcVar4;
   char *pcVar5;
   
-  iVar3 = __arrinit(param_1 + 4,0xfa,&DAT_005a1970);
-  iVar3 = __arrinit(iVar3 + 0x19644,200,&DAT_005a1990);
-  iVar3 = __arrinit(iVar3 + 0x141490,0x14,&DAT_005a19b0);
-  iVar3 = __arrinit(iVar3 + 0x554,0xfa,&DAT_005a19d0);
+  iVar3 = __arrinit(param_1 + 4,0xfa,&g_C3DSCameraTypeInfo_005a1970);
+  iVar3 = __arrinit(iVar3 + 0x19644,200,&g_C3DSLightTypeInfo_005a1990);
+  iVar3 = __arrinit(iVar3 + 0x141490,0x14,&g_SRoomTypeInfo_005a19b0);
+  iVar3 = __arrinit(iVar3 + 0x554,0xfa,&g_SVDBoxTypeInfo_005a19d0);
   puVar1 = (uint *)(iVar3 + -0x15b02c);
   *puVar1 = 0;
   *(uint *)(iVar3 + -0x1419e8) = 0;

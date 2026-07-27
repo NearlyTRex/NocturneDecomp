@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_turret_cpp_CTurret_process_FUN_005497f0(int param_1,float param_2)
 
 {
@@ -150,9 +148,9 @@ LAB_00549887:
     }
     break;
   default:
-    _DAT_01cc4800 = "..\\core\\turret.cpp";
-    _DAT_01cc4804 = 0x15a;
-    FUN_004c8440();
+    PTR_01cc4800 = "..\\core\\turret.cpp";
+    INT_01cc4804 = 0x15a;
+    core_main_c_FUN_004c8440();
   }
   if (-1 < *(int *)(param_1 + 0x2ec)) {
     (**(code **)(*(int *)(param_1 + 0x14c) + 0xe8))();

@@ -22,15 +22,15 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0(in
   int local_14;
   
   if ((param_2 < 0) || (*param_1 <= param_2)) {
-    _DAT_01cc4800 = "..\\core\\morph.cpp";
-    _DAT_01cc4804 = 0x191;
-    FUN_004c8440("CMorphModel::setFaceList - invalid part index");
+    PTR_01cc4800 = "..\\core\\morph.cpp";
+    INT_01cc4804 = 0x191;
+    core_main_c_FUN_004c8440("CMorphModel::setFaceList - invalid part index");
   }
   param_6 = param_6 + param_1[param_2 * 4 + 4];
   if (param_1[param_2 * 4 + 4] + param_1[param_2 * 4 + 2] < param_7 + param_6) {
-    _DAT_01cc4800 = "..\\core\\morph.cpp";
-    _DAT_01cc4804 = 0x198;
-    FUN_004c8440("CMorphModel::setFaceList - invalid vertex range");
+    PTR_01cc4800 = "..\\core\\morph.cpp";
+    INT_01cc4804 = 0x198;
+    core_main_c_FUN_004c8440("CMorphModel::setFaceList - invalid vertex range");
   }
   local_1c = 0;
   local_24 = param_3;

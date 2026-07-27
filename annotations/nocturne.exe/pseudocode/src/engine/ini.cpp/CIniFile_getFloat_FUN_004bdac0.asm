@@ -8,7 +8,7 @@
 ; undefined        Stack[-0x68]:1  local_68
 ;
 ; XREF[1]:
-;   FUN_005289f0 at 00528b32
+;   sound_sndmain.cpp_FUN_005289f0 at 00528b32
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_g_0058673b

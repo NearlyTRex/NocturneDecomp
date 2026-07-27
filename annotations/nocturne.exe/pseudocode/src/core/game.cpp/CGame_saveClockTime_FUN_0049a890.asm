@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[10]:
-;   FUN_004a57c0 at 004a5d4b
-;   FUN_004d23d0 at 004d2498
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6a58
 ;   core_game.cpp_CGame_process_FUN_004a6010 at 004a6505
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a6fc7
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dd87
+;   core_game.cpp_FUN_004a57c0 at 004a5d4b
+;   core_menu.cpp_FUN_004d23d0 at 004d2498
 ;   core_menu.cpp_configureCustomKeys_FUN_004d0d20 at 004d0d3f
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004d0080 at 004d009a
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d12ff

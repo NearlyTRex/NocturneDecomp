@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CGunFlame_process_FUN_00488430(float *param_1)
 
 {
@@ -45,7 +43,7 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_00488430(float *param_1)
        ) {
       core_fire_cpp_CGunFlame_init_FUN_004880d0(param_1);
     }
-    param_1[7] = fVar4 * _DAT_0059d218 + param_1[7];
+    param_1[7] = fVar4 * 15.0f + param_1[7];
     fVar3 = 1.6049665430689486e-314._0_4_;
     if (0x419fffff < (int)param_1[7]) {
       do {

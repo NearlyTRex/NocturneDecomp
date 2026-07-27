@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c874a
+;   core_main.c_FUN_004c85f0 at 004c874a
 ;
 ; Referenced Globals:
 ;   void* PTR_timeBeginPeriod_005753e4 = 00175828

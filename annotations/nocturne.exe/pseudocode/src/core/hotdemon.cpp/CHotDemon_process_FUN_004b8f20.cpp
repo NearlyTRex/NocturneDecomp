@@ -246,7 +246,7 @@ LAB_004b93d5:
       uVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                         (param_1 + 0x150,local_ac,0);
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_b8,uVar6);
-      FUN_004b0480(INT_005b96c4,local_b8,0);
+      core_gore_cpp_FUN_004b0480(INT_005b96c4,local_b8,0);
       *(uint *)(param_1 + 0xbc90) = 1;
     }
   }

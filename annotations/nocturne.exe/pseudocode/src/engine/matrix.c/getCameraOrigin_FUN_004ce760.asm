@@ -9,10 +9,10 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
-;   FUN_004477f0 at 004477f7
-;   FUN_00460d10 at 00460d1b
+;   core_dcamera.cpp_FUN_004477f0 at 004477f7
 ;   core_ground.cpp_CGround_render_FUN_004b2110 at 004b211c
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30 at 00460d40
+;   engine_drender.cpp_FUN_00460d10 at 00460d1b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c039c4

@@ -153,20 +153,19 @@
         "type":"memory_block"
       },
       {
-        "following_block":".reloc",
-        "likely_purpose":"Unmapped space between .bss and .reloc",
-        "name":"Gap",
-        "permissions":"---",
+        "initialized":false,
+        "likely_purpose":"Uninitialized data (zero-filled)",
+        "name":"RUNTIME_HEAP",
+        "permissions":"RW-",
         "permissions_detailed":{
           "execute":false,
-          "read":false,
-          "write":false
+          "read":true,
+          "write":true
         },
-        "preceding_block":".bss",
-        "range":"0x7a0a00-0x2de5fff",
+        "range":"007a0a00-02de5fff",
         "size":40130048,
         "size_formatted":"38.3MB",
-        "type":"gap"
+        "type":"memory_block"
       },
       {
         "initialized":true,
@@ -216,12 +215,12 @@
       }
     ],
     "summary":{
-      "block_count":7,
-      "gap_count":6,
-      "total_gap_formatted":"38.3MB",
-      "total_gap_size":40141824,
-      "total_mapped_formatted":"3.7MB",
-      "total_mapped_size":3896320
+      "block_count":8,
+      "gap_count":5,
+      "total_gap_formatted":"12KB",
+      "total_gap_size":11776,
+      "total_mapped_formatted":"42.0MB",
+      "total_mapped_size":44026368
     }
   },
   "gaps":[
@@ -256,14 +255,6 @@
       "preceding_block":"DGROUP",
       "size":3072,
       "start":"0x5c4400"
-    },
-    {
-      "end":"0x2de5fff",
-      "following_block":".reloc",
-      "note":"Gap between .bss and .reloc",
-      "preceding_block":".bss",
-      "size":40130048,
-      "start":"0x7a0a00"
     },
     {
       "end":"0x2dfefff",
@@ -343,6 +334,21 @@
       },
       "size":1948160,
       "start":"005c5000",
+      "type":"Default"
+    },
+    {
+      "comment":"Uninitialized tail of .bss that the PE loader clamped away (VirtualSize=0; SizeOfRawData is the authority).",
+      "end":"02de5fff",
+      "importable":true,
+      "initialized":false,
+      "name":"RUNTIME_HEAP",
+      "permissions":{
+        "execute":false,
+        "read":true,
+        "write":true
+      },
+      "size":40130048,
+      "start":"007a0a00",
       "type":"Default"
     },
     {

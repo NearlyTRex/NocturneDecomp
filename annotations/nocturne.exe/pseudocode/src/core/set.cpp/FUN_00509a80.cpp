@@ -88,11 +88,11 @@ void core_set_cpp_FUN_00509a80(int param_1,int param_2)
     if (0 < _DAT_01fba2ec) {
       do {
         iVar4 = 0;
-        FUN_00445750();
+        core_dcamera_cpp_FUN_00445750();
         if (0 < *(int *)(param_1 + 0x15a8cc)) {
           do {
             core_set_cpp_FUN_0050e080();
-            FUN_00445750();
+            core_dcamera_cpp_FUN_00445750();
             iVar4 = iVar4 + 1;
             core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190();
           } while (iVar4 < *(int *)(param_1 + 0x15a8cc));
@@ -107,13 +107,13 @@ void core_set_cpp_FUN_00509a80(int param_1,int param_2)
       do {
         uVar1 = *(uint *)(iVar4 + 0x1fba484);
         if (*(int *)(iVar4 + 0x1fba614) == 0) {
-          FUN_00445750();
+          core_dcamera_cpp_FUN_00445750();
           *(uint *)(&DAT_01fba7a8 + _DAT_01fba7a4 * 4) = uVar1;
           _DAT_01fba7a4 = _DAT_01fba7a4 + 1;
         }
         else {
           core_set_cpp_FUN_0050e080();
-          FUN_00445750();
+          core_dcamera_cpp_FUN_00445750();
           core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190();
         }
         local_24 = local_24 + 1;
@@ -182,8 +182,8 @@ void core_set_cpp_FUN_00509a80(int param_1,int param_2)
     } while (local_2c < _DAT_01fba2d8);
   }
   core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20();
-  FUN_004afe80(INT_005b96c4,0);
-  FUN_0048a970(0x01C08D04,0);
+  core_gore_cpp_FUN_004afe80(INT_005b96c4,0);
+  core_fire_cpp_FUN_0048a970(0x01C08D04,0);
   if (*0x02DD1210 == 0) {
     core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,0);
   }
@@ -192,7 +192,7 @@ void core_set_cpp_FUN_00509a80(int param_1,int param_2)
   if (0 < *(int *)(param_1 + 0x14cd6c)) {
     do {
       iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(iVar4 + 0x14cd70),_DAT_01c78c78);
+                        (*(uint *)(iVar4 + 0x14cd70),g_CGlassActorType_01c78c40.name_hash);
       if (iVar3 != 0) {
         (**(code **)(*(int *)(iVar3 + 0x14c) + 0x10))();
       }
@@ -245,7 +245,7 @@ void core_set_cpp_FUN_00509a80(int param_1,int param_2)
                dVar2);
   }
   if (*(int *)(0x01C775EC + 0x1e8) != 0) {
-    FUN_005138e0();
+    core_setdir_cpp_FUN_005138e0();
   }
   iVar5 = 0;
   iVar4 = param_1;

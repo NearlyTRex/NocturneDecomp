@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_motion_cpp_CMotionController_advance_FUN_004e11c0(int param_1,float *param_2)
 
 {
@@ -61,9 +59,9 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_004e11c0(int param_1,f
         core_motion_cpp_CMotionController_startTransition_FUN_004e1770(param_1,local_40);
         break;
       default:
-        _DAT_01cc4800 = "..\\core\\motion.cpp";
-        _DAT_01cc4804 = 0x1b7;
-        FUN_004c8440("Invalid transition command returned by CMotionControler::advanceComplex: %d",local_3c);
+        PTR_01cc4800 = "..\\core\\motion.cpp";
+        INT_01cc4804 = 0x1b7;
+        core_main_c_FUN_004c8440("Invalid transition command returned by CMotionControler::advanceComplex: %d",local_3c);
       }
       goto LAB_004e1332;
     }
@@ -103,9 +101,9 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_004e11c0(int param_1,f
                 (param_1,*(uint *)(param_1 + 0x18),*(uint *)(param_1 + 0x1c),&local_48);
       goto LAB_004e12bd;
     default:
-      _DAT_01cc4800 = "..\\core\\motion.cpp";
-      _DAT_01cc4804 = 0x17e;
-      FUN_004c8440("CMotionController::advance: Tweening active but invalid tweenType: %d",*(uint *)(param_1 + 0xc));
+      PTR_01cc4800 = "..\\core\\motion.cpp";
+      INT_01cc4804 = 0x17e;
+      core_main_c_FUN_004c8440("CMotionController::advance: Tweening active but invalid tweenType: %d",*(uint *)(param_1 + 0xc));
     }
 switchD_004e12af_caseD_3:
     if (local_18 != 0) {

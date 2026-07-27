@@ -1,27 +1,27 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_004cdd30(int param_1)
+; int engine_matrix_c_FUN_004cdd30(int param_1)
 ;
 ;
 ; XREF[1]:
-;   FUN_004cde10 at 004cde32
+;   engine_matrix.c_FUN_004cde10 at 004cde32
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_00588258
 ;   TerminatedCString s_sqrt_out_of_domain_0058826b
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004cdd30
-        ;   Label: FUN_004cdd30
+        ;   Label: engine_matrix.c_FUN_004cdd30
     MOV EBX,dword ptr [ESP + 0x8]       ; 004cdd31
     CMP EBX,0x1                         ; 004cdd35
     JL 0x004cddd9                       ; 004cdd38
@@ -98,10 +98,10 @@ section .text
         ;   Label: LAB_004cddd9
     MOV ECX,0x38e                       ; 004cddde
     PUSH 0x58826b                       ; 004cdde3 | = "sqrt out of domain!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004cdde8 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004cddee | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004cddf4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004cdde8 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004cddee | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004cddf4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004cddf9
     JMP 0x004cdd3e                      ; 004cddfc
         ;   XREF to: 004cdd3e (UNCONDITIONAL_JUMP)  ; LAB_004cdd3e

@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1063,
-    "complexity_score": 1554,
+    "complexity_score": 1536,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 629,
-    "suspect_count": 88,
+    "pseudocode_lines": 631,
+    "suspect_count": 86,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -140,19 +140,19 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1692
+    "total_lines": 1694
   },
   "cross_references": [
-    {
-      "addr": "0053f210",
-      "from_addr": "0053f236",
-      "name": "FUN_0053f210",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0053a660",
       "from_addr": "0053a6b6",
       "name": "core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053f210",
+      "from_addr": "0053f236",
+      "name": "core_stranger.cpp_FUN_0053f210",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -179,6 +179,11 @@
       "addr": "0042a9d0",
       "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
     },
     {
       "addr": "00534fc0",
@@ -229,11 +234,6 @@
       "addr": "0055a910",
       "is_variadic": false,
       "name": "core_xform.cpp_transformVector3x4InPlace_FUN_0055a910"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -275,20 +275,20 @@
     },
     {
       "addr": "00764ad4",
-      "name": "CDemonActorType_00764a9c.name_hash",
+      "name": "g_CLightActorActorType_00764a9c.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -311,7 +311,7 @@
     },
     {
       "addr": "02ddf9a8",
-      "name": "DAT_02ddf9a8",
+      "name": "g_CWeaponActorType_02ddf970.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -337,7 +337,7 @@
       {
         "call_addr": "0053f236",
         "call_type": "direct",
-        "caller": "FUN_0053f210",
+        "caller": "core_stranger.cpp_FUN_0053f210",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1719,49 +1719,49 @@
         {
           "check_id": "legacyUninitvar",
           "column": 17,
-          "line": 488,
+          "line": 490,
           "message": "Uninitialized variable: local_218",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 17,
-          "line": 489,
+          "line": 491,
           "message": "Uninitialized variable: local_214",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 32,
-          "line": 486,
+          "line": 488,
           "message": "Uninitialized variable: local_210",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 29,
-          "line": 488,
+          "line": 490,
           "message": "Uninitialized variable: local_20c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 29,
-          "line": 489,
+          "line": 491,
           "message": "Uninitialized variable: local_208",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 42,
-          "line": 453,
+          "line": 454,
           "message": "Uninitialized variable: local_200",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 30,
-          "line": 453,
+          "line": 454,
           "message": "Uninitialized variable: local_1f4",
           "severity": "error"
         }
@@ -1837,15 +1837,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 200,
+      "line": 201,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_180 = (float)core_actor_cpp_castToClassHash_FUN_0040d890(param_2,_DAT_02ddf9a8);",
+      "text": "(param_2,g_CWeaponActorType_02ddf970.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 202,
+      "line": 203,
       "match": "(int *)((int)local_180",
       "severity": "moderate",
       "text": "iVar2 = *(int *)((int)local_180 + 0x2d8);",
@@ -1853,7 +1853,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 222,
+      "line": 223,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,3,iVar6);",
@@ -1861,7 +1861,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 252,
+      "line": 253,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,3,iVar6);",
@@ -1869,7 +1869,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 282,
+      "line": 283,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,3,iVar6);",
@@ -1877,7 +1877,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 336,
+      "line": 337,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,0,iVar6);",
@@ -1885,7 +1885,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 348,
+      "line": 349,
       "match": "param_3",
       "severity": "mild",
       "text": "else if (param_3 == 0) {",
@@ -1893,39 +1893,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 350,
-      "match": "DAT_02dc9f40",
-      "severity": "mild",
-      "text": "(local_75c,&DAT_02dc9f40,&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 350,
+      "line": 351,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(local_75c,&DAT_02dc9f40,&DAT_02dd1184);",
+      "text": "(local_75c,&CVector3f_02dc9f40,&DAT_02dd1184);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 388,
-      "match": "DAT_02dc9f34",
-      "severity": "mild",
-      "text": "(local_aec,&DAT_02dc9f34,&DAT_02dd1184);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 388,
+      "line": 389,
       "match": "DAT_02dd1184",
       "severity": "mild",
-      "text": "(local_aec,&DAT_02dc9f34,&DAT_02dd1184);",
+      "text": "(local_aec,&CVector3f_02dc9f34,&DAT_02dd1184);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 433,
+      "line": 434,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2a84) == 0xe) {",
@@ -1933,7 +1917,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 435,
+      "line": 436,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(local_d8,&DAT_02dd1184,_DAT_02dc9f88 * 0x30 + iVar6);",
@@ -1941,7 +1925,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 437,
+      "line": 438,
       "match": "DAT_02dd1184",
       "severity": "mild",
       "text": "(local_90,&DAT_02dd1184,_DAT_02dc9f84 * 0x30 + iVar6);",
@@ -1949,7 +1933,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 444,
+      "line": 445,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,local_204);",
@@ -1957,7 +1941,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 444,
+      "line": 445,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,local_204);",
@@ -1965,7 +1949,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 444,
+      "line": 445,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,local_204);",
@@ -1973,7 +1957,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 447,
+      "line": 448,
       "match": "param_2",
       "severity": "mild",
       "text": "fVar3 = (float)core_stranger_cpp_getCarriedObjectVerticalOffset_FUN_00534fc0(param_2);",
@@ -1981,7 +1965,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 453,
+      "line": 454,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1faf0) != 0) {",
@@ -1989,15 +1973,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 476,
+      "line": 478,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,CDemonActorType_00764a9c.name_hash);",
+      "text": "(param_2,g_CLightActorActorType_00764a9c.name_hash);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 478,
+      "line": 480,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,&local_21c);",
@@ -2005,7 +1989,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 478,
+      "line": 480,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,&local_21c);",
@@ -2013,7 +1997,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 478,
+      "line": 480,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_2 + 0x14c) + 0x14))(param_2,&local_21c);",
@@ -2021,7 +2005,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 493,
+      "line": 495,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0) {",
@@ -2029,7 +2013,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 505,
+      "line": 507,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 1) {",
@@ -2037,7 +2021,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 512,
+      "line": 514,
       "match": "param_1",
       "severity": "mild",
       "text": "core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_45c,iVar1 * 0x30 + param_1 + 0xfd0);",
@@ -2045,7 +2029,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 539,
+      "line": 541,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar6 = (**(code **)(*(int *)(param_2 + 0x14c) + 0x6c))(param_2);",
@@ -2053,7 +2037,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 539,
+      "line": 541,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar6 = (**(code **)(*(int *)(param_2 + 0x14c) + 0x6c))(param_2);",
@@ -2061,7 +2045,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 539,
+      "line": 541,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar6 = (**(code **)(*(int *)(param_2 + 0x14c) + 0x6c))(param_2);",
@@ -2069,7 +2053,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 558,
+      "line": 560,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,0,iVar1 * 0x30 + param_1 + 0xfd0);",
@@ -2077,26 +2061,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 558,
+      "line": 560,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,0,iVar1 * 0x30 + param_1 + 0xfd0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 582,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (param_3 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 583,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_b0 = param_3;",
       "type": "unnamed_param"
     },
     {
@@ -2104,12 +2072,28 @@
       "line": 584,
       "match": "param_3",
       "severity": "mild",
+      "text": "if (param_3 == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 585,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_b0 = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 586,
+      "match": "param_3",
+      "severity": "mild",
       "text": "local_ac = param_3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 592,
+      "line": 594,
       "match": "param_3",
       "severity": "mild",
       "text": "else if (param_3 == 1) {",
@@ -2117,7 +2101,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 607,
+      "line": 609,
       "match": "param_1",
       "severity": "mild",
       "text": "core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(&local_e4,iVar1 * 0x30 + param_1 + 0xfd0);",
@@ -2125,7 +2109,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 626,
+      "line": 628,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "puVar7 = unaff_ESI;",
@@ -2133,7 +2117,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 632,
+      "line": 634,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -2141,7 +2125,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 226,
+      "line": 227,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2149,7 +2133,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 256,
+      "line": 257,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2157,7 +2141,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 286,
+      "line": 287,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2165,7 +2149,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 340,
+      "line": 341,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2173,7 +2157,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 354,
+      "line": 355,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2181,7 +2165,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 362,
+      "line": 363,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2189,7 +2173,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 370,
+      "line": 371,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2197,7 +2181,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 378,
+      "line": 379,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2205,7 +2189,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 392,
+      "line": 393,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2213,7 +2197,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 400,
+      "line": 401,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2221,7 +2205,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 408,
+      "line": 409,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2229,7 +2213,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 416,
+      "line": 417,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2237,7 +2221,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 457,
+      "line": 458,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2245,7 +2229,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 465,
+      "line": 466,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2253,7 +2237,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 498,
+      "line": 500,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2261,7 +2245,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 515,
+      "line": 517,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2269,7 +2253,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 562,
+      "line": 564,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2277,7 +2261,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 570,
+      "line": 572,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2285,7 +2269,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 620,
+      "line": 622,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2293,7 +2277,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 627,
+      "line": 629,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -2301,7 +2285,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_180 != &local_150)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 485,
+      "line": 487,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_180 != &local_150) {",
@@ -2480,7 +2464,7 @@
     },
     {
       "description": "Uninitialized variable: local_218",
-      "line": 488,
+      "line": 490,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_134 = local_218 + local_20c;",
@@ -2488,7 +2472,7 @@
     },
     {
       "description": "Uninitialized variable: local_214",
-      "line": 489,
+      "line": 491,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_130 = local_214 + local_208;",
@@ -2496,7 +2480,7 @@
     },
     {
       "description": "Uninitialized variable: local_210",
-      "line": 486,
+      "line": 488,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_144[3] = local_21c + local_210;",
@@ -2504,7 +2488,7 @@
     },
     {
       "description": "Uninitialized variable: local_20c",
-      "line": 488,
+      "line": 490,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_134 = local_218 + local_20c;",
@@ -2512,7 +2496,7 @@
     },
     {
       "description": "Uninitialized variable: local_208",
-      "line": 489,
+      "line": 491,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_130 = local_214 + local_208;",
@@ -2520,7 +2504,7 @@
     },
     {
       "description": "Uninitialized variable: local_200",
-      "line": 453,
+      "line": 454,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_104 = local_104 - (local_1f4 - local_200);",
@@ -2528,7 +2512,7 @@
     },
     {
       "description": "Uninitialized variable: local_1f4",
-      "line": 453,
+      "line": 454,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_104 = local_104 - (local_1f4 - local_200);",

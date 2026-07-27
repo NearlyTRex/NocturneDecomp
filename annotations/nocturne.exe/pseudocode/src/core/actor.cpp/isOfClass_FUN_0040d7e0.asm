@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[56]:
-;   FUN_0040ef70 at 0040ef7a
-;   FUN_0040f480 at 0040f49a
-;   FUN_00414e10 at 00414e1a
-;   FUN_004196b0 at 00419ac0
-;   FUN_0047a150 at 0047a190
-;   FUN_00481d30 at 00481d3a
-;   FUN_00497900 at 00497b74
-;   FUN_004980d0 at 0049824d
-;   FUN_004b43d0 at 004b43da
-;   FUN_004b5b00 at 004b5b22
+;   core_actor.cpp_FUN_0040b300 at 0040b533
+;   core_ammo.cpp_FUN_0040ef70 at 0040ef7a
+;   core_ammobox.cpp_FUN_0040f480 at 0040f49a
+;   core_barrier.cpp_CBarrier_getCollisionType_FUN_00411860 at 0041188f
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00414056
+;   core_battery.cpp_FUN_00414e10 at 00414e1a
+;   core_boneguy.cpp_FUN_004196b0 at 00419ac0
+;   core_boxactor.cpp_CBoxActor_canPickup_FUN_0041f0b0 at 0041f0d2
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 004299fa
+;   core_charactr.cpp_FUN_00427730 at 00427764
 ;   ... and 46 more
 ;
 ; Called Functions:

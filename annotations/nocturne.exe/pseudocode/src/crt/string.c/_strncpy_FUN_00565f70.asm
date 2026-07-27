@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_004f5c40 at 004f5c4f
 ;   FUN_0056c864 at 0056cb4b
 ;   FUN_00572b70 at 00572bbe
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0 at 004f3fcc
+;   cockpit_pkbmpset.cpp_FUN_004f5c40 at 004f5c4f
 ;   core_netgame.cpp_CNetGame_processChatOut_FUN_004ebfd0 at 004ec0cf
 ;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90 at 00456dbb
 ;   engine_pod.cpp_findFilesByExtension_FUN_004f8b90 at 004f8cfa

@@ -41,12 +41,13 @@
 ;
 ; Called Functions:
 ;   BringWindowToTop
+;   core_main.c_FUN_004c85f0
+;   core_main.c_FUN_004c90e0
+;   core_main.c_FUN_004d23d0
 ;   CreateWindowExA
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_stdlib.c_srand_FUN_005648b0
 ;   FindWindowA
-;   FUN_004c85f0
-;   FUN_004c90e0
 ;   GetCommandLineA
 ;   GetCurrentDirectoryA
 ;   GetCurrentProcess
@@ -54,7 +55,6 @@
 ;   GetModuleFileNameA
 ;   GetStockObject
 ;   GlobalMemoryStatus
-;   IsIconic
 ;   ... and 9 more
 ;
 ; *****************************************************************************
@@ -294,13 +294,13 @@ section .text
     MOV EAX,dword ptr [ESP + 0x40]      ; 005594d4
     PUSH EBP                            ; 005594d8
     MOV [0x02de20ac],EAX                ; 005594d9 | DAT_02de20ac
-    CALL FUN_004c85f0                   ; 005594de
-        ;   XREF to: 004c85f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004c85f0()
+    CALL core_main.c_FUN_004c85f0       ; 005594de
+        ;   XREF to: 004c85f0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c85f0()
     ADD ESP,0x8                         ; 005594e3
-    CALL thunk_FUN_004d23d0             ; 005594e6
-        ;   XREF to: 004c85e0 (UNCONDITIONAL_CALL)  ; undefined thunk_FUN_004d23d0()
-    CALL FUN_004c90e0                   ; 005594eb
-        ;   XREF to: 004c90e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004c90e0()
+    CALL core_main.c_FUN_004d23d0       ; 005594e6
+        ;   XREF to: 004c85e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004d23d0()
+    CALL core_main.c_FUN_004c90e0       ; 005594eb
+        ;   XREF to: 004c90e0 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c90e0()
     XOR EAX,EAX                         ; 005594f0
     ADD ESP,0x48                        ; 005594f2
     POP EBP                             ; 005594f5

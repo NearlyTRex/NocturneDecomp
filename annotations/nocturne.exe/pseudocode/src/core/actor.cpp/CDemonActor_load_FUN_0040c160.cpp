@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040c160(char *param_1,int param_2)
 
 {
@@ -28,9 +26,9 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040c160(char *param_1,int para
   _fscanf(param_2," { %s \"%[^\"]\"\n",local_dc,local_78);
   iVar5 = _stricmp(uVar4,local_dc);
   if (iVar5 != 0) {
-    _DAT_01cc4800 = "..\\core\\actor.cpp";
-    _DAT_01cc4804 = 0x7c6;
-    FUN_004c8440("Start of actor file tag mismatch for class %s",uVar4);
+    PTR_01cc4800 = "..\\core\\actor.cpp";
+    INT_01cc4804 = 0x7c6;
+    core_main_c_FUN_004c8440("Start of actor file tag mismatch for class %s",uVar4);
   }
   pcVar6 = local_78;
   pcVar7 = param_1;
@@ -55,14 +53,14 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040c160(char *param_1,int para
   _fscanf(param_2," } %s \"%[^\"]\"\n",local_dc,local_78);
   iVar5 = _stricmp(uVar4,local_dc);
   if ((iVar5 != 0) || (iVar5 = _stricmp(param_1,local_78), iVar5 != 0)) {
-    _DAT_01cc4800 = "..\\core\\actor.cpp";
-    _DAT_01cc4804 = 0x7e3;
-    FUN_004c8440("End of actor file tag mismatch for class %s name \"%s\"",uVar4,param_1);
+    PTR_01cc4800 = "..\\core\\actor.cpp";
+    INT_01cc4804 = 0x7e3;
+    core_main_c_FUN_004c8440("End of actor file tag mismatch for class %s name \"%s\"",uVar4,param_1);
   }
   if ((*(byte *)(param_2 + 0xc) & 0x20) != 0) {
-    _DAT_01cc4800 = "..\\core\\actor.cpp";
-    _DAT_01cc4804 = 0x7e8;
-    FUN_004c8440("IO Error after reading %s \"%s\"",uVar4,param_1);
+    PTR_01cc4800 = "..\\core\\actor.cpp";
+    INT_01cc4804 = 0x7e8;
+    core_main_c_FUN_004c8440("IO Error after reading %s \"%s\"",uVar4,param_1);
   }
   DAT_00763e8c = (char *)uVar3;
   DAT_00763e88 = uVar2;

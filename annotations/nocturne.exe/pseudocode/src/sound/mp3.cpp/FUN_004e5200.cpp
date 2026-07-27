@@ -1,14 +1,14 @@
-// Name: FUN_004e5200
+// Name: sound_mp3.cpp_FUN_004e5200
 // Address: 004e5200
 // Address Range: [[004e5200, 004e58cd]]
 // Convention: unknown
-// Signature: int FUN_004e5200(undefined4 param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int *param_7)
+// Signature: int sound_mp3_cpp_FUN_004e5200(undefined4 param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int *param_7)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_004e5200(uint param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int *param_7)
+int sound_mp3_cpp_FUN_004e5200(uint param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int *param_7)
 
 {
   int iVar1;
@@ -55,24 +55,24 @@ int FUN_004e5200(uint param_1,int param_2,int param_3,int param_4,int param_5,in
       *(int *)(iVar1 + 0x1cd8c38) = (1 << (*(byte *)(iVar1 + 0x1cd8c34) & 0x1f)) + -1;
       sscanf(iVar9,"%u",&local_38);
       if (iVar6 != local_38) {
-        _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-        _DAT_01cc4804 = 0xd6b;
-        FUN_004c8440("wrong table number %u.  File: %s",iVar6,&DAT_01cd8b28);
+        PTR_01cc4800 = "..\\sound\\mp3.cpp";
+        INT_01cc4804 = 0xd6b;
+        core_main_c_FUN_004c8440("wrong table number %u.  File: %s",iVar6,&DAT_01cd8b28);
       }
       iVar9 = *(int *)(&DAT_005bdbb0 + local_18);
       if (iVar9 < 0) {
         if (iVar9 != -1) {
-          _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-          _DAT_01cc4804 = 0xd8d;
+          PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          INT_01cc4804 = 0xd8d;
           pcVar12 = "huffman decodertable error at table %d.  File: %s";
           goto LAB_004e5594;
         }
         uVar7 = *(uint *)(&DAT_01cd944c + iVar1);
         *(uint *)(iVar1 + 0x1cd8c3c) = 0xffffffff;
         if (0x400 < uVar7) {
-          _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-          _DAT_01cc4804 = 0xd7e;
-          FUN_004c8440("MP3 Huffman tree overflow!  File: %s",&DAT_01cd8b28);
+          PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          INT_01cc4804 = 0xd7e;
+          core_main_c_FUN_004c8440("MP3 Huffman tree overflow!  File: %s",&DAT_01cd8b28);
         }
         uVar7 = 0;
         puVar4 = *(byte **)(&DAT_005bdbb4 + local_18);
@@ -105,11 +105,11 @@ int FUN_004e5200(uint param_1,int param_2,int param_3,int param_4,int param_5,in
         *(uint *)(&DAT_01cd944c + iVar1) = *(uint *)(&DAT_01cd944c + iVar9);
         if ((*(int *)(iVar1 + 0x1cd8c2c) != *(int *)(iVar9 + 0x1cd8c2c)) ||
            (*(int *)(iVar9 + 0x1cd8c30) != *(int *)(iVar1 + 0x1cd8c30))) {
-          _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-          _DAT_01cc4804 = 0xd76;
+          PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          INT_01cc4804 = 0xd76;
           pcVar12 = "wrong table %u reference.  File: %s";
 LAB_004e5594:
-          FUN_004c8440(pcVar12,iVar6,&DAT_01cd8b28);
+          core_main_c_FUN_004c8440(pcVar12,iVar6,&DAT_01cd8b28);
         }
       }
       iVar1 = iVar1 + 0x828;
@@ -118,9 +118,9 @@ LAB_004e5594:
       local_1c = local_1c + 0x828;
     } while (iVar6 < 0x22);
     if (iVar6 != 0x22) {
-      _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-      _DAT_01cc4804 = 0xda1;
-      FUN_004c8440("decoder table read error.  File: %s",&DAT_01cd8b28);
+      PTR_01cc4800 = "..\\sound\\mp3.cpp";
+      INT_01cc4804 = 0xda1;
+      core_main_c_FUN_004c8440("decoder table read error.  File: %s",&DAT_01cd8b28);
     }
     _DAT_01cd6320 = 1;
   }

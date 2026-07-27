@@ -1,14 +1,14 @@
-// Name: FUN_004720c0
+// Name: shape_edittool.cpp_FUN_004720c0
 // Address: 004720c0
 // Address Range: [[004720c0, 004721dc]]
 // Convention: unknown
-// Signature: void FUN_004720c0(undefined4 param_1)
+// Signature: void shape_edittool_cpp_FUN_004720c0(undefined4 param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004720c0(uint param_1)
+void shape_edittool_cpp_FUN_004720c0(uint param_1)
 
 {
   int iVar1;
@@ -25,9 +25,9 @@ void FUN_004720c0(uint param_1)
   
   bVar10 = 0;
   if (_DAT_01bcd07c < 1) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0x6f7;
-    FUN_004c8440("CEditorTools::closeWindow() called but no window was opened!");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0x6f7;
+    core_main_c_FUN_004c8440("CEditorTools::closeWindow() called but no window was opened!");
   }
   iVar1 = (_DAT_01bcd07c + -1) * 0x1d8;
   puVar7 = *(uint **)(iVar1 + 0x1bcd248);

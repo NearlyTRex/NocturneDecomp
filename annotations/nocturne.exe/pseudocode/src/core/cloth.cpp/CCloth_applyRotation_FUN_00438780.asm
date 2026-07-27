@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00438620 at 00438642
+;   core_cloth.cpp_FUN_00438620 at 00438642
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0

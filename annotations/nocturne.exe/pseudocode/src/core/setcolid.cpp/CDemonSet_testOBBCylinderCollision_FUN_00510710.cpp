@@ -36,7 +36,7 @@ bool __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(u
   
   pfVar3 = local_1e8;
   iVar4 = 0;
-  __arrinit(local_1e8,8,&DAT_005993b0);
+  __arrinit(local_1e8,8,&g_CVectorTypeInfo_005993b0);
   do {
     uVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_0041cc70(param_3,local_38,iVar4);
     pfVar2 = (float *)core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40

@@ -21,7 +21,7 @@ ulonglong sound_sndmain_cpp_getSfxPlaybackPosition_FUN_00526d10(uint param_1,uin
   }
   else {
     if ((*(int *)(iVar1 + 0x6c) != 0) && (_DAT_02dc8318 != 0)) {
-      iVar2 = FUN_005257e0(iVar1);
+      iVar2 = sound_sndmain_cpp_FUN_005257e0(iVar1);
       if (iVar2 == 0) {
         sound_sndmain_cpp_unlockSound_FUN_00528890();
         return 0xbff0000000000000;

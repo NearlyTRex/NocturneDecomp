@@ -30,9 +30,9 @@ int * core_netgame_cpp_allocSimFrame_FUN_004e9730(int param_1)
     } while (iVar1 < _DAT_01d09c00 * 100);
   }
   if (0x1ff < _DAT_01d09c00) {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 299;
-    FUN_004c8440("allocSimFrame - sim history list full");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 299;
+    core_main_c_FUN_004c8440("allocSimFrame - sim history list full");
   }
   piVar3 = (int *)(_DAT_01d09c00 * 100 + 0x1d09c04);
   _DAT_01d09c00 = _DAT_01d09c00 + 1;

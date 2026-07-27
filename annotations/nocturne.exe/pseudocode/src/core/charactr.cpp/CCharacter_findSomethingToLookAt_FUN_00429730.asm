@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004b6d80 at 004b736b
+;   core_hostage.cpp_FUN_004b6d80 at 004b736b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_0057a272
@@ -22,7 +22,7 @@
 ;   double DOUBLE_0057a30a = 20
 ;   float FLOAT_0057a312 = -1
 ;   undefined4 DAT_005be368
-;   undefined4 CDemonActorType_00765a60.name_hash
+;   undefined4 g_CCharacterActorType_00765a60.name_hash
 ;   ... and 5 more
 ;
 ; Called Functions:
@@ -32,13 +32,13 @@
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
+;   core_main.c_FUN_004c8440
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00511800
 ;   core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_0050fa30
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -249,7 +249,7 @@ section .text
     SAHF                                ; 004299a0
     JA 0x00429851                       ; 004299a1
         ;   XREF to: 00429851 (CONDITIONAL_JUMP)  ; LAB_00429851
-    MOV EAX,[0x01bcdef4]                ; 004299a7 | DAT_01bcdef4
+    MOV EAX,[0x01bcdef4]                ; 004299a7 | g_CEnemyActorType_01bcdebc.name_hash
     PUSH EAX                            ; 004299ac
     MOV ECX,0x41200000                  ; 004299ad
     PUSH EBX                            ; 004299b2
@@ -436,7 +436,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00429bcc
         ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240()
     ADD ESP,0xc                         ; 00429bd1
-    MOV EBX,dword ptr [0x00765a98]      ; 00429bd4 | CDemonActorType_00765a60.name_hash
+    MOV EBX,dword ptr [0x00765a98]      ; 00429bd4 | g_CCharacterActorType_00765a60.name_hash
     PUSH EBX                            ; 00429bda
     MOV EDI,dword ptr [ESI + 0x25c8]    ; 00429bdb
     PUSH EDI                            ; 00429be1
@@ -450,10 +450,10 @@ section .text
     MOV EAX,0x57a278                    ; 00429bf0 | = "..\\core\\charactr.cpp"
     MOV EDX,0xdb4                       ; 00429bf5
     PUSH 0x57a28d                       ; 00429bfa | = "CCharacter::findSomethingToLookAt - S..."
-    MOV [0x01cc4800],EAX                ; 00429bff | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00429c04 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00429c0a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00429bff | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00429c04 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00429c0a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00429c0f
     PUSH EBX                            ; 00429c12
         ;   Label: LAB_00429c12

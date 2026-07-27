@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c8701
+;   core_main.c_FUN_004c85f0 at 004c8701
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7638

@@ -36,7 +36,7 @@ uint FUN_0056d034(int param_1)
   iVar6 = iVar4 * 2;
   if (iVar2 == 0) {
     iVar2 = *(int *)(&DAT_005a4a78 + iVar6);
-    iVar6 = *(int *)(&DAT_005a4a76 + iVar6);
+    iVar6 = *(int *)((int)&g_fstreambaseTypeInfo_005a4a60.class_name + iVar6 + 2);
   }
   else {
     iVar2 = *(int *)(&DAT_005a4a92 + iVar6);

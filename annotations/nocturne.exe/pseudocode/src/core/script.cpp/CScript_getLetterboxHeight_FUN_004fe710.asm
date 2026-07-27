@@ -8,8 +8,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   FUN_004fe770 at 004fe7f3
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049abfb
+;   core_script.cpp_FUN_004fe770 at 004fe7f3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b761c

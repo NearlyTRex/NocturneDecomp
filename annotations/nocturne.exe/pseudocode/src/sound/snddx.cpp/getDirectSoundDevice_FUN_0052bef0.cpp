@@ -2,7 +2,7 @@
 // Address: 0052bef0
 // Address Range: [[0052bef0, 0052c11a]]
 // Convention: __cdecl
-// Signature: undefined1 * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
+// Signature: undefined * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
 
 #include "nocturne.h"
 
@@ -51,7 +51,7 @@ byte * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
             uVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
             _sprintf(&iStack_784,"DirectSux: Unable to %s.  (%s)",
                        "Create the primary buffer",uVar2);
-            FUN_00529980(&iStack_784);
+            sound_sndmain_cpp_FUN_00529980(&iStack_784);
             uStack_28 = uStack_28 & 0xffffffef;
             iVar1 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_2c,&DAT_02dc9218,0);
             if (iVar1 != 0) {
@@ -80,7 +80,7 @@ byte * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0052bef0(int param_1)
         puVar3 = auStack_5f4;
       }
 LAB_0052bf91:
-      FUN_00529980(puVar3);
+      sound_sndmain_cpp_FUN_00529980(puVar3);
       sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90(&DAT_02dc93a0);
       return (byte *)0x0;
     }

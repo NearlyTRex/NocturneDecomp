@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_morph_cpp_CMorph_getReady_FUN_004e03c0(int param_1)
 
 {
@@ -59,11 +57,11 @@ void __cdecl core_morph_cpp_CMorph_getReady_FUN_004e03c0(int param_1)
   int local_14;
   
   if ((*(int *)(param_1 + 0x54) < 3) || (*(int *)(param_1 + 0x65c) < 3)) {
-    _DAT_01cc4800 = "..\\core\\morph.cpp";
-    _DAT_01cc4804 = 799;
-    FUN_004c8440("CMorph::getReady - can't do this unless we have setup both models!");
+    PTR_01cc4800 = "..\\core\\morph.cpp";
+    INT_01cc4804 = 799;
+    core_main_c_FUN_004c8440("CMorph::getReady - can't do this unless we have setup both models!");
   }
-  __arrinit(local_c8,2,&DAT_005993f0);
+  __arrinit(local_c8,2,&g_CBoundingBox3D_005993f0);
   local_38 = param_1;
   local_2c = 0;
   local_24 = local_c8;

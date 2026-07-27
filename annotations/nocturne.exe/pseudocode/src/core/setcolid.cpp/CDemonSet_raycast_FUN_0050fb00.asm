@@ -16,16 +16,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[17]:
-;   FUN_0043d1c0 at 0043d35f
-;   FUN_00477890 at 00477ad4
-;   FUN_0048b6f0 at 0048b7d3
-;   FUN_00498de0 at 00499044
-;   FUN_004b27c0 at 004b298a
-;   FUN_004c71a0 at 004c73a0
-;   FUN_004fda20 at 004fdc84
-;   FUN_00515ea0 at 0051611e
-;   FUN_00545c30 at 00545e95
 ;   core_actor.cpp_FUN_0040b300 at 0040b81f
+;   core_crossbow.cpp_FUN_0043d1c0 at 0043d35f
+;   core_elephant.cpp_FUN_00477890 at 00477ad4
+;   core_fire.cpp_FUN_0048b6f0 at 0048b7d3
+;   core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 at 004971d1
+;   core_gabriela.cpp_FUN_00498de0 at 00499044
+;   core_gun.cpp_FUN_004b27c0 at 004b298a
+;   core_lightgun.cpp_CLightGun_canSeeTarget_FUN_004c70a0 at 004c7137
+;   core_lightgun.cpp_FUN_004c71a0 at 004c73a0
+;   core_scat.cpp_FUN_004fda20 at 004fdc84
 ;   ... and 7 more
 ;
 ; Referenced Globals:

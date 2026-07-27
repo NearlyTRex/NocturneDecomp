@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00462910 at 00462923
+;   core_drone.cpp_FUN_00462910 at 00462923
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_drone_dfm_0057de8b
 ;   float FLOAT_0059c6fc = 50
-;   undefined4 DAT_0059c700
+;   float FLOAT_0059c700 = 100
 ;   undefined1* PTR_core_drone.cpp_CDrone_setup_FUN_004629b0_0059c714 = 004629b0
 ;
 ; Called Functions:
@@ -38,7 +38,7 @@ section .text
     MOV dword ptr [EBX + 0x2dd4],0x3f400000 ; 00462967
     FLD float ptr [0x0059c6fc]          ; 00462971 | FLOAT_0059c6fc
     MOV dword ptr [EBX + 0x2dd8],0x3fc00000 ; 00462977
-    FLD float ptr [0x0059c700]          ; 00462981 | DAT_0059c700
+    FLD float ptr [0x0059c700]          ; 00462981 | FLOAT_0059c700
     MOV dword ptr [EBX + 0x2608],0x1    ; 00462987
     ADD ESP,0x8                         ; 00462991
     MOV dword ptr [EBX + 0x2434],0x42960000 ; 00462994

@@ -146,7 +146,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(void)
         (**(code **)(*(int *)(iVar4 + 0x34) + 8))(iVar4);
       }
       iVar4 = iVar4 + 0x38;
-    } while (iVar4 != 0x1c70618);
+    } while ((CDemonActorType *)iVar4 != &g_CFlameActorType_01c70618);
   }
   return;
 }

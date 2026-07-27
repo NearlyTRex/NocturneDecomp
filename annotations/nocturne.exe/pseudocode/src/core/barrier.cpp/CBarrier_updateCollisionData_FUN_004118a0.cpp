@@ -12,6 +12,6 @@ void core_barrier_cpp_CBarrier_updateCollisionData_FUN_004118a0(int param_1)
   if (*(int *)(param_1 + 0x15c) == 0) {
     return;
   }
-  FUN_00511a10(0x01E57284,param_1);
+  core_setcolid_cpp_FUN_00511a10(0x01E57284,param_1);
   return;
 }

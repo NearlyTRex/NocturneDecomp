@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,25 +122,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 180,
+    "complexity_score": 164,
     "cross_reference_count": 1,
     "function_call_count": 4,
-    "global_count": 2,
+    "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
-    "suspect_count": 13,
+    "pseudocode_lines": 34,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 133
+    "total_lines": 132
   },
   "cross_references": [
     {
       "addr": "004571f0",
       "from_addr": "00457230",
-      "name": "FUN_004571f0",
+      "name": "core_dpart.cpp_FUN_004571f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,8 +152,8 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00456f60",
-    "signature": "void FUN_00456f60(int param_1)"
+    "name": "core_dpart.cpp_FUN_00456f60",
+    "signature": "void core_dpart_cpp_FUN_00456f60(int param_1)"
   },
   "function_calls": [
     {
@@ -163,32 +162,68 @@
       "name": "core_dpart.cpp_CDemonPart_free_FUN_00457060"
     },
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "00563c90",
       "is_variadic": false,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
       "addr": "00565c50",
       "is_variadic": false,
-      "name": "FUN_00565c50"
+      "name": "crt_unknown.c_FUN_00565c50"
     }
   ],
   "globals": [
     {
+      "addr": "0057d35e",
+      "name": "s_CDemonPart_alloc_Out_of_0057d35e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057d38b",
+      "name": "s_core_dpart_cpp_0057d38b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057d39d",
+      "name": "s_core_dpart_cpp_0057d39d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057d3af",
+      "name": "s_CDemonPart_alloc_Out_of_0057d3af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057d3d9",
+      "name": "s_core_dpart_cpp_0057d3d9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0057d3eb",
+      "name": "s_CDemonPart_alloc_Out_of_0057d3eb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -198,7 +233,7 @@
       {
         "call_addr": "00457230",
         "call_type": "direct",
-        "caller": "FUN_004571f0",
+        "caller": "core_dpart.cpp_FUN_004571f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -248,24 +283,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_00456f60(int param_1)",
+      "text": "void core_dpart_cpp_FUN_00456f60(int param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dpart_cpp_CDemonPart_free_FUN_00457060(param_1);",
@@ -273,7 +300,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x20) != 0) {",
@@ -281,7 +308,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = FUN_00565c50(*(int *)(param_1 + 0x20),0xc);",
@@ -289,7 +316,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x2c) = iVar1;",
@@ -297,7 +324,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "_sprintf(auStack_10c,\"CDemonPart::alloc - Out of vertex %d memory!\",*(uint *)(param_1 + 0x20));",
@@ -305,7 +332,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = FUN_00565c50(*(uint *)(param_1 + 0x20),0xc);",
@@ -313,7 +340,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x30) = iVar1;",
@@ -321,7 +348,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x24) != 0) {",
@@ -329,7 +356,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = FUN_00565c50(*(int *)(param_1 + 0x24),0x20);",
@@ -337,7 +364,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x34) = iVar1;",

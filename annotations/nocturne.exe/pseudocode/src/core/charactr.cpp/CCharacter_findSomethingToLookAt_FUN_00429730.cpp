@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(int param_1,float param_2,int param_3)
 
 {
@@ -112,7 +110,8 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(int
                          (&fStack_44,&fStack_50), ABS(fStack_40) <= (float)1.3962634015555599)) &&
              (ABS(fStack_44) <= (float)0.78539816337500001)) {
             fStack_100 = 10.0;
-            iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar3,_DAT_01bcdef4);
+            iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
+                              (iVar3,g_CEnemyActorType_01bcdebc.name_hash);
             if (((iVar2 != 0) && (iStack_1c == 0)) &&
                (fStack_100 = 30.0, param_1 == *(int *)(iVar2 + 0xbca4))) {
               fStack_100 = 40.0;
@@ -167,11 +166,11 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_00429730(int
     uStack_c4 = 0x40b00000;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&fStack_8c,&uStack_c8);
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(param_1 + 0x25c8),CDemonActorType_00765a60.name_hash);
+                      (*(uint *)(param_1 + 0x25c8),g_CCharacterActorType_00765a60.name_hash);
     if (iVar1 == 0) {
-      _DAT_01cc4800 = "..\\core\\charactr.cpp";
-      _DAT_01cc4804 = 0xdb4;
-      FUN_004c8440("CCharacter::findSomethingToLookAt - Should be a character");
+      PTR_01cc4800 = "..\\core\\charactr.cpp";
+      INT_01cc4804 = 0xdb4;
+      core_main_c_FUN_004c8440("CCharacter::findSomethingToLookAt - Should be a character");
     }
     iVar3 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x104))(iVar1);
     if ((iVar3 == 0) || (*(char *)(iVar1 + 0x23b0) == '\0')) {

@@ -31,7 +31,7 @@
 ;   core_setcolid.cpp_CDemonSet_isPointInWater_FUN_00511b50
 ;   core_sound.cpp_CSound_playActorSound_FUN_0052ea60
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_004940d0
+;   xxx_unk.c_FUN_004940d0
 ;
 ; *****************************************************************************
 
@@ -135,8 +135,8 @@ section .text
     MOV EDX,dword ptr [0x005b9284]      ; 0040dc5b | INT_005b9284
         ;   Label: caseD_0
     PUSH EDX                            ; 0040dc61
-    CALL FUN_004940d0                   ; 0040dc62
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
+    CALL xxx_unk.c_FUN_004940d0         ; 0040dc62
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
     ADD ESP,0x4                         ; 0040dc67
         ;   Label: LAB_0040dc67
     FLD float ptr [ESP + 0x9c]          ; 0040dc6a
@@ -198,15 +198,15 @@ section .text
     MOV EAX,[0x005b9284]                ; 0040dcfc | INT_005b9284
         ;   Label: caseD_3
     PUSH EAX                            ; 0040dd01
-    CALL FUN_004940d0                   ; 0040dd02
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
+    CALL xxx_unk.c_FUN_004940d0         ; 0040dd02
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
     JMP 0x0040dc67                      ; 0040dd07
         ;   XREF to: 0040dc67 (UNCONDITIONAL_JUMP)  ; LAB_0040dc67
     MOV EBP,dword ptr [0x005b9284]      ; 0040dd0c | INT_005b9284
         ;   Label: caseD_7
     PUSH EBP                            ; 0040dd12
-    CALL FUN_004940d0                   ; 0040dd13
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
+    CALL xxx_unk.c_FUN_004940d0         ; 0040dd13
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
     JMP 0x0040dc67                      ; 0040dd18
         ;   XREF to: 0040dc67 (UNCONDITIONAL_JUMP)  ; LAB_0040dc67
 

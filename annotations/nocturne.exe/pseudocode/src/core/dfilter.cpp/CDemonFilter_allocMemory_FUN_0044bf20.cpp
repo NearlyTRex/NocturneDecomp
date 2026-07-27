@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(int *param_1)
 
 {
@@ -19,8 +17,8 @@ void __cdecl core_dfilter_cpp_CDemonFilter_allocMemory_FUN_0044bf20(int *param_1
   if (iVar1 != 0) {
     return;
   }
-  _DAT_01cc4800 = "..\\core\\dfilter.cpp";
-  _DAT_01cc4804 = 0x8d;
-  FUN_004c8440("CDemonFilter::allocMemory - Out of memory");
+  PTR_01cc4800 = "..\\core\\dfilter.cpp";
+  INT_01cc4804 = 0x8d;
+  core_main_c_FUN_004c8440("CDemonFilter::allocMemory - Out of memory");
   return;
 }

@@ -1,0 +1,89 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 6,
+    "complexity_score": 34,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
+    "suspect_types": [
+      "stack_ref"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [
+    {
+      "addr": "0057301c",
+      "from_addr": "0057319f",
+      "name": "FUN_0057301c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005670c1",
+      "from_addr": "005670c4",
+      "name": "crt_unknown.c_FUN_005670c1",
+      "type": "CONDITIONAL_JUMP"
+    }
+  ],
+  "function": {
+    "address": "005670e0",
+    "address_range": [
+      [
+        "005670e0",
+        "005670ec"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005670e0",
+    "signature": "undefined4 crt_unknown_c_FUN_005670e0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056ddc0",
+      "is_variadic": false,
+      "name": "FUN_0056ddc0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c1aa4",
+      "name": "s_Stack_Overflow_005c1aa4",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.25,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 4,
+      "INT_ADD": 1,
+      "INT_SUB": 3,
+      "LOAD": 1,
+      "STORE": 3
+    },
+    "pcode_op_count": 13
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Direct stack address reference",
+      "line": 15,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "*(int *)(&stack0xfffffff4 + iVar5) = iVar5;",
+      "type": "stack_ref"
+    }
+  ]
+}

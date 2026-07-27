@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00506b40 at 00506b5f
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_0044e110 at 0044e115
+;   core_set.cpp_staticInit_FUN_00506b40 at 00506b5f
 ;
 ; *****************************************************************************
 

@@ -17,10 +17,10 @@ int __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00423f40(uint param_1)
   iVar1 = core_actor_cpp_FUN_00409d30(param_1);
   iVar1 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660(iVar1 + 0x150);
   iVar1 = core_cloth_cpp_CClothList_ctor_FUN_00438210(iVar1 + 0x293c);
-  iVar1 = __arrinit(iVar1 + 0x1c8,0xf,&DAT_005993b0);
-  iVar1 = __arrinit(iVar1 + 0xb4,0xf,&DAT_005993b0);
-  iVar1 = __arrinit(iVar1 + 0x20c,0x32,&DAT_00599960);
-  iVar1 = __arrinit(iVar1 + 0x4b0,0x32,&DAT_00599940);
+  iVar1 = __arrinit(iVar1 + 0x1c8,0xf,&g_CVectorTypeInfo_005993b0);
+  iVar1 = __arrinit(iVar1 + 0xb4,0xf,&g_CVectorTypeInfo_005993b0);
+  iVar1 = __arrinit(iVar1 + 0x20c,0x32,&g_SFireTypeInfo_00599960);
+  iVar1 = __arrinit(iVar1 + 0x4b0,0x32,&g_CFlameTypeInfo_00599940);
   *(byte ***)(iVar1 + -0x3278) = &PTR_core_charactr_cpp_CCharacter_setup_FUN_00424260_0059b0a4;
   *(uint *)(iVar1 + -0xfc0) = 0;
   *(uint *)(iVar1 + -0xf9c) = 0;

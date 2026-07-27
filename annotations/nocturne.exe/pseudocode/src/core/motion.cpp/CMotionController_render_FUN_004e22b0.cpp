@@ -39,7 +39,7 @@ void __cdecl core_motion_cpp_CMotionController_render_FUN_004e22b0(int param_1,i
   local_2c = (int)ROUND(local_20 * _DAT_005a0d00);
   local_28 = (int)ROUND(local_1c * _DAT_005a0d00);
   local_24 = (int)ROUND(_DAT_005a0d00 * 0.0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea5d0,&local_2c);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0xea5d0,&local_2c);
   iVar2 = *DAT_005ae704;
   if ((*(byte *)(iVar2 + 0xea5e3) & 0x80) != 0) {
     return;

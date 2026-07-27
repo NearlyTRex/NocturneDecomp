@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004f0360 at 004f048d
 ;   core_path.cpp_CPathMap_ctor_FUN_004efd50 at 004efd73
+;   core_path.cpp_FUN_004f0360 at 004f048d
 ;   core_path.cpp_resetAllPathMaps_FUN_004f1e90 at 004f1ed7
 ;
 ; Called Functions:

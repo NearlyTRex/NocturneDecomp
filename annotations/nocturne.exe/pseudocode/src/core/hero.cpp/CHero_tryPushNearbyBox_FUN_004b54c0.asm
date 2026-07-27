@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x80]:1  local_80
 ;
 ; XREF[2]:
-;   FUN_00495a20 at 00496ba7
-;   FUN_0053fc60 at 0053fe53
+;   core_gabriela.cpp_FUN_00495a20 at 00496ba7
+;   core_stranger.cpp_FUN_0053fc60 at 0053fe53
 ;
 ; Referenced Globals:
 ;   float FLOAT_00585873 = 0.5
@@ -16,7 +16,7 @@
 ;   double DOUBLE_00585883 = 5
 ;   double DOUBLE_0058588b = 0.610865238180555
 ;   undefined4 DAT_005be368
-;   undefined4 CDemonActorType_00764800.name_hash
+;   undefined4 g_CBoxActorActorType_00764800.name_hash
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
 ;
@@ -65,7 +65,7 @@ section .text
     TEST EDX,EDX                        ; 004b5507
     JZ 0x004b5550                       ; 004b5509
         ;   XREF to: 004b5550 (CONDITIONAL_JUMP)  ; LAB_004b5550
-    MOV ECX,dword ptr [0x00764838]      ; 004b550b | CDemonActorType_00764800.name_hash
+    MOV ECX,dword ptr [0x00764838]      ; 004b550b | g_CBoxActorActorType_00764800.name_hash
     PUSH ECX                            ; 004b5511
     PUSH EDX                            ; 004b5512
     CALL core_actor.cpp_castToClassHash_FUN_0040d890 ; 004b5513
@@ -102,7 +102,7 @@ section .text
     ADD ESI,0x4                         ; 004b5555
     JMP 0x004b54f0                      ; 004b5558
         ;   XREF to: 004b54f0 (UNCONDITIONAL_JUMP)  ; LAB_004b54f0
-    MOV EDX,dword ptr [0x00764838]      ; 004b555a | CDemonActorType_00764800.name_hash
+    MOV EDX,dword ptr [0x00764838]      ; 004b555a | g_CBoxActorActorType_00764800.name_hash
         ;   Label: LAB_004b555a
     PUSH EDX                            ; 004b5560
     MOV ECX,dword ptr [ESI + EBX*0x1 + 0x14cd70] ; 004b5561 | DAT_01fa3ff4

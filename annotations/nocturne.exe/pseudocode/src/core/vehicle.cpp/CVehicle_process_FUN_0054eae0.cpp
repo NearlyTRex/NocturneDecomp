@@ -133,7 +133,8 @@ uint core_vehicle_cpp_CVehicle_process_FUN_0054eae0(int param_1,float param_2)
   iStack_18 = 0;
   for (iVar10 = 0; iVar10 < *(int *)(0x01E57284 + 0x14ecb0); iVar10 = iVar10 + 1) {
     iVar9 = *(int *)(0x01E57284 + iStack_18 + 0x14ecb4);
-    iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar9,_DAT_01ccdc10);
+    iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890
+                      (iVar9,g_CMobsterActorType_01ccdbd8.name_hash);
     if ((iVar6 == 0) || (param_1 != *(int *)(iVar6 + 0xbd48))) {
       core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(auStack_c8);
       iVar6 = (**(code **)(*(int *)(iVar9 + 0x14c) + 0x34))(iVar9,auStack_c8);
@@ -172,7 +173,8 @@ uint core_vehicle_cpp_CVehicle_process_FUN_0054eae0(int param_1,float param_2)
   iStack_1c = 0;
   for (iVar9 = 0; iVar9 < *(int *)(0x01E57284 + 0x150bf4); iVar9 = iVar9 + 1) {
     iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(iVar10 + 0x150bf8 + 0x01E57284),_DAT_01ccdc10);
+                      (*(uint *)(iVar10 + 0x150bf8 + 0x01E57284),
+                       g_CMobsterActorType_01ccdbd8.name_hash);
     if ((iVar6 != 0) && (iVar2 = *(int *)(iVar6 + 0xbd48), param_1 == iVar2)) {
       if (*(int *)(iVar6 + 0xbd4c) == 0) {
         *(int *)(iVar2 + 0x1068) = iVar6;
@@ -209,9 +211,9 @@ joined_r0x0054f2b0:
     iVar9 = core_tommygun_cpp_CTommyGun_ctor_FUN_00545b90(iVar6);
   }
   if ((iVar10 == 0) || (iVar9 == 0)) {
-    _DAT_01cc4800 = "..\\core\\vehicle.cpp";
-    _DAT_01cc4804 = 0x161;
-    FUN_004c8440("CMobster::process - Out of memory!");
+    PTR_01cc4800 = "..\\core\\vehicle.cpp";
+    INT_01cc4804 = 0x161;
+    core_main_c_FUN_004c8440("CMobster::process - Out of memory!");
   }
   iVar6 = core_actor_cpp_randomChance_FUN_0040dea0(0x3f000000);
   if (iVar6 == 0) {

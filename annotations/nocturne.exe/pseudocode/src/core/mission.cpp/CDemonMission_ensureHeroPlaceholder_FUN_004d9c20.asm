@@ -17,26 +17,26 @@
 ;   TerminatedCString s_Hell_froze_finding_hero_0058a0e6
 ;   TerminatedCString s_Replaced_hero_OK_You_wil_0058a0ff
 ;   undefined4 DAT_005b6d50
-;   undefined4 DAT_01cae160
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   undefined4 g_CHeroPlaceholderActorType_01cae128.name_hash
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
 ;   core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90
+;   core_main.c_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90
-;   FUN_0046fe60
-;   FUN_00474c90
-;   FUN_004c8440
-;   FUN_0056497c
+;   crt_unknown.c_FUN_0056497c
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
 ;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00474080
+;   shape_edittool.cpp_FUN_0046fe60
+;   shape_edittool.cpp_FUN_00474c90
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x180]     ; 004d9c29
     MOV EAX,ESP                         ; 004d9c30
     PUSH EAX                            ; 004d9c32
-    CALL FUN_00474c90                   ; 004d9c33
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00474c90()
+    CALL shape_edittool.cpp_FUN_00474c90 ; 004d9c33
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
     MOV EBX,dword ptr [EDI + 0x514]     ; 004d9c38
     ADD ESP,0x4                         ; 004d9c3e
     TEST EBX,EBX                        ; 004d9c41
@@ -72,7 +72,7 @@ section .text
     CALL shape_edittool.cpp_CStrList_add_FUN_00473cb0 ; 004d9c5d
         ;   XREF to: 00473cb0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CStrList_add_FUN_00473cb0()
     ADD ESP,0x8                         ; 004d9c62
-    MOV EBP,dword ptr [0x01cae160]      ; 004d9c65 | DAT_01cae160
+    MOV EBP,dword ptr [0x01cae160]      ; 004d9c65 | g_CHeroPlaceholderActorType_01cae128.name_hash
         ;   Label: LAB_004d9c65
     PUSH EBP                            ; 004d9c6b
     PUSH EBX                            ; 004d9c6c
@@ -120,15 +120,15 @@ section .text
     MOV ECX,0x58a0d2                    ; 004d9ccc | = "..\\core\\mission.cpp"
     MOV EBX,0x687                       ; 004d9cd1
     PUSH 0x58a0e6                       ; 004d9cd6 | = "Hell froze finding hero."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d9cdb | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004d9ce1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d9ce7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d9cdb | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004d9ce1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d9ce7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d9cec
     PUSH 0x154                          ; 004d9cef
         ;   Label: LAB_004d9cef
-    CALL FUN_0056497c                   ; 004d9cf4
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 004d9cf4
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 004d9cf9
     TEST EAX,EAX                        ; 004d9cfc
     JZ 0x004d9d09                       ; 004d9cfe
@@ -181,8 +181,8 @@ section .text
     PUSH 0x58a0ff                       ; 004d9d6b | = "Replaced hero OK.  You will need to s..."
     MOV ESI,dword ptr [0x005b6d50]      ; 004d9d70 | DAT_005b6d50
     PUSH ESI                            ; 004d9d76
-    CALL FUN_0046fe60                   ; 004d9d77
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fe60()
+    CALL shape_edittool.cpp_FUN_0046fe60 ; 004d9d77
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
     ADD ESP,0x8                         ; 004d9d7c
     PUSH 0x0                            ; 004d9d7f
     LEA EAX,[ESP + 0x8]                 ; 004d9d81
@@ -216,8 +216,8 @@ section .text
         ;   Label: LAB_004d9dbf
     MOV EDI,dword ptr [0x005b6d50]      ; 004d9dc4 | DAT_005b6d50
     PUSH EDI                            ; 004d9dca
-    CALL FUN_0046fe60                   ; 004d9dcb
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fe60()
+    CALL shape_edittool.cpp_FUN_0046fe60 ; 004d9dcb
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
     ADD ESP,0x8                         ; 004d9dd0
     PUSH 0x0                            ; 004d9dd3
         ;   Label: LAB_004d9dd3

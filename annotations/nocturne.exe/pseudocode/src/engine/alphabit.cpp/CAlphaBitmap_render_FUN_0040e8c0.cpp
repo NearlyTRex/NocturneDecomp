@@ -27,7 +27,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040e8c0(int *param_1,i
   if (DAT_005b7624 == 0x20) {
     if (0 < iVar3) {
       do {
-        wincore_windll_cpp_renderAlphaRow32_FUN_0053055c
+        engine_special_cpp_renderAlphaRow32_FUN_0053055c
                   (*(int *)(&DAT_01bd2fa0 + local_18) + param_2 * 4,iVar4,param_4,param_8,iVar1);
         iVar4 = iVar4 + param_1[3];
         local_18 = local_18 + 4;
@@ -38,7 +38,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040e8c0(int *param_1,i
   else if (0 < iVar3) {
     local_14 = local_18;
     do {
-      wincore_windll_cpp_renderAlphaRow16_FUN_005305f7
+      engine_special_cpp_renderAlphaRow16_FUN_005305f7
                 (*(int *)(&DAT_01bd2fa0 + local_14) + param_2 * 2,iVar4,param_4,param_8,iVar1);
       iVar4 = iVar4 + param_1[3];
       local_14 = local_14 + 4;

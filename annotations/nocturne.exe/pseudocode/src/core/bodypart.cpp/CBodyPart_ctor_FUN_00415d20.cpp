@@ -12,8 +12,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(uint param_1)
   int iVar1;
   
   iVar1 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar1 = __arrinit(iVar1 + 0x288,3,&DAT_0059a820);
-  iVar1 = __arrinit(iVar1 + 0x4c0,2,&DAT_0059a840);
+  iVar1 = __arrinit(iVar1 + 0x288,3,&g_SBodyPartModelTypeInfo_0059a820);
+  iVar1 = __arrinit(iVar1 + 0x4c0,2,&g_SBodyPartFireTypeInfo_0059a840);
   iVar1 = core_box_cpp_CBox_ctor_FUN_0041a610(iVar1 + 0x56c);
   *(byte ***)(iVar1 + -0xb68) = &PTR_core_bodypart_cpp_CBodyPart_setup_FUN_00416500_0059a744;
   *(uint *)(iVar1 + 0x25c) = 0;

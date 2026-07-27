@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   void* PTR_FUN_005c1890 = 00566f98
+;   void* PTR_crt_unknown.c_FUN_00566f98_005c1890 = 00566f98
 ;
 ; Called Functions:
 ;   FUN_00568e80
@@ -43,7 +43,7 @@ section .text
     POP ESI                             ; 0057173d
     POP EBX                             ; 0057173e
     RET                                 ; 0057173f
-    MOV dword ptr [0x005c1890],0x5716cc ; 00571740 | PTR_FUN_005c1890
+    MOV dword ptr [0x005c1890],0x5716cc ; 00571740 | PTR_crt_unknown.c_FUN_00566f98_005c1890
         ;   Label: LAB_00571740
     CMP EDI,0x2                         ; 0057174a
     JZ 0x00571775                       ; 0057174d

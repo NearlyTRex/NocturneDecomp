@@ -34,15 +34,15 @@
 ;   ... and 14 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401e30
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60
 ;   engine_font.cpp_CBitFont_wrapText_FUN_00492f30
-;   FUN_004c8440
-;   FUN_00532320
-;   wincore_windll.cpp_lockFrame_FUN_005322e0
+;   engine_special.cpp_FUN_00532320
+;   engine_special.cpp_lockFrame_FUN_005322e0
 ;
 ; *****************************************************************************
 
@@ -75,10 +75,10 @@ section .text
     MOV EBP,0x57e8e2                    ; 00471b9a | = "..\\shape\\edittool.cpp"
     MOV EAX,0x674                       ; 00471b9f
     PUSH 0x57e8f8                       ; 00471ba4 | = "Can't open another window!"
-    MOV dword ptr [0x01cc4800],EBP      ; 00471ba9 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00471baf | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00471bb4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00471ba9 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00471baf | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00471bb4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00471bb9
     MOV EDX,dword ptr [0x01bcd07c]      ; 00471bbc | DAT_01bcd07c
         ;   Label: LAB_00471bbc
@@ -237,8 +237,8 @@ section .text
     JL 0x00471dce                       ; 00471ddd
         ;   XREF to: 00471dce (CONDITIONAL_JUMP)  ; LAB_00471dce
     NOP                                 ; 00471ddf
-    CALL wincore_windll.cpp_lockFrame_FUN_005322e0 ; 00471de0
-        ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_lockFrame_FUN_005322e0()
+    CALL engine_special.cpp_lockFrame_FUN_005322e0 ; 00471de0
+        ;   XREF to: 005322e0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_lockFrame_FUN_005322e0()
         ;   Label: LAB_00471de0
     MOV EDX,dword ptr [0x005b761c]      ; 00471de5 | DAT_005b761c
     MOV ECX,dword ptr [0x005b7624]      ; 00471deb | DAT_005b7624
@@ -274,8 +274,8 @@ section .text
     JL 0x00471e11                       ; 00471e38
         ;   XREF to: 00471e11 (CONDITIONAL_JUMP)  ; LAB_00471e11
     LEA EAX,[EAX]                       ; 00471e3a
-    CALL FUN_00532320                   ; 00471e40
-        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; undefined FUN_00532320()
+    CALL engine_special.cpp_FUN_00532320 ; 00471e40
+        ;   XREF to: 00532320 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00532320()
         ;   Label: LAB_00471e40
     MOV EDX,dword ptr [ESP + 0x12f8]    ; 00471e45
         ;   Label: LAB_00471e45
@@ -304,10 +304,10 @@ section .text
     MOV EBP,0x57e917                    ; 00471e9d | = "..\\shape\\edittool.cpp"
     MOV EAX,0x6c4                       ; 00471ea2
     PUSH 0x57e92d                       ; 00471ea7 | = "out of memory to open editor window."
-    MOV dword ptr [0x01cc4800],EBP      ; 00471eac | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00471eb2 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00471eb7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00471eac | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00471eb2 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00471eb7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00471ebc
     MOV EBP,dword ptr [ESP + 0x12cc]    ; 00471ebf
         ;   Label: LAB_00471ebf
@@ -418,10 +418,10 @@ section .text
         ;   Label: LAB_00472058
     MOV EBX,0x8b                        ; 0047205d
     PUSH 0x57e510                       ; 00472062 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 00472067 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0047206d | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00472073
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00472067 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0047206d | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00472073
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00472078
     JMP 0x00471b6e                      ; 0047207b
         ;   XREF to: 00471b6e (UNCONDITIONAL_JUMP)  ; LAB_00471b6e

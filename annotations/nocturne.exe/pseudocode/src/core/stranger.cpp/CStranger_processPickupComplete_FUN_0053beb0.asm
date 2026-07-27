@@ -10,12 +10,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_actionPending_d_stranger_00595acf
 ;   undefined4 DAT_005b6d50
-;   undefined4 CDemonActorType_007641f8.name_hash
+;   undefined4 g_CAmmoBoxActorType_007641f8.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
-;   FUN_0040f1a0
-;   FUN_0046fb40
+;   core_ammobox.cpp_FUN_0040f1a0
+;   shape_edittool.cpp_FUN_0046fb40
 ;
 ; *****************************************************************************
 
@@ -32,7 +32,7 @@ section .text
     CMP ECX,0x4                         ; 0053bec5
     JNZ 0x0053bf0b                      ; 0053bec8
         ;   XREF to: 0053bf0b (CONDITIONAL_JUMP)  ; LAB_0053bf0b
-    MOV EBP,dword ptr [0x00764230]      ; 0053beca | CDemonActorType_007641f8.name_hash
+    MOV EBP,dword ptr [0x00764230]      ; 0053beca | g_CAmmoBoxActorType_007641f8.name_hash
         ;   Label: LAB_0053beca
     PUSH EBP                            ; 0053bed0
     MOV EAX,dword ptr [EBX + 0x1fa08]   ; 0053bed1
@@ -46,8 +46,8 @@ section .text
     LEA EDX,[EBX + 0x1f5a0]             ; 0053bee4
     PUSH EDX                            ; 0053beea
     PUSH EAX                            ; 0053beeb
-    CALL FUN_0040f1a0                   ; 0053beec
-        ;   XREF to: 0040f1a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040f1a0()
+    CALL core_ammobox.cpp_FUN_0040f1a0  ; 0053beec
+        ;   XREF to: 0040f1a0 (UNCONDITIONAL_CALL)  ; undefined core_ammobox.cpp_FUN_0040f1a0()
     ADD ESP,0x8                         ; 0053bef1
     MOV dword ptr [EBX + 0x1faa0],0x1   ; 0053bef4
         ;   Label: LAB_0053bef4
@@ -63,8 +63,8 @@ section .text
     PUSH 0x595acf                       ; 0053bf12 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDI,dword ptr [0x005b6d50]      ; 0053bf17 | DAT_005b6d50
     PUSH EDI                            ; 0053bf1d
-    CALL FUN_0046fb40                   ; 0053bf1e
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fb40()
+    CALL shape_edittool.cpp_FUN_0046fb40 ; 0053bf1e
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
     ADD ESP,0x10                        ; 0053bf23
     POP EDI                             ; 0053bf26
     JMP 0x0053beca                      ; 0053bf27

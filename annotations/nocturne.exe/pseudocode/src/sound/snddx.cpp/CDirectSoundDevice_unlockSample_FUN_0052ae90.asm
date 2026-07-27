@@ -9,15 +9,15 @@
 ;   TerminatedCString s_sound_snddx_cpp_005942fe
 ;   TerminatedCString s_DirectSoundDevice_unlock_00594311
 ;   TerminatedCString s_Unlock_hw_sample_buffer_00594353
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dc9244
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_004c8440
-;   FUN_00529980
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90
+;   sound_sndmain.cpp_FUN_00529980
 ;
 ; *****************************************************************************
 
@@ -42,10 +42,10 @@ section .text
     MOV ECX,0x5942fe                    ; 0052aeb2 | = "..\\sound\\snddx.cpp"
     MOV EDI,0x2b6                       ; 0052aeb7
     PUSH 0x594311                       ; 0052aebc | = "DirectSoundDevice::unlockSample - Can..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0052aec1 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0052aec7 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0052aecd
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0052aec1 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0052aec7 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0052aecd
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052aed2
     MOV EBP,dword ptr [ESI + 0x15c]     ; 0052aed5
         ;   Label: LAB_0052aed5
@@ -90,8 +90,8 @@ section .text
     ADD ESP,0x10                        ; 0052af37
     MOV EAX,ESP                         ; 0052af3a
     PUSH EAX                            ; 0052af3c
-    CALL FUN_00529980                   ; 0052af3d
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 0052af3d
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x4                         ; 0052af42
     ADD ESP,0x190                       ; 0052af45
     POP EBP                             ; 0052af4b

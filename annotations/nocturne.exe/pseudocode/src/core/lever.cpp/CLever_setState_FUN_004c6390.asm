@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_01cc3660
+;   undefined4 g_CLeverActorType_01cc3628.name_hash
 ;   undefined4 DAT_01cc9454
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa3ff0
@@ -151,7 +151,7 @@ section .text
     ADD ESP,0x8                         ; 004c64b8
     JMP 0x004c6400                      ; 004c64bb
         ;   XREF to: 004c6400 (UNCONDITIONAL_JUMP)  ; LAB_004c6400
-    MOV ECX,dword ptr [0x01cc3660]      ; 004c64c0 | DAT_01cc3660
+    MOV ECX,dword ptr [0x01cc3660]      ; 004c64c0 | g_CLeverActorType_01cc3628.name_hash
         ;   Label: LAB_004c64c0
     PUSH ECX                            ; 004c64c6
     MOV EBP,dword ptr [EBX + EAX*0x1 + 0x14cd70] ; 004c64c7 | DAT_01fa3ff4

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004c90e0 at 004c9352
-;   FUN_004d9900 at 004d9905
+;   core_main.c_FUN_004c90e0 at 004c9352
+;   core_mission.cpp_FUN_004d9900 at 004d9905
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01abb658

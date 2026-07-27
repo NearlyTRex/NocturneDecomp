@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[28]:
-;   FUN_00430210 at 0043027b
-;   FUN_0043b5b0 at 0043b5b6
-;   FUN_00452560 at 0045256f
-;   FUN_004d7de0 at 004d7de6
-;   FUN_004e08e0 at 004e08e6
-;   FUN_004febd0 at 004fed79
-;   FUN_00517190 at 00517196
-;   FUN_00563290 at 00563299
+;   cockpit_ckptutil.c_FUN_00430210 at 0043027b
 ;   core_actor.cpp_FUN_0040cb00 at 0040cb1b
 ;   core_actor.cpp_FUN_0040ce80 at 0040ce9b
+;   core_actor.cpp_archiveClothList_FUN_0040cf70 at 0040cf90
+;   core_actor.cpp_archiveDescription_FUN_0040c3a0 at 0040c3bb
+;   core_actor.cpp_archivePartStatus_FUN_0040cbf0 at 0040cc13
+;   core_actor.cpp_archiveRules_FUN_0040d110 at 0040d12c
+;   core_actor.cpp_archiveString_FUN_0040c6d0 at 0040c6f0
+;   core_course.cpp_CCourse_load_FUN_0043b690 at 0043b6c8
+;   core_course.cpp_FUN_0043b5b0 at 0043b5b6
 ;   ... and 18 more
 ;
 ; Referenced Globals:
@@ -22,7 +22,7 @@
 ;   void* PTR_FUN_005c1ac4 = 005671e4
 ;
 ; Called Functions:
-;   FUN_00564640
+;   crt_unknown.c_FUN_00564640
 ;   FUN_005671e4
 ;   FUN_00568e80
 ;
@@ -77,8 +77,8 @@ section .text
     JGE 0x005645e1                      ; 005645d2
         ;   XREF to: 005645e1 (CONDITIONAL_JUMP)  ; LAB_005645e1
     PUSH EBX                            ; 005645d4
-    CALL FUN_00564640                   ; 005645d5
-        ;   XREF to: 00564640 (UNCONDITIONAL_CALL)  ; undefined FUN_00564640()
+    CALL crt_unknown.c_FUN_00564640     ; 005645d5
+        ;   XREF to: 00564640 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564640()
     ADD ESP,0x4                         ; 005645da
     MOV ESI,EAX                         ; 005645dd
     JMP 0x005645ea                      ; 005645df
@@ -102,8 +102,8 @@ section .text
     JGE 0x0056460d                      ; 005645fe
         ;   XREF to: 0056460d (CONDITIONAL_JUMP)  ; LAB_0056460d
     PUSH EBX                            ; 00564600
-    CALL FUN_00564640                   ; 00564601
-        ;   XREF to: 00564640 (UNCONDITIONAL_CALL)  ; undefined FUN_00564640()
+    CALL crt_unknown.c_FUN_00564640     ; 00564601
+        ;   XREF to: 00564640 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564640()
     ADD ESP,0x4                         ; 00564606
     MOV ESI,EAX                         ; 00564609
     JMP 0x00564617                      ; 0056460b

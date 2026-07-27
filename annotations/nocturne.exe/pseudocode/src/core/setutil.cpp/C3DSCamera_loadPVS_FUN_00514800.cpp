@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_00514800(int param_1,uint param_2)
 
 {
@@ -21,9 +19,9 @@ void __cdecl core_setutil_cpp_C3DSCamera_loadPVS_FUN_00514800(int param_1,uint p
   *(int *)(param_1 + 0x194) = iVar1;
   if (0 < *(int *)(param_1 + 400)) {
     if (iVar1 == 0) {
-      _DAT_01cc4800 = "..\\core\\setutil.cpp";
-      _DAT_01cc4804 = 0xcf;
-      FUN_004c8440("Out of memory for pvsList - %d",*(int *)(param_1 + 400));
+      PTR_01cc4800 = "..\\core\\setutil.cpp";
+      INT_01cc4804 = 0xcf;
+      core_main_c_FUN_004c8440("Out of memory for pvsList - %d",*(int *)(param_1 + 400));
     }
     iVar1 = 0;
     if (0 < *(int *)(param_1 + 400)) {

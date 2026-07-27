@@ -3,6 +3,10 @@
 // Function prototypes for core/charactr.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_charactr.cpp_staticInit_FUN_00423ea0
+// Address: 00423ea0
+void __cdecl staticInit(void);
+
 // Original: core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 // Address: 00423ed0
 void __cdecl SDamageInfo::ctor(undefined4 *param_1);
@@ -22,6 +26,14 @@ void __cdecl CCharacter::archive(int param_1);
 // Original: core_charactr.cpp_CCharacter_setPositionAndOrientation_FUN_004246e0
 // Address: 004246e0
 void __cdecl CCharacter::setPositionAndOrientation(int param_1,undefined4 param_2,undefined4 param_3);
+
+// Original: core_charactr.cpp_FUN_00424730
+// Address: 00424730
+float FUN_00424730(void);
+
+// Original: core_charactr.cpp_FUN_00424780
+// Address: 00424780
+float FUN_00424780(void);
 
 // Original: core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
 // Address: 004247f0
@@ -355,6 +367,30 @@ undefined4 FUN_0042af70(int param_1,float param_2);
 // Address: 0042b490
 void __cdecl CCharacter::playSoundWithCooldown(int param_1,undefined4 param_2);
 
+// Original: core_charactr.cpp_FUN_0042b4d0
+// Address: 0042b4d0
+void FUN_0042b4d0(void);
+
+// Original: core_charactr.cpp_FUN_0042b500
+// Address: 0042b500
+void FUN_0042b500(void);
+
+// Original: core_charactr.cpp_FUN_0042b510
+// Address: 0042b510
+void FUN_0042b510(void);
+
+// Original: core_charactr.cpp_FUN_0042b570
+// Address: 0042b570
+void FUN_0042b570(void);
+
+// Original: core_charactr.cpp_FUN_0042b5a0
+// Address: 0042b5a0
+undefined4 FUN_0042b5a0(void);
+
+// Original: core_charactr.cpp_FUN_0042b5b0
+// Address: 0042b5b0
+int FUN_0042b5b0(void);
+
 // Original: core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0
 // Address: 0042b5c0
 undefined4 getGameDeltaTime(int param_1);
@@ -375,6 +411,14 @@ undefined4 FUN_0042b6a0(undefined4 param_1);
 // Address: 0042b6b0
 undefined4 FUN_0042b6b0(undefined4 param_1);
 
-// Original: core_charactr.cpp_FUN_0042b740
-// Address: 0042b740
-CDemonActorType * FUN_0042b740(void);
+// Original: core_charactr.cpp_FUN_0042b6c0
+// Address: 0042b6c0
+undefined4 * FUN_0042b6c0(void);
+
+// Original: core_charactr.cpp_FUN_0042b6d0
+// Address: 0042b6d0
+undefined4 * FUN_0042b6d0(void);
+
+// Original: core_charactr.cpp_FUN_0042b6e0
+// Address: 0042b6e0
+undefined4 * FUN_0042b6e0(void);

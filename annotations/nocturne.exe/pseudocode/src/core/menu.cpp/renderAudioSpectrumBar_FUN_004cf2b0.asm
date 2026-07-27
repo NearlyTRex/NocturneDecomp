@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   FUN_004d1290 at 004d12a5
+;   core_menu.cpp_FUN_004d1290 at 004d12a5
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1ad6
 ;
 ; Referenced Globals:

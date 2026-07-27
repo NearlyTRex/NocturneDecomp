@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 189,
-    "complexity_score": 168,
+    "complexity_score": 153,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "unnamed_param",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
     "total_lines": 252
   },
@@ -173,6 +172,11 @@
       "name": "core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90"
     },
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "004d8c60",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60"
@@ -193,24 +197,9 @@
       "name": "core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90"
     },
     {
-      "addr": "0046fe60",
-      "is_variadic": false,
-      "name": "FUN_0046fe60"
-    },
-    {
-      "addr": "00474c90",
-      "is_variadic": false,
-      "name": "FUN_00474c90"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
       "addr": "0056497c",
       "is_variadic": false,
-      "name": "FUN_0056497c"
+      "name": "crt_unknown.c_FUN_0056497c"
     },
     {
       "addr": "00474d70",
@@ -231,6 +220,16 @@
       "addr": "00474080",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_00474080"
+    },
+    {
+      "addr": "0046fe60",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0046fe60"
+    },
+    {
+      "addr": "00474c90",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_00474c90"
     }
   ],
   "globals": [
@@ -278,20 +277,20 @@
     },
     {
       "addr": "01cae160",
-      "name": "DAT_01cae160",
+      "name": "g_CHeroPlaceholderActorType_01cae128.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -359,16 +358,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_mission_cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20(int param_1)",
@@ -376,7 +367,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_1 + 0x514);",
@@ -384,7 +375,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_004d90a0(param_1,uVar3);",
@@ -392,7 +383,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(param_1,iVar1);",
@@ -400,7 +391,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_removeActor_FUN_004d8f90(param_1,iVar2,1);",
@@ -408,7 +399,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60(param_1,iVar1);",
@@ -416,7 +407,7 @@
     },
     {
       "description": "Watcom raw-offset struct copy (4 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 37,
+      "line": 35,
       "match": "raw-offset struct copy",
       "severity": "moderate",
       "text": "*(uint *)(iVar1 + 0x20) = *(uint *)(iVar2 + 0x20);",
@@ -424,7 +415,7 @@
     },
     {
       "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 42,
+      "line": 40,
       "match": "raw-offset struct copy",
       "severity": "moderate",
       "text": "*(uint *)(iVar1 + 0x30) = *(uint *)(iVar2 + 0x30);",

@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005350c0 at 00535437
+;   core_stranger.cpp_FUN_005350c0 at 00535437
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057af2b
 ;   TerminatedCString s_CClothList_add_list_is_f_0057af3d
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -63,10 +63,10 @@ section .text
         ;   Label: LAB_004383e0
     MOV ESI,0x5d1                       ; 004383e5
     PUSH 0x57af3d                       ; 004383ea | = "CClothList::add - list is full"
-    MOV dword ptr [0x01cc4800],ECX      ; 004383ef | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004383f5 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004383fb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004383ef | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004383f5 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004383fb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00438400
     JMP 0x0043839c                      ; 00438403
         ;   XREF to: 0043839c (UNCONDITIONAL_JUMP)  ; LAB_0043839c

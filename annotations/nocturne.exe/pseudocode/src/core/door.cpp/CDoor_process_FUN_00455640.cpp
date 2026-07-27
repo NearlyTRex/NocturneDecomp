@@ -66,7 +66,7 @@ void core_door_cpp_CDoor_process_FUN_00455640(int param_1,float param_2)
       if (*(char *)(param_1 + 0x85c) != '\0') {
         (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,param_1 + 0x85c);
       }
-      FUN_00511aa0(0x01E57284,param_1);
+      core_setcolid_cpp_FUN_00511aa0(0x01E57284,param_1);
     }
     *(uint *)(param_1 + 0x9a4) = 0;
     break;
@@ -108,7 +108,7 @@ void core_door_cpp_CDoor_process_FUN_00455640(int param_1,float param_2)
         if (*(int *)(param_1 + 0x9c0) != 0) {
           *(uint *)(param_1 + 0x9c0) = 2;
         }
-        FUN_00511a10(0x01E57284,param_1);
+        core_setcolid_cpp_FUN_00511a10(0x01E57284,param_1);
       }
     }
     else if (*(float *)(param_1 + 0x9a4) < 0.0) {
@@ -117,7 +117,7 @@ void core_door_cpp_CDoor_process_FUN_00455640(int param_1,float param_2)
       if (*(int *)(param_1 + 0x9c0) != 0) {
         *(uint *)(param_1 + 0x9c0) = 2;
       }
-      FUN_00511a10(0x01E57284,param_1);
+      core_setcolid_cpp_FUN_00511a10(0x01E57284,param_1);
     }
   }
   if (*(int *)(param_1 + 0x2d8) == 0) {

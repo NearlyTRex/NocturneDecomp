@@ -26,7 +26,7 @@
 ;   undefined4 DAT_01c00c54
 ;
 ; Called Functions:
-;   FUN_004405d0
+;   core_dcamera.cpp_FUN_004405d0
 ;
 ; *****************************************************************************
 
@@ -189,8 +189,8 @@ section .text
     PUSH EDX                            ; 0050c1a1
     MOV dword ptr [ESP + 0x24],ECX      ; 0050c1a2
     MOV dword ptr [ESP + 0x2c],EBX      ; 0050c1a6
-    CALL FUN_004405d0                   ; 0050c1aa
-        ;   XREF to: 004405d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004405d0()
+    CALL core_dcamera.cpp_FUN_004405d0  ; 0050c1aa
+        ;   XREF to: 004405d0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_004405d0()
     ADD ESP,0x14                        ; 0050c1af
     POP EBX                             ; 0050c1b2
     POP ESI                             ; 0050c1b3

@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -143,18 +143,6 @@
   },
   "cross_references": [
     {
-      "addr": "0049f930",
-      "from_addr": "0049fe76",
-      "name": "FUN_0049f930",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005125a0",
-      "from_addr": "005125d9",
-      "name": "FUN_005125a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0049ee30",
       "from_addr": "0049f6f5",
       "name": "core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30",
@@ -164,6 +152,12 @@
       "addr": "0049da10",
       "from_addr": "0049e055",
       "name": "core_game.cpp_CGame_runGameSession_FUN_0049da10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049f930",
+      "from_addr": "0049fe76",
+      "name": "core_game.cpp_FUN_0049f930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -182,6 +176,12 @@
       "addr": "005090f0",
       "from_addr": "00509127",
       "name": "core_set.cpp_FUN_005090f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005125a0",
+      "from_addr": "005125d9",
+      "name": "core_setdir.cpp_FUN_005125a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -234,6 +234,21 @@
       "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50"
     },
     {
+      "addr": "004421b0",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_FUN_004421b0"
+    },
+    {
+      "addr": "00448310",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_FUN_00448310"
+    },
+    {
+      "addr": "00448380",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_FUN_00448380"
+    },
+    {
       "addr": "0044dbd0",
       "is_variadic": false,
       "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_0044dbd0"
@@ -284,6 +299,21 @@
       "name": "core_dskybox.cpp_renderSkyDome_FUN_00463580"
     },
     {
+      "addr": "0048a970",
+      "is_variadic": false,
+      "name": "core_fire.cpp_FUN_0048a970"
+    },
+    {
+      "addr": "004afe80",
+      "is_variadic": false,
+      "name": "core_gore.cpp_FUN_004afe80"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "0050d2d0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0"
@@ -314,6 +344,11 @@
       "name": "core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_00508890"
     },
     {
+      "addr": "005148b0",
+      "is_variadic": false,
+      "name": "core_setutil.cpp_FUN_005148b0"
+    },
+    {
       "addr": "0052ece0",
       "is_variadic": false,
       "name": "core_sound.cpp_CSound_setReverbPreset_FUN_0052ece0"
@@ -332,41 +367,6 @@
       "addr": "00563c90",
       "is_variadic": false,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
-    },
-    {
-      "addr": "004421b0",
-      "is_variadic": false,
-      "name": "FUN_004421b0"
-    },
-    {
-      "addr": "00448310",
-      "is_variadic": false,
-      "name": "FUN_00448310"
-    },
-    {
-      "addr": "00448380",
-      "is_variadic": false,
-      "name": "FUN_00448380"
-    },
-    {
-      "addr": "0048a970",
-      "is_variadic": false,
-      "name": "FUN_0048a970"
-    },
-    {
-      "addr": "004afe80",
-      "is_variadic": false,
-      "name": "FUN_004afe80"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
-      "addr": "005148b0",
-      "is_variadic": false,
-      "name": "FUN_005148b0"
     }
   ],
   "globals": [
@@ -450,14 +450,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -619,7 +619,7 @@
       {
         "call_addr": "0049fe76",
         "call_type": "direct",
-        "caller": "FUN_0049f930",
+        "caller": "core_game.cpp_FUN_0049f930",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -663,7 +663,7 @@
       {
         "call_addr": "005125d9",
         "call_type": "direct",
-        "caller": "FUN_005125a0",
+        "caller": "core_setdir.cpp_FUN_005125a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -674,7 +674,7 @@
       {
         "call_addr": "00512a7b",
         "call_type": "direct",
-        "caller": "FUN_005125a0",
+        "caller": "core_setdir.cpp_FUN_005125a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -905,7 +905,7 @@
       "line": 38,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004c8440(\"CDemonSet::setCameraView - invalid index: %d\",param_2);",
+      "text": "core_main_c_FUN_004c8440(\"CDemonSet::setCameraView - invalid index: %d\",param_2);",
       "type": "unnamed_param"
     },
     {

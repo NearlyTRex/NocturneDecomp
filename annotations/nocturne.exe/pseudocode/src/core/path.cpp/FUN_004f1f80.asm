@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004f1f80(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; void core_path_cpp_FUN_004f1f80(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
@@ -12,22 +12,22 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058ce9f
 ;   TerminatedCString s_Global_pathmap_list_corr_0058ceb0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01e312f8
 ;   undefined4 DAT_01fba938
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
-;   FUN_004c8440
-;   FUN_004f18c0
+;   core_main.c_FUN_004c8440
+;   core_path.cpp_FUN_004f18c0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f1f80
-        ;   Label: FUN_004f1f80
+        ;   Label: core_path.cpp_FUN_004f1f80
     PUSH ESI                            ; 004f1f81
     PUSH EDI                            ; 004f1f82
     PUSH EBP                            ; 004f1f83
@@ -78,10 +78,10 @@ section .text
         ;   Label: LAB_004f1feb
     MOV ECX,0x6b5                       ; 004f1ff0
     PUSH 0x58ceb0                       ; 004f1ff5 | = "Global pathmap list corruption"
-    MOV dword ptr [0x01cc4800],EDX      ; 004f1ffa | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f2000 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f2006
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004f1ffa | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004f2000 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f2006
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f200b
     JMP 0x004f1fc3                      ; 004f200e
         ;   XREF to: 004f1fc3 (UNCONDITIONAL_JUMP)  ; LAB_004f1fc3
@@ -106,8 +106,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x3c]      ; 004f2035
     PUSH ECX                            ; 004f2039
     PUSH EDX                            ; 004f203a
-    CALL FUN_004f18c0                   ; 004f203b
-        ;   XREF to: 004f18c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f18c0()
+    CALL core_path.cpp_FUN_004f18c0     ; 004f203b
+        ;   XREF to: 004f18c0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_004f18c0()
     ADD ESP,0x14                        ; 004f2040
     JMP 0x004f1fd5                      ; 004f2043
         ;   XREF to: 004f1fd5 (UNCONDITIONAL_JUMP)  ; LAB_004f1fd5

@@ -3,6 +3,18 @@
 // Function prototypes for core/drone.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_drone.cpp_staticInit_FUN_004628e0
+// Address: 004628e0
+void __cdecl staticInit(void);
+
+// Original: core_drone.cpp_FUN_00462910
+// Address: 00462910
+void FUN_00462910(void);
+
+// Original: core_drone.cpp_FUN_00462930
+// Address: 00462930
+CDemonActorType * FUN_00462930(void);
+
 // Original: core_drone.cpp_CDrone_ctor_FUN_00462940
 // Address: 00462940
 int CDrone::ctor(undefined4 param_1);
@@ -15,6 +27,18 @@ void CDrone::setup(int param_1);
 // Address: 00462a60
 void CDrone::process(int param_1,float param_2);
 
+// Original: core_drone.cpp_FUN_004630e0
+// Address: 004630e0
+void FUN_004630e0(int param_1);
+
 // Original: core_drone.cpp_CDrone_processDamage_FUN_00463150
 // Address: 00463150
 void CDrone::processDamage(int param_1,int param_2);
+
+// Original: core_drone.cpp_FUN_004632c0
+// Address: 004632c0
+undefined4 FUN_004632c0(int param_1,undefined4 *param_2);
+
+// Original: core_drone.cpp_FUN_00463310
+// Address: 00463310
+int FUN_00463310(int param_1,byte param_2);

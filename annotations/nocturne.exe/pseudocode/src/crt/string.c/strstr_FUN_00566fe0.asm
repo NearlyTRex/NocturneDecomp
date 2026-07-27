@@ -7,9 +7,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_00521d80 at 00521d8d
 ;   core_script.cpp_trimLine_FUN_004fdf60 at 004fdfa5
 ;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 at 00521fce
+;   sound_sndmain.cpp_FUN_00521d80 at 00521d8d
 ;
 ; *****************************************************************************
 

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0049cc10 at 0049cc79
+;   core_game.cpp_FUN_0049cc10 at 0049cc79
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c6e5
@@ -18,20 +18,20 @@
 ;   double DOUBLE_0058c732 = 0.0000152587890625
 ;   double DOUBLE_0058c73a = 30
 ;   double DOUBLE_0058c742 = 0.100000000000000
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01cea408
 ;   undefined4 DAT_01d09c00
 ;   undefined4 DAT_01d09c68
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_004ed980
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740
 ;   core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_004edaf0
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_004ebe10
 ;   crt_string.c_memmove_FUN_00566170
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -181,10 +181,10 @@ section .text
         ;   Label: LAB_004ed8a7
     MOV EDX,0x97c                       ; 004ed8ac
     PUSH 0x58c6f9                       ; 004ed8b1 | = "CNetGame::processClientFrame - I'm no..."
-    MOV [0x01cc4800],EAX                ; 004ed8b6 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004ed8bb | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ed8c1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004ed8b6 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004ed8bb | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ed8c1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ed8c6
     JMP 0x004ed75c                      ; 004ed8c9
         ;   XREF to: 004ed75c (UNCONDITIONAL_JUMP)  ; LAB_004ed75c

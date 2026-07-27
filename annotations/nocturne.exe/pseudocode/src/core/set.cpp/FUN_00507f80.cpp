@@ -56,13 +56,13 @@ void core_set_cpp_FUN_00507f80(int *param_1,int param_2)
     piStack_34 = param_1;
     piStack_2c = piStack_30;
     do {
-      FUN_005148b0(piStack_40 + iStack_20 * 0x68,0x1fb8508);
+      core_setutil_cpp_FUN_005148b0(piStack_40 + iStack_20 * 0x68,0x1fb8508);
       core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(0x1fb8508,0);
       _DAT_01fba938 = 1;
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80();
       core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(0x1fb8508,0);
-      FUN_004421b0();
-      piVar2 = (int *)FUN_00447f20(0x1fb8508,auStack_70);
+      core_dcamera_cpp_FUN_004421b0();
+      piVar2 = (int *)core_dcamera_cpp_FUN_00447f20(0x1fb8508,auStack_70);
       if (piVar2 != piStack_38) {
         *piStack_38 = *piVar2;
         piStack_38[1] = piVar2[1];
@@ -103,15 +103,15 @@ void core_set_cpp_FUN_00507f80(int *param_1,int param_2)
               } while (iVar4 < _DAT_01fb99d0);
             }
             if (iVar4 == _DAT_01fb99d0) {
-              _DAT_01cc4800 = "..\\core\\set.cpp";
-              _DAT_01cc4804 = 0x2e8;
-              FUN_004c8440();
+              PTR_01cc4800 = "..\\core\\set.cpp";
+              INT_01cc4804 = 0x2e8;
+              core_main_c_FUN_004c8440();
             }
             core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50();
             uVar1 = core_dcamera_cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20
                               (0x1fb8508);
             *(byte *)(iStack_18 + 0x19770) = uVar1;
-            FUN_00444ef0(0x1fb8508);
+            core_dcamera_cpp_FUN_00444ef0(0x1fb8508);
             puVar7 = (uint *)(iVar5 + 0x19870 + (uint)bVar10 * -8);
             *(uint *)(iVar5 + 0x1986c) = uStack_58;
             puVar8 = puVar7 + (uint)bVar10 * -2 + 1;
@@ -127,7 +127,7 @@ void core_set_cpp_FUN_00507f80(int *param_1,int param_2)
           }
           else {
             core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(0x1fb8508);
-            uVar1 = FUN_00515c40();
+            uVar1 = core_setutil_cpp_FUN_00515c40();
             *(byte *)((int)param_1 + iStack_20 + 0x19770 + iVar4 * 0x1898) = uVar1;
             core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(0x1fb8508);
             *(uint *)((int)param_1 + iStack_28 + iVar4 * 0x1898 + 0x1986c) = 0;

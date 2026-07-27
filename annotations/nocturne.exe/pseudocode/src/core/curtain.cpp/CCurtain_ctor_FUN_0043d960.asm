@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0043d930 at 0043d943
+;   core_curtain.cpp_FUN_0043d930 at 0043d943
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_SGLASS_RAW_0057b4c7
@@ -16,8 +16,8 @@
 ;   undefined4 s_one_0057b4d2+1
 ;   undefined4 s_ne_0057b4d2+2
 ;   undefined4 s_e_0057b4d2+3
-;   undefined1* PTR_FUN_0059bc94 = 0043dad0
-;   undefined4 DAT_0059bd90
+;   undefined1* PTR_core_curtain.cpp_FUN_0043dad0_0059bc94 = 0043dad0
+;   WatcomTypeInfo g_SCurtainVertexTypeInfo_0059bd90
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -35,14 +35,14 @@ section .text
     CALL core_actor.cpp_FUN_00409d30    ; 0043d967
         ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 0043d96c
-    PUSH 0x59bd90                       ; 0043d96f | DAT_0059bd90
+    PUSH 0x59bd90                       ; 0043d96f | g_SCurtainVertexTypeInfo_0059bd90
     PUSH 0x3e8                          ; 0043d974
     ADD EAX,0x200                       ; 0043d979
     PUSH EAX                            ; 0043d97e
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0043d97f
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     LEA EDX,[EAX + 0xfffffe00]          ; 0043d984
-    MOV dword ptr [EDX + 0x14c],0x59bc94 ; 0043d98a | PTR_FUN_0059bc94
+    MOV dword ptr [EDX + 0x14c],0x59bc94 ; 0043d98a | PTR_core_curtain.cpp_FUN_0043dad0_0059bc94
     MOV ESI,0x57b4c7                    ; 0043d994 | = "SGLASS.RAW"
     MOV dword ptr [EDX + 0x150],0x40800000 ; 0043d999
     ADD ESP,0xc                         ; 0043d9a3

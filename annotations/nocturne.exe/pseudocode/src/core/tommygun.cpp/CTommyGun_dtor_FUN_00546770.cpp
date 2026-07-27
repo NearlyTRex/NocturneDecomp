@@ -12,7 +12,7 @@ uint core_tommygun_cpp_CTommyGun_dtor_FUN_00546770(uint param_1,byte param_2)
   uint uVar1;
   
   if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&DAT_005a33e0);
+    uVar1 = __vec_delete(param_1,&g_CTommyGunTypeInfo_005a33e0);
     shape_memdbg_cpp_free_FUN_00564486(uVar1);
     return param_1;
   }

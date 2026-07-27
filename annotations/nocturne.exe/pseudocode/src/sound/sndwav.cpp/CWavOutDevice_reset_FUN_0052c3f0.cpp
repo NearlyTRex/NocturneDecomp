@@ -19,7 +19,7 @@ uint sound_sndwav_cpp_CWavOutDevice_reset_FUN_0052c3f0(void)
   if (_DAT_02dc93a4 != (HWAVEOUT)0x0) {
     MVar1 = waveOutReset(_DAT_02dc93a4);
     if (MVar1 != 0) {
-      FUN_00529980("waveOutReset failed!");
+      sound_sndmain_cpp_FUN_00529980("waveOutReset failed!");
       uVar3 = 0;
     }
   }

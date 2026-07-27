@@ -183,9 +183,9 @@ LAB_0054b592:
       *(uint *)(param_1 + 0xbed0) = 0;
     }
     if (*0x01CEA280 != 0) {
-      _DAT_01cc4800 = "..\\core\\tvbat.cpp";
-      _DAT_01cc4804 = 0x10a;
-      FUN_004c8440("CTVBat::process - can't follow orders in network game!");
+      PTR_01cc4800 = "..\\core\\tvbat.cpp";
+      INT_01cc4804 = 0x10a;
+      core_main_c_FUN_004c8440("CTVBat::process - can't follow orders in network game!");
     }
     iVar6 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
     if (&local_58 != (float *)(iVar6 + 0x20)) {

@@ -1,14 +1,12 @@
-// Name: FUN_0044d550
+// Name: core_dimage.cpp_FUN_0044d550
 // Address: 0044d550
 // Address Range: [[0044d550, 0044d792]]
 // Convention: unknown
-// Signature: void FUN_0044d550(undefined1 *param_1,char *param_2,undefined4 param_3,undefined4 param_4)
+// Signature: void core_dimage_cpp_FUN_0044d550(undefined1 *param_1,char *param_2,undefined4 param_3,undefined4 param_4)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_0044d550(byte *param_1,char *param_2,uint param_3,uint param_4)
+void core_dimage_cpp_FUN_0044d550(byte *param_1,char *param_2,uint param_3,uint param_4)
 
 {
   char cVar1;
@@ -38,13 +36,13 @@ void FUN_0044d550(byte *param_1,char *param_2,uint param_3,uint param_4)
   } while (cVar1 != '\0');
   iVar4 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_11c,"rb");
   if (iVar4 == 0) {
-    _DAT_01cc4800 = "..\\core\\dimage.cpp";
-    _DAT_01cc4804 = 0x68;
-    FUN_004c8440("CDemonImage::load - Unable to load image!");
+    PTR_01cc4800 = "..\\core\\dimage.cpp";
+    INT_01cc4804 = 0x68;
+    core_main_c_FUN_004c8440("CDemonImage::load - Unable to load image!");
   }
   *(uint *)(param_1 + 0x304) = param_3;
   *(uint *)(param_1 + 0x308) = param_4;
-  FUN_0044d460(param_1);
+  core_dimage_cpp_FUN_0044d460(param_1);
   _fread(*(uint *)(param_1 + 0x300),param_3,param_4,iVar4);
   _fclose(iVar4);
   do {
@@ -58,9 +56,9 @@ void FUN_0044d550(byte *param_1,char *param_2,uint param_3,uint param_4)
   pcVar8 = (char *)0x0;
 LAB_0044d60d:
   if (pcVar8 == (char *)0x0) {
-    _DAT_01cc4800 = "..\\core\\dimage.cpp";
-    _DAT_01cc4804 = 0x7b;
-    FUN_004c8440("CDemonImage::load - Unable to find extention!");
+    PTR_01cc4800 = "..\\core\\dimage.cpp";
+    INT_01cc4804 = 0x7b;
+    core_main_c_FUN_004c8440("CDemonImage::load - Unable to find extention!");
   }
   pcVar6 = ".ACT";
   do {
@@ -74,9 +72,9 @@ LAB_0044d60d:
   } while (cVar1 != '\0');
   iVar4 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_11c,"rb");
   if (iVar4 == 0) {
-    _DAT_01cc4800 = "..\\core\\dimage.cpp";
-    _DAT_01cc4804 = 0x7f;
-    FUN_004c8440("CDemonImage::load - Unable to load palette!");
+    PTR_01cc4800 = "..\\core\\dimage.cpp";
+    INT_01cc4804 = 0x7f;
+    core_main_c_FUN_004c8440("CDemonImage::load - Unable to load palette!");
   }
   _fread(param_1 + 0x30c,0x100,3,iVar4);
   _fclose(iVar4);
@@ -88,7 +86,7 @@ LAB_0044d60d:
     local_1c = (uint)(byte)puVar5[0x30c];
     local_18 = (uint)(byte)puVar5[0x30e];
     bVar2 = puVar5[0x30d];
-    uVar3 = FUN_0044d4f0(param_1,local_1c,bVar2,local_18);
+    uVar3 = core_dimage_cpp_FUN_0044d4f0(param_1,local_1c,bVar2,local_18);
     *(ushort *)(puVar7 + 0x100) = uVar3;
     puVar7 = puVar7 + 2;
     puVar5 = puVar5 + 3;

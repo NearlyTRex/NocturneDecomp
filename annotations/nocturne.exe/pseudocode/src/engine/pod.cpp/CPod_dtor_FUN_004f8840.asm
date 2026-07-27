@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004f93e0 at 004f93ef
+;   core_podmain.cpp_FUN_004f93e0 at 004f93ef
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_engine_pod.cpp_CPod_dtor_FUN_004f8840_005a1484 = 004f8840
-;   undefined4 DAT_005a14a0
+;   WatcomTypeInfo g_CPodTypeInfo_005a14a0
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
+;   crt_unknown.c_FUN_00564494
 ;   engine_pod.cpp_CPod_cleanup_FUN_004f8b40
-;   FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -39,7 +39,7 @@ section .text
     POP EBX                             ; 004f8868
     LEA EAX,[EAX]                       ; 004f8869
     NOP                                 ; 004f886f
-    PUSH 0x5a14a0                       ; 004f8871 | DAT_005a14a0
+    PUSH 0x5a14a0                       ; 004f8871 | g_CPodTypeInfo_005a14a0
         ;   Label: LAB_004f8871
     PUSH EBX                            ; 004f8876
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004f8877
@@ -54,8 +54,8 @@ section .text
     RET                                 ; 004f888b
     PUSH EBX                            ; 004f888c
         ;   Label: LAB_004f888c
-    CALL FUN_00564494                   ; 004f888d
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 004f888d
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 004f8892
     MOV EAX,EBX                         ; 004f8895
     POP EBX                             ; 004f8897

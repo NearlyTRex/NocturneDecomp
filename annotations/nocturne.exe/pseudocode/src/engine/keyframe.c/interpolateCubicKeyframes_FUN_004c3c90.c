@@ -76,9 +76,9 @@ int engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(int param_1)
   }
   iVar4 = *(int *)(param_1 + 0x14);
   if (*(int *)(iVar4 + 8) != 2) {
-    _DAT_01cc4800 = "..\\engine\\keyframe.c";
-    _DAT_01cc4804 = 0x16b;
-    FUN_004c8440("Bad keyframe 1");
+    PTR_01cc4800 = "..\\engine\\keyframe.c";
+    INT_01cc4804 = 0x16b;
+    core_main_c_FUN_004c8440("Bad keyframe 1");
   }
   fVar23 = (float10)uVar16 * (float10)1.52587890625e-05;
   fVar24 = fVar23 * fVar23;
@@ -149,9 +149,9 @@ int engine_keyframe_c_interpolateCubicKeyframes_FUN_004c3c90(int param_1)
     } while (local_2c < *(int *)(uVar16 + 8));
   }
   if (*piVar14 != 0x17) {
-    _DAT_01cc4800 = "..\\engine\\keyframe.c";
-    _DAT_01cc4804 = 0x1a6;
-    FUN_004c8440("ZBP not found!",uVar28,uVar29,uVar30,uVar31);
+    PTR_01cc4800 = "..\\engine\\keyframe.c";
+    INT_01cc4804 = 0x1a6;
+    core_main_c_FUN_004c8440("ZBP not found!",uVar28,uVar29,uVar30,uVar31);
   }
   puVar19 = (uint *)(piVar14 + 3);
   iVar17 = *(int *)(param_1 + 0x14) + 0x14;

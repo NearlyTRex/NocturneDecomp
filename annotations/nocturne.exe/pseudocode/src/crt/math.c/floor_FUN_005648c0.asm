@@ -9,16 +9,16 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[27]:
-;   FUN_00411940 at 00411969
-;   FUN_0046b650 at 0046b66d
-;   FUN_00494e80 at 00494faf
-;   FUN_005235b0 at 005235be
-;   FUN_005464a0 at 00546607
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00 at 0040df4c
 ;   core_bat.cpp_CBat_updateCoursePosition_FUN_00411f20 at 00411f6c
-;   core_bat.cpp_fmodfPositive_FUN_0043b510 at 0043b539
+;   core_bat.cpp_FUN_00411940 at 00411969
 ;   core_boneguy.cpp_hsvToRgb_FUN_00418480 at 00418597
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e61f
+;   core_bugs.cpp_FUN_00421b80 at 00421c27
+;   core_course.cpp_CCourse_interpolate_FUN_0043b890 at 0043ba2c
+;   core_course.cpp_fmodfPositive_FUN_0043b510 at 0043b539
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_004680b0 at 0046812a
+;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00 at 00467a59
 ;   ... and 17 more
 ;
 ; Referenced Globals:

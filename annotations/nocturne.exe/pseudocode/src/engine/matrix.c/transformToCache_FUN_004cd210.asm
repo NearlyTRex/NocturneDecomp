@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00472de0 at 00472e45
-;   FUN_00473080 at 004730bd
-;   FUN_00473190 at 00473277
+;   shape_edittool.cpp_FUN_00472de0 at 00472e45
+;   shape_edittool.cpp_FUN_00473080 at 004730bd
+;   shape_edittool.cpp_FUN_00473190 at 00473277
 ;
 ; Called Functions:
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     SHL EAX,0x4                         ; 004cd223
     ADD EAX,0x5c5014                    ; 004cd226
     PUSH EAX                            ; 004cd22b
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 004cd22c
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 004cd22c
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     ADD ESP,0x8                         ; 004cd231
     POP EBX                             ; 004cd234
     RET                                 ; 004cd235

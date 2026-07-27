@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,32 +122,31 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 174,
+    "complexity_score": 158,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 24,
-    "suspect_count": 13,
+    "pseudocode_lines": 23,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 98
+    "total_lines": 97
   },
   "cross_references": [
-    {
-      "addr": "004f6d90",
-      "from_addr": "004f6edb",
-      "name": "FUN_004f6d90",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00447670",
       "from_addr": "004476d4",
       "name": "core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f6d90",
+      "from_addr": "004f6edb",
+      "name": "core_platfrm.cpp_FUN_004f6d90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -184,9 +183,9 @@
     },
     {
       "addr": "0059bde4",
-      "name": "DAT_0059bde4",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059bde4",
+      "type": "float",
+      "value": "0.00390625"
     }
   ],
   "param_estimates": {
@@ -210,7 +209,7 @@
       {
         "call_addr": "004f6edb",
         "call_type": "direct",
-        "caller": "FUN_004f6d90",
+        "caller": "core_platfrm.cpp_FUN_004f6d90",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -326,16 +325,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "int core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(int param_1,int *param_2)",
@@ -343,7 +334,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "int core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(int param_1,int *param_2)",
@@ -351,10 +342,42 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar3 = (float10)((float)(param_2[1] - *(int *)(param_1 + 0x170)) * 0.00390625f);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = (float10)((float)(param_2[1] - *(int *)(param_1 + 0x170)) * 0.00390625f);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar4 = (float10)((float)(*param_2 - *(int *)(param_1 + 0x16c)) * 0.00390625f);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar4 = (float10)((float)(*param_2 - *(int *)(param_1 + 0x16c)) * 0.00390625f);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar3 = (float10)((float)(param_2[1] - *(int *)(param_1 + 0x170)) * _DAT_0059bde4);",
+      "text": "fVar5 = (float10)((float)(param_2[2] - *(int *)(param_1 + 0x174)) * 0.00390625f);",
       "type": "unnamed_param"
     },
     {
@@ -362,44 +385,12 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = (float10)((float)(param_2[1] - *(int *)(param_1 + 0x170)) * _DAT_0059bde4);",
+      "text": "fVar5 = (float10)((float)(param_2[2] - *(int *)(param_1 + 0x174)) * 0.00390625f);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar4 = (float10)((float)(*param_2 - *(int *)(param_1 + 0x16c)) * _DAT_0059bde4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = (float10)((float)(*param_2 - *(int *)(param_1 + 0x16c)) * _DAT_0059bde4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fVar5 = (float10)((float)(param_2[2] - *(int *)(param_1 + 0x174)) * _DAT_0059bde4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar5 = (float10)((float)(param_2[2] - *(int *)(param_1 + 0x174)) * _DAT_0059bde4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "(0x140d784,param_1 + 0x16c,param_2,(int)ROUND(fVar3),uVar6);",
@@ -407,7 +398,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "(0x140d784,param_1 + 0x16c,param_2,(int)ROUND(fVar3),uVar6);",
@@ -415,7 +406,7 @@
     },
     {
       "description": "Raw hex address 0x447622 assigned to bare local `uVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 17,
+      "line": 15,
       "match": "0x447622",
       "severity": "moderate",
       "text": "uVar6 = 0x447622;",

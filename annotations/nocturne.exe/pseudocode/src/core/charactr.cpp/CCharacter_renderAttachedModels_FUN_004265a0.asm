@@ -16,9 +16,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_0054dac0 at 0054db59
 ;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00425c20 at 00425c6c
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5a75
+;   core_vampboss.cpp_FUN_0054dac0 at 0054db59
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

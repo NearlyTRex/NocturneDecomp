@@ -1,14 +1,14 @@
-// Name: FUN_004edfc0
+// Name: support_newmsg.cpp_FUN_004edfc0
 // Address: 004edfc0
 // Address Range: [[004edfc0, 004ee2e2]]
 // Convention: unknown
-// Signature: int FUN_004edfc0(undefined4 param_1)
+// Signature: int support_newmsg_cpp_FUN_004edfc0(undefined4 param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-int FUN_004edfc0(uint param_1)
+int support_newmsg_cpp_FUN_004edfc0(uint param_1)
 
 {
   char cVar1;
@@ -41,9 +41,9 @@ int FUN_004edfc0(uint param_1)
       _fgets(local_31c,0xff,iVar4);
       _fscanf(iVar4,"%d\n",&DAT_01d16810);
       if (local_1c != 0) {
-        _DAT_01cc4800 = "..\\support\\newmsg.cpp";
-        _DAT_01cc4804 = 0x52;
-        FUN_004c8440("Unknown message file version");
+        PTR_01cc4800 = "..\\support\\newmsg.cpp";
+        INT_01cc4804 = 0x52;
+        core_main_c_FUN_004c8440("Unknown message file version");
       }
       _fgets(local_31c,0xff,iVar4);
       _fscanf(iVar4,"\"%[^\"]\"\n",&DAT_005bdf50);
@@ -93,14 +93,14 @@ int FUN_004edfc0(uint param_1)
         }
         iVar5 = _fscanf(iVar4,"\"%[^\"]\", \"%[^\"]\"\n",local_21c,local_11c);
         if (iVar5 != 2) {
-          _DAT_01cc4800 = "..\\support\\newmsg.cpp";
-          _DAT_01cc4804 = 99;
-          FUN_004c8440("Error reading %s",param_1);
+          PTR_01cc4800 = "..\\support\\newmsg.cpp";
+          INT_01cc4804 = 99;
+          core_main_c_FUN_004c8440("Error reading %s",param_1);
         }
         if (499 < _DAT_01d16818) {
-          _DAT_01cc4800 = "..\\support\\newmsg.cpp";
-          _DAT_01cc4804 = 0x68;
-          FUN_004c8440("Too many messages in %s",param_1);
+          PTR_01cc4800 = "..\\support\\newmsg.cpp";
+          INT_01cc4804 = 0x68;
+          core_main_c_FUN_004c8440("Too many messages in %s",param_1);
         }
         pcVar8 = local_21c;
         pcVar9 = (char *)(_DAT_01d16818 * 0x80 + 0x1d177c0);

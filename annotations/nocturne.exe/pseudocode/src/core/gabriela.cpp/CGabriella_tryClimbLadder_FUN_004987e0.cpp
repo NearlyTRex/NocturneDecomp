@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004987e0(int param_1)
 
 {
@@ -46,7 +44,8 @@ uint __cdecl core_gabriela_cpp_CGabriella_tryClimbLadder_FUN_004987e0(int param_
       return 0;
     }
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(0x01E57284 + local_1c + 0x14cd70),_DAT_01cc3120);
+                      (*(uint *)(0x01E57284 + local_1c + 0x14cd70),
+                       g_CLadderActorType_01cc30e8.name_hash);
     local_24 = iVar1;
     if (iVar1 != 0) {
       local_60 = *(float *)(param_1 + 0x20) - *(float *)(iVar1 + 0x20);

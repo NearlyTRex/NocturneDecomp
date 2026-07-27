@@ -50,9 +50,9 @@ void __cdecl core_stranger_cpp_CStranger_makeDrawDecision_FUN_00539b10(int param
   
   bVar7 = 0;
   if ((*(int *)(param_1 + 0x2a84) < 0) || (0x10 < *(int *)(param_1 + 0x2a84))) {
-    _DAT_01cc4800 = "..\\core\\stranger.cpp";
-    _DAT_01cc4804 = 0xa7c;
-    FUN_004c8440("CStranger::makeDrawDecision - draw motion out of range!");
+    PTR_01cc4800 = "..\\core\\stranger.cpp";
+    INT_01cc4804 = 0xa7c;
+    core_main_c_FUN_004c8440("CStranger::makeDrawDecision - draw motion out of range!");
   }
   local_f8 = 1.0;
   if (*(int *)(param_1 + 0x2624 + *(int *)(param_1 + 0x2a84) * 0x38) == 0) {
@@ -123,7 +123,8 @@ LAB_00539cea:
   }
   local_24 = local_18;
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-            (param_1 + 0x150,local_20,local_18,local_f8,_DAT_02dc9f94,FUN_0051b650);
+            (param_1 + 0x150,local_20,local_18,local_f8,_DAT_02dc9f94,core_skeleton_cpp_FUN_0051b650
+            );
   if (*(int *)(param_1 + 0x2a84) == 0) {
     local_30 = (float)(param_1 + 0x800);
     core_xform_cpp_slerpQuaternion_FUN_0055d2d0
@@ -169,7 +170,7 @@ LAB_00539cea:
     ;
     local_100 = (1.0 - local_18) * local_f8 * local_100;
     if (0.0 < local_100) {
-      core_xform_cpp_FUN_0055d4a0(fVar1,local_100,_DAT_02dc9f94,FUN_00534e90);
+      core_xform_cpp_FUN_0055d4a0(fVar1,local_100,_DAT_02dc9f94,core_stranger_cpp_FUN_00534e90);
       puVar10 = &stack0xffffff90;
       iVar2 = param_1 + 0x150;
       local_70 = local_90;
@@ -185,8 +186,8 @@ LAB_00539cea:
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                 (iVar2,puVar10);
     }
-    FUN_0053a260(param_1,0);
-    FUN_0053a260(param_1,1);
+    core_stranger_cpp_FUN_0053a260(param_1,0);
+    core_stranger_cpp_FUN_0053a260(param_1,1);
     puVar10 = (uint *)(param_1 + 0x800 + _DAT_02dc9f88 * 0x10);
     puVar5 = (uint *)(_DAT_02dc9f68 * 0x10 + 0x800 + param_1);
     puVar6 = puVar10 + (uint)bVar7 * -2 + 1;
@@ -214,7 +215,7 @@ LAB_00539cea:
     local_38 = (1.0 - local_18) * local_f8;
     core_xform_cpp_FUN_0055d4a0(*(uint *)(param_1 + 0x1fa58));
     fVar1 = local_38;
-    pcVar12 = FUN_00534e90;
+    pcVar12 = core_stranger_cpp_FUN_00534e90;
     puVar10 = &stack0xffffff20;
     local_e0 = local_80;
     *(uint *)((int)&stack0xffffff24 + (uint)bVar7 * 0xfffffffe * 4) =
@@ -243,7 +244,7 @@ LAB_00539cea:
           ((int)(&stack0xffffffa8 + (uint)bVar7 * -8 + (uint)bVar7 * -8) +
           ((uint)bVar7 * -2 + 1) * 4);
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
-              (local_30,&stack0xffffffb0,local_38,_DAT_02dc9f94,FUN_00534e90);
+              (local_30,&stack0xffffffb0,local_38,_DAT_02dc9f94,core_stranger_cpp_FUN_00534e90);
     if (*(int *)(param_1 + 0x2a84) != 0xe) {
       return;
     }
@@ -255,7 +256,7 @@ LAB_00539cea:
                           (float10)1);
   local_34 = (float)fVar8;
   core_xform_cpp_FUN_0055d4e0(local_34);
-  pcVar12 = FUN_0051b650;
+  pcVar12 = core_skeleton_cpp_FUN_0051b650;
   puVar10 = &stack0xffffff60;
   uVar11 = 0x3f800000;
   param_1 = param_1 + 0x150;
@@ -274,7 +275,7 @@ LAB_00539cea:
   core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
             (iVar2,puVar10,uVar11,uVar3,pcVar12);
   core_xform_cpp_FUN_0055d4e0(-local_34);
-  pcVar12 = FUN_0051b650;
+  pcVar12 = core_skeleton_cpp_FUN_0051b650;
   puVar10 = &stack0xffffff60;
   uVar11 = 0x3f800000;
   local_a0 = local_b0;

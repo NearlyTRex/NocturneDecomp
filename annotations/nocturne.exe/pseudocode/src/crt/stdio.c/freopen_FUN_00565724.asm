@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c86a8
+;   core_main.c_FUN_004c85f0 at 004c86a8
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1ac0 = 005671e4
@@ -13,9 +13,9 @@
 ;   undefined4 DAT_005c1d58
 ;
 ; Called Functions:
-;   FUN_005653e0
-;   FUN_0056551c
-;   FUN_005656a4
+;   crt_unknown.c_FUN_005653e0
+;   crt_unknown.c_FUN_0056551c
+;   crt_unknown.c_FUN_005656a4
 ;   FUN_005671e4
 ;
 ; *****************************************************************************
@@ -33,8 +33,8 @@ section .text
     PUSH EAX                            ; 00565731
     MOV EDX,dword ptr [ESP + 0x20]      ; 00565732
     PUSH EDX                            ; 00565736
-    CALL FUN_005653e0                   ; 00565737
-        ;   XREF to: 005653e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005653e0()
+    CALL crt_unknown.c_FUN_005653e0     ; 00565737
+        ;   XREF to: 005653e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005653e0()
     ADD ESP,0x8                         ; 0056573c
     MOV EDI,EAX                         ; 0056573f
     TEST EAX,EAX                        ; 00565741
@@ -53,8 +53,8 @@ section .text
     ADD ESP,0x4                         ; 00565763
     PUSH ESI                            ; 00565766
         ;   Label: LAB_00565766
-    CALL FUN_005656a4                   ; 00565767
-        ;   XREF to: 005656a4 (UNCONDITIONAL_CALL)  ; undefined FUN_005656a4()
+    CALL crt_unknown.c_FUN_005656a4     ; 00565767
+        ;   XREF to: 005656a4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005656a4()
     ADD ESP,0x4                         ; 0056576c
     MOV ESI,EAX                         ; 0056576f
     TEST EAX,EAX                        ; 00565771
@@ -74,8 +74,8 @@ section .text
     PUSH EAX                            ; 00565792
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00565793
     PUSH EAX                            ; 00565797
-    CALL FUN_0056551c                   ; 00565798
-        ;   XREF to: 0056551c (UNCONDITIONAL_CALL)  ; undefined FUN_0056551c()
+    CALL crt_unknown.c_FUN_0056551c     ; 00565798
+        ;   XREF to: 0056551c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056551c()
     ADD ESP,0x18                        ; 0056579d
     MOV ESI,EAX                         ; 005657a0
     PUSH EBX                            ; 005657a2

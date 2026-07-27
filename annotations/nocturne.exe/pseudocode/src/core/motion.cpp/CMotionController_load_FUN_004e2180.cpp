@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_motion_cpp_CMotionController_load_FUN_004e2180(int param_1,uint param_2)
 
 {
@@ -20,9 +18,9 @@ void __cdecl core_motion_cpp_CMotionController_load_FUN_004e2180(int param_1,uin
   if ((iVar1 != 2) &&
      (iVar1 = _fscanf(param_2,"\"%[^\"]\" , %f",param_1 + 0x30,param_1 + 8),
      iVar1 != 2)) {
-    _DAT_01cc4800 = "..\\core\\motion.cpp";
-    _DAT_01cc4804 = 0x51e;
-    FUN_004c8440("CMotionController::load - error parsing file");
+    PTR_01cc4800 = "..\\core\\motion.cpp";
+    INT_01cc4804 = 0x51e;
+    core_main_c_FUN_004c8440("CMotionController::load - error parsing file");
   }
   do {
     iVar1 = _fgetc(param_2);

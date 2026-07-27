@@ -30,9 +30,9 @@ int __cdecl engine_2d_c_drawHLine_FUN_00403bd0(int param_1,int param_2,int param
       if (DAT_005b7624 < 0x10) {
         if (DAT_005b7624 != 8) {
 LAB_00403cb2:
-          _DAT_01cc4800 = "..\\engine\\2d.c";
-          _DAT_01cc4804 = 0x8a4;
-          iVar3 = FUN_004c8440("hLine - invalid bitsPerPixel");
+          PTR_01cc4800 = "..\\engine\\2d.c";
+          INT_01cc4804 = 0x8a4;
+          iVar3 = core_main_c_FUN_004c8440("hLine - invalid bitsPerPixel");
           return iVar3;
         }
         param_3 = memset

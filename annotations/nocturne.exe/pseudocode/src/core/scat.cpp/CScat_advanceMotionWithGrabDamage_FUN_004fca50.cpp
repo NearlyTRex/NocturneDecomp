@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50(int param_1,float param_2)
 
 {
@@ -21,7 +19,7 @@ void __cdecl core_scat_cpp_CScat_advanceMotionWithGrabDamage_FUN_004fca50(int pa
     iVar1 = core_motion_cpp_CMotionController_advance_FUN_004e11c0(param_1 + 0x150,&param_2);
     if (iVar1 == 100) {
       iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(param_1 + 0x2590),_DAT_01bcdef4);
+                        (*(uint *)(param_1 + 0x2590),g_CEnemyActorType_01bcdebc.name_hash);
       if (iVar1 != 0) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(auStack_50);
         local_4c = 0x40a00000;

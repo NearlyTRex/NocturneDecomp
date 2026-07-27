@@ -8,7 +8,7 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c8d61
+;   core_main.c_FUN_004c85f0 at 004c8d61
 ;
 ; Referenced Globals:
 ;   void* PTR_RegCloseKey_00575380 = 001756a6

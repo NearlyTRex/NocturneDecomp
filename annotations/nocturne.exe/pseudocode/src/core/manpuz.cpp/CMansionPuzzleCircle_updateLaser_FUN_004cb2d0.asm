@@ -63,7 +63,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   FUN_004c9cf0 at 004c9d43
+;   core_manpuz.cpp_FUN_004c9cf0 at 004c9d43
 ;
 ; Referenced Globals:
 ;   float FLOAT_0058802a = 2
@@ -76,10 +76,10 @@
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
+;   core_fire.cpp_FUN_0048b6f0
 ;   core_fire.cpp_SLaserInfo_ctor_FUN_0048b6b0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
-;   FUN_0048b6f0
 ;
 ; *****************************************************************************
 
@@ -272,8 +272,8 @@ section .text
     PUSH EAX                            ; 004cb50c
     MOV EAX,[0x005b80f0]                ; 004cb50d | DAT_005b80f0
     PUSH EAX                            ; 004cb512
-    CALL FUN_0048b6f0                   ; 004cb513
-        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048b6f0()
+    CALL core_fire.cpp_FUN_0048b6f0     ; 004cb513
+        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048b6f0()
     ADD ESP,0x14                        ; 004cb518
     MOV EDX,dword ptr [0x005be368]      ; 004cb51b | DAT_005be368
     PUSH EDX                            ; 004cb521 | DAT_01e57284

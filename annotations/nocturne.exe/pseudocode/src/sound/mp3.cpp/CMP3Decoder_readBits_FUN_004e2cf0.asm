@@ -7,23 +7,23 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   FUN_004e5200 at 004e58bc
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e8eff
 ;   sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_004e4c70 at 004e4fdf
 ;   sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_004e2ed0 at 004e30cb
 ;   sound_mp3.cpp_CMP3Decoder_readBit_FUN_004e2dd0 at 004e2dd7
 ;   sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_004e48a0 at 004e497c
+;   sound_mp3.cpp_FUN_004e5200 at 004e58bc
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0058b5de
 ;   TerminatedCString s_Buffer_overflow_File_s_0058b5ef
 ;   undefined4 DAT_005bc010
 ;   undefined4 DAT_005bc030
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -97,10 +97,10 @@ section .text
     MOV EBP,0x58b5de                    ; 004e2da1 | = "..\\sound\\mp3.cpp"
     MOV EAX,0x2c0                       ; 004e2da6
     PUSH 0x58b5ef                       ; 004e2dab | = "Buffer overflow!!  File: %s"
-    MOV dword ptr [0x01cc4800],EBP      ; 004e2db0 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e2db6 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e2dbb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004e2db0 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004e2db6 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e2dbb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e2dc0
     JMP 0x004e2d1e                      ; 004e2dc3
         ;   XREF to: 004e2d1e (UNCONDITIONAL_JUMP)  ; LAB_004e2d1e

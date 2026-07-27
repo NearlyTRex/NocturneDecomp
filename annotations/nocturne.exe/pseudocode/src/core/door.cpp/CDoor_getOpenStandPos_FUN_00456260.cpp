@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00456260(int param_1,float *param_2,float *param_3,uint param_4)
 
 {
@@ -88,9 +86,9 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00456260(int param_1,flo
     }
     break;
   default:
-    _DAT_01cc4800 = "..\\core\\door.cpp";
-    _DAT_01cc4804 = 0x340;
-    FUN_004c8440("CDoor::getOpenStandPos - invalid doorType");
+    PTR_01cc4800 = "..\\core\\door.cpp";
+    INT_01cc4804 = 0x340;
+    core_main_c_FUN_004c8440("CDoor::getOpenStandPos - invalid doorType");
     param_2[1] = *(float *)(param_1 + 0x24);
     return param_2;
   }

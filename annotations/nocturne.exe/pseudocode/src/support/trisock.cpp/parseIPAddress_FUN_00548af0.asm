@@ -8,11 +8,13 @@
 ;   core_game.cpp_joinNetworkGame_FUN_004a5e40 at 004a5e86
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_support_trisock_cpp_00596b9f
+;   TerminatedCString s_Invalid_dotted_decimal_s_00596bb6
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   support_trisock.cpp_parseIPComponents_FUN_00548bf0
 ;
 ; *****************************************************************************
@@ -39,13 +41,13 @@ section .text
     PUSH ESI                            ; 00548b0c
     MOV EDI,dword ptr [ESP + 0x14]      ; 00548b0d
     PUSH EDI                            ; 00548b11
-    MOV ECX,0x596b9f                    ; 00548b12
+    MOV ECX,0x596b9f                    ; 00548b12 | = "..\\support\\trisock.cpp"
     MOV ESI,0x36                        ; 00548b17
-    PUSH 0x596bb6                       ; 00548b1c
-    MOV dword ptr [0x01cc4800],ECX      ; 00548b21 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00548b27 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00548b2d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x596bb6                       ; 00548b1c | = "Invalid dotted decimal string: %s"
+    MOV dword ptr [0x01cc4800],ECX      ; 00548b21 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00548b27 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00548b2d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00548b32
     POP ESI                             ; 00548b35
     POP EDI                             ; 00548b36

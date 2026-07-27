@@ -13,7 +13,7 @@ int core_vampboss_cpp_CVampireBoss_dtor_FUN_0054e370(int param_1,byte param_2)
   uint uVar2;
   
   if ((param_2 & 4) != 0) {
-    uVar2 = __vec_delete(param_1,&DAT_005a3be0);
+    uVar2 = __vec_delete(param_1,&g_CVampireBossTypeInfo_005a3be0);
     shape_memdbg_cpp_free_FUN_00564486(uVar2);
     return param_1;
   }

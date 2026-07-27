@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004720c0(undefined4 param_1)
+; void shape_edittool_cpp_FUN_004720c0(undefined4 param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -9,16 +9,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
-;   FUN_004673e0 at 0046754e
-;   FUN_0046f7e0 at 0046f945
-;   FUN_0046fb40 at 0046fcaf
-;   FUN_0046fcd0 at 0046fe3f
-;   FUN_0046fe60 at 0046ffcf
-;   FUN_00470eb0 at 00471171
-;   FUN_004f8240 at 004f84df
+;   core_dtrace.cpp_FUN_004673e0 at 0046754e
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049de90
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfdfc
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004ea00b
+;   engine_pod.cpp_FUN_004f8240 at 004f84df
+;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70 at 00474e3e
+;   shape_edittool.cpp_FUN_0046f7e0 at 0046f945
+;   shape_edittool.cpp_FUN_0046fb40 at 0046fcaf
+;   shape_edittool.cpp_FUN_0046fcd0 at 0046fe3f
+;   shape_edittool.cpp_FUN_0046fe60 at 0046ffcf
 ;   ... and 1 more
 ;
 ; Referenced Globals:
@@ -28,11 +28,11 @@
 ;   undefined4 DAT_01bcd07c
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0
 ;
 ; *****************************************************************************
@@ -40,7 +40,7 @@
 section .text
 
     PUSH EBX                            ; 004720c0
-        ;   Label: FUN_004720c0
+        ;   Label: shape_edittool.cpp_FUN_004720c0
     PUSH ESI                            ; 004720c1
     PUSH EDI                            ; 004720c2
     PUSH EBP                            ; 004720c3
@@ -135,10 +135,10 @@ section .text
         ;   Label: LAB_004721b5
     MOV EBX,0x6f7                       ; 004721ba
     PUSH 0x57e968                       ; 004721bf | = "CEditorTools::closeWindow() called bu..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004721c4 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004721ca | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004721d0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004721c4 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004721ca | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004721d0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004721d5
     JMP 0x004720d4                      ; 004721d8
         ;   XREF to: 004720d4 (UNCONDITIONAL_JUMP)  ; LAB_004720d4

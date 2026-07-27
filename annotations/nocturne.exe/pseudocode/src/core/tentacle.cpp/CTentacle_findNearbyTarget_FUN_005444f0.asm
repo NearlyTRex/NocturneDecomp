@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00543c50 at 00543d33
+;   core_tentacle.cpp_FUN_00543c50 at 00543d33
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005965e8 = 3

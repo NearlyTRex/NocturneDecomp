@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 248,
+    "complexity_score": 232,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
-    "suspect_count": 19,
+    "pseudocode_lines": 32,
+    "suspect_count": 18,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 109
+    "total_lines": 108
   },
   "cross_references": [],
   "function": {
@@ -153,24 +152,24 @@
   },
   "function_calls": [
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "00563c90",
       "is_variadic": false,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
-      "addr": "004c8440",
+      "addr": "00529a90",
       "is_variadic": false,
-      "name": "FUN_004c8440"
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90"
     },
     {
       "addr": "00529980",
       "is_variadic": false,
-      "name": "FUN_00529980"
-    },
-    {
-      "addr": "00529a90",
-      "is_variadic": false,
-      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90"
+      "name": "sound_sndmain.cpp_FUN_00529980"
     }
   ],
   "globals": [
@@ -200,14 +199,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -265,16 +264,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(uint param_1,int param_2,uint param_3,uint param_4,int param_5)",
@@ -282,7 +273,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(uint param_1,int param_2,uint param_3,uint param_4,int param_5)",
@@ -290,7 +281,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(uint param_1,int param_2,uint param_3,uint param_4,int param_5)",
@@ -298,7 +289,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "void sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(uint param_1,int param_2,uint param_3,uint param_4,int param_5)",
@@ -306,7 +297,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
       "text": "void sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(uint param_1,int param_2,uint param_3,uint param_4,int param_5)",
@@ -314,7 +305,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "if (((param_2 < 1) || (0x18 < param_2)) || (*(int *)(&DAT_02dc9244 + param_2 * 4) == 0)) {",
@@ -322,7 +313,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "if (((param_2 < 1) || (0x18 < param_2)) || (*(int *)(&DAT_02dc9244 + param_2 * 4) == 0)) {",
@@ -330,7 +321,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_2",
       "severity": "mild",
       "text": "if (((param_2 < 1) || (0x18 < param_2)) || (*(int *)(&DAT_02dc9244 + param_2 * 4) == 0)) {",
@@ -338,7 +329,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 13,
       "match": "DAT_02dc9244",
       "severity": "mild",
       "text": "if (((param_2 < 1) || (0x18 < param_2)) || (*(int *)(&DAT_02dc9244 + param_2 * 4) == 0)) {",
@@ -346,7 +337,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
       "text": "iStack_1a4 = param_2;",
@@ -354,7 +345,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_5",
       "severity": "mild",
       "text": "iStack_1a4 = *(uint *)(param_5 + 0x15c);",
@@ -362,7 +353,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 22,
       "match": "param_5",
       "severity": "mild",
       "text": "pcStack_1a8 = *(char **)(param_5 + 0x164);",
@@ -370,7 +361,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_5",
       "severity": "mild",
       "text": "uStack_1ac = *(uint *)(param_5 + 0x158);",
@@ -378,7 +369,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_5",
       "severity": "mild",
       "text": "uStack_1b0 = *(uint *)(param_5 + 0x160);",
@@ -386,7 +377,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "piStack_1b4 = *(int **)(&DAT_02dc9244 + param_2 * 4);",
@@ -394,7 +385,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 25,
       "match": "DAT_02dc9244",
       "severity": "mild",
       "text": "piStack_1b4 = *(int **)(&DAT_02dc9244 + param_2 * 4);",
@@ -402,7 +393,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
+      "line": 26,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar1 = (**(code **)(*piStack_1b4 + 0x4c))();",
@@ -410,7 +401,7 @@
     },
     {
       "description": "Raw hex address 0x52aed2 assigned to bare local `uStack_1ac`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_1ac` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 20,
+      "line": 18,
       "match": "0x52aed2",
       "severity": "moderate",
       "text": "uStack_1ac = 0x52aed2;",

@@ -14,11 +14,11 @@
 ;   TerminatedCString s_CCloth_saveJoinedLight_M_0057aeab
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -84,10 +84,10 @@ section .text
         ;   Label: LAB_00437d55
     MOV ECX,0x4e3                       ; 00437d5a
     PUSH 0x57ae5f                       ; 00437d5f | = "CCloth::saveJoinedLight - Can't save ..."
-    MOV dword ptr [0x01cc4800],EDX      ; 00437d64 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00437d6a | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00437d70
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00437d64 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00437d6a | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00437d70
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00437d75
     JMP 0x00437cd4                      ; 00437d78
         ;   XREF to: 00437cd4 (UNCONDITIONAL_JUMP)  ; LAB_00437cd4
@@ -95,10 +95,10 @@ section .text
         ;   Label: LAB_00437d7d
     MOV ESI,0x4e8                       ; 00437d82
     PUSH 0x57aeab                       ; 00437d87 | = "CCloth::saveJoinedLight - Model wasn'..."
-    MOV dword ptr [0x01cc4800],EBX      ; 00437d8c | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00437d92 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00437d98
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00437d8c | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00437d92 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00437d98
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00437d9d
     JMP 0x00437ce2                      ; 00437da0
         ;   XREF to: 00437ce2 (UNCONDITIONAL_JUMP)  ; LAB_00437ce2

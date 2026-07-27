@@ -9,6 +9,6 @@
 void __cdecl core_cloth_cpp_SClothVertex_arrdtor_FUN_00438a00(uint param_1)
 
 {
-  __arrfini(param_1,800,&DAT_0059b3a0);
+  __arrfini(param_1,800,&g_SClothVertexTypeInfo_0059b3a0);
   return;
 }

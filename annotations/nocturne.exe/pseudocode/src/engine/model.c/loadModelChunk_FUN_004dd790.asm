@@ -20,16 +20,16 @@
 ;   TerminatedCString s_Model_read_hose_0058a6d8
 ;   TerminatedCString s_engine_model_c_0058a6e8
 ;   TerminatedCString s_Bad_model_0058a6fa
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -71,13 +71,13 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x2ee                       ; 004dd7de
     ADD ESP,0xc                         ; 004dd7e3
-    MOV [0x01cc4804],EAX                ; 004dd7e6 | DAT_01cc4804
+    MOV [0x01cc4804],EAX                ; 004dd7e6 | INT_01cc4804
     MOV EAX,ESP                         ; 004dd7eb
     MOV EBP,0x58a6b4                    ; 004dd7ed | = "..\\engine\\model.c"
     PUSH EAX                            ; 004dd7f2
-    MOV dword ptr [0x01cc4800],EBP      ; 004dd7f3 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 004dd7f9
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004dd7f3 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 004dd7f9
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004dd7fe
     PUSH EDI                            ; 004dd801
         ;   Label: LAB_004dd801
@@ -93,10 +93,10 @@ section .text
     MOV EDX,0x58a6c6                    ; 004dd812 | = "..\\engine\\model.c"
     MOV ECX,0x2f3                       ; 004dd817
     PUSH 0x58a6d8                       ; 004dd81c | = "Model read hose"
-    MOV dword ptr [0x01cc4800],EDX      ; 004dd821 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004dd827 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004dd82d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004dd821 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004dd827 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004dd82d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004dd832
     PUSH EDI                            ; 004dd835
         ;   Label: LAB_004dd835
@@ -131,10 +131,10 @@ section .text
     MOV EAX,ESP                         ; 004dd873
     MOV ECX,0x2e3                       ; 004dd875
     PUSH EAX                            ; 004dd87a
-    MOV dword ptr [0x01cc4800],EDX      ; 004dd87b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004dd881 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004dd887
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004dd87b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004dd881 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004dd887
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004dd88c
     JMP 0x004dd7bc                      ; 004dd88f
         ;   XREF to: 004dd7bc (UNCONDITIONAL_JUMP)  ; LAB_004dd7bc
@@ -142,10 +142,10 @@ section .text
         ;   Label: LAB_004dd894
     MOV EBP,0x2f6                       ; 004dd899
     PUSH 0x58a6fa                       ; 004dd89e | = "Bad model!"
-    MOV dword ptr [0x01cc4800],EDI      ; 004dd8a3 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004dd8a9 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004dd8af
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004dd8a3 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004dd8a9 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004dd8af
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004dd8b4
     MOV EAX,EBX                         ; 004dd8b7
     MOV dword ptr [ESI + EBX*0x1],0x0   ; 004dd8b9

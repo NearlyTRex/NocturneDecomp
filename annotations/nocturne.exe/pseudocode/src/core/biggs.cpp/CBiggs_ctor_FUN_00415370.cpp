@@ -19,7 +19,7 @@ int core_biggs_cpp_CBiggs_ctor_FUN_00415370(uint param_1)
   iVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
   iVar4 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar4 + 0xbd24);
   iVar4 = core_morph_cpp_CMorph_ctor_FUN_004e0050(iVar4 + 0x184);
-  *(byte ***)(iVar4 + -0xbd5c) = &PTR_FUN_0059a5b4;
+  *(byte ***)(iVar4 + -0xbd5c) = &PTR_core_biggs_cpp_FUN_00415430_0059a5b4;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar4 + -0xbd58,"biggs.dfm")
   ;
   pcVar5 = "bigAlien";

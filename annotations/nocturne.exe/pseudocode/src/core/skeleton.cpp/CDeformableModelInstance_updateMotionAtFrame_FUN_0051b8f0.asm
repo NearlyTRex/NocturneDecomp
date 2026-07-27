@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00535450 at 0053568a
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0051de60 at 0051de9e
+;   core_stranger.cpp_FUN_00535450 at 0053568a
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0

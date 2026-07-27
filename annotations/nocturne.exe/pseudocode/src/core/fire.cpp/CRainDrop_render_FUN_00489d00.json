@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -113,6 +89,30 @@
         "category": "other",
         "column": 70,
         "line": 237,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
         "message": "unknown type name 'code'"
       }
     ],
@@ -209,17 +209,17 @@
     {
       "addr": "00460d90",
       "is_variadic": false,
-      "name": "FUN_00460d90"
+      "name": "engine_drender.cpp_FUN_00460d90"
     },
     {
       "addr": "0053075c",
       "is_variadic": false,
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0053075c"
     },
     {
       "addr": "00530a25",
       "is_variadic": false,
-      "name": "wincore_windll.cpp_transformPoint_FUN_00530a25"
+      "name": "engine_special.cpp_transformPoint_FUN_00530a25"
     }
   ],
   "globals": [
@@ -231,9 +231,9 @@
     },
     {
       "addr": "0059d1f8",
-      "name": "DAT_0059d1f8",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059d1f8",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005ae704",
@@ -689,7 +689,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_74 = (int)ROUND(*param_1 * _DAT_0059d1f8);",
+      "text": "local_74 = (int)ROUND(*param_1 * 256.0f);",
       "type": "unnamed_param"
     },
     {
@@ -697,7 +697,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_70 = (int)ROUND(param_1[1] * _DAT_0059d1f8);",
+      "text": "local_70 = (int)ROUND(param_1[1] * 256.0f);",
       "type": "unnamed_param"
     },
     {
@@ -705,7 +705,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_6c = (int)ROUND(param_1[2] * _DAT_0059d1f8);",
+      "text": "local_6c = (int)ROUND(param_1[2] * 256.0f);",
       "type": "unnamed_param"
     },
     {
@@ -713,7 +713,7 @@
       "line": 53,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformPoint_FUN_00530a25(*DAT_005ae704);",
+      "text": "engine_special_cpp_transformPoint_FUN_00530a25(*DAT_005ae704);",
       "type": "undefined_data"
     },
     {
@@ -745,7 +745,7 @@
       "line": 59,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "FUN_00460d90(DAT_005ae704);",
+      "text": "engine_drender_cpp_FUN_00460d90(DAT_005ae704);",
       "type": "undefined_data"
     },
     {
@@ -801,7 +801,7 @@
       "line": 74,
       "match": "&stack0xffffff98",
       "severity": "moderate",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&stack0xffffff98);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&stack0xffffff98);",
       "type": "stack_ref"
     },
     {
@@ -809,7 +809,7 @@
       "line": 74,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&stack0xffffff98);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&stack0xffffff98);",
       "type": "undefined_data"
     },
     {
@@ -817,7 +817,7 @@
       "line": 81,
       "match": "&stack0xffffff80",
       "severity": "moderate",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&stack0xffffff80);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&stack0xffffff80);",
       "type": "stack_ref"
     },
     {
@@ -825,7 +825,7 @@
       "line": 81,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&stack0xffffff80);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&stack0xffffff80);",
       "type": "undefined_data"
     },
     {
@@ -833,7 +833,7 @@
       "line": 88,
       "match": "&stack0xffffffbc",
       "severity": "moderate",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&stack0xffffffbc);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&stack0xffffffbc);",
       "type": "stack_ref"
     },
     {
@@ -841,7 +841,7 @@
       "line": 88,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&stack0xffffffbc);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&stack0xffffffbc);",
       "type": "undefined_data"
     },
     {
@@ -849,7 +849,7 @@
       "line": 95,
       "match": "&stack0xffffffb0",
       "severity": "moderate",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&stack0xffffffb0);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&stack0xffffffb0);",
       "type": "stack_ref"
     },
     {
@@ -857,7 +857,7 @@
       "line": 95,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&stack0xffffffb0);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&stack0xffffffb0);",
       "type": "undefined_data"
     },
     {
@@ -913,7 +913,7 @@
       "line": 112,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_30 = (int)ROUND(*param_1 * _DAT_0059d1f8);",
+      "text": "iStack_30 = (int)ROUND(*param_1 * 256.0f);",
       "type": "unnamed_param"
     },
     {
@@ -921,7 +921,7 @@
       "line": 113,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = (int)ROUND(param_1[1] * _DAT_0059d1f8);",
+      "text": "local_2c = (int)ROUND(param_1[1] * 256.0f);",
       "type": "unnamed_param"
     },
     {
@@ -929,7 +929,7 @@
       "line": 114,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = (int)ROUND(param_1[2] * _DAT_0059d1f8);",
+      "text": "local_28 = (int)ROUND(param_1[2] * 256.0f);",
       "type": "unnamed_param"
     },
     {

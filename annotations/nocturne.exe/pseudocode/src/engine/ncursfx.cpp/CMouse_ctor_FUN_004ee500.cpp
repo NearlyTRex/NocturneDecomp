@@ -11,9 +11,9 @@ int engine_ncursfx_cpp_CMouse_ctor_FUN_004ee500(uint param_1)
 {
   int iVar1;
   
-  iVar1 = __arrinit(param_1,8,&DAT_0059df00);
-  iVar1 = __arrinit(iVar1 + 0xa0,7,&DAT_0059df00);
-  iVar1 = __arrinit(iVar1 + 0x8c,0xf,&DAT_0059df00);
+  iVar1 = __arrinit(param_1,8,&g_CAlphaBitmapTypeInfo_0059df00);
+  iVar1 = __arrinit(iVar1 + 0xa0,7,&g_CAlphaBitmapTypeInfo_0059df00);
+  iVar1 = __arrinit(iVar1 + 0x8c,0xf,&g_CAlphaBitmapTypeInfo_0059df00);
   *(uint *)(iVar1 + 300) = 0;
   *(uint *)(iVar1 + 0x130) = 0;
   return iVar1 + -300;

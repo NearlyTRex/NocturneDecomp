@@ -30,6 +30,6 @@ void core_moloch_cpp_CMoloch_setup_FUN_004dda70(int param_1)
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004e0170(iVar1,0,param_1 + 0x150);
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004e0170(iVar1,1,param_1 + 0x1fa3c);
   core_morph_cpp_CMorph_getReady_FUN_004e03c0(iVar1);
-  FUN_004b48d0(param_1);
+  core_hero_cpp_FUN_004b48d0(param_1);
   return;
 }

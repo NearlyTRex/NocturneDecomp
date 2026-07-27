@@ -7,16 +7,16 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[74]:
-;   FUN_00439f50 at 0043a05e
-;   FUN_00495a20 at 004962da
-;   FUN_00498de0 at 00498ec7
-;   FUN_004b32d0 at 004b33e7
-;   FUN_004b52f0 at 004b53d7
-;   FUN_004b6d80 at 004b7437
-;   FUN_004b9fe0 at 004ba119
-;   FUN_004baba0 at 004badba
-;   FUN_004c4970 at 004c4efb
-;   FUN_004d4f30 at 004d5168
+;   core_baron.cpp_FUN_00410cc0 at 00410d15
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004128b6
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413c58
+;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0 at 00422949
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 at 00427515
+;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427ca5
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 0042996f
+;   core_charactr.cpp_CCharacter_followActor_FUN_00428780 at 004288cf
+;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00424e90 at 00424eb1
+;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 at 00424836
 ;   ... and 64 more
 ;
 ; Called Functions:

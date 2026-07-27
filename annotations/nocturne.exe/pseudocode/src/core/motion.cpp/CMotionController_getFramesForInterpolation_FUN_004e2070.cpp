@@ -1,6 +1,6 @@
 // Name: core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_004e2070
 // Address: 004e2070
-// Address Range: [[004e2070, 004e2170]]
+// Address Range: [[004e2070, 004e211f] [004e2121, 004e2170]]
 // Convention: __cdecl
 // Signature: int __cdecl core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_004e2070(int *param_1,float param_2,float param_3,int *param_4,int *param_5,float *param_6)
 

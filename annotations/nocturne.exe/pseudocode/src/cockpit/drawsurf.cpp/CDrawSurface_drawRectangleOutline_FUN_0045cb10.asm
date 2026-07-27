@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0045cb90 at 0045cbf0
-;   FUN_0045cc10 at 0045cc5c
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_0045cb70 at 0045cb82
+;   cockpit_drawsurf.cpp_FUN_0045cb90 at 0045cbf0
+;   cockpit_drawsurf.cpp_FUN_0045cc10 at 0045cc5c
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730

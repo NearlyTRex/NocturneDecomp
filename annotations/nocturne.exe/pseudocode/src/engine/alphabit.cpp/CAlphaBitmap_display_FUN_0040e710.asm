@@ -13,16 +13,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[12]:
-;   FUN_004c2470 at 004c2b14
-;   FUN_004c85f0 at 004c8c56
-;   FUN_004c8eb0 at 004c8f24
-;   FUN_004c90e0 at 004c9173
-;   FUN_004ee740 at 004ee79c
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a66cf
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6b5a
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7030
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d9d8
+;   core_inv.cpp_FUN_004c2470 at 004c2b14
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640 at 004c5744
+;   core_main.c_FUN_004c85f0 at 004c8c56
+;   core_main.c_FUN_004c8eb0 at 004c8f24
+;   core_main.c_FUN_004c90e0 at 004c9173
+;   core_menu.cpp_showCalibrationTestPattern_FUN_004cfe50 at 004cfeea
 ;   ... and 2 more
 ;
 ; Referenced Globals:
@@ -33,8 +33,8 @@
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0
-;   wincore_windll.cpp_renderAlphaRow16_FUN_005305f7
-;   wincore_windll.cpp_renderAlphaRow32_FUN_0053055c
+;   engine_special.cpp_renderAlphaRow16_FUN_005305f7
+;   engine_special.cpp_renderAlphaRow32_FUN_0053055c
 ;
 ; *****************************************************************************
 
@@ -126,8 +126,8 @@ section .text
     ADD EDX,EBX                         ; 0040e7d3
     PUSH EDX                            ; 0040e7d5
     PUSH ECX                            ; 0040e7d6
-    CALL wincore_windll.cpp_renderAlphaRow32_FUN_0053055c ; 0040e7d7
-        ;   XREF to: 0053055c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_renderAlphaRow32_FUN_0053055c()
+    CALL engine_special.cpp_renderAlphaRow32_FUN_0053055c ; 0040e7d7
+        ;   XREF to: 0053055c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderAlphaRow32_FUN_0053055c()
     ADD ESP,0x14                        ; 0040e7dc
     MOV EDX,dword ptr [ESP + 0x18]      ; 0040e7df
         ;   Label: LAB_0040e7df
@@ -196,8 +196,8 @@ section .text
     ADD EDX,EBX                         ; 0040e877
     PUSH EDX                            ; 0040e879
     PUSH ECX                            ; 0040e87a
-    CALL wincore_windll.cpp_renderAlphaRow16_FUN_005305f7 ; 0040e87b
-        ;   XREF to: 005305f7 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_renderAlphaRow16_FUN_005305f7()
+    CALL engine_special.cpp_renderAlphaRow16_FUN_005305f7 ; 0040e87b
+        ;   XREF to: 005305f7 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderAlphaRow16_FUN_005305f7()
     ADD ESP,0x14                        ; 0040e880
     MOV EDX,dword ptr [ESP + 0x18]      ; 0040e883
         ;   Label: LAB_0040e883

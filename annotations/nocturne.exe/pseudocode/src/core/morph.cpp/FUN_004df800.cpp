@@ -1,14 +1,14 @@
-// Name: FUN_004df800
+// Name: core_morph.cpp_FUN_004df800
 // Address: 004df800
 // Address Range: [[004df800, 004df9d7]]
 // Convention: unknown
-// Signature: void FUN_004df800(int *param_1,int param_2,int param_3,int param_4,int param_5,int *param_6,int param_7,int param_8)
+// Signature: void core_morph_cpp_FUN_004df800(int *param_1,int param_2,int param_3,int param_4,int param_5,int *param_6,int param_7,int param_8)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004df800(int *param_1,int param_2,int param_3,int param_4,int param_5,int *param_6,int param_7,int param_8)
+void core_morph_cpp_FUN_004df800(int *param_1,int param_2,int param_3,int param_4,int param_5,int *param_6,int param_7,int param_8)
 
 {
   int *piVar1;
@@ -28,15 +28,15 @@ void FUN_004df800(int *param_1,int param_2,int param_3,int param_4,int param_5,i
   
   bVar11 = 0;
   if ((param_2 < 0) || (*param_1 <= param_2)) {
-    _DAT_01cc4800 = "..\\core\\morph.cpp";
-    _DAT_01cc4804 = 0x152;
-    FUN_004c8440("CMorphModel::setFaceList - invalid part index");
+    PTR_01cc4800 = "..\\core\\morph.cpp";
+    INT_01cc4804 = 0x152;
+    core_main_c_FUN_004c8440("CMorphModel::setFaceList - invalid part index");
   }
   local_18 = param_7 + param_1[param_2 * 4 + 4];
   if (param_1[param_2 * 4 + 4] + param_1[param_2 * 4 + 2] < param_8 + local_18) {
-    _DAT_01cc4800 = "..\\core\\morph.cpp";
-    _DAT_01cc4804 = 0x159;
-    FUN_004c8440("CMorphModel::setFaceList - invalid vertex range");
+    PTR_01cc4800 = "..\\core\\morph.cpp";
+    INT_01cc4804 = 0x159;
+    core_main_c_FUN_004c8440("CMorphModel::setFaceList - invalid vertex range");
   }
   local_20 = 0;
   if (0 < param_8) {

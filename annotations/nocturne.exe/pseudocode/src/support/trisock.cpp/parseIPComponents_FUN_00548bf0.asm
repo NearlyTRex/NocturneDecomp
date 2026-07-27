@@ -7,6 +7,9 @@
 ; XREF[1]:
 ;   support_trisock.cpp_parseIPAddress_FUN_00548af0 at 00548afb
 ;
+; Referenced Globals:
+;   TerminatedCString s_d_d_d_d_00596c1d
+;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_00566b5c
 ;   support_trisock.cpp_buildIPAddress_FUN_00548c60
@@ -26,7 +29,7 @@ section .text
     PUSH EAX                            ; 00548c02
     LEA EAX,[ESP + 0xc]                 ; 00548c03
     PUSH EAX                            ; 00548c07
-    PUSH 0x596c1d                       ; 00548c08
+    PUSH 0x596c1d                       ; 00548c08 | = "%d.%d.%d.%d"
     MOV EDX,dword ptr [ESP + 0x30]      ; 00548c0d
     PUSH EDX                            ; 00548c11
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 00548c12

@@ -18,18 +18,6 @@
   },
   "cross_references": [
     {
-      "addr": "00474ae0",
-      "from_addr": "00474c2c",
-      "name": "FUN_00474ae0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f7ae0",
-      "from_addr": "004f7b12",
-      "name": "FUN_004f7ae0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005687bc",
       "from_addr": "00568807",
       "name": "FUN_005687bc",
@@ -45,6 +33,18 @@
       "addr": "00456800",
       "from_addr": "00456832",
       "name": "engine_dosio.cpp_findFileNormally_FUN_00456800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f7ae0",
+      "from_addr": "004f7b12",
+      "name": "engine_pod.cpp_FUN_004f7ae0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00474ae0",
+      "from_addr": "00474c2c",
+      "name": "shape_edittool.cpp_FUN_00474ae0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -79,7 +79,7 @@
     {
       "addr": "005638d0",
       "is_variadic": false,
-      "name": "FUN_005638d0"
+      "name": "crt_unknown.c_FUN_005638d0"
     },
     {
       "addr": "00568e80",
@@ -156,7 +156,7 @@
       {
         "call_addr": "004f7b12",
         "call_type": "direct",
-        "caller": "FUN_004f7ae0",
+        "caller": "engine_pod.cpp_FUN_004f7ae0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -167,7 +167,7 @@
       {
         "call_addr": "00474c2c",
         "call_type": "direct",
-        "caller": "FUN_00474ae0",
+        "caller": "shape_edittool.cpp_FUN_00474ae0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

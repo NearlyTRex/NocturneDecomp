@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,18 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 182,
+    "complexity_score": 152,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 14,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
     "total_lines": 83
   },
@@ -141,19 +139,19 @@
     {
       "addr": "004f53f0",
       "from_addr": "004f5422",
-      "name": "FUN_004f53f0",
+      "name": "cockpit_pkbmpset.cpp_FUN_004f53f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f54c0",
       "from_addr": "004f5596",
-      "name": "FUN_004f54c0",
+      "name": "cockpit_pkbmpset.cpp_FUN_004f54c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f5920",
       "from_addr": "004f5954",
-      "name": "FUN_004f5920",
+      "name": "cockpit_pkbmpset.cpp_FUN_004f5920",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -166,10 +164,20 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004f5350",
-    "signature": "void FUN_004f5350(int *param_1,int param_2)"
+    "name": "cockpit_pkbmpset.cpp_FUN_004f5350",
+    "signature": "void cockpit_pkbmpset_cpp_FUN_004f5350(int *param_1,int param_2)"
   },
   "function_calls": [
+    {
+      "addr": "004f5320",
+      "is_variadic": false,
+      "name": "cockpit_pkbitmap.cpp_FUN_004f5320"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
     {
       "addr": "00566234",
       "is_variadic": false,
@@ -179,16 +187,6 @@
       "addr": "00563c90",
       "is_variadic": false,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
-      "addr": "004f5320",
-      "is_variadic": false,
-      "name": "FUN_004f5320"
     },
     {
       "addr": "00564c18",
@@ -211,20 +209,20 @@
     },
     {
       "addr": "005a1340",
-      "name": "DAT_005a1340",
-      "type": "undefined4",
+      "name": "g_CPackedBitmapTypeInfo_005a1340",
+      "type": "WatcomTypeInfo",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -234,7 +232,7 @@
       {
         "call_addr": "004f5954",
         "call_type": "direct",
-        "caller": "FUN_004f5920",
+        "caller": "cockpit_pkbmpset.cpp_FUN_004f5920",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -248,7 +246,7 @@
       {
         "call_addr": "004f5422",
         "call_type": "direct",
-        "caller": "FUN_004f53f0",
+        "caller": "cockpit_pkbmpset.cpp_FUN_004f53f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -261,7 +259,7 @@
       {
         "call_addr": "004f5596",
         "call_type": "direct",
-        "caller": "FUN_004f54c0",
+        "caller": "cockpit_pkbmpset.cpp_FUN_004f54c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -324,40 +322,32 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004f5350(int *param_1,int param_2)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_004f5350(int *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004f5350(int *param_1,int param_2)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_004f5350(int *param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004f5320(param_1);",
+      "text": "cockpit_pkbitmap_cpp_FUN_004f5320(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 < 1) {",
@@ -365,31 +355,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar1 = shape_memdbg_cpp_malloc_FUN_00564c18(param_2 * 0x24 + 4,param_2,&DAT_005a1340);",
+      "text": "(param_2 * 0x24 + 4,param_2,&g_CPackedBitmapTypeInfo_005a1340);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar1 = shape_memdbg_cpp_malloc_FUN_00564c18(param_2 * 0x24 + 4,param_2,&DAT_005a1340);",
+      "text": "(param_2 * 0x24 + 4,param_2,&g_CPackedBitmapTypeInfo_005a1340);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005a1340",
-      "severity": "mild",
-      "text": "uVar1 = shape_memdbg_cpp_malloc_FUN_00564c18(param_2 * 0x24 + 4,param_2,&DAT_005a1340);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = iVar2;",
@@ -397,7 +379,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "_sprintf(local_d0,\"Unable to allocate %u bytes for %u CPackedBitmaps in CPackedBitmapSet::alloc\",param_2 * 0x24,param_2);",
@@ -405,7 +387,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "_sprintf(local_d0,\"Unable to allocate %u bytes for %u CPackedBitmaps in CPackedBitmapSet::alloc\",param_2 * 0x24,param_2);",
@@ -413,7 +395,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = param_2;",
@@ -421,7 +403,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_1 = param_2;",

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0049a1e0 at 0049a1ef
 ;   core_boxactor.cpp_CLightActor_ctor_FUN_0041f310 at 0041f32d
+;   core_game.cpp_staticInit_FUN_0049a1e0 at 0049a1ef
 ;   core_setutil.cpp_C3DSLight_create_FUN_005151f0 at 00515329
 ;
 ; Called Functions:

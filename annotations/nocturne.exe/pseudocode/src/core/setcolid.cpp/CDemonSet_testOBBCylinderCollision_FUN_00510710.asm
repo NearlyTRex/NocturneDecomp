@@ -28,11 +28,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_004ca240 at 004ca2cc
-;   FUN_00510a40 at 00510ec2
+;   core_manpuz.cpp_FUN_004ca240 at 004ca2cc
+;   core_setcolid.cpp_FUN_00510a40 at 00510ec2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_getCorner_FUN_0041cc70
@@ -53,7 +53,7 @@ section .text
     SUB ESP,0x1d8                       ; 00510714
     MOV EDI,dword ptr [ESP + 0x1f8]     ; 0051071a
     MOV EBP,dword ptr [ESP + 0x1fc]     ; 00510721
-    PUSH 0x5993b0                       ; 00510728 | DAT_005993b0
+    PUSH 0x5993b0                       ; 00510728 | g_CVectorTypeInfo_005993b0
     PUSH 0x8                            ; 0051072d
     LEA EAX,[ESP + 0x8]                 ; 0051072f
     PUSH EAX                            ; 00510733

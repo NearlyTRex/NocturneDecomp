@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004d8fc0 at 004d900c
+;   core_mission.cpp_FUN_004d8fc0 at 004d900c
 ;   core_set.cpp_CDemonSet_load_FUN_00506f10 at 00507c6b
 ;
 ; Referenced Globals:

@@ -20,8 +20,8 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[2]:
-;   FUN_00547b30 at 00547ed0
 ;   core_set.cpp_CDemonSet_processActors_FUN_00509140 at 00509440
+;   core_trigger.cpp_FUN_00547b30 at 00547ed0
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058150c = 0.5

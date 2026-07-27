@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760(int param_1,uint param_2,uint param_3,char *param_4,uint param_5)
 
 {
@@ -17,9 +15,9 @@ void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a760(int param_
   char *pcVar4;
   
   if (0x13 < *(int *)(param_1 + 0x2620)) {
-    _DAT_01cc4800 = "..\\core\\charactr.cpp";
-    _DAT_01cc4804 = 0xf56;
-    FUN_004c8440("CCharacter::addLayerAction - too many");
+    PTR_01cc4800 = "..\\core\\charactr.cpp";
+    INT_01cc4804 = 0xf56;
+    core_main_c_FUN_004c8440("CCharacter::addLayerAction - too many");
   }
   iVar2 = *(int *)(param_1 + 0x2620);
   *(int *)(param_1 + 0x2620) = *(int *)(param_1 + 0x2620) + 1;

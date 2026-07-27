@@ -14,7 +14,7 @@
 ;   TerminatedCString s_CBaron_00578729
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_005be368
-;   undefined4 CDemonActorType_00764330.name_hash
+;   undefined4 g_CBaronActorType_00764330.name_hash
 ;   undefined4 DAT_01cc9450
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa3ff0
@@ -56,7 +56,7 @@ section .text
     POP ESI                             ; 0041155d
     POP EBX                             ; 0041155e
     RET                                 ; 0041155f
-    MOV EBP,dword ptr [0x00764368]      ; 00411560 | CDemonActorType_00764330.name_hash
+    MOV EBP,dword ptr [0x00764368]      ; 00411560 | g_CBaronActorType_00764330.name_hash
         ;   Label: LAB_00411560
     PUSH EBP                            ; 00411566
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 00411567 | DAT_01fa3ff4

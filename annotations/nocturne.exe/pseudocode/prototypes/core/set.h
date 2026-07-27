@@ -3,6 +3,10 @@
 // Function prototypes for core/set.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_set.cpp_staticInit_FUN_00506b40
+// Address: 00506b40
+void __cdecl staticInit(void);
+
 // Original: core_set.cpp_CDemonSet_ctor_FUN_00506bc0
 // Address: 00506bc0
 undefined4 * CDemonSet::ctor(int param_1);
@@ -119,6 +123,14 @@ void CDemonSet::lightVertexColor(int param_1,undefined4 param_2,int *param_3,int
 // Address: 0050bb50
 undefined4 * __cdecl CDemonSet::computeLighting(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5);
 
+// Original: core_set.cpp_FUN_0050bbc0
+// Address: 0050bbc0
+void FUN_0050bbc0(int param_1,int param_2);
+
+// Original: core_set.cpp_FUN_0050bcf0
+// Address: 0050bcf0
+void FUN_0050bcf0(int param_1,ushort *param_2,float *param_3);
+
 // Original: core_set.cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
 // Address: 0050be20
 void __cdecl CDemonSet::computeVertexOmniLighting(undefined4 param_1,float *param_2,float *param_3,int param_4);
@@ -147,9 +159,17 @@ float __cdecl CDemonSet::getReverbPresetAtPosition(int param_1,float *param_2);
 // Address: 0050d280
 void __cdecl CDemonSet::loadAssets(void);
 
+// Original: core_set.cpp_FUN_0050d2a0
+// Address: 0050d2a0
+undefined4 FUN_0050d2a0(int param_1,int param_2);
+
 // Original: core_set.cpp_CDemonSet_buildDisplayList_FUN_0050d2d0
 // Address: 0050d2d0
 void __cdecl CDemonSet::buildDisplayList(int param_1,uint param_2);
+
+// Original: core_set.cpp_FUN_0050d640
+// Address: 0050d640
+void FUN_0050d640(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 
 // Original: core_set.cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670
 // Address: 0050d670
@@ -163,6 +183,10 @@ void __cdecl CDemonSet::renderEnvMapPrimitives(undefined4 param_1,undefined4 *pa
 // Address: 0050d910
 void FUN_0050d910(int param_1,ushort *param_2,int param_3,int param_4);
 
+// Original: core_set.cpp_FUN_0050dd60
+// Address: 0050dd60
+void FUN_0050dd60(void);
+
 // Original: core_set.cpp_FUN_0050ddd0
 // Address: 0050ddd0
 void FUN_0050ddd0(int param_1,int param_2,int param_3,undefined4 param_4);
@@ -174,6 +198,10 @@ void __cdecl CDemonSet::renderFaceListOrEnvMap(undefined4 param_1,undefined4 par
 // Original: core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40
 // Address: 0050df40
 int __cdecl CDemonSet::renderPrimitiveList(int param_1,int param_2,int param_3);
+
+// Original: core_set.cpp_FUN_0050dfe0
+// Address: 0050dfe0
+int FUN_0050dfe0(int param_1,int param_2,int param_3);
 
 // Original: core_set.cpp_FUN_0050e080
 // Address: 0050e080
@@ -254,3 +282,51 @@ void __cdecl CDemonSet::saveStateInfo(int *param_1,undefined4 param_2);
 // Original: core_set.cpp_CDemonSet_loadStateInfo_FUN_0050e920
 // Address: 0050e920
 void __cdecl CDemonSet::loadStateInfo(int *param_1,undefined4 param_2);
+
+// Original: core_set.cpp_FUN_0050ea10
+// Address: 0050ea10
+undefined4 FUN_0050ea10(void);
+
+// Original: core_set.cpp_FUN_0050ea40
+// Address: 0050ea40
+undefined4 FUN_0050ea40(undefined4 param_1);
+
+// Original: core_set.cpp_FUN_0050ea50
+// Address: 0050ea50
+undefined4 FUN_0050ea50(undefined4 param_1);
+
+// Original: core_set.cpp_FUN_0050ea60
+// Address: 0050ea60
+undefined4 FUN_0050ea60(undefined4 param_1);
+
+// Original: core_set.cpp_FUN_0050ea70
+// Address: 0050ea70
+undefined4 FUN_0050ea70(undefined4 param_1);
+
+// Original: core_set.cpp_FUN_0050ea80
+// Address: 0050ea80
+undefined4 FUN_0050ea80(undefined4 param_1);
+
+// Original: core_set.cpp_FUN_0050ea90
+// Address: 0050ea90
+void FUN_0050ea90(void);
+
+// Original: core_set.cpp_FUN_0050eae0
+// Address: 0050eae0
+void FUN_0050eae0(void);
+
+// Original: core_set.cpp_FUN_0050eb00
+// Address: 0050eb00
+void FUN_0050eb00(undefined4 param_1);
+
+// Original: core_set.cpp_FUN_0050eb20
+// Address: 0050eb20
+void FUN_0050eb20(undefined4 param_1);
+
+// Original: core_set.cpp_FUN_0050eb40
+// Address: 0050eb40
+void FUN_0050eb40(undefined4 param_1);
+
+// Original: core_set.cpp_FUN_0050eb60
+// Address: 0050eb60
+void FUN_0050eb60(undefined4 param_1);

@@ -28,7 +28,7 @@ int * FUN_0056b5ad(int *param_1,byte param_2)
     FUN_00564494(param_1);
   }
   else {
-    uVar2 = __vec_delete(param_1,&DAT_005a4980);
+    uVar2 = __vec_delete(param_1,&g_strstreambaseTypeInfo_005a4980);
     shape_memdbg_cpp_free_FUN_00564486(uVar2);
   }
   return param_1;

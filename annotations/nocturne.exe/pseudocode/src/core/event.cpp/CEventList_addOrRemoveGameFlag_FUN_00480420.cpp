@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_00480420(int param_1,char *param_2,int param_3)
 
 {
@@ -33,9 +31,9 @@ void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_00480420(int para
     }
     else if (iVar2 < 0) {
       if (9 < *(int *)(param_1 + 0x1908)) {
-        _DAT_01cc4800 = "..\\core\\event.cpp";
-        _DAT_01cc4804 = 0xa37;
-        FUN_004c8440("Too many game flags!");
+        PTR_01cc4800 = "..\\core\\event.cpp";
+        INT_01cc4804 = 0xa37;
+        core_main_c_FUN_004c8440("Too many game flags!");
       }
       uVar3 = 0xffffffff;
       pcVar5 = param_2;
@@ -46,9 +44,9 @@ void __cdecl core_event_cpp_CEventList_addOrRemoveGameFlag_FUN_00480420(int para
         pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
       } while (cVar1 != '\0');
       if (0x1f < ~uVar3 - 1) {
-        _DAT_01cc4800 = "..\\core\\event.cpp";
-        _DAT_01cc4804 = 0xa3d;
-        FUN_004c8440("Event name %s too long!",param_2);
+        PTR_01cc4800 = "..\\core\\event.cpp";
+        INT_01cc4804 = 0xa3d;
+        core_main_c_FUN_004c8440("Event name %s too long!",param_2);
       }
       pcVar5 = (char *)(*(int *)(param_1 + 0x1908) * 0x20 + param_1 + 0x190c);
       do {

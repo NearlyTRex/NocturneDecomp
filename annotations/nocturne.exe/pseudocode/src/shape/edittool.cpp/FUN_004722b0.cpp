@@ -1,14 +1,14 @@
-// Name: FUN_004722b0
+// Name: shape_edittool.cpp_FUN_004722b0
 // Address: 004722b0
 // Address Range: [[004722b0, 00472484]]
 // Convention: unknown
-// Signature: void FUN_004722b0(void)
+// Signature: void shape_edittool_cpp_FUN_004722b0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004722b0(void)
+void shape_edittool_cpp_FUN_004722b0(void)
 
 {
   int iVar1;
@@ -21,16 +21,16 @@ void FUN_004722b0(void)
   int *piVar8;
   
   if (_DAT_01bcd070 == 0) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0x8b;
-    FUN_004c8440("gEdFont must be set by the application.");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0x8b;
+    core_main_c_FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = *(uint *)(_DAT_01bcd070 + 0x3168);
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
   if (_DAT_01bcd07c < 1) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0x749;
-    FUN_004c8440("CEditorTools::paintWindow() called but no window was opened!");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0x749;
+    core_main_c_FUN_004c8440("CEditorTools::paintWindow() called but no window was opened!");
   }
   uVar4 = _DAT_01c00c70;
   iVar7 = (_DAT_01bcd07c + -1) * 0x1d8;

@@ -17,12 +17,6 @@
   },
   "cross_references": [
     {
-      "addr": "0056551c",
-      "from_addr": "0056553b",
-      "name": "FUN_0056551c",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005684f8",
       "from_addr": "0056850b",
       "name": "FUN_005684f8",
@@ -56,6 +50,12 @@
       "addr": "0040d3f0",
       "from_addr": "0040d482",
       "name": "core_actor.cpp_registerActorClass_FUN_0040d3f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056551c",
+      "from_addr": "0056553b",
+      "name": "crt_unknown.c_FUN_0056551c",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -129,7 +129,7 @@
       {
         "call_addr": "0056553b",
         "call_type": "direct",
-        "caller": "FUN_0056551c",
+        "caller": "crt_unknown.c_FUN_0056551c",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a379c
-;   undefined4 DAT_005a37a0
+;   float FLOAT_005a379c = -0.5235988
+;   float FLOAT_005a37a0 = 1.221730
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_0040b1b0
@@ -38,9 +38,9 @@ section .text
     MOV dword ptr [EBX + 0x10],0x40c90fdb ; 0054a82d
     MOV dword ptr [EBX + 0x14],0xc0c90fdb ; 0054a834
     MOV dword ptr [EBX + 0x4],EAX       ; 0054a83b
-    FLD float ptr [0x005a37a0]          ; 0054a83e | DAT_005a37a0
+    FLD float ptr [0x005a37a0]          ; 0054a83e | FLOAT_005a37a0
     FSUB float ptr [ESI + 0x30]         ; 0054a844
-    FLD float ptr [0x005a379c]          ; 0054a847 | DAT_005a379c
+    FLD float ptr [0x005a379c]          ; 0054a847 | FLOAT_005a379c
     FXCH                                ; 0054a84d
     FSTP float ptr [EBX + 0x18]         ; 0054a84f
     FSUB float ptr [ESI + 0x30]         ; 0054a852

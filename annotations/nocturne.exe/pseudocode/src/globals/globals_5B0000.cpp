@@ -5,8 +5,8 @@
 // =============================================================================
 
 // int
-int INT_005b064c = 0x6;
-int INT_005b0660 = 0x2;
+int g_INT_005b064c = 0x6;
+int g_INT_005b0660 = 0x2;
 int INT_005b75dc = 0x7;
 int INT_005b7604 = 0xA;
 int INT_005b8018 = 0x2;
@@ -14,6 +14,7 @@ int INT_005b801c = 0x2;
 int INT_005b91c0 = 0x7;
 int INT_005b9210 = 0x3;
 int INT_005b9284 = 0x1C70F74;
+int g_INT_005b9288 = 0x1;
 int INT_005b92a8 = 0x3;
 int INT_005b9624 = 0x2;
 int INT_005b9650 = 0x7;

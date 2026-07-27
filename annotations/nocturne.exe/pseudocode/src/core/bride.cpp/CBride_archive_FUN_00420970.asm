@@ -9,7 +9,7 @@
 ;   TerminatedCString s_modelName_00579b8b
 ;   TerminatedCString s_guardDistance_00579b95
 ;   TerminatedCString s_state_00579ba3
-;   int INT_005ad0e0 = 0x4
+;   int g_INT_005ad0e0 = 0x4
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80
@@ -27,7 +27,7 @@ section .text
     PUSH EBX                            ; 00420975
     CALL core_enemy.cpp_CEnemy_archive_FUN_004796c0 ; 00420976
         ;   XREF to: 004796c0 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_archive_FUN_004796c0()
-    MOV EDX,dword ptr [0x005ad0e0]      ; 0042097b | INT_005ad0e0
+    MOV EDX,dword ptr [0x005ad0e0]      ; 0042097b | g_INT_005ad0e0
     ADD ESP,0x4                         ; 00420981
     CMP EDX,0x2                         ; 00420984
     JL 0x004209cc                       ; 00420987
@@ -38,7 +38,7 @@ section .text
     PUSH EAX                            ; 00420994
     CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80 ; 00420995
         ;   XREF to: 0040ca80 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveDeformableModelInstance_FUN_0040ca80()
-    MOV ECX,dword ptr [0x005ad0e0]      ; 0042099a | INT_005ad0e0
+    MOV ECX,dword ptr [0x005ad0e0]      ; 0042099a | g_INT_005ad0e0
     ADD ESP,0x8                         ; 004209a0
     CMP ECX,0x2                         ; 004209a3
     JL 0x004209c1                       ; 004209a6
@@ -52,7 +52,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004209b9
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
     ADD ESP,0x8                         ; 004209be
-    CMP dword ptr [0x005ad0e0],0x3      ; 004209c1 | INT_005ad0e0
+    CMP dword ptr [0x005ad0e0],0x3      ; 004209c1 | g_INT_005ad0e0
         ;   Label: LAB_004209c1
     JGE 0x004209e2                      ; 004209c8
         ;   XREF to: 004209e2 (CONDITIONAL_JUMP)  ; LAB_004209e2

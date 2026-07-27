@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0046f000(void)
+; void shape_edittool_cpp_FUN_0046f000(void)
 ;
 ;
 ; Referenced Globals:
@@ -10,19 +10,19 @@
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     CMP dword ptr [0x01bcd070],0x0      ; 0046f000 | DAT_01bcd070
-        ;   Label: FUN_0046f000
+        ;   Label: shape_edittool.cpp_FUN_0046f000
     JZ 0x0046f02b                       ; 0046f007
         ;   XREF to: 0046f02b (CONDITIONAL_JUMP)  ; LAB_0046f02b
     MOV EAX,[0x01bcd070]                ; 0046f009 | DAT_01bcd070
@@ -41,10 +41,10 @@ section .text
     MOV ECX,0x57e4fa                    ; 0046f02c | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 0046f031
     PUSH 0x57e510                       ; 0046f036 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046f03b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0046f041 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0046f047
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0046f03b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0046f041 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0046f047
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046f04c
     POP EBX                             ; 0046f04f
     JMP 0x0046f009                      ; 0046f050

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_00476800(int *param_1)
 
 {
@@ -22,9 +20,9 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_00476800(int *para
   }
   iVar3 = param_1[10] - param_1[9];
   if (iVar3 < 1) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0xefb;
-    FUN_004c8440("CEdScrollBar::computeThumb - invalid dimensions");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0xefb;
+    core_main_c_FUN_004c8440("CEdScrollBar::computeThumb - invalid dimensions");
   }
   iVar1 = (param_1[2] * iVar3) / param_1[1];
   if (param_1[4] == 0) {

@@ -5,23 +5,23 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_0052d790 at 0052db9d
-;   FUN_0052dff0 at 0052e3b5
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c4f0
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a71fb
 ;   core_script.cpp_CScript_getDialogDuration_FUN_005049b0 at 00504b16
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e95f
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052decc
+;   core_sound.cpp_FUN_0052d790 at 0052db9d
+;   core_sound.cpp_FUN_0052dff0 at 0052e3b5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00593437
 ;   TerminatedCString s_setNextSfxChannel_invali_0059344c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dc1b74
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -50,10 +50,10 @@ section .text
     MOV EDX,0x593437                    ; 005261dc | = "..\\sound\\sndmain.cpp"
     MOV ECX,0xccc                       ; 005261e1
     PUSH 0x59344c                       ; 005261e6 | = "setNextSfxChannel - invalid channel i..."
-    MOV dword ptr [0x01cc4800],EDX      ; 005261eb | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005261f1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005261f7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005261eb | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005261f1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005261f7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 005261fc
     JMP 0x005261be                      ; 005261ff
         ;   XREF to: 005261be (UNCONDITIONAL_JUMP)  ; LAB_005261be

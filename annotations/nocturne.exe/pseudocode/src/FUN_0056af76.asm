@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00564905 at 0056490c
-;   FUN_00566ed7 at 00566ef6
+;   crt_cpp.c_pureVirtualConstructor_FUN_00564905 at 0056490c
+;   crt_cpp.c_pureVirtual_FUN_00566ed7 at 00566ef6
 ;
 ; Called Functions:
 ;   FUN_0056dd80

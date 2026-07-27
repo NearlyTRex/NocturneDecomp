@@ -5,7 +5,6 @@
 ;
 ;
 ; XREF[24]:
-;   FUN_0045f270 at 0045f321
 ;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0045f090 at 0045f130
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedDirect_FUN_0045f700 at 0045f73b
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0045f8d0 at 0045f951
@@ -15,6 +14,7 @@
 ;   engine_drender.cpp_CDemonRenderer_renderDecalPoly_FUN_0045f9d0 at 0045fa51
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190 at 0045f1f2
 ;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendDirect_FUN_0045fe40 at 0045feb9
+;   engine_drender.cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0045ff20 at 0045ffce
 ;   ... and 14 more
 ;
 ; Referenced Globals:
@@ -24,17 +24,17 @@
 ;   undefined4 DAT_00766c74
 ;   undefined4 DAT_01c039a0
 ;   undefined4 DAT_01c039a1
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_xform.cpp_transformAndClipGeometry_FUN_0055e040
 ;   engine_3d.c_rasterizeTriangle_FUN_005628c0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_004349a0
 ;   engine_clipper.c_FUN_00432cd0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -82,10 +82,10 @@ section .text
         ;   Label: LAB_0045edc3
     MOV EBP,0xac                        ; 0045edc8
     PUSH 0x57db88                       ; 0045edcd | = "CDemonRenderer::clipAndFillPoly - Bad..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0045edd2 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0045edd8 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0045edde
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0045edd2 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 0045edd8 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0045edde
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045ede3
     JMP 0x0045ed96                      ; 0045ede6
         ;   XREF to: 0045ed96 (UNCONDITIONAL_JUMP)  ; LAB_0045ed96

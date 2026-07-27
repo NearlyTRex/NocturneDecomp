@@ -21,8 +21,8 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059bde0 = 65536
-;   undefined4 DAT_0059bde4
-;   undefined4 DAT_01c70710
+;   float FLOAT_0059bde4 = 0.00390625
+;   undefined4 CVector3f_01c70708.z
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0
@@ -59,13 +59,13 @@ section .text
         ;   Label: LAB_00442c80
     MOV EAX,ESI                         ; 00442c84
     FILD dword ptr [EAX]                ; 00442c86
-    FMUL float ptr [0x0059bde4]         ; 00442c88 | DAT_0059bde4
+    FMUL float ptr [0x0059bde4]         ; 00442c88 | FLOAT_0059bde4
     FSTP float ptr [EBX]                ; 00442c8e
     FILD dword ptr [EAX + 0x4]          ; 00442c90
-    FMUL float ptr [0x0059bde4]         ; 00442c93 | DAT_0059bde4
+    FMUL float ptr [0x0059bde4]         ; 00442c93 | FLOAT_0059bde4
     FSTP float ptr [EBX + 0x4]          ; 00442c99
     FILD dword ptr [EAX + 0x8]          ; 00442c9c
-    FMUL float ptr [0x0059bde4]         ; 00442c9f | DAT_0059bde4
+    FMUL float ptr [0x0059bde4]         ; 00442c9f | FLOAT_0059bde4
     FSTP float ptr [EBX + 0x8]          ; 00442ca5
     MOV EAX,dword ptr [ESP + 0x40]      ; 00442ca8
     FLD float ptr [ESP + 0xc]           ; 00442cac
@@ -87,7 +87,7 @@ section .text
     FADDP                               ; 00442cea
     FSTP float ptr [ESP + 0x24]         ; 00442cec
     MOV EAX,dword ptr [ESP + 0x24]      ; 00442cf0
-    MOV EDX,dword ptr [0x01c70710]      ; 00442cf4 | DAT_01c70710
+    MOV EDX,dword ptr [0x01c70710]      ; 00442cf4 | CVector3f_01c70708.z
     SAR EAX,0x1                         ; 00442cfa
     SUB EDX,EAX                         ; 00442cfc
     MOV dword ptr [ESP + 0x28],EDX      ; 00442cfe

@@ -42,8 +42,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   FUN_004f7360 at 004f7519
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040aa03
+;   core_platfrm.cpp_FUN_004f7360 at 004f7519
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059c064

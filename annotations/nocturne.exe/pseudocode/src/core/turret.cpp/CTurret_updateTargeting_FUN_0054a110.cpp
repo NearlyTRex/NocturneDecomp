@@ -112,7 +112,7 @@ LAB_0054a296:
     }
     iVar3 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x54))(iVar1);
     if (iVar3 == 0) goto LAB_0054a296;
-    __arrinit(&fStack_15c,10,&DAT_005993b0);
+    __arrinit(&fStack_15c,10,&g_CVectorTypeInfo_005993b0);
     iVar3 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x4c))(iVar1,&fStack_15c);
     if (iVar3 < 1) {
       pfVar4 = (float *)(**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,auStack_e4);
@@ -138,7 +138,7 @@ LAB_0054a296:
     uVar2 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(param_1,auStack_84,auStack_54)
     ;
     core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&fStack_48,uVar2);
-    if (((fStack_48 < 0xBF060A92) || (0x3F9C61AA < fStack_48)) ||
+    if (((fStack_48 < -0.5235988f) || (1.22173f < fStack_48)) ||
        (SQRT(fStack_88 * fStack_88 + fStack_90 * fStack_90 + fStack_8c * fStack_8c) <
         SQRT(fStack_40 * fStack_40 + fStack_48 * fStack_48 + fStack_44 * fStack_44)))
     goto LAB_0054a296;

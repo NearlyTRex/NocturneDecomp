@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00446800 at 00446805
+;   core_dcamera.cpp_FUN_00446800 at 00446805
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20

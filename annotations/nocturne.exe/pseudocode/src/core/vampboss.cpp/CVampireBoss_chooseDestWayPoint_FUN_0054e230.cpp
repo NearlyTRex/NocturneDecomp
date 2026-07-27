@@ -29,9 +29,9 @@ void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_0054e230(int 
   iVar10 = param_1;
   do {
     if (*(int *)(iVar10 + 0xbedb4) == 0) {
-      _DAT_01cc4800 = "..\\core\\vampboss.cpp";
-      _DAT_01cc4804 = 0x423;
-      FUN_004c8440("CVampireBoss::chooseDestWayPoint - wayPoint[%d] == NULL",iVar9);
+      PTR_01cc4800 = "..\\core\\vampboss.cpp";
+      INT_01cc4804 = 0x423;
+      core_main_c_FUN_004c8440("CVampireBoss::chooseDestWayPoint - wayPoint[%d] == NULL",iVar9);
     }
     iVar1 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
     iVar2 = *(int *)(iVar10 + 0xbedb4);

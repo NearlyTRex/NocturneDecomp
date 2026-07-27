@@ -12,6 +12,6 @@ void __cdecl core_mission_cpp_CDemonMission_loadScript_FUN_004d86d0(int param_1,
   byte local_104 [260];
   
   makepath(local_104,0,0,param_1 + 0x10,"scr");
-  FUN_004febd0(0x01E56DA0,local_104,param_2);
+  core_script_cpp_FUN_004febd0(0x01E56DA0,local_104,param_2);
   return;
 }

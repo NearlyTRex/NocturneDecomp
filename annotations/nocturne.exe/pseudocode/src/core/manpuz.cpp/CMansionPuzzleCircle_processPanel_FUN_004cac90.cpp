@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90(int param_1,int param_2,float param_3)
 
 {
@@ -28,9 +26,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_processPanel_FUN_004cac90(int 
       iVar2 = core_manpuz_cpp_CMansionPuzzleCircle_getNextPanelIndex_FUN_004cb8e0(param_1,param_2);
       piVar4 = (int *)(param_1 + 0x5e8 + iVar2 * 100);
       if (*piVar4 != 0) {
-        _DAT_01cc4800 = "..\\core\\manpuz.cpp";
-        _DAT_01cc4804 = 0x45d;
-        FUN_004c8440("CMansionPuzzleCircle::processPanel - Panel collision!");
+        PTR_01cc4800 = "..\\core\\manpuz.cpp";
+        INT_01cc4804 = 0x45d;
+        core_main_c_FUN_004c8440("CMansionPuzzleCircle::processPanel - Panel collision!");
       }
       *piVar4 = *piVar3;
       piVar4[1] = piVar3[1];

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00530d40 at 00530e3d
+;   engine_special.cpp_FUN_00530d40 at 00530e3d
 ;
 ; Referenced Globals:
 ;   void* PTR_FreeLibrary_005754dc = 00175c4c

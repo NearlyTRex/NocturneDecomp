@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_004c9cf0 at 004c9cfe
-;   FUN_00546e10 at 00546e2b
-;   FUN_00547b30 at 00547b6d
 ;   core_fire.cpp_initProcess_FUN_00487fd0 at 00488032
+;   core_manpuz.cpp_FUN_004c9cf0 at 004c9cfe
+;   core_trash.cpp_FUN_00546e10 at 00546e2b
+;   core_trigger.cpp_FUN_00547b30 at 00547b6d
 ;   core_vampboss.cpp_CVampireBoss_process_FUN_0054c690 at 0054d622
 ;
 ; Referenced Globals:

@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_00522480 at 005226a2
-;   FUN_005229f0 at 00522bc4
+;   sound_sndmain.cpp_FUN_00522480 at 005226a2
+;   sound_sndmain.cpp_FUN_005229f0 at 00522bc4
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526ac0
 ;
 ; Referenced Globals:
@@ -21,12 +21,12 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_00564a70
-;   FUN_00529980
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60
 ;   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_00523b70
 ;   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
 ;   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_00523b20
 ;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0
+;   sound_sndmain.cpp_FUN_00529980
 ;   sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0
 ;
 ; *****************************************************************************
@@ -104,8 +104,8 @@ section .text
     JL 0x00523973                       ; 005239b4
         ;   XREF to: 00523973 (CONDITIONAL_JUMP)  ; LAB_00523973
     PUSH 0x5927ce                       ; 005239b6 | = "allocateHwSample - failed\n"
-    CALL FUN_00529980                   ; 005239bb
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 005239bb
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x4                         ; 005239c0
     XOR EAX,EAX                         ; 005239c3
         ;   Label: LAB_005239c3

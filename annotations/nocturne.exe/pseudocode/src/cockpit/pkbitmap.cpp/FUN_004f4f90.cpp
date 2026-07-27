@@ -1,14 +1,12 @@
-// Name: FUN_004f4f90
+// Name: cockpit_pkbitmap.cpp_FUN_004f4f90
 // Address: 004f4f90
 // Address Range: [[004f4f90, 004f510b]]
 // Convention: unknown
-// Signature: int FUN_004f4f90(uint *param_1,undefined4 param_2,uint param_3,undefined4 param_4,int param_5)
+// Signature: int cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,undefined4 param_2,uint param_3,undefined4 param_4,int param_5)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int FUN_004f4f90(uint *param_1,uint param_2,uint param_3,uint param_4,int param_5)
+int cockpit_pkbitmap_cpp_FUN_004f4f90(uint *param_1,uint param_2,uint param_3,uint param_4,int param_5)
 
 {
   int iVar1;
@@ -49,7 +47,8 @@ int FUN_004f4f90(uint *param_1,uint param_2,uint param_3,uint param_4,int param_
       }
       if ((iVar1 != 0) || (local_1c == 0)) goto LAB_004f4fd1;
       uVar2 = local_1c / param_3;
-      uVar3 = shape_memdbg_cpp_malloc_FUN_00564c18(uVar2 * 0x24 + 4,uVar2,&DAT_005a1340);
+      uVar3 = shape_memdbg_cpp_malloc_FUN_00564c18
+                        (uVar2 * 0x24 + 4,uVar2,&g_CPackedBitmapTypeInfo_005a1340);
       local_18 = __vec_new(uVar3);
       if (local_18 != 0) {
         iVar1 = 0;
@@ -79,16 +78,16 @@ int FUN_004f4f90(uint *param_1,uint param_2,uint param_3,uint param_4,int param_
       }
     }
     else {
-      _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-      _DAT_01cc4804 = 0x556;
-      FUN_004c8440("IO error reading PBG (possibly corrupt file).");
+      PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+      INT_01cc4804 = 0x556;
+      core_main_c_FUN_004c8440("IO error reading PBG (possibly corrupt file).");
 LAB_004f4fd1:
-      _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-      _DAT_01cc4804 = 0x557;
-      FUN_004c8440("Corrupt data detected reading PBG.");
+      PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+      INT_01cc4804 = 0x557;
+      core_main_c_FUN_004c8440("Corrupt data detected reading PBG.");
     }
-    _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-    _DAT_01cc4804 = 0x558;
-    FUN_004c8440("Out of memory reading PBG");
+    PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+    INT_01cc4804 = 0x558;
+    core_main_c_FUN_004c8440("Out of memory reading PBG");
   } while( true );
 }

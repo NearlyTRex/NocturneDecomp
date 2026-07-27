@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00461720 at 00461787
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0 at 00461e74
+;   engine_drender.cpp_FUN_00461720 at 00461787
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624

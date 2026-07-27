@@ -5,7 +5,6 @@
 ;
 ;
 ; XREF[9]:
-;   FUN_005634b0 at 00563508
 ;   FUN_00568890 at 00568959
 ;   FUN_00571efe at 00571fae
 ;   FUN_00571fd1 at 00572134
@@ -14,6 +13,7 @@
 ;   FUN_00572f40 at 00572f55
 ;   FUN_005733e0 at 00573593
 ;   crt_stdio.c_fseek_FUN_0056582c at 005658b7
+;   crt_unknown.c_FUN_005634b0 at 00563508
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFilePointer_005755a0 = 00175ff4

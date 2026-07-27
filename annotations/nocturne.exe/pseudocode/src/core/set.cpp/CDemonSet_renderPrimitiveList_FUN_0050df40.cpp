@@ -36,14 +36,14 @@ int __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(int param_1,
       if (0 < param_3) {
         do {
           iVar2 = iVar2 + 1;
-          param_2 = FUN_004d76e0(*(uint *)(param_1 + 0x161268),iVar1);
+          param_2 = core_mirror_cpp_FUN_004d76e0(*(uint *)(param_1 + 0x161268),iVar1);
           iVar1 = iVar1 + 0x28;
         } while (iVar2 < param_3);
       }
     }
     if (_DAT_01c02594 != 0) {
 LAB_0050dfcc:
-      iVar1 = wincore_windll_cpp_sync_FUN_00532b30();
+      iVar1 = engine_special_cpp_sync_FUN_00532b30();
       return iVar1;
     }
   }

@@ -8,7 +8,7 @@
 ;   core_bodypart.cpp_CBodyPart_dtor_FUN_00415e40 at 00415e8c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059a820
+;   WatcomTypeInfo g_SBodyPartModelTypeInfo_0059a820
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f
@@ -17,7 +17,7 @@
 
 section .text
 
-    PUSH 0x59a820                       ; 00418110 | DAT_0059a820
+    PUSH 0x59a820                       ; 00418110 | g_SBodyPartModelTypeInfo_0059a820
         ;   Label: core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110
     PUSH 0x3                            ; 00418115
     MOV EDX,dword ptr [ESP + 0xc]       ; 00418117

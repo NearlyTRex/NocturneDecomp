@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00415340 at 00415353
+;   core_biggs.cpp_FUN_00415340 at 00415353
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_biggs_dfm_00578dcd
@@ -16,7 +16,7 @@
 ;   undefined4 s_Alien_00578de4+3
 ;   float FLOAT_0059a598 = 50
 ;   float FLOAT_0059a59c = 100
-;   undefined1* PTR_FUN_0059a5b4 = 00415430
+;   undefined1* PTR_core_biggs.cpp_FUN_00415430_0059a5b4 = 00415430
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00454490
@@ -52,7 +52,7 @@ section .text
     PUSH 0x578dcd                       ; 004153a2 | = "biggs.dfm"
     LEA EAX,[EBX + 0x150]               ; 004153a7
     PUSH EAX                            ; 004153ad
-    MOV dword ptr [EBX + 0x14c],0x59a5b4 ; 004153ae | PTR_FUN_0059a5b4
+    MOV dword ptr [EBX + 0x14c],0x59a5b4 ; 004153ae | PTR_core_biggs.cpp_FUN_00415430_0059a5b4
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 004153b8
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     ADD ESP,0x8                         ; 004153bd

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00446590(int param_1,float *param_2,float param_3)
 
 {
@@ -23,11 +21,11 @@ uint __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00446590(int para
   uint uVar10;
   uint uVar11;
   
-  iVar1 = (int)ROUND(_DAT_0059bddc * param_3);
-  iVar2 = (int)ROUND(_DAT_0059bddc * param_3);
-  uVar10 = (int)ROUND(*param_2 * _DAT_0059bddc) - *(int *)(param_1 + 0x16c);
-  uVar6 = (int)ROUND(param_2[1] * _DAT_0059bddc) - *(int *)(param_1 + 0x170);
-  uVar11 = (int)ROUND(param_2[2] * _DAT_0059bddc) - *(int *)(param_1 + 0x174);
+  iVar1 = (int)ROUND(256.0f * param_3);
+  iVar2 = (int)ROUND(256.0f * param_3);
+  uVar10 = (int)ROUND(*param_2 * 256.0f) - *(int *)(param_1 + 0x16c);
+  uVar6 = (int)ROUND(param_2[1] * 256.0f) - *(int *)(param_1 + 0x170);
+  uVar11 = (int)ROUND(param_2[2] * 256.0f) - *(int *)(param_1 + 0x174);
   if (((iVar1 <= (int)((uVar10 ^ (int)uVar10 >> 0x1f) - ((int)uVar10 >> 0x1f))) ||
       (iVar1 <= (int)((uVar6 ^ (int)uVar6 >> 0x1f) - ((int)uVar6 >> 0x1f)))) ||
      (iVar1 <= (int)((uVar11 ^ (int)uVar11 >> 0x1f) - ((int)uVar11 >> 0x1f)))) {

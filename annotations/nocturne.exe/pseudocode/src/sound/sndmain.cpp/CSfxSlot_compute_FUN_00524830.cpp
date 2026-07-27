@@ -26,9 +26,9 @@ uint sound_sndmain_cpp_CSfxSlot_compute_FUN_00524830(int param_1,float param_2)
   int local_18;
   
   if (_DAT_02dc84bc < 1) {
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x95d;
-    FUN_004c8440();
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x95d;
+    core_main_c_FUN_004c8440();
   }
   if (*(int *)(param_1 + 0x74) == 0) {
     return 0;

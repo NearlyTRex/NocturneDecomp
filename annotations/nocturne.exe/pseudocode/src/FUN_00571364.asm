@@ -11,7 +11,7 @@
 ;   undefined4 DAT_02de5d70
 ;
 ; Called Functions:
-;   FUN_005638d0
+;   crt_unknown.c_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -32,13 +32,13 @@ section .text
         ;   XREF to: 00571385 (CONDITIONAL_JUMP)  ; LAB_00571385
     MOV ECX,dword ptr [EBX + 0x8]       ; 00571379
     PUSH ECX                            ; 0057137c
-    CALL FUN_005638d0                   ; 0057137d
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 0057137d
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 00571382
     PUSH EBX                            ; 00571385
         ;   Label: LAB_00571385
-    CALL FUN_005638d0                   ; 00571386
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 00571386
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 0057138b
     MOV EBX,ESI                         ; 0057138e
     TEST ESI,ESI                        ; 00571390

@@ -15,6 +15,10 @@ void __cdecl CCloth::dtor(int param_1);
 // Address: 004351b0
 void __cdecl CCloth::allocMemory(int param_1);
 
+// Original: core_cloth.cpp_FUN_00435210
+// Address: 00435210
+void FUN_00435210(int param_1);
+
 // Original: core_cloth.cpp_CCloth_load_FUN_00435240
 // Address: 00435240
 int __cdecl CCloth::load(int param_1,undefined4 param_2);
@@ -47,6 +51,14 @@ void __cdecl CCloth::process(undefined4 param_1,undefined4 param_2,undefined4 pa
 // Address: 00436e80
 void __cdecl CCloth::step(int param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6);
 
+// Original: core_cloth.cpp_FUN_00437a60
+// Address: 00437a60
+void FUN_00437a60(int param_1);
+
+// Original: core_cloth.cpp_FUN_00437ab0
+// Address: 00437ab0
+void FUN_00437ab0(int param_1,int param_2,int param_3);
+
 // Original: core_cloth.cpp_CCloth_saveJoinedLight_FUN_00437cc0
 // Address: 00437cc0
 int CCloth::saveJoinedLight(int param_1,int param_2);
@@ -75,6 +87,10 @@ void __cdecl CClothList::reset(int *param_1);
 // Address: 00438390
 void __cdecl CClothList::add(int *param_1,char *param_2);
 
+// Original: core_cloth.cpp_FUN_00438410
+// Address: 00438410
+void FUN_00438410(int *param_1,int param_2);
+
 // Original: core_cloth.cpp_CClothList_setup_FUN_00438510
 // Address: 00438510
 void __cdecl CClothList::setup(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
@@ -87,6 +103,14 @@ void __cdecl CClothList::process(int *param_1,undefined4 param_2,undefined4 para
 // Address: 004385a0
 void __cdecl CClothList::render(int *param_1,int param_2);
 
+// Original: core_cloth.cpp_FUN_00438620
+// Address: 00438620
+void FUN_00438620(int *param_1,undefined4 param_2);
+
+// Original: core_cloth.cpp_FUN_00438660
+// Address: 00438660
+void FUN_00438660(int *param_1,undefined4 *param_2);
+
 // Original: core_cloth.cpp_CCloth_grabCloth_FUN_004386b0
 // Address: 004386b0
 void __cdecl CCloth::grabCloth(int param_1,undefined4 param_2,int param_3);
@@ -98,6 +122,34 @@ void __cdecl CCloth::resetState(int param_1,int param_2);
 // Original: core_cloth.cpp_CCloth_applyRotation_FUN_00438780
 // Address: 00438780
 void CCloth::applyRotation(int param_1,float *param_2);
+
+// Original: core_cloth.cpp_FUN_00438880
+// Address: 00438880
+int FUN_00438880(void);
+
+// Original: core_cloth.cpp_FUN_004388a0
+// Address: 004388a0
+void FUN_004388a0(void);
+
+// Original: core_cloth.cpp_FUN_004388d0
+// Address: 004388d0
+int FUN_004388d0(void);
+
+// Original: core_cloth.cpp_FUN_00438900
+// Address: 00438900
+void FUN_00438900(void);
+
+// Original: core_cloth.cpp_FUN_00438950
+// Address: 00438950
+void FUN_00438950(void);
+
+// Original: core_cloth.cpp_FUN_00438980
+// Address: 00438980
+undefined4 FUN_00438980(undefined4 param_1);
+
+// Original: core_cloth.cpp_FUN_00438990
+// Address: 00438990
+undefined4 FUN_00438990(undefined4 param_1);
 
 // Original: core_cloth.cpp_SClothVertex_ctor_FUN_004389a0
 // Address: 004389a0

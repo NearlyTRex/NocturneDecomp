@@ -104,9 +104,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(int param_1,ch
   pcVar22 = (char *)0x0;
 LAB_00443299:
   if (pcVar22 == (char *)0x0) {
-    _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-    _DAT_01cc4804 = 0x982;
-    FUN_004c8440("CDemonCamera::loadImage - no extention");
+    PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    INT_01cc4804 = 0x982;
+    core_main_c_FUN_004c8440("CDemonCamera::loadImage - no extention");
   }
   pcVar24 = ".ACT";
   do {
@@ -147,9 +147,9 @@ LAB_00443299:
     pcVar24 = (char *)0x0;
 LAB_00443363:
     if (pcVar24 == (char *)0x0) {
-      _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-      _DAT_01cc4804 = 0x995;
-      FUN_004c8440("CDemonCamera::loadImage - no ext");
+      PTR_01cc4800 = "..\\core\\dcamera.cpp";
+      INT_01cc4804 = 0x995;
+      core_main_c_FUN_004c8440("CDemonCamera::loadImage - no ext");
     }
     pcVar22 = ".fog";
     do {
@@ -181,14 +181,14 @@ LAB_00443363:
           iVar5 = engine_dosio_cpp_getFileSize_FUN_004568c0("backdrop",local_f4);
           local_9c = iVar5 - 0x1003;
           if ((int)local_9c < 1) {
-            _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-            _DAT_01cc4804 = 0x9b5;
-            FUN_004c8440("Hell froze loading %s",local_f4);
+            PTR_01cc4800 = "..\\core\\dcamera.cpp";
+            INT_01cc4804 = 0x9b5;
+            core_main_c_FUN_004c8440("Hell froze loading %s",local_f4);
           }
           if (500000 < local_9c) {
-            _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-            _DAT_01cc4804 = 0x9bb;
-            FUN_004c8440("%s too big to fit in decompress buffer",local_f4);
+            PTR_01cc4800 = "..\\core\\dcamera.cpp";
+            INT_01cc4804 = 0x9bb;
+            core_main_c_FUN_004c8440("%s too big to fit in decompress buffer",local_f4);
           }
           _fread(&DAT_0077d250,local_9c,1,local_14);
           support_codec_cpp_CLZWDecompress_init_FUN_00439a30(0x12cdb28);
@@ -196,9 +196,9 @@ LAB_00443363:
           iVar5 = support_codec_cpp_CLZWDecompress_processBuffer_FUN_00439b30
                             (0x12cdb28,&DAT_0077d250,&local_9c,0x12e1778,&local_98,1);
           if (iVar5 == 0) {
-            _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-            _DAT_01cc4804 = 0x9c4;
-            FUN_004c8440("Error decompressing %s",local_f4);
+            PTR_01cc4800 = "..\\core\\dcamera.cpp";
+            INT_01cc4804 = 0x9c4;
+            core_main_c_FUN_004c8440("Error decompressing %s",local_f4);
           }
           local_a4 = 0;
           if (0 < _DAT_0140d780) {

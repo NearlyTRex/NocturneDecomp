@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004e5200 at 004e52a3
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e8ed4
+;   sound_mp3.cpp_FUN_004e5200 at 004e52a3
 ;
 ; *****************************************************************************
 

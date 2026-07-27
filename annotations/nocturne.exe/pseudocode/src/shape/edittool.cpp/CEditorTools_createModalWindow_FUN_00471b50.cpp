@@ -32,16 +32,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(uint
   
   bVar11 = 0;
   if (_DAT_01bcd070 == 0) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0x8b;
-    FUN_004c8440("gEdFont must be set by the application.");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0x8b;
+    core_main_c_FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = *(uint *)(_DAT_01bcd070 + 0x3168);
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
   if (4 < _DAT_01bcd07c) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0x674;
-    FUN_004c8440("Can't open another window!");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0x674;
+    core_main_c_FUN_004c8440("Can't open another window!");
   }
   iVar1 = _DAT_01bcd07c * 0x1d8;
   local_1c = (int *)(iVar1 + 0x1bcd080);
@@ -101,7 +101,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(uint
           iVar1 = iVar8;
         } while (iVar8 < DAT_005b7620 * 4);
       }
-      wincore_windll_cpp_lockFrame_FUN_005322e0();
+      engine_special_cpp_lockFrame_FUN_005322e0();
       iVar1 = DAT_005b761c * DAT_005b7624 >> 0x1f;
       uVar3 = (int)((DAT_005b761c * DAT_005b7624 + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3;
       iVar1 = 0;
@@ -124,7 +124,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(uint
           iVar8 = iVar8 + 4;
         } while (iVar1 < DAT_005b7620);
       }
-      FUN_00532320();
+      engine_special_cpp_FUN_00532320();
     }
     iVar1 = (param_4 - param_2) * DAT_005b7624;
     iVar8 = iVar1 >> 0x1f;
@@ -132,9 +132,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_00471b50(uint
     iVar1 = malloc((param_5 - param_3) * local_14);
     local_1c[0x72] = iVar1;
     if (iVar1 == 0) {
-      _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-      _DAT_01cc4804 = 0x6c4;
-      FUN_004c8440("out of memory to open editor window.");
+      PTR_01cc4800 = "..\\shape\\edittool.cpp";
+      INT_01cc4804 = 0x6c4;
+      core_main_c_FUN_004c8440("out of memory to open editor window.");
     }
     puVar7 = (uint *)local_1c[0x72];
     if (param_3 < param_5) {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004bd790(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void engine_ini_cpp_FUN_004bd790(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x20c]:1  local_20c
@@ -11,21 +11,21 @@
 ;   TerminatedCString s_d_00586621
 ;   TerminatedCString s_engine_ini_cpp_00586624
 ;   TerminatedCString s_Bad_ini_read_00586636
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_stdlib.c_atoi_FUN_00566f30
 ;   engine_ini.cpp_CIni_getProfileString_FUN_004bd0a0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004bd790
-        ;   Label: FUN_004bd790
+        ;   Label: engine_ini.cpp_FUN_004bd790
     PUSH ESI                            ; 004bd791
     PUSH EBP                            ; 004bd792
     SUB ESP,0x200                       ; 004bd793
@@ -71,10 +71,10 @@ section .text
     MOV EDI,0x586624                    ; 004bd807 | = "..\\engine\\ini.cpp"
     MOV EBP,0x22b                       ; 004bd80c
     PUSH 0x586636                       ; 004bd811 | = "Bad ini read!"
-    MOV dword ptr [0x01cc4800],EDI      ; 004bd816 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004bd81c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004bd822
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004bd816 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004bd81c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004bd822
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004bd827
     POP EDI                             ; 004bd82a
     JMP 0x004bd7f1                      ; 004bd82b

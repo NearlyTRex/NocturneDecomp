@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004571f0 at 00457441
+;   core_dpart.cpp_FUN_004571f0 at 00457441
 ;
 ; Called Functions:
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920

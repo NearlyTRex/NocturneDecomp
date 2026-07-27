@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[49]:
-;   FUN_0046baa0 at 0046bc55
-;   FUN_0046bd90 at 0046bf45
-;   FUN_00495a20 at 00496c95
-;   FUN_004ada20 at 004adaa1
-;   FUN_004b27c0 at 004b2acc
-;   FUN_004c9580 at 004c987c
-;   FUN_005384d0 at 00538dd9
-;   FUN_00545c30 at 00545fd9
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 at 0040a25a
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200 at 0040a213
+;   core_box.cpp_CBox_loadFromFile_FUN_0041c850 at 0041c9a9
+;   core_box.cpp_CBox_processPhysics_FUN_0041ad10 at 0041af66
+;   core_box.cpp_CBox_updateTransform_FUN_0041aaa0 at 0041ac2c
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 004226a6
+;   core_bugs.cpp_FUN_00422050 at 00422210
+;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427d5e
+;   core_charactr.cpp_FUN_0042af70 at 0042b17d
+;   core_cloth.cpp_CCloth_applyConstraints_FUN_004366f0 at 00436ca3
 ;   ... and 39 more
 ;
 ; *****************************************************************************

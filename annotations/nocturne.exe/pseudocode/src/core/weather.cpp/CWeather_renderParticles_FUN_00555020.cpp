@@ -120,7 +120,7 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(int *param_1
     local_50 = (int)ROUND(*pfVar3 * _DAT_005a4290);
     local_4c = (int)ROUND(pfVar3[1] * _DAT_005a4290);
     local_48 = (int)ROUND(pfVar3[2] * _DAT_005a4290);
-    wincore_windll_cpp_transformPoint_FUN_00530a25(iVar2,&local_50);
+    engine_special_cpp_transformPoint_FUN_00530a25(iVar2,&local_50);
     iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(DAT_005ae704,iVar2);
     if (iVar2 != 0) {
       engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
@@ -152,22 +152,22 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(int *param_1
       local_8c = (int)ROUND(local_14 * _DAT_005a4290);
       local_88 = (int)ROUND(local_34 * _DAT_005a4290);
       local_84 = (int)ROUND(_DAT_005a4290 * 0.0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_8c);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_8c);
       local_38 = -local_38;
       local_68 = (int)ROUND(local_38 * _DAT_005a4290);
       local_64 = (int)ROUND(local_34 * _DAT_005a4290);
       local_60 = (int)ROUND(local_30 * _DAT_005a4290);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_68);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_68);
       local_34 = -local_34;
       local_5c = (int)ROUND(local_38 * _DAT_005a4290);
       local_58 = (int)ROUND(local_34 * _DAT_005a4290);
       local_54 = (int)ROUND(local_30 * _DAT_005a4290);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_5c);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_5c);
       local_38 = -local_38;
       local_98 = (int)ROUND(local_38 * _DAT_005a4290);
       local_94 = (int)ROUND(local_34 * _DAT_005a4290);
       local_90 = (int)ROUND(local_30 * _DAT_005a4290);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_98);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_98);
       engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,local_f0);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);
     }
@@ -203,22 +203,22 @@ void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_00555020(int *param_1
         local_74 = (int)ROUND(_DAT_005a4290 * 0.2);
         local_70 = (int)ROUND(_DAT_005a4290 * 0.0);
         local_6c = (int)ROUND(_DAT_005a4290 * 0.0);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_74);
+        engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_74);
         local_bc = -local_bc;
         local_a4 = (int)ROUND(local_bc * _DAT_005a4290);
         local_a0 = (int)ROUND(local_b8 * _DAT_005a4290);
         local_9c = (int)ROUND(local_b4 * _DAT_005a4290);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_a4);
+        engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_a4);
         local_b8 = 0.4;
         local_c8 = (int)ROUND(local_bc * _DAT_005a4290);
         local_c4 = (int)ROUND(_DAT_005a4290 * 0.4);
         local_c0 = (int)ROUND(local_b4 * _DAT_005a4290);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_c8);
+        engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_c8);
         local_bc = -local_bc;
         local_44 = (int)ROUND(local_bc * _DAT_005a4290);
         local_40 = (int)ROUND(local_b8 * _DAT_005a4290);
         local_3c = (int)ROUND(local_b4 * _DAT_005a4290);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_44);
+        engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_44);
         engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0(DAT_005ae704,local_f0);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);
       }

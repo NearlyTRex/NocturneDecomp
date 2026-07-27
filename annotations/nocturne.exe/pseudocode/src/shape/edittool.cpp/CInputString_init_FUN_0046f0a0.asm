@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0046f7e0 at 0046f848
-;   FUN_00470eb0 at 00470f6a
+;   shape_edittool.cpp_FUN_0046f7e0 at 0046f848
+;   shape_edittool.cpp_FUN_00470eb0 at 00470f6a
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0

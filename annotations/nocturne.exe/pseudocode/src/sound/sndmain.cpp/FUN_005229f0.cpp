@@ -1,14 +1,14 @@
-// Name: FUN_005229f0
+// Name: sound_sndmain.cpp_FUN_005229f0
 // Address: 005229f0
 // Address Range: [[005229f0, 00522d06]]
 // Convention: unknown
-// Signature: char * FUN_005229f0(undefined4 param_1,char *param_2)
+// Signature: char * sound_sndmain_cpp_FUN_005229f0(undefined4 param_1,char *param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-char * FUN_005229f0(uint param_1,char *param_2)
+char * sound_sndmain_cpp_FUN_005229f0(uint param_1,char *param_2)
 
 {
   char cVar1;
@@ -53,9 +53,9 @@ LAB_00522a32:
     }
     *(int *)(pcVar2 + 0x144) = iVar4;
     if (iVar4 == 0) {
-      _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-      _DAT_01cc4804 = 0x3c8;
-      FUN_004c8440("Out of memory.");
+      PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+      INT_01cc4804 = 0x3c8;
+      core_main_c_FUN_004c8440("Out of memory.");
     }
     sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(*(uint *)(pcVar2 + 0x144),param_2);
     pcVar5 = pcVar2;

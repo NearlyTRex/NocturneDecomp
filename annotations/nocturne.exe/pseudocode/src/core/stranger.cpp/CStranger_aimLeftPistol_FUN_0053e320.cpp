@@ -54,9 +54,9 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0053e320(int param_1)
   float fStack_14;
   
   if (*(int *)(param_1 + 0x1fa94) == 0) {
-    _DAT_01cc4800 = "..\\core\\stranger.cpp";
-    _DAT_01cc4804 = 0x10b4;
-    FUN_004c8440("CStranger::aimLeftPistol - no weapon?");
+    PTR_01cc4800 = "..\\core\\stranger.cpp";
+    INT_01cc4804 = 0x10b4;
+    core_main_c_FUN_004c8440("CStranger::aimLeftPistol - no weapon?");
   }
   (**(code **)(*(int *)(*(int *)(param_1 + 0x1fa94) + 0x14c) + 0xd8))
             (*(int *)(param_1 + 0x1fa94),local_9c);

@@ -46,7 +46,7 @@ uint __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(int param_1)
       for (iVar5 = 0; iVar5 < *(int *)(0x01E57284 + 0x14cd6c); iVar5 = iVar5 + 1) {
         iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
                           (*(uint *)(iVar1 + 0x14cd70 + 0x01E57284),
-                           CDemonActorType_00764800.name_hash);
+                           g_CBoxActorActorType_00764800.name_hash);
         if (((iVar3 != 0) && (*(int *)(iVar3 + 0x314) != 0)) && (*(int *)(iVar3 + 0x318) == 0)) {
           (**(code **)(*(int *)(iVar3 + 0x14c) + 0x14))(iVar3,&local_80);
           fStack_68 = local_80 + fStack_74;
@@ -80,7 +80,7 @@ uint __cdecl core_hero_cpp_CHero_tryPushNearbyBox_FUN_004b54c0(int param_1)
       }
       if (*(int *)(param_1 + 0x1fa0c) == 0) goto LAB_004b5550;
       iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(int *)(param_1 + 0x1fa0c),CDemonActorType_00764800.name_hash);
+                        (*(int *)(param_1 + 0x1fa0c),g_CBoxActorActorType_00764800.name_hash);
       if (iVar1 != 0) {
         *(int *)(iVar1 + 0x318) = param_1;
         uVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x28))(iVar1,iVar1 + 0x324);

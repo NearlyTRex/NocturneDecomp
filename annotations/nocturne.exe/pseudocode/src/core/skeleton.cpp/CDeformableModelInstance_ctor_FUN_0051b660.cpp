@@ -12,7 +12,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0051b660(uint p
   int iVar1;
   
   iVar1 = core_motion_cpp_CMotionController_ctor_FUN_004e1120(param_1);
-  iVar1 = __arrinit(iVar1 + 0x58,100,&DAT_005993b0);
+  iVar1 = __arrinit(iVar1 + 0x58,100,&g_CVectorTypeInfo_005993b0);
   *(byte ***)(iVar1 + -8) =
        &PTR_core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0051b6e0_005a1ed4;
   *(byte *)(iVar1 + 0x2208) = 0;

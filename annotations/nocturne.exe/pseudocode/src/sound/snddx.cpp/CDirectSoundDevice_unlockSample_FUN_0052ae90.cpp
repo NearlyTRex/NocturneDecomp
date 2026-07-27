@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(uint param_1,int param_2,uint param_3,uint param_4,int param_5)
 
 {
@@ -22,10 +20,10 @@ void sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(uint param_1,i
   if (((param_2 < 1) || (0x18 < param_2)) || (*(int *)(&DAT_02dc9244 + param_2 * 4) == 0)) {
     iStack_1a4 = param_2;
     pcStack_1a8 = "DirectSoundDevice::unlockSample - Can't unlock invalid handle: %d";
-    _DAT_01cc4800 = "..\\sound\\snddx.cpp";
-    _DAT_01cc4804 = 0x2b6;
+    PTR_01cc4800 = "..\\sound\\snddx.cpp";
+    INT_01cc4804 = 0x2b6;
     uStack_1ac = 0x52aed2;
-    FUN_004c8440();
+    core_main_c_FUN_004c8440();
   }
   iStack_1a4 = *(uint *)(param_5 + 0x15c);
   pcStack_1a8 = *(char **)(param_5 + 0x164);
@@ -37,7 +35,7 @@ void sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(uint param_1,i
     uVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar1);
     _sprintf(&piStack_1b4,"DirectSux: Unable to %s.  (%s)","Unlock hw sample buffer",
                uVar2);
-    FUN_00529980(&piStack_1b4);
+    sound_sndmain_cpp_FUN_00529980(&piStack_1b4);
     return;
   }
   return;

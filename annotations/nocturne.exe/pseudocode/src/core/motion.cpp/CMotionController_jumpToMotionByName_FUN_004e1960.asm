@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00540820 at 0054086e
-;   FUN_00540f50 at 005411b3
 ;   core_dracbrid.cpp_CDraculaBride_archive_FUN_0045a450 at 0045a509
 ;   core_mimic.cpp_CMimic_setupCloth_FUN_004d5770 at 004d57ee
 ;   core_moloch.cpp_CMoloch_process_FUN_004ddb20 at 004de042
+;   core_stranger.cpp_FUN_00540820 at 0054086e
+;   core_succubus.cpp_FUN_00540f50 at 005411b3
 ;   core_vampboss.cpp_CVampireBoss_transformToHuman_FUN_0054e1e0 at 0054e1fd
 ;
 ; Called Functions:

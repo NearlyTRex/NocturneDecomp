@@ -17,7 +17,7 @@ int core_vampboss_cpp_CVampireBoss_ctor_FUN_0054c2b0(uint param_1)
   iVar1 = core_cloth_cpp_CCloth_ctor_FUN_00435100(iVar1 + 0x3ab30);
   iVar1 = core_cloth_cpp_CCloth_ctor_FUN_00435100(iVar1 + 0x3ab30);
   iVar1 = core_morph_cpp_CMorph_ctor_FUN_004e0050(iVar1 + 0x3ab34);
-  *(byte ***)(iVar1 + -0xbe020) = &PTR_FUN_005a3a94;
+  *(byte ***)(iVar1 + -0xbe020) = &PTR_core_vampboss_cpp_FUN_0054c3e0_005a3a94;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0
             (iVar1 + -0xbe01c,"nosfer.dfm");
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0

@@ -23,11 +23,11 @@
 ;   undefined4 DAT_01b8efcc
 ;   undefined4 DAT_01b8efd0
 ;   undefined4 DAT_01b8efd4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -140,10 +140,10 @@ section .text
         ;   Label: LAB_0046ae09
     MOV ESI,0x8c9                       ; 0046ae0e
     PUSH 0x57e279                       ; 0046ae13 | = "CDemonRaytrace::setPVS - Too many dra..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046ae18 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0046ae1e | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0046ae24
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0046ae18 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0046ae1e | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0046ae24
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046ae29
     JMP 0x0046ad1c                      ; 0046ae2c
         ;   XREF to: 0046ad1c (UNCONDITIONAL_JUMP)  ; LAB_0046ad1c

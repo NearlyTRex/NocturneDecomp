@@ -38,8 +38,8 @@ int __cdecl core_hero_cpp_closestHeroToPoint_FUN_004b4500(float *param_1)
   if (iVar6 != 0) {
     return iVar6;
   }
-  _DAT_01cc4800 = "..\\core\\hero.cpp";
-  _DAT_01cc4804 = 0x34;
-  FUN_004c8440("closestHeroToPoint - no heros!");
+  PTR_01cc4800 = "..\\core\\hero.cpp";
+  INT_01cc4804 = 0x34;
+  core_main_c_FUN_004c8440("closestHeroToPoint - no heros!");
   return 0;
 }

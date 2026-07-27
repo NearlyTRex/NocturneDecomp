@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0044c560 at 0044ca6a
+;   core_dfont.cpp_FUN_0044c560 at 0044ca6a
 ;
 ; Referenced Globals:
 ;   void* PTR_CreateFontA_005753a4 = 0017573c

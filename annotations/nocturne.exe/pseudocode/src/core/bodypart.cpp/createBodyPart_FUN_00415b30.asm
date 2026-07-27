@@ -8,7 +8,6 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[15]:
-;   FUN_0051e860 at 0051e87e
 ;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412de0 at 00412f35
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_004145f0 at 004146c2
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0f0 at 0041a202
@@ -18,6 +17,7 @@
 ;   core_dracbrid.cpp_CDraculaBride_dismemberPart_FUN_0045a1a0 at 0045a1dd
 ;   core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004a8330 at 004a83f2
 ;   core_ghoul.cpp_CGhoul_processDismemberment_FUN_004ab190 at 004ab25d
+;   core_imp.cpp_CImp_processDismemberment_FUN_004bca20 at 004bcaf2
 ;   ... and 5 more
 ;
 ; Referenced Globals:
@@ -25,17 +25,17 @@
 ;   TerminatedCString s_Can_t_create_body_part_00578e8f
 ;   float FLOAT_00578eaa = 10
 ;   undefined4 DAT_005baf90
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
+;   core_main.c_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
-;   FUN_004c8440
-;   FUN_0056497c
+;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x44]      ; 00415b3b
     MOV EDI,dword ptr [ESP + 0x48]      ; 00415b3f
     PUSH 0xf18                          ; 00415b43
-    CALL FUN_0056497c                   ; 00415b48
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 00415b48
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 00415b4d
     TEST EAX,EAX                        ; 00415b50
     JNZ 0x00415c31                      ; 00415b52
@@ -65,10 +65,10 @@ section .text
     MOV EDX,0x578e7a                    ; 00415b5e | = "..\\core\\bodypart.cpp"
     MOV ECX,0x32                        ; 00415b63
     PUSH 0x578e8f                       ; 00415b68 | = "Can't create body part!"
-    MOV dword ptr [0x01cc4800],EDX      ; 00415b6d | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00415b73 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00415b79
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00415b6d | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00415b73 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00415b79
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00415b7e
     MOV EDX,dword ptr [ESP + 0x3c]      ; 00415b81
         ;   Label: LAB_00415b81

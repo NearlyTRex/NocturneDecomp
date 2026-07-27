@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00469ce0 at 0046a620
+;   core_dtrace.cpp_FUN_00469ce0 at 0046a620
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae700
@@ -17,7 +17,7 @@
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_0044aff0
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
-;   wincore_windll.cpp_sync_FUN_00532b30
+;   engine_special.cpp_sync_FUN_00532b30
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
     ADD ESP,0x8                         ; 0046afc3
     ADD EDI,0x4                         ; 0046afc6
     INC ESI                             ; 0046afc9
-    CALL wincore_windll.cpp_sync_FUN_00532b30 ; 0046afca
-        ;   XREF to: 00532b30 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_sync_FUN_00532b30()
+    CALL engine_special.cpp_sync_FUN_00532b30 ; 0046afca
+        ;   XREF to: 00532b30 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_sync_FUN_00532b30()
     MOV EDX,dword ptr [0x01b7b744]      ; 0046afcf | DAT_01b7b744
     ADD EBX,0xc                         ; 0046afd5
     CMP ESI,EDX                         ; 0046afd8

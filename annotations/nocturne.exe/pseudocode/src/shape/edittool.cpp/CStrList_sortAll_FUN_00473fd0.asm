@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00470730 at 0047085b
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 004705a7
+;   shape_edittool.cpp_FUN_00470730 at 0047085b
 ;
 ; *****************************************************************************
 

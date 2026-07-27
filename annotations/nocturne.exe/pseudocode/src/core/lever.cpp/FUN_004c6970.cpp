@@ -1,0 +1,25 @@
+// Name: core_lever.cpp_FUN_004c6970
+// Address: 004c6970
+// Address Range: [[004c6970, 004c69bd]]
+// Convention: unknown
+// Signature: undefined4 core_lever_cpp_FUN_004c6970(undefined4 param_1,byte param_2)
+
+#include "nocturne.h"
+
+uint core_lever_cpp_FUN_004c6970(uint param_1,byte param_2)
+
+{
+  uint uVar1;
+  
+  if ((param_2 & 4) != 0) {
+    uVar1 = __vec_delete(param_1,&g_CLeverTypeInfo_0059fd20);
+    shape_memdbg_cpp_free_FUN_00564486(uVar1);
+    return param_1;
+  }
+  uVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(param_1,1);
+  if ((param_2 & 2) == 0) {
+    return uVar1;
+  }
+  FUN_00564494(uVar1);
+  return uVar1;
+}

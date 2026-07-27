@@ -3,6 +3,10 @@
 // Function prototypes for core/weather.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_weather.cpp_staticInit_FUN_00554930
+// Address: 00554930
+void __cdecl staticInit(void);
+
 // Original: core_weather.cpp_CWeather_ctor_FUN_00554960
 // Address: 00554960
 undefined4 CWeather::ctor(undefined4 param_1);
@@ -34,3 +38,7 @@ void CWeather::setOriginAndRotation(int *param_1,float *param_2,int *param_3);
 // Original: core_weather.cpp_CWeather_dtor_FUN_005559d0
 // Address: 005559d0
 undefined4 CWeather::dtor(undefined4 param_1);
+
+// Original: core_weather.cpp_FUN_005559e0
+// Address: 005559e0
+void FUN_005559e0(void);

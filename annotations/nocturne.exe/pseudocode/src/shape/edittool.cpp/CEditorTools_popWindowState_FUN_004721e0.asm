@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0046fa20 at 0046fa32
-;   FUN_004720c0 at 004721a5
+;   shape_edittool.cpp_FUN_0046fa20 at 0046fa32
+;   shape_edittool.cpp_FUN_004720c0 at 004721a5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e9a5
@@ -22,12 +22,12 @@
 ;   undefined4 DAT_01c00c64
 ;   undefined4 DAT_01c00c68
 ;   undefined4 DAT_01c00c6c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
-;   FUN_005638d0
+;   core_main.c_FUN_004c8440
+;   crt_unknown.c_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -84,17 +84,17 @@ section .text
         ;   Label: LAB_00472270
     MOV EBX,0x718                       ; 00472275
     PUSH 0x57e9bb                       ; 0047227a | = "CEditorTools::popWindow() called but ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0047227f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00472285 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0047228b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0047227f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00472285 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0047228b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00472290
     JMP 0x004721f0                      ; 00472293
         ;   XREF to: 004721f0 (UNCONDITIONAL_JUMP)  ; LAB_004721f0
     PUSH EDI                            ; 00472298
         ;   Label: LAB_00472298
-    CALL FUN_005638d0                   ; 00472299
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 00472299
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 0047229e
     MOV dword ptr [EBX + 0x1c8],0x0     ; 004722a1
     JMP 0x0047221c                      ; 004722ab

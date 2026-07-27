@@ -1,14 +1,12 @@
-// Name: FUN_00431260
+// Name: cockpit_ckptutil.c_FUN_00431260
 // Address: 00431260
 // Address Range: [[00431260, 004314ae]]
 // Convention: unknown
-// Signature: void FUN_00431260(byte *param_1,undefined4 param_2,int *param_3,int param_4,int param_5,uint param_6 )
+// Signature: void cockpit_ckptutil_c_FUN_00431260(byte *param_1,undefined4 param_2,int *param_3,int param_4,int param_5,uint param_6)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00431260(byte *param_1,uint param_2,int *param_3,int param_4,int param_5,uint param_6 )
+void cockpit_ckptutil_c_FUN_00431260(byte *param_1,uint param_2,int *param_3,int param_4,int param_5,uint param_6)
 
 {
   bool bVar1;
@@ -29,9 +27,9 @@ void FUN_00431260(byte *param_1,uint param_2,int *param_3,int param_4,int param_
   
   if (0xff < param_6) {
     _sprintf(local_130,"Invalid transparent color index: %d",param_6);
-    _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-    _DAT_01cc4804 = 0x93a;
-    FUN_004c8440(local_130);
+    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    INT_01cc4804 = 0x93a;
+    core_main_c_FUN_004c8440(local_130);
   }
   local_20 = 0;
   if (0 < param_5) {
@@ -71,9 +69,9 @@ void FUN_00431260(byte *param_1,uint param_2,int *param_3,int param_4,int param_
       }
       if (0xf < local_14) {
         _sprintf(local_130,"Too many spans: bitmap %s, spans %d, scanline %d",param_2,local_14,local_20);
-        _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-        _DAT_01cc4804 = 0x96a;
-        FUN_004c8440(local_130);
+        PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+        INT_01cc4804 = 0x96a;
+        core_main_c_FUN_004c8440(local_130);
       }
       if (bVar1) {
         local_1c[local_14 + 0x11] = (local_30 - local_1c[local_14 + 1]) + 1;

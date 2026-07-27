@@ -1,26 +1,31 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004f8570(int param_1,int param_2)
+; void engine_pod_cpp_FUN_004f8570(int param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_engine_pod_cpp_0058da77
+;   TerminatedCString s_CPodFile_getAuditRecord_0058da89
+;   TerminatedCString s_rb_0058dac5
+;   TerminatedCString s_engine_pod_cpp_0058dac8
+;   TerminatedCString s_CPodFile_getAuditRecord_0058dada
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   crt_stdio.c_fseek_FUN_0056582c
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f8570
-        ;   Label: FUN_004f8570
+        ;   Label: engine_pod.cpp_FUN_004f8570
     PUSH EDI                            ; 004f8571
     PUSH EBP                            ; 004f8572
     SUB ESP,0x138                       ; 004f8573
@@ -33,16 +38,16 @@ section .text
     CMP EDX,dword ptr [EBP + 0x214]     ; 004f858d
     JL 0x004f85b8                       ; 004f8593
         ;   XREF to: 004f85b8 (CONDITIONAL_JUMP)  ; LAB_004f85b8
-    MOV ESI,0x58da77                    ; 004f8595
+    MOV ESI,0x58da77                    ; 004f8595 | = "..\\engine\\pod.cpp"
         ;   Label: LAB_004f8595
     MOV EDI,0x1f1                       ; 004f859a
-    PUSH 0x58da89                       ; 004f859f
-    MOV dword ptr [0x01cc4800],ESI      ; 004f85a4 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004f85aa | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f85b0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x58da89                       ; 004f859f | = "CPodFile::getAuditRecord - invalid in..."
+    MOV dword ptr [0x01cc4800],ESI      ; 004f85a4 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004f85aa | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f85b0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f85b5
-    PUSH 0x58dac5                       ; 004f85b8
+    PUSH 0x58dac5                       ; 004f85b8 | = "rb"
         ;   Label: LAB_004f85b8
     LEA EDI,[EBP + 0x4]                 ; 004f85bd
     PUSH EDI                            ; 004f85c0
@@ -92,13 +97,13 @@ section .text
     RET                                 ; 004f8631
     PUSH EDI                            ; 004f8632
         ;   Label: LAB_004f8632
-    MOV EAX,0x58dac8                    ; 004f8633
+    MOV EAX,0x58dac8                    ; 004f8633 | = "..\\engine\\pod.cpp"
     MOV EDX,0x1f6                       ; 004f8638
-    PUSH 0x58dada                       ; 004f863d
-    MOV [0x01cc4800],EAX                ; 004f8642 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004f8647 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f864d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x58dada                       ; 004f863d | = "CPodFile::getAuditRecord - can't open %s"
+    MOV [0x01cc4800],EAX                ; 004f8642 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004f8647 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f864d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004f8652
     JMP 0x004f85cf                      ; 004f8655
         ;   XREF to: 004f85cf (UNCONDITIONAL_JUMP)  ; LAB_004f85cf

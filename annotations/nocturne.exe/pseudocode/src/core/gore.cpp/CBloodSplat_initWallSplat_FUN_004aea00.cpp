@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004aea00(uint *param_1,float *param_2,float *param_3)
 
 {
@@ -34,12 +32,12 @@ void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004aea00(uint *param_1,
   uVar2 = core_actor_cpp_getRandomInt_FUN_0040de00(0,3,uVar2,uVar3);
   param_1[10] = uVar2;
   param_1[9] = 0;
-  param_1[0xb] = (int)ROUND(*param_2 * _DAT_0059e4d4);
-  param_1[0xc] = (int)ROUND(param_2[1] * _DAT_0059e4d4);
-  param_1[0xd] = (int)ROUND(param_2[2] * _DAT_0059e4d4);
-  param_1[0xe] = (int)ROUND(*param_3 * _DAT_0059e4d8);
-  param_1[0xf] = (int)ROUND(param_3[1] * _DAT_0059e4d8);
-  param_1[0x10] = (int)ROUND(param_3[2] * _DAT_0059e4d8);
+  param_1[0xb] = (int)ROUND(*param_2 * 256.0f);
+  param_1[0xc] = (int)ROUND(param_2[1] * 256.0f);
+  param_1[0xd] = (int)ROUND(param_2[2] * 256.0f);
+  param_1[0xe] = (int)ROUND(*param_3 * 65536.0f);
+  param_1[0xf] = (int)ROUND(param_3[1] * 65536.0f);
+  param_1[0x10] = (int)ROUND(param_3[2] * 65536.0f);
   *param_1 = 0;
   param_1[5] = param_2;
   return;

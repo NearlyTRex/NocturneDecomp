@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0042b720 at 0042b733
+;   core_chain.cpp_FUN_0042b720 at 0042b733
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHAINLINK_RAW_0057a55d
@@ -21,7 +21,7 @@
 ;   undefined4 s_chain_move_wav_0057a57a+2
 ;   undefined4 s_chain_move_wav_0057a57a+3
 ;   undefined1* PTR_core_chain.cpp_CChain_setup_FUN_0042b8f0_0059b244 = 0042b8f0
-;   undefined4 DAT_0059b320
+;   WatcomTypeInfo g_SChainVertexTypeInfo_0059b320
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -39,7 +39,7 @@ section .text
     CALL core_actor.cpp_FUN_00409d30    ; 0042b757
         ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 0042b75c
-    PUSH 0x59b320                       ; 0042b75f | DAT_0059b320
+    PUSH 0x59b320                       ; 0042b75f | g_SChainVertexTypeInfo_0059b320
     PUSH 0x14                           ; 0042b764
     ADD EAX,0x284                       ; 0042b766
     PUSH EAX                            ; 0042b76b

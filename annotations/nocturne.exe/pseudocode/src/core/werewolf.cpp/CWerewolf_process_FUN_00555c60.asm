@@ -261,8 +261,8 @@ section .text
     PUSH EBX                            ; 00555da0
     MOV EDI,dword ptr [0x005baf90]      ; 00555da1 | DAT_005baf90
     PUSH EDI                            ; 00555da7 | DAT_01cc9450
-    CALL FUN_004d9110                   ; 00555da8
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined FUN_004d9110()
+    CALL core_mission.cpp_FUN_004d9110  ; 00555da8
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
     ADD ESP,0xc                         ; 00555dad
     JMP 0x00555cbe                      ; 00555db0
         ;   XREF to: 00555cbe (UNCONDITIONAL_JUMP)  ; LAB_00555cbe
@@ -1029,8 +1029,8 @@ section .text
     PUSH EAX                            ; 0055668c
     MOV ECX,dword ptr [0x005b96c4]      ; 0055668d | INT_005b96c4
     PUSH ECX                            ; 00556693
-    CALL FUN_004b0480                   ; 00556694
-        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()
+    CALL core_gore.cpp_FUN_004b0480     ; 00556694
+        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004b0480()
     ADD ESP,0xc                         ; 00556699
     MOV dword ptr [EBX + 0xbc90],0x1    ; 0055669c
     JMP 0x00555e90                      ; 005566a6
@@ -1095,7 +1095,7 @@ section .text
     SAHF                                ; 00556746
     JA 0x0055672c                       ; 00556747
         ;   XREF to: 0055672c (CONDITIONAL_JUMP)  ; LAB_0055672c
-    MOV EAX,[0x02dd1044]                ; 00556749 | DAT_02dd1044
+    MOV EAX,[0x02dd1044]                ; 00556749 | g_CTrapActorType_02dd100c.name_hash
         ;   Label: LAB_00556749
     PUSH EAX                            ; 0055674e
     MOV EDX,dword ptr [EBX + 0xbd50]    ; 0055674f
@@ -1224,7 +1224,7 @@ section .text
     ADD ESP,0xc                         ; 00556894
     JMP 0x00555e90                      ; 00556897
         ;   XREF to: 00555e90 (UNCONDITIONAL_JUMP)  ; LAB_00555e90
-    MOV ESI,dword ptr [0x02dd1044]      ; 0055689c | DAT_02dd1044
+    MOV ESI,dword ptr [0x02dd1044]      ; 0055689c | g_CTrapActorType_02dd100c.name_hash
         ;   Label: LAB_0055689c
     PUSH ESI                            ; 005568a2
     MOV EDI,dword ptr [EBX + 0xbd50]    ; 005568a3
@@ -1251,10 +1251,10 @@ section .text
         ;   Label: LAB_005568e2
     MOV EDX,0x1ad                       ; 005568e7
     PUSH 0x597d60                       ; 005568ec | = "Alpha werewolf requires 2 waypoints"
-    MOV [0x01cc4800],EAX                ; 005568f1 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 005568f6 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005568fc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 005568f1 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 005568f6 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005568fc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00556901
     SUB ESP,0x8                         ; 00556904
         ;   Label: LAB_00556904
@@ -1567,7 +1567,7 @@ section .text
     ADD ESP,0xc                         ; 00556c9f
     JMP 0x00556b12                      ; 00556ca2
         ;   XREF to: 00556b12 (UNCONDITIONAL_JUMP)  ; LAB_00556b12
-    MOV EDI,dword ptr [0x02dd1044]      ; 00556ca7 | DAT_02dd1044
+    MOV EDI,dword ptr [0x02dd1044]      ; 00556ca7 | g_CTrapActorType_02dd100c.name_hash
         ;   Label: LAB_00556ca7
     PUSH EDI                            ; 00556cad
     MOV EAX,dword ptr [EBX + 0xbd50]    ; 00556cae
@@ -1692,7 +1692,7 @@ section .text
     CMP EDI,dword ptr [EAX + 0x150bf4]  ; 00556e01 | DAT_01fa7e78
     JGE 0x00556b12                      ; 00556e07
         ;   XREF to: 00556b12 (CONDITIONAL_JUMP)  ; LAB_00556b12
-    MOV ECX,dword ptr [0x02de07c4]      ; 00556e0d | DAT_02de07c4
+    MOV ECX,dword ptr [0x02de07c4]      ; 00556e0d | g_CWerewolfActorType_02de078c.name_hash
     PUSH ECX                            ; 00556e13
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x150bf8] ; 00556e14
     PUSH EDX                            ; 00556e1b

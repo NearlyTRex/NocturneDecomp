@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_004c79a0 at 004c7aa4
-;   FUN_005464a0 at 00546504
+;   core_lightgun.cpp_FUN_004c79a0 at 004c7aa4
+;   core_tommygun.cpp_FUN_005464a0 at 00546504
 ;   core_turret.cpp_CTurret_process_FUN_005497f0 at 0054992f
 ;   core_vehicle.cpp_CVehicle_process_FUN_0054eae0 at 0054ef87
 ;

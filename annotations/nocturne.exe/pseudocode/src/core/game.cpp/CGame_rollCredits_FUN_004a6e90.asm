@@ -32,26 +32,26 @@
 ;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_014b9900
 ;   undefined4 DAT_01cc30e4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01d16810
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_0049a890
 ;   core_game.cpp_CGame_updateDT_FUN_0049a8a0
+;   core_main.c_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgets_FUN_00564b20
 ;   crt_string.c__strcmp_FUN_005649c0
+;   crt_unknown.c_FUN_005638d0
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_2d.c_fillRectColor_FUN_00403e60
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040e320
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040e710
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040e340
-;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0
-;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   ... and 15 more
 ;
 ; *****************************************************************************
@@ -181,8 +181,8 @@ section .text
     JZ 0x004a7103                       ; 004a700d
         ;   XREF to: 004a7103 (CONDITIONAL_JUMP)  ; LAB_004a7103
     MOV dword ptr [ESP + 0x111c],EAX    ; 004a7013
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004a701a
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004a701a
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
     PUSH 0xffff                         ; 004a701f
     PUSH 0x0                            ; 004a7024
     PUSH 0x0                            ; 004a7026
@@ -346,10 +346,10 @@ section .text
         ;   Label: LAB_004a71d0
     MOV EAX,0x1242                      ; 004a71d5
     PUSH 0x5846a2                       ; 004a71da | = "CGame::rollCredits - Out of memory"
-    MOV dword ptr [0x01cc4800],EDI      ; 004a71df | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004a71e5 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004a71ea
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004a71df | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004a71e5 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004a71ea
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004a71ef
     JMP 0x004a7194                      ; 004a71f2
         ;   XREF to: 004a7194 (UNCONDITIONAL_JUMP)  ; LAB_004a7194
@@ -394,8 +394,8 @@ section .text
         ;   Label: LAB_004a725f
     PUSH EDI                            ; 004a7263
     ADD EBX,0x4                         ; 004a7264
-    CALL FUN_005638d0                   ; 004a7267
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 004a7267
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 004a726c
     CMP EBX,ESI                         ; 004a726f
     JL 0x004a725f                       ; 004a7271

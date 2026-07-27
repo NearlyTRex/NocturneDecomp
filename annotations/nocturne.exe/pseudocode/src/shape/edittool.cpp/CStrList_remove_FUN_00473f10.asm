@@ -10,13 +10,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057ec7a
 ;   TerminatedCString s_CStrList_remove_invalid_0057ec90
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_string.c_memmove_FUN_00566170
-;   FUN_004c8440
-;   FUN_005638d0
+;   crt_unknown.c_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -40,10 +40,10 @@ section .text
         ;   Label: LAB_00473f2c
     MOV EDI,0xa03                       ; 00473f31
     PUSH 0x57ec90                       ; 00473f36 | = "CStrList::remove - invalid range"
-    MOV dword ptr [0x01cc4800],EBX      ; 00473f3b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00473f41 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00473f47
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00473f3b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00473f41 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00473f47
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00473f4c
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00473f4f
         ;   Label: LAB_00473f4f
@@ -60,8 +60,8 @@ section .text
     JZ 0x00473f79                       ; 00473f6e
         ;   XREF to: 00473f79 (CONDITIONAL_JUMP)  ; LAB_00473f79
     PUSH EDX                            ; 00473f70
-    CALL FUN_005638d0                   ; 00473f71
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 00473f71
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 00473f76
     ADD EBX,0x4                         ; 00473f79
         ;   Label: LAB_00473f79

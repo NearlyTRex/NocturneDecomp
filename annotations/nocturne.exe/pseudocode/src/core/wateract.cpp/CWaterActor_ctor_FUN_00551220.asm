@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005511f0 at 00551203
+;   core_wateract.cpp_FUN_005511f0 at 00551203
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_005975cb
@@ -17,7 +17,7 @@
 ;   undefined4 s_ne_005975d0+2
 ;   undefined4 s_e_005975d0+3
 ;   undefined1* PTR_core_wateract.cpp_CWaterActor_setup_FUN_00551370_005a3ef4 = 00551370
-;   undefined4 DAT_005a3fd0
+;   WatcomTypeInfo g_SWaterVertexTypeInfo_005a3fd0
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -35,7 +35,7 @@ section .text
     CALL core_actor.cpp_FUN_00409d30    ; 00551227
         ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 0055122c
-    PUSH 0x5a3fd0                       ; 0055122f | DAT_005a3fd0
+    PUSH 0x5a3fd0                       ; 0055122f | g_SWaterVertexTypeInfo_005a3fd0
     PUSH 0x3e8                          ; 00551234
     ADD EAX,0x294                       ; 00551239
     PUSH EAX                            ; 0055123e

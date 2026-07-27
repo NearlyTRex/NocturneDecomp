@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_005289f0 at 00528a8e
+;   sound_sndmain.cpp_FUN_005289f0 at 00528a8e
 ;   sound_sndmain.cpp_writeIni_FUN_00528c80 at 00528d1a
 ;
 ; Referenced Globals:

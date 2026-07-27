@@ -12,11 +12,11 @@ uint core_scat_cpp_CScat_dtor_FUN_004fde30(uint param_1,byte param_2)
   uint uVar1;
   
   if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&DAT_005a16a0);
+    uVar1 = __vec_delete(param_1,&g_CScatTypeInfo_005a16a0);
     shape_memdbg_cpp_free_FUN_00564486(uVar1);
     return param_1;
   }
-  uVar1 = FUN_004b4800(param_1,1);
+  uVar1 = core_hero_cpp_FUN_004b4800(param_1,1);
   if ((param_2 & 2) == 0) {
     return uVar1;
   }

@@ -8,16 +8,20 @@
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebaa6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_core_netgame_cpp_0058c489
+;   TerminatedCString s_CNetGame_sendGameSetting_0058c49d
+;   TerminatedCString s_core_netgame_cpp_0058c4eb
+;   TerminatedCString s_CNetGame_send_invalid_pl_0058c4ff
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cea3f4
 ;   undefined4 DAT_01cea3f8
 ;   undefined4 DAT_01cea404
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_netgame.cpp_CNetGame_send_FUN_004eb350
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   FUN_004c8440
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
 ; *****************************************************************************
@@ -38,14 +42,14 @@ section .text
     CMP EDX,dword ptr [EAX + 0x4]       ; 004ecf68
     JZ 0x004ecf90                       ; 004ecf6b
         ;   XREF to: 004ecf90 (CONDITIONAL_JUMP)  ; LAB_004ecf90
-    MOV EBX,0x58c489                    ; 004ecf6d
+    MOV EBX,0x58c489                    ; 004ecf6d | = "..\\core\\netgame.cpp"
         ;   Label: LAB_004ecf6d
     MOV ESI,0x8a8                       ; 004ecf72
-    PUSH 0x58c49d                       ; 004ecf77
-    MOV dword ptr [0x01cc4800],EBX      ; 004ecf7c | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004ecf82 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ecf88
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x58c49d                       ; 004ecf77 | = "CNetGame::sendGameSettingsPacket - sh..."
+    MOV dword ptr [0x01cc4800],EBX      ; 004ecf7c | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004ecf82 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ecf88
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ecf8d
     MOV EDI,dword ptr [ESP + 0xd0]      ; 004ecf90
         ;   Label: LAB_004ecf90
@@ -56,14 +60,14 @@ section .text
     CMP EDI,dword ptr [EDX + 0x1c]      ; 004ecfa2
     JL 0x004ecfc9                       ; 004ecfa5
         ;   XREF to: 004ecfc9 (CONDITIONAL_JUMP)  ; LAB_004ecfc9
-    MOV EAX,0x58c4eb                    ; 004ecfa7
+    MOV EAX,0x58c4eb                    ; 004ecfa7 | = "..\\core\\netgame.cpp"
         ;   Label: LAB_004ecfa7
     MOV EDX,0x8ae                       ; 004ecfac
-    PUSH 0x58c4ff                       ; 004ecfb1
-    MOV [0x01cc4800],EAX                ; 004ecfb6 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004ecfbb | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ecfc1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x58c4ff                       ; 004ecfb1 | = "CNetGame::send - invalid player index"
+    MOV [0x01cc4800],EAX                ; 004ecfb6 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004ecfbb | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ecfc1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ecfc6
     PUSH 0x5a0e00                       ; 004ecfc9
         ;   Label: LAB_004ecfc9

@@ -5,28 +5,28 @@
 ;
 ;
 ; XREF[71]:
-;   FUN_0042c4c0 at 0042c54b
-;   FUN_0043dad0 at 0043daf6
-;   FUN_0043f330 at 0043f3c5
-;   FUN_00443180 at 004431f1
-;   FUN_00450c90 at 00450cfe
-;   FUN_00489990 at 00489baa
-;   FUN_0048d5d0 at 0048da49
-;   FUN_004ac440 at 004ac4c5
-;   FUN_004ac600 at 004ac67c
-;   FUN_004ac7c0 at 004ac83b
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 at 004160cb
+;   core_bodypart.cpp_CBodyPart_setup_FUN_00416500 at 0041652c
+;   core_chain.cpp_FUN_0042c4c0 at 0042c54b
+;   core_charactr.cpp_CCharacter_renderBurn_FUN_00426e80 at 00426eab
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_00425cc0 at 00425d28
+;   core_curtain.cpp_FUN_0043dad0 at 0043daf6
+;   core_curtain.cpp_FUN_0043f330 at 0043f3c5
+;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 004438d8
+;   core_dcamera.cpp_FUN_00443180 at 004431f1
+;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 at 0044f8e5
 ;   ... and 61 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057dd98
 ;   TerminatedCString s_CDR_texture_Too_many_cap_0057ddae
 ;   undefined4 DAT_01b4d7b0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -54,10 +54,10 @@ section .text
     MOV EDI,0x57dd98                    ; 00461edc | = "..\\engine\\drender.cpp"
     MOV EBP,0xafc                       ; 00461ee1
     PUSH 0x57ddae                       ; 00461ee6 | = "CDR::texture - Too many captured text..."
-    MOV dword ptr [0x01cc4800],EDI      ; 00461eeb | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00461ef1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00461ef7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00461eeb | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00461ef1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00461ef7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00461efc
     MOV EDX,dword ptr [0x01b4d7b0]      ; 00461eff | DAT_01b4d7b0
         ;   Label: LAB_00461eff

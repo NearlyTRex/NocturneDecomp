@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_0048d5d0 at 0048dd8a
-;   FUN_00511d80 at 00511fa3
-;   FUN_005125a0 at 00512f23
+;   core_flame.cpp_FUN_0048d5d0 at 0048dd8a
+;   core_setdir.cpp_FUN_00511d80 at 00511fa3
+;   core_setdir.cpp_FUN_005125a0 at 00512f23
 ;   engine_matrix.c_projectCachedPoint_FUN_004cd240 at 004cd256
 ;
 ; Referenced Globals:

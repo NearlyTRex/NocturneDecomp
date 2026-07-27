@@ -7,8 +7,6 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
-;   FUN_004e2c60 at 004e2c84
-;   FUN_004e7ed0 at 004e7fdf
 ;   sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_004e3320 at 004e3364
 ;   sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_004e31f0 at 004e3248
 ;   sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_004e3130 at 004e314a
@@ -17,6 +15,8 @@
 ;   sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004e3460 at 004e3627
 ;   sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_004e33d0 at 004e3437
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_004e85b0 at 004e862e
+;   sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320 at 004e4344
+;   sound_mp3.cpp_FUN_004e2c60 at 004e2c84
 ;   ... and 1 more
 ;
 ; Referenced Globals:
@@ -24,12 +24,12 @@
 ;   TerminatedCString s_Cannot_read_or_write_mor_0058b5a2
 ;   undefined4 DAT_005bc010
 ;   undefined4 DAT_005bc030
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fread_FUN_005636d0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -101,10 +101,10 @@ section .text
     MOV ECX,0x58b591                    ; 004e2b40 | = "..\\sound\\mp3.cpp"
     MOV ESI,0x266                       ; 004e2b45
     PUSH 0x58b5a2                       ; 004e2b4a | = "Cannot read or write more than %d bit..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004e2b4f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004e2b55 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e2b5b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004e2b4f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004e2b55 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e2b5b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004e2b60
     JMP 0x004e2adb                      ; 004e2b63
         ;   XREF to: 004e2adb (UNCONDITIONAL_JUMP)  ; LAB_004e2adb

@@ -14,14 +14,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   FUN_0045db00 at 0045db1c
-;   FUN_0045dbd0 at 0045dbec
-;   FUN_0045dca0 at 0045dcbc
-;   FUN_0045dd70 at 0045dd8c
-;   FUN_0045de40 at 0045de60
-;   FUN_0045df20 at 0045df40
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_0045e000 at 0045e024
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_0045da30 at 0045da4c
+;   cockpit_drawsurf.cpp_FUN_0045db00 at 0045db1c
+;   cockpit_drawsurf.cpp_FUN_0045dbd0 at 0045dbec
+;   cockpit_drawsurf.cpp_FUN_0045dca0 at 0045dcbc
+;   cockpit_drawsurf.cpp_FUN_0045dd70 at 0045dd8c
+;   cockpit_drawsurf.cpp_FUN_0045de40 at 0045de60
+;   cockpit_drawsurf.cpp_FUN_0045df20 at 0045df40
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0045d714 = 0045d81d

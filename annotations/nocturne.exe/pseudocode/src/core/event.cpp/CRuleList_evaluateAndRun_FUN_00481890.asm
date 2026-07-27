@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004b5110 at 004b5203
-;   FUN_004b52f0 at 004b5463
+;   core_hero.cpp_FUN_004b5110 at 004b5203
+;   core_hero.cpp_FUN_004b52f0 at 004b5463
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7650

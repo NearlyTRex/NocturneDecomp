@@ -27,7 +27,7 @@
 ;   core_course.cpp_CCourse_load_FUN_0043b690
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
-;   FUN_004950a0
+;   core_frankgen.cpp_FUN_004950a0
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     JNZ 0x004948c2                      ; 00494760
         ;   XREF to: 004948c2 (CONDITIONAL_JUMP)  ; LAB_004948c2
     PUSH EBX                            ; 00494766
-    CALL FUN_004950a0                   ; 00494767
-        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004950a0()
+    CALL core_frankgen.cpp_FUN_004950a0 ; 00494767
+        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004950a0()
     ADD ESP,0x4                         ; 0049476c
     POP EDI                             ; 0049476f
     POP ESI                             ; 00494770
@@ -241,8 +241,8 @@ section .text
         ;   XREF to: 0043b690 (UNCONDITIONAL_CALL)  ; undefined core_course.cpp_CCourse_load_FUN_0043b690()
     ADD ESP,0x8                         ; 004948d5
     PUSH EBX                            ; 004948d8
-    CALL FUN_004950a0                   ; 004948d9
-        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004950a0()
+    CALL core_frankgen.cpp_FUN_004950a0 ; 004948d9
+        ;   XREF to: 004950a0 (UNCONDITIONAL_CALL)  ; undefined core_frankgen.cpp_FUN_004950a0()
     ADD ESP,0x4                         ; 004948de
     POP EDI                             ; 004948e1
     POP ESI                             ; 004948e2

@@ -109,7 +109,7 @@ LAB_004bbb59:
                              (*(int *)(param_1 + 0xbca4)), iVar7 == 0)) &&
          (iVar7 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xe0))
                             (*(int *)(param_1 + 0xbca4),param_1,0), iVar7 != 0)) {
-        local_48 = 0x40000000;
+        local_48 = 2.0f;
         local_50 = 0;
         local_4c = 0;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,&local_68,&local_50);
@@ -197,7 +197,7 @@ LAB_004bbb59:
           local_78 = *(float *)(iVar7 + 0x28) - *(float *)(param_1 + 0x28);
           local_20 = SQRT(local_78 * local_78 + local_80 * local_80 + local_7c * local_7c);
           local_18 = local_20;
-          if (local_20 < 0x40000000) {
+          if (local_20 < 2.0f) {
             core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(local_e0,&local_80);
             local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                                         (local_dc - *(float *)(param_1 + 0x34));
@@ -206,7 +206,7 @@ LAB_004bbb59:
             }
           }
           if (local_20 < *(float *)(param_1 + 0xbc9c)) {
-            if (_DAT_0059f578 <= local_20) {
+            if (10.0f <= local_20) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,2,1);
             }
             else {
@@ -228,7 +228,7 @@ LAB_004bbb59:
     case 1:
     case 2:
       (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
-      fVar1 = 0x40000000;
+      fVar1 = 2.0f;
       iVar4 = param_1 + 0x150;
       if (*(int *)(param_1 + 0xbca4) == 0) {
         iVar7 = core_enemy_cpp_CEnemy_updatePatrol_FUN_0047a030(param_1,param_2);
@@ -242,7 +242,7 @@ LAB_004bbb59:
       else {
         iVar7 = *(int *)(*(int *)(param_1 + 0xbca4) + 0x2590);
         if (iVar7 == 0) {
-          local_28 = 0x40000000;
+          local_28 = 2.0f;
           *(uint *)(param_1 + 0x23ac) = 0;
           *(uint *)(param_1 + 0x23a8) = *(uint *)(param_1 + 0x23ac);
           *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
@@ -259,10 +259,10 @@ LAB_004bbb59:
             local_a0 = 0;
             local_2c = SQRT(local_9c * local_9c + local_a4 * local_a4);
             local_1c = local_2c;
-            if ((_DAT_0059f578 < local_2c) && (local_24 == 1)) {
+            if ((10.0f < local_2c) && (local_24 == 1)) {
               core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar4,2,1);
             }
-            if (((local_1c < _DAT_0059f57c) &&
+            if (((local_1c < 4.0f) &&
                 (iVar4 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xec))
                                    (*(int *)(param_1 + 0xbca4)), iVar4 == 0)) &&
                (*(int *)(param_1 + 0x2290 + *(int *)(param_1 + 0xbd58) * 4) != 0)) {
@@ -358,7 +358,8 @@ LAB_004bbb59:
         iVar4 = 0;
         while (iVar4 < *(int *)(0x01E57284 + 0x150bf4)) {
           iVar8 = core_actor_cpp_castToClassHash_FUN_0040d890
-                            (*(uint *)(iVar7 + 0x150bf8 + 0x01E57284),_DAT_01cae374);
+                            (*(uint *)(iVar7 + 0x150bf8 + 0x01E57284),
+                             g_CImpActorType_01cae33c.name_hash);
           if (((iVar8 == 0) || (iVar8 == param_1)) ||
              (*(int *)(param_1 + 0xbca4) != *(int *)(iVar8 + 0xbca4))) {
             iVar4 = iVar4 + 1;
@@ -377,7 +378,7 @@ LAB_004bbb59:
         uVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                           (iVar4,local_f8,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_c8,uVar6);
-        FUN_004b0480(INT_005b96c4,local_c8,0);
+        core_gore_cpp_FUN_004b0480(INT_005b96c4,local_c8,0);
         *(uint *)(param_1 + 0xbc90) = 1;
       }
       break;

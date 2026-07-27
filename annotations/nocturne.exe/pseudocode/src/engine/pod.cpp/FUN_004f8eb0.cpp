@@ -1,14 +1,12 @@
-// Name: FUN_004f8eb0
+// Name: engine_pod.cpp_FUN_004f8eb0
 // Address: 004f8eb0
 // Address Range: [[004f8eb0, 004f90f0]]
 // Convention: unknown
-// Signature: void FUN_004f8eb0(undefined4 param_1,undefined4 param_2)
+// Signature: void engine_pod_cpp_FUN_004f8eb0(undefined4 param_1,undefined4 param_2)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_004f8eb0(uint param_1,uint param_2)
+void engine_pod_cpp_FUN_004f8eb0(uint param_1,uint param_2)
 
 {
   byte uVar1;
@@ -28,12 +26,12 @@ void FUN_004f8eb0(uint param_1,uint param_2)
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
             (0x01BCD074,"Computing CRC over entire pod: %s...",param_2);
-  FUN_004f7a80(local_240);
-  iVar2 = FUN_004f7ae0(local_240,param_2);
+  engine_pod_cpp_FUN_004f7a80(local_240);
+  iVar2 = engine_pod_cpp_FUN_004f7ae0(local_240,param_2);
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\engine\\pod.cpp";
-    _DAT_01cc4804 = 0x37a;
-    FUN_004c8440("Can't mount %s to check version",param_2);
+    PTR_01cc4800 = "..\\engine\\pod.cpp";
+    INT_01cc4804 = 0x37a;
+    core_main_c_FUN_004c8440("Can't mount %s to check version",param_2);
   }
   engine_pod_cpp_CPodFile_cleanup_FUN_004f80e0(local_240);
   if (local_240[0] == 1) {
@@ -43,9 +41,9 @@ void FUN_004f8eb0(uint param_1,uint param_2)
     local_1c = 8;
   }
   else {
-    _DAT_01cc4800 = "..\\engine\\pod.cpp";
-    _DAT_01cc4804 = 0x385;
-    FUN_004c8440("Invalid pod version for %s: %d",param_2,local_240[0]);
+    PTR_01cc4800 = "..\\engine\\pod.cpp";
+    INT_01cc4804 = 0x385;
+    core_main_c_FUN_004c8440("Invalid pod version for %s: %d",param_2,local_240[0]);
   }
   iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058d9a8,param_2);
   iVar2 = local_1c;
@@ -63,7 +61,7 @@ void FUN_004f8eb0(uint param_1,uint param_2)
       uVar1 = *puVar8;
       puVar8 = puVar8 + 1;
       uVar5 = uVar5 + 1;
-      uVar6 = FUN_004f77d0(uVar6,uVar1);
+      uVar6 = engine_pod_cpp_FUN_004f77d0(uVar6,uVar1);
     } while (uVar5 < 0x10000);
   }
   uVar5 = 0;
@@ -75,7 +73,7 @@ void FUN_004f8eb0(uint param_1,uint param_2)
       uVar1 = *puVar8;
       puVar8 = puVar8 + 1;
       uVar5 = uVar5 + 1;
-      uVar6 = FUN_004f77d0(uVar6,uVar1);
+      uVar6 = engine_pod_cpp_FUN_004f77d0(uVar6,uVar1);
     } while (uVar5 < uVar7);
   }
   _fclose(local_20);

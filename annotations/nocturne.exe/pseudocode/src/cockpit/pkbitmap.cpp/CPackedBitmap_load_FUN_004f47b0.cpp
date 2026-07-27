@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,int param_2,uint param_3,uint param_4,uint param_5,int param_6)
 
 {
@@ -31,7 +29,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,in
   int iStack_14;
   
   bVar11 = 0;
-  FUN_004f3f50(param_1);
+  cockpit_pkbitmap_cpp_FUN_004f3f50(param_1);
   *(uint *)(param_1 + 0x18) = param_3;
   *(uint *)(param_1 + 0x1c) = param_4;
   if (param_6 == 0) {
@@ -40,9 +38,9 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,in
   iVar1 = shape_memdbg_cpp_malloc_FUN_00564c18((*(int *)(param_1 + 0x1c) + 1) * 4);
   *(int *)(param_1 + 0x20) = iVar1;
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-    _DAT_01cc4804 = 0x37d;
-    FUN_004c8440("Unable to allocate memory for rowOffset table in CPackedBitmap::load");
+    PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+    INT_01cc4804 = 0x37d;
+    core_main_c_FUN_004c8440("Unable to allocate memory for rowOffset table in CPackedBitmap::load");
   }
   iVar1 = 0;
   iStack_24 = 0;
@@ -81,9 +79,9 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0(int param_1,in
             if (iVar4 == 0) {
               _sprintf(auStack_154,"Out of memory packing file \"%s\" on row %u trying to get %u bytes",param_1,iStack_24,iStack_18
                         );
-              _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-              _DAT_01cc4804 = 0x3b5;
-              FUN_004c8440(auStack_154);
+              PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+              INT_01cc4804 = 0x3b5;
+              core_main_c_FUN_004c8440(auStack_154);
             }
           }
           puVar5 = (ushort *)(*(int *)(param_1 + 0x14) + iVar1);

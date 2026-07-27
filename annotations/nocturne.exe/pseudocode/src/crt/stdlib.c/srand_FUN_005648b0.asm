@@ -9,14 +9,14 @@
 ;   wincore_winrun.cpp_FUN_00559260 at 005592e4
 ;
 ; Called Functions:
-;   FUN_00564880
+;   crt_unknown.c_FUN_00564880
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL FUN_00564880                   ; 005648b0
-        ;   XREF to: 00564880 (UNCONDITIONAL_CALL)  ; undefined FUN_00564880()
+    CALL crt_unknown.c_FUN_00564880     ; 005648b0
+        ;   XREF to: 00564880 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564880()
         ;   Label: crt_stdlib.c_srand_FUN_005648b0
     TEST EAX,EAX                        ; 005648b5
     JZ 0x005648bf                       ; 005648b7

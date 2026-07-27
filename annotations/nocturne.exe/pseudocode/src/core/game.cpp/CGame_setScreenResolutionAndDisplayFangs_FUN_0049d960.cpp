@@ -20,7 +20,7 @@ void __cdecl core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960
   if (*(int *)(0x01CC9450 + 4) == 0) {
     _DAT_01bcd070 = _DAT_014b9900;
   }
-  wincore_windll_cpp_clearScreen_FUN_0052ee70();
+  engine_special_cpp_clearScreen_FUN_0052ee70();
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040e320(local_18);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(local_18,"fangs",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(local_18,0,0,0x8000);

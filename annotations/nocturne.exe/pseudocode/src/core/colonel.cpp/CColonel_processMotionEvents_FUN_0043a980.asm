@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00439f50 at 00439fb4
+;   core_colonel.cpp_FUN_00439f50 at 00439fb4
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004b5950(int param_1)
 
 {
@@ -39,7 +37,8 @@ uint __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004b5950(int param_1)
       return 0;
     }
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(iVar3 + 0x14cd70 + 0x01E57284),_DAT_014b8a54);
+                      (*(uint *)(iVar3 + 0x14cd70 + 0x01E57284),
+                       g_CActorDestinationActorType_014b8a1c.name_hash);
     local_14 = iVar1;
     if (iVar1 != 0) {
       iVar2 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0044bab0

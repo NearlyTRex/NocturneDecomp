@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0048e990 at 0048e9a3
+;   core_flamegun.cpp_FUN_0048e990 at 0048e9a3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_flamegun_kfm_0058169c
-;   undefined4 DAT_0059d79c
+;   float FLOAT_0059d79c = 8
 ;   undefined1* PTR_core_weapon.cpp_CWeapon_setup_FUN_00553f10_0059d7b4 = 00553f10
 ;
 ; Called Functions:
@@ -42,7 +42,7 @@ section .text
     MOV dword ptr [EBX + 0x2dc],0x0     ; 0048ea19
     MOV dword ptr [EBX + 0x2e0],0x41700000 ; 0048ea23
     MOV dword ptr [EBX + 0x2e4],0x1     ; 0048ea2d
-    FLD float ptr [0x0059d79c]          ; 0048ea37 | DAT_0059d79c
+    FLD float ptr [0x0059d79c]          ; 0048ea37 | FLOAT_0059d79c
     MOV dword ptr [EBX + 0x57c],0x0     ; 0048ea3d
     ADD ESP,0x8                         ; 0048ea47
     MOV dword ptr [EBX + 0x578],0x0     ; 0048ea4a

@@ -33,7 +33,7 @@ uint wincore_winvideo_cpp_FUN_0055a510(uint param_1,uint param_2)
     return 0;
   }
   _fclose(iVar3);
-  wincore_windll_cpp_clearScreen_FUN_0052ee70();
+  engine_special_cpp_clearScreen_FUN_0052ee70();
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   pHVar7 = _DAT_02de2098;
   if (_DAT_02de3124 != 0) {
@@ -114,7 +114,7 @@ uint wincore_winvideo_cpp_FUN_0055a510(uint param_1,uint param_2)
   }
   SetThreadPriority(hThread,1);
   wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(_DAT_02de2098);
-  wincore_windll_cpp_clearScreen_FUN_0052ee70();
+  engine_special_cpp_clearScreen_FUN_0052ee70();
   wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   return 1;

@@ -24,7 +24,7 @@ void core_svetlana_cpp_CSvetlana_setup_FUN_00541a40(int param_1)
     pcVar4 = "svetlana.dfm";
   }
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(param_1 + 0x150,pcVar4);
-  FUN_004b48d0(param_1);
+  core_hero_cpp_FUN_004b48d0(param_1);
   iVar1 = param_1 + 0x150;
   uVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(iVar1);
   _DAT_02dca058 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar2,"Bip01 head",1);

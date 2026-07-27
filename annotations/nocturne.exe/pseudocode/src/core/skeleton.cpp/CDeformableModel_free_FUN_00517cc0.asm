@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_0051f650 at 0051f65e
 ;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0 at 0051801f
 ;   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00517da0 at 00517db5
 ;   core_skeleton.cpp_CDeformableModel_dtor_FUN_00517c80 at 00517c86
+;   core_skeleton.cpp_FUN_0051f650 at 0051f65e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a1ee0
+;   WatcomTypeInfo g_SVertTypeInfo_005a1ee0
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
@@ -34,7 +34,7 @@ section .text
         ;   XREF to: 00517d60 (CONDITIONAL_JUMP)  ; LAB_00517d60
     PUSH EBX                            ; 00517cd3
     MOV EBX,EDI                         ; 00517cd4
-    PUSH 0x5a1ee0                       ; 00517cd6 | DAT_005a1ee0
+    PUSH 0x5a1ee0                       ; 00517cd6 | g_SVertTypeInfo_005a1ee0
         ;   Label: LAB_00517cd6
     MOV ECX,dword ptr [EBX + 0x40]      ; 00517cdb
     PUSH ECX                            ; 00517cde

@@ -19,14 +19,14 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(int param_1,int
   int iVar6;
   
   if ((param_2 < 0) || (*(int *)(param_1 + 0x1c) <= param_2)) {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 0x862;
-    FUN_004c8440("CNetGame::removePlayer - invalid player index");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 0x862;
+    core_main_c_FUN_004c8440("CNetGame::removePlayer - invalid player index");
   }
   if (param_2 == *(int *)(param_1 + 0x114)) {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 0x869;
-    FUN_004c8440("CNetGame::removePlayer - tried to remove myself!");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 0x869;
+    core_main_c_FUN_004c8440("CNetGame::removePlayer - tried to remove myself!");
   }
   if (param_2 == *(int *)(param_1 + 0x110)) {
     *(uint *)(param_1 + 0x110) = 0xffffffff;

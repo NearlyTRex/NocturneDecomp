@@ -10,7 +10,6 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
-;   FUN_0048d5d0 at 0048db48
 ;   core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430 at 0044f477
 ;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520 at 00450935
 ;   core_dlight.cpp_FUN_0044f9b0 at 0044fe1a
@@ -19,6 +18,7 @@
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 00485ebb
 ;   core_fire.cpp_CLightningBolt_render_FUN_00488bf0 at 00488d63
 ;   core_fire.cpp_CTrail_render_FUN_00489360 at 00489407
+;   core_flame.cpp_FUN_0048d5d0 at 0048db48
 ;   core_set.cpp_FUN_0050e080 at 0050e0ca
 ;   ... and 1 more
 ;

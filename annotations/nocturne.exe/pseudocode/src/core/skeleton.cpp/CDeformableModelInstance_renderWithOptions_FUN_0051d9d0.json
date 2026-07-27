@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -136,30 +136,6 @@
     "total_lines": 88
   },
   "cross_references": [
-    {
-      "addr": "0045a260",
-      "from_addr": "0045a3ee",
-      "name": "FUN_0045a260",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d5b20",
-      "from_addr": "004d5b7b",
-      "name": "FUN_004d5b20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00541640",
-      "from_addr": "005416c0",
-      "name": "FUN_00541640",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054dac0",
-      "from_addr": "0054db36",
-      "name": "FUN_0054dac0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "004110f0",
       "from_addr": "0041125e",
@@ -185,9 +161,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0045a260",
+      "from_addr": "0045a3ee",
+      "name": "core_dracbrid.cpp_FUN_0045a260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d5860",
       "from_addr": "004d5969",
       "name": "core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d5b20",
+      "from_addr": "004d5b7b",
+      "name": "core_mimic.cpp_FUN_004d5b20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00541640",
+      "from_addr": "005416c0",
+      "name": "core_succubus.cpp_FUN_00541640",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054dac0",
+      "from_addr": "0054db36",
+      "name": "core_vampboss.cpp_FUN_0054dac0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -297,7 +297,7 @@
       {
         "call_addr": "0045a3ee",
         "call_type": "direct",
-        "caller": "FUN_0045a260",
+        "caller": "core_dracbrid.cpp_FUN_0045a260",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -319,7 +319,7 @@
       {
         "call_addr": "004d5b7b",
         "call_type": "direct",
-        "caller": "FUN_004d5b20",
+        "caller": "core_mimic.cpp_FUN_004d5b20",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -330,7 +330,7 @@
       {
         "call_addr": "005416c0",
         "call_type": "direct",
-        "caller": "FUN_00541640",
+        "caller": "core_succubus.cpp_FUN_00541640",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -341,7 +341,7 @@
       {
         "call_addr": "0054db36",
         "call_type": "direct",
-        "caller": "FUN_0054dac0",
+        "caller": "core_vampboss.cpp_FUN_0054dac0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_event_cpp_CEventList_setCounter_FUN_004806d0(int param_1,char *param_2,int param_3)
 
 {
@@ -21,9 +19,9 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_004806d0(int param_1,char 
   if (iVar3 < 0) {
     if (param_3 != 0) {
       if (9 < *(int *)(param_1 + 0x337c)) {
-        _DAT_01cc4800 = "..\\core\\event.cpp";
-        _DAT_01cc4804 = 0xab2;
-        FUN_004c8440("CEventList::setCounter - too many counters!");
+        PTR_01cc4800 = "..\\core\\event.cpp";
+        INT_01cc4804 = 0xab2;
+        core_main_c_FUN_004c8440("CEventList::setCounter - too many counters!");
       }
       pcVar5 = (char *)(param_1 + 0x3380 + *(int *)(param_1 + 0x337c) * 0x20);
       do {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_0051f680(undefined4 param_1)
+; int core_skeleton_cpp_FUN_0051f680(undefined4 param_1)
 ;
 ;
 ; XREF[1]:
@@ -10,21 +10,21 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591e2e
 ;   TerminatedCString s_Can_t_load_s_because_ske_00591e43
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02737ef4
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CSkeleton_load_FUN_00517560
 ;   crt_string.c__stricmp_FUN_00564520
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0051f680
-        ;   Label: FUN_0051f680
+        ;   Label: core_skeleton.cpp_FUN_0051f680
     PUSH ESI                            ; 0051f681
     PUSH EDI                            ; 0051f682
     PUSH EBP                            ; 0051f683
@@ -63,10 +63,10 @@ section .text
     MOV ESI,0x591e2e                    ; 0051f6d7 | = "..\\core\\skeleton.cpp"
     MOV EBP,0x1093                      ; 0051f6dc
     PUSH 0x591e43                       ; 0051f6e1 | = "Can't load %s because skeleton manage..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0051f6e6 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0051f6ec | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0051f6f2
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0051f6e6 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 0051f6ec | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0051f6f2
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0051f6f7
     MOV EAX,[0x02737ef4]                ; 0051f6fa | DAT_02737ef4
         ;   Label: LAB_0051f6fa

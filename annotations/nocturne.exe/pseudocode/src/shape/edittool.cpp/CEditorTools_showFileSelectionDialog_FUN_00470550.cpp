@@ -19,11 +19,11 @@ uint __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047055
   int local_284 [92];
   byte local_114 [260];
   
-  FUN_00474c90(local_284);
+  shape_edittool_cpp_FUN_00474c90(local_284);
   shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004746b0(local_284,param_3,param_4);
   if (local_284[0] < 1) {
     uVar4 = support_newmsg_cpp_getLocalizedString_FUN_004ee370("No files found");
-    FUN_0046fcd0(param_1,uVar4);
+    shape_edittool_cpp_FUN_0046fcd0(param_1,uVar4);
     uVar4 = 0;
   }
   else {

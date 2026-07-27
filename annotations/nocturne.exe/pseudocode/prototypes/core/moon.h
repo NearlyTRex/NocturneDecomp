@@ -3,6 +3,10 @@
 // Function prototypes for core/moon.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_moon.cpp_staticInit_FUN_004de770
+// Address: 004de770
+void __cdecl staticInit(void);
+
 // Original: core_moon.cpp_CMoon_ctor_FUN_004de800
 // Address: 004de800
 void CMoon::ctor(int param_1);
@@ -34,3 +38,23 @@ void __cdecl CMoon::renderJoystickCalibration(int param_1);
 // Original: core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_004df170
 // Address: 004df170
 undefined4 CMoon::isAnimationFirstHalf(void);
+
+// Original: core_moon.cpp_FUN_004df190
+// Address: 004df190
+undefined4 FUN_004df190(undefined4 param_1);
+
+// Original: core_moon.cpp_FUN_004df1a0
+// Address: 004df1a0
+undefined4 FUN_004df1a0(undefined4 param_1);
+
+// Original: core_moon.cpp_FUN_004df1b0
+// Address: 004df1b0
+void FUN_004df1b0(void);
+
+// Original: core_moon.cpp_FUN_004df1d0
+// Address: 004df1d0
+void FUN_004df1d0(undefined4 param_1);
+
+// Original: core_moon.cpp_FUN_004df1f0
+// Address: 004df1f0
+void FUN_004df1f0(undefined4 param_1);

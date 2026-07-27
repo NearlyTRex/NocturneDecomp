@@ -5,25 +5,25 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_004b27c0 at 004b2b15
-;   FUN_00545c30 at 00546022
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 at 00454518
 ;   core_elephant.cpp_CElephantGun_onFired_FUN_00477fd0 at 00478093
 ;   core_fire.cpp_loadDynamiteAssets_FUN_004876a0 at 004876a5
+;   core_gun.cpp_FUN_004b27c0 at 004b2b15
 ;   core_shotgun.cpp_CShotgun_onFired_FUN_00516620 at 005166f2
+;   core_tommygun.cpp_FUN_00545c30 at 00546022
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_0057ce51
 ;   TerminatedCString s_Can_t_load_s_because_key_0057ce64
 ;   undefined4 DAT_01abb658
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00453950
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650
+;   core_main.c_FUN_004c8440
 ;   crt_string.c__stricmp_FUN_00564520
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -66,10 +66,10 @@ section .text
     MOV ESI,0x57ce51                    ; 004543fb | = "..\\core\\dmodel.cpp"
     MOV EAX,0x4cd                       ; 00454400
     PUSH 0x57ce64                       ; 00454405 | = "Can't load %s because keyFrame model ..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0045440a | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00454410 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00454415
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0045440a | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00454410 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00454415
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0045441a
     MOV EDX,dword ptr [0x01abb658]      ; 0045441d | DAT_01abb658
         ;   Label: LAB_0045441d

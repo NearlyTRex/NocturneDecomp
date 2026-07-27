@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_batman_cpp_CBatman_ctor_FUN_004133e0(uint param_1)
 
 {
   char cVar1;
-  uint uVar2;
-  uint uVar3;
+  float fVar2;
+  float fVar3;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
@@ -23,12 +21,12 @@ int core_batman_cpp_CBatman_ctor_FUN_004133e0(uint param_1)
   *(byte ***)(iVar4 + 0x14c) = &PTR_core_batman_cpp_CBatman_setup_FUN_004134a0_0059a164;
   pcVar6 = (char *)(iVar4 + 0xbd24);
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar4 + 0x150,"batman.dfm");
-  uVar2 = _DAT_0059a150;
+  fVar2 = 50.0f;
   *(uint *)(iVar4 + 0x2dd4) = 0x3f19999a;
-  uVar3 = _DAT_0059a154;
+  fVar3 = 100.0f;
   *(uint *)(iVar4 + 0x2dd8) = 0x40000000;
-  *(uint *)(iVar4 + 0x2ddc) = uVar2;
-  *(uint *)(iVar4 + 0x2de0) = uVar3;
+  *(float *)(iVar4 + 0x2ddc) = fVar2;
+  *(float *)(iVar4 + 0x2de0) = fVar3;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;

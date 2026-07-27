@@ -60,9 +60,9 @@ void sound_sndmain_cpp_CSfxSlot_mix_FUN_00524d10(int param_1)
   int local_14;
   
   if (_DAT_02dc84bc < 1) {
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0xa1a;
-    FUN_004c8440("SfxSlot::mix - must be locked!");
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0xa1a;
+    core_main_c_FUN_004c8440("SfxSlot::mix - must be locked!");
   }
   if (*(int *)(param_1 + 0x70) != 0) {
     local_58 = in_stack_00000028;

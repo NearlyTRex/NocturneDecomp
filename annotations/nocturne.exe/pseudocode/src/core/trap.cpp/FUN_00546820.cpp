@@ -1,0 +1,20 @@
+// Name: core_trap.cpp_FUN_00546820
+// Address: 00546820
+// Address Range: [[00546820, 0054686d]]
+// Convention: unknown
+// Signature: int core_trap_cpp_FUN_00546820(undefined4 param_1)
+
+#include "nocturne.h"
+
+int core_trap_cpp_FUN_00546820(uint param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = core_actor_cpp_FUN_00409d30(param_1);
+  iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x150);
+  *(byte ***)(iVar1 + -4) = &PTR_core_trap_cpp_FUN_00546870_005a3424;
+  core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar1,"beartrap.kfm");
+  *(uint *)(iVar1 + 0x180) = 0;
+  return iVar1 + -0x150;
+}

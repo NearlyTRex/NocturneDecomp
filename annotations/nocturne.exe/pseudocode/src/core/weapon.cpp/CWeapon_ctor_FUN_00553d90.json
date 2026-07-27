@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -136,24 +136,6 @@
   },
   "cross_references": [
     {
-      "addr": "00477710",
-      "from_addr": "00477716",
-      "name": "FUN_00477710",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b2760",
-      "from_addr": "004b2766",
-      "name": "FUN_004b2760",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00515d20",
-      "from_addr": "00515d26",
-      "name": "FUN_00515d20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00411350",
       "from_addr": "00411355",
       "name": "core_baron.cpp_CBaronWeapon_ctor_FUN_00411350",
@@ -172,6 +154,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00477710",
+      "from_addr": "00477716",
+      "name": "core_elephant.cpp_FUN_00477710",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0048e9c0",
       "from_addr": "0048e9c6",
       "name": "core_flamegun.cpp_CFlameThrower_ctor_FUN_0048e9c0",
@@ -184,6 +172,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004b2760",
+      "from_addr": "004b2766",
+      "name": "core_gun.cpp_FUN_004b2760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004c6e30",
       "from_addr": "004c6e36",
       "name": "core_lightgun.cpp_CLightGun_ctor_FUN_004c6e30",
@@ -193,6 +187,12 @@
       "addr": "004cec60",
       "from_addr": "004cec68",
       "name": "core_melee.cpp_CMelee_ctor_FUN_004cec60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00515d20",
+      "from_addr": "00515d26",
+      "name": "core_shotgun.cpp_FUN_00515d20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -301,7 +301,7 @@
       {
         "call_addr": "00477716",
         "call_type": "direct",
-        "caller": "FUN_00477710",
+        "caller": "core_elephant.cpp_FUN_00477710",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -334,7 +334,7 @@
       {
         "call_addr": "004b2766",
         "call_type": "direct",
-        "caller": "FUN_004b2760",
+        "caller": "core_gun.cpp_FUN_004b2760",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -367,7 +367,7 @@
       {
         "call_addr": "00515d26",
         "call_type": "direct",
-        "caller": "FUN_00515d20",
+        "caller": "core_shotgun.cpp_FUN_00515d20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

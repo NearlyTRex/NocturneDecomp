@@ -59,7 +59,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(int param_1)
     core_game_cpp_CGame_saveClockTime_FUN_0049a890();
     for (local_550 = 5.0; 0.0 < local_550; local_550 = local_550 - *(float *)(param_1 + 0x264)) {
       pcStack_554 = (char *)0x4a6a79;
-      wincore_windll_cpp_clearScreen_FUN_0052ee70();
+      engine_special_cpp_clearScreen_FUN_0052ee70();
       pcStack_554 = "To be continued...";
       uStack_558 = 0x4a6a83;
       pcStack_554 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
@@ -90,7 +90,7 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(int param_1)
   uStack_55c = "stats";
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(local_4c);
   pcStack_554 = (char *)0x4a6b49;
-  wincore_windll_cpp_clearScreen_FUN_0052ee70();
+  engine_special_cpp_clearScreen_FUN_0052ee70();
   pcStack_554 = (char *)0xffff;
   uStack_558 = 0;
   uStack_55c = (char *)0x0;

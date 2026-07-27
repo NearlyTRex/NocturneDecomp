@@ -29,7 +29,7 @@ int __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(uint *param_1)
   bVar6 = 0;
   if ((DAT_01e312f0 & 1) == 0) {
     DAT_01e312f0 = DAT_01e312f0 | 1;
-    __arrinit(0x1d468a0,0xc,&DAT_005a1200);
+    __arrinit(0x1d468a0,0xc,&g_CPathMapTypeInfo_005a1200);
     FUN_00564bb0(&DAT_005be0a8);
   }
   if (DAT_005be0b8 < 0) {
@@ -75,6 +75,6 @@ int __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(uint *param_1)
   local_24 = param_1[1];
   local_20 = param_1[2];
   iVar1 = iVar5 * 0x138dc + 0x1d468a0;
-  FUN_004f0360(iVar1,&stack0xffffffd8,1);
+  core_path_cpp_FUN_004f0360(iVar1,&stack0xffffffd8,1);
   return iVar1;
 }

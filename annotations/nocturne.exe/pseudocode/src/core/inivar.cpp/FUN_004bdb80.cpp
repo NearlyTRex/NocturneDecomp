@@ -1,14 +1,14 @@
-// Name: FUN_004bdb80
+// Name: core_inivar.cpp_FUN_004bdb80
 // Address: 004bdb80
 // Address Range: [[004bdb80, 004be2c6]]
 // Convention: unknown
-// Signature: void FUN_004bdb80(void)
+// Signature: void core_inivar_cpp_FUN_004bdb80(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004bdb80(void)
+void core_inivar_cpp_FUN_004bdb80(void)
 
 {
   int iVar1;
@@ -16,16 +16,16 @@ void FUN_004bdb80(void)
   
   iVar1 = engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0(".\\system\\nocturne.ini",0x180);
   if (iVar1 != 0) {
-    _DAT_01cc4800 = "..\\core\\inivar.cpp";
-    _DAT_01cc4804 = 0x54;
-    FUN_004c8440("Please copy Nocturne to your hard drive");
+    PTR_01cc4800 = "..\\core\\inivar.cpp";
+    INT_01cc4804 = 0x54;
+    core_main_c_FUN_004c8440("Please copy Nocturne to your hard drive");
   }
   engine_ini_cpp_CIniFile_ctor_FUN_004bd860(local_204,".\\system\\nocturne.ini",0);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(local_204,"Graphics");
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"gamePIXX",0x01C775EC);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"gamePIXY",0x01C775EC + 4);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"gameBPP",0x01C775EC + 8);
-  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"useDirect3D",&DAT_02dc9d60);
+  engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"useDirect3D",&INT_02dc9d60);
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"useAGPFlag",&DAT_02dc9d6c);
   engine_ini_cpp_CIniFile_getString_FUN_004bd910
             (local_204,"rendererDLLPath",&DAT_005c0e80,0xfa);
@@ -55,7 +55,7 @@ void FUN_004bdb80(void)
   _DAT_01cc64a4 = 0;
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,"currentBoard",&DAT_01cc64a4);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(local_204,"Sound");
-  FUN_005289f0(local_204);
+  sound_sndmain_cpp_FUN_005289f0(local_204);
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004bd8d0(local_204,"Control");
   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
             (local_204,"gameControl",0x01C775EC + 0xbc);

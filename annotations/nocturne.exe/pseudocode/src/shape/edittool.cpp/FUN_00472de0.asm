@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00472de0(undefined4 param_1,float param_2,undefined4 param_3)
+; void shape_edittool_cpp_FUN_00472de0(undefined4 param_1,float param_2,undefined4 param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x20]:4  local_20
@@ -9,13 +9,14 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
-;   FUN_00437ab0 at 00437cb0
-;   FUN_00472fd0 at 00473060
-;   FUN_00518f60 at 005190e1
+;   core_cloth.cpp_FUN_00437ab0 at 00437cb0
+;   core_skeleton.cpp_FUN_00518f60 at 005190e1
+;   shape_edittool.cpp_FUN_00472fd0 at 00473060
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
+;   TerminatedCString s_XYZ_0057ea93
 ;   undefined4 s_YZ_0057ea93+1
 ;   TerminatedCString s_c_0057ea97
 ;   double DOUBLE_0057ea9a = 256
@@ -28,10 +29,10 @@
 ;   undefined4 DAT_005c5078
 ;   undefined4 DAT_005c5084
 ;   undefined4 DAT_005c5084+3
-;   undefined4 DAT_005c5088
-;   ... and 9 more
+;   ... and 10 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00409290
@@ -39,14 +40,13 @@
 ;   engine_font.cpp_CBitFont_drawText_FUN_00490980
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_matrix.c_transformToCache_FUN_004cd210
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00472de0
-        ;   Label: FUN_00472de0
+        ;   Label: shape_edittool.cpp_FUN_00472de0
     PUSH ESI                            ; 00472de1
     PUSH EDI                            ; 00472de2
     PUSH EBP                            ; 00472de3
@@ -176,16 +176,16 @@ section .text
         ;   Label: LAB_00472f4f
     MOV EBX,0x8b                        ; 00472f54
     PUSH 0x57e510                       ; 00472f59 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 00472f5e | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00472f64 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00472f6a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00472f5e | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00472f64 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00472f6a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00472f6f
     JMP 0x00472df4                      ; 00472f72
         ;   XREF to: 00472df4 (UNCONDITIONAL_JUMP)  ; LAB_00472df4
     XOR EAX,EAX                         ; 00472f77
         ;   Label: LAB_00472f77
-    MOV AL,byte ptr [ESI + 0x57ea93]    ; 00472f79 | s_YZ_0057ea93+1
+    MOV AL,byte ptr [ESI + 0x57ea93]    ; 00472f79 | s_YZ_0057ea93+1 | = "XYZ"
     PUSH EAX                            ; 00472f7f
     PUSH 0x57ea97                       ; 00472f80 | = "%c"
     LEA EAX,[ESP + 0x8]                 ; 00472f85

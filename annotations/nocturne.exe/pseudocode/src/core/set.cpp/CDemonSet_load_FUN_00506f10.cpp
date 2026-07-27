@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
 
 {
@@ -48,9 +46,9 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
   core_set_cpp_CDemonSet_clear_FUN_00506ec0(param_1);
   iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_2,"rt");
   if (iVar3 == 0) {
-    _DAT_01cc4800 = "..\\core\\set.cpp";
-    _DAT_01cc4804 = 0x11b;
-    FUN_004c8440("CDemonSet::Unable to open %s",param_2);
+    PTR_01cc4800 = "..\\core\\set.cpp";
+    INT_01cc4804 = 0x11b;
+    core_main_c_FUN_004c8440("CDemonSet::Unable to open %s",param_2);
   }
   _fscanf(iVar3,"%d\n",param_1 + 0x56a31);
   _fscanf(iVar3,"%f\n",param_1 + 0x56aab);
@@ -341,7 +339,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
     } while (cVar1 != '\0');
     iVar3 = engine_dosio_cpp_getFile_FUN_00456a60("data",piVar6,"rb");
     if (iVar3 == 0) {
-      wincore_windll_cpp_clearScreen_FUN_0052ee70();
+      engine_special_cpp_clearScreen_FUN_0052ee70();
       engine_2d_c_drawText_FUN_00402600("Warning!  No .GEO file.  Press any key",0,0);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
       engine_2d_c_clearInputAndWait_FUN_00403f50();
@@ -349,7 +347,7 @@ int __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(int *param_1,uint param_2)
     }
     else {
       _fclose(iVar3);
-      FUN_00467890(&DAT_01fba938,piVar6);
+      core_dtrace_cpp_FUN_00467890(&DAT_01fba938,piVar6);
     }
     core_path_cpp_resetAllPathMaps_FUN_004f1e90();
   }

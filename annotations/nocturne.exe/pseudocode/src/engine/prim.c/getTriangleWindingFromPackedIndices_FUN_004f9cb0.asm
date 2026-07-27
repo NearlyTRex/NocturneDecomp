@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00461720 at 0046196c
 ;   engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0 at 00461cff
+;   engine_drender.cpp_FUN_00461720 at 0046196c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c5014

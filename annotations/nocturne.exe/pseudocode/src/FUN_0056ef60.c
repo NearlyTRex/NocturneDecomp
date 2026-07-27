@@ -10,24 +10,24 @@ void FUN_0056ef60(void)
 
 {
   byte in_AL;
-  char *pcVar1;
+  RuntimeHandlerEntry *pRVar1;
   byte bVar2;
-  char *pcVar3;
+  RuntimeHandlerEntry *pRVar3;
   
   while( true ) {
-    pcVar1 = &DAT_005c2302;
-    pcVar3 = &DAT_005c26ce;
+    pRVar1 = &g_FirstInitHandler;
+    pRVar3 = &RuntimeHandlerEntry_005c26ce;
     bVar2 = in_AL;
     do {
-      if ((*pcVar1 != '\x02') && ((byte)pcVar1[1] <= bVar2)) {
-        bVar2 = pcVar1[1];
-        pcVar3 = pcVar1;
+      if ((pRVar1->status != '\x02') && (pRVar1->priority <= bVar2)) {
+        bVar2 = pRVar1->priority;
+        pRVar3 = pRVar1;
       }
-      pcVar1 = pcVar1 + 6;
-    } while (pcVar1 < &DAT_005c26ce);
-    if (pcVar3 == &DAT_005c26ce) break;
-    FUN_0056ef50(pcVar3 + 2);
-    *pcVar3 = '\x02';
+      pRVar1 = pRVar1 + 1;
+    } while (pRVar1 < &RuntimeHandlerEntry_005c26ce);
+    if (pRVar3 == &RuntimeHandlerEntry_005c26ce) break;
+    FUN_0056ef50(&pRVar3->func);
+    pRVar3->status = '\x02';
   }
   return;
 }

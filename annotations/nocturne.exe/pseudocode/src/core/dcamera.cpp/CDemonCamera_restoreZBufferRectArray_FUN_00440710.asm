@@ -29,7 +29,7 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_00440610
 ;   core_dstrender.cpp_memcpyMMX_FUN_00465341
-;   wincore_windll.cpp_restoreZBuffer_FUN_00532c90
+;   engine_special.cpp_restoreZBuffer_FUN_00532c90
 ;
 ; *****************************************************************************
 
@@ -268,8 +268,8 @@ section .text
     PUSH 0x0                            ; 00440972
     PUSH 0x0                            ; 00440974
     PUSH 0x0                            ; 00440976
-    CALL wincore_windll.cpp_restoreZBuffer_FUN_00532c90 ; 00440978
-        ;   XREF to: 00532c90 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_restoreZBuffer_FUN_00532c90()
+    CALL engine_special.cpp_restoreZBuffer_FUN_00532c90 ; 00440978
+        ;   XREF to: 00532c90 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_restoreZBuffer_FUN_00532c90()
     ADD ESP,0x14                        ; 0044097d
     ADD ESP,0x2c                        ; 00440980
     POP EBP                             ; 00440983

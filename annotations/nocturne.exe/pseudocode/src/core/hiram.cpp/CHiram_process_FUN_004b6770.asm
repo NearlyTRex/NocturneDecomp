@@ -10,7 +10,7 @@
 ;   TerminatedCString s_GlassHiram_005859df
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005baf90
-;   undefined4 DAT_01c78c78
+;   undefined4 g_CGlassActorType_01c78c40.name_hash
 ;   undefined4 DAT_01cc9450
 ;
 ; Called Functions:
@@ -20,13 +20,13 @@
 ;   core_charactr.cpp_FUN_004259f0
 ;   core_charactr.cpp_FUN_0042a150
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
+;   core_glass.cpp_FUN_004ada20
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0
+;   core_mission.cpp_FUN_004d9110
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
-;   FUN_004ada20
-;   FUN_004d9110
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     PUSH EBX                            ; 004b67fa
     MOV EDI,dword ptr [0x005baf90]      ; 004b67fb | DAT_005baf90
     PUSH EDI                            ; 004b6801 | DAT_01cc9450
-    CALL FUN_004d9110                   ; 004b6802
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined FUN_004d9110()
+    CALL core_mission.cpp_FUN_004d9110  ; 004b6802
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
     ADD ESP,0xc                         ; 004b6807
     JMP 0x004b67d1                      ; 004b680a
         ;   XREF to: 004b67d1 (UNCONDITIONAL_JUMP)  ; LAB_004b67d1
@@ -118,7 +118,7 @@ section .text
     CALL core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0 ; 004b682b
         ;   XREF to: 004e16b0 (UNCONDITIONAL_CALL)  ; undefined core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0()
     ADD ESP,0xc                         ; 004b6830
-    MOV ECX,dword ptr [0x01c78c78]      ; 004b6833 | DAT_01c78c78
+    MOV ECX,dword ptr [0x01c78c78]      ; 004b6833 | g_CGlassActorType_01c78c40.name_hash
     PUSH ECX                            ; 004b6839
     PUSH 0x5859df                       ; 004b683a | = "GlassHiram"
     MOV ESI,dword ptr [0x005baf90]      ; 004b683f | DAT_005baf90
@@ -136,8 +136,8 @@ section .text
     LEA ESI,[EAX + 0x20]                ; 004b685f
     PUSH ESI                            ; 004b6862
     PUSH EAX                            ; 004b6863
-    CALL FUN_004ada20                   ; 004b6864
-        ;   XREF to: 004ada20 (UNCONDITIONAL_CALL)  ; undefined FUN_004ada20()
+    CALL core_glass.cpp_FUN_004ada20    ; 004b6864
+        ;   XREF to: 004ada20 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004ada20()
     ADD ESP,0x8                         ; 004b6869
     JMP 0x004b67ad                      ; 004b686c
         ;   XREF to: 004b67ad (UNCONDITIONAL_JUMP)  ; LAB_004b67ad

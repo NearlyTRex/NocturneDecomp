@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_00523330(float *param_1,ushort *param_2,uint param_3,int param_4,int param_5)
 
 {
@@ -21,9 +19,9 @@ void __cdecl sound_sndmain_cpp_convertMixBufToOutput_FUN_00523330(float *param_1
   local_30 = param_2;
   if (param_3 < 8) {
 LAB_0052347d:
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x554;
-    FUN_004c8440("convertMixBufToOutput - invalid bits: %d",param_3);
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x554;
+    core_main_c_FUN_004c8440("convertMixBufToOutput - invalid bits: %d",param_3);
     return;
   }
   if (param_3 < 9) {

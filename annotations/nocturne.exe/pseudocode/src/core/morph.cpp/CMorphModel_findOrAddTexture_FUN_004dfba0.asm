@@ -5,19 +5,19 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004df800 at 004df8b7
 ;   core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0 at 004dfaa9
+;   core_morph.cpp_FUN_004df800 at 004df8b7
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0058acd8
 ;   TerminatedCString s_CMorphModel_findOrAddTex_0058acea
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_string.c__stricmp_FUN_00564520
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -58,10 +58,10 @@ section .text
     MOV EDI,0x58acd8                    ; 004dfbdb | = "..\\core\\morph.cpp"
     MOV EAX,0x1d0                       ; 004dfbe0
     PUSH 0x58acea                       ; 004dfbe5 | = "CMorphModel::findOrAddTexture - too m..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004dfbea | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004dfbf0 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004dfbf5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004dfbea | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004dfbf0 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004dfbf5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004dfbfa
     MOV ESI,dword ptr [EBX + 0x64]      ; 004dfbfd
         ;   Label: LAB_004dfbfd

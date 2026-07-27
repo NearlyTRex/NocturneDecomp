@@ -40,11 +40,11 @@ void core_gore_cpp_CFootstep_render_FUN_004afa20(uint *param_1)
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,&DAT_005ba84c);
   pfVar2 = (float *)(param_1 + 2);
   do {
-    local_1c = (int)ROUND(*pfVar2 * _DAT_0059e4d4);
-    local_18 = (int)ROUND(pfVar2[1] * _DAT_0059e4d4);
-    local_14 = (int)ROUND(pfVar2[2] * _DAT_0059e4d4);
+    local_1c = (int)ROUND(*pfVar2 * 256.0f);
+    local_18 = (int)ROUND(pfVar2[1] * 256.0f);
+    local_14 = (int)ROUND(pfVar2[2] * 256.0f);
     pfVar2 = pfVar2 + 3;
-    wincore_windll_cpp_transformPoint_FUN_00530a25(puVar3,&local_1c);
+    engine_special_cpp_transformPoint_FUN_00530a25(puVar3,&local_1c);
     puVar3 = puVar3 + 0xc;
   } while (pfVar2 != (float *)(param_1 + 0xe));
   if (param_1[0xf] == 0) {

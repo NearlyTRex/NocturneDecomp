@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 494,
-    "complexity_score": 1403,
+    "complexity_score": 1404,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 213,
+    "pseudocode_lines": 214,
     "suspect_count": 115,
     "suspect_types": [
       "pointer_cast",
@@ -139,7 +139,7 @@
       "unnamed_param",
       "warning_type_propagation"
     ],
-    "total_lines": 707
+    "total_lines": 708
   },
   "cross_references": [],
   "function": {
@@ -1305,7 +1305,7 @@
       "line": 188,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x1fb04,*(uint *)(param_1 + 0x1fb10),DAT_007642e8,FUN_0051b650);",
+      "text": "(param_1 + 0x1fb04,*(uint *)(param_1 + 0x1fb10),DAT_007642e8,",
       "type": "unnamed_param"
     },
     {
@@ -1313,7 +1313,7 @@
       "line": 188,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1 + 0x1fb04,*(uint *)(param_1 + 0x1fb10),DAT_007642e8,FUN_0051b650);",
+      "text": "(param_1 + 0x1fb04,*(uint *)(param_1 + 0x1fb10),DAT_007642e8,",
       "type": "unnamed_param"
     },
     {
@@ -1321,12 +1321,12 @@
       "line": 188,
       "match": "DAT_007642e8",
       "severity": "mild",
-      "text": "(param_1 + 0x1fb04,*(uint *)(param_1 + 0x1fb10),DAT_007642e8,FUN_0051b650);",
+      "text": "(param_1 + 0x1fb04,*(uint *)(param_1 + 0x1fb10),DAT_007642e8,",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 189,
+      "line": 190,
       "match": "&stack0xffffff6c",
       "severity": "moderate",
       "text": "puVar5 = &stack0xffffff6c;",
@@ -1334,7 +1334,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 191,
+      "line": 192,
       "match": "&stack0xffffff70",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff70 + (uint)bVar7 * 0xfffffffe * 4) =",
@@ -1342,7 +1342,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 192,
+      "line": 193,
       "match": "&stack0xffffff60",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff60 + (uint)bVar7 * -8);",
@@ -1350,7 +1350,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 193,
+      "line": 194,
       "match": "&stack0xffffff74",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff74 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
@@ -1358,7 +1358,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 194,
+      "line": 195,
       "match": "&stack0xffffff64",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff64 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
@@ -1366,7 +1366,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 196,
+      "line": 197,
       "match": "&stack0xffffff74",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff74 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4) =",
@@ -1374,7 +1374,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 198,
+      "line": 199,
       "match": "&stack0xffffff64",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff64 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4)",
@@ -1382,7 +1382,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 202,
+      "line": 203,
       "match": "param_1",
       "severity": "mild",
       "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",
@@ -1390,18 +1390,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 202,
+      "line": 203,
       "match": "param_2",
       "severity": "mild",
       "text": "core_charactr_cpp_FUN_0042a150(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 209,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_60 = local_60 + *(float *)(param_1 + 0x20);",
       "type": "unnamed_param"
     },
     {
@@ -1409,7 +1401,7 @@
       "line": 210,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_5c = local_5c + *(float *)(param_1 + 0x24);",
+      "text": "local_60 = local_60 + *(float *)(param_1 + 0x20);",
       "type": "unnamed_param"
     },
     {
@@ -1417,12 +1409,20 @@
       "line": 211,
       "match": "param_1",
       "severity": "mild",
+      "text": "local_5c = local_5c + *(float *)(param_1 + 0x24);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 212,
+      "match": "param_1",
+      "severity": "mild",
       "text": "local_58 = local_10 + *(float *)(param_1 + 0x28);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 215,
+      "line": 216,
       "match": "param_2",
       "severity": "mild",
       "text": "DAT_0076432c = DAT_0076432c + param_2;",
@@ -1430,7 +1430,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 215,
+      "line": 216,
       "match": "DAT_0076432c",
       "severity": "mild",
       "text": "DAT_0076432c = DAT_0076432c + param_2;",
@@ -1438,7 +1438,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 215,
+      "line": 216,
       "match": "DAT_0076432c",
       "severity": "mild",
       "text": "DAT_0076432c = DAT_0076432c + param_2;",
@@ -1446,7 +1446,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffff70` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 191,
+      "line": 192,
       "match": "(int)&stack0xffffff70",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff70 + (uint)bVar7 * 0xfffffffe * 4) =",
@@ -1454,7 +1454,7 @@
     },
     {
       "description": "Pointer value `(&stack0xffffff74 + (uint)bVar7 * -8 + (uint)bVar7 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 196,
+      "line": 197,
       "match": "(int)(&stack0xffffff74 + (uint)bVar7 * -8 + (uint)bVar7 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff74 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4) =",
@@ -1462,7 +1462,7 @@
     },
     {
       "description": "Pointer value `(&stack0xffffff64 + (uint)bVar7 * -8 + (uint)bVar7 * -8)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 198,
+      "line": 199,
       "match": "(int)(&stack0xffffff64 + (uint)bVar7 * -8 + (uint)bVar7 * -8)",
       "severity": "moderate",
       "text": "((int)(&stack0xffffff64 + (uint)bVar7 * -8 + (uint)bVar7 * -8) + ((uint)bVar7 * -2 + 1) * 4)",
@@ -1478,7 +1478,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 191,
+      "line": 192,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffff70 + (uint)bVar7 * 0xfffffffe * 4) =",

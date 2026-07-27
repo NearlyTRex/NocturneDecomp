@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004b9cf0 at 004b9d03
+;   core_icepick.cpp_FUN_004b9cf0 at 004b9d03
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_icepick_dfm_0058600b
 ;   undefined1* PTR_core_icepick.cpp_CIcePick_setup_FUN_004b9db0_0059f3e4 = 004b9db0
 ;
 ; Called Functions:
+;   core_hero.cpp_FUN_004b46d0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
-;   FUN_004b46d0
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
         ;   Label: core_icepick.cpp_CIcePick_ctor_FUN_004b9d20
     MOV EDX,dword ptr [ESP + 0x8]       ; 004b9d21
     PUSH EDX                            ; 004b9d25
-    CALL FUN_004b46d0                   ; 004b9d26
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b46d0()
+    CALL core_hero.cpp_FUN_004b46d0     ; 004b9d26
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b46d0()
     MOV EBX,EAX                         ; 004b9d2b
     ADD EAX,0x150                       ; 004b9d2d
     ADD ESP,0x4                         ; 004b9d32

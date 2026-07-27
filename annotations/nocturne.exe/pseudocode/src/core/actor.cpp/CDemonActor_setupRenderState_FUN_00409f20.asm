@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[66]:
-;   FUN_0040f2b0 at 0040f2bd
-;   FUN_00415760 at 0041577d
-;   FUN_004161a0 at 004161e9
-;   FUN_00416300 at 0041635e
-;   FUN_00419c20 at 00419c3c
-;   FUN_00421540 at 00421571
-;   FUN_0042c4c0 at 0042c4f0
-;   FUN_0043d0a0 at 0043d0aa
-;   FUN_0043f330 at 0043f33a
-;   FUN_00455d50 at 00455d6b
+;   core_ammo.cpp_FUN_0040ec30 at 0040ec3a
+;   core_ammobox.cpp_FUN_0040f2b0 at 0040f2bd
+;   core_backgnd.cpp_FUN_0040ff80 at 0040ff95
+;   core_baron.cpp_FUN_004110f0 at 004111e8
+;   core_bat.cpp_FUN_00411e30 at 00411e3a
+;   core_batman.cpp_FUN_00414340 at 004143a8
+;   core_biggs.cpp_FUN_00415760 at 0041577d
+;   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00416430 at 00416476
+;   core_bodypart.cpp_FUN_004161a0 at 004161e9
+;   core_bodypart.cpp_FUN_00416300 at 0041635e
 ;   ... and 56 more
 ;
 ; Referenced Globals:

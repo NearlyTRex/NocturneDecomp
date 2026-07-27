@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0040f1a0(int param_1,undefined4 param_2)
+; void core_ammobox_cpp_FUN_0040f1a0(int param_1,undefined4 param_2)
 ;
 ;
 ; XREF[2]:
@@ -15,23 +15,23 @@
 ;   undefined4 s_ome_ammo_0057838f+1
 ;   undefined4 s_me_ammo_0057838f+2
 ;   undefined4 s_e_ammo_0057838f+3
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040eb70
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80
+;   core_ammo.cpp_FUN_0040ef60
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360
-;   FUN_0040ef60
-;   FUN_004c8440
-;   FUN_0056497c
+;   core_main.c_FUN_004c8440
+;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0040f1a0
-        ;   Label: FUN_0040f1a0
+        ;   Label: core_ammobox.cpp_FUN_0040f1a0
     PUSH EBP                            ; 0040f1a1
     MOV EBP,dword ptr [ESP + 0xc]       ; 0040f1a2
     MOV EDX,dword ptr [EBP + 0x318]     ; 0040f1a6
@@ -59,8 +59,8 @@ section .text
     RET                                 ; 0040f1e2
     PUSH 0x314                          ; 0040f1e3
         ;   Label: LAB_0040f1e3
-    CALL FUN_0056497c                   ; 0040f1e8
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0040f1e8
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0040f1ed
     TEST EAX,EAX                        ; 0040f1f0
     JZ 0x0040f1fd                       ; 0040f1f2
@@ -79,10 +79,10 @@ section .text
     MOV ESI,0x57836d                    ; 0040f205 | = "..\\core\\ammobox.cpp"
     MOV EDI,0xa2                        ; 0040f20a
     PUSH 0x578381                       ; 0040f20f | = "Out of memory"
-    MOV dword ptr [0x01cc4800],ESI      ; 0040f214 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0040f21a | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0040f220
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0040f214 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0040f21a | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0040f220
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040f225
     LEA ESI,[EBP + 0x2cc]               ; 0040f228
         ;   Label: LAB_0040f228
@@ -94,8 +94,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x30c]     ; 0040f238
     PUSH EAX                            ; 0040f23e
     PUSH EBX                            ; 0040f23f
-    CALL FUN_0040ef60                   ; 0040f240
-        ;   XREF to: 0040ef60 (UNCONDITIONAL_CALL)  ; undefined FUN_0040ef60()
+    CALL core_ammo.cpp_FUN_0040ef60     ; 0040f240
+        ;   XREF to: 0040ef60 (UNCONDITIONAL_CALL)  ; undefined core_ammo.cpp_FUN_0040ef60()
     MOV EAX,dword ptr [EBP + 0x310]     ; 0040f245
     ADD ESP,0x8                         ; 0040f24b
     MOV dword ptr [EBX + 0x310],EAX     ; 0040f24e

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0053fc60 at 0053fc84
+;   core_stranger.cpp_FUN_0053fc60 at 0053fc84
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a2704 = 10

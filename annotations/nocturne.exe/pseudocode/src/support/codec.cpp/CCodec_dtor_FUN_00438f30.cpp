@@ -12,7 +12,7 @@ uint * __cdecl support_codec_cpp_CCodec_dtor_FUN_00438f30(uint *param_1,uint par
   uint uVar1;
   
   if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&DAT_0059b470);
+    uVar1 = __vec_delete(param_1,&g_CCodecTypeInfo_0059b470);
     shape_memdbg_cpp_free_FUN_00564486(uVar1);
     return param_1;
   }

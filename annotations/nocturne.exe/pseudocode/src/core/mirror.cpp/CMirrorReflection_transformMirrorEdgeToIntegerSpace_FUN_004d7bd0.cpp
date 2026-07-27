@@ -33,9 +33,9 @@ void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004
   byte local_18 [12];
   
   bVar2 = 0;
-  local_24 = (float)*param_2 * _DAT_005a0888;
-  local_20 = (float)param_2[1] * _DAT_005a0888;
-  local_1c = (float)param_2[2] * _DAT_005a0888;
+  local_24 = (float)*param_2 * 0.00390625f;
+  local_20 = (float)param_2[1] * 0.00390625f;
+  local_1c = (float)param_2[2] * 0.00390625f;
   local_54 = (float)*param_3 * _DAT_005a088c;
   local_50 = (float)param_3[1] * _DAT_005a088c;
   local_4c = (float)param_3[2] * _DAT_005a088c;
@@ -69,10 +69,10 @@ void core_mirror_cpp_CMirrorReflection_transformMirrorEdgeToIntegerSpace_FUN_004
     local_50 = local_50 - local_20;
     local_4c = local_4c - local_1c;
   }
-  local_3c = (int)ROUND(local_54 * _DAT_005a0884);
-  local_38[0] = (int)ROUND(local_50 * _DAT_005a0884);
-  local_38[1] = (int)ROUND(local_4c * _DAT_005a0884);
-  *unaff_ESI = (int)ROUND(local_54 * _DAT_005a0884);
+  local_3c = (int)ROUND(local_54 * 65536.0f);
+  local_38[0] = (int)ROUND(local_50 * 65536.0f);
+  local_38[1] = (int)ROUND(local_4c * 65536.0f);
+  *unaff_ESI = (int)ROUND(local_54 * 65536.0f);
   unaff_ESI[(uint)bVar2 * -2 + 1] = local_38[(uint)bVar2 * -2];
   (unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
        local_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];

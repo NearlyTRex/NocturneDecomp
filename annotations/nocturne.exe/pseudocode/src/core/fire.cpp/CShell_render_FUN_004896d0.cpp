@@ -19,10 +19,10 @@ void core_fire_cpp_CShell_render_FUN_004896d0(float *param_1)
   
   if (0.0 < param_1[6]) {
     uVar1 = *DAT_005ae704;
-    local_1c = (int)ROUND(*param_1 * _DAT_0059d1f8);
-    local_18 = (int)ROUND(param_1[1] * _DAT_0059d1f8);
-    local_14 = (int)ROUND(param_1[2] * _DAT_0059d1f8);
-    wincore_windll_cpp_transformPoint_FUN_00530a25(uVar1,&local_1c);
+    local_1c = (int)ROUND(*param_1 * 256.0f);
+    local_18 = (int)ROUND(param_1[1] * 256.0f);
+    local_14 = (int)ROUND(param_1[2] * 256.0f);
+    engine_special_cpp_transformPoint_FUN_00530a25(uVar1,&local_1c);
     iVar2 = engine_drender_cpp_CDemonRenderer_depthTest_FUN_00461f80(DAT_005ae704,uVar1);
     if (iVar2 != 0) {
       iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);

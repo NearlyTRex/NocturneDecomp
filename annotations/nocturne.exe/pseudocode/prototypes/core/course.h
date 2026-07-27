@@ -3,9 +3,25 @@
 // Function prototypes for core/course.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_course.cpp_FUN_0043b500
+// Address: 0043b500
+undefined4 * FUN_0043b500(void);
+
+// Original: core_course.cpp_fmodfPositive_FUN_0043b510
+// Address: 0043b510
+float fmodfPositive(float param_1,float param_2);
+
+// Original: core_course.cpp_FUN_0043b5b0
+// Address: 0043b5b0
+void FUN_0043b5b0(void);
+
 // Original: core_course.cpp_CCourse_ctor_FUN_0043b5d0
 // Address: 0043b5d0
 void __cdecl CCourse::ctor(undefined4 *param_1);
+
+// Original: core_course.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0
+// Address: 0043b5f0
+undefined4 __cdecl CDemonTriangle::arrdtor(undefined4 param_1);
 
 // Original: core_course.cpp_CCourse_allocMemory_FUN_0043b610
 // Address: 0043b610

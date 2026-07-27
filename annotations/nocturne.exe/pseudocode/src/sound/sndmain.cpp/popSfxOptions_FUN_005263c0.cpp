@@ -15,8 +15,8 @@ void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005263c0(void)
   if (-1 < _DAT_02dc1b74) {
     return;
   }
-  _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-  _DAT_01cc4804 = 0xd03;
-  FUN_004c8440("popSfxOptions - stack empty");
+  PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+  INT_01cc4804 = 0xd03;
+  core_main_c_FUN_004c8440("popSfxOptions - stack empty");
   return;
 }

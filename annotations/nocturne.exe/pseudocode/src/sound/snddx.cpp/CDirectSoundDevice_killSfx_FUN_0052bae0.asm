@@ -11,8 +11,8 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_00529980
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90
+;   sound_sndmain.cpp_FUN_00529980
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
         ;   XREF to: 0052bb15 (CONDITIONAL_JUMP)  ; LAB_0052bb15
     PUSH 0x5947d0                       ; 0052bafd | = "DirectSoundDevice::killSfx - handle w..."
         ;   Label: LAB_0052bafd
-    CALL FUN_00529980                   ; 0052bb02
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 0052bb02
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x4                         ; 0052bb07
     ADD ESP,0x190                       ; 0052bb0a
         ;   Label: LAB_0052bb0a
@@ -108,8 +108,8 @@ section .text
     ADD ESP,0x10                        ; 0052bbb1
     MOV EAX,ESP                         ; 0052bbb4
     PUSH EAX                            ; 0052bbb6
-    CALL FUN_00529980                   ; 0052bbb7
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 0052bbb7
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x4                         ; 0052bbbc
     ADD ESP,0x190                       ; 0052bbbf
     POP EBP                             ; 0052bbc5

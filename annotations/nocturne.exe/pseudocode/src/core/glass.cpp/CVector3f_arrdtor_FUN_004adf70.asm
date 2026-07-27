@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004adef0 at 004adf05
+;   core_glass.cpp_FUN_004adef0 at 004adf05
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f
@@ -17,7 +17,7 @@
 
 section .text
 
-    PUSH 0x5993b0                       ; 004adf70 | DAT_005993b0
+    PUSH 0x5993b0                       ; 004adf70 | g_CVectorTypeInfo_005993b0
         ;   Label: core_glass.cpp_CVector3f_arrdtor_FUN_004adf70
     PUSH 0x19                           ; 004adf75
     MOV EDX,dword ptr [ESP + 0xc]       ; 004adf77

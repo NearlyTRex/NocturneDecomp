@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(int *param_1,uint param_2,uint param_3,uint param_4,char *param_5)
 
 {
@@ -33,9 +31,9 @@ uint __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(int *param_1,ui
   }
   iVar3 = _fopen(param_5,"rt");
   if (iVar3 == 0) {
-    _DAT_01cc4800 = "..\\engine\\ini.cpp";
-    _DAT_01cc4804 = 0x182;
-    FUN_004c8440("cIni::writeProfileString: Unable to open input");
+    PTR_01cc4800 = "..\\engine\\ini.cpp";
+    INT_01cc4804 = 0x182;
+    core_main_c_FUN_004c8440("cIni::writeProfileString: Unable to open input");
   }
   pcVar7 = acStack_216;
   pcVar6 = param_5;
@@ -59,9 +57,9 @@ uint __cdecl engine_ini_cpp_CIni_writeProfileString_FUN_004bd480(int *param_1,ui
   acStack_216[~uVar5] = 'x';
   iVar4 = _fopen(acStack_216 + 2,"wt");
   if (iVar4 == 0) {
-    _DAT_01cc4800 = "..\\engine\\ini.cpp";
-    _DAT_01cc4804 = 0x186;
-    FUN_004c8440("cIni::writeProfileString: Unable to open output");
+    PTR_01cc4800 = "..\\engine\\ini.cpp";
+    INT_01cc4804 = 0x186;
+    core_main_c_FUN_004c8440("cIni::writeProfileString: Unable to open output");
   }
   if (iVar2 == 0) {
     _sprintf(local_114,"[%s]\n",param_2);

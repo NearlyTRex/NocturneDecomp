@@ -21,7 +21,7 @@ int core_turret_cpp_CTurret_ctor_FUN_005494a0(uint param_1)
   
   iVar2 = core_weapon_cpp_CWeapon_ctor_FUN_00553d90(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x57c);
-  *(byte ***)(iVar2 + -0x430) = &PTR_FUN_005a37b4;
+  *(byte ***)(iVar2 + -0x430) = &PTR_core_turret_cpp_FUN_005495f0_005a37b4;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (iVar2 + -0x42c,"gturret_head.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580

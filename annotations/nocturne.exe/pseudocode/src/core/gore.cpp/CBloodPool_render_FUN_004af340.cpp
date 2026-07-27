@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_gore_cpp_CBloodPool_render_FUN_004af340(uint *param_1)
 
 {
@@ -48,31 +46,31 @@ void core_gore_cpp_CBloodPool_render_FUN_004af340(uint *param_1)
   local_30 = 0xbfaa9fbe;
   local_28 = 0xbfaa9fbe;
   local_2c = 0;
-  local_24 = (int)ROUND(_DAT_0059e4d4 * -1.333);
-  local_20 = (int)ROUND(_DAT_0059e4d4 * 0.0);
-  local_1c = (int)ROUND(_DAT_0059e4d4 * -1.333);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_24);
+  local_24 = (int)ROUND(256.0f * -1.333);
+  local_20 = (int)ROUND(256.0f * 0.0);
+  local_1c = (int)ROUND(256.0f * -1.333);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_24);
   local_30 = 0x3faa9fbe;
   local_2c = 0;
   local_28 = 0xbfaa9fbe;
-  iStack_54 = (int)ROUND(_DAT_0059e4d4 * 1.333);
-  local_50 = (int)ROUND(_DAT_0059e4d4 * 0.0);
-  local_4c = (int)ROUND(_DAT_0059e4d4 * -1.333);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&iStack_54);
+  iStack_54 = (int)ROUND(256.0f * 1.333);
+  local_50 = (int)ROUND(256.0f * 0.0);
+  local_4c = (int)ROUND(256.0f * -1.333);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&iStack_54);
   local_30 = 0x3faa9fbe;
   local_28 = 0x3faa9fbe;
   local_2c = 0;
-  local_48 = (int)ROUND(_DAT_0059e4d4 * 1.333);
-  local_44 = (int)ROUND(_DAT_0059e4d4 * 0.0);
-  local_40 = (int)ROUND(_DAT_0059e4d4 * 1.333);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_48);
+  local_48 = (int)ROUND(256.0f * 1.333);
+  local_44 = (int)ROUND(256.0f * 0.0);
+  local_40 = (int)ROUND(256.0f * 1.333);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_48);
   local_30 = 0xbfaa9fbe;
   local_2c = 0;
   local_28 = 0x3faa9fbe;
-  local_3c = (int)ROUND(_DAT_0059e4d4 * -1.333);
-  local_38 = (int)ROUND(_DAT_0059e4d4 * 0.0);
-  local_34 = (int)ROUND(_DAT_0059e4d4 * 1.333);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_3c);
+  local_3c = (int)ROUND(256.0f * -1.333);
+  local_38 = (int)ROUND(256.0f * 0.0);
+  local_34 = (int)ROUND(256.0f * 1.333);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_3c);
   uVar1 = param_1[4];
   if (uVar1 == 0) {
 LAB_004af532:

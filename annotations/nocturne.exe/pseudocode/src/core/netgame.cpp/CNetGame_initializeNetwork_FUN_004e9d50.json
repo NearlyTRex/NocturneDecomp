@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -125,7 +125,7 @@
     "complexity_score": 123,
     "cross_reference_count": 2,
     "function_call_count": 9,
-    "global_count": 3,
+    "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 38,
     "suspect_count": 7,
@@ -138,15 +138,15 @@
   },
   "cross_references": [
     {
-      "addr": "004e99f0",
-      "from_addr": "004e9a64",
-      "name": "FUN_004e99f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004e9a90",
       "from_addr": "004e9af0",
       "name": "core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e99f0",
+      "from_addr": "004e9a64",
+      "name": "core_netgame.cpp_FUN_004e99f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -169,14 +169,14 @@
       "name": "core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_004ea6e0"
     },
     {
-      "addr": "0046fcd0",
-      "is_variadic": false,
-      "name": "FUN_0046fcd0"
-    },
-    {
       "addr": "0046fff0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0"
+    },
+    {
+      "addr": "0046fcd0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0046fcd0"
     },
     {
       "addr": "00549110",
@@ -210,6 +210,42 @@
     }
   ],
   "globals": [
+    {
+      "addr": "0058bbd2",
+      "name": "s_Initializing_network_0058bbd2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058bbea",
+      "name": "s_Can_t_create_datagram_so_0058bbea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058bc07",
+      "name": "s_Can_t_turn_off_blocking_0058bc07",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058bc2f",
+      "name": "s_Can_t_bind_UDP_socket_0058bc2f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058bc45",
+      "name": "s_Can_t_querry_back_for_so_0058bc45",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058bc6a",
+      "name": "s_Initializing_network_OK_0058bc6a",
+      "type": "TerminatedCString",
+      "value": null
+    },
     {
       "addr": "005b6d50",
       "name": "DAT_005b6d50",
@@ -246,7 +282,7 @@
       {
         "call_addr": "004e9a64",
         "call_type": "direct",
-        "caller": "FUN_004e99f0",
+        "caller": "core_netgame.cpp_FUN_004e99f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -7,16 +7,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[31]:
-;   FUN_0045e340 at 0045e350
-;   FUN_0046fb40 at 0046fbcb
-;   FUN_0046fcd0 at 0046fd5b
-;   FUN_0046fe60 at 0046feeb
-;   FUN_00470eb0 at 004710bb
-;   FUN_004722b0 at 0047240e
-;   FUN_00475470 at 00475517
-;   FUN_00476f40 at 00476f6e
-;   FUN_00477080 at 004770e6
-;   FUN_004771f0 at 00477298
+;   cockpit_drawsurf.cpp_FUN_0045e340 at 0045e350
+;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049b032
+;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bff0c
+;   core_inv.cpp_FUN_004c2470 at 004c261b
+;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5f13
+;   core_main.c_FUN_004c85f0 at 004c8bfd
+;   core_main.c_FUN_004c8dc0 at 004c8dd0
+;   core_main.c_FUN_004c8eb0 at 004c8f38
+;   core_main.c_FUN_004c90e0 at 004c9187
+;   core_menu.cpp_FUN_004cf810 at 004cf829
 ;   ... and 21 more
 ;
 ; Called Functions:

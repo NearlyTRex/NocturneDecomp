@@ -28,7 +28,7 @@ float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(int param_1,uint pa
   if (*(float *)(param_1 + 0x44c) < 0.0) {
     iVar2 = sscanf(param_3,&DOUBLE_0058fa9a,&local_28);
     if (iVar2 != 1) {
-      local_28 = (float)FUN_0052ebc0(0x02DC9450,param_3);
+      local_28 = (float)core_sound_cpp_FUN_0052ebc0(0x02DC9450,param_3);
       local_14 = local_28;
       if (local_28 < 0.0) {
         shape_edittool_cpp_CStrList_add_FUN_00473cb0(0x1e56c30,param_3);
@@ -53,7 +53,8 @@ float core_script_cpp_CScript_getDialogDuration_FUN_005049b0(int param_1,uint pa
     local_28 = *(float *)(param_1 + 0x44c);
   }
   iVar2 = core_script_cpp_getActor_FUN_004fe180
-                    (param_2,CDemonActorType_00765a60.name_hash,&CDemonActorType_00765a60);
+                    (param_2,g_CCharacterActorType_00765a60.name_hash,
+                     &g_CCharacterActorType_00765a60);
   *(int *)(param_1 + 4) = iVar2;
   if (iVar2 == 0) {
     if (_DAT_01e56c2c != 0) {

@@ -19,9 +19,9 @@ void __cdecl sound_sndmain_cpp_pushSfxOptions_FUN_00526340(void)
   bVar4 = 0;
   _DAT_02dc1b74 = _DAT_02dc1b74 + 1;
   if (7 < _DAT_02dc1b74) {
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0xcf4;
-    FUN_004c8440("pushSfxOptions - stack full");
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0xcf4;
+    core_main_c_FUN_004c8440("pushSfxOptions - stack full");
   }
   puVar2 = (uint *)((_DAT_02dc1b74 + -1) * 0x6c + 0x2dc1b78);
   puVar3 = (uint *)(_DAT_02dc1b74 * 0x6c + 0x2dc1b78);

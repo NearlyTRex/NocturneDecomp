@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00446810 at 00446929
-;   FUN_004a3b90 at 004a3ef3
+;   core_dcamera.cpp_FUN_00446810 at 00446929
+;   core_game.cpp_FUN_004a3b90 at 004a3ef3
 ;
 ; Called Functions:
 ;   FUN_0056b327

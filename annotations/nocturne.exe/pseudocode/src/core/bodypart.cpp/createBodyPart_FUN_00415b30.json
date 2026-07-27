@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,28 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 381,
+    "complexity_score": 365,
     "cross_reference_count": 15,
     "function_call_count": 7,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
-    "suspect_count": 30,
+    "pseudocode_lines": 60,
+    "suspect_count": 29,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 216
+    "total_lines": 215
   },
   "cross_references": [
-    {
-      "addr": "0051e860",
-      "from_addr": "0051e87e",
-      "name": "FUN_0051e860",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00412de0",
       "from_addr": "00412f35",
@@ -217,6 +210,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0051e860",
+      "from_addr": "0051e87e",
+      "name": "core_skeleton.cpp_FUN_0051e860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00520b60",
       "from_addr": "00520c4c",
       "name": "core_smiley.cpp_CSmiley_processDismemberment_FUN_00520b60",
@@ -258,6 +257,11 @@
       "name": "core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20"
     },
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "004d8c60",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60"
@@ -268,14 +272,9 @@
       "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720"
     },
     {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
       "addr": "0056497c",
       "is_variadic": false,
-      "name": "FUN_0056497c"
+      "name": "crt_unknown.c_FUN_0056497c"
     }
   ],
   "globals": [
@@ -305,14 +304,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -489,16 +488,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(uint *param_1,uint *param_2,uint *param_3,int param_4,uint param_5,uint param_6,uint param_7)",
@@ -506,7 +497,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(uint *param_1,uint *param_2,uint *param_3,int param_4,uint param_5,uint param_6,uint param_7)",
@@ -514,7 +505,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(uint *param_1,uint *param_2,uint *param_3,int param_4,uint param_5,uint param_6,uint param_7)",
@@ -522,7 +513,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(uint *param_1,uint *param_2,uint *param_3,int param_4,uint param_5,uint param_6,uint param_7)",
@@ -530,7 +521,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_5",
       "severity": "mild",
       "text": "int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(uint *param_1,uint *param_2,uint *param_3,int param_4,uint param_5,uint param_6,uint param_7)",
@@ -538,7 +529,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_6",
       "severity": "mild",
       "text": "int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(uint *param_1,uint *param_2,uint *param_3,int param_4,uint param_5,uint param_6,uint param_7)",
@@ -546,7 +537,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_7",
       "severity": "mild",
       "text": "int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(uint *param_1,uint *param_2,uint *param_3,int param_4,uint param_5,uint param_6,uint param_7)",
@@ -554,7 +545,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x20) = *param_1;",
@@ -562,7 +553,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x24) = param_1[1];",
@@ -570,7 +561,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x28) = param_1[2];",
@@ -578,7 +569,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((uint *)(iVar2 + 0x30) != param_2) {",
@@ -586,7 +577,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x30) = *param_2;",
@@ -594,7 +585,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x34) = param_2[1];",
@@ -602,7 +593,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x38) = param_2[2];",
@@ -610,7 +601,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == (uint *)0x0) {",
@@ -618,7 +609,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_3",
       "severity": "mild",
       "text": "else if ((uint *)(iVar2 + 0x278) != param_3) {",
@@ -626,7 +617,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x278) = *param_3;",
@@ -634,7 +625,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x27c) = param_3[1];",
@@ -642,7 +633,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 49,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x280) = param_3[2];",
@@ -650,7 +641,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_4",
       "severity": "mild",
       "text": "if (param_4 != 0) {",
@@ -658,7 +649,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_4",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x108) = *(uint *)(param_4 + 0x108);",
@@ -666,7 +657,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_4",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x10c) = *(uint *)(param_4 + 0x10c);",
@@ -674,7 +665,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_4",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x110) = *(uint *)(param_4 + 0x110);",
@@ -682,7 +673,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 58,
       "match": "param_5",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0xc98) = param_5;",
@@ -690,7 +681,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 59,
       "match": "param_6",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0xfc) = param_6;",
@@ -698,7 +689,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 60,
       "match": "param_6",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0xc9c) = param_6;",
@@ -706,7 +697,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 61,
       "match": "param_7",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0xca0) = param_7;",
@@ -714,7 +705,7 @@
     },
     {
       "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 56,
+      "line": 54,
       "match": "raw-offset struct copy",
       "severity": "moderate",
       "text": "*(uint *)(iVar2 + 0x108) = *(uint *)(param_4 + 0x108);",

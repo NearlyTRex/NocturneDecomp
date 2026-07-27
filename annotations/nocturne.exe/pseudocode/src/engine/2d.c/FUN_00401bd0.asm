@@ -5,21 +5,21 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00401010 at 0040105c
+;   engine_2d.c_FUN_00401010 at 0040105c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rb_00577154
 ;   TerminatedCString s_art_00577157
 ;   TerminatedCString s_engine_2d_c_0057715b
 ;   TerminatedCString s_Unable_to_open_VGA_palet_0057716a
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -57,10 +57,10 @@ section .text
     MOV ECX,0x57715b                    ; 00401c0f | = "..\\engine\\2d.c"
     MOV ESI,0x2c1                       ; 00401c14
     PUSH 0x57716a                       ; 00401c19 | = "Unable to open VGA palette"
-    MOV dword ptr [0x01cc4800],ECX      ; 00401c1e | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00401c24 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00401c2a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00401c1e | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00401c24 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00401c2a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00401c2f
     POP ESI                             ; 00401c32
     JMP 0x00401bee                      ; 00401c33

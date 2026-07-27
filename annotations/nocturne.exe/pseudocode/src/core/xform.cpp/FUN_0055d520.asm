@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   FUN_00497900 at 00497daf
-;   FUN_004fd1d0 at 004fd239
-;   FUN_0053a260 at 0053a2c1
+;   core_gabriela.cpp_FUN_00497900 at 00497daf
+;   core_scat.cpp_FUN_004fd1d0 at 004fd239
+;   core_stranger.cpp_FUN_0053a260 at 0053a2c1
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00598386 = 0.5

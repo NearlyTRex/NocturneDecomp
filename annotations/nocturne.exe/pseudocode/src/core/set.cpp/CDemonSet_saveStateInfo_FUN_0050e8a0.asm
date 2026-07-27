@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004a3b90 at 004a3dfa
+;   core_game.cpp_FUN_004a3b90 at 004a3dfa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Set_state_version_00590882

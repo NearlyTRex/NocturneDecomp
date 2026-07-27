@@ -245,8 +245,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
         iVar7 = iVar7 + -1;
       }
       uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                        (acStack_2e1 + 1,CDemonActorType_00763e48.name_hash,
-                         &CDemonActorType_00763e48);
+                        (acStack_2e1 + 1,g_CDemonActorActorType_00763e48.name_hash,
+                         &g_CDemonActorActorType_00763e48);
       if ((uVar6 == 0) || (uVar6 == 0x0FFFFFFF)) {
         local_dc = 0;
       }
@@ -395,7 +395,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
               iVar7 = iVar7 + -1;
             }
             uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                              (acStack_72d + 1,_DAT_01cae124,0x1cae0ec);
+                              (acStack_72d + 1,g_CHeroActorType_01cae0ec.name_hash,
+                               &g_CHeroActorType_01cae0ec);
             if (uVar6 != 0) {
               if (uVar6 == 0x0FFFFFFF) {
                 local_dc = 0;
@@ -535,7 +536,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                 iVar7 = iVar7 + -1;
               }
               uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                (acStack_59d + 1,_DAT_01c78c78,0x1c78c40);
+                                (acStack_59d + 1,g_CGlassActorType_01c78c40.name_hash,
+                                 &g_CGlassActorType_01c78c40);
               if (uVar6 != 0) {
                 if (uVar6 == 0x0FFFFFFF) {
                   local_dc = 0;
@@ -601,8 +603,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
               }
               else {
                 uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                  (local_600,CDemonActorType_00765a60.name_hash,
-                                   &CDemonActorType_00765a60);
+                                  (local_600,g_CCharacterActorType_00765a60.name_hash,
+                                   &g_CCharacterActorType_00765a60);
                 if (uVar6 != 0) {
                   if (uVar6 == 0x0FFFFFFF) {
                     local_dc = 0;
@@ -793,8 +795,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                     iVar7 = iVar7 + -1;
                   }
                   uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                    (acStack_40d + 1,CDemonActorType_00763e48.name_hash,
-                                     &CDemonActorType_00763e48);
+                                    (acStack_40d + 1,g_CDemonActorActorType_00763e48.name_hash,
+                                     &g_CDemonActorActorType_00763e48);
                   if (uVar6 != 0) {
                     if (uVar6 == 0x0FFFFFFF) {
                       local_dc = 0;
@@ -878,12 +880,12 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                   iVar7 = iVar7 + -1;
                 }
                 uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                  (acStack_4d5 + 1,CDemonActorType_00763e48.name_hash,
-                                   &CDemonActorType_00763e48);
+                                  (acStack_4d5 + 1,g_CDemonActorActorType_00763e48.name_hash,
+                                   &g_CDemonActorActorType_00763e48);
                 if ((uVar6 == 0) ||
                    (uVar10 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                       (local_3a9 + 1,CDemonActorType_00763e48.name_hash,
-                                        &CDemonActorType_00763e48), uVar10 == 0)) {
+                                       (local_3a9 + 1,g_CDemonActorActorType_00763e48.name_hash,
+                                        &g_CDemonActorActorType_00763e48), uVar10 == 0)) {
                   return 0xffffffff;
                 }
                 *param_3 = *param_3 + local_60;
@@ -1107,8 +1109,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                           return 0xffffffff;
                         }
                         local_dc = core_event_cpp_resolveActorByName_FUN_0047a390
-                                             (local_27c,CDemonActorType_00765a60.name_hash,
-                                              &CDemonActorType_00765a60);
+                                             (local_27c,g_CCharacterActorType_00765a60.name_hash,
+                                              &g_CCharacterActorType_00765a60);
                         if (local_dc == 0) {
                           return 0xffffffff;
                         }
@@ -1146,8 +1148,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                           }
                           else {
                             local_b4 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                                 (local_1b4,CDemonActorType_00765a60.name_hash,
-                                                  &CDemonActorType_00765a60);
+                                                 (local_1b4,g_CCharacterActorType_00765a60.name_hash
+                                                  ,&g_CCharacterActorType_00765a60);
                             if (local_b4 != 0) {
                               local_dc = 0;
                               if (local_b4 != 0x0FFFFFFF) {
@@ -1201,7 +1203,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                             return 0xffffffff;
                           }
                           uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                            (local_470,_DAT_01cae124,0x1cae0ec);
+                                            (local_470,g_CHeroActorType_01cae0ec.name_hash,
+                                             &g_CHeroActorType_01cae0ec);
                           if (uVar6 == 0) {
                             return 0xffffffff;
                           }
@@ -1237,7 +1240,8 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                               return 0xffffffff;
                             }
                             uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                              (local_538,_DAT_01cae124,0x1cae0ec);
+                                              (local_538,g_CHeroActorType_01cae0ec.name_hash,
+                                               &g_CHeroActorType_01cae0ec);
                             if (uVar6 == 0) {
                               return 0xffffffff;
                             }
@@ -1292,8 +1296,9 @@ uint __cdecl core_event_cpp_CEventList_evaluateAtom_FUN_0047e0d0(uint param_1,in
                               }
                               else {
                                 uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                                  (local_664,CDemonActorType_00765a60.name_hash,
-                                                   &CDemonActorType_00765a60);
+                                                  (local_664,
+                                                   g_CCharacterActorType_00765a60.name_hash,
+                                                   &g_CCharacterActorType_00765a60);
                                 if (uVar6 != 0) {
                                   if (uVar6 == 0x0FFFFFFF) {
                                     local_dc = 0;
@@ -1520,9 +1525,9 @@ switchD_0047e565_caseD_5:
       break;
     default:
 switchD_0047e565_default:
-      _DAT_01cc4800 = "..\\core\\event.cpp";
-      _DAT_01cc4804 = 0x765;
-      FUN_004c8440("Hell froze.");
+      PTR_01cc4800 = "..\\core\\event.cpp";
+      INT_01cc4804 = 0x765;
+      core_main_c_FUN_004c8440("Hell froze.");
     }
 LAB_0047e580:
     while (((&DAT_005c168c)[(byte)(*(char *)(param_2 + *param_3) + 1)] & 2) != 0) {

@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_0041d050 at 0041d107
-;   FUN_004574e0 at 00457505
-;   FUN_004ca790 at 004cab58
-;   FUN_004f18c0 at 004f19c1
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 at 0041dd45
+;   core_box.cpp_FUN_0041d050 at 0041d107
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170 at 00453289
+;   core_manpuz.cpp_FUN_004ca790 at 004cab58
+;   core_path.cpp_FUN_004f18c0 at 004f19c1
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_00460fb0 at 00460fe0
+;   engine_drender.cpp_FUN_004574e0 at 00457505
 ;
 ; *****************************************************************************
 

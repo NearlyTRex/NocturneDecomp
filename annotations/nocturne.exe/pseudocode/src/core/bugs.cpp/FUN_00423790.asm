@@ -17,16 +17,16 @@
 ;   undefined4 DAT_00764d9c
 ;   undefined4 DAT_00764da0
 ;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_01bcdef4
-;   undefined4 DAT_01cae124
+;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
+;   undefined4 g_CHeroActorType_01cae0ec.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
+;   core_bugs.cpp_FUN_004219f0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   FUN_004219f0
 ;
 ; *****************************************************************************
 
@@ -39,7 +39,7 @@ section .text
     PUSH EBP                            ; 00423793
     SUB ESP,0x8                         ; 00423794
     MOV EBX,dword ptr [ESP + 0x20]      ; 00423797
-    MOV EDX,dword ptr [0x01cae124]      ; 0042379b | DAT_01cae124
+    MOV EDX,dword ptr [0x01cae124]      ; 0042379b | g_CHeroActorType_01cae0ec.name_hash
     MOV EAX,dword ptr [ESP + 0x1c]      ; 004237a1
     PUSH EDX                            ; 004237a5
     MOV dword ptr [EAX + 0x12964],0x0   ; 004237a6
@@ -54,7 +54,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004237c7
     ADD EAX,0x150                       ; 004237cb
     MOV dword ptr [EDX + 0x12964],EAX   ; 004237d0
-    MOV ECX,dword ptr [0x01bcdef4]      ; 004237d6 | DAT_01bcdef4
+    MOV ECX,dword ptr [0x01bcdef4]      ; 004237d6 | g_CEnemyActorType_01bcdebc.name_hash
         ;   Label: LAB_004237d6
     PUSH ECX                            ; 004237dc
     PUSH EBX                            ; 004237dd
@@ -119,8 +119,8 @@ section .text
     MOV EBX,dword ptr [EAX + EDX*0x4 + 0x54] ; 004238a3
     PUSH EBX                            ; 004238a7
     PUSH EBP                            ; 004238a8
-    CALL FUN_004219f0                   ; 004238a9
-        ;   XREF to: 004219f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004219f0()
+    CALL core_bugs.cpp_FUN_004219f0     ; 004238a9
+        ;   XREF to: 004219f0 (UNCONDITIONAL_CALL)  ; undefined core_bugs.cpp_FUN_004219f0()
     ADD ESP,0xc                         ; 004238ae
     MOV EDI,dword ptr [EBP + 0x12998]   ; 004238b1
     PUSH EDI                            ; 004238b7

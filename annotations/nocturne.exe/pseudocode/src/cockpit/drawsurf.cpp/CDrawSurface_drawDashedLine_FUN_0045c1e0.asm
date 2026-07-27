@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0045c050 at 0045c0d7
+;   cockpit_drawsurf.cpp_FUN_0045c050 at 0045c0d7
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057d976 = 0.0000152587890625

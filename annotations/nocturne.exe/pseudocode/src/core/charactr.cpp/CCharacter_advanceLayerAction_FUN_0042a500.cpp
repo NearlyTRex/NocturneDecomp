@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a500(int param_1,float *param_2,int param_3)
 
 {
@@ -22,9 +20,9 @@ int core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a500(int param_1,flo
   
   if ((*(int *)(param_1 + 0x2a84) < 0) || (*(int *)(param_1 + 0x2620) <= *(int *)(param_1 + 0x2a84))
      ) {
-    _DAT_01cc4800 = "..\\core\\charactr.cpp";
-    _DAT_01cc4804 = 0xf00;
-    FUN_004c8440("CCharacter::advanceLayerAction - invalid layerActionIndex");
+    PTR_01cc4800 = "..\\core\\charactr.cpp";
+    INT_01cc4804 = 0xf00;
+    core_main_c_FUN_004c8440("CCharacter::advanceLayerAction - invalid layerActionIndex");
   }
   piVar6 = (int *)(param_1 + 0x2624 + *(int *)(param_1 + 0x2a84) * 0x38);
   if (*(float *)(param_1 + 0x2a88) < 0.0) {

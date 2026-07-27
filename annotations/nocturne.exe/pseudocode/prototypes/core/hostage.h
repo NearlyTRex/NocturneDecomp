@@ -3,6 +3,18 @@
 // Function prototypes for core/hostage.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_hostage.cpp_staticInit_FUN_004b6990
+// Address: 004b6990
+void __cdecl staticInit(void);
+
+// Original: core_hostage.cpp_FUN_004b69c0
+// Address: 004b69c0
+void FUN_004b69c0(void);
+
+// Original: core_hostage.cpp_FUN_004b69e0
+// Address: 004b69e0
+CDemonActorType * FUN_004b69e0(void);
+
 // Original: core_hostage.cpp_CHostage_ctor_FUN_004b69f0
 // Address: 004b69f0
 int CHostage::ctor(undefined4 param_1);
@@ -14,6 +26,10 @@ void CHostage::setup(int param_1);
 // Original: core_hostage.cpp_CHostage_renderOpaque_FUN_004b6cf0
 // Address: 004b6cf0
 undefined4 CHostage::renderOpaque(int param_1);
+
+// Original: core_hostage.cpp_FUN_004b6d80
+// Address: 004b6d80
+void FUN_004b6d80(int param_1,float param_2);
 
 // Original: core_hostage.cpp_CHostage_processGrabberFlee_FUN_004b81a0
 // Address: 004b81a0
@@ -31,6 +47,22 @@ void CHostage::archive(int param_1);
 // Address: 004b8540
 undefined4 CHostage::isGrabbable(int param_1);
 
+// Original: core_hostage.cpp_FUN_004b8580
+// Address: 004b8580
+undefined4 FUN_004b8580(void);
+
 // Original: core_hostage.cpp_CHostage_getGrabbed_FUN_004b8590
 // Address: 004b8590
 undefined4 CHostage::getGrabbed(int param_1,undefined4 param_2,int param_3);
+
+// Original: core_hostage.cpp_FUN_004b8600
+// Address: 004b8600
+void FUN_004b8600(int param_1,int param_2);
+
+// Original: core_hostage.cpp_FUN_004b8700
+// Address: 004b8700
+void FUN_004b8700(int param_1,int param_2);
+
+// Original: core_hostage.cpp_FUN_004b8b70
+// Address: 004b8b70
+int FUN_004b8b70(int param_1,byte param_2);

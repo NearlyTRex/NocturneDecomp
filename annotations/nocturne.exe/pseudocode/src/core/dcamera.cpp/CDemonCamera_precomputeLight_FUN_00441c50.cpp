@@ -79,9 +79,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_00441c50(int para
   *(int *)(param_2 + 0x1c50) = iVar1;
   if (((*(int *)(param_2 + 0x1c48) == 0) || (*(int *)(param_2 + 0x1c4c) == 0)) ||
      (*(int *)(param_2 + 0x1c50) == 0)) {
-    _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-    _DAT_01cc4804 = 0x6ae;
-    FUN_004c8440("CDemonCamera::precomputeLight - Too many lights visible from camera %s",param_1);
+    PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    INT_01cc4804 = 0x6ae;
+    core_main_c_FUN_004c8440("CDemonCamera::precomputeLight - Too many lights visible from camera %s",param_1);
   }
   core_dlight_cpp_CDemonLight_initializeVisibilityBuffer_FUN_00451a60(param_2);
   if ((param_3 == (int *)0x0) || (*(int *)(param_1 + 0x140) != 0x1e0)) {

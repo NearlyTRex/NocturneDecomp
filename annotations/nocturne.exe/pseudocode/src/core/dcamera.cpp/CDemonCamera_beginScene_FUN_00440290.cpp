@@ -82,9 +82,9 @@ switchD_004402a8_caseD_3:
     *(uint *)(param_1 + 0x11e4) = 1;
   }
   else {
-    _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-    _DAT_01cc4804 = 0x2f3;
-    FUN_004c8440("CDemonCamera::beginScene - Scene already open!");
+    PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    INT_01cc4804 = 0x2f3;
+    core_main_c_FUN_004c8440("CDemonCamera::beginScene - Scene already open!");
   }
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00440240(param_1,param_2);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
@@ -107,14 +107,14 @@ switchD_004402a8_caseD_3:
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0
             (DAT_005ae704,param_1 + 0x110);
   if (param_2 == 0) {
-    if (_DAT_02dc9d60 != 0) {
-      wincore_windll_cpp_beginScene_FUN_00532340();
+    if (INT_02dc9d60 != 0) {
+      engine_special_cpp_beginScene_FUN_00532340();
     }
-    wincore_windll_cpp_clearScreen_FUN_0052ee70();
-    wincore_windll_cpp_clearZBufferNative_FUN_0052eed4();
+    engine_special_cpp_clearScreen_FUN_0052ee70();
+    engine_special_cpp_clearZBufferNative_FUN_0052eed4();
     if (_DAT_01c02594 != 0) {
-      wincore_windll_cpp_clear_FUN_005329a0();
-      wincore_windll_cpp_clearZBuffer_FUN_00532b50();
+      engine_special_cpp_clear_FUN_005329a0();
+      engine_special_cpp_clearZBuffer_FUN_00532b50();
     }
   }
   core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0(param_1);

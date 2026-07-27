@@ -28,10 +28,10 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[4]:
-;   FUN_0043f330 at 0043f4fa
-;   FUN_00455d50 at 00455dc5
-;   FUN_004f6c60 at 004f6d26
-;   FUN_0054f510 at 0054f59e
+;   core_curtain.cpp_FUN_0043f330 at 0043f4fa
+;   core_door.cpp_FUN_00455d50 at 00455dc5
+;   core_platfrm.cpp_FUN_004f6c60 at 004f6d26
+;   core_vehicle.cpp_FUN_0054f510 at 0054f59e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059aa80

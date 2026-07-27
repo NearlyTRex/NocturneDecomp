@@ -12,8 +12,8 @@
 ;   core_vampboss.cpp_CVampireBoss_ctor_FUN_0054c2b0 at 0054c2d2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059b3a0
-;   undefined4 DAT_0059b3c0
+;   WatcomTypeInfo g_SClothVertexTypeInfo_0059b3a0
+;   WatcomTypeInfo g_SClothBoneTypeInfo_0059b3c0
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00452590
@@ -29,14 +29,14 @@ section .text
     CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00452590 ; 00435105
         ;   XREF to: 00452590 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00452590()
     ADD ESP,0x4                         ; 0043510a
-    PUSH 0x59b3a0                       ; 0043510d | DAT_0059b3a0
+    PUSH 0x59b3a0                       ; 0043510d | g_SClothVertexTypeInfo_0059b3a0
     PUSH 0x320                          ; 00435112
     ADD EAX,0x398                       ; 00435117
     PUSH EAX                            ; 0043511c
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0043511d
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 00435122
-    PUSH 0x59b3c0                       ; 00435125 | DAT_0059b3c0
+    PUSH 0x59b3c0                       ; 00435125 | g_SClothBoneTypeInfo_0059b3c0
     PUSH 0x32                           ; 0043512a
     ADD EAX,0x377b8                     ; 0043512c
     PUSH EAX                            ; 00435131

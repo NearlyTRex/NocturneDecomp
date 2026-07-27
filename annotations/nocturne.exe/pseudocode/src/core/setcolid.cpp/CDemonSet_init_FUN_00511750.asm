@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[31]:
-;   FUN_0043d1c0 at 0043d310
-;   FUN_00477890 at 00477a82
-;   FUN_00478f80 at 00478fc9
-;   FUN_0048b6f0 at 0048bc14
-;   FUN_00498de0 at 00499068
-;   FUN_004998c0 at 00499a74
-;   FUN_004a9270 at 004a9f03
-;   FUN_004b27c0 at 004b2934
-;   FUN_004c71a0 at 004c7332
-;   FUN_004da790 at 004daf0c
+;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0 at 0040dac2
+;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040d930 at 0040d9ba
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 00429a7d
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 at 004254e1
+;   core_crossbow.cpp_FUN_0043d1c0 at 0043d310
+;   core_elephant.cpp_FUN_00477890 at 00477a82
+;   core_emitter.cpp_FUN_00478f80 at 00478fc9
+;   core_fire.cpp_FUN_0048b6f0 at 0048bc14
+;   core_gabriela.cpp_CGabriella_processAI_FUN_00496d10 at 004971e0
+;   core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_00498b60 at 00498bb6
 ;   ... and 21 more
 ;
 ; *****************************************************************************

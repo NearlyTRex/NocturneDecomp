@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0049cc10 at 0049cc88
+;   core_game.cpp_FUN_0049cc10 at 0049cc88
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_3_2f_ms_00584486
@@ -41,9 +41,9 @@
 ;   core_script.cpp_CScript_process_FUN_004fe5b0
 ;   core_set.cpp_CDemonSet_process_FUN_0050d040
 ;   core_set.cpp_CDemonSet_processActors_FUN_00509140
+;   core_setdir.cpp_FUN_005125a0
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0
 ;   core_terrain.cpp_CTerrain_process_FUN_00549410
-;   core_water.cpp_CWater_process_FUN_00550860
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -440,8 +440,8 @@ section .text
     PUSH ECX                            ; 004a64f4
     MOV EDI,dword ptr [0x005be368]      ; 004a64f5 | DAT_005be368
     PUSH EDI                            ; 004a64fb | DAT_01e57284
-    CALL FUN_005125a0                   ; 004a64fc
-        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005125a0()
+    CALL core_setdir.cpp_FUN_005125a0   ; 004a64fc
+        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005125a0()
     ADD ESP,0xc                         ; 004a6501
     PUSH EBX                            ; 004a6504
     CALL core_game.cpp_CGame_saveClockTime_FUN_0049a890 ; 004a6505

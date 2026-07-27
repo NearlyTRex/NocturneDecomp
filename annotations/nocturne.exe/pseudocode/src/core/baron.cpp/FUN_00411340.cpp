@@ -9,5 +9,5 @@
 CDemonActorType * core_baron_cpp_FUN_00411340(void)
 
 {
-  return &CDemonActorType_007644e8;
+  return &g_CBaronWeaponActorType_007644e8;
 }

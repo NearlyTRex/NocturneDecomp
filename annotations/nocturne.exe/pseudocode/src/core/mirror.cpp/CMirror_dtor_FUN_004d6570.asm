@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004adef0 at 004adf15
+;   core_glass.cpp_FUN_004adef0 at 004adf15
 ;
 ; Called Functions:
 ;   core_mirror.cpp_SClipPlane_arrdtor_FUN_004d7d90

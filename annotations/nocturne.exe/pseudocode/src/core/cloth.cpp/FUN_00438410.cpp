@@ -1,14 +1,12 @@
-// Name: FUN_00438410
+// Name: core_cloth.cpp_FUN_00438410
 // Address: 00438410
 // Address Range: [[00438410, 0043850d]]
 // Convention: unknown
-// Signature: void FUN_00438410(int *param_1,int param_2)
+// Signature: void core_cloth_cpp_FUN_00438410(int *param_1,int param_2)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00438410(int *param_1,int param_2)
+void core_cloth_cpp_FUN_00438410(int *param_1,int param_2)
 
 {
   char cVar1;
@@ -21,9 +19,9 @@ void FUN_00438410(int *param_1,int param_2)
   int *piVar8;
   
   if ((param_2 < 0) || (*param_1 <= param_2)) {
-    _DAT_01cc4800 = "..\\core\\cloth.cpp";
-    _DAT_01cc4804 = 0x5e4;
-    FUN_004c8440("CClothList::remove - invalid index");
+    PTR_01cc4800 = "..\\core\\cloth.cpp";
+    INT_01cc4804 = 0x5e4;
+    core_main_c_FUN_004c8440("CClothList::remove - invalid index");
   }
   if (param_1[param_2 + 0x65] != 0) {
     uVar3 = core_cloth_cpp_CCloth_dtor_FUN_00435160(param_1[param_2 + 0x65],0);

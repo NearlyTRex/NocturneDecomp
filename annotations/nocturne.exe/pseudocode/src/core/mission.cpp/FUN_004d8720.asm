@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004d8720(int param_1,undefined4 param_2)
+; void core_mission_cpp_FUN_004d8720(int param_1,undefined4 param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_004a3b90 at 004a3ca4
-;   FUN_004d7f80 at 004d7fa5
+;   core_game.cpp_FUN_004a3b90 at 004a3ca4
+;   core_mission.cpp_FUN_004d7f80 at 004d7fa5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Preparing_actors_00589a4d
@@ -35,10 +35,10 @@
 ;   core_actor.cpp_syncActorTypeIDs_FUN_0040d8c0
 ;   core_gore.cpp_CGore_save_FUN_004b08d0
 ;   core_inv.cpp_CInventory_saveItems_FUN_004c1140
+;   core_main.c_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_countActors_FUN_004d8d80
 ;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004d8db0
 ;   crt_stdio.c_fprintf_FUN_005644f0
-;   FUN_004c8440
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
 ;
 ; *****************************************************************************
@@ -46,7 +46,7 @@
 section .text
 
     PUSH EBX                            ; 004d8720
-        ;   Label: FUN_004d8720
+        ;   Label: core_mission.cpp_FUN_004d8720
     PUSH ESI                            ; 004d8721
     PUSH EDI                            ; 004d8722
     PUSH EBP                            ; 004d8723
@@ -200,7 +200,7 @@ section .text
     TEST ESI,ESI                        ; 004d88b8
     JZ 0x004d88e2                       ; 004d88ba
         ;   XREF to: 004d88e2 (CONDITIONAL_JUMP)  ; LAB_004d88e2
-    MOV EBP,dword ptr [0x01cae124]      ; 004d88bc | DAT_01cae124
+    MOV EBP,dword ptr [0x01cae124]      ; 004d88bc | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: LAB_004d88bc
     PUSH EBP                            ; 004d88c2
     PUSH ESI                            ; 004d88c3
@@ -255,10 +255,10 @@ section .text
         ;   XREF to: 004d8964 (CONDITIONAL_JUMP)  ; LAB_004d8964
     MOV EAX,0x1e9                       ; 004d8947
     PUSH 0x589b3c                       ; 004d894c | = "Too many actors"
-    MOV dword ptr [0x01cc4800],EBP      ; 004d8951 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004d8957 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d895c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004d8951 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004d8957 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d895c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d8961
     MOV EAX,dword ptr [EBX + 0x858]     ; 004d8964
         ;   Label: LAB_004d8964
@@ -274,7 +274,7 @@ section .text
     TEST EAX,EAX                        ; 004d898a
     JZ 0x004d89fe                       ; 004d898c
         ;   XREF to: 004d89fe (CONDITIONAL_JUMP)  ; LAB_004d89fe
-    MOV ESI,dword ptr [0x01cae124]      ; 004d898e | DAT_01cae124
+    MOV ESI,dword ptr [0x01cae124]      ; 004d898e | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: LAB_004d898e
     PUSH ESI                            ; 004d8994
     MOV EDI,dword ptr [ESP + 0x4]       ; 004d8995
@@ -358,10 +358,10 @@ section .text
         ;   Label: LAB_004d8a66
     MOV EAX,0x1f4                       ; 004d8a6b
     PUSH 0x589b60                       ; 004d8a70 | = "Too many actors"
-    MOV dword ptr [0x01cc4800],ECX      ; 004d8a75 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004d8a7b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d8a80
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d8a75 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004d8a7b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d8a80
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d8a85
     JMP 0x004d89cb                      ; 004d8a88
         ;   XREF to: 004d89cb (UNCONDITIONAL_JUMP)  ; LAB_004d89cb

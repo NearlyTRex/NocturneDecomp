@@ -1,14 +1,14 @@
-// Name: FUN_00472de0
+// Name: shape_edittool.cpp_FUN_00472de0
 // Address: 00472de0
 // Address Range: [[00472de0, 00472fcd]]
 // Convention: unknown
-// Signature: void FUN_00472de0(undefined4 param_1,float param_2,undefined4 param_3)
+// Signature: void shape_edittool_cpp_FUN_00472de0(undefined4 param_1,float param_2,undefined4 param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00472de0(uint param_1,float param_2,uint param_3)
+void shape_edittool_cpp_FUN_00472de0(uint param_1,float param_2,uint param_3)
 
 {
   int iVar1;
@@ -37,10 +37,10 @@ void FUN_00472de0(uint param_1,float param_2,uint param_3)
   bVar7 = 0;
   if (_DAT_01bcd070 == 0) {
     apiStack_38[0] = (int *)"gEdFont must be set by the application.";
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0x8b;
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0x8b;
     piStack_3c = (int *)0x472f6f;
-    FUN_004c8440();
+    core_main_c_FUN_004c8440();
   }
   apiStack_38[0] = (int *)0x6a;
   _DAT_01bcd9b8 = *(uint *)(_DAT_01bcd070 + 0x3168);

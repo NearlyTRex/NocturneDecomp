@@ -12,7 +12,7 @@ int __cdecl engine_pod_cpp_CPod_dtor_FUN_004f8840(int param_1,byte param_2)
   uint uVar1;
   
   if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&DAT_005a14a0);
+    uVar1 = __vec_delete(param_1,&g_CPodTypeInfo_005a14a0);
     shape_memdbg_cpp_free_FUN_00564486(uVar1);
     return param_1;
   }

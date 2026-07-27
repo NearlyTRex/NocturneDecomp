@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; uint * FUN_004dcf60(int *param_1)
+; uint * engine_model_c_FUN_004dcf60(int *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x160]:1  local_160
@@ -39,23 +39,23 @@
 ;   TerminatedCString s_Unable_to_read_magnify_0058a5ea
 ;   TerminatedCString s_Unable_to_read_verticies_0058a602
 ;   TerminatedCString s_engine_model_c_0058a625
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_sprintf_FUN_00563c90
+;   engine_boss.c_FUN_0041a5a0
+;   engine_model.c_FUN_004dcee0
 ;   engine_model.c_loadModelFile_FUN_004dcd10
-;   FUN_0041a5a0
-;   FUN_004c8440
-;   FUN_004dcee0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004dcf60
-        ;   Label: FUN_004dcf60
+        ;   Label: engine_model.c_FUN_004dcf60
     PUSH EDI                            ; 004dcf61
     PUSH EBP                            ; 004dcf62
     SUB ESP,0x154                       ; 004dcf63
@@ -99,10 +99,10 @@ section .text
     MOV EAX,ESP                         ; 004dcfe7
     MOV EDI,0x176                       ; 004dcfe9
     PUSH EAX                            ; 004dcfee
-    MOV dword ptr [0x01cc4800],ESI      ; 004dcfef | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004dcff5 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004dcffb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004dcfef | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004dcff5 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004dcffb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004dd000
     MOV EBP,0x80000000                  ; 004dd003
         ;   Label: LAB_004dd003
@@ -356,15 +356,15 @@ section .text
     PUSH EAX                            ; 004dd383
     LEA EDI,[ESP + 0xbc]                ; 004dd384
     MOV EBX,EAX                         ; 004dd38b
-    CALL FUN_004dcf60                   ; 004dd38d
-        ;   XREF to: 004dcf60 (UNCONDITIONAL_CALL)  ; undefined FUN_004dcf60()
+    CALL engine_model.c_FUN_004dcf60    ; 004dd38d
+        ;   XREF to: 004dcf60 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_FUN_004dcf60()
     ADD ESP,0x4                         ; 004dd392
     MOV ECX,0xd                         ; 004dd395
     LEA ESI,[ESP + 0xec]                ; 004dd39a
     PUSH EBX                            ; 004dd3a1
     MOVSD.REP ES:EDI,ESI                ; 004dd3a2
-    CALL FUN_004dcee0                   ; 004dd3a4
-        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; undefined FUN_004dcee0()
+    CALL engine_model.c_FUN_004dcee0    ; 004dd3a4
+        ;   XREF to: 004dcee0 (UNCONDITIONAL_CALL)  ; undefined engine_model.c_FUN_004dcee0()
     MOV ECX,0xd                         ; 004dd3a9
     LEA EDI,[ESP + 0x54]                ; 004dd3ae
     LEA ESI,[ESP + 0xbc]                ; 004dd3b2
@@ -375,8 +375,8 @@ section .text
         ;   Label: LAB_004dd3be
     LEA ESI,[ESP + 0x88]                ; 004dd3bf
     LEA EDI,[ESP + 0x54]                ; 004dd3c6
-    CALL FUN_0041a5a0                   ; 004dd3ca
-        ;   XREF to: 0041a5a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0041a5a0()
+    CALL engine_boss.c_FUN_0041a5a0     ; 004dd3ca
+        ;   XREF to: 0041a5a0 (UNCONDITIONAL_CALL)  ; undefined engine_boss.c_FUN_0041a5a0()
     MOV ECX,0xd                         ; 004dd3cf
     LEA ESI,[ESP + 0x88]                ; 004dd3d4
     ADD ESP,0x4                         ; 004dd3db
@@ -386,10 +386,10 @@ section .text
         ;   Label: LAB_004dd3e3
     MOV EBP,0x172                       ; 004dd3e8
     PUSH 0x58a5ea                       ; 004dd3ed | = "Unable to read magnify!"
-    MOV dword ptr [0x01cc4800],EDI      ; 004dd3f2 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004dd3f8 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004dd3fe
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004dd3f2 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004dd3f8 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004dd3fe
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004dd403
     JMP 0x004dcfac                      ; 004dd406
         ;   XREF to: 004dcfac (UNCONDITIONAL_JUMP)  ; LAB_004dcfac

@@ -15,14 +15,14 @@
 ;   TerminatedCString s_Tried_to_assign_actor_va_00580b89
 ;   TerminatedCString s_core_event_cpp_00580bc7
 ;   TerminatedCString s_CEventList_setActorVaria_00580bd9
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
 ;   core_event.cpp_CEventList_findActorVariable_FUN_00480ba0
+;   core_main.c_FUN_004c8440
 ;   crt_string.c_memmove_FUN_00566170
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -46,16 +46,16 @@ section .text
     MOV EDX,0x580b77                    ; 0048096d | = "..\\core\\event.cpp"
     MOV ECX,0xb2b                       ; 00480972
     PUSH EBP                            ; 00480977
-    MOV dword ptr [0x01cc4800],EDX      ; 00480978 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0048097e | DAT_01cc4804
+    MOV dword ptr [0x01cc4800],EDX      ; 00480978 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0048097e | INT_01cc4804
     CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0 ; 00480984
         ;   XREF to: 00409fa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0()
     ADD ESP,0x4                         ; 00480989
     PUSH EAX                            ; 0048098c
     PUSH EDI                            ; 0048098d
     PUSH 0x580b89                       ; 0048098e | = "Tried to assign actor var %s an actor..."
-    CALL FUN_004c8440                   ; 00480993
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    CALL core_main.c_FUN_004c8440       ; 00480993
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 00480998
     PUSH EDI                            ; 0048099b
         ;   Label: LAB_0048099b
@@ -136,10 +136,10 @@ section .text
     MOV ECX,0x580bc7                    ; 00480a2e | = "..\\core\\event.cpp"
     MOV ESI,0xb38                       ; 00480a33
     PUSH 0x580bd9                       ; 00480a38 | = "CEventList::setActorVariable - alread..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00480a3d | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00480a43 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00480a49
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00480a3d | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00480a43 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00480a49
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00480a4e
     MOV EAX,dword ptr [EBX + 0x34e8]    ; 00480a51
         ;   Label: LAB_00480a51

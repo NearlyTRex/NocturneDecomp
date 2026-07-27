@@ -8,16 +8,16 @@
 ; undefined        Stack[-0x40]:1  local_40
 ;
 ; XREF[35]:
-;   FUN_0041fe40 at 0041fffd
-;   FUN_00497870 at 00497891
-;   FUN_00499b00 at 00499b33
-;   FUN_004a9270 at 004a9d97
-;   FUN_004b6d80 at 004b71e1
-;   FUN_004c4970 at 004c4e1b
-;   FUN_004d4f30 at 004d4f60
-;   FUN_004da790 at 004db01e
-;   FUN_0051d650 at 0051d69c
-;   FUN_00535450 at 005356a5
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 0041270f
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413daa
+;   core_bride.cpp_FUN_0041fe40 at 0041fffd
+;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0 at 0042ae31
+;   core_cow.cpp_CZombieCow_process_FUN_0043bdb0 at 0043c0ea
+;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 00454ae0
+;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 00459657
+;   core_drone.cpp_CDrone_process_FUN_00462a60 at 00462e9a
+;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 0049745d
+;   core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004990c0 at 0049940f
 ;   ... and 25 more
 ;
 ; Called Functions:

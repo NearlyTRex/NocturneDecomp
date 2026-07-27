@@ -49,6 +49,7 @@
 ;   core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_course.cpp_CCourse_evaluate_FUN_0043b800
+;   core_main.c_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
 ;   core_mobster.cpp_CMobster_ctor_FUN_004da150
@@ -56,7 +57,6 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
 ;   core_tommygun.cpp_CTommyGun_ctor_FUN_00545b90
 ;   core_vehicle.cpp_CVehicle_playTrackedSound_FUN_0054f7a0
-;   FUN_004c8440
 ;   ... and 3 more
 ;
 ; *****************************************************************************
@@ -263,7 +263,7 @@ section .text
     JGE 0x0054ef4a                      ; 0054ed9d
         ;   XREF to: 0054ef4a (CONDITIONAL_JUMP)  ; LAB_0054ef4a
     MOV ECX,dword ptr [ESP + 0xf0]      ; 0054eda3
-    MOV EAX,[0x01ccdc10]                ; 0054edaa | DAT_01ccdc10
+    MOV EAX,[0x01ccdc10]                ; 0054edaa | g_CMobsterActorType_01ccdbd8.name_hash
     ADD ESI,ECX                         ; 0054edaf
     PUSH EAX                            ; 0054edb1
     MOV ESI,dword ptr [ESI + 0x14ecb4]  ; 0054edb2 | DAT_01fa5f38 | DAT_01fa5f3c
@@ -499,8 +499,8 @@ section .text
         ;   XREF to: 0054f263 (CONDITIONAL_JUMP)  ; LAB_0054f263
     PUSH 0xbdfc                         ; 0054f071
         ;   Label: LAB_0054f071
-    CALL FUN_0056497c                   ; 0054f076
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0054f076
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0054f07b
     TEST EAX,EAX                        ; 0054f07e
     JZ 0x0054f08b                       ; 0054f080
@@ -512,8 +512,8 @@ section .text
     PUSH 0x57c                          ; 0054f08b
         ;   Label: LAB_0054f08b
     MOV ESI,EAX                         ; 0054f090
-    CALL FUN_0056497c                   ; 0054f092
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0054f092
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0054f097
     TEST EAX,EAX                        ; 0054f09a
     JZ 0x0054f0a7                       ; 0054f09c
@@ -531,10 +531,10 @@ section .text
         ;   Label: LAB_0054f0b1
     MOV EDX,0x161                       ; 0054f0b6
     PUSH 0x597346                       ; 0054f0bb | = "CMobster::process - Out of memory!"
-    MOV [0x01cc4800],EAX                ; 0054f0c0 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0054f0c5 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0054f0cb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0054f0c0 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0054f0c5 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0054f0cb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0054f0d0
     PUSH 0x3f000000                     ; 0054f0d3
         ;   Label: LAB_0054f0d3
@@ -645,7 +645,7 @@ section .text
     ADD ESP,0x8                         ; 0054f1ed
     JMP 0x0054ef54                      ; 0054f1f0
         ;   XREF to: 0054ef54 (UNCONDITIONAL_JUMP)  ; LAB_0054ef54
-    MOV EDX,dword ptr [0x01ccdc10]      ; 0054f1f5 | DAT_01ccdc10
+    MOV EDX,dword ptr [0x01ccdc10]      ; 0054f1f5 | g_CMobsterActorType_01ccdbd8.name_hash
         ;   Label: LAB_0054f1f5
     PUSH EDX                            ; 0054f1fb
     MOV ECX,dword ptr [ESI + EAX*0x1 + 0x150bf8] ; 0054f1fc

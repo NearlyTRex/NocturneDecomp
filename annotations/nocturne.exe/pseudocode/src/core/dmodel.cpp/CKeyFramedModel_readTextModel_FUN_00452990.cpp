@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param_1,int param_2)
 
 {
@@ -37,14 +35,14 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param
   } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
   _fscanf(param_2,"%d\n",&local_44);
   if (local_44 < 5) {
-    _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-    _DAT_01cc4804 = 0x128;
-    FUN_004c8440("KFM file is invalid version %d",local_44);
+    PTR_01cc4800 = "..\\core\\dmodel.cpp";
+    INT_01cc4804 = 0x128;
+    core_main_c_FUN_004c8440("KFM file is invalid version %d",local_44);
   }
   if (8 < local_44) {
-    _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-    _DAT_01cc4804 = 299;
-    FUN_004c8440("KFM file is version %d, this .exe can only handle up to version %d",local_44,8);
+    PTR_01cc4800 = "..\\core\\dmodel.cpp";
+    INT_01cc4804 = 299;
+    core_main_c_FUN_004c8440("KFM file is version %d, this .exe can only handle up to version %d",local_44,8);
   }
   iVar3 = 1;
   do {
@@ -137,9 +135,9 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param
     iVar3 = shape_memdbg_cpp_malloc_FUN_00564c18(*(uint *)(param_1 + 0x110));
     *(int *)(param_1 + 0x11c) = iVar3;
     if (iVar3 == 0) {
-      _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-      _DAT_01cc4804 = 0x178;
-      FUN_004c8440("Out of memory for envMapOpacList");
+      PTR_01cc4800 = "..\\core\\dmodel.cpp";
+      INT_01cc4804 = 0x178;
+      core_main_c_FUN_004c8440("Out of memory for envMapOpacList");
     }
     iVar3 = 1;
     do {
@@ -185,9 +183,9 @@ int __cdecl core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(int param
   }
   iVar3 = param_1;
   if ((*(byte *)(param_2 + 0xc) & 0x20) != 0) {
-    _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-    _DAT_01cc4804 = 0x197;
-    iVar3 = FUN_004c8440("Error reading KFM model");
+    PTR_01cc4800 = "..\\core\\dmodel.cpp";
+    INT_01cc4804 = 0x197;
+    iVar3 = core_main_c_FUN_004c8440("Error reading KFM model");
   }
   if (local_48 != 0) {
     iVar3 = core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0(param_1);

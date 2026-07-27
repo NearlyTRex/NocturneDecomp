@@ -5,7 +5,11 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004f5a50 at 004f5a7c
+;   cockpit_pkbmpset.cpp_FUN_004f5a50 at 004f5a7c
+;
+; Referenced Globals:
+;   TerminatedCString s_raw_0058d1e6
+;   TerminatedCString s_pbm_0058d1eb
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_004f46b0
@@ -49,7 +53,7 @@ section .text
         ;   Label: LAB_004f4ae6
     POP EBX                             ; 004f4ae7
     RET                                 ; 004f4ae8
-    PUSH 0x58d1e6                       ; 004f4ae9
+    PUSH 0x58d1e6                       ; 004f4ae9 | = ".raw"
         ;   Label: LAB_004f4ae9
     PUSH ESI                            ; 004f4aee
     CALL crt_string.c__stricmp_FUN_00564520 ; 004f4aef
@@ -58,7 +62,7 @@ section .text
     TEST EAX,EAX                        ; 004f4af7
     JZ 0x004f4b1e                       ; 004f4af9
         ;   XREF to: 004f4b1e (CONDITIONAL_JUMP)  ; LAB_004f4b1e
-    PUSH 0x58d1eb                       ; 004f4afb
+    PUSH 0x58d1eb                       ; 004f4afb | = ".pbm"
     PUSH ESI                            ; 004f4b00
     CALL crt_string.c__stricmp_FUN_00564520 ; 004f4b01
         ;   XREF to: 00564520 (UNCONDITIONAL_CALL)  ; undefined crt_string.c__stricmp_FUN_00564520()

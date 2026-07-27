@@ -21,9 +21,9 @@ void __cdecl core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(int param_1,int p
   int local_18;
   
   if ((param_2 < 0) || (*(int *)(param_1 + 0x1c) <= param_2)) {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 0x735;
-    FUN_004c8440("CNetGame::updatePing - invalid player index");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 0x735;
+    core_main_c_FUN_004c8440("CNetGame::updatePing - invalid player index");
   }
   iVar1 = wincore_winrun_cpp_getTime_FUN_00558a30();
   iVar1 = iVar1 / 0x12;

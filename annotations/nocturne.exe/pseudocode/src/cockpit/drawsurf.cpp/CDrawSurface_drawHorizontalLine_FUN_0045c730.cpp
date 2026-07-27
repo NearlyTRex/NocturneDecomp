@@ -60,9 +60,9 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730(in
           return param_2;
         }
       }
-      _DAT_01cc4800 = "..\\cockpit\\drawsurf.cpp";
-      _DAT_01cc4804 = 0x3a5;
-      iVar1 = FUN_004c8440("Invalid bitsPerPixel!");
+      PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
+      INT_01cc4804 = 0x3a5;
+      iVar1 = core_main_c_FUN_004c8440("Invalid bitsPerPixel!");
       return iVar1;
     }
   }

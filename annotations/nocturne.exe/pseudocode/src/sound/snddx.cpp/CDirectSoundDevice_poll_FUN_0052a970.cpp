@@ -31,7 +31,7 @@ uint sound_snddx_cpp_CDirectSoundDevice_poll_FUN_0052a970(void)
         uVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(iVar2);
         _sprintf(&piStack_1a8,"DirectSux: Unable to %s.  (%s)",
                    "Get position of secondary buffer",uVar1);
-        FUN_00529980(&piStack_1a8);
+        sound_sndmain_cpp_FUN_00529980(&piStack_1a8);
         return 0;
       }
       uVar3 = uStack_18 / _DAT_02dc9238;

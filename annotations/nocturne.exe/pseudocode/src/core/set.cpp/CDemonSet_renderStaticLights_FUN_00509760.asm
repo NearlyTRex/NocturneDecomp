@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_0049cc10 at 0049ceb1
+;   core_game.cpp_FUN_0049cc10 at 0049ceb1
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508cf0
 ;   core_set.cpp_FUN_00509a80 at 00509ad1
 ;

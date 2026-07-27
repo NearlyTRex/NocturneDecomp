@@ -40,9 +40,9 @@ void __cdecl shape_edittool_cpp_CInputString_draw_FUN_0046f680(int param_1,int p
   uVar7 = _DAT_01bcdde0;
   if (*(int *)(param_1 + 0x13c) != 0) {
     if (0x3ff < *(uint *)(param_1 + 0x130)) {
-      _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-      _DAT_01cc4804 = 0x1a5;
-      FUN_004c8440("CInputString::draw - string too big for hidden text!");
+      PTR_01cc4800 = "..\\shape\\edittool.cpp";
+      INT_01cc4804 = 0x1a5;
+      core_main_c_FUN_004c8440("CInputString::draw - string too big for hidden text!");
     }
     memset(0x1bcd9c8,0x2a,*(uint *)(param_1 + 0x130));
     uVar7 = _DAT_01bcdde0;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(int param_1,float param_2)
 
 {
@@ -86,7 +84,7 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(int param_1,floa
                         (iVar4,puVar6,auStack_64,*(uint *)(param_1 + 0x6c));
       if (iVar4 != 0) {
         core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(auStack_bc,auStack_64);
-        fStack_8c = _DAT_0059aeb4 * param_2;
+        fStack_8c = 2.0f * param_2;
         uStack_94 = 0;
         uStack_90 = 0;
         puStack_1c = (uint *)fStack_8c;
@@ -113,7 +111,7 @@ void __cdecl core_bugs_cpp_CBugs_attackSwarmTarget_FUN_00422370(int param_1,floa
   }
   if ((0 < (int)puVar5) &&
      (fVar1 = *(float *)(param_1 + 0x1985c) - param_2, *(float *)(param_1 + 0x1985c) = fVar1,
-     uVar2 = CDemonActorType_00765a60.name_hash, fVar1 <= 0.0)) {
+     uVar2 = g_CCharacterActorType_00765a60.name_hash, fVar1 <= 0.0)) {
     *(uint *)(param_1 + 0x1985c) = 0x3e4ccccd;
     iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(*(uint *)(param_1 + 0x12960),uVar2);
     if (iVar4 != 0) {

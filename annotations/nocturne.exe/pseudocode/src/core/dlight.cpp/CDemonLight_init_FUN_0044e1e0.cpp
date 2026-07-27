@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(int param_1)
 
 {
@@ -21,9 +19,9 @@ void __cdecl core_dlight_cpp_CDemonLight_init_FUN_0044e1e0(int param_1)
                     (*(int *)(param_1 + 0x1cc0) * *(int *)(param_1 + 0x1cc4) * 2 + 0x210);
   *(int *)(param_1 + 0x2f98) = iVar1;
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "..\\core\\dlight.cpp";
-    _DAT_01cc4804 = 0x6c;
-    FUN_004c8440("CDemonCamera::init - Unable to alloc frame buffer");
+    PTR_01cc4800 = "..\\core\\dlight.cpp";
+    INT_01cc4804 = 0x6c;
+    core_main_c_FUN_004c8440("CDemonCamera::init - Unable to alloc frame buffer");
   }
   *(uint *)(param_1 + 0x2f94) = *(int *)(param_1 + 0x2f98) + 0x10U & 0xfffffff0;
   iVar1 = *(int *)(param_1 + 0x1cc0) * *(int *)(param_1 + 0x1cc4);

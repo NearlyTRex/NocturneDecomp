@@ -124,7 +124,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(int param
       local_74 = (int)ROUND(local_80 * _DAT_0059b070);
       local_70 = (int)ROUND(local_7c * _DAT_0059b070);
       iVar3 = iVar3 + 0xc;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iVar6,&local_78);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iVar6,&local_78);
       iVar6 = iVar6 + 0x30;
     } while (iVar6 != 0x90);
     engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0(DAT_005ae704,local_e8,0x267)
@@ -155,7 +155,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(int param
       local_68 = (int)ROUND(local_80 * _DAT_0059b070);
       local_64 = (int)ROUND(local_7c * _DAT_0059b070);
       iVar3 = iVar3 + 0xc;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iVar6,&local_6c);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iVar6,&local_6c);
       iVar6 = iVar6 + 0x30;
     } while (iVar6 != 0x90);
     engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
@@ -188,7 +188,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(int param
     local_5c = (int)ROUND(local_44 * _DAT_0059b070);
     local_58 = (int)ROUND(local_7c * _DAT_0059b070);
     local_18 = iVar12;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c
+    engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (*DAT_005ae704 + iVar6,&local_60,fVar11,iVar12);
     piVar2 = DAT_005ae704;
     *(uint *)(iVar6 + 0x20 + *DAT_005ae704) = 0xffff;
@@ -199,7 +199,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(int param
     local_b4 = (int)ROUND(local_84 * _DAT_0059b070);
     local_b0 = (int)ROUND(local_38 * _DAT_0059b070);
     local_ac = (int)ROUND(local_7c * _DAT_0059b070);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*piVar2 + iVar3,&local_b4);
+    engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*piVar2 + iVar3,&local_b4);
     piVar2 = DAT_005ae704;
     *(uint *)(*DAT_005ae704 + 0x20 + iVar3) = 0xffff;
     *(uint *)(*piVar2 + 0x24 + iVar3) = 0;
@@ -221,7 +221,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(int param
   local_c0 = (int)ROUND(_DAT_02dd1184 * _DAT_0059b070);
   local_bc = (int)ROUND(_DAT_02dd1188 * _DAT_0059b070);
   local_b8 = (int)ROUND(_DAT_02dd118c * _DAT_0059b070);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_c0);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_c0);
   piVar2 = DAT_005ae704;
   *(uint *)(*DAT_005ae704 + 0x20) = 0xffff;
   iVar8 = 0;
@@ -242,7 +242,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderCollision_FUN_00425cc0(int param
     local_a4 = (int)ROUND(_DAT_0059b070 * 0.0);
     local_a0 = (int)ROUND(local_7c * _DAT_0059b070);
     local_18 = iVar3;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iVar6,&local_a8);
+    engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iVar6,&local_a8);
     piVar2 = DAT_005ae704;
     *(uint *)(*DAT_005ae704 + 0x20 + iVar6) = 0xffff;
     *(uint *)(*piVar2 + 0x24 + iVar6) = 0;

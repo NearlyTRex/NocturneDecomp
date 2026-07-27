@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00481630(int *param_1,int param_2,char *param_3,char *param_4)
+; void core_event_cpp_FUN_00481630(int *param_1,int param_2,char *param_3,char *param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -12,19 +12,19 @@
 ;   TerminatedCString s_CRuleList_insert_invalid_00580eed
 ;   TerminatedCString s_core_event_cpp_00580f0f
 ;   TerminatedCString s_CRuleList_insert_list_fu_00580f21
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_string.c_memmove_FUN_00566170
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00481630
-        ;   Label: FUN_00481630
+        ;   Label: core_event.cpp_FUN_00481630
     PUSH ESI                            ; 00481631
     PUSH EDI                            ; 00481632
     PUSH EBP                            ; 00481633
@@ -41,10 +41,10 @@ section .text
         ;   Label: LAB_00481647
     MOV EDI,0xcd9                       ; 0048164c
     PUSH 0x580eed                       ; 00481651 | = "CRuleList::insert - invalid index"
-    MOV dword ptr [0x01cc4800],ECX      ; 00481656 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0048165c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00481662
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00481656 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0048165c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00481662
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00481667
     CMP dword ptr [EBX],0x5             ; 0048166a
         ;   Label: LAB_0048166a
@@ -146,10 +146,10 @@ section .text
         ;   Label: LAB_00481744
     MOV EDX,0xcda                       ; 00481749
     PUSH 0x580f21                       ; 0048174e | = "CRuleList::insert - list full"
-    MOV [0x01cc4800],EAX                ; 00481753 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00481758 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0048175e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00481753 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00481758 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0048175e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00481763
     JMP 0x00481673                      ; 00481766
         ;   XREF to: 00481673 (UNCONDITIONAL_JUMP)  ; LAB_00481673

@@ -34,7 +34,7 @@ void core_passngr_cpp_CPassenger_process_FUN_004ef890(int param_1,float param_2)
                 (0x01CC9450,*(int *)(param_1 + 0x1f678));
       uVar5 = 0x01CC9450;
       *(uint *)(param_1 + 0x1f678) = 0;
-      FUN_004d9110(uVar5,param_1,1);
+      core_mission_cpp_FUN_004d9110(uVar5,param_1,1);
     }
   }
   else {

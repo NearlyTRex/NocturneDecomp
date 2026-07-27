@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004f2c00 at 004f2c13
+;   core_pendulum.cpp_FUN_004f2c00 at 004f2c13
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_pend_kfm_0058cff2

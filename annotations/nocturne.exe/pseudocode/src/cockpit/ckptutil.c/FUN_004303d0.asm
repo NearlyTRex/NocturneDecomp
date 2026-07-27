@@ -1,25 +1,27 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004303d0(undefined4 *param_1,int param_2,uint param_3,uint param_4)
+; void cockpit_ckptutil_c_FUN_004303d0(undefined4 *param_1,int param_2,uint param_3,uint param_4)
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_Unable_to_allocate_u_byt_0057aaab
+;   TerminatedCString s_cockpit_ckptutil_c_0057aae5
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_004c8440
-;   FUN_005638d0
+;   crt_unknown.c_FUN_005638d0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004303d0
-        ;   Label: FUN_004303d0
+        ;   Label: cockpit_ckptutil.c_FUN_004303d0
     PUSH ESI                            ; 004303d1
     PUSH EDI                            ; 004303d2
     PUSH EBP                            ; 004303d3
@@ -99,8 +101,8 @@ section .text
     POP EDI                             ; 004304a6
     MOV ESI,dword ptr [ESP + 0x54]      ; 004304a7
     PUSH ESI                            ; 004304ab
-    CALL FUN_005638d0                   ; 004304ac
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 004304ac
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 004304b1
     ADD ESP,0x68                        ; 004304b4
     POP EBP                             ; 004304b7
@@ -110,7 +112,7 @@ section .text
     RET                                 ; 004304bb
     PUSH EBX                            ; 004304bc
         ;   Label: LAB_004304bc
-    PUSH 0x57aaab                       ; 004304bd
+    PUSH 0x57aaab                       ; 004304bd | = "Unable to allocate %u bytes for tempo..."
     LEA EAX,[ESP + 0x8]                 ; 004304c2
     PUSH EAX                            ; 004304c6
     MOV EBX,0x802                       ; 004304c7
@@ -118,12 +120,12 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 004304d1
     MOV EAX,ESP                         ; 004304d4
-    MOV ECX,0x57aae5                    ; 004304d6
+    MOV ECX,0x57aae5                    ; 004304d6 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 004304db
-    MOV dword ptr [0x01cc4804],EBX      ; 004304dc | DAT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 004304e2 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 004304e8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EBX      ; 004304dc | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004304e2 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 004304e8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004304ed
     JMP 0x00430413                      ; 004304f0
         ;   XREF to: 00430413 (UNCONDITIONAL_JUMP)  ; LAB_00430413

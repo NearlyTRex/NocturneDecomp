@@ -11,7 +11,7 @@ int core_icepick_cpp_CIcePick_ctor_FUN_004b9d20(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_004b46d0(param_1);
+  iVar1 = core_hero_cpp_FUN_004b46d0(param_1);
   *(byte ***)(iVar1 + 0x14c) = &PTR_core_icepick_cpp_CIcePick_setup_FUN_004b9db0_0059f3e4;
   *(uint *)(iVar1 + 0x1fa3c) = 0;
   *(uint *)(iVar1 + 0x1fa40) = 0;

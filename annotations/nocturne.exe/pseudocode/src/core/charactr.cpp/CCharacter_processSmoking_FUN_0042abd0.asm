@@ -20,9 +20,9 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[3]:
-;   FUN_00535900 at 00535a4e
-;   FUN_00541d00 at 00541d6b
 ;   core_npc.cpp_CNPC_process_FUN_004eea20 at 004eea4a
+;   core_stranger.cpp_FUN_00535900 at 00535a4e
+;   core_svetlana.cpp_FUN_00541d00 at 00541d6b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_head_0057a472

@@ -14,7 +14,7 @@ int core_baron_cpp_CBaron_ctor_FUN_004101d0(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_004b46d0(param_1);
+  iVar2 = core_hero_cpp_FUN_004b46d0(param_1);
   *(byte ***)(iVar2 + 0x14c) = &PTR_core_baron_cpp_CBaron_setup_FUN_004102c0_00599ac4;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar2 + 0x150,"baron.dfm");
   *(uint *)(iVar2 + 0x1fb10) = 0x3f800000;

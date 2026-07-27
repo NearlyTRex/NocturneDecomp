@@ -11,17 +11,17 @@
 ;   TerminatedCString s_fog_00577196
 ;   TerminatedCString s_engine_2d_c_0057719a
 ;   TerminatedCString s_Unable_to_read_fog_table_005771a9
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   engine_2d.c_FUN_00402e90
 ;   engine_2d.c_FUN_00403130
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
-;   wincore_windll.cpp_setFogColorFromPalette_FUN_00532a80
+;   engine_special.cpp_setFogColorFromPalette_FUN_00532a80
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     JL 0x004030b9                       ; 004030d7
         ;   XREF to: 004030b9 (CONDITIONAL_JUMP)  ; LAB_004030b9
     PUSH EBX                            ; 004030d9
-    CALL wincore_windll.cpp_setFogColorFromPalette_FUN_00532a80 ; 004030da
-        ;   XREF to: 00532a80 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_setFogColorFromPalette_FUN_00532a80()
+    CALL engine_special.cpp_setFogColorFromPalette_FUN_00532a80 ; 004030da
+        ;   XREF to: 00532a80 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_setFogColorFromPalette_FUN_00532a80()
     ADD ESP,0x4                         ; 004030df
     POP EDI                             ; 004030e2
     POP EBX                             ; 004030e3
@@ -99,10 +99,10 @@ section .text
         ;   Label: LAB_0040310e
     MOV ECX,0x69c                       ; 00403113
     PUSH 0x5771a9                       ; 00403118 | = "Unable to read fog table."
-    MOV dword ptr [0x01cc4800],EDX      ; 0040311d | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00403123 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00403129
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0040311d | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00403123 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00403129
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     JMP 0x004030b3                      ; 0040312e
         ;   XREF to: 004030b3 (UNCONDITIONAL_JUMP)  ; LAB_004030b3
 

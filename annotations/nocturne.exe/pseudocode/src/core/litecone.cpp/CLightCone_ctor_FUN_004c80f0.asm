@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004c80c0 at 004c80d3
+;   core_litecone.cpp_FUN_004c80c0 at 004c80d3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_00587ad0
@@ -16,7 +16,7 @@
 ;   undefined4 s_one_00587ad5+1
 ;   undefined4 s_ne_00587ad5+2
 ;   undefined4 s_e_00587ad5+3
-;   undefined1* PTR_FUN_0059fed4 = 004c8190
+;   undefined1* PTR_core_litecone.cpp_FUN_004c8190_0059fed4 = 004c8190
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -32,7 +32,7 @@ section .text
     PUSH EDX                            ; 004c80f6
     CALL core_actor.cpp_FUN_00409d30    ; 004c80f7
         ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
-    MOV dword ptr [EAX + 0x14c],0x59fed4 ; 004c80fc | PTR_FUN_0059fed4
+    MOV dword ptr [EAX + 0x14c],0x59fed4 ; 004c80fc | PTR_core_litecone.cpp_FUN_004c8190_0059fed4
     MOV ESI,0x587ad0                    ; 004c8106 | = "none"
     MOV dword ptr [EAX + 0x150],0x42600000 ; 004c810b
     MOV EDX,EAX                         ; 004c8115

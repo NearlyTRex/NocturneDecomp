@@ -1,0 +1,159 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 14,
+    "complexity_score": 77,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 7,
+    "suspect_count": 5,
+    "suspect_types": [
+      "param_count_too_few",
+      "stack_ref",
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 21
+  },
+  "cross_references": [
+    {
+      "addr": "0042eb90",
+      "from_addr": "0042ed8f",
+      "name": "cockpit_ckptutil.c_FUN_0042eb90",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00564c30",
+    "address_range": [
+      [
+        "00564c30",
+        "00564c52"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_00564c30",
+    "signature": "void crt_unknown_c_FUN_00564c30(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "0056ae10",
+      "is_variadic": false,
+      "name": "FUN_0056ae10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c18ae",
+      "name": "DAT_005c18ae",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0042ed8f",
+        "call_type": "direct",
+        "caller": "cockpit_ckptutil.c_FUN_0042eb90",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.166666666666667,
+    "instruction_count": 12,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 7,
+      "INT_ADD": 5,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 5,
+      "LOAD": 2,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 5
+    },
+    "pcode_op_count": 50
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void FUN_00564c30(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 7,
+      "match": "&stack0x00000008",
+      "severity": "moderate",
+      "text": "local_4 = &stack0x00000008;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 8,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "FUN_0056ae10(&DAT_005c18ae,param_1,&local_4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_005c18ae",
+      "severity": "mild",
+      "text": "FUN_0056ae10(&DAT_005c18ae,param_1,&local_4);",
+      "type": "undefined_data"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

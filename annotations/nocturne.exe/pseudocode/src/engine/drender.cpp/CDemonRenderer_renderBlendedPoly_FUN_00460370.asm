@@ -7,10 +7,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   FUN_0043f330 at 0043f4da
-;   FUN_004ac440 at 004ac5ca
-;   FUN_004ac600 at 004ac789
+;   core_curtain.cpp_FUN_0043f330 at 0043f4da
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 004868e5
+;   core_glass.cpp_FUN_004ac440 at 004ac5ca
+;   core_glass.cpp_FUN_004ac600 at 004ac789
 ;   core_water.cpp_CWater_render_FUN_00550cb0 at 005510f7
 ;
 ; Referenced Globals:

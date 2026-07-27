@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 417,
+    "complexity_score": 416,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 127,
+    "pseudocode_lines": 126,
     "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
@@ -139,7 +139,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 374
+    "total_lines": 373
   },
   "cross_references": [
     {
@@ -168,6 +168,21 @@
       "name": "BringWindowToTop"
     },
     {
+      "addr": "004c85f0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c85f0"
+    },
+    {
+      "addr": "004c90e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c90e0"
+    },
+    {
+      "addr": "004c85e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004d23d0"
+    },
+    {
       "addr": "EXTERNAL:00000025",
       "is_variadic": false,
       "name": "CreateWindowExA"
@@ -186,16 +201,6 @@
       "addr": "EXTERNAL:00000028",
       "is_variadic": false,
       "name": "FindWindowA"
-    },
-    {
-      "addr": "004c85f0",
-      "is_variadic": false,
-      "name": "FUN_004c85f0"
-    },
-    {
-      "addr": "004c90e0",
-      "is_variadic": false,
-      "name": "FUN_004c90e0"
     },
     {
       "addr": "EXTERNAL:00000057",
@@ -266,11 +271,6 @@
       "addr": "EXTERNAL:0000003d",
       "is_variadic": false,
       "name": "ShowWindow"
-    },
-    {
-      "addr": "004c85e0",
-      "is_variadic": false,
-      "name": "thunk_FUN_004d23d0"
     },
     {
       "addr": "EXTERNAL:0000001a",
@@ -706,15 +706,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(WNDCLASSA *)((int)pWVar12",
+      "line": 43,
+      "match": "(WNDCLASSA *)((int)pWVar11",
       "severity": "moderate",
-      "text": "pWVar12 = (WNDCLASSA *)((int)pWVar12 + -0x80);",
+      "text": "pWVar11 = (WNDCLASSA *)((int)pWVar11 + -0x80);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "_DAT_02de209c = param_1;",
@@ -722,10 +722,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 48,
       "match": "DAT_02de2c10",
       "severity": "mild",
-      "text": "pcVar13 = &DAT_02de2c10;",
+      "text": "pcVar12 = &DAT_02de2c10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_02de2c10",
+      "severity": "mild",
+      "text": "pcVar12 = &DAT_02de2c10;",
       "type": "undefined_data"
     },
     {
@@ -733,28 +741,20 @@
       "line": 60,
       "match": "DAT_02de2c10",
       "severity": "mild",
-      "text": "pbVar9 = &DAT_02de2c10;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_02de2c10",
-      "severity": "mild",
       "text": "if (DAT_02de2c10 != '\\0') {",
       "type": "undefined_data"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 71,
-      "match": "*(byte **)(iVar10 + 0x2de2d14",
+      "line": 70,
+      "match": "*(char **)(iVar9 + 0x2de2d14",
       "severity": "moderate",
-      "text": "*(byte **)(iVar10 + 0x2de2d14) = pbVar9;",
+      "text": "*(char **)(iVar9 + 0x2de2d14) = pcVar12;",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "GetModuleFileNameA(param_1,&DAT_02de2a10,0x100);",
@@ -762,7 +762,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 83,
       "match": "DAT_02de2a10",
       "severity": "mild",
       "text": "GetModuleFileNameA(param_1,&DAT_02de2a10,0x100);",
@@ -770,10 +770,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 85,
       "match": "DAT_02de2a10",
       "severity": "mild",
-      "text": "pcVar13 = &DAT_02de2a10;",
+      "text": "pcVar12 = &DAT_02de2a10;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 96,
+      "match": "DAT_02de2a10",
+      "severity": "mild",
+      "text": "} while ((&DAT_02de2a10)[uVar10] != '\\\\');",
       "type": "undefined_data"
     },
     {
@@ -781,20 +789,12 @@
       "line": 97,
       "match": "DAT_02de2a10",
       "severity": "mild",
-      "text": "} while ((&DAT_02de2a10)[uVar11] != '\\\\');",
+      "text": "(&DAT_02de2a10)[uVar10] = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
-      "match": "DAT_02de2a10",
-      "severity": "mild",
-      "text": "(&DAT_02de2a10)[uVar11] = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 100,
+      "line": 99,
       "match": "DAT_02de2a10",
       "severity": "mild",
       "text": "SetCurrentDirectoryA(&DAT_02de2a10);",
@@ -802,7 +802,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
       "text": "local_58.hInstance = param_1;",
@@ -810,7 +810,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "local_58.hIcon = LoadIconA(param_1,(LPCSTR)0x65);",
@@ -818,7 +818,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
       "text": "(HWND)0x0,(HMENU)0x0,param_1,(LPVOID)0x0);",
@@ -826,31 +826,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 118,
+      "line": 117,
       "match": "param_4",
       "severity": "mild",
       "text": "ShowWindow(_DAT_02de2098,param_4);",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `pWVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 44,
-      "match": "(int)pWVar12",
+      "description": "Pointer value `pWVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)pWVar11",
       "severity": "moderate",
-      "text": "pWVar12 = (WNDCLASSA *)((int)pWVar12 + -0x80);",
+      "text": "pWVar11 = (WNDCLASSA *)((int)pWVar11 + -0x80);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pWVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
-      "match": "(int)pWVar12",
+      "description": "Pointer value `pWVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 44,
+      "match": "(int)pWVar11",
       "severity": "moderate",
-      "text": "} while (iVar10 < (int)pWVar12);",
+      "text": "} while (iVar9 < (int)pWVar11);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 51,
+      "line": 50,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -858,7 +858,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 87,
+      "line": 86,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

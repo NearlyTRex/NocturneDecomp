@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00421010 at 00421023
+;   core_bugs.cpp_FUN_00421010 at 00421023
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_roach_kfm_00579c09
@@ -45,14 +45,14 @@ section .text
     CALL core_enemy.cpp_CEnemy_ctor_FUN_00479560 ; 00421048
         ;   XREF to: 00479560 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_CEnemy_ctor_FUN_00479560()
     ADD ESP,0x4                         ; 0042104d
-    PUSH 0x59b010                       ; 00421050 | DAT_0059b010
+    PUSH 0x59b010                       ; 00421050 | g_SBugsTypeInfo_0059b010
     PUSH 0x190                          ; 00421055
     ADD EAX,0xbd2c                      ; 0042105a
     PUSH EAX                            ; 0042105f
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00421060
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 00421065
-    PUSH 0x59b030                       ; 00421068 | DAT_0059b030
+    PUSH 0x59b030                       ; 00421068 | g_CKeyFramedModelInstanceTypeInfo_0059b030
     PUSH 0x4                            ; 0042106d
     ADD EAX,0x6404                      ; 0042106f
     PUSH EAX                            ; 00421074

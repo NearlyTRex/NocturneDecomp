@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * FUN_005229f0(undefined4 param_1,char *param_2)
+; char * sound_sndmain_cpp_FUN_005229f0(undefined4 param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x114]:1  local_114
@@ -16,21 +16,21 @@
 ;   TerminatedCString s_rb_005927ba
 ;   TerminatedCString s_sound_005927bd
 ;   float FLOAT_005a2174 = 2
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dc1ed8
 ;   undefined4 DAT_02dc216c
 ;   undefined4 DAT_02dc2170
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_ftell_FUN_00566e70
 ;   crt_string.c__stricmp_FUN_00564520
 ;   crt_string.c_splitpath_FUN_00566498
+;   crt_unknown.c_FUN_0056497c
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
-;   FUN_004c8440
-;   FUN_0056497c
 ;   sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90
 ;   sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910
@@ -44,7 +44,7 @@
 section .text
 
     PUSH EBX                            ; 005229f0
-        ;   Label: FUN_005229f0
+        ;   Label: sound_sndmain.cpp_FUN_005229f0
     PUSH ESI                            ; 005229f1
     PUSH EDI                            ; 005229f2
     PUSH EBP                            ; 005229f3
@@ -124,8 +124,8 @@ section .text
     JLE 0x00522ceb                      ; 00522aaa
         ;   XREF to: 00522ceb (CONDITIONAL_JUMP)  ; LAB_00522ceb
     PUSH 0x8630                         ; 00522ab0
-    CALL FUN_0056497c                   ; 00522ab5
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 00522ab5
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 00522aba
     TEST EAX,EAX                        ; 00522abd
     JZ 0x00522aca                       ; 00522abf
@@ -142,10 +142,10 @@ section .text
     MOV EDI,0x592796                    ; 00522ad4 | = "..\\sound\\sndmain.cpp"
     MOV EAX,0x3c8                       ; 00522ad9
     PUSH 0x5927ab                       ; 00522ade | = "Out of memory."
-    MOV dword ptr [0x01cc4800],EDI      ; 00522ae3 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00522ae9 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00522aee
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00522ae3 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00522ae9 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00522aee
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00522af3
     PUSH ESI                            ; 00522af6
         ;   Label: LAB_00522af6

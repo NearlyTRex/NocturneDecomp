@@ -246,7 +246,7 @@ LAB_0049ef39:
       *(uint *)(param_1 + 0x240) = 0;
     }
     iVar3 = *(int *)(0x01E57284 + 0x15aabc);
-    FUN_005125a0(0x01E57284,*(uint *)(0x01E56DA0 + 0xc),1);
+    core_setdir_cpp_FUN_005125a0(0x01E57284,*(uint *)(0x01E56DA0 + 0xc),1);
     *(uint *)(0x01E56DA0 + 0x10) = 0;
     if (iVar3 == *(int *)(0x01E57284 + 0x15aabc)) {
       core_set_cpp_CDemonSet_setCameraView_FUN_005088f0

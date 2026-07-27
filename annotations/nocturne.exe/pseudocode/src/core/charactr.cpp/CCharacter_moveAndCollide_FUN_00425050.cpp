@@ -174,12 +174,12 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(int param_
     if (local_38 < fVar3) {
       local_38 = *(float *)(param_1 + 0x2614) * (float)0.5 + fVar3;
     }
-    local_14 = (float)FUN_00510a40(0x01E57284,*(uint *)(param_1 + 0x20),
-                                   *(uint *)(param_1 + 0x28),local_94,local_8c,
-                                   *(float *)(param_1 + 0x2dd8) * *(float *)(param_1 + 0x2614),
-                                   *(float *)(param_1 + 0x2de4) * *(float *)(param_1 + 0x2614) +
-                                   *(float *)(param_1 + 0x24),*(float *)(param_1 + 0x24) + local_38)
-    ;
+    local_14 = (float)core_setcolid_cpp_FUN_00510a40
+                                (0x01E57284,*(uint *)(param_1 + 0x20),
+                                 *(uint *)(param_1 + 0x28),local_94,local_8c,
+                                 *(float *)(param_1 + 0x2dd8) * *(float *)(param_1 + 0x2614),
+                                 *(float *)(param_1 + 0x2de4) * *(float *)(param_1 + 0x2614) +
+                                 *(float *)(param_1 + 0x24),*(float *)(param_1 + 0x24) + local_38);
     if (DAT_00765a9c == 0) {
       DAT_00765a9c = *(int *)(0x01E57284 + 0x14cd5c);
     }
@@ -238,7 +238,7 @@ void __cdecl core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(int param_
       if ((param_1 == iVar8) && (local_c8 < 1.0)) {
         core_actor_cpp_CDemonActor_inverseTransformVector_FUN_0040a220
                   (iVar8,auStack_c4,0x01E57284 + 0x14cd40);
-        FUN_004940d0(INT_005b9284,auStack_c4[0],uStack_bc);
+        xxx_unk_c_FUN_004940d0(INT_005b9284,auStack_c4[0],uStack_bc);
       }
       if (*(float *)(param_1 + 0x24) < *(float *)(param_1 + 0x240c)) {
         *(uint *)(param_1 + 0x24) = *(uint *)(param_1 + 0x240c);

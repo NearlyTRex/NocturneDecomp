@@ -18,7 +18,7 @@
     {
       "addr": "004c8440",
       "from_addr": "004c84d6",
-      "name": "FUN_004c8440",
+      "name": "core_main.c_FUN_004c8440",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -38,13 +38,13 @@
     {
       "addr": "00566f98",
       "is_variadic": false,
-      "name": "FUN_00566f98"
+      "name": "crt_unknown.c_FUN_00566f98"
     }
   ],
   "globals": [
     {
       "addr": "005c1890",
-      "name": "PTR_FUN_005c1890",
+      "name": "PTR_crt_unknown.c_FUN_00566f98_005c1890",
       "type": "void*",
       "value": "00566f98"
     }
@@ -55,7 +55,7 @@
       {
         "call_addr": "004c84d6",
         "call_type": "direct",
-        "caller": "FUN_004c8440",
+        "caller": "core_main.c_FUN_004c8440",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -95,7 +95,7 @@
       "line": 5,
       "match": "code *",
       "severity": "moderate",
-      "text": "(*(code *)PTR_FUN_005c1890)();",
+      "text": "(*(code *)PTR_crt_unknown_c_FUN_00566f98_005c1890)();",
       "type": "unresolved_funcptr"
     }
   ]

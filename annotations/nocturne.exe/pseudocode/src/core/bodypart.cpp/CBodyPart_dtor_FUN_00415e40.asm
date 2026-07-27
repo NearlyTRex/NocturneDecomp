@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_core_bodypart.cpp_CBodyPart_setup_FUN_00416500_0059a744 = 00416500
-;   undefined4 DAT_0059a860
+;   WatcomTypeInfo g_CBodyPartTypeInfo_0059a860
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
@@ -15,7 +15,7 @@
 ;   core_bodypart.cpp_SBodyPartModel_arrdtor_FUN_00418110
 ;   core_box.cpp_CBox_dtor_FUN_0041a6c0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -67,7 +67,7 @@ section .text
     MOV EAX,EBX                         ; 00415eb0
     POP EBX                             ; 00415eb2
     RET                                 ; 00415eb3
-    PUSH 0x59a860                       ; 00415eb4 | DAT_0059a860
+    PUSH 0x59a860                       ; 00415eb4 | g_CBodyPartTypeInfo_0059a860
         ;   Label: LAB_00415eb4
     PUSH EBX                            ; 00415eb9
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00415eba
@@ -82,8 +82,8 @@ section .text
     RET                                 ; 00415ece
     PUSH EAX                            ; 00415ecf
         ;   Label: LAB_00415ecf
-    CALL FUN_00564494                   ; 00415ed0
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 00415ed0
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 00415ed5
     MOV EAX,EBX                         ; 00415ed8
     POP EBX                             ; 00415eda

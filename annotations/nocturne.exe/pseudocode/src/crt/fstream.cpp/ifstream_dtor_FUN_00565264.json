@@ -2,44 +2,43 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 296,
+    "complexity_score": 282,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 25,
+    "pseudocode_lines": 27,
+    "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 95
+    "total_lines": 96
   },
   "cross_references": [
     {
       "addr": "004a3b90",
       "from_addr": "004a3fbf",
-      "name": "FUN_004a3b90",
+      "name": "core_game.cpp_FUN_004a3b90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a4170",
       "from_addr": "004a45b7",
-      "name": "FUN_004a4170",
+      "name": "core_game.cpp_FUN_004a4170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005650f0",
       "from_addr": "005650fd",
-      "name": "FUN_005650f0",
+      "name": "crt_unknown.c_FUN_005650f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00565106",
       "from_addr": "00565115",
-      "name": "FUN_00565106",
+      "name": "crt_unknown.c_FUN_00565106",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -70,7 +69,7 @@
     {
       "addr": "00564494",
       "is_variadic": false,
-      "name": "FUN_00564494"
+      "name": "crt_unknown.c_FUN_00564494"
     },
     {
       "addr": "0056b633",
@@ -96,8 +95,8 @@
   "globals": [
     {
       "addr": "0059b4d0",
-      "name": "DAT_0059b4d0",
-      "type": "undefined4",
+      "name": "g_ifstreamTypeInfo_0059b4d0",
+      "type": "WatcomTypeInfo",
       "value": null
     },
     {
@@ -108,13 +107,13 @@
     },
     {
       "addr": "005a47c0",
-      "name": "PTR_FUN_005a47c0",
+      "name": "PTR_crt_unknown.c_FUN_005650f0_005a47c0",
       "type": "void*",
       "value": "005650f0"
     },
     {
       "addr": "005a47c8",
-      "name": "PTR_FUN_005a47c8",
+      "name": "PTR_crt_unknown.c_FUN_00565106_005a47c8",
       "type": "void*",
       "value": "00565106"
     }
@@ -125,7 +124,7 @@
       {
         "call_addr": "004a45b7",
         "call_type": "direct",
-        "caller": "FUN_004a4170",
+        "caller": "core_game.cpp_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -136,7 +135,7 @@
       {
         "call_addr": "004a46e2",
         "call_type": "direct",
-        "caller": "FUN_004a4170",
+        "caller": "core_game.cpp_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -147,7 +146,7 @@
       {
         "call_addr": "004a472e",
         "call_type": "direct",
-        "caller": "FUN_004a4170",
+        "caller": "core_game.cpp_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +157,7 @@
       {
         "call_addr": "004a479b",
         "call_type": "direct",
-        "caller": "FUN_004a4170",
+        "caller": "core_game.cpp_FUN_004a4170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,7 +168,7 @@
       {
         "call_addr": "004a3fbf",
         "call_type": "direct",
-        "caller": "FUN_004a3b90",
+        "caller": "core_game.cpp_FUN_004a3b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,7 +179,7 @@
       {
         "call_addr": "004a4114",
         "call_type": "direct",
-        "caller": "FUN_004a3b90",
+        "caller": "core_game.cpp_FUN_004a3b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,7 +190,7 @@
       {
         "call_addr": "004a4151",
         "call_type": "direct",
-        "caller": "FUN_004a3b90",
+        "caller": "core_game.cpp_FUN_004a3b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -213,7 +212,7 @@
       {
         "call_addr": "005650fd",
         "call_type": "direct",
-        "caller": "FUN_005650f0",
+        "caller": "crt_unknown.c_FUN_005650f0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -224,7 +223,7 @@
       {
         "call_addr": "00565115",
         "call_type": "direct",
-        "caller": "FUN_00565106",
+        "caller": "crt_unknown.c_FUN_00565106",
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "method": "push_count",
@@ -341,7 +340,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[0x13] = (int)&PTR_FUN_005a47c0;",
+      "text": "param_1[0x13] = (int)&PTR_crt_unknown_c_FUN_005650f0_005a47c0;",
       "type": "unnamed_param"
     },
     {
@@ -349,7 +348,7 @@
       "line": 12,
       "match": "(byte ***)((int)param_1",
       "severity": "moderate",
-      "text": "*(byte ***)((int)param_1 + *(int *)(*param_1 + 4) + 0x28) = &PTR_FUN_005a47c8;",
+      "text": "*(byte ***)((int)param_1 + *(int *)(*param_1 + 4) + 0x28) =",
       "type": "pointer_cast"
     },
     {
@@ -357,7 +356,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte ***)((int)param_1 + *(int *)(*param_1 + 4) + 0x28) = &PTR_FUN_005a47c8;",
+      "text": "*(byte ***)((int)param_1 + *(int *)(*param_1 + 4) + 0x28) =",
       "type": "unnamed_param"
     },
     {
@@ -365,15 +364,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte ***)((int)param_1 + *(int *)(*param_1 + 4) + 0x28) = &PTR_FUN_005a47c8;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = FUN_0056b6e8(param_1 + 0x11,1);",
+      "text": "*(byte ***)((int)param_1 + *(int *)(*param_1 + 4) + 0x28) =",
       "type": "unnamed_param"
     },
     {
@@ -381,12 +372,20 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = (int *)FUN_0056b810(iVar1 + -0x44,1);",
+      "text": "iVar1 = FUN_0056b6e8(param_1 + 0x11,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = (int *)FUN_0056b810(iVar1 + -0x44,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 & 1) == 0) {",
@@ -394,7 +393,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = FUN_0056b633(param_1 + 0x15,1);",
@@ -402,7 +401,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (int *)(iVar1 + -0x54);",
@@ -410,7 +409,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 & 2) == 0) {",
@@ -418,7 +417,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "return param_1;",
@@ -426,7 +425,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "FUN_00564494(param_1);",
@@ -434,23 +433,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = __vec_delete(param_1,&DAT_0059b4d0);",
+      "text": "uVar2 = __vec_delete(param_1,&g_ifstreamTypeInfo_0059b4d0);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_0059b4d0",
-      "severity": "mild",
-      "text": "uVar2 = __vec_delete(param_1,&DAT_0059b4d0);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "return param_1;",
@@ -465,11 +456,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&PTR_FUN_005a47c0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&PTR_crt_unknown_c_FUN_005650f0_005a47c0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 11,
-      "match": "(int)&PTR_FUN_005a47c0",
+      "match": "(int)&PTR_crt_unknown_c_FUN_005650f0_005a47c0",
       "severity": "moderate",
-      "text": "param_1[0x13] = (int)&PTR_FUN_005a47c0;",
+      "text": "param_1[0x13] = (int)&PTR_crt_unknown_c_FUN_005650f0_005a47c0;",
       "type": "pointer_truncation"
     }
   ],

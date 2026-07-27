@@ -3,6 +3,10 @@
 // Function prototypes for core/hero.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_hero.cpp_staticInit_FUN_004b44b0
+// Address: 004b44b0
+void __cdecl staticInit(void);
+
 // Original: core_hero.cpp_closestHeroToPoint_FUN_004b4500
 // Address: 004b4500
 int __cdecl closestHeroToPoint(float *param_1);
@@ -15,9 +19,49 @@ undefined4 __cdecl isAnyHeroWithinRadius(float *param_1,float param_2);
 // Address: 004b4630
 undefined4 __cdecl isAnyHeroWithinCylinder(float *param_1,float param_2,float param_3);
 
+// Original: core_hero.cpp_FUN_004b46d0
+// Address: 004b46d0
+int FUN_004b46d0(undefined4 param_1);
+
+// Original: core_hero.cpp_FUN_004b4800
+// Address: 004b4800
+void FUN_004b4800(int param_1);
+
+// Original: core_hero.cpp_FUN_004b48d0
+// Address: 004b48d0
+void FUN_004b48d0(int param_1);
+
 // Original: core_hero.cpp_CHero_testCylinderCollision_FUN_004b4910
 // Address: 004b4910
 undefined4 CHero::testCylinderCollision(int param_1,undefined4 param_2,undefined4 param_3);
+
+// Original: core_hero.cpp_FUN_004b4950
+// Address: 004b4950
+undefined4 FUN_004b4950(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+
+// Original: core_hero.cpp_FUN_004b49a0
+// Address: 004b49a0
+int FUN_004b49a0(int param_1);
+
+// Original: core_hero.cpp_FUN_004b4c00
+// Address: 004b4c00
+int FUN_004b4c00(int param_1);
+
+// Original: core_hero.cpp_FUN_004b4c10
+// Address: 004b4c10
+undefined4 FUN_004b4c10(void);
+
+// Original: core_hero.cpp_FUN_004b4c20
+// Address: 004b4c20
+undefined4 FUN_004b4c20(int param_1,undefined4 param_2,int param_3);
+
+// Original: core_hero.cpp_FUN_004b4c30
+// Address: 004b4c30
+undefined4 FUN_004b4c30(void);
+
+// Original: core_hero.cpp_FUN_004b4c60
+// Address: 004b4c60
+undefined4 FUN_004b4c60(void);
 
 // Original: core_hero.cpp_CHero_getGrabbed_FUN_004b4c70
 // Address: 004b4c70
@@ -38,6 +82,18 @@ undefined4 __cdecl CHero::tryInteract(int param_1);
 // Original: core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0
 // Address: 004b4fe0
 undefined4 __cdecl CHero::tryTalkToNearbyCharacter(int param_1);
+
+// Original: core_hero.cpp_FUN_004b5110
+// Address: 004b5110
+int FUN_004b5110(int param_1);
+
+// Original: core_hero.cpp_FUN_004b5270
+// Address: 004b5270
+undefined4 FUN_004b5270(int param_1);
+
+// Original: core_hero.cpp_FUN_004b52f0
+// Address: 004b52f0
+undefined4 FUN_004b52f0(int param_1);
 
 // Original: core_hero.cpp_CHero_executeLeverPull_FUN_004b5490
 // Address: 004b5490
@@ -62,6 +118,10 @@ void __cdecl CHero::stopNearbyInteraction(int param_1);
 // Original: core_hero.cpp_CHero_findItemUseTarget_FUN_004b5950
 // Address: 004b5950
 undefined4 __cdecl CHero::findItemUseTarget(int param_1);
+
+// Original: core_hero.cpp_FUN_004b5b00
+// Address: 004b5b00
+undefined4 FUN_004b5b00(int param_1);
 
 // Original: core_hero.cpp_CHero_canLookAt_FUN_004b5b70
 // Address: 004b5b70
@@ -91,6 +151,18 @@ int CHero::closestEnemy(int param_1,float *param_2);
 // Address: 004b5e90
 void CHero::kill(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 
+// Original: core_hero.cpp_FUN_004b5ec0
+// Address: 004b5ec0
+void FUN_004b5ec0(int param_1);
+
+// Original: core_hero.cpp_FUN_004b5f60
+// Address: 004b5f60
+void FUN_004b5f60(void);
+
+// Original: core_hero.cpp_FUN_004b5f80
+// Address: 004b5f80
+CDemonActorType * FUN_004b5f80(void);
+
 // Original: core_hero.cpp_CHeroPlaceholder_ctor_FUN_004b5f90
 // Address: 004b5f90
 void __cdecl CHeroPlaceholder::ctor(undefined4 param_1);
@@ -106,3 +178,7 @@ void CHeroPlaceholder::getBoundingBox(undefined4 param_1,undefined4 *param_2);
 // Original: core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080
 // Address: 004b6080
 int __cdecl CHeroPlaceholder::createHero(int param_1,undefined4 param_2);
+
+// Original: core_hero.cpp_FUN_004b61f0
+// Address: 004b61f0
+void FUN_004b61f0(int param_1);

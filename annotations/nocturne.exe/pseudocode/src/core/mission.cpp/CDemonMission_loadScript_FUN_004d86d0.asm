@@ -15,8 +15,8 @@
 ;   undefined4 DAT_01e56da0
 ;
 ; Called Functions:
+;   core_script.cpp_FUN_004febd0
 ;   crt_file.c_makepath_FUN_0056626c
-;   FUN_004febd0
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EAX                            ; 004d8703
     MOV ECX,dword ptr [0x005be220]      ; 004d8704 | DAT_005be220
     PUSH ECX                            ; 004d870a | DAT_01e56da0
-    CALL FUN_004febd0                   ; 004d870b
-        ;   XREF to: 004febd0 (UNCONDITIONAL_CALL)  ; undefined FUN_004febd0()
+    CALL core_script.cpp_FUN_004febd0   ; 004d870b
+        ;   XREF to: 004febd0 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_004febd0()
     ADD ESP,0xc                         ; 004d8710
     ADD ESP,0x104                       ; 004d8713
     RET                                 ; 004d8719

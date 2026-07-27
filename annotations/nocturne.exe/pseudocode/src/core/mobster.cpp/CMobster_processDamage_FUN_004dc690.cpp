@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_mobster_cpp_CMobster_processDamage_FUN_004dc690(int param_1,int param_2)
 
 {
@@ -43,8 +41,8 @@ void core_mobster_cpp_CMobster_processDamage_FUN_004dc690(int param_1,int param_
     }
     goto LAB_004dc755;
   }
-  iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(*(uint *)(param_2 + 0x34),_DAT_02dd1008)
-  ;
+  iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
+                    (*(uint *)(param_2 + 0x34),g_CTommyGunActorType_02dd0fd0.name_hash);
   if (iVar2 == 0) {
 LAB_004dc731:
     core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar3,3,1);

@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[28]:
-;   FUN_00442d9c at 00442e6b
-;   FUN_00447f20 at 00448177
-;   FUN_005519c0 at 00551a34
-;   FUN_00554310 at 00554363
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220 at 0040a233
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290 at 0040a2c6
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 at 004175fe
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40 at 0041726a
 ;   core_box.cpp_CBox_processPhysics_FUN_0041ad10 at 0041ae79
 ;   core_box.cpp_CBox_setupVelocities_FUN_0041cb40 at 0041cb79
+;   core_cloth.cpp_CCloth_applyRotation_FUN_00438780 at 00438810
+;   core_cloth.cpp_CCloth_step_FUN_00436e80 at 004372ff
+;   core_curtain.cpp_CCurtain_updateLocalPositions_FUN_0043e1e0 at 0043e24e
+;   core_dcamera.cpp_FUN_00442d9c at 00442e6b
 ;   ... and 18 more
 ;
 ; *****************************************************************************

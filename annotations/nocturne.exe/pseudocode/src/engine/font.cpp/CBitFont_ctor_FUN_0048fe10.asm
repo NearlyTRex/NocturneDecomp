@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0044c560 at 0044c624
+;   core_dfont.cpp_FUN_0044c560 at 0044c624
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_reset_FUN_0048fe50

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0(int param_1)
 
 {
@@ -41,9 +39,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00453ff0(
     }
     *(int **)(param_1 + 0x358) = piVar3;
     if (piVar3 == (int *)0x0) {
-      _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-      _DAT_01cc4804 = 0x470;
-      FUN_004c8440("CKeyFramedModel::buildCollisionTriList - out of memory");
+      PTR_01cc4800 = "..\\core\\dmodel.cpp";
+      INT_01cc4804 = 0x470;
+      core_main_c_FUN_004c8440("CKeyFramedModel::buildCollisionTriList - out of memory");
     }
     core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00454100(param_1,&DAT_02dd1184);
   }

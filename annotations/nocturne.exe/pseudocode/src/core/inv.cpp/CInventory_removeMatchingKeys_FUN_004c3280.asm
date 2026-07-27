@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004b5ec0 at 004b5f1e
 ;   core_hero.cpp_CHero_removeMatchingKeys_FUN_004b5cb0 at 004b5cbf
+;   core_hero.cpp_FUN_004b5ec0 at 004b5f1e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc30e0
+;   undefined4 g_CKeyActorActorType_01cc30a8.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -32,7 +32,7 @@ section .text
     JLE 0x004c32c9                      ; 004c3293
         ;   XREF to: 004c32c9 (CONDITIONAL_JUMP)  ; LAB_004c32c9
     MOV EBX,EDI                         ; 004c3295
-    MOV EAX,[0x01cc30e0]                ; 004c3297 | DAT_01cc30e0
+    MOV EAX,[0x01cc30e0]                ; 004c3297 | g_CKeyActorActorType_01cc30a8.name_hash
         ;   Label: LAB_004c3297
     PUSH EAX                            ; 004c329c
     MOV EDX,dword ptr [EBX + 0xc]       ; 004c329d

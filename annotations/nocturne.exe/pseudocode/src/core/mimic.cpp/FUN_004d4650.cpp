@@ -1,14 +1,14 @@
-// Name: FUN_004d4650
+// Name: core_mimic.cpp_FUN_004d4650
 // Address: 004d4650
 // Address Range: [[004d4650, 004d49eb]]
 // Convention: unknown
-// Signature: void FUN_004d4650(int param_1)
+// Signature: void core_mimic_cpp_FUN_004d4650(int param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004d4650(int param_1)
+void core_mimic_cpp_FUN_004d4650(int param_1)
 
 {
   uint *puVar1;
@@ -25,9 +25,9 @@ void FUN_004d4650(int param_1)
   
   bVar7 = 0;
   if (*0x01CEA280 != 0) {
-    _DAT_01cc4800 = "..\\core\\mimic.cpp";
-    _DAT_01cc4804 = 0xb6;
-    FUN_004c8440("CMimic::setup - can't use mimic in multi-player!");
+    PTR_01cc4800 = "..\\core\\mimic.cpp";
+    INT_01cc4804 = 0xb6;
+    core_main_c_FUN_004c8440("CMimic::setup - can't use mimic in multi-player!");
   }
   iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
   if (iVar4 == 0) {
@@ -75,13 +75,14 @@ void FUN_004d4650(int param_1)
   core_enemy_cpp_CEnemy_setup_FUN_004796b0(param_1);
   core_cloth_cpp_CCloth_load_FUN_00435240(param_1 + 0xbdec,"strcoat.cth");
   core_cloth_cpp_CCloth_setup_FUN_004359e0(param_1 + 0xbdec,param_1 + 0x20,param_1 + 0x30,iVar4);
-  uVar3 = core_actor_cpp_createActorByName_FUN_0040d540(param_1 + 0x46924,_DAT_01bcdef4);
+  uVar3 = core_actor_cpp_createActorByName_FUN_0040d540
+                    (param_1 + 0x46924,g_CEnemyActorType_01bcdebc.name_hash);
   iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890(uVar3);
   *(int *)(param_1 + 0x4757c) = iVar4;
   if (iVar4 == 0) {
-    _DAT_01cc4800 = "..\\core\\mimic.cpp";
-    _DAT_01cc4804 = 0x101;
-    FUN_004c8440("CMimic failed to create morph target actor!");
+    PTR_01cc4800 = "..\\core\\mimic.cpp";
+    INT_01cc4804 = 0x101;
+    core_main_c_FUN_004c8440("CMimic failed to create morph target actor!");
   }
   (*(code *)**(uint **)(*(int *)(param_1 + 0x4757c) + 0x14c))(*(int *)(param_1 + 0x4757c));
   iVar4 = param_1 + 0x150;

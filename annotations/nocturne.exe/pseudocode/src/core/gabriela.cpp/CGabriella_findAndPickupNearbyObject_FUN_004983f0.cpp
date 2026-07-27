@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0(int param_1)
 
 {
@@ -53,7 +51,7 @@ uint __cdecl core_gabriela_cpp_CGabriella_findAndPickupNearbyObject_FUN_004983f0
   int local_18;
   
   *(uint *)(param_1 + 0x1fa08) = 0;
-  __arrinit(local_bc,4,&DAT_005993b0);
+  __arrinit(local_bc,4,&g_CVectorTypeInfo_005993b0);
   local_5c = 0xbda3d70a;
   local_58 = 0x3ee147ae;
   local_54 = 0x3ff5c28f;
@@ -139,9 +137,9 @@ LAB_00498579:
   if (uStack_28 < 2) {
     if (uStack_28 != 1) {
 LAB_00498759:
-      _DAT_01cc4800 = "..\\core\\gabriela.cpp";
-      _DAT_01cc4804 = 0x638;
-      FUN_004c8440("Hell froze - invalid pickUpType: %d",uStack_28);
+      PTR_01cc4800 = "..\\core\\gabriela.cpp";
+      INT_01cc4804 = 0x638;
+      core_main_c_FUN_004c8440("Hell froze - invalid pickUpType: %d",uStack_28);
       return 1;
     }
     uVar7 = 0xe;

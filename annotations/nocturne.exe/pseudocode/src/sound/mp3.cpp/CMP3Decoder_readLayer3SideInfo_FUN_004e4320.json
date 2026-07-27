@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,22 +122,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 520,
-    "complexity_score": 1107,
+    "complexity_score": 1091,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 227,
-    "suspect_count": 85,
+    "pseudocode_lines": 226,
+    "suspect_count": 84,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 747
+    "total_lines": 746
   },
   "cross_references": [
     {
@@ -163,7 +162,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "FUN_004c8440"
+      "name": "core_main.c_FUN_004c8440"
     },
     {
       "addr": "004e29d0",
@@ -203,14 +202,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -416,16 +415,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320(uint param_1,uint param_2,uint *param_3,uint *param_4)",
@@ -433,7 +424,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320(uint param_1,uint param_2,uint *param_3,uint *param_4)",
@@ -441,7 +432,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320(uint param_1,uint param_2,uint *param_3,uint *param_4)",
@@ -449,7 +440,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_4",
       "severity": "mild",
       "text": "void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_004e4320(uint param_1,uint param_2,uint *param_3,uint *param_4)",
@@ -457,7 +448,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_4",
       "severity": "mild",
       "text": "iVar1 = param_4[4];",
@@ -465,7 +456,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_4",
       "severity": "mild",
       "text": "if (*(int *)*param_4 == 0) {",
@@ -473,7 +464,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,8);",
@@ -481,7 +472,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = uVar3;",
@@ -489,7 +480,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,uVar3);",
@@ -497,7 +488,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3[1] = uVar3;",
@@ -505,7 +496,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_3",
       "severity": "mild",
       "text": "local_28 = param_3;",
@@ -513,7 +504,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_3",
       "severity": "mild",
       "text": "local_48 = param_3;",
@@ -521,7 +512,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_3",
       "severity": "mild",
       "text": "local_3c = param_3;",
@@ -529,7 +520,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_3",
       "severity": "mild",
       "text": "local_38 = param_3;",
@@ -537,7 +528,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,0xc);",
@@ -545,7 +536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,9);",
@@ -553,7 +544,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,8);",
@@ -561,7 +552,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,9);",
@@ -569,7 +560,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar4 = sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(param_2);",
@@ -577,7 +568,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 57,
       "match": "param_3",
       "severity": "mild",
       "text": "puVar5 = param_3 + local_30 * 0x28;",
@@ -585,7 +576,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 62,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,5);",
@@ -593,7 +584,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 64,
       "match": "(uint *)((int)puVar5",
       "severity": "moderate",
       "text": "*(uint *)((int)puVar5 + iVar4 + 0x34) = uVar3;",
@@ -601,7 +592,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 67,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,4);",
@@ -609,7 +600,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 69,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,3);",
@@ -617,7 +608,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 74,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,2);",
@@ -625,7 +616,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 76,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(param_2);",
@@ -633,7 +624,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 81,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,5);",
@@ -641,7 +632,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 89,
+      "line": 87,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,3);",
@@ -649,7 +640,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 90,
       "match": "(uint *)((int)param_3",
       "severity": "moderate",
       "text": "*(uint *)((int)param_3 + iVar4 + 0x40) = uVar3;",
@@ -657,7 +648,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 90,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)((int)param_3 + iVar4 + 0x40) = uVar3;",
@@ -665,7 +656,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 92,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3[local_30 * 0x28 + 0xb] == 0) {",
@@ -673,15 +664,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 97,
+      "line": 95,
       "match": "DAT_01cd8b28",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Side info bad: block_type == 0 in split block.  File: %s\",&DAT_01cd8b28);",
+      "text": "core_main_c_FUN_004c8440(\"Side info bad: block_type == 0 in split block.  File: %s\",&DAT_01cd8b28);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 97,
       "match": "param_3",
       "severity": "mild",
       "text": "else if ((param_3[local_30 * 0x28 + 0xb] == 2) && (param_3[local_30 * 0x28 + 0xc] == 0)) {",
@@ -689,7 +680,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 97,
       "match": "param_3",
       "severity": "mild",
       "text": "else if ((param_3[local_30 * 0x28 + 0xb] == 2) && (param_3[local_30 * 0x28 + 0xc] == 0)) {",
@@ -697,10 +688,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 98,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3[local_30 * 0x28 + 0x13] = 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 105,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(param_2);",
       "type": "unnamed_param"
     },
     {
@@ -713,15 +712,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 120,
+      "line": 118,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,9);",
@@ -729,7 +720,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 119,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = uVar3;",
@@ -737,7 +728,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
+      "line": 126,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,uVar3);",
@@ -745,7 +736,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 129,
+      "line": 127,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3[1] = uVar3;",
@@ -753,7 +744,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 130,
       "match": "param_3",
       "severity": "mild",
       "text": "local_5c = param_3 + 4;",
@@ -761,7 +752,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 132,
       "match": "param_3",
       "severity": "mild",
       "text": "puVar5 = param_3 + iVar4 * 0x28;",
@@ -769,7 +760,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 137,
+      "line": 135,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(param_2);",
@@ -777,7 +768,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 149,
+      "line": 147,
       "match": "param_3",
       "severity": "mild",
       "text": "local_44 = local_58 + (int)param_3;",
@@ -785,7 +776,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 154,
+      "line": 152,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,0xc);",
@@ -793,7 +784,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 156,
+      "line": 154,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,9);",
@@ -801,7 +792,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 158,
+      "line": 156,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,8);",
@@ -809,7 +800,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 160,
+      "line": 158,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,4);",
@@ -817,7 +808,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 160,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar4 = sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(param_2);",
@@ -825,7 +816,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 167,
+      "line": 165,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,5);",
@@ -833,7 +824,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 171,
+      "line": 169,
       "match": "(uint *)((int)param_3",
       "severity": "moderate",
       "text": "*(uint *)((int)param_3 + iVar2 + 0x34) = uVar3;",
@@ -841,7 +832,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 171,
+      "line": 169,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)((int)param_3 + iVar2 + 0x34) = uVar3;",
@@ -849,7 +840,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 173,
+      "line": 171,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,4);",
@@ -857,7 +848,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 174,
+      "line": 172,
       "match": "(uint *)((int)param_3",
       "severity": "moderate",
       "text": "*(uint *)((int)param_3 + iVar7 + 0x4c) = uVar3;",
@@ -865,7 +856,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 172,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)((int)param_3 + iVar7 + 0x4c) = uVar3;",
@@ -873,7 +864,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 175,
+      "line": 173,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,3);",
@@ -881,7 +872,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 176,
+      "line": 174,
       "match": "(uint *)((int)param_3",
       "severity": "moderate",
       "text": "*(uint *)((int)param_3 + iVar7 + 0x2c) = 0;",
@@ -889,7 +880,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 176,
+      "line": 174,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)((int)param_3 + iVar7 + 0x2c) = 0;",
@@ -897,7 +888,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 177,
+      "line": 175,
       "match": "(uint *)((int)param_3",
       "severity": "moderate",
       "text": "*(uint *)((int)param_3 + iVar7 + 0x50) = uVar3;",
@@ -905,7 +896,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 175,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)((int)param_3 + iVar7 + 0x50) = uVar3;",
@@ -913,7 +904,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 180,
+      "line": 178,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,2);",
@@ -921,7 +912,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 182,
+      "line": 180,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(param_2);",
@@ -929,7 +920,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 183,
+      "line": 181,
       "match": "param_3",
       "severity": "mild",
       "text": "uVar10 = (int)param_3 + local_58 + local_34 * 0xa0;",
@@ -937,7 +928,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 188,
+      "line": 186,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,5);",
@@ -945,7 +936,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 194,
+      "line": 192,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004e2ac0(param_2,3);",
@@ -953,7 +944,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 196,
       "match": "(uint *)((int)param_3",
       "severity": "moderate",
       "text": "*(uint *)((int)param_3 + iVar7 + 0x40) = uVar3;",
@@ -961,7 +952,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 198,
+      "line": 196,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)((int)param_3 + iVar7 + 0x40) = uVar3;",
@@ -969,7 +960,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 200,
+      "line": 198,
       "match": "(int *)((int)param_3",
       "severity": "moderate",
       "text": "iVar7 = *(int *)((int)param_3 + iVar4 + 0x2c);",
@@ -977,7 +968,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 200,
+      "line": 198,
       "match": "param_3",
       "severity": "mild",
       "text": "iVar7 = *(int *)((int)param_3 + iVar4 + 0x2c);",
@@ -985,15 +976,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 204,
+      "line": 202,
       "match": "DAT_01cd8b28",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Side info bad: block_type == 0 in split block.  File: %s\",&DAT_01cd8b28);",
+      "text": "core_main_c_FUN_004c8440(\"Side info bad: block_type == 0 in split block.  File: %s\",&DAT_01cd8b28);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 206,
+      "line": 204,
       "match": "(int *)((int)param_3",
       "severity": "moderate",
       "text": "else if ((iVar7 == 2) && (*(int *)((int)param_3 + iVar4 + 0x30) == 0)) {",
@@ -1001,7 +992,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 206,
+      "line": 204,
       "match": "param_3",
       "severity": "mild",
       "text": "else if ((iVar7 == 2) && (*(int *)((int)param_3 + iVar4 + 0x30) == 0)) {",
@@ -1009,7 +1000,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 207,
+      "line": 205,
       "match": "(uint *)((int)param_3",
       "severity": "moderate",
       "text": "*(uint *)((int)param_3 + iVar4 + 0x4c) = 8;",
@@ -1017,10 +1008,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 207,
+      "line": 205,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)((int)param_3 + iVar4 + 0x4c) = 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 212,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(param_2);",
       "type": "unnamed_param"
     },
     {
@@ -1040,16 +1039,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 218,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar3 = sound_mp3_cpp_CFileBitStream_readBit_FUN_004e29d0(param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 66,
+      "line": 64,
       "match": "(int)puVar5",
       "severity": "moderate",
       "text": "*(uint *)((int)puVar5 + iVar4 + 0x34) = uVar3;",
@@ -1057,7 +1048,7 @@
     },
     {
       "description": "Pointer value `puVar9` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 87,
+      "line": 85,
       "match": "(uint)puVar9",
       "severity": "moderate",
       "text": "uVar10 = (uint)puVar9 ^ (uint)(puVar5 + 2);",
@@ -1065,7 +1056,7 @@
     },
     {
       "description": "Pointer value `(puVar5 + 2)` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 87,
+      "line": 85,
       "match": "(uint)(puVar5 + 2)",
       "severity": "moderate",
       "text": "uVar10 = (uint)puVar9 ^ (uint)(puVar5 + 2);",
@@ -1073,7 +1064,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 189,
+      "line": 187,
       "match": "(uint *)(uVar10 + 0x34)",
       "severity": "moderate",
       "text": "*(uint *)(uVar10 + 0x34) = uVar3;",
@@ -1081,7 +1072,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 210,
+      "line": 208,
       "match": "(uint *)(local_44 + 0x4c)",
       "severity": "moderate",
       "text": "*(uint *)(local_44 + 0x4c) = 7;",

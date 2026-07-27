@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004c2470 at 004c269f
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004bf41f
 ;   core_inv.cpp_CInventory_select_FUN_004c1580 at 004c16dd
+;   core_inv.cpp_FUN_004c2470 at 004c269f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Add_to_dict_s_00586d38

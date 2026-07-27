@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004b5b00 at 004b5b5d
+;   core_hero.cpp_FUN_004b5b00 at 004b5b5d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CTrap_005858ab
@@ -25,7 +25,7 @@
 ;   double DOUBLE_005858c3 = 3
 ;   double DOUBLE_005858cb = 60
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_014b8a54
+;   undefined4 g_CActorDestinationActorType_014b8a1c.name_hash
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
 ;
@@ -88,7 +88,7 @@ section .text
     MOV dword ptr [EBP + -0x8],EAX      ; 004b59c0
     JMP 0x004b5976                      ; 004b59c3
         ;   XREF to: 004b5976 (UNCONDITIONAL_JUMP)  ; LAB_004b5976
-    MOV EBX,dword ptr [0x014b8a54]      ; 004b59c5 | DAT_014b8a54
+    MOV EBX,dword ptr [0x014b8a54]      ; 004b59c5 | g_CActorDestinationActorType_014b8a1c.name_hash
         ;   Label: LAB_004b59c5
     PUSH EBX                            ; 004b59cb
     MOV EDX,dword ptr [EDI + EAX*0x1 + 0x14cd70] ; 004b59cc | DAT_01fa3ff4

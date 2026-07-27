@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,18 +122,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 109,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 8,
+    "pseudocode_lines": 20,
+    "suspect_count": 7,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param"
     ],
-    "total_lines": 78
+    "total_lines": 79
   },
   "cross_references": [],
   "function": {
@@ -155,29 +154,29 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00409ea0"
     },
     {
+      "addr": "004cc020",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_FUN_004cc020"
+    },
+    {
+      "addr": "004cc040",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_FUN_004cc040"
+    },
+    {
+      "addr": "004cc060",
+      "is_variadic": false,
+      "name": "core_manpuz.cpp_FUN_004cc060"
+    },
+    {
       "addr": "0056445f",
       "is_variadic": false,
       "name": "crt_memory.c___vec_delete_FUN_0056445f"
     },
     {
-      "addr": "004cc020",
-      "is_variadic": false,
-      "name": "FUN_004cc020"
-    },
-    {
-      "addr": "004cc040",
-      "is_variadic": false,
-      "name": "FUN_004cc040"
-    },
-    {
-      "addr": "004cc060",
-      "is_variadic": false,
-      "name": "FUN_004cc060"
-    },
-    {
       "addr": "00564494",
       "is_variadic": false,
-      "name": "FUN_00564494"
+      "name": "crt_unknown.c_FUN_00564494"
     },
     {
       "addr": "00564486",
@@ -188,8 +187,8 @@
   "globals": [
     {
       "addr": "005a0290",
-      "name": "DAT_005a0290",
-      "type": "undefined4",
+      "name": "g_CMansionPuzzleCircleTypeInfo_005a0290",
+      "type": "WatcomTypeInfo",
       "value": null
     }
   ],
@@ -264,20 +263,12 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = __vec_delete(param_1,&DAT_005a0290);",
+      "text": "uVar2 = __vec_delete(param_1,&g_CMansionPuzzleCircleTypeInfo_005a0290)",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005a0290",
-      "severity": "mild",
-      "text": "uVar2 = __vec_delete(param_1,&DAT_005a0290);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "return param_1;",
@@ -285,15 +276,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = FUN_004cc060(param_1 + 0x1338,0);",
+      "text": "iVar1 = core_manpuz_cpp_FUN_004cc060(param_1 + 0x1338,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 & 2) == 0) {",

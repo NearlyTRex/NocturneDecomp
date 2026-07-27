@@ -35,9 +35,9 @@ float core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0051a470(int param_1,
     __arrinit();
   }
   if (5000 < *(int *)(param_2 * 4 + param_1 + 0x2c)) {
-    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-    _DAT_01cc4804 = 0x6d2;
-    FUN_004c8440();
+    PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    INT_01cc4804 = 0x6d2;
+    core_main_c_FUN_004c8440();
   }
   iVar2 = param_2 * 4 + param_1;
   pfVar3 = (float *)&DAT_026757d0;

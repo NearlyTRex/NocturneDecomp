@@ -2,10 +2,20 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3f.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2DE0000
 // =============================================================================
+
+// CDemonActorType
+extern CDemonActorType g_CWerewolfActorType_02de078c;
+extern CDemonActorType g_CZombieActorType_02de4940;
+
+// CVector3f
+extern CVector3f CVector3f_02de0774;
+extern CVector3f CVector3f_02de0780;
 
 // word
 extern word DAT_02DE612A;

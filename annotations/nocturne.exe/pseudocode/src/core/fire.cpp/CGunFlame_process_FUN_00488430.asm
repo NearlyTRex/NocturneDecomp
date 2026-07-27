@@ -19,7 +19,7 @@
 ;   double DOUBLE_005813b4 = 0.200000000000000
 ;   double DOUBLE_005813bc = 0.5
 ;   double DOUBLE_005813c4 = 1.60496654306895E-314
-;   undefined4 DAT_0059d218
+;   float FLOAT_0059d218 = 15
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77850
@@ -143,7 +143,7 @@ section .text
     ADD ESP,0x4                         ; 0048853b
     FLD float ptr [ESP + 0x20]          ; 0048853e
         ;   Label: LAB_0048853e
-    FMUL float ptr [0x0059d218]         ; 00488542 | DAT_0059d218
+    FMUL float ptr [0x0059d218]         ; 00488542 | FLOAT_0059d218
     FADD float ptr [EBX + 0x1c]         ; 00488548
     FSTP float ptr [EBX + 0x1c]         ; 0048854b
     CMP dword ptr [EBX + 0x1c],0x41a00000 ; 0048854e

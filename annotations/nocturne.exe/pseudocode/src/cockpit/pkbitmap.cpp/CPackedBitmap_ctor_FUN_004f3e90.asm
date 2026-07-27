@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004f4f90 at 004f50bc
+;   cockpit_pkbitmap.cpp_FUN_004f4f90 at 004f50bc
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_004f3f20

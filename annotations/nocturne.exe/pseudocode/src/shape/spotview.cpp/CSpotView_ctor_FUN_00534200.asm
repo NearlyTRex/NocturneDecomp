@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005341f0 at 005341f5
+;   shape_spotview.cpp_staticInit_FUN_005341f0 at 005341f5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c0fa8

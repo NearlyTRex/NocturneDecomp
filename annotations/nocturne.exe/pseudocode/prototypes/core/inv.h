@@ -3,6 +3,10 @@
 // Function prototypes for core/inv.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_inv.cpp_staticInit_FUN_004be9d0
+// Address: 004be9d0
+void __cdecl staticInit(void);
+
 // Original: core_inv.cpp_getItemModel_FUN_004beb40
 // Address: 004beb40
 int getItemModel(undefined4 param_1);
@@ -23,6 +27,10 @@ bool __cdecl loadItem(int param_1,undefined4 param_2);
 // Address: 004bedc0
 void __cdecl CInventory::ctor(undefined4 *param_1);
 
+// Original: core_inv.cpp_FUN_004bee60
+// Address: 004bee60
+undefined4 FUN_004bee60(undefined4 param_1);
+
 // Original: core_inv.cpp_CInventory_clear_FUN_004bee80
 // Address: 004bee80
 void __cdecl CInventory::clear(int param_1);
@@ -42,6 +50,10 @@ void __cdecl freeInventory(void);
 // Original: core_inv.cpp_CInventory_addItem_FUN_004bf360
 // Address: 004bf360
 undefined4 __cdecl CInventory::addItem(int param_1,int param_2,int param_3);
+
+// Original: core_inv.cpp_FUN_004c0640
+// Address: 004c0640
+void FUN_004c0640(void);
 
 // Original: core_inv.cpp_CInventory_findItemByName_FUN_004c0710
 // Address: 004c0710
@@ -138,6 +150,10 @@ void __cdecl drawItemIconBackground(int param_1,int param_2,int param_3,int para
 // Original: core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150
 // Address: 004c2150
 void __cdecl CInventory::renderSelectedItems(int param_1);
+
+// Original: core_inv.cpp_FUN_004c2470
+// Address: 004c2470
+void FUN_004c2470(float *param_1);
 
 // Original: core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004c31b0
 // Address: 004c31b0

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c8c7c
+;   core_main.c_FUN_004c85f0 at 004c8c7c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wav_005949ae

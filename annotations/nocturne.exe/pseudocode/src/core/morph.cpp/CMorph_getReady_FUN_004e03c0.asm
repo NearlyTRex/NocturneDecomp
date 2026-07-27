@@ -49,26 +49,26 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   FUN_00415430 at 00415488
-;   FUN_004d4650 at 004d49aa
-;   FUN_00540c20 at 00540ee4
-;   FUN_0054c3e0 at 0054c585
+;   core_biggs.cpp_FUN_00415430 at 00415488
+;   core_mimic.cpp_FUN_004d4650 at 004d49aa
 ;   core_moloch.cpp_CMoloch_process_FUN_004ddb20 at 004de145
 ;   core_moloch.cpp_CMoloch_setup_FUN_004dda70 at 004ddaf0
 ;   core_passngr.cpp_CPassenger_setup_FUN_004ef6d0 at 004ef761
+;   core_succubus.cpp_FUN_00540c20 at 00540ee4
+;   core_vampboss.cpp_FUN_0054c3e0 at 0054c585
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_0058ad78
 ;   TerminatedCString s_CMorph_getReady_can_t_do_0058ad8a
-;   undefined4 DAT_005993f0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   WatcomTypeInfo g_CBoundingBox3D_005993f0
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041cc00
+;   core_main.c_FUN_004c8440
 ;   core_morph.cpp_CMorphModel_findNearestPoint_FUN_004dffc0
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -87,7 +87,7 @@ section .text
     CMP dword ptr [EAX + 0x65c],0x3     ; 004e03db
     JL 0x004e048f                       ; 004e03e2
         ;   XREF to: 004e048f (CONDITIONAL_JUMP)  ; LAB_004e048f
-    PUSH 0x5993f0                       ; 004e03e8 | DAT_005993f0
+    PUSH 0x5993f0                       ; 004e03e8 | g_CBoundingBox3D_005993f0
         ;   Label: LAB_004e03e8
     PUSH 0x2                            ; 004e03ed
     LEA EAX,[ESP + 0x8]                 ; 004e03ef
@@ -148,10 +148,10 @@ section .text
         ;   Label: LAB_004e048f
     MOV ESI,0x31f                       ; 004e0494
     PUSH 0x58ad8a                       ; 004e0499 | = "CMorph::getReady - can't do this unle..."
-    MOV dword ptr [0x01cc4800],EBX      ; 004e049e | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004e04a4 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e04aa
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004e049e | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004e04a4 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e04aa
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004e04af
     JMP 0x004e03e8                      ; 004e04b2
         ;   XREF to: 004e03e8 (UNCONDITIONAL_JUMP)  ; LAB_004e03e8

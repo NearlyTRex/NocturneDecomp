@@ -59,18 +59,18 @@
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01cae124
+;   undefined4 g_CHeroActorType_01cae0ec.name_hash
 ;   undefined4 DAT_01e57284
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_actor.cpp_CDemonActor_transformVector_FUN_0040a200
+;   core_fire.cpp_FUN_0048b6f0
 ;   core_fire.cpp_SLaserInfo_ctor_FUN_0048b6b0
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
-;   FUN_0048b6f0
 ;
 ; *****************************************************************************
 
@@ -162,7 +162,7 @@ section .text
     ADD ESP,0x4                         ; 00554826
     MOV dword ptr [EBP + 0xe],EAX       ; 00554829
     MOV EAX,0x3f800000                  ; 0055482c
-    MOV EDX,dword ptr [0x01cae124]      ; 00554831 | DAT_01cae124
+    MOV EDX,dword ptr [0x01cae124]      ; 00554831 | g_CHeroActorType_01cae0ec.name_hash
     MOV dword ptr [EBP + -0x6],EAX      ; 00554837
     PUSH EDX                            ; 0055483a
     MOV ECX,dword ptr [EBX + 0x2fc]     ; 0055483b
@@ -225,8 +225,8 @@ section .text
     PUSH EAX                            ; 005548de
     MOV dword ptr [EBP + 0x12],EBX      ; 005548df
     MOV dword ptr [EBP + -0x42],EBX     ; 005548e2
-    CALL FUN_0048b6f0                   ; 005548e5
-        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048b6f0()
+    CALL core_fire.cpp_FUN_0048b6f0     ; 005548e5
+        ;   XREF to: 0048b6f0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048b6f0()
     ADD ESP,0x14                        ; 005548ea
     MOV EDX,dword ptr [0x005be368]      ; 005548ed | DAT_005be368
     PUSH EDX                            ; 005548f3 | DAT_01e57284

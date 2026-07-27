@@ -9,12 +9,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   FUN_00513720 at 00513809
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0 at 00508634
 ;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00509760 at 0050988e
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508b2f
 ;   core_set.cpp_FUN_00507f80 at 00508061
 ;   core_set.cpp_FUN_0050a260 at 0050a3cf
+;   core_setdir.cpp_FUN_00513720 at 00513809
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
@@ -33,6 +33,8 @@
 ;   core_dskybox.cpp_renderSkyDome_FUN_00463580
 ;   core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_0046ae40
 ;   core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0
+;   core_dtrace.cpp_FUN_00469ce0
+;   core_glass.cpp_FUN_004ac7c0
 ;   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004d7980
 ;   core_set.cpp_CDemonSet_buildMirrorList_FUN_0050e210
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
@@ -42,8 +44,6 @@
 ;   core_water.cpp_CWater_render_FUN_00550cb0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-;   engine_drender.cpp_CDemonRenderer_setLightDirection_FUN_00460c70
-;   engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -99,8 +99,8 @@ section .text
         ;   Label: LAB_00507d04
     PUSH dword ptr [ESP + 0x28]         ; 00507d05
     PUSH 0x1fba938                      ; 00507d09 | DAT_01fba938
-    CALL FUN_00469ce0                   ; 00507d0e
-        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_00469ce0()
+    CALL core_dtrace.cpp_FUN_00469ce0   ; 00507d0e
+        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00469ce0()
     ADD ESP,0xc                         ; 00507d13
     CMP EDI,0x2                         ; 00507d16
     JNZ 0x00507d51                      ; 00507d19
@@ -200,8 +200,8 @@ section .text
     JZ 0x00507e29                       ; 00507e1e
         ;   XREF to: 00507e29 (CONDITIONAL_JUMP)  ; LAB_00507e29
     PUSH EAX                            ; 00507e20
-    CALL FUN_004ac7c0                   ; 00507e21
-        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004ac7c0()
+    CALL core_glass.cpp_FUN_004ac7c0    ; 00507e21
+        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004ac7c0()
     ADD ESP,0x4                         ; 00507e26
     PUSH 0x1                            ; 00507e29
         ;   Label: LAB_00507e29
@@ -213,8 +213,8 @@ section .text
     PUSH 0x0                            ; 00507e35
     PUSH dword ptr [ESP + 0x28]         ; 00507e37
     PUSH 0x1fba938                      ; 00507e3b | DAT_01fba938
-    CALL FUN_00469ce0                   ; 00507e40
-        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_00469ce0()
+    CALL core_dtrace.cpp_FUN_00469ce0   ; 00507e40
+        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00469ce0()
     ADD ESP,0xc                         ; 00507e45
     PUSH EBX                            ; 00507e48
     ADD ESI,0x4                         ; 00507e49
@@ -307,8 +307,8 @@ section .text
     JZ 0x00507f3d                       ; 00507f32
         ;   XREF to: 00507f3d (CONDITIONAL_JUMP)  ; LAB_00507f3d
     PUSH EAX                            ; 00507f34
-    CALL FUN_004ac7c0                   ; 00507f35
-        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004ac7c0()
+    CALL core_glass.cpp_FUN_004ac7c0    ; 00507f35
+        ;   XREF to: 004ac7c0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004ac7c0()
     ADD ESP,0x4                         ; 00507f3a
     PUSH 0x0                            ; 00507f3d
         ;   Label: LAB_00507f3d
@@ -320,8 +320,8 @@ section .text
     PUSH 0x0                            ; 00507f49
     PUSH dword ptr [ESP + 0x28]         ; 00507f4b
     PUSH 0x1fba938                      ; 00507f4f | DAT_01fba938
-    CALL FUN_00469ce0                   ; 00507f54
-        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; undefined FUN_00469ce0()
+    CALL core_dtrace.cpp_FUN_00469ce0   ; 00507f54
+        ;   XREF to: 00469ce0 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_00469ce0()
     ADD ESP,0xc                         ; 00507f59
     PUSH EBX                            ; 00507f5c
     ADD EDI,0x4                         ; 00507f5d

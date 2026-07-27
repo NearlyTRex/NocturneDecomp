@@ -58,12 +58,12 @@
 ;   ... and 15 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModel_allocLOD_FUN_00517ec0
 ;   core_skeleton.cpp_CDeformableModel_allocMemory_FUN_00517da0
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20
 ;   crt_stdio.c_fgetc_FUN_00564570
 ;   crt_stdio.c_fscanf_FUN_00563350
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -104,10 +104,10 @@ section .text
         ;   Label: LAB_005192c1
     MOV ECX,0x4c7                       ; 005192c6
     PUSH 0x5916f2                       ; 005192cb | = "Deformable model file is corrupt"
-    MOV dword ptr [0x01cc4800],EDX      ; 005192d0 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005192d6 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005192dc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005192d0 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005192d6 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005192dc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005192e1
     MOV EAX,dword ptr [ESP + 0x28]      ; 005192e4
         ;   Label: LAB_005192e4
@@ -121,10 +121,10 @@ section .text
     MOV EBP,0x591713                    ; 005192f8 | = "..\\core\\skeleton.cpp"
     MOV EAX,0x4ca                       ; 005192fd
     PUSH 0x591728                       ; 00519302 | = "Can't load model of version %d, this ..."
-    MOV dword ptr [0x01cc4800],EBP      ; 00519307 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0051930d | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00519312
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00519307 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0051930d | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00519312
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 00519317
     MOV EDI,dword ptr [ESP + 0x28]      ; 0051931a
         ;   Label: LAB_0051931a
@@ -961,10 +961,10 @@ section .text
         ;   Label: LAB_00519ab1
     MOV ESI,0x596                       ; 00519ab6
     PUSH 0x59186e                       ; 00519abb | = "CDeformableModel::loadStream - error ..."
-    MOV dword ptr [0x01cc4800],EBX      ; 00519ac0 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00519ac6 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00519acc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00519ac0 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00519ac6 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00519acc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00519ad1
     ADD ESP,0x7c                        ; 00519ad4
     POP EBP                             ; 00519ad7

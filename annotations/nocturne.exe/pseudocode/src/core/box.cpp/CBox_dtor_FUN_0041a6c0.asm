@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_0041fa10 at 0041fa35
-;   FUN_0041fa90 at 0041faa5
-;   FUN_005170d0 at 005170e5
-;   FUN_00534dc0 at 00534dd5
 ;   core_bodypart.cpp_CBodyPart_dtor_FUN_00415e40 at 00415e6c
+;   core_boxactor.cpp_FUN_0041fa10 at 0041fa35
+;   core_boxactor.cpp_FUN_0041fa90 at 0041faa5
 ;   core_fire.cpp_CStake_dtor_FUN_0048cc30 at 0048cc3a
 ;   core_fire.cpp_CToss_dtor_FUN_0048ca90 at 0048ca9c
+;   core_simbox.cpp_FUN_005170d0 at 005170e5
+;   core_stone.cpp_FUN_00534dc0 at 00534dd5
 ;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0 at 00553ebf
 ;
 ; Called Functions:

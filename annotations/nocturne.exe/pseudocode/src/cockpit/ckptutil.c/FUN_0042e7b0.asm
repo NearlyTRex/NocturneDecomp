@@ -1,16 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0042e7b0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
+; void cockpit_ckptutil_c_FUN_0042e7b0(int param_1,int param_2,int param_3,int param_4,int *param_5,int param_6,uint param_7)
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_cockpit_ckptutil_c_0057a716
+;   TerminatedCString s_Invalid_height_array_siz_0057a72c
+;   TerminatedCString s_cockpit_ckptutil_c_0057a747
+;   TerminatedCString s_No_room_for_scroll_bitma_0057a75d
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
-;   FUN_00564494
+;   core_main.c_FUN_004c8440
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
 ; *****************************************************************************
@@ -18,7 +22,7 @@
 section .text
 
     PUSH EBX                            ; 0042e7b0
-        ;   Label: FUN_0042e7b0
+        ;   Label: cockpit_ckptutil.c_FUN_0042e7b0
     PUSH EDI                            ; 0042e7b1
     PUSH EBP                            ; 0042e7b2
     SUB ESP,0x30                        ; 0042e7b3
@@ -186,8 +190,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 0042e93f
         ;   Label: LAB_0042e93f
     PUSH ECX                            ; 0042e943
-    CALL FUN_00564494                   ; 0042e944
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 0042e944
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 0042e949
     POP ESI                             ; 0042e94c
     ADD ESP,0x30                        ; 0042e94d
@@ -196,25 +200,25 @@ section .text
     POP EDI                             ; 0042e951
     POP EBX                             ; 0042e952
     RET                                 ; 0042e953
-    MOV ECX,0x57a716                    ; 0042e954
+    MOV ECX,0x57a716                    ; 0042e954 | = "..\\cockpit\\ckptutil.c"
         ;   Label: LAB_0042e954
     MOV ESI,0x3f0                       ; 0042e959
-    PUSH 0x57a72c                       ; 0042e95e
-    MOV dword ptr [0x01cc4800],ECX      ; 0042e963 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0042e969 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0042e96f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x57a72c                       ; 0042e95e | = "Invalid height array size."
+    MOV dword ptr [0x01cc4800],ECX      ; 0042e963 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0042e969 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0042e96f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042e974
     JMP 0x0042e7e3                      ; 0042e977
         ;   XREF to: 0042e7e3 (UNCONDITIONAL_JUMP)  ; LAB_0042e7e3
-    MOV EAX,0x57a747                    ; 0042e97c
+    MOV EAX,0x57a747                    ; 0042e97c | = "..\\cockpit\\ckptutil.c"
         ;   Label: LAB_0042e97c
     MOV EDX,0x3f6                       ; 0042e981
-    PUSH 0x57a75d                       ; 0042e986
-    MOV [0x01cc4800],EAX                ; 0042e98b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0042e990 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0042e996
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x57a75d                       ; 0042e986 | = "No room for scroll bitmap height table."
+    MOV [0x01cc4800],EAX                ; 0042e98b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0042e990 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0042e996
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042e99b
     JMP 0x0042e7ff                      ; 0042e99e
         ;   XREF to: 0042e7ff (UNCONDITIONAL_JUMP)  ; LAB_0042e7ff

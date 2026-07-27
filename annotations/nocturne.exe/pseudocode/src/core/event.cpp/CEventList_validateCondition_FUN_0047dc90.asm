@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 * __cdecl core_event_cpp_CEventList_validateCondition_FUN_0047dc90(undefined4 param_1,char *param_2)
+; undefined * __cdecl core_event_cpp_CEventList_validateCondition_FUN_0047dc90(undefined4 param_1,char *param_2)
 ;
 ;
 ; XREF[3]:

@@ -24,16 +24,16 @@
 ;   undefined4 DAT_01c038f4
 ;   undefined4 DAT_01c039c4
 ;   undefined4 DAT_01c039cc
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01fb96f0
 ;   undefined4 DAT_01ffb05c
 ;   undefined4 DAT_01fff224
 ;   ... and 3 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -57,10 +57,10 @@ section .text
     MOV ESI,0x5905ea                    ; 0050b811 | = "..\\core\\set.cpp"
     MOV EBP,0xaf6                       ; 0050b816
     PUSH 0x5905fa                       ; 0050b81b | = "CDemonSet::lightVertexColor - Quick l..."
-    MOV dword ptr [0x01cc4800],ESI      ; 0050b820 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0050b826 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050b82c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0050b820 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 0050b826 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050b82c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050b831
     MOV EAX,dword ptr [EBX + 0x15aa8c]  ; 0050b834
         ;   Label: LAB_0050b834

@@ -20,19 +20,18 @@ uint wincore_winrun_cpp_FUN_00559260(HMODULE param_1,uint param_2,uint param_3,i
   DWORD DVar6;
   LPSTR pCVar7;
   byte *pbVar8;
-  byte *pbVar9;
   HANDLE hThread;
-  int iVar10;
-  uint uVar11;
-  WNDCLASSA *pWVar12;
-  char *pcVar13;
-  byte bVar14;
+  int iVar9;
+  uint uVar10;
+  WNDCLASSA *pWVar11;
+  char *pcVar12;
+  byte bVar13;
   WNDCLASSA local_58;
   _MEMORYSTATUS local_30;
   
-  bVar14 = 0;
+  bVar13 = 0;
   hWnd = FindWindowA(PTR_s_Nocturne_005c1658,(LPCSTR)0x0);
-  pWVar12 = &local_58;
+  pWVar11 = &local_58;
   if (hWnd != (HWND)0x0) {
     pHVar4 = GetLastActivePopup(hWnd);
     if (pHVar4 != (HWND)0x0) {
@@ -47,27 +46,27 @@ uint wincore_winrun_cpp_FUN_00559260(HMODULE param_1,uint param_2,uint param_3,i
     return 0;
   }
   do {
-    iVar10 = *(int *)pWVar12;
-    pWVar12 = (WNDCLASSA *)((int)pWVar12 + -0x80);
-  } while (iVar10 < (int)pWVar12);
+    iVar9 = *(int *)pWVar11;
+    pWVar11 = (WNDCLASSA *)((int)pWVar11 + -0x80);
+  } while (iVar9 < (int)pWVar11);
   _DAT_02de209c = param_1;
   DVar6 = timeGetTime();
   srand(DVar6);
-  pcVar13 = &DAT_02de2c10;
+  pcVar12 = &DAT_02de2c10;
   pCVar7 = GetCommandLineA();
   do {
     cVar2 = *pCVar7;
-    *pcVar13 = cVar2;
+    *pcVar12 = cVar2;
     if (cVar2 == '\0') break;
     cVar2 = pCVar7[1];
     pCVar7 = pCVar7 + 2;
-    pcVar13[1] = cVar2;
-    pcVar13 = pcVar13 + 2;
+    pcVar12[1] = cVar2;
+    pcVar12 = pcVar12 + 2;
   } while (cVar2 != '\0');
-  pbVar9 = &DAT_02de2c10;
+  pcVar12 = &DAT_02de2c10;
   if (DAT_02de2c10 != '\0') {
-    pbVar1 = pbVar9;
-    iVar10 = _DAT_02de2d10 << 2;
+    pbVar1 = (byte *)pcVar12;
+    iVar9 = _DAT_02de2d10 << 2;
     do {
       do {
         pbVar8 = pbVar1;
@@ -75,37 +74,37 @@ uint wincore_winrun_cpp_FUN_00559260(HMODULE param_1,uint param_2,uint param_3,i
       } while (0x20 < *pbVar8);
       *pbVar8 = 0;
       _DAT_02de2d10 = _DAT_02de2d10 + 1;
-      *(byte **)(iVar10 + 0x2de2d14) = pbVar9;
+      *(char **)(iVar9 + 0x2de2d14) = pcVar12;
       bVar3 = *pbVar1;
-      pbVar9 = pbVar1;
+      pcVar12 = (char *)pbVar1;
       while (bVar3 == 0x20) {
-        pbVar1 = pbVar9 + 1;
-        pbVar9 = pbVar9 + 1;
+        pbVar1 = (byte *)(pcVar12 + 1);
+        pcVar12 = pcVar12 + 1;
         bVar3 = *pbVar1;
       }
-      pbVar1 = pbVar9;
-      iVar10 = iVar10 + 4;
-    } while (*pbVar9 != 0);
+      pbVar1 = (byte *)pcVar12;
+      iVar9 = iVar9 + 4;
+    } while (*pcVar12 != 0);
   }
   GetCurrentDirectoryA(0x100,(LPSTR)0x2de2b10);
   GetModuleFileNameA(param_1,&DAT_02de2a10,0x100);
-  uVar11 = 0xffffffff;
-  pcVar13 = &DAT_02de2a10;
+  uVar10 = 0xffffffff;
+  pcVar12 = &DAT_02de2a10;
   do {
-    if (uVar11 == 0) break;
-    uVar11 = uVar11 - 1;
-    cVar2 = *pcVar13;
-    pcVar13 = pcVar13 + (uint)bVar14 * -2 + 1;
+    if (uVar10 == 0) break;
+    uVar10 = uVar10 - 1;
+    cVar2 = *pcVar12;
+    pcVar12 = pcVar12 + (uint)bVar13 * -2 + 1;
   } while (cVar2 != '\0');
-  uVar11 = ~uVar11;
+  uVar10 = ~uVar10;
   do {
-    uVar11 = uVar11 - 1;
-    if ((int)uVar11 < 1) goto LAB_005593b7;
-  } while ((&DAT_02de2a10)[uVar11] != '\\');
-  (&DAT_02de2a10)[uVar11] = 0;
+    uVar10 = uVar10 - 1;
+    if ((int)uVar10 < 1) goto LAB_005593b7;
+  } while ((&DAT_02de2a10)[uVar10] != '\\');
+  (&DAT_02de2a10)[uVar10] = 0;
 LAB_005593b7:
   SetCurrentDirectoryA(&DAT_02de2a10);
-  local_58.lpfnWndProc = FUN_00558d90;
+  local_58.lpfnWndProc = wincore_winrun_cpp_FUN_00558d90;
   local_58.cbClsExtra = 0;
   local_58.cbWndExtra = 0;
   local_58.hInstance = param_1;
@@ -131,8 +130,8 @@ LAB_005593b7:
   GlobalMemoryStatus(&local_30);
   _DAT_02de20a8 = local_30.dwTotalPhys;
   _DAT_02de20ac = local_30.dwAvailPageFile;
-  FUN_004c85f0(_DAT_02de2d10,0x2de2d14);
-  thunk_FUN_004d23d0();
-  FUN_004c90e0();
+  core_main_c_FUN_004c85f0(_DAT_02de2d10,0x2de2d14);
+  core_main_c_FUN_004d23d0();
+  core_main_c_FUN_004c90e0();
   return 0;
 }

@@ -21,16 +21,16 @@
 ;   TerminatedCString s_CBattery_00586d00
 ;   TerminatedCString s_core_inv_cpp_00586d09
 ;   TerminatedCString s_getModel_Can_t_classify_00586d19
-;   undefined4 CDemonActorType_007641bc.name_hash
-;   undefined4 CDemonActorType_00764674.name_hash
-;   undefined4 CDemonActorType_00764800.name_hash
-;   undefined4 DAT_01c08cc4
+;   undefined4 g_CAmmoActorType_007641bc.name_hash
+;   undefined4 g_CBatteryActorType_00764674.name_hash
+;   undefined4 g_CBoxActorActorType_00764800.name_hash
+;   undefined4 g_CFilmReelActorType_01c08c8c.name_hash
 ;   ... and 7 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -114,7 +114,7 @@ section .text
     TEST EAX,EAX                        ; 004bec06
     JZ 0x004bec6a                       ; 004bec08
         ;   XREF to: 004bec6a (CONDITIONAL_JUMP)  ; LAB_004bec6a
-    MOV ESI,dword ptr [0x007646ac]      ; 004bec0a | CDemonActorType_00764674.name_hash
+    MOV ESI,dword ptr [0x007646ac]      ; 004bec0a | g_CBatteryActorType_00764674.name_hash
     PUSH ESI                            ; 004bec10
         ;   Label: LAB_004bec10
     PUSH EBX                            ; 004bec11
@@ -128,41 +128,41 @@ section .text
     POP ESI                             ; 004bec21
     POP EBX                             ; 004bec22
     RET                                 ; 004bec23
-    MOV EBP,dword ptr [0x02ddf9a8]      ; 004bec24 | DAT_02ddf9a8
+    MOV EBP,dword ptr [0x02ddf9a8]      ; 004bec24 | g_CWeaponActorType_02ddf970.name_hash
         ;   Label: LAB_004bec24
     PUSH EBP                            ; 004bec2a
     JMP 0x004bec11                      ; 004bec2b
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV EDI,dword ptr [0x007641f4]      ; 004bec2d | CDemonActorType_007641bc.name_hash
+    MOV EDI,dword ptr [0x007641f4]      ; 004bec2d | g_CAmmoActorType_007641bc.name_hash
         ;   Label: LAB_004bec2d
     PUSH EDI                            ; 004bec33
     JMP 0x004bec11                      ; 004bec34
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV ESI,dword ptr [0x01cc30e0]      ; 004bec36 | DAT_01cc30e0
+    MOV ESI,dword ptr [0x01cc30e0]      ; 004bec36 | g_CKeyActorActorType_01cc30a8.name_hash
         ;   Label: LAB_004bec36
     JMP 0x004bec10                      ; 004bec3c
         ;   XREF to: 004bec10 (UNCONDITIONAL_JUMP)  ; LAB_004bec10
-    MOV ECX,dword ptr [0x00764838]      ; 004bec3e | CDemonActorType_00764800.name_hash
+    MOV ECX,dword ptr [0x00764838]      ; 004bec3e | g_CBoxActorActorType_00764800.name_hash
         ;   Label: LAB_004bec3e
     PUSH ECX                            ; 004bec44
     JMP 0x004bec11                      ; 004bec45
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV EDX,dword ptr [0x01cae0d0]      ; 004bec47 | DAT_01cae0d0
+    MOV EDX,dword ptr [0x01cae0d0]      ; 004bec47 | g_CHealthItemActorType_01cae098.name_hash
         ;   Label: LAB_004bec47
     PUSH EDX                            ; 004bec4d
     JMP 0x004bec11                      ; 004bec4e
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV EAX,[0x01c78bbc]                ; 004bec50 | DAT_01c78bbc
+    MOV EAX,[0x01c78bbc]                ; 004bec50 | g_CGasMaskActorType_01c78b84.name_hash
         ;   Label: LAB_004bec50
     PUSH EAX                            ; 004bec55
     JMP 0x004bec11                      ; 004bec56
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV EBP,dword ptr [0x01c08cc4]      ; 004bec58 | DAT_01c08cc4
+    MOV EBP,dword ptr [0x01c08cc4]      ; 004bec58 | g_CFilmReelActorType_01c08c8c.name_hash
         ;   Label: LAB_004bec58
     PUSH EBP                            ; 004bec5e
     JMP 0x004bec11                      ; 004bec5f
         ;   XREF to: 004bec11 (UNCONDITIONAL_JUMP)  ; LAB_004bec11
-    MOV EDI,dword ptr [0x02dd1044]      ; 004bec61 | DAT_02dd1044
+    MOV EDI,dword ptr [0x02dd1044]      ; 004bec61 | g_CTrapActorType_02dd100c.name_hash
         ;   Label: LAB_004bec61
     PUSH EDI                            ; 004bec67
     JMP 0x004bec11                      ; 004bec68
@@ -172,10 +172,10 @@ section .text
     MOV EDX,0x586d09                    ; 004bec6b | = "..\\core\\inv.cpp"
     MOV ECX,0x9d                        ; 004bec70
     PUSH 0x586d19                       ; 004bec75 | = "getModel - Can't classify : %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 004bec7a | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004bec80 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004bec86
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004bec7a | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004bec80 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004bec86
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004bec8b
     XOR EAX,EAX                         ; 004bec8e
     POP EBP                             ; 004bec90

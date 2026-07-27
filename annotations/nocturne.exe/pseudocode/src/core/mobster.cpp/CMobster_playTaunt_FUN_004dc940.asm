@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004da790 at 004daeda
+;   core_mobster.cpp_FUN_004da790 at 004daeda
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mobster_cheese_c_c_d_wav_0058a4ad
@@ -19,13 +19,13 @@
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_005bed68
 ;   undefined4 DAT_01c77608
-;   undefined4 DAT_01ccdc10
+;   undefined4 g_CMobsterActorType_01ccdbd8.name_hash
 ;   undefined4 DAT_01fa7e78
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
+;   core_sound.cpp_FUN_0052ebc0
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_0052ebc0
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
 ;
 ; *****************************************************************************
@@ -106,8 +106,8 @@ section .text
     PUSH EAX                            ; 004dc9d8
     MOV EDX,dword ptr [0x005bed68]      ; 004dc9d9 | DAT_005bed68
     PUSH EDX                            ; 004dc9df
-    CALL FUN_0052ebc0                   ; 004dc9e0
-        ;   XREF to: 0052ebc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ebc0()
+    CALL core_sound.cpp_FUN_0052ebc0    ; 004dc9e0
+        ;   XREF to: 0052ebc0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_FUN_0052ebc0()
     MOV dword ptr [ESP + 0x74],EAX      ; 004dc9e5
     MOV EAX,dword ptr [ESP + 0x74]      ; 004dc9e9
     MOV dword ptr [ESI + 0xbd3c],EAX    ; 004dc9ed
@@ -144,7 +144,7 @@ section .text
     JGE 0x004dca9a                      ; 004dca4b
         ;   XREF to: 004dca9a (CONDITIONAL_JUMP)  ; LAB_004dca9a
     MOV EDX,dword ptr [ESP + 0x68]      ; 004dca4d
-    MOV ECX,dword ptr [0x01ccdc10]      ; 004dca51 | DAT_01ccdc10
+    MOV ECX,dword ptr [0x01ccdc10]      ; 004dca51 | g_CMobsterActorType_01ccdbd8.name_hash
     ADD EAX,EDX                         ; 004dca57
     PUSH ECX                            ; 004dca59
     MOV ECX,dword ptr [EAX + 0x150bf8]  ; 004dca5a

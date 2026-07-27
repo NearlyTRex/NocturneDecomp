@@ -13,12 +13,12 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
-;   FUN_004f6d90 at 004f6edb
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670 at 004476d4
+;   core_platfrm.cpp_FUN_004f6d90 at 004f6edb
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057baf3 = 256
-;   undefined4 DAT_0059bde4
+;   float FLOAT_0059bde4 = 0.00390625
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80
@@ -49,13 +49,13 @@ section .text
     MOV dword ptr [ESP + 0x14],EAX      ; 004475d6
     LEA EAX,[ESP + 0xc]                 ; 004475da
     FILD dword ptr [EAX]                ; 004475de
-    FMUL float ptr [0x0059bde4]         ; 004475e0 | DAT_0059bde4
+    FMUL float ptr [0x0059bde4]         ; 004475e0 | FLOAT_0059bde4
     FSTP float ptr [EBX]                ; 004475e6
     FILD dword ptr [EAX + 0x4]          ; 004475e8
-    FMUL float ptr [0x0059bde4]         ; 004475eb | DAT_0059bde4
+    FMUL float ptr [0x0059bde4]         ; 004475eb | FLOAT_0059bde4
     FSTP float ptr [EBX + 0x4]          ; 004475f1
     FILD dword ptr [EAX + 0x8]          ; 004475f4
-    FMUL float ptr [0x0059bde4]         ; 004475f7 | DAT_0059bde4
+    FMUL float ptr [0x0059bde4]         ; 004475f7 | FLOAT_0059bde4
     FSTP float ptr [EBX + 0x8]          ; 004475fd
     FLD float ptr [ESP + 0x4]           ; 00447600
     FMUL ST0                            ; 00447604

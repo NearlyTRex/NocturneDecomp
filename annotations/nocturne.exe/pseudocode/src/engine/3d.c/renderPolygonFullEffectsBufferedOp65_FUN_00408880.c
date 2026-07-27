@@ -29,17 +29,17 @@ int engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_00408880(int param_1)
   if (iVar2 != 0) {
     if (_DAT_01c03948 == 0) {
       if (DAT_005b7624 == 0x20) {
-        _DAT_01c00c7c = FUN_005300ec;
+        _DAT_01c00c7c = engine_special_cpp_FUN_005300ec;
       }
       else {
-        _DAT_01c00c7c = FUN_00530322;
+        _DAT_01c00c7c = engine_special_cpp_FUN_00530322;
       }
     }
     else if (DAT_005b7624 == 0x20) {
-      _DAT_01c00c7c = FUN_0052f031;
+      _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
     }
     else {
-      _DAT_01c00c7c = FUN_0052f823;
+      _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
     }
     piVar5 = &DAT_006b029c;
     _DAT_01c039a0 = 0x1e7;

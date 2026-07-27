@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[1]:
-;   FUN_004fbf20 at 004fc393
+;   core_scat.cpp_FUN_004fbf20 at 004fc393
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058dede = 15

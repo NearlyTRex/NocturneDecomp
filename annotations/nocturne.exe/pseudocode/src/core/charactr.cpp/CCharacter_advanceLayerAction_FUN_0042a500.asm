@@ -14,17 +14,17 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_004fcd90 at 004fce41
-;   FUN_0053f310 at 0053f434
+;   core_scat.cpp_FUN_004fcd90 at 004fce41
+;   core_stranger.cpp_FUN_0053f310 at 0053f434
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a386
 ;   TerminatedCString s_CCharacter_advanceLayerA_0057a39b
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -49,10 +49,10 @@ section .text
         ;   Label: LAB_0042a521
     MOV EBP,0xf00                       ; 0042a526
     PUSH 0x57a39b                       ; 0042a52b | = "CCharacter::advanceLayerAction - inva..."
-    MOV dword ptr [0x01cc4800],EDI      ; 0042a530 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0042a536 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0042a53c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0042a530 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 0042a536 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0042a53c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042a541
     MOV EAX,dword ptr [EBX + 0x2a84]    ; 0042a544
         ;   Label: LAB_0042a544

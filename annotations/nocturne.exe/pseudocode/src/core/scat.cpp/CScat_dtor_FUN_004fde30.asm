@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a16a0
+;   WatcomTypeInfo g_CScatTypeInfo_005a16a0
 ;
 ; Called Functions:
+;   core_hero.cpp_FUN_004b4800
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_004b4800
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 004fde56 (CONDITIONAL_JUMP)  ; LAB_004fde56
     PUSH 0x1                            ; 004fde3c
     PUSH EBX                            ; 004fde3e
-    CALL FUN_004b4800                   ; 004fde3f
-        ;   XREF to: 004b4800 (UNCONDITIONAL_CALL)  ; undefined FUN_004b4800()
+    CALL core_hero.cpp_FUN_004b4800     ; 004fde3f
+        ;   XREF to: 004b4800 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b4800()
     ADD ESP,0x8                         ; 004fde44
     MOV DL,byte ptr [ESP + 0xc]         ; 004fde47
     MOV EBX,EAX                         ; 004fde4b
@@ -36,7 +36,7 @@ section .text
     MOV EAX,EBX                         ; 004fde52
     POP EBX                             ; 004fde54
     RET                                 ; 004fde55
-    PUSH 0x5a16a0                       ; 004fde56 | DAT_005a16a0
+    PUSH 0x5a16a0                       ; 004fde56 | g_CScatTypeInfo_005a16a0
         ;   Label: LAB_004fde56
     PUSH EBX                            ; 004fde5b
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004fde5c
@@ -51,8 +51,8 @@ section .text
     RET                                 ; 004fde70
     PUSH EAX                            ; 004fde71
         ;   Label: LAB_004fde71
-    CALL FUN_00564494                   ; 004fde72
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 004fde72
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 004fde77
     MOV EAX,EBX                         ; 004fde7a
     POP EBX                             ; 004fde7c

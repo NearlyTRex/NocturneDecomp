@@ -7,10 +7,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   FUN_004ca790 at 004cab7b
-;   FUN_004f16d0 at 004f18ab
-;   FUN_004f18c0 at 004f1c7e
 ;   core_fire.cpp_CLaserBeam_render_FUN_00485a90 at 0048684e
+;   core_manpuz.cpp_FUN_004ca790 at 004cab7b
+;   core_path.cpp_FUN_004f16d0 at 004f18ab
+;   core_path.cpp_FUN_004f18c0 at 004f1c7e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624

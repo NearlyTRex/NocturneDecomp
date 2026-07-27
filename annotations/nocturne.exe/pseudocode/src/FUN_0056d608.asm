@@ -11,9 +11,9 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
-;   FUN_00566590 at 00566596
 ;   crt_time.c__mktime_FUN_00565fb0 at 005660cb
 ;   crt_time.c__strftime_FUN_00566634 at 00566a03
+;   crt_unknown.c_FUN_00566590 at 00566596
 ;
 ; Referenced Globals:
 ;   void* PTR_GetTimeZoneInformation_0057553c = 00175dfe

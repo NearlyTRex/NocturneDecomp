@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,27 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 62,
+    "complexity_score": 47,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 7,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 17
   },
   "cross_references": [
-    {
-      "addr": "00540b40",
-      "from_addr": "00540b72",
-      "name": "FUN_00540b40",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00415370",
       "from_addr": "00415394",
@@ -165,6 +158,12 @@
       "addr": "004ef4e0",
       "from_addr": "004ef4fb",
       "name": "core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00540b40",
+      "from_addr": "00540b72",
+      "name": "core_succubus.cpp_FUN_00540b40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -196,8 +195,8 @@
   "globals": [
     {
       "addr": "005a0ce0",
-      "name": "DAT_005a0ce0",
-      "type": "undefined4",
+      "name": "g_CMorphModelTypeInfo_005a0ce0",
+      "type": "WatcomTypeInfo",
       "value": null
     }
   ],
@@ -251,7 +250,7 @@
       {
         "call_addr": "00540b72",
         "call_type": "direct",
-        "caller": "FUN_00540b40",
+        "caller": "core_succubus.cpp_FUN_00540b40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -319,16 +318,8 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = __arrinit(param_1,2,&DAT_005a0ce0);",
+      "text": "iVar1 = __arrinit(param_1,2,&g_CMorphModelTypeInfo_005a0ce0);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_005a0ce0",
-      "severity": "mild",
-      "text": "iVar1 = __arrinit(param_1,2,&DAT_005a0ce0);",
-      "type": "undefined_data"
     },
     {
       "call_site_count": 6,

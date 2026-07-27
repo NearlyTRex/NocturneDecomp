@@ -16,13 +16,13 @@
 ;   TerminatedCString s_CNetGame_removePlayer_in_0058c3bd
 ;   TerminatedCString s_core_netgame_cpp_0058c3eb
 ;   TerminatedCString s_CNetGame_removePlayer_tr_0058c3ff
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01d06610
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_string.c_memmove_FUN_00566170
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -46,10 +46,10 @@ section .text
         ;   Label: LAB_004ecc98
     MOV ESI,0x862                       ; 004ecc9d
     PUSH 0x58c3bd                       ; 004ecca2 | = "CNetGame::removePlayer - invalid play..."
-    MOV dword ptr [0x01cc4800],EBX      ; 004ecca7 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004eccad | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004eccb3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004ecca7 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004eccad | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004eccb3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004eccb8
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004eccbb
         ;   Label: LAB_004eccbb
@@ -60,10 +60,10 @@ section .text
     MOV EBP,0x58c3eb                    ; 004ecccb | = "..\\core\\netgame.cpp"
     MOV EAX,0x869                       ; 004eccd0
     PUSH 0x58c3ff                       ; 004eccd5 | = "CNetGame::removePlayer - tried to rem..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004eccda | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004ecce0 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ecce5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004eccda | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004ecce0 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ecce5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004eccea
     MOV EBX,dword ptr [ESP + 0x1c]      ; 004ecced
         ;   Label: LAB_004ecced

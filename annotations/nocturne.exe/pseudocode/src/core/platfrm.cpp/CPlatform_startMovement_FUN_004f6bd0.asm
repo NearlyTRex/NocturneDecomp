@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004f6170 at 004f61fa
+;   core_platfrm.cpp_FUN_004f6170 at 004f61fa
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00502862
 ;
 ; *****************************************************************************

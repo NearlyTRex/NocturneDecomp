@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0045e370 at 0045e4e5
-;   FUN_004fe9d0 at 004fea2f
+;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e4e5
+;   core_script.cpp_FUN_004fe9d0 at 004fea2f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01b4d718

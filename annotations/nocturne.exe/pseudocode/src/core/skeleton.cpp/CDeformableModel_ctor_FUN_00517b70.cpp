@@ -14,8 +14,8 @@ uint * core_skeleton_cpp_CDeformableModel_ctor_FUN_00517b70(int param_1)
   uint *puVar3;
   uint *puVar4;
   
-  iVar2 = __arrinit(param_1 + 0x1750,100,&DAT_005993b0);
-  iVar2 = __arrinit(iVar2 + 0x4bc,100,&DAT_005993f0);
+  iVar2 = __arrinit(param_1 + 0x1750,100,&g_CVectorTypeInfo_005993b0);
+  iVar2 = __arrinit(iVar2 + 0x4bc,100,&g_CBoundingBox3D_005993f0);
   puVar1 = (uint *)(iVar2 + -0x1c0c);
   puVar3 = puVar1;
   do {

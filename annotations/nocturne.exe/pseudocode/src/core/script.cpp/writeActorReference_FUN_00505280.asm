@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005055f0 at 00505757
+;   core_script.cpp_FUN_005055f0 at 00505757
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_0058fcba

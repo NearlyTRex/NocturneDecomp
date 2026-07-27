@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004c9cf0 at 004c9d2d
+;   core_manpuz.cpp_FUN_004c9cf0 at 004c9d2d
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a004c = 2

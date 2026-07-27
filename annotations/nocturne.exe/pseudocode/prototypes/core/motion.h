@@ -3,6 +3,10 @@
 // Function prototypes for core/motion.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_motion.cpp_FUN_004e08e0
+// Address: 004e08e0
+void FUN_004e08e0(undefined4 param_1);
+
 // Original: core_motion.cpp_CMotionList_ctor_FUN_004e0900
 // Address: 004e0900
 void __cdecl CMotionList::ctor(undefined4 *param_1);
@@ -10,6 +14,10 @@ void __cdecl CMotionList::ctor(undefined4 *param_1);
 // Original: core_motion.cpp_CMotionList_load_FUN_004e0920
 // Address: 004e0920
 void __cdecl CMotionList::load(int *param_1,undefined4 param_2);
+
+// Original: core_motion.cpp_FUN_004e0d20
+// Address: 004e0d20
+void FUN_004e0d20(int *param_1,undefined4 param_2);
 
 // Original: core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010
 // Address: 004e1010
@@ -58,6 +66,10 @@ void __cdecl CMotionController::setDesiredStateByName(undefined4 *param_1,undefi
 // Original: core_motion.cpp_CMotionController_startTransition_FUN_004e1770
 // Address: 004e1770
 void __cdecl CMotionController::startTransition(int param_1,int param_2);
+
+// Original: core_motion.cpp_FUN_004e1830
+// Address: 004e1830
+undefined4 FUN_004e1830(void);
 
 // Original: core_motion.cpp_CMotionController_setMotionList_FUN_004e1860
 // Address: 004e1860
@@ -110,6 +122,10 @@ float CMotionController::markerPositionToFrame(int *param_1,int param_2,float pa
 // Original: core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_004e2070
 // Address: 004e2070
 int __cdecl CMotionController::getFramesForInterpolation(int *param_1,float param_2,float param_3,int *param_4,int *param_5,float *param_6);
+
+// Original: core_motion.cpp_FUN_004e2120
+// Address: 004e2120
+void FUN_004e2120(void);
 
 // Original: core_motion.cpp_CMotionController_load_FUN_004e2180
 // Address: 004e2180

@@ -19,12 +19,6 @@
   },
   "cross_references": [
     {
-      "addr": "00521d80",
-      "from_addr": "00521d8d",
-      "name": "FUN_00521d80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004fdf60",
       "from_addr": "004fdfa5",
       "name": "core_script.cpp_trimLine_FUN_004fdf60",
@@ -34,6 +28,12 @@
       "addr": "00521e10",
       "from_addr": "00521fce",
       "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00521d80",
+      "from_addr": "00521d8d",
+      "name": "sound_sndmain.cpp_FUN_00521d80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -79,7 +79,7 @@
       {
         "call_addr": "00521d8d",
         "call_type": "direct",
-        "caller": "FUN_00521d80",
+        "caller": "sound_sndmain.cpp_FUN_00521d80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

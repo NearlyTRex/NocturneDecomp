@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   undefined1* PTR_core_particle.cpp_CParticle_setup_FUN_004ef040_0059d284 = 004ef040
 ;
 ; Called Functions:
@@ -22,7 +22,7 @@ section .text
     CALL core_particle.cpp_CParticle_ctor_FUN_004ef010 ; 0048cb05
         ;   XREF to: 004ef010 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_CParticle_ctor_FUN_004ef010()
     ADD ESP,0x4                         ; 0048cb0a
-    PUSH 0x5993b0                       ; 0048cb0d | DAT_005993b0
+    PUSH 0x5993b0                       ; 0048cb0d | g_CVectorTypeInfo_005993b0
     PUSH 0x3                            ; 0048cb12
     ADD EAX,0x78                        ; 0048cb14
     PUSH EAX                            ; 0048cb17

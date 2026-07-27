@@ -19,7 +19,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   FUN_0048ab60 at 0048ad21
+;   core_fire.cpp_FUN_0048ab60 at 0048ad21
 ;
 ; Referenced Globals:
 ;   float FLOAT_005810b8 = 0.1000000

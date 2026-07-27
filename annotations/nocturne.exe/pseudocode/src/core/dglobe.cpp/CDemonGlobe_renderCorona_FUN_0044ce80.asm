@@ -29,7 +29,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   FUN_00445750 at 0044593e
+;   core_dcamera.cpp_FUN_00445750 at 0044593e
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057c389 = 0.00390625
@@ -55,7 +55,7 @@
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   engine_drender.cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -146,8 +146,8 @@ section .text
     ADD EAX,EDI                         ; 0044cf7c
     PUSH EAX                            ; 0044cf7e
     ADD ESI,0xc                         ; 0044cf7f
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0044cf82
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0044cf82
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     ADD EDI,0x30                        ; 0044cf87
     ADD ESP,0x8                         ; 0044cf8a
     CMP ESI,0x2e8                       ; 0044cf8d

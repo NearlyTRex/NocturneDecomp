@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 281,
+    "complexity_score": 266,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 56,
-    "suspect_count": 20,
+    "suspect_count": 19,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
       "unnamed_param",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
     "total_lines": 215
   },
@@ -142,7 +141,7 @@
     {
       "addr": "004da790",
       "from_addr": "004daeda",
-      "name": "FUN_004da790",
+      "name": "core_mobster.cpp_FUN_004da790",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -166,14 +165,14 @@
       "name": "core_actor.cpp_castToClassHash_FUN_0040d890"
     },
     {
+      "addr": "0052ebc0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_FUN_0052ebc0"
+    },
+    {
       "addr": "00563c90",
       "is_variadic": false,
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
-    },
-    {
-      "addr": "0052ebc0",
-      "is_variadic": false,
-      "name": "FUN_0052ebc0"
     },
     {
       "addr": "00526c50",
@@ -220,7 +219,7 @@
     },
     {
       "addr": "01ccdc10",
-      "name": "DAT_01ccdc10",
+      "name": "g_CMobsterActorType_01ccdbd8.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -237,7 +236,7 @@
       {
         "call_addr": "004daeda",
         "call_type": "direct",
-        "caller": "FUN_004da790",
+        "caller": "core_mobster.cpp_FUN_004da790",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -248,7 +247,7 @@
       {
         "call_addr": "004db2c7",
         "call_type": "direct",
-        "caller": "FUN_004da790",
+        "caller": "core_mobster.cpp_FUN_004da790",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -259,7 +258,7 @@
       {
         "call_addr": "004db600",
         "call_type": "direct",
-        "caller": "FUN_004da790",
+        "caller": "core_mobster.cpp_FUN_004da790",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -375,14 +374,14 @@
         {
           "check_id": "oppositeInnerCondition",
           "column": 17,
-          "line": 37,
+          "line": 35,
           "message": "Opposite inner 'if' condition leads to a dead code block.",
           "severity": "warning"
         },
         {
           "check_id": "oppositeInnerCondition",
           "column": 13,
-          "line": 42,
+          "line": 40,
           "message": "Opposite inner 'if' condition leads to a dead code block.",
           "severity": "warning"
         }
@@ -393,16 +392,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(int param_1,int param_2)",
@@ -410,7 +401,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(int param_1,int param_2)",
@@ -418,7 +409,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(float *)(param_1 + 0xbd3c) <= 0.0) {",
@@ -426,7 +417,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "local_1c = param_2 + 0x60;",
@@ -434,7 +425,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar4 = param_2 * 4;",
@@ -442,7 +433,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "if (((*(int *)(iVar1 + 0x1c) != 0) || (param_2 != 1)) || (iVar3 != 6)) {",
@@ -450,7 +441,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "_sprintf(local_80,\"mobster-cheese-%c-%c-%d.wav\",*(byte *)(param_1 + 0xbd38),",
@@ -458,7 +449,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbd3c) = local_14;",
@@ -466,7 +457,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0.0 < *(float *)(param_1 + 0xbd3c)) break;",
@@ -474,7 +465,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0.0 < *(float *)(param_1 + 0xbd3c)) {",
@@ -482,7 +473,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0xbd3c) = *(float *)(param_1 + 0xbd3c) + 5.0f;",
@@ -490,7 +481,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0xbd3c) = *(float *)(param_1 + 0xbd3c) + 5.0f;",
@@ -498,7 +489,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(param_1 + 0xbdc4));",
@@ -506,7 +497,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 44,
+      "line": 42,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,local_80);",
@@ -514,7 +505,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,local_80);",
@@ -522,7 +513,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,local_80);",
@@ -530,7 +521,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xbdbc) = uVar2;",
@@ -538,7 +529,7 @@
     },
     {
       "description": "Raw hex address 0x1c775ec assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 22,
+      "line": 20,
       "match": "0x1c775ec",
       "severity": "moderate",
       "text": "iVar1 = 0x01C775EC;",

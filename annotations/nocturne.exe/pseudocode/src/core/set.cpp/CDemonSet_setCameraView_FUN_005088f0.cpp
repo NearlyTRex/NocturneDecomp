@@ -40,9 +40,9 @@ int __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(int *param_1,int p
   
   bVar9 = 0;
   if ((param_2 < 0) || (*param_1 <= param_2)) {
-    _DAT_01cc4800 = "..\\core\\set.cpp";
-    _DAT_01cc4804 = 0x3ed;
-    FUN_004c8440("CDemonSet::setCameraView - invalid index: %d",param_2);
+    PTR_01cc4800 = "..\\core\\set.cpp";
+    INT_01cc4804 = 0x3ed;
+    core_main_c_FUN_004c8440("CDemonSet::setCameraView - invalid index: %d",param_2);
   }
   iVar5 = 0;
   if (0 < _DAT_01fba2d8) {
@@ -85,7 +85,7 @@ int __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(int *param_1,int p
   _DAT_01fba9a4 = 0;
   _DAT_01fba2ec = 0;
   _DAT_01fba480 = 0;
-  FUN_005148b0(piVar6,0x1fb8508);
+  core_setutil_cpp_FUN_005148b0(piVar6,0x1fb8508);
   piVar4 = param_1 + 0x56a1e;
   if (param_1[param_2 * 0x68 + 0x54] == 0) {
     param_1[0x56a1b] = piVar6[0x54];
@@ -128,12 +128,12 @@ int __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(int *param_1,int p
   core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(0x1fb8508);
   core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(param_1,0x10);
   core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80(param_1,0x461c3f9a,1);
-  FUN_00448310(0x1fb8508);
+  core_dcamera_cpp_FUN_00448310(0x1fb8508);
   _DAT_01ffb060 = 1;
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(param_1,1);
   _DAT_01ffb060 = 0;
-  FUN_004421b0(0x1fb8508);
-  FUN_00448380(0x1fb8508);
+  core_dcamera_cpp_FUN_004421b0(0x1fb8508);
+  core_dcamera_cpp_FUN_00448380(0x1fb8508);
   _sprintf(local_f0,"%s.raw",param_1 + param_2 * 0x68 + 1);
   core_dcamera_cpp_CDemonCamera_loadImage_FUN_00443250(0x1fb8508,local_f0);
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(param_1,1);
@@ -159,9 +159,9 @@ int __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(int *param_1,int p
           *(int **)(&DAT_01fba9a8 + _DAT_01fba9a4 * 4) = local_1c + local_14 * 0x626;
           _DAT_01fba9a4 = _DAT_01fba9a4 + 1;
           if (199 < _DAT_01fba9a4) {
-            _DAT_01cc4800 = "..\\core\\set.cpp";
-            _DAT_01cc4804 = 0x460;
-            FUN_004c8440("CDemonSet::setCameraView - Too many omni lights");
+            PTR_01cc4800 = "..\\core\\set.cpp";
+            INT_01cc4804 = 0x460;
+            core_main_c_FUN_004c8440("CDemonSet::setCameraView - Too many omni lights");
           }
         }
         iVar3 = iVar5;
@@ -213,8 +213,8 @@ int __cdecl core_set_cpp_CDemonSet_setCameraView_FUN_005088f0(int *param_1,int p
     core_dskybox_cpp_renderSkyDome_FUN_00463580(0x01B7B4E8,param_1 + 0x58491,param_1[0x58499]);
   }
   core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(param_1,1);
-  FUN_004afe80(INT_005b96c4,1);
-  FUN_0048a970(0x01C08D04,1);
+  core_gore_cpp_FUN_004afe80(INT_005b96c4,1);
+  core_fire_cpp_FUN_0048a970(0x01C08D04,1);
   if (*0x02DD1210 == 0) {
     core_water_cpp_CWater_render_FUN_00550cb0(0x02DD1210,0);
   }

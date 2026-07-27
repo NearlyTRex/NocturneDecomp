@@ -8,7 +8,7 @@
 ;   core_stranger.cpp_CStranger_setPositionAndOrientation_FUN_00539ac0 at 00539af7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059b094
+;   float FLOAT_0059b094 = 9999
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150
@@ -32,7 +32,7 @@ section .text
     CALL core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150 ; 00424700
         ;   XREF to: 0040b150 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_0040b150()
     LEA EAX,[EBX + 0x2420]              ; 00424705
-    FLD float ptr [0x0059b094]          ; 0042470b | DAT_0059b094
+    FLD float ptr [0x0059b094]          ; 0042470b | FLOAT_0059b094
     MOV dword ptr [EAX + 0x8],0x0       ; 00424711
     ADD ESP,0xc                         ; 00424718
     MOV EDX,dword ptr [EAX + 0x8]       ; 0042471b

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004d74a0 at 004d76a3
+;   core_mirror.cpp_FUN_004d74a0 at 004d76a3
 ;   engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0 at 004914d8
 ;
 ; Referenced Globals:

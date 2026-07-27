@@ -13,6 +13,6 @@ uint shape_edittool_cpp_CEditorTools_ctor_FUN_0046f9f0(uint param_1)
 {
   _DAT_01bcd07c = 0;
   memset(0x1bcd080,0,0x938);
-  FUN_0046fa80(param_1);
+  shape_edittool_cpp_FUN_0046fa80(param_1);
   return param_1;
 }

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004feff0 at 004ff123
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 0050353d
+;   core_script.cpp_FUN_004feff0 at 004ff123
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005be368

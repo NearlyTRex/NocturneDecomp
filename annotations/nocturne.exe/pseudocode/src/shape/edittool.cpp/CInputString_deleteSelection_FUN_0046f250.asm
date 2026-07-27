@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0046f7e0 at 0046f9b9
-;   FUN_00470eb0 at 004712d1
 ;   shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0046f390 at 0046f477
+;   shape_edittool.cpp_FUN_0046f7e0 at 0046f9b9
+;   shape_edittool.cpp_FUN_00470eb0 at 004712d1
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CInputString_deleteRange_FUN_0046f1e0

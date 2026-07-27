@@ -7,16 +7,16 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[159]:
-;   FUN_00408fc0 at 004091b6
-;   FUN_0041f6e0 at 0041f9a6
-;   FUN_0042eb90 at 0042ebce
-;   FUN_0042ee00 at 0042ee3e
-;   FUN_0042f050 at 0042f0c8
-;   FUN_00430210 at 0043029b
-;   FUN_004303d0 at 004304cc
-;   FUN_00430630 at 0043073b
-;   FUN_00431260 at 00431387
-;   FUN_00446810 at 0044687d
+;   cockpit_ckptutil.c_FUN_0042eb90 at 0042ebce
+;   cockpit_ckptutil.c_FUN_0042ee00 at 0042ee3e
+;   cockpit_ckptutil.c_FUN_0042f050 at 0042f0c8
+;   cockpit_ckptutil.c_FUN_00430210 at 0043029b
+;   cockpit_ckptutil.c_FUN_004303d0 at 004304cc
+;   cockpit_ckptutil.c_FUN_00430630 at 0043073b
+;   cockpit_ckptutil.c_FUN_00431260 at 00431387
+;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d552
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d27b
+;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_004f47b0 at 004f48fd
 ;   ... and 149 more
 ;
 ; Called Functions:

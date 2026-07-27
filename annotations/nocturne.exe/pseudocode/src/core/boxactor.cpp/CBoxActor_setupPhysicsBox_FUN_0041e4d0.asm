@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_0041ef90 at 0041f08f
 ;   core_boxactor.cpp_CBoxActor_onDropped_FUN_0041f0f0 at 0041f103
 ;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041f240 at 0041f2b7
 ;   core_boxactor.cpp_CBoxActor_setup_FUN_0041e430 at 0041e4b3
+;   core_boxactor.cpp_FUN_0041ef90 at 0041f08f
 ;
 ; Referenced Globals:
 ;   float FLOAT_00579809 = 0.5

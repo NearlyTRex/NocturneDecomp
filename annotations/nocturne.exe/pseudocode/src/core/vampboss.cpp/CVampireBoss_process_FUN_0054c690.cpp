@@ -88,9 +88,9 @@ void core_vampboss_cpp_CVampireBoss_process_FUN_0054c690(int param_1,float param
   iVar7 = param_1;
   do {
     if (*(int *)(iVar7 + 0xbedb4) == 0) {
-      _DAT_01cc4800 = "..\\core\\vampboss.cpp";
-      _DAT_01cc4804 = 0xcf;
-      FUN_004c8440("CVampireBoss::process - Need 4 waypoints");
+      PTR_01cc4800 = "..\\core\\vampboss.cpp";
+      INT_01cc4804 = 0xcf;
+      core_main_c_FUN_004c8440("CVampireBoss::process - Need 4 waypoints");
     }
     iVar7 = iVar7 + 4;
   } while (iVar7 != param_1 + 0x10);
@@ -383,7 +383,7 @@ LAB_0054d1ae:
     }
     else {
       if (uVar4 < 3) {
-        FUN_0054e130(param_1);
+        core_vampboss_cpp_FUN_0054e130(param_1);
         goto LAB_0054d1ae;
       }
       if (uVar4 < 4) {
@@ -401,7 +401,8 @@ LAB_0054d1ae:
         for (fStack_2c = 0.0; (int)fStack_2c < *(int *)(0x01E57284 + 0x150bf4);
             fStack_2c = (float)((int)fStack_2c + 1)) {
           iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                            (*(uint *)(iVar7 + 0x150bf8 + 0x01E57284),_DAT_02dd1144);
+                            (*(uint *)(iVar7 + 0x150bf8 + 0x01E57284),
+                             g_CTVBatActorType_02dd110c.name_hash);
           if ((iVar5 != 0) && (*(int *)(iVar5 + 0xbecc) != 0)) {
             core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(auStack_208);
             uStack_204 = 0x4479c000;

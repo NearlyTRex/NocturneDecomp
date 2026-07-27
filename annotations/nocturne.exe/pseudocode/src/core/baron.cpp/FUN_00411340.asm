@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   CDemonActorType CDemonActorType_007644e8
+;   CDemonActorType g_CBaronWeaponActorType_007644e8
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,0x7644e8                    ; 00411340 | CDemonActorType_007644e8
+    MOV EAX,0x7644e8                    ; 00411340 | g_CBaronWeaponActorType_007644e8
         ;   Label: core_baron.cpp_FUN_00411340
     RET                                 ; 00411345
 

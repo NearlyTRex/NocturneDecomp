@@ -104,8 +104,9 @@ LAB_00566a14:
       }
       else {
         if (bVar2 < 0x58) {
-          FUN_00566600(local_a0,((6 - (((int)param_4[7] % 7 - param_4[6]) + 7) % 7) + param_4[7]) /
-                                7);
+          FUN_00566600
+                    (local_a0,((6 - (((int)param_4[7] % 7 - param_4[6]) + 7) % 7) + param_4[7]) / 7)
+          ;
           pcVar6 = local_a0;
           goto LAB_00566a20;
         }

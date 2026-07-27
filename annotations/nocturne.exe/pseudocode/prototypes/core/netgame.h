@@ -3,17 +3,45 @@
 // Function prototypes for core/netgame.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_netgame.cpp_staticInit_FUN_004e94a0
+// Address: 004e94a0
+void __cdecl staticInit(void);
+
+// Original: core_netgame.cpp_FUN_004e94f0
+// Address: 004e94f0
+void FUN_004e94f0(void);
+
+// Original: core_netgame.cpp_FUN_004e9520
+// Address: 004e9520
+void FUN_004e9520(void);
+
+// Original: core_netgame.cpp_FUN_004e9570
+// Address: 004e9570
+float FUN_004e9570(void);
+
 // Original: core_netgame.cpp_getElapsedSeconds_FUN_004e95d0
 // Address: 004e95d0
 float getElapsedSeconds(int param_1);
+
+// Original: core_netgame.cpp_FUN_004e9630
+// Address: 004e9630
+void FUN_004e9630(void);
 
 // Original: core_netgame.cpp_removeChatOut_FUN_004e9640
 // Address: 004e9640
 void removeChatOut(int param_1);
 
+// Original: core_netgame.cpp_FUN_004e96e0
+// Address: 004e96e0
+int FUN_004e96e0(void);
+
 // Original: core_netgame.cpp_allocSimFrame_FUN_004e9730
 // Address: 004e9730
 int * allocSimFrame(int param_1);
+
+// Original: core_netgame.cpp_FUN_004e97e0
+// Address: 004e97e0
+void FUN_004e97e0(int param_1);
 
 // Original: core_netgame.cpp_CNetGame_ctor_FUN_004e9860
 // Address: 004e9860
@@ -30,6 +58,10 @@ void __cdecl CNetGame::init(int param_1);
 // Original: core_netgame.cpp_CNetGame_shutdown_FUN_004e99c0
 // Address: 004e99c0
 void __cdecl CNetGame::shutdown(int param_1);
+
+// Original: core_netgame.cpp_FUN_004e99f0
+// Address: 004e99f0
+undefined4 FUN_004e99f0(undefined4 *param_1);
 
 // Original: core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90
 // Address: 004e9a90
@@ -139,10 +171,90 @@ void __cdecl CNetGame::sendDisconnectNotify(undefined4 param_1,undefined4 param_
 // Address: 004edaf0
 void __cdecl CNetGame::sendSimFrameAck(int *param_1);
 
+// Original: core_netgame.cpp_FUN_004edc30
+// Address: 004edc30
+bool FUN_004edc30(void);
+
+// Original: core_netgame.cpp_FUN_004edc50
+// Address: 004edc50
+undefined4 FUN_004edc50(void);
+
+// Original: core_netgame.cpp_FUN_004edc80
+// Address: 004edc80
+void FUN_004edc80(void);
+
+// Original: core_netgame.cpp_FUN_004edca0
+// Address: 004edca0
+void FUN_004edca0(undefined4 *param_1);
+
+// Original: core_netgame.cpp_FUN_004edcb0
+// Address: 004edcb0
+void FUN_004edcb0(void);
+
+// Original: core_netgame.cpp_FUN_004edcc0
+// Address: 004edcc0
+void FUN_004edcc0(void);
+
+// Original: core_netgame.cpp_FUN_004edcd0
+// Address: 004edcd0
+void FUN_004edcd0(void);
+
+// Original: core_netgame.cpp_FUN_004edce0
+// Address: 004edce0
+void FUN_004edce0(void);
+
+// Original: core_netgame.cpp_FUN_004edcf0
+// Address: 004edcf0
+void FUN_004edcf0(void);
+
+// Original: core_netgame.cpp_FUN_004edd00
+// Address: 004edd00
+void FUN_004edd00(void);
+
+// Original: core_netgame.cpp_FUN_004edd10
+// Address: 004edd10
+void FUN_004edd10(void);
+
+// Original: core_netgame.cpp_FUN_004edd20
+// Address: 004edd20
+void FUN_004edd20(void);
+
+// Original: core_netgame.cpp_FUN_004edd30
+// Address: 004edd30
+void FUN_004edd30(undefined4 *param_1,undefined4 *param_2);
+
 // Original: core_netgame.cpp_SPlayer_ctor_FUN_004ede30
 // Address: 004ede30
 undefined4 SPlayer::ctor(undefined4 param_1);
 
+// Original: core_netgame.cpp_FUN_004ede40
+// Address: 004ede40
+undefined4 FUN_004ede40(undefined4 param_1);
+
+// Original: core_netgame.cpp_FUN_004ede50
+// Address: 004ede50
+undefined4 FUN_004ede50(undefined4 param_1);
+
+// Original: core_netgame.cpp_FUN_004ede60
+// Address: 004ede60
+undefined4 FUN_004ede60(undefined4 param_1);
+
+// Original: core_netgame.cpp_FUN_004ede70
+// Address: 004ede70
+void FUN_004ede70(undefined4 *param_1,undefined4 *param_2);
+
+// Original: core_netgame.cpp_FUN_004edf30
+// Address: 004edf30
+void FUN_004edf30(void);
+
+// Original: core_netgame.cpp_FUN_004edf80
+// Address: 004edf80
+void FUN_004edf80(void);
+
 // Original: core_netgame.cpp_assignInt1_FUN_004edfa0
 // Address: 004edfa0
 undefined4 * __cdecl assignInt1(undefined4 *param_1,undefined4 *param_2);
+
+// Original: core_netgame.cpp_FUN_004edfb0
+// Address: 004edfb0
+undefined4 * FUN_004edfb0(undefined4 *param_1,undefined4 *param_2);

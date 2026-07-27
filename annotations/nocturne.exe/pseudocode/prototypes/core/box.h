@@ -15,6 +15,10 @@ int __cdecl CBox::dtor(int param_1);
 // Address: 0041a6e0
 void __cdecl CBox::setupCorners(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,undefined4 param_5);
 
+// Original: core_box.cpp_FUN_0041a910
+// Address: 0041a910
+void FUN_0041a910(int param_1,undefined4 param_2,undefined4 param_3,int param_4,float *param_5,undefined4 param_6);
+
 // Original: core_box.cpp_CBox_updateTransform_FUN_0041aaa0
 // Address: 0041aaa0
 void __cdecl CBox::updateTransform(float *param_1,float *param_2,float *param_3,float param_4);
@@ -39,6 +43,14 @@ void __cdecl CBox::saveToFile(float *param_1,undefined4 param_2,undefined4 param
 // Address: 0041cb40
 void __cdecl CBox::setupVelocities(int param_1,undefined4 *param_2,undefined4 *param_3);
 
+// Original: core_box.cpp_FUN_0041cbc0
+// Address: 0041cbc0
+undefined4 FUN_0041cbc0(undefined4 param_1);
+
+// Original: core_box.cpp_FUN_0041cbd0
+// Address: 0041cbd0
+undefined4 FUN_0041cbd0(undefined4 param_1);
+
 // Original: core_box.cpp_SScrape_arrdtor_FUN_0041cbe0
 // Address: 0041cbe0
 void __cdecl SScrape::arrdtor(undefined4 param_1);
@@ -59,6 +71,10 @@ undefined4 __cdecl CBoundingBox3D::isVisibleWithShadow(void);
 // Address: 0041ceb0
 undefined4 __cdecl CBoundingBox3D::isVisible(float *param_1,int param_2);
 
+// Original: core_box.cpp_FUN_0041d050
+// Address: 0041d050
+undefined4 FUN_0041d050(float *param_1);
+
 // Original: core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450
 // Address: 0041d450
 float __cdecl CBoundingBox3D::getBoundingBoxScreenSize(float *param_1);
@@ -67,9 +83,25 @@ float __cdecl CBoundingBox3D::getBoundingBoxScreenSize(float *param_1);
 // Address: 0041d550
 float CBoundingBox3D::doesRayIntersect(float *param_1,float *param_2,float *param_3,float *param_4);
 
+// Original: core_box.cpp_FUN_0041d980
+// Address: 0041d980
+void FUN_0041d980(float *param_1);
+
+// Original: core_box.cpp_FUN_0041d9d0
+// Address: 0041d9d0
+void FUN_0041d9d0(float *param_1,int param_2,float *param_3);
+
+// Original: core_box.cpp_FUN_0041daa0
+// Address: 0041daa0
+void FUN_0041daa0(float *param_1,int param_2,int *param_3);
+
 // Original: core_box.cpp_CBoundingBox3D_reset_FUN_0041dbc0
 // Address: 0041dbc0
 void __cdecl CBoundingBox3D::reset(undefined4 *param_1);
+
+// Original: core_box.cpp_FUN_0041dbf0
+// Address: 0041dbf0
+undefined4 FUN_0041dbf0(void);
 
 // Original: core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_0041dc20
 // Address: 0041dc20

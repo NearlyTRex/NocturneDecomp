@@ -7,16 +7,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[52]:
-;   FUN_0040f2b0 at 0040f324
-;   FUN_0040f740 at 0040f7b0
-;   FUN_00414e70 at 00414ee6
-;   FUN_004161a0 at 00416275
-;   FUN_0041ea00 at 0041eaae
-;   FUN_0041eaf0 at 0041eba4
-;   FUN_00421540 at 00421676
-;   FUN_0043cbc0 at 0043cc3c
-;   FUN_0043d0a0 at 0043d106
-;   FUN_00455d50 at 00455dea
+;   core_ammo.cpp_FUN_0040ec30 at 0040ec81
+;   core_ammobox.cpp_FUN_0040f2b0 at 0040f324
+;   core_anvil.cpp_FUN_0040f740 at 0040f7b0
+;   core_backgnd.cpp_FUN_0040ff80 at 0040ffc9
+;   core_baron.cpp_FUN_004110f0 at 004111d0
+;   core_bat.cpp_FUN_00411e30 at 00411e85
+;   core_battery.cpp_FUN_00414e70 at 00414ee6
+;   core_bodypart.cpp_FUN_004161a0 at 00416275
+;   core_boxactor.cpp_FUN_0041ea00 at 0041eaae
+;   core_boxactor.cpp_FUN_0041eaf0 at 0041eba4
 ;   ... and 42 more
 ;
 ; Called Functions:

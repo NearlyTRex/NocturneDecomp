@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x28]:4  local_28
 ;
 ; XREF[1]:
-;   FUN_0049cc10 at 0049cda9
+;   core_game.cpp_FUN_0049cc10 at 0049cda9
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00591ead = 10

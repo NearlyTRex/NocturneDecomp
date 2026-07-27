@@ -9,7 +9,7 @@
 void core_stranger_cpp_CStranger_archive_FUN_0053cf90(int param_1)
 
 {
-  FUN_004b49a0(param_1);
+  core_hero_cpp_FUN_004b49a0(param_1);
   if ((1 < INT_005c0ff0) && (INT_005c0ff0 < 5)) {
     core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1fa08,"objectToPickUp");
     core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1fa04,"doorToOpen");

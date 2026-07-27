@@ -26,9 +26,9 @@ void core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(int param_1,uint param
   
   if (*(int *)(param_1 + 0x15aa88) != 0) {
     if (param_3 == (int *)0x0) {
-      _DAT_01cc4800 = "..\\core\\set.cpp";
-      _DAT_01cc4804 = 0xaf6;
-      FUN_004c8440("CDemonSet::lightVertexColor - Quick light mode with no normal");
+      PTR_01cc4800 = "..\\core\\set.cpp";
+      INT_01cc4804 = 0xaf6;
+      core_main_c_FUN_004c8440("CDemonSet::lightVertexColor - Quick light mode with no normal");
     }
     lVar1 = (longlong)*(int *)(param_1 + 0x15aa8c) * (longlong)*param_3;
     lVar2 = (longlong)*(int *)(param_1 + 0x15aa90) * (longlong)param_3[1];

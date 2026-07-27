@@ -5,20 +5,20 @@
 ;
 ;
 ; XREF[37]:
-;   FUN_0040fc30 at 0040fc49
-;   FUN_004132c0 at 004132d9
-;   FUN_00414c60 at 00414c79
-;   FUN_00415250 at 00415269
-;   FUN_00415a30 at 00415a59
-;   FUN_00420f20 at 00420f39
-;   FUN_0043c6f0 at 0043c709
-;   FUN_00454f30 at 00454f49
-;   FUN_0045b350 at 0045b369
-;   FUN_00463310 at 00463329
+;   core_armour.cpp_CEnemy_dtor_FUN_0040fcf0 at 0040fd09
+;   core_armour.cpp_FUN_0040fc30 at 0040fc49
+;   core_batcreat.cpp_FUN_004132c0 at 004132d9
+;   core_batman.cpp_FUN_00414c60 at 00414c79
+;   core_beast.cpp_FUN_00415250 at 00415269
+;   core_biggs.cpp_FUN_00415a30 at 00415a59
+;   core_boneguy.cpp_CBoneGuy_dtor_FUN_0041a400 at 0041a429
+;   core_bride.cpp_FUN_00420f20 at 00420f39
+;   core_bugs.cpp_FUN_00423d90 at 00423db9
+;   core_charactr.cpp_CCharacter_dtor_FUN_0042b5d0 at 0042b5e9
 ;   ... and 27 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00599940
+;   WatcomTypeInfo g_CFlameTypeInfo_00599940
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f
@@ -27,7 +27,7 @@
 
 section .text
 
-    PUSH 0x599940                       ; 0040fe50 | DAT_00599940
+    PUSH 0x599940                       ; 0040fe50 | g_CFlameTypeInfo_00599940
         ;   Label: core_armour.cpp_CFlame_arrdtor_FUN_0040fe50
     PUSH 0x32                           ; 0040fe55
     MOV EDX,dword ptr [ESP + 0xc]       ; 0040fe57

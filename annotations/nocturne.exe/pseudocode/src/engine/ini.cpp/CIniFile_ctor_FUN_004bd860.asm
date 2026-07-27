@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_004a4b50 at 004a4c34
-;   FUN_004bdb80 at 004bdbb0
+;   core_game.cpp_FUN_004a4b50 at 004a4c34
+;   core_inivar.cpp_FUN_004bdb80 at 004bdbb0
 ;   core_inivar.cpp_writeIniData_FUN_004be2d0 at 004be2e6
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501ced
 ;

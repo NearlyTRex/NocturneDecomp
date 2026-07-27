@@ -5,23 +5,23 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00558d90 at 00558e8f
+;   wincore_winrun.cpp_FUN_00558d90 at 00558e8f
 ;
 ; Referenced Globals:
 ;   void* PTR_ShowWindow_0057547c = 00175aa2
-;   undefined4 DAT_02dc9d60
+;   int INT_02dc9d60
 ;   undefined4 DAT_02ddf568
 ;   undefined4 DAT_02de2098
 ;
 ; Called Functions:
+;   engine_special.cpp_restoreVideoMode_FUN_005325f0
 ;   ShowWindow
-;   wincore_windll.cpp_restoreVideoMode_FUN_005325f0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x02dc9d60],0x0      ; 00553b70 | DAT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 00553b70 | INT_02dc9d60
         ;   Label: wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_00553b70
     JZ 0x00553b82                       ; 00553b77
         ;   XREF to: 00553b82 (CONDITIONAL_JUMP)  ; LAB_00553b82
@@ -32,8 +32,8 @@ section .text
         ;   Label: LAB_00553b82
     PUSH EBX                            ; 00553b83
         ;   Label: LAB_00553b83
-    CALL wincore_windll.cpp_restoreVideoMode_FUN_005325f0 ; 00553b84
-        ;   XREF to: 005325f0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_restoreVideoMode_FUN_005325f0()
+    CALL engine_special.cpp_restoreVideoMode_FUN_005325f0 ; 00553b84
+        ;   XREF to: 005325f0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_restoreVideoMode_FUN_005325f0()
     PUSH 0x6                            ; 00553b89
     MOV EBX,dword ptr [0x02de2098]      ; 00553b8b | DAT_02de2098
     PUSH EBX                            ; 00553b91

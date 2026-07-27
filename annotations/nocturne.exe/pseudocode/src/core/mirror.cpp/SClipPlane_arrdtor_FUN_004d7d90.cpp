@@ -9,6 +9,6 @@
 void __cdecl core_mirror_cpp_SClipPlane_arrdtor_FUN_004d7d90(uint param_1)
 
 {
-  __arrfini(param_1,5,&DAT_005a08a0);
+  __arrfini(param_1,5,&g_SClipPlaneTypeInfo_005a08a0);
   return;
 }

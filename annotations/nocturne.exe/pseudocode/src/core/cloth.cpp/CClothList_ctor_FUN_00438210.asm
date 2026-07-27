@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00540b40 at 00540b64
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00423f40 at 00423f64
+;   core_succubus.cpp_FUN_00540b40 at 00540b64
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0

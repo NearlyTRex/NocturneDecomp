@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[82]:
-;   FUN_00401010 at 004010de
-;   FUN_0042eb90 at 0042ed7a
-;   FUN_0042ee00 at 0042ef4f
-;   FUN_00430210 at 004302a4
-;   FUN_00446810 at 00446dee
-;   FUN_0044b660 at 0044b6f8
-;   FUN_0044d550 at 0044d5e9
-;   FUN_00467890 at 004678bf
-;   FUN_00490210 at 00490369
-;   FUN_0049a320 at 0049a5ec
+;   FUN_00568690 at 00568704
+;   cockpit_ckptutil.c_FUN_0042eb90 at 0042ed7a
+;   cockpit_ckptutil.c_FUN_0042ee00 at 0042ef4f
+;   cockpit_ckptutil.c_FUN_00430210 at 004302a4
+;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d57e
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d2b6
+;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_004f4e40 at 004f4ebe
+;   cockpit_pkbitmap.cpp_FUN_004f4b30 at 004f4b5c
+;   cockpit_pkbitmap.cpp_FUN_004f5110 at 004f5171
+;   cockpit_pkbmpset.cpp_FUN_004f54c0 at 004f56b3
 ;   ... and 72 more
 ;
 ; Referenced Globals:
@@ -23,7 +23,7 @@
 ;   undefined4 DAT_02de4e20
 ;
 ; Called Functions:
-;   FUN_005633c4
+;   crt_unknown.c_FUN_005633c4
 ;   FUN_005671e4
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
         ;   Label: LAB_005633ae
     PUSH 0x1                            ; 005633b4
     PUSH EBX                            ; 005633b6
-    CALL FUN_005633c4                   ; 005633b7
-        ;   XREF to: 005633c4 (UNCONDITIONAL_CALL)  ; undefined FUN_005633c4()
+    CALL crt_unknown.c_FUN_005633c4     ; 005633b7
+        ;   XREF to: 005633c4 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005633c4()
     ADD ESP,0x8                         ; 005633bc
     POP EBX                             ; 005633bf
     RET                                 ; 005633c0

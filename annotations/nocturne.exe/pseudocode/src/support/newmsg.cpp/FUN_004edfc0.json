@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -143,7 +143,7 @@
     {
       "addr": "004c85f0",
       "from_addr": "004c86f9",
-      "name": "FUN_004c85f0",
+      "name": "core_main.c_FUN_004c85f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -156,10 +156,15 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004edfc0",
-    "signature": "int FUN_004edfc0(undefined4 param_1)"
+    "name": "support_newmsg.cpp_FUN_004edfc0",
+    "signature": "int support_newmsg_cpp_FUN_004edfc0(undefined4 param_1)"
   },
   "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
     {
       "addr": "00563380",
       "is_variadic": false,
@@ -194,11 +199,6 @@
       "addr": "004568c0",
       "is_variadic": false,
       "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -294,14 +294,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -347,7 +347,7 @@
       {
         "call_addr": "004c86f9",
         "call_type": "direct",
-        "caller": "FUN_004c85f0",
+        "caller": "core_main.c_FUN_004c85f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -473,7 +473,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "int FUN_004edfc0(uint param_1)",
+      "text": "int support_newmsg_cpp_FUN_004edfc0(uint param_1)",
       "type": "unnamed_param"
     },
     {
@@ -513,7 +513,7 @@
       "line": 91,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Error reading %s\",param_1);",
+      "text": "core_main_c_FUN_004c8440(\"Error reading %s\",param_1);",
       "type": "unnamed_param"
     },
     {
@@ -521,7 +521,7 @@
       "line": 96,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Too many messages in %s\",param_1);",
+      "text": "core_main_c_FUN_004c8440(\"Too many messages in %s\",param_1);",
       "type": "unnamed_param"
     },
     {

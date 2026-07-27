@@ -26,8 +26,8 @@
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0 at 0050b7c4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a0884
-;   undefined4 DAT_005a0888
+;   float FLOAT_005a0884 = 65536
+;   float FLOAT_005a0888 = 0.00390625
 ;   undefined4 DAT_005a088c
 ;
 ; Called Functions:
@@ -48,13 +48,13 @@ section .text
     MOV ESI,dword ptr [ESP + 0x64]      ; 004d7be0
     LEA EBX,[ESP + 0x3c]                ; 004d7be4
     FILD dword ptr [EAX]                ; 004d7be8
-    FMUL float ptr [0x005a0888]         ; 004d7bea | DAT_005a0888
+    FMUL float ptr [0x005a0888]         ; 004d7bea | FLOAT_005a0888
     FSTP float ptr [EBX]                ; 004d7bf0
     FILD dword ptr [EAX + 0x4]          ; 004d7bf2
-    FMUL float ptr [0x005a0888]         ; 004d7bf5 | DAT_005a0888
+    FMUL float ptr [0x005a0888]         ; 004d7bf5 | FLOAT_005a0888
     FSTP float ptr [EBX + 0x4]          ; 004d7bfb
     FILD dword ptr [EAX + 0x8]          ; 004d7bfe
-    FMUL float ptr [0x005a0888]         ; 004d7c01 | DAT_005a0888
+    FMUL float ptr [0x005a0888]         ; 004d7c01 | FLOAT_005a0888
     FSTP float ptr [EBX + 0x8]          ; 004d7c07
     LEA EBX,[ESP + 0xc]                 ; 004d7c0a
     MOV EAX,EDX                         ; 004d7c0e
@@ -164,13 +164,13 @@ section .text
     LEA ESI,[ESP + 0x24]                ; 004d7d3c
     MOV EDI,EBP                         ; 004d7d40
     FLD float ptr [EAX]                 ; 004d7d42
-    FMUL float ptr [0x005a0884]         ; 004d7d44 | DAT_005a0884
+    FMUL float ptr [0x005a0884]         ; 004d7d44 | FLOAT_005a0884
     FISTP dword ptr [EBX]               ; 004d7d4a
     FLD float ptr [EAX + 0x4]           ; 004d7d4c
-    FMUL float ptr [0x005a0884]         ; 004d7d4f | DAT_005a0884
+    FMUL float ptr [0x005a0884]         ; 004d7d4f | FLOAT_005a0884
     FISTP dword ptr [EBX + 0x4]         ; 004d7d55
     FLD float ptr [EAX + 0x8]           ; 004d7d58
-    FMUL float ptr [0x005a0884]         ; 004d7d5b | DAT_005a0884
+    FMUL float ptr [0x005a0884]         ; 004d7d5b | FLOAT_005a0884
     FISTP dword ptr [EBX + 0x8]         ; 004d7d61
     MOVSD ES:EDI,ESI                    ; 004d7d64
     MOVSD ES:EDI,ESI                    ; 004d7d65

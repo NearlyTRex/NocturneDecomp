@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 302,
-    "complexity_score": 507,
+    "complexity_score": 492,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 167,
-    "suspect_count": 30,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
       "self_copy_guard",
@@ -136,8 +136,7 @@
       "unaffected_reg",
       "unnamed_param",
       "unresolved_funcptr",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
     "total_lines": 469
   },
@@ -152,14 +151,19 @@
     ],
     "convention": "unknown",
     "is_ebp_frame": true,
-    "name": "FUN_00499ca0",
-    "signature": "void FUN_00499ca0(int param_1,float param_2)"
+    "name": "core_gabriela.cpp_FUN_00499ca0",
+    "signature": "void core_gabriela_cpp_FUN_00499ca0(int param_1,float param_2)"
   },
   "function_calls": [
     {
       "addr": "0040d890",
       "is_variadic": false,
       "name": "core_actor.cpp_castToClassHash_FUN_0040d890"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
     },
     {
       "addr": "0055afb0",
@@ -195,11 +199,6 @@
       "addr": "0055a910",
       "is_variadic": false,
       "name": "core_xform.cpp_transformVector3x4InPlace_FUN_0055a910"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -235,20 +234,20 @@
     },
     {
       "addr": "00764ad4",
-      "name": "CDemonActorType_00764a9c.name_hash",
+      "name": "g_CLightActorActorType_00764a9c.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -506,35 +505,35 @@
         {
           "check_id": "legacyUninitvar",
           "column": 15,
-          "line": 76,
+          "line": 75,
           "message": "Uninitialized variable: fStack_9c",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 15,
-          "line": 77,
+          "line": 76,
           "message": "Uninitialized variable: fStack_98",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 26,
-          "line": 74,
+          "line": 73,
           "message": "Uninitialized variable: fStack_94",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 27,
-          "line": 76,
+          "line": 75,
           "message": "Uninitialized variable: fStack_90",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 27,
-          "line": 77,
+          "line": 76,
           "message": "Uninitialized variable: fStack_8c",
           "severity": "error"
         }
@@ -545,32 +544,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_00499ca0(int param_1,float param_2)",
+      "text": "void core_gabriela_cpp_FUN_00499ca0(int param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_00499ca0(int param_1,float param_2)",
+      "text": "void core_gabriela_cpp_FUN_00499ca0(int param_1,float param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 9,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "uint *unaff_ESI;",
@@ -578,7 +569,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar1 = (int)param_2 * 0x44 + param_1;",
@@ -586,7 +577,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = (int)param_2 * 0x44 + param_1;",
@@ -594,7 +585,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 66,
+      "line": 65,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar4 + 0x14c) + 0x14))(iVar4,&local_a0);",
@@ -602,7 +593,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 94,
+      "line": 93,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 0.0) {",
@@ -610,7 +601,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 106,
+      "line": 105,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "if (param_2 == 1.4013e-45) {",
@@ -618,7 +609,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 105,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 1.4013e-45) {",
@@ -626,7 +617,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 112,
       "match": "param_1",
       "severity": "mild",
       "text": "core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(auStack_d0,local_10 * 0x30 + param_1 + 0xfd0);",
@@ -634,7 +625,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 129,
+      "line": 128,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 0.0) {",
@@ -642,7 +633,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 130,
+      "line": 129,
       "match": "param_2",
       "severity": "mild",
       "text": "local_60 = param_2;",
@@ -650,7 +641,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 131,
       "match": "param_2",
       "severity": "mild",
       "text": "local_5c = param_2;",
@@ -658,7 +649,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 133,
       "match": "param_2",
       "severity": "mild",
       "text": "local_30 = param_2;",
@@ -666,7 +657,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 134,
       "match": "param_2",
       "severity": "mild",
       "text": "local_2c = param_2;",
@@ -674,7 +665,7 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 139,
+      "line": 138,
       "match": "1.4013e-45",
       "severity": "mild",
       "text": "else if (param_2 == 1.4013e-45) {",
@@ -682,7 +673,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 139,
+      "line": 138,
       "match": "param_2",
       "severity": "mild",
       "text": "else if (param_2 == 1.4013e-45) {",
@@ -690,7 +681,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 154,
+      "line": 153,
       "match": "param_1",
       "severity": "mild",
       "text": "core_xform_cpp_transformVector3x4InPlace_FUN_0055a910(&local_34,local_10 * 0x30 + param_1 + 0xfd0)",
@@ -698,7 +689,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 166,
+      "line": 165,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "*unaff_ESI = *puVar3;",
@@ -706,7 +697,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 168,
+      "line": 167,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
@@ -714,7 +705,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 168,
+      "line": 167,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
@@ -722,7 +713,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 99,
+      "line": 98,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -730,7 +721,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 116,
+      "line": 115,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -738,7 +729,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 165,
+      "line": 164,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {",
@@ -746,7 +737,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_1c != &fStack_88)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 73,
+      "line": 72,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_1c != &fStack_88) {",
@@ -754,7 +745,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 56,
+      "line": 54,
       "match": "(int *)(iVar1 + 0x24ac)",
       "severity": "moderate",
       "text": "iVar4 = *(int *)(iVar1 + 0x24ac);",
@@ -762,7 +753,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 57,
+      "line": 55,
       "match": "(int *)(iVar1 + 0x24a4)",
       "severity": "moderate",
       "text": "local_10 = *(int *)(iVar1 + 0x24a4);",
@@ -770,7 +761,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 78,
+      "line": 77,
       "match": "(int *)(iVar1 + 0x664)",
       "severity": "moderate",
       "text": "iVar4 = *(int *)(iVar1 + 0x664);",
@@ -786,7 +777,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_9c",
-      "line": 76,
+      "line": 75,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "fStack_24 = fStack_9c + fStack_90;",
@@ -794,7 +785,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_98",
-      "line": 77,
+      "line": 76,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "fStack_20 = fStack_98 + fStack_8c;",
@@ -802,7 +793,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_94",
-      "line": 74,
+      "line": 73,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "fStack_28 = local_a0 + fStack_94;",
@@ -810,7 +801,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_90",
-      "line": 76,
+      "line": 75,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "fStack_24 = fStack_9c + fStack_90;",
@@ -818,7 +809,7 @@
     },
     {
       "description": "Uninitialized variable: fStack_8c",
-      "line": 77,
+      "line": 76,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "fStack_20 = fStack_98 + fStack_8c;",

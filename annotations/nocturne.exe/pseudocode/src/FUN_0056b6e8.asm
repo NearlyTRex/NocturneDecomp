@@ -12,11 +12,11 @@
 ; Referenced Globals:
 ;   void* PTR_FUN_005a49c4 = 0056b6e8
 ;   void* PTR_FUN_005a49cc = 0056b6d0
-;   undefined4 DAT_005a4a00
+;   WatcomTypeInfo g_istreamTypeInfo_005a4a00
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   FUN_0056b633
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
@@ -49,7 +49,7 @@ section .text
     MOV EAX,EBX                         ; 0056b723
     POP EBX                             ; 0056b725
     RET                                 ; 0056b726
-    PUSH 0x5a4a00                       ; 0056b727 | DAT_005a4a00
+    PUSH 0x5a4a00                       ; 0056b727 | g_istreamTypeInfo_005a4a00
         ;   Label: LAB_0056b727
     PUSH EBX                            ; 0056b72c
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 0056b72d
@@ -75,8 +75,8 @@ section .text
         ;   XREF to: 0056b71c (UNCONDITIONAL_JUMP)  ; LAB_0056b71c
     PUSH EBX                            ; 0056b755
         ;   Label: LAB_0056b755
-    CALL FUN_00564494                   ; 0056b756
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 0056b756
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     JMP 0x0056b73b                      ; 0056b75b
         ;   XREF to: 0056b73b (UNCONDITIONAL_JUMP)  ; LAB_0056b73b
 

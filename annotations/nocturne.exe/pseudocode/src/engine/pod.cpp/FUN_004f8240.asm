@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool FUN_004f8240(int *param_1)
+; bool engine_pod_cpp_FUN_004f8240(int *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1a0]:4  local_1a0
@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004f9100 at 004f912e
+;   engine_pod.cpp_FUN_004f9100 at 004f912e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0058d9a8
@@ -27,27 +27,27 @@
 ;   TerminatedCString s_Verifying_CRC_for_s_0058da5c
 ;   TerminatedCString s_rb_0058da74
 ;   undefined4 DAT_005b6d50
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01e428d0
 ;   undefined4 DAT_01e428d1
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   crt_stdio.c_fseek_FUN_0056582c
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
-;   FUN_004720c0
-;   FUN_00474c90
-;   FUN_004c8440
-;   FUN_004f77d0
-;   FUN_004f86a0
+;   engine_pod.cpp_FUN_004f77d0
+;   engine_pod.cpp_FUN_004f86a0
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760
 ;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00474d70
 ;   shape_edittool.cpp_CPickList_dtor_FUN_00474cf0
+;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
+;   shape_edittool.cpp_FUN_004720c0
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -55,7 +55,7 @@
 section .text
 
     PUSH EBX                            ; 004f8240
-        ;   Label: FUN_004f8240
+        ;   Label: engine_pod.cpp_FUN_004f8240
     PUSH ESI                            ; 004f8241
     PUSH EDI                            ; 004f8242
     PUSH EBP                            ; 004f8243
@@ -159,8 +159,8 @@ section .text
     PUSH EAX                            ; 004f8360
     INC ESI                             ; 004f8361
     INC EBX                             ; 004f8362
-    CALL FUN_004f77d0                   ; 004f8363
-        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f77d0()
+    CALL engine_pod.cpp_FUN_004f77d0    ; 004f8363
+        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f77d0()
     ADD ESP,0x8                         ; 004f8368
     CMP EBX,0x10000                     ; 004f836b
     JC 0x004f835b                       ; 004f8371
@@ -191,8 +191,8 @@ section .text
     PUSH EAX                            ; 004f83ac
     PUSH EBP                            ; 004f83ad
     INC ESI                             ; 004f83ae
-    CALL FUN_004f77d0                   ; 004f83af
-        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f77d0()
+    CALL engine_pod.cpp_FUN_004f77d0    ; 004f83af
+        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f77d0()
     ADD ESP,0x8                         ; 004f83b4
     INC EBX                             ; 004f83b7
     MOV EDX,dword ptr [ESP + 0x180]     ; 004f83b8
@@ -240,8 +240,8 @@ section .text
     MOV EAX,ESP                         ; 004f841e
     PUSH EAX                            ; 004f8420
     XOR EDI,EDI                         ; 004f8421
-    CALL FUN_00474c90                   ; 004f8423
-        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined FUN_00474c90()
+    CALL shape_edittool.cpp_FUN_00474c90 ; 004f8423
+        ;   XREF to: 00474c90 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00474c90()
     MOV EBP,dword ptr [EBX + 0x208]     ; 004f8428
     ADD ESP,0x4                         ; 004f842e
     TEST EBP,EBP                        ; 004f8431
@@ -277,8 +277,8 @@ section .text
     PUSH EDI                            ; 004f8498
     PUSH EBX                            ; 004f8499
     MOV EBP,dword ptr [EBX + 0x20c]     ; 004f849a
-    CALL FUN_004f86a0                   ; 004f84a0
-        ;   XREF to: 004f86a0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f86a0()
+    CALL engine_pod.cpp_FUN_004f86a0    ; 004f84a0
+        ;   XREF to: 004f86a0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f86a0()
     MOV EDX,dword ptr [ESI + EBP*0x1 + 0x10] ; 004f84a5
     ADD ESP,0x8                         ; 004f84a9
     CMP EAX,EDX                         ; 004f84ac
@@ -302,8 +302,8 @@ section .text
     MOV EAX,[0x005b6d50]                ; 004f84d9 | DAT_005b6d50
         ;   Label: LAB_004f84d9
     PUSH EAX                            ; 004f84de
-    CALL FUN_004720c0                   ; 004f84df
-        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004720c0()
+    CALL shape_edittool.cpp_FUN_004720c0 ; 004f84df
+        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
     ADD ESP,0x4                         ; 004f84e4
     MOV EDX,dword ptr [ESP]             ; 004f84e7
     TEST EDX,EDX                        ; 004f84ea
@@ -350,10 +350,10 @@ section .text
         ;   Label: LAB_004f8547
     MOV EBP,0x1cf                       ; 004f854c
     PUSH 0x58da47                       ; 004f8551 | = "Invalid pod version!"
-    MOV dword ptr [0x01cc4800],EDI      ; 004f8556 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004f855c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f8562
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004f8556 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004f855c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f8562
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f8567
     JMP 0x004f8284                      ; 004f856a
         ;   XREF to: 004f8284 (UNCONDITIONAL_JUMP)  ; LAB_004f8284

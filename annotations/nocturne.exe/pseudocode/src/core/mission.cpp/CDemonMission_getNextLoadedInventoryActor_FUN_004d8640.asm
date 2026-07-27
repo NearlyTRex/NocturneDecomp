@@ -12,12 +12,12 @@
 ;   TerminatedCString s_CDemonMission_getNextLoa_005899ad
 ;   TerminatedCString s_core_mission_cpp_005899e3
 ;   TerminatedCString s_CDemonMission_getNextLoa_005899f7
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_string.c__stricmp_FUN_00564520
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -35,10 +35,10 @@ section .text
     MOV ECX,0x589999                    ; 004d8651 | = "..\\core\\mission.cpp"
     MOV ESI,0x186                       ; 004d8656
     PUSH 0x5899ad                       ; 004d865b | = "CDemonMission::getNextLoadedInventory..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d8660 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d8666 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d866c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d8660 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d8666 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d866c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d8671
     POP ESI                             ; 004d8674
     MOV EDI,dword ptr [ESP + 0x14]      ; 004d8675
@@ -67,10 +67,10 @@ section .text
     MOV EAX,0x5899e3                    ; 004d86ab | = "..\\core\\mission.cpp"
     MOV EDX,0x18b                       ; 004d86b0
     PUSH 0x5899f7                       ; 004d86b5 | = "CDemonMission::getNextLoadedInventory..."
-    MOV [0x01cc4800],EAX                ; 004d86ba | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004d86bf | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d86c5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004d86ba | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004d86bf | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d86c5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004d86ca
     JMP 0x004d868d                      ; 004d86cd
         ;   XREF to: 004d868d (UNCONDITIONAL_JUMP)  ; LAB_004d868d

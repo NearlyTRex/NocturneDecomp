@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004cc0b0 at 004cc0c3
+;   core_marquee.cpp_FUN_004cc0b0 at 004cc0c3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_menu1_pth_00588193

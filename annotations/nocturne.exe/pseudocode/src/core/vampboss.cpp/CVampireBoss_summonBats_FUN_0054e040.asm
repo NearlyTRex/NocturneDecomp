@@ -13,11 +13,11 @@
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
-;   undefined4 DAT_02dd1144
+;   undefined4 g_CTVBatActorType_02dd110c.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
-;   FUN_0054bfc0
+;   core_tvbat.cpp_FUN_0054bfc0
 ;
 ; *****************************************************************************
 
@@ -44,7 +44,7 @@ section .text
     POP ESI                             ; 0054e06b
     POP EBX                             ; 0054e06c
     RET                                 ; 0054e06d
-    MOV ECX,dword ptr [0x02dd1144]      ; 0054e06e | DAT_02dd1144
+    MOV ECX,dword ptr [0x02dd1144]      ; 0054e06e | g_CTVBatActorType_02dd110c.name_hash
         ;   Label: LAB_0054e06e
     PUSH ECX                            ; 0054e074
     MOV EDI,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0054e075 | DAT_01fa3ff4
@@ -59,8 +59,8 @@ section .text
     JZ 0x0054e09b                       ; 0054e090
         ;   XREF to: 0054e09b (CONDITIONAL_JUMP)  ; LAB_0054e09b
     PUSH EAX                            ; 0054e092
-    CALL FUN_0054bfc0                   ; 0054e093
-        ;   XREF to: 0054bfc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0054bfc0()
+    CALL core_tvbat.cpp_FUN_0054bfc0    ; 0054e093
+        ;   XREF to: 0054bfc0 (UNCONDITIONAL_CALL)  ; undefined core_tvbat.cpp_FUN_0054bfc0()
     ADD ESP,0x4                         ; 0054e098
     INC EBX                             ; 0054e09b
         ;   Label: LAB_0054e09b

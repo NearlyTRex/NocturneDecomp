@@ -10,7 +10,7 @@
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_freeMasterZBuffer_FUN_0044e440
-;   FUN_005638d0
+;   crt_unknown.c_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     JZ 0x0044e2f6                       ; 0044e2e1
         ;   XREF to: 0044e2f6 (CONDITIONAL_JUMP)  ; LAB_0044e2f6
     PUSH ESI                            ; 0044e2e3
-    CALL FUN_005638d0                   ; 0044e2e4
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 0044e2e4
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 0044e2e9
     MOV dword ptr [EBX + 0x2fa0],0x0    ; 0044e2ec
     MOV EBP,dword ptr [EBX + 0x1c6c]    ; 0044e2f6
@@ -50,8 +50,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x2f98]    ; 0044e304
         ;   Label: LAB_0044e304
     PUSH ECX                            ; 0044e30a
-    CALL FUN_005638d0                   ; 0044e30b
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 0044e30b
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     MOV dword ptr [EBX + 0x2f94],0x0    ; 0044e310
     ADD ESP,0x4                         ; 0044e31a
     MOV dword ptr [EBX + 0x2f98],0x0    ; 0044e31d
@@ -59,8 +59,8 @@ section .text
         ;   XREF to: 0044e2d0 (UNCONDITIONAL_JUMP)  ; LAB_0044e2d0
     PUSH EBP                            ; 0044e329
         ;   Label: LAB_0044e329
-    CALL FUN_005638d0                   ; 0044e32a
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 0044e32a
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 0044e32f
     MOV dword ptr [EBX + 0x1c6c],0x0    ; 0044e332
     POP EBP                             ; 0044e33c

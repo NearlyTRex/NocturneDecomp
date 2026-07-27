@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,uint param_2)
 
 {
@@ -33,9 +31,9 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,uint param_
   }
   iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("world",param_2,"rt");
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\script.cpp";
-    _DAT_01cc4804 = 0xec2;
-    FUN_004c8440("Can't open world\\%s",param_2);
+    PTR_01cc4800 = "..\\core\\script.cpp";
+    INT_01cc4804 = 0xec2;
+    core_main_c_FUN_004c8440("Can't open world\\%s",param_2);
   }
   iVar3 = _ftell(iVar2);
   local_c = local_c + iVar3;
@@ -48,9 +46,10 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,uint param_
     }
     iVar3 = _fscanf(iVar2,"%[^,], %[^,], %[^\n]\n",local_334,local_2bc,local_29e);
     if (iVar3 != 3) {
-      _DAT_01cc4800 = "..\\core\\script.cpp";
-      _DAT_01cc4804 = 0xed6;
-      FUN_004c8440("SCScipt::dbLoad - error parsing %s record %d",param_2,*(uint *)(param_1 + 0x1c));
+      PTR_01cc4800 = "..\\core\\script.cpp";
+      INT_01cc4804 = 0xed6;
+      core_main_c_FUN_004c8440
+                ("SCScipt::dbLoad - error parsing %s record %d",param_2,*(uint *)(param_1 + 0x1c));
     }
     core_script_cpp_trimString_FUN_004fe000(local_334);
     core_script_cpp_trimString_FUN_004fe000(local_2bc);
@@ -83,7 +82,8 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,uint param_
     } while (cVar1 != '\0');
     iVar3 = core_script_cpp_CScript_findDialogEntry_FUN_00505180(param_1,local_334);
     if (-1 < iVar3) {
-      FUN_0046fcd0(0x01BCD074,"Warning! Duplicate wav string %s detected in %s",local_334,param_2);
+      shape_edittool_cpp_FUN_0046fcd0
+                (0x01BCD074,"Warning! Duplicate wav string %s detected in %s",local_334,param_2);
     }
     _sprintf(local_2f8,"%s.wav",local_334);
     iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0("sound",local_2f8);
@@ -109,9 +109,9 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,uint param_
     iVar3 = realloc(*(uint *)(param_1 + 0x20),iVar3 * 0x226);
     *(int *)(param_1 + 0x20) = iVar3;
     if (iVar3 == 0) {
-      _DAT_01cc4800 = "..\\core\\script.cpp";
-      _DAT_01cc4804 = 0xefb;
-      FUN_004c8440("SCScipt::dbLoad - out of memory");
+      PTR_01cc4800 = "..\\core\\script.cpp";
+      INT_01cc4804 = 0xefb;
+      core_main_c_FUN_004c8440("SCScipt::dbLoad - out of memory");
     }
     pcVar5 = local_334;
     puVar6 = (uint *)(*(int *)(param_1 + 0x20) + (*(int *)(param_1 + 0x1c) + -1) * 0x226);

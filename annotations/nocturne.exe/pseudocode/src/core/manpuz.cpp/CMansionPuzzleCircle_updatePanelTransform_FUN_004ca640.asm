@@ -12,9 +12,9 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   FUN_004c9580 at 004c97b0
-;   FUN_004c9cf0 at 004c9d6b
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0 at 004cb6e6
+;   core_manpuz.cpp_FUN_004c9580 at 004c97b0
+;   core_manpuz.cpp_FUN_004c9cf0 at 004c9d6b
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a003c = 0.5235988

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(int *param_1,uint param_2)
 
 {
@@ -25,9 +23,9 @@ int __cdecl core_event_cpp_CEventList_loadState_FUN_00480f70(int *param_1,uint p
   _fgets(local_120,0xff,param_2);
   _fscanf(param_2,"%d\n",&local_20);
   if (5 < local_20) {
-    _DAT_01cc4800 = "..\\core\\event.cpp";
-    _DAT_01cc4804 = 0xc2c;
-    FUN_004c8440("CEventList::loadState - file version %d is newer than .EXE, which can only handle up to version %d",local_20,5);
+    PTR_01cc4800 = "..\\core\\event.cpp";
+    INT_01cc4804 = 0xc2c;
+    core_main_c_FUN_004c8440("CEventList::loadState - file version %d is newer than .EXE, which can only handle up to version %d",local_20,5);
   }
   _fgets(local_120,0xff,param_2);
   iVar1 = 0;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_course_cpp_CCourse_load_FUN_0043b690(int *param_1,uint param_2)
 
 {
@@ -21,9 +19,9 @@ void __cdecl core_course_cpp_CCourse_load_FUN_0043b690(int *param_1,uint param_2
   core_course_cpp_CCourse_free_FUN_0043b7c0(param_1);
   iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("data",param_2,"rt");
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "..\\core\\course.cpp";
-    _DAT_01cc4804 = 0x7c;
-    FUN_004c8440("CCourse::load - can't open data\\%s",param_2);
+    PTR_01cc4800 = "..\\core\\course.cpp";
+    INT_01cc4804 = 0x7c;
+    core_main_c_FUN_004c8440("CCourse::load - can't open data\\%s",param_2);
   }
   do {
     iVar2 = _fgetc(iVar1);

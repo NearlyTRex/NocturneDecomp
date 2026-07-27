@@ -1,14 +1,12 @@
-// Name: FUN_00481630
+// Name: core_event.cpp_FUN_00481630
 // Address: 00481630
 // Address Range: [[00481630, 0048176a]]
 // Convention: unknown
-// Signature: void FUN_00481630(int *param_1,int param_2,char *param_3,char *param_4)
+// Signature: void core_event_cpp_FUN_00481630(int *param_1,int param_2,char *param_3,char *param_4)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00481630(int *param_1,int param_2,char *param_3,char *param_4)
+void core_event_cpp_FUN_00481630(int *param_1,int param_2,char *param_3,char *param_4)
 
 {
   char cVar1;
@@ -18,14 +16,14 @@ void FUN_00481630(int *param_1,int param_2,char *param_3,char *param_4)
   int *piVar5;
   
   if ((param_2 < 0) || (*param_1 < param_2)) {
-    _DAT_01cc4800 = "..\\core\\event.cpp";
-    _DAT_01cc4804 = 0xcd9;
-    FUN_004c8440("CRuleList::insert - invalid index");
+    PTR_01cc4800 = "..\\core\\event.cpp";
+    INT_01cc4804 = 0xcd9;
+    core_main_c_FUN_004c8440("CRuleList::insert - invalid index");
   }
   if (4 < *param_1) {
-    _DAT_01cc4800 = "..\\core\\event.cpp";
-    _DAT_01cc4804 = 0xcda;
-    FUN_004c8440("CRuleList::insert - list full");
+    PTR_01cc4800 = "..\\core\\event.cpp";
+    INT_01cc4804 = 0xcda;
+    core_main_c_FUN_004c8440("CRuleList::insert - list full");
   }
   iVar2 = param_2 * 100;
   piVar5 = param_1 + param_2 * 0x19 + 1;

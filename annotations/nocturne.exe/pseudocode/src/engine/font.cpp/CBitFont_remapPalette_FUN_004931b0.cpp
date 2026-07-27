@@ -44,9 +44,9 @@ LAB_00493246:
           }
           else {
 LAB_00493368:
-            _DAT_01cc4800 = "..\\engine\\font.cpp";
-            _DAT_01cc4804 = 0x686;
-            FUN_004c8440("CBitFont::remapPalette - Invalid bitsPerPixel");
+            PTR_01cc4800 = "..\\engine\\font.cpp";
+            INT_01cc4804 = 0x686;
+            core_main_c_FUN_004c8440("CBitFont::remapPalette - Invalid bitsPerPixel");
           }
         }
         else {

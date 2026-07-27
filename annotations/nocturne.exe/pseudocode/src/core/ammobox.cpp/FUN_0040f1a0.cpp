@@ -1,14 +1,12 @@
-// Name: FUN_0040f1a0
+// Name: core_ammobox.cpp_FUN_0040f1a0
 // Address: 0040f1a0
 // Address Range: [[0040f1a0, 0040f2a9]]
 // Convention: unknown
-// Signature: void FUN_0040f1a0(int param_1,undefined4 param_2)
+// Signature: void core_ammobox_cpp_FUN_0040f1a0(int param_1,undefined4 param_2)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_0040f1a0(int param_1,uint param_2)
+void core_ammobox_cpp_FUN_0040f1a0(int param_1,uint param_2)
 
 {
   char cVar1;
@@ -32,12 +30,12 @@ void FUN_0040f1a0(int param_1,uint param_2)
     pcVar3 = (char *)core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(iVar2);
   }
   if (pcVar3 == (char *)0x0) {
-    _DAT_01cc4800 = "..\\core\\ammobox.cpp";
-    _DAT_01cc4804 = 0xa2;
-    FUN_004c8440("Out of memory");
+    PTR_01cc4800 = "..\\core\\ammobox.cpp";
+    INT_01cc4804 = 0xa2;
+    core_main_c_FUN_004c8440("Out of memory");
   }
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pcVar3,param_1 + 0x2cc);
-  FUN_0040ef60(pcVar3,*(uint *)(param_1 + 0x30c));
+  core_ammo_cpp_FUN_0040ef60(pcVar3,*(uint *)(param_1 + 0x30c));
   *(uint *)(pcVar3 + 0x310) = *(uint *)(param_1 + 0x310);
   (*(code *)**(uint **)(pcVar3 + 0x14c))(pcVar3);
   core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pcVar3,param_1 + 0x2cc);

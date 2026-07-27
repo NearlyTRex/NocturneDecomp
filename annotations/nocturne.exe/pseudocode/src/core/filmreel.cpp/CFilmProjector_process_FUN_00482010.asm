@@ -13,16 +13,16 @@
 ;   double DOUBLE_0058104b = 3.14159265350000
 ;   undefined4 DAT_005ad550
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_01c08cc4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   undefined4 g_CFilmReelActorType_01c08c8c.name_hash
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_dest.cpp_CActorDestination_process_FUN_0044b850
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310
 ;   core_event.cpp_CEventList_executeCommands_FUN_0047ab70
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;
@@ -107,7 +107,7 @@ section .text
     MOV dword ptr [EBX + 0x3d8],EAX     ; 004820d9
     JMP 0x0048209e                      ; 004820df
         ;   XREF to: 0048209e (UNCONDITIONAL_JUMP)  ; LAB_0048209e
-    MOV EAX,[0x01c08cc4]                ; 004820e1 | DAT_01c08cc4
+    MOV EAX,[0x01c08cc4]                ; 004820e1 | g_CFilmReelActorType_01c08c8c.name_hash
         ;   Label: LAB_004820e1
     PUSH EAX                            ; 004820e6
     MOV EDX,dword ptr [EBX + 0x150]     ; 004820e7
@@ -122,10 +122,10 @@ section .text
     MOV ECX,0x580fed                    ; 004820fc | = "..\\core\\filmreel.cpp"
     MOV EDI,0x11e                       ; 00482101
     PUSH 0x581002                       ; 00482106 | = "CFilmProjector::Need to put CFilmReel..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0048210b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00482111 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00482117
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0048210b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00482111 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00482117
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0048211c
     LEA EAX,[ESI + 0x2d0]               ; 0048211f
         ;   Label: LAB_0048211f

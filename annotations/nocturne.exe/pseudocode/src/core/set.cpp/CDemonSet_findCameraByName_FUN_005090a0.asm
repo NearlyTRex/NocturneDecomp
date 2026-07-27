@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004f6170 at 004f626f
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c6b3
+;   core_platfrm.cpp_FUN_004f6170 at 004f626f
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 005016a9
 ;
 ; Called Functions:

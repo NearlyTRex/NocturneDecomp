@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(int param_1,int *param_2)
 
 {
@@ -18,9 +16,9 @@ int core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(int param_1
   float10 fVar5;
   uint uVar6;
   
-  fVar3 = (float10)((float)(param_2[1] - *(int *)(param_1 + 0x170)) * _DAT_0059bde4);
-  fVar4 = (float10)((float)(*param_2 - *(int *)(param_1 + 0x16c)) * _DAT_0059bde4);
-  fVar5 = (float10)((float)(param_2[2] - *(int *)(param_1 + 0x174)) * _DAT_0059bde4);
+  fVar3 = (float10)((float)(param_2[1] - *(int *)(param_1 + 0x170)) * 0.00390625f);
+  fVar4 = (float10)((float)(*param_2 - *(int *)(param_1 + 0x16c)) * 0.00390625f);
+  fVar5 = (float10)((float)(param_2[2] - *(int *)(param_1 + 0x174)) * 0.00390625f);
   uVar6 = 0x447622;
   fVar3 = (float10)round
                              (SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3) *

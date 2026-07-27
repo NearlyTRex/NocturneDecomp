@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0053fc60 at 0053fe06
+;   core_stranger.cpp_FUN_0053fc60 at 0053fe06
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0053b60c = 0053b971
@@ -36,12 +36,12 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
+;   core_main.c_FUN_004c8440
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -732,10 +732,10 @@ section .text
     MOV EAX,0x595a60                    ; 0053be83 | = "..\\core\\stranger.cpp"
     MOV EDX,0xd31                       ; 0053be88
     PUSH 0x595a75                       ; 0053be8d | = "Hell froze - invalid pickUpType: %d"
-    MOV [0x01cc4800],EAX                ; 0053be92 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0053be97 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0053be9d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0053be92 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0053be97 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0053be9d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0053bea2
     JMP 0x0053bbf0                      ; 0053bea5
         ;   XREF to: 0053bbf0 (UNCONDITIONAL_JUMP)  ; LAB_0053bbf0

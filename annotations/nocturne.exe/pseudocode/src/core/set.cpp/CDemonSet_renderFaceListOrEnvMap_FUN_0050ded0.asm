@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   core_set.cpp_FUN_0050d910
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
-;   FUN_00461720
+;   engine_drender.cpp_FUN_00461720
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     PUSH ECX                            ; 0050df0a
     MOV EBX,dword ptr [0x005ae704]      ; 0050df0b | DAT_005ae704
     PUSH EBX                            ; 0050df11 | DAT_01b4d738
-    CALL FUN_00461720                   ; 0050df12
-        ;   XREF to: 00461720 (UNCONDITIONAL_CALL)  ; undefined FUN_00461720()
+    CALL engine_drender.cpp_FUN_00461720 ; 0050df12
+        ;   XREF to: 00461720 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00461720()
     ADD ESP,0x10                        ; 0050df17
     POP EBP                             ; 0050df1a
         ;   Label: LAB_0050df1a

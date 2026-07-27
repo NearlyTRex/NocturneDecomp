@@ -17,11 +17,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   FUN_004d4650 at 004d4829
-;   FUN_0054c3e0 at 0054c422
 ;   core_cloth.cpp_CClothList_load_FUN_00438270 at 004382e6
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004957c0 at 004957f9
+;   core_mimic.cpp_FUN_004d4650 at 004d4829
 ;   core_svetlana.cpp_CSvetlana_setup_FUN_00541a40 at 00541c33
+;   core_vampboss.cpp_FUN_0054c3e0 at 0054c422
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_0057acab
@@ -46,11 +46,11 @@
 ;   core_cloth.cpp_CCloth_initializeConnections_FUN_004357b0
 ;   core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00453950
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgets_FUN_00564b20
 ;   crt_stdio.c_fscanf_FUN_00563350
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -100,10 +100,10 @@ section .text
     MOV EDX,0x57acf1                    ; 004352bb | = "..\\core\\cloth.cpp"
     MOV ECX,0xa2                        ; 004352c0
     PUSH 0x57ad03                       ; 004352c5 | = "%s is version %d, this .EXE is old an..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004352ca | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004352d0 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004352d6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004352ca | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004352d0 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004352d6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x10                        ; 004352db
     MOV EBP,dword ptr [ESP + 0x208]     ; 004352de
         ;   Label: LAB_004352de
@@ -412,10 +412,10 @@ section .text
     MOV EDX,0x57acb5                    ; 0043573c | = "..\\core\\cloth.cpp"
     MOV ECX,0x9b                        ; 00435741
     PUSH 0x57acc7                       ; 00435746 | = "CCloth::load - Unable to open file %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 0043574b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00435751 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00435757
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0043574b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00435751 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00435757
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0043575c
     JMP 0x0043527a                      ; 0043575f
         ;   XREF to: 0043527a (UNCONDITIONAL_JUMP)  ; LAB_0043527a

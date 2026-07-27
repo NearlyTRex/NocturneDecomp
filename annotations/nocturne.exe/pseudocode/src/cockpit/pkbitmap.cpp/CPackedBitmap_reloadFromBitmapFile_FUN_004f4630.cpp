@@ -11,7 +11,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reloadFromBitmapFile_FUN_004f463
 {
   uint uVar1;
   
-  FUN_004f3f50(param_1);
+  cockpit_pkbitmap_cpp_FUN_004f3f50(param_1);
   cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_004f3fc0(param_1,param_2);
   uVar1 = cockpit_ckptutil_c_readBitmapFile_FUN_0042d240(param_1,0,param_4 * param_3);
   cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_004f47b0

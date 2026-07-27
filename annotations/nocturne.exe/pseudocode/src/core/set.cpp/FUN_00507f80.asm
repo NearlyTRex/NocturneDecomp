@@ -5,8 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_Camera_box_7_2f_7_2f_7_2_005902ac
+;   TerminatedCString s_core_set_cpp_005902e5
+;   TerminatedCString s_CDemonSet_precomuputeLig_005902f5
+;   TerminatedCString s_Light_d_Box_d_d_d_d_00590341
+;   TerminatedCString s_Precomputing_lights_from_0059035d
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01fb99d0
 ;   undefined4 DAT_01fba938
 ;
@@ -15,17 +20,17 @@
 ;   core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20
 ;   core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00444e20
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50
+;   core_dcamera.cpp_FUN_004421b0
+;   core_dcamera.cpp_FUN_00444ef0
+;   core_dcamera.cpp_FUN_00447f20
+;   core_main.c_FUN_004c8440
 ;   core_set.cpp_CDemonSet_initScene_FUN_005084c0
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
 ;   core_set.cpp_FUN_0050ad20
+;   core_setutil.cpp_FUN_005148b0
+;   core_setutil.cpp_FUN_00515c40
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_string.c__strcmp_FUN_005649c0
-;   engine_2d.c_drawText_FUN_00402600
-;   FUN_004421b0
-;   FUN_00444ef0
-;   FUN_00447f20
-;   FUN_004c8440
-;   FUN_005148b0
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -73,8 +78,8 @@ section .text
     PUSH 0x1fb8508                      ; 00508028
     ADD EAX,EBX                         ; 0050802d
     PUSH EAX                            ; 0050802f
-    CALL FUN_005148b0                   ; 00508030
-        ;   XREF to: 005148b0 (UNCONDITIONAL_CALL)  ; undefined FUN_005148b0()
+    CALL core_setutil.cpp_FUN_005148b0  ; 00508030
+        ;   XREF to: 005148b0 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_FUN_005148b0()
     ADD ESP,0x8                         ; 00508035
     PUSH 0x0                            ; 00508038
     PUSH 0x1fb8508                      ; 0050803a
@@ -96,14 +101,14 @@ section .text
         ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20()
     ADD ESP,0x8                         ; 00508075
     PUSH 0x1fb8508                      ; 00508078
-    CALL FUN_004421b0                   ; 0050807d
-        ;   XREF to: 004421b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004421b0()
+    CALL core_dcamera.cpp_FUN_004421b0  ; 0050807d
+        ;   XREF to: 004421b0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_004421b0()
     ADD ESP,0x4                         ; 00508082
     LEA EAX,[ESP + 0x100]               ; 00508085
     PUSH EAX                            ; 0050808c
     PUSH 0x1fb8508                      ; 0050808d
-    CALL FUN_00447f20                   ; 00508092
-        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; undefined FUN_00447f20()
+    CALL core_dcamera.cpp_FUN_00447f20  ; 00508092
+        ;   XREF to: 00447f20 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00447f20()
     ADD ESP,0x8                         ; 00508097
     MOV ESI,dword ptr [ESP + 0x138]     ; 0050809a
     MOV EBX,EAX                         ; 005080a1
@@ -148,7 +153,7 @@ section .text
     SUB ESP,0x8                         ; 00508114
     FLD float ptr [EAX + 0x17c]         ; 00508117
     FSTP double ptr [ESP]               ; 0050811d
-    PUSH 0x5902ac                       ; 00508120
+    PUSH 0x5902ac                       ; 00508120 | = "Camera box (%7.2f, %7.2f, %7.2f) - (%..."
     LEA EAX,[ESP + 0x34]                ; 00508125
     PUSH EAX                            ; 00508129
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050812a
@@ -219,13 +224,13 @@ section .text
         ;   Label: LAB_0050821a
     JNZ 0x00508244                      ; 00508220
         ;   XREF to: 00508244 (CONDITIONAL_JUMP)  ; LAB_00508244
-    MOV EDI,0x5902e5                    ; 00508222
+    MOV EDI,0x5902e5                    ; 00508222 | = "..\\core\\set.cpp"
     MOV EAX,0x2e8                       ; 00508227
-    PUSH 0x5902f5                       ; 0050822c
-    MOV dword ptr [0x01cc4800],EDI      ; 00508231 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00508237 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050823c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x5902f5                       ; 0050822c | = "CDemonSet::precomuputeLightVisibility..."
+    MOV dword ptr [0x01cc4800],EDI      ; 00508231 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00508237 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050823c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00508241
     PUSH 0x0                            ; 00508244
         ;   Label: LAB_00508244
@@ -245,8 +250,8 @@ section .text
     PUSH 0x1fb8508                      ; 00508271
     MOV byte ptr [ESI + 0x19770],AL     ; 00508276
     LEA ESI,[ESP + 0x120]               ; 0050827c
-    CALL FUN_00444ef0                   ; 00508283
-        ;   XREF to: 00444ef0 (UNCONDITIONAL_CALL)  ; undefined FUN_00444ef0()
+    CALL core_dcamera.cpp_FUN_00444ef0  ; 00508283
+        ;   XREF to: 00444ef0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00444ef0()
     LEA ESI,[ESP + 0x120]               ; 00508288
     ADD ESP,0x8                         ; 0050828f
     LEA EDI,[EBP + 0x1986c]             ; 00508292
@@ -268,7 +273,7 @@ section .text
     PUSH ESI                            ; 005082c7
     MOV EDI,dword ptr [ESP + 0x16c]     ; 005082c8
     PUSH EDI                            ; 005082cf
-    PUSH 0x590341                       ; 005082d0
+    PUSH 0x590341                       ; 005082d0 | = "Light %d, Box : %d,%d,%d,%d"
     LEA EAX,[ESP + 0x18]                ; 005082d5
     PUSH EAX                            ; 005082d9
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 005082da
@@ -298,7 +303,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x150]     ; 00508339
         ;   Label: LAB_00508339
     PUSH EAX                            ; 00508340
-    PUSH 0x59035d                       ; 00508341
+    PUSH 0x59035d                       ; 00508341 | = "Precomputing lights from camera : %d"
     LEA EAX,[ESP + 0x8]                 ; 00508346
     PUSH EAX                            ; 0050834a
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 0050834b
@@ -369,8 +374,8 @@ section .text
     ADD ESP,0x8                         ; 00508426
     ADD ESI,dword ptr [ESP + 0x140]     ; 00508429
     PUSH ESI                            ; 00508430
-    CALL FUN_00515c40                   ; 00508431
-        ;   XREF to: 00515c40 (UNCONDITIONAL_CALL)  ; undefined FUN_00515c40()
+    CALL core_setutil.cpp_FUN_00515c40  ; 00508431
+        ;   XREF to: 00515c40 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_FUN_00515c40()
     ADD ESP,0x4                         ; 00508436
     PUSH 0x0                            ; 00508439
     MOV ESI,dword ptr [ESP + 0x154]     ; 0050843b

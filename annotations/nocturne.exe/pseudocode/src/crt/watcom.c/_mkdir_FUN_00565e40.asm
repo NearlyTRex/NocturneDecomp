@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00456b20 at 00456b77
-;   FUN_004a3b90 at 004a3c46
+;   core_game.cpp_FUN_004a3b90 at 004a3c46
+;   engine_dosio.cpp_FUN_00456b20 at 00456b77
 ;   engine_dosio.cpp_getFile_FUN_00456a60 at 00456aac
 ;
 ; Referenced Globals:

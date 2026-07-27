@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005289f0 at 00528b41
+;   sound_sndmain.cpp_FUN_005289f0 at 00528b41
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005939be
@@ -13,11 +13,11 @@
 ;   double DOUBLE_00593a0e = 0.0500000000000000
 ;   double DOUBLE_00593a16 = 2
 ;   undefined4 DAT_005bea98
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   sound_sndmain.cpp_isSoundBusy_FUN_00528490
 ;
 ; *****************************************************************************
@@ -52,10 +52,10 @@ section .text
         ;   Label: LAB_005289b9
     MOV ECX,0x1329                      ; 005289be
     PUSH 0x5939d3                       ; 005289c3 | = "setMaxSwSoundLatency - can't do this ..."
-    MOV dword ptr [0x01cc4800],EDX      ; 005289c8 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005289ce | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005289d4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005289c8 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005289ce | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005289d4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005289d9
     JMP 0x00528989                      ; 005289dc
         ;   XREF to: 00528989 (UNCONDITIONAL_JUMP)  ; LAB_00528989

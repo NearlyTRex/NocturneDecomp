@@ -1,15 +1,15 @@
-// Name: FUN_004d2880
+// Name: core_menu.cpp_FUN_004d2880
 // Address: 004d2880
 // Address Range: [[004d2880, 004d28f9]]
 // Convention: unknown
-// Signature: void FUN_004d2880(void)
+// Signature: void core_menu_cpp_FUN_004d2880(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void FUN_004d2880(void)
+void core_menu_cpp_FUN_004d2880(void)
 
 {
   char cVar1;
@@ -19,9 +19,9 @@ void FUN_004d2880(void)
   char *in_stack_00000008;
   
   if (0x1d < _DAT_01cc8120) {
-    _DAT_01cc4800 = "..\\core\\menu.cpp";
-    _DAT_01cc4804 = 0x827;
-    FUN_004c8440("Too many custom keys!");
+    PTR_01cc4800 = "..\\core\\menu.cpp";
+    INT_01cc4804 = 0x827;
+    core_main_c_FUN_004c8440("Too many custom keys!");
   }
   iVar2 = _DAT_01cc8120;
   *(uint *)(&DAT_01cc8124 + _DAT_01cc8120 * 4) = in_stack_00000004;

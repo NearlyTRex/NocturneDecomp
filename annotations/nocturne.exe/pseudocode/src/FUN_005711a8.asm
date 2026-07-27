@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_00564a70
-;   FUN_00565c50
+;   crt_unknown.c_FUN_00565c50
 ;   FUN_005671e4
 ;   FUN_0056ddc0
 ;   GetCurrentThreadId
@@ -75,8 +75,8 @@ section .text
         ;   Label: LAB_005711fe
     PUSH ESI                            ; 00571204
     PUSH 0x1                            ; 00571205
-    CALL FUN_00565c50                   ; 00571207
-        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined FUN_00565c50()
+    CALL crt_unknown.c_FUN_00565c50     ; 00571207
+        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565c50()
     ADD ESP,0x8                         ; 0057120c
     MOV EBP,EAX                         ; 0057120f
     TEST EAX,EAX                        ; 00571211

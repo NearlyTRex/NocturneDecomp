@@ -5,21 +5,21 @@
 ;
 ;
 ; XREF[44]:
-;   FUN_0040f0f0 at 0040f105
-;   FUN_0040f5f0 at 0040f5f5
-;   FUN_00414de0 at 00414de6
-;   FUN_0043dad0 at 0043dae0
-;   FUN_004a8a60 at 004a8a65
-;   FUN_004b0bd0 at 004b0be7
-;   FUN_004b4250 at 004b4267
-;   FUN_004c34c0 at 004c34d7
-;   FUN_004c4340 at 004c4345
-;   FUN_004c8190 at 004c8195
+;   core_ammo.cpp_FUN_0040ec00 at 0040ec17
+;   core_ammobox.cpp_FUN_0040f0f0 at 0040f105
+;   core_anvil.cpp_FUN_0040f5f0 at 0040f5f5
+;   core_backgnd.cpp_CBackgroundActor_setup_FUN_0040ff30 at 0040ff45
+;   core_barrier.cpp_CBarrier_setup_FUN_00411760 at 00411766
+;   core_bat.cpp_CBat_setup_FUN_00411ae0 at 00411b0e
+;   core_battery.cpp_FUN_00414de0 at 00414de6
+;   core_bodypart.cpp_CBodyPart_setup_FUN_00416500 at 00416508
+;   core_boxactor.cpp_CBoxActor_setup_FUN_0041e430 at 0041e43a
+;   core_chain.cpp_CChain_setup_FUN_0042b8f0 at 0042b8fc
 ;   ... and 34 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
-;   FUN_004f0360
+;   core_path.cpp_FUN_004f0360
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     ADD EBX,0x20                        ; 00409ff0
     PUSH EBX                            ; 00409ff3
     PUSH EAX                            ; 00409ff4
-    CALL FUN_004f0360                   ; 00409ff5
-        ;   XREF to: 004f0360 (UNCONDITIONAL_CALL)  ; undefined FUN_004f0360()
+    CALL core_path.cpp_FUN_004f0360     ; 00409ff5
+        ;   XREF to: 004f0360 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_004f0360()
     ADD ESP,0xc                         ; 00409ffa
     POP EBX                             ; 00409ffd
     RET                                 ; 00409ffe

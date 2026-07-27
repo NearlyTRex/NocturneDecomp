@@ -20,8 +20,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
-;   FUN_004980d0 at 00498190
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 at 004275be
+;   core_gabriela.cpp_FUN_004980d0 at 00498190
 ;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 at 0053a83e
 ;
 ; *****************************************************************************

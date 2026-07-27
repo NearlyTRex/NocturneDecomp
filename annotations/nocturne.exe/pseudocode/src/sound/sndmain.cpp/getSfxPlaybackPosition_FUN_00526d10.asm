@@ -10,16 +10,16 @@
 ; undefined8       Stack[-0x18]:8  local_18
 ;
 ; XREF[3]:
-;   FUN_005464a0 at 005465af
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60 at 00480da3
+;   core_tommygun.cpp_FUN_005464a0 at 005465af
 ;   core_turret.cpp_CTurret_process_FUN_005497f0 at 00549c7b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:
-;   FUN_005257e0
 ;   sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_00525c70
+;   sound_sndmain.cpp_FUN_005257e0
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0
 ;   sound_sndmain.cpp_unlockSound_FUN_00528890
 ;
@@ -52,8 +52,8 @@ section .text
     JZ 0x00526d4c                       ; 00526d3d
         ;   XREF to: 00526d4c (CONDITIONAL_JUMP)  ; LAB_00526d4c
     PUSH EAX                            ; 00526d3f
-    CALL FUN_005257e0                   ; 00526d40
-        ;   XREF to: 005257e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005257e0()
+    CALL sound_sndmain.cpp_FUN_005257e0 ; 00526d40
+        ;   XREF to: 005257e0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005257e0()
     ADD ESP,0x4                         ; 00526d45
     TEST EAX,EAX                        ; 00526d48
     JZ 0x00526da8                       ; 00526d4a

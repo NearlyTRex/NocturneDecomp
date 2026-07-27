@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0049cc10 at 0049d403
+;   core_game.cpp_FUN_0049cc10 at 0049d403
 ;
 ; Called Functions:
 ;   engine_2d.c_drawText_FUN_00402600

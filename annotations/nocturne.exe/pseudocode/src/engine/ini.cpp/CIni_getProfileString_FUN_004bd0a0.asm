@@ -10,7 +10,7 @@
 ; undefined        Stack[-0x110]:1  local_110
 ;
 ; XREF[2]:
-;   FUN_004bd790 at 004bd7e5
+;   engine_ini.cpp_FUN_004bd790 at 004bd7e5
 ;   engine_ini.cpp_getProfileString_FUN_004bd750 at 004bd777
 ;
 ; Referenced Globals:
@@ -18,16 +18,16 @@
 ;   TerminatedCString s_engine_ini_cpp_005864e8
 ;   TerminatedCString s_cIni_getProfileString_Un_005864fa
 ;   TerminatedCString s_s_00586527
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgets_FUN_00564b20
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_string.c__strcmp_FUN_005649c0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -123,10 +123,10 @@ section .text
         ;   Label: LAB_004bd164
     MOV ESI,0x57                        ; 004bd169
     PUSH 0x5864fa                       ; 004bd16e | = "cIni::getProfileString: Unable to ope..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004bd173 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004bd179 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004bd17f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004bd173 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004bd179 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004bd17f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004bd184
     JMP 0x004bd0cb                      ; 004bd187
         ;   XREF to: 004bd0cb (UNCONDITIONAL_JUMP)  ; LAB_004bd0cb

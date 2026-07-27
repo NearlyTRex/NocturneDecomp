@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,23 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 404,
-    "complexity_score": 610,
+    "complexity_score": 594,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 155,
-    "suspect_count": 42,
+    "pseudocode_lines": 154,
+    "suspect_count": 41,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_constant",
       "stack_ref",
       "undefined_data",
       "unknown_field",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 559
+    "total_lines": 558
   },
   "cross_references": [
     {
@@ -210,7 +209,7 @@
     {
       "addr": "0053075c",
       "is_variadic": false,
-      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c"
+      "name": "engine_special.cpp_transformAndProjectPoint_FUN_0053075c"
     }
   ],
   "globals": [
@@ -300,15 +299,15 @@
     },
     {
       "addr": "0059d1f8",
-      "name": "DAT_0059d1f8",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059d1f8",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "0059d214",
-      "name": "DAT_0059d214",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059d214",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005ae704",
@@ -690,16 +689,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_fire_cpp_CGunFlame_render_FUN_00488580(float *param_1)",
@@ -707,7 +698,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 <= 0.0) {",
@@ -715,7 +706,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar8 = (float10)round((float10)param_1[7]);",
@@ -723,7 +714,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 54,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,(int)fStack_2c * 0x18 + 0x1c09c28,uVar18);",
@@ -731,7 +722,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "(DAT_005ae704,param_1 + 1);",
@@ -739,7 +730,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,param_1 + 1);",
@@ -747,7 +738,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 57,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0(DAT_005ae704,auStack_88);",
@@ -755,7 +746,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 58,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(DAT_005ae704,auStack_88,0);",
@@ -763,15 +754,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar8 = ((float10)_DAT_0059d214 - (float10)*param_1) / (float10)_DAT_0059d214;",
+      "text": "fVar8 = ((float10)2.0f - (float10)*param_1) / (float10)2.0f;",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 65,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,local_94);",
@@ -779,7 +770,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar5 = *pfVar7 - param_1[1];",
@@ -787,7 +778,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = (float)((float10)pfVar7[1] - (float10)param_1[2]);",
@@ -795,7 +786,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar3 = (float)((float10)pfVar7[2] - (float10)param_1[3]);",
@@ -803,7 +794,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar10 = (float10)param_1[4];",
@@ -811,7 +802,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "ABS((float10)fVar3 * (float10)param_1[6] +",
@@ -819,7 +810,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "(float10)fVar5 * (float10)param_1[4] +",
@@ -827,7 +818,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
       "text": "(float10)fVar2 * (float10)param_1[5]) /",
@@ -835,7 +826,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "(SQRT((float10)param_1[6] * (float10)param_1[6] +",
@@ -843,7 +834,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "(SQRT((float10)param_1[6] * (float10)param_1[6] +",
@@ -851,7 +842,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar10 * fVar10 + (float10)param_1[5] * (float10)param_1[5]) *",
@@ -859,7 +850,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 77,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar10 * fVar10 + (float10)param_1[5] * (float10)param_1[5]) *",
@@ -867,7 +858,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 80,
+      "line": 78,
       "match": "param_1",
       "severity": "mild",
       "text": "SQRT(((float10)pfVar7[2] - (float10)param_1[3]) * (float10)fVar3 +",
@@ -875,7 +866,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 80,
       "match": "param_1",
       "severity": "mild",
       "text": "((float10)pfVar7[1] - (float10)param_1[2]) * (float10)fVar2))) *",
@@ -883,7 +874,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 86,
+      "line": 84,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_78 = fVar1 * 5.5536608591669236e-315._0_4_ * (float)0.00390625;",
@@ -891,7 +882,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 87,
+      "line": 85,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fStack_7c = -fStack_d4 * 5.5536608591669236e-315._0_4_ * (float)0.00390625;",
@@ -899,39 +890,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 93,
+      "line": 91,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_4c);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_4c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 96,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_58);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_58);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 101,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_64);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_64);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 106,
       "match": "DAT_005ae704",
       "severity": "mild",
-      "text": "wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_70);",
+      "text": "engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_70);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 109,
+      "line": 107,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "piVar6 = DAT_005ae704;",
@@ -939,7 +930,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 113,
+      "line": 111,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar10 = (float10)5.4940833406217561e-315._0_4_;",
@@ -947,7 +938,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 114,
+      "line": 112,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "*(uint *)(*DAT_005ae704 + 0x18) = 0x20000;",
@@ -955,7 +946,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 155,
+      "line": 153,
       "match": "&stack0xffffff28",
       "severity": "moderate",
       "text": "(DAT_005ae704,&stack0xffffff28,uVar15,uVar16,uVar17);",
@@ -963,7 +954,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 155,
+      "line": 153,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "(DAT_005ae704,&stack0xffffff28,uVar15,uVar16,uVar17);",
@@ -971,7 +962,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 156,
+      "line": 154,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(DAT_005ae704,0,uVar15,uVar16);",
@@ -979,7 +970,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 157,
+      "line": 155,
       "match": "DAT_005ae704",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704,uVar15);",
@@ -987,7 +978,7 @@
     },
     {
       "description": "Raw hex address 0x4885ac assigned to bare local `uVar18`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar18` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 52,
+      "line": 50,
       "match": "0x4885ac",
       "severity": "moderate",
       "text": "uVar18 = 0x4885ac;",
@@ -995,7 +986,7 @@
     },
     {
       "description": "Raw hex address 0x48892c assigned to bare local `uVar17`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar17` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 124,
+      "line": 122,
       "match": "0x48892c",
       "severity": "moderate",
       "text": "uVar17 = 0x48892c;",
@@ -1003,7 +994,7 @@
     },
     {
       "description": "Raw hex address 0x488935 assigned to bare local `uVar16`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar16` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 127,
+      "line": 125,
       "match": "0x488935",
       "severity": "moderate",
       "text": "uVar16 = 0x488935;",
@@ -1011,7 +1002,7 @@
     },
     {
       "description": "Raw hex address 0x488946 assigned to bare local `uVar15`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar15` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 130,
+      "line": 128,
       "match": "0x488946",
       "severity": "moderate",
       "text": "uVar15 = 0x488946;",

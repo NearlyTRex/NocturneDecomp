@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004c71a0 at 004c73df
-;   FUN_004c79a0 at 004c7b22
+;   core_lightgun.cpp_FUN_004c71a0 at 004c73df
+;   core_lightgun.cpp_FUN_004c79a0 at 004c7b22
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059fd64 = 112

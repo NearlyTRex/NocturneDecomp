@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0045d310(int param_1,int param_2,int *param_3)
+; void cockpit_drawsurf_cpp_FUN_0045d310(int param_1,int param_2,int *param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xdc]:4  local_dc
@@ -21,20 +21,20 @@
 ;   undefined4 DAT_01b4d494
 ;   undefined4 DAT_01b4d498
 ;   undefined4 DAT_01b4d49c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0045c730
+;   core_main.c_FUN_004c8440
 ;   crt_string.c_memmove_FUN_00566170
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0045d310
-        ;   Label: FUN_0045d310
+        ;   Label: cockpit_drawsurf.cpp_FUN_0045d310
     PUSH ESI                            ; 0045d311
     PUSH EDI                            ; 0045d312
     PUSH EBP                            ; 0045d313
@@ -290,10 +290,10 @@ section .text
     MOV EAX,0x57da84                    ; 0045d5e1 | = "..\\cockpit\\drawsurf.cpp"
     MOV EDX,0x578                       ; 0045d5e6
     PUSH 0x57da9c                       ; 0045d5eb | = "CDrawSurface::fillPoly - too many edges!"
-    MOV [0x01cc4800],EAX                ; 0045d5f0 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0045d5f5 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0045d5fb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0045d5f0 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0045d5f5 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0045d5fb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045d600
     MOV EAX,EBP                         ; 0045d603
         ;   Label: LAB_0045d603

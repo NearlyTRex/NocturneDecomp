@@ -63,7 +63,8 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0(int par
       local_28 = 0;
       for (local_20 = 0; local_20 < *(int *)(0x01E57284 + 0x14cd6c); local_20 = local_20 + 1) {
         iVar1 = *(int *)(iVar4 + 0x14cd70 + 0x01E57284);
-        local_18 = (float)FUN_00498de0(param_1,iVar1,iVar1 == *(int *)(param_1 + 0x1fa60));
+        local_18 = (float)core_gabriela_cpp_FUN_00498de0
+                                    (param_1,iVar1,iVar1 == *(int *)(param_1 + 0x1fa60));
         if ((0.0 <= local_18) && (local_18 < local_24)) {
           local_28 = iVar1;
           local_24 = local_18;
@@ -86,7 +87,7 @@ void __cdecl core_gabriela_cpp_CGabriella_updateAimTracking_FUN_004990c0(int par
       fVar2 = *(float *)(param_1 + 0x1fa78) - param_2 / 0.3f;
     }
     else {
-      __arrinit(&local_134,10,&DAT_005993b0);
+      __arrinit(&local_134,10,&g_CVectorTypeInfo_005993b0);
       iVar4 = (**(code **)(*(int *)(*(int *)(param_1 + 0x1fa60) + 0x14c) + 0x4c))
                         (*(int *)(param_1 + 0x1fa60),&local_134);
       if (iVar4 < 1) {

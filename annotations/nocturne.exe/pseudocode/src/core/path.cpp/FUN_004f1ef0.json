@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -145,19 +145,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004f1ef0",
-    "signature": "void FUN_004f1ef0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)"
+    "name": "core_path.cpp_FUN_004f1ef0",
+    "signature": "void core_path_cpp_FUN_004f1ef0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)"
   },
   "function_calls": [
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "FUN_004c8440"
+      "name": "core_main.c_FUN_004c8440"
     },
     {
       "addr": "004f18c0",
       "is_variadic": false,
-      "name": "FUN_004f18c0"
+      "name": "core_path.cpp_FUN_004f18c0"
     }
   ],
   "globals": [
@@ -175,14 +175,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -250,7 +250,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004f1ef0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "void core_path_cpp_FUN_004f1ef0(uint param_1,uint param_2,uint param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -258,7 +258,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004f1ef0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "void core_path_cpp_FUN_004f1ef0(uint param_1,uint param_2,uint param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -266,7 +266,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void FUN_004f1ef0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "void core_path_cpp_FUN_004f1ef0(uint param_1,uint param_2,uint param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -274,7 +274,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void FUN_004f1ef0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "void core_path_cpp_FUN_004f1ef0(uint param_1,uint param_2,uint param_3,uint param_4)",
       "type": "unnamed_param"
     },
     {
@@ -282,7 +282,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004f18c0(*(int *)(iVar1 + 0x1e312fc),param_1,param_2,param_3,param_4);",
+      "text": "core_path_cpp_FUN_004f18c0(*(int *)(iVar1 + 0x1e312fc),param_1,param_2,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
@@ -290,7 +290,7 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004f18c0(*(int *)(iVar1 + 0x1e312fc),param_1,param_2,param_3,param_4);",
+      "text": "core_path_cpp_FUN_004f18c0(*(int *)(iVar1 + 0x1e312fc),param_1,param_2,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
@@ -298,7 +298,7 @@
       "line": 20,
       "match": "param_3",
       "severity": "mild",
-      "text": "FUN_004f18c0(*(int *)(iVar1 + 0x1e312fc),param_1,param_2,param_3,param_4);",
+      "text": "core_path_cpp_FUN_004f18c0(*(int *)(iVar1 + 0x1e312fc),param_1,param_2,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
@@ -306,7 +306,7 @@
       "line": 20,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_004f18c0(*(int *)(iVar1 + 0x1e312fc),param_1,param_2,param_3,param_4);",
+      "text": "core_path_cpp_FUN_004f18c0(*(int *)(iVar1 + 0x1e312fc),param_1,param_2,param_3,param_4);",
       "type": "unnamed_param"
     }
   ]

@@ -24,8 +24,8 @@
 ; Referenced Globals:
 ;   double DOUBLE_00596ea5 = 0.0174532925194444
 ;   double DOUBLE_00596ead = 0.00100000000000000
-;   undefined4 DAT_005a379c
-;   undefined4 DAT_005a37a0
+;   float FLOAT_005a379c = -0.5235988
+;   float FLOAT_005a37a0 = 1.221730
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
@@ -62,19 +62,19 @@ section .text
         ;   XREF to: 0054e4a0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0()
     ADD ESP,0x8                         ; 0054a67e
     FLD float ptr [ESP + 0x8]           ; 0054a681
-    FCOMP float ptr [0x005a379c]        ; 0054a685 | DAT_005a379c
+    FCOMP float ptr [0x005a379c]        ; 0054a685 | FLOAT_005a379c
     FNSTSW AX                           ; 0054a68b
     SAHF                                ; 0054a68d
     JC 0x0054a7e2                       ; 0054a68e
         ;   XREF to: 0054a7e2 (CONDITIONAL_JUMP)  ; LAB_0054a7e2
     FLD float ptr [ESP + 0x8]           ; 0054a694
         ;   Label: LAB_0054a694
-    FCOMP float ptr [0x005a37a0]        ; 0054a698 | DAT_005a37a0
+    FCOMP float ptr [0x005a37a0]        ; 0054a698 | FLOAT_005a37a0
     FNSTSW AX                           ; 0054a69e
     SAHF                                ; 0054a6a0
     JBE 0x0054a6ac                      ; 0054a6a1
         ;   XREF to: 0054a6ac (CONDITIONAL_JUMP)  ; LAB_0054a6ac
-    MOV EAX,[0x005a37a0]                ; 0054a6a3 | DAT_005a37a0
+    MOV EAX,[0x005a37a0]                ; 0054a6a3 | FLOAT_005a37a0
     MOV dword ptr [ESP + 0x8],EAX       ; 0054a6a8
     FLD float ptr [ESP + 0xc]           ; 0054a6ac
         ;   Label: LAB_0054a6ac
@@ -198,7 +198,7 @@ section .text
     POP EBP                             ; 0054a7df
     POP EBX                             ; 0054a7e0
     RET                                 ; 0054a7e1
-    MOV EAX,[0x005a379c]                ; 0054a7e2 | DAT_005a379c
+    MOV EAX,[0x005a379c]                ; 0054a7e2 | FLOAT_005a379c
         ;   Label: LAB_0054a7e2
     MOV dword ptr [ESP + 0x8],EAX       ; 0054a7e7
     JMP 0x0054a694                      ; 0054a7eb

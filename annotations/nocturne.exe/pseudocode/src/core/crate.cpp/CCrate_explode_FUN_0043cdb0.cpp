@@ -27,8 +27,8 @@ void __cdecl core_crate_cpp_CCrate_explode_FUN_0043cdb0(int param_1)
     uStack_8 = *(uint *)(param_1 + 0x28);
   }
   fStack_c = (fStack_18 - fStack_24) + fStack_c;
-  FUN_0048c0d0(0x01C08D04,&uStack_10,0x42000000,0x44bb8000,0x40800000);
-  FUN_004d9110(0x01CC9450,param_1,1);
+  core_fire_cpp_FUN_0048c0d0(0x01C08D04,&uStack_10,0x42000000,0x44bb8000,0x40800000);
+  core_mission_cpp_FUN_004d9110(0x01CC9450,param_1,1);
   *(uint *)(param_1 + 0x70) = 2;
   return;
 }

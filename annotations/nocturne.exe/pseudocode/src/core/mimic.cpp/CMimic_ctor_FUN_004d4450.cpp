@@ -19,7 +19,7 @@ int core_mimic_cpp_CMimic_ctor_FUN_004d4450(uint param_1)
   iVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);
   iVar4 = core_cloth_cpp_CCloth_ctor_FUN_00435100(iVar4 + 0xbdec);
   iVar4 = core_morph_cpp_CMorph_ctor_FUN_004e0050(iVar4 + 0x3ab60);
-  *(byte ***)(iVar4 + -0x46800) = &PTR_FUN_005a05f4;
+  *(byte ***)(iVar4 + -0x46800) = &PTR_core_mimic_cpp_FUN_004d4650_005a05f4;
   *(uint *)(iVar4 + -0x43b78) = 0x3f000000;
   pcVar5 = "CGhoul";
   *(uint *)(iVar4 + -0x43b74) = 0x3f800000;

@@ -7,19 +7,19 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004cb010 at 004cb2b5
+;   core_manpuz.cpp_FUN_004cb010 at 004cb2b5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_manpuz_cpp_00588032
 ;   TerminatedCString s_CMansionPuzzleCircle_shi_00588045
 ;   TerminatedCString s_manpuz_doorslide_wav_00588075
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_004cb8f0
 ;   core_manpuz.cpp_CMansionPuzzleCircle_updatePanelTransform_FUN_004ca640
-;   FUN_004c8440
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005263c0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00526340
 ;   sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0
@@ -68,10 +68,10 @@ section .text
         ;   Label: LAB_004cb5fa
     MOV ECX,0x554                       ; 004cb5ff
     PUSH 0x588045                       ; 004cb604 | = "CMansionPuzzleCircle::shiftPanelLeft ..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004cb609 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004cb60f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004cb615
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004cb609 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004cb60f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004cb615
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004cb61a
     MOV EAX,ESI                         ; 004cb61d
         ;   Label: LAB_004cb61d

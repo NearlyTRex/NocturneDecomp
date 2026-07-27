@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_gabriela_cpp_CGabriella_renderOpaque_FUN_00498cc0(int param_1)
 
 {
@@ -24,7 +22,8 @@ int core_gabriela_cpp_CGabriella_renderOpaque_FUN_00498cc0(int param_1)
         ((**(code **)(*(int *)(iVar2 + 0x14c) + 8))(iVar2),
         (float)0.90000000000000002 < *(float *)(param_1 + 0x1fa44))) &&
        ((iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                           (*(uint *)(param_1 + 0x1f8d0),_DAT_01bca0c0), iVar2 == 0 ||
+                           (*(uint *)(param_1 + 0x1f8d0),
+                            g_CDynamiteActorType_01bca088.name_hash), iVar2 == 0 ||
         (0.0 < SQRT(*(float *)(iVar2 + 0x57c) * *(float *)(iVar2 + 0x57c) +
                     *(float *)(iVar2 + 0x574) * *(float *)(iVar2 + 0x574) +
                     *(float *)(iVar2 + 0x578) * *(float *)(iVar2 + 0x578)))))) {

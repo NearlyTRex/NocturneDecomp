@@ -1,0 +1,111 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 7,
+    "complexity_score": 73,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 6,
+    "suspect_types": [
+      "register_param"
+    ],
+    "total_lines": 15
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00481af4",
+    "address_range": [
+      [
+        "00481af4",
+        "00481b02"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_00481af4",
+    "signature": "void crt_unknown_c_FUN_00481af4(void)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.8,
+    "instruction_count": 5,
+    "opcode_distribution": {
+      "COPY": 4,
+      "INT_ADD": 4,
+      "LOAD": 3,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 14
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "ushort *in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "ushort *in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(byte *)(in_ECX + 1) = *(byte *)(in_EDX + 1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "*(byte *)(in_ECX + 1) = *(byte *)(in_EDX + 1);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*in_ECX = *in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "*in_ECX = *in_EDX;",
+      "type": "register_param"
+    }
+  ]
+}

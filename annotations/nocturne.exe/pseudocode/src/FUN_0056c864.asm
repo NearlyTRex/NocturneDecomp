@@ -36,9 +36,9 @@
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_stdlib.c__fullpath_FUN_00565d00
 ;   crt_string.c__strncpy_FUN_00565f70
+;   crt_unknown.c_FUN_00566570
 ;   FindClose
 ;   FindFirstFileA
-;   FUN_00566570
 ;   FUN_00568e80
 ;   FUN_0056c5f0
 ;   FUN_0056c750
@@ -142,8 +142,8 @@ section .text
         ;   XREF to: 0056c989 (CONDITIONAL_JUMP)  ; LAB_0056c989
     PUSH ESI                            ; 0056c93e
         ;   Label: LAB_0056c93e
-    CALL FUN_00566570                   ; 0056c93f
-        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; undefined FUN_00566570()
+    CALL crt_unknown.c_FUN_00566570     ; 0056c93f
+        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566570()
     ADD ESP,0x4                         ; 0056c944
     TEST EAX,EAX                        ; 0056c947
     JZ 0x0056c95b                       ; 0056c949
@@ -158,8 +158,8 @@ section .text
     LEA EAX,[ESP + 0x244]               ; 0056c95b
         ;   Label: LAB_0056c95b
     PUSH EAX                            ; 0056c962
-    CALL FUN_00566570                   ; 0056c963
-        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; undefined FUN_00566570()
+    CALL crt_unknown.c_FUN_00566570     ; 0056c963
+        ;   XREF to: 00566570 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566570()
     ADD ESP,0x4                         ; 0056c968
     PUSH 0x13e                          ; 0056c96b
     PUSH 0x0                            ; 0056c970

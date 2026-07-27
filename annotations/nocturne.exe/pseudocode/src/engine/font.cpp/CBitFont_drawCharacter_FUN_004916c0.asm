@@ -56,9 +56,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_004933c0 at 0049341d
-;   FUN_00493760 at 004937e0
 ;   engine_font.cpp_CBitFont_drawText_FUN_00490980 at 00490aca
+;   engine_font.cpp_FUN_004933c0 at 0049341d
+;   engine_font.cpp_FUN_00493760 at 004937e0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624

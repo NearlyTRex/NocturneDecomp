@@ -8,7 +8,7 @@
 ;   core_cloth.cpp_CCloth_dtor_FUN_00435160 at 00435177
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059b3c0
+;   WatcomTypeInfo g_SClothBoneTypeInfo_0059b3c0
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f
@@ -17,7 +17,7 @@
 
 section .text
 
-    PUSH 0x59b3c0                       ; 00438a20 | DAT_0059b3c0
+    PUSH 0x59b3c0                       ; 00438a20 | g_SClothBoneTypeInfo_0059b3c0
         ;   Label: core_cloth.cpp_SClothBone_arrdtor_FUN_00438a20
     PUSH 0x32                           ; 00438a25
     MOV EDX,dword ptr [ESP + 0xc]       ; 00438a27

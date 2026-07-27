@@ -16,9 +16,9 @@
 ;   undefined4 DAT_01c777dc
 ;
 ; Called Functions:
+;   core_mirror.cpp_FUN_004d76e0
 ;   engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0045ee60
-;   FUN_004d76e0
-;   wincore_windll.cpp_sync_FUN_00532b30
+;   engine_special.cpp_sync_FUN_00532b30
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x161268]  ; 0050df75
     PUSH EAX                            ; 0050df7b
     INC EBX                             ; 0050df7c
-    CALL FUN_004d76e0                   ; 0050df7d
-        ;   XREF to: 004d76e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004d76e0()
+    CALL core_mirror.cpp_FUN_004d76e0   ; 0050df7d
+        ;   XREF to: 004d76e0 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_FUN_004d76e0()
     ADD ESI,0x28                        ; 0050df82
     ADD ESP,0x8                         ; 0050df85
     CMP EBX,EDI                         ; 0050df88
@@ -95,8 +95,8 @@ section .text
     POP ESI                             ; 0050dfc9
     POP EBX                             ; 0050dfca
     RET                                 ; 0050dfcb
-    CALL wincore_windll.cpp_sync_FUN_00532b30 ; 0050dfcc
-        ;   XREF to: 00532b30 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_sync_FUN_00532b30()
+    CALL engine_special.cpp_sync_FUN_00532b30 ; 0050dfcc
+        ;   XREF to: 00532b30 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_sync_FUN_00532b30()
         ;   Label: LAB_0050dfcc
     POP EBP                             ; 0050dfd1
     POP EDI                             ; 0050dfd2

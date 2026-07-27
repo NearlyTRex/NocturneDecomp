@@ -3,6 +3,10 @@
 // Function prototypes for core/script.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_script.cpp_staticInit_FUN_004fde80
+// Address: 004fde80
+void __cdecl staticInit(void);
+
 // Original: core_script.cpp_validateActorVariableName_FUN_004fdec0
 // Address: 004fdec0
 undefined4 __cdecl validateActorVariableName(char *param_1);
@@ -39,6 +43,18 @@ int __cdecl getActionState(int param_1,undefined4 param_2);
 // Address: 004fe3d0
 undefined4 __cdecl parseBodyPartMask(int param_1,int param_2,undefined4 *param_3);
 
+// Original: core_script.cpp_FUN_004fe490
+// Address: 004fe490
+int FUN_004fe490(int param_1);
+
+// Original: core_script.cpp_FUN_004fe4d0
+// Address: 004fe4d0
+int FUN_004fe4d0(int param_1);
+
+// Original: core_script.cpp_FUN_004fe500
+// Address: 004fe500
+void FUN_004fe500(int param_1);
+
 // Original: core_script.cpp_CScript_freeParsedLines_FUN_004fe550
 // Address: 004fe550
 void __cdecl CScript::freeParsedLines(int param_1);
@@ -50,6 +66,30 @@ void __cdecl CScript::process(int *param_1);
 // Original: core_script.cpp_CScript_getLetterboxHeight_FUN_004fe710
 // Address: 004fe710
 int CScript::getLetterboxHeight(void);
+
+// Original: core_script.cpp_FUN_004fe770
+// Address: 004fe770
+void FUN_004fe770(int param_1);
+
+// Original: core_script.cpp_FUN_004fe9d0
+// Address: 004fe9d0
+void FUN_004fe9d0(int param_1,int param_2,int param_3,int param_4,int param_5);
+
+// Original: core_script.cpp_FUN_004febd0
+// Address: 004febd0
+undefined4 FUN_004febd0(int param_1,undefined4 param_2,int param_3);
+
+// Original: core_script.cpp_FUN_004fee30
+// Address: 004fee30
+void FUN_004fee30(int param_1);
+
+// Original: core_script.cpp_FUN_004fef60
+// Address: 004fef60
+undefined * FUN_004fef60(int param_1,int *param_2);
+
+// Original: core_script.cpp_FUN_004feff0
+// Address: 004feff0
+void FUN_004feff0(undefined4 *param_1);
 
 // Original: core_script.cpp_CScript_executeInitSection_FUN_004ff170
 // Address: 004ff170
@@ -79,6 +119,14 @@ int __cdecl CScript::findLabelIndex(int param_1,undefined4 param_2);
 // Address: 00504c70
 int CScript::skipCommands(int param_1,int param_2,int param_3);
 
+// Original: core_script.cpp_FUN_00504d60
+// Address: 00504d60
+void FUN_00504d60(int param_1);
+
+// Original: core_script.cpp_FUN_00504d90
+// Address: 00504d90
+undefined4 FUN_00504d90(int *param_1);
+
 // Original: core_script.cpp_CScript_dbLoad_FUN_00504e70
 // Address: 00504e70
 void __cdecl CScript::dbLoad(int param_1,undefined4 param_2);
@@ -98,6 +146,10 @@ void __cdecl writeActorReference(undefined4 param_1,int *param_2);
 // Original: core_script.cpp_CScript_loadState_FUN_005052c0
 // Address: 005052c0
 int __cdecl CScript::loadState(int param_1,undefined4 param_2);
+
+// Original: core_script.cpp_FUN_005055f0
+// Address: 005055f0
+void FUN_005055f0(int param_1,undefined4 param_2);
 
 // Original: core_script.cpp_CScript_computeChecksum_FUN_00505820
 // Address: 00505820

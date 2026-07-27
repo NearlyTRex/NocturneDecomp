@@ -11,6 +11,6 @@ int core_fire_cpp_CCrater_ctor_FUN_0048ca50(int param_1)
 {
   int iVar1;
   
-  iVar1 = __arrinit(param_1 + 0x1c,3,&DAT_005993b0);
+  iVar1 = __arrinit(param_1 + 0x1c,3,&g_CVectorTypeInfo_005993b0);
   return iVar1 + -0x1c;
 }

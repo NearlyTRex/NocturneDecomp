@@ -1,23 +1,23 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0046fcd0(undefined4 param_1,undefined4 param_2)
+; void shape_edittool_cpp_FUN_0046fcd0(undefined4 param_1,undefined4 param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[21]:
-;   FUN_00470730 at 00470a50
-;   FUN_004a3b90 at 004a4015
-;   FUN_004a4170 at 004a46be
-;   FUN_004a57c0 at 004a5bd1
-;   FUN_004febd0 at 004fedde
-;   FUN_00504d90 at 00504e4d
-;   FUN_0053fc60 at 0053fcfe
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1e34
+;   core_game.cpp_FUN_004a3b90 at 004a4015
+;   core_game.cpp_FUN_004a4170 at 004a46be
+;   core_game.cpp_FUN_004a57c0 at 004a5bd1
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d434b
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920 at 004d9a6d
+;   core_mission.cpp_CDemonMission_loadActor_FUN_004d8aa0 at 004d8bc0
+;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780 at 004d9853
+;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90 at 004e9cb9
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9e2d
 ;   ... and 11 more
 ;
 ; Referenced Globals:
@@ -34,10 +34,11 @@
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
 ;   undefined4 DAT_01cc30e4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
@@ -46,10 +47,9 @@
 ;   engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
 ;   engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0
-;   FUN_004720c0
-;   FUN_004722b0
-;   FUN_004c8440
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80
+;   shape_edittool.cpp_FUN_004720c0
+;   shape_edittool.cpp_FUN_004722b0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;
 ; *****************************************************************************
@@ -57,7 +57,7 @@
 section .text
 
     PUSH EBX                            ; 0046fcd0
-        ;   Label: FUN_0046fcd0
+        ;   Label: shape_edittool.cpp_FUN_0046fcd0
     PUSH ESI                            ; 0046fcd1
     PUSH EDI                            ; 0046fcd2
     PUSH EBP                            ; 0046fcd3
@@ -69,10 +69,10 @@ section .text
     MOV ECX,0x57e4fa                    ; 0046fce4 | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 0046fce9
     PUSH 0x57e510                       ; 0046fcee | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0046fcf3 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0046fcf9 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0046fcff
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0046fcf3 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0046fcf9 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0046fcff
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046fd04
     MOV EAX,[0x01bcd070]                ; 0046fd07 | DAT_01bcd070
         ;   Label: LAB_0046fd07
@@ -141,8 +141,8 @@ section .text
         ;   XREF to: 00471a80 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80()
     ADD ESP,0x14                        ; 0046fdbb
     PUSH EDI                            ; 0046fdbe
-    CALL FUN_004722b0                   ; 0046fdbf
-        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004722b0()
+    CALL shape_edittool.cpp_FUN_004722b0 ; 0046fdbf
+        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004722b0()
     ADD ESP,0x4                         ; 0046fdc4
     PUSH 0xffff                         ; 0046fdc7
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 0046fdcc
@@ -185,8 +185,8 @@ section .text
         ;   XREF to: 004c41c0 (UNCONDITIONAL_CALL)  ; undefined engine_keys.cpp_CKeys_getInputKey_FUN_004c41c0()
     ADD ESP,0x4                         ; 0046fe3b
     PUSH EDI                            ; 0046fe3e
-    CALL FUN_004720c0                   ; 0046fe3f
-        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined FUN_004720c0()
+    CALL shape_edittool.cpp_FUN_004720c0 ; 0046fe3f
+        ;   XREF to: 004720c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004720c0()
     ADD ESP,0x4                         ; 0046fe44
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0046fe47
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()

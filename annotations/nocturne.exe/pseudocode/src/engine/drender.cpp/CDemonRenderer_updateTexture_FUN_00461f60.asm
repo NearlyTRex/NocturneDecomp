@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00443180 at 00443242
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 0044392e
+;   core_dcamera.cpp_FUN_00443180 at 00443242
 ;
 ; Called Functions:
 ;   engine_texture.cpp_loadAndUpdateTexture_FUN_00545a40

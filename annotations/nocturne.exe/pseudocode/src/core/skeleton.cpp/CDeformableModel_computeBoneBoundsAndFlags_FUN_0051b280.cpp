@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280(int param_1)
 
 {
@@ -90,9 +88,9 @@ int __cdecl core_skeleton_cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_005
             do {
               iVar8 = *(int *)(iVar8 * 0x24 + iVar3 + 0x2857c);
               if (iVar8 < 0) {
-                _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-                _DAT_01cc4804 = 0x86b;
-                iVar4 = FUN_004c8440("Bug!");
+                PTR_01cc4800 = "..\\core\\skeleton.cpp";
+                INT_01cc4804 = 0x86b;
+                iVar4 = core_main_c_FUN_004c8440("Bug!");
               }
             } while ((*(int *)(param_1 + 0x256c + iVar8 * 4) != 2) &&
                     (iVar10 = iVar10 + 1, iVar10 < 2));

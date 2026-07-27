@@ -5,19 +5,19 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004b46d0 at 004b46e4
-;   FUN_004ee950 at 004ee964
+;   core_hero.cpp_FUN_004b46d0 at 004b46e4
+;   core_npc.cpp_FUN_004ee950 at 004ee964
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058cc99
 ;   TerminatedCString s_Too_many_pathmaps_0058ccaa
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01e312f8
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_path.cpp_CPathMap_reset_FUN_004f1e10
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -53,10 +53,10 @@ section .text
     MOV ECX,0x58cc99                    ; 004efda4 | = "..\\core\\path.cpp"
     MOV ESI,0x123                       ; 004efda9
     PUSH 0x58ccaa                       ; 004efdae | = "Too many pathmaps!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004efdb3 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004efdb9 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004efdbf
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004efdb3 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004efdb9 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004efdbf
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004efdc4
     POP ESI                             ; 004efdc7
     JMP 0x004efd89                      ; 004efdc8

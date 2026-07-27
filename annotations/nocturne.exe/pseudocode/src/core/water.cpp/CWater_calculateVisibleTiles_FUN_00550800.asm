@@ -70,12 +70,12 @@
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0
 ;   core_dtrace.cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0
+;   core_main.c_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
-;   FUN_004c8440
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -267,8 +267,8 @@ section .text
     PUSH EAX                            ; 00550a8c
     MOV EAX,dword ptr [EDX]             ; 00550a8d | DAT_01b4d738
     PUSH EAX                            ; 00550a8f
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 00550a90
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00550a90
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     ADD ESP,0x8                         ; 00550a95
     MOV EAX,dword ptr [EDI + 0x8]       ; 00550a98
     LEA EBX,[ESP + 0x34]                ; 00550a9b
@@ -289,8 +289,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00550ad4 | DAT_01b4d738
     ADD EAX,0x30                        ; 00550ad6
     PUSH EAX                            ; 00550ad9
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 00550ada
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00550ada
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     ADD ESP,0x8                         ; 00550adf
     MOV EAX,dword ptr [EDI + 0x8]       ; 00550ae2
     LEA EBX,[ESP + 0x7c]                ; 00550ae5
@@ -311,8 +311,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00550b1e | DAT_01b4d738
     ADD EAX,0x60                        ; 00550b20
     PUSH EAX                            ; 00550b23
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 00550b24
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00550b24
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     LEA EBX,[ESP + 0x54]                ; 00550b29
     LEA EAX,[ESP + 0x6c]                ; 00550b2d
     ADD ESP,0x8                         ; 00550b31
@@ -333,8 +333,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 00550b67 | DAT_01b4d738
     ADD EAX,0x90                        ; 00550b69
     PUSH EAX                            ; 00550b6e
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 00550b6f
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00550b6f
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV EAX,[0x005c5024]                ; 00550b74 | DAT_005c5024
     MOV EBX,dword ptr [0x005c5054]      ; 00550b79 | DAT_005c5054
     MOV EDX,dword ptr [0x005c5084]      ; 00550b7f | DAT_005c5084
@@ -416,10 +416,10 @@ section .text
     MOV EAX,0x59753f                    ; 00550c66 | = "..\\core\\water.cpp"
     MOV EDX,0x136                       ; 00550c6b
     PUSH 0x597551                       ; 00550c70 | = "Too many visible water tiles!"
-    MOV [0x01cc4800],EAX                ; 00550c75 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00550c7a | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00550c80
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00550c75 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00550c7a | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00550c80
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00550c85
     MOV EAX,[0x02dd1234]                ; 00550c88 | DAT_02dd1234
         ;   Label: LAB_00550c88

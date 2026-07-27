@@ -18,9 +18,9 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(int param
   uint *puVar5;
   
   if (_DAT_020842d0 < 1) {
-    _DAT_01cc4800 = "..\\core\\setcolid.cpp";
-    _DAT_01cc4804 = 0x42a;
-    FUN_004c8440("CDemonSet::popRaytraceState - stack empty");
+    PTR_01cc4800 = "..\\core\\setcolid.cpp";
+    INT_01cc4804 = 0x42a;
+    core_main_c_FUN_004c8440("CDemonSet::popRaytraceState - stack empty");
   }
   _DAT_020842d0 = _DAT_020842d0 + -1;
   iVar2 = _DAT_020842d0 * 0xa0;

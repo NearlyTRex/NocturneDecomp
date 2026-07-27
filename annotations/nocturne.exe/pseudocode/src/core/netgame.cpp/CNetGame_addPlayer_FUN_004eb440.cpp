@@ -21,9 +21,9 @@ int core_netgame_cpp_CNetGame_addPlayer_FUN_004eb440(int param_1,uint *param_2,c
   
   bVar7 = 0;
   if (1 < *(int *)(param_1 + 0x1c)) {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 0x5ff;
-    FUN_004c8440("CNetGame::addPlayer - too many players!");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 0x5ff;
+    core_main_c_FUN_004c8440("CNetGame::addPlayer - too many players!");
   }
   iVar2 = *(int *)(param_1 + 0x1c);
   pcVar5 = (char *)(param_1 + 0x20 + iVar2 * 0x78);

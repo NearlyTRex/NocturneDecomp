@@ -14,7 +14,7 @@
 ;   float FLOAT_00590bc1 = -10
 ;   undefined4 DAT_005c11ec
 ;   undefined4 DAT_02dd1214
-;   undefined4 DAT_02ddd5d0
+;   undefined4 g_CWaterActorActorType_02ddd598.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -49,7 +49,7 @@ section .text
     JLE 0x00511baf                      ; 00511b82
         ;   XREF to: 00511baf (CONDITIONAL_JUMP)  ; LAB_00511baf
     MOV EDI,EBP                         ; 00511b84
-    MOV EAX,[0x02ddd5d0]                ; 00511b86 | DAT_02ddd5d0
+    MOV EAX,[0x02ddd5d0]                ; 00511b86 | g_CWaterActorActorType_02ddd598.name_hash
         ;   Label: LAB_00511b86
     PUSH EAX                            ; 00511b8b
     MOV EDX,dword ptr [EDI + 0x14cd70]  ; 00511b8c

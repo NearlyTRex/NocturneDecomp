@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined * FUN_004314b0(void)
+; undefined * engine_clipper_c_FUN_004314b0(void)
 ;
 ;
 ; Referenced Globals:
@@ -9,18 +9,18 @@
 ;   TerminatedCString s_Ran_out_of_clipped_verts_0057ac5b
 ;   undefined4 DAT_007678f8
 ;   undefined4 DAT_00767b38
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     CMP dword ptr [0x00767b38],0xc      ; 004314b0 | DAT_00767b38
-        ;   Label: FUN_004314b0
+        ;   Label: engine_clipper.c_FUN_004314b0
     JGE 0x004314d8                      ; 004314b7
         ;   XREF to: 004314d8 (CONDITIONAL_JUMP)  ; LAB_004314d8
     MOV ECX,dword ptr [0x00767b38]      ; 004314b9 | DAT_00767b38
@@ -37,10 +37,10 @@ section .text
     MOV ECX,0x57ac47                    ; 004314d9 | = "..\\engine\\clipper.c"
     MOV EBX,0x5e                        ; 004314de
     PUSH 0x57ac5b                       ; 004314e3 | = "Ran out of clipped verts!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004314e8 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004314ee | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004314f4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004314e8 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004314ee | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004314f4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004314f9
     POP EBX                             ; 004314fc
     JMP 0x004314b9                      ; 004314fd

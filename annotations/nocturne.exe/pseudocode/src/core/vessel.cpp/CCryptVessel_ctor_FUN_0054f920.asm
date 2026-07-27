@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0054f8f0 at 0054f903
+;   core_vessel.cpp_FUN_0054f8f0 at 0054f903
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_vsslbase_kfm_00597448
@@ -18,7 +18,7 @@
 ;   undefined4 s_ne_0059745a+2
 ;   undefined4 s_e_0059745a+3
 ;   TerminatedCString s_vsslorb_kfm_0059745f
-;   undefined1* PTR_FUN_005a3d84 = 0054fa80
+;   undefined1* PTR_core_vessel.cpp_FUN_0054fa80_005a3d84 = 0054fa80
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -59,7 +59,7 @@ section .text
     LEA EAX,[EBX + 0x150]               ; 0054f965
     PUSH EAX                            ; 0054f96b
     MOV ESI,0x597455                    ; 0054f96c | = "none"
-    MOV dword ptr [EBX + 0x14c],0x5a3d84 ; 0054f971 | PTR_FUN_005a3d84
+    MOV dword ptr [EBX + 0x14c],0x5a3d84 ; 0054f971 | PTR_core_vessel.cpp_FUN_0054fa80_005a3d84
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 0054f97b
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     MOV dword ptr [EBX + 0x2cc],0x0     ; 0054f980

@@ -12,12 +12,12 @@
 ;   TerminatedCString s_C3DSLight_advanceFilter_00590f09
 ;   TerminatedCString s_core_setutil_cpp_00590f3e
 ;   TerminatedCString s_C3DSLight_setFilterFrame_00590f52
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -62,10 +62,10 @@ section .text
         ;   Label: LAB_005156bb
     MOV EDI,0x36c                       ; 005156c0
     PUSH 0x590f09                       ; 005156c5 | = "C3DSLight::advanceFilter - NULL CDemo..."
-    MOV dword ptr [0x01cc4800],ECX      ; 005156ca | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005156d0 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005156d6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 005156ca | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 005156d0 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005156d6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005156db
     JMP 0x00515683                      ; 005156de
         ;   XREF to: 00515683 (UNCONDITIONAL_JUMP)  ; LAB_00515683
@@ -73,10 +73,10 @@ section .text
         ;   Label: LAB_005156e0
     MOV EDX,0x370                       ; 005156e5
     PUSH 0x590f52                       ; 005156ea | = "C3DSLight::setFilterFrame - invalid f..."
-    MOV [0x01cc4800],EAX                ; 005156ef | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 005156f4 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005156fa
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 005156ef | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 005156f4 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005156fa
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005156ff
     JMP 0x0051568f                      ; 00515702
         ;   XREF to: 0051568f (UNCONDITIONAL_JUMP)  ; LAB_0051568f

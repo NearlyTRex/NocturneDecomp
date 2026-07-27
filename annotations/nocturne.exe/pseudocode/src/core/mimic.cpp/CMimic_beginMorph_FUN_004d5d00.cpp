@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_004d5d00(int param_1)
 
 {
@@ -15,9 +13,9 @@ void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_004d5d00(int param_1)
   byte *puVar2;
   
   if (*(int *)(param_1 + 0x4757c) == 0) {
-    _DAT_01cc4800 = "..\\core\\mimic.cpp";
-    _DAT_01cc4804 = 0x499;
-    FUN_004c8440("CMimic::beginMorph() - can't do this unless morphActor has been created!");
+    PTR_01cc4800 = "..\\core\\mimic.cpp";
+    INT_01cc4804 = 0x499;
+    core_main_c_FUN_004c8440("CMimic::beginMorph() - can't do this unless morphActor has been created!");
   }
   *(uint *)(*(int *)(param_1 + 0x4757c) + 0x108) = *(uint *)(param_1 + 0x108);
   *(uint *)(*(int *)(param_1 + 0x4757c) + 0x10c) = *(uint *)(param_1 + 0x10c);

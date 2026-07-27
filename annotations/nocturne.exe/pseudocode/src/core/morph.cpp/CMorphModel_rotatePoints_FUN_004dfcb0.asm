@@ -28,19 +28,19 @@
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cce554
 ;   undefined4 DAT_01cce558
 ;   undefined4 DAT_01cce55c
 ;   undefined4 DAT_01e57284
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_0050c2d0
 ;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
-;   FUN_004c8440
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -128,8 +128,8 @@ section .text
     PUSH ESI                            ; 004dfda8 | DAT_01cce554
     ADD EAX,EDI                         ; 004dfda9
     PUSH EAX                            ; 004dfdab
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 004dfdac
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 004dfdac
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV EAX,[0x005ae704]                ; 004dfdb1 | DAT_005ae704
     MOV EAX,dword ptr [EAX]             ; 004dfdb6 | DAT_01b4d738
     MOV EAX,dword ptr [EDI + EAX*0x1 + 0x10] ; 004dfdb8
@@ -169,10 +169,10 @@ section .text
         ;   Label: LAB_004dfe0a
     MOV EBX,0x1f8                       ; 004dfe0f
     PUSH 0x58ad3e                       ; 004dfe14 | = "CMorphModel::rotatePoints - too many ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004dfe19 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004dfe1f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004dfe25
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004dfe19 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004dfe1f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004dfe25
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004dfe2a
     JMP 0x004dfcc8                      ; 004dfe2d
         ;   XREF to: 004dfcc8 (UNCONDITIONAL_JUMP)  ; LAB_004dfcc8

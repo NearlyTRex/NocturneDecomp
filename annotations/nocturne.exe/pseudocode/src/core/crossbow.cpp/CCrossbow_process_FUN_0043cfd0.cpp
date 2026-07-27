@@ -23,7 +23,7 @@ void core_crossbow_cpp_CCrossbow_process_FUN_0043cfd0(int param_1,uint param_2)
   *(uint *)(param_1 + 0x59c) = puVar2[2];
   if ((((*(int *)(param_1 + 0x2cc) != 2) || (*(int *)(param_1 + 0x560) < 1)) ||
       (*(int *)(param_1 + 0x564) != 5)) || (0.0 < *(float *)(param_1 + 0x2f8))) {
-    FUN_0048df10(param_1 + 0x574);
+    core_flame_cpp_FUN_0048df10(param_1 + 0x574);
     *(uint *)(param_1 + 0x570) = 0;
   }
   else {

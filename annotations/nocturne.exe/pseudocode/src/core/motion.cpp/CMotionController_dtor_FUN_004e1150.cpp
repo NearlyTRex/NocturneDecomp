@@ -12,7 +12,7 @@ int __cdecl core_motion_cpp_CMotionController_dtor_FUN_004e1150(int param_1,uint
   uint uVar1;
   
   if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&DAT_005a0d30);
+    uVar1 = __vec_delete(param_1,&g_CMotionControllerTypeInfo_005a0d30);
     shape_memdbg_cpp_free_FUN_00564486(uVar1);
     return param_1;
   }

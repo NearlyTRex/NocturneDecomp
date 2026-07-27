@@ -48,11 +48,11 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
         return;
       }
       iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(param_1 + 0x24f0),_DAT_02ddf9a8);
+                        (*(uint *)(param_1 + 0x24f0),g_CWeaponActorType_02ddf970.name_hash);
       if (iVar2 == 0) {
-        _DAT_01cc4800 = "..\\core\\mobster.cpp";
-        _DAT_01cc4804 = 0x323;
-        FUN_004c8440("CMobster::aimTommyGun - I'm not carrying one!");
+        PTR_01cc4800 = "..\\core\\mobster.cpp";
+        INT_01cc4804 = 0x323;
+        core_main_c_FUN_004c8440("CMobster::aimTommyGun - I'm not carrying one!");
       }
       local_88 = 0.7853982;
       if (*(int *)(param_1 + 0xbd48) != 0) {
@@ -67,7 +67,7 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
       local_34 = *(float *)(iVar2 + 0x24) - pfVar4[1];
       local_30 = *(float *)(iVar2 + 0x28) - pfVar4[2];
       iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(param_1 + 0xbca4),_DAT_01cae124);
+                        (*(uint *)(param_1 + 0xbca4),g_CHeroActorType_01cae0ec.name_hash);
       fVar1 = 3.0f;
       if (iVar2 != 0) {
         fVar1 = 5.3464347077054713e-315._0_4_;
@@ -115,7 +115,8 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
         uVar6 = 6;
       }
       core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-                (param_1 + 0x150,uVar6,0x40c00000,uVar3,_DAT_01ccdbd0,FUN_0051b650);
+                (param_1 + 0x150,uVar6,0x40c00000,uVar3,_DAT_01ccdbd0,core_skeleton_cpp_FUN_0051b650
+                );
       core_xform_cpp_FUN_0055d4a0(local_2c);
       local_80 = local_60;
       *(uint *)((int)&stack0xffffff84 + (uint)bVar5 * 0xfffffffe * 4) =
@@ -130,9 +131,9 @@ void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004db6f0(int param_1,floa
       local_18 = (float)(param_1 + 0x150);
       core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0
                 (local_18,&stack0xffffff80,*(uint *)(param_1 + 0xbdf4),_DAT_01ccdbd0,
-                 FUN_0051b650);
+                 core_skeleton_cpp_FUN_0051b650);
       core_xform_cpp_FUN_0055d4e0(local_28);
-      pcVar7 = FUN_0051b650;
+      pcVar7 = core_skeleton_cpp_FUN_0051b650;
       local_80 = local_70;
       *(uint *)((int)&stack0xffffff84 + (uint)bVar5 * 0xfffffffe * 4) =
            *(uint *)(local_50 + (uint)bVar5 * -8 + -0x1c);

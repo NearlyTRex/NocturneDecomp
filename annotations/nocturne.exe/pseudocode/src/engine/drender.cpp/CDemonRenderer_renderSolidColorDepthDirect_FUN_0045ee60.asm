@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_004d76e0 at 004d7709
-;   FUN_004d7760 at 004d77dc
-;   FUN_00511d80 at 0051248c
-;   FUN_005125a0 at 0051340b
+;   core_mirror.cpp_FUN_004d76e0 at 004d7709
+;   core_mirror.cpp_FUN_004d7760 at 004d77dc
 ;   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0050df40 at 0050dfaf
+;   core_setdir.cpp_FUN_00511d80 at 0051248c
+;   core_setdir.cpp_FUN_005125a0 at 0051340b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c7c

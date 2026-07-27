@@ -10,8 +10,8 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[3]:
-;   FUN_004a4170 at 004a42d7
-;   FUN_004a4b50 at 004a4e83
+;   core_game.cpp_FUN_004a4170 at 004a42d7
+;   core_game.cpp_FUN_004a4b50 at 004a4e83
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d957c
 ;
 ; Referenced Globals:
@@ -32,7 +32,7 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040e340
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-;   wincore_windll.cpp_clearScreen_FUN_0052ee70
+;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;
 ; *****************************************************************************
 
@@ -213,8 +213,8 @@ section .text
     RET                                 ; 004c58fe
     PUSH EBX                            ; 004c58ff
         ;   Label: LAB_004c58ff
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004c5900
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004c5900
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
     MOV dword ptr [ESI + 0x114],0x0     ; 004c5905
     MOV dword ptr [ESI + 0x118],0x0     ; 004c590f
     MOV dword ptr [ESI + 0x11c],0x280   ; 004c5919

@@ -75,9 +75,9 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
 ;   core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00467a00
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200
+;   core_main.c_FUN_004c8440
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_00511990
 ;   crt_math.c_atan2_FUN_00566c81
-;   FUN_004c8440
 ;   sound_sndmain.cpp_isSfxPlaying_FUN_00526c50
 ;   sound_sndmain.cpp_isWithinListenerRadius_FUN_00527880
 ;
@@ -259,10 +259,10 @@ section .text
     MOV ECX,0x596f72                    ; 0054b699 | = "..\\core\\tvbat.cpp"
     MOV ESI,0x10a                       ; 0054b69e
     PUSH 0x596f84                       ; 0054b6a3 | = "CTVBat::process - can't follow orders..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0054b6a8 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0054b6ae | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0054b6b4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0054b6a8 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0054b6ae | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0054b6b4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0054b6b9
     MOV EAX,[0x01cae0e8]                ; 0054b6bc | DAT_01cae0e8
         ;   Label: LAB_0054b6bc

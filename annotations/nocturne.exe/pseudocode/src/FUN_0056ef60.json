@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 93,
+    "complexity_score": 48,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "register_param",
-      "undefined_data"
+      "register_param"
     ],
     "total_lines": 70
   },
@@ -171,45 +170,45 @@
   "globals": [
     {
       "addr": "005c2302",
-      "name": "DAT_005c2302",
-      "type": "undefined1",
+      "name": "g_FirstInitHandler",
+      "type": "RuntimeHandlerEntry",
       "value": null
     },
     {
       "addr": "005c2303",
-      "name": "DAT_005c2303",
-      "type": "undefined1",
+      "name": "g_ExitHandlerTableStart",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c2308",
-      "name": "DAT_005c2308",
-      "type": "undefined1",
+      "name": "g_InitHandlers",
+      "type": "RuntimeHandlerEntry[160]",
       "value": null
     },
     {
       "addr": "005c2309",
-      "name": "DAT_005c2309",
-      "type": "undefined1",
+      "name": "g_InitHandlers[0].priority",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c230a",
-      "name": "PTR_FUN_005c230a",
-      "type": "void*",
-      "value": "0040eb10"
+      "name": "g_InitHandlers[0].func",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "005c26ce",
-      "name": "DAT_005c26ce",
-      "type": "undefined1",
+      "name": "RuntimeHandlerEntry_005c26ce",
+      "type": "RuntimeHandlerEntry",
       "value": null
     },
     {
       "addr": "005c26d0",
-      "name": "PTR_FUN_005c26d0",
-      "type": "void*",
-      "value": "00563d13"
+      "name": "RuntimeHandlerEntry_005c26ce.func",
+      "type": "undefined4",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -329,44 +328,12 @@
       "type": "register_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005c2302",
-      "severity": "mild",
-      "text": "pcVar1 = &DAT_005c2302;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005c26ce",
-      "severity": "mild",
-      "text": "pcVar3 = &DAT_005c26ce;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Inferred register parameter",
       "line": 13,
       "match": "in_AL",
       "severity": "mild",
       "text": "bVar2 = in_AL;",
       "type": "register_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005c26ce",
-      "severity": "mild",
-      "text": "} while (pcVar1 < &DAT_005c26ce);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_005c26ce",
-      "severity": "mild",
-      "text": "if (pcVar3 == &DAT_005c26ce) break;",
-      "type": "undefined_data"
     },
     {
       "description": "Uninitialized variable: in_AL",

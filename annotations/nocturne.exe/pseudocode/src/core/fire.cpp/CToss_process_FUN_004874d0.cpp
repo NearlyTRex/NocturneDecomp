@@ -54,7 +54,7 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004874d0(int *param_1)
       return;
     }
     if (*param_1 == 0) {
-      FUN_0048c0d0(0x01C08D04,pfVar1,0x41800000,0x42c80000,0x40800000);
+      core_fire_cpp_FUN_0048c0d0(0x01C08D04,pfVar1,0x41800000,0x42c80000,0x40800000);
       sound_sndmain_cpp_killSfx_FUN_00527230(param_1[0xf8]);
       return;
     }

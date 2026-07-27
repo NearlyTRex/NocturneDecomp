@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004c90e0 at 004c935c
-;   FUN_004d9900 at 004d990f
+;   core_main.c_FUN_004c90e0 at 004c935c
+;   core_mission.cpp_FUN_004d9900 at 004d990f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00670b60
 ;   undefined4 DAT_02737ef4
 ;
 ; Called Functions:
-;   FUN_005174e0
-;   FUN_0051f650
+;   core_skeleton.cpp_FUN_005174e0
+;   core_skeleton.cpp_FUN_0051f650
 ;
 ; *****************************************************************************
 
@@ -24,13 +24,13 @@ section .text
         ;   Label: core_skeleton.cpp_freeAllSkeletons_FUN_0051f730
     PUSH ESI                            ; 0051f731
     MOV EBX,0x2737ef8                   ; 0051f732
-    CALL FUN_0051f650                   ; 0051f737
-        ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; undefined FUN_0051f650()
+    CALL core_skeleton.cpp_FUN_0051f650 ; 0051f737
+        ;   XREF to: 0051f650 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0051f650()
     LEA ESI,[EBX + 0x670b60]            ; 0051f73c | DAT_00670b60
     PUSH EBX                            ; 0051f742
         ;   Label: LAB_0051f742
-    CALL FUN_005174e0                   ; 0051f743
-        ;   XREF to: 005174e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005174e0()
+    CALL core_skeleton.cpp_FUN_005174e0 ; 0051f743
+        ;   XREF to: 005174e0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005174e0()
     ADD EBX,0x2937c                     ; 0051f748
     ADD ESP,0x4                         ; 0051f74e
     CMP EBX,ESI                         ; 0051f751

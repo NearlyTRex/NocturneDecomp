@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004b46d0 at 004b47ce
+;   core_hero.cpp_FUN_004b46d0 at 004b47ce
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CGun_005857f6
@@ -15,9 +15,9 @@
 ;   undefined4 s_our_weapon_0058581b+1
 ;   undefined4 s_ur_weapon_0058581b+2
 ;   undefined4 s_r_weapon_0058581b+3
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
-;   undefined4 DAT_02ddf9a8
+;   char* PTR_01cc4800
+;   int INT_01cc4804
+;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -25,7 +25,7 @@
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360
 ;   core_inv.cpp_CInventory_initialize_FUN_004bef10
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004c0850
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -41,7 +41,7 @@ section .text
     CALL core_inv.cpp_CInventory_initialize_FUN_004bef10 ; 004b4ddd
         ;   XREF to: 004bef10 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_CInventory_initialize_FUN_004bef10()
     ADD ESP,0x4                         ; 004b4de2
-    MOV EDX,dword ptr [0x02ddf9a8]      ; 004b4de5 | DAT_02ddf9a8
+    MOV EDX,dword ptr [0x02ddf9a8]      ; 004b4de5 | g_CWeaponActorType_02ddf970.name_hash
     PUSH EDX                            ; 004b4deb
     PUSH 0x5857f6                       ; 004b4dec | = "CGun"
     CALL core_actor.cpp_createActorByName_FUN_0040d540 ; 004b4df1
@@ -98,10 +98,10 @@ section .text
         ;   Label: LAB_004b4e5c
     MOV ESI,0x1b2                       ; 004b4e61
     PUSH 0x58580c                       ; 004b4e66 | = "Out of memory!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004b4e6b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004b4e71 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004b4e77
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004b4e6b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004b4e71 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004b4e77
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b4e7c
     JMP 0x004b4e08                      ; 004b4e7f
         ;   XREF to: 004b4e08 (UNCONDITIONAL_JUMP)  ; LAB_004b4e08

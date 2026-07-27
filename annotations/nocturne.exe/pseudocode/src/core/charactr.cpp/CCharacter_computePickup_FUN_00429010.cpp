@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00429010(int param_1,int param_2,float param_3)
 
 {
@@ -29,9 +27,9 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_00429010(int param_1
   bVar7 = 0;
   piVar2 = (int *)(param_1 + 0x24a4 + param_2 * 0x44);
   if (*piVar2 < 0) {
-    _DAT_01cc4800 = "..\\core\\charactr.cpp";
-    _DAT_01cc4804 = 0xc14;
-    FUN_004c8440("CCharacter::computePickup - invalid bone!");
+    PTR_01cc4800 = "..\\core\\charactr.cpp";
+    INT_01cc4804 = 0xc14;
+    core_main_c_FUN_004c8440("CCharacter::computePickup - invalid bone!");
   }
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_0055ae80
             (local_100,piVar2[2] + 0x20,piVar2[2] + 0x30);

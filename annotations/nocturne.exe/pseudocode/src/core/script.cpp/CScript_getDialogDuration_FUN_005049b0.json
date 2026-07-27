@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 436,
+    "complexity_score": 437,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 82,
     "suspect_count": 33,
     "suspect_types": [
       "param_count_too_few",
@@ -136,7 +136,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 266
+    "total_lines": 267
   },
   "cross_references": [
     {
@@ -171,14 +171,14 @@
       "name": "core_sound.cpp_CSound_playSound_FUN_0052ea40"
     },
     {
+      "addr": "0052ebc0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_FUN_0052ebc0"
+    },
+    {
       "addr": "00566b5c",
       "is_variadic": false,
       "name": "crt_stdio.c_sscanf_FUN_00566b5c"
-    },
-    {
-      "addr": "0052ebc0",
-      "is_variadic": false,
-      "name": "FUN_0052ebc0"
     },
     {
       "addr": "00473cb0",
@@ -228,13 +228,13 @@
     },
     {
       "addr": "00765a60",
-      "name": "CDemonActorType_00765a60",
+      "name": "g_CCharacterActorType_00765a60",
       "type": "CDemonActorType",
       "value": null
     },
     {
       "addr": "00765a98",
-      "name": "CDemonActorType_00765a60.name_hash",
+      "name": "g_CCharacterActorType_00765a60.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -478,7 +478,7 @@
       "line": 24,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_28 = (float)FUN_0052ebc0(0x02DC9450,param_3);",
+      "text": "local_28 = (float)core_sound_cpp_FUN_0052ebc0(0x02DC9450,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -510,12 +510,12 @@
       "line": 49,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_2,CDemonActorType_00765a60.name_hash,&CDemonActorType_00765a60);",
+      "text": "(param_2,g_CCharacterActorType_00765a60.name_hash,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 4) = iVar2;",
@@ -523,7 +523,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 8) = iVar2;",
@@ -531,23 +531,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x14) == 0) && (*(int *)(param_1 + 4) != *(int *)(param_1 + 0xc))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x14) == 0) && (*(int *)(param_1 + 4) != *(int *)(param_1 + 0xc))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(int *)(param_1 + 0x14) == 0) && (*(int *)(param_1 + 4) != *(int *)(param_1 + 0xc))) {",
@@ -558,12 +542,28 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0x14) == 0) && (*(int *)(param_1 + 4) != *(int *)(param_1 + 0xc))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((*(int *)(param_1 + 0x14) == 0) && (*(int *)(param_1 + 4) != *(int *)(param_1 + 0xc))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 60,
+      "match": "param_1",
+      "severity": "mild",
       "text": "*(uint *)(param_1 + 0x10) = 1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xc) = *(uint *)(param_1 + 4);",
@@ -571,7 +571,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xc) = *(uint *)(param_1 + 4);",
@@ -579,7 +579,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "pcVar5 = (char *)(param_1 + 0x4c);",
@@ -587,7 +587,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 66,
       "match": "param_4",
       "severity": "mild",
       "text": "cVar1 = *param_4;",
@@ -595,7 +595,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 69,
       "match": "param_4",
       "severity": "mild",
       "text": "cVar1 = param_4[1];",
@@ -603,7 +603,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 70,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4 = param_4 + 2;",
@@ -611,18 +611,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 70,
       "match": "param_4",
       "severity": "mild",
       "text": "param_4 = param_4 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(param_1 + 4) != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -630,23 +622,15 @@
       "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(*(int *)(param_1 + 4) + 0x2610) = local_28;",
+      "text": "if (*(int *)(param_1 + 4) != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar3 = core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,param_1,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "uVar3 = core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,param_1,param_3);",
+      "text": "*(float *)(*(int *)(param_1 + 4) + 0x2610) = local_28;",
       "type": "unnamed_param"
     },
     {
@@ -654,12 +638,28 @@
       "line": 80,
       "match": "param_1",
       "severity": "mild",
+      "text": "uVar3 = core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,param_1,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uVar3 = core_sound_cpp_CSound_playSound_FUN_0052ea40(0x02DC9450,param_1,param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_1",
+      "severity": "mild",
       "text": "*(uint *)(param_1 + 0x24) = uVar3;",
       "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 64,
+      "line": 65,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

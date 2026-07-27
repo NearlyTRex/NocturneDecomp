@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_00437a60 at 00437a74
-;   FUN_004574e0 at 004575c7
-;   FUN_00468d00 at 004690c5
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0 at 004217cc
+;   core_cloth.cpp_FUN_00437a60 at 00437a74
+;   core_dtrace.cpp_FUN_00468d00 at 004690c5
 ;   core_water.cpp_CWater_render_FUN_00550cb0 at 00551168
+;   engine_drender.cpp_FUN_004574e0 at 004575c7
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006b0260

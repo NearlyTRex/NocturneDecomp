@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004700d0(undefined4 param_1,undefined4 param_2)
+; void shape_edittool_cpp_FUN_004700d0(undefined4 param_1,undefined4 param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -15,16 +15,16 @@
 ;   undefined4 DAT_01bcddec
 ;   undefined4 DAT_01c00c58
 ;   undefined4 DAT_01c00c5c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_vsprintf_FUN_00563a08
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
 ;   engine_font.cpp_CBitFont_drawText_FUN_00490980
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
-;   FUN_004722b0
-;   FUN_004c8440
+;   shape_edittool.cpp_FUN_004722b0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;
 ; *****************************************************************************
@@ -32,7 +32,7 @@
 section .text
 
     PUSH EBX                            ; 004700d0
-        ;   Label: FUN_004700d0
+        ;   Label: shape_edittool.cpp_FUN_004700d0
     PUSH ESI                            ; 004700d1
     PUSH EDI                            ; 004700d2
     PUSH EBP                            ; 004700d3
@@ -64,8 +64,8 @@ section .text
     XOR EDI,EDI                         ; 00470125
     PUSH EBP                            ; 00470127
     MOV dword ptr [ESP + 0x4],EDI       ; 00470128
-    CALL FUN_004722b0                   ; 0047012c
-        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004722b0()
+    CALL shape_edittool.cpp_FUN_004722b0 ; 0047012c
+        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004722b0()
     ADD ESP,0x4                         ; 00470131
     PUSH 0xffff                         ; 00470134
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00470139
@@ -96,10 +96,10 @@ section .text
         ;   Label: LAB_00470178
     MOV EBX,0x8b                        ; 0047017d
     PUSH 0x57e510                       ; 00470182 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 00470187 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0047018d | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00470193
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00470187 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0047018d | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00470193
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00470198
     JMP 0x004700e4                      ; 0047019b
         ;   XREF to: 004700e4 (UNCONDITIONAL_JUMP)  ; LAB_004700e4

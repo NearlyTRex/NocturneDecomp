@@ -267,9 +267,9 @@ LAB_005614f8:
   if (uVar1 < 2) {
     if (uVar1 != 1) {
 LAB_005615c6:
-      _DAT_01cc4800 = "..\\core\\zombie.cpp";
-      _DAT_01cc4804 = 0x5d0;
-      FUN_004c8440("Invalid zombie object shape!");
+      PTR_01cc4800 = "..\\core\\zombie.cpp";
+      INT_01cc4804 = 0x5d0;
+      core_main_c_FUN_004c8440("Invalid zombie object shape!");
       return 1;
     }
   }

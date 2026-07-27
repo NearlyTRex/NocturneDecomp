@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,24 +122,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 239,
+    "complexity_score": 223,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
-    "suspect_count": 17,
+    "pseudocode_lines": 58,
+    "suspect_count": 16,
     "suspect_types": [
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 227
+    "total_lines": 226
   },
   "cross_references": [
     {
       "addr": "004f5a50",
       "from_addr": "004f5b0d",
-      "name": "FUN_004f5a50",
+      "name": "cockpit_pkbmpset.cpp_FUN_004f5a50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -152,14 +151,24 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004f5740",
-    "signature": "void FUN_004f5740(int *param_1,int param_2,int param_3)"
+    "name": "cockpit_pkbmpset.cpp_FUN_004f5740",
+    "signature": "void cockpit_pkbmpset_cpp_FUN_004f5740(int *param_1,int param_2,int param_3)"
   },
   "function_calls": [
     {
       "addr": "004f4700",
       "is_variadic": false,
       "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700"
+    },
+    {
+      "addr": "004f5c60",
+      "is_variadic": false,
+      "name": "cockpit_pkbmpset.cpp_FUN_004f5c60"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
     },
     {
       "addr": "005635b0",
@@ -187,24 +196,14 @@
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
+      "addr": "005638d0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005638d0"
+    },
+    {
       "addr": "00456a60",
       "is_variadic": false,
       "name": "engine_dosio.cpp_getFile_FUN_00456a60"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
-      "addr": "004f5c60",
-      "is_variadic": false,
-      "name": "FUN_004f5c60"
-    },
-    {
-      "addr": "005638d0",
-      "is_variadic": false,
-      "name": "FUN_005638d0"
     }
   ],
   "globals": [
@@ -258,14 +257,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -275,7 +274,7 @@
       {
         "call_addr": "004f5b0d",
         "call_type": "direct",
-        "caller": "FUN_004f5a50",
+        "caller": "cockpit_pkbmpset.cpp_FUN_004f5a50",
         "estimated_params": 0,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -380,7 +379,7 @@
         {
           "check_id": "AssignmentAddressToInteger",
           "column": 12,
-          "line": 33,
+          "line": 31,
           "message": "Assigning a pointer to an integer is not portable.",
           "severity": "portability"
         }
@@ -391,40 +390,32 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004f5740(int *param_1,int param_2,int param_3)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_004f5740(int *param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004f5740(int *param_1,int param_2,int param_3)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_004f5740(int *param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void FUN_004f5740(int *param_1,int param_2,int param_3)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_004f5740(int *param_1,int param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "local_14 = engine_dosio_cpp_getFile_FUN_00456a60(\"art\",param_1 + 2,\"rb\");",
@@ -432,7 +423,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "_sprintf(local_e4,\"Unable to open %s in CPackedBitmapSet::reloadJoinedRAW\",param_1 + 2);",
@@ -440,7 +431,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = param_1[7] * param_1[8];",
@@ -448,7 +439,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = param_1[7] * param_1[8];",
@@ -456,7 +447,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *param_1) {",
@@ -464,7 +455,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "local_1c = param_1 + 2;",
@@ -472,7 +463,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((param_3 < 0) || (iVar2 == param_3)) {",
@@ -480,7 +471,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_3",
       "severity": "mild",
       "text": "if ((param_3 < 0) || (iVar2 == param_3)) {",
@@ -488,7 +479,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1[1] + iVar4,local_18,param_1[7]);",
@@ -496,7 +487,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1[1] + iVar4,local_18,param_1[7]);",
@@ -504,7 +495,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar2 < *param_1);",
@@ -512,7 +503,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 56,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == 0) {",
@@ -520,10 +511,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004f5c60(param_1);",
+      "text": "cockpit_pkbmpset_cpp_FUN_004f5c60(param_1);",
       "type": "unnamed_param"
     }
   ]

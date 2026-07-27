@@ -8,16 +8,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[13]:
-;   FUN_004c85f0 at 004c8c3d
-;   FUN_004c8eb0 at 004c8f09
-;   FUN_004c90e0 at 004c9158
-;   FUN_004d23d0 at 004d240a
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a66b1
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6b3c
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a6eeb
 ;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_0049d960 at 0049d9c2
 ;   core_inv.cpp_loadAssets_FUN_004befa0 at 004befe6
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640 at 004c5730
+;   core_main.c_FUN_004c85f0 at 004c8c3d
+;   core_main.c_FUN_004c8eb0 at 004c8f09
+;   core_main.c_FUN_004c90e0 at 004c9158
+;   core_menu.cpp_FUN_004d23d0 at 004d240a
 ;   ... and 3 more
 ;
 ; Referenced Globals:
@@ -39,6 +39,7 @@
 ;   ... and 10 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgetc_FUN_00564570
@@ -46,7 +47,6 @@
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_alphabit.cpp_CAlphaBitmap_free_FUN_0040e360
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -92,10 +92,10 @@ section .text
     MOV EDX,0x5780d3                    ; 0040e431 | = "..\\engine\\alphabit.cpp"
     MOV ECX,0x56                        ; 0040e436
     PUSH 0x5780ea                       ; 0040e43b | = "CAlphaBitmap::load - Out of memory"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040e440 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040e446 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0040e44c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0040e440 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0040e446 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0040e44c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040e451
     PUSH 0x400                          ; 0040e454
         ;   Label: LAB_0040e454
@@ -109,10 +109,10 @@ section .text
     MOV EDI,0x57810d                    ; 0040e468 | = "..\\engine\\alphabit.cpp"
     MOV EBP,0x59                        ; 0040e46d
     PUSH 0x578124                       ; 0040e472 | = "CAlphaBitmap::load - Out of memory"
-    MOV dword ptr [0x01cc4800],EDI      ; 0040e477 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 0040e47d | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0040e483
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0040e477 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 0040e47d | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0040e483
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040e488
     MOV EAX,dword ptr [ESP + 0x11c]     ; 0040e48b
         ;   Label: LAB_0040e48b
@@ -139,10 +139,10 @@ section .text
     MOV EDX,0x578155                    ; 0040e4ca | = "..\\engine\\alphabit.cpp"
     MOV ECX,0x5f                        ; 0040e4cf
     PUSH 0x57816c                       ; 0040e4d4 | = "CAlphaBitmap::load - Can't open %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 0040e4d9 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0040e4df | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0040e4e5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0040e4d9 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0040e4df | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0040e4e5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0040e4ea
     MOV ESI,dword ptr [ESP + 0x100]     ; 0040e4ed
         ;   Label: LAB_0040e4ed
@@ -273,10 +273,10 @@ section .text
         ;   Label: LAB_0040e65b
     MOV EDI,0x53                        ; 0040e660
     PUSH 0x5780b0                       ; 0040e665 | = "CAlphaBitmap::load - Out of memory"
-    MOV dword ptr [0x01cc4800],ESI      ; 0040e66a | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0040e670 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0040e676
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0040e66a | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0040e670 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0040e676
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040e67b
     JMP 0x0040e412                      ; 0040e67e
         ;   XREF to: 0040e412 (UNCONDITIONAL_JUMP)  ; LAB_0040e412
@@ -286,10 +286,10 @@ section .text
     MOV ESI,0x57819d                    ; 0040e686 | = "..\\engine\\alphabit.cpp"
     MOV EDI,0x65                        ; 0040e68b
     PUSH 0x5781b4                       ; 0040e690 | = "CAlphaBitmap::load - Can't open %s"
-    MOV dword ptr [0x01cc4800],ESI      ; 0040e695 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0040e69b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0040e6a1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0040e695 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0040e69b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0040e6a1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0040e6a6
     JMP 0x0040e559                      ; 0040e6a9
         ;   XREF to: 0040e559 (UNCONDITIONAL_JUMP)  ; LAB_0040e559

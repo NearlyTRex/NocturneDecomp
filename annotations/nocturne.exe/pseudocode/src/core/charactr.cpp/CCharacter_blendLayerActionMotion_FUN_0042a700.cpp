@@ -15,6 +15,6 @@ void core_charactr_cpp_CCharacter_blendLayerActionMotion_FUN_0042a700(int param_
   core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
             (param_1 + 0x150,*(uint *)(iVar1 + 0x2c + param_1 + 0x2624),
              (float)*(int *)(iVar1 + 0x30 + param_1 + 0x2624) * *(float *)(param_1 + 0x2a88),param_2
-             ,param_3,FUN_0051b650);
+             ,param_3,core_skeleton_cpp_FUN_0051b650);
   return;
 }

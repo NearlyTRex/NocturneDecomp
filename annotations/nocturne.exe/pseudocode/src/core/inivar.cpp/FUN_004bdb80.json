@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 604,
-    "complexity_score": 212,
+    "complexity_score": 202,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 92,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 127,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
@@ -140,7 +140,7 @@
     {
       "addr": "004c85f0",
       "from_addr": "004c86bb",
-      "name": "FUN_004c85f0",
+      "name": "core_main.c_FUN_004c85f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -153,14 +153,19 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004bdb80",
-    "signature": "void FUN_004bdb80(void)"
+    "name": "core_inivar.cpp_FUN_004bdb80",
+    "signature": "void core_inivar_cpp_FUN_004bdb80(void)"
   },
   "function_calls": [
     {
       "addr": "0049e610",
       "is_variadic": false,
       "name": "core_game.cpp_CGame_restoreDefaultControls_FUN_0049e610"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
     },
     {
       "addr": "00565dd0",
@@ -188,14 +193,9 @@
       "name": "engine_ini.cpp_CIniFile_readIniHeader_FUN_004bd8d0"
     },
     {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
       "addr": "005289f0",
       "is_variadic": false,
-      "name": "FUN_005289f0"
+      "name": "sound_sndmain.cpp_FUN_005289f0"
     }
   ],
   "globals": [
@@ -723,14 +723,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -741,8 +741,8 @@
     },
     {
       "addr": "02dc9d60",
-      "name": "DAT_02dc9d60",
-      "type": "undefined4",
+      "name": "INT_02dc9d60",
+      "type": "int",
       "value": null
     },
     {
@@ -758,7 +758,7 @@
       {
         "call_addr": "004c86bb",
         "call_type": "direct",
-        "caller": "FUN_004c85f0",
+        "caller": "core_main.c_FUN_004c85f0",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -823,14 +823,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_02dc9d60",
-      "severity": "mild",
-      "text": "engine_ini_cpp_CIniFile_getInteger_FUN_004bda20(local_204,\"useDirect3D\",&DAT_02dc9d60);",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

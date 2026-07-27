@@ -21,7 +21,7 @@
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_getVertexIndex_FUN_004b1800
-;   wincore_windll.cpp_transformPoint_FUN_00530a25
+;   engine_special.cpp_transformPoint_FUN_00530a25
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
     ADD EDI,0x5c5014                    ; 004b189b | DAT_005c5014
     PUSH EDI                            ; 004b18a1
     MOV dword ptr [ESP + 0xc],EBX       ; 004b18a2
-    CALL wincore_windll.cpp_transformPoint_FUN_00530a25 ; 004b18a6
-        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformPoint_FUN_00530a25()
+    CALL engine_special.cpp_transformPoint_FUN_00530a25 ; 004b18a6
+        ;   XREF to: 00530a25 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformPoint_FUN_00530a25()
     MOV dword ptr [EDI + 0x20],0x3fff   ; 004b18ab | DAT_005c5034
     MOV dword ptr [EDI + 0x24],0x3fff   ; 004b18b2 | DAT_005c5038
     ADD ESP,0x8                         ; 004b18b9

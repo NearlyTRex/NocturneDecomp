@@ -5,22 +5,26 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004f5920 at 004f599c
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_loadPBMFile_FUN_004f4ef0 at 004f4efb
+;   cockpit_pkbmpset.cpp_FUN_004f5920 at 004f599c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_rb_0058d305
+;   TerminatedCString s_art_0058d308
+;   TerminatedCString s_Unable_to_open_PBM_file_0058d30c
+;   TerminatedCString s_cockpit_pkbitmap_cpp_0058d327
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_004f4ab0
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0
+;   cockpit_pkbitmap.cpp_FUN_004f3f50
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
-;   FUN_004f3f50
 ;
 ; *****************************************************************************
 
@@ -32,8 +36,8 @@ section .text
     SUB ESP,0x64                        ; 004f4e42
     MOV EBX,dword ptr [ESP + 0x70]      ; 004f4e45
     PUSH EBX                            ; 004f4e49
-    CALL FUN_004f3f50                   ; 004f4e4a
-        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; undefined FUN_004f3f50()
+    CALL cockpit_pkbitmap.cpp_FUN_004f3f50 ; 004f4e4a
+        ;   XREF to: 004f3f50 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_FUN_004f3f50()
     ADD ESP,0x4                         ; 004f4e4f
     MOV EDX,dword ptr [ESP + 0x74]      ; 004f4e52
     PUSH EDX                            ; 004f4e56
@@ -41,9 +45,9 @@ section .text
     CALL cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0 ; 004f4e58
         ;   XREF to: 004f3fc0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_004f3fc0()
     ADD ESP,0x8                         ; 004f4e5d
-    PUSH 0x58d305                       ; 004f4e60
+    PUSH 0x58d305                       ; 004f4e60 | = "rb"
     PUSH EBX                            ; 004f4e65
-    PUSH 0x58d308                       ; 004f4e66
+    PUSH 0x58d308                       ; 004f4e66 | = "art"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004f4e6b
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004f4e70
@@ -53,7 +57,7 @@ section .text
         ;   XREF to: 004f4eb1 (CONDITIONAL_JUMP)  ; LAB_004f4eb1
     PUSH EDI                            ; 004f4e79
     PUSH EBX                            ; 004f4e7a
-    PUSH 0x58d30c                       ; 004f4e7b
+    PUSH 0x58d30c                       ; 004f4e7b | = "Unable to open PBM file %s"
     LEA EAX,[ESP + 0xc]                 ; 004f4e80
     PUSH EAX                            ; 004f4e84
     MOV EDI,0x4ff                       ; 004f4e85
@@ -61,12 +65,12 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     ADD ESP,0xc                         ; 004f4e8f
     LEA EAX,[ESP + 0x4]                 ; 004f4e92
-    MOV ECX,0x58d327                    ; 004f4e96
+    MOV ECX,0x58d327                    ; 004f4e96 | = "..\\cockpit\\pkbitmap.cpp"
     PUSH EAX                            ; 004f4e9b
-    MOV dword ptr [0x01cc4804],EDI      ; 004f4e9c | DAT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 004f4ea2 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 004f4ea8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EDI      ; 004f4e9c | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004f4ea2 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 004f4ea8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f4ead
     POP EDI                             ; 004f4eb0
     PUSH 0x0                            ; 004f4eb1

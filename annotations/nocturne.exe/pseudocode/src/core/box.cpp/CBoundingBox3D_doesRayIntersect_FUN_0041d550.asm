@@ -24,8 +24,8 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ;
 ; XREF[6]:
-;   FUN_0041ef90 at 0041f013
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a87f
+;   core_boxactor.cpp_FUN_0041ef90 at 0041f013
 ;   core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_00453990 at 004539dd
 ;   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_004c9e50 at 004ca0d4
 ;   core_setdir.cpp_testOBBIntersection_FUN_00513e80 at 0051408b

@@ -4,6 +4,22 @@
 // GLOBALS - Master Include
 // =============================================================================
 
+#include "globals/globals_14B0000.h"
+#include "globals/globals_1AF0000.h"
+#include "globals/globals_1B40000.h"
+#include "globals/globals_1B70000.h"
+#include "globals/globals_1BC0000.h"
+#include "globals/globals_1C00000.h"
+#include "globals/globals_1C70000.h"
+#include "globals/globals_1CA0000.h"
+#include "globals/globals_1CC0000.h"
+#include "globals/globals_1D40000.h"
+#include "globals/globals_1E40000.h"
+#include "globals/globals_1E50000.h"
+#include "globals/globals_2670000.h"
+#include "globals/globals_2DA0000.h"
+#include "globals/globals_2DC0000.h"
+#include "globals/globals_2DD0000.h"
 #include "globals/globals_2DE0000.h"
 #include "globals/globals_2DF0000.h"
 #include "globals/globals_400000.h"

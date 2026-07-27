@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004a4170(int param_1,char *param_2,int param_3)
+; void core_game_cpp_FUN_004a4170(int param_1,char *param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x638]:1  local_638
@@ -31,8 +31,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_004a4b50 at 004a4efd
-;   FUN_004d23d0 at 004d2815
+;   core_game.cpp_FUN_004a4b50 at 004a4efd
+;   core_menu.cpp_FUN_004d23d0 at 004d2815
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_noc_00583c33
@@ -61,13 +61,13 @@
 ;   core_gore.cpp_CGore_load_FUN_004b0820
 ;   core_gore.cpp_CGore_reset_FUN_004afdb0
 ;   core_level.cpp_CLevelLoader_show_FUN_004c5640
+;   core_main.c_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_findActorByName_FUN_004d90a0
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780
 ;   core_script.cpp_CScript_loadState_FUN_005052c0
 ;   core_set.cpp_CDemonSet_loadStateInfo_FUN_0050e920
-;   crt_fstream.cpp_ifstream_ctor_FUN_005652fe
 ;   ... and 31 more
 ;
 ; *****************************************************************************
@@ -75,7 +75,7 @@
 section .text
 
     PUSH EBX                            ; 004a4170
-        ;   Label: FUN_004a4170
+        ;   Label: core_game.cpp_FUN_004a4170
     PUSH ESI                            ; 004a4171
     PUSH EDI                            ; 004a4172
     PUSH EBP                            ; 004a4173
@@ -402,10 +402,10 @@ section .text
     MOV EDX,0x583cf2                    ; 004a4554 | = "..\\core\\game.cpp"
     MOV ECX,0xe2f                       ; 004a4559
     PUSH 0x583d03                       ; 004a455e | = "Can't reopen %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 004a4563 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004a4569 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004a456f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004a4563 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004a4569 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004a456f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004a4574
     PUSH 0x0                            ; 004a4577
         ;   Label: LAB_004a4577
@@ -459,8 +459,8 @@ section .text
     PUSH 0x583d1e                       ; 004a4605 | = "Can't load old save game file %s.  So..."
     MOV ECX,dword ptr [0x005b6d50]      ; 004a460a | DAT_005b6d50
     PUSH ECX                            ; 004a4610
-    CALL FUN_0046fe60                   ; 004a4611
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fe60()
+    CALL shape_edittool.cpp_FUN_0046fe60 ; 004a4611
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
     ADD ESP,0xc                         ; 004a4616
     JMP 0x004a4289                      ; 004a4619
         ;   XREF to: 004a4289 (UNCONDITIONAL_JUMP)  ; LAB_004a4289
@@ -517,8 +517,8 @@ section .text
     PUSH EAX                            ; 004a46b6
     MOV EBX,dword ptr [0x005b6d50]      ; 004a46b7 | DAT_005b6d50
     PUSH EBX                            ; 004a46bd
-    CALL FUN_0046fcd0                   ; 004a46be
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a46be
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x8                         ; 004a46c3
     PUSH 0x0                            ; 004a46c6
     LEA EAX,[ESP + 0x554]               ; 004a46c8
@@ -546,8 +546,8 @@ section .text
     PUSH EAX                            ; 004a4702
     MOV EDI,dword ptr [0x005b6d50]      ; 004a4703 | DAT_005b6d50
     PUSH EDI                            ; 004a4709
-    CALL FUN_0046fcd0                   ; 004a470a
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a470a
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x8                         ; 004a470f
     PUSH 0x0                            ; 004a4712
     LEA EAX,[ESP + 0x554]               ; 004a4714
@@ -575,8 +575,8 @@ section .text
     PUSH EAX                            ; 004a474e
     MOV EBX,dword ptr [0x005b6d50]      ; 004a474f | DAT_005b6d50
     PUSH EBX                            ; 004a4755
-    CALL FUN_0046fcd0                   ; 004a4756
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a4756
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x8                         ; 004a475b
     PUSH ESI                            ; 004a475e
     LEA EAX,[ESP + 0x5d4]               ; 004a475f
@@ -658,7 +658,7 @@ section .text
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004a4848
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_00563350()
     ADD ESP,0xc                         ; 004a484d
-    MOV EAX,[0x01cae124]                ; 004a4850 | DAT_01cae124
+    MOV EAX,[0x01cae124]                ; 004a4850 | g_CHeroActorType_01cae0ec.name_hash
     PUSH EAX                            ; 004a4855
     LEA EAX,[ESP + 0x40c]               ; 004a4856
     PUSH EAX                            ; 004a485d
@@ -684,8 +684,8 @@ section .text
     PUSH 0x583d85                       ; 004a4891 | = "Can't find hero %s.  Sorry."
     MOV ESI,dword ptr [0x005b6d50]      ; 004a4896 | DAT_005b6d50
     PUSH ESI                            ; 004a489c
-    CALL FUN_0046fcd0                   ; 004a489d
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004a489d
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0xc                         ; 004a48a2
     MOV ESI,dword ptr [ESP + 0x624]     ; 004a48a5
         ;   Label: LAB_004a48a5
@@ -844,8 +844,8 @@ section .text
     PUSH 0x583d4c                       ; 004a4a85 | = "Can't load old save game file %s.  So..."
     MOV EDX,dword ptr [0x005b6d50]      ; 004a4a8a | DAT_005b6d50
     PUSH EDX                            ; 004a4a90
-    CALL FUN_0046fe60                   ; 004a4a91
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fe60()
+    CALL shape_edittool.cpp_FUN_0046fe60 ; 004a4a91
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
     ADD ESP,0xc                         ; 004a4a96
     JMP 0x004a4289                      ; 004a4a99
         ;   XREF to: 004a4289 (UNCONDITIONAL_JUMP)  ; LAB_004a4289

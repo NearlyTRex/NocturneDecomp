@@ -5,6 +5,7 @@
 ;
 ;
 ; Referenced Globals:
+;   TerminatedCString s_CTrigger_CGlass_00587a48
 ;   float FLOAT_00587a5d = 0.5
 ;   undefined4 DAT_005be368
 ;
@@ -90,7 +91,7 @@ section .text
     CMP ESI,EDX                         ; 004c714e
     JZ 0x004c7198                       ; 004c7150
         ;   XREF to: 004c7198 (CONDITIONAL_JUMP)  ; LAB_004c7198
-    PUSH 0x587a48                       ; 004c7152
+    PUSH 0x587a48                       ; 004c7152 | = "CTrigger || CGlass"
     PUSH EDX                            ; 004c7157
     CALL core_actor.cpp_isOfClass_FUN_0040d7e0 ; 004c7158
         ;   XREF to: 0040d7e0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_isOfClass_FUN_0040d7e0()

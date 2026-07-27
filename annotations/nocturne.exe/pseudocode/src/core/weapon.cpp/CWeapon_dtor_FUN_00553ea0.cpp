@@ -13,7 +13,7 @@ int __cdecl core_weapon_cpp_CWeapon_dtor_FUN_00553ea0(int param_1,byte param_2)
   uint uVar2;
   
   if ((param_2 & 4) != 0) {
-    uVar2 = __vec_delete(param_1,&DAT_005a4250);
+    uVar2 = __vec_delete(param_1,&g_CWeaponTypeInfo_005a4250);
     shape_memdbg_cpp_free_FUN_00564486(uVar2);
     return param_1;
   }

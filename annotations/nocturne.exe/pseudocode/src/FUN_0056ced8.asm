@@ -18,7 +18,7 @@
 ;   FUN_0056cfd8 at 0056d00a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a4a76
+;   undefined4 g_fstreambaseTypeInfo_005a4a60.class_name+2
 ;   undefined4 DAT_005a4a78
 ;   undefined4 DAT_005a4a90
 ;   undefined4 DAT_005a4a92
@@ -59,7 +59,7 @@ section .text
     MOV EAX,dword ptr [EBX + 0x10]      ; 0056cf18
         ;   Label: LAB_0056cf18
     MOV ESI,dword ptr [EAX*0x2 + 0x5a4a78] ; 0056cf1b | DAT_005a4a78
-    MOV EAX,dword ptr [EAX*0x2 + 0x5a4a76] ; 0056cf22 | DAT_005a4a76
+    MOV EAX,dword ptr [EAX*0x2 + 0x5a4a76] ; 0056cf22 | g_fstreambaseTypeInfo_005a4a60.class_name+2
     SAR ESI,0x10                        ; 0056cf29
         ;   Label: LAB_0056cf29
     SAR EAX,0x10                        ; 0056cf2c

@@ -1,14 +1,12 @@
-// Name: FUN_004e2480
+// Name: sound_mp3.cpp_FUN_004e2480
 // Address: 004e2480
 // Address Range: [[004e2480, 004e25bd]]
 // Convention: unknown
-// Signature: int FUN_004e2480(int *param_1)
+// Signature: int sound_mp3_cpp_FUN_004e2480(int *param_1)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int FUN_004e2480(int *param_1)
+int sound_mp3_cpp_FUN_004e2480(int *param_1)
 
 {
   int iVar1;
@@ -51,8 +49,8 @@ int FUN_004e2480(int *param_1)
   else if (param_1[3] == 4) {
     return iVar4;
   }
-  _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-  _DAT_01cc4804 = 0x1a1;
-  FUN_004c8440("MPEG Layer 2 - pick_table - can't load tables!  File: %s",&DAT_01cd8b28,uVar7);
+  PTR_01cc4800 = "..\\sound\\mp3.cpp";
+  INT_01cc4804 = 0x1a1;
+  core_main_c_FUN_004c8440("MPEG Layer 2 - pick_table - can't load tables!  File: %s",&DAT_01cd8b28,uVar7);
   return iVar4;
 }

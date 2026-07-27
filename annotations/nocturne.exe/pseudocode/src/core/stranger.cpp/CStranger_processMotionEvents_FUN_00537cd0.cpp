@@ -107,12 +107,13 @@ LAB_005383ca:
             *(uint *)(param_1 + 0x1faa0) = 0;
           }
           else {
-            FUN_0046fb40(0x01BCD074,"actionPending = %d\nstranger.cpp line %d",
-                         *(int *)(param_1 + 0x1faa0),0x77c);
+            shape_edittool_cpp_FUN_0046fb40
+                      (0x01BCD074,"actionPending = %d\nstranger.cpp line %d",*(int *)(param_1 + 0x1faa0),
+                       0x77c);
           }
           iVar4 = *(int *)(param_1 + 0x1fa08);
           if (iVar4 == 0) {
-            FUN_0046fb40(0x01BCD074,"Object to pick up is now NULL\nstranger.cpp line %d",0x782);
+            shape_edittool_cpp_FUN_0046fb40(0x01BCD074,"Object to pick up is now NULL\nstranger.cpp line %d",0x782);
           }
           else {
             iVar4 = (**(code **)(*(int *)(iVar4 + 0x14c) + 0x7c))(iVar4,param_1);
@@ -129,8 +130,9 @@ LAB_005383ca:
               }
               if (iVar4 == 2) {
                 if (*(int *)(param_1 + 0x1faa0) != 0) {
-                  FUN_0046fb40(0x01BCD074,"actionPending = %d\nstranger.cpp line %d",
-                               *(int *)(param_1 + 0x1faa0),0x7a0);
+                  shape_edittool_cpp_FUN_0046fb40
+                            (0x01BCD074,"actionPending = %d\nstranger.cpp line %d",
+                             *(int *)(param_1 + 0x1faa0),0x7a0);
                 }
                 *(uint *)(param_1 + 0x1faa0) = 1;
               }
@@ -152,7 +154,8 @@ LAB_00537df4:
           }
           else {
             if (iVar5 == 6) goto LAB_00537df4;
-            FUN_0046fb40(0x01BCD074,"actionPending = %d\nstranger.cpp line %d",iVar5,0x75e);
+            shape_edittool_cpp_FUN_0046fb40
+                      (0x01BCD074,"actionPending = %d\nstranger.cpp line %d",iVar5,0x75e);
           }
           *(uint *)(param_1 + 0x1fa1c) = 0;
           if (*(int *)(param_1 + 0x2a84) == 0xe) {
@@ -166,7 +169,7 @@ LAB_00537df4:
       }
       else if (uVar2 < 7) {
         iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(param_1 + 0x2590),_DAT_01bcdef4);
+                          (*(uint *)(param_1 + 0x2590),g_CEnemyActorType_01bcdebc.name_hash);
         local_18 = iVar4;
         if (iVar4 != 0) {
           uVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
@@ -233,8 +236,9 @@ LAB_00537df4:
             *(uint *)(param_1 + 0x1faa0) = 0;
           }
           else {
-            FUN_0046fb40(0x01BCD074,"actionPending = %d\nstranger.cpp line %d",
-                         *(int *)(param_1 + 0x1faa0),0x7c0);
+            shape_edittool_cpp_FUN_0046fb40
+                      (0x01BCD074,"actionPending = %d\nstranger.cpp line %d",*(int *)(param_1 + 0x1faa0),
+                       0x7c0);
           }
         }
         else {
@@ -242,13 +246,14 @@ LAB_00537df4:
             *(uint *)(param_1 + 0x1faa0) = 0;
           }
           else {
-            FUN_0046fb40(0x01BCD074,"actionPending = %d\nstranger.cpp line %d",
-                         *(int *)(param_1 + 0x1faa0),0x813);
+            shape_edittool_cpp_FUN_0046fb40
+                      (0x01BCD074,"actionPending = %d\nstranger.cpp line %d",*(int *)(param_1 + 0x1faa0),
+                       0x813);
           }
           if (*(int *)(param_1 + 0x1fa04) == 0) {
-            FUN_0046fb40(0x01BCD074,"doorToOpen == NULL\nstranger.cpp line %d",0x819);
+            shape_edittool_cpp_FUN_0046fb40(0x01BCD074,"doorToOpen == NULL\nstranger.cpp line %d",0x819);
           }
-          iVar4 = FUN_004b5270(param_1);
+          iVar4 = core_hero_cpp_FUN_004b5270(param_1);
           if (iVar4 == 0) {
             core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar1,0,1);
           }

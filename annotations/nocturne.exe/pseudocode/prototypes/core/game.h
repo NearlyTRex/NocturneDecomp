@@ -3,9 +3,17 @@
 // Function prototypes for core/game.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_game.cpp_staticInit_FUN_0049a1e0
+// Address: 0049a1e0
+void __cdecl staticInit(void);
+
 // Original: core_game.cpp_setupMovieRecording_FUN_0049a240
 // Address: 0049a240
 void setupMovieRecording(void);
+
+// Original: core_game.cpp_FUN_0049a320
+// Address: 0049a320
+void FUN_0049a320(void);
 
 // Original: core_game.cpp_CGame_ctor_FUN_0049a650
 // Address: 0049a650
@@ -55,9 +63,21 @@ void __cdecl CGame::setFudgeTarget(int param_1,undefined4 param_2,undefined4 par
 // Address: 0049b260
 void __cdecl CGame::processFudge(int param_1);
 
+// Original: core_game.cpp_FUN_0049b3a0
+// Address: 0049b3a0
+void FUN_0049b3a0(undefined4 param_1);
+
+// Original: core_game.cpp_FUN_0049b420
+// Address: 0049b420
+void FUN_0049b420(undefined4 param_1,undefined4 param_2);
+
 // Original: core_game.cpp_CGame_showCustomizableKeys_FUN_0049b4e0
 // Address: 0049b4e0
 void __cdecl CGame::showCustomizableKeys(int param_1);
+
+// Original: core_game.cpp_FUN_0049cc10
+// Address: 0049cc10
+void FUN_0049cc10(int param_1);
 
 // Original: core_game.cpp_CGame_setGameRes_FUN_0049d870
 // Address: 0049d870
@@ -87,6 +107,22 @@ void __cdecl CGame::resetKeyState(int param_1);
 // Address: 0049ec80
 undefined4 __cdecl CGame::processJoystickControls(undefined4 param_1,undefined4 param_2);
 
+// Original: core_game.cpp_FUN_0049ecc0
+// Address: 0049ecc0
+void FUN_0049ecc0(void);
+
+// Original: core_game.cpp_FUN_0049ecf0
+// Address: 0049ecf0
+void FUN_0049ecf0(void);
+
+// Original: core_game.cpp_FUN_0049ed20
+// Address: 0049ed20
+void FUN_0049ed20(void);
+
+// Original: core_game.cpp_FUN_0049edc0
+// Address: 0049edc0
+void FUN_0049edc0(void);
+
 // Original: core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30
 // Address: 0049ee30
 void __cdecl CGame::processKeyboardControls(int param_1,uint *param_2);
@@ -99,9 +135,25 @@ void __cdecl CGame::processMouseControls(int param_1,int param_2);
 // Address: 0049f8c0
 void __cdecl CGame::resetInputAndCenterCursor(void);
 
+// Original: core_game.cpp_FUN_0049f930
+// Address: 0049f930
+void FUN_0049f930(int param_1);
+
+// Original: core_game.cpp_FUN_004a0260
+// Address: 004a0260
+undefined4 FUN_004a0260(char *param_1);
+
 // Original: core_game.cpp_giveHeroWeapon_FUN_004a02e0
 // Address: 004a02e0
 void __cdecl giveHeroWeapon(undefined4 param_1);
+
+// Original: core_game.cpp_FUN_004a03a0
+// Address: 004a03a0
+void FUN_004a03a0(void);
+
+// Original: core_game.cpp_FUN_004a0430
+// Address: 004a0430
+void FUN_004a0430(char *param_1,undefined4 param_2,undefined4 param_3);
 
 // Original: core_game.cpp_scaleBoneRecursive_FUN_004a04e0
 // Address: 004a04e0
@@ -139,13 +191,37 @@ void __cdecl CGame::renderIrisFade(void);
 // Address: 004a3a50
 undefined4 __cdecl CGame::fadeIn(void);
 
+// Original: core_game.cpp_FUN_004a3a70
+// Address: 004a3a70
+void FUN_004a3a70(void);
+
+// Original: core_game.cpp_FUN_004a3a90
+// Address: 004a3a90
+void FUN_004a3a90(void);
+
 // Original: core_game.cpp_CGame_setStatusDisplay_FUN_004a3ab0
 // Address: 004a3ab0
 void __cdecl CGame::setStatusDisplay(int param_1,char *param_2,undefined4 param_3,float param_4);
 
+// Original: core_game.cpp_FUN_004a3b90
+// Address: 004a3b90
+void FUN_004a3b90(int param_1,char *param_2);
+
+// Original: core_game.cpp_FUN_004a4170
+// Address: 004a4170
+void FUN_004a4170(int param_1,char *param_2,int param_3);
+
+// Original: core_game.cpp_FUN_004a4b50
+// Address: 004a4b50
+void FUN_004a4b50(int param_1,int param_2);
+
 // Original: core_game.cpp_CGame_displayBitmap_FUN_004a5740
 // Address: 004a5740
 void __cdecl CGame::displayBitmap(int param_1,char *param_2,undefined4 param_3,undefined4 param_4);
+
+// Original: core_game.cpp_FUN_004a57c0
+// Address: 004a57c0
+void FUN_004a57c0(int param_1);
 
 // Original: core_game.cpp_joinNetworkGame_FUN_004a5e40
 // Address: 004a5e40
@@ -174,3 +250,11 @@ void __cdecl CGame::finishAct(int param_1);
 // Original: core_game.cpp_CGame_rollCredits_FUN_004a6e90
 // Address: 004a6e90
 void __cdecl CGame::rollCredits(undefined4 param_1);
+
+// Original: core_game.cpp_CSlew_ctor_FUN_004a72a0
+// Address: 004a72a0
+undefined4 CSlew::ctor(undefined4 param_1);
+
+// Original: core_game.cpp_CSlew_dtor_FUN_004a72b0
+// Address: 004a72b0
+undefined4 CSlew::dtor(undefined4 param_1);

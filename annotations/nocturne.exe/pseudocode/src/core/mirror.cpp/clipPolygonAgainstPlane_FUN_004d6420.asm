@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004d74a0 at 004d7530
+;   core_mirror.cpp_FUN_004d74a0 at 004d7530
 ;
 ; Referenced Globals:
 ;   void* PTR_caseD_1_004d6408 = 004d64f5

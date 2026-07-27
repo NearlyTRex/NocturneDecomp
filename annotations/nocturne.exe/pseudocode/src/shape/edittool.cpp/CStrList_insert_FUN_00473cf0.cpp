@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00473cf0(int *param_1,int param_2,char *param_3)
 
 {
@@ -21,9 +19,9 @@ void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00473cf0(int *param_1,int pa
   
   bVar7 = 0;
   if ((param_2 < 0) || (*param_1 < param_2)) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0x9ba;
-    FUN_004c8440("CStrList::insert - invalid index");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0x9ba;
+    core_main_c_FUN_004c8440("CStrList::insert - invalid index");
   }
   iVar2 = *param_1;
   iVar5 = iVar2 + 1;
@@ -45,9 +43,9 @@ void __cdecl shape_edittool_cpp_CStrList_insert_FUN_00473cf0(int *param_1,int pa
   uVar3 = malloc(~uVar4);
   *(uint *)(param_1[2] + iVar2) = uVar3;
   if (*(int *)(iVar2 + param_1[2]) == 0) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0x9c8;
-    FUN_004c8440("CStrList::insert - out of memory");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0x9c8;
+    core_main_c_FUN_004c8440("CStrList::insert - out of memory");
   }
   pcVar6 = *(char **)(param_1[2] + param_2 * 4);
   do {

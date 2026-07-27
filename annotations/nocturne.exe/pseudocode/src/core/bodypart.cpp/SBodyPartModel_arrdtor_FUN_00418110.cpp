@@ -9,6 +9,6 @@
 void __cdecl core_bodypart_cpp_SBodyPartModel_arrdtor_FUN_00418110(uint param_1)
 
 {
-  __arrfini(param_1,3,&DAT_0059a820);
+  __arrfini(param_1,3,&g_SBodyPartModelTypeInfo_0059a820);
   return;
 }

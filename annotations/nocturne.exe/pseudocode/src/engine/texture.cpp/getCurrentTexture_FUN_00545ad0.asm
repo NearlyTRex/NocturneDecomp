@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 * __cdecl engine_texture_cpp_getCurrentTexture_FUN_00545ad0(void)
+; undefined * __cdecl engine_texture_cpp_getCurrentTexture_FUN_00545ad0(void)
 ;
 ;
 ; XREF[2]:

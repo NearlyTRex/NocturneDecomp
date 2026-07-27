@@ -8,18 +8,18 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[9]:
-;   FUN_00470730 at 004708d6
-;   FUN_00474ae0 at 00474b40
 ;   core_mission.cpp_CDemonMission_loadScript_FUN_004d86d0 at 004d86ef
 ;   engine_font.cpp_CBitFont_loadBitmap_FUN_0048ff70 at 004900dd
 ;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 0047061d
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460 at 004744fe
 ;   shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004746b0 at 00474794
 ;   shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0 at 00474994
+;   shape_edittool.cpp_FUN_00470730 at 004708d6
+;   shape_edittool.cpp_FUN_00474ae0 at 00474b40
 ;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10 at 00521e91
 ;
 ; Called Functions:
-;   FUN_00566250
+;   crt_unknown.c_FUN_00566250
 ;   FUN_0056d9f0
 ;   FUN_0056da30
 ;   FUN_0056da50
@@ -111,8 +111,8 @@ section .text
         ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d9f0()
     ADD ESP,0x4                         ; 005662ff
     PUSH EAX                            ; 00566302
-    CALL FUN_00566250                   ; 00566303
-        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; undefined FUN_00566250()
+    CALL crt_unknown.c_FUN_00566250     ; 00566303
+        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566250()
     ADD ESP,0x8                         ; 00566308
     PUSH EBX                            ; 0056630b
     PUSH EAX                            ; 0056630c
@@ -179,8 +179,8 @@ section .text
     MOV EDX,ESP                         ; 00566396
     PUSH EDX                            ; 00566398
     PUSH EAX                            ; 00566399
-    CALL FUN_00566250                   ; 0056639a
-        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; undefined FUN_00566250()
+    CALL crt_unknown.c_FUN_00566250     ; 0056639a
+        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566250()
     ADD ESP,0x8                         ; 0056639f
     MOV EDX,dword ptr [ESP]             ; 005663a2
     CMP EAX,EDX                         ; 005663a5
@@ -205,8 +205,8 @@ section .text
         ;   XREF to: 0056d9f0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056d9f0()
     ADD ESP,0x4                         ; 005663c9
     PUSH EAX                            ; 005663cc
-    CALL FUN_00566250                   ; 005663cd
-        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; undefined FUN_00566250()
+    CALL crt_unknown.c_FUN_00566250     ; 005663cd
+        ;   XREF to: 00566250 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566250()
     ADD ESP,0x8                         ; 005663d2
     PUSH EBX                            ; 005663d5
     PUSH EAX                            ; 005663d6

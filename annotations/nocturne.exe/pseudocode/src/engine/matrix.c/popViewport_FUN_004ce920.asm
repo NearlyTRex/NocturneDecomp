@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004722b0 at 00472383
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70 at 00460e70
+;   shape_edittool.cpp_FUN_004722b0 at 00472383
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005882ea
@@ -27,7 +27,7 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -85,10 +85,10 @@ section .text
     MOV EBX,0x5882ea                    ; 004cea26 | = "..\\engine\\matrix.c"
     MOV ESI,0x569                       ; 004cea2b
     PUSH 0x5882fd                       ; 004cea30 | = "3D Window unbalance"
-    MOV dword ptr [0x01cc4800],EBX      ; 004cea35 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004cea3b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004cea41
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004cea35 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004cea3b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004cea41
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004cea46
     POP EBX                             ; 004cea49
     POP ESI                             ; 004cea4a

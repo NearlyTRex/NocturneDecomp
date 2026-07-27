@@ -72,7 +72,7 @@ __asm {
         pop EBX
         ret
     LAB_005539d2:
-        call FUN_00532ba0
+        call engine_special_cpp_FUN_00532ba0
         xor ESI,ESI
         mov dword ptr [DAT_02ddf564],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005591c0
@@ -116,9 +116,9 @@ __asm {
         mov EDI,0x597ae0
         mov EAX,0x346
         push 0x597af7
-        mov dword ptr [DAT_01cc4800],EDI
-        mov [DAT_01cc4804],EAX
-        call FUN_004c8440
+        mov dword ptr [PTR_01cc4800],EDI
+        mov [INT_01cc4804],EAX
+        call core_main_c_FUN_004c8440
         add ESP,0x4
     LAB_00553a63:
         mov EAX,dword ptr [EBP + -0x58]
@@ -170,9 +170,9 @@ __asm {
         mov ESI,0x597b13
         mov EDI,0x368
         push 0x597b2a
-        mov dword ptr [DAT_01cc4800],ESI
-        mov dword ptr [DAT_01cc4804],EDI
-        call FUN_004c8440
+        mov dword ptr [PTR_01cc4800],ESI
+        mov dword ptr [INT_01cc4804],EDI
+        call core_main_c_FUN_004c8440
         add ESP,0x4
         xor ESI,ESI
         mov dword ptr [DAT_02ddf564],ESI
@@ -193,7 +193,7 @@ __asm {
         jz LAB_005539be
         cmp EAX,0x887601c2
         jnz LAB_005539be
-        call FUN_00553ba0
+        call wincore_wddvmem_cpp_FUN_00553ba0
         xor ESI,ESI
         mov dword ptr [DAT_02ddf564],ESI
         call wincore_winrun_cpp_processWindowMessages_FUN_005591c0

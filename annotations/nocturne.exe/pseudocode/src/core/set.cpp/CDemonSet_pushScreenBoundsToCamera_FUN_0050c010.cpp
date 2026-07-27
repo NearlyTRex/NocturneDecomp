@@ -80,7 +80,8 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(uint p
         piVar3 = piVar3 + 0xc;
       } while (local_10 < param_2);
     }
-    FUN_004405d0(_DAT_007f7374,iVar4 >> 0x10,local_c >> 0x10,iVar2 >> 0x10,local_8 >> 0x10);
+    core_dcamera_cpp_FUN_004405d0
+              (_DAT_007f7374,iVar4 >> 0x10,local_c >> 0x10,iVar2 >> 0x10,local_8 >> 0x10);
   }
   return;
 }

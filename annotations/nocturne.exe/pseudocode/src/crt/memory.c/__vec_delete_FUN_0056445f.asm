@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[137]:
-;   FUN_0040ef90 at 0040efbc
-;   FUN_0040f4b0 at 0040f4dc
-;   FUN_0040f8b0 at 0040f8dc
-;   FUN_0040fc30 at 0040fcc7
-;   FUN_004100f0 at 0041011c
-;   FUN_00411610 at 0041163c
-;   FUN_00411660 at 0041168c
-;   FUN_004118c0 at 004118ec
-;   FUN_004132c0 at 00413357
-;   FUN_00414c60 at 00414cf7
+;   FUN_0056b538 at 0056b57d
+;   FUN_0056b5ad at 0056b603
+;   FUN_0056b633 at 0056b660
+;   FUN_0056b6e8 at 0056b72d
+;   FUN_0056b810 at 0056b866
+;   FUN_005701cf at 00570225
+;   FUN_00570449 at 005704a4
+;   cockpit_pkbitmap.cpp_FUN_004f5320 at 004f532e
+;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0 at 00409ed7
+;   core_ammo.cpp_FUN_0040ef90 at 0040efbc
 ;   ... and 127 more
 ;
 ; Called Functions:

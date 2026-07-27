@@ -9,7 +9,7 @@
 void core_hostage_cpp_CHostage_archive_FUN_004b8320(int param_1)
 
 {
-  FUN_004eed10(param_1);
+  core_npc_cpp_FUN_004eed10(param_1);
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1f91c,"followState");
   core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x1f924,"hostageState");
   core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x1f928,"goalWayPoint");

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_dcube_cpp_clipEdgeToPlane_FUN_004484c0(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10)
 
 {
@@ -21,9 +19,9 @@ void core_dcube_cpp_clipEdgeToPlane_FUN_004484c0(float *param_1,float *param_2,f
   dVar1 = (double)fVar2;
   local_28 = SUB84(__BITCAST_UINT64(dVar1),0);
   if ((((ulonglong)dVar1 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
-    _DAT_01cc4800 = "..\\core\\dcube.cpp";
-    _DAT_01cc4804 = 0x6e;
-    FUN_004c8440("Bad clip!");
+    PTR_01cc4800 = "..\\core\\dcube.cpp";
+    INT_01cc4804 = 0x6e;
+    core_main_c_FUN_004c8440("Bad clip!");
   }
   fVar2 = -(param_1[2] * (float)__BITCAST_DOUBLE(CONCAT44(param_9,param_8)) +
            param_1[1] * (float)__BITCAST_DOUBLE(CONCAT44(param_7,param_6)) +

@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00477890 at 00477f75
-;   FUN_004b27c0 at 004b2f59
-;   FUN_00515ea0 at 005165bc
-;   FUN_00545c30 at 00546413
 ;   core_actor.cpp_FUN_0040b300 at 0040bc87
+;   core_elephant.cpp_FUN_00477890 at 00477f75
+;   core_gun.cpp_FUN_004b27c0 at 004b2f59
+;   core_shotgun.cpp_FUN_00515ea0 at 005165bc
+;   core_tommygun.cpp_FUN_00545c30 at 00546413
 ;   core_turret.cpp_CTurret_fire_FUN_0054ab10 at 0054afea
 ;
 ; Referenced Globals:
@@ -20,9 +20,9 @@
 ;   undefined4 DAT_0077ad0c
 ;
 ; Called Functions:
+;   core_fire.cpp_FUN_0048c0d0
+;   core_mission.cpp_FUN_004d9110
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   FUN_0048c0d0
-;   FUN_004d9110
 ;
 ; *****************************************************************************
 
@@ -77,15 +77,15 @@ section .text
     FADD float ptr [ESP + 0x34]         ; 0043ce2b
     PUSH ESI                            ; 0043ce2f
     FSTP float ptr [ESP + 0x38]         ; 0043ce30
-    CALL FUN_0048c0d0                   ; 0043ce34
-        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048c0d0()
+    CALL core_fire.cpp_FUN_0048c0d0     ; 0043ce34
+        ;   XREF to: 0048c0d0 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0048c0d0()
     ADD ESP,0x14                        ; 0043ce39
     PUSH 0x1                            ; 0043ce3c
     PUSH EBX                            ; 0043ce3e
     MOV EDI,dword ptr [0x005baf90]      ; 0043ce3f | DAT_005baf90
     PUSH EDI                            ; 0043ce45
-    CALL FUN_004d9110                   ; 0043ce46
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined FUN_004d9110()
+    CALL core_mission.cpp_FUN_004d9110  ; 0043ce46
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
     ADD ESP,0xc                         ; 0043ce4b
     MOV dword ptr [EBX + 0x70],0x2      ; 0043ce4e
     POP ESI                             ; 0043ce55

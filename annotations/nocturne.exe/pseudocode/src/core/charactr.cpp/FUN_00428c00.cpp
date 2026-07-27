@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_charactr_cpp_FUN_00428c00(int param_1,float param_2)
 
 {
@@ -49,7 +47,8 @@ uint core_charactr_cpp_FUN_00428c00(int param_1,float param_2)
   if (*(int *)(param_1 + 0x25ac) == 0) {
     iVar2 = *(int *)(param_1 + 0x2598);
     if (((0.0 <= *(float *)(param_1 + 0x259c)) &&
-        (iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar2,_DAT_02ddf54c), iVar5 != 0)) &&
+        (iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
+                           (iVar2,g_CWayPointActorType_02ddf514.name_hash), iVar5 != 0)) &&
        (iVar2 = core_waypoint_cpp_CWayPoint_findNearestReachable_FUN_00552680(param_1 + 0x20,iVar5),
        iVar2 == 0)) {
       engine_console_cpp_CConsole_printf_FUN_0043ac60

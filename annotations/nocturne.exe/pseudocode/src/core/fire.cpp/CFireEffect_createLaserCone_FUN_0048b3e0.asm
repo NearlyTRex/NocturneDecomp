@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00478120 at 00478294
-;   FUN_004c7ca0 at 004c7e30
-;   FUN_00516770 at 005168e4
+;   core_elephant.cpp_FUN_00478120 at 00478294
+;   core_lightgun.cpp_FUN_004c7ca0 at 004c7e30
+;   core_shotgun.cpp_FUN_00516770 at 005168e4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059d210
+;   float FLOAT_0059d210 = 0.02000000
 ;   undefined4 DAT_01c5c700
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     PUSH EBX                            ; 0048b3f0
     PUSH dword ptr [ESP + 0x30]         ; 0048b3f1
     MOV ECX,dword ptr [ESP + 0x30]      ; 0048b3f5
-    PUSH dword ptr [0x0059d210]         ; 0048b3f9 | DAT_0059d210
+    PUSH dword ptr [0x0059d210]         ; 0048b3f9 | FLOAT_0059d210
     PUSH ECX                            ; 0048b3ff
     MOV EBX,dword ptr [ESP + 0x34]      ; 0048b400
     PUSH EBX                            ; 0048b404

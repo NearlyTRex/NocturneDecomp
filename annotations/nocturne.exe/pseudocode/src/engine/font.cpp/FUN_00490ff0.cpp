@@ -1,15 +1,15 @@
-// Name: FUN_00490ff0
+// Name: engine_font.cpp_FUN_00490ff0
 // Address: 00490ff0
 // Address Range: [[00490ff0, 00491132]]
 // Convention: unknown
-// Signature: void FUN_00490ff0(uint param_1,uint param_2,uint param_3)
+// Signature: void engine_font_cpp_FUN_00490ff0(uint param_1,uint param_2,uint param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004910f9) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00490ff0(uint param_1,uint param_2,uint param_3)
+void engine_font_cpp_FUN_00490ff0(uint param_1,uint param_2,uint param_3)
 
 {
   if (DAT_005b7624 == 8) {
@@ -28,9 +28,9 @@ void FUN_00490ff0(uint param_1,uint param_2,uint param_3)
          param_2 << (DAT_01c00630 & 0x1f) | param_1 << (DAT_01c00624 & 0x1f);
   }
   else {
-    _DAT_01cc4800 = "..\\engine\\font.cpp";
-    _DAT_01cc4804 = 0x399;
-    FUN_004c8440("Invalid bitsPerPixel in CBitFont::setTrueColor");
+    PTR_01cc4800 = "..\\engine\\font.cpp";
+    INT_01cc4804 = 0x399;
+    core_main_c_FUN_004c8440("Invalid bitsPerPixel in CBitFont::setTrueColor");
   }
   _DAT_01c70f68 = param_2;
   _DAT_01c70f6c = param_3;

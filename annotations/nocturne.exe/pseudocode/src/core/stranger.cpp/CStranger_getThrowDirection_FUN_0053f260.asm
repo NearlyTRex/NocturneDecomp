@@ -13,8 +13,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   FUN_0053d100 at 0053d1dc
-;   FUN_0053f310 at 0053f917
+;   core_stranger.cpp_FUN_0053d100 at 0053d1dc
+;   core_stranger.cpp_FUN_0053f310 at 0053f917
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0

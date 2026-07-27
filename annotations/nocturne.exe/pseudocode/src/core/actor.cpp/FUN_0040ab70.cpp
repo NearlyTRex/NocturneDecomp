@@ -22,7 +22,7 @@ void core_actor_cpp_FUN_0040ab70(float *param_1,uint param_2)
   local_14 = (int)ROUND(*param_1 * _DAT_005992b0);
   local_10 = (int)ROUND(param_1[1] * _DAT_005992b0);
   local_c = (int)ROUND(param_1[2] * _DAT_005992b0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*0x01B4D738 + 0xea5d0,&local_14);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*0x01B4D738 + 0xea5d0,&local_14);
   iVar3 = *0x01B4D738;
   if ((*(byte *)(iVar3 + 0xea5e3) & 0x80) == 0) {
     iVar4 = *(int *)(iVar3 + 0xea5e0) >> 0x10;

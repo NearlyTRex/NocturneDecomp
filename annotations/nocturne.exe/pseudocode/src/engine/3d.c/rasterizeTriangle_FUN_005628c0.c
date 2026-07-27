@@ -50,7 +50,7 @@ void __cdecl engine_3d_c_rasterizeTriangle_FUN_005628c0(int *param_1,int param_2
   }
   _DAT_01e52ef8 = _DAT_01e52ef8 + 1;
   if ((_DAT_01c02594 != 0) && (DAT_006b0278 == 0)) {
-    wincore_windll_cpp_drawPolygon_FUN_00532620(param_1,param_2,_DAT_01c039a0);
+    engine_special_cpp_drawPolygon_FUN_00532620(param_1,param_2,_DAT_01c039a0);
     return;
   }
   if (_DAT_01c039a4 != 0) {
@@ -180,7 +180,7 @@ LAB_00562b4c:
             return;
           }
         }
-        wincore_windll_cpp_renderScanline_FUN_00530710(local_18,local_14,iVar9);
+        engine_special_cpp_renderScanline_FUN_00530710(local_18,local_14,iVar9);
         if (_DAT_01b4d768 != 0) {
           return;
         }

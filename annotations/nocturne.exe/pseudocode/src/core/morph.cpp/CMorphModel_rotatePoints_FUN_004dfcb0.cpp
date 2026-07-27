@@ -27,9 +27,9 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(int param_1,fl
   uint local_14;
   
   if (2000 < *(int *)(param_1 + 0x54)) {
-    _DAT_01cc4800 = "..\\core\\morph.cpp";
-    _DAT_01cc4804 = 0x1f8;
-    FUN_004c8440("CMorphModel::rotatePoints - too many points!");
+    PTR_01cc4800 = "..\\core\\morph.cpp";
+    INT_01cc4804 = 0x1f8;
+    core_main_c_FUN_004c8440("CMorphModel::rotatePoints - too many points!");
   }
   local_20 = 0;
   local_14 = 0xff;
@@ -50,7 +50,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(int param_1,fl
                             ) * _DAT_005a0cc0);
       piVar10[1] = (int)ROUND((fVar3 * param_2 + fVar1 * fVar7) * _DAT_005a0cc0);
       piVar10[2] = (int)ROUND((param_2 * fVar4 + fVar7 * fVar2) * _DAT_005a0cc0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iVar11,piVar10);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iVar11,piVar10);
       uVar6 = *(uint *)(iVar11 + 0x10 + *DAT_005ae704);
       if ((uVar6 & 0x80000000) == 0) {
         local_14 = 0;

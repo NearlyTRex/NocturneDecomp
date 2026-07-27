@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(int param_1)
 
 {
@@ -123,9 +121,9 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_004552a0(int param_1)
                        (param_1,auStack_38,&fStack_5c);
     break;
   default:
-    _DAT_01cc4800 = "..\\core\\door.cpp";
-    _DAT_01cc4804 = 0xf8;
-    FUN_004c8440("CDoor::reposition - Unknown type");
+    PTR_01cc4800 = "..\\core\\door.cpp";
+    INT_01cc4804 = 0xf8;
+    core_main_c_FUN_004c8440("CDoor::reposition - Unknown type");
     goto LAB_00455399;
   }
   if ((uint *)(param_1 + 0x9b4) != puVar2) {

@@ -12,14 +12,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_004f2050 at 004f208e
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20 at 004f1242
+;   core_path.cpp_FUN_004f2050 at 004f208e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_path_cpp_0058cc6f
 ;   TerminatedCString s_queuePop_empty_queue_0058cc80
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01e312f4
 ;   undefined4 DAT_01e3161c
 ;   undefined4 DAT_01e31620
@@ -34,9 +34,9 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0
 ;   crt_memory.c_memset_FUN_00563cc0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -195,10 +195,10 @@ section .text
         ;   Label: LAB_004f2260
     MOV EAX,0xdf                        ; 004f2265
     PUSH 0x58cc80                       ; 004f226a | = "queuePop - empty queue?!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f226f | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f2275 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f227a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004f226f | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004f2275 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f227a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f227f
     JMP 0x004f214d                      ; 004f2282
         ;   XREF to: 004f214d (UNCONDITIONAL_JUMP)  ; LAB_004f214d

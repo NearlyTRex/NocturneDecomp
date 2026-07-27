@@ -1,14 +1,12 @@
-// Name: FUN_004e7ed0
+// Name: sound_mp3.cpp_FUN_004e7ed0
 // Address: 004e7ed0
 // Address Range: [[004e7ed0, 004e825f]]
 // Convention: unknown
-// Signature: void FUN_004e7ed0(int param_1,int param_2,int param_3)
+// Signature: void sound_mp3_cpp_FUN_004e7ed0(int param_1,int param_2,int param_3)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_004e7ed0(int param_1,int param_2,int param_3)
+void sound_mp3_cpp_FUN_004e7ed0(int param_1,int param_2,int param_3)
 
 {
   uint uVar1;
@@ -56,9 +54,9 @@ void FUN_004e7ed0(int param_1,int param_2,int param_3)
   iVar2 = malloc(local_1c);
   *(int *)(param_1 + 0x5324) = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-    _DAT_01cc4804 = 0x1ff;
-    FUN_004c8440("Out of memory.  File: %s",&DAT_01cd8b28);
+    PTR_01cc4800 = "..\\sound\\mp3.cpp";
+    INT_01cc4804 = 0x1ff;
+    core_main_c_FUN_004c8440("Out of memory.  File: %s",&DAT_01cd8b28);
   }
   _fseek(*piVar6,*(uint *)(param_1 + 0x5340),0);
   *(uint *)(param_1 + 0x5330) = 0;
@@ -115,9 +113,9 @@ void FUN_004e7ed0(int param_1,int param_2,int param_3)
       iVar2 = 4;
     }
     if (iVar2 != *(int *)(local_24 + 0xc)) {
-      _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-      _DAT_01cc4804 = 0x1a1;
-      FUN_004c8440("MPEG Layer 2 - pick_table - can't load tables!  File: %s",&DAT_01cd8b28);
+      PTR_01cc4800 = "..\\sound\\mp3.cpp";
+      INT_01cc4804 = 0x1a1;
+      core_main_c_FUN_004c8440("MPEG Layer 2 - pick_table - can't load tables!  File: %s",&DAT_01cd8b28);
     }
     local_30 = local_1c;
   }
@@ -129,9 +127,9 @@ void FUN_004e7ed0(int param_1,int param_2,int param_3)
     iVar2 = piVar6[1];
     iVar4 = piVar6[8];
     if ((((iVar2 < 1) || (3 < iVar2)) || (iVar4 < 0)) || (3 < iVar4)) {
-      _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-      _DAT_01cc4804 = 0x1b1;
-      FUN_004c8440("js_bound bad layer/modext (%d/%d)  File: %s",iVar2,iVar4,&DAT_01cd8b28);
+      PTR_01cc4800 = "..\\sound\\mp3.cpp";
+      INT_01cc4804 = 0x1b1;
+      core_main_c_FUN_004c8440("js_bound bad layer/modext (%d/%d)  File: %s",iVar2,iVar4,&DAT_01cd8b28);
     }
     local_34 = *(uint *)("$CMotionController$$" + iVar4 * 4 + iVar2 * 0x10 + 10);
   }

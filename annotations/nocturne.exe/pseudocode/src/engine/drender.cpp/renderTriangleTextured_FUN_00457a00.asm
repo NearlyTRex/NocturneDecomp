@@ -14,9 +14,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_00461720 at 004618e9
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 at 0045edea
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_004614b0 at 0046165c
+;   engine_drender.cpp_FUN_00461720 at 004618e9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c5014
@@ -38,8 +38,8 @@
 ;
 ; Called Functions:
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
-;   wincore_windll.cpp_drawPolygon2_FUN_00532650
-;   wincore_windll.cpp_renderScanline_FUN_00530710
+;   engine_special.cpp_drawPolygon2_FUN_00532650
+;   engine_special.cpp_renderScanline_FUN_00530710
 ;
 ; *****************************************************************************
 
@@ -91,8 +91,8 @@ section .text
     PUSH EBX                            ; 00457a7b
     LEA EAX,[ESP + 0x8]                 ; 00457a7c
     PUSH EAX                            ; 00457a80
-    CALL wincore_windll.cpp_drawPolygon2_FUN_00532650 ; 00457a81
-        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolygon2_FUN_00532650()
+    CALL engine_special.cpp_drawPolygon2_FUN_00532650 ; 00457a81
+        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon2_FUN_00532650()
     ADD ESP,0xc                         ; 00457a86
     MOV EBP,dword ptr [0x01b4cd30]      ; 00457a89 | DAT_01b4cd30
         ;   Label: LAB_00457a89
@@ -289,8 +289,8 @@ section .text
         ;   Label: LAB_00457ca8
     MOV ESI,dword ptr [ESP + 0x54]      ; 00457cac
     MOV EBX,dword ptr [ESP + 0x4c]      ; 00457cb0
-    CALL wincore_windll.cpp_renderScanline_FUN_00530710 ; 00457cb4
-        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_renderScanline_FUN_00530710()
+    CALL engine_special.cpp_renderScanline_FUN_00530710 ; 00457cb4
+        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderScanline_FUN_00530710()
     CMP dword ptr [0x01b4d768],0x0      ; 00457cb9 | DAT_01b4d768
     JNZ 0x00457a89                      ; 00457cc0
         ;   XREF to: 00457a89 (CONDITIONAL_JUMP)  ; LAB_00457a89

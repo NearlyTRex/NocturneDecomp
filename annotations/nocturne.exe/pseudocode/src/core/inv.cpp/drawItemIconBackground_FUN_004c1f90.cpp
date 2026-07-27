@@ -70,6 +70,6 @@ void __cdecl core_inv_cpp_drawItemIconBackground_FUN_004c1f90(int param_1,int pa
   local_18 = param_2;
   local_1c = param_3;
   local_14 = param_4;
-  FUN_004405d0(0x1fb8508,param_1,param_3,param_2,param_4);
+  core_dcamera_cpp_FUN_004405d0(0x1fb8508,param_1,param_3,param_2,param_4);
   return;
 }

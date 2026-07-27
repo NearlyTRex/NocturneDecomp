@@ -5,27 +5,27 @@
 ;
 ;
 ; XREF[28]:
-;   FUN_00418a00 at 00418ffe
-;   FUN_0045ab40 at 0045afaa
-;   FUN_004c79a0 at 004c7c08
-;   FUN_0052d790 at 0052db96
-;   FUN_0052dff0 at 0052e3a4
-;   FUN_0052eac0 at 0052eac1
-;   FUN_00535900 at 00537c1f
-;   FUN_005464a0 at 00546680
+;   core_boneguy.cpp_FUN_00418a00 at 00418ffe
 ;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e7f4
 ;   core_charactr.cpp_CCharacter_processFire_FUN_004269b0 at 00426d2a
+;   core_dracbrid.cpp_FUN_0045ab40 at 0045afaa
+;   core_drone.cpp_CDrone_process_FUN_00462a60 at 0046307b
+;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c4e9
+;   core_event.cpp_CEventList_restartSfxEntries_FUN_00480eb0 at 00480ee1
+;   core_fire.cpp_CFireball_onCollision_FUN_00484b60 at 00484bda
+;   core_flame.cpp_CFlame_process_FUN_0048d0c0 at 0048d404
+;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30 at 00494e53
 ;   ... and 18 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_0059347a
 ;   TerminatedCString s_pushSfxOptions_stack_ful_0059348f
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dc1b74
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -64,10 +64,10 @@ section .text
     MOV EBX,0x59347a                    ; 00526398 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0xcf4                       ; 0052639d
     PUSH 0x59348f                       ; 005263a2 | = "pushSfxOptions - stack full"
-    MOV dword ptr [0x01cc4800],EBX      ; 005263a7 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005263ad | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005263b3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 005263a7 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 005263ad | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005263b3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005263b8
     POP EBX                             ; 005263bb
     JMP 0x00526354                      ; 005263bc

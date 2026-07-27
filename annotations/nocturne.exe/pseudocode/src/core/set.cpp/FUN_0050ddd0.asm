@@ -16,10 +16,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   FUN_0043f330 at 0043f53a
-;   FUN_00551c00 at 00551dd5
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437f21
+;   core_curtain.cpp_FUN_0043f330 at 0043f53a
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00453170 at 0045332d
+;   core_wateract.cpp_FUN_00551c00 at 00551dd5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

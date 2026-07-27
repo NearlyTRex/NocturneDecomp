@@ -18,15 +18,15 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_0057a316
 ;   TerminatedCString s_CCharacter_applyLookAt_n_0057a32b
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_xform.cpp_FUN_0055d4a0
 ;   core_xform.cpp_FUN_0055d4e0
 ;   core_xform.cpp_multiplyQuaternion_FUN_0055d130
 ;   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -116,10 +116,10 @@ section .text
     MOV ECX,0x57a316                    ; 00429f31 | = "..\\core\\charactr.cpp"
     MOV ESI,0xdf9                       ; 00429f36
     PUSH 0x57a32b                       ; 00429f3b | = "CCharacter::applyLookAt - never set l..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00429f40 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00429f46 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00429f4c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00429f40 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00429f46 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00429f4c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00429f51
     JMP 0x00429e8a                      ; 00429f54
         ;   XREF to: 00429e8a (UNCONDITIONAL_JUMP)  ; LAB_00429e8a

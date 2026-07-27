@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_wateract_cpp_CWaterActor_process_FUN_00551a80(float param_1,float param_2)
 
 {
@@ -60,9 +58,9 @@ void core_wateract_cpp_CWaterActor_process_FUN_00551a80(float param_1,float para
     *(uint *)((int)param_1 + 0x274) = 0;
     break;
   default:
-    _DAT_01cc4800 = "..\\core\\wateract.cpp";
-    _DAT_01cc4804 = 0x1a5;
-    FUN_004c8440("CWaterActor::process - Bad state");
+    PTR_01cc4800 = "..\\core\\wateract.cpp";
+    INT_01cc4804 = 0x1a5;
+    core_main_c_FUN_004c8440("CWaterActor::process - Bad state");
   }
   *(float *)((int)param_1 + 0x24) =
        *(float *)((int)param_1 + 0x160) * *(float *)((int)param_1 + 0x274) +

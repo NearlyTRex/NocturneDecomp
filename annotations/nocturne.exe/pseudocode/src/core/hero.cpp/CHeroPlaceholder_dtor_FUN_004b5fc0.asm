@@ -6,12 +6,12 @@
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_core_actor.cpp_CDemonActor_setup_FUN_00409fc0_0059ec84 = 00409fc0
-;   undefined4 DAT_0059ed60
+;   WatcomTypeInfo g_CHeroPlaceholderTypeInfo_0059ed60
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -38,7 +38,7 @@ section .text
     MOV EAX,EBX                         ; 004b5fec
     POP EBX                             ; 004b5fee
     RET                                 ; 004b5fef
-    PUSH 0x59ed60                       ; 004b5ff0 | DAT_0059ed60
+    PUSH 0x59ed60                       ; 004b5ff0 | g_CHeroPlaceholderTypeInfo_0059ed60
         ;   Label: LAB_004b5ff0
     PUSH EBX                            ; 004b5ff5
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004b5ff6
@@ -53,8 +53,8 @@ section .text
     RET                                 ; 004b600a
     PUSH EAX                            ; 004b600b
         ;   Label: LAB_004b600b
-    CALL FUN_00564494                   ; 004b600c
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 004b600c
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 004b6011
     MOV EAX,EBX                         ; 004b6014
     POP EBX                             ; 004b6016

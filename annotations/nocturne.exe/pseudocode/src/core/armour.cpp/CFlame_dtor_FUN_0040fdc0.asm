@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00599940
+;   WatcomTypeInfo g_CFlameTypeInfo_00599940
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -36,7 +36,7 @@ section .text
     MOV EAX,EBX                         ; 0040fde2
     POP EBX                             ; 0040fde4
     RET                                 ; 0040fde5
-    PUSH 0x599940                       ; 0040fde6 | DAT_00599940
+    PUSH 0x599940                       ; 0040fde6 | g_CFlameTypeInfo_00599940
         ;   Label: LAB_0040fde6
     PUSH EBX                            ; 0040fdeb
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 0040fdec
@@ -51,8 +51,8 @@ section .text
     RET                                 ; 0040fe00
     PUSH EAX                            ; 0040fe01
         ;   Label: LAB_0040fe01
-    CALL FUN_00564494                   ; 0040fe02
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 0040fe02
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 0040fe07
     MOV EAX,EBX                         ; 0040fe0a
     POP EBX                             ; 0040fe0c

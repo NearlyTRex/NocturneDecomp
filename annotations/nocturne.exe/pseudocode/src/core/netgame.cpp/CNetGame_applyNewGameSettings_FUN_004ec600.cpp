@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(int *param_1,uint *param_2)
 
 {
@@ -72,9 +70,9 @@ uint __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(int *pa
   
   bVar15 = 0;
   if ((*param_1 != 2) || (param_1[1] != 1)) {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 0x7e6;
-    FUN_004c8440("CNetGame::applyNewGameSettings - should only call this in client lobby mode");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 0x7e6;
+    core_main_c_FUN_004c8440("CNetGame::applyNewGameSettings - should only call this in client lobby mode");
   }
   puVar10 = (uint *)&stack0xfffffe90;
   for (iVar5 = 0x2c; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -135,9 +133,9 @@ uint __cdecl core_netgame_cpp_CNetGame_applyNewGameSettings_FUN_004ec600(int *pa
       }
       if (iVar5 == local_113) {
         if (local_24 == param_1[0x45]) {
-          _DAT_01cc4800 = "..\\core\\netgame.cpp";
-          _DAT_01cc4804 = 0x811;
-          FUN_004c8440("Hell froze");
+          PTR_01cc4800 = "..\\core\\netgame.cpp";
+          INT_01cc4804 = 0x811;
+          core_main_c_FUN_004c8440("Hell froze");
         }
         core_netgame_cpp_CNetGame_removePlayer_FUN_004ecc80(param_1,local_24);
       }

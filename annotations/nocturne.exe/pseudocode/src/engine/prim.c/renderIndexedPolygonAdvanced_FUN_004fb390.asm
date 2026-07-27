@@ -39,8 +39,8 @@
 ;   engine_prim.c_normalizeTextureCoords_FUN_004f98e0
 ;   engine_prim.c_prepareDepthBuffer_FUN_004f9870
 ;   engine_prim.c_replaceWWithDepth_FUN_004f99d0
-;   wincore_windll.cpp_drawPolygon2_FUN_00532650
-;   wincore_windll.cpp_renderScanline_FUN_00530710
+;   engine_special.cpp_drawPolygon2_FUN_00532650
+;   engine_special.cpp_renderScanline_FUN_00530710
 ;
 ; *****************************************************************************
 
@@ -133,8 +133,8 @@ section .text
     PUSH EAX                            ; 004fb46b
     LEA EAX,[ESP + 0x8]                 ; 004fb46c
     PUSH EAX                            ; 004fb470
-    CALL wincore_windll.cpp_drawPolygon2_FUN_00532650 ; 004fb471
-        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolygon2_FUN_00532650()
+    CALL engine_special.cpp_drawPolygon2_FUN_00532650 ; 004fb471
+        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon2_FUN_00532650()
     ADD ESP,0xc                         ; 004fb476
     ADD ESP,0x58                        ; 004fb479
         ;   Label: LAB_004fb479
@@ -449,8 +449,8 @@ section .text
         ;   Label: LAB_004fb79a
     MOV EBX,dword ptr [ESP + 0x50]      ; 004fb79e
     MOV EDI,EBP                         ; 004fb7a2
-    CALL wincore_windll.cpp_renderScanline_FUN_00530710 ; 004fb7a4
-        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_renderScanline_FUN_00530710()
+    CALL engine_special.cpp_renderScanline_FUN_00530710 ; 004fb7a4
+        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderScanline_FUN_00530710()
     MOV EAX,dword ptr [ESP + 0x54]      ; 004fb7a9
     MOV EDX,dword ptr [ESP + 0x54]      ; 004fb7ad
     MOV EAX,dword ptr [EAX + 0xc]       ; 004fb7b1

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00475230 at 0047537f
+;   shape_edittool.cpp_FUN_00475230 at 0047537f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c58

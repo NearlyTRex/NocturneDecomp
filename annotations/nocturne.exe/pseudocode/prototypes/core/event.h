@@ -3,6 +3,34 @@
 // Function prototypes for core/event.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_event.cpp_staticInit_FUN_0047a1d0
+// Address: 0047a1d0
+void __cdecl staticInit(void);
+
+// Original: core_event.cpp_FUN_0047a1e0
+// Address: 0047a1e0
+undefined4 FUN_0047a1e0(void);
+
+// Original: core_event.cpp_FUN_0047a210
+// Address: 0047a210
+undefined4 FUN_0047a210(undefined4 param_1);
+
+// Original: core_event.cpp_FUN_0047a260
+// Address: 0047a260
+void FUN_0047a260(void);
+
+// Original: core_event.cpp_FUN_0047a280
+// Address: 0047a280
+void FUN_0047a280(void);
+
+// Original: core_event.cpp_FUN_0047a2b0
+// Address: 0047a2b0
+undefined4 FUN_0047a2b0(void);
+
+// Original: core_event.cpp_FUN_0047a350
+// Address: 0047a350
+undefined4 FUN_0047a350(void);
+
 // Original: core_event.cpp_resolveActorByName_FUN_0047a390
 // Address: 0047a390
 int __cdecl resolveActorByName(char *param_1,undefined4 param_2,undefined4 param_3);
@@ -10,6 +38,10 @@ int __cdecl resolveActorByName(char *param_1,undefined4 param_2,undefined4 param
 // Original: core_event.cpp_parseVectorLocation_FUN_0047a4c0
 // Address: 0047a4c0
 undefined4 __cdecl parseVectorLocation(int param_1,int *param_2,undefined4 *param_3);
+
+// Original: core_event.cpp_FUN_0047a5e0
+// Address: 0047a5e0
+void FUN_0047a5e0(char *param_1);
 
 // Original: core_event.cpp_extractParenArg_FUN_0047a650
 // Address: 0047a650
@@ -57,11 +89,11 @@ int __cdecl CEventList::evaluateCondition(undefined4 param_1,char *param_2);
 
 // Original: core_event.cpp_CEventList_validateCondition_FUN_0047dc90
 // Address: 0047dc90
-undefined1 * __cdecl CEventList::validateCondition(undefined4 param_1,char *param_2);
+undefined * __cdecl CEventList::validateCondition(undefined4 param_1,char *param_2);
 
 // Original: core_event.cpp_CEventList_validateCommands_FUN_0047dcd0
 // Address: 0047dcd0
-undefined1 * __cdecl CEventList::validateCommands(undefined4 param_1,char *param_2);
+undefined * __cdecl CEventList::validateCommands(undefined4 param_1,char *param_2);
 
 // Original: core_event.cpp_CEventList_evaluateExpression_FUN_0047dd10
 // Address: 0047dd10
@@ -163,6 +195,18 @@ int __cdecl CEventList::loadState(int *param_1,undefined4 param_2);
 // Address: 00481330
 int __cdecl CEventList::saveState(int *param_1,undefined4 param_2);
 
+// Original: core_event.cpp_FUN_00481620
+// Address: 00481620
+void FUN_00481620(undefined4 *param_1);
+
+// Original: core_event.cpp_FUN_00481630
+// Address: 00481630
+void FUN_00481630(int *param_1,int param_2,char *param_3,char *param_4);
+
+// Original: core_event.cpp_FUN_00481770
+// Address: 00481770
+void FUN_00481770(int *param_1,int param_2);
+
 // Original: core_event.cpp_CRuleList_findFirst_FUN_00481840
 // Address: 00481840
 int __cdecl CRuleList::findFirst(int *param_1);
@@ -171,6 +215,26 @@ int __cdecl CRuleList::findFirst(int *param_1);
 // Address: 00481890
 undefined4 __cdecl CRuleList::evaluateAndRun(int param_1);
 
+// Original: core_event.cpp_FUN_004818e0
+// Address: 004818e0
+float FUN_004818e0(void);
+
 // Original: core_event.cpp_getSelectedCameraIndex_FUN_00481920
 // Address: 00481920
 undefined4 __cdecl getSelectedCameraIndex(int param_1);
+
+// Original: core_event.cpp_FUN_00481930
+// Address: 00481930
+undefined4 FUN_00481930(void);
+
+// Original: core_event.cpp_FUN_00481950
+// Address: 00481950
+undefined4 * FUN_00481950(undefined4 *param_1,undefined4 *param_2);
+
+// Original: core_event.cpp_FUN_00481960
+// Address: 00481960
+undefined4 * FUN_00481960(void);
+
+// Original: core_event.cpp_FUN_00481970
+// Address: 00481970
+undefined4 * FUN_00481970(void);

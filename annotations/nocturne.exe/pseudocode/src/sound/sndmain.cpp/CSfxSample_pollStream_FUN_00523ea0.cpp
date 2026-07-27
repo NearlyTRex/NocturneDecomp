@@ -32,26 +32,26 @@ uint sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(float param_1,float pa
   
   bVar10 = 0;
   if (_DAT_02dc84bc < 1) {
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x7be;
-    FUN_004c8440("SfxSlot::kill - must be locked!");
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x7be;
+    core_main_c_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
   if (-1 < *(int *)((int)param_1 + 0x134)) {
     iVar14 = *(int *)((int)param_1 + 0x134) * 0x120;
     if ((*(int *)(&DAT_02dbd3e4 + iVar14) == 0) || (param_1 != *(float *)(&DAT_02dbd3e8 + iVar14)))
     {
-      _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-      _DAT_01cc4804 = 0x7cb;
-      FUN_004c8440("SfxSample::pollStream - my sfx isn't active with me!");
+      PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+      INT_01cc4804 = 0x7cb;
+      core_main_c_FUN_004c8440("SfxSample::pollStream - my sfx isn't active with me!");
     }
     if (_DAT_02dc8318 == 0) {
-      FUN_00529980("SfxSample::pollStream - no sound device?\n");
+      sound_sndmain_cpp_FUN_00529980("SfxSample::pollStream - no sound device?\n");
       goto LAB_005240fa;
     }
     if (*(int *)(iVar14 + 0x2dbd3e0) != 0) {
-      iVar4 = FUN_005257e0(iVar14 + 0x2dbd374);
+      iVar4 = sound_sndmain_cpp_FUN_005257e0(iVar14 + 0x2dbd374);
       if (iVar4 == 0) {
-        FUN_00529980("SfxSample::pollStream - error querrying hw playback position\n");
+        sound_sndmain_cpp_FUN_00529980("SfxSample::pollStream - error querrying hw playback position\n");
         goto LAB_005240fa;
       }
       if (((*(int *)((int)param_1 + 0x124) == 0) && (-1 < *(int *)((int)param_1 + 0x110))) &&
@@ -88,10 +88,11 @@ uint sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(float param_1,float pa
         }
         if ((*(int *)((int)param_1 + 0x140) < 0) ||
            (*(int *)((int)param_1 + 0x138) <= *(int *)((int)param_1 + 0x140))) {
-          _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-          _DAT_01cc4804 = 0x81a;
-          FUN_004c8440("nextLoadSampleDest = %d, allocLength = %d",*(uint *)((int)param_1 + 0x140),
-                       *(uint *)((int)param_1 + 0x138));
+          PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+          INT_01cc4804 = 0x81a;
+          core_main_c_FUN_004c8440
+                    ("nextLoadSampleDest = %d, allocLength = %d",*(uint *)((int)param_1 + 0x140),
+                     *(uint *)((int)param_1 + 0x138));
         }
         iVar14 = *(int *)((int)param_1 + 0x138) - *(int *)((int)param_1 + 0x140);
         if (iVar4 < iVar14) {
@@ -135,9 +136,9 @@ LAB_005241ef:
           local_20 = iVar14;
           if (uVar7 < 8) {
 LAB_00524219:
-            _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-            _DAT_01cc4804 = 0x5c4;
-            FUN_004c8440("generateSilence - invalid bit depth!");
+            PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+            INT_01cc4804 = 0x5c4;
+            core_main_c_FUN_004c8440("generateSilence - invalid bit depth!");
           }
           else if (uVar7 < 9) {
             memset(puVar8,0x80,iVar5);
@@ -149,9 +150,9 @@ LAB_00524219:
         }
         else if (*(int *)((int)param_1 + 0x144) == 0) {
           if (*(int *)((int)param_1 + 0x14c) == 0) {
-            _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-            _DAT_01cc4804 = 0x86c;
-            FUN_004c8440("Can't stream unless we have mp3 decoder or open wav file!");
+            PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+            INT_01cc4804 = 0x86c;
+            core_main_c_FUN_004c8440("Can't stream unless we have mp3 decoder or open wav file!");
           }
           uVar13 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
                              (param_1,iVar14,*(uint *)((int)param_1 + 0x14c));
@@ -191,9 +192,9 @@ LAB_00524292:
         }
         else if (bVar2) goto LAB_00524292;
         if (iVar14 < local_20) {
-          _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-          _DAT_01cc4804 = 0x893;
-          FUN_004c8440("MP3 decoded more than batch: r = %d, batch = %d",local_20,iVar14);
+          PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+          INT_01cc4804 = 0x893;
+          core_main_c_FUN_004c8440("MP3 decoded more than batch: r = %d, batch = %d",local_20,iVar14);
         }
         if (iVar14 != local_20) {
           *(int *)((int)param_1 + 0x110) = *(int *)((int)param_1 + 0x13c) + local_20;
@@ -216,7 +217,7 @@ LAB_00524292:
       }
       pcVar12 = "Error locking %s while streaming\n";
 LAB_005240f2:
-      FUN_00529980(pcVar12,param_1);
+      sound_sndmain_cpp_FUN_00529980(pcVar12,param_1);
 LAB_005240fa:
       sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(local_30);
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(param_1);

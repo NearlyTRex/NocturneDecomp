@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_004ed980(int param_1,int *param_2)
 
 {
@@ -21,9 +19,9 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_004ed980(int par
   
   bVar7 = 0;
   if (*(int *)(param_1 + 0x114) < 0) {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 0x9cd;
-    FUN_004c8440("CNetGame::applySimFrameHistory - I'm not in the player list!");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 0x9cd;
+    core_main_c_FUN_004c8440("CNetGame::applySimFrameHistory - I'm not in the player list!");
   }
   *(int *)(param_1 + 0x16c) = param_2[1];
   core_game_cpp_CGame_slamDT_FUN_004a5f00(0x01C775EC,param_2[2]);

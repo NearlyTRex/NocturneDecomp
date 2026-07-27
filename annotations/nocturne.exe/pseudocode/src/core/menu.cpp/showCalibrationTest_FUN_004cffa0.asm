@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004c85f0 at 004c8da8
+;   core_main.c_FUN_004c85f0 at 004c8da8
 ;   core_menu.cpp_configureGraphicsOptions_FUN_004d0080 at 004d0c82
 ;
 ; Referenced Globals:

@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -136,27 +136,15 @@
   },
   "cross_references": [
     {
-      "addr": "004569a0",
-      "from_addr": "004569cc",
-      "name": "FUN_004569a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00470730",
-      "from_addr": "004707ec",
-      "name": "FUN_00470730",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00474ae0",
-      "from_addr": "00474b9f",
-      "name": "FUN_00474ae0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004f92b0",
       "from_addr": "004f92de",
       "name": "core_podmain.cpp_CDemonPod_load_FUN_004f92b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004569a0",
+      "from_addr": "004569cc",
+      "name": "engine_dosio.cpp_FUN_004569a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -169,6 +157,18 @@
       "addr": "004748b0",
       "from_addr": "004749dc",
       "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004748b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00470730",
+      "from_addr": "004707ec",
+      "name": "shape_edittool.cpp_FUN_00470730",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00474ae0",
+      "from_addr": "00474b9f",
+      "name": "shape_edittool.cpp_FUN_00474ae0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -231,7 +231,7 @@
       {
         "call_addr": "00474b9f",
         "call_type": "direct",
-        "caller": "FUN_00474ae0",
+        "caller": "shape_edittool.cpp_FUN_00474ae0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -242,7 +242,7 @@
       {
         "call_addr": "004569cc",
         "call_type": "direct",
-        "caller": "FUN_004569a0",
+        "caller": "engine_dosio.cpp_FUN_004569a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -253,7 +253,7 @@
       {
         "call_addr": "004707ec",
         "call_type": "direct",
-        "caller": "FUN_00470730",
+        "caller": "shape_edittool.cpp_FUN_00470730",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

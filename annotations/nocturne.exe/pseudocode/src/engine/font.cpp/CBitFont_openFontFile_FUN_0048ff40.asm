@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0044c560 at 0044c59e
-;   FUN_00490210 at 0049040e
+;   core_dfont.cpp_FUN_0044c560 at 0044c59e
+;   engine_font.cpp_FUN_00490210 at 0049040e
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004901d0

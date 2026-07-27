@@ -4,6 +4,14 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x2DE0000
 // =============================================================================
 
+// CDemonActorType
+CDemonActorType g_CWerewolfActorType_02de078c = {};
+CDemonActorType g_CZombieActorType_02de4940 = {};
+
+// CVector3f
+CVector3f CVector3f_02de0774 = {};
+CVector3f CVector3f_02de0780 = {};
+
 // word
 word DAT_02DE612A = 0;
 word DAT_02DE62C2 = 0;

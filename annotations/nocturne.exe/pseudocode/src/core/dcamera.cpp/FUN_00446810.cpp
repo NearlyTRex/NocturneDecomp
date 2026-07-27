@@ -1,14 +1,14 @@
-// Name: FUN_00446810
+// Name: core_dcamera.cpp_FUN_00446810
 // Address: 00446810
 // Address Range: [[00446810, 00446e94]]
 // Convention: unknown
-// Signature: void FUN_00446810(int param_1)
+// Signature: void core_dcamera_cpp_FUN_00446810(int param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00446810(int param_1)
+void core_dcamera_cpp_FUN_00446810(int param_1)
 
 {
   int iVar1;
@@ -75,9 +75,9 @@ void FUN_00446810(int param_1)
   _sprintf(local_f8,"backdrop\\%s",local_274);
   crt_fstream_cpp_ofstream_ctor_FUN_0056511e(local_174,0,local_f8,0x110,0x000001A4);
   if (local_114 != 0) {
-    _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-    _DAT_01cc4804 = 0x12d0;
-    FUN_004c8440("Can't create %s",local_f8);
+    PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    INT_01cc4804 = 0x12d0;
+    core_main_c_FUN_004c8440("Can't create %s",local_f8);
   }
   crt_fstream_cpp_ostream_write_FUN_00565a13(local_130,0x140d784,0x1000);
   if (_DAT_0140e7a0 != 0) {
@@ -188,19 +188,19 @@ void FUN_00446810(int param_1)
         iVar1 = support_codec_cpp_CCodec_processFromBuffer_FUN_004390b0
                           (auStack_a0,&DAT_012ceb78,&local_58,auStack_13c);
         if (iVar1 == 0) {
-          _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-          _DAT_01cc4804 = 0x133d;
-          FUN_004c8440("Error compressing %s",auStack_104);
+          PTR_01cc4800 = "..\\core\\dcamera.cpp";
+          INT_01cc4804 = 0x133d;
+          core_main_c_FUN_004c8440("Error compressing %s",auStack_104);
         }
         if (local_58 != 0) {
-          _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-          _DAT_01cc4804 = 0x133f;
-          FUN_004c8440("Not all bytes consumed compressing %s",auStack_104);
+          PTR_01cc4800 = "..\\core\\dcamera.cpp";
+          INT_01cc4804 = 0x133f;
+          core_main_c_FUN_004c8440("Not all bytes consumed compressing %s",auStack_104);
         }
         if (iStack_120 != 0) {
-          _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-          _DAT_01cc4804 = 0x1340;
-          FUN_004c8440("Error writing compressed file %s",auStack_104);
+          PTR_01cc4800 = "..\\core\\dcamera.cpp";
+          INT_01cc4804 = 0x1340;
+          core_main_c_FUN_004c8440("Error writing compressed file %s",auStack_104);
         }
         local_50 = local_50 + 0x12c00;
         local_4c = local_4c + 0x12c00;

@@ -78,20 +78,20 @@ uint __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(int param_1,in
   DAT_005c5010 = malloc();
   if (DAT_005c5010 == 0) {
     piStack_88 = (int *)"WDDVMEM: Fatal - out of frame buffer memory";
-    _DAT_01cc4800 = "..\\wincore\\wddvmem.cpp";
-    _DAT_01cc4804 = 0xea;
+    PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
+    INT_01cc4804 = 0xea;
     iStack_8c = 0x552f10;
-    FUN_004c8440();
+    core_main_c_FUN_004c8440();
   }
   piStack_88 = (int *)(DAT_005b761c * DAT_005b7620 * 4 + 0x40);
   iStack_8c = 0x552f2b;
   _DAT_02ddf560 = malloc();
   if (_DAT_02ddf560 == 0) {
     piStack_88 = (int *)"WDDVMEM: Fatal - out of Z buffer memory";
-    _DAT_01cc4800 = "..\\wincore\\wddvmem.cpp";
-    _DAT_01cc4804 = 0xef;
+    PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
+    INT_01cc4804 = 0xef;
     iStack_8c = 0x552f56;
-    FUN_004c8440();
+    core_main_c_FUN_004c8440();
   }
   piStack_88 = (int *)param_3;
   iStack_8c = param_2;
@@ -164,14 +164,14 @@ uint __cdecl wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(int param_1,in
     iVar3 = 0;
     wincore_wddvmem_cpp_setupColorPalette_FUN_005537e0();
     do {
-      wincore_windll_cpp_clearScreen_FUN_0052ee70();
+      engine_special_cpp_clearScreen_FUN_0052ee70();
       iVar3 = iVar3 + 1;
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     } while (iVar3 < 3);
     return 1;
   }
-  _DAT_01cc4800 = "..\\wincore\\wddvmem.cpp";
-  _DAT_01cc4804 = 0x1d7;
-  FUN_004c8440("setScreenResolution - Create back buffer failed!");
+  PTR_01cc4800 = "..\\wincore\\wddvmem.cpp";
+  INT_01cc4804 = 0x1d7;
+  core_main_c_FUN_004c8440("setScreenResolution - Create back buffer failed!");
   return 0;
 }

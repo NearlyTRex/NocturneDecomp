@@ -1,30 +1,34 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004d7f80(undefined4 param_1,undefined4 param_2)
+; void core_mission_cpp_FUN_004d7f80(undefined4 param_1,undefined4 param_2)
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_wt_00589669
+;   TerminatedCString s_world_0058966c
+;   TerminatedCString s_core_mission_cpp_00589672
+;   TerminatedCString s_CDemonMission_save_Unabl_00589686
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
+;   core_mission.cpp_FUN_004d8720
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
-;   FUN_004d8720
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004d7f80
-        ;   Label: FUN_004d7f80
+        ;   Label: core_mission.cpp_FUN_004d7f80
     PUSH EDI                            ; 004d7f81
-    PUSH 0x589669                       ; 004d7f82
+    PUSH 0x589669                       ; 004d7f82 | = "wt"
     MOV EDX,dword ptr [ESP + 0x14]      ; 004d7f87
     PUSH EDX                            ; 004d7f8b
-    PUSH 0x58966c                       ; 004d7f8c
+    PUSH 0x58966c                       ; 004d7f8c | = "world"
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004d7f91
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; undefined engine_dosio.cpp_getFile_FUN_00456a60()
     ADD ESP,0xc                         ; 004d7f96
@@ -36,8 +40,8 @@ section .text
         ;   Label: LAB_004d7f9f
     MOV EDI,dword ptr [ESP + 0x10]      ; 004d7fa0
     PUSH EDI                            ; 004d7fa4
-    CALL FUN_004d8720                   ; 004d7fa5
-        ;   XREF to: 004d8720 (UNCONDITIONAL_CALL)  ; undefined FUN_004d8720()
+    CALL core_mission.cpp_FUN_004d8720  ; 004d7fa5
+        ;   XREF to: 004d8720 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d8720()
     ADD ESP,0x8                         ; 004d7faa
     PUSH EBX                            ; 004d7fad
     CALL crt_stdio.c_fclose_FUN_00563380 ; 004d7fae
@@ -48,13 +52,13 @@ section .text
     RET                                 ; 004d7fb8
     PUSH ESI                            ; 004d7fb9
         ;   Label: LAB_004d7fb9
-    MOV ECX,0x589672                    ; 004d7fba
+    MOV ECX,0x589672                    ; 004d7fba | = "..\\core\\mission.cpp"
     MOV ESI,0xb6                        ; 004d7fbf
-    PUSH 0x589686                       ; 004d7fc4
-    MOV dword ptr [0x01cc4800],ECX      ; 004d7fc9 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d7fcf | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d7fd5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x589686                       ; 004d7fc4 | = "CDemonMission::save - Unable to open ..."
+    MOV dword ptr [0x01cc4800],ECX      ; 004d7fc9 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d7fcf | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d7fd5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d7fda
     POP ESI                             ; 004d7fdd
     JMP 0x004d7f9f                      ; 004d7fde

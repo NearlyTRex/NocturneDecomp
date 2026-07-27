@@ -66,8 +66,9 @@ void cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int param_1,int param_2,int para
             }
             param_1 = param_1 + iStack_1c;
             fVar3 = (float)(uVar5 >> 8 ^ 0xff) * fVar7;
-            FUN_0042fd60(param_1,param_2,((float)(uVar5 >> 8) + 1.0) * fVar7,param_5);
-            FUN_0042fd60(param_1,param_2 + 1,fVar3,param_5);
+            cockpit_ckptutil_c_FUN_0042fd60
+                      (param_1,param_2,((float)(uVar5 >> 8) + 1.0) * fVar7,param_5);
+            cockpit_ckptutil_c_FUN_0042fd60(param_1,param_2 + 1,fVar3,param_5);
             uVar6 = uVar5;
           }
         }
@@ -81,8 +82,9 @@ void cockpit_ckptutil_c_drawLineAA_FUN_0042f600(int param_1,int param_2,int para
             }
             param_2 = param_2 + 1;
             fVar3 = (float)(uVar5 >> 8 ^ 0xff) * fVar7;
-            FUN_0042fd60(param_1,param_2,((float)(uVar5 >> 8) + 1.0) * fVar7,param_5);
-            FUN_0042fd60(iStack_1c + param_1,param_2,fVar3,param_5);
+            cockpit_ckptutil_c_FUN_0042fd60
+                      (param_1,param_2,((float)(uVar5 >> 8) + 1.0) * fVar7,param_5);
+            cockpit_ckptutil_c_FUN_0042fd60(iStack_1c + param_1,param_2,fVar3,param_5);
             uVar6 = uVar5;
           }
         }

@@ -9,6 +9,6 @@
 void __cdecl core_curtain_cpp_CVector3f_arrdtor_FUN_0043f9a0(uint param_1)
 
 {
-  __arrfini(param_1,100,&DAT_005993b0);
+  __arrfini(param_1,100,&g_CVectorTypeInfo_005993b0);
   return;
 }

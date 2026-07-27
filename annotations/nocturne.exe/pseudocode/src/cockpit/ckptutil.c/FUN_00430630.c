@@ -1,14 +1,12 @@
-// Name: FUN_00430630
+// Name: cockpit_ckptutil.c_FUN_00430630
 // Address: 00430630
 // Address Range: [[00430630, 004310ed]]
 // Convention: unknown
-// Signature: int FUN_00430630(int param_1,int *param_2,int param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9)
+// Signature: int cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,int param_3,int *param_4,int param_5,int param_6,int param_7 ,int param_8,int param_9)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int FUN_00430630(int param_1,int *param_2,int param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9)
+int cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,int param_3,int *param_4,int param_5,int param_6,int param_7 ,int param_8,int param_9)
 
 {
   int iVar1;
@@ -113,9 +111,9 @@ int FUN_00430630(int param_1,int *param_2,int param_3,int *param_4,int param_5,i
         iVar13 = iVar12 + -1;
         if (0x1ff < (int)uVar8) {
           _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d",uVar8,iVar10);
-          _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-          _DAT_01cc4804 = 0x87e;
-          FUN_004c8440(local_1f4);
+          PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+          INT_01cc4804 = 0x87e;
+          core_main_c_FUN_004c8440(local_1f4);
         }
         uVar5 = (ushort)iVar10;
         if (0 < iVar14) {
@@ -246,9 +244,9 @@ LAB_00430936:
         }
         if (0x1ff < (int)uVar8) {
           _sprintf(local_1f4,"Reached max trace edges: edges %d, scanline %d",uVar8,iVar10);
-          _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-          _DAT_01cc4804 = 0x8b8;
-          FUN_004c8440(local_1f4);
+          PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+          INT_01cc4804 = 0x8b8;
+          core_main_c_FUN_004c8440(local_1f4);
         }
         if (iVar13 < local_48) {
           local_30 = iVar12 + -2;
@@ -338,9 +336,9 @@ LAB_00430936:
   iVar10 = realloc(param_3,iVar14);
   if (iVar10 == 0) {
     _sprintf(local_1f4,"Unable to allocate %u bytes for edge list.",iVar14);
-    _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-    _DAT_01cc4804 = 0x8f7;
-    FUN_004c8440(local_1f4);
+    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    INT_01cc4804 = 0x8f7;
+    core_main_c_FUN_004c8440(local_1f4);
   }
   puVar11 = (uint *)&DAT_00765c6c;
   puVar15 = (uint *)(*param_4 * 8 + iVar10);

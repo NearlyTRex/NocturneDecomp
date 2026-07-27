@@ -3,35 +3,40 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CVector3f.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x760000
 // =============================================================================
 
 // CDemonActorType
-extern CDemonActorType CDemonActorType_00763e48;
-extern CDemonActorType CDemonActorType_007641bc;
-extern CDemonActorType CDemonActorType_007641f8;
-extern CDemonActorType CDemonActorType_00764234;
-extern CDemonActorType CDemonActorType_00764270;
-extern CDemonActorType CDemonActorType_007642ac;
-extern CDemonActorType CDemonActorType_00764330;
-extern CDemonActorType CDemonActorType_007644e8;
-extern CDemonActorType CDemonActorType_00764524;
-extern CDemonActorType CDemonActorType_00764560;
-extern CDemonActorType CDemonActorType_007645cc;
-extern CDemonActorType CDemonActorType_00764638;
-extern CDemonActorType CDemonActorType_00764674;
-extern CDemonActorType CDemonActorType_007646b0;
-extern CDemonActorType CDemonActorType_0076471c;
-extern CDemonActorType CDemonActorType_00764758;
-extern CDemonActorType CDemonActorType_007647c0;
-extern CDemonActorType CDemonActorType_00764800;
-extern CDemonActorType CDemonActorType_00764a9c;
-extern CDemonActorType CDemonActorType_00764af0;
-extern CDemonActorType CDemonActorType_00765888;
-extern CDemonActorType CDemonActorType_00765a60;
-extern CDemonActorType CDemonActorType_00765c30;
+extern CDemonActorType g_CDemonActorActorType_00763e48;
+extern CDemonActorType g_CAmmoActorType_007641bc;
+extern CDemonActorType g_CAmmoBoxActorType_007641f8;
+extern CDemonActorType g_CAnvilActorType_00764234;
+extern CDemonActorType g_CArmourActorType_00764270;
+extern CDemonActorType g_CBackgroundActorActorType_007642ac;
+extern CDemonActorType g_CBaronActorType_00764330;
+extern CDemonActorType g_CBaronWeaponActorType_007644e8;
+extern CDemonActorType g_CBarrierActorType_00764524;
+extern CDemonActorType g_CBatActorType_00764560;
+extern CDemonActorType g_CBatCreatureActorType_007645cc;
+extern CDemonActorType g_CBatmanActorType_00764638;
+extern CDemonActorType g_CBatteryActorType_00764674;
+extern CDemonActorType g_CBeastActorType_007646b0;
+extern CDemonActorType g_CBiggsActorType_0076471c;
+extern CDemonActorType g_CBodyPartActorType_00764758;
+extern CDemonActorType g_CBoneGuyActorType_007647c0;
+extern CDemonActorType g_CBoxActorActorType_00764800;
+extern CDemonActorType g_CLightActorActorType_00764a9c;
+extern CDemonActorType g_CBrideActorType_00764af0;
+extern CDemonActorType g_CBugsActorType_00765888;
+extern CDemonActorType g_CCharacterActorType_00765a60;
+extern CDemonActorType g_CChainActorType_00765c30;
+
+// CVector3f
+extern CVector3f CVector3f_00764ad8;
+extern CVector3f CVector3f_00764ae4;
 
 // undefined1
 extern undefined1 DAT_00763e14;

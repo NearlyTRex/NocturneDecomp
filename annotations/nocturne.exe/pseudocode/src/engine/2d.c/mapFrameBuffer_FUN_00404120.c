@@ -14,40 +14,40 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(int param_1,int param_2,int 
   int iVar1;
   
   if (DAT_006b023c != 0) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0x998;
-    FUN_004c8440("mapFrameBuffer - already mapped!");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0x998;
+    core_main_c_FUN_004c8440("mapFrameBuffer - already mapped!");
   }
   if (param_5 == 0) {
     iVar1 = param_2 * param_4 >> 0x1f;
     param_5 = (int)((param_2 * param_4 + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3;
   }
   if (((param_4 != 8) && (param_4 != 0x10)) && (param_4 != 0x20)) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0x9a0;
-    FUN_004c8440("mapFrameBuffer - invalid bits/pixel");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0x9a0;
+    core_main_c_FUN_004c8440("mapFrameBuffer - invalid bits/pixel");
   }
   iVar1 = param_2 * param_4 >> 0x1f;
   if ((int)((param_5 ^ (int)param_5 >> 0x1f) - ((int)param_5 >> 0x1f)) <
       (int)((param_2 * param_4 + iVar1 * -8) - (uint)(iVar1 << 2 < 0)) >> 3) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0x9a1;
-    FUN_004c8440("mapFrameBuffer - invalid stride");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0x9a1;
+    core_main_c_FUN_004c8440("mapFrameBuffer - invalid stride");
   }
   if ((param_2 < 1) || (param_3 < 1)) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0x9a2;
-    FUN_004c8440("mapFrameBuffer - invalid size");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0x9a2;
+    core_main_c_FUN_004c8440("mapFrameBuffer - invalid size");
   }
   if (0x4b0 < param_3) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0x9a3;
-    FUN_004c8440("mapFrameBuffer - ySize too big!");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0x9a3;
+    core_main_c_FUN_004c8440("mapFrameBuffer - ySize too big!");
   }
   if (param_1 == 0) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0x9a4;
-    FUN_004c8440("mapFrameBuffer - invalid buffer!");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0x9a4;
+    core_main_c_FUN_004c8440("mapFrameBuffer - invalid buffer!");
   }
   DAT_006b023c = DAT_005b761c;
   DAT_006b0240 = DAT_005b7620;

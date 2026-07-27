@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -136,30 +136,6 @@
     "total_lines": 12
   },
   "cross_references": [
-    {
-      "addr": "0048eb30",
-      "from_addr": "0048ebc8",
-      "name": "FUN_0048eb30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a9270",
-      "from_addr": "004a95dd",
-      "name": "FUN_004a9270",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f6170",
-      "from_addr": "004f634e",
-      "name": "FUN_004f6170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0052dff0",
-      "from_addr": "0052e0b6",
-      "name": "FUN_0052dff0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "0041e5e0",
       "from_addr": "0041e7b2",
@@ -195,6 +171,30 @@
       "from_addr": "0048d24b",
       "name": "core_flame.cpp_CFlame_process_FUN_0048d0c0",
       "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048eb30",
+      "from_addr": "0048ebc8",
+      "name": "core_flamegun.cpp_FUN_0048eb30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9270",
+      "from_addr": "004a95dd",
+      "name": "core_ghoul.cpp_FUN_004a9270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f6170",
+      "from_addr": "004f634e",
+      "name": "core_platfrm.cpp_FUN_004f6170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052dff0",
+      "from_addr": "0052e0b6",
+      "name": "core_sound.cpp_FUN_0052dff0",
+      "type": "UNCONDITIONAL_CALL"
     }
   ],
   "function": {
@@ -223,7 +223,7 @@
       {
         "call_addr": "0052e0b6",
         "call_type": "direct",
-        "caller": "FUN_0052dff0",
+        "caller": "core_sound.cpp_FUN_0052dff0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -234,7 +234,7 @@
       {
         "call_addr": "0052e1c7",
         "call_type": "direct",
-        "caller": "FUN_0052dff0",
+        "caller": "core_sound.cpp_FUN_0052dff0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -289,7 +289,7 @@
       {
         "call_addr": "004a95dd",
         "call_type": "direct",
-        "caller": "FUN_004a9270",
+        "caller": "core_ghoul.cpp_FUN_004a9270",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -300,7 +300,7 @@
       {
         "call_addr": "004f634e",
         "call_type": "direct",
-        "caller": "FUN_004f6170",
+        "caller": "core_platfrm.cpp_FUN_004f6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

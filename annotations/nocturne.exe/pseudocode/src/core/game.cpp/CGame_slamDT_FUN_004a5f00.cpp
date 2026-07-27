@@ -14,9 +14,9 @@ void __cdecl core_game_cpp_CGame_slamDT_FUN_004a5f00(int param_1,float param_2)
   float10 fVar1;
   
   if (param_2 < 0.0) {
-    _DAT_01cc4800 = "..\\core\\game.cpp";
-    _DAT_01cc4804 = 0x10b5;
-    FUN_004c8440("CGame::slamDT - invalid dt!");
+    PTR_01cc4800 = "..\\core\\game.cpp";
+    INT_01cc4804 = 0x10b5;
+    core_main_c_FUN_004c8440("CGame::slamDT - invalid dt!");
   }
   *(float *)(param_1 + 0x264) = param_2;
   fVar1 = (float10)round

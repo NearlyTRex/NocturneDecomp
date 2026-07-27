@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004cf1f0 at 004cf216
+;   core_menu.cpp_staticInit_FUN_004cf1f0 at 004cf216
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00452590

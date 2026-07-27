@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_004fbf20 at 004fc246
+;   core_scat.cpp_FUN_004fbf20 at 004fc246
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0058df4e = 3.14159265350000
@@ -30,7 +30,7 @@
 ;   float FLOAT_0058df62 = 0.5
 ;   double DOUBLE_0058df66 = 1.5
 ;   double DOUBLE_0058df6e = 0.0200000000000000
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e533a0
 ;   undefined4 DAT_01fa3ff0
@@ -41,10 +41,10 @@
 ;   core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
 ;   core_actor.cpp_normalizeAngleToPi_FUN_0040df00
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
+;   core_scat.cpp_FUN_004fda20
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
 ;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   FUN_004fda20
 ;
 ; *****************************************************************************
 
@@ -256,8 +256,8 @@ section .text
     PUSH EAX                            ; 004fd744
     PUSH EBX                            ; 004fd745
     PUSH ESI                            ; 004fd746
-    CALL FUN_004fda20                   ; 004fd747
-        ;   XREF to: 004fda20 (UNCONDITIONAL_CALL)  ; undefined FUN_004fda20()
+    CALL core_scat.cpp_FUN_004fda20     ; 004fd747
+        ;   XREF to: 004fda20 (UNCONDITIONAL_CALL)  ; undefined core_scat.cpp_FUN_004fda20()
     MOV dword ptr [ESP + 0x134],EAX     ; 004fd74c
     FLD float ptr [ESP + 0x134]         ; 004fd753
     ADD ESP,0xc                         ; 004fd75a
@@ -296,7 +296,7 @@ section .text
         ;   Label: LAB_004fd7b1
     JZ 0x004fd4ed                       ; 004fd7b8
         ;   XREF to: 004fd4ed (CONDITIONAL_JUMP)  ; LAB_004fd4ed
-    PUSH 0x5993b0                       ; 004fd7be | DAT_005993b0
+    PUSH 0x5993b0                       ; 004fd7be | g_CVectorTypeInfo_005993b0
     PUSH 0xa                            ; 004fd7c3
     LEA EAX,[ESP + 0x10]                ; 004fd7c5
     PUSH EAX                            ; 004fd7c9

@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,25 +122,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 282,
+    "complexity_score": 266,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 47,
-    "suspect_count": 22,
+    "pseudocode_lines": 46,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 204
+    "total_lines": 203
   },
   "cross_references": [
     {
       "addr": "0048ab60",
       "from_addr": "0048ac50",
-      "name": "FUN_0048ab60",
+      "name": "core_fire.cpp_FUN_0048ab60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -161,9 +160,9 @@
   "globals": [
     {
       "addr": "0059bddc",
-      "name": "DAT_0059bddc",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_0059bddc",
+      "type": "float",
+      "value": "256"
     }
   ],
   "param_estimates": {
@@ -172,7 +171,7 @@
       {
         "call_addr": "0048ac50",
         "call_type": "direct",
-        "caller": "FUN_0048ab60",
+        "caller": "core_fire.cpp_FUN_0048ab60",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -297,21 +296,21 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 46,
-          "line": 31,
+          "line": 29,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 43,
-          "line": 32,
+          "line": 30,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 44,
-          "line": 33,
+          "line": 31,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         }
@@ -322,16 +321,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "uint __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00446590(int param_1,float *param_2,float param_3)",
@@ -339,7 +330,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "uint __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00446590(int param_1,float *param_2,float param_3)",
@@ -347,26 +338,58 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_3",
       "severity": "mild",
       "text": "uint __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_00446590(int param_1,float *param_2,float param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar1 = (int)ROUND(256.0f * param_3);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "iVar2 = (int)ROUND(256.0f * param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 19,
-      "match": "param_3",
+      "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = (int)ROUND(_DAT_0059bddc * param_3);",
+      "text": "uVar10 = (int)ROUND(*param_2 * 256.0f) - *(int *)(param_1 + 0x16c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar10 = (int)ROUND(*param_2 * 256.0f) - *(int *)(param_1 + 0x16c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 20,
-      "match": "param_3",
+      "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = (int)ROUND(_DAT_0059bddc * param_3);",
+      "text": "uVar6 = (int)ROUND(param_2[1] * 256.0f) - *(int *)(param_1 + 0x170);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uVar6 = (int)ROUND(param_2[1] * 256.0f) - *(int *)(param_1 + 0x170);",
       "type": "unnamed_param"
     },
     {
@@ -374,7 +397,7 @@
       "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar10 = (int)ROUND(*param_2 * _DAT_0059bddc) - *(int *)(param_1 + 0x16c);",
+      "text": "uVar11 = (int)ROUND(param_2[2] * 256.0f) - *(int *)(param_1 + 0x174);",
       "type": "unnamed_param"
     },
     {
@@ -382,44 +405,12 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar10 = (int)ROUND(*param_2 * _DAT_0059bddc) - *(int *)(param_1 + 0x16c);",
+      "text": "uVar11 = (int)ROUND(param_2[2] * 256.0f) - *(int *)(param_1 + 0x174);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar6 = (int)ROUND(param_2[1] * _DAT_0059bddc) - *(int *)(param_1 + 0x170);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar6 = (int)ROUND(param_2[1] * _DAT_0059bddc) - *(int *)(param_1 + 0x170);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uVar11 = (int)ROUND(param_2[2] * _DAT_0059bddc) - *(int *)(param_1 + 0x174);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar11 = (int)ROUND(param_2[2] * _DAT_0059bddc) - *(int *)(param_1 + 0x174);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar3 = (longlong)(int)uVar10 * (longlong)*(int *)(param_1 + 0x178);",
@@ -427,7 +418,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar4 = (longlong)(int)uVar6 * (longlong)*(int *)(param_1 + 0x184);",
@@ -435,7 +426,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar5 = (longlong)(int)uVar11 * (longlong)*(int *)(param_1 + 400);",
@@ -443,7 +434,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar3 = (longlong)(int)uVar10 * (longlong)*(int *)(param_1 + 0x17c);",
@@ -451,7 +442,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar4 = (longlong)(int)uVar6 * (longlong)*(int *)(param_1 + 0x188);",
@@ -459,7 +450,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar5 = (longlong)(int)uVar11 * (longlong)*(int *)(param_1 + 0x194);",
@@ -467,7 +458,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar3 = (longlong)(int)uVar10 * (longlong)*(int *)(param_1 + 0x180);",
@@ -475,7 +466,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar4 = (longlong)(int)uVar6 * (longlong)*(int *)(param_1 + 0x18c);",
@@ -483,7 +474,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "lVar5 = (longlong)(int)uVar11 * (longlong)*(int *)(param_1 + 0x198);",
@@ -502,7 +493,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 31,
+      "line": 29,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "if (((iVar1 <= (int)((uVar10 ^ (int)uVar10 >> 0x1f) - ((int)uVar10 >> 0x1f))) ||",
@@ -510,7 +501,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 32,
+      "line": 30,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(iVar1 <= (int)((uVar6 ^ (int)uVar6 >> 0x1f) - ((int)uVar6 >> 0x1f)))) ||",
@@ -518,7 +509,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 33,
+      "line": 31,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "(iVar1 <= (int)((uVar11 ^ (int)uVar11 >> 0x1f) - ((int)uVar11 >> 0x1f)))) {",

@@ -15,9 +15,9 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_005272e0(int param_1,uint pa
   int *piVar2;
   
   if ((param_1 < 0) || (0x1f < param_1)) {
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0xf32;
-    FUN_004c8440("setSfxChannelVol - invalid channel index: %d",param_1);
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0xf32;
+    core_main_c_FUN_004c8440("setSfxChannelVol - invalid channel index: %d",param_1);
   }
   piVar2 = _DAT_02dc8318;
   *(uint *)(param_1 * 4 + 0x2dc7958) = param_2;

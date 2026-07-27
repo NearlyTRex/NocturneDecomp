@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004f2990 at 004f2b45
+;   engine_pcx.c_FUN_004f2990 at 004f2b45
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pcx_c_0058cf54
@@ -33,10 +33,10 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_fputc_FUN_00566cc0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -123,10 +123,10 @@ section .text
     MOV EBX,0x58cf8b                    ; 004f2864 | = "..\\engine\\pcx.c"
     MOV ESI,0x9f                        ; 004f2869
     PUSH 0x58cf9b                       ; 004f286e | = "saveScreenRaw32 - Unable to open output"
-    MOV dword ptr [0x01cc4800],EBX      ; 004f2873 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f2879 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f287f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004f2873 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004f2879 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f287f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f2884
     XOR EBP,EBP                         ; 004f2887
         ;   Label: LAB_004f2887
@@ -210,10 +210,10 @@ section .text
         ;   Label: LAB_004f2960
     MOV ECX,0x99                        ; 004f2965
     PUSH 0x58cf64                       ; 004f296a | = "saveScreenRaw32 - No ext found"
-    MOV dword ptr [0x01cc4800],EDX      ; 004f296f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f2975 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f297b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004f296f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004f2975 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f297b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f2980
     JMP 0x004f282d                      ; 004f2983
         ;   XREF to: 004f282d (UNCONDITIONAL_JUMP)  ; LAB_004f282d

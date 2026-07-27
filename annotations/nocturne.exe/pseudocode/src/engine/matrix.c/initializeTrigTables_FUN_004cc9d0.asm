@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c873b
+;   core_main.c_FUN_004c85f0 at 004c873b
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005881c3 = 3.14159265350000

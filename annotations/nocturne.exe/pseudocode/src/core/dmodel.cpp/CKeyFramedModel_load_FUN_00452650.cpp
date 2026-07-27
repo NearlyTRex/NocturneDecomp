@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(char *param_1,char *param_2)
 
 {
@@ -22,9 +20,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(char *param_1,cha
   pcVar4 = param_2;
   pcVar5 = param_1;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-    _DAT_01cc4804 = 0xb8;
-    FUN_004c8440("Can't open keyframed model %s",param_2);
+    PTR_01cc4800 = "..\\core\\dmodel.cpp";
+    INT_01cc4804 = 0xb8;
+    core_main_c_FUN_004c8440("Can't open keyframed model %s",param_2);
   }
   do {
     cVar1 = *pcVar4;
@@ -41,9 +39,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_00452650(char *param_1,cha
     _fclose(iVar2);
     iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_2,"rt");
     if (iVar2 == 0) {
-      _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-      _DAT_01cc4804 = 0xc5;
-      FUN_004c8440("Can't open keyframed model %s",param_2);
+      PTR_01cc4800 = "..\\core\\dmodel.cpp";
+      INT_01cc4804 = 0xc5;
+      core_main_c_FUN_004c8440("Can't open keyframed model %s",param_2);
     }
     core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00452990(param_1,iVar2);
   }

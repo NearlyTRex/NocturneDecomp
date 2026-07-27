@@ -11,6 +11,6 @@ int __cdecl core_mirror_cpp_CMirror_ctor_FUN_004d6550(int param_1)
 {
   int iVar1;
   
-  iVar1 = __arrinit(param_1 + 0x98,5,&DAT_005a08a0);
+  iVar1 = __arrinit(param_1 + 0x98,5,&g_SClipPlaneTypeInfo_005a08a0);
   return iVar1 + -0x98;
 }

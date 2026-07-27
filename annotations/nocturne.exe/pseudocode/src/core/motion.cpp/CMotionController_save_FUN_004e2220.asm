@@ -14,13 +14,13 @@
 ;   TerminatedCString s_Tried_to_save_motion_con_0058b41d
 ;   TerminatedCString s_s_s_g_current_motion_nam_0058b468
 ;   TerminatedCString s_s_s_g_current_motion_nam_0058b49a
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   crt_stdio.c_fprintf_FUN_005644f0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -41,10 +41,10 @@ section .text
     MOV EDI,0x58b40a                    ; 004e2233 | = "..\\core\\motion.cpp"
     MOV EAX,0x536                       ; 004e2238
     PUSH 0x58b41d                       ; 004e223d | = "Tried to save motion controller state..."
-    MOV dword ptr [0x01cc4800],EDI      ; 004e2242 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004e2248 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e224d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004e2242 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004e2248 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e224d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004e2252
     SUB ESP,0x8                         ; 004e2255
         ;   Label: LAB_004e2255

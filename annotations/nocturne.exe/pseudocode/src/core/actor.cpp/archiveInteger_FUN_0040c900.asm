@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[64]:
-;   FUN_0040f390 at 0040f3d2
-;   FUN_0040f7d0 at 0040f826
-;   FUN_00419ce0 at 00419d95
-;   FUN_0043b310 at 0043b37a
-;   FUN_0048e830 at 0048e85e
-;   FUN_004948f0 at 0049490a
-;   FUN_004b49a0 at 004b4a95
-;   FUN_004b61f0 at 004b620c
-;   FUN_004cc870 at 004cc8c6
-;   FUN_004de680 at 004de6c2
+;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 at 0040d33c
+;   core_ammo.cpp_FUN_0040ecf0 at 0040ed32
+;   core_ammobox.cpp_FUN_0040f390 at 0040f3d2
+;   core_anvil.cpp_FUN_0040f7d0 at 0040f826
+;   core_backgnd.cpp_CBackgroundActor_archive_FUN_00410040 at 0041006e
+;   core_baron.cpp_CBaron_archive_FUN_00411080 at 004110cf
+;   core_barrier.cpp_CBarrier_archive_FUN_00411800 at 0041184f
+;   core_batman.cpp_CBatman_archive_FUN_00414510 at 00414598
+;   core_biggs.cpp_CBiggs_archive_FUN_00415870 at 004158c1
+;   core_bodypart.cpp_CBodyPart_archive_FUN_00416570 at 00416590
 ;   ... and 54 more
 ;
 ; Referenced Globals:

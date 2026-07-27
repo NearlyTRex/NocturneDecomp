@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_00527e10 at 00527e24
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a6f6a
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1ff6
 ;   core_sound.cpp_CSound_reset_FUN_0052e9c0 at 0052e9c0
 ;   core_sound.cpp_CSound_shutdown_FUN_0052df90 at 0052dfd4
+;   sound_sndmain.cpp_FUN_00527e10 at 00527e24
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_005285b0 at 005285b2
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 at 00527e6e
 ;   sound_sndmain.cpp_setSoundEnabled_FUN_00526cb0 at 00526cbb

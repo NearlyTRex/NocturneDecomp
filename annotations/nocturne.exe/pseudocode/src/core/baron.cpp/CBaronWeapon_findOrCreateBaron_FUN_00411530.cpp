@@ -20,7 +20,7 @@ void __cdecl core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530(int para
     for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x14cd6c); iVar4 = iVar4 + 1) {
       iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
                         (*(uint *)(iVar5 + 0x14cd70 + 0x01E57284),
-                         CDemonActorType_00764330.name_hash);
+                         g_CBaronActorType_00764330.name_hash);
       *(int *)(param_1 + 0x570) = iVar2;
       if (iVar2 != 0) break;
       iVar5 = iVar5 + 4;

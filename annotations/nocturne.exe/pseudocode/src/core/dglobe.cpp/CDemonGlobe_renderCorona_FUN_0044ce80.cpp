@@ -66,7 +66,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(int param_1)
       local_2c = (int)ROUND(local_38 * _DAT_0059bff0);
       local_28 = (int)ROUND(local_34 * _DAT_0059bff0);
       iVar3 = iVar3 + 0xc;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*0x01B4D738 + iVar4,&local_30);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*0x01B4D738 + iVar4,&local_30);
       iVar4 = iVar4 + 0x30;
     } while (iVar3 != 0x2e8);
     iVar3 = 0;
@@ -80,7 +80,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0044ce80(int param_1)
       local_4c = *(uint *)((int)&DAT_005ad890 + iVar3);
       local_48 = *(uint *)((int)&DAT_005ad894 + iVar3);
       local_44 = *(uint *)((int)&DAT_005ad898 + iVar3);
-      pcVar8 = FUN_00444180;
+      pcVar8 = core_dcamera_cpp_FUN_00444180;
       local_40 = *(uint *)((int)&DAT_005ad89c + iVar3);
       puVar7 = local_64;
       iVar3 = iVar3 + 0x24;

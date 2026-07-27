@@ -5,9 +5,6 @@
 ;
 ;
 ; XREF[17]:
-;   FUN_004b6d80 at 004b7767
-;   FUN_00547b30 at 00547c1d
-;   FUN_0054dd50 at 0054df43
 ;   core_dest.cpp_CActorDestination_process_FUN_0044b850 at 0044b99b
 ;   core_door.cpp_CDoor_onOpened_FUN_00455270 at 00455281
 ;   core_door.cpp_CDoor_process_FUN_00455640 at 00455720
@@ -15,6 +12,9 @@
 ;   core_filmreel.cpp_CFilmProjector_process_FUN_00482010 at 004820ba
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a22a8
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0 at 004b50ea
+;   core_hostage.cpp_CHostage_getGrabbed_FUN_004b8590 at 004b85e9
+;   core_hostage.cpp_FUN_004b6d80 at 004b7767
+;   core_inv.cpp_CInventory_select_FUN_004c1580 at 004c1816
 ;   ... and 7 more
 ;
 ; Referenced Globals:

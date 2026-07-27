@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004b5f60 at 004b5f73
+;   core_hero.cpp_FUN_004b5f60 at 004b5f73
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9d01
 ;
 ; Referenced Globals:

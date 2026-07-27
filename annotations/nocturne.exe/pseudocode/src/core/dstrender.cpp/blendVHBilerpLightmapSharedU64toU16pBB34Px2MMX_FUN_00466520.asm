@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004470f0 at 00447319
+;   core_dcamera.cpp_FUN_004470f0 at 00447319
 ;
 ; Referenced Globals:
 ;   undefined8 DAT_005b47b8

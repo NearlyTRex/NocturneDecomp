@@ -1,0 +1,174 @@
+// Name: core_dstrender.cpp_FUN_00463d98
+// Address: 00463d98
+// Address Range: [[00463d98, 00463f76]]
+// Convention: unknown
+// Signature: void core_dstrender_cpp_FUN_00463d98(void)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void core_dstrender_cpp_FUN_00463d98(void)
+
+{
+  uint uVar1;
+  uint uVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int unaff_EBX;
+  uint *puVar6;
+  uint *puVar7;
+  uint *puVar8;
+  uint uVar9;
+  int unaff_ESI;
+  uint uVar10;
+  int unaff_EDI;
+  uint *puVar11;
+  
+  uVar1 = _DAT_01c00c70;
+  uVar10 = *(uint *)(unaff_ESI + 8);
+  uVar9 = *(uint *)(unaff_EDI + 8);
+  uVar2 = uVar10;
+  iVar4 = unaff_ESI;
+  if (uVar9 < uVar10) {
+    uVar2 = uVar9;
+    uVar9 = uVar10;
+    iVar4 = unaff_EDI;
+    unaff_EDI = unaff_ESI;
+  }
+  uVar2 = uVar2 >> 0x10;
+  iVar3 = (uVar9 >> 0x10) - uVar2;
+  if (iVar3 != 0 && uVar2 <= uVar9 >> 0x10) {
+    puVar6 = (uint *)(*(int *)(&DAT_01bd2fa0 + unaff_EBX * 4) + uVar2 * 4);
+    puVar8 = (uint *)(*(int *)(&DAT_01bd4260 + unaff_EBX * 4) + uVar2 * 4);
+    iVar5 = (int)((ulonglong)
+                  ((longlong)(*(int *)(unaff_EDI + 0x28) - *(int *)(iVar4 + 0x28)) *
+                  (longlong)*(int *)(&DAT_01c00c80 + (iVar3 + 1) * 4)) >> 0x20);
+    uVar10 = *(uint *)(iVar4 + 0x28);
+    while (iVar4 = iVar3 + -4, puVar7 = puVar8, puVar11 = puVar6, 3 < iVar3) {
+      if ((int)*puVar8 <= (int)(uVar10 >> 8)) {
+        *puVar8 = uVar10 >> 8;
+        *puVar6 = uVar1;
+      }
+      uVar9 = uVar10 + iVar5 >> 8;
+      if ((int)puVar8[1] <= (int)uVar9) {
+        puVar8[1] = uVar9;
+        puVar6[1] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5 + iVar5;
+      uVar9 = uVar10 >> 8;
+      if ((int)puVar8[2] <= (int)uVar9) {
+        puVar8[2] = uVar9;
+        puVar6[2] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5;
+      uVar9 = uVar10 >> 8;
+      if ((int)puVar8[3] <= (int)uVar9) {
+        puVar8[3] = uVar9;
+        puVar6[3] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5;
+      puVar7 = puVar8 + 4;
+      puVar11 = puVar6 + 4;
+      iVar4 = iVar3 + -8;
+      if (iVar3 + -4 < 4) break;
+      if ((int)*puVar7 <= (int)(uVar10 >> 8)) {
+        *puVar7 = uVar10 >> 8;
+        *puVar11 = uVar1;
+      }
+      uVar9 = uVar10 + iVar5 >> 8;
+      if ((int)puVar8[5] <= (int)uVar9) {
+        puVar8[5] = uVar9;
+        puVar6[5] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5 + iVar5;
+      uVar9 = uVar10 >> 8;
+      if ((int)puVar8[6] <= (int)uVar9) {
+        puVar8[6] = uVar9;
+        puVar6[6] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5;
+      uVar9 = uVar10 >> 8;
+      if ((int)puVar8[7] <= (int)uVar9) {
+        puVar8[7] = uVar9;
+        puVar6[7] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5;
+      puVar7 = puVar8 + 8;
+      puVar11 = puVar6 + 8;
+      iVar4 = iVar3 + -0xc;
+      if (iVar3 + -8 < 4) break;
+      if ((int)*puVar7 <= (int)(uVar10 >> 8)) {
+        *puVar7 = uVar10 >> 8;
+        *puVar11 = uVar1;
+      }
+      uVar9 = uVar10 + iVar5 >> 8;
+      if ((int)puVar8[9] <= (int)uVar9) {
+        puVar8[9] = uVar9;
+        puVar6[9] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5 + iVar5;
+      uVar9 = uVar10 >> 8;
+      if ((int)puVar8[10] <= (int)uVar9) {
+        puVar8[10] = uVar9;
+        puVar6[10] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5;
+      uVar9 = uVar10 >> 8;
+      if ((int)puVar8[0xb] <= (int)uVar9) {
+        puVar8[0xb] = uVar9;
+        puVar6[0xb] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5;
+      puVar7 = puVar8 + 0xc;
+      puVar11 = puVar6 + 0xc;
+      iVar4 = iVar3 + -0x10;
+      if (iVar3 + -0xc < 4) break;
+      if ((int)*puVar7 <= (int)(uVar10 >> 8)) {
+        *puVar7 = uVar10 >> 8;
+        *puVar11 = uVar1;
+      }
+      uVar9 = uVar10 + iVar5 >> 8;
+      if ((int)puVar8[0xd] <= (int)uVar9) {
+        puVar8[0xd] = uVar9;
+        puVar6[0xd] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5 + iVar5;
+      uVar9 = uVar10 >> 8;
+      if ((int)puVar8[0xe] <= (int)uVar9) {
+        puVar8[0xe] = uVar9;
+        puVar6[0xe] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5;
+      uVar9 = uVar10 >> 8;
+      if ((int)puVar8[0xf] <= (int)uVar9) {
+        puVar8[0xf] = uVar9;
+        puVar6[0xf] = uVar1;
+      }
+      uVar10 = uVar10 + iVar5;
+      puVar8 = puVar8 + 0x10;
+      puVar6 = puVar6 + 0x10;
+      iVar3 = iVar4;
+    }
+    if (-4 < iVar4) {
+      if ((int)*puVar7 <= (int)(uVar10 >> 8)) {
+        *puVar7 = uVar10 >> 8;
+        *puVar11 = uVar1;
+      }
+      if (iVar4 != -3 && 0 < iVar4 + 4) {
+        uVar9 = uVar10 + iVar5 >> 8;
+        if ((int)puVar7[1] <= (int)uVar9) {
+          puVar7[1] = uVar9;
+          puVar11[1] = uVar1;
+        }
+        if ((1 < iVar4 + 3) && (uVar10 = uVar10 + iVar5 + iVar5 >> 8, (int)puVar7[2] <= (int)uVar10)
+           ) {
+          puVar7[2] = uVar10;
+          puVar11[2] = uVar1;
+        }
+      }
+    }
+  }
+  return;
+}

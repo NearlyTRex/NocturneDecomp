@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 296,
+    "complexity_score": 297,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 46,
+    "pseudocode_lines": 47,
     "suspect_count": 23,
     "suspect_types": [
       "param_count_too_few",
@@ -135,7 +135,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 184
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -169,6 +169,11 @@
       "name": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004b6080"
     },
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "004d8c60",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60"
@@ -181,12 +186,7 @@
     {
       "addr": "0046fcd0",
       "is_variadic": false,
-      "name": "FUN_0046fcd0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
+      "name": "shape_edittool.cpp_FUN_0046fcd0"
     }
   ],
   "globals": [
@@ -240,20 +240,20 @@
     },
     {
       "addr": "01cae160",
-      "name": "DAT_01cae160",
+      "name": "g_CHeroPlaceholderActorType_01cae128.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -403,7 +403,7 @@
       "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_0046fcd0(0x01BCD074,\"Can't find hero placeholder for hero %d\",param_2);",
+      "text": "shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,\"Can't find hero placeholder for hero %d\",param_2);",
       "type": "unnamed_param"
     },
     {
@@ -416,7 +416,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((iVar2 != 0) && (param_2 == *(int *)(iVar2 + 0x150))) {",
@@ -424,7 +424,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_4",
       "severity": "mild",
       "text": "if (param_4 == 0) {",
@@ -432,7 +432,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 37,
       "match": "param_3",
       "severity": "mild",
       "text": "local_14 = core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(iVar2,param_3);",
@@ -440,7 +440,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 40,
       "match": "param_4",
       "severity": "mild",
       "text": "local_14 = param_4;",
@@ -448,7 +448,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 41,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_4 + 0x14c) + 0x60))(param_4,iVar2 + 0x20,iVar2 + 0x30);",
@@ -456,15 +456,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(param_4 + 0x14c) + 0x60))(param_4,iVar2 + 0x20,iVar2 + 0x30);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 41,
       "match": "param_4",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_4 + 0x14c) + 0x60))(param_4,iVar2 + 0x20,iVar2 + 0x30);",
@@ -475,7 +467,7 @@
       "line": 41,
       "match": "param_4",
       "severity": "mild",
-      "text": "*(uint *)(param_4 + 0x2c) = *(uint *)(iVar2 + 0x2c);",
+      "text": "(**(code **)(*(int *)(param_4 + 0x14c) + 0x60))(param_4,iVar2 + 0x20,iVar2 + 0x30);",
       "type": "unnamed_param"
     },
     {
@@ -483,12 +475,20 @@
       "line": 42,
       "match": "param_4",
       "severity": "mild",
+      "text": "*(uint *)(param_4 + 0x2c) = *(uint *)(iVar2 + 0x2c);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_4",
+      "severity": "mild",
       "text": "core_motion_cpp_CMotionController_jumpToMotion_FUN_004e1990(param_4 + 0x150,0,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 43,
+      "line": 44,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(param_4 + 0x14c) + 0x128))(param_4,0,0,0);",
@@ -496,7 +496,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 44,
       "match": "param_4",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_4 + 0x14c) + 0x128))(param_4,0,0,0);",
@@ -504,7 +504,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 44,
       "match": "param_4",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(param_4 + 0x14c) + 0x128))(param_4,0,0,0);",

@@ -12,16 +12,16 @@
 ; CDemonActorType * Stack[0x18]:4   parent_class_info
 ;
 ; XREF[106]:
-;   FUN_00409840 at 00409855
-;   FUN_0040eb10 at 0040eb2b
-;   FUN_0040efe0 at 0040effb
-;   FUN_0040f500 at 0040f51b
-;   FUN_0040f900 at 0040f91b
-;   FUN_0040fe70 at 0040fe8b
-;   FUN_00410140 at 0041015b
-;   FUN_004116b0 at 004116cb
-;   FUN_00411910 at 0041192b
-;   FUN_004120a0 at 004120bb
+;   core_actor.cpp_staticInit_FUN_00409840 at 00409855
+;   core_ammo.cpp_staticInit_FUN_0040eb10 at 0040eb2b
+;   core_ammobox.cpp_staticInit_FUN_0040efe0 at 0040effb
+;   core_anvil.cpp_staticInit_FUN_0040f500 at 0040f51b
+;   core_armour.cpp_staticInit_FUN_0040f900 at 0040f91b
+;   core_backgnd.cpp_staticInit_FUN_0040fe70 at 0040fe8b
+;   core_baron.cpp_staticInit_FUN_00410140 at 0041015b
+;   core_barrier.cpp_staticInit_FUN_004116b0 at 004116cb
+;   core_bat.cpp_staticInit_FUN_00411910 at 0041192b
+;   core_batcreat.cpp_staticInit_FUN_004120a0 at 004120bb
 ;   ... and 96 more
 ;
 ; Referenced Globals:
@@ -30,12 +30,12 @@
 ;   undefined4 DAT_005c168c
 ;   undefined4 DAT_00763e94
 ;   undefined4 DAT_00763e98
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_ctype.c_tolower_FUN_00564860
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -123,10 +123,10 @@ section .text
         ;   Label: LAB_0040d49f
     MOV EBX,0xa19                       ; 0040d4a4
     PUSH 0x577f4d                       ; 0040d4a9 | = "Too many actor types!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0040d4ae | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0040d4b4 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0040d4ba
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0040d4ae | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0040d4b4 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0040d4ba
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040d4bf
     JMP 0x0040d452                      ; 0040d4c2
         ;   XREF to: 0040d452 (UNCONDITIONAL_JUMP)  ; LAB_0040d452

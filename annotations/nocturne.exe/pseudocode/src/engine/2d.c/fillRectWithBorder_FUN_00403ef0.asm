@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_004722b0 at 0047237b
-;   FUN_00476580 at 004765b1
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049ae38
 ;   core_game.cpp_drawHealthBar_FUN_0049aab0 at 0049aafc
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfd0a
 ;   shape_edittool.cpp_CEditorTools_updatePercentage_FUN_00471760 at 004718ab
+;   shape_edittool.cpp_FUN_004722b0 at 0047237b
+;   shape_edittool.cpp_FUN_00476580 at 004765b1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c70

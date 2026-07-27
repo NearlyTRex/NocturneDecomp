@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0051e860 at 0051e895
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00427eb0 at 00427f0c
+;   core_skeleton.cpp_FUN_0051e860 at 0051e895
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_dismember_FUN_00519ec0

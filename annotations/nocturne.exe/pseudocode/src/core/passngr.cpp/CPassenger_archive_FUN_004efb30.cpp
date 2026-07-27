@@ -9,7 +9,7 @@
 void core_passngr_cpp_CPassenger_archive_FUN_004efb30(int param_1)
 
 {
-  FUN_004eed10(param_1);
+  core_npc_cpp_FUN_004eed10(param_1);
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f570,"transformEvent");
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x1f5d4,"wolfModelName");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x202a8,"morphTime");

@@ -1,14 +1,12 @@
-// Name: FUN_00467560
+// Name: core_dtrace.cpp_FUN_00467560
 // Address: 00467560
 // Address Range: [[00467560, 004675d9]]
 // Convention: unknown
-// Signature: void FUN_00467560(int param_1)
+// Signature: void core_dtrace_cpp_FUN_00467560(int param_1)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00467560(int param_1)
+void core_dtrace_cpp_FUN_00467560(int param_1)
 
 {
   int *piVar1;
@@ -28,8 +26,8 @@ void FUN_00467560(int param_1)
   if ((*(int *)(param_1 + 8) != 0) && (iVar3 != 0)) {
     return;
   }
-  _DAT_01cc4800 = "..\\core\\dtrace.cpp";
-  _DAT_01cc4804 = 0xf9;
-  FUN_004c8440("CDemonRaytrace::allocTriList - Out of memory!");
+  PTR_01cc4800 = "..\\core\\dtrace.cpp";
+  INT_01cc4804 = 0xf9;
+  core_main_c_FUN_004c8440("CDemonRaytrace::allocTriList - Out of memory!");
   return;
 }

@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,19 +122,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 263,
+    "complexity_score": 247,
     "cross_reference_count": 0,
     "function_call_count": 4,
-    "global_count": 2,
+    "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 48,
-    "suspect_count": 20,
+    "pseudocode_lines": 47,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 167
+    "total_lines": 166
   },
   "cross_references": [],
   "function": {
@@ -151,6 +150,11 @@
   },
   "function_calls": [
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "004c3760",
       "is_variadic": false,
       "name": "engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004c3760"
@@ -164,24 +168,43 @@
       "addr": "004dd520",
       "is_variadic": false,
       "name": "engine_model.c_getMRGLSize_FUN_004dd520"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
     {
+      "addr": "005876a4",
+      "name": "s_engine_keyframe_c_005876a4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005876b9",
+      "name": "s_recomputeKeyFrameNormals_005876b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005876e4",
+      "name": "s_engine_keyframe_c_005876e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005876f9",
+      "name": "s_recomputeKeyFrameNormals_005876f9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -235,16 +258,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "void engine_keyframe_c_recomputeKeyFrameNormals_FUN_004c4080(uint *param_1)",
@@ -252,7 +267,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = *param_1;",
@@ -260,7 +275,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 == 2) {",
@@ -268,7 +283,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "puVar2 = param_1 + 3;",
@@ -276,7 +291,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = *param_1;",
@@ -284,7 +299,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "puVar3 = param_1;",
@@ -292,7 +307,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = engine_model_c_getMRGLSize_FUN_004dd520(param_1);",
@@ -300,7 +315,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 19,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "param_1 = (uint *)((int)param_1 + (uVar1 & 0xfffffffc));",
@@ -308,7 +323,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (uint *)((int)param_1 + (uVar1 & 0xfffffffc));",
@@ -316,7 +331,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (uint *)((int)param_1 + (uVar1 & 0xfffffffc));",
@@ -324,7 +339,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = *param_1;",
@@ -332,7 +347,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = *param_1;",
@@ -340,7 +355,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_keyframe_c_calculateSurfaceNormal_FUN_004c3920(puVar2,param_1);",
@@ -348,7 +363,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_keyframe_c_calculatePackedSurfaceNormal_FUN_004c3760(puVar2,param_1);",
@@ -356,7 +371,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = engine_model_c_getMRGLSize_FUN_004dd520(param_1);",
@@ -364,7 +379,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 45,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "param_1 = (uint *)((int)param_1 + (uVar1 & 0xfffffffc));",
@@ -372,7 +387,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (uint *)((int)param_1 + (uVar1 & 0xfffffffc));",
@@ -380,7 +395,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = (uint *)((int)param_1 + (uVar1 & 0xfffffffc));",
@@ -388,7 +403,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 == 0) {",

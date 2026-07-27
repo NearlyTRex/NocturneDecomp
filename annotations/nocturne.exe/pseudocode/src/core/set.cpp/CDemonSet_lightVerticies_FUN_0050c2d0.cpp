@@ -93,9 +93,9 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
   
   bVar15 = 0;
   if (20000 < param_2) {
-    _DAT_01cc4800 = "..\\core\\set.cpp";
-    _DAT_01cc4804 = 0xd26;
-    FUN_004c8440("CDemonSet::lightVerticies - tried to light %d vertices, but GLOBAL_VERTEX_COUNT = %d",param_2,20000);
+    PTR_01cc4800 = "..\\core\\set.cpp";
+    INT_01cc4804 = 0xd26;
+    core_main_c_FUN_004c8440("CDemonSet::lightVerticies - tried to light %d vertices, but GLOBAL_VERTEX_COUNT = %d",param_2,20000);
   }
   iVar5 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
   if (iVar5 == 0) {
@@ -114,7 +114,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
                   local_11c = *(uint *)((int)&DAT_005c5014 + iVar8);
                   local_118 = *(uint *)((int)&DAT_005c5018 + iVar8);
                   local_114 = *(uint *)((int)&DAT_005c501c + iVar8);
-                  FUN_00441440(0x1fb8508,&stack0xfffffee4);
+                  core_dcamera_cpp_FUN_00441440(0x1fb8508,&stack0xfffffee4);
                   local_e0 = local_158;
                   *(uint *)((int)&stack0xffffff24 + (uint)bVar15 * 0xfffffffe * 4) =
                        *(uint *)((int)&stack0xfffffeac + (uint)bVar15 * 0xfffffffe * 4);
@@ -139,7 +139,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
                   local_134 = *(uint *)((int)&DAT_005c5014 + iVar6);
                   local_130 = *(uint *)((int)&DAT_005c5018 + iVar6);
                   local_12c = *(uint *)((int)&DAT_005c501c + iVar6);
-                  FUN_00441440(0x1fb8508,&stack0xfffffecc);
+                  core_dcamera_cpp_FUN_00441440(0x1fb8508,&stack0xfffffecc);
                   puVar12 = (uint *)(local_58 + 0x200b134 + (uint)bVar15 * -8);
                   *(uint *)(local_58 + 0x200b130) = local_140;
                   *puVar12 = *(uint *)((int)&stack0xfffffec4 + (uint)bVar15 * 0xfffffffe * 4);
@@ -151,12 +151,12 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
               }
               if (param_6 < 1) {
                 if (4000 < param_3) {
-                  _DAT_01cc4800 = "..\\core\\set.cpp";
-                  _DAT_01cc4804 = 0xde8;
-                  FUN_004c8440("Too many normals on this packed tri list");
-                  _DAT_01cc4800 = "..\\core\\set.cpp";
-                  _DAT_01cc4804 = 0xdea;
-                  FUN_004c8440("Need more normals for packed models");
+                  PTR_01cc4800 = "..\\core\\set.cpp";
+                  INT_01cc4804 = 0xde8;
+                  core_main_c_FUN_004c8440("Too many normals on this packed tri list");
+                  PTR_01cc4800 = "..\\core\\set.cpp";
+                  INT_01cc4804 = 0xdea;
+                  core_main_c_FUN_004c8440("Need more normals for packed models");
                 }
                 iVar8 = 0;
                 if (0 < param_3) {
@@ -180,7 +180,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
                     local_44 = (float)iVar6 * local_a8 - (float)local_24 * local_9c;
                     local_3c = (float)local_24 * (float)local_1c - local_a4 * local_88;
                     local_90 = local_3c * local_3c + local_44 * local_44 + local_40 * local_40;
-                    local_8c = (float)(_DAT_01c70710 - ((int)local_90 >> 1));
+                    local_8c = (float)((int)CVector3f_01c70708.z - ((int)local_90 >> 1));
                     fVar1 = local_8c * (float)65535;
                     puVar7 = puVar7 + 9;
                     iVar8 = iVar8 + 1;
@@ -242,7 +242,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
                     fVar4 = (float)iVar13 * fVar2 - (float)local_20 * local_bc;
                     fVar3 = (float)local_20 * local_c0 - local_c4 * (float)local_1c;
                     local_2c = fVar3 * fVar3 + fVar4 * fVar4 + fVar1 * fVar1;
-                    local_28 = (float)(_DAT_01c70710 - ((int)local_2c >> 1));
+                    local_28 = (float)((int)CVector3f_01c70708.z - ((int)local_2c >> 1));
                     fVar2 = local_28 * (float)65535;
                     *(float *)(puVar7 + 4) = fVar1 * fVar2;
                     *(float *)(puVar7 + 6) = fVar4 * fVar2;
@@ -311,7 +311,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
                     iVar8 = local_54;
                     local_74 = pfVar14[2] * pfVar14[2] +
                                *pfVar14 * *pfVar14 + pfVar14[1] * pfVar14[1];
-                    local_70 = (float)(_DAT_01c70710 - ((int)local_74 >> 1));
+                    local_70 = (float)((int)CVector3f_01c70708.z - ((int)local_74 >> 1));
                     fVar1 = local_70 * (float)65535;
                     *pfVar14 = *pfVar14 * fVar1;
                     pfVar14[1] = pfVar14[1] * fVar1;
@@ -343,7 +343,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
                        (1.0 <= ABS(pfVar14[2]))) {
                       local_80 = pfVar14[2] * pfVar14[2] +
                                  *pfVar14 * *pfVar14 + pfVar14[1] * pfVar14[1];
-                      local_7c = (float)(_DAT_01c70710 - ((int)local_80 >> 1));
+                      local_7c = (float)((int)CVector3f_01c70708.z - ((int)local_80 >> 1));
                       fVar1 = local_7c * (float)65535;
                       *pfVar14 = *pfVar14 * fVar1;
                       pfVar14[1] = pfVar14[1] * fVar1;
@@ -381,7 +381,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
                   local_110 = *(uint *)((int)&DAT_005c5014 + iVar5);
                   local_10c = *(uint *)((int)&DAT_005c5018 + iVar5);
                   local_108 = *(uint *)((int)&DAT_005c501c + iVar5);
-                  FUN_00441440(0x1fb8508,&stack0xfffffef0);
+                  core_dcamera_cpp_FUN_00441440(0x1fb8508,&stack0xfffffef0);
                   iVar5 = iVar5 + 0x30;
                   puVar12 = (uint *)(local_5c + 0x200b134 + (uint)bVar15 * -8);
                   *(uint *)(local_5c + 0x200b130) = local_f8;
@@ -452,7 +452,7 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
             local_164 = *(uint *)((int)&DAT_005c5014 + iVar5);
             local_160 = *(uint *)((int)&DAT_005c5018 + iVar5);
             local_15c = *(uint *)((int)&DAT_005c501c + iVar5);
-            FUN_00441440(0x1fb8508,&stack0xfffffe9c);
+            core_dcamera_cpp_FUN_00441440(0x1fb8508,&stack0xfffffe9c);
             local_ec = local_104;
             *(uint *)((int)&stack0xffffff18 + (uint)bVar15 * 0xfffffffe * 4) =
                  *(uint *)((int)&stack0xffffff00 + (uint)bVar15 * 0xfffffffe * 4);

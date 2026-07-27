@@ -33,7 +33,7 @@ int core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_0044d2d0(int param_1,
   local_20 = (float)*(int *)(param_1 + 0x3c) *
              (*(float *)(param_1 + 0x18) - fVar1) * *(float *)(param_1 + 0x38);
   if (param_3 != (int *)0x0) {
-    fVar1 = (float)(_DAT_01c70710 - ((int)fVar1 >> 1));
+    fVar1 = (float)((int)CVector3f_01c70708.z - ((int)fVar1 >> 1));
     fVar1 = local_28 * fVar1 * (float)param_3[2] * _DAT_0059bffc +
             local_30 * fVar1 * (float)*param_3 * _DAT_0059bffc +
             local_2c * fVar1 * (float)param_3[1] * _DAT_0059bffc;

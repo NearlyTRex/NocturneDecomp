@@ -5,28 +5,28 @@
 ;
 ;
 ; XREF[12]:
-;   FUN_00470230 at 004702fd
-;   FUN_00470310 at 004703dd
-;   FUN_004703f0 at 004704fb
-;   FUN_00470730 at 00470a3d
-;   FUN_004a4b50 at 004a51e6
-;   FUN_004f8240 at 004f84f4
-;   FUN_0052ed40 at 0052edab
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049e436
+;   core_game.cpp_FUN_004a4b50 at 004a51e6
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3bd9
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d2176
+;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9d86
+;   core_sound.cpp_FUN_0052ed40 at 0052edab
+;   engine_pod.cpp_FUN_004f8240 at 004f84f4
+;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550 at 004706bf
+;   shape_edittool.cpp_FUN_00470230 at 004702fd
+;   shape_edittool.cpp_FUN_00470310 at 004703dd
 ;   ... and 2 more
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_shape_edittool.cpp_CPickList_dtor_FUN_00474cf0_0059ca94 = 00474cf0
-;   undefined4 DAT_0059cad0
+;   WatcomTypeInfo g_CPickListTypeInfo_0059cad0
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00476160
-;   FUN_00476490
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_edittool.cpp_CStrList_dtor_FUN_00473b80
+;   shape_edittool.cpp_FUN_00476160
+;   shape_edittool.cpp_FUN_00476490
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -41,14 +41,14 @@ section .text
         ;   XREF to: 00474d3d (CONDITIONAL_JUMP)  ; LAB_00474d3d
     PUSH EBX                            ; 00474cfc
     MOV dword ptr [EBX + 0xc],0x59ca94  ; 00474cfd | PTR_shape_edittool.cpp_CPickList_dtor_FUN_00474cf0_0059ca94
-    CALL FUN_00476160                   ; 00474d04
-        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; undefined FUN_00476160()
+    CALL shape_edittool.cpp_FUN_00476160 ; 00474d04
+        ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476160()
     ADD ESP,0x4                         ; 00474d09
     PUSH 0x0                            ; 00474d0c
     ADD EBX,0x138                       ; 00474d0e
     PUSH EBX                            ; 00474d14
-    CALL FUN_00476490                   ; 00474d15
-        ;   XREF to: 00476490 (UNCONDITIONAL_CALL)  ; undefined FUN_00476490()
+    CALL shape_edittool.cpp_FUN_00476490 ; 00474d15
+        ;   XREF to: 00476490 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00476490()
     ADD ESP,0x8                         ; 00474d1a
     PUSH 0x1                            ; 00474d1d
     LEA EBX,[EAX + 0xfffffec8]          ; 00474d1f
@@ -64,7 +64,7 @@ section .text
     MOV EAX,EBX                         ; 00474d39
     POP EBX                             ; 00474d3b
     RET                                 ; 00474d3c
-    PUSH 0x59cad0                       ; 00474d3d | DAT_0059cad0
+    PUSH 0x59cad0                       ; 00474d3d | g_CPickListTypeInfo_0059cad0
         ;   Label: LAB_00474d3d
     PUSH EBX                            ; 00474d42
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00474d43
@@ -79,8 +79,8 @@ section .text
     RET                                 ; 00474d57
     PUSH EAX                            ; 00474d58
         ;   Label: LAB_00474d58
-    CALL FUN_00564494                   ; 00474d59
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 00474d59
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 00474d5e
     MOV EAX,EBX                         ; 00474d61
     POP EBX                             ; 00474d63

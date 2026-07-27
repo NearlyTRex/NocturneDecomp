@@ -3,13 +3,21 @@
 // Function prototypes for core/zombie.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_zombie.cpp_staticInit_FUN_0055e780
+// Address: 0055e780
+void __cdecl staticInit(void);
+
 // Original: core_zombie.cpp_classifyObjectShape_FUN_0055e940
 // Address: 0055e940
 undefined4 __cdecl classifyObjectShape(float *param_1);
 
+// Original: core_zombie.cpp_FUN_0055ea90
+// Address: 0055ea90
+void FUN_0055ea90(void);
+
 // Original: core_zombie.cpp_FUN_0055eab0
 // Address: 0055eab0
-undefined4 FUN_0055eab0(void);
+CDemonActorType * FUN_0055eab0(void);
 
 // Original: core_zombie.cpp_CZombie_ctor_FUN_0055eac0
 // Address: 0055eac0

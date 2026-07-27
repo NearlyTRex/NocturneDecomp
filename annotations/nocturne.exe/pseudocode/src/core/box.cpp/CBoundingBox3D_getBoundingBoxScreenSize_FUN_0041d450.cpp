@@ -24,7 +24,7 @@ float __cdecl core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450(
   local_34 = (int)ROUND(local_28 * _DAT_0059aa80);
   local_30 = (int)ROUND(local_24 * _DAT_0059aa80);
   local_2c = (int)ROUND(local_20 * _DAT_0059aa80);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (*DAT_005ae704 + 0xea5d0,&local_34,*param_1 + param_1[3],param_1[1] + param_1[4],
              param_1[2] + param_1[5]);
   if (0 < *(int *)(*DAT_005ae704 + 0xea5d8)) {

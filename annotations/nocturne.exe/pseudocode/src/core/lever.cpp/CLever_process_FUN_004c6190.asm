@@ -10,7 +10,7 @@
 ;   double DOUBLE_00587935 = 0.900000000000000
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_01cc3660
+;   undefined4 g_CLeverActorType_01cc3628.name_hash
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
@@ -84,7 +84,7 @@ section .text
     CMP EDI,dword ptr [EAX + 0x14cd6c]  ; 004c623c | DAT_01fa3ff0
     JGE 0x004c6314                      ; 004c6242
         ;   XREF to: 004c6314 (CONDITIONAL_JUMP)  ; LAB_004c6314
-    MOV EBP,dword ptr [0x01cc3660]      ; 004c6248 | DAT_01cc3660
+    MOV EBP,dword ptr [0x01cc3660]      ; 004c6248 | g_CLeverActorType_01cc3628.name_hash
     PUSH EBP                            ; 004c624e
     MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 004c624f | DAT_01fa3ff4 | DAT_01fa3ff8
     PUSH EDX                            ; 004c6256

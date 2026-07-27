@@ -3,6 +3,18 @@
 // Function prototypes for core/baron.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_baron.cpp_staticInit_FUN_00410140
+// Address: 00410140
+void __cdecl staticInit(void);
+
+// Original: core_baron.cpp_FUN_004101a0
+// Address: 004101a0
+void FUN_004101a0(void);
+
+// Original: core_baron.cpp_FUN_004101c0
+// Address: 004101c0
+CDemonActorType * FUN_004101c0(void);
+
 // Original: core_baron.cpp_CBaron_ctor_FUN_004101d0
 // Address: 004101d0
 int CBaron::ctor(undefined4 param_1);
@@ -55,6 +67,10 @@ undefined4 CBaron::processDamage(undefined4 param_1,int param_2);
 // Address: 00411310
 void FUN_00411310(void);
 
+// Original: core_baron.cpp_FUN_00411320
+// Address: 00411320
+void FUN_00411320(void);
+
 // Original: core_baron.cpp_FUN_00411340
 // Address: 00411340
 CDemonActorType * FUN_00411340(void);
@@ -94,3 +110,15 @@ void CBaronWeapon::setWeaponState(int param_1,undefined4 param_2);
 // Original: core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530
 // Address: 00411530
 void __cdecl CBaronWeapon::findOrCreateBaron(int param_1);
+
+// Original: core_baron.cpp_FUN_00411600
+// Address: 00411600
+undefined4 FUN_00411600(void);
+
+// Original: core_baron.cpp_FUN_00411610
+// Address: 00411610
+undefined4 FUN_00411610(undefined4 param_1,byte param_2);
+
+// Original: core_baron.cpp_FUN_00411660
+// Address: 00411660
+undefined4 FUN_00411660(undefined4 param_1,byte param_2);

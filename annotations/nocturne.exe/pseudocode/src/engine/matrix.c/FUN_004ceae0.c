@@ -1,14 +1,14 @@
-// Name: FUN_004ceae0
+// Name: engine_matrix.c_FUN_004ceae0
 // Address: 004ceae0
 // Address Range: [[004ceae0, 004ceb80]]
 // Convention: unknown
-// Signature: void FUN_004ceae0(int param_1,int param_2,int param_3)
+// Signature: void engine_matrix_c_FUN_004ceae0(int param_1,int param_2,int param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004ceae0(int param_1,int param_2,int param_3)
+void engine_matrix_c_FUN_004ceae0(int param_1,int param_2,int param_3)
 
 {
   int iVar1;
@@ -28,8 +28,8 @@ void FUN_004ceae0(int param_1,int param_2,int param_3)
   if (_DAT_01cc5174 < 10) {
     return;
   }
-  _DAT_01cc4800 = "..\\engine\\matrix.c";
-  _DAT_01cc4804 = 0x5c9;
-  FUN_004c8440("Matrix unbalance3");
+  PTR_01cc4800 = "..\\engine\\matrix.c";
+  INT_01cc4804 = 0x5c9;
+  core_main_c_FUN_004c8440("Matrix unbalance3");
   return;
 }

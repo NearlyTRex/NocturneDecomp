@@ -5,28 +5,28 @@
 ;
 ;
 ; XREF[98]:
-;   FUN_00414930 at 004149f7
-;   FUN_00418a00 at 004192d8
-;   FUN_004196b0 at 00419981
-;   FUN_0041fe40 at 0041fef3
-;   FUN_00439f50 at 0043a15c
-;   FUN_00495a20 at 00496b7a
-;   FUN_004996b0 at 00499795
-;   FUN_004a9270 at 004a93a4
-;   FUN_004ab450 at 004ab59c
-;   FUN_004b32d0 at 004b34dc
+;   core_baron.cpp_CBaron_attachToOwner_FUN_00410a80 at 00410b6b
+;   core_baron.cpp_CBaron_detachFromOwner_FUN_00410bb0 at 00410bd4
+;   core_baron.cpp_FUN_00410490 at 0041061c
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004129cc
+;   core_batcreat.cpp_FUN_00413040 at 00413107
+;   core_batman.cpp_CBatman_pickRandomMovementState_FUN_00413780 at 004137a0
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413d66
+;   core_batman.cpp_FUN_00414930 at 004149f7
+;   core_biggs.cpp_CBiggs_processDamage_FUN_00415900 at 00415940
+;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 0041556b
 ;   ... and 88 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_motion_cpp_0058b2cd
 ;   TerminatedCString s_CMotionController_setDes_0058b2e0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_004e1500
 ;   core_motion.cpp_CMotionController_reverseTransition_FUN_004e1600
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -76,10 +76,10 @@ section .text
     MOV ECX,0x58b2cd                    ; 004e16fb | = "..\\core\\motion.cpp"
     MOV EDI,0x274                       ; 004e1700
     PUSH 0x58b2e0                       ; 004e1705 | = "CMotionController::setDesiredState - ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004e170a | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004e1710 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e1716
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004e170a | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004e1710 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e1716
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004e171b
     POP EDI                             ; 004e171e
     JMP 0x004e16c4                      ; 004e171f

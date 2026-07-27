@@ -38,8 +38,8 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(int param_1)
   int local_14;
   
   sound_sndmain_cpp_processAudio_FUN_005288f0();
-  wincore_windll_cpp_clearScreen_FUN_0052ee70();
-  wincore_windll_cpp_clearZBufferNative_FUN_0052eed4();
+  engine_special_cpp_clearScreen_FUN_0052ee70();
+  engine_special_cpp_clearZBufferNative_FUN_0052eed4();
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
             (DAT_005ae704,&DAT_02dd1184);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(DAT_005ae704,0x42e00000);

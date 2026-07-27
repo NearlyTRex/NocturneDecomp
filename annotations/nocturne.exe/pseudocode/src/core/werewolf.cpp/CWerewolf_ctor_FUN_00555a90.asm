@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00555a60 at 00555a73
+;   core_werewolf.cpp_FUN_00555a60 at 00555a73
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wolfbrn_dfm_00597cd3

@@ -12,7 +12,7 @@ int core_gabriela_cpp_CGabriella_ctor_FUN_004956a0(uint param_1)
   float fVar1;
   int iVar2;
   
-  iVar2 = FUN_004b46d0(param_1);
+  iVar2 = core_hero_cpp_FUN_004b46d0(param_1);
   iVar2 = core_cloth_cpp_CCloth_ctor_FUN_00435100(iVar2 + 0x1fa7c);
   *(byte ***)(iVar2 + -0x1f930) = &PTR_core_gabriela_cpp_CGabriella_setup_FUN_004957c0_0059dcf4
   ;

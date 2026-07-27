@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_00549470 at 00549483
+;   core_turret.cpp_FUN_00549470 at 00549483
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gturret_head_kfm_00596ce5
@@ -19,7 +19,7 @@
 ;   undefined4 s_Character_00596d09+1
 ;   undefined4 s_haracter_00596d09+2
 ;   undefined4 s_aracter_00596d09+3
-;   undefined1* PTR_FUN_005a37b4 = 005495f0
+;   undefined1* PTR_core_turret.cpp_FUN_005495f0_005a37b4 = 005495f0
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -50,7 +50,7 @@ section .text
     PUSH 0x596ce5                       ; 005494c7 | = "gturret_head.kfm"
     LEA EAX,[EBX + 0x150]               ; 005494cc
     PUSH EAX                            ; 005494d2
-    MOV dword ptr [EBX + 0x14c],0x5a37b4 ; 005494d3 | PTR_FUN_005a37b4
+    MOV dword ptr [EBX + 0x14c],0x5a37b4 ; 005494d3 | PTR_core_turret.cpp_FUN_005495f0_005a37b4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 005494dd
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     ADD ESP,0x8                         ; 005494e2

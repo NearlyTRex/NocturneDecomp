@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040d3f0(CDemonActorType *this_ptr,char *class_name,CDemonActor_FactoryFunc *factor_func,int *max_version,int version,CDemonActorType *parent_class_info)
 
 {
@@ -44,9 +42,9 @@ CDemonActorType * __cdecl core_actor_cpp_registerActorClass_FUN_0040d3f0(CDemonA
   }
   this_ptr->name_hash = uVar3;
   if (199 < iVar2) {
-    _DAT_01cc4800 = "..\\core\\actor.cpp";
-    _DAT_01cc4804 = 0xa19;
-    FUN_004c8440("Too many actor types!");
+    PTR_01cc4800 = "..\\core\\actor.cpp";
+    INT_01cc4804 = 0xa19;
+    core_main_c_FUN_004c8440("Too many actor types!");
   }
   (&DAT_00763e98)[DAT_00763e94] = this_ptr;
   DAT_00763e94 = DAT_00763e94 + 1;

@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_0041f6e0 at 0041f9b3
+;   core_boxactor.cpp_FUN_0041f6e0 at 0041f9b3
 ;   core_dfilter.cpp_CFilterCache_getFilter_FUN_0044bd20 at 0044bdf1
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310 at 0044c44b
 ;
@@ -31,12 +31,12 @@
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_allocMemory_FUN_0044bf20
+;   core_main.c_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -93,10 +93,10 @@ section .text
     MOV EBP,0x57bf64                    ; 0044bffd | = "..\\core\\dfilter.cpp"
     MOV EAX,0xb7                        ; 0044c002
     PUSH 0x57bf78                       ; 0044c007 | = "CDemonFilter::load - Non-square filte..."
-    MOV dword ptr [0x01cc4800],EBP      ; 0044c00c | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0044c012 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044c017
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0044c00c | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0044c012 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044c017
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0044c01c
     MOV ESI,dword ptr [EBX]             ; 0044c01f
         ;   Label: LAB_0044c01f
@@ -109,10 +109,10 @@ section .text
     MOV EAX,0x57bfa5                    ; 0044c02d | = "..\\core\\dfilter.cpp"
     MOV EDX,0xb9                        ; 0044c032
     PUSH 0x57bfb9                       ; 0044c037 | = "CDemonFilter::load - Bad filter size %d"
-    MOV [0x01cc4800],EAX                ; 0044c03c | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0044c041 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044c047
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0044c03c | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0044c041 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044c047
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0044c04c
     MOV ESI,dword ptr [EBX + 0x4]       ; 0044c04f
         ;   Label: LAB_0044c04f
@@ -125,10 +125,10 @@ section .text
     MOV EAX,0x57bfe1                    ; 0044c05f | = "..\\core\\dfilter.cpp"
     MOV EDX,0xbc                        ; 0044c064
     PUSH 0x57bff5                       ; 0044c069 | = "CDemonFilter::load - Bad filter size %d"
-    MOV [0x01cc4800],EAX                ; 0044c06e | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0044c073 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044c079
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0044c06e | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0044c073 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044c079
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0044c07e
     PUSH EBX                            ; 0044c081
         ;   Label: LAB_0044c081
@@ -185,10 +185,10 @@ section .text
     MOV EDX,0x57bf25                    ; 0044c0f3 | = "..\\core\\dfilter.cpp"
     MOV ECX,0xab                        ; 0044c0f8
     PUSH 0x57bf39                       ; 0044c0fd | = "CDemonFilter::load - Bad filename : %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 0044c102 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0044c108 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044c10e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0044c102 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0044c108 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044c10e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0044c113
     JMP 0x0044bfbc                      ; 0044c116
         ;   XREF to: 0044bfbc (UNCONDITIONAL_JUMP)  ; LAB_0044bfbc
@@ -208,10 +208,10 @@ section .text
         ;   Label: LAB_0044c13d
     MOV EAX,0xc6                        ; 0044c142
     PUSH 0x57c038                       ; 0044c147 | = "CDemonFilter::load - Bad filename"
-    MOV dword ptr [0x01cc4800],EBP      ; 0044c14c | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0044c152 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044c157
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0044c14c | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0044c152 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044c157
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044c15c
     JMP 0x0044c0a7                      ; 0044c15f
         ;   XREF to: 0044c0a7 (UNCONDITIONAL_JUMP)  ; LAB_0044c0a7

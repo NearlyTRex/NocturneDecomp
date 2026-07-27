@@ -88,7 +88,6 @@ section .text
     POP ESI                             ; 004e2118
     POP EBX                             ; 004e2119
     LEA EAX,[EAX]                       ; 004e211a
-    RET                                 ; 004e2120
     MOV EAX,dword ptr [EDX + 0x60]      ; 004e2121
         ;   Label: LAB_004e2121
     MOV dword ptr [ECX],EAX             ; 004e2124

@@ -28,7 +28,7 @@ uint shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(uint para
     }
     iVar1 = sscanf();
     if (iVar1 == 3) break;
-    FUN_0046fcd0(param_1,"Please enter a valid vector.");
+    shape_edittool_cpp_FUN_0046fcd0(param_1,"Please enter a valid vector.");
   }
   if (param_3 != &fStack_18) {
     *param_3 = fStack_18;

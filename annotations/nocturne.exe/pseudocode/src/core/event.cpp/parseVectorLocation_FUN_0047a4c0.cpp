@@ -26,7 +26,8 @@ uint __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(int param_1,int *pa
     return 0xffffffff;
   }
   iVar1 = core_event_cpp_resolveActorByName_FUN_0047a390
-                    (local_78,CDemonActorType_00763e48.name_hash,&CDemonActorType_00763e48);
+                    (local_78,g_CDemonActorActorType_00763e48.name_hash,
+                     &g_CDemonActorActorType_00763e48);
   if (iVar1 == 0) {
     return 0xffffffff;
   }

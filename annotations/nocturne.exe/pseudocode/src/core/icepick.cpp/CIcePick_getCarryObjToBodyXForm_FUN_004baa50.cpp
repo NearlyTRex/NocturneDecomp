@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50(int param_1,int param_2)
 
 {
@@ -51,9 +49,9 @@ void core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004baa50(int param_1,i
     }
   }
   else {
-    _DAT_01cc4800 = "..\\core\\icepick.cpp";
-    _DAT_01cc4804 = 0x28a;
-    FUN_004c8440("CIcePick::getCarryObjToBodyXForm - wrong hand");
+    PTR_01cc4800 = "..\\core\\icepick.cpp";
+    INT_01cc4804 = 0x28a;
+    core_main_c_FUN_004c8440("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0(local_78,&local_3c,&local_24);
   core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00(local_78,iVar1 * 0x30 + param_1 + 0xfd0);

@@ -67,7 +67,8 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1
     local_38 = local_50 + local_5c;
     if (local_80 <= 0.0) break;
     core_fire_cpp_CFireEffect_createLaserSegment_FUN_0048b370
-              (param_1,&local_70,&local_40,param_4,0,param_6,param_8,param_9,param_10,0x3CA3D70A);
+              (param_1,&local_70,&local_40,param_4,0,param_6,param_8,param_9,param_10,0.02f
+              );
     if (&local_70 != &local_40) {
       local_70 = local_40;
       local_6c = local_3c;
@@ -82,6 +83,6 @@ void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_0048b440(uint param_1
   }
   core_fire_cpp_CFireEffect_createLaserSegment_FUN_0048b370
             (param_1,&local_70,&local_40,param_4,param_5,param_6,param_8,param_9,param_10,
-             0x3CA3D70A);
+             0.02f);
   return;
 }

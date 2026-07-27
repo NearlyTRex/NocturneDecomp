@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004c31b0(int param_1,uint param_2,int param_3)
 
 {
@@ -24,7 +22,7 @@ uint __cdecl core_inv_cpp_CInventory_checkHasMatchingKey_FUN_004c31b0(int param_
   if (0 < *(int *)(param_1 + 8)) {
     do {
       iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(iVar3 + 0xc),_DAT_01cc30e0);
+                        (*(uint *)(iVar3 + 0xc),g_CKeyActorActorType_01cc30a8.name_hash);
       if ((iVar1 != 0) && ((*(uint *)(iVar1 + 0x2cc) & param_2) != 0)) {
         if (param_3 == 0) {
           return 1;

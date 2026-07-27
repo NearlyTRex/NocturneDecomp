@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 178,
+    "complexity_score": 162,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 23,
-    "suspect_count": 13,
+    "pseudocode_lines": 22,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "pointer_truncation",
       "unnamed_param",
-      "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 75
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -167,7 +166,7 @@
     {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "FUN_004c8440"
+      "name": "core_main.c_FUN_004c8440"
     },
     {
       "addr": "00564c18",
@@ -190,14 +189,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -266,7 +265,7 @@
         {
           "check_id": "pointerAdditionResultNotNull",
           "column": 20,
-          "line": 26,
+          "line": 25,
           "message": "Comparison is wrong. Result of 'piVar1+1' can't be 0 unless there is pointer overflow, and pointer overflow is undefined behaviour.",
           "severity": "warning"
         }
@@ -285,16 +284,8 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 4,
       "match": "param_1",
       "severity": "mild",
       "text": "void __cdecl core_course_cpp_CCourse_allocMemory_FUN_0043b610(int *param_1,int param_2)",
@@ -302,7 +293,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 5,
+      "line": 4,
       "match": "param_2",
       "severity": "mild",
       "text": "void __cdecl core_course_cpp_CCourse_allocMemory_FUN_0043b610(int *param_1,int param_2)",
@@ -310,7 +301,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 9,
       "match": "param_1",
       "severity": "mild",
       "text": "core_course_cpp_CCourse_free_FUN_0043b7c0(param_1);",
@@ -318,7 +309,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = param_2;",
@@ -326,7 +317,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 10,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_1 = param_2;",
@@ -334,7 +325,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 11,
       "match": "param_2",
       "severity": "mild",
       "text": "piVar1 = (int *)shape_memdbg_cpp_malloc_FUN_00564c18(param_2 * 0x1c + 4);",
@@ -342,7 +333,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = 0;",
@@ -350,7 +341,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "*piVar1 = param_2;",
@@ -358,7 +349,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = (int)(piVar1 + 1);",
@@ -366,7 +357,7 @@
     },
     {
       "description": "Pointer value `(piVar1 + 1)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 18,
+      "line": 17,
       "match": "(int)(piVar1 + 1)",
       "severity": "moderate",
       "text": "param_1[1] = (int)(piVar1 + 1);",

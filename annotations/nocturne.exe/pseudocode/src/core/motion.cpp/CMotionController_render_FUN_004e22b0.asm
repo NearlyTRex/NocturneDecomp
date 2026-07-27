@@ -17,15 +17,15 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[9]:
-;   FUN_00415760 at 0041583c
-;   FUN_0045a260 at 0045a333
-;   FUN_004de550 at 004de632
-;   FUN_00541640 at 005416fc
-;   FUN_0054dac0 at 0054db86
 ;   core_baron.cpp_FUN_004110f0 at 00411280
 ;   core_batman.cpp_FUN_00414340 at 00414413
+;   core_biggs.cpp_FUN_00415760 at 0041583c
 ;   core_charactr.cpp_CCharacter_renderOpaque_FUN_00426440 at 004264d3
+;   core_dracbrid.cpp_FUN_0045a260 at 0045a333
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5aa1
+;   core_moloch.cpp_FUN_004de550 at 004de632
+;   core_succubus.cpp_FUN_00541640 at 005416fc
+;   core_vampboss.cpp_FUN_0054dac0 at 0054db86
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_0058b4cc
@@ -42,7 +42,7 @@
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_2d.c_drawText_FUN_00402600
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -104,8 +104,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 004e233a | DAT_01b4d738
     ADD EAX,0xea5d0                     ; 004e233c
     PUSH EAX                            ; 004e2341
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 004e2342
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 004e2342
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV EAX,[0x005ae704]                ; 004e2347 | DAT_005ae704
     MOV EAX,dword ptr [EAX]             ; 004e234c | DAT_01b4d738
     MOV DL,byte ptr [EAX + 0xea5e3]     ; 004e234e

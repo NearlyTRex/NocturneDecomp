@@ -7,9 +7,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   FUN_00419ce0 at 00419dd1
-;   FUN_004b49a0 at 004b4a00
+;   core_boneguy.cpp_FUN_00419ce0 at 00419dd1
 ;   core_ghoul.cpp_CGhoul_archive_FUN_004aae30 at 004aaeef
+;   core_hero.cpp_FUN_004b49a0 at 004b4a00
 ;   core_hostage.cpp_CHostage_archive_FUN_004b8320 at 004b8386
 ;   core_tentacle.cpp_CTentacle_archive_FUN_00544470 at 005444b8
 ;   core_zombie.cpp_CZombie_archive_FUN_00561aa0 at 00561b24

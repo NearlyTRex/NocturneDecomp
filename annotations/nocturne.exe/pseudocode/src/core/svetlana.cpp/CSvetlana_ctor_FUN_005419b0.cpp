@@ -11,7 +11,7 @@ int core_svetlana_cpp_CSvetlana_ctor_FUN_005419b0(uint param_1)
 {
   int iVar1;
   
-  iVar1 = FUN_004b46d0(param_1);
+  iVar1 = core_hero_cpp_FUN_004b46d0(param_1);
   iVar1 = core_cloth_cpp_CCloth_ctor_FUN_00435100(iVar1 + 0x1fa44);
   iVar1 = core_cloth_cpp_CCloth_ctor_FUN_00435100(iVar1 + 0x3ab30);
   *(byte ***)(iVar1 + -0x5a428) = &PTR_core_svetlana_cpp_CSvetlana_setup_FUN_00541a40_005a2a74;

@@ -12,8 +12,8 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_00529980
 ;   sound_snddx.cpp_getDirectSoundErrorString_FUN_00529a90
+;   sound_sndmain.cpp_FUN_00529980
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     ADD ESP,0x10                        ; 0052b868
     MOV EAX,ESP                         ; 0052b86b
     PUSH EAX                            ; 0052b86d
-    CALL FUN_00529980                   ; 0052b86e
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 0052b86e
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x4                         ; 0052b873
     XOR EAX,EAX                         ; 0052b876
     ADD ESP,0x194                       ; 0052b878

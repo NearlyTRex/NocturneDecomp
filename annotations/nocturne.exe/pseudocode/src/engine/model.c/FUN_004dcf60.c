@@ -1,14 +1,12 @@
-// Name: FUN_004dcf60
+// Name: engine_model.c_FUN_004dcf60
 // Address: 004dcf60
 // Address Range: [[004dcf60, 004dd40a]]
 // Convention: unknown
-// Signature: uint * FUN_004dcf60(int *param_1)
+// Signature: uint * engine_model_c_FUN_004dcf60(int *param_1)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-uint * FUN_004dcf60(int *param_1)
+uint * engine_model_c_FUN_004dcf60(int *param_1)
 
 {
   int *piVar1;
@@ -53,7 +51,7 @@ uint * FUN_004dcf60(int *param_1)
   bVar13 = 0;
   if (*param_1 == 0x20) {
     uVar4 = engine_model_c_loadModelFile_FUN_004dcd10(param_1 + 6);
-    FUN_004dcf60(uVar4);
+    engine_model_c_FUN_004dcf60(uVar4);
     puVar11 = local_74;
     puVar10 = &local_a8;
     for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -61,30 +59,30 @@ uint * FUN_004dcf60(int *param_1)
       puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
       puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
     }
-    FUN_004dcee0(uVar4);
+    engine_model_c_FUN_004dcee0(uVar4);
     iVar6 = 0xd;
     puVar11 = local_110;
     puVar10 = &local_a8;
   }
   else if (*param_1 == 0x26) {
     puVar11 = local_110;
-    FUN_0041a5a0(param_1);
+    engine_boss_c_FUN_0041a5a0(param_1);
     iVar6 = 0xd;
     puVar10 = local_dc;
   }
   else {
     local_34 = param_1 + 5;
     if (*param_1 != 0x14) {
-      _DAT_01cc4800 = "..\\engine\\model.c";
-      _DAT_01cc4804 = 0x172;
-      FUN_004c8440("Unable to read magnify!");
+      PTR_01cc4800 = "..\\engine\\model.c";
+      INT_01cc4804 = 0x172;
+      core_main_c_FUN_004c8440("Unable to read magnify!");
     }
     iVar6 = (int)(0x7fffffff / (longlong)param_1[1]) * 2;
     if (param_1[2] != 2) {
       _sprintf(local_160,"Unable to read verticies in model!");
-      _DAT_01cc4800 = "..\\engine\\model.c";
-      _DAT_01cc4804 = 0x176;
-      FUN_004c8440(local_160);
+      PTR_01cc4800 = "..\\engine\\model.c";
+      INT_01cc4804 = 0x176;
+      core_main_c_FUN_004c8440(local_160);
     }
     iVar7 = 0;
     iVar12 = -0x80000000;

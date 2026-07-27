@@ -15,7 +15,7 @@ int core_wateract_cpp_CWaterActor_ctor_FUN_00551220(uint param_1)
   char *pcVar4;
   
   iVar2 = core_actor_cpp_FUN_00409d30(param_1);
-  iVar2 = __arrinit(iVar2 + 0x294,1000,&DAT_005a3fd0);
+  iVar2 = __arrinit(iVar2 + 0x294,1000,&g_SWaterVertexTypeInfo_005a3fd0);
   *(byte ***)(iVar2 + -0x148) = &PTR_core_wateract_cpp_CWaterActor_setup_FUN_00551370_005a3ef4;
   *(uint *)(iVar2 + -0x144) = 0x40800000;
   *(uint *)(iVar2 + -0x140) = 0x3dcccccd;

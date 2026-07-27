@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004b13b0 at 004b13b6
 ;   core_ground.cpp_CGround_init_FUN_004b13d0 at 004b13d6
+;   core_ground.cpp_FUN_004b13b0 at 004b13b6
 ;   core_terrain.cpp_CTerrain_free_FUN_005492f0 at 005492f7
 ;
 ; Called Functions:
 ;   core_texlist.cpp_CTextureList_dtor_FUN_00544940
-;   FUN_005638d0
-;   FUN_00564494
+;   crt_unknown.c_FUN_005638d0
+;   crt_unknown.c_FUN_00564494
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     RET                                 ; 004b148b
     PUSH EDX                            ; 004b148c
         ;   Label: LAB_004b148c
-    CALL FUN_005638d0                   ; 004b148d
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 004b148d
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 004b1492
     MOV dword ptr [EBX + 0x24],0x0      ; 004b1495
     MOV EAX,dword ptr [EBX + 0x28]      ; 004b149c
@@ -52,8 +52,8 @@ section .text
         ;   XREF to: 00544940 (UNCONDITIONAL_CALL)  ; undefined core_texlist.cpp_CTextureList_dtor_FUN_00544940()
     ADD ESP,0x8                         ; 004b14b4
     PUSH EAX                            ; 004b14b7
-    CALL FUN_00564494                   ; 004b14b8
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 004b14b8
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 004b14bd
     MOV dword ptr [EBX + 0x28],0x0      ; 004b14c0
     POP EBX                             ; 004b14c7

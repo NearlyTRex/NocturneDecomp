@@ -6,20 +6,18 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void engine_ini_cpp_CIniFile_getString_FUN_004bd910(char *param_1,uint param_2,uint param_3,uint param_4)
 
 {
   if (*param_1 == '\0') {
-    _DAT_01cc4800 = "..\\engine\\ini.cpp";
-    _DAT_01cc4804 = 0x265;
-    FUN_004c8440("CIniFile::getString - filename not write!");
+    PTR_01cc4800 = "..\\engine\\ini.cpp";
+    INT_01cc4804 = 0x265;
+    core_main_c_FUN_004c8440("CIniFile::getString - filename not write!");
   }
   if (param_1[0x100] == '\0') {
-    _DAT_01cc4800 = "..\\engine\\ini.cpp";
-    _DAT_01cc4804 = 0x266;
-    FUN_004c8440("CIniFile::getString - section not write!");
+    PTR_01cc4800 = "..\\engine\\ini.cpp";
+    INT_01cc4804 = 0x266;
+    core_main_c_FUN_004c8440("CIniFile::getString - section not write!");
   }
   engine_ini_cpp_getProfileString_FUN_004bd750
             (param_1 + 0x100,param_2,param_3,param_3,param_4,param_1);

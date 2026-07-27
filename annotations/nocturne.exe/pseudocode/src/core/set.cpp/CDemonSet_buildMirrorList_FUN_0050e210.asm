@@ -14,16 +14,16 @@
 ;   TerminatedCString s_CDemonSet_buildMirrorLis_00590842
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c78c78
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   undefined4 g_CGlassActorType_01c78c40.name_hash
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_00409f20
 ;   core_box.cpp_CBoundingBox3D_isVisible_FUN_0041ceb0
+;   core_main.c_FUN_004c8440
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     JLE 0x0050e2f0                      ; 0050e22f
         ;   XREF to: 0050e2f0 (CONDITIONAL_JUMP)  ; LAB_0050e2f0
     MOV EDI,ESI                         ; 0050e235
-    MOV EBX,dword ptr [0x01c78c78]      ; 0050e237 | DAT_01c78c78
+    MOV EBX,dword ptr [0x01c78c78]      ; 0050e237 | g_CGlassActorType_01c78c40.name_hash
         ;   Label: LAB_0050e237
     PUSH EBX                            ; 0050e23d
     MOV EAX,dword ptr [EDI + 0x14cd70]  ; 0050e23e
@@ -87,10 +87,10 @@ section .text
     MOV EBX,0x590832                    ; 0050e2ad | = "..\\core\\set.cpp"
     MOV EAX,0x1118                      ; 0050e2b2
     PUSH 0x590842                       ; 0050e2b7 | = "CDemonSet::buildMirrorList - Too many..."
-    MOV dword ptr [0x01cc4800],EBX      ; 0050e2bc | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0050e2c2 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050e2c7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0050e2bc | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0050e2c2 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050e2c7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050e2cc
     MOV EDX,dword ptr [0x005ae704]      ; 0050e2cf | DAT_005ae704
         ;   Label: LAB_0050e2cf

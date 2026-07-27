@@ -48,7 +48,7 @@ uint __cdecl core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(int *param_1)
     }
     piStack_2c = param_1 + 0x46;
     while (*param_1 != 0) {
-      wincore_windll_cpp_clearScreen_FUN_0052ee70();
+      engine_special_cpp_clearScreen_FUN_0052ee70();
       _sprintf(acStack_130,"Mission: %s",piStack_2c);
       engine_2d_c_drawText_FUN_00402600(acStack_130,0,0xb);
       _sprintf(acStack_130,"MyGameSettigsId: %d",_DAT_01cea404);
@@ -277,7 +277,7 @@ LAB_004eb75b:
         core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(param_1,iVar3,0x40000000);
       }
     }
-    FUN_0046fe60(0x01BCD074,"You have been disconnected from the game.");
+    shape_edittool_cpp_FUN_0046fe60(0x01BCD074,"You have been disconnected from the game.");
 LAB_004eb861:
     engine_2d_c_clearInputAndWait_FUN_00403f50();
     core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(param_1,1);

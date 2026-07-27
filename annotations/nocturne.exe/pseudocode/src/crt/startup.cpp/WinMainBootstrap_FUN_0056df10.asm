@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
-;   FUN_005670ed
+;   crt_unknown.c_FUN_005670ed
 ;   FUN_00567458
 ;   FUN_0056ef60
 ;   FUN_0056fcd4
@@ -68,8 +68,8 @@ section .text
     JNC 0x0056df84                      ; 0056df6c
         ;   XREF to: 0056df84 (CONDITIONAL_JUMP)  ; LAB_0056df84
     PUSH EBX                            ; 0056df6e
-    CALL FUN_005670ed                   ; 0056df6f
-        ;   XREF to: 005670ed (UNCONDITIONAL_CALL)  ; undefined FUN_005670ed()
+    CALL crt_unknown.c_FUN_005670ed     ; 0056df6f
+        ;   XREF to: 005670ed (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005670ed()
     MOV EAX,[0x005c1cf0]                ; 0056df74 | DAT_005c1cf0
     ADD EAX,0x3                         ; 0056df79
     AND AL,0xfc                         ; 0056df7c

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_0053fc60 at 0053fef3
+;   core_stranger.cpp_FUN_0053fc60 at 0053fef3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Ladder_dot_f_00595b3f
@@ -27,7 +27,7 @@
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_01cc3120
+;   undefined4 g_CLadderActorType_01cc30e8.name_hash
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
 ;
@@ -102,7 +102,7 @@ section .text
         ;   XREF to: 0053c41b (UNCONDITIONAL_JUMP)  ; LAB_0053c41b
     MOV EBX,dword ptr [ESP + 0xd8]      ; 0053c45a
         ;   Label: LAB_0053c45a
-    MOV ESI,dword ptr [0x01cc3120]      ; 0053c461 | DAT_01cc3120
+    MOV ESI,dword ptr [0x01cc3120]      ; 0053c461 | g_CLadderActorType_01cc30e8.name_hash
     ADD EAX,EBX                         ; 0053c467
     PUSH ESI                            ; 0053c469
     MOV EAX,dword ptr [EAX + 0x14cd70]  ; 0053c46a | DAT_01fa3ff4

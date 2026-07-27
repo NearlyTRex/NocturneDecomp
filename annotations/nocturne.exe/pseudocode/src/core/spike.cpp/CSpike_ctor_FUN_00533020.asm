@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00532ff0 at 00533003
+;   core_spike.cpp_FUN_00532ff0 at 00533003
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bgate_kfm_00595011

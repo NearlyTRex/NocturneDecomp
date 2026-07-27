@@ -65,7 +65,7 @@ void core_dlight_cpp_FUN_0044f0b0(int param_1)
     local_60 = (int)ROUND(local_3c * _DAT_0059c030);
     local_5c = (int)ROUND(local_38 * _DAT_0059c030);
     local_14 = iVar5;
-    wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iVar4,&local_64);
+    engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iVar4,&local_64);
     piVar1 = DAT_005ae704;
     iVar5 = iVar5 + 1;
     *(uint *)(iVar4 + 0x20 + *DAT_005ae704) = 0;
@@ -74,7 +74,7 @@ void core_dlight_cpp_FUN_0044f0b0(int param_1)
   local_7c = (int)ROUND(_DAT_01abb4b8 * _DAT_0059c030);
   local_78 = (int)ROUND(_DAT_01abb4bc * _DAT_0059c030);
   local_74 = (int)ROUND(_DAT_01abb4c0 * _DAT_0059c030);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*piVar1 + 0x300,&local_7c);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*piVar1 + 0x300,&local_7c);
   piVar1 = DAT_005ae704;
   *(uint *)(*DAT_005ae704 + 800) = 0xffff;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(piVar1,1);
@@ -119,7 +119,7 @@ void core_dlight_cpp_FUN_0044f0b0(int param_1)
       iVar5 = iVar4 + 1;
       local_88 = iVar4;
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-                (DAT_005ae704,local_a4,FUN_00444180);
+                (DAT_005ae704,local_a4,core_dcamera_cpp_FUN_00444180);
       iVar4 = iVar5;
     } while (iVar5 < 0x10);
   }
@@ -137,7 +137,7 @@ void core_dlight_cpp_FUN_0044f0b0(int param_1)
     local_8c = iVar4;
     local_88 = iVar5;
     engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
-              (DAT_005ae704,&local_a8,FUN_00444180,uVar8);
+              (DAT_005ae704,&local_a8,core_dcamera_cpp_FUN_00444180,uVar8);
     iVar4 = iVar5;
   } while (iVar5 < 0xe);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);

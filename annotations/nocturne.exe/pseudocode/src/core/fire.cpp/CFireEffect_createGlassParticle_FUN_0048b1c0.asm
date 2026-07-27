@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004accf0 at 004ace0c
+;   core_glass.cpp_FUN_004accf0 at 004ace0c
 ;   core_skeleton.cpp_CDeformableModel_shatter_FUN_0051a780 at 0051aa4c
 ;
 ; Referenced Globals:

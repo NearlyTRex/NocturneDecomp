@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0048d5d0 at 0048d688
+;   core_flame.cpp_FUN_0048d5d0 at 0048d688
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704

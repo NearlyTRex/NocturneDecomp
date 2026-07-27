@@ -8,8 +8,8 @@
 ;   core_gore.cpp_CGore_createWallBloodSplat_FUN_004b01c0 at 004b01e8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059e4d4
-;   undefined4 DAT_0059e4d8
+;   float FLOAT_0059e4d4 = 256
+;   float FLOAT_0059e4d8 = 65536
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
@@ -66,24 +66,24 @@ section .text
     MOV EAX,EBP                         ; 004aea6f
     MOV dword ptr [ESI + 0x24],0x0      ; 004aea71
     FLD float ptr [EAX]                 ; 004aea78
-    FMUL float ptr [0x0059e4d4]         ; 004aea7a | DAT_0059e4d4
+    FMUL float ptr [0x0059e4d4]         ; 004aea7a | FLOAT_0059e4d4
     FISTP dword ptr [EBX]               ; 004aea80
     FLD float ptr [EAX + 0x4]           ; 004aea82
-    FMUL float ptr [0x0059e4d4]         ; 004aea85 | DAT_0059e4d4
+    FMUL float ptr [0x0059e4d4]         ; 004aea85 | FLOAT_0059e4d4
     FISTP dword ptr [EBX + 0x4]         ; 004aea8b
     FLD float ptr [EAX + 0x8]           ; 004aea8e
-    FMUL float ptr [0x0059e4d4]         ; 004aea91 | DAT_0059e4d4
+    FMUL float ptr [0x0059e4d4]         ; 004aea91 | FLOAT_0059e4d4
     FISTP dword ptr [EBX + 0x8]         ; 004aea97
     LEA EBX,[ESI + 0x38]                ; 004aea9a
     MOV EAX,EDI                         ; 004aea9d
     FLD float ptr [EAX]                 ; 004aea9f
-    FMUL float ptr [0x0059e4d8]         ; 004aeaa1 | DAT_0059e4d8
+    FMUL float ptr [0x0059e4d8]         ; 004aeaa1 | FLOAT_0059e4d8
     FISTP dword ptr [EBX]               ; 004aeaa7
     FLD float ptr [EAX + 0x4]           ; 004aeaa9
-    FMUL float ptr [0x0059e4d8]         ; 004aeaac | DAT_0059e4d8
+    FMUL float ptr [0x0059e4d8]         ; 004aeaac | FLOAT_0059e4d8
     FISTP dword ptr [EBX + 0x4]         ; 004aeab2
     FLD float ptr [EAX + 0x8]           ; 004aeab5
-    FMUL float ptr [0x0059e4d8]         ; 004aeab8 | DAT_0059e4d8
+    FMUL float ptr [0x0059e4d8]         ; 004aeab8 | FLOAT_0059e4d8
     FISTP dword ptr [EBX + 0x8]         ; 004aeabe
     MOV EAX,dword ptr [ESP + 0x20]      ; 004aeac1
     MOV dword ptr [ESI],0x0             ; 004aeac5

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004676c0 at 004677fc
+;   core_dtrace.cpp_FUN_004676c0 at 004677fc
 ;
 ; Called Functions:
 ;   core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_0044acb0

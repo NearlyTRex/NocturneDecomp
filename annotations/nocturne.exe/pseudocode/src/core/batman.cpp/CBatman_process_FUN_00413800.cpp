@@ -118,7 +118,7 @@ void core_batman_cpp_CBatman_process_FUN_00413800(int param_1,float param_2)
           while ((iVar3 < *(int *)(0x01E57284 + 0x150bf4) &&
                  ((iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
                                      (*(uint *)(iVar4 + 0x150bf8 + 0x01E57284),
-                                      CDemonActorType_00764638.name_hash), iVar5 == 0 ||
+                                      g_CBatmanActorType_00764638.name_hash), iVar5 == 0 ||
                   (*(int *)(iVar5 + 0xbdc0) == 0))))) {
             iVar3 = iVar3 + 1;
             iVar4 = iVar4 + 4;
@@ -232,7 +232,7 @@ void core_batman_cpp_CBatman_process_FUN_00413800(int param_1,float param_2)
         uVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                           (iVar3,local_ec,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_74,uVar7);
-        FUN_004b0480(INT_005b96c4,local_74,0);
+        core_gore_cpp_FUN_004b0480(INT_005b96c4,local_74,0);
         *(uint *)(param_1 + 0xbc90) = 1;
       }
       break;
@@ -267,9 +267,9 @@ void core_batman_cpp_CBatman_process_FUN_00413800(int param_1,float param_2)
       case 1:
         fVar2 = *(float *)(param_1 + 0xbdc4) + param_2;
         *(float *)(param_1 + 0xbdc4) = fVar2;
-        if (0x3F800000 < fVar2) {
+        if (1.0f < fVar2) {
           *(uint *)(param_1 + 0xbdc0) = 2;
-          *(float *)(param_1 + 0xbdc4) = 0x3F800000;
+          *(float *)(param_1 + 0xbdc4) = 1.0f;
         }
         iVar3 = 0;
         local_bc = 0;
@@ -291,7 +291,7 @@ void core_batman_cpp_CBatman_process_FUN_00413800(int param_1,float param_2)
       case 2:
         local_30 = 1;
         local_1c = 0;
-        for (local_18 = 0; fVar2 = 0x3F800000, local_18 < *(int *)(0x01E57284 + 0x14ecb0);
+        for (local_18 = 0; fVar2 = 1.0f, local_18 < *(int *)(0x01E57284 + 0x14ecb0);
             local_18 = local_18 + 1) {
           iVar3 = *(int *)(0x01E57284 + local_1c + 0x14ecb4);
           if (((iVar3 != 0) && (iVar3 != param_1)) &&

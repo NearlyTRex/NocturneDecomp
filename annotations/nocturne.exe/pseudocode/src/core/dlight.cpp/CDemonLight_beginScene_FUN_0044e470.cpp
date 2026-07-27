@@ -17,9 +17,9 @@ void __cdecl core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(int param_1,int
   int iVar4;
   
   if (*(int *)(param_1 + 0x11e4) != 0) {
-    _DAT_01cc4800 = "..\\core\\dlight.cpp";
-    _DAT_01cc4804 = 0xf3;
-    FUN_004c8440("CDemonLight::beginScene - Scene already open");
+    PTR_01cc4800 = "..\\core\\dlight.cpp";
+    INT_01cc4804 = 0xf3;
+    core_main_c_FUN_004c8440("CDemonLight::beginScene - Scene already open");
   }
   *(uint *)(param_1 + 0x11e4) = 1;
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_00440240(param_1,param_2);

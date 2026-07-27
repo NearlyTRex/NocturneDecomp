@@ -1,14 +1,14 @@
-// Name: FUN_004a57c0
+// Name: core_game.cpp_FUN_004a57c0
 // Address: 004a57c0
 // Address Range: [[004a57c0, 004a5d87]]
 // Convention: unknown
-// Signature: void FUN_004a57c0(int param_1)
+// Signature: void core_game_cpp_FUN_004a57c0(int param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004a57c0(int param_1)
+void core_game_cpp_FUN_004a57c0(int param_1)
 
 {
   char cVar1;
@@ -41,14 +41,15 @@ void FUN_004a57c0(int param_1)
   *(uint *)(param_1 + 0xcc) = 0;
   iVar2 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",iVar4);
   if (iVar2 < 0) {
-    FUN_0046fcd0(0x01BCD074,"Can't open %s",iVar4);
+    shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,"Can't open %s",iVar4);
     *(byte *)(param_1 + 0x8b4) = 0;
     return;
   }
   iVar3 = *(int *)(param_1 + 0x9b4) * *(int *)(param_1 + 0x9b8);
   if (iVar2 != iVar3) {
-    FUN_0046fcd0(0x01BCD074,"%s is %d bytes, but expected %dx%d=%d byte file",iVar4,
-                 *(uint *)(param_1 + 0x9b4),*(int *)(param_1 + 0x9b8),iVar3);
+    shape_edittool_cpp_FUN_0046fcd0
+              (0x01BCD074,"%s is %d bytes, but expected %dx%d=%d byte file",iVar4,
+               *(uint *)(param_1 + 0x9b4),*(int *)(param_1 + 0x9b8),iVar3);
     *(byte *)(param_1 + 0x8b4) = 0;
     return;
   }
@@ -76,7 +77,7 @@ void FUN_004a57c0(int param_1)
   } while (cVar1 != '\0');
   iVar4 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_130,"rb");
   if (iVar4 == 0) {
-    FUN_0046fcd0(0x01BCD074,"Can't open %s",local_130);
+    shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,"Can't open %s",local_130);
   }
   else {
     _fread(local_630,1,0x300,iVar4);
@@ -110,9 +111,9 @@ void FUN_004a57c0(int param_1)
       local_20 = local_20 + 4;
     } while (iVar2 != 0x200);
     wincore_wddvmem_cpp_openScreenDevice_FUN_00553470();
-    wincore_windll_cpp_lockFrame_FUN_005322e0();
-    wincore_windll_cpp_clearScreen_FUN_0052ee70();
-    FUN_00532320();
+    engine_special_cpp_lockFrame_FUN_005322e0();
+    engine_special_cpp_clearScreen_FUN_0052ee70();
+    engine_special_cpp_FUN_00532320();
     wincore_wddvmem_cpp_closeScreenDevice_FUN_00553520();
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     local_18 = malloc
@@ -120,9 +121,9 @@ void FUN_004a57c0(int param_1)
     if (local_18 != 0) {
       iVar4 = engine_dosio_cpp_getFile_FUN_00456a60("art",param_1 + 0x8b4,"rb");
       if (iVar4 == 0) {
-        _DAT_01cc4800 = "..\\core\\game.cpp";
-        _DAT_01cc4804 = 0x1028;
-        FUN_004c8440("Can't open %s",param_1 + 0x8b4);
+        PTR_01cc4800 = "..\\core\\game.cpp";
+        INT_01cc4804 = 0x1028;
+        core_main_c_FUN_004c8440("Can't open %s",param_1 + 0x8b4);
       }
       _fread(local_18,*(uint *)(param_1 + 0x9b4),*(uint *)(param_1 + 0x9b8),iVar4);
       _fclose(iVar4);

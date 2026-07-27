@@ -28,9 +28,9 @@ int __cdecl core_dmodel_cpp_loadModel_FUN_004543b0(uint param_1)
     } while (iVar3 < _DAT_01abb658);
   }
   if (0xff < _DAT_01abb658) {
-    _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-    _DAT_01cc4804 = 0x4cd;
-    FUN_004c8440("Can't load %s because keyFrame model manager is full.  (Size is %d)",param_1,0x100);
+    PTR_01cc4800 = "..\\core\\dmodel.cpp";
+    INT_01cc4804 = 0x4cd;
+    core_main_c_FUN_004c8440("Can't load %s because keyFrame model manager is full.  (Size is %d)",param_1,0x100);
   }
   iVar3 = _DAT_01abb658 * 0x398 + 0x1abb65c;
   _DAT_01abb658 = _DAT_01abb658 + 1;

@@ -138,7 +138,7 @@ void core_werewolf_cpp_CWerewolf_process_FUN_00555c60(int param_1,float param_2)
       core_gore_cpp_CGore_spawnBloodBurst_FUN_004b0200(INT_005b96c4,local_98,0,local_34,uVar10);
     }
     else if (uVar5 == 0x29a) {
-      FUN_004d9110(0x01CC9450,param_1);
+      core_mission_cpp_FUN_004d9110(0x01CC9450,param_1);
     }
     else {
       core_charactr_cpp_CCharacter_processMotion_FUN_0042add0(param_1);
@@ -237,14 +237,14 @@ LAB_005567cd:
         }
       }
       iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(param_1 + 0xbd50),_DAT_02dd1044);
+                        (*(uint *)(param_1 + 0xbd50),g_CTrapActorType_02dd100c.name_hash);
       if ((iVar4 == 0) || (local_18 != 0xf)) {
         iVar4 = *(int *)(param_1 + 0xbca4);
         if (*(int *)(param_1 + 0xbd24) == 2) {
           if ((*(int *)(param_1 + 0xbd58) == 0) || (*(int *)(param_1 + 0xbd5c) == 0)) {
-            _DAT_01cc4800 = "..\\core\\werewolf.cpp";
-            _DAT_01cc4804 = 0x1ad;
-            FUN_004c8440();
+            PTR_01cc4800 = "..\\core\\werewolf.cpp";
+            INT_01cc4804 = 0x1ad;
+            core_main_c_FUN_004c8440();
           }
           engine_console_cpp_CConsole_printf_FUN_0043ac60
                     (PTR_DAT_005ad350,"Phase: %d, Timer: %f\n",*(uint *)(param_1 + 0xbd60),
@@ -320,7 +320,7 @@ LAB_00556967:
         }
         else if (iVar8 < 1) {
           iVar8 = core_actor_cpp_castToClassHash_FUN_0040d890
-                            (*(uint *)(param_1 + 0xbd50),_DAT_02dd1044);
+                            (*(uint *)(param_1 + 0xbd50),g_CTrapActorType_02dd100c.name_hash);
           if (iVar8 == 0) {
             local_194 = *(float *)(iVar4 + 0x20) - *(float *)(param_1 + 0x20);
             local_190 = *(float *)(iVar4 + 0x24) - *(float *)(param_1 + 0x24);
@@ -350,8 +350,8 @@ LAB_00556967:
                 iVar4 = 0;
                 for (iVar8 = 0; iVar8 < *(int *)(0x01E57284 + 0x150bf4); iVar8 = iVar8 + 1) {
                   iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                    (*(uint *)(iVar4 + 0x150bf8 + 0x01E57284),_DAT_02de07c4)
-                  ;
+                                    (*(uint *)(iVar4 + 0x150bf8 + 0x01E57284),
+                                     g_CWerewolfActorType_02de078c.name_hash);
                   if (((iVar6 != 0) && (iVar6 != param_1)) &&
                      (iVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004e1660(),
                      *(int *)(iVar6 + 0x24) == 8)) {
@@ -433,7 +433,7 @@ LAB_005567aa:
             uVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                               (param_1 + 0x150,local_1ac,0);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_1b8,uVar7);
-            FUN_004b0480(INT_005b96c4,local_1b8,0);
+            core_gore_cpp_FUN_004b0480(INT_005b96c4,local_1b8,0);
             *(uint *)(param_1 + 0xbc90) = 1;
           }
           goto LAB_00555e90;
@@ -512,7 +512,7 @@ LAB_00556301:
           }
         }
         iVar4 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(param_1 + 0xbd50),_DAT_02dd1044);
+                          (*(uint *)(param_1 + 0xbd50),g_CTrapActorType_02dd100c.name_hash);
         if ((iVar4 != 0) && (local_18 == 0xe)) goto LAB_005567aa;
         if (*(int *)(param_1 + 0xbca4) == 0) goto LAB_00555e90;
         iVar4 = core_actor_cpp_randomChance_FUN_0040dea0();

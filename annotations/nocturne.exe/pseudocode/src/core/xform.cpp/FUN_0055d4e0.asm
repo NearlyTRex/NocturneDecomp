@@ -10,15 +10,15 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[9]:
-;   FUN_00497900 at 00497ab9
-;   FUN_004fd1d0 at 004fd216
-;   FUN_0051d650 at 0051d714
-;   FUN_005384d0 at 00538710
-;   FUN_005396d0 at 0053975d
-;   FUN_0053a260 at 0053a2a1
 ;   core_charactr.cpp_FUN_00429e60 at 00429ebb
+;   core_gabriela.cpp_FUN_00497900 at 00497ab9
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004db6f0 at 004db99b
+;   core_scat.cpp_FUN_004fd1d0 at 004fd216
+;   core_skeleton.cpp_FUN_0051d650 at 0051d714
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00539b10 at 0053a0e1
+;   core_stranger.cpp_FUN_005384d0 at 00538710
+;   core_stranger.cpp_FUN_005396d0 at 0053975d
+;   core_stranger.cpp_FUN_0053a260 at 0053a2a1
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0059837e = 0.5

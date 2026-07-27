@@ -1,14 +1,12 @@
-// Name: FUN_004f2990
+// Name: engine_pcx.c_FUN_004f2990
 // Address: 004f2990
 // Address Range: [[004f2990, 004f2bcc]]
 // Convention: unknown
-// Signature: void FUN_004f2990(undefined4 param_1)
+// Signature: void engine_pcx_c_FUN_004f2990(undefined4 param_1)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_004f2990(uint param_1)
+void engine_pcx_c_FUN_004f2990(uint param_1)
 
 {
   int *piVar1;
@@ -57,9 +55,9 @@ void FUN_004f2990(uint param_1)
   }
   piVar1 = (int *)_fopen(param_1,"wb");
   if (piVar1 == (int *)0x0) {
-    _DAT_01cc4800 = "..\\engine\\pcx.c";
-    _DAT_01cc4804 = 0xee;
-    FUN_004c8440("Cannot write .PCX");
+    PTR_01cc4800 = "..\\engine\\pcx.c";
+    INT_01cc4804 = 0xee;
+    core_main_c_FUN_004c8440("Cannot write .PCX");
   }
   iVar2 = 0;
   _fwrite(&local_88,1,0x80,piVar1);

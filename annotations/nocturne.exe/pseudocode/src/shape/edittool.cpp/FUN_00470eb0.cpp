@@ -1,14 +1,14 @@
-// Name: FUN_00470eb0
+// Name: shape_edittool.cpp_FUN_00470eb0
 // Address: 00470eb0
 // Address Range: [[00470eb0, 00471352]]
 // Convention: unknown
-// Signature: undefined4 FUN_00470eb0(undefined4 param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5,byte param_6)
+// Signature: undefined4 shape_edittool_cpp_FUN_00470eb0(undefined4 param_1,undefined4 param_2,char *param_3,char *param_4,char *param_5,byte param_6)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint FUN_00470eb0(uint param_1,uint param_2,char *param_3,char *param_4,char *param_5,byte param_6)
+uint shape_edittool_cpp_FUN_00470eb0(uint param_1,uint param_2,char *param_3,char *param_4,char *param_5,byte param_6)
 
 {
   char cVar1;
@@ -32,9 +32,9 @@ uint FUN_00470eb0(uint param_1,uint param_2,char *param_3,char *param_4,char *pa
     param_3 = &CHAR_00h_0057e72c;
   }
   if (_DAT_01bcd070 == 0) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0x8b;
-    FUN_004c8440("gEdFont must be set by the application.");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0x8b;
+    core_main_c_FUN_004c8440("gEdFont must be set by the application.");
   }
   _DAT_01bcd9b8 = *(int *)(_DAT_01bcd070 + 0x3168);
   _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
@@ -49,7 +49,7 @@ uint FUN_00470eb0(uint param_1,uint param_2,char *param_3,char *param_4,char *pa
   DAT_005b7630 = 0x7f;
   local_14 = 0;
   do {
-    FUN_004722b0(param_1);
+    shape_edittool_cpp_FUN_004722b0(param_1);
     strupr(local_158);
     if (*param_3 != '\0') {
       pcVar2 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370("Directory: ");
@@ -107,7 +107,7 @@ uint FUN_00470eb0(uint param_1,uint param_2,char *param_3,char *param_4,char *pa
       iVar4 = engine_keys_cpp_CKeys_getInputKey_FUN_004c41c0(INT_005bac64);
       if (iVar4 == 0x1b) {
         *param_5 = '\0';
-        FUN_004720c0(param_1);
+        shape_edittool_cpp_FUN_004720c0(param_1);
         engine_2d_c_clearInputAndWait_FUN_00403f50();
         wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
         DAT_005b7630 = local_18;
@@ -207,7 +207,7 @@ LAB_004711e7:
     param_5[1] = cVar1;
     param_5 = param_5 + 2;
   } while (cVar1 != '\0');
-  FUN_004720c0(param_1);
+  shape_edittool_cpp_FUN_004720c0(param_1);
   DAT_005b7630 = local_18;
   return 1;
 }

@@ -1,14 +1,12 @@
-// Name: FUN_00430210
+// Name: cockpit_ckptutil.c_FUN_00430210
 // Address: 00430210
 // Address Range: [[00430210, 004303ce]]
 // Convention: unknown
-// Signature: int FUN_00430210(undefined4 param_1,int param_2,uint param_3,uint param_4,int param_5,undefined4 param_6)
+// Signature: int cockpit_ckptutil_c_FUN_00430210(undefined4 param_1,int param_2,uint param_3,uint param_4,int param_5,undefined4 param_6)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int FUN_00430210(uint param_1,int param_2,uint param_3,uint param_4,int param_5,uint param_6)
+int cockpit_ckptutil_c_FUN_00430210(uint param_1,int param_2,uint param_3,uint param_4,int param_5,uint param_6)
 
 {
   int iVar1;
@@ -24,17 +22,17 @@ int FUN_00430210(uint param_1,int param_2,uint param_3,uint param_4,int param_5,
     param_2 = malloc(local_1c);
     if (param_2 == 0) {
       _sprintf(local_6c,"Unable to allocate %u bytes for rotated bitmap file (%s).",local_1c,param_1);
-      _DAT_01cc4804 = 0x7b8;
-      _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-      FUN_004c8440(local_6c);
+      INT_01cc4804 = 0x7b8;
+      PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+      core_main_c_FUN_004c8440(local_6c);
     }
   }
   iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("art",param_1,"rb");
   if (iVar1 == 0) {
     _sprintf(local_6c,"Unable to open bitmap file (%s).",param_1);
-    _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-    _DAT_01cc4804 = 0x7c1;
-    FUN_004c8440(local_6c);
+    PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+    INT_01cc4804 = 0x7c1;
+    core_main_c_FUN_004c8440(local_6c);
   }
   local_18 = 0;
   if (param_4 != 0) {
@@ -47,9 +45,9 @@ int FUN_00430210(uint param_1,int param_2,uint param_3,uint param_4,int param_5,
           if (local_14 == -1) {
             _sprintf(local_6c,"Unable to read bitmap file (%s).",param_1);
             _fclose(iVar1);
-            _DAT_01cc4804 = 0x7ce;
-            _DAT_01cc4800 = "..\\cockpit\\ckptutil.c";
-            FUN_004c8440(local_6c);
+            INT_01cc4804 = 0x7ce;
+            PTR_01cc4800 = "..\\cockpit\\ckptutil.c";
+            core_main_c_FUN_004c8440(local_6c);
           }
           uVar2 = uVar2 + 1;
           *puVar3 = (byte)local_14;
@@ -63,6 +61,6 @@ int FUN_00430210(uint param_1,int param_2,uint param_3,uint param_4,int param_5,
   if (param_5 == 0) {
     return param_2;
   }
-  FUN_0042d370(param_1,param_2,local_1c,param_6);
+  cockpit_ckptutil_c_FUN_0042d370(param_1,param_2,local_1c,param_6);
   return param_2;
 }

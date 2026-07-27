@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004701a0(undefined4 param_1,undefined4 param_2)
+; void shape_edittool_cpp_FUN_004701a0(undefined4 param_1,undefined4 param_2)
 ;
 ;
 ; Referenced Globals:
@@ -11,12 +11,12 @@
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
-;   FUN_004c8440
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00471a80
 ;
 ; *****************************************************************************
@@ -24,7 +24,7 @@
 section .text
 
     PUSH ESI                            ; 004701a0
-        ;   Label: FUN_004701a0
+        ;   Label: shape_edittool.cpp_FUN_004701a0
     PUSH EDI                            ; 004701a1
     CMP dword ptr [0x01bcd070],0x0      ; 004701a2 | DAT_01bcd070
     JZ 0x004701fa                       ; 004701a9
@@ -63,10 +63,10 @@ section .text
     MOV ECX,0x57e4fa                    ; 004701fb | = "..\\shape\\edittool.cpp"
     MOV EBX,0x8b                        ; 00470200
     PUSH 0x57e510                       ; 00470205 | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 0047020a | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00470210 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00470216
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0047020a | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00470210 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00470216
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0047021b
     POP EBX                             ; 0047021e
     JMP 0x004701ab                      ; 0047021f

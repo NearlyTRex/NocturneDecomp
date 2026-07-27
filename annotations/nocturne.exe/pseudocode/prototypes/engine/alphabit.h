@@ -34,3 +34,7 @@ void __cdecl CAlphaBitmap::scale(int *param_1,int param_2,int param_3);
 // Original: engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0
 // Address: 0040eab0
 void CAlphaBitmap::initPalette(int param_1);
+
+// Original: engine_alphabit.cpp_FUN_0040eadd
+// Address: 0040eadd
+void FUN_0040eadd(void);

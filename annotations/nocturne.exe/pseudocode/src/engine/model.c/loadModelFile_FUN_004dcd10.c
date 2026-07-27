@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 char * __cdecl engine_model_c_loadModelFile_FUN_004dcd10(char *param_1)
 
 {
@@ -39,37 +37,37 @@ LAB_004dcd36:
   iVar1 = engine_dosio_cpp_getFileSize_FUN_004568c0("models",param_1);
   if (iVar1 == 0) {
     _sprintf(local_5c,"Unable to get file size: %s",param_1);
-    _DAT_01cc4800 = "..\\engine\\model.c";
-    _DAT_01cc4804 = 0xf0;
-    FUN_004c8440(local_5c);
+    PTR_01cc4800 = "..\\engine\\model.c";
+    INT_01cc4804 = 0xf0;
+    core_main_c_FUN_004c8440(local_5c);
   }
   iVar2 = engine_dosio_cpp_getFile_FUN_00456a60("models",param_1,"rb");
   if (iVar2 == 0) {
     _sprintf(local_5c,"Unable to open model: %s",param_1);
-    _DAT_01cc4804 = 0xf5;
-    _DAT_01cc4800 = "..\\engine\\model.c";
-    FUN_004c8440(local_5c);
+    INT_01cc4804 = 0xf5;
+    PTR_01cc4800 = "..\\engine\\model.c";
+    core_main_c_FUN_004c8440(local_5c);
   }
   pcVar5 = (char *)malloc(iVar1);
   if (pcVar5 == (char *)0x0) {
     _sprintf(local_5c,"Out of model memory: %s",param_1);
-    _DAT_01cc4800 = "..\\engine\\model.c";
-    _DAT_01cc4804 = 0x100;
-    FUN_004c8440(local_5c);
+    PTR_01cc4800 = "..\\engine\\model.c";
+    INT_01cc4804 = 0x100;
+    core_main_c_FUN_004c8440(local_5c);
   }
   iVar3 = _fread(pcVar5,1,iVar1,iVar2);
   if (iVar3 != iVar1) {
     _sprintf(local_5c,"Model file read error: %s",param_1);
-    _DAT_01cc4804 = 0x107;
-    _DAT_01cc4800 = "..\\engine\\model.c";
-    FUN_004c8440(local_5c);
+    INT_01cc4804 = 0x107;
+    PTR_01cc4800 = "..\\engine\\model.c";
+    core_main_c_FUN_004c8440(local_5c);
   }
   _fclose(iVar2);
   if ((*pcVar5 != '\x14') && (*pcVar5 != ' ')) {
     _sprintf(local_5c,"Invalid model: %s",param_1);
-    _DAT_01cc4800 = "..\\engine\\model.c";
-    _DAT_01cc4804 = 0x10d;
-    FUN_004c8440(local_5c);
+    PTR_01cc4800 = "..\\engine\\model.c";
+    INT_01cc4804 = 0x10d;
+    core_main_c_FUN_004c8440(local_5c);
   }
   return pcVar5;
 }

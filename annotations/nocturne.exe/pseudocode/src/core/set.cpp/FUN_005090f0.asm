@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0049f930 at 0049fb07
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a0b61
+;   core_game.cpp_FUN_0049f930 at 0049fb07
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010
+;   core_dcamera.cpp_FUN_004401b0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0
-;   FUN_004401b0
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 00509109
     PUSH EBX                            ; 0050910d
     PUSH 0x1fb8508                      ; 0050910e
-    CALL FUN_004401b0                   ; 00509113
-        ;   XREF to: 004401b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004401b0()
+    CALL core_dcamera.cpp_FUN_004401b0  ; 00509113
+        ;   XREF to: 004401b0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_004401b0()
     ADD ESP,0xc                         ; 00509118
     MOV EAX,dword ptr [ESP + 0xc]       ; 0050911b
     MOV ESI,dword ptr [EAX + 0x15aabc]  ; 0050911f

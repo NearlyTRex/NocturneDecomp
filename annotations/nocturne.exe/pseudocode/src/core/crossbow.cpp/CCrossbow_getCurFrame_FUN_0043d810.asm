@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   FUN_0043d0a0 at 0043d0e9
+;   core_crossbow.cpp_FUN_0043d0a0 at 0043d0e9
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057b4a6 = 0.666000000000000

@@ -3,6 +3,14 @@
 // Function prototypes for core/ground.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_ground.cpp_staticInit_FUN_004b1060
+// Address: 004b1060
+void __cdecl staticInit(void);
+
+// Original: core_ground.cpp_FUN_004b1090
+// Address: 004b1090
+int FUN_004b1090(undefined4 param_1,char *param_2,char *param_3,undefined4 param_4);
+
 // Original: core_ground.cpp_getGroundTypeCode_FUN_004b11b0
 // Address: 004b11b0
 char * __cdecl getGroundTypeCode(undefined4 param_1);
@@ -14,6 +22,10 @@ undefined4 getGroundTypeColor(undefined4 param_1);
 // Original: core_ground.cpp_CGround_ctor_FUN_004b1350
 // Address: 004b1350
 void CGround::ctor(int *param_1,int param_2,int param_3);
+
+// Original: core_ground.cpp_FUN_004b13b0
+// Address: 004b13b0
+undefined4 FUN_004b13b0(undefined4 param_1);
 
 // Original: core_ground.cpp_CGround_init_FUN_004b13d0
 // Address: 004b13d0
@@ -62,3 +74,7 @@ void __cdecl CGround::render(int param_1);
 // Original: core_ground.cpp_CGround_getHeightAtPosition_FUN_004b21b0
 // Address: 004b21b0
 int __cdecl CGround::getHeightAtPosition(int *param_1,uint param_2,uint param_3);
+
+// Original: core_ground.cpp_FUN_004b2430
+// Address: 004b2430
+void FUN_004b2430(int *param_1,uint param_2,uint param_3);

@@ -5,9 +5,6 @@
 ;
 ;
 ; XREF[12]:
-;   FUN_00511d80 at 00511e3e
-;   FUN_005125a0 at 00512da8
-;   FUN_00513720 at 005137c8
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 004404ad
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_0044e470 at 0044e520
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 at 004c0d81
@@ -15,6 +12,9 @@
 ;   core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_004d6610 at 004d6632
 ;   core_moon.cpp_CMoon_renderJoystickCalibration_FUN_004df040 at 004df071
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec8b
+;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190 at 0050e1b4
+;   core_set.cpp_FUN_0050a260 at 0050a5a1
+;   core_setdir.cpp_FUN_00511d80 at 00511e3e
 ;   ... and 2 more
 ;
 ; Referenced Globals:

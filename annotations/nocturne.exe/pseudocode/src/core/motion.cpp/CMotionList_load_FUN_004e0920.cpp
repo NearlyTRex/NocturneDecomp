@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(int *param_1,uint param_2)
 
 {
@@ -33,14 +31,14 @@ void __cdecl core_motion_cpp_CMotionList_load_FUN_004e0920(int *param_1,uint par
   } while (iVar2 != 10);
   _fscanf(param_2,"%d\n",&local_34);
   if (local_34 < 0) {
-    _DAT_01cc4800 = "..\\core\\motion.cpp";
-    _DAT_01cc4804 = 0x5b;
-    FUN_004c8440("Error reading motion list.");
+    PTR_01cc4800 = "..\\core\\motion.cpp";
+    INT_01cc4804 = 0x5b;
+    core_main_c_FUN_004c8440("Error reading motion list.");
   }
   if (2 < local_34) {
-    _DAT_01cc4800 = "..\\core\\motion.cpp";
-    _DAT_01cc4804 = 0x5d;
-    FUN_004c8440("Can't read motion list - it's version %d, and I can only handle up to version %d.  (Probably you have an old .exe)",local_34,2);
+    PTR_01cc4800 = "..\\core\\motion.cpp";
+    INT_01cc4804 = 0x5d;
+    core_main_c_FUN_004c8440("Can't read motion list - it's version %d, and I can only handle up to version %d.  (Probably you have an old .exe)",local_34,2);
   }
   do {
     iVar2 = _fgetc(param_2);

@@ -27,13 +27,13 @@
 ;   undefined4 DAT_020842cc
 ;
 ; Called Functions:
+;   core_dcamera.cpp_FUN_004477f0
+;   core_mirror.cpp_FUN_004d6650
 ;   engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_00460e20
 ;   engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_004613c0
 ;   engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
 ;   engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_004613a0
-;   FUN_004477f0
-;   FUN_004d6650
 ;
 ; *****************************************************************************
 
@@ -97,8 +97,8 @@ section .text
     PUSH 0x20842b4                      ; 0050e12e | DAT_020842b4
     ADD EAX,0x1e4                       ; 0050e133
     PUSH EAX                            ; 0050e138
-    CALL FUN_004d6650                   ; 0050e139
-        ;   XREF to: 004d6650 (UNCONDITIONAL_CALL)  ; undefined FUN_004d6650()
+    CALL core_mirror.cpp_FUN_004d6650   ; 0050e139
+        ;   XREF to: 004d6650 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_FUN_004d6650()
     ADD ESP,0x10                        ; 0050e13e
     PUSH 0x1                            ; 0050e141
     MOV EBP,dword ptr [0x005ae704]      ; 0050e143 | DAT_005ae704
@@ -110,8 +110,8 @@ section .text
     PUSH EBX                            ; 0050e153
     MOV EAX,[0x007f7370]                ; 0050e154 | DAT_007f7370
     PUSH EAX                            ; 0050e159
-    CALL FUN_004477f0                   ; 0050e15a
-        ;   XREF to: 004477f0 (UNCONDITIONAL_CALL)  ; undefined FUN_004477f0()
+    CALL core_dcamera.cpp_FUN_004477f0  ; 0050e15a
+        ;   XREF to: 004477f0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_004477f0()
     ADD ESP,0x8                         ; 0050e15f
     PUSH EBX                            ; 0050e162
     MOV EDX,dword ptr [0x005ae704]      ; 0050e163 | DAT_005ae704

@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,17 +122,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 106,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "unnamed_param",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
     "total_lines": 138
   },
@@ -140,7 +139,7 @@
     {
       "addr": "0055ea90",
       "from_addr": "0055eaa3",
-      "name": "FUN_0055ea90",
+      "name": "core_zombie.cpp_FUN_0055ea90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -222,15 +221,15 @@
     },
     {
       "addr": "005a453c",
-      "name": "DAT_005a453c",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a453c",
+      "type": "float",
+      "value": "50"
     },
     {
       "addr": "005a4540",
-      "name": "DAT_005a4540",
-      "type": "undefined4",
-      "value": null
+      "name": "FLOAT_005a4540",
+      "type": "float",
+      "value": "100"
     },
     {
       "addr": "005a4554",
@@ -251,7 +250,7 @@
       {
         "call_addr": "0055eaa3",
         "call_type": "direct",
-        "caller": "FUN_0055ea90",
+        "caller": "core_zombie.cpp_FUN_0055ea90",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -309,16 +308,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "int core_zombie_cpp_CZombie_ctor_FUN_0055eac0(uint param_1)",
@@ -326,15 +317,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);",
+      "text": "iVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00479560(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 29,
+      "line": 28,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

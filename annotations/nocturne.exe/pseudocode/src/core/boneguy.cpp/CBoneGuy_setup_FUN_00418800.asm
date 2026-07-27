@@ -24,11 +24,11 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004796b0
+;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -188,10 +188,10 @@ section .text
         ;   Label: LAB_004189b8
     MOV EBX,0x12f                       ; 004189bd
     PUSH 0x579296                       ; 004189c2 | = "CBoneGuy::explode - Not enough contai..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004189c7 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004189cd | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004189d3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004189c7 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004189cd | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004189d3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004189d8
     JMP 0x0041898b                      ; 004189db
         ;   XREF to: 0041898b (UNCONDITIONAL_JUMP)  ; LAB_0041898b

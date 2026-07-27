@@ -7,7 +7,7 @@
 ; Called Functions:
 ;   core_curtain.cpp_CVector3f_arrdtor_FUN_0043f9a0
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0
-;   FUN_0051f900
+;   core_skeleton.cpp_FUN_0051f900
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     PUSH 0x0                            ; 00517c8e
     ADD EBX,0x1c0c                      ; 00517c90
     PUSH EBX                            ; 00517c96
-    CALL FUN_0051f900                   ; 00517c97
-        ;   XREF to: 0051f900 (UNCONDITIONAL_CALL)  ; undefined FUN_0051f900()
+    CALL core_skeleton.cpp_FUN_0051f900 ; 00517c97
+        ;   XREF to: 0051f900 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0051f900()
     ADD ESP,0x8                         ; 00517c9c
     PUSH 0x0                            ; 00517c9f
     SUB EAX,0x4bc                       ; 00517ca1

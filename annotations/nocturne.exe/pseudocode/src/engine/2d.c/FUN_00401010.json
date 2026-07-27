@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -139,7 +139,7 @@
     {
       "addr": "004c85f0",
       "from_addr": "004c8745",
-      "name": "FUN_004c85f0",
+      "name": "core_main.c_FUN_004c85f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -152,10 +152,15 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_00401010",
-    "signature": "void FUN_00401010(void)"
+    "name": "engine_2d.c_FUN_00401010",
+    "signature": "void engine_2d_c_FUN_00401010(void)"
   },
   "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
     {
       "addr": "005635b0",
       "is_variadic": false,
@@ -207,14 +212,9 @@
       "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
     },
     {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
       "addr": "00552b40",
       "is_variadic": false,
-      "name": "FUN_00552b40"
+      "name": "wincore_wddvmem.cpp_FUN_00552b40"
     },
     {
       "addr": "00552e00",
@@ -458,14 +458,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -475,7 +475,7 @@
       {
         "call_addr": "004c8745",
         "call_type": "direct",
-        "caller": "FUN_004c85f0",
+        "caller": "core_main.c_FUN_004c85f0",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -547,7 +547,7 @@
       "line": 16,
       "match": "DAT_005b761c",
       "severity": "mild",
-      "text": "iVar3 = FUN_00552b40(DAT_005b761c,DAT_005b7620);",
+      "text": "iVar3 = wincore_wddvmem_cpp_FUN_00552b40(DAT_005b761c,DAT_005b7620);",
       "type": "undefined_data"
     },
     {
@@ -555,7 +555,7 @@
       "line": 16,
       "match": "DAT_005b7620",
       "severity": "mild",
-      "text": "iVar3 = FUN_00552b40(DAT_005b761c,DAT_005b7620);",
+      "text": "iVar3 = wincore_wddvmem_cpp_FUN_00552b40(DAT_005b761c,DAT_005b7620);",
       "type": "undefined_data"
     },
     {

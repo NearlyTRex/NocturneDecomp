@@ -101,7 +101,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(int param_1,
   local_4c = (int)ROUND(local_58 * _DAT_005a42d0);
   local_48 = (int)ROUND(local_54 * _DAT_005a42d0);
   local_44 = (int)ROUND(local_50 * _DAT_005a42d0);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_4c);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_4c);
   local_a0 = -0.2f;
   local_20 = 0.2f;
   local_98 = 0;
@@ -122,7 +122,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(int param_1,
   local_78 = (int)ROUND(local_54 * _DAT_005a42d0);
   local_74 = (int)ROUND(local_50 * _DAT_005a42d0);
   local_1c = local_a0;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_7c);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_7c);
   local_b4 = -0.2f;
   local_b8 = -0.2f;
   local_b0 = 0;
@@ -143,7 +143,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(int param_1,
   local_2c = (int)ROUND(local_50 * _DAT_005a42d0);
   local_1c = local_b8;
   local_18 = local_b4;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_34);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_34);
   local_d8 = -0.2f;
   local_14 = 0.2f;
   local_dc = 0.2f;
@@ -164,7 +164,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_renderEyeGlow_FUN_005570b0(int param_1,
   local_c0 = (int)ROUND(local_54 * _DAT_005a42d0);
   local_bc = (int)ROUND(local_50 * _DAT_005a42d0);
   local_18 = local_d8;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_c4);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_c4);
   piVar2 = DAT_005ae704;
   *(uint *)(*DAT_005ae704 + 0x20) = 0xffff;
   *(uint *)(*piVar2 + 0x24) = 0;

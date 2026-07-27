@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[9]:
-;   FUN_0046f7e0 at 0046f888
-;   FUN_0046fb40 at 0046fc26
-;   FUN_0046fcd0 at 0046fdb6
-;   FUN_0046fe60 at 0046ff46
-;   FUN_004701a0 at 004701ef
-;   FUN_00470eb0 at 00470f40
-;   FUN_00475470 at 00475806
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004cfbc0 at 004cfbf8
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 at 004716e4
+;   shape_edittool.cpp_FUN_0046f7e0 at 0046f888
+;   shape_edittool.cpp_FUN_0046fb40 at 0046fc26
+;   shape_edittool.cpp_FUN_0046fcd0 at 0046fdb6
+;   shape_edittool.cpp_FUN_0046fe60 at 0046ff46
+;   shape_edittool.cpp_FUN_004701a0 at 004701ef
+;   shape_edittool.cpp_FUN_00470eb0 at 00470f40
+;   shape_edittool.cpp_FUN_00475470 at 00475806
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
@@ -23,13 +23,13 @@
 ;   undefined4 DAT_01bcd070
 ;   undefined4 DAT_01bcd9b8
 ;   undefined4 DAT_01bcd9bc
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0
-;   FUN_004c8440
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50
 ;
 ; *****************************************************************************
@@ -49,10 +49,10 @@ section .text
     MOV ECX,0x57e4fa                    ; 00471a95 | = "..\\shape\\edittool.cpp"
     MOV EDI,0x8b                        ; 00471a9a
     PUSH 0x57e510                       ; 00471a9f | = "gEdFont must be set by the application."
-    MOV dword ptr [0x01cc4800],ECX      ; 00471aa4 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00471aaa | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00471ab0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00471aa4 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00471aaa | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00471ab0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00471ab5
     MOV EAX,[0x01bcd070]                ; 00471ab8 | DAT_01bcd070
         ;   Label: LAB_00471ab8

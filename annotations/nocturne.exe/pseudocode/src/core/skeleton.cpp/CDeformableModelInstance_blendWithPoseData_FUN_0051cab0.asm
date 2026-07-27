@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005384d0 at 005385aa
+;   core_stranger.cpp_FUN_005384d0 at 005385aa
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0051cae0

@@ -3,6 +3,10 @@
 // Function prototypes for core/morph.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_morph.cpp_FUN_004df210
+// Address: 004df210
+int FUN_004df210(int param_1,int param_2,int param_3);
+
 // Original: core_morph.cpp_CMorphModel_ctor_FUN_004df240
 // Address: 004df240
 void CMorphModel::ctor(undefined4 *param_1);
@@ -35,6 +39,10 @@ void __cdecl CMorphModel::addPartFromKeyFramedModel(undefined4 param_1,int param
 // Address: 004df660
 void __cdecl CMorphModel::animateFromVertexBuffer(int *param_1,int param_2,int *param_3,int param_4,int param_5);
 
+// Original: core_morph.cpp_FUN_004df740
+// Address: 004df740
+void FUN_004df740(int param_1,int param_2,undefined4 param_3);
+
 // Original: core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_004df770
 // Address: 004df770
 void __cdecl CMorphModel::animateFromDeformableModel(undefined4 param_1,undefined4 param_2,int param_3);
@@ -42,6 +50,10 @@ void __cdecl CMorphModel::animateFromDeformableModel(undefined4 param_1,undefine
 // Original: core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0
 // Address: 004df7c0
 void __cdecl CMorphModel::animateFromKeyframedModel(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4);
+
+// Original: core_morph.cpp_FUN_004df800
+// Address: 004df800
+void FUN_004df800(int *param_1,int param_2,int param_3,int param_4,int param_5,int *param_6,int param_7,int param_8);
 
 // Original: core_morph.cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0
 // Address: 004df9e0
@@ -83,6 +95,10 @@ void __cdecl CMorph::free(int param_1);
 // Address: 004e00b0
 void CMorph::setupModelFromTriPolygons(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
 
+// Original: core_morph.cpp_FUN_004e0110
+// Address: 004e0110
+void FUN_004e0110(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
+
 // Original: core_morph.cpp_CMorph_setupModelFromDeformable_FUN_004e0170
 // Address: 004e0170
 void __cdecl CMorph::setupModelFromDeformable(int param_1,int param_2,undefined4 param_3);
@@ -91,9 +107,25 @@ void __cdecl CMorph::setupModelFromDeformable(int param_1,int param_2,undefined4
 // Address: 004e01b0
 void __cdecl CMorph::setupModelFromKeyframed(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
 
+// Original: core_morph.cpp_FUN_004e01f0
+// Address: 004e01f0
+void FUN_004e01f0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
+
+// Original: core_morph.cpp_FUN_004e0240
+// Address: 004e0240
+void FUN_004e0240(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
+
+// Original: core_morph.cpp_FUN_004e0290
+// Address: 004e0290
+void FUN_004e0290(void);
+
 // Original: core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0
 // Address: 004e02c0
 void __cdecl CMorph::addPartFromKeyframedModel(int param_1,int param_2,undefined4 param_3,undefined4 param_4);
+
+// Original: core_morph.cpp_FUN_004e0300
+// Address: 004e0300
+void FUN_004e0300(void);
 
 // Original: core_morph.cpp_CMorph_updateModelFromDeformable_FUN_004e0340
 // Address: 004e0340
@@ -110,6 +142,14 @@ void __cdecl CMorph::getReady(int param_1);
 // Original: core_morph.cpp_CMorph_render_FUN_004e0820
 // Address: 004e0820
 void __cdecl CMorph::render(int param_1,float param_2);
+
+// Original: core_morph.cpp_FUN_004e0890
+// Address: 004e0890
+int FUN_004e0890(void);
+
+// Original: core_morph.cpp_FUN_004e08a0
+// Address: 004e08a0
+void FUN_004e08a0(undefined4 param_1);
 
 // Original: core_morph.cpp_CMorphModel_arrdtor_FUN_004e08c0
 // Address: 004e08c0

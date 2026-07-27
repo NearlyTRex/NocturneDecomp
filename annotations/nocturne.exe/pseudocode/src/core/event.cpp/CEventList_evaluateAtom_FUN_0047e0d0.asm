@@ -141,7 +141,7 @@
 ;   core_inv.cpp_CInventory_checkHasMatchingKey_FUN_004c31b0
 ;   core_inv.cpp_CInventory_findItemByName_FUN_004c0710
 ;   core_inv.cpp_CInventory_hasItemOfClass_FUN_004c0760
-;   core_set.cpp_CDemonSet_addLightFilter_FUN_0050e5d0
+;   core_main.c_FUN_004c8440
 ;   ... and 7 more
 ;
 ; *****************************************************************************
@@ -831,10 +831,10 @@ section .text
         ;   Label: default
     MOV ECX,0x765                       ; 0047e6fb
     PUSH 0x580339                       ; 0047e700 | = "Hell froze."
-    MOV dword ptr [0x01cc4800],EDX      ; 0047e705 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0047e70b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0047e711
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0047e705 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0047e70b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0047e711
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0047e716
     JMP 0x0047e57d                      ; 0047e719
         ;   XREF to: 0047e57d (UNCONDITIONAL_JUMP)  ; LAB_0047e57d
@@ -941,9 +941,9 @@ section .text
         ;   XREF to: 0047e792 (CONDITIONAL_JUMP)  ; LAB_0047e792
     JMP 0x0047e7a6                      ; 0047e817
         ;   XREF to: 0047e7a6 (UNCONDITIONAL_JUMP)  ; LAB_0047e7a6
-    PUSH 0x763e48                       ; 0047e819 | CDemonActorType_00763e48
+    PUSH 0x763e48                       ; 0047e819 | g_CDemonActorActorType_00763e48
         ;   Label: LAB_0047e819
-    MOV EBX,dword ptr [0x00763e80]      ; 0047e81e | CDemonActorType_00763e48.name_hash
+    MOV EBX,dword ptr [0x00763e80]      ; 0047e81e | g_CDemonActorActorType_00763e48.name_hash
     PUSH EBX                            ; 0047e824
     LEA EAX,[ESP + 0x7b8]               ; 0047e825
     PUSH EAX                            ; 0047e82c
@@ -1289,7 +1289,7 @@ section .text
         ;   XREF to: 0047eb3a (UNCONDITIONAL_JUMP)  ; LAB_0047eb3a
     PUSH 0x1cae0ec                      ; 0047eb79
         ;   Label: LAB_0047eb79
-    MOV ECX,dword ptr [0x01cae124]      ; 0047eb7e | DAT_01cae124
+    MOV ECX,dword ptr [0x01cae124]      ; 0047eb7e | g_CHeroActorType_01cae0ec.name_hash
     PUSH ECX                            ; 0047eb84
     LEA EAX,[ESP + 0x36c]               ; 0047eb85
     PUSH EAX                            ; 0047eb8c
@@ -1596,7 +1596,7 @@ section .text
         ;   XREF to: 0047ee01 (UNCONDITIONAL_JUMP)  ; LAB_0047ee01
     PUSH 0x1c78c40                      ; 0047ee74
         ;   Label: LAB_0047ee74
-    MOV EBX,dword ptr [0x01c78c78]      ; 0047ee79 | DAT_01c78c78
+    MOV EBX,dword ptr [0x01c78c78]      ; 0047ee79 | g_CGlassActorType_01c78c40.name_hash
     PUSH EBX                            ; 0047ee7f
     LEA EAX,[ESP + 0x4fc]               ; 0047ee80
     PUSH EAX                            ; 0047ee87
@@ -1735,9 +1735,9 @@ section .text
     CMP dword ptr [ESP + 0xa00],0x3     ; 0047f011
     JL 0x0047f05b                       ; 0047f019
         ;   XREF to: 0047f05b (CONDITIONAL_JUMP)  ; LAB_0047f05b
-    MOV EAX,0x765a60                    ; 0047f01b | CDemonActorType_00765a60
-    PUSH EAX                            ; 0047f020 | CDemonActorType_00765a60
-    MOV EDX,dword ptr [0x00765a98]      ; 0047f021 | CDemonActorType_00765a60.name_hash
+    MOV EAX,0x765a60                    ; 0047f01b | g_CCharacterActorType_00765a60
+    PUSH EAX                            ; 0047f020 | g_CCharacterActorType_00765a60
+    MOV EDX,dword ptr [0x00765a98]      ; 0047f021 | g_CCharacterActorType_00765a60.name_hash
     PUSH EDX                            ; 0047f027
     LEA EAX,[ESP + 0x498]               ; 0047f028
     PUSH EAX                            ; 0047f02f
@@ -2228,9 +2228,9 @@ section .text
         ;   XREF to: 0047f497 (CONDITIONAL_JUMP)  ; LAB_0047f497
     JMP 0x0047f4ab                      ; 0047f4e8
         ;   XREF to: 0047f4ab (UNCONDITIONAL_JUMP)  ; LAB_0047f4ab
-    PUSH 0x763e48                       ; 0047f4ea | CDemonActorType_00763e48
+    PUSH 0x763e48                       ; 0047f4ea | g_CDemonActorActorType_00763e48
         ;   Label: LAB_0047f4ea
-    MOV ECX,dword ptr [0x00763e80]      ; 0047f4ef | CDemonActorType_00763e48.name_hash
+    MOV ECX,dword ptr [0x00763e80]      ; 0047f4ef | g_CDemonActorActorType_00763e48.name_hash
     PUSH ECX                            ; 0047f4f5
     LEA EAX,[ESP + 0x68c]               ; 0047f4f6
     PUSH EAX                            ; 0047f4fd
@@ -2419,9 +2419,9 @@ section .text
         ;   XREF to: 0047f677 (CONDITIONAL_JUMP)  ; LAB_0047f677
     JMP 0x0047f68b                      ; 0047f6c8
         ;   XREF to: 0047f68b (UNCONDITIONAL_JUMP)  ; LAB_0047f68b
-    PUSH 0x763e48                       ; 0047f6ca | CDemonActorType_00763e48
+    PUSH 0x763e48                       ; 0047f6ca | g_CDemonActorActorType_00763e48
         ;   Label: LAB_0047f6ca
-    MOV ECX,dword ptr [0x00763e80]      ; 0047f6cf | CDemonActorType_00763e48.name_hash
+    MOV ECX,dword ptr [0x00763e80]      ; 0047f6cf | g_CDemonActorActorType_00763e48.name_hash
     PUSH ECX                            ; 0047f6d5
     LEA EAX,[ESP + 0x5c4]               ; 0047f6d6
     PUSH EAX                            ; 0047f6dd
@@ -2440,9 +2440,9 @@ section .text
     POP ESI                             ; 0047f6f5
     POP EBX                             ; 0047f6f6
     RET                                 ; 0047f6f7
-    PUSH 0x763e48                       ; 0047f6f8 | CDemonActorType_00763e48
+    PUSH 0x763e48                       ; 0047f6f8 | g_CDemonActorActorType_00763e48
         ;   Label: LAB_0047f6f8
-    MOV EBX,dword ptr [0x00763e80]      ; 0047f6fd | CDemonActorType_00763e48.name_hash
+    MOV EBX,dword ptr [0x00763e80]      ; 0047f6fd | g_CDemonActorActorType_00763e48.name_hash
     PUSH EBX                            ; 0047f703
     LEA EAX,[ESP + 0x6f0]               ; 0047f704
     PUSH EAX                            ; 0047f70b
@@ -2961,9 +2961,9 @@ section .text
     CMP dword ptr [ESP + 0xa58],0x3     ; 0047fc24
     JL 0x0047fc70                       ; 0047fc2c
         ;   XREF to: 0047fc70 (CONDITIONAL_JUMP)  ; LAB_0047fc70
-    MOV EAX,0x765a60                    ; 0047fc2e | CDemonActorType_00765a60
-    PUSH EAX                            ; 0047fc33 | CDemonActorType_00765a60
-    MOV EBX,dword ptr [0x00765a98]      ; 0047fc34 | CDemonActorType_00765a60.name_hash
+    MOV EAX,0x765a60                    ; 0047fc2e | g_CCharacterActorType_00765a60
+    PUSH EAX                            ; 0047fc33 | g_CCharacterActorType_00765a60
+    MOV EBX,dword ptr [0x00765a98]      ; 0047fc34 | g_CCharacterActorType_00765a60.name_hash
     PUSH EBX                            ; 0047fc3a
     LEA EAX,[ESP + 0x81c]               ; 0047fc3b
     PUSH EAX                            ; 0047fc42
@@ -3061,9 +3061,9 @@ section .text
     CMP dword ptr [ESP + 0x9b0],0x3     ; 0047fd12
     JL 0x0047fdbd                       ; 0047fd1a
         ;   XREF to: 0047fdbd (CONDITIONAL_JUMP)  ; LAB_0047fdbd
-    MOV EAX,0x765a60                    ; 0047fd20 | CDemonActorType_00765a60
-    PUSH EAX                            ; 0047fd25 | CDemonActorType_00765a60
-    MOV EAX,[0x00765a98]                ; 0047fd26 | CDemonActorType_00765a60.name_hash
+    MOV EAX,0x765a60                    ; 0047fd20 | g_CCharacterActorType_00765a60
+    PUSH EAX                            ; 0047fd25 | g_CCharacterActorType_00765a60
+    MOV EAX,[0x00765a98]                ; 0047fd26 | g_CCharacterActorType_00765a60.name_hash
     PUSH EAX                            ; 0047fd2b
     LEA EAX,[ESP + 0x8e4]               ; 0047fd2c
     PUSH EAX                            ; 0047fd33
@@ -3200,7 +3200,7 @@ section .text
         ;   XREF to: 0047feff (CONDITIONAL_JUMP)  ; LAB_0047feff
     MOV EAX,0x1cae0ec                   ; 0047feb9
     PUSH EAX                            ; 0047febe
-    MOV EBX,dword ptr [0x01cae124]      ; 0047febf | DAT_01cae124
+    MOV EBX,dword ptr [0x01cae124]      ; 0047febf | g_CHeroActorType_01cae0ec.name_hash
     PUSH EBX                            ; 0047fec5
     LEA EAX,[ESP + 0x628]               ; 0047fec6
     PUSH EAX                            ; 0047fecd
@@ -3284,7 +3284,7 @@ section .text
         ;   XREF to: 0047ffde (CONDITIONAL_JUMP)  ; LAB_0047ffde
     MOV EAX,0x1cae0ec                   ; 0047ff9a
     PUSH EAX                            ; 0047ff9f
-    MOV EBX,dword ptr [0x01cae124]      ; 0047ffa0 | DAT_01cae124
+    MOV EBX,dword ptr [0x01cae124]      ; 0047ffa0 | g_CHeroActorType_01cae0ec.name_hash
     PUSH EBX                            ; 0047ffa6
     LEA EAX,[ESP + 0x560]               ; 0047ffa7
     PUSH EAX                            ; 0047ffae
@@ -3429,8 +3429,8 @@ section .text
     CMP dword ptr [ESP + 0xa78],0x3     ; 00480130
     JL 0x00480179                       ; 00480138
         ;   XREF to: 00480179 (CONDITIONAL_JUMP)  ; LAB_00480179
-    PUSH 0x765a60                       ; 0048013a | CDemonActorType_00765a60
-    MOV EDI,dword ptr [0x00765a98]      ; 0048013f | CDemonActorType_00765a60.name_hash
+    PUSH 0x765a60                       ; 0048013a | g_CCharacterActorType_00765a60
+    MOV EDI,dword ptr [0x00765a98]      ; 0048013f | g_CCharacterActorType_00765a60.name_hash
     PUSH EDI                            ; 00480145
     LEA EAX,[ESP + 0x434]               ; 00480146
     PUSH EAX                            ; 0048014d

@@ -9,11 +9,11 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_core_motion.cpp_CMotionController_dtor_FUN_004e1150_005a0d24 = 004e1150
-;   undefined4 DAT_005a0d30
+;   WatcomTypeInfo g_CMotionControllerTypeInfo_005a0d30
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -34,7 +34,7 @@ section .text
     MOV EAX,EBX                         ; 004e1168
     POP EBX                             ; 004e116a
     RET                                 ; 004e116b
-    PUSH 0x5a0d30                       ; 004e116c | DAT_005a0d30
+    PUSH 0x5a0d30                       ; 004e116c | g_CMotionControllerTypeInfo_005a0d30
         ;   Label: LAB_004e116c
     PUSH EBX                            ; 004e1171
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004e1172
@@ -49,8 +49,8 @@ section .text
     RET                                 ; 004e1186
     PUSH EBX                            ; 004e1187
         ;   Label: LAB_004e1187
-    CALL FUN_00564494                   ; 004e1188
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 004e1188
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 004e118d
     MOV EAX,EBX                         ; 004e1190
     POP EBX                             ; 004e1192

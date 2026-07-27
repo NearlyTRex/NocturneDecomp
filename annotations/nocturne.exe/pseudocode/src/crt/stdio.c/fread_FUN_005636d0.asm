@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[43]:
-;   FUN_00401010 at 0040115d
-;   FUN_0042eb90 at 0042ec00
-;   FUN_0044d550 at 0044d5e0
-;   FUN_004571f0 at 00457205
-;   FUN_004676c0 at 004676ea
-;   FUN_0046c3c0 at 0046c3d0
-;   FUN_004a4170 at 004a436d
-;   FUN_004a57c0 at 004a58ab
-;   FUN_004e27f0 at 004e2837
-;   FUN_004f4f90 at 004f4faa
+;   cockpit_ckptutil.c_FUN_0042eb90 at 0042ec00
+;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042d480 at 0042d538
+;   cockpit_ckptutil.c_readBitmapFile_FUN_0042d240 at 0042d2a8
+;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_004f4c80 at 004f4ca2
+;   cockpit_pkbitmap.cpp_FUN_004f4f90 at 004f4faa
+;   cockpit_pkbmpset.cpp_FUN_004f54c0 at 004f561e
+;   cockpit_pkbmpset.cpp_FUN_004f5740 at 004f5893
+;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 0044330f
+;   core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_00448ec0 at 00448ed8
+;   core_dcube.cpp_CDemonCube_load_FUN_0044aed0 at 0044aee5
 ;   ... and 33 more
 ;
 ; Referenced Globals:
@@ -22,7 +22,7 @@
 ;   void* PTR_FUN_005c1ac4 = 005671e4
 ;
 ; Called Functions:
-;   FUN_00564670
+;   crt_unknown.c_FUN_00564670
 ;   FUN_005671e4
 ;   FUN_00568e80
 ;   FUN_00568ed0
@@ -189,8 +189,8 @@ section .text
         ;   XREF to: 0056375b (UNCONDITIONAL_JUMP)  ; LAB_0056375b
     PUSH EBX                            ; 00563822
         ;   Label: LAB_00563822
-    CALL FUN_00564670                   ; 00563823
-        ;   XREF to: 00564670 (UNCONDITIONAL_CALL)  ; undefined FUN_00564670()
+    CALL crt_unknown.c_FUN_00564670     ; 00563823
+        ;   XREF to: 00564670 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564670()
     ADD ESP,0x4                         ; 00563828
     TEST EAX,EAX                        ; 0056382b
     JZ 0x005638a9                       ; 0056382d
@@ -206,8 +206,8 @@ section .text
     JNZ 0x00563852                      ; 00563843
         ;   XREF to: 00563852 (CONDITIONAL_JUMP)  ; LAB_00563852
     PUSH EBX                            ; 00563845
-    CALL FUN_00564670                   ; 00563846
-        ;   XREF to: 00564670 (UNCONDITIONAL_CALL)  ; undefined FUN_00564670()
+    CALL crt_unknown.c_FUN_00564670     ; 00563846
+        ;   XREF to: 00564670 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564670()
     ADD ESP,0x4                         ; 0056384b
     TEST EAX,EAX                        ; 0056384e
     JZ 0x005638a9                       ; 00563850
@@ -228,8 +228,8 @@ section .text
     JNZ 0x0056387e                      ; 0056386f
         ;   XREF to: 0056387e (CONDITIONAL_JUMP)  ; LAB_0056387e
     PUSH EBX                            ; 00563871
-    CALL FUN_00564670                   ; 00563872
-        ;   XREF to: 00564670 (UNCONDITIONAL_CALL)  ; undefined FUN_00564670()
+    CALL crt_unknown.c_FUN_00564670     ; 00563872
+        ;   XREF to: 00564670 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564670()
     ADD ESP,0x4                         ; 00563877
     TEST EAX,EAX                        ; 0056387a
     JZ 0x005638a9                       ; 0056387c

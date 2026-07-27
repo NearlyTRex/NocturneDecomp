@@ -2,6 +2,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActorType.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x500000
@@ -12,30 +13,30 @@ undefined4 __cdecl core_script_cpp_CScript_processTimer_FUN_00504b70(int param_1
 void __cdecl core_script_cpp_CScript_setSpeaker_FUN_00504bf0(int param_1,int param_2);
 int __cdecl core_script_cpp_CScript_findLabelIndex_FUN_00504c10(int param_1,undefined4 param_2);
 int core_script_cpp_CScript_skipCommands_FUN_00504c70(int param_1,int param_2,int param_3);
-void FUN_00504d60(int param_1);
-undefined4 FUN_00504d90(int *param_1);
+void core_script_cpp_FUN_00504d60(int param_1);
+undefined4 core_script_cpp_FUN_00504d90(int *param_1);
 void __cdecl core_script_cpp_CScript_dbLoad_FUN_00504e70(int param_1,undefined4 param_2);
 int __cdecl core_script_cpp_CScript_findDialogEntry_FUN_00505180(int param_1,undefined4 param_2);
 void __cdecl core_script_cpp_readActorReference_FUN_00505200(undefined4 param_1,undefined4 *param_2);
 void __cdecl core_script_cpp_writeActorReference_FUN_00505280(undefined4 param_1,int *param_2);
 int __cdecl core_script_cpp_CScript_loadState_FUN_005052c0(int param_1,undefined4 param_2);
-void FUN_005055f0(int param_1,undefined4 param_2);
+void core_script_cpp_FUN_005055f0(int param_1,undefined4 param_2);
 undefined4 __cdecl core_script_cpp_CScript_computeChecksum_FUN_00505820(int param_1);
 undefined4 * __cdecl core_script_cpp_makeVector_FUN_00505880(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 int __cdecl core_script_cpp_getDeformableModelFilename_FUN_005058b0(int param_1);
-void FUN_005058c0(void);
-void FUN_005058f0(void);
-undefined4 FUN_00505910(void);
-int FUN_00505920(undefined4 param_1);
+void __cdecl core_sentinel_cpp_staticInit_FUN_005058c0(void);
+void core_sentinel_cpp_FUN_005058f0(void);
+CDemonActorType * core_sentinel_cpp_FUN_00505910(void);
+int core_sentinel_cpp_FUN_00505920(undefined4 param_1);
 void core_sentinel_cpp_CSentinel_setup_FUN_00505990(int param_1);
 void core_sentinel_cpp_CSentinel_process_FUN_00505ba0(int param_1,float param_2);
 undefined4 core_sentinel_cpp_CSentinel_attractActorToward_FUN_005066e0(int param_1,int param_2);
 void core_sentinel_cpp_CSentinel_archive_FUN_005067e0(int param_1);
 void core_sentinel_cpp_CSentinel_processDamage_FUN_00506840(int param_1,int param_2);
 undefined4 core_sentinel_cpp_CSentinel_getTargetPoints_FUN_00506940(int param_1,undefined4 *param_2);
-void FUN_00506a60(undefined4 param_1,undefined4 param_2);
-int FUN_00506a80(int param_1,byte param_2);
-void FUN_00506b40(void);
+void core_sentinel_cpp_FUN_00506a60(undefined4 param_1,undefined4 param_2);
+int core_sentinel_cpp_FUN_00506a80(int param_1,byte param_2);
+void __cdecl core_set_cpp_staticInit_FUN_00506b40(void);
 undefined4 * core_set_cpp_CDemonSet_ctor_FUN_00506bc0(int param_1);
 int core_set_cpp_CDemonSet_dtor_FUN_00506e50(int param_1);
 void __cdecl core_set_cpp_CDemonSet_clear_FUN_00506ec0(int param_1);
@@ -65,8 +66,8 @@ int __cdecl core_set_cpp_CDemonSet_gatherVisibleLights_FUN_0050aee0(undefined4 p
 int core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0050b5c0(int param_1,undefined4 param_2,int param_3);
 void core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(int param_1,undefined4 param_2,int *param_3,int param_4,int param_5);
 undefined4 * __cdecl core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5);
-void FUN_0050bbc0(int param_1,int param_2);
-void FUN_0050bcf0(int param_1,ushort *param_2,float *param_3);
+void core_set_cpp_FUN_0050bbc0(int param_1,int param_2);
+void core_set_cpp_FUN_0050bcf0(int param_1,ushort *param_2,float *param_3);
 void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(undefined4 param_1,float *param_2,float *param_3,int param_4);
 void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(undefined4 param_1,int param_2);
 void core_set_cpp_CDemonSet_rotateVerticies_FUN_0050c200(undefined4 param_1,int param_2,int param_3);
@@ -74,17 +75,17 @@ int __cdecl core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0(int param_1,int p
 void __cdecl core_set_cpp_CDemonSet_process_FUN_0050d040(int param_1);
 float __cdecl core_set_cpp_CDemonSet_getReverbPresetAtPosition_FUN_0050d1c0(int param_1,float *param_2);
 void __cdecl core_set_cpp_CDemonSet_loadAssets_FUN_0050d280(void);
-undefined4 FUN_0050d2a0(int param_1,int param_2);
+undefined4 core_set_cpp_FUN_0050d2a0(int param_1,int param_2);
 void __cdecl core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(int param_1,uint param_2);
-void FUN_0050d640(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void core_set_cpp_FUN_0050d640(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_0050d670(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_0050d6a0(undefined4 param_1,undefined4 *param_2,int param_3,int param_4,int param_5);
 void core_set_cpp_FUN_0050d910(int param_1,ushort *param_2,int param_3,int param_4);
-void FUN_0050dd60(void);
+void core_set_cpp_FUN_0050dd60(void);
 void core_set_cpp_FUN_0050ddd0(int param_1,int param_2,int param_3,undefined4 param_4);
 void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 int __cdecl core_set_cpp_CDemonSet_renderPrimitiveList_FUN_0050df40(int param_1,int param_2,int param_3);
-int FUN_0050dfe0(int param_1,int param_2,int param_3);
+int core_set_cpp_FUN_0050dfe0(int param_1,int param_2,int param_3);
 void core_set_cpp_FUN_0050e080(int param_1,int param_2);
 void core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190(int param_1);
 void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(int param_1);
@@ -105,27 +106,27 @@ void __cdecl core_set_cpp_CDemonSet_loadMasterLightStates_FUN_0050e820(undefined
 int __cdecl core_set_cpp_CDemonSet_saveMasterLightStates_FUN_0050e860(undefined4 param_1,int *param_2);
 void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_0050e8a0(int *param_1,undefined4 param_2);
 void __cdecl core_set_cpp_CDemonSet_loadStateInfo_FUN_0050e920(int *param_1,undefined4 param_2);
-undefined4 FUN_0050ea10(void);
-undefined4 FUN_0050ea40(undefined4 param_1);
-undefined4 FUN_0050ea50(undefined4 param_1);
-undefined4 FUN_0050ea60(undefined4 param_1);
-undefined4 FUN_0050ea70(undefined4 param_1);
-undefined4 FUN_0050ea80(undefined4 param_1);
-void FUN_0050ea90(void);
-void FUN_0050eae0(void);
-void FUN_0050eb00(undefined4 param_1);
-void FUN_0050eb20(undefined4 param_1);
-void FUN_0050eb40(undefined4 param_1);
-void FUN_0050eb60(undefined4 param_1);
-void FUN_0050eb80(void);
-uint FUN_0050eba0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,float *param_8);
+undefined4 core_set_cpp_FUN_0050ea10(void);
+undefined4 core_set_cpp_FUN_0050ea40(undefined4 param_1);
+undefined4 core_set_cpp_FUN_0050ea50(undefined4 param_1);
+undefined4 core_set_cpp_FUN_0050ea60(undefined4 param_1);
+undefined4 core_set_cpp_FUN_0050ea70(undefined4 param_1);
+undefined4 core_set_cpp_FUN_0050ea80(undefined4 param_1);
+void core_set_cpp_FUN_0050ea90(void);
+void core_set_cpp_FUN_0050eae0(void);
+void core_set_cpp_FUN_0050eb00(undefined4 param_1);
+void core_set_cpp_FUN_0050eb20(undefined4 param_1);
+void core_set_cpp_FUN_0050eb40(undefined4 param_1);
+void core_set_cpp_FUN_0050eb60(undefined4 param_1);
+void __cdecl core_setcolid_cpp_staticInit_FUN_0050eb80(void);
+uint core_setcolid_cpp_FUN_0050eba0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,float *param_8);
 float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(int param_1,float *param_2,float param_3);
 float core_setcolid_cpp_FUN_0050f910(int param_1,undefined4 *param_2);
 undefined4 __cdecl core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_0050fa30(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 undefined4 core_setcolid_cpp_CDemonSet_getVoxelHeight_FUN_0050fab0(undefined4 param_1,undefined4 param_2);
 void __cdecl core_setcolid_cpp_CDemonSet_testVoxelRaycast_FUN_0050fae0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 undefined4 core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00(int param_1,float *param_2,float *param_3);
-undefined4 FUN_0050fc90(int param_1);
+undefined4 core_setcolid_cpp_FUN_0050fc90(int param_1);
 float core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_0050fdd0(undefined4 param_1,float *param_2,float *param_3);
 float core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0(int param_1,float param_2,float *param_3,float *param_4,float param_5);
 

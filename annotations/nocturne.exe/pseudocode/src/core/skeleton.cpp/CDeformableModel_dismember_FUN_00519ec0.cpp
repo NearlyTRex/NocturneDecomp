@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(int param_1,int param_2,int param_3,int param_4,uint *param_5,int param_6)
 
 {
@@ -37,9 +35,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(int param
   bVar14 = 0;
   if (param_3 != 0) {
     if (*(int *)(param_2 * 8 + param_1 + 8) != 0) {
-      _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-      _DAT_01cc4804 = 0x63d;
-      FUN_004c8440("CDeformableModel::dismember - can't dismember shadow LOD.");
+      PTR_01cc4800 = "..\\core\\skeleton.cpp";
+      INT_01cc4804 = 0x63d;
+      core_main_c_FUN_004c8440("CDeformableModel::dismember - can't dismember shadow LOD.");
     }
     iVar7 = param_2 * 4;
     local_30 = *(int *)(param_1 + iVar7 + 0x54);
@@ -58,9 +56,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(int param
     iVar8 = local_2c + *(int *)(iVar7 + 0xc24 + iVar3);
     iVar3 = local_30 + *(int *)(iVar7 + 0xc38 + iVar3);
     if (4000 < *(int *)(iVar7 + param_1 + 0x2c)) {
-      _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-      _DAT_01cc4804 = 0x652;
-      FUN_004c8440("CDeformableModel::dismember - too many vertices!");
+      PTR_01cc4800 = "..\\core\\skeleton.cpp";
+      INT_01cc4804 = 0x652;
+      core_main_c_FUN_004c8440("CDeformableModel::dismember - too many vertices!");
     }
     iVar7 = param_2 * 4 + param_1;
     memset(0x2671950,0,*(int *)(iVar7 + 0x2c) << 2);
@@ -125,9 +123,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(int param
       } while (local_18 < *(int *)(iVar9 + 0x2c));
     }
     if (iVar7 != *(int *)(param_3 + 0x16c)) {
-      _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-      _DAT_01cc4804 = 0x688;
-      FUN_004c8440("CDeformableModel::dismember - Hell froze 1!");
+      PTR_01cc4800 = "..\\core\\skeleton.cpp";
+      INT_01cc4804 = 0x688;
+      core_main_c_FUN_004c8440("CDeformableModel::dismember - Hell froze 1!");
     }
     if (local_2c < iVar8) {
       iVar4 = param_1 + param_2 * 4;
@@ -190,9 +188,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(int param
       } while (local_30 < iVar3 * 4);
     }
     if (local_14 != *(int *)(param_3 + 0x178)) {
-      _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-      _DAT_01cc4804 = 0x6bf;
-      FUN_004c8440("CDeformableModel::dismember - Hell froze 2!");
+      PTR_01cc4800 = "..\\core\\skeleton.cpp";
+      INT_01cc4804 = 0x6bf;
+      core_main_c_FUN_004c8440("CDeformableModel::dismember - Hell froze 2!");
       return;
     }
   }

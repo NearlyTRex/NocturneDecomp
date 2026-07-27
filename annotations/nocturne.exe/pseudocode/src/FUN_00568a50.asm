@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_005634b0 at 0056351e
 ;   FUN_00570a70 at 00570a9f
+;   crt_unknown.c_FUN_005634b0 at 0056351e
 ;
 ; Referenced Globals:
 ;   void* PTR_CloseHandle_0057548c = 00175ad4

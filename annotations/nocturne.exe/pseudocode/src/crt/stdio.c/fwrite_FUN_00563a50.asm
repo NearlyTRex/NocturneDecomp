@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[10]:
-;   FUN_00448f40 at 00448f86
-;   FUN_0046c410 at 0046c420
-;   FUN_004f2990 at 004f2aa4
-;   FUN_004f4f10 at 004f4f47
-;   FUN_004f8eb0 at 004f9081
-;   FUN_00513670 at 005136c7
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_004f4bb0 at 004f4c0d
+;   cockpit_pkbitmap.cpp_FUN_004f4f10 at 004f4f47
+;   core_dcube.cpp_FUN_00448f40 at 00448f86
+;   core_dtri.cpp_FUN_0046c410 at 0046c420
+;   core_setdir.cpp_FUN_00513670 at 005136c7
 ;   engine_2d.c_FUN_00403130 at 0040315b
 ;   engine_2d.c_FUN_00403500 at 0040352b
 ;   engine_2d.c_FUN_00403630 at 00403718
+;   engine_pcx.c_FUN_004f2990 at 004f2aa4
+;   engine_pod.cpp_FUN_004f8eb0 at 004f9081
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1abc = 005671dc

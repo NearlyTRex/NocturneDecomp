@@ -14,7 +14,7 @@ uint * core_netgame_cpp_CNetGame_ctor_FUN_004e9860(int param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = __arrinit(param_1 + 0x20,2,&DAT_005a0e20);
+  iVar2 = __arrinit(param_1 + 0x20,2,&g_SNetPlayerTypeInfo_005a0e20);
   iVar2 = support_trisock_cpp_invalidateSocket_FUN_00548ed0(iVar2 + 0x150);
   *(uint *)(iVar2 + -0x170) = 0;
   *(uint *)(iVar2 + -0x16c) = 0;

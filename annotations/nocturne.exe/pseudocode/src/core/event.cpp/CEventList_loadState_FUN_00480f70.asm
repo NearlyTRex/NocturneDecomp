@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004a4170 at 004a48e3
+;   core_game.cpp_FUN_004a4170 at 004a48e3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_00580cc1
@@ -33,9 +33,9 @@
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_reset_FUN_0047aa00
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fgets_FUN_00564b20
 ;   crt_stdio.c_fscanf_FUN_00563350
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -331,10 +331,10 @@ section .text
     MOV ECX,0x580cc5                    ; 0048129e | = "..\\core\\event.cpp"
     MOV EDI,0xc2c                       ; 004812a3
     PUSH 0x580cd7                       ; 004812a8 | = "CEventList::loadState - file version ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004812ad | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004812b3 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004812b9
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004812ad | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004812b3 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004812b9
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004812be
     JMP 0x00480fca                      ; 004812c1
         ;   XREF to: 00480fca (UNCONDITIONAL_JUMP)  ; LAB_00480fca

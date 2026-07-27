@@ -1,14 +1,12 @@
-// Name: FUN_004f7ae0
+// Name: engine_pod.cpp_FUN_004f7ae0
 // Address: 004f7ae0
 // Address Range: [[004f7ae0, 004f80d1]]
 // Convention: unknown
-// Signature: undefined4 FUN_004f7ae0(undefined4 *param_1,char *param_2)
+// Signature: undefined4 engine_pod_cpp_FUN_004f7ae0(undefined4 *param_1,char *param_2)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-uint FUN_004f7ae0(uint *param_1,char *param_2)
+uint engine_pod_cpp_FUN_004f7ae0(uint *param_1,char *param_2)
 
 {
   char cVar1;
@@ -92,9 +90,9 @@ uint FUN_004f7ae0(uint *param_1,char *param_2)
           iVar4 = malloc(iVar2);
           param_1[0x84] = iVar4;
           if (iVar4 == 0) {
-            _DAT_01cc4800 = "..\\engine\\pod.cpp";
-            _DAT_01cc4804 = 0xfe;
-            FUN_004c8440("Out of memory!");
+            PTR_01cc4800 = "..\\engine\\pod.cpp";
+            INT_01cc4804 = 0xfe;
+            core_main_c_FUN_004c8440("Out of memory!");
           }
           _fread(param_1[0x84],iVar2,1,local_1c);
           iVar4 = param_1[0x83] + (param_1[0x82] + -1) * 0x14;
@@ -141,9 +139,9 @@ uint FUN_004f7ae0(uint *param_1,char *param_2)
             iVar7 = realloc(param_1[0x84],iVar2);
             param_1[0x84] = iVar7;
             if (iVar7 == 0) {
-              _DAT_01cc4800 = "..\\engine\\pod.cpp";
-              _DAT_01cc4804 = 0x128;
-              FUN_004c8440("Out of memory!");
+              PTR_01cc4800 = "..\\engine\\pod.cpp";
+              INT_01cc4804 = 0x128;
+              core_main_c_FUN_004c8440("Out of memory!");
             }
             pcVar8 = (char *)(param_1[0x84] + *(int *)(iVar4 + param_1[0x83]));
             pcVar12 = local_5c;

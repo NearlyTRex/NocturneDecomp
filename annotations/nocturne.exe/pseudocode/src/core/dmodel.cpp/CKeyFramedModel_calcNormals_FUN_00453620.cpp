@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00453620(int param_1)
 
 {
@@ -27,9 +25,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00453620(int param_
   
   if (*(int *)(param_1 + 0x100) == 1) {
     if (*(int *)(param_1 + 0x108) == 0) {
-      _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-      _DAT_01cc4804 = 0x2f1;
-      FUN_004c8440("CKeyFramedModel::calcNormals() - vertexNormalList not allocated!");
+      PTR_01cc4800 = "..\\core\\dmodel.cpp";
+      INT_01cc4804 = 0x2f1;
+      core_main_c_FUN_004c8440("CKeyFramedModel::calcNormals() - vertexNormalList not allocated!");
     }
     memset
               (*(uint *)(param_1 + 0x108),0,*(int *)(param_1 + 0x104) * 0xc);

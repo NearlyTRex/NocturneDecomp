@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059b568
+;   float FLOAT_0059b568 = 0.5
 ;   undefined4 DAT_005b9354
 ;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_01c777bc
@@ -43,7 +43,7 @@ section .text
     TEST EDI,EDI                        ; 0043aa38
     JZ 0x0043aa8d                       ; 0043aa3a
         ;   XREF to: 0043aa8d (CONDITIONAL_JUMP)  ; LAB_0043aa8d
-    MOV EAX,[0x0059b568]                ; 0043aa3c | DAT_0059b568
+    MOV EAX,[0x0059b568]                ; 0043aa3c | FLOAT_0059b568
         ;   Label: LAB_0043aa3c
     MOV dword ptr [EBX + 0xbc8c],EAX    ; 0043aa41
     FLD float ptr [ESI + 0x4]           ; 0043aa47

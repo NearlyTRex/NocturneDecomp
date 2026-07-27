@@ -5,19 +5,19 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_00527d80 at 00527d89
-;   FUN_005289f0 at 00528c50
-;   FUN_0052dd90 at 0052ddcd
-;   FUN_0052dff0 at 0052e27f
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1ceb
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e899
 ;   core_sound.cpp_CSound_init_FUN_0052ddf0 at 0052debd
+;   core_sound.cpp_FUN_0052dd90 at 0052ddcd
+;   core_sound.cpp_FUN_0052dff0 at 0052e27f
+;   sound_sndmain.cpp_FUN_00527d80 at 00527d89
+;   sound_sndmain.cpp_FUN_005289f0 at 00528c50
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005935cf
 ;   TerminatedCString s_setSfxChannelVol_invalid_005935e4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dbd3e4
 ;   undefined4 DAT_02dbd494
 ;   undefined4 DAT_02dbd500
@@ -25,7 +25,7 @@
 ;   undefined4 DAT_02dc8318
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0
 ;   sound_sndmain.cpp_lockSound_FUN_00528800
 ;   sound_sndmain.cpp_unlockSound_FUN_00528890
@@ -49,10 +49,10 @@ section .text
     MOV EDX,0x5935cf                    ; 005272f0 | = "..\\sound\\sndmain.cpp"
     MOV ECX,0xf32                       ; 005272f5
     PUSH 0x5935e4                       ; 005272fa | = "setSfxChannelVol - invalid channel in..."
-    MOV dword ptr [0x01cc4800],EDX      ; 005272ff | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00527305 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0052730b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005272ff | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00527305 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0052730b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00527310
     MOV EDX,dword ptr [ESP + 0x10]      ; 00527313
         ;   Label: LAB_00527313

@@ -15,9 +15,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   FUN_004673e0 at 0046752d
-;   FUN_004f8240 at 004f8490
+;   core_dtrace.cpp_FUN_004673e0 at 0046752d
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 at 004ea049
+;   engine_pod.cpp_FUN_004f8240 at 004f8490
 ;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_00471660 at 00471725
 ;
 ; Referenced Globals:
@@ -39,13 +39,13 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_2d.c_fillRectColor_FUN_00403e60
 ;   engine_2d.c_fillRectWithBorder_FUN_00403ef0
 ;   engine_3d.c_setRenderAlpha_FUN_00408370
 ;   engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
-;   FUN_004722b0
-;   FUN_004c8440
+;   shape_edittool.cpp_FUN_004722b0
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
@@ -125,8 +125,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 00471812
         ;   Label: LAB_00471812
     PUSH EBX                            ; 00471815
-    CALL FUN_004722b0                   ; 00471816
-        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004722b0()
+    CALL shape_edittool.cpp_FUN_004722b0 ; 00471816
+        ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004722b0()
     ADD ESP,0x4                         ; 0047181b
     PUSH 0xffff                         ; 0047181e
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 00471823
@@ -325,10 +325,10 @@ section .text
         ;   Label: LAB_00471a58
     MOV EBX,0x605                       ; 00471a5d
     PUSH 0x57e849                       ; 00471a62 | = "CEditorTools::updatePercentageWindow ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00471a67 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00471a6d | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00471a73
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00471a67 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00471a6d | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00471a73
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00471a78
     JMP 0x00471779                      ; 00471a7b
         ;   XREF to: 00471779 (UNCONDITIONAL_JUMP)  ; LAB_00471779

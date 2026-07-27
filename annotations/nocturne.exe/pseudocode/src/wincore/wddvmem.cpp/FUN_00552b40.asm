@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_00552b40(void)
+; undefined4 wincore_wddvmem_cpp_FUN_00552b40(void)
 ;
 ;
 ; XREF[1]:
-;   FUN_00401010 at 00401027
+;   engine_2d.c_FUN_00401010 at 00401027
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005977c5
@@ -17,8 +17,8 @@
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_005c5010
 ;   undefined4 DAT_006af62c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02ddf550
 ;   undefined4 DAT_02ddf554
 ;   undefined4 DAT_02ddf558
@@ -26,17 +26,17 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   DirectDrawCreate
-;   FUN_004c8440
-;   wincore_windll.cpp_loadExternalRenderer_FUN_00531780
+;   engine_special.cpp_loadExternalRenderer_FUN_00531780
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00552b40
-        ;   Label: FUN_00552b40
+        ;   Label: wincore_wddvmem.cpp_FUN_00552b40
     PUSH ESI                            ; 00552b41
     PUSH EDI                            ; 00552b42
     PUSH EBP                            ; 00552b43
@@ -73,10 +73,10 @@ section .text
     MOV EDI,0x597808                    ; 00552ba0 | = "..\\wincore\\wddvmem.cpp"
     MOV EBP,0xef                        ; 00552ba5
     PUSH 0x59781f                       ; 00552baa | = "WDDVMEM: Fatal - out of Z buffer memory"
-    MOV dword ptr [0x01cc4800],EDI      ; 00552baf | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00552bb5 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00552bbb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00552baf | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00552bb5 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00552bbb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00552bc0
     MOV EAX,[0x02ddf560]                ; 00552bc3 | DAT_02ddf560
         ;   Label: LAB_00552bc3
@@ -138,8 +138,8 @@ section .text
     MOV EBX,dword ptr [0x02de2098]      ; 00552c4e | DAT_02de2098
         ;   Label: LAB_00552c4e
     PUSH EBX                            ; 00552c54
-    CALL wincore_windll.cpp_loadExternalRenderer_FUN_00531780 ; 00552c55
-        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_loadExternalRenderer_FUN_00531780()
+    CALL engine_special.cpp_loadExternalRenderer_FUN_00531780 ; 00552c55
+        ;   XREF to: 00531780 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_loadExternalRenderer_FUN_00531780()
     MOV EAX,0x1                         ; 00552c5a
     ADD ESP,0x4                         ; 00552c5f
     POP EBP                             ; 00552c62
@@ -151,10 +151,10 @@ section .text
         ;   Label: LAB_00552c67
     MOV EBX,0xea                        ; 00552c6c
     PUSH 0x5977dc                       ; 00552c71 | = "WDDVMEM: Fatal - out of frame buffer ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00552c76 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00552c7c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00552c82
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00552c76 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00552c7c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00552c82
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00552c87
     JMP 0x00552b7c                      ; 00552c8a
         ;   XREF to: 00552b7c (UNCONDITIONAL_JUMP)  ; LAB_00552b7c

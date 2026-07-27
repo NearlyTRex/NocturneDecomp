@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_00430630(int param_1,int *param_2,int param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9)
+; int cockpit_ckptutil_c_FUN_00430630(int param_1,int *param_2,int param_3,int *param_4,int param_5,int param_6,int param_7 ,int param_8,int param_9)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x1f4]:1  local_1f4
@@ -82,16 +82,16 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_realloc_FUN_00564a70
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00430630
-        ;   Label: FUN_00430630
+        ;   Label: cockpit_ckptutil.c_FUN_00430630
     PUSH ESI                            ; 00430631
     PUSH EDI                            ; 00430632
     PUSH EBP                            ; 00430633
@@ -159,13 +159,13 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x57ab2a                    ; 00430740 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 00430745
-    MOV [0x01cc4800],EAX                ; 00430748 | DAT_01cc4800
+    MOV [0x01cc4800],EAX                ; 00430748 | PTR_01cc4800
     MOV EAX,ESP                         ; 0043074d
     MOV EDX,0x87e                       ; 0043074f
     PUSH EAX                            ; 00430754
-    MOV dword ptr [0x01cc4804],EDX      ; 00430755 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0043075b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EDX      ; 00430755 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0043075b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00430760
     TEST ESI,ESI                        ; 00430763
         ;   Label: LAB_00430763
@@ -528,13 +528,13 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x57ab6f                    ; 00430cf4 | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 00430cf9
-    MOV [0x01cc4800],EAX                ; 00430cfc | DAT_01cc4800
+    MOV [0x01cc4800],EAX                ; 00430cfc | PTR_01cc4800
     MOV EAX,ESP                         ; 00430d01
     MOV EDX,0x8b8                       ; 00430d03
     PUSH EAX                            ; 00430d08
-    MOV dword ptr [0x01cc4804],EDX      ; 00430d09 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00430d0f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EDX      ; 00430d09 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00430d0f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00430d14
     CMP EDI,dword ptr [ESP + 0x1ac]     ; 00430d17
         ;   Label: LAB_00430d17
@@ -757,10 +757,10 @@ section .text
     MOV EAX,ESP                         ; 0043108a
     MOV ECX,0x8f7                       ; 0043108c
     PUSH EAX                            ; 00431091
-    MOV dword ptr [0x01cc4800],EDX      ; 00431092 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00431098 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0043109e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00431092 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00431098 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0043109e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004310a3
     MOV EDI,dword ptr [ESP + 0x204]     ; 004310a6
         ;   Label: LAB_004310a6

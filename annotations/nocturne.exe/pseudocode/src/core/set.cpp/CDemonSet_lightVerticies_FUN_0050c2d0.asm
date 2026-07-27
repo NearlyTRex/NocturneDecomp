@@ -67,12 +67,12 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[8]:
-;   FUN_0043f330 at 0043f4a4
-;   FUN_004ac440 at 004ac583
-;   FUN_004ac600 at 004ac73f
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 at 00416084
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437e8c
+;   core_curtain.cpp_FUN_0043f330 at 0043f4a4
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0 at 00453127
+;   core_glass.cpp_FUN_004ac440 at 004ac583
+;   core_glass.cpp_FUN_004ac600 at 004ac73f
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_004dfcb0 at 004dfe70
 ;   core_skeleton.cpp_CDeformableModel_lightVertices_FUN_00518470 at 0051849d
 ;
@@ -96,11 +96,11 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10
+;   core_dcamera.cpp_FUN_00441440
+;   core_main.c_FUN_004c8440
 ;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090
-;   FUN_00441440
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -123,10 +123,10 @@ section .text
     MOV ECX,0x5906b9                    ; 0050c2f0 | = "..\\core\\set.cpp"
     MOV EBX,0xd26                       ; 0050c2f5
     PUSH 0x5906c9                       ; 0050c2fa | = "CDemonSet::lightVerticies - tried to ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0050c2ff | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050c305 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050c30b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0050c2ff | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0050c305 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050c30b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0050c310
     MOV EDI,dword ptr [0x005ae704]      ; 0050c313 | DAT_005ae704
         ;   Label: LAB_0050c313
@@ -328,8 +328,8 @@ section .text
     PUSH 0x1fb8508                      ; 0050c51d
     LEA ESI,[ESP + 0x74]                ; 0050c522
     LEA EDI,[ESP + 0x8c]                ; 0050c526
-    CALL FUN_00441440                   ; 0050c52d
-        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined FUN_00441440()
+    CALL core_dcamera.cpp_FUN_00441440  ; 0050c52d
+        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00441440()
     LEA ESI,[ESP + 0x74]                ; 0050c532
     ADD ESP,0x8                         ; 0050c536
     MOVSD ES:EDI,ESI                    ; 0050c539
@@ -446,8 +446,8 @@ section .text
     PUSH EAX                            ; 0050c673
     PUSH 0x1fb8508                      ; 0050c674
     LEA ESI,[ESP + 0x80]                ; 0050c679
-    CALL FUN_00441440                   ; 0050c680
-        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined FUN_00441440()
+    CALL core_dcamera.cpp_FUN_00441440  ; 0050c680
+        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00441440()
     ADD ESP,0x8                         ; 0050c685
     MOV EDI,dword ptr [ESP + 0x114]     ; 0050c688
     LEA ESI,[ESP + 0x78]                ; 0050c68f
@@ -518,8 +518,8 @@ section .text
     PUSH 0x1fb8508                      ; 0050c75b
     LEA ESI,[ESP + 0x20]                ; 0050c760
     LEA EDI,[ESP + 0x98]                ; 0050c764
-    CALL FUN_00441440                   ; 0050c76b
-        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined FUN_00441440()
+    CALL core_dcamera.cpp_FUN_00441440  ; 0050c76b
+        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00441440()
     LEA ESI,[ESP + 0x20]                ; 0050c770
     ADD ESP,0x8                         ; 0050c774
     MOVSD ES:EDI,ESI                    ; 0050c777
@@ -568,8 +568,8 @@ section .text
     PUSH EAX                            ; 0050c7fe
     PUSH 0x1fb8508                      ; 0050c7ff
     LEA ESI,[ESP + 0x38]                ; 0050c804
-    CALL FUN_00441440                   ; 0050c808
-        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined FUN_00441440()
+    CALL core_dcamera.cpp_FUN_00441440  ; 0050c808
+        ;   XREF to: 00441440 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_00441440()
     ADD ESP,0x8                         ; 0050c80d
     MOV EDI,dword ptr [ESP + 0x118]     ; 0050c810
     LEA ESI,[ESP + 0x30]                ; 0050c817
@@ -667,7 +667,7 @@ section .text
     FXCH ST3                            ; 0050c969
     FSTP float ptr [ESP + 0x144]        ; 0050c96b
     MOV EDX,dword ptr [ESP + 0x144]     ; 0050c972
-    MOV ECX,dword ptr [0x01c70710]      ; 0050c979 | DAT_01c70710
+    MOV ECX,dword ptr [0x01c70710]      ; 0050c979 | CVector3f_01c70708.z
     SAR EDX,0x1                         ; 0050c97f
     SUB ECX,EDX                         ; 0050c981
     MOV dword ptr [ESP + 0x148],ECX     ; 0050c983
@@ -864,10 +864,10 @@ section .text
     MOV ECX,0x59071e                    ; 0050cbab | = "..\\core\\set.cpp"
     MOV ESI,0xde8                       ; 0050cbb0
     PUSH 0x59072e                       ; 0050cbb5 | = "Too many normals on this packed tri list"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050cbba | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0050cbc0 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050cbc6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0050cbba | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0050cbc0 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050cbc6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050cbcb
     CMP dword ptr [EBP + 0x1c],0xfa0    ; 0050cbce
         ;   Label: LAB_0050cbce
@@ -876,10 +876,10 @@ section .text
     MOV EAX,0x590757                    ; 0050cbd7 | = "..\\core\\set.cpp"
     MOV EDX,0xdea                       ; 0050cbdc
     PUSH 0x590767                       ; 0050cbe1 | = "Need more normals for packed models"
-    MOV [0x01cc4800],EAX                ; 0050cbe6 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0050cbeb | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050cbf1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0050cbe6 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0050cbeb | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050cbf1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050cbf6
     MOV ECX,dword ptr [EBP + 0x1c]      ; 0050cbf9
         ;   Label: LAB_0050cbf9
@@ -979,7 +979,7 @@ section .text
     FADDP                               ; 0050cda1
     FSTP float ptr [ESP + 0xe0]         ; 0050cda3
     MOV EAX,dword ptr [ESP + 0xe0]      ; 0050cdaa
-    MOV ECX,dword ptr [0x01c70710]      ; 0050cdb1 | DAT_01c70710
+    MOV ECX,dword ptr [0x01c70710]      ; 0050cdb1 | CVector3f_01c70708.z
     SAR EAX,0x1                         ; 0050cdb7
     SUB ECX,EAX                         ; 0050cdb9
     MOV dword ptr [ESP + 0xe4],ECX      ; 0050cdbb
@@ -1082,7 +1082,7 @@ section .text
     FADDP                               ; 0050ced3
     FSTP float ptr [ESP + 0xf0]         ; 0050ced5
     MOV EAX,dword ptr [ESP + 0xf0]      ; 0050cedc
-    MOV EDX,dword ptr [0x01c70710]      ; 0050cee3 | DAT_01c70710
+    MOV EDX,dword ptr [0x01c70710]      ; 0050cee3 | CVector3f_01c70708.z
     SAR EAX,0x1                         ; 0050cee9
     SUB EDX,EAX                         ; 0050ceeb
     MOV dword ptr [ESP + 0xf4],EDX      ; 0050ceed
@@ -1136,7 +1136,7 @@ section .text
     FADDP                               ; 0050cf81
     FSTP float ptr [ESP + 0xfc]         ; 0050cf83
     MOV EAX,dword ptr [ESP + 0xfc]      ; 0050cf8a
-    MOV EDX,dword ptr [0x01c70710]      ; 0050cf91 | DAT_01c70710
+    MOV EDX,dword ptr [0x01c70710]      ; 0050cf91 | CVector3f_01c70708.z
     SAR EAX,0x1                         ; 0050cf97
     SUB EDX,EAX                         ; 0050cf99
     MOV dword ptr [ESP + 0x100],EDX     ; 0050cf9b

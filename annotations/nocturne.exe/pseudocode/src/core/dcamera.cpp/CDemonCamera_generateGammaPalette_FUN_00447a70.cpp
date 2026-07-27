@@ -34,7 +34,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00447a70(uin
     *(uint *)(&DAT_00b0e1fc + iVar2) = uVar1 << 0x18 | uVar1 << 0x10 | uVar1 << 8 | uVar1;
     iVar2 = iVar2 + 4;
   } while (iVar3 < 0x100);
-  wincore_windll_cpp_setFogColor_FUN_00532af0
+  engine_special_cpp_setFogColor_FUN_00532af0
             (*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff,
              *(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff,
              *(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff);

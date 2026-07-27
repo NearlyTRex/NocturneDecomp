@@ -32,9 +32,10 @@ void __cdecl core_script_cpp_CScript_process_FUN_004fe5b0(int *param_1)
       iVar2 = core_script_cpp_CScript_step_FUN_004ff2c0(param_1,&local_18);
       if (iVar2 == 0) goto LAB_004fe623;
       if (iVar2 < 0) {
-        FUN_0046fcd0(0x01BCD074,"Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
-                     *(uint *)(param_1[0xb] + iVar1 * 8),
-                     *(uint *)(param_1[0xb] + 4 + iVar1 * 8),&DAT_01e56420);
+        shape_edittool_cpp_FUN_0046fcd0
+                  (0x01BCD074,"Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
+                   *(uint *)(param_1[0xb] + iVar1 * 8),
+                   *(uint *)(param_1[0xb] + 4 + iVar1 * 8),&DAT_01e56420);
 LAB_004fe675:
         param_1[6] = 2;
       }
@@ -42,8 +43,9 @@ LAB_004fe675:
       iVar3 = iVar3 + 1;
     } while (iVar3 < 0xc9);
     if (_DAT_01e56c28 == 0) {
-      FUN_0046fcd0(0x01BCD074,"!WARNING!  Infinite loop detected in script at line %d",
-                   *(uint *)(param_1[0xb] + iVar1 * 8));
+      shape_edittool_cpp_FUN_0046fcd0
+                (0x01BCD074,"!WARNING!  Infinite loop detected in script at line %d",
+                 *(uint *)(param_1[0xb] + iVar1 * 8));
       _DAT_01e56c28 = 1;
     }
 LAB_004fe623:

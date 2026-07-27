@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,16 +122,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 346,
+    "complexity_score": 331,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 71,
-    "suspect_count": 26,
+    "suspect_count": 25,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 353
@@ -140,13 +139,13 @@
     {
       "addr": "004ca240",
       "from_addr": "004ca2cc",
-      "name": "FUN_004ca240",
+      "name": "core_manpuz.cpp_FUN_004ca240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00510a40",
       "from_addr": "00510ec2",
-      "name": "FUN_00510a40",
+      "name": "core_setcolid.cpp_FUN_00510a40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -192,8 +191,8 @@
   "globals": [
     {
       "addr": "005993b0",
-      "name": "DAT_005993b0",
-      "type": "undefined4",
+      "name": "g_CVectorTypeInfo_005993b0",
+      "type": "WatcomTypeInfo",
       "value": null
     }
   ],
@@ -203,7 +202,7 @@
       {
         "call_addr": "00510ec2",
         "call_type": "direct",
-        "caller": "FUN_00510a40",
+        "caller": "core_setcolid.cpp_FUN_00510a40",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +213,7 @@
       {
         "call_addr": "004ca2cc",
         "call_type": "direct",
-        "caller": "FUN_004ca240",
+        "caller": "core_manpuz.cpp_FUN_004ca240",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -468,14 +467,6 @@
       "severity": "mild",
       "text": "bool __cdecl core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00510710(uint param_1,float *param_2,uint param_3,float *param_4,uint param_5)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005993b0",
-      "severity": "mild",
-      "text": "__arrinit(local_1e8,8,&DAT_005993b0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

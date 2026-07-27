@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_00418a00 at 00418a6b
+;   core_boneguy.cpp_FUN_00418a00 at 00418a6b
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047d550
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920 at 004d9a17
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_004e1500 at 004e1585

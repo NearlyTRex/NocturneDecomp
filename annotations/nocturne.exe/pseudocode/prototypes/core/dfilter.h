@@ -3,9 +3,17 @@
 // Function prototypes for core/dfilter.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_dfilter.cpp_staticInit_FUN_0044bc20
+// Address: 0044bc20
+void __cdecl staticInit(void);
+
 // Original: core_dfilter.cpp_CFilterCache_ctor_FUN_0044bca0
 // Address: 0044bca0
 void CFilterCache::ctor(undefined4 *param_1);
+
+// Original: core_dfilter.cpp_FUN_0044bcb0
+// Address: 0044bcb0
+undefined4 FUN_0044bcb0(undefined4 param_1);
 
 // Original: core_dfilter.cpp_CFilterCache_free_FUN_0044bcd0
 // Address: 0044bcd0
@@ -62,3 +70,7 @@ void __cdecl CFilterFX::openMovie(int *param_1,int param_2);
 // Original: core_dfilter.cpp_CFilterFX_process_FUN_0044c4a0
 // Address: 0044c4a0
 void __cdecl CFilterFX::process(int *param_1);
+
+// Original: core_dfilter.cpp_FUN_0044c540
+// Address: 0044c540
+void FUN_0044c540(undefined4 param_1);

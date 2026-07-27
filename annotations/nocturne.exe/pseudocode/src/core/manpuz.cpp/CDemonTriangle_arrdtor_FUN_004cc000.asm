@@ -8,7 +8,7 @@
 ;   core_manpuz.cpp_SGem_dtor_FUN_004cbef0 at 004cbefa
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059c080
+;   WatcomTypeInfo g_CDemonTriangleTypeInfo_0059c080
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f
@@ -17,7 +17,7 @@
 
 section .text
 
-    PUSH 0x59c080                       ; 004cc000 | DAT_0059c080
+    PUSH 0x59c080                       ; 004cc000 | g_CDemonTriangleTypeInfo_0059c080
         ;   Label: core_manpuz.cpp_CDemonTriangle_arrdtor_FUN_004cc000
     PUSH 0x2                            ; 004cc005
     MOV EDX,dword ptr [ESP + 0xc]       ; 004cc007

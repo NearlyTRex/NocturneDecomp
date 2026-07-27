@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00415760 at 004157d6
-;   FUN_004de550 at 004de5d8
-;   FUN_004efa60 at 004efaee
-;   FUN_00541640 at 00541752
-;   FUN_0054dac0 at 0054dbda
+;   core_biggs.cpp_FUN_00415760 at 004157d6
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004d5e20 at 004d5f34
+;   core_moloch.cpp_FUN_004de550 at 004de5d8
+;   core_passngr.cpp_FUN_004efa60 at 004efaee
+;   core_succubus.cpp_FUN_00541640 at 00541752
+;   core_vampboss.cpp_FUN_0054dac0 at 0054dbda
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_004df770

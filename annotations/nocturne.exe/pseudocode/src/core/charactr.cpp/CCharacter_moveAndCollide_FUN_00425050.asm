@@ -45,16 +45,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[36]:
-;   FUN_00418a00 at 00418f7a
-;   FUN_0041fe40 at 00420879
-;   FUN_00439f50 at 0043a45a
-;   FUN_00495a20 at 004968f2
-;   FUN_004a9270 at 004a94ef
-;   FUN_004b32d0 at 004b3864
-;   FUN_004b6d80 at 004b7f81
-;   FUN_004b9fe0 at 004ba72b
-;   FUN_004c4970 at 004c4ba8
-;   FUN_004d4f30 at 004d56ea
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 0041265d
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 004139fb
+;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 00415677
+;   core_boneguy.cpp_FUN_00418a00 at 00418f7a
+;   core_bride.cpp_FUN_0041fe40 at 00420879
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 004226e6
+;   core_bugs.cpp_FUN_00422050 at 0042223d
+;   core_colonel.cpp_FUN_00439f50 at 0043a45a
+;   core_cow.cpp_CZombieCow_process_FUN_0043bdb0 at 0043bfbe
+;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 00454975
 ;   ... and 26 more
 ;
 ; Referenced Globals:
@@ -82,9 +82,9 @@
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_00511780
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
+;   core_setcolid.cpp_FUN_00510a40
 ;   crt_string.c__strnicmp_FUN_00564bc0
-;   FUN_004940d0
-;   FUN_00510a40
+;   xxx_unk.c_FUN_004940d0
 ;
 ; *****************************************************************************
 
@@ -269,8 +269,8 @@ section .text
     MOV EDX,dword ptr [0x005be368]      ; 004252c5 | DAT_005be368
     PUSH dword ptr [EBX + 0x20]         ; 004252cb
     PUSH EDX                            ; 004252ce | DAT_01e57284
-    CALL FUN_00510a40                   ; 004252cf
-        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; undefined FUN_00510a40()
+    CALL core_setcolid.cpp_FUN_00510a40 ; 004252cf
+        ;   XREF to: 00510a40 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00510a40()
     MOV dword ptr [ESP + 0xec],EAX      ; 004252d4
     FLD float ptr [ESP + 0xec]          ; 004252db
     ADD ESP,0x20                        ; 004252e2
@@ -640,8 +640,8 @@ section .text
     MOV ECX,dword ptr [0x005b9284]      ; 00425797 | INT_005b9284
     PUSH dword ptr [ESP + 0x20]         ; 0042579d
     PUSH ECX                            ; 004257a1
-    CALL FUN_004940d0                   ; 004257a2
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
+    CALL xxx_unk.c_FUN_004940d0         ; 004257a2
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
     ADD ESP,0xc                         ; 004257a7
     FLD float ptr [EBX + 0x24]          ; 004257aa
         ;   Label: LAB_004257aa

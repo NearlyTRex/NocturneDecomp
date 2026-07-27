@@ -8,7 +8,7 @@
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049df8a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bcdef4
+;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -26,7 +26,7 @@ section .text
     TEST EBX,EBX                        ; 004d9dfe
     JZ 0x004d9e20                       ; 004d9e00
         ;   XREF to: 004d9e20 (CONDITIONAL_JUMP)  ; LAB_004d9e20
-    MOV EDX,dword ptr [0x01bcdef4]      ; 004d9e02 | DAT_01bcdef4
+    MOV EDX,dword ptr [0x01bcdef4]      ; 004d9e02 | g_CEnemyActorType_01bcdebc.name_hash
         ;   Label: LAB_004d9e02
     PUSH EDX                            ; 004d9e08
     PUSH EBX                            ; 004d9e09

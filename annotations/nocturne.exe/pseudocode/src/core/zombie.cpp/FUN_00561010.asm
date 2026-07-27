@@ -28,7 +28,7 @@
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_01cc4800
+;   char* PTR_01cc4800
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -39,13 +39,13 @@
 ;   core_bodypart.cpp_addVector_FUN_00417fc0
 ;   core_bodypart.cpp_scaleVector_FUN_00417f60
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0
+;   core_main.c_FUN_004c8440
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_zombie.cpp_classifyObjectShape_FUN_0055e940
 ;   core_zombie.cpp_CZombie_canPickupWithHand_FUN_00561880
 ;   core_zombie.cpp_CZombie_getPickupHandIndex_FUN_005617e0
 ;   core_zombie.cpp_CZombie_resetChaseState_FUN_005624e0
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -511,10 +511,10 @@ section .text
         ;   Label: LAB_005615c6
     MOV ECX,0x5d0                       ; 005615cb
     PUSH 0x59880e                       ; 005615d0 | = "Invalid zombie object shape!"
-    MOV dword ptr [0x01cc4800],EDX      ; 005615d5 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005615db | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005615e1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005615d5 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005615db | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005615e1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005615e6
     MOV EAX,0x1                         ; 005615e9
     MOV ESP,EBP                         ; 005615ee

@@ -33,12 +33,12 @@
 ;   undefined4 DAT_005b80f0
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_00763e44
-;   undefined4 CDemonActorType_00765a60.name_hash
+;   undefined4 g_CCharacterActorType_00765a60.name_hash
 ;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_01c7068c
+;   undefined4 g_CFlameCanActorType_01c70654.name_hash
 ;   undefined4 DAT_01c777f8
 ;   undefined4 DAT_01c77850
-;   undefined4 DAT_01c78c78
+;   undefined4 g_CGlassActorType_01c78c40.name_hash
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -47,12 +47,12 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_fire.cpp_CFireEffect_getExplosionEffect_FUN_0048c160
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550
+;   core_glass.cpp_FUN_004ada20
+;   core_glass.cpp_FUN_004aded0
+;   core_path.cpp_FUN_004f0360
 ;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0
 ;   core_trigger.cpp_CTrigger_applyDamage_FUN_005485e0
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   FUN_004ada20
-;   FUN_004aded0
-;   FUN_004f0360
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
 ; *****************************************************************************
@@ -237,8 +237,8 @@ section .text
     ADD EDX,0x20                        ; 00509355
     PUSH EDX                            ; 00509358
     PUSH EAX                            ; 00509359
-    CALL FUN_004f0360                   ; 0050935a
-        ;   XREF to: 004f0360 (UNCONDITIONAL_CALL)  ; undefined FUN_004f0360()
+    CALL core_path.cpp_FUN_004f0360     ; 0050935a
+        ;   XREF to: 004f0360 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_004f0360()
     ADD ESP,0xc                         ; 0050935f
     MOV EDX,dword ptr [0x00763e44]      ; 00509362 | DAT_00763e44
         ;   Label: LAB_00509362
@@ -292,7 +292,7 @@ section .text
     JLE 0x005095bb                      ; 005093e1
         ;   XREF to: 005095bb (CONDITIONAL_JUMP)  ; LAB_005095bb
     MOV ESI,EAX                         ; 005093e7
-    MOV EDX,dword ptr [0x00765a98]      ; 005093e9 | CDemonActorType_00765a60.name_hash
+    MOV EDX,dword ptr [0x00765a98]      ; 005093e9 | g_CCharacterActorType_00765a60.name_hash
         ;   Label: LAB_005093e9
     PUSH EDX                            ; 005093ef
     MOV ECX,dword ptr [ESI + 0x14cd70]  ; 005093f0
@@ -357,7 +357,7 @@ section .text
     PUSH EBX                            ; 005094a1
     CALL dword ptr [EDX + 0x100]        ; 005094a2
     ADD ESP,0x8                         ; 005094a8
-    MOV EAX,[0x01c78c78]                ; 005094ab | DAT_01c78c78
+    MOV EAX,[0x01c78c78]                ; 005094ab | g_CGlassActorType_01c78c40.name_hash
         ;   Label: LAB_005094ab
     PUSH EAX                            ; 005094b0
     MOV EDX,dword ptr [ESI + 0x14cd70]  ; 005094b1
@@ -384,8 +384,8 @@ section .text
     JZ 0x00509504                       ; 005094e7
         ;   XREF to: 00509504 (CONDITIONAL_JUMP)  ; LAB_00509504
     PUSH EBX                            ; 005094e9
-    CALL FUN_004aded0                   ; 005094ea
-        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; undefined FUN_004aded0()
+    CALL core_glass.cpp_FUN_004aded0    ; 005094ea
+        ;   XREF to: 004aded0 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004aded0()
     ADD ESP,0x4                         ; 005094ef
     TEST EAX,EAX                        ; 005094f2
     JZ 0x00509504                       ; 005094f4
@@ -393,10 +393,10 @@ section .text
     MOV EDX,dword ptr [ESP + 0x74]      ; 005094f6
     PUSH EDX                            ; 005094fa
     PUSH EBX                            ; 005094fb
-    CALL FUN_004ada20                   ; 005094fc
-        ;   XREF to: 004ada20 (UNCONDITIONAL_CALL)  ; undefined FUN_004ada20()
+    CALL core_glass.cpp_FUN_004ada20    ; 005094fc
+        ;   XREF to: 004ada20 (UNCONDITIONAL_CALL)  ; undefined core_glass.cpp_FUN_004ada20()
     ADD ESP,0x8                         ; 00509501
-    MOV ECX,dword ptr [0x02dd10bc]      ; 00509504 | DAT_02dd10bc
+    MOV ECX,dword ptr [0x02dd10bc]      ; 00509504 | g_CTriggerActorType_02dd1084.name_hash
         ;   Label: LAB_00509504
     PUSH ECX                            ; 0050950a
     MOV EBX,dword ptr [ESI + 0x14cd70]  ; 0050950b
@@ -435,7 +435,7 @@ section .text
     CALL core_trigger.cpp_CTrigger_applyDamage_FUN_005485e0 ; 0050955c
         ;   XREF to: 005485e0 (UNCONDITIONAL_CALL)  ; undefined core_trigger.cpp_CTrigger_applyDamage_FUN_005485e0()
     ADD ESP,0x8                         ; 00509561
-    MOV EBX,dword ptr [0x01c7068c]      ; 00509564 | DAT_01c7068c
+    MOV EBX,dword ptr [0x01c7068c]      ; 00509564 | g_CFlameCanActorType_01c70654.name_hash
         ;   Label: LAB_00509564
     PUSH EBX                            ; 0050956a
     MOV EAX,dword ptr [ESI + 0x14cd70]  ; 0050956b

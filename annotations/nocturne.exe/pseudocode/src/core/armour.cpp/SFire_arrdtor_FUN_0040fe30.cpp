@@ -9,6 +9,6 @@
 void __cdecl core_armour_cpp_SFire_arrdtor_FUN_0040fe30(uint param_1)
 
 {
-  __arrfini(param_1,0x32,&DAT_00599960);
+  __arrfini(param_1,0x32,&g_SFireTypeInfo_00599960);
   return;
 }

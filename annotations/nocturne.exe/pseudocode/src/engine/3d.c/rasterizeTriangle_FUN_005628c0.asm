@@ -38,8 +38,8 @@
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
 ;   engine_prim.c_prepareDepthBuffer_FUN_004f9870
 ;   engine_prim.c_replaceWWithDepth_FUN_004f99d0
-;   wincore_windll.cpp_drawPolygon_FUN_00532620
-;   wincore_windll.cpp_renderScanline_FUN_00530710
+;   engine_special.cpp_drawPolygon_FUN_00532620
+;   engine_special.cpp_renderScanline_FUN_00530710
 ;
 ; *****************************************************************************
 
@@ -317,8 +317,8 @@ section .text
     PUSH EAX                            ; 00562baa
     MOV EDX,dword ptr [ESP + 0x3c]      ; 00562bab
     PUSH EDX                            ; 00562baf
-    CALL wincore_windll.cpp_drawPolygon_FUN_00532620 ; 00562bb0
-        ;   XREF to: 00532620 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolygon_FUN_00532620()
+    CALL engine_special.cpp_drawPolygon_FUN_00532620 ; 00562bb0
+        ;   XREF to: 00532620 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon_FUN_00532620()
     ADD ESP,0xc                         ; 00562bb5
     MOV EBP,dword ptr [0x02de497c]      ; 00562bb8 | DAT_02de497c
     ADD ESP,0x20                        ; 00562bbe
@@ -491,8 +491,8 @@ section .text
         ;   Label: LAB_00562d4e
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00562d52
     MOV EBX,dword ptr [ESP + 0x14]      ; 00562d56
-    CALL wincore_windll.cpp_renderScanline_FUN_00530710 ; 00562d5a
-        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_renderScanline_FUN_00530710()
+    CALL engine_special.cpp_renderScanline_FUN_00530710 ; 00562d5a
+        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderScanline_FUN_00530710()
     CMP dword ptr [0x01b4d768],0x0      ; 00562d5f | DAT_01b4d768
     JNZ 0x00562b5e                      ; 00562d66
         ;   XREF to: 00562b5e (CONDITIONAL_JUMP)  ; LAB_00562b5e

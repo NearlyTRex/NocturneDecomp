@@ -47,12 +47,12 @@ void engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90(int *para
       if (param_1[1] == 0) {
         _DAT_01c039a0 = 0x90;
         _DAT_01c039a4 = 6;
-        _DAT_01c00c7c = FUN_00463c42;
+        _DAT_01c00c7c = core_dstrender_cpp_FUN_00463c42;
       }
       else {
         _DAT_01c039a0 = 0;
         _DAT_01c039a4 = 0;
-        _DAT_01c00c7c = FUN_00463ac7;
+        _DAT_01c00c7c = core_dstrender_cpp_FUN_00463ac7;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
                 (param_1,*(uint *)(param_2 + 4),&DAT_01b4d76c);

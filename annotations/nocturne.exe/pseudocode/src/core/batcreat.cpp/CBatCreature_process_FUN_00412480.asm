@@ -343,8 +343,8 @@ section .text
     PUSH EAX                            ; 0041272a
     MOV ESI,dword ptr [0x005b96c4]      ; 0041272b | INT_005b96c4
     PUSH ESI                            ; 00412731
-    CALL FUN_004b0480                   ; 00412732
-        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()
+    CALL core_gore.cpp_FUN_004b0480     ; 00412732
+        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004b0480()
     ADD ESP,0xc                         ; 00412737
     MOV dword ptr [EBX + 0xbc90],0x1    ; 0041273a
     JMP 0x0041257b                      ; 00412744

@@ -44,7 +44,7 @@ void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(int param_1,float param_2)
   if (0.0 < param_2) {
     return;
   }
-  FUN_004d9110(0x01CC9450,param_1,1);
+  core_mission_cpp_FUN_004d9110(0x01CC9450,param_1,1);
   (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_40);
   fStack_10 = fStack_34 - local_40;
   fStack_1c = fStack_10 * 0.5f;
@@ -55,6 +55,6 @@ void core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(int param_1,float param_2)
   fStack_28 = *(float *)(param_1 + 0x20) + fStack_1c;
   fStack_24 = *(float *)(param_1 + 0x24) + fStack_18;
   fStack_20 = *(float *)(param_1 + 0x28) + fStack_14;
-  FUN_0048c0d0(0x01C08D04,param_1 + 0x358,0x41800000,0x44bb8000,0x40800000);
+  core_fire_cpp_FUN_0048c0d0(0x01C08D04,param_1 + 0x358,0x41800000,0x44bb8000,0x40800000);
   return;
 }

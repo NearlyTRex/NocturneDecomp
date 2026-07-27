@@ -1,14 +1,14 @@
-// Name: FUN_00522480
+// Name: sound_sndmain.cpp_FUN_00522480
 // Address: 00522480
 // Address Range: [[00522480, 00522962]]
 // Convention: unknown
-// Signature: char * FUN_00522480(char *param_1)
+// Signature: char * sound_sndmain_cpp_FUN_00522480(char *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-char * FUN_00522480(char *param_1)
+char * sound_sndmain_cpp_FUN_00522480(char *param_1)
 
 {
   char cVar1;
@@ -92,9 +92,9 @@ LAB_005224ea:
   if (iVar6 == 0) {
     local_14 = engine_dosio_cpp_getFile_FUN_00456a60("sound",param_1,"rb");
     if (local_14 == 0) {
-      _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-      _DAT_01cc4804 = 0x300;
-      FUN_004c8440("Can't open %s",param_1);
+      PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+      INT_01cc4804 = 0x300;
+      core_main_c_FUN_004c8440("Can't open %s",param_1);
     }
     uVar3 = _ftell(local_14);
     *(uint *)(pcVar5 + 0x148) = uVar3;
@@ -144,9 +144,9 @@ LAB_005224ea:
   else {
     iVar6 = _stricmp(&local_114,"mp3");
     if (iVar6 != 0) {
-      _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-      _DAT_01cc4804 = 0x37d;
-      FUN_004c8440("Unknown sample file format extension: %s",param_1);
+      PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+      INT_01cc4804 = 0x37d;
+      core_main_c_FUN_004c8440("Unknown sample file format extension: %s",param_1);
       return pcVar5;
     }
     sound_mp3_cpp_CMP3Decoder_openFile_FUN_004e7df0(0x2da8ae0,param_1);
@@ -163,9 +163,9 @@ LAB_005224ea:
     *(uint *)(pcVar5 + 0x10c) = uVar3;
     sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(pcVar5);
     if (*(int *)(pcVar5 + 0x110) < 0) {
-      _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-      _DAT_01cc4804 = 0x34f;
-      FUN_004c8440("Don't know length of sample %s",param_1);
+      PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+      INT_01cc4804 = 0x34f;
+      core_main_c_FUN_004c8440("Don't know length of sample %s",param_1);
     }
     pcVar5[0x128] = '\0';
     pcVar5[0x129] = '\0';
@@ -204,7 +204,7 @@ LAB_005224ea:
       pcVar10 = "Error decoding file data from %s\n";
     }
   }
-  FUN_00529980(pcVar10,param_1);
+  sound_sndmain_cpp_FUN_00529980(pcVar10,param_1);
 LAB_005226f8:
   sound_mp3_cpp_CMP3Decoder_free_FUN_004e8260(0x2da8ae0);
   sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(pcVar5);

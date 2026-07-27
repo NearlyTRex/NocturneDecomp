@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_00495a20 at 00495ac0
+;   core_gabriela.cpp_FUN_00495a20 at 00495ac0
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004973b4 = 00497448
@@ -30,8 +30,8 @@
 ;   double DOUBLE_005820e2 = 0.200000000000000
 ;   double DOUBLE_005820ea = 0.400000000000000
 ;   int INT_005b96c4 = 0x1c78c7c
-;   undefined4 CDemonActorType_00764a9c.name_hash
-;   undefined4 DAT_01bcdef4
+;   undefined4 g_CLightActorActorType_00764a9c.name_hash
+;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
 ;   undefined4 DAT_01c713b4
 ;   undefined4 DAT_01c713b8
 ;   undefined4 DAT_01c713c8
@@ -47,11 +47,11 @@
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004b5c70
 ;   core_hero.cpp_CHero_executeObjectPickup_FUN_004b5c30
+;   core_hero.cpp_FUN_004b5270
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
-;   crt_math.c_round_FUN_00563a30
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -132,7 +132,7 @@ section .text
     POP ESI                             ; 004974bb
     POP EBX                             ; 004974bc
     RET                                 ; 004974bd
-    MOV EDI,dword ptr [0x00764ad4]      ; 004974be | CDemonActorType_00764a9c.name_hash
+    MOV EDI,dword ptr [0x00764ad4]      ; 004974be | g_CLightActorActorType_00764a9c.name_hash
         ;   Label: caseD_2
     PUSH EDI                            ; 004974c4
     MOV EAX,dword ptr [EBX + 0x1fa08]   ; 004974c5
@@ -260,7 +260,7 @@ section .text
     ADD ESP,0xc                         ; 00497618
     JMP 0x004974a7                      ; 0049761b
         ;   XREF to: 004974a7 (UNCONDITIONAL_JUMP)  ; caseD_12
-    MOV ECX,dword ptr [0x01bcdef4]      ; 00497620 | DAT_01bcdef4
+    MOV ECX,dword ptr [0x01bcdef4]      ; 00497620 | g_CEnemyActorType_01bcdebc.name_hash
         ;   Label: caseD_6
     PUSH ECX                            ; 00497626
     MOV EDI,dword ptr [EBX + 0x2590]    ; 00497627
@@ -412,8 +412,8 @@ section .text
         ;   XREF to: 004974a7 (UNCONDITIONAL_JUMP)  ; caseD_12
     PUSH EBX                            ; 004977db
         ;   Label: caseD_16
-    CALL FUN_004b5270                   ; 004977dc
-        ;   XREF to: 004b5270 (UNCONDITIONAL_CALL)  ; undefined FUN_004b5270()
+    CALL core_hero.cpp_FUN_004b5270     ; 004977dc
+        ;   XREF to: 004b5270 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b5270()
     ADD ESP,0x4                         ; 004977e1
     TEST EAX,EAX                        ; 004977e4
     JNZ 0x004974a7                      ; 004977e6

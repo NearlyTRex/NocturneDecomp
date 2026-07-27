@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0046c100(int param_1,undefined4 param_2)
+; void core_dtrace_cpp_FUN_0046c100(int param_1,undefined4 param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x40]:4  local_40
@@ -14,28 +14,28 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   FUN_0046bd90 at 0046bf96
+;   core_dtrace.cpp_FUN_0046bd90 at 0046bf96
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_0057e402
 ;   TerminatedCString s_Parity_Check_999_0057e415
 ;   undefined1 DAT_005b6d08
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_dcube.cpp_FUN_0044ac30
 ;   core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
-;   FUN_0044ac30
-;   FUN_0046b650
-;   FUN_004c8440
+;   core_dtrace.cpp_FUN_0046b650
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0046c100
-        ;   Label: FUN_0046c100
+        ;   Label: core_dtrace.cpp_FUN_0046c100
     PUSH ESI                            ; 0046c101
     PUSH EDI                            ; 0046c102
     PUSH EBP                            ; 0046c103
@@ -46,8 +46,8 @@ section .text
     PUSH EBX                            ; 0046c110
     LEA ESI,[ESP + 0x20]                ; 0046c111
     LEA EDI,[ESP + 0x14]                ; 0046c115
-    CALL FUN_0046b650                   ; 0046c119
-        ;   XREF to: 0046b650 (UNCONDITIONAL_CALL)  ; undefined FUN_0046b650()
+    CALL core_dtrace.cpp_FUN_0046b650   ; 0046c119
+        ;   XREF to: 0046b650 (UNCONDITIONAL_CALL)  ; undefined core_dtrace.cpp_FUN_0046b650()
     LEA ESI,[ESP + 0x20]                ; 0046c11e
     ADD ESP,0x8                         ; 0046c122
     MOVSD ES:EDI,ESI                    ; 0046c125
@@ -127,18 +127,18 @@ section .text
     MOV EDX,0x57e402                    ; 0046c1c2 | = "..\\core\\dtrace.cpp"
     MOV ECX,0xb55                       ; 0046c1c7
     PUSH 0x57e415                       ; 0046c1cc | = "Parity Check 999"
-    MOV dword ptr [0x01cc4800],EDX      ; 0046c1d1 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0046c1d7 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0046c1dd
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0046c1d1 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0046c1d7 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0046c1dd
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0046c1e2
     CMP dword ptr [EBX],0x0             ; 0046c1e5
         ;   Label: LAB_0046c1e5
     JNZ 0x0046c1f3                      ; 0046c1e8
         ;   XREF to: 0046c1f3 (CONDITIONAL_JUMP)  ; LAB_0046c1f3
     PUSH EBX                            ; 0046c1ea
-    CALL FUN_0044ac30                   ; 0046c1eb
-        ;   XREF to: 0044ac30 (UNCONDITIONAL_CALL)  ; undefined FUN_0044ac30()
+    CALL core_dcube.cpp_FUN_0044ac30    ; 0046c1eb
+        ;   XREF to: 0044ac30 (UNCONDITIONAL_CALL)  ; undefined core_dcube.cpp_FUN_0044ac30()
     ADD ESP,0x4                         ; 0046c1f0
     MOV EAX,dword ptr [ESP + 0x8]       ; 0046c1f3
         ;   Label: LAB_0046c1f3

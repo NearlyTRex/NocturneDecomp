@@ -9,6 +9,6 @@
 void __cdecl shape_edittool_cpp_CEditorTools_showCheatInputDialog_FUN_00471630(uint param_1,uint param_2,uint param_3,uint param_4,uint param_5)
 
 {
-  FUN_0046f7e0(param_2,param_3,param_4,param_5,1);
+  shape_edittool_cpp_FUN_0046f7e0(param_2,param_3,param_4,param_5,1);
   return;
 }

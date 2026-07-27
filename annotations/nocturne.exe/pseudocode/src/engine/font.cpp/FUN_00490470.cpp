@@ -1,14 +1,12 @@
-// Name: FUN_00490470
+// Name: engine_font.cpp_FUN_00490470
 // Address: 00490470
 // Address Range: [[00490470, 00490916]]
 // Convention: unknown
-// Signature: void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
+// Signature: void engine_font_cpp_FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
+void engine_font_cpp_FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   int iVar1;
@@ -34,9 +32,9 @@ void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
   
   local_40 = (int *)shape_memdbg_cpp_malloc_FUN_00564c18(param_4 * 4);
   if (local_40 == (int *)0x0) {
-    _DAT_01cc4800 = "..\\engine\\font.cpp";
-    _DAT_01cc4804 = 0x1b9;
-    FUN_004c8440("Out of memory");
+    PTR_01cc4800 = "..\\engine\\font.cpp";
+    INT_01cc4804 = 0x1b9;
+    core_main_c_FUN_004c8440("Out of memory");
   }
   iVar3 = 0;
   pbVar4 = *(byte **)(param_1 + 0x144 + param_2 * 4);
@@ -52,9 +50,9 @@ void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
   }
   if (local_20 == *(uint *)(param_1 + 0x3188)) {
     _sprintf(local_16c,"No character markers found in font file (%s).",param_2 * 0x50 + param_1 + 4);
-    _DAT_01cc4804 = 0x1ce;
-    _DAT_01cc4800 = "..\\engine\\font.cpp";
-    FUN_004c8440(local_16c);
+    INT_01cc4804 = 0x1ce;
+    PTR_01cc4800 = "..\\engine\\font.cpp";
+    core_main_c_FUN_004c8440(local_16c);
   }
   iVar3 = 0;
   pbVar4 = *(byte **)(param_1 + 0x144 + param_2 * 4);
@@ -100,9 +98,9 @@ void FUN_00490470(int param_1,int param_2,int param_3,int param_4,int param_5)
             local_28 = iVar6;
             if (0xff < iVar3) {
               _sprintf(local_16c,"Too many chars: fontfile %s, chars %d",local_2c,iVar3);
-              _DAT_01cc4804 = 0x202;
-              _DAT_01cc4800 = "..\\engine\\font.cpp";
-              FUN_004c8440(local_16c);
+              INT_01cc4804 = 0x202;
+              PTR_01cc4800 = "..\\engine\\font.cpp";
+              core_main_c_FUN_004c8440(local_16c);
             }
             *(byte **)(iVar5 + 0x1d68) = local_1c;
           }

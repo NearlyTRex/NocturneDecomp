@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_004b49a0 at 004b4a33
-;   FUN_004eed10 at 004eed20
 ;   core_enemy.cpp_CEnemy_archive_FUN_004796c0 at 00479731
+;   core_hero.cpp_FUN_004b49a0 at 004b4a33
+;   core_npc.cpp_FUN_004eed10 at 004eed20
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hitPoints_00579e21
@@ -61,7 +61,7 @@ section .text
     PUSH EAX                            ; 004244cf
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004244d0
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
-    MOV EDX,dword ptr [0x005ad1e8]      ; 004244d5 | INT_005ad1e8
+    MOV EDX,dword ptr [0x005ad1e8]      ; 004244d5 | g_INT_005ad1e8
     ADD ESP,0x8                         ; 004244db
     CMP EDX,0x2                         ; 004244de
     JL 0x00424560                       ; 004244e1
@@ -108,7 +108,7 @@ section .text
     JL 0x0042453f                       ; 0042455b
         ;   XREF to: 0042453f (CONDITIONAL_JUMP)  ; LAB_0042453f
     LEA EAX,[EAX]                       ; 0042455d
-    CMP dword ptr [0x005ad1e8],0x3      ; 00424560 | INT_005ad1e8
+    CMP dword ptr [0x005ad1e8],0x3      ; 00424560 | g_INT_005ad1e8
         ;   Label: LAB_00424560
     JL 0x0042457d                       ; 00424567
         ;   XREF to: 0042457d (CONDITIONAL_JUMP)  ; LAB_0042457d
@@ -118,7 +118,7 @@ section .text
     CALL core_actor.cpp_archiveString_FUN_0040c6d0 ; 00424575
         ;   XREF to: 0040c6d0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveString_FUN_0040c6d0()
     ADD ESP,0x8                         ; 0042457a
-    CMP dword ptr [0x005ad1e8],0x4      ; 0042457d | INT_005ad1e8
+    CMP dword ptr [0x005ad1e8],0x4      ; 0042457d | g_INT_005ad1e8
         ;   Label: LAB_0042457d
     JL 0x004245c2                       ; 00424584
         ;   XREF to: 004245c2 (CONDITIONAL_JUMP)  ; LAB_004245c2
@@ -140,7 +140,7 @@ section .text
     CALL core_actor.cpp_archiveClothList_FUN_0040cf70 ; 004245ba
         ;   XREF to: 0040cf70 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveClothList_FUN_0040cf70()
     ADD ESP,0x8                         ; 004245bf
-    CMP dword ptr [0x005ad1e8],0x5      ; 004245c2 | INT_005ad1e8
+    CMP dword ptr [0x005ad1e8],0x5      ; 004245c2 | g_INT_005ad1e8
         ;   Label: LAB_004245c2
     JL 0x004245df                       ; 004245c9
         ;   XREF to: 004245df (CONDITIONAL_JUMP)  ; LAB_004245df
@@ -150,7 +150,7 @@ section .text
     CALL core_actor.cpp_archiveFloat_FUN_0040c880 ; 004245d7
         ;   XREF to: 0040c880 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveFloat_FUN_0040c880()
     ADD ESP,0x8                         ; 004245dc
-    CMP dword ptr [0x005ad1e8],0x6      ; 004245df | INT_005ad1e8
+    CMP dword ptr [0x005ad1e8],0x6      ; 004245df | g_INT_005ad1e8
         ;   Label: LAB_004245df
     JGE 0x00424695                      ; 004245e6
         ;   XREF to: 00424695 (CONDITIONAL_JUMP)  ; LAB_00424695

@@ -12,7 +12,7 @@ int __cdecl core_actor_cpp_CDemonActor_dtor_FUN_00409ea0(int param_1,uint param_
   uint uVar1;
   
   if ((param_2 & 4) != 0) {
-    uVar1 = __vec_delete(param_1,&DAT_005993d0);
+    uVar1 = __vec_delete(param_1,&g_CDemonActorTypeInfo_005993d0);
     shape_memdbg_cpp_free_FUN_00564486(uVar1);
     return param_1;
   }

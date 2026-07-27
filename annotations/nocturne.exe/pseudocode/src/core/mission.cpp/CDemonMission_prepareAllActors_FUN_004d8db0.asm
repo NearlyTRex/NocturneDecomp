@@ -7,10 +7,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   FUN_004d8720 at 004d8749
-;   FUN_004d93d0 at 004d9415
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004d9020 at 004d908f
 ;   core_mission.cpp_CDemonMission_startMission_FUN_004d9780 at 004d97a9
+;   core_mission.cpp_FUN_004d8720 at 004d8749
+;   core_mission.cpp_FUN_004d93d0 at 004d9415
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Setting_up_actors_00589c5c

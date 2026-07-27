@@ -81,7 +81,7 @@
 ;   double DOUBLE_00578c8f = 32
 ;   double DOUBLE_00578c97 = 5
 ;   float FLOAT_0059a14c = 3.5
-;   undefined4 DAT_0059a158
+;   float FLOAT_0059a158 = 1
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   ... and 12 more
 ;
@@ -341,13 +341,13 @@ section .text
         ;   Label: caseD_1
     FADD float ptr [EBP + 0x92]         ; 00413aa2
     FST float ptr [EBX + 0xbdc4]        ; 00413aa8
-    FCOMP float ptr [0x0059a158]        ; 00413aae | DAT_0059a158
+    FCOMP float ptr [0x0059a158]        ; 00413aae | FLOAT_0059a158
     FNSTSW AX                           ; 00413ab4
     SAHF                                ; 00413ab6
     JBE 0x00413ace                      ; 00413ab7
         ;   XREF to: 00413ace (CONDITIONAL_JUMP)  ; LAB_00413ace
     MOV dword ptr [EBX + 0xbdc0],0x2    ; 00413ab9
-    MOV EAX,[0x0059a158]                ; 00413ac3 | DAT_0059a158
+    MOV EAX,[0x0059a158]                ; 00413ac3 | FLOAT_0059a158
     MOV dword ptr [EBX + 0xbdc4],EAX    ; 00413ac8
     MOV ECX,0x40400000                  ; 00413ace
         ;   Label: LAB_00413ace
@@ -466,7 +466,7 @@ section .text
         ;   Label: LAB_00413bf6
     JZ 0x00413900                       ; 00413bfa
         ;   XREF to: 00413900 (CONDITIONAL_JUMP)  ; caseD_c
-    FLD float ptr [0x0059a158]          ; 00413c00 | DAT_0059a158
+    FLD float ptr [0x0059a158]          ; 00413c00 | FLOAT_0059a158
     MOV dword ptr [EBX + 0xbdc0],0x3    ; 00413c06
     LEA EAX,[EBX + 0x20]                ; 00413c10
     FSTP float ptr [EBX + 0xbdc4]       ; 00413c13
@@ -629,8 +629,8 @@ section .text
     PUSH EAX                            ; 00413dc4
     MOV EDI,dword ptr [0x005b96c4]      ; 00413dc5 | INT_005b96c4
     PUSH EDI                            ; 00413dcb
-    CALL FUN_004b0480                   ; 00413dcc
-        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()
+    CALL core_gore.cpp_FUN_004b0480     ; 00413dcc
+        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004b0480()
     ADD ESP,0xc                         ; 00413dd1
     MOV dword ptr [EBX + 0xbc90],0x1    ; 00413dd4
     JMP 0x00413900                      ; 00413dde
@@ -874,7 +874,7 @@ section .text
     CMP ESI,dword ptr [EAX + 0x150bf4]  ; 0041406f | DAT_01fa7e78
     JGE 0x004140a1                      ; 00414075
         ;   XREF to: 004140a1 (CONDITIONAL_JUMP)  ; LAB_004140a1
-    MOV EDX,dword ptr [0x00764670]      ; 00414077 | CDemonActorType_00764638.name_hash
+    MOV EDX,dword ptr [0x00764670]      ; 00414077 | g_CBatmanActorType_00764638.name_hash
     PUSH EDX                            ; 0041407d
     MOV ECX,dword ptr [EDI + EAX*0x1 + 0x150bf8] ; 0041407e
     PUSH ECX                            ; 00414085

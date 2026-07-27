@@ -20,9 +20,9 @@ void engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(int param_1,i
   if (*(int *)(param_1 + 0x1c) != 0) {
     _DAT_01b4d7b0 = _DAT_01b4d7b0 + 1;
     if (100 < _DAT_01b4d7b0) {
-      _DAT_01cc4800 = "..\\engine\\drender.cpp";
-      _DAT_01cc4804 = 0xafc;
-      FUN_004c8440("CDR::texture - Too many captured textures");
+      PTR_01cc4800 = "..\\engine\\drender.cpp";
+      INT_01cc4804 = 0xafc;
+      core_main_c_FUN_004c8440("CDR::texture - Too many captured textures");
     }
     iVar2 = _DAT_01b4d7b0 * 0x48;
     *(uint *)(iVar2 + 0x1b796d8) = *(uint *)(param_2 + 4);

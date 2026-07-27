@@ -1,14 +1,12 @@
-// Name: FUN_00499ca0
+// Name: core_gabriela.cpp_FUN_00499ca0
 // Address: 00499ca0
 // Address Range: [[00499ca0, 0049a109]]
 // Convention: unknown
-// Signature: void FUN_00499ca0(int param_1,float param_2)
+// Signature: void core_gabriela_cpp_FUN_00499ca0(int param_1,float param_2)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00499ca0(int param_1,float param_2)
+void core_gabriela_cpp_FUN_00499ca0(int param_1,float param_2)
 
 {
   int iVar1;
@@ -68,7 +66,8 @@ void FUN_00499ca0(int param_1,float param_2)
   local_14 = 0.0;
   local_18 = 0.0;
   local_1c = 0.0;
-  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar4,CDemonActorType_00764a9c.name_hash);
+  iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
+                    (iVar4,g_CLightActorActorType_00764a9c.name_hash);
   if (iVar1 == 0) goto LAB_00499d1a;
   (**(code **)(*(int *)(iVar4 + 0x14c) + 0x14))(iVar4,&local_a0);
   fStack_28 = local_a0 + fStack_94;
@@ -92,9 +91,9 @@ void FUN_00499ca0(int param_1,float param_2)
       local_18 = fStack_90;
     }
     else {
-      _DAT_01cc4800 = "..\\core\\gabriela.cpp";
-      _DAT_01cc4804 = 0x945;
-      FUN_004c8440("Don't know how to carry light %s",iVar1);
+      PTR_01cc4800 = "..\\core\\gabriela.cpp";
+      INT_01cc4804 = 0x945;
+      core_main_c_FUN_004c8440("Don't know how to carry light %s",iVar1);
     }
     goto LAB_00499d1a;
   }

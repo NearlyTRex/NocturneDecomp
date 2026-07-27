@@ -3,6 +3,14 @@
 // Function prototypes for core/dmodel.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_dmodel.cpp_staticInit_FUN_00452530
+// Address: 00452530
+void __cdecl staticInit(void);
+
+// Original: core_dmodel.cpp_FUN_00452560
+// Address: 00452560
+void FUN_00452560(undefined4 param_1,int param_2);
+
 // Original: core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00452590
 // Address: 00452590
 void __cdecl CKeyFramedModel::ctor(undefined1 *param_1);
@@ -110,3 +118,15 @@ undefined4 __cdecl CKeyFramedModelInstance::getModelPtr(int param_1);
 // Original: core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
 // Address: 00454580
 void __cdecl CKeyFramedModelInstance::setModelName(int param_1,char *param_2);
+
+// Original: core_dmodel.cpp_FUN_004545c0
+// Address: 004545c0
+undefined4 FUN_004545c0(undefined4 param_1);
+
+// Original: core_dmodel.cpp_FUN_004545d0
+// Address: 004545d0
+undefined4 FUN_004545d0(undefined4 param_1);
+
+// Original: core_dmodel.cpp_FUN_004545e0
+// Address: 004545e0
+void FUN_004545e0(undefined4 param_1);

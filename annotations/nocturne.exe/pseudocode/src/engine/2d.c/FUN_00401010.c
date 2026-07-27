@@ -1,14 +1,14 @@
-// Name: FUN_00401010
+// Name: engine_2d.c_FUN_00401010
 // Address: 00401010
 // Address Range: [[00401010, 0040129a]]
 // Convention: unknown
-// Signature: void FUN_00401010(void)
+// Signature: void engine_2d_c_FUN_00401010(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00401010(void)
+void engine_2d_c_FUN_00401010(void)
 
 {
   int iVar1;
@@ -20,11 +20,11 @@ void FUN_00401010(void)
   int iVar7;
   uint uVar8;
   
-  iVar3 = FUN_00552b40(DAT_005b761c,DAT_005b7620);
+  iVar3 = wincore_wddvmem_cpp_FUN_00552b40(DAT_005b761c,DAT_005b7620);
   if (iVar3 == 0) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0x84;
-    FUN_004c8440("No room for frame buffer.  Please run SETUP");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0x84;
+    core_main_c_FUN_004c8440("No room for frame buffer.  Please run SETUP");
   }
   wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00
             (*(uint *)(&DAT_005aca6c + DAT_006af628 * 8),
@@ -37,9 +37,9 @@ void FUN_00401010(void)
   iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
                     ("startup","font.ndx","rb");
   if (iVar3 == 0) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0xa1;
-    FUN_004c8440("Unable to open font.ndx");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0xa1;
+    core_main_c_FUN_004c8440("Unable to open font.ndx");
   }
   puVar5 = &DAT_006afabc;
   do {
@@ -51,16 +51,16 @@ void FUN_00401010(void)
   uVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0("startup","font.bin");
   DAT_006afa38 = malloc(uVar4);
   if (DAT_006afa38 == 0) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0xaa;
-    FUN_004c8440("Unable to malloc font memory");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0xaa;
+    core_main_c_FUN_004c8440("Unable to malloc font memory");
   }
   iVar3 = engine_dosio_cpp_getFile_FUN_00456a60
                     ("startup","font.bin","rb");
   if (iVar3 == 0) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0xac;
-    FUN_004c8440("Unable to open font.bin");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0xac;
+    core_main_c_FUN_004c8440("Unable to open font.bin");
   }
   _fread(DAT_006afa38,uVar4,1,iVar3);
   _fclose(iVar3);

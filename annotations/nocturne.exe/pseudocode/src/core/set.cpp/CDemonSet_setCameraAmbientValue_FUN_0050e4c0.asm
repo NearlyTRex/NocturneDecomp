@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0049f930 at 004a023a
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50 at 0047c6f5
+;   core_game.cpp_FUN_0049f930 at 004a023a
 ;   core_set.cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_0050e510 at 0050e546
 ;
 ; Called Functions:

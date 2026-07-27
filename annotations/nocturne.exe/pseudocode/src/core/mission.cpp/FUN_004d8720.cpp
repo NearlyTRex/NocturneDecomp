@@ -1,14 +1,12 @@
-// Name: FUN_004d8720
+// Name: core_mission.cpp_FUN_004d8720
 // Address: 004d8720
 // Address Range: [[004d8720, 004d8a9f]]
 // Convention: unknown
-// Signature: void FUN_004d8720(int param_1,undefined4 param_2)
+// Signature: void core_mission_cpp_FUN_004d8720(int param_1,undefined4 param_2)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_004d8720(int param_1,uint param_2)
+void core_mission_cpp_FUN_004d8720(int param_1,uint param_2)
 
 {
   int *piVar1;
@@ -58,7 +56,7 @@ void FUN_004d8720(int param_1,uint param_2)
   iVar5 = 0;
   _fprintf(param_2,"// inventory actor count\n");
   for (iVar4 = *(int *)(param_1 + 0x514); iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x144)) {
-    iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar4,_DAT_01cae124);
+    iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar4,g_CHeroActorType_01cae0ec.name_hash);
     if (iVar3 != 0) {
       iVar5 = iVar5 + *(int *)(iVar3 + 0x1f5a8);
     }
@@ -71,22 +69,22 @@ void FUN_004d8720(int param_1,uint param_2)
     uVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(iVar4,iVar4);
     _fprintf(param_2,"%s \"%s\"\n",uVar2);
     if (1999 < *(int *)(param_1 + 0x858)) {
-      _DAT_01cc4800 = "..\\core\\mission.cpp";
-      _DAT_01cc4804 = 0x1e9;
-      FUN_004c8440("Too many actors");
+      PTR_01cc4800 = "..\\core\\mission.cpp";
+      INT_01cc4804 = 0x1e9;
+      core_main_c_FUN_004c8440("Too many actors");
     }
     *(int *)(param_1 + 0x85c + *(int *)(param_1 + 0x858) * 4) = iVar4;
     *(int *)(param_1 + 0x858) = *(int *)(param_1 + 0x858) + 1;
   }
   for (iVar4 = *(int *)(param_1 + 0x514); iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x144)) {
-    iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar4,_DAT_01cae124);
+    iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar4,g_CHeroActorType_01cae0ec.name_hash);
     if (iVar5 != 0) {
       iVar3 = iVar5 + 0x1f5a0;
       for (iVar6 = 0; iVar6 < *(int *)(iVar5 + 0x1f5a8); iVar6 = iVar6 + 1) {
         if (1999 < *(int *)(param_1 + 0x858)) {
-          _DAT_01cc4800 = "..\\core\\mission.cpp";
-          _DAT_01cc4804 = 500;
-          FUN_004c8440("Too many actors");
+          PTR_01cc4800 = "..\\core\\mission.cpp";
+          INT_01cc4804 = 500;
+          core_main_c_FUN_004c8440("Too many actors");
         }
         *(uint *)(param_1 + 0x85c + *(int *)(param_1 + 0x858) * 4) =
              *(uint *)(iVar3 + 0xc);

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004a5740(int param_1,char *param_2,uint param_3,uint param_4)
 
 {
@@ -15,9 +13,9 @@ void __cdecl core_game_cpp_CGame_displayBitmap_FUN_004a5740(int param_1,char *pa
   char *pcVar2;
   
   if (*(char *)(param_1 + 0x8b4) != '\0') {
-    _DAT_01cc4800 = "..\\core\\game.cpp";
-    _DAT_01cc4804 = 0xfcf;
-    FUN_004c8440("CGame::displayBitmap - tried to queue %s, but %s already queued!",param_2,param_1 + 0x8b4);
+    PTR_01cc4800 = "..\\core\\game.cpp";
+    INT_01cc4804 = 0xfcf;
+    core_main_c_FUN_004c8440("CGame::displayBitmap - tried to queue %s, but %s already queued!",param_2,param_1 + 0x8b4);
   }
   pcVar2 = (char *)(param_1 + 0x8b4);
   do {

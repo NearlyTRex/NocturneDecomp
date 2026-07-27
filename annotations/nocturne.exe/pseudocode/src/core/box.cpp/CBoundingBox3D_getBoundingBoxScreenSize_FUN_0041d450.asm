@@ -30,7 +30,7 @@
 ;   undefined4 DAT_01c00c4c
 ;
 ; Called Functions:
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -85,8 +85,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0041d4d7 | DAT_01b4d738
     ADD EAX,0xea5d0                     ; 0041d4d9
     PUSH EAX                            ; 0041d4de
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0041d4df
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0041d4df
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV EAX,[0x005ae704]                ; 0041d4e4 | DAT_005ae704
     MOV EAX,dword ptr [EAX]             ; 0041d4e9 | DAT_01b4d738
     MOV EAX,dword ptr [EAX + 0xea5d8]   ; 0041d4eb

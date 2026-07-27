@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_0045ab40 at 0045afb3
-;   FUN_004c79a0 at 004c7c11
+;   core_dracbrid.cpp_FUN_0045ab40 at 0045afb3
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30 at 00494e62
+;   core_lightgun.cpp_FUN_004c79a0 at 004c7c11
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0 at 004cb6f7
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740 at 004cb7ad
 ;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d316

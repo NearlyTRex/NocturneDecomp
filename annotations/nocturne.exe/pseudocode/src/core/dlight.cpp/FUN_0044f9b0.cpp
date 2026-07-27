@@ -103,7 +103,7 @@ void core_dlight_cpp_FUN_0044f9b0(int param_1)
       local_2c = (float)local_24 * (float)local_24;
       if (local_28 <= local_2c) {
         local_148 = 1.0 - local_28 / local_2c;
-        FUN_00460d10(DAT_005ae704);
+        engine_drender_cpp_FUN_00460d10(DAT_005ae704);
         local_a4 = local_ec;
         (&local_a0)[(uint)bVar4 * -2] = (&iStack_e8)[(uint)bVar4 * -2];
         local_9c[(uint)bVar4 * -2 + (uint)bVar4 * -2] =
@@ -171,24 +171,24 @@ void core_dlight_cpp_FUN_0044f9b0(int param_1)
               local_d8 = (int)ROUND(local_140 * _DAT_0059c030);
               local_d4 = (int)ROUND(local_140 * _DAT_0059c030);
               local_d0 = (int)ROUND(_DAT_0059c030 * 0.0);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_d8);
+              engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_d8);
               local_9c[0] = -local_9c[0];
               local_60 = (int)ROUND(local_9c[0] * _DAT_0059c030);
               local_5c = (int)ROUND(local_9c[1] * _DAT_0059c030);
               local_58 = (int)ROUND(local_9c[2] * _DAT_0059c030);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c
+              engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (*DAT_005ae704 + 0x30,&local_60);
               local_9c[1] = -local_9c[1];
               local_54 = (int)ROUND(local_9c[0] * _DAT_0059c030);
               local_50 = (int)ROUND(local_9c[1] * _DAT_0059c030);
               local_4c = (int)ROUND(local_9c[2] * _DAT_0059c030);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c
+              engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (*DAT_005ae704 + 0x60,&local_54);
               local_9c[0] = -local_9c[0];
               iStack_c0 = (int)ROUND(local_9c[0] * _DAT_0059c030);
               local_bc = (int)ROUND(local_9c[1] * _DAT_0059c030);
               local_b8 = (int)ROUND(local_9c[2] * _DAT_0059c030);
-              wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c
+              engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                         (*DAT_005ae704 + 0x90,&iStack_c0);
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0(DAT_005ae704,puVar3);
               piVar7 = DAT_005ae704;

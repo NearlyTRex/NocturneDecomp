@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x24]:4  local_24
 ;
 ; XREF[1]:
-;   FUN_00535900 at 00536483
+;   core_stranger.cpp_FUN_00535900 at 00536483
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00595cb7 = 3.14159265350000
@@ -21,11 +21,11 @@
 ;   double DOUBLE_00595cdf = 0.0100000000000000
 ;   double DOUBLE_00595ce7 = 30
 ;   double DOUBLE_00595cef = 10
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   float FLOAT_005a2730 = -1.047198
 ;   float FLOAT_005a2734 = 1.221730
 ;   undefined4 DAT_005be368
-;   undefined4 CDemonActorType_00765a60.name_hash
+;   undefined4 g_CCharacterActorType_00765a60.name_hash
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa9dbc
 ;   ... and 4 more
@@ -296,7 +296,7 @@ section .text
     JGE 0x0053e101                      ; 0053dc8b
         ;   XREF to: 0053e101 (CONDITIONAL_JUMP)  ; LAB_0053e101
     MOV ESI,dword ptr [ESP + 0x17c]     ; 0053dc91
-    MOV EBX,dword ptr [0x00765a98]      ; 0053dc98 | CDemonActorType_00765a60.name_hash
+    MOV EBX,dword ptr [0x00765a98]      ; 0053dc98 | g_CCharacterActorType_00765a60.name_hash
     ADD EAX,ESI                         ; 0053dc9e
     PUSH EBX                            ; 0053dca0
     MOV EDI,dword ptr [EAX + 0x152b3c]  ; 0053dca1
@@ -408,7 +408,7 @@ section .text
         ;   Label: LAB_0053de02
     MOV EAX,[0x005be368]                ; 0053de09 | DAT_005be368
     ADD EAX,EDX                         ; 0053de0e
-    PUSH 0x5993b0                       ; 0053de10 | DAT_005993b0
+    PUSH 0x5993b0                       ; 0053de10 | g_CVectorTypeInfo_005993b0
     MOV EAX,dword ptr [EAX + 0x152b3c]  ; 0053de15
     PUSH 0xa                            ; 0053de1b
     MOV dword ptr [ESP + 0x1a4],EAX     ; 0053de1d

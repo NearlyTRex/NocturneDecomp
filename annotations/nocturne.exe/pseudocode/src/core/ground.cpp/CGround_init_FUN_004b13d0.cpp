@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_ground_cpp_CGround_init_FUN_004b13d0(int *param_1)
 
 {
@@ -18,9 +16,9 @@ void __cdecl core_ground_cpp_CGround_init_FUN_004b13d0(int *param_1)
   iVar1 = malloc(*param_1 * param_1[1] * 4);
   param_1[9] = iVar1;
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "..\\core\\ground.cpp";
-    _DAT_01cc4804 = 0xd3;
-    FUN_004c8440("CGround::init - Out of memory");
+    PTR_01cc4800 = "..\\core\\ground.cpp";
+    INT_01cc4804 = 0xd3;
+    core_main_c_FUN_004c8440("CGround::init - Out of memory");
   }
   iVar2 = FUN_0056497c(0x6d64);
   iVar1 = 0;
@@ -31,8 +29,8 @@ void __cdecl core_ground_cpp_CGround_init_FUN_004b13d0(int *param_1)
   if (iVar1 != 0) {
     return;
   }
-  _DAT_01cc4800 = "..\\core\\ground.cpp";
-  _DAT_01cc4804 = 0xd8;
-  FUN_004c8440("CGround::init - Out of memory2");
+  PTR_01cc4800 = "..\\core\\ground.cpp";
+  INT_01cc4804 = 0xd8;
+  core_main_c_FUN_004c8440("CGround::init - Out of memory2");
   return;
 }

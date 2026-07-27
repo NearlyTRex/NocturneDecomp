@@ -36,9 +36,9 @@ uint __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(int param_1
   else {
     _DAT_01cae0d4 = 0x01CEA280[7];
     if (3 < _DAT_01cae0d4) {
-      _DAT_01cc4800 = "..\\core\\mission.cpp";
-      _DAT_01cc4804 = 0x63b;
-      FUN_004c8440("CDemonMission::createHeros - too many network players for MAX_HERO");
+      PTR_01cc4800 = "..\\core\\mission.cpp";
+      INT_01cc4804 = 0x63b;
+      core_main_c_FUN_004c8440("CDemonMission::createHeros - too many network players for MAX_HERO");
     }
     iVar4 = 0;
     if (0 < _DAT_01cae0d4) {

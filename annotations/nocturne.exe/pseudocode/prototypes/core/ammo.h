@@ -3,6 +3,18 @@
 // Function prototypes for core/ammo.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_ammo.cpp_staticInit_FUN_0040eb10
+// Address: 0040eb10
+void __cdecl staticInit(void);
+
+// Original: core_ammo.cpp_FUN_0040eb40
+// Address: 0040eb40
+void FUN_0040eb40(void);
+
+// Original: core_ammo.cpp_FUN_0040eb60
+// Address: 0040eb60
+CDemonActorType * FUN_0040eb60(void);
+
 // Original: core_ammo.cpp_CAmmo_ctor_FUN_0040eb70
 // Address: 0040eb70
 int __cdecl CAmmo::ctor(undefined4 param_1);
@@ -34,3 +46,15 @@ undefined4 FUN_0040ed50(void);
 // Original: core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80
 // Address: 0040ed80
 void __cdecl CAmmo::setWeaponClass(int param_1,char *param_2);
+
+// Original: core_ammo.cpp_FUN_0040ef60
+// Address: 0040ef60
+void FUN_0040ef60(int param_1,undefined4 param_2);
+
+// Original: core_ammo.cpp_FUN_0040ef70
+// Address: 0040ef70
+undefined4 FUN_0040ef70(undefined4 param_1,undefined4 param_2);
+
+// Original: core_ammo.cpp_FUN_0040ef90
+// Address: 0040ef90
+undefined4 FUN_0040ef90(undefined4 param_1,byte param_2);

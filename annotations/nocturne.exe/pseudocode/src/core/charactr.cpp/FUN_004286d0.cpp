@@ -15,6 +15,6 @@ void core_charactr_cpp_FUN_004286d0(int param_1,uint param_2)
   if (param_1 != *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8)) {
     return;
   }
-  FUN_004940d0(INT_005b9284,param_2);
+  xxx_unk_c_FUN_004940d0(INT_005b9284,param_2);
   return;
 }

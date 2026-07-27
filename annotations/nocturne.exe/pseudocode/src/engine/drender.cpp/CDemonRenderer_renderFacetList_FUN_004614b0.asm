@@ -25,16 +25,16 @@
 ;   undefined4 DAT_01c02594
 ;   undefined4 DAT_01c039a0
 ;   undefined4 DAT_01c039a4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_0045f460
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00
 ;   engine_prim.c_getTriangleWindingFromIndices1_FUN_004f9ad0
-;   FUN_004c8440
-;   wincore_windll.cpp_drawPolyList_FUN_00532680
+;   engine_special.cpp_drawPolyList_FUN_00532680
 ;
 ; *****************************************************************************
 
@@ -247,10 +247,10 @@ section .text
     MOV ECX,0x57dc9d                    ; 004616b5 | = "..\\engine\\drender.cpp"
     MOV EAX,0x967                       ; 004616ba
     PUSH 0x57dcb3                       ; 004616bf | = "CDemonRenderer::demonGZFacetList - To..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004616c4 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004616ca | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004616cf
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004616c4 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004616ca | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004616cf
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004616d4
     MOV EDX,dword ptr [ESP + 0x14]      ; 004616d7
         ;   Label: LAB_004616d7
@@ -271,8 +271,8 @@ section .text
     PUSH 0x5ae70c                       ; 004616fa | DAT_005ae70c
     MOV EDI,dword ptr [ESI]             ; 004616ff
     PUSH EDI                            ; 00461701
-    CALL wincore_windll.cpp_drawPolyList_FUN_00532680 ; 00461702
-        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolyList_FUN_00532680()
+    CALL engine_special.cpp_drawPolyList_FUN_00532680 ; 00461702
+        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList_FUN_00532680()
     ADD ESP,0x10                        ; 00461707
     ADD ESP,0x18                        ; 0046170a
     POP EBP                             ; 0046170d

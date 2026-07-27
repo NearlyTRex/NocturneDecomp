@@ -1,14 +1,12 @@
-// Name: FUN_004fee30
+// Name: core_script.cpp_FUN_004fee30
 // Address: 004fee30
 // Address Range: [[004fee30, 004fef59]]
 // Convention: unknown
-// Signature: void FUN_004fee30(int param_1)
+// Signature: void core_script_cpp_FUN_004fee30(int param_1)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_004fee30(int param_1)
+void core_script_cpp_FUN_004fee30(int param_1)
 
 {
   char cVar1;
@@ -36,9 +34,9 @@ void FUN_004fee30(int param_1)
                         (*(uint *)(param_1 + 0x2c),(*(int *)(param_1 + 0x28) + 1) * 8);
       *(int *)(param_1 + 0x2c) = iVar2;
       if (iVar2 == 0) {
-        _DAT_01cc4800 = "..\\core\\script.cpp";
-        _DAT_01cc4804 = 0x398;
-        FUN_004c8440("Out of memory loading script at line %d",iVar5 + 1);
+        PTR_01cc4800 = "..\\core\\script.cpp";
+        INT_01cc4804 = 0x398;
+        core_main_c_FUN_004c8440("Out of memory loading script at line %d",iVar5 + 1);
       }
       *(int *)(*(int *)(param_1 + 0x2c) + *(int *)(param_1 + 0x28) * 8) = iVar5 + 1;
       uVar4 = 0xffffffff;
@@ -52,9 +50,9 @@ void FUN_004fee30(int param_1)
       uVar3 = malloc(~uVar4);
       *(uint *)(*(int *)(param_1 + 0x2c) + 4 + *(int *)(param_1 + 0x28) * 8) = uVar3;
       if (*(int *)(param_1 + 0x2c) == 0) {
-        _DAT_01cc4800 = "..\\core\\script.cpp";
-        _DAT_01cc4804 = 0x39b;
-        FUN_004c8440("Out of memory loading script at line %d",iVar5 + 1);
+        PTR_01cc4800 = "..\\core\\script.cpp";
+        INT_01cc4804 = 0x39b;
+        core_main_c_FUN_004c8440("Out of memory loading script at line %d",iVar5 + 1);
       }
       pcVar6 = &DAT_01e55c18;
       pcVar7 = *(char **)(*(int *)(param_1 + 0x2c) + 4 + *(int *)(param_1 + 0x28) * 8);

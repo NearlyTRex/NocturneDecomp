@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004d8720 at 004d8a4c
+;   core_mission.cpp_FUN_004d8720 at 004d8a4c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Gore_005851e0

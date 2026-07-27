@@ -1,26 +1,26 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0051dc30(void)
+; void core_skeleton_cpp_FUN_0051dc30(void)
 ;
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_00591c2c
 ;   TerminatedCString s_CDeformableModelInstance_00591c41
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_00518ec0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0051dc30
-        ;   Label: FUN_0051dc30
+        ;   Label: core_skeleton.cpp_FUN_0051dc30
     PUSH EDI                            ; 0051dc31
     MOV EBX,dword ptr [ESP + 0xc]       ; 0051dc32
     CMP dword ptr [EBX + 0x2230],0x0    ; 0051dc36
@@ -45,10 +45,10 @@ section .text
     MOV ECX,0x591c2c                    ; 0051dc5c | = "..\\core\\skeleton.cpp"
     MOV ESI,0xd33                       ; 0051dc61
     PUSH 0x591c41                       ; 0051dc66 | = "CDeformableModelInstance::outlinePoly..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0051dc6b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051dc71 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0051dc77
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0051dc6b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0051dc71 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0051dc77
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051dc7c
     POP ESI                             ; 0051dc7f
     JMP 0x0051dc3f                      ; 0051dc80

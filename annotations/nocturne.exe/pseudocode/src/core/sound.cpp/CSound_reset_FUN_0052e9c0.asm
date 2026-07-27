@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004d23d0 at 004d2705
+;   core_menu.cpp_FUN_004d23d0 at 004d2705
 ;   core_menu.cpp_showOptionsScreen_FUN_004d21c0 at 004d23a3
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e8e0
 ;

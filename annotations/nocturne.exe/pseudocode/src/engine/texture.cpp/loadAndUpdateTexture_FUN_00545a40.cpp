@@ -10,6 +10,6 @@ void __cdecl engine_texture_cpp_loadAndUpdateTexture_FUN_00545a40(uint param_1,u
 
 {
   engine_texture_cpp_ensureTextureLoaded_FUN_00545920(param_1);
-  wincore_windll_cpp_updateTexture_FUN_00532440(param_1,param_2);
+  engine_special_cpp_updateTexture_FUN_00532440(param_1,param_2);
   return;
 }

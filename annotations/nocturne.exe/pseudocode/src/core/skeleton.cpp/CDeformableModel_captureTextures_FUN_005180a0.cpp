@@ -15,7 +15,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_captureTextures_FUN_005180a0(int
   int iVar4;
   uint local_14;
   
-  uVar1 = FUN_0051f680(param_1 + 0x2a1c);
+  uVar1 = core_skeleton_cpp_FUN_0051f680(param_1 + 0x2a1c);
   iVar3 = 0;
   core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_00519ae0(param_1,uVar1);
   if (0 < *(int *)(param_1 + 0xb8)) {

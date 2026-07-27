@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,26 +122,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 238,
+    "complexity_score": 222,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 48,
-    "suspect_count": 17,
+    "pseudocode_lines": 47,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 188
+    "total_lines": 187
   },
   "cross_references": [
     {
       "addr": "004f8240",
       "from_addr": "004f84a0",
-      "name": "FUN_004f8240",
+      "name": "engine_pod.cpp_FUN_004f8240",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -154,10 +153,15 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004f86a0",
-    "signature": "undefined4 FUN_004f86a0(int param_1,int param_2)"
+    "name": "engine_pod.cpp_FUN_004f86a0",
+    "signature": "undefined4 engine_pod_cpp_FUN_004f86a0(int param_1,int param_2)"
   },
   "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
     {
       "addr": "00563380",
       "is_variadic": false,
@@ -179,14 +183,9 @@
       "name": "crt_stdio.c_fseek_FUN_0056582c"
     },
     {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
       "addr": "004f77d0",
       "is_variadic": false,
-      "name": "FUN_004f77d0"
+      "name": "engine_pod.cpp_FUN_004f77d0"
     }
   ],
   "globals": [
@@ -222,14 +221,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -251,7 +250,7 @@
       {
         "call_addr": "004f84a0",
         "call_type": "direct",
-        "caller": "FUN_004f8240",
+        "caller": "engine_pod.cpp_FUN_004f8240",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -330,32 +329,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_004f86a0(int param_1,int param_2)",
+      "text": "uint engine_pod_cpp_FUN_004f86a0(int param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint FUN_004f86a0(int param_1,int param_2)",
+      "text": "uint engine_pod_cpp_FUN_004f86a0(int param_1,int param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 < 0) || (*(int *)(param_1 + 0x208) <= param_2)) {",
@@ -363,7 +354,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_2 < 0) || (*(int *)(param_1 + 0x208) <= param_2)) {",
@@ -371,7 +362,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 < 0) || (*(int *)(param_1 + 0x208) <= param_2)) {",
@@ -379,7 +370,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = _fopen(param_1 + 4,\"rb\");",
@@ -387,15 +378,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"CPodFile::computeOneFileCRC - can't open %s\",param_1 + 4);",
+      "text": "core_main_c_FUN_004c8440(\"CPodFile::computeOneFileCRC - can't open %s\",param_1 + 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "_fseek(iVar2,*(uint *)(param_2 * 0x14 + 8 + *(int *)(param_1 + 0x20c)),0);",
@@ -403,7 +394,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "_fseek(iVar2,*(uint *)(param_2 * 0x14 + 8 + *(int *)(param_1 + 0x20c)),0);",
@@ -411,7 +402,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "for (uVar6 = *(uint *)(param_2 * 0x14 + *(int *)(param_1 + 0x20c) + 4); 0xffff < (int)uVar6;",
@@ -419,7 +410,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "for (uVar6 = *(uint *)(param_2 * 0x14 + *(int *)(param_1 + 0x20c) + 4); 0xffff < (int)uVar6;",
@@ -427,7 +418,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 27,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "puVar5 = &DAT_01e428d0;",
@@ -435,7 +426,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 29,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "_fread(&DAT_01e428d0,0x10000,1,iVar2);",
@@ -443,7 +434,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 37,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "puVar5 = &DAT_01e428d0;",
@@ -451,7 +442,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 38,
       "match": "DAT_01e428d0",
       "severity": "mild",
       "text": "_fread(&DAT_01e428d0,uVar6,1,iVar2);",

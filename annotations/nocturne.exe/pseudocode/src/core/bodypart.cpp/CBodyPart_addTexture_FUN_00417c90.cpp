@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_00417c90(int param_1,char *param_2)
 
 {
@@ -30,9 +28,9 @@ int __cdecl core_bodypart_cpp_CBodyPart_addTexture_FUN_00417c90(int param_1,char
     } while (iVar3 < *(int *)(param_1 + 0x184));
   }
   if (9 < *(int *)(param_1 + 0x184)) {
-    _DAT_01cc4800 = "..\\core\\bodypart.cpp";
-    _DAT_01cc4804 = 0x47a;
-    FUN_004c8440("Too many body part textures!");
+    PTR_01cc4800 = "..\\core\\bodypart.cpp";
+    INT_01cc4804 = 0x47a;
+    core_main_c_FUN_004c8440("Too many body part textures!");
   }
   memset(*(int *)(param_1 + 0x184) * 0x18 + param_1 + 0x188,0,0x18);
   pcVar5 = (char *)(param_1 + 0x188 + *(int *)(param_1 + 0x184) * 0x18 + 8);

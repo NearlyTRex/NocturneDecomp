@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[93]:
-;   FUN_00470730 at 004708ee
-;   FUN_00473ff0 at 00473ffe
-;   FUN_004a3b90 at 004a3bea
-;   FUN_004a4170 at 004a41c0
-;   FUN_004a4b50 at 004a4e43
-;   FUN_004ee9e0 at 004ee9fc
-;   FUN_004f5a50 at 004f5adc
-;   FUN_004f7ae0 at 004f7e26
-;   FUN_004f8a10 at 004f8a75
-;   FUN_004feff0 at 004ff0ce
+;   FUN_0056b960 at 0056b9ef
+;   FUN_0056c750 at 0056c783
+;   cockpit_pkbitmap.cpp_CPackedBitmap_loadByFileExtension_FUN_004f4ac0 at 004f4aef
+;   cockpit_pkbmpset.cpp_FUN_004f5a50 at 004f5adc
+;   core_actor.cpp_CDemonActor_load_FUN_0040c160 at 0040c1aa
+;   core_bodypart.cpp_CBodyPart_addTexture_FUN_00417c90 at 00417cb0
+;   core_charactr.cpp_CCharacter_getDeathState_FUN_00428710 at 0042875a
+;   core_dmodel.cpp_loadModel_FUN_004543b0 at 004543cc
+;   core_dracbrid.cpp_CDraculaBride_setup_FUN_00458730 at 0045875f
+;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047e2df
 ;   ... and 83 more
 ;
 ; *****************************************************************************

@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00408fc0 at 00408ffd
+;   engine_3d.c_FUN_00408fc0 at 00408ffd
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7644
@@ -20,7 +20,7 @@
 ;   undefined4 DAT_01c038f4
 ;
 ; Called Functions:
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     PUSH EDI                            ; 00404583
         ;   Label: LAB_00404583
     PUSH ESI                            ; 00404584
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 00404585
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 00404585
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV EAX,[0x01c038f4]                ; 0040458a | DAT_01c038f4
     MOV dword ptr [ESI + 0x2c],EAX      ; 0040458f | DAT_005c5040
     MOV AH,byte ptr [ESI + 0x13]        ; 00404592 | DAT_005c5024+3

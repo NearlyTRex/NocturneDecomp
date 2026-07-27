@@ -12,7 +12,7 @@ void core_bat_cpp_CBat_archive_FUN_00411b50(int param_1)
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x150,"courseFilename");
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2fc,"param");
-  if (INT_005acf94 < 3) {
+  if (g_INT_005acf94 < 3) {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x304,"speed");
     *(float *)(param_1 + 0x300) = *(float *)(param_1 + 0x304) * (float)30;
   }
@@ -20,10 +20,10 @@ void core_bat_cpp_CBat_archive_FUN_00411b50(int param_1)
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x304,"flapSpeedMult");
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x300,"courseSpeed");
   }
-  if (1 < INT_005acf94) {
+  if (1 < g_INT_005acf94) {
     core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ca00(param_1 + 0x180,"modelName");
   }
-  if (INT_005acf94 < 4) {
+  if (g_INT_005acf94 < 4) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x30c,0);

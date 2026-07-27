@@ -68,12 +68,12 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_setup_FUN_00409fc0
 ;   core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_0044da40
+;   core_main.c_FUN_004c8440
 ;   core_mirror.cpp_CMirror_setupCorners_FUN_004d6590
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_string.c__strcmp_FUN_005649c0
 ;   crt_string.c__stricmp_FUN_00564520
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -152,10 +152,10 @@ section .text
     MOV EDX,0x584edc                    ; 004abd82 | = "..\\core\\glass.cpp"
     MOV ECX,0x86                        ; 004abd87
     PUSH 0x584eee                       ; 004abd8c | = "CGlass::setup - Too many verticies(%d..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004abd91 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004abd97 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004abd9d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004abd91 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004abd97 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004abd9d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 004abda2
     FILD dword ptr [EBX + 0xb24]        ; 004abda5
         ;   Label: LAB_004abda5

@@ -5,22 +5,22 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_00461720 at 0046174e
 ;   engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_00461ad0 at 00461b64
 ;   engine_drender.cpp_CDemonRenderer_processVisiblePrimitive_FUN_00461a30 at 00461ac2
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0 at 0045f666
+;   engine_drender.cpp_FUN_00461720 at 0046174e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057dd57
 ;   TerminatedCString s_CDR_captureFace_too_many_0057dd6d
 ;   undefined4 DAT_01b4d7ac
 ;   undefined4 DAT_01b4d7b0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -72,10 +72,10 @@ section .text
     MOV EDI,0x57dd57                    ; 00461c4d | = "..\\engine\\drender.cpp"
     MOV EAX,0xa81                       ; 00461c52
     PUSH 0x57dd6d                       ; 00461c57 | = "CDR::captureFace - too many faces cap..."
-    MOV dword ptr [0x01cc4800],EDI      ; 00461c5c | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00461c62 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00461c67
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00461c5c | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00461c62 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00461c67
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00461c6c
     MOV EDX,dword ptr [0x01b4d7ac]      ; 00461c6f | DAT_01b4d7ac
         ;   Label: LAB_00461c6f

@@ -48,7 +48,7 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_004eea20(int param_1,float param_2)
     uVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                       (param_1 + 0x150,auStack_48,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_30,uVar5);
-    FUN_004b0480(INT_005b96c4,auStack_30,0);
+    core_gore_cpp_FUN_004b0480(INT_005b96c4,auStack_30,0);
     *(uint *)(param_1 + 0x1f56c) = 1;
   }
   fVar3 = (float)3.1415926535000001;

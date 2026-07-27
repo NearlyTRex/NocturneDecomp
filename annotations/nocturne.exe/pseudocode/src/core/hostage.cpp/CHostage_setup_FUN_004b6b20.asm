@@ -24,11 +24,11 @@
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890
 ;   core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010
+;   core_npc.cpp_FUN_004ee9e0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0
 ;   crt_string.c__stricmp_FUN_00564520
-;   FUN_004ee9e0
 ;
 ; *****************************************************************************
 
@@ -180,8 +180,8 @@ section .text
         ;   XREF to: 004b6cd3 (CONDITIONAL_JUMP)  ; LAB_004b6cd3
     PUSH EBX                            ; 004b6cbb
         ;   Label: LAB_004b6cbb
-    CALL FUN_004ee9e0                   ; 004b6cbc
-        ;   XREF to: 004ee9e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004ee9e0()
+    CALL core_npc.cpp_FUN_004ee9e0      ; 004b6cbc
+        ;   XREF to: 004ee9e0 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004ee9e0()
     ADD ESP,0x4                         ; 004b6cc1
     MOV dword ptr [EBX + 0x1f918],0x0   ; 004b6cc4
     POP EBP                             ; 004b6cce

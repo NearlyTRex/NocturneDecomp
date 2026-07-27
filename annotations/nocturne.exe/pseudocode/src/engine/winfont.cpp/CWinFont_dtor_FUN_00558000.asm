@@ -10,9 +10,9 @@
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
+;   crt_unknown.c_FUN_00564494
 ;   engine_palette.cpp_CFont_dtor_FUN_004eefc0
 ;   engine_winfont.cpp_CWinFont_reset_FUN_005586a0
-;   FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     RET                                 ; 0055804f
     PUSH EAX                            ; 00558050
         ;   Label: LAB_00558050
-    CALL FUN_00564494                   ; 00558051
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 00558051
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 00558056
     MOV EAX,EBX                         ; 00558059
     POP EBX                             ; 0055805b

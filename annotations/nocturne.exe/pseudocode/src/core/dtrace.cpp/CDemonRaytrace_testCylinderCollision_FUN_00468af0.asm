@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00510a40 at 00510a96
+;   core_setcolid.cpp_FUN_00510a40 at 00510a96
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_014b89e8

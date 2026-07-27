@@ -50,7 +50,7 @@
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
 ;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_004fb390
 ;   engine_prim.c_renderScanlinePolygon_FUN_004fad00
-;   wincore_windll.cpp_drawPolygon2_FUN_00532650
+;   engine_special.cpp_drawPolygon2_FUN_00532650
 ;
 ; *****************************************************************************
 
@@ -200,8 +200,8 @@ section .text
     INC ESI                             ; 00434ad4
     PUSH 0x767274                       ; 00434ad5 | DAT_00767274
     MOV dword ptr [0x01e52ef8],ESI      ; 00434ada | DAT_01e52ef8
-    CALL wincore_windll.cpp_drawPolygon2_FUN_00532650 ; 00434ae0
-        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolygon2_FUN_00532650()
+    CALL engine_special.cpp_drawPolygon2_FUN_00532650 ; 00434ae0
+        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon2_FUN_00532650()
     ADD ESP,0xc                         ; 00434ae5
     ADD ESP,0x20                        ; 00434ae8
     POP EBP                             ; 00434aeb

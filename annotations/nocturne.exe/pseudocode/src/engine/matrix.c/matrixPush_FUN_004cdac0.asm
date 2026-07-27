@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004d43c0 at 004d43c3
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d5911
+;   core_mimic.cpp_FUN_004d43c0 at 004d43c3
 ;   engine_drender.cpp_CDemonRenderer_matrixPush_FUN_00460be0 at 00460be0
 ;
 ; Referenced Globals:
@@ -28,7 +28,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -78,10 +78,10 @@ section .text
     MOV EBX,0x58820f                    ; 004cdb99 | = "..\\engine\\matrix.c"
     MOV ESI,0x348                       ; 004cdb9e
     PUSH 0x588222                       ; 004cdba3 | = "Matrix unbalance"
-    MOV dword ptr [0x01cc4800],EBX      ; 004cdba8 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004cdbae | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004cdbb4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004cdba8 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004cdbae | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004cdbb4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004cdbb9
     POP EBX                             ; 004cdbbc
     POP ESI                             ; 004cdbbd

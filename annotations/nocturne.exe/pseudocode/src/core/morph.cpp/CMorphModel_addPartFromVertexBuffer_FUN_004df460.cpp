@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_004df460(int *param_1,int param_2,int param_3,int param_4,int param_5,uint param_6,uint param_7)
 
 {
   int iVar1;
   
   if (4 < *param_1) {
-    _DAT_01cc4800 = "..\\core\\morph.cpp";
-    _DAT_01cc4804 = 0xac;
-    FUN_004c8440("CMorphModel::addPart - too many parts!");
+    PTR_01cc4800 = "..\\core\\morph.cpp";
+    INT_01cc4804 = 0xac;
+    core_main_c_FUN_004c8440("CMorphModel::addPart - too many parts!");
   }
   param_1[*param_1 * 4 + 3] = param_1[0x15];
   param_1[*param_1 * 4 + 1] = param_2;
@@ -30,9 +28,9 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromVertexBuffer_FUN_004df460(int
   param_1[0x18] = iVar1;
   *param_1 = *param_1 + 1;
   if ((param_1[0x16] == 0) || (param_1[0x18] == 0)) {
-    _DAT_01cc4800 = "..\\core\\morph.cpp";
-    _DAT_01cc4804 = 0xc5;
-    FUN_004c8440("CMorphModel::setup - out of memory!");
+    PTR_01cc4800 = "..\\core\\morph.cpp";
+    INT_01cc4804 = 0xc5;
+    core_main_c_FUN_004c8440("CMorphModel::setup - out of memory!");
   }
   if (param_3 != 0) {
     core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004df660

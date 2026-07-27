@@ -6,14 +6,14 @@
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_core_moloch.cpp_CMoloch_setup_FUN_004dda70_005a0ac4 = 004dda70
-;   undefined4 DAT_005a0c10
+;   WatcomTypeInfo g_CMolochTypeInfo_005a0c10
 ;
 ; Called Functions:
+;   core_hero.cpp_FUN_004b4800
 ;   core_morph.cpp_CMorph_dtor_FUN_004e0070
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_004b4800
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -42,8 +42,8 @@ section .text
     PUSH 0x1                            ; 004dda27
     LEA EBX,[EAX + 0xfffe05c4]          ; 004dda29
     PUSH EBX                            ; 004dda2f
-    CALL FUN_004b4800                   ; 004dda30
-        ;   XREF to: 004b4800 (UNCONDITIONAL_CALL)  ; undefined FUN_004b4800()
+    CALL core_hero.cpp_FUN_004b4800     ; 004dda30
+        ;   XREF to: 004b4800 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b4800()
     ADD ESP,0x8                         ; 004dda35
     MOV DL,byte ptr [ESP + 0xc]         ; 004dda38
     MOV EBX,EAX                         ; 004dda3c
@@ -53,7 +53,7 @@ section .text
     MOV EAX,EBX                         ; 004dda43
     POP EBX                             ; 004dda45
     RET                                 ; 004dda46
-    PUSH 0x5a0c10                       ; 004dda47 | DAT_005a0c10
+    PUSH 0x5a0c10                       ; 004dda47 | g_CMolochTypeInfo_005a0c10
         ;   Label: LAB_004dda47
     PUSH EBX                            ; 004dda4c
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004dda4d
@@ -68,8 +68,8 @@ section .text
     RET                                 ; 004dda61
     PUSH EAX                            ; 004dda62
         ;   Label: LAB_004dda62
-    CALL FUN_00564494                   ; 004dda63
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 004dda63
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 004dda68
     MOV EAX,EBX                         ; 004dda6b
     POP EBX                             ; 004dda6d

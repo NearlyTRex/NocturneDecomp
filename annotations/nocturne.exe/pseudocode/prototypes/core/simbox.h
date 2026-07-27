@@ -3,6 +3,18 @@
 // Function prototypes for core/simbox.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_simbox.cpp_staticInit_FUN_00516b40
+// Address: 00516b40
+void __cdecl staticInit(void);
+
+// Original: core_simbox.cpp_FUN_00516b70
+// Address: 00516b70
+void FUN_00516b70(void);
+
+// Original: core_simbox.cpp_FUN_00516b90
+// Address: 00516b90
+CDemonActorType * FUN_00516b90(void);
+
 // Original: core_simbox.cpp_CSimBox_ctor_FUN_00516ba0
 // Address: 00516ba0
 int CSimBox::ctor(undefined4 param_1);
@@ -15,6 +27,22 @@ void CSimBox::setup(int param_1);
 // Address: 00516d80
 void CSimBox::process(int param_1,undefined4 param_2);
 
+// Original: core_simbox.cpp_FUN_00516f50
+// Address: 00516f50
+int FUN_00516f50(int param_1);
+
+// Original: core_simbox.cpp_FUN_00516fc0
+// Address: 00516fc0
+undefined4 * FUN_00516fc0(int param_1,undefined4 *param_2);
+
 // Original: core_simbox.cpp_CSimBox_archive_FUN_00517010
 // Address: 00517010
 void CSimBox::archive(int param_1);
+
+// Original: core_simbox.cpp_FUN_005170c0
+// Address: 005170c0
+undefined4 FUN_005170c0(void);
+
+// Original: core_simbox.cpp_FUN_005170d0
+// Address: 005170d0
+int FUN_005170d0(int param_1,byte param_2);

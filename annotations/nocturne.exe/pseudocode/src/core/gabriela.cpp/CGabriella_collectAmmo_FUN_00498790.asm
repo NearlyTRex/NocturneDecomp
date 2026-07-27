@@ -8,11 +8,11 @@
 ;   core_gabriela.cpp_CGabriella_processMotionEvents_FUN_00497410 at 004977ce
 ;
 ; Referenced Globals:
-;   undefined4 CDemonActorType_007641f8.name_hash
+;   undefined4 g_CAmmoBoxActorType_007641f8.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
-;   FUN_0040f1a0
+;   core_ammobox.cpp_FUN_0040f1a0
 ;
 ; *****************************************************************************
 
@@ -27,7 +27,7 @@ section .text
         ;   XREF to: 004987a1 (CONDITIONAL_JUMP)  ; LAB_004987a1
     POP EBX                             ; 0049879f
     RET                                 ; 004987a0
-    MOV ECX,dword ptr [0x00764230]      ; 004987a1 | CDemonActorType_007641f8.name_hash
+    MOV ECX,dword ptr [0x00764230]      ; 004987a1 | g_CAmmoBoxActorType_007641f8.name_hash
         ;   Label: LAB_004987a1
     PUSH ECX                            ; 004987a7
     PUSH EDX                            ; 004987a8
@@ -40,8 +40,8 @@ section .text
     LEA EDX,[EBX + 0x1f5a0]             ; 004987b5
     PUSH EDX                            ; 004987bb
     PUSH EAX                            ; 004987bc
-    CALL FUN_0040f1a0                   ; 004987bd
-        ;   XREF to: 0040f1a0 (UNCONDITIONAL_CALL)  ; undefined FUN_0040f1a0()
+    CALL core_ammobox.cpp_FUN_0040f1a0  ; 004987bd
+        ;   XREF to: 0040f1a0 (UNCONDITIONAL_CALL)  ; undefined core_ammobox.cpp_FUN_0040f1a0()
     ADD ESP,0x8                         ; 004987c2
     MOV dword ptr [EBX + 0x1fa08],0x0   ; 004987c5
         ;   Label: LAB_004987c5

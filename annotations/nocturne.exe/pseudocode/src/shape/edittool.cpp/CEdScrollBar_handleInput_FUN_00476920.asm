@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00475230 at 004752cc
+;   shape_edittool.cpp_FUN_00475230 at 004752cc
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00476908 = 00476b2c

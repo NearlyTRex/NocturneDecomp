@@ -1,22 +1,20 @@
-// Name: FUN_00481770
+// Name: core_event.cpp_FUN_00481770
 // Address: 00481770
 // Address Range: [[00481770, 00481834]]
 // Convention: unknown
-// Signature: void FUN_00481770(int *param_1,int param_2)
+// Signature: void core_event_cpp_FUN_00481770(int *param_1,int param_2)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_00481770(int *param_1,int param_2)
+void core_event_cpp_FUN_00481770(int *param_1,int param_2)
 
 {
   int iVar1;
   
   if ((param_2 < 0) || (*param_1 <= param_2)) {
-    _DAT_01cc4800 = "..\\core\\event.cpp";
-    _DAT_01cc4804 = 0xcef;
-    FUN_004c8440("CRuleList::remove - invalid index");
+    PTR_01cc4800 = "..\\core\\event.cpp";
+    INT_01cc4804 = 0xcef;
+    core_main_c_FUN_004c8440("CRuleList::remove - invalid index");
   }
   iVar1 = *param_1;
   *param_1 = iVar1 + -1;

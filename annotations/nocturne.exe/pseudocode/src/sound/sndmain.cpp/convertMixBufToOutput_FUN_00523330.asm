@@ -26,11 +26,11 @@
 ;   float FLOAT_005928ee = 127
 ;   double DOUBLE_005928f6 = -1
 ;   float FLOAT_005928fe = 128
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -178,10 +178,10 @@ section .text
     MOV EDI,0x5928a9                    ; 0052347e | = "..\\sound\\sndmain.cpp"
     MOV EDX,0x554                       ; 00523483
     PUSH 0x5928be                       ; 00523488 | = "convertMixBufToOutput - invalid bits: %d"
-    MOV dword ptr [0x01cc4800],EDI      ; 0052348d | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00523493 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00523499
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0052348d | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00523493 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00523499
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0052349e
     MOV ESP,EBP                         ; 005234a1
     POP EBP                             ; 005234a3

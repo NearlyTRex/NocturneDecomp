@@ -29,8 +29,8 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
 ;   core_actor.cpp_createActorByName_FUN_0040d540
+;   core_main.c_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004d9720
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -48,7 +48,7 @@ section .text
         ;   XREF to: 004b61c2 (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EAX*0x4 + 0x4b6050]  ; 004b6093 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    MOV ESI,dword ptr [0x01cae124]      ; 004b609a | DAT_01cae124
+    MOV ESI,dword ptr [0x01cae124]      ; 004b609a | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: caseD_0
     PUSH ESI                            ; 004b60a0
     PUSH 0x5858f3                       ; 004b60a1 | = "CGabriella"
@@ -68,10 +68,10 @@ section .text
     MOV EDI,0x585986                    ; 004b60bd | = "..\\core\\hero.cpp"
     MOV EBP,0x57d                       ; 004b60c2
     PUSH 0x585997                       ; 004b60c7 | = "CHeroPlaceholder::createHero - failed."
-    MOV dword ptr [0x01cc4800],EDI      ; 004b60cc | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004b60d2 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004b60d8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004b60cc | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004b60d2 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004b60d8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b60dd
     PUSH EBX                            ; 004b60e0
         ;   Label: LAB_004b60e0
@@ -113,49 +113,49 @@ section .text
     POP ESI                             ; 004b6138
     POP EBX                             ; 004b6139
     RET                                 ; 004b613a
-    MOV EBX,dword ptr [0x01cae124]      ; 004b613b | DAT_01cae124
+    MOV EBX,dword ptr [0x01cae124]      ; 004b613b | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: caseD_1
     PUSH EBX                            ; 004b6141
     PUSH 0x5858fe                       ; 004b6142 | = "CSvetlana"
     JMP 0x004b60a6                      ; 004b6147
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV ECX,dword ptr [0x01cae124]      ; 004b614c | DAT_01cae124
+    MOV ECX,dword ptr [0x01cae124]      ; 004b614c | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: caseD_2
     PUSH ECX                            ; 004b6152
     PUSH 0x585908                       ; 004b6153 | = "CStranger"
     JMP 0x004b60a6                      ; 004b6158
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV EDX,dword ptr [0x01cae124]      ; 004b615d | DAT_01cae124
+    MOV EDX,dword ptr [0x01cae124]      ; 004b615d | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: caseD_3
     PUSH EDX                            ; 004b6163
     PUSH 0x585912                       ; 004b6164 | = "CScat"
     JMP 0x004b60a6                      ; 004b6169
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV EAX,[0x01cae124]                ; 004b616e | DAT_01cae124
+    MOV EAX,[0x01cae124]                ; 004b616e | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: caseD_4
     PUSH EAX                            ; 004b6173
     PUSH 0x585918                       ; 004b6174 | = "CBaron"
     JMP 0x004b60a6                      ; 004b6179
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV EBP,dword ptr [0x01cae124]      ; 004b617e | DAT_01cae124
+    MOV EBP,dword ptr [0x01cae124]      ; 004b617e | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: caseD_5
     PUSH EBP                            ; 004b6184
     PUSH 0x58591f                       ; 004b6185 | = "CIcePick"
     JMP 0x004b60a6                      ; 004b618a
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV EDI,dword ptr [0x01cae124]      ; 004b618f | DAT_01cae124
+    MOV EDI,dword ptr [0x01cae124]      ; 004b618f | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: caseD_6
     PUSH EDI                            ; 004b6195
     PUSH 0x585928                       ; 004b6196 | = "CHaystack"
     JMP 0x004b60a6                      ; 004b619b
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV ESI,dword ptr [0x01cae124]      ; 004b61a0 | DAT_01cae124
+    MOV ESI,dword ptr [0x01cae124]      ; 004b61a0 | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: caseD_7
     PUSH ESI                            ; 004b61a6
     PUSH 0x585932                       ; 004b61a7 | = "CColonel"
     JMP 0x004b60a6                      ; 004b61ac
         ;   XREF to: 004b60a6 (UNCONDITIONAL_JUMP)  ; LAB_004b60a6
-    MOV EBX,dword ptr [0x01cae124]      ; 004b61b1 | DAT_01cae124
+    MOV EBX,dword ptr [0x01cae124]      ; 004b61b1 | g_CHeroActorType_01cae0ec.name_hash
         ;   Label: caseD_8
     PUSH EBX                            ; 004b61b7
     PUSH 0x58593b                       ; 004b61b8 | = "CMoloch"
@@ -165,10 +165,10 @@ section .text
         ;   Label: default
     MOV ECX,0x578                       ; 004b61c7
     PUSH 0x585954                       ; 004b61cc | = "CHeroPlaceholder::createHero - invali..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004b61d1 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004b61d7 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004b61dd
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004b61d1 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004b61d7 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004b61dd
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b61e2
     JMP 0x004b60b9                      ; 004b61e5
         ;   XREF to: 004b60b9 (UNCONDITIONAL_JUMP)  ; LAB_004b60b9

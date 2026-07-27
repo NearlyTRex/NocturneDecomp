@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0044c560(void)
+; void core_dfont_cpp_FUN_0044c560(void)
 ;
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c878f
+;   core_main.c_FUN_004c85f0 at 004c878f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dfont_cpp_0057c10d
@@ -26,27 +26,27 @@
 ;   ... and 26 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
+;   crt_unknown.c_FUN_0056497c
 ;   engine_font.cpp_CBitFont_ctor_FUN_0048fe10
 ;   engine_font.cpp_CBitFont_openFontFile_FUN_0048ff40
 ;   engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_00493140
 ;   engine_font.cpp_CBitFont_setFontReady_FUN_004931a0
 ;   engine_font.cpp_CBitFont_setInitializedFlag_FUN_00490460
 ;   engine_winfont.cpp_CWinFont_ctor_FUN_00557f50
-;   FUN_004c8440
-;   FUN_0056497c
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0044c560
-        ;   Label: FUN_0044c560
+        ;   Label: core_dfont.cpp_FUN_0044c560
     PUSH ESI                            ; 0044c561
     PUSH EDI                            ; 0044c562
     PUSH EBP                            ; 0044c563
     PUSH 0x3198                         ; 0044c564
-    CALL FUN_0056497c                   ; 0044c569
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0044c569
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0044c56e
     TEST EAX,EAX                        ; 0044c571
     JNZ 0x0044c979                      ; 0044c573
@@ -97,8 +97,8 @@ section .text
         ;   XREF to: 004931a0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_setFontReady_FUN_004931a0()
     ADD ESP,0x8                         ; 0044c60f
     PUSH 0x3198                         ; 0044c612
-    CALL FUN_0056497c                   ; 0044c617
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0044c617
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0044c61c
     TEST EAX,EAX                        ; 0044c61f
     JZ 0x0044c62c                       ; 0044c621
@@ -145,8 +145,8 @@ section .text
         ;   XREF to: 004931a0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_setFontReady_FUN_004931a0()
     ADD ESP,0x8                         ; 0044c6a7
     PUSH 0x3198                         ; 0044c6aa
-    CALL FUN_0056497c                   ; 0044c6af
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0044c6af
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0044c6b4
     TEST EAX,EAX                        ; 0044c6b7
     JZ 0x0044c6c4                       ; 0044c6b9
@@ -209,8 +209,8 @@ section .text
         ;   XREF to: 004931a0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_CBitFont_setFontReady_FUN_004931a0()
     ADD ESP,0x8                         ; 0044c774
     PUSH 0x3198                         ; 0044c777
-    CALL FUN_0056497c                   ; 0044c77c
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0044c77c
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0044c781
     TEST EAX,EAX                        ; 0044c784
     JZ 0x0044c791                       ; 0044c786
@@ -259,8 +259,8 @@ section .text
     MOV EAX,[0x014b9904]                ; 0044c80f | DAT_014b9904
     PUSH 0x3198                         ; 0044c814
     MOV [0x01bcd070],EAX                ; 0044c819 | DAT_01bcd070
-    CALL FUN_0056497c                   ; 0044c81e
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0044c81e
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0044c823
     TEST EAX,EAX                        ; 0044c826
     JZ 0x0044c833                       ; 0044c828
@@ -304,8 +304,8 @@ section .text
     MOV EAX,[0x014b9904]                ; 0044c8a5 | DAT_014b9904
     PUSH 0x3198                         ; 0044c8aa
     MOV [0x01bcd070],EAX                ; 0044c8af | DAT_01bcd070
-    CALL FUN_0056497c                   ; 0044c8b4
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0044c8b4
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0044c8b9
     TEST EAX,EAX                        ; 0044c8bc
     JZ 0x0044c8c9                       ; 0044c8be
@@ -322,10 +322,10 @@ section .text
     MOV ECX,0x57c24c                    ; 0044c8d2 | = "..\\core\\dfont.cpp"
     MOV EBX,0x96                        ; 0044c8d7
     PUSH 0x57c25e                       ; 0044c8dc | = "Micro font object not allocated!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0044c8e1 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0044c8e7 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044c8ed
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0044c8e1 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0044c8e7 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044c8ed
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044c8f2
     PUSH 0x0                            ; 0044c8f5
         ;   Label: LAB_0044c8f5
@@ -379,10 +379,10 @@ section .text
         ;   Label: LAB_0044c987
     MOV ECX,0x41                        ; 0044c98c
     PUSH 0x57c11f                       ; 0044c991 | = "Medium font object not allocated!"
-    MOV dword ptr [0x01cc4800],EDX      ; 0044c996 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0044c99c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044c9a2
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0044c996 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0044c99c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044c9a2
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044c9a7
     JMP 0x0044c586                      ; 0044c9aa
         ;   XREF to: 0044c586 (UNCONDITIONAL_JUMP)  ; LAB_0044c586
@@ -390,10 +390,10 @@ section .text
         ;   Label: LAB_0044c9af
     MOV EAX,0x51                        ; 0044c9b4
     PUSH 0x57c15f                       ; 0044c9b9 | = "Tiny font object not allocated!"
-    MOV dword ptr [0x01cc4800],EBP      ; 0044c9be | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0044c9c4 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044c9c9
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0044c9be | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0044c9c4 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044c9c9
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044c9ce
     JMP 0x0044c639                      ; 0044c9d1
         ;   XREF to: 0044c639 (UNCONDITIONAL_JUMP)  ; LAB_0044c639
@@ -401,10 +401,10 @@ section .text
         ;   Label: LAB_0044c9d6
     MOV ESI,0x60                        ; 0044c9db
     PUSH 0x57c19e                       ; 0044c9e0 | = "Theme font object not allocated!"
-    MOV dword ptr [0x01cc4800],EBX      ; 0044c9e5 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0044c9eb | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044c9f1
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 0044c9e5 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0044c9eb | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044c9f1
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044c9f6
     JMP 0x0044c6d1                      ; 0044c9f9
         ;   XREF to: 0044c6d1 (UNCONDITIONAL_JUMP)  ; LAB_0044c6d1
@@ -412,10 +412,10 @@ section .text
         ;   Label: LAB_0044c9fe
     MOV EBX,0x71                        ; 0044ca03
     PUSH 0x57c1de                       ; 0044ca08 | = "Debug font object not allocated!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0044ca0d | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0044ca13 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044ca19
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0044ca0d | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0044ca13 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044ca19
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044ca1e
     JMP 0x0044c79e                      ; 0044ca21
         ;   XREF to: 0044c79e (UNCONDITIONAL_JUMP)  ; LAB_0044c79e
@@ -423,17 +423,17 @@ section .text
         ;   Label: LAB_0044ca26
     MOV EAX,0x84                        ; 0044ca2b
     PUSH 0x57c21e                       ; 0044ca30 | = "Console font object not allocated!"
-    MOV dword ptr [0x01cc4800],EBP      ; 0044ca35 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0044ca3b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044ca40
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0044ca35 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0044ca3b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044ca40
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044ca45
     JMP 0x0044c840                      ; 0044ca48
         ;   XREF to: 0044c840 (UNCONDITIONAL_JUMP)  ; LAB_0044c840
     PUSH 0x13c                          ; 0044ca4d
         ;   Label: LAB_0044ca4d
-    CALL FUN_0056497c                   ; 0044ca52
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0044ca52
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0044ca57
     TEST EAX,EAX                        ; 0044ca5a
     JZ 0x0044ca72                       ; 0044ca5c
@@ -454,10 +454,10 @@ section .text
     MOV EAX,0x57c289                    ; 0044ca7b | = "..\\core\\dfont.cpp"
     MOV EDX,0xa6                        ; 0044ca80
     PUSH 0x57c29b                       ; 0044ca85 | = "initFonts - Can't allocate gMediumOSFont"
-    MOV [0x01cc4800],EAX                ; 0044ca8a | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0044ca8f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044ca95
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0044ca8a | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0044ca8f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044ca95
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044ca9a
     MOV EAX,[0x014b98f8]                ; 0044ca9d | DAT_014b98f8
         ;   Label: LAB_0044ca9d
@@ -465,8 +465,8 @@ section .text
     MOV dword ptr [EAX + 0x3190],0x1    ; 0044caa8
     PUSH 0x13c                          ; 0044cab2
     MOV dword ptr [EAX + 0x3194],EDX    ; 0044cab7
-    CALL FUN_0056497c                   ; 0044cabd
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0044cabd
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0044cac2
     TEST EAX,EAX                        ; 0044cac5
     JZ 0x0044cadd                       ; 0044cac7
@@ -487,10 +487,10 @@ section .text
     MOV ECX,0x57c2c4                    ; 0044cae6 | = "..\\core\\dfont.cpp"
     MOV EBX,0xac                        ; 0044caeb
     PUSH 0x57c2d6                       ; 0044caf0 | = "initFonts - Can't allocate gThemeOSFont"
-    MOV dword ptr [0x01cc4800],ECX      ; 0044caf5 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0044cafb | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044cb01
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0044caf5 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0044cafb | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044cb01
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044cb06
     MOV EAX,[0x014b9900]                ; 0044cb09 | DAT_014b9900
         ;   Label: LAB_0044cb09
@@ -498,8 +498,8 @@ section .text
     MOV dword ptr [EAX + 0x3190],0x1    ; 0044cb14
     PUSH 0x13c                          ; 0044cb1e
     MOV dword ptr [EAX + 0x3194],EDX    ; 0044cb23
-    CALL FUN_0056497c                   ; 0044cb29
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0044cb29
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0044cb2e
     TEST EAX,EAX                        ; 0044cb31
     JZ 0x0044cb49                       ; 0044cb33
@@ -520,10 +520,10 @@ section .text
     MOV ESI,0x57c2fe                    ; 0044cb52 | = "..\\core\\dfont.cpp"
     MOV EDI,0xb2                        ; 0044cb57
     PUSH 0x57c310                       ; 0044cb5c | = "initFonts - Can't allocate gTinyOSFont"
-    MOV dword ptr [0x01cc4800],ESI      ; 0044cb61 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0044cb67 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044cb6d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 0044cb61 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0044cb67 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044cb6d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044cb72
     MOV EAX,[0x014b98fc]                ; 0044cb75 | DAT_014b98fc
         ;   Label: LAB_0044cb75
@@ -531,8 +531,8 @@ section .text
     MOV dword ptr [EAX + 0x3190],0x1    ; 0044cb80
     PUSH 0x13c                          ; 0044cb8a
     MOV dword ptr [EAX + 0x3194],EDX    ; 0044cb8f
-    CALL FUN_0056497c                   ; 0044cb95
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0044cb95
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 0044cb9a
     TEST EAX,EAX                        ; 0044cb9d
     JZ 0x0044cbb5                       ; 0044cb9f
@@ -553,10 +553,10 @@ section .text
     MOV EBP,0x57c337                    ; 0044cbbe | = "..\\core\\dfont.cpp"
     MOV EAX,0xb8                        ; 0044cbc3
     PUSH 0x57c349                       ; 0044cbc8 | = "initFonts - Can't allocate gDebugOSFont"
-    MOV dword ptr [0x01cc4800],EBP      ; 0044cbcd | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0044cbd3 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044cbd8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0044cbcd | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0044cbd3 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044cbd8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044cbdd
     MOV EAX,[0x014b9904]                ; 0044cbe0 | DAT_014b9904
         ;   Label: LAB_0044cbe0

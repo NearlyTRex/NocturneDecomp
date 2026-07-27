@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020(uint param_1)
 
 {
@@ -15,29 +13,29 @@ uint __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00445020(ui
   int iVar2;
   
   if (DAT_005b7620 < 0x1e1) {
-    wincore_windll_cpp_lockFrame_FUN_005322e0();
+    engine_special_cpp_lockFrame_FUN_005322e0();
   }
   else {
-    iVar2 = wincore_windll_cpp_lockHoldBuffer_FUN_00532d60();
+    iVar2 = engine_special_cpp_lockHoldBuffer_FUN_00532d60();
     if (iVar2 == 0) {
-      _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-      _DAT_01cc4804 = 0xe2b;
-      FUN_004c8440("Unable to lock hold buffer.   Please set 640x480 as your resolution.");
+      PTR_01cc4800 = "..\\core\\dcamera.cpp";
+      INT_01cc4804 = 0xe2b;
+      core_main_c_FUN_004c8440("Unable to lock hold buffer.   Please set 640x480 as your resolution.");
     }
   }
-  FUN_004470f0(param_1);
+  core_dcamera_cpp_FUN_004470f0(param_1);
   if (DAT_005b7620 < 0x1e1) {
-    uVar1 = FUN_00532320();
-    if (_DAT_02dc9d60 == 0) {
+    uVar1 = engine_special_cpp_FUN_00532320();
+    if (INT_02dc9d60 == 0) {
       return uVar1;
     }
   }
   else {
-    uVar1 = wincore_windll_cpp_unlockHoldBuffer_FUN_00532d80();
-    if (_DAT_02dc9d60 == 0) {
+    uVar1 = engine_special_cpp_unlockHoldBuffer_FUN_00532d80();
+    if (INT_02dc9d60 == 0) {
       return uVar1;
     }
   }
-  uVar1 = wincore_windll_cpp_beginScene_FUN_00532340();
+  uVar1 = engine_special_cpp_beginScene_FUN_00532340();
   return uVar1;
 }

@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_mobster_die_wav_0058a489
 ;   TerminatedCString s_mobster_hit_wav_0058a49b
-;   undefined4 DAT_02dd1008
+;   undefined4 g_CTommyGunActorType_02dd0fd0.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -66,7 +66,7 @@ section .text
     SAHF                                ; 004dc707
     JNC 0x004dc764                      ; 004dc708
         ;   XREF to: 004dc764 (CONDITIONAL_JUMP)  ; LAB_004dc764
-    MOV EAX,[0x02dd1008]                ; 004dc70a | DAT_02dd1008
+    MOV EAX,[0x02dd1008]                ; 004dc70a | g_CTommyGunActorType_02dd0fd0.name_hash
     PUSH EAX                            ; 004dc70f
     MOV EDX,dword ptr [EDI + 0x34]      ; 004dc710
     PUSH EDX                            ; 004dc713

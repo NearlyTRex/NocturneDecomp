@@ -9,7 +9,7 @@
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_0044c310 at 0044c328
 ;
 ; Called Functions:
-;   FUN_005638d0
+;   crt_unknown.c_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     RET                                 ; 0044c2fd
     PUSH EDX                            ; 0044c2fe
         ;   Label: LAB_0044c2fe
-    CALL FUN_005638d0                   ; 0044c2ff
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 0044c2ff
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 0044c304
     MOV dword ptr [EBX + 0x4],0x0       ; 0044c307
     POP EBX                             ; 0044c30e

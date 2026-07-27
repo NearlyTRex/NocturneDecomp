@@ -9,17 +9,17 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_004950a0 at 004950ca
+;   core_frankgen.cpp_FUN_004950a0 at 004950ca
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_frankgen_cpp_00581dbb
 ;   TerminatedCString s_CFrankenstienMachine_set_00581dd0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_evaluate_FUN_0043b800
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -93,10 +93,10 @@ section .text
         ;   Label: LAB_004953cd
     MOV ECX,0x1dc                       ; 004953d2
     PUSH 0x581dd0                       ; 004953d7 | = "CFrankenstienMachine::setCourseFrame ..."
-    MOV dword ptr [0x01cc4800],EDX      ; 004953dc | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004953e2 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004953e8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004953dc | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004953e2 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004953e8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004953ed
     JMP 0x0049535e                      ; 004953f0
         ;   XREF to: 0049535e (UNCONDITIONAL_JUMP)  ; LAB_0049535e

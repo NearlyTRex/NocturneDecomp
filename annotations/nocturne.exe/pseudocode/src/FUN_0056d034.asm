@@ -13,11 +13,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00566590 at 005665b8
 ;   crt_time.c__mktime_FUN_00565fb0 at 005660e0
+;   crt_unknown.c_FUN_00566590 at 005665b8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a4a76
+;   undefined4 g_fstreambaseTypeInfo_005a4a60.class_name+2
 ;   undefined4 DAT_005a4a78
 ;   undefined4 DAT_005a4a7a
 ;   undefined4 DAT_005a4a90
@@ -95,7 +95,7 @@ section .text
         ;   XREF to: 0056d0c2 (UNCONDITIONAL_JUMP)  ; LAB_0056d0c2
     MOV EDX,dword ptr [EAX + 0x5a4a78]  ; 0056d0b6 | DAT_005a4a78
         ;   Label: LAB_0056d0b6
-    MOV EAX,dword ptr [EAX + 0x5a4a76]  ; 0056d0bc | DAT_005a4a76
+    MOV EAX,dword ptr [EAX + 0x5a4a76]  ; 0056d0bc | g_fstreambaseTypeInfo_005a4a60.class_name+2
     SAR EDX,0x10                        ; 0056d0c2
         ;   Label: LAB_0056d0c2
     SAR EAX,0x10                        ; 0056d0c5

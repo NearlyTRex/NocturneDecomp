@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_00414930 at 004149ac
-;   FUN_00478790 at 00478c46
 ;   core_batcreat.cpp_FUN_00413040 at 004130bc
+;   core_batman.cpp_FUN_00414930 at 004149ac
 ;   core_bride.cpp_CBride_processDamage_FUN_00420c40 at 00420ca9
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 004285a3
 ;   core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0045a6f0 at 0045a754
+;   core_emitter.cpp_FUN_00478790 at 00478c46
 ;   core_fire.cpp_CGunFlame_init_FUN_004880d0 at 004881fe
 ;   core_flame.cpp_CFlame_process_FUN_0048d0c0 at 0048d37d
 ;

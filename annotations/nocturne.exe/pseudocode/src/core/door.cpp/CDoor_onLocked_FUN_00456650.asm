@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004b5270 at 004b52d1
 ;   core_door.cpp_CDoor_getMoveType_FUN_004564b0 at 00456506
+;   core_hero.cpp_FUN_004b5270 at 004b52d1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01af4e98

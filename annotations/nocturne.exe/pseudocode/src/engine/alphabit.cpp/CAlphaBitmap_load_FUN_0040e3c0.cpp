@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(int *param_1,uint param_2,int param_3,int param_4)
 
 {
@@ -25,30 +23,30 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(int *param_1,uin
   iVar1 = malloc(param_3 * param_4);
   *param_1 = iVar1;
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "..\\engine\\alphabit.cpp";
-    _DAT_01cc4804 = 0x53;
-    FUN_004c8440("CAlphaBitmap::load - Out of memory");
+    PTR_01cc4800 = "..\\engine\\alphabit.cpp";
+    INT_01cc4804 = 0x53;
+    core_main_c_FUN_004c8440("CAlphaBitmap::load - Out of memory");
   }
   iVar1 = malloc(param_3 * param_4);
   param_1[1] = iVar1;
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "..\\engine\\alphabit.cpp";
-    _DAT_01cc4804 = 0x56;
-    FUN_004c8440("CAlphaBitmap::load - Out of memory");
+    PTR_01cc4800 = "..\\engine\\alphabit.cpp";
+    INT_01cc4804 = 0x56;
+    core_main_c_FUN_004c8440("CAlphaBitmap::load - Out of memory");
   }
   iVar1 = malloc(0x400);
   param_1[2] = iVar1;
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "..\\engine\\alphabit.cpp";
-    _DAT_01cc4804 = 0x59;
-    FUN_004c8440("CAlphaBitmap::load - Out of memory");
+    PTR_01cc4800 = "..\\engine\\alphabit.cpp";
+    INT_01cc4804 = 0x59;
+    core_main_c_FUN_004c8440("CAlphaBitmap::load - Out of memory");
   }
   _sprintf(local_114,"%s.raw",param_2);
   local_14 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
   if (local_14 == 0) {
-    _DAT_01cc4800 = "..\\engine\\alphabit.cpp";
-    _DAT_01cc4804 = 0x5f;
-    FUN_004c8440("CAlphaBitmap::load - Can't open %s",local_114);
+    PTR_01cc4800 = "..\\engine\\alphabit.cpp";
+    INT_01cc4804 = 0x5f;
+    core_main_c_FUN_004c8440("CAlphaBitmap::load - Can't open %s",local_114);
   }
   iVar1 = local_14;
   _fread(*param_1,param_3,param_4,local_14);
@@ -56,9 +54,9 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040e3c0(int *param_1,uin
   _sprintf(local_114,"%s.act",param_2);
   local_14 = engine_dosio_cpp_getFile_FUN_00456a60("art",local_114,"rb");
   if (local_14 == 0) {
-    _DAT_01cc4800 = "..\\engine\\alphabit.cpp";
-    _DAT_01cc4804 = 0x65;
-    FUN_004c8440("CAlphaBitmap::load - Can't open %s",local_114);
+    PTR_01cc4800 = "..\\engine\\alphabit.cpp";
+    INT_01cc4804 = 0x65;
+    core_main_c_FUN_004c8440("CAlphaBitmap::load - Can't open %s",local_114);
   }
   iVar1 = 0;
   do {

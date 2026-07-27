@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00411320 at 00411333
+;   core_baron.cpp_FUN_00411320 at 00411333
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_core_baron.cpp_CBaronWeapon_setup_FUN_004113b0_00599c14 = 004113b0

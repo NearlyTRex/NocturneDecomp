@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004722b0 at 0047234f
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00460e40 at 00460e56
+;   shape_edittool.cpp_FUN_004722b0 at 0047234f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_matrix_c_005882c3
@@ -27,8 +27,8 @@
 ;   ... and 8 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401e30
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -103,10 +103,10 @@ section .text
     MOV EBX,0x5882c3                    ; 004ce8f3 | = "..\\engine\\matrix.c"
     MOV ESI,0x53d                       ; 004ce8f8
     PUSH 0x5882d6                       ; 004ce8fd | = "Too many 3D windows"
-    MOV dword ptr [0x01cc4800],EBX      ; 004ce902 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004ce908 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ce90e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004ce902 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004ce908 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ce90e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ce913
     POP EBX                             ; 004ce916
     POP ESI                             ; 004ce917

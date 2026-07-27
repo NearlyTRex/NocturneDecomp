@@ -29,20 +29,20 @@
 ;   TerminatedCString s_turret_tail_wav_00596d86
 ;   double DOUBLE_00596d9d = 2
 ;   undefined4 DAT_005b7650
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
 ;   core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
+;   core_main.c_FUN_004c8440
 ;   core_turret.cpp_CTurret_updatePatrol_FUN_0054a920
 ;   core_turret.cpp_CTurret_updateTargeting_FUN_0054a110
 ;   core_xform.cpp_FUN_0055d610
 ;   core_xform.cpp_quaternionToEulerAngles_FUN_0055d5b0
 ;   core_xform.cpp_slerpQuaternion_FUN_0055d2d0
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_004c8440
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00526d10
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_00527130
@@ -368,10 +368,10 @@ section .text
         ;   Label: default
     MOV ECX,0x15a                       ; 00549c15
     PUSH 0x596d50                       ; 00549c1a | = "CTurret::process - invalid state"
-    MOV dword ptr [0x01cc4800],EDX      ; 00549c1f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00549c25 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00549c2b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00549c1f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00549c25 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00549c2b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00549c30
     JMP 0x0054989a                      ; 00549c33
         ;   XREF to: 0054989a (UNCONDITIONAL_JUMP)  ; LAB_0054989a

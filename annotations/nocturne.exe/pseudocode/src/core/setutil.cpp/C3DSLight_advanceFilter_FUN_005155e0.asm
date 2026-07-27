@@ -10,12 +10,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_00590eac
 ;   TerminatedCString s_C3DSLight_advanceFilter_00590ec0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_004501c0
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -65,10 +65,10 @@ section .text
         ;   Label: LAB_00515645
     MOV ESI,0x354                       ; 0051564a
     PUSH 0x590ec0                       ; 0051564f | = "C3DSLight::advanceFilter - NULL CDemo..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00515654 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051565a | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00515660
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00515654 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0051565a | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00515660
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00515665
     JMP 0x005155ee                      ; 00515668
         ;   XREF to: 005155ee (UNCONDITIONAL_JUMP)  ; LAB_005155ee

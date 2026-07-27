@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[50]:
-;   FUN_0040f610 at 0040f6f5
-;   FUN_00418a00 at 0041908c
-;   FUN_0041fe40 at 0042030d
-;   FUN_0043d1c0 at 0043d5e8
-;   FUN_00462300 at 0046243a
-;   FUN_00477890 at 00477d93
-;   FUN_004a9270 at 004a98a4
-;   FUN_004b27c0 at 004b2d07
-;   FUN_004b6d80 at 004b6eb4
-;   FUN_004c71a0 at 004c78ab
+;   core_actor.cpp_FUN_0040b300 at 0040b54b
+;   core_anvil.cpp_FUN_0040f610 at 0040f6f5
+;   core_baron.cpp_FUN_00410cc0 at 00410dbb
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412750
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413ecc
+;   core_bodypart.cpp_CBodyPart_process_FUN_004168d0 at 00416a93
+;   core_boneguy.cpp_FUN_00418a00 at 0041908c
+;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e9bb
+;   core_bride.cpp_FUN_0041fe40 at 0042030d
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 0042240d
 ;   ... and 40 more
 ;
 ; *****************************************************************************

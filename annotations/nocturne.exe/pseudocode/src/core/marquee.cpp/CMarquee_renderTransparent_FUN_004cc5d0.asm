@@ -38,11 +38,11 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
 ;   core_course.cpp_CCourse_evaluate_FUN_0043b800
+;   core_marquee.cpp_FUN_004cc440
 ;   crt_math.c_round_FUN_00563a30
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
-;   FUN_004cc440
 ;
 ; *****************************************************************************
 
@@ -133,8 +133,8 @@ section .text
     PUSH EAX                            ; 004cc6bf
     PUSH EBX                            ; 004cc6c0
     INC EDI                             ; 004cc6c1
-    CALL FUN_004cc440                   ; 004cc6c2
-        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; undefined FUN_004cc440()
+    CALL core_marquee.cpp_FUN_004cc440  ; 004cc6c2
+        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_004cc440()
     ADD ESP,0x8                         ; 004cc6c7
     CMP EDI,EBP                         ; 004cc6ca
     JL 0x004cc65a                       ; 004cc6cc
@@ -206,8 +206,8 @@ section .text
     PUSH EAX                            ; 004cc78a
     PUSH EBX                            ; 004cc78b
     INC ESI                             ; 004cc78c
-    CALL FUN_004cc440                   ; 004cc78d
-        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; undefined FUN_004cc440()
+    CALL core_marquee.cpp_FUN_004cc440  ; 004cc78d
+        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_004cc440()
     ADD ESP,0x8                         ; 004cc792
     CMP ESI,EBP                         ; 004cc795
     JGE 0x004cc6ce                      ; 004cc797
@@ -284,8 +284,8 @@ section .text
         ;   Label: LAB_004cc85b
     PUSH EAX                            ; 004cc85f
     PUSH EBX                            ; 004cc860
-    CALL FUN_004cc440                   ; 004cc861
-        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; undefined FUN_004cc440()
+    CALL core_marquee.cpp_FUN_004cc440  ; 004cc861
+        ;   XREF to: 004cc440 (UNCONDITIONAL_CALL)  ; undefined core_marquee.cpp_FUN_004cc440()
     ADD ESP,0x8                         ; 004cc866
     JMP 0x004cc7e8                      ; 004cc869
         ;   XREF to: 004cc7e8 (UNCONDITIONAL_JUMP)  ; LAB_004cc7e8

@@ -5,27 +5,27 @@
 ;
 ;
 ; XREF[39]:
-;   FUN_00439da0 at 00439dc8
-;   FUN_004b3110 at 004b3138
-;   FUN_004b6d80 at 004b71cb
-;   FUN_004d4650 at 004d46b7
-;   FUN_00535450 at 0053547c
-;   FUN_00540c20 at 00540cec
-;   FUN_0054c3e0 at 0054c5ba
 ;   core_baron.cpp_CBaron_setup_FUN_004102c0 at 004102e8
 ;   core_batcreat.cpp_CBatCreature_setup_FUN_00412160 at 00412192
 ;   core_batman.cpp_CBatman_setup_FUN_004134a0 at 004134d2
+;   core_boneguy.cpp_CBoneGuy_setup_FUN_00418800 at 00418829
+;   core_bride.cpp_CBride_setup_FUN_0041fc20 at 0041fc4c
+;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0 at 0042ae13
+;   core_charactr.cpp_CCharacter_processSmoking_FUN_0042abd0 at 0042ac66
+;   core_charactr.cpp_CCharacter_setup_FUN_00424260 at 004242fd
+;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_004363e0 at 00436426
+;   core_colonel.cpp_FUN_00439da0 at 00439dc8
 ;   ... and 29 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005913b0
 ;   TerminatedCString s_Can_t_find_bone_s_in_ske_005913c5
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_string.c__stricmp_FUN_00564520
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -83,10 +83,10 @@ section .text
     MOV ESI,0x5913b0                    ; 00517a2a | = "..\\core\\skeleton.cpp"
     MOV EAX,0x16d                       ; 00517a2f
     PUSH 0x5913c5                       ; 00517a34 | = "Can't find bone %s in skeleton %s!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00517a39 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00517a3f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00517a44
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00517a39 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00517a3f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00517a44
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 00517a49
     MOV EAX,0xffffffff                  ; 00517a4c
     POP EBP                             ; 00517a51

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0043b020 at 0043b033
+;   core_conveyor.cpp_FUN_0043b020 at 0043b033
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_0057b1d4
@@ -16,10 +16,10 @@
 ;   undefined4 s_one_0057b1d9+1
 ;   undefined4 s_ne_0057b1d9+2
 ;   undefined4 s_e_0057b1d9+3
-;   undefined1* PTR_FUN_0059b734 = 0043b110
+;   undefined1* PTR_core_conveyor.cpp_FUN_0043b110_0059b734 = 0043b110
 ;
 ; Called Functions:
-;   FUN_004f5d90
+;   core_platfrm.cpp_FUN_004f5d90
 ;
 ; *****************************************************************************
 
@@ -30,9 +30,9 @@ section .text
     PUSH EDI                            ; 0043b051
     MOV EDX,dword ptr [ESP + 0xc]       ; 0043b052
     PUSH EDX                            ; 0043b056
-    CALL FUN_004f5d90                   ; 0043b057
-        ;   XREF to: 004f5d90 (UNCONDITIONAL_CALL)  ; undefined FUN_004f5d90()
-    MOV dword ptr [EAX + 0x14c],0x59b734 ; 0043b05c | PTR_FUN_0059b734
+    CALL core_platfrm.cpp_FUN_004f5d90  ; 0043b057
+        ;   XREF to: 004f5d90 (UNCONDITIONAL_CALL)  ; undefined core_platfrm.cpp_FUN_004f5d90()
+    MOV dword ptr [EAX + 0x14c],0x59b734 ; 0043b05c | PTR_core_conveyor.cpp_FUN_0043b110_0059b734
     MOV ESI,0x57b1d4                    ; 0043b066 | = "none"
     MOV dword ptr [EAX + 0x720],0x3f800000 ; 0043b06b
     MOV EDX,EAX                         ; 0043b075

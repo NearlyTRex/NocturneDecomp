@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 797,
-    "complexity_score": 669,
+    "complexity_score": 670,
     "cross_reference_count": 2,
     "function_call_count": 46,
     "global_count": 59,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 309,
+    "pseudocode_lines": 310,
     "suspect_count": 33,
     "suspect_types": [
       "param_count_too_few",
@@ -137,19 +137,19 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1106
+    "total_lines": 1107
   },
   "cross_references": [
     {
       "addr": "004a4b50",
       "from_addr": "004a4efd",
-      "name": "FUN_004a4b50",
+      "name": "core_game.cpp_FUN_004a4b50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d23d0",
       "from_addr": "004d2815",
-      "name": "FUN_004d23d0",
+      "name": "core_menu.cpp_FUN_004d23d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -162,8 +162,8 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004a4170",
-    "signature": "void FUN_004a4170(int param_1,char *param_2,int param_3)"
+    "name": "core_game.cpp_FUN_004a4170",
+    "signature": "void core_game_cpp_FUN_004a4170(int param_1,char *param_2,int param_3)"
   },
   "function_calls": [
     {
@@ -205,6 +205,11 @@
       "addr": "004c5640",
       "is_variadic": false,
       "name": "core_level.cpp_CLevelLoader_show_FUN_004c5640"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
     },
     {
       "addr": "004d90a0",
@@ -342,24 +347,19 @@
       "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
     },
     {
+      "addr": "00470550",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550"
+    },
+    {
       "addr": "0046fcd0",
       "is_variadic": false,
-      "name": "FUN_0046fcd0"
+      "name": "shape_edittool.cpp_FUN_0046fcd0"
     },
     {
       "addr": "0046fe60",
       "is_variadic": false,
-      "name": "FUN_0046fe60"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
-      "addr": "00470550",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00470550"
+      "name": "shape_edittool.cpp_FUN_0046fe60"
     },
     {
       "addr": "00438f30",
@@ -724,20 +724,20 @@
     },
     {
       "addr": "01cae124",
-      "name": "DAT_01cae124",
+      "name": "g_CHeroActorType_01cae0ec.name_hash",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -759,7 +759,7 @@
       {
         "call_addr": "004a4efd",
         "call_type": "direct",
-        "caller": "FUN_004a4b50",
+        "caller": "core_game.cpp_FUN_004a4b50",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -773,7 +773,7 @@
       {
         "call_addr": "004d2815",
         "call_type": "direct",
-        "caller": "FUN_004d23d0",
+        "caller": "core_menu.cpp_FUN_004d23d0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -1043,7 +1043,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_004a4170(int param_1,char *param_2,int param_3)",
+      "text": "void core_game_cpp_FUN_004a4170(int param_1,char *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -1051,7 +1051,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_004a4170(int param_1,char *param_2,int param_3)",
+      "text": "void core_game_cpp_FUN_004a4170(int param_1,char *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -1059,7 +1059,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void FUN_004a4170(int param_1,char *param_2,int param_3)",
+      "text": "void core_game_cpp_FUN_004a4170(int param_1,char *param_2,int param_3)",
       "type": "unnamed_param"
     },
     {
@@ -1208,7 +1208,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 284,
+      "line": 285,
       "match": "DAT_01c7869c",
       "severity": "mild",
       "text": "_fscanf(iVar3,\"%d\\n\",&DAT_01c7869c);",
@@ -1216,7 +1216,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 286,
+      "line": 287,
       "match": "DAT_01c786a0",
       "severity": "mild",
       "text": "puVar7 = &DAT_01c786a0;",
@@ -1224,7 +1224,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 303,
+      "line": 304,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0) {",
@@ -1232,7 +1232,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 307,
+      "line": 308,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x9c4) == 0) goto LAB_004a4674;",
@@ -1240,7 +1240,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 308,
+      "line": 309,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = local_2c;",
@@ -1248,7 +1248,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 309,
+      "line": 310,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x9c4) = 0;",

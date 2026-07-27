@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004b9fe0 at 004ba4ba
+;   core_icepick.cpp_FUN_004b9fe0 at 004ba4ba
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0

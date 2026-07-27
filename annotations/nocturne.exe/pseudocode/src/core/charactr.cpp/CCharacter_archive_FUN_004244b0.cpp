@@ -17,7 +17,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004244b0(int param_1)
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
   core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2434,"hitPoints");
-  if (1 < INT_005ad1e8) {
+  if (1 < g_INT_005ad1e8) {
     if (DAT_00763e88 == 1) {
       core_actor_cpp_archiveInteger_FUN_0040c900(&local_1c,"numCarryHands");
       local_20 = 0;
@@ -52,18 +52,18 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004244b0(int param_1)
       } while (local_20 < 2);
     }
   }
-  if (2 < INT_005ad1e8) {
+  if (2 < g_INT_005ad1e8) {
     core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x252c,"talkToMeEvent");
   }
-  if (3 < INT_005ad1e8) {
+  if (3 < g_INT_005ad1e8) {
     core_actor_cpp_archiveActor_FUN_0040c980(param_1 + 0x2590,"grabbedBy");
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x2594,"grabbedType");
     core_actor_cpp_archiveClothList_FUN_0040cf70(param_1 + 0x2a8c,"clothList");
   }
-  if (4 < INT_005ad1e8) {
+  if (4 < g_INT_005ad1e8) {
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2614,"sizeScale");
   }
-  if (5 < INT_005ad1e8) {
+  if (5 < g_INT_005ad1e8) {
     core_actor_cpp_archiveInteger_FUN_0040c900(param_1 + 0x243c,"healthBarMode");
     core_actor_cpp_archiveLocalizedString_FUN_0040c7f0(param_1 + 0x2440,"descriptiveName");
     core_actor_cpp_archiveFloat_FUN_0040c880(param_1 + 0x2438,"maxHitPoints");

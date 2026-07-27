@@ -106,8 +106,8 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   engine_drender.cpp_CDemonRenderer_renderOverlayDirect_FUN_004604c0
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000
-;   FUN_00460d10
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_drender.cpp_FUN_00460d10
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -217,8 +217,8 @@ section .text
     FSUBRP                              ; 0044fb26
     LEA EBX,[ESP + 0x54]                ; 0044fb28
     FSTP float ptr [ESP + 0x4]          ; 0044fb2c
-    CALL FUN_00460d10                   ; 0044fb30
-        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined FUN_00460d10()
+    CALL engine_drender.cpp_FUN_00460d10 ; 0044fb30
+        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00460d10()
     LEA ESI,[ESP + 0x60]                ; 0044fb35
     ADD ESP,0x4                         ; 0044fb39
     LEA EAX,[ESP + 0xa4]                ; 0044fb3c
@@ -438,8 +438,8 @@ section .text
     PUSH EAX                            ; 0044fe8d
     MOV EAX,dword ptr [EDX]             ; 0044fe8e | DAT_01b4d738
     PUSH EAX                            ; 0044fe90
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0044fe91
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0044fe91
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     ADD ESP,0x8                         ; 0044fe96
     MOV AH,byte ptr [ESP + 0xb3]        ; 0044fe99
     XOR AH,0x80                         ; 0044fea0
@@ -461,8 +461,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0044fee8 | DAT_01b4d738
     ADD EAX,0x30                        ; 0044feea
     PUSH EAX                            ; 0044feed
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0044feee
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0044feee
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     ADD ESP,0x8                         ; 0044fef3
     MOV DL,byte ptr [ESP + 0xb7]        ; 0044fef6
     LEA EBX,[ESP + 0xf8]                ; 0044fefd
@@ -484,8 +484,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0044ff45 | DAT_01b4d738
     ADD EAX,0x60                        ; 0044ff47
     PUSH EAX                            ; 0044ff4a
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0044ff4b
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0044ff4b
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     ADD ESP,0x8                         ; 0044ff50
     MOV DH,byte ptr [ESP + 0xb3]        ; 0044ff53
     LEA EBX,[ESP + 0x8c]                ; 0044ff5a
@@ -507,8 +507,8 @@ section .text
     MOV EAX,dword ptr [EDX]             ; 0044ffa2 | DAT_01b4d738
     ADD EAX,0x90                        ; 0044ffa4
     PUSH EAX                            ; 0044ffa9
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0044ffaa
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0044ffaa
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     ADD ESP,0x8                         ; 0044ffaf
     PUSH ESI                            ; 0044ffb2 | DAT_005ae488
     MOV EAX,[0x005ae704]                ; 0044ffb3 | DAT_005ae704

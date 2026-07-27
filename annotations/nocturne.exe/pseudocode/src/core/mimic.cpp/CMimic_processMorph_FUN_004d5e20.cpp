@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(int param_1,float param_2)
 
 {
@@ -17,9 +15,9 @@ int __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(int param_1,float pa
   float local_18 [2];
   
   if (*(int *)(param_1 + 0x4757c) == 0) {
-    _DAT_01cc4800 = "..\\core\\mimic.cpp";
-    _DAT_01cc4804 = 0x4c9;
-    FUN_004c8440("CMimic::processMorph - can't process morph unless we've started morph!");
+    PTR_01cc4800 = "..\\core\\mimic.cpp";
+    INT_01cc4804 = 0x4c9;
+    core_main_c_FUN_004c8440("CMimic::processMorph - can't process morph unless we've started morph!");
   }
   fVar1 = param_2 / 1.0f + *(float *)(param_1 + 0x47578);
   *(float *)(param_1 + 0x47578) = fVar1;
@@ -29,7 +27,7 @@ int __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004d5e20(int param_1,float pa
     core_mission_cpp_CDemonMission_addActorToList_FUN_004d8c60
               (0x01CC9450,*(uint *)(param_1 + 0x4757c));
     *(uint *)(param_1 + 0x4757c) = 0;
-    iVar2 = FUN_004d9110(0x01CC9450,param_1,1);
+    iVar2 = core_mission_cpp_FUN_004d9110(0x01CC9450,param_1,1);
   }
   else {
     local_18[0] = param_2;

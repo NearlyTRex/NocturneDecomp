@@ -15,16 +15,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[15]:
-;   FUN_0045ab40 at 0045aff5
-;   FUN_004c79a0 at 004c7c36
-;   FUN_0052d790 at 0052da9c
-;   FUN_0052dff0 at 0052e54f
-;   FUN_00535900 at 00537c33
+;   core_dracbrid.cpp_FUN_0045ab40 at 0045aff5
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_00480eb0 at 00480f09
 ;   core_fire.cpp_CFireball_onCollision_FUN_00484b60 at 00484c06
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_00494e30 at 00494e6f
 ;   core_game.cpp_CGame_rollCredits_FUN_004a6e90 at 004a7212
+;   core_lightgun.cpp_FUN_004c79a0 at 004c7c36
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0 at 004cb704
+;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004cb740 at 004cb7ba
+;   core_manpuz.cpp_updateGemHumChannel_FUN_004caef0 at 004cafe3
+;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1d07
 ;   ... and 5 more
 ;
 ; Referenced Globals:
@@ -46,21 +46,21 @@
 ;   ... and 14 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_ftell_FUN_00566e70
 ;   crt_string.c__stricmp_FUN_00564520
 ;   crt_string.c_splitpath_FUN_00566498
+;   crt_unknown.c_FUN_0056497c
 ;   engine_dosio.cpp_getFile_FUN_00456a60
 ;   engine_dosio.cpp_getFileSize_FUN_004568c0
-;   FUN_004c8440
-;   FUN_00522480
-;   FUN_00529980
-;   FUN_0056497c
 ;   sound_mp3.cpp_CMP3Decoder_ctor_FUN_004e7d90
 ;   sound_mp3.cpp_CMP3Decoder_openFile_FUN_004e7df0
 ;   sound_sndmain.cpp_CSfxOptions_reset_FUN_00525eb0
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60
+;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_00521e10
+;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0
 ;   ... and 12 more
 ;
 ; *****************************************************************************
@@ -318,10 +318,10 @@ section .text
         ;   Label: LAB_00526881
     MOV EDI,0x1f6                       ; 00526886
     PUSH 0x5922c5                       ; 0052688b | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],ESI      ; 00526890 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00526896 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0052689c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00526890 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00526896 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0052689c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005268a1
     JMP 0x0052665b                      ; 005268a4
         ;   XREF to: 0052665b (UNCONDITIONAL_JUMP)  ; LAB_0052665b
@@ -371,8 +371,8 @@ section .text
         ;   XREF to: 005266dc (CONDITIONAL_JUMP)  ; LAB_005266dc
     MOV EAX,ESP                         ; 00526920
     PUSH EAX                            ; 00526922
-    CALL FUN_00522480                   ; 00526923
-        ;   XREF to: 00522480 (UNCONDITIONAL_CALL)  ; undefined FUN_00522480()
+    CALL sound_sndmain.cpp_FUN_00522480 ; 00526923
+        ;   XREF to: 00522480 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00522480()
     ADD ESP,0x4                         ; 00526928
     JMP 0x0052673b                      ; 0052692b
         ;   XREF to: 0052673b (UNCONDITIONAL_JUMP)  ; LAB_0052673b
@@ -414,8 +414,8 @@ section .text
     JLE 0x00526c07                      ; 00526993
         ;   XREF to: 00526c07 (CONDITIONAL_JUMP)  ; LAB_00526c07
     PUSH 0x8630                         ; 00526999
-    CALL FUN_0056497c                   ; 0052699e
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 0052699e
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 005269a3
     TEST EAX,EAX                        ; 005269a6
     JZ 0x005269b3                       ; 005269a8
@@ -433,10 +433,10 @@ section .text
     MOV EDI,0x592796                    ; 005269c4 | = "..\\sound\\sndmain.cpp"
     MOV EAX,0x3c8                       ; 005269c9
     PUSH 0x5927ab                       ; 005269ce | = "Out of memory."
-    MOV dword ptr [0x01cc4800],EDI      ; 005269d3 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 005269d9 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005269de
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 005269d3 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 005269d9 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005269de
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005269e3
     MOV EAX,dword ptr [ESP + 0x378]     ; 005269e6
         ;   Label: LAB_005269e6
@@ -601,8 +601,8 @@ section .text
         ;   Label: LAB_00526c1e
     PUSH EAX                            ; 00526c20
     PUSH 0x59356d                       ; 00526c21 | = "startSfx - can't get sample %s\n"
-    CALL FUN_00529980                   ; 00526c26
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 00526c26
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x8                         ; 00526c2b
     PUSH EBP                            ; 00526c2e | DAT_02dbd494
         ;   Label: LAB_00526c2e

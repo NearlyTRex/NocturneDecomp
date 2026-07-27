@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(int *param_1)
 
 {
@@ -38,9 +36,9 @@ void core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(int *pa
           *(uint *)(iVar1 + 0x70) = 1;
 LAB_004d91fc:
           if (1999 < *(int *)(0x01E57284 + 0x14cd6c)) {
-            _DAT_01cc4800 = "..\\core\\mission.cpp";
-            _DAT_01cc4804 = 0x44e;
-            FUN_004c8440("CDemonMission::buildActiveSetActorList - Too many actors in current set!");
+            PTR_01cc4800 = "..\\core\\mission.cpp";
+            INT_01cc4804 = 0x44e;
+            core_main_c_FUN_004c8440("CDemonMission::buildActiveSetActorList - Too many actors in current set!");
           }
           iVar2 = 0x01E57284;
           *(int *)(0x01E57284 + 0x14cd70 + *(int *)(0x01E57284 + 0x14cd6c) * 4) = iVar1;

@@ -16,8 +16,8 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_bindSkeleton_FUN_00519ae0
+;   core_skeleton.cpp_FUN_0051f680
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-;   FUN_0051f680
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x18]      ; 005180a7
     LEA EAX,[EDI + 0x2a1c]              ; 005180ab
     PUSH EAX                            ; 005180b1
-    CALL FUN_0051f680                   ; 005180b2
-        ;   XREF to: 0051f680 (UNCONDITIONAL_CALL)  ; undefined FUN_0051f680()
+    CALL core_skeleton.cpp_FUN_0051f680 ; 005180b2
+        ;   XREF to: 0051f680 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0051f680()
     ADD ESP,0x4                         ; 005180b7
     PUSH EAX                            ; 005180ba
     PUSH EDI                            ; 005180bb

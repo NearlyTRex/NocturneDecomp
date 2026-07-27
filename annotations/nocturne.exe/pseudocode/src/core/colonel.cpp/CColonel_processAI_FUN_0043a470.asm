@@ -35,7 +35,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00439f50 at 00439fcb
+;   core_colonel.cpp_FUN_00439f50 at 00439fcb
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057b174 = 5.43968647586312E-315

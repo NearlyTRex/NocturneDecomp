@@ -11,6 +11,6 @@ int core_gore_cpp_CFootstep_ctor_FUN_004b09b0(int param_1)
 {
   int iVar1;
   
-  iVar1 = __arrinit(param_1 + 8,4,&DAT_005993b0);
+  iVar1 = __arrinit(param_1 + 8,4,&g_CVectorTypeInfo_005993b0);
   return iVar1 + -8;
 }

@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004e94a0 at 004e94a5
+;   core_netgame.cpp_staticInit_FUN_004e94a0 at 004e94a5
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_MyComputer_0058ba8e
 ;   undefined4 s_yComputer_0058ba8e+1
 ;   undefined4 s_Computer_0058ba8e+2
 ;   undefined4 s_omputer_0058ba8e+3
-;   undefined4 DAT_005a0e20
+;   WatcomTypeInfo g_SNetPlayerTypeInfo_005a0e20
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005644a7
@@ -26,7 +26,7 @@ section .text
         ;   Label: core_netgame.cpp_CNetGame_ctor_FUN_004e9860
     PUSH EDI                            ; 004e9861
     MOV EDX,dword ptr [ESP + 0xc]       ; 004e9862
-    PUSH 0x5a0e20                       ; 004e9866 | DAT_005a0e20
+    PUSH 0x5a0e20                       ; 004e9866 | g_SNetPlayerTypeInfo_005a0e20
     PUSH 0x2                            ; 004e986b
     ADD EDX,0x20                        ; 004e986d
     PUSH EDX                            ; 004e9870

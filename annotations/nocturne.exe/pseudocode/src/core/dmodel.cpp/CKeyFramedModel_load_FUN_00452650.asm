@@ -20,8 +20,8 @@
 ;   TerminatedCString s_models_0057c994
 ;   TerminatedCString s_core_dmodel_cpp_0057c99b
 ;   TerminatedCString s_Can_t_open_keyframed_mod_0057c9ae
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00453620
@@ -29,11 +29,11 @@
 ;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004527a0
 ;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00452990
 ;   core_dmodel.cpp_FUN_00452f10
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgetc_FUN_00564570
 ;   crt_stdio.c_ungetc_FUN_00564740
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -112,10 +112,10 @@ section .text
     MOV EAX,0x57c99b                    ; 004526eb | = "..\\core\\dmodel.cpp"
     MOV EDX,0xc5                        ; 004526f0
     PUSH 0x57c9ae                       ; 004526f5 | = "Can't open keyframed model %s"
-    MOV [0x01cc4800],EAX                ; 004526fa | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004526ff | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00452705
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004526fa | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004526ff | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00452705
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0045270a
     PUSH EBP                            ; 0045270d
         ;   Label: LAB_0045270d
@@ -163,10 +163,10 @@ section .text
     MOV ECX,0x57c960                    ; 00452763 | = "..\\core\\dmodel.cpp"
     MOV ESI,0xb8                        ; 00452768
     PUSH 0x57c973                       ; 0045276d | = "Can't open keyframed model %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 00452772 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00452778 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0045277e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00452772 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00452778 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0045277e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00452783
     JMP 0x00452682                      ; 00452786
         ;   XREF to: 00452682 (UNCONDITIONAL_JUMP)  ; LAB_00452682

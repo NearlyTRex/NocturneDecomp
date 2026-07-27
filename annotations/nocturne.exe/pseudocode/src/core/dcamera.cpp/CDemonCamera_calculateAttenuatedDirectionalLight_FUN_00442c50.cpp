@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442c50(uint param_1,int *param_2,int param_3,int *param_4)
 
 {
@@ -25,10 +23,11 @@ uint core_dcamera_cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_00442
     iVar7 = 0xaaaa;
   }
   else {
-    fVar4 = (float)*param_2 * _DAT_0059bde4 - *(float *)(param_3 + 0x104);
-    fVar5 = (float)param_2[1] * _DAT_0059bde4 - *(float *)(param_3 + 0x108);
-    fVar6 = (float)param_2[2] * _DAT_0059bde4 - *(float *)(param_3 + 0x10c);
-    fVar9 = (float)(_DAT_01c70710 - ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) >> 1));
+    fVar4 = (float)*param_2 * 0.00390625f - *(float *)(param_3 + 0x104);
+    fVar5 = (float)param_2[1] * 0.00390625f - *(float *)(param_3 + 0x108);
+    fVar6 = (float)param_2[2] * 0.00390625f - *(float *)(param_3 + 0x10c);
+    fVar9 = (float)((int)CVector3f_01c70708.z -
+                   ((int)(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) >> 1));
     lVar1 = (longlong)(int)ROUND(fVar4 * fVar9 * 65536.0f) * (longlong)*param_4;
     lVar2 = (longlong)(int)ROUND(fVar5 * fVar9 * 65536.0f) * (longlong)param_4[1];
     lVar3 = (longlong)(int)ROUND(fVar6 * fVar9 * 65536.0f) * (longlong)param_4[2];

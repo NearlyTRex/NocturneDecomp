@@ -10,16 +10,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[128]:
-;   FUN_00418630 at 0041875d
-;   FUN_00418a00 at 0041900c
-;   FUN_004196b0 at 0041973d
-;   FUN_0041f3d0 at 0041f476
-;   FUN_0041fe40 at 0041feda
-;   FUN_0043d840 at 0043d84d
-;   FUN_0045ab40 at 0045ab5b
-;   FUN_00462300 at 004624da
-;   FUN_0046ecf0 at 0046ecfd
-;   FUN_00477890 at 00477925
+;   core_baron.cpp_FUN_00410490 at 0041074f
+;   core_bat.cpp_CBat_process_FUN_00411c40 at 00411e0a
+;   core_bat.cpp_CBat_setup_FUN_00411ae0 at 00411b35
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412762
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413ede
+;   core_bodypart.cpp_CBodyPart_addFire_FUN_00417b40 at 00417c6a
+;   core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10 at 00417f3b
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40 at 00417296
+;   core_bodypart.cpp_CBodyPart_process_FUN_004168d0 at 00416aa5
+;   core_bodypart.cpp_createBodyPart_FUN_00415b30 at 00415c49
 ;   ... and 118 more
 ;
 ; Referenced Globals:

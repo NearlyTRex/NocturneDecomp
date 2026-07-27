@@ -1,14 +1,12 @@
-// Name: FUN_004febd0
+// Name: core_script.cpp_FUN_004febd0
 // Address: 004febd0
 // Address Range: [[004febd0, 004fee22]]
 // Convention: unknown
-// Signature: undefined4 FUN_004febd0(int param_1,undefined4 param_2,int param_3)
+// Signature: undefined4 core_script_cpp_FUN_004febd0(int param_1,undefined4 param_2,int param_3)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-uint FUN_004febd0(int param_1,uint param_2,int param_3)
+uint core_script_cpp_FUN_004febd0(int param_1,uint param_2,int param_3)
 
 {
   char cVar1;
@@ -30,7 +28,7 @@ uint FUN_004febd0(int param_1,uint param_2,int param_3)
   bVar11 = 0;
   local_14 = param_1 + 0x30;
   do {
-    FUN_004fe500(param_1);
+    core_script_cpp_FUN_004fe500(param_1);
     iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0("world",param_2);
     if (iVar3 < 1) {
       return 1;
@@ -74,8 +72,9 @@ uint FUN_004febd0(int param_1,uint param_2,int param_3)
           if (iVar5 == 0) {
             _fclose(iVar6);
             iVar3 = shape_edittool_cpp_CStrList_getItemCount_FUN_00477660(param_1 + 0x30);
-            FUN_0046fcd0(0x01BCD074,"Probable non-text file %s detected near line %d.  Cannot use script.",param_2,iVar3 + 1);
-            FUN_004fe500(param_1);
+            shape_edittool_cpp_FUN_0046fcd0
+                      (0x01BCD074,"Probable non-text file %s detected near line %d.  Cannot use script.",param_2,iVar3 + 1);
+            core_script_cpp_FUN_004fe500(param_1);
             return 0;
           }
           local_31c[iVar7] = (char)iVar5;
@@ -88,17 +87,17 @@ LAB_004fecd4:
       shape_edittool_cpp_CStrList_add_FUN_00473cb0(local_14,local_31c);
     } while (bVar2);
     _fclose(iVar6);
-    FUN_004fee30(param_1);
+    core_script_cpp_FUN_004fee30(param_1);
     if (param_3 != 0) {
 LAB_004fee03:
-      FUN_004feff0(param_1);
+      core_script_cpp_FUN_004feff0(param_1);
       return 1;
     }
-    iVar3 = FUN_004fef60(param_1,&local_18);
-    FUN_00476160(0x1e56c30);
+    iVar3 = core_script_cpp_FUN_004fef60(param_1,&local_18);
+    shape_edittool_cpp_FUN_00476160(0x1e56c30);
     if (iVar3 == 0) goto LAB_004fee03;
-    _DAT_01cc4800 = "..\\core\\script.cpp";
-    _DAT_01cc4804 = 0x372;
-    FUN_004c8440("%s failed syntax check on line %d: %s",param_2,local_18 + 1,iVar3);
+    PTR_01cc4800 = "..\\core\\script.cpp";
+    INT_01cc4804 = 0x372;
+    core_main_c_FUN_004c8440("%s failed syntax check on line %d: %s",param_2,local_18 + 1,iVar3);
   } while( true );
 }

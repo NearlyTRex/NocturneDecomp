@@ -13,9 +13,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_popViewport_FUN_00460e70(void)
 {
   _DAT_01cc53d0 = _DAT_01cc53d0 + -1;
   if (_DAT_01cc53d0 < 0) {
-    _DAT_01cc4800 = "..\\engine\\matrix.c";
-    _DAT_01cc4804 = 0x569;
-    FUN_004c8440("3D Window unbalance");
+    PTR_01cc4800 = "..\\engine\\matrix.c";
+    INT_01cc4804 = 0x569;
+    core_main_c_FUN_004c8440("3D Window unbalance");
   }
   _DAT_01c039c4 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc549c);
   _DAT_01c039c8 = *(uint *)(_DAT_01cc53d0 * 4 + 0x1cc54c4);

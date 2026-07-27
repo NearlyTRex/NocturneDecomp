@@ -9,6 +9,6 @@
 void __cdecl engine_ncursfx_cpp_CAlphaBitmap_arrdtor2_FUN_004ee8d0(uint param_1)
 
 {
-  __arrfini(param_1,0xf,&DAT_0059df00);
+  __arrfini(param_1,0xf,&g_CAlphaBitmapTypeInfo_0059df00);
   return;
 }

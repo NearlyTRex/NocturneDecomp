@@ -7,12 +7,12 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[7]:
-;   FUN_0048f490 at 0048f832
-;   FUN_004ac9b0 at 004acaf3
-;   FUN_00551c00 at 00551e1f
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 at 00416175
 ;   core_dskybox.cpp_renderSkyDome_FUN_00463580 at 0046388e
+;   core_flies.cpp_FUN_0048f490 at 0048f832
+;   core_glass.cpp_FUN_004ac9b0 at 004acaf3
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_004dfea0 at 004dff69
+;   core_wateract.cpp_FUN_00551c00 at 00551e1f
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_004614b0 at 004614d7
 ;
 ; Referenced Globals:

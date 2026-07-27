@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodPool_init_FUN_004af730(int param_1,uint *param_2,uint param_3)
 
 {
@@ -23,9 +21,9 @@ void __cdecl core_gore_cpp_CBloodPool_init_FUN_004af730(int param_1,uint *param_
   *(uint *)(param_1 + 0xc) = param_2[2];
   *(uint *)(param_1 + 0x18) = 0;
   *(float *)(param_1 + 8) = *(float *)(param_1 + 8) + 0.1f;
-  *(int *)(param_1 + 0x1c) = (int)ROUND(*(float *)(param_1 + 4) * _DAT_0059e4d4);
-  *(int *)(param_1 + 0x20) = (int)ROUND(*(float *)(param_1 + 8) * _DAT_0059e4d4);
-  *(int *)(param_1 + 0x24) = (int)ROUND(*(float *)(param_1 + 0xc) * _DAT_0059e4d4);
+  *(int *)(param_1 + 0x1c) = (int)ROUND(*(float *)(param_1 + 4) * 256.0f);
+  *(int *)(param_1 + 0x20) = (int)ROUND(*(float *)(param_1 + 8) * 256.0f);
+  *(int *)(param_1 + 0x24) = (int)ROUND(*(float *)(param_1 + 0xc) * 256.0f);
   *(uint *)(param_1 + 0x10) = param_3;
   return;
 }

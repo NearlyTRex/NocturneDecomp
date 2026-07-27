@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[13]:
-;   FUN_00405b40 at 00405c2c
-;   FUN_00408fc0 at 004090c2
-;   FUN_0044d060 at 0044d159
-;   FUN_0048f490 at 0048f637
-;   FUN_004dd690 at 004dd6bd
-;   FUN_00545a10 at 00545a16
 ;   core_charactr.cpp_FUN_004270e0 at 0042717f
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437e47
+;   core_dglobe.cpp_FUN_0044d060 at 0044d159
+;   core_flies.cpp_FUN_0048f490 at 0048f637
+;   engine_3d.c_FUN_00405b40 at 00405c2c
+;   engine_3d.c_FUN_00408fc0 at 004090c2
 ;   engine_3d.c_updateAnimatedTexture_FUN_00406690 at 004066fd
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 at 00461eb7
+;   engine_font.cpp_CBitFont_render3DCharacter_FUN_004911f0 at 0049124d
+;   engine_model.c_FUN_004dd690 at 004dd6bd
 ;   ... and 3 more
 ;
 ; Referenced Globals:
@@ -25,11 +25,11 @@
 ;   undefined4 DAT_02dd0f84
 ;
 ; Called Functions:
+;   engine_special.cpp_selectTexture_FUN_00532400
+;   engine_special.cpp_updateTexture_FUN_00532440
 ;   engine_texture.cpp_CTextureCache_findTexture_FUN_00545390
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00544ef0
 ;   engine_texture.cpp_CTextureCache_setupTexture_FUN_00545410
-;   wincore_windll.cpp_selectTexture_FUN_00532400
-;   wincore_windll.cpp_updateTexture_FUN_00532440
 ;
 ; *****************************************************************************
 
@@ -95,8 +95,8 @@ section .text
     MOV ECX,dword ptr [0x01c00020]      ; 0054599c | DAT_01c00020
     PUSH ECX                            ; 005459a2
     PUSH EBX                            ; 005459a3
-    CALL wincore_windll.cpp_selectTexture_FUN_00532400 ; 005459a4
-        ;   XREF to: 00532400 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_selectTexture_FUN_00532400()
+    CALL engine_special.cpp_selectTexture_FUN_00532400 ; 005459a4
+        ;   XREF to: 00532400 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_selectTexture_FUN_00532400()
     ADD ESP,0x8                         ; 005459a9
     LEA EAX,[EBX + 0x18]                ; 005459ac
         ;   Label: LAB_005459ac
@@ -109,8 +109,8 @@ section .text
         ;   Label: LAB_005459b4
     PUSH EDX                            ; 005459ba
     PUSH EBX                            ; 005459bb
-    CALL wincore_windll.cpp_updateTexture_FUN_00532440 ; 005459bc
-        ;   XREF to: 00532440 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_updateTexture_FUN_00532440()
+    CALL engine_special.cpp_updateTexture_FUN_00532440 ; 005459bc
+        ;   XREF to: 00532440 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_updateTexture_FUN_00532440()
     ADD ESP,0x8                         ; 005459c1
     LEA EAX,[EBX + 0x18]                ; 005459c4
     POP ESI                             ; 005459c7

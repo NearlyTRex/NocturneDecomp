@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[79]:
-;   FUN_00405ab0 at 00405ac7
-;   FUN_00406920 at 00406960
-;   FUN_00406a00 at 00406a40
-;   FUN_00406ae0 at 00406aee
-;   FUN_00406b80 at 00406bc0
-;   FUN_00408fc0 at 00409100
-;   FUN_0041d050 at 0041d191
-;   FUN_004574e0 at 00457565
-;   FUN_0045f270 at 0045f339
+;   core_box.cpp_FUN_0041d050 at 0041d191
 ;   engine_3d.c_FUN_00405200 at 00405209
+;   engine_3d.c_FUN_00405ab0 at 00405ac7
+;   engine_3d.c_FUN_00406920 at 00406960
+;   engine_3d.c_FUN_00406a00 at 00406a40
+;   engine_3d.c_FUN_00406ae0 at 00406aee
+;   engine_3d.c_FUN_00406b80 at 00406bc0
+;   engine_3d.c_FUN_00408fc0 at 00409100
+;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_004060b0 at 004060c5
+;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_00407a20 at 00407a34
 ;   ... and 69 more
 ;
 ; Referenced Globals:

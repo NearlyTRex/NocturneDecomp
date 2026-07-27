@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(int param_1)
 
 {
@@ -84,7 +82,7 @@ void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(int param_1)
   local_80 = *(uint *)(param_1 + 0x2f4);
   local_94 = 0x3f800000;
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                    (*(uint *)(param_1 + 0x2fc),_DAT_01cae124);
+                    (*(uint *)(param_1 + 0x2fc),g_CHeroActorType_01cae0ec.name_hash);
   local_d0 = (uint)(iVar1 != 0);
   local_e8 = local_94;
   local_e4 = local_90;
@@ -108,7 +106,7 @@ void core_weapon_cpp_CWeapon_fireProjectile_FUN_00554750(int param_1)
   local_78 = 1;
   local_cc = 1;
   local_7c = local_d0;
-  FUN_0048b6f0(0x01C08D04,local_28,local_34,&local_e8,0);
+  core_fire_cpp_FUN_0048b6f0(0x01C08D04,local_28,local_34,&local_e8,0);
   core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
   return;
 }

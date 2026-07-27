@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,25 +122,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 150,
+    "complexity_score": 126,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 65,
-    "suspect_count": 7,
+    "pseudocode_lines": 66,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
       "unnamed_param",
       "unrolled_strcpy"
     ],
-    "total_lines": 192
+    "total_lines": 193
   },
   "cross_references": [
     {
       "addr": "00421010",
       "from_addr": "00421023",
-      "name": "FUN_00421010",
+      "name": "core_bugs.cpp_FUN_00421010",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -288,14 +287,14 @@
     },
     {
       "addr": "0059b010",
-      "name": "DAT_0059b010",
-      "type": "undefined4",
+      "name": "g_SBugsTypeInfo_0059b010",
+      "type": "WatcomTypeInfo",
       "value": null
     },
     {
       "addr": "0059b030",
-      "name": "DAT_0059b030",
-      "type": "undefined4",
+      "name": "g_CKeyFramedModelInstanceTypeInfo_0059b030",
+      "type": "WatcomTypeInfo",
       "value": null
     }
   ],
@@ -305,7 +304,7 @@
       {
         "call_addr": "00421023",
         "call_type": "direct",
-        "caller": "FUN_00421010",
+        "caller": "core_bugs.cpp_FUN_00421010",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -370,24 +369,8 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_0059b010",
-      "severity": "mild",
-      "text": "iVar2 = __arrinit(iVar2 + 0xbd2c,400,&DAT_0059b010);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0059b030",
-      "severity": "mild",
-      "text": "iVar2 = __arrinit(iVar2 + 0x6404,4,&DAT_0059b030);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 31,
+      "line": 32,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -395,7 +378,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 43,
+      "line": 44,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -403,7 +386,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 54,
+      "line": 55,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

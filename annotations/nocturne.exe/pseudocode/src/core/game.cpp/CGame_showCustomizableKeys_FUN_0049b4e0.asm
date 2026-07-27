@@ -34,7 +34,7 @@
 ; undefined        Stack[-0x110]:1  local_110
 ;
 ; XREF[1]:
-;   FUN_0049cc10 at 0049d54f
+;   core_game.cpp_FUN_0049cc10 at 0049d54f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_s_00582402

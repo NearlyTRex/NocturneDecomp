@@ -11,7 +11,7 @@ void core_barrier_cpp_CBarrier_archive_FUN_00411800(int param_1)
 {
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(param_1);
   core_actor_cpp_archiveVector_FUN_0040c450(param_1 + 0x150,"size");
-  if (INT_005acf80 < 2) {
+  if (g_INT_005acf80 < 2) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040c6d0(param_1 + 0x160,"effectClassNameList");

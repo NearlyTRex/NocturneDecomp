@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[18]:
-;   FUN_0041ef90 at 0041efba
-;   FUN_0048b6f0 at 0048b947
-;   FUN_00495a20 at 00496141
-;   FUN_00510a40 at 00511236
-;   FUN_00535900 at 00536d98
-;   FUN_00546e10 at 005471fd
-;   FUN_00547670 at 005476d8
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a83a
+;   core_boxactor.cpp_FUN_0041ef90 at 0041efba
 ;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 00429907
 ;   core_charactr.cpp_CCharacter_followActor_FUN_00428780 at 004288c1
+;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050 at 0042578b
+;   core_charactr.cpp_CCharacter_setOrientation_FUN_0042a060 at 0042a0c2
+;   core_fire.cpp_CBulletHole_init_FUN_00482c80 at 00482e5a
+;   core_fire.cpp_FUN_0048b6f0 at 0048b947
+;   core_flies.cpp_CFlies_process_FUN_0048f090 at 0048f1a4
+;   core_gabriela.cpp_FUN_00495a20 at 00496141
 ;   ... and 8 more
 ;
 ; Called Functions:

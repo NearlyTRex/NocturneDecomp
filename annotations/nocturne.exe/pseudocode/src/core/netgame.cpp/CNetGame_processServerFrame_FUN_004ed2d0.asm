@@ -17,8 +17,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_0049cc10 at 0049ccb4
 ;   core_game.cpp_CGame_runGameSession_FUN_0049da10 at 0049dda1
+;   core_game.cpp_FUN_0049cc10 at 0049ccb4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058ba54
@@ -33,13 +33,14 @@
 ;   TerminatedCString s_CNetGame_processServerFr_0058c691
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c77850
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cea3f4
 ;   ... and 8 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_setRandomSeed_FUN_0040dd20
+;   core_main.c_FUN_004c8440
 ;   core_netgame.cpp_CNetGame_applySimFrameHistory_FUN_004ed980
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740
 ;   core_netgame.cpp_CNetGame_send_FUN_004eb350
@@ -47,7 +48,6 @@
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_stdlib.c_rand_FUN_0056488c
 ;   crt_string.c_memmove_FUN_00566170
-;   FUN_004c8440
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
 ; *****************************************************************************
@@ -103,10 +103,10 @@ section .text
     MOV EBP,0x58c5ce                    ; 004ed35c | = "..\\core\\netgame.cpp"
     MOV EAX,0x8f7                       ; 004ed361
     PUSH 0x58c5e2                       ; 004ed366 | = "CNetGame::processServerFrame - I'm no..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004ed36b | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004ed371 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ed376
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004ed36b | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004ed371 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ed376
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ed37b
     MOV EDX,dword ptr [EBX + 0x1c]      ; 004ed37e
         ;   Label: LAB_004ed37e
@@ -304,10 +304,10 @@ section .text
         ;   Label: LAB_004ed540
     MOV ESI,0x8f6                       ; 004ed545
     PUSH 0x58c597                       ; 004ed54a | = "CNetGame::processServerFrame - I'm no..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004ed54f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004ed555 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ed55b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004ed54f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004ed555 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ed55b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ed560
     JMP 0x004ed34e                      ; 004ed563
         ;   XREF to: 004ed34e (UNCONDITIONAL_JUMP)  ; LAB_004ed34e
@@ -330,10 +330,10 @@ section .text
     MOV EBP,0x58ba54                    ; 004ed58c | = "..\\core\\netgame.cpp"
     MOV EAX,0x12b                       ; 004ed591
     PUSH 0x58ba68                       ; 004ed596 | = "allocSimFrame - sim history list full"
-    MOV dword ptr [0x01cc4800],EBP      ; 004ed59b | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004ed5a1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ed5a6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004ed59b | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004ed5a1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ed5a6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ed5ab
     MOV EDX,dword ptr [0x01d09c00]      ; 004ed5ae | DAT_01d09c00
         ;   Label: LAB_004ed5ae
@@ -367,10 +367,10 @@ section .text
     MOV ECX,0x58c628                    ; 004ed5fd | = "..\\core\\netgame.cpp"
     MOV EDI,0x93b                       ; 004ed602
     PUSH 0x58c63c                       ; 004ed607 | = "CNetGame::processServerFrame - player..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004ed60c | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004ed612 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ed618
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004ed60c | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004ed612 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ed618
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ed61d
     CMP EBP,0x5                         ; 004ed620
         ;   Label: LAB_004ed620
@@ -460,10 +460,10 @@ section .text
         ;   Label: LAB_004ed6ee
     MOV EDX,0x94d                       ; 004ed6f3
     PUSH 0x58c691                       ; 004ed6f8 | = "CNetGame::processServerFrame - client..."
-    MOV [0x01cc4800],EAX                ; 004ed6fd | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004ed702 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ed708
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004ed6fd | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004ed702 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ed708
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ed70d
     JMP 0x004ed668                      ; 004ed710
         ;   XREF to: 004ed668 (UNCONDITIONAL_JUMP)  ; LAB_004ed668

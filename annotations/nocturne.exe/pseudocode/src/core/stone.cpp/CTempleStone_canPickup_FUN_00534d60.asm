@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_005951c1
-;   undefined4 DAT_014b8a54
+;   undefined4 g_CActorDestinationActorType_014b8a1c.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -20,7 +20,7 @@ section .text
         ;   Label: core_stone.cpp_CTempleStone_canPickup_FUN_00534d60
     PUSH EBP                            ; 00534d61
     MOV EBX,dword ptr [ESP + 0xc]       ; 00534d62
-    MOV EDX,dword ptr [0x014b8a54]      ; 00534d66 | DAT_014b8a54
+    MOV EDX,dword ptr [0x014b8a54]      ; 00534d66 | g_CActorDestinationActorType_014b8a1c.name_hash
     PUSH EDX                            ; 00534d6c
     MOV ECX,dword ptr [EBX + 0x664]     ; 00534d6d
     PUSH ECX                            ; 00534d73

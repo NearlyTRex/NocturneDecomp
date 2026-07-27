@@ -53,12 +53,12 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0051a780(int param_1
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(local_e0,param_3);
   if ((DAT_0268ced4 & 1) == 0) {
     DAT_0268ced4 = DAT_0268ced4 | 1;
-    __arrinit(&DAT_02684234,3000,&DAT_005993b0);
+    __arrinit(&DAT_02684234,3000,&g_CVectorTypeInfo_005993b0);
   }
   if (3000 < *(int *)(param_4 * 4 + param_1 + 0x2c)) {
-    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-    _DAT_01cc4804 = 0x748;
-    FUN_004c8440("CDeformableModel::shatter - too many vertices!");
+    PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    INT_01cc4804 = 0x748;
+    core_main_c_FUN_004c8440("CDeformableModel::shatter - too many vertices!");
   }
   pfVar7 = (float *)&DAT_02684234;
   local_5c = param_1 + param_4 * 4;
@@ -83,7 +83,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0051a780(int param_1
       param_5 = param_5 + 3;
     } while (iVar6 < *(int *)(local_5c + 0x2c));
   }
-  __arrinit(local_b8,3,&DAT_005993b0);
+  __arrinit(local_b8,3,&g_CVectorTypeInfo_005993b0);
   local_24 = 0;
   local_44 = 0;
   if (0 < *(int *)(param_1 + 0xc00)) {

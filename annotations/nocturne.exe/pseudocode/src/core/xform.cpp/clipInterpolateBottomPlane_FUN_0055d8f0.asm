@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0055de8e at 0055defc
-;   FUN_0055df19 at 0055df6a
+;   core_xform.cpp_FUN_0055de8e at 0055defc
+;   core_xform.cpp_FUN_0055df19 at 0055df6a
 ;   core_xform.cpp_transformAndClipGeometry_FUN_0055e040 at 0055e6a9
 ;
 ; Referenced Globals:

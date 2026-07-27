@@ -2,10 +2,22 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/stdlib.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5C0000
 // =============================================================================
+
+// RuntimeHandlerEntry
+extern RuntimeHandlerEntry g_FirstInitHandler;
+extern RuntimeHandlerEntry RuntimeHandlerEntry_005c26ce;
+extern RuntimeHandlerEntry RuntimeHandlerEntry_005c26f8;
+
+// RuntimeHandlerEntry[160]
+extern RuntimeHandlerEntry g_InitHandlers[160];
+
+// RuntimeHandlerEntry[6]
+extern RuntimeHandlerEntry RuntimeHandlerEntry_ARRAY_005c26d4[6];
 
 // TerminatedCString
 extern TerminatedCString s_d3d_dll_005c0e83;
@@ -23,6 +35,7 @@ extern int INT_005c154c;
 extern int INT_005c1578;
 extern int INT_005c1590;
 extern int INT_005c1614;
+extern int INT_005c1654;
 extern int INT_005c1668;
 extern int INT_005c166c;
 
@@ -40,18 +53,12 @@ extern undefined1 DAT_005c1d0f;
 extern undefined1 DAT_005c1e89;
 extern undefined1 DAT_005c2050;
 extern undefined1 DAT_005c2140;
-extern undefined1 DAT_005c2302;
-extern undefined1 DAT_005c2308;
-extern undefined1 DAT_005c26ce;
-extern undefined1 DAT_005c26d4;
-extern undefined1 DAT_005c26f8;
 
 // undefined2
 extern undefined2 DAT_005c1d11;
 extern undefined2 DAT_005c1f4c;
 
 // undefined4
-extern undefined4 DAT_005c1654;
 extern undefined4 DAT_005c1660;
 extern undefined4 DAT_005c1664;
 extern undefined4 DAT_005c1680;

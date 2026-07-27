@@ -17,7 +17,7 @@
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ca00
 ;   core_actor.cpp_archiveVector_FUN_0040c450
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040d2d0
-;   FUN_004c46b0
+;   core_ladder.cpp_FUN_004c46b0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
         ;   XREF to: 0040c980 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_archiveActor_FUN_0040c980()
     ADD ESP,0x8                         ; 004c4537
     PUSH EBX                            ; 004c453a
-    CALL FUN_004c46b0                   ; 004c453b
-        ;   XREF to: 004c46b0 (UNCONDITIONAL_CALL)  ; undefined FUN_004c46b0()
+    CALL core_ladder.cpp_FUN_004c46b0   ; 004c453b
+        ;   XREF to: 004c46b0 (UNCONDITIONAL_CALL)  ; undefined core_ladder.cpp_FUN_004c46b0()
     MOV EDX,dword ptr [0x005bac68]      ; 004c4540 | INT_005bac68
     ADD ESP,0x4                         ; 004c4546
     CMP EDX,0x2                         ; 004c4549

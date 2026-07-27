@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ushort *param_2)
 
 {
@@ -181,10 +179,10 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ush
         if (iVar5 != *(int *)(local_a4 + 0xc)) {
           ppiStack_60d8 = (int **)&DAT_01cd8b28;
           ppiStack_60dc = (int **)"MPEG Layer 2 - pick_table - can't load tables!  File: %s";
-          _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-          _DAT_01cc4804 = 0x1a1;
+          PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          INT_01cc4804 = 0x1a1;
           ppiStack_60e0 = (int **)0x4e8803;
-          FUN_004c8440();
+          core_main_c_FUN_004c8440();
         }
         local_c8 = local_a0;
       }
@@ -199,12 +197,12 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ush
            (3 < (int)ppiVar11)) {
           ppiStack_60d8 = (int **)&DAT_01cd8b28;
           ppiStack_60e4 = (int **)"js_bound bad layer/modext (%d/%d)  File: %s";
-          _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-          _DAT_01cc4804 = 0x1b1;
+          PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          INT_01cc4804 = 0x1b1;
           ppiStack_60e8 = (int **)0x4e885e;
           ppiStack_60e0 = local_8c;
           ppiStack_60dc = ppiVar11;
-          FUN_004c8440();
+          core_main_c_FUN_004c8440();
         }
         local_cc = *(uint ***)
                     ("$CMotionController$$" + (int)ppiVar11 * 4 + (int)local_8c * 0x10 + 10);
@@ -433,10 +431,10 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ush
         if (local_74 < 0) {
           ppiStack_60d8 = (int **)(local_b8 + -1);
           ppiStack_60dc = (int **)"Not enough main data to decode frame %d.";
-          _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-          _DAT_01cc4804 = 0xf90;
+          PTR_01cc4800 = "..\\sound\\mp3.cpp";
+          INT_01cc4804 = 0xf90;
           ppiStack_60e0 = (int **)0x4e8fdf;
-          FUN_004c8440();
+          core_main_c_FUN_004c8440();
         }
         while (iVar5 = local_74, 0 < local_74) {
           ppiStack_60d8 = (int **)0x8;
@@ -483,7 +481,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ush
                 ppiStack_60ec = (int **)auStack_3ccc;
                 ppiStack_60f0 = param_1;
                 ppiStack_60e4 = (int **)iVar5;
-                FUN_004e5200();
+                sound_mp3_cpp_FUN_004e5200();
                 ppiStack_60d8 = &piStack_e4;
                 ppiStack_60e4 = apiStack_6cc;
                 ppiStack_60e8 = (int **)local_5c;
@@ -503,7 +501,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ush
             ppiStack_60e4 = local_60cc;
             ppiStack_60e8 = (int **)auStack_4ecc;
             ppiStack_60ec = (int **)0x4e914e;
-            FUN_004e6160();
+            sound_mp3_cpp_FUN_004e6160();
             local_20 = (int **)0x0;
             if (0 < local_bc) {
               local_50 = (int)apiStack_4c4 + local_38;

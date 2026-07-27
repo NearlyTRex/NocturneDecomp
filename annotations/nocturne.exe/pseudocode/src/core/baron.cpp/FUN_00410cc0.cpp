@@ -60,7 +60,7 @@ void core_baron_cpp_FUN_00410cc0(int param_1)
     core_fire_cpp_CFireEffect_createCrater_FUN_0048c370(0x01C08D04,iVar1 + 0x20,0x40800000);
   }
   else {
-    __arrinit(local_148,10,&DAT_005993b0);
+    __arrinit(local_148,10,&g_CVectorTypeInfo_005993b0);
     iVar3 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x4c))(iVar1,local_148);
     iStack_18 = iVar3;
     iVar4 = rand();

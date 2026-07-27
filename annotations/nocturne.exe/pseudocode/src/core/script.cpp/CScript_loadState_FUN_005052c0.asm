@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004a4170 at 004a48f3
+;   core_game.cpp_FUN_004a4170 at 004a48f3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_0058fcc6
@@ -30,12 +30,12 @@
 ;   ... and 10 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_script.cpp_CScript_computeChecksum_FUN_00505820
 ;   core_script.cpp_readActorReference_FUN_00505200
 ;   crt_stdio.c_fgets_FUN_00564b20
 ;   crt_stdio.c_fscanf_FUN_00563350
-;   FUN_0046fb40
-;   FUN_004c8440
+;   shape_edittool.cpp_FUN_0046fb40
 ;
 ; *****************************************************************************
 
@@ -293,10 +293,10 @@ section .text
         ;   Label: LAB_00505565
     MOV EBX,0xf56                       ; 0050556a
     PUSH 0x58fcdd                       ; 0050556f | = "CScript::loadState - file version is ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00505574 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050557a | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00505580
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00505574 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0050557a | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00505580
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00505585
     JMP 0x0050530f                      ; 00505588
         ;   XREF to: 0050530f (UNCONDITIONAL_JUMP)  ; LAB_0050530f
@@ -325,8 +325,8 @@ section .text
     PUSH 0x58fd48                       ; 005055c8 | = "The script you were using when this g..."
     MOV EBX,dword ptr [0x005b6d50]      ; 005055cd | DAT_005b6d50
     PUSH EBX                            ; 005055d3
-    CALL FUN_0046fb40                   ; 005055d4
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fb40()
+    CALL shape_edittool.cpp_FUN_0046fb40 ; 005055d4
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
     ADD ESP,0x8                         ; 005055d9
     ADD ESP,0x108                       ; 005055dc
     POP EBP                             ; 005055e2

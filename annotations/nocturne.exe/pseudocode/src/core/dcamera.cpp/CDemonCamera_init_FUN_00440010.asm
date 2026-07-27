@@ -15,13 +15,13 @@
 ;   TerminatedCString s_core_dcamera_cpp_0057b661
 ;   TerminatedCString s_CDemonCamera_init_Unable_0057b675
 ;   undefined4 DAT_012b0660
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_004401d0
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -100,10 +100,10 @@ section .text
     MOV EDI,0x57b61b                    ; 0044010c | = "..\\core\\dcamera.cpp"
     MOV EBP,0x248                       ; 00440111
     PUSH 0x57b62f                       ; 00440116 | = "CDemonCamera::init - Unable to alloc ..."
-    MOV dword ptr [0x01cc4800],EDI      ; 0044011b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00440121 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00440127
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0044011b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00440121 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00440127
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044012c
     MOV EDX,dword ptr [EBX + 0x13c]     ; 0044012f
         ;   Label: LAB_0044012f
@@ -136,10 +136,10 @@ section .text
         ;   Label: LAB_00440182
     MOV ESI,0x24d                       ; 00440187
     PUSH 0x57b675                       ; 0044018c | = "CDemonCamera::init - Unable to alloc ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00440191 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00440197 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044019d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00440191 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00440197 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044019d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004401a2
     JMP 0x0044015b                      ; 004401a5
         ;   XREF to: 0044015b (UNCONDITIONAL_JUMP)  ; LAB_0044015b

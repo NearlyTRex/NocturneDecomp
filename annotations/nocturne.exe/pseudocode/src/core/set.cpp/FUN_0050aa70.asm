@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x110]:1  local_110
 ;
 ; XREF[1]:
-;   FUN_0049cc10 at 0049cfe2
+;   core_game.cpp_FUN_0049cc10 at 0049cfe2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_omni_lights_005905b3

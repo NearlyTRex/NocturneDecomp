@@ -24,6 +24,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
+;   core_flame.cpp_FUN_0048d5d0
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
@@ -31,7 +32,6 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00461000
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
-;   FUN_0048d5d0
 ;
 ; *****************************************************************************
 
@@ -171,8 +171,8 @@ section .text
     LEA EAX,[EBX + 0x3bc]               ; 005504ca
         ;   Label: LAB_005504ca
     PUSH EAX                            ; 005504d0
-    CALL FUN_0048d5d0                   ; 005504d1
-        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048d5d0()
+    CALL core_flame.cpp_FUN_0048d5d0    ; 005504d1
+        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_0048d5d0()
     ADD ESP,0x4                         ; 005504d6
     JMP 0x00550396                      ; 005504d9
         ;   XREF to: 00550396 (UNCONDITIONAL_JUMP)  ; LAB_00550396

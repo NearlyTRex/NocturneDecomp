@@ -5,26 +5,26 @@
 ;
 ;
 ; XREF[79]:
-;   FUN_0040f2b0 at 0040f302
-;   FUN_0040f340 at 0040f34f
-;   FUN_0040f860 at 0040f86f
-;   FUN_004100a0 at 004100b9
-;   FUN_00414f50 at 00414f5f
-;   FUN_00415430 at 00415473
-;   FUN_00415760 at 004157e9
-;   FUN_0041ea00 at 0041ea10
-;   FUN_0041eaf0 at 0041eb00
-;   FUN_0041ebe0 at 0041ec01
+;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a9fa
+;   core_ammo.cpp_FUN_0040eca0 at 0040ecaf
+;   core_ammobox.cpp_FUN_0040f2b0 at 0040f302
+;   core_ammobox.cpp_FUN_0040f340 at 0040f34f
+;   core_anvil.cpp_FUN_0040f860 at 0040f86f
+;   core_backgnd.cpp_FUN_0040fff0 at 0040ffff
+;   core_backgnd.cpp_FUN_004100a0 at 004100b9
+;   core_bat.cpp_CBat_process_FUN_00411c40 at 00411d28
+;   core_bat.cpp_FUN_00411ea0 at 00411ec1
+;   core_battery.cpp_FUN_00414f50 at 00414f5f
 ;   ... and 69 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_0057cea8
 ;   TerminatedCString s_Tried_to_do_something_wi_0057cebb
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -46,10 +46,10 @@ section .text
     MOV ECX,0x57cea8                    ; 0045454b | = "..\\core\\dmodel.cpp"
     MOV ESI,0x52d                       ; 00454550
     PUSH 0x57cebb                       ; 00454555 | = "Tried to do something with model %s, ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0045455a | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00454560 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00454566
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0045455a | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00454560 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00454566
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0045456b
     POP ESI                             ; 0045456e
     MOV EAX,dword ptr [EBX + 0x178]     ; 0045456f

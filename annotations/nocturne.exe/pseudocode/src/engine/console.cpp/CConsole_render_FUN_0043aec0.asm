@@ -12,7 +12,7 @@
 ; undefined1       Stack[-0x13]:1  local_13
 ;
 ; XREF[1]:
-;   FUN_0049cc10 at 0049d56d
+;   core_game.cpp_FUN_0049cc10 at 0049d56d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c00c70

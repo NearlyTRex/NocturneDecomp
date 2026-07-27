@@ -3,6 +3,22 @@
 // Function prototypes for engine/drender.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_drender.cpp_FUN_004574e0
+// Address: 004574e0
+void FUN_004574e0(int param_1);
+
+// Original: engine_drender.cpp_FUN_00457640
+// Address: 00457640
+void FUN_00457640(int param_1,int param_2);
+
+// Original: engine_drender.cpp_FUN_004578a0
+// Address: 004578a0
+void FUN_004578a0(int param_1,int param_2);
+
+// Original: engine_drender.cpp_FUN_004579c0
+// Address: 004579c0
+int * FUN_004579c0(int param_1,int *param_2);
+
 // Original: engine_drender.cpp_renderTriangleTextured_FUN_00457a00
 // Address: 00457a00
 void __cdecl renderTriangleTextured(int *param_1,int param_2);
@@ -10,6 +26,18 @@ void __cdecl renderTriangleTextured(int *param_1,int param_2);
 // Original: engine_drender.cpp_renderTriangleSimple_FUN_00458080
 // Address: 00458080
 void __cdecl renderTriangleSimple(int *param_1,int param_2);
+
+// Original: engine_drender.cpp_staticInit_FUN_0045ecf0
+// Address: 0045ecf0
+void __cdecl staticInit(void);
+
+// Original: engine_drender.cpp_FUN_0045ed00
+// Address: 0045ed00
+void FUN_0045ed00(undefined4 *param_1);
+
+// Original: engine_drender.cpp_FUN_0045ed40
+// Address: 0045ed40
+void FUN_0045ed40(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
 // Address: 0045ed80
@@ -34,6 +62,10 @@ undefined4 __cdecl CDemonRenderer::countVisiblePixelsPoly(int *param_1,int param
 // Original: engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
 // Address: 0045f190
 bool __cdecl CDemonRenderer::renderDepthProfiledDirect(int param_1,int param_2);
+
+// Original: engine_drender.cpp_FUN_0045f270
+// Address: 0045f270
+int FUN_0045f270(int *param_1,int param_2);
 
 // Original: engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
 // Address: 0045f3c0
@@ -115,6 +147,10 @@ void __cdecl CDemonRenderer::setCameraOrigin(undefined4 param_1,undefined4 *para
 // Address: 00460700
 void __cdecl CDemonRenderer::setCameraOriginFromScaledPoint(undefined4 param_1,float *param_2);
 
+// Original: engine_drender.cpp_FUN_00460760
+// Address: 00460760
+void FUN_00460760(undefined4 param_1,undefined4 *param_2);
+
 // Original: engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
 // Address: 00460780
 void __cdecl CDemonRenderer::setupSceneRendering(undefined4 param_1,undefined4 param_2);
@@ -151,6 +187,10 @@ void __cdecl CDemonRenderer::matrixPop(void);
 // Address: 00460c00
 void __cdecl CDemonRenderer::setProjectionScale(undefined4 param_1,float param_2);
 
+// Original: engine_drender.cpp_FUN_00460c26
+// Address: 00460c26
+void FUN_00460c26(void);
+
 // Original: engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40
 // Address: 00460c40
 void __cdecl CDemonRenderer::setLightIntensity(undefined4 param_1,float param_2);
@@ -159,9 +199,21 @@ void __cdecl CDemonRenderer::setLightIntensity(undefined4 param_1,float param_2)
 // Address: 00460c70
 void __cdecl CDemonRenderer::setLightDirection(undefined4 param_1,undefined4 *param_2);
 
+// Original: engine_drender.cpp_FUN_00460c90
+// Address: 00460c90
+void FUN_00460c90(undefined4 param_1,float *param_2);
+
+// Original: engine_drender.cpp_FUN_00460d10
+// Address: 00460d10
+void FUN_00460d10(void);
+
 // Original: engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30
 // Address: 00460d30
 float * __cdecl CDemonRenderer::getCameraOriginWorld(undefined4 param_1,float *param_2);
+
+// Original: engine_drender.cpp_FUN_00460d90
+// Address: 00460d90
+void FUN_00460d90(void);
 
 // Original: engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0
 // Address: 00460db0
@@ -251,6 +303,10 @@ void __cdecl CDemonRenderer::renderQuadBatch(int param_1,int param_2,int param_3
 // Address: 004614b0
 void __cdecl CDemonRenderer::renderFacetList(int *param_1,int param_2,int param_3,int param_4,undefined4 param_5);
 
+// Original: engine_drender.cpp_FUN_00461720
+// Address: 00461720
+void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4);
+
 // Original: engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0
 // Address: 004619f0
 void __cdecl CDemonRenderer::setTextureCaptureMode(int param_1,int param_2);
@@ -266,6 +322,14 @@ void CDemonRenderer::processQuadPrimitive(int param_1,int param_2,undefined4 par
 // Original: engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0
 // Address: 00461bd0
 void __cdecl CDemonRenderer::captureFace(int *param_1,ushort *param_2,undefined4 param_3);
+
+// Original: engine_drender.cpp_FUN_00461d50
+// Address: 00461d50
+undefined4 FUN_00461d50(int *param_1,int *param_2);
+
+// Original: engine_drender.cpp_FUN_00461d80
+// Address: 00461d80
+undefined4 FUN_00461d80(int *param_1,int *param_2);
 
 // Original: engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00461db0
 // Address: 00461db0

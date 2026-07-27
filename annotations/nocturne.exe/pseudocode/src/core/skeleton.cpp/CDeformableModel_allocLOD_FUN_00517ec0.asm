@@ -12,15 +12,15 @@
 ;   TerminatedCString s_CDeformableModel_allocLO_00591586
 ;   TerminatedCString s_core_skeleton_cpp_005915b9
 ;   TerminatedCString s_Out_of_hunk_in_CDeformab_005915ce
-;   undefined4 DAT_005a1ee0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   WatcomTypeInfo g_SVertTypeInfo_005a1ee0
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_00517cc0
 ;   crt_memory.c___vec_delete_FUN_0056445f
 ;   crt_memory.c___vec_new_FUN_00566234
-;   FUN_004c8440
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;   shape_memdbg.cpp_malloc_FUN_00564c18
 ;
@@ -46,15 +46,15 @@ section .text
     MOV ECX,0x591571                    ; 00517ed5 | = "..\\core\\skeleton.cpp"
     MOV EBX,0x28a                       ; 00517eda
     PUSH 0x591586                       ; 00517edf | = "CDeformableModel::allocLOD - invalid ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00517ee4 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00517eea | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00517ef0
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00517ee4 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00517eea | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00517ef0
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00517ef5
     LEA EBX,[EDI*0x4 + 0x0]             ; 00517ef8
         ;   Label: LAB_00517ef8
     ADD EBX,ESI                         ; 00517eff
-    PUSH 0x5a1ee0                       ; 00517f01 | DAT_005a1ee0
+    PUSH 0x5a1ee0                       ; 00517f01 | g_SVertTypeInfo_005a1ee0
     MOV EBP,dword ptr [EBX + 0x40]      ; 00517f06
     PUSH EBP                            ; 00517f09
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00517f0a
@@ -80,7 +80,7 @@ section .text
         ;   XREF to: 00564486 (UNCONDITIONAL_CALL)  ; undefined shape_memdbg.cpp_free_FUN_00564486()
     ADD ESP,0x4                         ; 00517f42
     MOV EAX,dword ptr [ESP + 0x1c]      ; 00517f45
-    PUSH 0x5a1ee0                       ; 00517f49 | DAT_005a1ee0
+    PUSH 0x5a1ee0                       ; 00517f49 | g_SVertTypeInfo_005a1ee0
     MOV dword ptr [EBX + 0x2c],EAX      ; 00517f4e
     MOV EAX,dword ptr [ESP + 0x24]      ; 00517f51
     MOV EDX,dword ptr [EBX + 0x2c]      ; 00517f55
@@ -174,10 +174,10 @@ section .text
     MOV EBX,0x5915b9                    ; 00518033 | = "..\\core\\skeleton.cpp"
     MOV EDI,0x2ae                       ; 00518038
     PUSH 0x5915ce                       ; 0051803d | = "Out of hunk in CDeformableModel::allo..."
-    MOV dword ptr [0x01cc4800],EBX      ; 00518042 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00518048 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0051804e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 00518042 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00518048 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0051804e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x10                        ; 00518053
     POP EBP                             ; 00518056
     POP EDI                             ; 00518057

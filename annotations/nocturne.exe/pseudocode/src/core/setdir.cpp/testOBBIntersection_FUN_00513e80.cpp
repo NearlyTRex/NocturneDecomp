@@ -67,7 +67,7 @@ uint __cdecl core_setdir_cpp_testOBBIntersection_FUN_00513e80(float *param_1,flo
     local_b8 = param_2[4];
     local_b4 = param_2[5];
   }
-  __arrinit(local_128,8,&DAT_005993b0);
+  __arrinit(local_128,8,&g_CVectorTypeInfo_005993b0);
   local_28 = param_2 + 6;
   uVar3 = 0;
   local_24 = param_1 + 6;

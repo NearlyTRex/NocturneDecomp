@@ -9,9 +9,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   FUN_005229f0 at 00522bd9
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 005240ab
 ;   sound_sndmain.cpp_CSfxSlot_seek_FUN_00525a80 at 00525b46
+;   sound_sndmain.cpp_FUN_005229f0 at 00522bd9
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 00526adc
 ;
 ; Referenced Globals:
@@ -23,13 +23,13 @@
 ;   TerminatedCString s_Error_seeking_s_to_d_00592ac9
 ;   TerminatedCString s_sound_sndmain_cpp_00592ae0
 ;   TerminatedCString s_SfxSample_seek_no_MP3_an_00592af5
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_math.c_round_FUN_00563a30
 ;   crt_stdio.c_fseek_FUN_0056582c
-;   FUN_004c8440
 ;   sound_mp3.cpp_CMP3Decoder_seek_FUN_004e8410
 ;   sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_00525c40
 ;   sound_sndmain.cpp_CSfxSample_normalizePlaybackPos_FUN_00525de0
@@ -81,10 +81,10 @@ section .text
         ;   Label: LAB_00523d7a
     MOV ECX,0x79c                       ; 00523d7f
     PUSH 0x592a92                       ; 00523d84 | = "SfxSample::seek - invalid destPtr"
-    MOV dword ptr [0x01cc4800],EDX      ; 00523d89 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00523d8f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00523d95
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00523d89 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00523d8f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00523d95
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00523d9a
     MOV dword ptr [EBX + 0x140],ESI     ; 00523d9d
         ;   Label: LAB_00523d9d
@@ -121,10 +121,10 @@ section .text
     MOV ECX,0x592a41                    ; 00523dec | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x791                       ; 00523df1
     PUSH 0x592a56                       ; 00523df6 | = "SfxSample::seek - '%s' isn't streamed!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00523dfb | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00523e01 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00523e07
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00523dfb | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00523e01 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00523e07
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00523e0c
     JMP 0x00523d2c                      ; 00523e0f
         ;   XREF to: 00523d2c (UNCONDITIONAL_JUMP)  ; LAB_00523d2c
@@ -148,10 +148,10 @@ section .text
     MOV EAX,0x592ab4                    ; 00523e3f | = "..\\sound\\sndmain.cpp"
     MOV EDX,0x7a5                       ; 00523e44
     PUSH 0x592ac9                       ; 00523e49 | = "Error seeking %s to %d"
-    MOV [0x01cc4800],EAX                ; 00523e4e | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00523e53 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00523e59
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00523e4e | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00523e53 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00523e59
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 00523e5e
     ADD ESP,0xc                         ; 00523e61
     POP EBP                             ; 00523e64
@@ -164,10 +164,10 @@ section .text
     MOV EBP,0x592ae0                    ; 00523e6a | = "..\\sound\\sndmain.cpp"
     MOV EAX,0x7b0                       ; 00523e6f
     PUSH 0x592af5                       ; 00523e74 | = "SfxSample::seek - no MP3 and no wavFi..."
-    MOV dword ptr [0x01cc4800],EBP      ; 00523e79 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 00523e7f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00523e84
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00523e79 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 00523e7f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00523e84
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00523e89
     ADD ESP,0xc                         ; 00523e8c
     POP EBP                             ; 00523e8f

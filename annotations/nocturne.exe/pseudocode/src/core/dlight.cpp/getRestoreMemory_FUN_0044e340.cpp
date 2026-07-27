@@ -14,9 +14,9 @@ uint __cdecl core_dlight_cpp_getRestoreMemory_FUN_0044e340(int param_1)
   int iVar1;
   
   if (0x300060U - param_1 < _DAT_01ab99ec) {
-    _DAT_01cc4800 = "..\\core\\dlight.cpp";
-    _DAT_01cc4804 = 0xa3;
-    FUN_004c8440("getRestoreMemory - Need more static memory");
+    PTR_01cc4800 = "..\\core\\dlight.cpp";
+    INT_01cc4804 = 0xa3;
+    core_main_c_FUN_004c8440("getRestoreMemory - Need more static memory");
   }
   iVar1 = _DAT_01ab99ec * 2;
   _DAT_01ab99ec = _DAT_01ab99ec + param_1 + 8;

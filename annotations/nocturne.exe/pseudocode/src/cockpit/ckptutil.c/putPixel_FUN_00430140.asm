@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0042f330 at 0042f3f3
+;   cockpit_ckptutil.c_FUN_0042f330 at 0042f3f3
 ;   cockpit_ckptutil.c_drawLineAA_FUN_0042f600 at 0042f680
 ;
 ; Referenced Globals:

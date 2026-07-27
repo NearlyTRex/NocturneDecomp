@@ -26,7 +26,7 @@
 ;   core_charactr.cpp_getGameDeltaTime_FUN_0042b5c0
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
 ;   core_script.cpp_CScript_step_FUN_004ff2c0
-;   FUN_0046fcd0
+;   shape_edittool.cpp_FUN_0046fcd0
 ;   sound_sndmain.cpp_killSfx_FUN_00527230
 ;
 ; *****************************************************************************
@@ -138,8 +138,8 @@ section .text
     MOV ESI,dword ptr [0x005b6d50]      ; 004fe69a | DAT_005b6d50
     PUSH ESI                            ; 004fe6a0
     MOV EDI,0x1                         ; 004fe6a1
-    CALL FUN_0046fcd0                   ; 004fe6a6
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004fe6a6
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0xc                         ; 004fe6ab
     MOV dword ptr [0x01e56c28],EDI      ; 004fe6ae | DAT_01e56c28
     JMP 0x004fe623                      ; 004fe6b4
@@ -154,8 +154,8 @@ section .text
     PUSH 0x58e1d6                       ; 004fe6ca | = "Error processing script.\nLine: %d\nT..."
     MOV EAX,[0x005b6d50]                ; 004fe6cf | DAT_005b6d50
     PUSH EAX                            ; 004fe6d4
-    CALL FUN_0046fcd0                   ; 004fe6d5
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004fe6d5
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x14                        ; 004fe6da
     JMP 0x004fe675                      ; 004fe6dd
         ;   XREF to: 004fe675 (UNCONDITIONAL_JUMP)  ; LAB_004fe675

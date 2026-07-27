@@ -7,10 +7,10 @@
 ; undefined        Stack[-0x6c]:1  local_6c
 ;
 ; XREF[4]:
-;   FUN_004a4b50 at 004a4c6c
-;   FUN_004bdb80 at 004bdbdb
-;   FUN_005289f0 at 00528aa4
+;   core_game.cpp_FUN_004a4b50 at 004a4c6c
+;   core_inivar.cpp_FUN_004bdb80 at 004bdbdb
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 00501d2a
+;   sound_sndmain.cpp_FUN_005289f0 at 00528aa4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_00586732

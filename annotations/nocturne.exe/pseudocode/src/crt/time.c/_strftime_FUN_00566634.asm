@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_00470730 at 00470b78
 ;   shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00474460 at 0047456d
+;   shape_edittool.cpp_FUN_00470730 at 00470b78
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_a_b_d_H_M_S_Y_00598a98
@@ -31,7 +31,7 @@
 ;   void* PTR_DAT_005c1f0c = 005c1e08
 ;
 ; Called Functions:
-;   FUN_00566600
+;   crt_unknown.c_FUN_00566600
 ;   FUN_0056d608
 ;   FUN_0056dc68
 ;
@@ -251,8 +251,8 @@ section .text
     PUSH EDI                            ; 00566825
     LEA EAX,[ESP + 0x4]                 ; 00566826
     PUSH EAX                            ; 0056682a
-    CALL FUN_00566600                   ; 0056682b
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined FUN_00566600()
+    CALL crt_unknown.c_FUN_00566600     ; 0056682b
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
     ADD ESP,0x8                         ; 00566830
     JMP 0x00566a20                      ; 00566833
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -266,8 +266,8 @@ section .text
     PUSH ECX                            ; 0056684c
     LEA EAX,[ESP + 0x4]                 ; 0056684d
     PUSH EAX                            ; 00566851
-    CALL FUN_00566600                   ; 00566852
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined FUN_00566600()
+    CALL crt_unknown.c_FUN_00566600     ; 00566852
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
     ADD ESP,0x8                         ; 00566857
     JMP 0x00566a20                      ; 0056685a
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -286,8 +286,8 @@ section .text
         ;   Label: LAB_00566873
     LEA EAX,[ESP + 0x4]                 ; 00566874
     PUSH EAX                            ; 00566878
-    CALL FUN_00566600                   ; 00566879
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined FUN_00566600()
+    CALL crt_unknown.c_FUN_00566600     ; 00566879
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
     ADD ESP,0x8                         ; 0056687e
     JMP 0x00566a20                      ; 00566881
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -310,8 +310,8 @@ section .text
     PUSH EAX                            ; 005668a8
     LEA EAX,[ESP + 0x4]                 ; 005668a9
     PUSH EAX                            ; 005668ad
-    CALL FUN_00566600                   ; 005668ae
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined FUN_00566600()
+    CALL crt_unknown.c_FUN_00566600     ; 005668ae
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
     ADD ESP,0x8                         ; 005668b3
     JMP 0x00566a20                      ; 005668b6
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -320,8 +320,8 @@ section .text
     PUSH EDX                            ; 005668be
     LEA EAX,[ESP + 0x4]                 ; 005668bf
     PUSH EAX                            ; 005668c3
-    CALL FUN_00566600                   ; 005668c4
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined FUN_00566600()
+    CALL crt_unknown.c_FUN_00566600     ; 005668c4
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
     ADD ESP,0x8                         ; 005668c9
     JMP 0x00566a20                      ; 005668cc
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -350,8 +350,8 @@ section .text
     PUSH EAX                            ; 00566908
     LEA EAX,[ESP + 0x4]                 ; 00566909
     PUSH EAX                            ; 0056690d
-    CALL FUN_00566600                   ; 0056690e
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined FUN_00566600()
+    CALL crt_unknown.c_FUN_00566600     ; 0056690e
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
     ADD ESP,0x8                         ; 00566913
     JMP 0x00566a20                      ; 00566916
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -371,8 +371,8 @@ section .text
     PUSH EAX                            ; 0056693c
     LEA EAX,[ESP + 0x4]                 ; 0056693d
     PUSH EAX                            ; 00566941
-    CALL FUN_00566600                   ; 00566942
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined FUN_00566600()
+    CALL crt_unknown.c_FUN_00566600     ; 00566942
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
     ADD ESP,0x8                         ; 00566947
     JMP 0x00566a20                      ; 0056694a
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -406,8 +406,8 @@ section .text
     PUSH EAX                            ; 00566995
     LEA EAX,[ESP + 0x4]                 ; 00566996
     PUSH EAX                            ; 0056699a
-    CALL FUN_00566600                   ; 0056699b
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined FUN_00566600()
+    CALL crt_unknown.c_FUN_00566600     ; 0056699b
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
     ADD ESP,0x8                         ; 005669a0
     JMP 0x00566a20                      ; 005669a3
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20
@@ -430,8 +430,8 @@ section .text
     PUSH EDX                            ; 005669d9
     LEA EAX,[ESP + 0x4]                 ; 005669da
     PUSH EAX                            ; 005669de
-    CALL FUN_00566600                   ; 005669df
-        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined FUN_00566600()
+    CALL crt_unknown.c_FUN_00566600     ; 005669df
+        ;   XREF to: 00566600 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566600()
     ADD ESP,0x8                         ; 005669e4
     JMP 0x00566a20                      ; 005669e7
         ;   XREF to: 00566a20 (UNCONDITIONAL_JUMP)  ; LAB_00566a20

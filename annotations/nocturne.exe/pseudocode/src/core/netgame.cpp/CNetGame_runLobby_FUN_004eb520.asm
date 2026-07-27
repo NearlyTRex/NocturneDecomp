@@ -8,22 +8,22 @@
 ;   core_game.cpp_joinNetworkGame_FUN_004a5e40 at 004a5eb1
 ;
 ; Referenced Globals:
-;   float FLOAT_0058c222 = 1000
-;   double DOUBLE_0058c22a = 0.0000152587890625
-;   double DOUBLE_0058c232 = 30
-;   double DOUBLE_0058c23a = 0.200000000000000
-;   undefined4 DAT_005b6d50
-;   undefined4 DAT_005b761c
-;   undefined4 DAT_005b7620
-;   int INT_005bac64 = 0x1cc30e4
-;   undefined4 DAT_005baf90
-;   undefined4 DAT_005bdee0
-;   undefined4 DAT_005bdee4
-;   undefined4 DAT_005c1664
-;   undefined4 DAT_01c00c70
-;   undefined4 DAT_01cea3f4
-;   undefined4 DAT_01cea3f8
-;   ... and 4 more
+;   TerminatedCString s_You_have_been_disconnect_0058c160
+;   TerminatedCString s_Mission_s_0058c18a
+;   TerminatedCString s_MyGameSettigsId_d_0058c196
+;   TerminatedCString s_Player_0058c1aa
+;   TerminatedCString s_IP_0058c1b1
+;   TerminatedCString s_Ping_0058c1b4
+;   TerminatedCString s_Ready_0058c1b9
+;   TerminatedCString s_heroType_0058c1bf
+;   TerminatedCString s_gameSettings_0058c1c8
+;   TerminatedCString s_Local_0058c1d5
+;   TerminatedCString s_Local_0058c1dd
+;   TerminatedCString s_dms_0058c1e5
+;   TerminatedCString s_anon_0058c1ea
+;   TerminatedCString s_Ready_0058c1ec
+;   TerminatedCString s_Not_ready_0058c1f2
+;   ... and 24 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_setRandomSeed_FUN_0040dd20
@@ -97,11 +97,11 @@ section .text
     CMP dword ptr [EAX],0x0             ; 004eb5b0
     JZ 0x004eb84d                       ; 004eb5b3
         ;   XREF to: 004eb84d (CONDITIONAL_JUMP)  ; LAB_004eb84d
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004eb5b9
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004eb5b9
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
     MOV EBX,dword ptr [ESP + 0x10c]     ; 004eb5be
     PUSH EBX                            ; 004eb5c5
-    PUSH 0x58c18a                       ; 004eb5c6
+    PUSH 0x58c18a                       ; 004eb5c6 | = "Mission: %s"
     LEA EAX,[ESP + 0x10]                ; 004eb5cb
     PUSH EAX                            ; 004eb5cf
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004eb5d0
@@ -116,7 +116,7 @@ section .text
     ADD ESP,0xc                         ; 004eb5e6
     MOV ESI,dword ptr [0x01cea404]      ; 004eb5e9 | DAT_01cea404
     PUSH ESI                            ; 004eb5ef
-    PUSH 0x58c196                       ; 004eb5f0
+    PUSH 0x58c196                       ; 004eb5f0 | = "MyGameSettigsId: %d"
     LEA EAX,[ESP + 0x10]                ; 004eb5f5
     PUSH EAX                            ; 004eb5f9
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004eb5fa
@@ -131,37 +131,37 @@ section .text
     ADD ESP,0xc                         ; 004eb613
     PUSH 0x21                           ; 004eb616
     PUSH 0x0                            ; 004eb618
-    PUSH 0x58c1aa                       ; 004eb61a
+    PUSH 0x58c1aa                       ; 004eb61a | = "Player"
     CALL engine_2d.c_drawText_FUN_00402600 ; 004eb61f
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 004eb624
     PUSH 0x21                           ; 004eb627
     PUSH 0x64                           ; 004eb629
-    PUSH 0x58c1b1                       ; 004eb62b
+    PUSH 0x58c1b1                       ; 004eb62b | = "IP"
     CALL engine_2d.c_drawText_FUN_00402600 ; 004eb630
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 004eb635
     PUSH 0x21                           ; 004eb638
     PUSH 0xc8                           ; 004eb63a
-    PUSH 0x58c1b4                       ; 004eb63f
+    PUSH 0x58c1b4                       ; 004eb63f | = "Ping"
     CALL engine_2d.c_drawText_FUN_00402600 ; 004eb644
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 004eb649
     PUSH 0x21                           ; 004eb64c
     PUSH 0x12c                          ; 004eb64e
-    PUSH 0x58c1b9                       ; 004eb653
+    PUSH 0x58c1b9                       ; 004eb653 | = "Ready"
     CALL engine_2d.c_drawText_FUN_00402600 ; 004eb658
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 004eb65d
     PUSH 0x21                           ; 004eb660
     PUSH 0x190                          ; 004eb662
-    PUSH 0x58c1bf                       ; 004eb667
+    PUSH 0x58c1bf                       ; 004eb667 | = "heroType"
     CALL engine_2d.c_drawText_FUN_00402600 ; 004eb66c
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     ADD ESP,0xc                         ; 004eb671
     PUSH 0x21                           ; 004eb674
     PUSH 0x1f4                          ; 004eb676
-    PUSH 0x58c1c8                       ; 004eb67b
+    PUSH 0x58c1c8                       ; 004eb67b | = "gameSettings"
     CALL engine_2d.c_drawText_FUN_00402600 ; 004eb680
         ;   XREF to: 00402600 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_drawText_FUN_00402600()
     MOV EAX,[0x005b761c]                ; 004eb685 | DAT_005b761c
@@ -202,7 +202,7 @@ section .text
     CMP EAX,EDX                         ; 004eb703
     JNZ 0x004eb88e                      ; 004eb705
         ;   XREF to: 004eb88e (CONDITIONAL_JUMP)  ; LAB_004eb88e
-    MOV ESI,0x58c1d5                    ; 004eb70b
+    MOV ESI,0x58c1d5                    ; 004eb70b | = "(Local)"
     LEA EDI,[ESP + 0x8]                 ; 004eb710
     PUSH EDI                            ; 004eb714
     MOV AL,byte ptr [ESI]               ; 004eb715
@@ -233,7 +233,7 @@ section .text
     CMP EDX,dword ptr [EAX + 0x114]     ; 004eb74a
     JNZ 0x004eb8a1                      ; 004eb750
         ;   XREF to: 004eb8a1 (CONDITIONAL_JUMP)  ; LAB_004eb8a1
-    MOV ESI,0x58c1dd                    ; 004eb756
+    MOV ESI,0x58c1dd                    ; 004eb756 | = "(Local)"
     LEA EDI,[ESP + 0x8]                 ; 004eb75b
         ;   Label: LAB_004eb75b
     PUSH EDI                            ; 004eb75f
@@ -264,7 +264,7 @@ section .text
     CMP dword ptr [EAX + 0x44],0x0      ; 004eb793
     JZ 0x004eb8f9                       ; 004eb797
         ;   XREF to: 004eb8f9 (CONDITIONAL_JUMP)  ; LAB_004eb8f9
-    MOV ESI,0x58c1ec                    ; 004eb79d
+    MOV ESI,0x58c1ec                    ; 004eb79d | = "Ready"
     LEA EDI,[ESP + 0x8]                 ; 004eb7a2
         ;   Label: LAB_004eb7a2
     PUSH EDI                            ; 004eb7a6
@@ -293,7 +293,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x11c]     ; 004eb7d3
     MOV EDX,dword ptr [EAX + 0x14]      ; 004eb7da
     PUSH EDX                            ; 004eb7dd
-    PUSH 0x58c1fc                       ; 004eb7de
+    PUSH 0x58c1fc                       ; 004eb7de | = "%d"
     LEA EAX,[ESP + 0x10]                ; 004eb7e3
     PUSH EAX                            ; 004eb7e7
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004eb7e8
@@ -329,12 +329,12 @@ section .text
         ;   XREF to: 004ece70 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_004ece70()
     JMP 0x004eb59b                      ; 004eb848
         ;   XREF to: 004eb59b (UNCONDITIONAL_JUMP)  ; LAB_004eb59b
-    PUSH 0x58c160                       ; 004eb84d
+    PUSH 0x58c160                       ; 004eb84d | = "You have been disconnected from the g..."
         ;   Label: LAB_004eb84d
     MOV ECX,dword ptr [0x005b6d50]      ; 004eb852 | DAT_005b6d50
     PUSH ECX                            ; 004eb858
-    CALL FUN_0046fe60                   ; 004eb859
-        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fe60()
+    CALL shape_edittool.cpp_FUN_0046fe60 ; 004eb859
+        ;   XREF to: 0046fe60 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fe60()
     ADD ESP,0x8                         ; 004eb85e
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004eb861
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_clearInputAndWait_FUN_00403f50()
@@ -383,7 +383,7 @@ section .text
     FISTP dword ptr [ESP + 0x120]       ; 004eb8c9
     MOV ESI,dword ptr [ESP + 0x120]     ; 004eb8d0
     PUSH ESI                            ; 004eb8d7
-    PUSH 0x58c1e5                       ; 004eb8d8
+    PUSH 0x58c1e5                       ; 004eb8d8 | = "%dms"
     LEA EAX,[ESP + 0x10]                ; 004eb8dd
     PUSH EAX                            ; 004eb8e1
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004eb8e2
@@ -391,11 +391,11 @@ section .text
     ADD ESP,0xc                         ; 004eb8e7
     JMP 0x004eb779                      ; 004eb8ea
         ;   XREF to: 004eb779 (UNCONDITIONAL_JUMP)  ; LAB_004eb779
-    MOV ESI,0x58c1ea                    ; 004eb8ef
+    MOV ESI,0x58c1ea                    ; 004eb8ef | = "?"
         ;   Label: LAB_004eb8ef
     JMP 0x004eb75b                      ; 004eb8f4
         ;   XREF to: 004eb75b (UNCONDITIONAL_JUMP)  ; LAB_004eb75b
-    MOV ESI,0x58c1f2                    ; 004eb8f9
+    MOV ESI,0x58c1f2                    ; 004eb8f9 | = "Not ready"
         ;   Label: LAB_004eb8f9
     JMP 0x004eb7a2                      ; 004eb8fe
         ;   XREF to: 004eb7a2 (UNCONDITIONAL_JUMP)  ; LAB_004eb7a2
@@ -403,7 +403,7 @@ section .text
         ;   Label: LAB_004eb903
     MOV ESI,dword ptr [EAX + 0x34]      ; 004eb90a
     PUSH ESI                            ; 004eb90d
-    PUSH 0x58c1ff                       ; 004eb90e
+    PUSH 0x58c1ff                       ; 004eb90e | = "%d"
     LEA EAX,[ESP + 0x10]                ; 004eb913
     PUSH EAX                            ; 004eb917
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004eb918
@@ -589,7 +589,7 @@ section .text
         ;   XREF to: 004ebb7d (CONDITIONAL_JUMP)  ; LAB_004ebb7d
     MOV EDI,dword ptr [ESP + 0x10c]     ; 004ebaf9
     PUSH EDI                            ; 004ebb00
-    PUSH 0x58c202                       ; 004ebb01
+    PUSH 0x58c202                       ; 004ebb01 | = "Loading %s"
     MOV EAX,[0x005b6d50]                ; 004ebb06 | DAT_005b6d50
     PUSH EAX                            ; 004ebb0b
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004ebb0c
@@ -769,7 +769,7 @@ section .text
     LEA EBX,[EAX + 0x118]               ; 004ebccb
         ;   Label: LAB_004ebccb
     PUSH EBX                            ; 004ebcd1
-    PUSH 0x58c20d                       ; 004ebcd2
+    PUSH 0x58c20d                       ; 004ebcd2 | = "Loading %s"
     MOV ECX,dword ptr [0x005b6d50]      ; 004ebcd7 | DAT_005b6d50
     PUSH ECX                            ; 004ebcdd
     CALL shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0 ; 004ebcde
@@ -866,7 +866,7 @@ section .text
         ;   Label: LAB_004ebdc9
     PUSH 0x100                          ; 004ebdcb
     PUSH 0x1cea180                      ; 004ebdd0
-    PUSH 0x58c218                       ; 004ebdd5
+    PUSH 0x58c218                       ; 004ebdd5 | = "Send chat"
     MOV EAX,[0x005b6d50]                ; 004ebdda | DAT_005b6d50
     PUSH EAX                            ; 004ebddf
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600 ; 004ebde0

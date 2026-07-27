@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_005125a0 at 00512666
-;   FUN_00513720 at 0051375a
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290 at 00440404
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_0044e470 at 0044e4b8
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 at 004c0c69
 ;   core_level.cpp_CLevelLoader_update_FUN_004c59e0 at 004c5a31
+;   core_setdir.cpp_FUN_005125a0 at 00512666
+;   core_setdir.cpp_FUN_00513720 at 0051375a
 ;
 ; Called Functions:
 ;   engine_matrix.c_pushViewport_FUN_004ce7c0

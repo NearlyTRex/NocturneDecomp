@@ -21,7 +21,7 @@ int __cdecl core_level_cpp_CLevelLoader_show_FUN_004c5640(uint *param_1,uint par
   param_1[0x44] = param_3;
   param_1[1] = param_2;
   if (param_3 == 0) {
-    wincore_windll_cpp_clearScreen_FUN_0052ee70();
+    engine_special_cpp_clearScreen_FUN_0052ee70();
     param_1[0x45] = 0;
     param_1[0x46] = 0;
     param_1[0x47] = 0x280;

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00516b70 at 00516b83
+;   core_simbox.cpp_FUN_00516b70 at 00516b83
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00591105

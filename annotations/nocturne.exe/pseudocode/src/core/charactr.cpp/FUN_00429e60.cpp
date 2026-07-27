@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_charactr_cpp_FUN_00429e60(int param_1)
 
@@ -27,9 +26,9 @@ void core_charactr_cpp_FUN_00429e60(int param_1)
   bVar3 = 0;
   if (0.0 < *(float *)(param_1 + 0x25d8)) {
     if (*(int *)(param_1 + 0x25dc) < 0) {
-      _DAT_01cc4800 = "..\\core\\charactr.cpp";
-      _DAT_01cc4804 = 0xdf9;
-      FUN_004c8440("CCharacter::applyLookAt - never set lookAtHeadBone for actor %s",param_1);
+      PTR_01cc4800 = "..\\core\\charactr.cpp";
+      INT_01cc4804 = 0xdf9;
+      core_main_c_FUN_004c8440("CCharacter::applyLookAt - never set lookAtHeadBone for actor %s",param_1);
     }
     core_xform_cpp_FUN_0055d4a0(*(uint *)(param_1 + 0x25d4));
     local_44 = local_24;

@@ -13,11 +13,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   FUN_004c2470 at 004c26f8
-;   FUN_004fe770 at 004fe8d0
 ;   core_game.cpp_CGame_displayActStats_FUN_004a6680 at 004a696f
 ;   core_game.cpp_CGame_finishAct_FUN_004a6a10 at 004a6ded
 ;   core_game.cpp_CGame_renderOverlay_FUN_0049ab50 at 0049afa5
+;   core_inv.cpp_FUN_004c2470 at 004c26f8
+;   core_script.cpp_FUN_004fe770 at 004fe8d0
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50 at 00471ce5
 ;
 ; Referenced Globals:

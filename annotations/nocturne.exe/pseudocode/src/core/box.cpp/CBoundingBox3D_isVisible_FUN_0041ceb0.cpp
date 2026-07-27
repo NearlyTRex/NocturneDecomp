@@ -29,7 +29,7 @@ uint __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(float *param_1,i
   float local_10;
   float local_c;
   
-  iVar1 = FUN_0041d050(param_1);
+  iVar1 = core_box_cpp_FUN_0041d050(param_1);
   if ((iVar1 == -1) || (iVar1 == 0)) {
     return 0;
   }
@@ -52,7 +52,7 @@ uint __cdecl core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(float *param_1,i
     local_2c = (int)ROUND(local_20 * _DAT_0059aa80);
     local_28 = (int)ROUND(local_1c * _DAT_0059aa80);
     local_24 = (int)ROUND(local_18 * _DAT_0059aa80);
-    wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(local_74,&local_2c);
+    engine_special_cpp_transformAndProjectPoint_FUN_0053075c(local_74,&local_2c);
     local_14 = local_14 + local_20;
     local_10 = local_10 + local_1c;
     local_c = local_c + local_18;

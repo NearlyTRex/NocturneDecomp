@@ -1,15 +1,14 @@
-// Name: FUN_0045ed40
+// Name: engine_drender.cpp_FUN_0045ed40
 // Address: 0045ed40
 // Address Range: [[0045ed40, 0045ed74]]
 // Convention: unknown
-// Signature: void FUN_0045ed40(void)
+// Signature: void engine_drender_cpp_FUN_0045ed40(void)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void FUN_0045ed40(void)
+void engine_drender_cpp_FUN_0045ed40(void)
 
 {
   int in_stack_00000004;
@@ -19,8 +18,8 @@ void FUN_0045ed40(void)
   if (in_stack_00000008 != 1) {
     return;
   }
-  _DAT_01cc4800 = "..\\engine\\drender.cpp";
-  _DAT_01cc4804 = 0x9b;
-  FUN_004c8440("Ortho isn't supported any more");
+  PTR_01cc4800 = "..\\engine\\drender.cpp";
+  INT_01cc4804 = 0x9b;
+  core_main_c_FUN_004c8440("Ortho isn't supported any more");
   return;
 }

@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_00468d00 at 00469126
-;   FUN_0046e9f0 at 0046eb2d
-;   FUN_0050dfe0 at 0050e04f
-;   FUN_00511d80 at 00512326
-;   FUN_005125a0 at 0051329d
+;   core_dtrace.cpp_FUN_00468d00 at 00469126
+;   core_dtri.cpp_FUN_0046e9f0 at 0046eb2d
+;   core_set.cpp_FUN_0050dfe0 at 0050e04f
+;   core_setdir.cpp_FUN_00511d80 at 00512326
+;   core_setdir.cpp_FUN_005125a0 at 0051329d
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00518510 at 00518ca1
 ;   core_water.cpp_CWater_render_FUN_00550cb0 at 0055117b
 ;

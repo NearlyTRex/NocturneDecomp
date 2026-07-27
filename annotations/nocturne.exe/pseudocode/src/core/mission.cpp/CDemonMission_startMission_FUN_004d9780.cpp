@@ -15,7 +15,7 @@ uint __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(int param_
   int iVar2;
   
   if (_DAT_01cae0d4 < 1) {
-    FUN_0046fcd0(0x01BCD074,"Can't run mission - no heros");
+    shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,"Can't run mission - no heros");
     return 0;
   }
   if (*(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8) != 0) {
@@ -36,11 +36,11 @@ uint __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(int param_
     if (iVar2 == 0) {
       return 0;
     }
-    FUN_004feff0(0x01E56DA0);
+    core_script_cpp_FUN_004feff0(0x01E56DA0);
     core_script_cpp_CScript_executeInitSection_FUN_004ff170(0x01E56DA0);
     core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0(0x01E57284);
     return 1;
   }
-  FUN_0046fcd0(0x01BCD074,"Can't run mission - no local hero");
+  shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,"Can't run mission - no local hero");
   return 0;
 }

@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00527e10 at 00527e29
 ;   core_sound.cpp_CSound_reset_FUN_0052e9c0 at 0052e9c5
+;   sound_sndmain.cpp_FUN_00527e10 at 00527e29
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60

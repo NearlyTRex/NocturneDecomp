@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[62]:
-;   FUN_0040f740 at 0040f7bf
-;   FUN_00414e70 at 00414ecb
-;   FUN_004161a0 at 00416291
-;   FUN_00416300 at 004163b4
-;   FUN_0041ea00 at 0041eabd
-;   FUN_0041eaf0 at 0041ebcb
-;   FUN_00421540 at 00421685
-;   FUN_00437ab0 at 00437c37
-;   FUN_0043cbc0 at 0043cc1b
-;   FUN_00450c90 at 004512fd
+;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60 at 00409f67
+;   core_anvil.cpp_FUN_0040f740 at 0040f7bf
+;   core_baron.cpp_FUN_004110f0 at 004111df
+;   core_battery.cpp_FUN_00414e70 at 00414ecb
+;   core_bodypart.cpp_FUN_004161a0 at 00416291
+;   core_bodypart.cpp_FUN_00416300 at 004163b4
+;   core_boxactor.cpp_FUN_0041ea00 at 0041eabd
+;   core_boxactor.cpp_FUN_0041eaf0 at 0041ebcb
+;   core_bugs.cpp_FUN_00421540 at 00421685
+;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_004265a0 at 00426687
 ;   ... and 52 more
 ;
 ; *****************************************************************************

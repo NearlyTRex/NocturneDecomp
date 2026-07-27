@@ -19,7 +19,7 @@ void __cdecl core_set_cpp_CDemonSet_renderFaceListOrEnvMap_FUN_0050ded0(uint par
         return;
       }
     }
-    FUN_00461720(DAT_005ae704,param_2,param_3,param_4);
+    engine_drender_cpp_FUN_00461720(DAT_005ae704,param_2,param_3,param_4);
   }
   return;
 }

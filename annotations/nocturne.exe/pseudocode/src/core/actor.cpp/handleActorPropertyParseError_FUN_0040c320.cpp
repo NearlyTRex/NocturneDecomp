@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040c320(uint param_1,char *param_2)
 
 {
@@ -29,8 +27,9 @@ void __cdecl core_actor_cpp_handleActorPropertyParseError_FUN_0040c320(uint para
   if (DAT_00763e88 == 2) {
     pcVar2 = "save";
   }
-  _DAT_01cc4800 = "..\\core\\actor.cpp";
-  _DAT_01cc4804 = 0x7fb;
-  FUN_004c8440("Error %sing actor property.\nActor name: %s\nActor type: %s\nProperty description: %s\nProperty type: %s\n",pcVar2,pcVar3,pcVar1,param_2,param_1);
+  PTR_01cc4800 = "..\\core\\actor.cpp";
+  INT_01cc4804 = 0x7fb;
+  core_main_c_FUN_004c8440("Error %sing actor property.\nActor name: %s\nActor type: %s\nProperty description: %s\nProperty type: %s\n",pcVar2,pcVar3,pcVar1,param_2,param_1)
+  ;
   return;
 }

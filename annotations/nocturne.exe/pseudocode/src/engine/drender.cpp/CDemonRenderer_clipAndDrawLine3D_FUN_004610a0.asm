@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00437ab0 at 00437c52
 ;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_004216d0 at 004217fd
+;   core_cloth.cpp_FUN_00437ab0 at 00437c52
 ;   core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_00518ec0 at 00518f09
 ;
 ; Referenced Globals:

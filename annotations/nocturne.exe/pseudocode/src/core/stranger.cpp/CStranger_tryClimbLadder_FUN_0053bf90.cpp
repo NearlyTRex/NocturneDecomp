@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(int param_1)
 
 {
@@ -71,7 +69,8 @@ uint __cdecl core_stranger_cpp_CStranger_tryClimbLadder_FUN_0053bf90(int param_1
     while( true ) {
       if (*(int *)(0x01E57284 + 0x14cd6c) <= local_1c) break;
       iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(0x01E57284 + local_18 + 0x14cd70),_DAT_01cc3120);
+                        (*(uint *)(0x01E57284 + local_18 + 0x14cd70),
+                         g_CLadderActorType_01cc30e8.name_hash);
       if ((iVar2 != 0) &&
          (ABS(*(float *)(param_1 + 0x24) - *(float *)(iVar2 + 0x24)) <= (float)2)) {
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290(iVar2,&local_a4,local_20);

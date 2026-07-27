@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   FUN_0048d5d0
+;   core_flame.cpp_FUN_0048d5d0
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     ADD EAX,0x574                       ; 0043d130
         ;   Label: LAB_0043d130
     PUSH EAX                            ; 0043d135
-    CALL FUN_0048d5d0                   ; 0043d136
-        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; undefined FUN_0048d5d0()
+    CALL core_flame.cpp_FUN_0048d5d0    ; 0043d136
+        ;   XREF to: 0048d5d0 (UNCONDITIONAL_CALL)  ; undefined core_flame.cpp_FUN_0048d5d0()
     MOV EAX,0x1                         ; 0043d13b
     ADD ESP,0x4                         ; 0043d140
     RET                                 ; 0043d143

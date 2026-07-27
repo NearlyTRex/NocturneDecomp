@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0045e370 at 0045e43e
-;   FUN_004fe9d0 at 004feb69
+;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e43e
+;   core_script.cpp_FUN_004fe9d0 at 004feb69
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_0045cb10

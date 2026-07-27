@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float * core_xform_cpp_inverse_FUN_0055bd00(float *param_1)
 
 {
@@ -42,9 +40,9 @@ float * core_xform_cpp_inverse_FUN_0055bd00(float *param_1)
   dVar5 = (double)core_xform_cpp_determinant_FUN_0055bcb0(param_1);
   local_20 = dVar5;
   if ((((ulonglong)dVar5 & 0x7fffffff00000000) == 0) && (SUB84(__BITCAST_UINT64(dVar5),0) == 0)) {
-    _DAT_01cc4800 = "..\\core\\xform.cpp";
-    _DAT_01cc4804 = 0x23e;
-    FUN_004c8440("inverse() - Singular matrix");
+    PTR_01cc4800 = "..\\core\\xform.cpp";
+    INT_01cc4804 = 0x23e;
+    core_main_c_FUN_004c8440("inverse() - Singular matrix");
   }
   local_90 = param_1[5] * param_1[10] - param_1[6] * param_1[9];
   local_60 = (double)local_90;

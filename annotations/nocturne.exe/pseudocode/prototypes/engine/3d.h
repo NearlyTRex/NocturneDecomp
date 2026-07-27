@@ -7,6 +7,14 @@
 // Address: 00404430
 undefined4 * FUN_00404430(undefined4 *param_1);
 
+// Original: engine_3d.c_FUN_005458a0
+// Address: 00404480
+void FUN_005458a0(void);
+
+// Original: engine_3d.c_FUN_005458d0
+// Address: 00404490
+void FUN_005458d0(void);
+
 // Original: engine_3d.c_badMRGLStruct_FUN_004044a0
 // Address: 004044a0
 undefined4 badMRGLStruct(undefined4 param_1);
@@ -75,6 +83,10 @@ int FUN_00405200(int param_1);
 // Address: 00405240
 int renderPolygonTexturedNormalizedUVLitOp14(int param_1);
 
+// Original: engine_3d.c_FUN_00405340
+// Address: 00405340
+int FUN_00405340(int param_1);
+
 // Original: engine_3d.c_renderPolygonSolidTexturedOp15_FUN_00405440
 // Address: 00405440
 int renderPolygonSolidTexturedOp15(int param_1);
@@ -114,6 +126,26 @@ int FUN_00405900(int param_1);
 // Original: engine_3d.c_oldFunction7_FUN_00405990
 // Address: 00405990
 undefined4 oldFunction7(void);
+
+// Original: engine_3d.c_FUN_004059c0
+// Address: 004059c0
+void FUN_004059c0(int param_1);
+
+// Original: engine_3d.c_FUN_00405a60
+// Address: 00405a60
+uint FUN_00405a60(int *param_1,int *param_2);
+
+// Original: engine_3d.c_FUN_00405ab0
+// Address: 00405ab0
+void FUN_00405ab0(int param_1,undefined4 param_2,undefined4 param_3);
+
+// Original: engine_3d.c_FUN_00405b30
+// Address: 00405b30
+void FUN_00405b30(void);
+
+// Original: engine_3d.c_FUN_00405b40
+// Address: 00405b40
+uint * FUN_00405b40(uint *param_1);
 
 // Original: engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
 // Address: 00405c90
@@ -158,6 +190,22 @@ int setVertexTextureU(int param_1);
 // Original: engine_3d.c_renderPolygonDestReadBlendOp33_FUN_00406880
 // Address: 00406880
 int renderPolygonDestReadBlendOp33(int param_1);
+
+// Original: engine_3d.c_FUN_00406920
+// Address: 00406920
+int FUN_00406920(int param_1);
+
+// Original: engine_3d.c_FUN_00406a00
+// Address: 00406a00
+int FUN_00406a00(int param_1);
+
+// Original: engine_3d.c_FUN_00406ae0
+// Address: 00406ae0
+int FUN_00406ae0(int param_1);
+
+// Original: engine_3d.c_FUN_00406b80
+// Address: 00406b80
+int FUN_00406b80(int param_1);
 
 // Original: engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_00406c60
 // Address: 00406c60
@@ -303,13 +351,33 @@ void FUN_00408e80(int *param_1);
 // Address: 00408f50
 void flushRenderQueue(void);
 
+// Original: engine_3d.c_FUN_00408fc0
+// Address: 00408fc0
+void FUN_00408fc0(byte *param_1);
+
+// Original: engine_3d.c_FUN_00409210
+// Address: 00409210
+void FUN_00409210(int param_1,int param_2);
+
 // Original: engine_3d.c_clipAndDrawLine2D_FUN_00409290
 // Address: 00409290
 void clipAndDrawLine2D(int param_1,int param_2,int param_3,undefined4 param_4,uint param_5);
 
+// Original: engine_3d.c_FUN_00409510
+// Address: 00409510
+void FUN_00409510(int param_1,int param_2);
+
 // Original: engine_3d.c_FUN_00409590
 // Address: 00409590
 uint FUN_00409590(uint param_1,uint param_2,int param_3,undefined4 param_4,uint param_5);
+
+// Original: engine_3d.c_FUN_004940e0
+// Address: 004940e0
+void FUN_004940e0(int param_1,int param_2);
+
+// Original: engine_3d.c_FUN_00494220
+// Address: 00494220
+int * FUN_00494220(int param_1,int *param_2);
 
 // Original: engine_3d.c_rasterizePolygonHardware_FUN_00494260
 // Address: 00494260
@@ -318,6 +386,14 @@ void __cdecl rasterizePolygonHardware(int *param_1,int param_2);
 // Original: engine_3d.c_addRasterizerEdge_FUN_00562620
 // Address: 00562620
 void addRasterizerEdge(int param_1,int param_2);
+
+// Original: engine_3d.c_FUN_00562740
+// Address: 00562740
+void FUN_00562740(int param_1,int param_2);
+
+// Original: engine_3d.c_FUN_00562880
+// Address: 00562880
+int * FUN_00562880(int param_1,int *param_2);
 
 // Original: engine_3d.c_rasterizeTriangle_FUN_005628c0
 // Address: 005628c0

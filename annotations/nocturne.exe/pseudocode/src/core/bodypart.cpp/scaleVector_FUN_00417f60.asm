@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004196b0 at 004198be
+;   core_boneguy.cpp_FUN_004196b0 at 004198be
 ;   core_mobster.cpp_CMobster_processWeaponPickup_FUN_004dbce0 at 004dbf1f
 ;   core_zombie.cpp_FUN_00561010 at 00561288
 ;

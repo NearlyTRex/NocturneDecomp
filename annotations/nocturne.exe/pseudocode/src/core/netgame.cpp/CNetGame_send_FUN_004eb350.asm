@@ -17,12 +17,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_0058c0ea
 ;   TerminatedCString s_CNetGame_send_invalid_pl_0058c0fe
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_004eb3c0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -64,10 +64,10 @@ section .text
     MOV ECX,0x58c0ea                    ; 004eb38e | = "..\\core\\netgame.cpp"
     MOV EDI,0x5c5                       ; 004eb393
     PUSH 0x58c0fe                       ; 004eb398 | = "CNetGame::send - invalid player index"
-    MOV dword ptr [0x01cc4800],ECX      ; 004eb39d | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004eb3a3 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004eb3a9
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004eb39d | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004eb3a3 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004eb3a9
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004eb3ae
     POP EDI                             ; 004eb3b1
     JMP 0x004eb364                      ; 004eb3b2

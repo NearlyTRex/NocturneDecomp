@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0045ca50 at 0045cad4
+;   cockpit_drawsurf.cpp_FUN_0045ca50 at 0045cad4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ad280
@@ -15,8 +15,8 @@
 ;   undefined4 DAT_01c00c64
 ;
 ; Called Functions:
+;   cockpit_ckptutil.c_FUN_0042fd60
 ;   cockpit_ckptutil.c_putPixel_FUN_00430140
-;   FUN_0042fd60
 ;
 ; *****************************************************************************
 
@@ -239,8 +239,8 @@ section .text
     FMULP                               ; 0042f7cd
     PUSH ESI                            ; 0042f7cf
     FSTP float ptr [ESP + 0x20]         ; 0042f7d0
-    CALL FUN_0042fd60                   ; 0042f7d4
-        ;   XREF to: 0042fd60 (UNCONDITIONAL_CALL)  ; undefined FUN_0042fd60()
+    CALL cockpit_ckptutil.c_FUN_0042fd60 ; 0042f7d4
+        ;   XREF to: 0042fd60 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042fd60()
     ADD ESP,0x10                        ; 0042f7d9
     MOV EDX,dword ptr [EBP + 0x24]      ; 0042f7dc
     PUSH EDX                            ; 0042f7df
@@ -248,8 +248,8 @@ section .text
     PUSH dword ptr [ESP + 0x14]         ; 0042f7e3
     PUSH EAX                            ; 0042f7e7
     PUSH ESI                            ; 0042f7e8
-    CALL FUN_0042fd60                   ; 0042f7e9
-        ;   XREF to: 0042fd60 (UNCONDITIONAL_CALL)  ; undefined FUN_0042fd60()
+    CALL cockpit_ckptutil.c_FUN_0042fd60 ; 0042f7e9
+        ;   XREF to: 0042fd60 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042fd60()
     ADD ESP,0x10                        ; 0042f7ee
     JMP 0x0042f76d                      ; 0042f7f1
         ;   XREF to: 0042f76d (UNCONDITIONAL_JUMP)  ; LAB_0042f76d
@@ -302,8 +302,8 @@ section .text
     FMULP                               ; 0042f865
     PUSH ESI                            ; 0042f867
     FSTP float ptr [ESP + 0x28]         ; 0042f868
-    CALL FUN_0042fd60                   ; 0042f86c
-        ;   XREF to: 0042fd60 (UNCONDITIONAL_CALL)  ; undefined FUN_0042fd60()
+    CALL cockpit_ckptutil.c_FUN_0042fd60 ; 0042f86c
+        ;   XREF to: 0042fd60 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042fd60()
     ADD ESP,0x10                        ; 0042f871
     MOV EDX,dword ptr [EBP + 0x24]      ; 0042f874
     PUSH EDX                            ; 0042f877
@@ -312,8 +312,8 @@ section .text
     PUSH EBX                            ; 0042f880
     ADD EAX,ESI                         ; 0042f881
     PUSH EAX                            ; 0042f883
-    CALL FUN_0042fd60                   ; 0042f884
-        ;   XREF to: 0042fd60 (UNCONDITIONAL_CALL)  ; undefined FUN_0042fd60()
+    CALL cockpit_ckptutil.c_FUN_0042fd60 ; 0042f884
+        ;   XREF to: 0042fd60 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0042fd60()
     ADD ESP,0x10                        ; 0042f889
     JMP 0x0042f80a                      ; 0042f88c
         ;   XREF to: 0042f80a (UNCONDITIONAL_JUMP)  ; LAB_0042f80a

@@ -33,18 +33,18 @@
 ;   TerminatedCString s_core_skeleton_cpp_005918d5
 ;   TerminatedCString s_Out_of_memory_005918ea
 ;   undefined4 DAT_005a1eb0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0051d3c0
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_0051dd00
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50
-;   FUN_004c8440
-;   FUN_0056497c
+;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     RET                                 ; 00519c18
     PUSH 0x22b4                         ; 00519c19
         ;   Label: LAB_00519c19
-    CALL FUN_0056497c                   ; 00519c1e
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 00519c1e
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 00519c23
     TEST EAX,EAX                        ; 00519c26
     JZ 0x00519c33                       ; 00519c28
@@ -93,10 +93,10 @@ section .text
     MOV EAX,0x5918d5                    ; 00519c3b | = "..\\core\\skeleton.cpp"
     MOV EDX,0x5f0                       ; 00519c40
     PUSH 0x5918ea                       ; 00519c45 | = "Out of memory"
-    MOV [0x01cc4800],EAX                ; 00519c4a | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00519c4f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00519c55
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00519c4a | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00519c4f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00519c55
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00519c5a
     PUSH ESI                            ; 00519c5d
         ;   Label: LAB_00519c5d

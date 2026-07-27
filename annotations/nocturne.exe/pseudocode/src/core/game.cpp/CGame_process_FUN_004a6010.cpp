@@ -51,7 +51,7 @@ void __cdecl core_game_cpp_CGame_process_FUN_004a6010(int param_1)
     if (*(int *)(param_1 + 0x228) == 0) {
       *(uint *)(param_1 + 0xcc) = 0;
       core_sound_cpp_CSound_init_FUN_0052ddf0();
-      FUN_005125a0(0x01E57284,*(uint *)(0x01E56DA0 + 0xc),2);
+      core_setdir_cpp_FUN_005125a0(0x01E57284,*(uint *)(0x01E56DA0 + 0xc),2);
       core_game_cpp_CGame_saveClockTime_FUN_0049a890();
       *(uint *)(0x01E56DA0 + 0x10) = 0;
     }

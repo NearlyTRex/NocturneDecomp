@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c8bb2
+;   core_main.c_FUN_004c85f0 at 004c8bb2
 ;
 ; Referenced Globals:
 ;   void* PTR_mciGetErrorStringA_005753dc = 00175800
@@ -47,6 +47,7 @@
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_stdlib.c_atoi_FUN_00566f30
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
+;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;   GetClientRect
 ;   GetCurrentProcess
 ;   mciGetErrorStringA
@@ -56,7 +57,6 @@
 ;   SetRectEmpty
 ;   SetThreadPriority
 ;   Sleep
-;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -97,8 +97,8 @@ section .text
         ;   XREF to: 00563380 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_00563380()
     ADD ESP,0x4                         ; 0055a566
     LEA ESI,[ESP + 0x190]               ; 0055a569
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 0055a570
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 0055a570
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0055a575
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     MOV EDI,dword ptr [0x02de3124]      ; 0055a57a | DAT_02de3124
@@ -390,8 +390,8 @@ section .text
     CALL wincore_winvideo.cpp_closeMovie_FUN_0055a1c0 ; 0055a889
         ;   XREF to: 0055a1c0 (UNCONDITIONAL_CALL)  ; undefined wincore_winvideo.cpp_closeMovie_FUN_0055a1c0()
     ADD ESP,0x4                         ; 0055a88e
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 0055a891
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 0055a891
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 0055a896
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 0055a89b

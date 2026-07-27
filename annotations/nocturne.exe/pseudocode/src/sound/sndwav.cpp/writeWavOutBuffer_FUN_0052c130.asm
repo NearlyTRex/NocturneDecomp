@@ -26,7 +26,7 @@
 ;   undefined4 DAT_02dc9438
 ;
 ; Called Functions:
-;   FUN_00529980
+;   sound_sndmain.cpp_FUN_00529980
 ;   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0
 ;   waveOutPrepareHeader
 ;   waveOutUnprepareHeader
@@ -144,8 +144,8 @@ section .text
     RET                                 ; 0052c248
     PUSH 0x5948bd                       ; 0052c249 | = "waveOutUnprepareHeader failed!"
         ;   Label: LAB_0052c249
-    CALL FUN_00529980                   ; 0052c24e
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 0052c24e
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x4                         ; 0052c253
     XOR EAX,EAX                         ; 0052c256
     ADD ESP,0x24                        ; 0052c258
@@ -156,8 +156,8 @@ section .text
     RET                                 ; 0052c25f
     PUSH 0x5948dc                       ; 0052c260 | = "waveOutPrepareHeader failed!"
         ;   Label: LAB_0052c260
-    CALL FUN_00529980                   ; 0052c265
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 0052c265
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x4                         ; 0052c26a
     XOR EAX,EAX                         ; 0052c26d
     ADD ESP,0x24                        ; 0052c26f
@@ -168,8 +168,8 @@ section .text
     RET                                 ; 0052c276
     PUSH 0x5948f9                       ; 0052c277 | = "waveOutWrite failed!"
         ;   Label: LAB_0052c277
-    CALL FUN_00529980                   ; 0052c27c
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 0052c27c
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     ADD ESP,0x4                         ; 0052c281
     XOR EAX,EAX                         ; 0052c284
     ADD ESP,0x24                        ; 0052c286

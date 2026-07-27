@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,13 +122,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 499,
+    "complexity_score": 489,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 69,
-    "suspect_count": 39,
+    "suspect_count": 38,
     "suspect_types": [
       "displaced_global_access",
       "pointer_cast",
@@ -168,26 +168,26 @@
       "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700"
     },
     {
+      "addr": "004f0360",
+      "is_variadic": false,
+      "name": "core_path.cpp_FUN_004f0360"
+    },
+    {
       "addr": "005644a7",
       "is_variadic": false,
       "name": "crt_memory.c___arrinit_FUN_005644a7"
     },
     {
-      "addr": "004f0360",
-      "is_variadic": false,
-      "name": "FUN_004f0360"
-    },
-    {
       "addr": "00564bb0",
       "is_variadic": false,
-      "name": "FUN_00564bb0"
+      "name": "crt_unknown.c_FUN_00564bb0"
     }
   ],
   "globals": [
     {
       "addr": "005a1200",
-      "name": "DAT_005a1200",
-      "type": "undefined4",
+      "name": "g_CPathMapTypeInfo_005a1200",
+      "type": "WatcomTypeInfo",
       "value": null
     },
     {
@@ -415,14 +415,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005a1200",
-      "severity": "mild",
-      "text": "__arrinit(0x1d468a0,0xc,&DAT_005a1200);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 26,
       "match": "DAT_005be0a8",
       "severity": "mild",
@@ -578,7 +570,7 @@
       "line": 71,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
-      "text": "FUN_004f0360(iVar1,&stack0xffffffd8,1);",
+      "text": "core_path_cpp_FUN_004f0360(iVar1,&stack0xffffffd8,1);",
       "type": "stack_ref"
     },
     {

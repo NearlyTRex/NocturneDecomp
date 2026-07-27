@@ -220,10 +220,10 @@ LAB_0055f021:
       }
       if (uVar5 < 6) {
         if (*(int *)(param_1 + 0xbca4) != 0) {
-          local_74 = 0x3FA66666;
+          local_74 = 1.3f;
           local_290 = 0;
           local_28c = 0;
-          local_288 = 0x3FA66666;
+          local_288 = 1.3f;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_26c,&local_290);
           local_1a0 = local_26c[0] - *(float *)(*(int *)(param_1 + 0xbca4) + 0x20);
           local_198 = local_264 - *(float *)(*(int *)(param_1 + 0xbca4) + 0x28);
@@ -314,9 +314,9 @@ LAB_0055f021:
     else if (uVar5 < 0xc) {
       iVar3 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(param_1,2);
       if (iVar3 < 0) {
-        _DAT_01cc4800 = "..\\core\\zombie.cpp";
-        _DAT_01cc4804 = 0x1ee;
-        FUN_004c8440("WTF!");
+        PTR_01cc4800 = "..\\core\\zombie.cpp";
+        INT_01cc4804 = 0x1ee;
+        core_main_c_FUN_004c8440("WTF!");
       }
       iVar6 = *(int *)(iVar3 * 0x44 + param_1 + 0x24ac);
       if (iVar6 != 0) {
@@ -332,9 +332,9 @@ LAB_0055f021:
     else if (uVar5 < 0xd) {
       iVar3 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(param_1,3);
       if (iVar3 < 0) {
-        _DAT_01cc4800 = "..\\core\\zombie.cpp";
-        _DAT_01cc4804 = 0x205;
-        FUN_004c8440("WTF!");
+        PTR_01cc4800 = "..\\core\\zombie.cpp";
+        INT_01cc4804 = 0x205;
+        core_main_c_FUN_004c8440("WTF!");
       }
       iVar6 = iVar3 * 0x44 + param_1;
       if (*(int *)(iVar6 + 0x24ac) != 0) {
@@ -540,7 +540,7 @@ LAB_0056033e:
           *(uint *)(param_1 + 0x23a4) = *(uint *)(param_1 + 0x23a8);
           iVar3 = core_zombie_cpp_FUN_00561010(param_1,param_2);
           if (iVar3 == 0) {
-            local_50 = 0x3FA66666;
+            local_50 = 1.3f;
             local_40 = core_zombie_cpp_CZombie_getPickupHandIndex_FUN_005617e0(param_1,1);
             if (((-1 < local_40) &&
                 (iVar3 = *(int *)(local_40 * 0x44 + param_1 + 0x24ac), iVar3 != 0)) &&
@@ -678,7 +678,7 @@ LAB_00560776:
         iVar3 = (**(code **)(*(int *)(*(int *)(param_1 + 0xbca4) + 0x14c) + 0xec))
                           (*(int *)(param_1 + 0xbca4));
         if (iVar3 == 0) {
-          local_34 = 0x3FA66666;
+          local_34 = 1.3f;
           local_4c = 3.0;
         }
         else if (iVar3 != param_1) goto LAB_00560776;
@@ -689,7 +689,7 @@ LAB_00560776:
         uVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                           (iVar3,local_a4,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_1c4,uVar4);
-        FUN_004b0480(INT_005b96c4,local_1c4,0);
+        core_gore_cpp_FUN_004b0480(INT_005b96c4,local_1c4,0);
         *(uint *)(param_1 + 0xbc90) = 1;
       }
     }
@@ -774,7 +774,7 @@ LAB_0055fd59:
             local_12c = local_24c;
           }
           local_1c = local_12c * local_12c + local_134 * local_134 + local_130 * local_130;
-          local_5c = (float)(((int)local_1c >> 1) + _DAT_01c7070c);
+          local_5c = (float)(((int)local_1c >> 1) + (int)CVector3f_01c70708.y);
           if (local_5c <= (float)8) {
             local_30 = *(float *)(param_1 + 0x2de8);
             if (local_30 < *(float *)(param_1 + 0x2de4)) {
@@ -791,14 +791,15 @@ LAB_0055fd59:
               core_setcolid_cpp_CDemonSet_ignore_FUN_00511780(0x01E57284,param_1);
               fVar13 = (float10)fcos((float10)local_78);
               fVar14 = (float10)fsin((float10)local_78);
-              local_18 = (float *)FUN_00510a40(0x01E57284,*(uint *)(param_1 + 0x20),
-                                               *(uint *)(param_1 + 0x28),
-                                               (float)(fVar14 * (float10)0.050000000000000003),
-                                               (float)(fVar13 * (float10)0.050000000000000003),
-                                               *(uint *)(param_1 + 0x2dd8),
-                                               *(float *)(param_1 + 0x24) +
-                                               *(float *)(param_1 + 0x2de4),
-                                               *(float *)(param_1 + 0x24) + local_30);
+              local_18 = (float *)core_setcolid_cpp_FUN_00510a40
+                                            (0x01E57284,*(uint *)(param_1 + 0x20),
+                                             *(uint *)(param_1 + 0x28),
+                                             (float)(fVar14 * (float10)0.050000000000000003),
+                                             (float)(fVar13 * (float10)0.050000000000000003),
+                                             *(uint *)(param_1 + 0x2dd8),
+                                             *(float *)(param_1 + 0x24) +
+                                             *(float *)(param_1 + 0x2de4),
+                                             *(float *)(param_1 + 0x24) + local_30);
               local_14 = local_18;
               core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
               if ((float)local_18 < 1.0) break;
@@ -893,8 +894,9 @@ LAB_0055fc2f:
         *(float *)(param_1 + 0x23a4) = *(float *)(param_1 + 0x23ac);
         core_charactr_cpp_CCharacter_moveAndCollide_FUN_00425050(param_1,&local_284);
         if ((iVar3 == 1) &&
-           (iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890(DAT_00765a9c,_DAT_01af4ed4),
-           local_58 = iVar6, iVar6 != 0)) {
+           (iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890
+                              (DAT_00765a9c,g_CDoorActorType_01af4e9c.name_hash), local_58 = iVar6,
+           iVar6 != 0)) {
           pfVar7 = (float *)(**(code **)(*(int *)(iVar6 + 0x14c) + 0x14))(iVar6,local_2b4);
           local_bc = *pfVar7 + pfVar7[3];
           local_b8 = pfVar7[1] + pfVar7[4];

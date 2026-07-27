@@ -5,14 +5,18 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_engine_keyframe_c_005876a4
+;   TerminatedCString s_recomputeKeyFrameNormals_005876b9
+;   TerminatedCString s_engine_keyframe_c_005876e4
+;   TerminatedCString s_recomputeKeyFrameNormals_005876f9
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_keyframe.c_calculatePackedSurfaceNormal_FUN_004c3760
 ;   engine_keyframe.c_calculateSurfaceNormal_FUN_004c3920
 ;   engine_model.c_getMRGLSize_FUN_004dd520
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -47,13 +51,13 @@ section .text
         ;   Label: LAB_004c40a5
     JNZ 0x004c40cb                      ; 004c40a7
         ;   XREF to: 004c40cb (CONDITIONAL_JUMP)  ; LAB_004c40cb
-    MOV EBP,0x5876a4                    ; 004c40a9
+    MOV EBP,0x5876a4                    ; 004c40a9 | = "..\\engine\\keyframe.c"
     MOV EAX,0x1f5                       ; 004c40ae
-    PUSH 0x5876b9                       ; 004c40b3
-    MOV dword ptr [0x01cc4800],EBP      ; 004c40b8 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004c40be | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004c40c3
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x5876b9                       ; 004c40b3 | = "recomputeKeyFrameNormals: Cannot find..."
+    MOV dword ptr [0x01cc4800],EBP      ; 004c40b8 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004c40be | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004c40c3
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004c40c8
     TEST EDI,EDI                        ; 004c40cb
         ;   Label: LAB_004c40cb
@@ -111,14 +115,14 @@ section .text
         ;   XREF to: 004c4094 (CONDITIONAL_JUMP)  ; LAB_004c4094
     JMP 0x004c40a5                      ; 004c412a
         ;   XREF to: 004c40a5 (UNCONDITIONAL_JUMP)  ; LAB_004c40a5
-    MOV EDX,0x5876e4                    ; 004c412f
+    MOV EDX,0x5876e4                    ; 004c412f | = "..\\engine\\keyframe.c"
         ;   Label: LAB_004c412f
     MOV ECX,0x1f6                       ; 004c4134
-    PUSH 0x5876f9                       ; 004c4139
-    MOV dword ptr [0x01cc4800],EDX      ; 004c413e | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004c4144 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004c414a
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x5876f9                       ; 004c4139 | = "recomputeKeyFrameNormals: Cannot find..."
+    MOV dword ptr [0x01cc4800],EDX      ; 004c413e | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004c4144 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004c414a
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004c414f
     JMP 0x004c40cf                      ; 004c4152
         ;   XREF to: 004c40cf (UNCONDITIONAL_JUMP)  ; LAB_004c40cf

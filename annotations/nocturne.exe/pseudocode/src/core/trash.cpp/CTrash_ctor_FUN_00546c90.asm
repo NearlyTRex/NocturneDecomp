@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00546c60 at 00546c73
+;   core_trash.cpp_FUN_00546c60 at 00546c73
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_question_kfm_00596932

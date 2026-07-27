@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_charactr_cpp_FUN_004259f0(int param_1,float param_2)
 
 {
@@ -40,7 +38,7 @@ uint core_charactr_cpp_FUN_004259f0(int param_1,float param_2)
                *(float *)(param_1 + 0x2434) / *(float *)(param_1 + 0x2438),0x40000000);
   }
   if (*(int *)(param_1 + 0x2404) == 0) {
-    if (*(float *)(param_1 + 0x240c) == _DAT_0059b094) {
+    if (*(float *)(param_1 + 0x240c) == 9999.0f) {
       iVar4 = 0;
       iVar3 = param_1;
       do {
@@ -54,7 +52,7 @@ uint core_charactr_cpp_FUN_004259f0(int param_1,float param_2)
     fVar1 = *(float *)(param_1 + 0xe4);
     *(uint *)(param_1 + 0xe4) = 0;
     *(float *)(param_1 + 0x24) = fVar1 + *(float *)(param_1 + 0x24);
-    if ((*(float *)(param_1 + 0x240c) == _DAT_0059b094) || (*(int *)(param_1 + 0xdc) != 0)) {
+    if ((*(float *)(param_1 + 0x240c) == 9999.0f) || (*(int *)(param_1 + 0xdc) != 0)) {
       uVar2 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x38))
                         (param_1,*(uint *)(param_1 + 0x2dd4),0);
       *(uint *)(param_1 + 0x240c) = uVar2;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(uint param_1,char *param_2,float param_3,float param_4,float param_5,float *param_6 )
 
 {
@@ -54,9 +52,9 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(uint param_1,char *para
         local_34 = -1;
         sscanf();
         if ((local_34 < 5) || (local_2c < local_30)) {
-          _DAT_01cc4800 = "..\\core\\sound.cpp";
-          _DAT_01cc4804 = 0x137;
-          FUN_004c8440("Invalid sfx string: %s",param_2);
+          PTR_01cc4800 = "..\\core\\sound.cpp";
+          INT_01cc4804 = 0x137;
+          core_main_c_FUN_004c8440("Invalid sfx string: %s",param_2);
         }
         iVar1 = _sprintf(pcVar6);
         pcVar5 = pcVar6 + iVar1;
@@ -128,7 +126,7 @@ LAB_0052d1a2:
     pcVar5 = (char *)0x0;
 LAB_0052d202:
     if (pcVar5 == (char *)0x0) {
-      FUN_0052d030();
+      core_sound_cpp_FUN_0052d030();
     }
     else {
       local_44 = param_3;
@@ -168,7 +166,7 @@ LAB_0052d202:
               cVar4 = *pcVar9;
             }
             *pcVar5 = '\0';
-            FUN_0052d030();
+            core_sound_cpp_FUN_0052d030();
             if (local_a8[0] != '\0') break;
           }
           iVar8 = iVar8 + 1;
@@ -189,9 +187,9 @@ LAB_0052d202:
           local_24 = -1;
           sscanf(local_14,"@%f%n");
           if (local_24 < 2) {
-            _DAT_01cc4800 = "..\\core\\sound.cpp";
-            _DAT_01cc4804 = 0x1a4;
-            FUN_004c8440("Invalid sfx string: %s",param_2);
+            PTR_01cc4800 = "..\\core\\sound.cpp";
+            INT_01cc4804 = 0x1a4;
+            core_main_c_FUN_004c8440("Invalid sfx string: %s",param_2);
             local_14 = local_14 + local_24;
           }
           else {
@@ -202,9 +200,9 @@ LAB_0052d202:
           local_20 = -1;
           sscanf(local_14,"*%f%n");
           if (local_20 < 2) {
-            _DAT_01cc4800 = "..\\core\\sound.cpp";
-            _DAT_01cc4804 = 0x1aa;
-            FUN_004c8440("Invalid sfx string: %s",param_2);
+            PTR_01cc4800 = "..\\core\\sound.cpp";
+            INT_01cc4804 = 0x1aa;
+            core_main_c_FUN_004c8440("Invalid sfx string: %s",param_2);
             local_14 = local_14 + local_20;
           }
           else {
@@ -212,9 +210,9 @@ LAB_0052d202:
           }
         }
         else {
-          _DAT_01cc4800 = "..\\core\\sound.cpp";
-          _DAT_01cc4804 = 0x1ad;
-          FUN_004c8440("Invalid sfx string: %s",param_2);
+          PTR_01cc4800 = "..\\core\\sound.cpp";
+          INT_01cc4804 = 0x1ad;
+          core_main_c_FUN_004c8440("Invalid sfx string: %s",param_2);
         }
       }
       else {
@@ -231,9 +229,9 @@ LAB_0052d202:
       sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_00525fc0();
     }
     sound_sndmain_cpp_setNextSfxFlags_FUN_00526240();
-    FUN_00526150(0,param_1);
+    sound_sndmain_cpp_FUN_00526150(0,param_1);
     sound_sndmain_cpp_setNextSfxVolume_FUN_005260f0();
-    FUN_00526120();
+    sound_sndmain_cpp_FUN_00526120();
     uVar2 = sound_sndmain_cpp_startSfx_FUN_005265a0();
     sound_sndmain_cpp_popSfxOptions_FUN_005263c0();
   }

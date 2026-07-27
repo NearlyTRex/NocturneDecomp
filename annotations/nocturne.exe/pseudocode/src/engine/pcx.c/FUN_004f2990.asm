@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004f2990(undefined4 param_1)
+; void engine_pcx_c_FUN_004f2990(undefined4 param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x88]:1  local_88
@@ -19,7 +19,7 @@
 ; undefined2       Stack[-0x40]:2  local_40
 ;
 ; XREF[1]:
-;   FUN_0049cc10 at 0049cfa9
+;   core_game.cpp_FUN_0049cc10 at 0049cfa9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wb_0058cfc3
@@ -28,10 +28,11 @@
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
@@ -40,14 +41,13 @@
 ;   engine_pcx.c_saveScreenRaw16_FUN_004f2620
 ;   engine_pcx.c_saveScreenRaw32_FUN_004f27e0
 ;   engine_pcx.c_writePCXScanline_FUN_004f2550
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f2990
-        ;   Label: FUN_004f2990
+        ;   Label: engine_pcx.c_FUN_004f2990
     PUSH EBP                            ; 004f2991
     SUB ESP,0x80                        ; 004f2992
     MOV EBX,dword ptr [ESP + 0x8c]      ; 004f2998
@@ -119,10 +119,10 @@ section .text
     MOV EBP,0x58cfc6                    ; 004f2a73 | = "..\\engine\\pcx.c"
     MOV EAX,0xee                        ; 004f2a78
     PUSH 0x58cfd6                       ; 004f2a7d | = "Cannot write .PCX"
-    MOV dword ptr [0x01cc4800],EBP      ; 004f2a82 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f2a88 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f2a8d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004f2a82 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004f2a88 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f2a8d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f2a92
     PUSH EBX                            ; 004f2a95
         ;   Label: LAB_004f2a95

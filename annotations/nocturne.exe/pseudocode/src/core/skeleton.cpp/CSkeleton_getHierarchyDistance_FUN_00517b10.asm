@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_0051cf60 at 0051cf8e
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0 at 0051d812
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0051cfd0 at 0051d028
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 at 0051c474
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0051cae0 at 0051cb78
 ;   core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_0051d970 at 0051d996
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 at 0051b9b4
+;   core_skeleton.cpp_FUN_0051cf60 at 0051cf8e
 ;
 ; *****************************************************************************
 

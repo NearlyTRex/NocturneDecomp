@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004b5270 at 004b5299
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_0047e0d0 at 0047ec93
+;   core_hero.cpp_FUN_004b5270 at 004b5299
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_You_used_a_key_005874f9
@@ -14,7 +14,7 @@
 ;   TerminatedCString s_You_need_the_right_key_00587518
 ;   undefined4 DAT_005b9354
 ;   undefined4 DAT_01c775ec
-;   undefined4 DAT_01cc30e0
+;   undefined4 g_CKeyActorActorType_01cc30a8.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -41,7 +41,7 @@ section .text
     JLE 0x004c3248                      ; 004c31cb
         ;   XREF to: 004c3248 (CONDITIONAL_JUMP)  ; LAB_004c3248
     MOV EBX,EDI                         ; 004c31d1
-    MOV EAX,[0x01cc30e0]                ; 004c31d3 | DAT_01cc30e0
+    MOV EAX,[0x01cc30e0]                ; 004c31d3 | g_CKeyActorActorType_01cc30a8.name_hash
         ;   Label: LAB_004c31d3
     PUSH EAX                            ; 004c31d8
     MOV EDX,dword ptr [EBX + 0xc]       ; 004c31d9

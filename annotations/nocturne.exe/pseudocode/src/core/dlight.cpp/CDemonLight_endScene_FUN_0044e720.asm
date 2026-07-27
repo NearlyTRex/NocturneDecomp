@@ -20,14 +20,14 @@
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01bd2fa0
 ;   undefined4 DAT_01bd2fa4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270
+;   core_main.c_FUN_004c8440
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70
 ;   engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_00461070
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -123,10 +123,10 @@ section .text
         ;   Label: LAB_0044e7fa
     MOV EBX,0x164                       ; 0044e7ff
     PUSH 0x57c6aa                       ; 0044e804 | = "CDemonLight::endScene - Scene not open"
-    MOV dword ptr [0x01cc4800],ECX      ; 0044e809 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0044e80f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044e815
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0044e809 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0044e80f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044e815
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0044e81a
     JMP 0x0044e73c                      ; 0044e81d
         ;   XREF to: 0044e73c (UNCONDITIONAL_JUMP)  ; LAB_0044e73c

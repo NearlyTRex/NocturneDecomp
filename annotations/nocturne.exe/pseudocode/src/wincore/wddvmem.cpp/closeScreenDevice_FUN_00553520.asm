@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[5]:
-;   FUN_0049cc10 at 0049d5ba
-;   FUN_004a57c0 at 004a5993
-;   FUN_00532ba0 at 00532c45
-;   FUN_00545aa0 at 00545ac4
+;   core_game.cpp_FUN_0049cc10 at 0049d5ba
+;   core_game.cpp_FUN_004a57c0 at 004a5993
+;   engine_special.cpp_FUN_00532ba0 at 00532c45
+;   engine_texture.cpp_FUN_00545aa0 at 00545ac4
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910 at 005539a1
 ;
 ; Referenced Globals:
@@ -23,14 +23,14 @@
 ;   undefined4 DAT_01bd2fa4
 ;   undefined4 DAT_01bd4260
 ;   undefined4 DAT_01c02594
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02ddf558
 ;   undefined4 DAT_02ddf564
 ;   ... and 1 more
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -92,10 +92,10 @@ section .text
     MOV ESI,0x597995                    ; 005535bb | = "..\\wincore\\wddvmem.cpp"
     MOV EDI,0x27f                       ; 005535c0
     PUSH 0x5979ac                       ; 005535c5 | = "closeScreenDevice - Unable to unlock"
-    MOV dword ptr [0x01cc4800],ESI      ; 005535ca | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005535d0 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005535d6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 005535ca | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 005535d0 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005535d6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005535db
     MOV dword ptr [0x02ddf564],0x1      ; 005535de | DAT_02ddf564
         ;   Label: LAB_005535de

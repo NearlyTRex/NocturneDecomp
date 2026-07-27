@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_004e7ed0 at 004e7edc
-;   FUN_00522480 at 005226fd
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_004e7dd0 at 004e7dd6
+;   sound_mp3.cpp_FUN_004e7ed0 at 004e7edc
+;   sound_sndmain.cpp_FUN_00522480 at 005226fd
 ;   sound_sndmain.cpp_getSampleInfo_FUN_005279e0 at 00527bc2
 ;
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_00563380
-;   FUN_005638d0
+;   crt_unknown.c_FUN_005638d0
 ;
 ; *****************************************************************************
 
@@ -57,8 +57,8 @@ section .text
     RET                                 ; 004e82b3
     PUSH EBX                            ; 004e82b4
         ;   Label: LAB_004e82b4
-    CALL FUN_005638d0                   ; 004e82b5
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 004e82b5
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 004e82ba
     MOV dword ptr [ESI + 0x4],0x0       ; 004e82bd
     MOV byte ptr [EDI],0x0              ; 004e82c4

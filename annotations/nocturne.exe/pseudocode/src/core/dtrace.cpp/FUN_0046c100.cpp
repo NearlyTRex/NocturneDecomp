@@ -1,14 +1,12 @@
-// Name: FUN_0046c100
+// Name: core_dtrace.cpp_FUN_0046c100
 // Address: 0046c100
 // Address Range: [[0046c100, 0046c22d]]
 // Convention: unknown
-// Signature: void FUN_0046c100(int param_1,undefined4 param_2)
+// Signature: void core_dtrace_cpp_FUN_0046c100(int param_1,undefined4 param_2)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-void FUN_0046c100(int param_1,uint param_2)
+void core_dtrace_cpp_FUN_0046c100(int param_1,uint param_2)
 
 {
   int *piVar1;
@@ -24,7 +22,7 @@ void FUN_0046c100(int param_1,uint param_2)
   int local_1c;
   
   bVar2 = 0;
-  FUN_0046b650(param_1,param_2);
+  core_dtrace_cpp_FUN_0046b650(param_1,param_2);
   local_34 = local_28;
   *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8);
@@ -45,12 +43,12 @@ void FUN_0046c100(int param_1,uint param_2)
     piVar1 = (int *)core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004678d0
                               (param_1,local_34,local_30,local_2c);
     if (piVar1 == (int *)0x0) {
-      _DAT_01cc4800 = "..\\core\\dtrace.cpp";
-      _DAT_01cc4804 = 0xb55;
-      FUN_004c8440("Parity Check 999");
+      PTR_01cc4800 = "..\\core\\dtrace.cpp";
+      INT_01cc4804 = 0xb55;
+      core_main_c_FUN_004c8440("Parity Check 999");
     }
     if (*piVar1 == 0) {
-      FUN_0044ac30(piVar1);
+      core_dcube_cpp_FUN_0044ac30(piVar1);
     }
     local_3c = local_38 * 8 + local_3c;
     *(byte *)(*piVar1 + local_3c) =

@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[13]:
-;   FUN_00447f20 at 0044818f
-;   FUN_00533750 at 00533862
-;   FUN_00549cd0 at 00549ebb
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540 at 0040a5e4
 ;   core_actor.cpp_CDemonActor_rayIntersect_FUN_0040a740 at 0040a7fc
 ;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680 at 004236d4
+;   core_dcamera.cpp_FUN_00447f20 at 0044818f
 ;   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004537d0 at 004538a1
 ;   core_morph.cpp_CMorph_getReady_FUN_004e03c0 at 004e0485
 ;   core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_0050ffe0 at 00510118
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromBones_FUN_0051ef40 at 0051efd8
+;   core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0051b280 at 0051b39e
+;   core_spike.cpp_FUN_00533750 at 00533862
 ;   ... and 3 more
 ;
 ; *****************************************************************************

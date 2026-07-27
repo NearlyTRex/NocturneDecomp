@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(int param_1,uint param_2)
 
 {
@@ -24,9 +22,9 @@ uint __cdecl sound_mp3_cpp_CMP3Decoder_readBits_FUN_004e2cf0(int param_1,uint pa
       uVar2 = *(int *)(param_1 + 0x1318) + 1;
       *(uint *)(param_1 + 0x1318) = uVar2;
       if (*(uint *)(param_1 + 0x1310) < uVar2) {
-        _DAT_01cc4800 = "..\\sound\\mp3.cpp";
-        _DAT_01cc4804 = 0x2c0;
-        FUN_004c8440("Buffer overflow!!  File: %s",&DAT_01cd8b28);
+        PTR_01cc4800 = "..\\sound\\mp3.cpp";
+        INT_01cc4804 = 0x2c0;
+        core_main_c_FUN_004c8440("Buffer overflow!!  File: %s",&DAT_01cd8b28);
       }
     }
     uVar2 = *(uint *)(param_1 + 0x531c);

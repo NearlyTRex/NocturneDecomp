@@ -7,11 +7,11 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   FUN_004b0480 at 004b04a2
+;   core_gore.cpp_FUN_004b0480 at 004b04a2
 ;
 ; Referenced Globals:
 ;   float FLOAT_00585138 = 0.1000000
-;   undefined4 DAT_0059e4d4
+;   float FLOAT_0059e4d4 = 256
 ;   undefined4 DAT_005be368
 ;   undefined4 DAT_01e57284
 ;
@@ -56,13 +56,13 @@ section .text
     LEA EBX,[ESI + 0x1c]                ; 004af787
     FSTP float ptr [ESI + 0x8]          ; 004af78a
     FLD float ptr [EAX]                 ; 004af78d
-    FMUL float ptr [0x0059e4d4]         ; 004af78f | DAT_0059e4d4
+    FMUL float ptr [0x0059e4d4]         ; 004af78f | FLOAT_0059e4d4
     FISTP dword ptr [EBX]               ; 004af795
     FLD float ptr [EAX + 0x4]           ; 004af797
-    FMUL float ptr [0x0059e4d4]         ; 004af79a | DAT_0059e4d4
+    FMUL float ptr [0x0059e4d4]         ; 004af79a | FLOAT_0059e4d4
     FISTP dword ptr [EBX + 0x4]         ; 004af7a0
     FLD float ptr [EAX + 0x8]           ; 004af7a3
-    FMUL float ptr [0x0059e4d4]         ; 004af7a6 | DAT_0059e4d4
+    FMUL float ptr [0x0059e4d4]         ; 004af7a6 | FLOAT_0059e4d4
     FISTP dword ptr [EBX + 0x8]         ; 004af7ac
     MOV EAX,dword ptr [ESP + 0x18]      ; 004af7af
     MOV dword ptr [ESI + 0x10],EAX      ; 004af7b3

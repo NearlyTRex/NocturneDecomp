@@ -19,11 +19,11 @@
 ;   core_charactr.cpp_FUN_0042a150
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004d8c60
+;   core_mission.cpp_FUN_004d9110
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
-;   FUN_004d9110
 ;
 ; *****************************************************************************
 
@@ -155,8 +155,8 @@ section .text
     MOV EAX,[0x005baf90]                ; 004ef9c1 | DAT_005baf90
     PUSH EAX                            ; 004ef9c6 | DAT_01cc9450
     MOV dword ptr [EBX + 0x1f678],0x0   ; 004ef9c7
-    CALL FUN_004d9110                   ; 004ef9d1
-        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined FUN_004d9110()
+    CALL core_mission.cpp_FUN_004d9110  ; 004ef9d1
+        ;   XREF to: 004d9110 (UNCONDITIONAL_CALL)  ; undefined core_mission.cpp_FUN_004d9110()
     ADD ESP,0xc                         ; 004ef9d6
     JMP 0x004ef8f5                      ; 004ef9d9
         ;   XREF to: 004ef8f5 (UNCONDITIONAL_JUMP)  ; LAB_004ef8f5

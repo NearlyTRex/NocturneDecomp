@@ -5,19 +5,19 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_00438410 at 00438460
-;   FUN_0049a170 at 0049a185
-;   FUN_004d4540 at 004d4599
-;   FUN_00543050 at 00543065
 ;   core_cloth.cpp_CClothList_load_FUN_00438270 at 00438300
 ;   core_cloth.cpp_CClothList_reset_FUN_00438320 at 0043833e
+;   core_cloth.cpp_FUN_00438410 at 00438460
+;   core_gabriela.cpp_FUN_0049a170 at 0049a185
+;   core_mimic.cpp_FUN_004d4540 at 004d4599
+;   core_svetlana.cpp_FUN_00543050 at 00543065
 ;   core_vampboss.cpp_CVampireBoss_dtor_FUN_0054e370 at 0054e399
 ;
 ; Called Functions:
+;   core_cloth.cpp_FUN_00435210
 ;   core_cloth.cpp_SClothBone_arrdtor_FUN_00438a20
 ;   core_cloth.cpp_SClothVertex_arrdtor_FUN_00438a00
 ;   core_dmodel.cpp_CKeyFramedModel_dtor_FUN_00452630
-;   FUN_00435210
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
         ;   Label: core_cloth.cpp_CCloth_dtor_FUN_00435160
     MOV EBX,dword ptr [ESP + 0x8]       ; 00435161
     PUSH EBX                            ; 00435165
-    CALL FUN_00435210                   ; 00435166
-        ;   XREF to: 00435210 (UNCONDITIONAL_CALL)  ; undefined FUN_00435210()
+    CALL core_cloth.cpp_FUN_00435210    ; 00435166
+        ;   XREF to: 00435210 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_FUN_00435210()
     ADD ESP,0x4                         ; 0043516b
     PUSH 0x0                            ; 0043516e
     ADD EBX,0x37b50                     ; 00435170

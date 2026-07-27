@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int engine_font_cpp_CBitFont_drawText_FUN_00490980(int param_1,char *param_2,int param_3,int param_4,uint param_5,uint param_6)
 
 {
@@ -35,9 +33,9 @@ int engine_font_cpp_CBitFont_drawText_FUN_00490980(int param_1,char *param_2,int
     return iVar2 - param_3;
   }
   if (*(int *)(param_1 + 0x3194) == 0) {
-    _DAT_01cc4800 = "..\\engine\\font.cpp";
-    _DAT_01cc4804 = 0x267;
-    FUN_004c8440("CBitFont::drawText - OSFont not set before DrawText called");
+    PTR_01cc4800 = "..\\engine\\font.cpp";
+    INT_01cc4804 = 0x267;
+    core_main_c_FUN_004c8440("CBitFont::drawText - OSFont not set before DrawText called");
   }
   local_14 = param_2;
   do {

@@ -5,20 +5,20 @@
 ;
 ;
 ; XREF[24]:
-;   FUN_0040fbc0 at 0040fbef
-;   FUN_00414930 at 00414a47
-;   FUN_004151b0 at 004151c1
-;   FUN_004219d0 at 004219e1
-;   FUN_004ab450 at 004ab61b
-;   FUN_00541810 at 00541821
+;   core_armour.cpp_FUN_0040fbc0 at 0040fbef
 ;   core_batcreat.cpp_FUN_00413040 at 00413157
+;   core_batman.cpp_FUN_00414930 at 00414a47
+;   core_beast.cpp_FUN_004151b0 at 004151c1
 ;   core_biggs.cpp_CBiggs_processDamage_FUN_00415900 at 0041596a
 ;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_00419f40 at 00419f89
 ;   core_bride.cpp_CBride_processDamage_FUN_00420c40 at 00420d67
+;   core_bugs.cpp_FUN_004219d0 at 004219e1
+;   core_cow.cpp_CZombieCow_processDamage_FUN_0043c5e0 at 0043c63c
+;   core_dog.cpp_CZombieDog_processDamage_FUN_00454e30 at 00454e85
 ;   ... and 14 more
 ;
 ; Referenced Globals:
-;   undefined4 CDemonActorType_00765a60.name_hash
+;   undefined4 g_CCharacterActorType_00765a60.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -55,7 +55,7 @@ section .text
     POP ESI                             ; 00479fa2
     POP EBX                             ; 00479fa3
     RET                                 ; 00479fa4
-    MOV EDX,dword ptr [0x00765a98]      ; 00479fa5 | CDemonActorType_00765a60.name_hash
+    MOV EDX,dword ptr [0x00765a98]      ; 00479fa5 | g_CCharacterActorType_00765a60.name_hash
         ;   Label: LAB_00479fa5
     PUSH EDX                            ; 00479fab
     MOV ECX,dword ptr [ESI + 0x38]      ; 00479fac
@@ -68,7 +68,7 @@ section .text
     JNZ 0x00479fd5                      ; 00479fbc
         ;   XREF to: 00479fd5 (CONDITIONAL_JUMP)  ; LAB_00479fd5
     PUSH EDI                            ; 00479fbe
-    MOV EDI,dword ptr [0x00765a98]      ; 00479fbf | CDemonActorType_00765a60.name_hash
+    MOV EDI,dword ptr [0x00765a98]      ; 00479fbf | g_CCharacterActorType_00765a60.name_hash
     PUSH EDI                            ; 00479fc5
     MOV EBP,dword ptr [ESI + 0x34]      ; 00479fc6
     PUSH EBP                            ; 00479fc9

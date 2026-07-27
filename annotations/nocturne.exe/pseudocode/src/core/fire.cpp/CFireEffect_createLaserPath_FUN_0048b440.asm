@@ -34,13 +34,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0053d100 at 0053d24d
+;   core_stranger.cpp_FUN_0053d100 at 0053d24d
 ;
 ; Referenced Globals:
 ;   float FLOAT_005814c8 = 0.05000000
 ;   double DOUBLE_005814cc = 0.0500000000000000
 ;   double DOUBLE_005814d4 = 0.5
-;   undefined4 DAT_0059d210
+;   float FLOAT_0059d210 = 0.02000000
 ;
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_createLaserSegment_FUN_0048b370
@@ -180,7 +180,7 @@ section .text
     JNC 0x0048b67a                      ; 0048b5c1
         ;   XREF to: 0048b67a (CONDITIONAL_JUMP)  ; LAB_0048b67a
     MOV EDX,dword ptr [EBP + 0x38]      ; 0048b5c7
-    PUSH dword ptr [0x0059d210]         ; 0048b5ca | DAT_0059d210
+    PUSH dword ptr [0x0059d210]         ; 0048b5ca | FLOAT_0059d210
     PUSH EDX                            ; 0048b5d0
     PUSH EBX                            ; 0048b5d1
     PUSH EDI                            ; 0048b5d2
@@ -245,7 +245,7 @@ section .text
         ;   XREF to: 0048b5fb (UNCONDITIONAL_JUMP)  ; LAB_0048b5fb
     MOV EAX,dword ptr [EBP + 0x38]      ; 0048b67a
         ;   Label: LAB_0048b67a
-    PUSH dword ptr [0x0059d210]         ; 0048b67d | DAT_0059d210
+    PUSH dword ptr [0x0059d210]         ; 0048b67d | FLOAT_0059d210
     PUSH EAX                            ; 0048b683
     PUSH EBX                            ; 0048b684
     PUSH EDI                            ; 0048b685

@@ -14,19 +14,19 @@ void core_dcamera_cpp_CDemonCamera_endScene_FUN_00440a20(int param_1,int param_2
   int iVar1;
   
   if (*(int *)(param_1 + 0x11e4) == 0) {
-    _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-    _DAT_01cc4804 = 0x3f9;
-    FUN_004c8440("CDemonCamera::endScene - Scene not open!");
+    PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    INT_01cc4804 = 0x3f9;
+    core_main_c_FUN_004c8440("CDemonCamera::endScene - Scene not open!");
   }
   else {
     *(uint *)(param_1 + 0x11e4) = 0;
   }
-  if (_DAT_02dc9d60 != 0) {
-    wincore_windll_cpp_endScene_FUN_00532360();
+  if (INT_02dc9d60 != 0) {
+    engine_special_cpp_endScene_FUN_00532360();
   }
   if ((*(int *)(param_1 + 0x168) == 0) && (param_2 == 0)) {
     if (_DAT_01c02594 != 0) {
-      wincore_windll_cpp_masterZBuffer_FUN_00532c70(0);
+      engine_special_cpp_masterZBuffer_FUN_00532c70(0);
     }
     iVar1 = 0;
     if (0 < *(int *)(param_1 + 0x140)) {

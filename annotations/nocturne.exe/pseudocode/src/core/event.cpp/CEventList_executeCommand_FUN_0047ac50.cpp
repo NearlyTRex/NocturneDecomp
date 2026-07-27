@@ -170,13 +170,13 @@ LAB_0047acd1:
         pcVar9 = pcVar9 + (uint)bVar14 * -2 + 1;
       } while (cVar1 != '\0');
       if (0x1f < ~uVar6 - 1) {
-        uVar5 = FUN_0047a210("Event name %s is too long",param_2);
+        uVar5 = core_event_cpp_FUN_0047a210("Event name %s is too long",param_2);
         return uVar5;
       }
       if (99 < *param_1) {
-        _DAT_01cc4800 = "..\\core\\event.cpp";
-        _DAT_01cc4804 = 599;
-        FUN_004c8440();
+        PTR_01cc4800 = "..\\core\\event.cpp";
+        INT_01cc4804 = 599;
+        core_main_c_FUN_004c8440();
       }
       piVar10 = param_1 + *param_1 * 8 + 1;
       local_14 = 0;
@@ -213,7 +213,7 @@ LAB_0047acd1:
         *(byte *)piVar10 = uVar2;
         iVar3 = core_event_cpp_isValidIdentifierChar_FUN_00480f40();
         if (iVar3 == 0) {
-          uVar5 = FUN_0047a210("Event name %s is not valid",param_2);
+          uVar5 = core_event_cpp_FUN_0047a210("Event name %s is not valid",param_2);
           return uVar5;
         }
         local_14 = uVar6 + 1;
@@ -231,14 +231,14 @@ LAB_0047acd1:
       core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0(0x01E57284,local_fc4,&local_e8,&local_44)
       ;
       if (local_e8 == 0) {
-        uVar5 = FUN_0047a210("SpotLight %s doesn't exist.",local_fc4);
+        uVar5 = core_event_cpp_FUN_0047a210("SpotLight %s doesn't exist.",local_fc4);
         return uVar5;
       }
       if (local_f0 != 0) {
         if (local_44 == 0) {
-          _DAT_01cc4800 = "..\\core\\event.cpp";
-          _DAT_01cc4804 = 0x27f;
-          FUN_004c8440("Can't find CDemonLight for light %s in advanceLightFilter meta-command",local_fc4);
+          PTR_01cc4800 = "..\\core\\event.cpp";
+          INT_01cc4804 = 0x27f;
+          core_main_c_FUN_004c8440("Can't find CDemonLight for light %s in advanceLightFilter meta-command",local_fc4);
         }
         core_setutil_cpp_C3DSLight_advanceFilter_FUN_005155e0(local_e8,local_44);
       }
@@ -253,7 +253,7 @@ LAB_0047acd1:
         local_e4 = -1;
         sscanf(local_ec,"( %f , %n",&local_e0,&local_e4);
         if (local_e4 < 0) {
-          uVar5 = FUN_0047a210();
+          uVar5 = core_event_cpp_FUN_0047a210();
           return uVar5;
         }
         local_ec = local_ec + local_e4;
@@ -285,8 +285,8 @@ LAB_0047acd1:
             memmove(local_4d5 + 1);
           }
           uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                            (local_4d5 + 1,CDemonActorType_00763e48.name_hash,
-                             &CDemonActorType_00763e48);
+                            (local_4d5 + 1,g_CDemonActorActorType_00763e48.name_hash,
+                             &g_CDemonActorActorType_00763e48);
           if (uVar6 == 0) {
             return 0;
           }
@@ -300,7 +300,7 @@ LAB_0047acd1:
           }
         }
         if (local_e4 < 0) {
-          uVar5 = FUN_0047a210();
+          uVar5 = core_event_cpp_FUN_0047a210();
           return uVar5;
         }
         local_ec = local_ec + local_e4;
@@ -312,7 +312,7 @@ LAB_0047acd1:
           local_e4 = -1;
           sscanf(local_ec,", %f %n",&local_dc,&local_e4);
           if (local_e4 < 0) {
-            uVar5 = FUN_0047a210();
+            uVar5 = core_event_cpp_FUN_0047a210();
             return uVar5;
           }
           local_ec = local_ec + local_e4;
@@ -321,12 +321,12 @@ LAB_0047acd1:
           }
         }
         if (*local_ec != ')') {
-          uVar5 = FUN_0047a210();
+          uVar5 = core_event_cpp_FUN_0047a210();
           return uVar5;
         }
         local_ec = local_ec + 1;
         if (local_f0 != 0) {
-          FUN_0048c0d0(0x01C08D04,&local_128,local_e0,0x44bb8000,local_dc);
+          core_fire_cpp_FUN_0048c0d0(0x01C08D04,&local_128,local_e0,0x44bb8000,local_dc);
         }
       }
       else {
@@ -339,9 +339,9 @@ LAB_0047acd1:
           pcVar9 = (char *)core_event_cpp_extractParenArg_FUN_0047a650(&local_ec,local_1154,200);
           if (pcVar9 != (char *)0x0) goto LAB_0047aec8;
           uVar7 = core_event_cpp_resolveActorByName_FUN_0047a390
-                            (local_1154,CDemonActorType_00763e48.name_hash,&CDemonActorType_00763e48
-                            );
-          uVar6 = CDemonActorType_00764800.name_hash;
+                            (local_1154,g_CDemonActorActorType_00763e48.name_hash,
+                             &g_CDemonActorActorType_00763e48);
+          uVar6 = g_CBoxActorActorType_00764800.name_hash;
           if (uVar7 == 0) {
             if (_DAT_01c08b5c != 0) {
               return 0;
@@ -356,7 +356,7 @@ LAB_0047acd1:
               sound_sndmain_cpp_killSfx_FUN_00527230();
             }
             iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                              (uVar7,CDemonActorType_00765c30.name_hash);
+                              (uVar7,g_CChainActorType_00765c30.name_hash);
             if (iVar3 != 0) {
               *(byte *)(iVar3 + 0x1ac) = 0;
               *(byte *)(iVar3 + 0x214) = 0;
@@ -375,7 +375,7 @@ LAB_0047acd1:
             sscanf
                       (local_ec,"( %[^ ,], %d, %d )%n",local_163c,&local_d8,&local_d4,&local_d0);
             if (local_d0 < 0) {
-              uVar5 = FUN_0047a210();
+              uVar5 = core_event_cpp_FUN_0047a210();
               return uVar5;
             }
             local_ec = local_ec + local_d0;
@@ -384,11 +384,11 @@ LAB_0047acd1:
             }
             iVar3 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",local_163c);
             if (iVar3 < 0) {
-              uVar5 = FUN_0047a210();
+              uVar5 = core_event_cpp_FUN_0047a210();
               return uVar5;
             }
             if (iVar3 != local_d8 * local_d4) {
-              uVar5 = FUN_0047a210();
+              uVar5 = core_event_cpp_FUN_0047a210();
               return uVar5;
             }
             if (local_f0 != 0) {
@@ -553,7 +553,7 @@ LAB_0047aec8:
                                     (local_ec," ( %[^,], %[^,],%f)%n",local_665 + 1,local_2e1 + 1,&local_b0,
                                      &local_b4);
                           if (local_b4 < 2) {
-                            uVar5 = FUN_0047a210();
+                            uVar5 = core_event_cpp_FUN_0047a210();
                             return uVar5;
                           }
                           uVar6 = 0xffffffff;
@@ -603,8 +603,8 @@ LAB_0047aec8:
                             local_ec = local_ec + 1;
                           }
                           uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                            (local_665 + 1,CDemonActorType_00765a60.name_hash,
-                                             &CDemonActorType_00765a60);
+                                            (local_665 + 1,g_CCharacterActorType_00765a60.name_hash,
+                                             &g_CCharacterActorType_00765a60);
                           if (uVar6 == 0) {
                             return 0;
                           }
@@ -614,7 +614,8 @@ LAB_0047aec8:
                           iVar3 = core_event_cpp_parseDamageType_FUN_0047a8f0
                                             (local_2e1 + 1,&local_ac);
                           if (iVar3 == 0) {
-                            uVar5 = FUN_0047a210("Unknown damage type \"%s\" in hurtCharacter command.",local_2e1 + 1);
+                            uVar5 = core_event_cpp_FUN_0047a210
+                                              ("Unknown damage type \"%s\" in hurtCharacter command.",local_2e1 + 1);
                             return uVar5;
                           }
                           if (local_f0 != 0) {
@@ -695,7 +696,7 @@ LAB_0047aec8:
                                            &local_a4);
                               }
                               if (local_a4 < 0) {
-                                uVar5 = FUN_0047a210();
+                                uVar5 = core_event_cpp_FUN_0047a210();
                                 return uVar5;
                               }
                               uVar6 = 0xffffffff;
@@ -745,8 +746,9 @@ LAB_0047aec8:
                                 local_ec = local_ec + 1;
                               }
                               uVar6 = core_event_cpp_resolveActorByName_FUN_0047a390
-                                                (local_153d + 1,CDemonActorType_00765a60.name_hash,
-                                                 &CDemonActorType_00765a60);
+                                                (local_153d + 1,
+                                                 g_CCharacterActorType_00765a60.name_hash,
+                                                 &g_CCharacterActorType_00765a60);
                               if (uVar6 == 0) {
                                 return 0;
                               }
@@ -756,8 +758,9 @@ LAB_0047aec8:
                               iVar3 = core_event_cpp_parseDeathType_FUN_0047a760
                                                 (local_219 + 1,&local_98);
                               if (iVar3 == 0) {
-                                uVar5 = FUN_0047a210("Unknown death type \"%s\" in killCharacter command.",
-                                                     local_219 + 1);
+                                uVar5 = core_event_cpp_FUN_0047a210
+                                                  ("Unknown death type \"%s\" in killCharacter command.",local_219 + 1)
+                                ;
                                 return uVar5;
                               }
                               if (local_f0 != 0) {
@@ -775,14 +778,14 @@ LAB_0047aec8:
                                   local_ec = local_ec + 1;
                                 }
                                 if (*0x01CEA280 != 0) {
-                                  uVar5 = FUN_0047a210();
+                                  uVar5 = core_event_cpp_FUN_0047a210();
                                   return uVar5;
                                 }
                                 local_94 = -1;
                                 sscanf
                                           (local_ec," ( %[^)])%n",local_27c,&local_94);
                                 if (local_94 < 2) {
-                                  uVar5 = FUN_0047a210();
+                                  uVar5 = core_event_cpp_FUN_0047a210();
                                   return uVar5;
                                 }
                                 local_ec = local_ec + local_94;
@@ -792,8 +795,8 @@ LAB_0047aec8:
                                 iVar3 = core_event_cpp_parseDeathType_FUN_0047a760
                                                   (local_27c,&local_90);
                                 if (iVar3 == 0) {
-                                  uVar5 = FUN_0047a210("Unknown death type \"%s\" in killHero command.",local_27c)
-                                  ;
+                                  uVar5 = core_event_cpp_FUN_0047a210
+                                                    ("Unknown death type \"%s\" in killHero command.",local_27c);
                                   return uVar5;
                                 }
                                 if ((local_f0 != 0) &&
@@ -1214,7 +1217,7 @@ LAB_0047aec8:
                                                         (local_ec,"( %[^ ,] , %d )%n",local_7f4,&local_54
                                                          ,&local_58);
                                               if (local_58 < 0) {
-                                                uVar5 = FUN_0047a210();
+                                                uVar5 = core_event_cpp_FUN_0047a210();
                                                 return uVar5;
                                               }
                                               local_ec = local_ec + local_58;
@@ -1222,23 +1225,26 @@ LAB_0047aec8:
                                                         (0x01E57284,local_7f4,&local_50,&local_4c)
                                               ;
                                               if (local_50 == 0) {
-                                                uVar5 = FUN_0047a210(
+                                                uVar5 = core_event_cpp_FUN_0047a210
+                                                                  (
                                                   "SpotLight %s doesn't exist.",local_7f4);
                                                 return uVar5;
                                               }
                                               if ((local_54 < 0) ||
                                                  (*(int *)(local_50 + 0x11ec) <= local_54)) {
-                                                uVar5 = FUN_0047a210(
+                                                uVar5 = core_event_cpp_FUN_0047a210
+                                                                  (
                                                   "Invalid filter frame, %s has %d filters",local_7f4,
                                                   *(uint *)(local_50 + 0x11ec));
                                                 return uVar5;
                                               }
                                               if (local_f0 != 0) {
                                                 if (local_4c == 0) {
-                                                  _DAT_01cc4800 = "..\\core\\event.cpp";
-                                                  _DAT_01cc4804 = 0x4e0;
-                                                  FUN_004c8440("Can't find CDemonLight for light %s in setLightFilterFrame meta-command",
-                                                               local_7f4);
+                                                  PTR_01cc4800 = "..\\core\\event.cpp";
+                                                  INT_01cc4804 = 0x4e0;
+                                                  core_main_c_FUN_004c8440
+                                                            ("Can't find CDemonLight for light %s in setLightFilterFrame meta-command",
+                                                             local_7f4);
                                                 }
                                                 core_setutil_cpp_C3DSLight_setFilterFrame_FUN_00515670
                                                           (local_50,local_54,local_4c);
@@ -1314,7 +1320,9 @@ LAB_0047aec8:
                                                 }
                                                 uVar6 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
-                                                            (local_d6d + 1,_DAT_01cc3660,0x1cc3628);
+                                                            (local_d6d + 1,
+                                                             g_CLeverActorType_01cc3628.name_hash,
+                                                             &g_CLeverActorType_01cc3628);
                                                 if (uVar6 == 0) {
                                                   return 0;
                                                 }
@@ -1416,8 +1424,9 @@ LAB_0047aec8:
                                                   uVar6 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_985 + 1,
-                                                             CDemonActorType_00765a60.name_hash,
-                                                             &CDemonActorType_00765a60);
+                                                             g_CCharacterActorType_00765a60.
+                                                             name_hash,
+                                                             &g_CCharacterActorType_00765a60);
                                                   if (uVar6 == 0) {
                                                     return 0;
                                                   }
@@ -1692,8 +1701,9 @@ LAB_0047aec8:
                                                     uVar6 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_72d + 1,
-                                                             CDemonActorType_00765a60.name_hash,
-                                                             &CDemonActorType_00765a60);
+                                                             g_CCharacterActorType_00765a60.
+                                                             name_hash,
+                                                             &g_CCharacterActorType_00765a60);
                                                   if (uVar6 == 0) {
                                                     return 0;
                                                   }
@@ -1749,7 +1759,7 @@ LAB_0047aec8:
                                                               (param_2," ( %[^ ,)]%n",local_344,
                                                                &local_1c);
                                                     if (local_1c < 2) {
-                                                      uVar5 = FUN_0047a210();
+                                                      uVar5 = core_event_cpp_FUN_0047a210();
                                                       return uVar5;
                                                     }
                                                     local_ec = local_ec + local_1c;
@@ -1761,7 +1771,8 @@ LAB_0047aec8:
                                                   core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
                                                             (0x01E57284,local_344);
                                                   if (iVar3 < 0) {
-                                                    uVar5 = FUN_0047a210(
+                                                    uVar5 = core_event_cpp_FUN_0047a210
+                                                                      (
                                                   "Camera \"%s\" doesn't exist",local_344);
                                                   return uVar5;
                                                   }
@@ -1772,7 +1783,7 @@ LAB_0047aec8:
                                                               (local_ec,",%f%n",&local_70,
                                                                &local_1c);
                                                     if (local_1c < 2) {
-                                                      uVar5 = FUN_0047a210();
+                                                      uVar5 = core_event_cpp_FUN_0047a210();
                                                       return uVar5;
                                                     }
                                                     local_ec = local_ec + local_1c;
@@ -1782,7 +1793,7 @@ LAB_0047aec8:
                                                     }
                                                   }
                                                   if (*local_ec != ')') {
-                                                    uVar5 = FUN_0047a210();
+                                                    uVar5 = core_event_cpp_FUN_0047a210();
                                                     return uVar5;
                                                   }
                                                   local_ec = local_ec + 1;
@@ -1798,7 +1809,8 @@ LAB_0047aec8:
                                                     if ((iVar3 != 0) ||
                                                        (((&DAT_005c168c)[(byte)(param_2[6] + 1)] &
                                                         0xe0) != 0)) {
-                                                      uVar5 = FUN_0047a210(
+                                                      uVar5 = core_event_cpp_FUN_0047a210
+                                                                        (
                                                   "Unknown meta-function starting at %s",param_2);
                                                   return uVar5;
                                                   }
@@ -1812,7 +1824,7 @@ LAB_0047aec8:
                                                             (local_ec,"(%[^,], %[^)])%n",local_bdd + 1,
                                                              local_59d + 1,&local_18);
                                                   if (local_18 < 5) {
-                                                    uVar5 = FUN_0047a210();
+                                                    uVar5 = core_event_cpp_FUN_0047a210();
                                                     return uVar5;
                                                   }
                                                   uVar6 = 0xffffffff;
@@ -1871,8 +1883,9 @@ LAB_0047aec8:
                                                   uVar6 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_bdd + 1,
-                                                             CDemonActorType_00763e48.name_hash,
-                                                             &CDemonActorType_00763e48);
+                                                             g_CDemonActorActorType_00763e48.
+                                                             name_hash,
+                                                             &g_CDemonActorActorType_00763e48);
                                                   if (uVar6 == 0) {
                                                     return 0;
                                                   }
@@ -1915,8 +1928,9 @@ LAB_0047aec8:
                                                     uVar7 = 
                                                   core_event_cpp_resolveActorByName_FUN_0047a390
                                                             (local_59d + 1,
-                                                             CDemonActorType_00763e48.name_hash,
-                                                             &CDemonActorType_00763e48);
+                                                             g_CDemonActorActorType_00763e48.
+                                                             name_hash,
+                                                             &g_CDemonActorActorType_00763e48);
                                                   if (uVar7 == 0) {
                                                     return 0;
                                                   }
@@ -1949,13 +1963,13 @@ LAB_0047aec8:
                                                   }
                                                   if ((local_18 < 0) ||
                                                      (local_59d[local_18 + 1] != '\0')) {
-                                                    uVar5 = FUN_0047a210();
+                                                    uVar5 = core_event_cpp_FUN_0047a210();
                                                     return uVar5;
                                                   }
                                                   if (local_f0 != 0) {
                                                     iVar3 = 
                                                   core_actor_cpp_castToClassHash_FUN_0040d890
-                                                            (uVar6,CDemonActorType_00765a60.
+                                                            (uVar6,g_CCharacterActorType_00765a60.
                                                                    name_hash);
                                                   if (iVar3 != 0) {
                                                     (**(code **)(*(int *)(iVar3 + 0x14c) + 0xe8))();
@@ -1999,7 +2013,7 @@ LAB_0047aec8:
       local_ec = local_ec + 1;
     }
     if (*local_ec != '\0') {
-      uVar5 = FUN_0047a210();
+      uVar5 = core_event_cpp_FUN_0047a210();
       return uVar5;
     }
   }

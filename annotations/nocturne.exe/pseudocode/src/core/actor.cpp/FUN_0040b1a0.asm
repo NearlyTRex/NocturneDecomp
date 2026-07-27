@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_0041f170 at 0041f17a
-;   FUN_004b4440 at 004b444a
-;   FUN_004c36f0 at 004c36fa
-;   FUN_00554570 at 0055457a
+;   core_boxactor.cpp_FUN_0041f170 at 0041f17a
+;   core_health.cpp_FUN_004b4440 at 004b444a
+;   core_keyactor.cpp_FUN_004c36f0 at 004c36fa
+;   core_weapon.cpp_FUN_00554570 at 0055457a
 ;
 ; *****************************************************************************
 

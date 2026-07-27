@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(uint *param_1,uint *param_2,uint *param_3,int param_4,uint param_5,uint param_6,uint param_7)
 
 {
@@ -27,9 +25,9 @@ int __cdecl core_bodypart_cpp_createBodyPart_FUN_00415b30(uint *param_1,uint *pa
     iVar2 = core_bodypart_cpp_CBodyPart_ctor_FUN_00415d20(iVar1);
   }
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\bodypart.cpp";
-    _DAT_01cc4804 = 0x32;
-    FUN_004c8440("Can't create body part!");
+    PTR_01cc4800 = "..\\core\\bodypart.cpp";
+    INT_01cc4804 = 0x32;
+    core_main_c_FUN_004c8440("Can't create body part!");
   }
   *(uint *)(iVar2 + 0x20) = *param_1;
   *(uint *)(iVar2 + 0x24) = param_1[1];

@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00456b20 at 00456b38
-;   FUN_004a3b90 at 004a3f6a
-;   FUN_004a4170 at 004a4511
+;   core_game.cpp_FUN_004a3b90 at 004a3f6a
+;   core_game.cpp_FUN_004a4170 at 004a4511
+;   engine_dosio.cpp_FUN_00456b20 at 00456b38
 ;
 ; Called Functions:
 ;   FUN_0056b327

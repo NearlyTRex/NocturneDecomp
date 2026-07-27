@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_004f86a0(int param_1,int param_2)
+; undefined4 engine_pod_cpp_FUN_004f86a0(int param_1,int param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004f8240 at 004f84a0
+;   engine_pod.cpp_FUN_004f8240 at 004f84a0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_0058db1d
@@ -17,25 +17,25 @@
 ;   TerminatedCString s_rb_0058db5b
 ;   TerminatedCString s_engine_pod_cpp_0058db5e
 ;   TerminatedCString s_CPodFile_computeOneFileC_0058db70
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01e428d0
 ;   undefined4 DAT_01e428d1
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fopen_FUN_0056568c
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   crt_stdio.c_fseek_FUN_0056582c
-;   FUN_004c8440
-;   FUN_004f77d0
+;   engine_pod.cpp_FUN_004f77d0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f86a0
-        ;   Label: FUN_004f86a0
+        ;   Label: engine_pod.cpp_FUN_004f86a0
     PUSH ESI                            ; 004f86a1
     PUSH EDI                            ; 004f86a2
     PUSH EBP                            ; 004f86a3
@@ -52,10 +52,10 @@ section .text
         ;   Label: LAB_004f86bb
     MOV ESI,0x221                       ; 004f86c0
     PUSH 0x58db2f                       ; 004f86c5 | = "CPodFile::computeOneFileCRC - invalid..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004f86ca | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f86d0 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f86d6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004f86ca | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004f86d0 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f86d6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f86db
     PUSH 0x58db5b                       ; 004f86de | = "rb"
         ;   Label: LAB_004f86de
@@ -72,10 +72,10 @@ section .text
     MOV EBP,0x58db5e                    ; 004f86f7 | = "..\\engine\\pod.cpp"
     MOV EAX,0x226                       ; 004f86fc
     PUSH 0x58db70                       ; 004f8701 | = "CPodFile::computeOneFileCRC - can't o..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004f8706 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004f870c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f8711
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004f8706 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004f870c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f8711
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004f8716
     LEA ESI,[EDI*0x4 + 0x0]             ; 004f8719
         ;   Label: LAB_004f8719
@@ -118,8 +118,8 @@ section .text
     PUSH EAX                            ; 004f8785
     INC ESI                             ; 004f8786
     INC EBX                             ; 004f8787
-    CALL FUN_004f77d0                   ; 004f8788
-        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f77d0()
+    CALL engine_pod.cpp_FUN_004f77d0    ; 004f8788
+        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f77d0()
     ADD ESP,0x8                         ; 004f878d
     CMP EBX,0x10000                     ; 004f8790
     JC 0x004f8780                       ; 004f8796
@@ -152,8 +152,8 @@ section .text
     PUSH EBP                            ; 004f87d5
     INC EBX                             ; 004f87d6
     INC ESI                             ; 004f87d7
-    CALL FUN_004f77d0                   ; 004f87d8
-        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004f77d0()
+    CALL engine_pod.cpp_FUN_004f77d0    ; 004f87d8
+        ;   XREF to: 004f77d0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_FUN_004f77d0()
     ADD ESP,0x8                         ; 004f87dd
     MOV EBP,EAX                         ; 004f87e0
     CMP ESI,EDI                         ; 004f87e2

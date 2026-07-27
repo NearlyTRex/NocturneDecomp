@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[37]:
-;   FUN_0045da90 at 0045dabc
-;   FUN_0045db60 at 0045db8c
-;   FUN_0045dc30 at 0045dc5c
-;   FUN_0045dd00 at 0045dd2c
-;   FUN_0045ddd0 at 0045ddfc
-;   FUN_0045dea0 at 0045decd
-;   FUN_0045df80 at 0045dfad
-;   FUN_0045e130 at 0045e15b
-;   FUN_0045e1f0 at 0045e21b
-;   FUN_0046fb40 at 0046fbac
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_0045e280 at 0045e2aa
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0045e070 at 0045e09d
+;   cockpit_drawsurf.cpp_FUN_0045da90 at 0045dabc
+;   cockpit_drawsurf.cpp_FUN_0045db60 at 0045db8c
+;   cockpit_drawsurf.cpp_FUN_0045dc30 at 0045dc5c
+;   cockpit_drawsurf.cpp_FUN_0045dd00 at 0045dd2c
+;   cockpit_drawsurf.cpp_FUN_0045ddd0 at 0045ddfc
+;   cockpit_drawsurf.cpp_FUN_0045dea0 at 0045decd
+;   cockpit_drawsurf.cpp_FUN_0045df80 at 0045dfad
+;   cockpit_drawsurf.cpp_FUN_0045e130 at 0045e15b
 ;   ... and 27 more
 ;
 ; Called Functions:

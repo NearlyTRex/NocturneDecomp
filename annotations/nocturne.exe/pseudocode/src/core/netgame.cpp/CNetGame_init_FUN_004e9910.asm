@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004c85f0 at 004c8d4a
+;   core_main.c_FUN_004c85f0 at 004c8d4a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_netlog_txt_0058ba99

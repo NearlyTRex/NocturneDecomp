@@ -11,6 +11,6 @@ int core_skeleton_cpp_SVert_ctor_FUN_0051f840(int param_1)
 {
   int iVar1;
   
-  iVar1 = __arrinit(param_1 + 0x10,3,&DAT_005993b0);
+  iVar1 = __arrinit(param_1 + 0x10,3,&g_CVectorTypeInfo_005993b0);
   return iVar1 + -0x10;
 }

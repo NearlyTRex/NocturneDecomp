@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004c0640(void)
+; void core_inv_cpp_FUN_004c0640(void)
 ;
 ;
 ; Referenced Globals:
@@ -11,23 +11,23 @@
 ;   undefined4 s_Some_ammo_00587187+1
 ;   undefined4 s_Some_ammo_00587187+2
 ;   undefined4 s_Some_ammo_00587187+3
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040eb70
 ;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360
-;   FUN_004c8440
-;   FUN_0056497c
+;   core_main.c_FUN_004c8440
+;   crt_unknown.c_FUN_0056497c
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH ESI                            ; 004c0640
-        ;   Label: FUN_004c0640
+        ;   Label: core_inv.cpp_FUN_004c0640
     PUSH EBP                            ; 004c0641
     MOV ESI,dword ptr [ESP + 0x10]      ; 004c0642
     CMP dword ptr [ESI + 0x564],-0x1    ; 004c0646
@@ -38,8 +38,8 @@ section .text
     RET                                 ; 004c0651
     PUSH 0x314                          ; 004c0652
         ;   Label: LAB_004c0652
-    CALL FUN_0056497c                   ; 004c0657
-        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined FUN_0056497c()
+    CALL crt_unknown.c_FUN_0056497c     ; 004c0657
+        ;   XREF to: 0056497c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056497c()
     ADD ESP,0x4                         ; 004c065c
     TEST EAX,EAX                        ; 004c065f
     JZ 0x004c066c                       ; 004c0661
@@ -58,10 +58,10 @@ section .text
     MOV ECX,0x587169                    ; 004c0674 | = "..\\core\\inv.cpp"
     MOV EDI,0x2fd                       ; 004c0679
     PUSH 0x587179                       ; 004c067e | = "Out of memory"
-    MOV dword ptr [0x01cc4800],ECX      ; 004c0683 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004c0689 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004c068f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004c0683 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004c0689 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004c068f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004c0694
     MOV EAX,dword ptr [ESI + 0x560]     ; 004c0697
         ;   Label: LAB_004c0697

@@ -30,7 +30,7 @@ int FUN_005701cf(int param_1,byte param_2)
     FUN_00564494(param_1);
   }
   else {
-    uVar2 = __vec_delete(param_1,&DAT_005a4af0);
+    uVar2 = __vec_delete(param_1,&g_strstreambufTypeInfo_005a4af0);
     shape_memdbg_cpp_free_FUN_00564486(uVar2);
   }
   return param_1;

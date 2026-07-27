@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_004722b0 at 00472467
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004eb69e
 ;   engine_2d.c_drawRect_FUN_00403e10 at 00403e27
 ;   engine_2d.c_fillRectColor_FUN_00403e60 at 00403ec4
+;   shape_edittool.cpp_FUN_004722b0 at 00472467
 ;   shape_edittool.cpp_draw3DBorder_FUN_00476260 at 0047628b
 ;   shape_edittool.cpp_draw3DInsetBorder_FUN_00476310 at 00476375
 ;
@@ -22,12 +22,12 @@
 ;   undefined4 DAT_01c00c60
 ;   undefined4 DAT_01c00c64
 ;   undefined4 DAT_01c00c70
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -138,10 +138,10 @@ section .text
         ;   Label: LAB_00403cb2
     MOV EDX,0x8a4                       ; 00403cb7
     PUSH 0x577318                       ; 00403cbc | = "hLine - invalid bitsPerPixel"
-    MOV [0x01cc4800],EAX                ; 00403cc1 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00403cc6 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00403ccc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 00403cc1 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00403cc6 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00403ccc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00403cd1
     POP EBP                             ; 00403cd4
     POP EDI                             ; 00403cd5

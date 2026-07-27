@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0044b770 at 0044b783
+;   core_dest.cpp_FUN_0044b770 at 0044b783
 ;   core_filmreel.cpp_CFilmProjector_ctor_FUN_00481f10 at 00481f18
 ;
 ; Referenced Globals:

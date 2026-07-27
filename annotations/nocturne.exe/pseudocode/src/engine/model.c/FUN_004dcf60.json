@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 422,
+    "complexity_score": 406,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 177,
-    "suspect_count": 22,
+    "pseudocode_lines": 176,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_truncation",
       "unaffected_reg",
       "unnamed_param",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 516
+    "total_lines": 515
   },
   "cross_references": [],
   "function": {
@@ -148,10 +147,15 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_004dcf60",
-    "signature": "uint * FUN_004dcf60(int *param_1)"
+    "name": "engine_model.c_FUN_004dcf60",
+    "signature": "uint * engine_model_c_FUN_004dcf60(int *param_1)"
   },
   "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
     {
       "addr": "00563a30",
       "is_variadic": false,
@@ -163,24 +167,19 @@
       "name": "crt_stdio.c_sprintf_FUN_00563c90"
     },
     {
-      "addr": "004dcd10",
-      "is_variadic": false,
-      "name": "engine_model.c_loadModelFile_FUN_004dcd10"
-    },
-    {
       "addr": "0041a5a0",
       "is_variadic": false,
-      "name": "FUN_0041a5a0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
+      "name": "engine_boss.c_FUN_0041a5a0"
     },
     {
       "addr": "004dcee0",
       "is_variadic": false,
-      "name": "FUN_004dcee0"
+      "name": "engine_model.c_FUN_004dcee0"
+    },
+    {
+      "addr": "004dcd10",
+      "is_variadic": false,
+      "name": "engine_model.c_loadModelFile_FUN_004dcd10"
     }
   ],
   "globals": [
@@ -210,14 +209,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -496,77 +495,77 @@
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 36,
-          "line": 151,
+          "line": 149,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 24,
-          "line": 152,
+          "line": 150,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 42,
-          "line": 156,
+          "line": 154,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 27,
-          "line": 157,
+          "line": 155,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 42,
-          "line": 161,
+          "line": 159,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "shiftTooManyBitsSigned",
           "column": 27,
-          "line": 162,
+          "line": 160,
           "message": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 33,
-          "line": 148,
+          "line": 146,
           "message": "Uninitialized variable: local_38",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 16,
-          "line": 176,
+          "line": 174,
           "message": "Uninitialized variable: *puVar10",
           "severity": "warning"
         },
         {
           "check_id": "uninitvar",
           "column": 13,
-          "line": 181,
+          "line": 179,
           "message": "Uninitialized variable: unaff_ESI",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 18,
-          "line": 157,
+          "line": 155,
           "message": "Uninitialized variable: local_b0",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 18,
-          "line": 162,
+          "line": 160,
           "message": "Uninitialized variable: local_ac",
           "severity": "error"
         }
@@ -577,24 +576,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint * FUN_004dcf60(int *param_1)",
+      "text": "uint * engine_model_c_FUN_004dcf60(int *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 15,
+      "line": 13,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "uint *unaff_ESI;",
@@ -602,7 +593,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 == 0x20) {",
@@ -610,7 +601,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar4 = engine_model_c_loadModelFile_FUN_004dcd10(param_1 + 6);",
@@ -618,7 +609,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "else if (*param_1 == 0x26) {",
@@ -626,15 +617,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0041a5a0(param_1);",
+      "text": "engine_boss_c_FUN_0041a5a0(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "local_34 = param_1 + 5;",
@@ -642,7 +633,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 != 0x14) {",
@@ -650,7 +641,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar6 = (int)(0x7fffffff / (longlong)param_1[1]) * 2;",
@@ -658,7 +649,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[2] != 2) {",
@@ -666,7 +657,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1[4]) {",
@@ -674,7 +665,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar7 < param_1[4]);",
@@ -682,7 +673,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 130,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar14 = (float10)round((float10)(local_14 * (1.0 / (float)param_1[4])))",
@@ -690,7 +681,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 174,
+      "line": 172,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "puVar10 = unaff_ESI;",
@@ -698,7 +689,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 180,
+      "line": 178,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "return unaff_ESI;",
@@ -706,7 +697,7 @@
     },
     {
       "description": "Pointer value `local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 137,
+      "line": 135,
       "match": "(int)local_34",
       "severity": "moderate",
       "text": "local_94 = (uint)((longlong)(int)local_34 * (longlong)(int)ROUND(fVar14)) >> 0x10 |",
@@ -714,7 +705,7 @@
     },
     {
       "description": "Pointer value `local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 138,
+      "line": 136,
       "match": "(int)local_34",
       "severity": "moderate",
       "text": "(int)((ulonglong)((longlong)(int)local_34 * (longlong)(int)ROUND(fVar14)) >> 0x20) <<",
@@ -722,7 +713,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -730,7 +721,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 168,
+      "line": 166,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -738,7 +729,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 175,
+      "line": 173,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -754,7 +745,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 151,
+      "line": 149,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "local_8c = (uVar2 ^ (int)uVar2 >> 0x1f) - ((int)uVar2 >> 0x1f);",
@@ -762,7 +753,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 152,
+      "line": 150,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "uVar2 = (int)uVar3 >> 0x1f;",
@@ -770,7 +761,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 156,
+      "line": 154,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "local_88 = (local_a4 ^ (int)local_a4 >> 0x1f) - ((int)local_a4 >> 0x1f);",
@@ -778,7 +769,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 157,
+      "line": 155,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "uVar2 = (int)local_b0 >> 0x1f;",
@@ -786,7 +777,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 161,
+      "line": 159,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "local_84 = (local_a0 ^ (int)local_a0 >> 0x1f) - ((int)local_a0 >> 0x1f);",
@@ -794,7 +785,7 @@
     },
     {
       "description": "Shifting signed 32-bit value by 31 bits is undefined behaviour",
-      "line": 162,
+      "line": 160,
       "match": "Cppcheck: signed shift by >= bit width (signed-div / branchless-abs idiom)",
       "severity": "moderate",
       "text": "uVar2 = (int)local_ac >> 0x1f;",
@@ -802,7 +793,7 @@
     },
     {
       "description": "Uninitialized variable: local_38",
-      "line": 148,
+      "line": 146,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "local_94 = (uint)((longlong)local_38 * (longlong)(int)ROUND(fVar14)) >> 0x10 |",
@@ -810,7 +801,7 @@
     },
     {
       "description": "Uninitialized variable: *puVar10",
-      "line": 176,
+      "line": 174,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "*puVar11 = *puVar10;",
@@ -818,7 +809,7 @@
     },
     {
       "description": "Uninitialized variable: unaff_ESI",
-      "line": 181,
+      "line": 179,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "puVar10 = unaff_ESI;",
@@ -826,7 +817,7 @@
     },
     {
       "description": "Uninitialized variable: local_b0",
-      "line": 157,
+      "line": 155,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "uVar2 = (int)local_b0 >> 0x1f;",
@@ -834,7 +825,7 @@
     },
     {
       "description": "Uninitialized variable: local_ac",
-      "line": 162,
+      "line": 160,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "uVar2 = (int)local_ac >> 0x1f;",

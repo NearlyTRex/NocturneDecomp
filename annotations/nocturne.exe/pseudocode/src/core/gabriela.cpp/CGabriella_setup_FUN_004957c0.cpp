@@ -14,7 +14,7 @@ void core_gabriela_cpp_CGabriella_setup_FUN_004957c0(int param_1)
   int iVar1;
   uint uVar2;
   
-  FUN_004b48d0(param_1);
+  core_hero_cpp_FUN_004b48d0(param_1);
   iVar1 = param_1 + 0x150;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_0051e0c0(iVar1,"gabriela.dfm");
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0051dcd0(iVar1);

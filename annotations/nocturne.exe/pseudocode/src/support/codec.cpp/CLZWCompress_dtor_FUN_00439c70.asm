@@ -5,11 +5,11 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059b530
+;   WatcomTypeInfo g_CLZWCompressTypeInfo_0059b530
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;   support_codec.cpp_CCodec_dtor_FUN_00438f30
 ;   support_codec.cpp_CLZWDictionary_dtor_FUN_00439370
@@ -44,7 +44,7 @@ section .text
     MOV EAX,EBX                         ; 00439ca3
     POP EBX                             ; 00439ca5
     RET                                 ; 00439ca6
-    PUSH 0x59b530                       ; 00439ca7 | DAT_0059b530
+    PUSH 0x59b530                       ; 00439ca7 | g_CLZWCompressTypeInfo_0059b530
         ;   Label: LAB_00439ca7
     PUSH EBX                            ; 00439cac
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00439cad
@@ -59,8 +59,8 @@ section .text
     RET                                 ; 00439cc1
     PUSH EAX                            ; 00439cc2
         ;   Label: LAB_00439cc2
-    CALL FUN_00564494                   ; 00439cc3
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 00439cc3
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 00439cc8
     MOV EAX,EBX                         ; 00439ccb
     POP EBX                             ; 00439ccd

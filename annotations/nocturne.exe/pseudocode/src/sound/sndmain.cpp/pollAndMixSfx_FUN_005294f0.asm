@@ -28,8 +28,8 @@
 ;   undefined4 DAT_005bea64
 ;   undefined4 DAT_005bea68
 ;   undefined4 DAT_005bea6c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dbd494
 ;   undefined4 DAT_02dc1b74
 ;   undefined4 DAT_02dc8328
@@ -37,9 +37,9 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_string.c_memmove_FUN_00566170
-;   FUN_004c8440
 ;   sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10
 ;   sound_sndmain.cpp_convertMixBufToOutput_FUN_00523330
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830
@@ -129,10 +129,10 @@ section .text
     MOV ESI,0x592860                    ; 005295ce | = "..\\sound\\sndmain.cpp"
     MOV EDI,0x4e4                       ; 005295d3
     PUSH 0x592875                       ; 005295d8 | = "nextMixingBuffer - shouldn't have any..."
-    MOV dword ptr [0x01cc4800],ESI      ; 005295dd | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 005295e3 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005295e9
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 005295dd | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 005295e3 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005295e9
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005295ee
     MOV ESI,dword ptr [0x02dc8330]      ; 005295f1 | DAT_02dc8330
         ;   Label: LAB_005295f1
@@ -289,10 +289,10 @@ section .text
         ;   Label: LAB_005297ab
     MOV EBX,0x1442                      ; 005297b0
     PUSH 0x593b0b                       ; 005297b5 | = "pollSfx - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 005297ba | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 005297c0 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005297c6
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 005297ba | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 005297c0 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005297c6
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005297cb
     JMP 0x00529504                      ; 005297ce
         ;   XREF to: 00529504 (UNCONDITIONAL_JUMP)  ; LAB_00529504
@@ -300,10 +300,10 @@ section .text
         ;   Label: LAB_005297d3
     MOV ECX,0x4e0                       ; 005297d8
     PUSH 0x592840                       ; 005297dd | = "SfxSlot::kill - must be locked!"
-    MOV dword ptr [0x01cc4800],EDX      ; 005297e2 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005297e8 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005297ee
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005297e2 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005297e8 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005297ee
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005297f3
     JMP 0x005295c5                      ; 005297f6
         ;   XREF to: 005295c5 (UNCONDITIONAL_JUMP)  ; LAB_005295c5

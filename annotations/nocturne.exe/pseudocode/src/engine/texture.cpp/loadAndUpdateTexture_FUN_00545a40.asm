@@ -8,8 +8,8 @@
 ;   engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00461f60 at 00461f6a
 ;
 ; Called Functions:
+;   engine_special.cpp_updateTexture_FUN_00532440
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920
-;   wincore_windll.cpp_updateTexture_FUN_00532440
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH ECX                            ; 00545a52
     MOV EBX,dword ptr [ESP + 0xc]       ; 00545a53
     PUSH EBX                            ; 00545a57
-    CALL wincore_windll.cpp_updateTexture_FUN_00532440 ; 00545a58
-        ;   XREF to: 00532440 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_updateTexture_FUN_00532440()
+    CALL engine_special.cpp_updateTexture_FUN_00532440 ; 00545a58
+        ;   XREF to: 00532440 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_updateTexture_FUN_00532440()
     ADD ESP,0x8                         ; 00545a5d
     POP EBX                             ; 00545a60
     RET                                 ; 00545a61

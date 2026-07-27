@@ -103,7 +103,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
       pfStack_d8 = &local_64;
       puStack_dc = (byte *)*0x01B4D738;
       piStack_e0 = (int *)0x4694d1;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c();
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c();
       local_14 = (float *)((int)param_2 + 1);
       local_2c = (float *)(float)(int)local_14;
       local_ac = (float)local_2c * (float)param_1[10] + (float)param_1[4];
@@ -115,7 +115,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
       pfStack_d8 = &local_7c;
       puStack_dc = (byte *)(*0x01B4D738 + 0x30);
       piStack_e0 = (int *)0x46955c;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c();
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c();
       local_14 = (float *)((int)param_4 + 1);
       local_ac = (float)local_2c * (float)param_1[10] + (float)param_1[4];
       local_24 = (float)(int)local_14;
@@ -127,7 +127,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
       pfStack_d8 = &local_40;
       puStack_dc = (byte *)(*0x01B4D738 + 0x60);
       piStack_e0 = (int *)0x4695f4;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c();
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c();
       local_ac = local_28 * (float)param_1[10] + (float)param_1[4];
       local_a8 = local_20 * (float)param_1[0xb] + (float)param_1[5];
       local_a4 = local_24 * (float)param_1[0xc] + (float)param_1[6];
@@ -137,7 +137,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
       pfStack_d8 = &local_58;
       puStack_dc = (byte *)(*0x01B4D738 + 0x90);
       piStack_e0 = (int *)0x469670;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c();
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c();
       local_14 = (float *)(param_3 + 1);
       local_ac = local_28 * (float)param_1[10] + (float)param_1[4];
       local_1c = (int *)(float)(int)local_14;
@@ -149,7 +149,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
       pfStack_d8 = &local_a0;
       puStack_dc = (byte *)(*0x01B4D738 + 0xc0);
       piStack_e0 = (int *)0x469702;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c();
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c();
       local_ac = (float)local_2c * (float)param_1[10] + (float)param_1[4];
       local_a8 = (float)local_1c * (float)param_1[0xb] + (float)param_1[5];
       local_a4 = local_30 * (float)param_1[0xc] + (float)param_1[6];
@@ -159,7 +159,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
       pfStack_d8 = &local_94;
       puStack_dc = (byte *)(*0x01B4D738 + 0xf0);
       piStack_e0 = (int *)0x46977e;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c();
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c();
       local_ac = (float)local_2c * (float)param_1[10] + (float)param_1[4];
       local_a8 = (float)local_1c * (float)param_1[0xb] + (float)param_1[5];
       local_a4 = local_24 * (float)param_1[0xc] + (float)param_1[6];
@@ -169,7 +169,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
       pfStack_d8 = &local_70;
       puStack_dc = (byte *)(*0x01B4D738 + 0x120);
       piStack_e0 = (int *)0x4697fa;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c();
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c();
       local_ac = local_28 * (float)param_1[10] + (float)param_1[4];
       local_a8 = (float)local_1c * (float)param_1[0xb] + (float)param_1[5];
       local_a4 = local_24 * (float)param_1[0xc] + (float)param_1[6];
@@ -179,7 +179,7 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
       pfStack_d8 = &local_88;
       puStack_dc = (byte *)(*0x01B4D738 + 0x150);
       piStack_e0 = (int *)0x469876;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c();
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c();
       piVar1 = 0x01B4D738;
       uVar2 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4 & DAT_005c50e4 &
               DAT_005c5114 & DAT_005c5144 & DAT_005c5174;
@@ -329,9 +329,9 @@ void core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00469390(int *param_1,i
         }
         _DAT_01b7b744 = _DAT_01b7b744 + 1;
         if (19999 < _DAT_01b7b744) {
-          _DAT_01cc4800 = "..\\core\\dtrace.cpp";
-          _DAT_01cc4804 = 0x792;
-          FUN_004c8440("Too many drawn cubes.  Need to recompile.");
+          PTR_01cc4800 = "..\\core\\dtrace.cpp";
+          INT_01cc4804 = 0x792;
+          core_main_c_FUN_004c8440("Too many drawn cubes.  Need to recompile.");
           return;
         }
       }

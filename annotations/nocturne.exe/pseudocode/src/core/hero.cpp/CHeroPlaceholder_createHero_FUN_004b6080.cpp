@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(int param_1,uint param_2)
 
 {
@@ -45,18 +43,18 @@ int __cdecl core_hero_cpp_CHeroPlaceholder_createHero_FUN_004b6080(int param_1,u
     pcVar3 = "CMoloch";
     break;
   default:
-    _DAT_01cc4800 = "..\\core\\hero.cpp";
-    _DAT_01cc4804 = 0x578;
-    FUN_004c8440("CHeroPlaceholder::createHero - invalid hero type.");
+    PTR_01cc4800 = "..\\core\\hero.cpp";
+    INT_01cc4804 = 0x578;
+    core_main_c_FUN_004c8440("CHeroPlaceholder::createHero - invalid hero type.");
     goto LAB_004b60b9;
   }
-  uVar1 = core_actor_cpp_createActorByName_FUN_0040d540(pcVar3,_DAT_01cae124);
+  uVar1 = core_actor_cpp_createActorByName_FUN_0040d540(pcVar3,g_CHeroActorType_01cae0ec.name_hash);
   iVar2 = core_actor_cpp_castToClassHash_FUN_0040d890(uVar1);
 LAB_004b60b9:
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\hero.cpp";
-    _DAT_01cc4804 = 0x57d;
-    FUN_004c8440("CHeroPlaceholder::createHero - failed.");
+    PTR_01cc4800 = "..\\core\\hero.cpp";
+    INT_01cc4804 = 0x57d;
+    core_main_c_FUN_004c8440("CHeroPlaceholder::createHero - failed.");
   }
   core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,iVar2);
   *(uint *)(iVar2 + 0x20) = *(uint *)(param_1 + 0x20);

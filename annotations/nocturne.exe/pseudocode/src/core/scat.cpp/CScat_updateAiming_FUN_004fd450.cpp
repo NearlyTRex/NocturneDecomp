@@ -84,7 +84,8 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(int param_1,float par
     for (local_20 = param_3; local_20 < *(int *)(0x01E57284 + 0x14cd6c); local_20 = local_20 + 1)
     {
       iVar1 = *(int *)(iVar3 + 0x14cd70 + 0x01E57284);
-      local_18 = (float)FUN_004fda20(param_1,iVar1,iVar1 == *(int *)(param_1 + 0x1fa60));
+      local_18 = (float)core_scat_cpp_FUN_004fda20
+                                  (param_1,iVar1,iVar1 == *(int *)(param_1 + 0x1fa60));
       if ((0.0 <= local_18) && (local_18 < local_24)) {
         local_28 = iVar1;
         local_24 = local_18;
@@ -103,7 +104,7 @@ void __cdecl core_scat_cpp_CScat_updateAiming_FUN_004fd450(int param_1,float par
     goto LAB_004fd4ed;
   }
   if (*(int *)(param_1 + 0x1fa60) == 0) goto LAB_004fd4ed;
-  __arrinit(&local_138,10,&DAT_005993b0);
+  __arrinit(&local_138,10,&g_CVectorTypeInfo_005993b0);
   iVar3 = (**(code **)(*(int *)(*(int *)(param_1 + 0x1fa60) + 0x14c) + 0x4c))
                     (*(int *)(param_1 + 0x1fa60),&local_138);
   if (iVar3 < 1) {

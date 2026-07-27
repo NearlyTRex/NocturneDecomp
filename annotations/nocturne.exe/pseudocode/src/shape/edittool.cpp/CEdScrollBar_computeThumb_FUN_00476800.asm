@@ -5,17 +5,17 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00476580 at 0047658d
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00476920 at 00476932
+;   shape_edittool.cpp_FUN_00476580 at 0047658d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057f0b4
 ;   TerminatedCString s_CEdScrollBar_computeThum_0057f0ca
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -124,10 +124,10 @@ section .text
         ;   Label: LAB_004768ca
     MOV EAX,0xefb                       ; 004768cf
     PUSH 0x57f0ca                       ; 004768d4 | = "CEdScrollBar::computeThumb - invalid ..."
-    MOV dword ptr [0x01cc4800],EBP      ; 004768d9 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004768df | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004768e4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004768d9 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004768df | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004768e4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004768e9
     JMP 0x0047682e                      ; 004768ec
         ;   XREF to: 0047682e (UNCONDITIONAL_JUMP)  ; LAB_0047682e

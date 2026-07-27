@@ -240,14 +240,15 @@ LAB_00458f79:
       iVar4 = 0;
       while ((iVar3 < *(int *)(0x01E57284 + 0x150bf4) &&
              ((iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890
-                                 (*(uint *)(iVar4 + 0x150bf8 + 0x01E57284),_DAT_01b4d25c),
-              iVar6 == 0 || (*(int *)(iVar6 + 0xbdb0) == 0))))) {
+                                 (*(uint *)(iVar4 + 0x150bf8 + 0x01E57284),
+                                  g_CDraculaBrideActorType_01b4d224.name_hash), iVar6 == 0 ||
+              (*(int *)(iVar6 + 0xbdb0) == 0))))) {
         iVar3 = iVar3 + 1;
         iVar4 = iVar4 + 4;
       }
       if (iVar3 == *(int *)(0x01E57284 + 0x150bf4)) {
         _sprintf(local_430,"bride-%d?.wav",*(uint *)(param_1 + 0xbdac));
-        FUN_0045ab40(param_1,local_430,0x3f800000);
+        core_dracbrid_cpp_FUN_0045ab40(param_1,local_430,0x3f800000);
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(param_1 + 0x150,0x17,1);
         (**(code **)(*(int *)(param_1 + 0x14c) + 0x24))(param_1,"hotbride-disappear.wav");
         iVar4 = *(int *)(param_1 + 0xbca4);
@@ -333,10 +334,10 @@ LAB_00458f79:
   case 9:
     if (*(float *)(param_1 + 0xbdb8) <= 0.0) {
       _sprintf(local_3cc,"bride-%d?.wav",*(uint *)(param_1 + 0xbdac));
-      FUN_0045ab40(param_1,local_3cc,0x3f800000);
+      core_dracbrid_cpp_FUN_0045ab40(param_1,local_3cc,0x3f800000);
       iVar4 = core_actor_cpp_randomChance_FUN_0040dea0(0x3e4ccccd);
       if (iVar4 != 0) {
-        FUN_0045ab40(param_1,local_3cc,0x3f800000);
+        core_dracbrid_cpp_FUN_0045ab40(param_1,local_3cc,0x3f800000);
       }
     }
     (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
@@ -409,10 +410,10 @@ LAB_00459978:
   case 0xe:
     if (*(float *)(param_1 + 0xbdb8) <= 0.0) {
       _sprintf(local_368,"bride-%d?.wav",*(uint *)(param_1 + 0xbdac));
-      FUN_0045ab40(param_1,local_368,0x3f800000);
+      core_dracbrid_cpp_FUN_0045ab40(param_1,local_368,0x3f800000);
       iVar4 = core_actor_cpp_randomChance_FUN_0040dea0(0x3e4ccccd);
       if (iVar4 != 0) {
-        FUN_0045ab40(param_1,local_368,0x3f800000);
+        core_dracbrid_cpp_FUN_0045ab40(param_1,local_368,0x3f800000);
       }
     }
     (**(code **)(*(int *)(param_1 + 0x14c) + 0x13c))(param_1,param_2);
@@ -470,7 +471,7 @@ LAB_00459978:
     uVar10 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                        (param_1 + 0x150,local_1b4,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_1cc,uVar10);
-    FUN_004b0480(INT_005b96c4,local_1cc,0);
+    core_gore_cpp_FUN_004b0480(INT_005b96c4,local_1cc,0);
     goto switchD_00459f4d_caseD_10;
   case 0x12:
     iVar4 = *(int *)(_DAT_01cae0e8 * 4 + 0x1cae0d8);
@@ -522,10 +523,10 @@ LAB_00459978:
   case 0x17:
     if (*(float *)(param_1 + 0xbdb8) <= 0.0) {
       _sprintf(local_494,"bride-%d?.wav",*(uint *)(param_1 + 0xbdac));
-      FUN_0045ab40(param_1,local_494,0x3f800000);
+      core_dracbrid_cpp_FUN_0045ab40(param_1,local_494,0x3f800000);
       iVar4 = core_actor_cpp_randomChance_FUN_0040dea0(0x3e4ccccd);
       if (iVar4 != 0) {
-        FUN_0045ab40(param_1,local_494,0x3f800000);
+        core_dracbrid_cpp_FUN_0045ab40(param_1,local_494,0x3f800000);
       }
     }
     switch(*(uint *)(param_1 + 0xbdb0)) {

@@ -31,17 +31,17 @@
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_00440240
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0
+;   core_main.c_FUN_004c8440
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
 ;   engine_drender.cpp_CDemonRenderer_pushViewport_FUN_00460e40
 ;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_004607b0
-;   FUN_004c8440
-;   wincore_windll.cpp_beginScene_FUN_00532340
-;   wincore_windll.cpp_clear_FUN_005329a0
-;   wincore_windll.cpp_clearScreen_FUN_0052ee70
-;   wincore_windll.cpp_clearZBuffer_FUN_00532b50
-;   wincore_windll.cpp_clearZBufferNative_FUN_0052eed4
+;   engine_special.cpp_beginScene_FUN_00532340
+;   engine_special.cpp_clear_FUN_005329a0
+;   engine_special.cpp_clearScreen_FUN_0052ee70
+;   engine_special.cpp_clearZBuffer_FUN_00532b50
+;   engine_special.cpp_clearZBufferNative_FUN_0052eed4
 ;
 ; *****************************************************************************
 
@@ -141,10 +141,10 @@ section .text
     MOV ECX,0x57b6c1                    ; 004403b2 | = "..\\core\\dcamera.cpp"
     MOV EBX,0x2f3                       ; 004403b7
     PUSH 0x57b6d5                       ; 004403bc | = "CDemonCamera::beginScene - Scene alre..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004403c1 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004403c7 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004403cd
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004403c1 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004403c7 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004403cd
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004403d2
     PUSH EDI                            ; 004403d5
         ;   Label: LAB_004403d5
@@ -216,23 +216,23 @@ section .text
     TEST EDI,EDI                        ; 004404ca
     JNZ 0x004404f9                      ; 004404cc
         ;   XREF to: 004404f9 (CONDITIONAL_JUMP)  ; LAB_004404f9
-    CMP dword ptr [0x02dc9d60],0x0      ; 004404ce | DAT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 004404ce | INT_02dc9d60
     JZ 0x004404dc                       ; 004404d5
         ;   XREF to: 004404dc (CONDITIONAL_JUMP)  ; LAB_004404dc
-    CALL wincore_windll.cpp_beginScene_FUN_00532340 ; 004404d7
-        ;   XREF to: 00532340 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_beginScene_FUN_00532340()
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004404dc
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_beginScene_FUN_00532340 ; 004404d7
+        ;   XREF to: 00532340 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_beginScene_FUN_00532340()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004404dc
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
         ;   Label: LAB_004404dc
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_0052eed4 ; 004404e1
-        ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearZBufferNative_FUN_0052eed4()
+    CALL engine_special.cpp_clearZBufferNative_FUN_0052eed4 ; 004404e1
+        ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearZBufferNative_FUN_0052eed4()
     CMP dword ptr [0x01c02594],0x0      ; 004404e6 | DAT_01c02594
     JZ 0x004404f9                       ; 004404ed
         ;   XREF to: 004404f9 (CONDITIONAL_JUMP)  ; LAB_004404f9
-    CALL wincore_windll.cpp_clear_FUN_005329a0 ; 004404ef
-        ;   XREF to: 005329a0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clear_FUN_005329a0()
-    CALL wincore_windll.cpp_clearZBuffer_FUN_00532b50 ; 004404f4
-        ;   XREF to: 00532b50 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearZBuffer_FUN_00532b50()
+    CALL engine_special.cpp_clear_FUN_005329a0 ; 004404ef
+        ;   XREF to: 005329a0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clear_FUN_005329a0()
+    CALL engine_special.cpp_clearZBuffer_FUN_00532b50 ; 004404f4
+        ;   XREF to: 00532b50 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearZBuffer_FUN_00532b50()
     PUSH ESI                            ; 004404f9
         ;   Label: LAB_004404f9
     CALL core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_00440fe0 ; 004404fa

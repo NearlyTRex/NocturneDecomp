@@ -5,6 +5,7 @@
 ;
 ;
 ; Referenced Globals:
+;   TerminatedCString s_s_0058ce1b
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_01e3161c
 ;   undefined4 DAT_01e31620
@@ -40,7 +41,7 @@ section .text
     MOV AL,byte ptr [EDI + 0x1e40098]   ; 004f153a
     MOV EDX,dword ptr [EAX*0x4 + 0x5be130] ; 004f1540
     PUSH EDX                            ; 004f1547
-    PUSH 0x58ce1b                       ; 004f1548
+    PUSH 0x58ce1b                       ; 004f1548 | = "%s"
     LEA EAX,[ESP + 0x8]                 ; 004f154d
     PUSH EAX                            ; 004f1551
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f1552

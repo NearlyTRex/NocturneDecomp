@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_004998c0 at 0049997b
-;   FUN_0052d790 at 0052d7e6
-;   FUN_0052dff0 at 0052e2dc
+;   core_gabriela.cpp_FUN_004998c0 at 0049997b
+;   core_sound.cpp_FUN_0052d790 at 0052d7e6
+;   core_sound.cpp_FUN_0052dff0 at 0052e2dc
 ;   core_weather.cpp_CWeather_setOriginAndRotation_FUN_005557d0 at 0055590f
 ;
 ; *****************************************************************************

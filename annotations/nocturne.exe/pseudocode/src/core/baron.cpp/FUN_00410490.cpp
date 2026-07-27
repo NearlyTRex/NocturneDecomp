@@ -192,7 +192,8 @@ switchD_00410a6d_default:
   iVar3 = param_1 + 0x150;
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(iVar3);
   core_xform_cpp_FUN_0055d610
-            (param_1 + 0x1fb04,*(uint *)(param_1 + 0x1fb10),DAT_007642e8,FUN_0051b650);
+            (param_1 + 0x1fb04,*(uint *)(param_1 + 0x1fb10),DAT_007642e8,
+             core_skeleton_cpp_FUN_0051b650);
   puVar5 = &stack0xffffff6c;
   local_94 = local_a4;
   *(uint *)((int)&stack0xffffff70 + (uint)bVar7 * 0xfffffffe * 4) =

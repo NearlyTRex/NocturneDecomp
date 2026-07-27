@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_0056c73c
-;   FUN_005670e0
+;   crt_unknown.c_FUN_005670e0
 ;   FUN_005671e4
 ;   FUN_00568e80
 ;   FUN_0056f220
@@ -222,8 +222,8 @@ section .text
     CMP EAX,0xb0                        ; 00573198
     JNC 0x005731a4                      ; 0057319d
         ;   XREF to: 005731a4 (CONDITIONAL_JUMP)  ; LAB_005731a4
-    CALL FUN_005670e0                   ; 0057319f
-        ;   XREF to: 005670e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005670e0()
+    CALL crt_unknown.c_FUN_005670e0     ; 0057319f
+        ;   XREF to: 005670e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005670e0()
     MOV ECX,dword ptr [EBP + -0x10]     ; 005731a4
         ;   Label: LAB_005731a4
     MOV EBX,0x200                       ; 005731a7

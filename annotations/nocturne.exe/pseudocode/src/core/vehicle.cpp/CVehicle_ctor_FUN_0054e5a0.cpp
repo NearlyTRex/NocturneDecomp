@@ -16,8 +16,9 @@ int core_vehicle_cpp_CVehicle_ctor_FUN_0054e5a0(uint param_1)
   
   iVar2 = core_actor_cpp_FUN_00409d30(param_1);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x150);
-  iVar2 = __arrinit(iVar2 + 0x17c,4,&DAT_0059b030);
-  iVar2 = __arrinit(iVar2 + 0x668,4,&DAT_005a3d20);
+  iVar2 = __arrinit
+                    (iVar2 + 0x17c,4,&g_CKeyFramedModelInstanceTypeInfo_0059b030);
+  iVar2 = __arrinit(iVar2 + 0x668,4,&g_CTireTypeInfo_005a3d20);
   iVar2 = core_course_cpp_CCourse_ctor_FUN_0043b5d0(iVar2 + 0x6e4);
   *(byte ***)(iVar2 + -0xecc) = &PTR_core_vehicle_cpp_CVehicle_setup_FUN_0054e7f0_005a3c44;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580

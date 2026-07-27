@@ -193,8 +193,8 @@
 ; undefined        Stack[-0xc]:1  local_c
 ;
 ; XREF[2]:
-;   FUN_0053f210 at 0053f236
 ;   core_stranger.cpp_CStranger_updateWeaponPosition_FUN_0053a660 at 0053a6b6
+;   core_stranger.cpp_FUN_0053f210 at 0053f236
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_stranger_cpp_0059596f
@@ -203,17 +203,18 @@
 ;   double DOUBLE_005959af = 0.700000000000000
 ;   double DOUBLE_005959b7 = 0.300000000000000
 ;   float FLOAT_005959bf = 0.3330000
-;   undefined4 CDemonActorType_00764a9c.name_hash
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   undefined4 g_CLightActorActorType_00764a9c.name_hash
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_02dc9f84
 ;   undefined4 DAT_02dc9f88
 ;   undefined4 DAT_02dd1184
-;   undefined4 DAT_02ddf9a8
+;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a9d0
+;   core_main.c_FUN_004c8440
 ;   core_stranger.cpp_getCarriedObjectVerticalOffset_FUN_00534fc0
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
 ;   core_xform.cpp_buildRotationX_FUN_0055c730
@@ -224,7 +225,6 @@
 ;   core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0
 ;   core_xform.cpp_transformVector3x4_FUN_0055a8b0
 ;   core_xform.cpp_transformVector3x4InPlace_FUN_0055a910
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -243,7 +243,7 @@ section .text
     MOV EAX,EDX                         ; 0053a77d
     SHL EAX,0x4                         ; 0053a77f
     ADD EAX,EDX                         ; 0053a782
-    MOV EDX,dword ptr [0x02ddf9a8]      ; 0053a784 | DAT_02ddf9a8
+    MOV EDX,dword ptr [0x02ddf9a8]      ; 0053a784 | g_CWeaponActorType_02ddf970.name_hash
     PUSH EDX                            ; 0053a78a
     MOV ECX,dword ptr [EBP + 0x8e]      ; 0053a78b
     MOV EAX,dword ptr [EBX + EAX*0x4 + 0x24a4] ; 0053a791
@@ -799,7 +799,7 @@ section .text
     CMP dword ptr [EBX + 0x2a84],0xe    ; 0053af61
     JZ 0x0053b2e9                       ; 0053af68
         ;   XREF to: 0053b2e9 (CONDITIONAL_JUMP)  ; LAB_0053b2e9
-    MOV ECX,dword ptr [0x00764ad4]      ; 0053af6e | CDemonActorType_00764a9c.name_hash
+    MOV ECX,dword ptr [0x00764ad4]      ; 0053af6e | g_CLightActorActorType_00764a9c.name_hash
     PUSH ECX                            ; 0053af74
     MOV ESI,dword ptr [EBP + 0x8e]      ; 0053af75
     PUSH ESI                            ; 0053af7b
@@ -1259,10 +1259,10 @@ section .text
     MOV EDI,0x59596f                    ; 0053b593 | = "..\\core\\stranger.cpp"
     MOV EAX,0xc44                       ; 0053b598
     PUSH 0x595984                       ; 0053b59d | = "Don't know how to carry light %s"
-    MOV dword ptr [0x01cc4800],EDI      ; 0053b5a2 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0053b5a8 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0053b5ad
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0053b5a2 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0053b5a8 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0053b5ad
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0053b5b2
     JMP 0x0053b05b                      ; 0053b5b5
         ;   XREF to: 0053b05b (UNCONDITIONAL_JUMP)  ; LAB_0053b05b

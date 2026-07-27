@@ -302,7 +302,7 @@ LAB_004fb790:
             }
           }
           apuStack_6c[1] = (uint *)0x4fb7a9;
-          wincore_windll_cpp_renderScanline_FUN_00530710(piVar3,local_14,local_18);
+          engine_special_cpp_renderScanline_FUN_00530710(piVar3,local_14,local_18);
           *(int *)(local_18 + 8) = *(int *)(local_18 + 8) + *(int *)(local_18 + 0xc);
           *(int *)(local_18 + 0x18) = *(int *)(local_18 + 0x18) + *(int *)(local_18 + 0x1c);
           *(int *)(local_18 + 0x20) = *(int *)(local_18 + 0x20) + *(int *)(local_18 + 0x24);
@@ -335,7 +335,7 @@ LAB_004fb790:
       } while (iVar6 < param_2);
     }
     apuStack_6c[0] = _DAT_01c039a0;
-    wincore_windll_cpp_drawPolygon2_FUN_00532650(apuStack_6c + 1,param_2);
+    engine_special_cpp_drawPolygon2_FUN_00532650(apuStack_6c + 1,param_2);
   }
   return;
 }

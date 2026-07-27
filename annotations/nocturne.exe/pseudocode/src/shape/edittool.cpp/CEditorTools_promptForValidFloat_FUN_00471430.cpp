@@ -28,10 +28,10 @@ uint __cdecl shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_00471430(ui
       }
       iVar1 = sscanf();
       if (iVar1 == 1) break;
-      FUN_0046fcd0();
+      shape_edittool_cpp_FUN_0046fcd0();
     }
     if ((param_4 == 0) || ((param_5 <= local_18 && (local_18 <= param_6)))) break;
-    FUN_0046fcd0(param_1,"Please enter a valid integer between %7g and %7g.");
+    shape_edittool_cpp_FUN_0046fcd0(param_1,"Please enter a valid integer between %7g and %7g.");
   }
   *param_3 = local_18;
   return 1;

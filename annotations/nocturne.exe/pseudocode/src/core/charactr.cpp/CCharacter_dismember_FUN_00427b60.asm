@@ -19,8 +19,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[9]:
-;   FUN_0040fa20 at 0040fb50
-;   FUN_0040fbc0 at 0040fbcf
+;   core_armour.cpp_FUN_0040fa20 at 0040fb50
+;   core_armour.cpp_FUN_0040fbc0 at 0040fbcf
 ;   core_batman.cpp_CBatman_processDismemberment_FUN_004145f0 at 00414918
 ;   core_charactr.cpp_CCharacter_explode_FUN_00427ab0 at 00427b4b
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 00428663

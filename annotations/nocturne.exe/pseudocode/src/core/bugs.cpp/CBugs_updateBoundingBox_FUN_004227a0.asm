@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00421480 at 0042152c
+;   core_bugs.cpp_FUN_00421480 at 0042152c
 ;
 ; Called Functions:
 ;   core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423680

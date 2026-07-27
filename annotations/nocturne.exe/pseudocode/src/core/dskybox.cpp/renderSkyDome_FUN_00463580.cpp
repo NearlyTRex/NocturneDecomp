@@ -118,13 +118,13 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(uint *param_1,char *par
   local_68 = local_70;
   fVar11 = (float10)round(fVar12 * fVar13);
   local_70 = (int)ROUND(fVar11);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*piVar4,&local_70);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*piVar4,&local_70);
   local_74 = -local_74;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_74);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_74);
   local_6c = -local_6c;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_74);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_74);
   local_74 = -local_74;
-  wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_74);
+  engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_74);
   piVar4 = DAT_005ae704;
   uVar2 = *param_1;
   *(uint *)(*DAT_005ae704 + 0x20) = uVar2;

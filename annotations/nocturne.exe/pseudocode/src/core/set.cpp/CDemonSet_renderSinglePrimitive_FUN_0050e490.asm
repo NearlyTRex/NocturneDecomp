@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0041d050 at 0041d1c8
+;   core_box.cpp_FUN_0041d050 at 0041d1c8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ae704
@@ -13,8 +13,8 @@
 ;   undefined4 DAT_01b4d750
 ;
 ; Called Functions:
+;   core_mirror.cpp_FUN_004d7720
 ;   engine_drender.cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
-;   FUN_004d7720
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     PUSH ECX                            ; 0050e4a4
     MOV EDX,dword ptr [EAX + 0x161268]  ; 0050e4a5
     PUSH EDX                            ; 0050e4ab
-    CALL FUN_004d7720                   ; 0050e4ac
-        ;   XREF to: 004d7720 (UNCONDITIONAL_CALL)  ; undefined FUN_004d7720()
+    CALL core_mirror.cpp_FUN_004d7720   ; 0050e4ac
+        ;   XREF to: 004d7720 (UNCONDITIONAL_CALL)  ; undefined core_mirror.cpp_FUN_004d7720()
     ADD ESP,0x8                         ; 0050e4b1
     RET                                 ; 0050e4b4
     PUSH ECX                            ; 0050e4b5

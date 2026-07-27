@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_00419c20 at 00419cbb
-;   FUN_0045a260 at 0045a3fc
-;   FUN_00550210 at 0055032f
 ;   core_baron.cpp_FUN_004110f0 at 0041126c
 ;   core_batman.cpp_FUN_00414340 at 004144cd
+;   core_boneguy.cpp_FUN_00419c20 at 00419cbb
+;   core_dracbrid.cpp_FUN_0045a260 at 0045a3fc
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40 at 004c0f07
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_004dfea0 at 004dff7f
+;   core_vessel.cpp_FUN_00550210 at 0055032f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01b4d7ac

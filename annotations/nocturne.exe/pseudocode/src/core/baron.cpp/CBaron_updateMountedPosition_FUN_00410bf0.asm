@@ -16,7 +16,7 @@
 ;   core_baron.cpp_FUN_00410490 at 00410807
 ;
 ; Referenced Globals:
-;   undefined4 CDemonActorType_00765a60.name_hash
+;   undefined4 g_CCharacterActorType_00765a60.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -79,7 +79,7 @@ section .text
     FSTP float ptr [EBP + -0x1c]        ; 00410c60
     CALL dword ptr [ESI + 0x60]         ; 00410c63
     ADD ESP,0xc                         ; 00410c66
-    MOV ECX,dword ptr [0x00765a98]      ; 00410c69 | CDemonActorType_00765a60.name_hash
+    MOV ECX,dword ptr [0x00765a98]      ; 00410c69 | g_CCharacterActorType_00765a60.name_hash
     PUSH ECX                            ; 00410c6f
     MOV ESI,dword ptr [EBX + 0x1fb14]   ; 00410c70
     PUSH ESI                            ; 00410c76

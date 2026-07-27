@@ -10,16 +10,16 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; XREF[31]:
-;   FUN_00418a00 at 00418d92
-;   FUN_0041fe40 at 0041ffe3
-;   FUN_004a9270 at 004a9be3
-;   FUN_004b6d80 at 004b6e53
-;   FUN_004da790 at 004da94b
-;   FUN_00540f50 at 00540ffa
 ;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004126a3
 ;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413a51
 ;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 00415708
+;   core_boneguy.cpp_FUN_00418a00 at 00418d92
+;   core_bride.cpp_FUN_0041fe40 at 0041ffe3
 ;   core_colonel.cpp_CColonel_processMotionEvents_FUN_0043a980 at 0043a9c3
+;   core_cow.cpp_CZombieCow_process_FUN_0043bdb0 at 0043c004
+;   core_dog.cpp_CZombieDog_process_FUN_00454750 at 004549bb
+;   core_dracbrid.cpp_CDraculaBride_process_FUN_00458a90 at 00458ca3
+;   core_drone.cpp_CDrone_process_FUN_00462a60 at 00462d2f
 ;   ... and 21 more
 ;
 ; Referenced Globals:

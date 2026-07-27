@@ -10,9 +10,9 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[3]:
-;   FUN_00535900 at 005367e7
-;   FUN_005445c0 at 00544703
 ;   core_charactr.cpp_CCharacter_preProcess_FUN_004259a0 at 004259dd
+;   core_stranger.cpp_FUN_00535900 at 005367e7
+;   core_tentacle.cpp_FUN_005445c0 at 00544703
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_inverseTransformVector_FUN_0040a220

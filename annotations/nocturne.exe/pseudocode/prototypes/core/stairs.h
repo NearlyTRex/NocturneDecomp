@@ -3,17 +3,41 @@
 // Function prototypes for core/stairs.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_stairs.cpp_CStairs_dtor_FUN_00412000
-// Address: 00412000
-int CStairs::dtor(int param_1,byte param_2);
+// Original: core_stairs.cpp_staticInit_FUN_00534750
+// Address: 00534750
+void __cdecl staticInit(void);
 
-// Original: core_stairs.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0
-// Address: 0043b5f0
-undefined4 __cdecl CDemonTriangle::arrdtor(undefined4 param_1);
+// Original: core_stairs.cpp_FUN_00534780
+// Address: 00534780
+void FUN_00534780(void);
+
+// Original: core_stairs.cpp_FUN_005347a0
+// Address: 005347a0
+CDemonActorType * FUN_005347a0(void);
+
+// Original: core_stairs.cpp_FUN_005347b0
+// Address: 005347b0
+int FUN_005347b0(undefined4 param_1);
+
+// Original: core_stairs.cpp_FUN_00534820
+// Address: 00534820
+undefined4 FUN_00534820(undefined4 param_1);
+
+// Original: core_stairs.cpp_FUN_00534840
+// Address: 00534840
+void FUN_00534840(void);
+
+// Original: core_stairs.cpp_FUN_00534850
+// Address: 00534850
+undefined4 FUN_00534850(void);
 
 // Original: core_stairs.cpp_CStairs_getBoundingBox_FUN_00534860
 // Address: 00534860
 void CStairs::getBoundingBox(int param_1,float *param_2);
+
+// Original: core_stairs.cpp_FUN_005348c0
+// Address: 005348c0
+void FUN_005348c0(int param_1);
 
 // Original: core_stairs.cpp_CStairs_getCollisionType_FUN_00534940
 // Address: 00534940
@@ -31,6 +55,18 @@ void CStairs::customIntersectCylinderXZ(int param_1,undefined4 param_2);
 // Address: 00534a70
 undefined4 CStairs::customGetFloorHeight(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 
+// Original: core_stairs.cpp_FUN_00534ac0
+// Address: 00534ac0
+undefined4 FUN_00534ac0(int param_1);
+
 // Original: core_stairs.cpp_CStairs_buildCollision_FUN_00534ad0
 // Address: 00534ad0
 void __cdecl CStairs::buildCollision(int param_1);
+
+// Original: core_stairs.cpp_CFlies_dtor_FUN_00534c10
+// Address: 00534c10
+int CFlies::dtor(int param_1,byte param_2);
+
+// Original: core_stairs.cpp_SFly_arrdtor_FUN_00534c80
+// Address: 00534c80
+void __cdecl SFly::arrdtor(undefined4 param_1);

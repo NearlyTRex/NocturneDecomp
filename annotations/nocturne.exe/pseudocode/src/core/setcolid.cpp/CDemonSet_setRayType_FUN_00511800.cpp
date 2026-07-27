@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(int param_1,int param_2)
 
 {
@@ -15,8 +13,8 @@ void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800(int param_1,int
   if (param_2 != 3) {
     return;
   }
-  _DAT_01cc4800 = "..\\core\\setcolid.cpp";
-  _DAT_01cc4804 = 0x49a;
-  FUN_004c8440("CDemonSet::setRayType - use setRayTypeLaser");
+  PTR_01cc4800 = "..\\core\\setcolid.cpp";
+  INT_01cc4804 = 0x49a;
+  core_main_c_FUN_004c8440("CDemonSet::setRayType - use setRayTypeLaser");
   return;
 }

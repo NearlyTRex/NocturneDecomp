@@ -12,7 +12,7 @@
 ;   undefined1* switchdataD_005717a8 = 0057180b
 ;
 ; Called Functions:
-;   FUN_00566f98
+;   crt_unknown.c_FUN_00566f98
 ;   FUN_00571510
 ;   FUN_00571564
 ;   FUN_00571630
@@ -51,8 +51,8 @@ section .text
         ;   Label: caseD_1
     JNZ 0x00571815                      ; 0057180e
         ;   XREF to: 00571815 (CONDITIONAL_JUMP)  ; caseD_c
-    CALL FUN_00566f98                   ; 00571810
-        ;   XREF to: 00566f98 (UNCONDITIONAL_CALL)  ; undefined FUN_00566f98()
+    CALL crt_unknown.c_FUN_00566f98     ; 00571810
+        ;   XREF to: 00566f98 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00566f98()
     CMP EBX,0x1                         ; 00571815
         ;   Label: caseD_3
     JZ 0x00571835                       ; 00571818

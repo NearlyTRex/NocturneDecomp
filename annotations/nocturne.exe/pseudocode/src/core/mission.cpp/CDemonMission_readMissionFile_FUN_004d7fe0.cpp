@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *param_1,uint param_2,int param_3)
 
 {
@@ -33,9 +31,9 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *p
   int local_14;
   
   bVar10 = 0;
-  FUN_004d7ea0(param_1);
+  core_mission_cpp_FUN_004d7ea0(param_1);
   if (param_3 == 0) {
-    FUN_004d9900(param_1);
+    core_mission_cpp_FUN_004d9900(param_1);
   }
   do {
     iVar2 = _fgetc(param_2);
@@ -43,19 +41,19 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *p
   } while (iVar2 != 10);
   _fscanf(param_2,"%d,%d\n",param_1 + 2,&local_2c);
   if (7 < (int)param_1[2]) {
-    _DAT_01cc4800 = "..\\core\\mission.cpp";
-    _DAT_01cc4804 = 0xe2;
-    FUN_004c8440("Invalid mission version number: %d, current version is %d.  (You probably have an old .exe)",param_1[2],7);
+    PTR_01cc4800 = "..\\core\\mission.cpp";
+    INT_01cc4804 = 0xe2;
+    core_main_c_FUN_004c8440("Invalid mission version number: %d, current version is %d.  (You probably have an old .exe)",param_1[2],7);
   }
   if (local_2c < 4) {
-    _DAT_01cc4800 = "..\\core\\mission.cpp";
-    _DAT_01cc4804 = 0xe5;
-    FUN_004c8440("This mission uses actor format version %d, which we don't support anymore!",local_2c);
+    PTR_01cc4800 = "..\\core\\mission.cpp";
+    INT_01cc4804 = 0xe5;
+    core_main_c_FUN_004c8440("This mission uses actor format version %d, which we don't support anymore!",local_2c);
   }
   if ((int)param_1[2] < 2) {
-    _DAT_01cc4800 = "..\\core\\mission.cpp";
-    _DAT_01cc4804 = 0xea;
-    FUN_004c8440("No name in mission");
+    PTR_01cc4800 = "..\\core\\mission.cpp";
+    INT_01cc4804 = 0xea;
+    core_main_c_FUN_004c8440("No name in mission");
   }
   do {
     iVar2 = _fgetc(param_2);
@@ -97,10 +95,11 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *p
         iVar5 = core_actor_cpp_getActorClassByName_FUN_0040d4d0(local_158);
         if (iVar5 != 0) {
           if (*(int *)(iVar5 + 0x34) < local_1c) {
-            _DAT_01cc4800 = "..\\core\\mission.cpp";
-            _DAT_01cc4804 = 0x108;
-            FUN_004c8440("Actor type %s is saved in mission in format version %d, but the latest version this .EXE supports is %d!",local_158,local_1c,
-                         *(int *)(iVar5 + 0x34));
+            PTR_01cc4800 = "..\\core\\mission.cpp";
+            INT_01cc4804 = 0x108;
+            core_main_c_FUN_004c8440
+                      ("Actor type %s is saved in mission in format version %d, but the latest version this .EXE supports is %d!",local_158,local_1c,*(int *)(iVar5 + 0x34)
+                      );
           }
           **(int **)(iVar5 + 0x30) = local_1c;
         }
@@ -166,9 +165,9 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *p
       param_1[0x215] = pcVar4;
     }
     if (1999 < (int)param_1[0x216]) {
-      _DAT_01cc4800 = "..\\core\\mission.cpp";
-      _DAT_01cc4804 = 0x135;
-      FUN_004c8440("Too many actors");
+      PTR_01cc4800 = "..\\core\\mission.cpp";
+      INT_01cc4804 = 0x135;
+      core_main_c_FUN_004c8440("Too many actors");
     }
     param_1[param_1[0x216] + 0x217] = local_18;
     local_14 = local_14 + 1;
@@ -183,9 +182,9 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *p
   if (0 < local_28) {
     do {
       if (iVar2 == 0) {
-        _DAT_01cc4800 = "..\\core\\mission.cpp";
-        _DAT_01cc4804 = 0x142;
-        FUN_004c8440("CDemonMission::load - actor list count mismatch #1!");
+        PTR_01cc4800 = "..\\core\\mission.cpp";
+        INT_01cc4804 = 0x142;
+        core_main_c_FUN_004c8440("CDemonMission::load - actor list count mismatch #1!");
       }
       core_actor_cpp_CDemonActor_load_FUN_0040c160(iVar2,param_2);
       iVar5 = iVar5 + 1;
@@ -198,11 +197,12 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *p
     if (0 < local_28) {
       do {
         if (iVar2 == 0) {
-          _DAT_01cc4800 = "..\\core\\mission.cpp";
-          _DAT_01cc4804 = 0x14e;
-          FUN_004c8440("CDemonMission::load - actor list count mismatch #2!");
+          PTR_01cc4800 = "..\\core\\mission.cpp";
+          INT_01cc4804 = 0x14e;
+          core_main_c_FUN_004c8440("CDemonMission::load - actor list count mismatch #2!");
         }
-        iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar2,_DAT_01cae124);
+        iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                          (iVar2,g_CHeroActorType_01cae0ec.name_hash);
         if (iVar3 != 0) {
           core_inv_cpp_CInventory_loadItems_FUN_004c14d0(iVar3 + 0x1f5a0);
         }
@@ -213,14 +213,14 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(uint *p
     param_1[3] = 0;
   }
   if (iVar2 != 0) {
-    _DAT_01cc4800 = "..\\core\\mission.cpp";
-    _DAT_01cc4804 = 0x155;
-    FUN_004c8440("CDemonMission::load - actor list count mismatch #3!");
+    PTR_01cc4800 = "..\\core\\mission.cpp";
+    INT_01cc4804 = 0x155;
+    core_main_c_FUN_004c8440("CDemonMission::load - actor list count mismatch #3!");
   }
   if (param_1[0x215] != 0) {
-    _DAT_01cc4800 = "..\\core\\mission.cpp";
-    _DAT_01cc4804 = 0x156;
-    FUN_004c8440("CDemonMission::load - actor list count mismatch #4!");
+    PTR_01cc4800 = "..\\core\\mission.cpp";
+    INT_01cc4804 = 0x156;
+    core_main_c_FUN_004c8440("CDemonMission::load - actor list count mismatch #4!");
   }
   param_1[0x216] = 0;
   if ((int)param_1[2] < 4) {

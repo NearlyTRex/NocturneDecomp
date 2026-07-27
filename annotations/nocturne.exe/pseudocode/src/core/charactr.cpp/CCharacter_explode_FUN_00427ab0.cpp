@@ -27,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_explode_FUN_00427ab0(int param_1,uint 
   fStack_8 = pfVar1[2] + pfVar1[5];
   fStack_20 = fStack_8 * 0.5f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,auStack_1c,&fStack_28);
-  FUN_0048c0d0(0x01C08D04,auStack_1c,0x40000000,0x44bb8000,0x40800000);
+  core_fire_cpp_FUN_0048c0d0(0x01C08D04,auStack_1c,0x40000000,0x44bb8000,0x40800000);
   core_charactr_cpp_CCharacter_dismember_FUN_00427b60(param_1,param_2,param_3,0);
   return;
 }

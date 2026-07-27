@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_bugs_cpp_FUN_00422050(int param_1,float param_2)
 
 {
@@ -66,7 +64,7 @@ void core_bugs_cpp_FUN_00422050(int param_1,float param_2)
                       (iVar2,pfVar1,auStack_50,*(uint *)(param_1 + 0x6c));
     if (iVar2 != 0) {
       core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(auStack_a8,auStack_50);
-      fStack_78 = _DAT_0059aeb4 * param_2;
+      fStack_78 = 2.0f * param_2;
       uStack_80 = 0;
       uStack_7c = 0;
       pfStack_14 = (float *)fStack_78;

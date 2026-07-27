@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(int param_1,float param_2)
 
 {
@@ -34,7 +32,8 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(int param_1,flo
     *(float *)(param_1 + 0xbd88) = local_14 + *(float *)(param_1 + 0xbd88);
     for (; local_18 < *(int *)(0x01E57284 + 0x14cd6c); local_18 = local_18 + 1) {
       iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(0x01E57284 + local_1c + 0x14cd70),_DAT_02ddf54c);
+                        (*(uint *)(0x01E57284 + local_1c + 0x14cd70),
+                         g_CWayPointActorType_02ddf514.name_hash);
       if ((iVar1 != 0) &&
          (iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0
                             (PTR_s_darkPoint_00584ead_005b9654,iVar1,0), iVar2 != 0)) {
@@ -42,7 +41,8 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(int param_1,flo
         local_20 = 1;
         for (iVar4 = 0; iVar4 < *(int *)(0x01E57284 + 0x150bf4); iVar4 = iVar4 + 1) {
           iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
-                            (*(uint *)(iVar2 + 0x150bf8 + 0x01E57284),_DAT_01c78c10);
+                            (*(uint *)(iVar2 + 0x150bf8 + 0x01E57284),
+                             g_CGhoulActorType_01c78bd8.name_hash);
           if (((iVar3 != 0) && (iVar3 != param_1)) && (iVar1 == *(int *)(iVar3 + 0xbd84)))
           goto LAB_004a90df;
           iVar2 = iVar2 + 4;
@@ -53,9 +53,9 @@ void __cdecl core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004a9040(int param_1,flo
             iVar2 = core_path_cpp_getPathMap_FUN_004f1e00(iVar1 + 0x20);
           }
           if (iVar2 == 0) {
-            _DAT_01cc4800 = "..\\core\\ghoul.cpp";
-            _DAT_01cc4804 = 300;
-            FUN_004c8440("CGhoul::findDarkWayPoint - Can't get temp path map");
+            PTR_01cc4800 = "..\\core\\ghoul.cpp";
+            INT_01cc4804 = 300;
+            core_main_c_FUN_004c8440("CGhoul::findDarkWayPoint - Can't get temp path map");
           }
           uStack_30 = 0;
           uStack_2c = 0;

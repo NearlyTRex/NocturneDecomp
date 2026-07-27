@@ -139,7 +139,7 @@ LAB_004cb32e:
     local_b4 = local_108;
     local_b0 = local_104;
     local_ac = local_100;
-    FUN_0048b6f0(0x01C08D04,local_3c,local_54,&local_c0,0);
+    core_fire_cpp_FUN_0048b6f0(0x01C08D04,local_3c,local_54,&local_c0,0);
     core_setcolid_cpp_CDemonSet_init_FUN_00511750(0x01E57284);
     return;
   }

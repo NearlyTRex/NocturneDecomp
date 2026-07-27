@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 FUN_004f7ae0(undefined4 *param_1,char *param_2)
+; undefined4 engine_pod_cpp_FUN_004f7ae0(undefined4 *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
@@ -26,10 +26,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   FUN_004f8eb0 at 004f8eee
-;   FUN_004f9100 at 004f911f
 ;   engine_pod.cpp_CPod_mount_FUN_004f88a0 at 004f8903
 ;   engine_pod.cpp_CPod_remount_FUN_004f8970 at 004f89b4
+;   engine_pod.cpp_FUN_004f8eb0 at 004f8eee
+;   engine_pod.cpp_FUN_004f9100 at 004f911f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rb_0058d9ac
@@ -37,10 +37,11 @@
 ;   TerminatedCString s_Out_of_memory_0058d9c1
 ;   TerminatedCString s_engine_pod_cpp_0058d9d0
 ;   TerminatedCString s_Out_of_memory_0058d9e2
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_memory.c_realloc_FUN_00564a70
 ;   crt_stdio.c_fclose_FUN_00563380
@@ -51,14 +52,13 @@
 ;   crt_string.c__stricmp_FUN_00564520
 ;   engine_dosio.cpp_getFileTimestamp_FUN_00456910
 ;   engine_pod.cpp_CPodFile_cleanup_FUN_004f80e0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f7ae0
-        ;   Label: FUN_004f7ae0
+        ;   Label: engine_pod.cpp_FUN_004f7ae0
     PUSH ESI                            ; 004f7ae1
     PUSH EDI                            ; 004f7ae2
     PUSH EBP                            ; 004f7ae3
@@ -237,10 +237,10 @@ section .text
     MOV ECX,0x58d9af                    ; 004f7cdc | = "..\\engine\\pod.cpp"
     MOV EBX,0xfe                        ; 004f7ce1
     PUSH 0x58d9c1                       ; 004f7ce6 | = "Out of memory!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f7ceb | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004f7cf1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f7cf7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004f7ceb | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004f7cf1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f7cf7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f7cfc
     MOV ESI,dword ptr [ESP + 0xf4]      ; 004f7cff
         ;   Label: LAB_004f7cff
@@ -478,10 +478,10 @@ section .text
     MOV ECX,0x58d9d0                    ; 004f7fcd | = "..\\engine\\pod.cpp"
     MOV ESI,0x128                       ; 004f7fd2
     PUSH 0x58d9e2                       ; 004f7fd7 | = "Out of memory!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f7fdc | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004f7fe2 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f7fe8
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004f7fdc | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004f7fe2 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f7fe8
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f7fed
     MOV EAX,dword ptr [ESP + 0x114]     ; 004f7ff0
         ;   Label: LAB_004f7ff0

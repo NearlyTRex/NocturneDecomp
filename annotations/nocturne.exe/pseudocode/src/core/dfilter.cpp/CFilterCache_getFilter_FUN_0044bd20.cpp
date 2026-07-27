@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20(int *param_1,char *param_2,int param_3)
 
 {
@@ -31,9 +29,9 @@ int core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20(int *param_1,char *para
     } while (iVar4 < *param_1);
   }
   if (0x3f < *param_1) {
-    _DAT_01cc4800 = "..\\core\\dfilter.cpp";
-    _DAT_01cc4804 = 0x55;
-    FUN_004c8440("CFilterCache::getFilter - Too many filters");
+    PTR_01cc4800 = "..\\core\\dfilter.cpp";
+    INT_01cc4804 = 0x55;
+    core_main_c_FUN_004c8440("CFilterCache::getFilter - Too many filters");
   }
   piVar6 = param_1 + iVar4 * 10 + 1;
   *param_1 = *param_1 + 1;
@@ -54,9 +52,9 @@ int core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20(int *param_1,char *para
   }
   param_1[iVar4 + 0x281] = iVar2;
   if (iVar2 == 0) {
-    _DAT_01cc4800 = "..\\core\\dfilter.cpp";
-    _DAT_01cc4804 = 0x59;
-    FUN_004c8440("CFilterCache::getFilter - Out of memory");
+    PTR_01cc4800 = "..\\core\\dfilter.cpp";
+    INT_01cc4804 = 0x59;
+    core_main_c_FUN_004c8440("CFilterCache::getFilter - Out of memory");
   }
   core_dfilter_cpp_CDemonFilter_load_FUN_0044bf90(param_1[iVar4 + 0x281],param_2);
   if (param_3 != 0) {

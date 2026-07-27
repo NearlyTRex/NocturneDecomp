@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(int param_1,int param_2)
 
 {
@@ -32,7 +30,7 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(int param_1,int pa
       if (((*(int *)(iVar1 + 0x1c) != 0) || (param_2 != 1)) || (iVar3 != 6)) {
         _sprintf(local_80,"mobster-cheese-%c-%c-%d.wav",*(byte *)(param_1 + 0xbd38),
                    local_1c,*(uint *)(iVar4 + 0x1ccdb94));
-        local_14 = FUN_0052ebc0(0x02DC9450,local_80);
+        local_14 = core_sound_cpp_FUN_0052ebc0(0x02DC9450,local_80);
         *(uint *)(param_1 + 0xbd3c) = local_14;
         if (0.0 < *(float *)(param_1 + 0xbd3c)) break;
         *(uint *)(iVar4 + 0x1ccdb94) = 0;
@@ -53,7 +51,8 @@ void __cdecl core_mobster_cpp_CMobster_playTaunt_FUN_004dc940(int param_1,int pa
             return;
           }
           iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                            (*(uint *)(0x01E57284 + local_18 + 0x150bf8),_DAT_01ccdc10);
+                            (*(uint *)(0x01E57284 + local_18 + 0x150bf8),
+                             g_CMobsterActorType_01ccdbd8.name_hash);
           if (((iVar1 != 0) &&
               (iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(*(uint *)(iVar1 + 0xbdbc)),
               iVar1 != 0)) && (iVar4 = iVar4 + 1, 3 < iVar4)) break;

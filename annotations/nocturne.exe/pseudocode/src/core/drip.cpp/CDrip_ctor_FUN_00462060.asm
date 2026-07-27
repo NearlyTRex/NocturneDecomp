@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00462030 at 00462043
+;   core_drip.cpp_FUN_00462030 at 00462043
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_stalag_kfm_0057ddde

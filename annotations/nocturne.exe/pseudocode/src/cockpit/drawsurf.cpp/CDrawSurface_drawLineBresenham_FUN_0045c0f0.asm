@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0045bfb0 at 0045c037
+;   cockpit_drawsurf.cpp_FUN_0045bfb0 at 0045c037
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_0045bab0

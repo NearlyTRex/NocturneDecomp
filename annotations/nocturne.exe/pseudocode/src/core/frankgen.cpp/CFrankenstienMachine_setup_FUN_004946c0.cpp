@@ -106,9 +106,9 @@ void core_frankgen_cpp_CFrankenstienMachine_setup_FUN_004946c0(int param_1)
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(param_1 + 0x17c);
   if (*(char *)(param_1 + 0x158) != '\0') {
     core_course_cpp_CCourse_load_FUN_0043b690(param_1 + 0x2f8,param_1 + 0x158);
-    FUN_004950a0(param_1);
+    core_frankgen_cpp_FUN_004950a0(param_1);
     return;
   }
-  FUN_004950a0(param_1);
+  core_frankgen_cpp_FUN_004950a0(param_1);
   return;
 }

@@ -25,11 +25,11 @@ uint core_turret_cpp_CTurret_aimAtTarget_FUN_0054a640(int param_1,float *param_2
   local_20 = param_2[1] - *(float *)(param_1 + 0x24);
   local_1c = param_2[2] - *(float *)(param_1 + 0x28);
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0(&local_30,&local_24);
-  if (local_30 < 0xBF060A92) {
-    local_30 = 0xBF060A92;
+  if (local_30 < -0.5235988f) {
+    local_30 = -0.5235988f;
   }
-  if (0x3F9C61AA < local_30) {
-    local_30 = 0x3F9C61AA;
+  if (1.22173f < local_30) {
+    local_30 = 1.22173f;
   }
   local_34 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040df00
                               (local_2c - *(float *)(param_1 + 0x34));

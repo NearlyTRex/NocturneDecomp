@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CStrList_remove_FUN_00473f10(int *param_1,int param_2,int param_3)
 
 {
   int iVar1;
   
   if (((param_2 < 0) || (*param_1 <= param_3)) || (param_3 < param_2)) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0xa03;
-    FUN_004c8440("CStrList::remove - invalid range");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0xa03;
+    core_main_c_FUN_004c8440("CStrList::remove - invalid range");
   }
   if (param_2 <= param_3) {
     iVar1 = param_2 * 4;

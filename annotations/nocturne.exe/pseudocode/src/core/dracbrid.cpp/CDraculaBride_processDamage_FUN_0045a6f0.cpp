@@ -58,7 +58,7 @@ void core_dracbrid_cpp_CDraculaBride_processDamage_FUN_0045a6f0(int param_1,int 
     }
     iVar5 = core_actor_cpp_randomChance_FUN_0040dea0(0x3ecccccd);
     if (iVar5 != 0) {
-      FUN_0045ab40(param_1,"bride-die?.wav",0x40000000);
+      core_dracbrid_cpp_FUN_0045ab40(param_1,"bride-die?.wav",0x40000000);
       core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
       return;
     }
@@ -88,7 +88,7 @@ LAB_0045a8a5:
   }
   iVar5 = core_actor_cpp_randomChance_FUN_0040dea0(0x3ecccccd);
   if (iVar5 != 0) {
-    FUN_0045ab40(param_1,"bride-hurt?.wav",0x40000000);
+    core_dracbrid_cpp_FUN_0045ab40(param_1,"bride-hurt?.wav",0x40000000);
     core_enemy_cpp_CEnemy_processDamage_FUN_00479f70(param_1,param_2);
     return;
   }

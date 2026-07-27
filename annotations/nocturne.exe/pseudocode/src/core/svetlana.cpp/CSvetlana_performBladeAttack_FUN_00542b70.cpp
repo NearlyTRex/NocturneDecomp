@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00542b70(int param_1,int param_2)
 
 {
@@ -45,9 +43,9 @@ void __cdecl core_svetlana_cpp_CSvetlana_performBladeAttack_FUN_00542b70(int par
   }
   local_18 = iVar5;
   if (local_18 == -1) {
-    _DAT_01cc4800 = "..\\core\\svetlana.cpp";
-    _DAT_01cc4804 = 0x2f0;
-    FUN_004c8440("Can't find svetlana's parent bone");
+    PTR_01cc4800 = "..\\core\\svetlana.cpp";
+    INT_01cc4804 = 0x2f0;
+    core_main_c_FUN_004c8440("Can't find svetlana's parent bone");
   }
   uVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0051d380
                     (param_1 + 0x150,local_30,param_2);

@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01cae0e8
 ;
 ; Called Functions:
-;   FUN_004940d0
+;   xxx_unk.c_FUN_004940d0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     MOV EBX,dword ptr [0x005b9284]      ; 004286ee | INT_005b9284
     PUSH dword ptr [ESP + 0xc]          ; 004286f4
     PUSH EBX                            ; 004286f8
-    CALL FUN_004940d0                   ; 004286f9
-        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004940d0()
+    CALL xxx_unk.c_FUN_004940d0         ; 004286f9
+        ;   XREF to: 004940d0 (UNCONDITIONAL_CALL)  ; undefined xxx_unk.c_FUN_004940d0()
     ADD ESP,0x8                         ; 004286fe
     POP EBX                             ; 00428701
     RET                                 ; 00428702

@@ -8,7 +8,7 @@
 ; undefined1       Stack[-0xd7]:1  local_d7
 ;
 ; XREF[1]:
-;   FUN_004eeea0 at 004eeefb
+;   core_npc.cpp_FUN_004eeea0 at 004eeefb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_d_0058cb63

@@ -52,7 +52,7 @@
 ;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005141f0 at 005142e0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_0041d550
@@ -95,7 +95,7 @@ section .text
     CMP EAX,EDX                         ; 00513ecd
     JNZ 0x0051419e                      ; 00513ecf
         ;   XREF to: 0051419e (CONDITIONAL_JUMP)  ; LAB_0051419e
-    PUSH 0x5993b0                       ; 00513ed5 | DAT_005993b0
+    PUSH 0x5993b0                       ; 00513ed5 | g_CVectorTypeInfo_005993b0
         ;   Label: LAB_00513ed5
     PUSH 0x8                            ; 00513eda
     LEA EAX,[EBP + 0xffffff62]          ; 00513edc

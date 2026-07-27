@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(int param_1,uint param_2)
 
 {
@@ -103,12 +101,13 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004c1190(int param_1,uint param_2)
   *(uint *)(param_1 + 0x450) = uVar2;
   if (-1 < local_14) {
     uVar2 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(local_14 * 4 + param_1 + 0xc),_DAT_02ddf9a8);
+                      (*(uint *)(local_14 * 4 + param_1 + 0xc),
+                       g_CWeaponActorType_02ddf970.name_hash);
     *(uint *)(param_1 + 0x330) = uVar2;
     if (*(int *)(param_1 + 0x330) == 0) {
-      _DAT_01cc4800 = "..\\core\\inv.cpp";
-      _DAT_01cc4804 = 0x54b;
-      FUN_004c8440("CInventory::load - Can't find your weapon");
+      PTR_01cc4800 = "..\\core\\inv.cpp";
+      INT_01cc4804 = 0x54b;
+      core_main_c_FUN_004c8440("CInventory::load - Can't find your weapon");
     }
   }
   core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004c1b90(param_1,999);

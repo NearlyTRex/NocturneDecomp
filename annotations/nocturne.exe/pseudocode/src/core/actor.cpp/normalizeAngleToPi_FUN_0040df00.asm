@@ -10,16 +10,16 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[58]:
-;   FUN_00424780 at 00424787
-;   FUN_00439f50 at 0043a069
-;   FUN_00495a20 at 004962e5
-;   FUN_004b32d0 at 004b33f2
-;   FUN_004b6d80 at 004b7442
-;   FUN_004b9fe0 at 004ba124
-;   FUN_004baba0 at 004badce
-;   FUN_004c4970 at 004c4f0f
-;   FUN_004d4f30 at 004d5173
-;   FUN_004da790 at 004db21f
+;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 at 0040a00b
+;   core_baron.cpp_FUN_00410cc0 at 00410d4e
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 004128ca
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 0041400e
+;   core_boxactor.cpp_CBoxActor_process_FUN_0041e5e0 at 0041e749
+;   core_bugs.cpp_CBugs_updateBugPathfinding_FUN_004227b0 at 00422a5f
+;   core_charactr.cpp_CCharacter_findSomethingToLookAt_FUN_00429730 at 00429dec
+;   core_charactr.cpp_CCharacter_followActor_FUN_00428780 at 0042891f
+;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00424e90 at 00424ece
+;   core_charactr.cpp_CCharacter_walkToPoint_FUN_004247f0 at 004249b3
 ;   ... and 48 more
 ;
 ; Referenced Globals:

@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004c90e0 at 004c9386
+;   core_main.c_FUN_004c90e0 at 004c9386
 ;   engine_pod.cpp_CPod_dtor_FUN_004f8840 at 004f8857
 ;
 ; Called Functions:
+;   crt_unknown.c_FUN_00564494
 ;   engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0
-;   FUN_00564494
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
         ;   XREF to: 004f7ac0 (UNCONDITIONAL_CALL)  ; undefined engine_pod.cpp_CPodFile_dtor_FUN_004f7ac0()
     ADD ESP,0x8                         ; 004f8b7b
     PUSH EAX                            ; 004f8b7e
-    CALL FUN_00564494                   ; 004f8b7f
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 004f8b7f
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 004f8b84
     JMP 0x004f8b58                      ; 004f8b87
         ;   XREF to: 004f8b58 (UNCONDITIONAL_JUMP)  ; LAB_004f8b58

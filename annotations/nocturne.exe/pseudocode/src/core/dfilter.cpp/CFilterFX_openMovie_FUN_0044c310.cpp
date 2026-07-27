@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(int *param_1,int param_2)
 
 {
@@ -20,9 +18,9 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(int *param_1,int 
     _sprintf(local_10c,"%s.txt",param_2);
     iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(param_2,local_10c,"rt");
     if (iVar1 == 0) {
-      _DAT_01cc4800 = "..\\core\\dfilter.cpp";
-      _DAT_01cc4804 = 0x15a;
-      FUN_004c8440("Can't open movie %s.txt",param_2);
+      PTR_01cc4800 = "..\\core\\dfilter.cpp";
+      INT_01cc4804 = 0x15a;
+      core_main_c_FUN_004c8440("Can't open movie %s.txt",param_2);
     }
     _fscanf(iVar1,"%d\n",param_1);
     _fclose(iVar1);
@@ -31,9 +29,9 @@ void __cdecl core_dfilter_cpp_CFilterFX_openMovie_FUN_0044c310(int *param_1,int 
     _sprintf(local_10c,"%s.mov",param_2);
     iVar1 = engine_dosio_cpp_getFile_FUN_00456a60(param_2,local_10c,"rb");
     if (iVar1 == 0) {
-      _DAT_01cc4800 = "..\\core\\dfilter.cpp";
-      _DAT_01cc4804 = 0x166;
-      FUN_004c8440("Can't open movie %s.mov",param_2);
+      PTR_01cc4800 = "..\\core\\dfilter.cpp";
+      INT_01cc4804 = 0x166;
+      core_main_c_FUN_004c8440("Can't open movie %s.mov",param_2);
     }
     _fread(param_1[1],0x2000,*param_1,iVar1);
     _fclose(iVar1);

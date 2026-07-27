@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_005169e0 at 005169f3
+;   core_shovel.cpp_FUN_005169e0 at 005169f3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shoveit_kfm_005910c5

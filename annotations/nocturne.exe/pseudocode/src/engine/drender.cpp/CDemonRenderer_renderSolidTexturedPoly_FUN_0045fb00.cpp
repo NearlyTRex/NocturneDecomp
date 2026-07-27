@@ -38,10 +38,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0045f
     }
     if (param_1[1] == 0) {
       if (DAT_005b7624 == 0x20) {
-        _DAT_01c00c7c = FUN_0052f031;
+        _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
       }
       else {
-        _DAT_01c00c7c = FUN_0052f823;
+        _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
       }
       _DAT_01c039a4 = 6;
       _DAT_01c039a0 = 0xc3;
@@ -49,7 +49,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0045f
     else {
       _DAT_01c039a0 = 1;
       _DAT_01c039a4 = 0;
-      _DAT_01c00c7c = FUN_00463b27;
+      _DAT_01c00c7c = core_dstrender_cpp_FUN_00463b27;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
               (param_1,*(uint *)(param_2 + 4),&DAT_01b4d76c);

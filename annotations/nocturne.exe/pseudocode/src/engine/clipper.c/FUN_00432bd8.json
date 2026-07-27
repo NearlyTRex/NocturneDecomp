@@ -1,0 +1,944 @@
+{
+  "compilation_status": {
+    "errors": [
+      {
+        "category": "other",
+        "column": 1,
+        "line": 188,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 189,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 190,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 51,
+        "line": 77,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 62,
+        "line": 79,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 44,
+        "line": 154,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 59,
+        "line": 161,
+        "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
+      },
+      {
+        "category": "other",
+        "column": 1,
+        "line": 166,
+        "message": "unknown type name 'MMRESULT'"
+      },
+      {
+        "category": "other",
+        "column": 87,
+        "line": 34,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 96,
+        "line": 58,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 93,
+        "line": 60,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "syntax_error",
+        "column": 15,
+        "line": 125,
+        "message": "expected unqualified-id"
+      },
+      {
+        "category": "other",
+        "column": 56,
+        "line": 188,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 71,
+        "line": 228,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 70,
+        "line": 237,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
+      }
+    ],
+    "success": false,
+    "warnings": []
+  },
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 78,
+    "complexity_score": 1032,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 9,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 157,
+    "suspect_count": 84,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "register_param",
+      "stack_param",
+      "unaffected_reg",
+      "undefined_data",
+      "warning_overlapping_instructions"
+    ],
+    "total_lines": 235
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00432bd8",
+    "address_range": [
+      [
+        "00432bd8",
+        "00432c7b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_clipper.c_FUN_00432bd8",
+    "signature": "undefined4 engine_clipper_c_FUN_00432bd8(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "00431930",
+      "is_variadic": false,
+      "name": "engine_clipper.c_interpolateVertexNearClip_FUN_00431930"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00432b87",
+      "name": "caseD_3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00766c70",
+      "name": "DAT_00766c70",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00766c74",
+      "name": "DAT_00766c74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00766c78",
+      "name": "DAT_00766c78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00766c80",
+      "name": "DAT_00766c80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00766c84",
+      "name": "DAT_00766c84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00766ca4",
+      "name": "DAT_00766ca4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00766ca8",
+      "name": "DAT_00766ca8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00766cac",
+      "name": "DAT_00766cac",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.592592592592593,
+    "instruction_count": 54,
+    "opcode_distribution": {
+      "BOOL_OR": 7,
+      "BRANCH": 6,
+      "CALL": 1,
+      "CBRANCH": 9,
+      "COPY": 50,
+      "INT2FLOAT": 1,
+      "INT_2COMP": 1,
+      "INT_ADD": 18,
+      "INT_AND": 37,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 36,
+      "INT_LESS": 7,
+      "INT_MULT": 7,
+      "INT_NOTEQUAL": 10,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 3,
+      "INT_SLESS": 18,
+      "INT_SUB": 17,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 11,
+      "POPCOUNT": 18,
+      "ROUND": 1,
+      "STORE": 12,
+      "SUBPIECE": 2,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 302
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping instructions detected",
+      "line": 2,
+      "match": "WARNING: Instruction at (ram,0x00432bd9) overlaps instruction at",
+      "severity": "mild",
+      "text": "/* WARNING: Instruction at (ram,0x00432bd9) overlaps instruction at (ram,0x00432bd8)",
+      "type": "warning_overlapping_instructions"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "int in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "uint *in_EDX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "longlong *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "longlong *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000138",
+      "severity": "moderate",
+      "text": "int in_stack_00000138;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 28,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(byte *)(in_ECX + 0x30) = *(byte *)(in_ECX + 0x30) ^ (byte)((uint)unaff_EBX >> 8);",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 28,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "*(byte *)(in_ECX + 0x30) = *(byte *)(in_ECX + 0x30) ^ (byte)((uint)unaff_EBX >> 8);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(byte *)(in_ECX + 0x30) = *(byte *)(in_ECX + 0x30) ^ (byte)((uint)unaff_EBX >> 8);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "plVar11 = (longlong *)((int)&DAT_00766c74 + unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_00766c74",
+      "severity": "mild",
+      "text": "plVar11 = (longlong *)((int)&DAT_00766c74 + unaff_EDI);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 30,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "iVar10 = in_ECX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "plVar8 = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "plVar12 = (longlong *)((int)&DAT_00766c78 + (uint)bVar13 * -8 + unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_00766c78",
+      "severity": "mild",
+      "text": "plVar12 = (longlong *)((int)&DAT_00766c78 + (uint)bVar13 * -8 + unaff_EDI);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "plVar8 = (longlong *)((int)unaff_EBX + (uint)bVar13 * -8 + 4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(longlong *)((int)unaff_EBX",
+      "severity": "moderate",
+      "text": "plVar8 = (longlong *)((int)unaff_EBX + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 36,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(int *)plVar11 = (int)*unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 37,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "iVar10 = in_ECX + -4;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 38,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "if (in_ECX + -4 == 0 || in_ECX < 4) goto LAB_00432c11;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 38,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "if (in_ECX + -4 == 0 || in_ECX < 4) goto LAB_00432c11;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(uint *)((int)plVar12",
+      "severity": "moderate",
+      "text": "*(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(uint *)((int)plVar8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)plVar8 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 57,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "(unaff_EBX,in_EDX,&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 57,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,in_EDX,&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_00766c74",
+      "severity": "mild",
+      "text": "(unaff_EBX,in_EDX,&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "(unaff_EBX,in_EDX,&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 60,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "plVar8 = unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_00000138",
+      "severity": "moderate",
+      "text": "iVar10 = in_stack_00000138 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 62,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBX = plVar8 + 6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_007672f4",
+      "severity": "mild",
+      "text": "if ((int)DAT_007672f4 <= iVar10) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 64,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "if (DAT_00766c70 < 3) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "if (DAT_00766c70 < 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 71,
+      "match": "DAT_00766c74",
+      "severity": "mild",
+      "text": "piVar5 = &DAT_00766c74;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000138",
+      "severity": "moderate",
+      "text": "uVar6 = in_stack_00000138 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 75,
+      "match": "DAT_007672f4",
+      "severity": "mild",
+      "text": "if (uVar6 == DAT_007672f4) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_007672f4",
+      "severity": "mild",
+      "text": "uVar6 = uVar6 ^ DAT_007672f4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 78,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "in_EDX = &DAT_007672f8 + uVar6 * 0xc;",
+      "type": "register_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 78,
+      "match": "DAT_007672f8",
+      "severity": "mild",
+      "text": "in_EDX = &DAT_007672f8 + uVar6 * 0xc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 79,
+      "match": "DAT_005ad284",
+      "severity": "mild",
+      "text": "bVar4 = DAT_005ad284 <= (int)plVar8[7];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_005ad284",
+      "severity": "mild",
+      "text": "if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar6 * 0xc]) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_00767300",
+      "severity": "mild",
+      "text": "if (DAT_005ad284 <= (int)(&DAT_00767300)[uVar6 * 0xc]) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 83,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 83,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "unaff_EBP = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 84,
+      "match": "in_stack_00000138",
+      "severity": "moderate",
+      "text": "in_stack_00000138 = iVar10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 87,
+      "match": "DAT_00766c74",
+      "severity": "mild",
+      "text": "plVar9 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 87,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "plVar9 = (longlong *)(&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 89,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "plVar12 = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 92,
+      "match": "DAT_00766c78",
+      "severity": "mild",
+      "text": "plVar11 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar13 * -2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 92,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "plVar11 = (longlong *)(&DAT_00766c78 + DAT_00766c70 * 0xc + (uint)bVar13 * -2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
+      "match": "(longlong *)((int)plVar8",
+      "severity": "moderate",
+      "text": "plVar12 = (longlong *)((int)plVar8 + (uint)bVar13 * -8 + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 94,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "*(int *)plVar9 = (int)*unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 107,
+      "match": "(uint *)((int)plVar11",
+      "severity": "moderate",
+      "text": "*(uint *)((int)plVar11 + (uint)bVar13 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 108,
+      "match": "(uint *)((int)plVar12",
+      "severity": "moderate",
+      "text": "*(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 111,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 111,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 115,
+      "match": "in_EDX",
+      "severity": "mild",
+      "text": "(in_EDX,unaff_EBX,&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 115,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(in_EDX,unaff_EBX,&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_00766c74",
+      "severity": "mild",
+      "text": "(in_EDX,unaff_EBX,&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 115,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "(in_EDX,unaff_EBX,&DAT_00766c74 + DAT_00766c70 * 0xc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 116,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 116,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "DAT_00766c70 = DAT_00766c70 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 152,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "if (DAT_00766c70 <= iVar10) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 157,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "unaff_EDI = DAT_00766c70 * 0x30;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 157,
+      "match": "DAT_00766c70",
+      "severity": "mild",
+      "text": "unaff_EDI = DAT_00766c70 * 0x30;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 158,
+      "match": "in_ECX",
+      "severity": "mild",
+      "text": "in_ECX = 0x30;",
+      "type": "register_param"
+    },
+    {
+      "description": "Pointer value `unaff_EBX` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 28,
+      "match": "(uint)unaff_EBX",
+      "severity": "moderate",
+      "text": "*(byte *)(in_ECX + 0x30) = *(byte *)(in_ECX + 0x30) ^ (byte)((uint)unaff_EBX >> 8);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00766c74` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)&DAT_00766c74",
+      "severity": "moderate",
+      "text": "plVar11 = (longlong *)((int)&DAT_00766c74 + unaff_EDI);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `plVar11` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 33,
+      "match": "(uint)plVar11",
+      "severity": "moderate",
+      "text": "if (((uint)plVar11 & 7) != 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&DAT_00766c78` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 34,
+      "match": "(int)&DAT_00766c78",
+      "severity": "moderate",
+      "text": "plVar12 = (longlong *)((int)&DAT_00766c78 + (uint)bVar13 * -8 + unaff_EDI);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `unaff_EBX` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 35,
+      "match": "(int)unaff_EBX",
+      "severity": "moderate",
+      "text": "plVar8 = (longlong *)((int)unaff_EBX + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `plVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 50,
+      "match": "(int)plVar12",
+      "severity": "moderate",
+      "text": "*(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `plVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 51,
+      "match": "(int)plVar8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)plVar8 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `plVar9` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 91,
+      "match": "(uint)plVar9",
+      "severity": "moderate",
+      "text": "if (((uint)plVar9 & 7) != 0) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `plVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 93,
+      "match": "(int)plVar8",
+      "severity": "moderate",
+      "text": "plVar12 = (longlong *)((int)plVar8 + (uint)bVar13 * -8 + 0x34);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `plVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 107,
+      "match": "(int)plVar11",
+      "severity": "moderate",
+      "text": "*(uint *)((int)plVar11 + (uint)bVar13 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `plVar12` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 108,
+      "match": "(int)plVar12",
+      "severity": "moderate",
+      "text": "*(uint *)((int)plVar12 + (uint)bVar13 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 29,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "plVar11 = (longlong *)((int)&DAT_00766c74 + unaff_EDI);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 34,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "plVar12 = (longlong *)((int)&DAT_00766c78 + (uint)bVar13 * -8 + unaff_EDI);",
+      "type": "pointer_cast"
+    }
+  ]
+}

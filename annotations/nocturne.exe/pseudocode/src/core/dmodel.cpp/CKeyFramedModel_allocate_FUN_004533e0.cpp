@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint param_2,uint param_3,uint param_4,uint param_5,uint param_6)
 
 {
@@ -23,14 +21,14 @@ void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint para
   *(uint *)(param_1 + 0x244) = param_5;
   *(uint *)(param_1 + 0x100) = param_6;
   if (4 < *(int *)(param_1 + 0x120)) {
-    _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-    _DAT_01cc4804 = 0x2c0;
-    FUN_004c8440("Too many materials!");
+    PTR_01cc4800 = "..\\core\\dmodel.cpp";
+    INT_01cc4804 = 0x2c0;
+    core_main_c_FUN_004c8440("Too many materials!");
   }
   if (0x1e < *(int *)(param_1 + 0x244)) {
-    _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-    _DAT_01cc4804 = 0x2c1;
-    FUN_004c8440("Too many parts!");
+    PTR_01cc4800 = "..\\core\\dmodel.cpp";
+    INT_01cc4804 = 0x2c1;
+    core_main_c_FUN_004c8440("Too many parts!");
   }
   uVar1 = shape_memdbg_cpp_malloc_FUN_00564c18
                     (*(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x104) * 0xc);
@@ -52,10 +50,11 @@ void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint para
       ((0 < *(int *)(param_1 + 0x110) && (*(int *)(param_1 + 0x118) == 0)))) ||
      (*(int *)(param_1 + 0x350) == 0)) {
     core_dmodel_cpp_FUN_00452f10(param_1);
-    _DAT_01cc4804 = 0x2d3;
-    _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-    FUN_004c8440("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d",*(uint *)(param_1 + 0x100),
-                 *(uint *)(param_1 + 0x104),*(uint *)(param_1 + 0x110));
+    INT_01cc4804 = 0x2d3;
+    PTR_01cc4800 = "..\\core\\dmodel.cpp";
+    core_main_c_FUN_004c8440
+              ("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d",*(uint *)(param_1 + 0x100),
+               *(uint *)(param_1 + 0x104),*(uint *)(param_1 + 0x110));
     if (*(int *)(param_1 + 0x100) != 1) {
       return;
     }
@@ -68,8 +67,8 @@ void core_dmodel_cpp_CKeyFramedModel_allocate_FUN_004533e0(int param_1,uint para
   if (iVar4 != 0) {
     return;
   }
-  _DAT_01cc4800 = "..\\core\\dmodel.cpp";
-  _DAT_01cc4804 = 0x2db;
-  FUN_004c8440("Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d",*(uint *)(param_1 + 0x104));
+  PTR_01cc4800 = "..\\core\\dmodel.cpp";
+  INT_01cc4804 = 0x2db;
+  core_main_c_FUN_004c8440("Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d",*(uint *)(param_1 + 0x104));
   return;
 }

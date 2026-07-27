@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_calculateInverseTransform_FUN_00440d40
-;   FUN_00460d10
+;   engine_drender.cpp_FUN_00460d10
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH EDX                            ; 00441056 | DAT_01b4d738
     MOV dword ptr [EBX + 0x198],ESI     ; 00441057
     LEA ESI,[ESP + 0x4]                 ; 0044105d
-    CALL FUN_00460d10                   ; 00441061
-        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined FUN_00460d10()
+    CALL engine_drender.cpp_FUN_00460d10 ; 00441061
+        ;   XREF to: 00460d10 (UNCONDITIONAL_CALL)  ; undefined engine_drender.cpp_FUN_00460d10()
     LEA ESI,[ESP + 0x4]                 ; 00441066
     LEA EDI,[EBX + 0x16c]               ; 0044106a
     ADD ESP,0x4                         ; 00441070

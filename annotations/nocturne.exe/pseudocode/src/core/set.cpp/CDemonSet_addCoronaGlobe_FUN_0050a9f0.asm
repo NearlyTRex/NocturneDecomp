@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_0041f3d0 at 0041f4f4
-;   FUN_00478790 at 00478919
+;   core_boxactor.cpp_FUN_0041f3d0 at 0041f4f4
+;   core_emitter.cpp_FUN_00478790 at 00478919
 ;   core_fire.cpp_CFireball_process_FUN_00484050 at 00484101
 ;   core_fire.cpp_CMuzzleFlash_init_FUN_00484e10 at 00484e53
 ;   core_keyactor.cpp_CKeyActor_process_FUN_004c34e0 at 004c3576

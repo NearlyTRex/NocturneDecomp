@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0(int param_1,char *param_2)
 
 {
@@ -30,9 +28,9 @@ int __cdecl core_morph_cpp_CMorphModel_findOrAddTexture_FUN_004dfba0(int param_1
     } while (iVar3 < *(int *)(param_1 + 100));
   }
   if (0x13 < *(int *)(param_1 + 100)) {
-    _DAT_01cc4800 = "..\\core\\morph.cpp";
-    _DAT_01cc4804 = 0x1d0;
-    FUN_004c8440("CMorphModel::findOrAddTexture - too many textures!");
+    PTR_01cc4800 = "..\\core\\morph.cpp";
+    INT_01cc4804 = 0x1d0;
+    core_main_c_FUN_004c8440("CMorphModel::findOrAddTexture - too many textures!");
   }
   memset(*(int *)(param_1 + 100) * 0x48 + param_1 + 0x68,0,0x48);
   pcVar5 = (char *)(param_1 + 0x68 + *(int *)(param_1 + 100) * 0x48 + 8);

@@ -22,7 +22,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_00535900 at 00535aeb
+;   core_stranger.cpp_FUN_00535900 at 00535aeb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_actionPending_d_stranger_005956b3
@@ -53,11 +53,11 @@
 ;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004b5c70
 ;   core_hero.cpp_CHero_executeLeverPull_FUN_004b5490
 ;   core_hero.cpp_CHero_executeObjectPickup_FUN_004b5c30
+;   core_hero.cpp_FUN_004b5270
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
 ;   core_motion.cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
-;   core_stranger.cpp_CStranger_dropRightHandObject_FUN_0053bf30
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -199,8 +199,8 @@ section .text
     PUSH EAX                            ; 00537e52 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EAX,[0x005b6d50]                ; 00537e53 | DAT_005b6d50
     PUSH EAX                            ; 00537e58
-    CALL FUN_0046fb40                   ; 00537e59
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fb40()
+    CALL shape_edittool.cpp_FUN_0046fb40 ; 00537e59
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
     ADD ESP,0x10                        ; 00537e5e
     JMP 0x00537dfe                      ; 00537e61
         ;   XREF to: 00537dfe (UNCONDITIONAL_JUMP)  ; LAB_00537dfe
@@ -234,8 +234,8 @@ section .text
     PUSH EAX                            ; 00537eac | = "actionPending = %d\nstranger.cpp line %d"
     MOV EAX,[0x005b6d50]                ; 00537ead | DAT_005b6d50
     PUSH EAX                            ; 00537eb2
-    CALL FUN_0046fb40                   ; 00537eb3
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fb40()
+    CALL shape_edittool.cpp_FUN_0046fb40 ; 00537eb3
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
     ADD ESP,0x10                        ; 00537eb8
     JMP 0x00537e78                      ; 00537ebb
         ;   XREF to: 00537e78 (UNCONDITIONAL_JUMP)  ; LAB_00537e78
@@ -244,8 +244,8 @@ section .text
     PUSH 0x595703                       ; 00537ec2 | = "Object to pick up is now NULL\nstrang..."
     MOV EDX,dword ptr [0x005b6d50]      ; 00537ec7 | DAT_005b6d50
     PUSH EDX                            ; 00537ecd
-    CALL FUN_0046fb40                   ; 00537ece
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fb40()
+    CALL shape_edittool.cpp_FUN_0046fb40 ; 00537ece
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
     ADD ESP,0xc                         ; 00537ed3
     JMP 0x00537da2                      ; 00537ed6
         ;   XREF to: 00537da2 (UNCONDITIONAL_JUMP)  ; LAB_00537da2
@@ -267,8 +267,8 @@ section .text
     PUSH 0x595736                       ; 00537efa | = "actionPending = %d\nstranger.cpp line %d"
     MOV EAX,[0x005b6d50]                ; 00537eff | DAT_005b6d50
     PUSH EAX                            ; 00537f04
-    CALL FUN_0046fb40                   ; 00537f05
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fb40()
+    CALL shape_edittool.cpp_FUN_0046fb40 ; 00537f05
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
     ADD ESP,0x10                        ; 00537f0a
     MOV dword ptr [EBX + 0x1faa0],0x1   ; 00537f0d
         ;   Label: LAB_00537f0d
@@ -320,8 +320,8 @@ section .text
     PUSH 0x59575e                       ; 00537f9b | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDX,dword ptr [0x005b6d50]      ; 00537fa0 | DAT_005b6d50
     PUSH EDX                            ; 00537fa6
-    CALL FUN_0046fb40                   ; 00537fa7
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fb40()
+    CALL shape_edittool.cpp_FUN_0046fb40 ; 00537fa7
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
     JMP 0x00537d9f                      ; 00537fac
         ;   XREF to: 00537d9f (UNCONDITIONAL_JUMP)  ; LAB_00537d9f
     MOV EAX,[0x02dc9f6c]                ; 00537fb1 | DAT_02dc9f6c
@@ -422,7 +422,7 @@ section .text
     ADD ESP,0xc                         ; 005380d0
     JMP 0x00537da2                      ; 005380d3
         ;   XREF to: 00537da2 (UNCONDITIONAL_JUMP)  ; LAB_00537da2
-    MOV EDI,dword ptr [0x01bcdef4]      ; 005380d8 | DAT_01bcdef4
+    MOV EDI,dword ptr [0x01bcdef4]      ; 005380d8 | g_CEnemyActorType_01bcdebc.name_hash
         ;   Label: LAB_005380d8
     PUSH EDI                            ; 005380de
     MOV EAX,dword ptr [EBX + 0x2590]    ; 005380df
@@ -574,8 +574,8 @@ section .text
     PUSH 0x5957ab                       ; 00538291 | = "actionPending = %d\nstranger.cpp line %d"
     MOV EDI,dword ptr [0x005b6d50]      ; 00538296 | DAT_005b6d50
     PUSH EDI                            ; 0053829c
-    CALL FUN_0046fb40                   ; 0053829d
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fb40()
+    CALL shape_edittool.cpp_FUN_0046fb40 ; 0053829d
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
     ADD ESP,0x10                        ; 005382a2
     JMP 0x00538336                      ; 005382a5
         ;   XREF to: 00538336 (UNCONDITIONAL_JUMP)  ; LAB_00538336
@@ -645,13 +645,13 @@ section .text
     PUSH 0x5957d3                       ; 00538344 | = "doorToOpen == NULL\nstranger.cpp line %d"
     MOV EDX,dword ptr [0x005b6d50]      ; 00538349 | DAT_005b6d50
     PUSH EDX                            ; 0053834f
-    CALL FUN_0046fb40                   ; 00538350
-        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fb40()
+    CALL shape_edittool.cpp_FUN_0046fb40 ; 00538350
+        ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fb40()
     ADD ESP,0xc                         ; 00538355
     PUSH EBX                            ; 00538358
         ;   Label: LAB_00538358
-    CALL FUN_004b5270                   ; 00538359
-        ;   XREF to: 004b5270 (UNCONDITIONAL_CALL)  ; undefined FUN_004b5270()
+    CALL core_hero.cpp_FUN_004b5270     ; 00538359
+        ;   XREF to: 004b5270 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b5270()
     ADD ESP,0x4                         ; 0053835e
     TEST EAX,EAX                        ; 00538361
     JNZ 0x00537da2                      ; 00538363

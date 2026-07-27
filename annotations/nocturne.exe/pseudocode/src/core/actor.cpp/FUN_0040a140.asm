@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_01e428cc
+;   undefined4 g_CPlatformActorType_01e42894.name_hash
 ;   undefined4 DAT_01e57284
 ;   undefined4 DAT_01fa3fc4
 ;   undefined4 DAT_01fa3fc8
@@ -22,7 +22,7 @@
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00511590
 ;   core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_0050ec80
 ;   core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_005113e0
-;   FUN_005117f0
+;   core_setcolid.cpp_FUN_005117f0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     ADD ESP,0x8                         ; 0040a16b
     MOV EDI,dword ptr [0x005be368]      ; 0040a16e | DAT_005be368
     PUSH EDI                            ; 0040a174 | DAT_01e57284
-    CALL FUN_005117f0                   ; 0040a175
-        ;   XREF to: 005117f0 (UNCONDITIONAL_CALL)  ; undefined FUN_005117f0()
+    CALL core_setcolid.cpp_FUN_005117f0 ; 0040a175
+        ;   XREF to: 005117f0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_005117f0()
     ADD ESP,0x4                         ; 0040a17a
     LEA EAX,[ESI + 0x20]                ; 0040a17d
     PUSH dword ptr [ESP + 0x20]         ; 0040a180
@@ -62,7 +62,7 @@ section .text
     MOV dword ptr [ESP + 0x10],EAX      ; 0040a191
     FLD float ptr [ESP + 0x10]          ; 0040a195
     ADD ESP,0xc                         ; 0040a199
-    MOV EAX,[0x01e428cc]                ; 0040a19c | DAT_01e428cc
+    MOV EAX,[0x01e428cc]                ; 0040a19c | g_CPlatformActorType_01e42894.name_hash
     PUSH EAX                            ; 0040a1a1
     MOV EAX,[0x005be368]                ; 0040a1a2 | DAT_005be368
     MOV EDX,dword ptr [EAX + 0x14cd5c]  ; 0040a1a7 | DAT_01fa3fe0

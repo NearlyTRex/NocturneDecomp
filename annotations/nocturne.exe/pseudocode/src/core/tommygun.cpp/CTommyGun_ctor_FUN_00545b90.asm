@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00545b60 at 00545b73
+;   core_tommygun.cpp_FUN_00545b60 at 00545b73
 ;   core_vehicle.cpp_CVehicle_process_FUN_0054eae0 at 0054f09f
 ;
 ; Referenced Globals:

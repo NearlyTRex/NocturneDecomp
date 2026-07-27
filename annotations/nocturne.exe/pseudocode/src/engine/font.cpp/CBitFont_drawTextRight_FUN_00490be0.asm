@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00490c70 at 00490cc2
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_0045d760 at 0045d879
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d95fb
+;   engine_font.cpp_FUN_00490c70 at 00490cc2
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_00490af0

@@ -11,16 +11,16 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[47]:
-;   FUN_0041f3d0 at 0041f5d1
-;   FUN_0046baa0 at 0046bac1
-;   FUN_0046bd90 at 0046bdb1
-;   FUN_004777a0 at 00477837
-;   FUN_00495a20 at 00496c6d
-;   FUN_004b27c0 at 004b2ab2
-;   FUN_004c9580 at 004c984d
-;   FUN_004c9cf0 at 004c9dc8
-;   FUN_004d6650 at 004d6b7d
-;   FUN_00515db0 at 00515e47
+;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000 at 0040a052
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 at 00417341
+;   core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00417730 at 004177b2
+;   core_box.cpp_CBox_processPhysics_FUN_0041ad10 at 0041b118
+;   core_box.cpp_CBox_updateTransform_FUN_0041aaa0 at 0041aada
+;   core_boxactor.cpp_FUN_0041f3d0 at 0041f5d1
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 00422658
+;   core_bugs.cpp_FUN_00422050 at 004221d1
+;   core_charactr.cpp_CCharacter_dismember_FUN_00427b60 at 00427d17
+;   core_charactr.cpp_FUN_0042af70 at 0042b135
 ;   ... and 37 more
 ;
 ; *****************************************************************************

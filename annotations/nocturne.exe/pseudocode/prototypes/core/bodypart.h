@@ -3,9 +3,21 @@
 // Function prototypes for core/bodypart.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_bodypart.cpp_staticInit_FUN_00415b00
+// Address: 00415b00
+void __cdecl staticInit(void);
+
 // Original: core_bodypart.cpp_createBodyPart_FUN_00415b30
 // Address: 00415b30
 int __cdecl createBodyPart(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7);
+
+// Original: core_bodypart.cpp_FUN_00415cf0
+// Address: 00415cf0
+void FUN_00415cf0(void);
+
+// Original: core_bodypart.cpp_FUN_00415d10
+// Address: 00415d10
+CDemonActorType * FUN_00415d10(void);
 
 // Original: core_bodypart.cpp_CBodyPart_ctor_FUN_00415d20
 // Address: 00415d20
@@ -22,6 +34,14 @@ void CBodyPart::setCounts(int param_1,undefined4 param_2,undefined4 param_3);
 // Original: core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030
 // Address: 00416030
 void __cdecl CBodyPart::renderGeometry(int param_1,undefined4 param_2);
+
+// Original: core_bodypart.cpp_FUN_004161a0
+// Address: 004161a0
+undefined4 FUN_004161a0(int param_1);
+
+// Original: core_bodypart.cpp_FUN_00416300
+// Address: 00416300
+void FUN_00416300(int param_1,int param_2);
 
 // Original: core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00416430
 // Address: 00416430
@@ -43,13 +63,29 @@ void CBodyPart::process(int param_1,float param_2);
 // Address: 00416b00
 void __cdecl CBodyPart::processFires(int param_1,float param_2);
 
+// Original: core_bodypart.cpp_FUN_00416c40
+// Address: 00416c40
+undefined4 FUN_00416c40(void);
+
+// Original: core_bodypart.cpp_FUN_00416c50
+// Address: 00416c50
+undefined4 * FUN_00416c50(int param_1,undefined4 *param_2);
+
 // Original: core_bodypart.cpp_CBodyPart_canPickup_FUN_00416c90
 // Address: 00416c90
 undefined4 CBodyPart::canPickup(int param_1);
 
+// Original: core_bodypart.cpp_FUN_00416cb0
+// Address: 00416cb0
+void FUN_00416cb0(int param_1,undefined4 param_2);
+
 // Original: core_bodypart.cpp_CBodyPart_onDropped_FUN_00416cc0
 // Address: 00416cc0
 void CBodyPart::onDropped(int param_1,int param_2);
+
+// Original: core_bodypart.cpp_FUN_00416d30
+// Address: 00416d30
+undefined4 FUN_00416d30(int param_1);
 
 // Original: core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416d40
 // Address: 00416d40
@@ -83,6 +119,10 @@ void CBodyPart::setupPhysicsBox(int param_1);
 // Address: 00417eb0
 void __cdecl CBodyPart::spawnGore(int param_1);
 
+// Original: core_bodypart.cpp_FUN_00417ef0
+// Address: 00417ef0
+undefined4 FUN_00417ef0(int param_1);
+
 // Original: core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_00417f10
 // Address: 00417f10
 void CBodyPart::fillAttackDamageInfo(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4);
@@ -98,6 +138,18 @@ void __cdecl subtractVector(float *param_1,float *param_2,float *param_3);
 // Original: core_bodypart.cpp_addVector_FUN_00417fc0
 // Address: 00417fc0
 void __cdecl addVector(float *param_1,float *param_2,float *param_3);
+
+// Original: core_bodypart.cpp_FUN_00417fec
+// Address: 00417fec
+void FUN_00417fec(void);
+
+// Original: core_bodypart.cpp_FUN_00418010
+// Address: 00418010
+float * FUN_00418010(float *param_1,float *param_2);
+
+// Original: core_bodypart.cpp_FUN_0041803d
+// Address: 0041803d
+float * FUN_0041803d(float *param_1);
 
 // Original: core_bodypart.cpp_SBodyPartFire_ctor_FUN_004180a0
 // Address: 004180a0

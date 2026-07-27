@@ -4,7 +4,8 @@
 ; undefined4 __cdecl support_trisock_cpp_buildIPAddress_FUN_00548c60(undefined1 *param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ;
-; XREF[1]:
+; XREF[2]:
+;   support_trisock.cpp_FUN_00548b40 at 00548b5d
 ;   support_trisock.cpp_parseIPComponents_FUN_00548bf0 at 00548c42
 ;
 ; *****************************************************************************

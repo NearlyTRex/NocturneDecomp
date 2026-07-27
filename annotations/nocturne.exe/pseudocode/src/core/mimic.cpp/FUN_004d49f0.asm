@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004d49f0(int param_1,undefined4 param_2)
+; void core_mimic_cpp_FUN_004d49f0(int param_1,undefined4 param_2)
 ;
 ;
 ; Referenced Globals:
@@ -10,27 +10,27 @@
 ;   undefined4 DAT_005b7650
 ;   undefined4 DAT_005bdee0
 ;   undefined4 DAT_01cae0e8
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cea280
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004296c0
 ;   core_charactr.cpp_FUN_004259f0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30
+;   core_main.c_FUN_004c8440
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004d5e20
 ;   core_mimic.cpp_CMimic_setupCloth_FUN_004d5770
+;   core_mimic.cpp_FUN_004d4ba0
+;   core_mimic.cpp_FUN_004d4f30
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
-;   FUN_004c8440
-;   FUN_004d4ba0
-;   FUN_004d4f30
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004d49f0
-        ;   Label: FUN_004d49f0
+        ;   Label: core_mimic.cpp_FUN_004d49f0
     PUSH EDI                            ; 004d49f1
     MOV EBX,dword ptr [ESP + 0xc]       ; 004d49f2
     MOV EAX,[0x005bdee0]                ; 004d49f6 | DAT_005bdee0
@@ -69,8 +69,8 @@ section .text
         ;   XREF to: 004d4ac0 (CONDITIONAL_JUMP)  ; LAB_004d4ac0
     PUSH dword ptr [ESP + 0x10]         ; 004d4a6d
     PUSH EBX                            ; 004d4a71
-    CALL FUN_004d4f30                   ; 004d4a72
-        ;   XREF to: 004d4f30 (UNCONDITIONAL_CALL)  ; undefined FUN_004d4f30()
+    CALL core_mimic.cpp_FUN_004d4f30    ; 004d4a72
+        ;   XREF to: 004d4f30 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_FUN_004d4f30()
     ADD ESP,0x8                         ; 004d4a77
     PUSH EBX                            ; 004d4a7a
         ;   Label: LAB_004d4a7a
@@ -86,10 +86,10 @@ section .text
     MOV ECX,0x5893d1                    ; 004d4a87 | = "..\\core\\mimic.cpp"
     MOV ESI,0x130                       ; 004d4a8c
     PUSH 0x5893e3                       ; 004d4a91 | = "CMimic::setup - can't use mimic in mu..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d4a96 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d4a9c | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d4aa2
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d4a96 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d4a9c | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d4aa2
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d4aa7
     POP ESI                             ; 004d4aaa
     JMP 0x004d4a04                      ; 004d4aab
@@ -129,8 +129,8 @@ section .text
     JZ 0x004d4a7a                       ; 004d4afd
         ;   XREF to: 004d4a7a (CONDITIONAL_JUMP)  ; LAB_004d4a7a
     PUSH EBX                            ; 004d4b03
-    CALL FUN_004d4ba0                   ; 004d4b04
-        ;   XREF to: 004d4ba0 (UNCONDITIONAL_CALL)  ; undefined FUN_004d4ba0()
+    CALL core_mimic.cpp_FUN_004d4ba0    ; 004d4b04
+        ;   XREF to: 004d4ba0 (UNCONDITIONAL_CALL)  ; undefined core_mimic.cpp_FUN_004d4ba0()
     MOV ECX,dword ptr [EBX + 0x4691c]   ; 004d4b09
     ADD ESP,0x4                         ; 004d4b0f
     CMP ECX,0x1                         ; 004d4b12

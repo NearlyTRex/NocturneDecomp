@@ -16,7 +16,7 @@
 ;   core_baron.cpp_CBaronWeapon_setWeaponState_FUN_004114a0 at 00411509
 ;
 ; Referenced Globals:
-;   undefined4 CDemonActorType_00765a60.name_hash
+;   undefined4 g_CCharacterActorType_00765a60.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -53,7 +53,7 @@ section .text
     POP ESI                             ; 00410aa6
     POP EBX                             ; 00410aa7
     RET                                 ; 00410aa8
-    MOV EDI,dword ptr [0x00765a98]      ; 00410aa9 | CDemonActorType_00765a60.name_hash
+    MOV EDI,dword ptr [0x00765a98]      ; 00410aa9 | g_CCharacterActorType_00765a60.name_hash
         ;   Label: LAB_00410aa9
     PUSH EDI                            ; 00410aaf
     PUSH ESI                            ; 00410ab0

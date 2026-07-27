@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,21 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 252,
+    "complexity_score": 236,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 47,
-    "suspect_count": 18,
+    "pseudocode_lines": 46,
+    "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "unresolved_funcptr",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 156
+    "total_lines": 155
   },
   "cross_references": [
     {
@@ -161,8 +160,8 @@
       ]
     ],
     "convention": "unknown",
-    "name": "FUN_0040f1a0",
-    "signature": "void FUN_0040f1a0(int param_1,undefined4 param_2)"
+    "name": "core_ammobox.cpp_FUN_0040f1a0",
+    "signature": "void core_ammobox_cpp_FUN_0040f1a0(int param_1,undefined4 param_2)"
   },
   "function_calls": [
     {
@@ -176,24 +175,24 @@
       "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ed80"
     },
     {
+      "addr": "0040ef60",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_FUN_0040ef60"
+    },
+    {
       "addr": "004bf360",
       "is_variadic": false,
       "name": "core_inv.cpp_CInventory_addItem_FUN_004bf360"
     },
     {
-      "addr": "0040ef60",
-      "is_variadic": false,
-      "name": "FUN_0040ef60"
-    },
-    {
       "addr": "004c8440",
       "is_variadic": false,
-      "name": "FUN_004c8440"
+      "name": "core_main.c_FUN_004c8440"
     },
     {
       "addr": "0056497c",
       "is_variadic": false,
-      "name": "FUN_0056497c"
+      "name": "crt_unknown.c_FUN_0056497c"
     }
   ],
   "globals": [
@@ -235,14 +234,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     }
   ],
@@ -317,32 +316,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_0040f1a0(int param_1,uint param_2)",
+      "text": "void core_ammobox_cpp_FUN_0040f1a0(int param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void FUN_0040f1a0(int param_1,uint param_2)",
+      "text": "void core_ammobox_cpp_FUN_0040f1a0(int param_1,uint param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x318) != 0) {",
@@ -350,7 +341,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_addItem_FUN_004bf360(param_2,*(int *)(param_1 + 0x318),1);",
@@ -358,7 +349,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_addItem_FUN_004bf360(param_2,*(int *)(param_1 + 0x318),1);",
@@ -366,7 +357,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x318) = 0;",
@@ -374,7 +365,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x30c) = 0;",
@@ -382,7 +373,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x30c) == 0) {",
@@ -390,7 +381,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pcVar3,param_1 + 0x2cc);",
@@ -398,15 +389,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_0040ef60(pcVar3,*(uint *)(param_1 + 0x30c));",
+      "text": "core_ammo_cpp_FUN_0040ef60(pcVar3,*(uint *)(param_1 + 0x30c));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(pcVar3 + 0x310) = *(uint *)(param_1 + 0x310);",
@@ -414,7 +405,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
+      "line": 33,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)**(uint **)(pcVar3 + 0x14c))(pcVar3);",
@@ -422,7 +413,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
       "text": "core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ed80(pcVar3,param_1 + 0x2cc);",
@@ -430,7 +421,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_2",
       "severity": "mild",
       "text": "core_inv_cpp_CInventory_addItem_FUN_004bf360(param_2,pcVar3,1);",
@@ -438,7 +429,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x30c) = 0;",
@@ -446,7 +437,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 39,
+      "line": 37,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

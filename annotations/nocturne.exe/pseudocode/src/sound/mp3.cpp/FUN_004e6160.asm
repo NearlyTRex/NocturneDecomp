@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004e6160(undefined4 *param_1,undefined4 *param_2,int param_3,int param_4,int *param_5)
+; void sound_mp3_cpp_FUN_004e6160(undefined4 *param_1,undefined4 *param_2,int param_3,int param_4,int *param_5)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x2080]:4  local_2080
@@ -87,7 +87,7 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   sound_mp3.cpp_calculateIntensityStereoRatio_FUN_004e60c0
 ;
 ; *****************************************************************************
@@ -95,7 +95,7 @@
 section .text
 
     PUSH EBX                            ; 004e6160
-        ;   Label: FUN_004e6160
+        ;   Label: sound_mp3.cpp_FUN_004e6160
     PUSH ESI                            ; 004e6161
     PUSH EDI                            ; 004e6162
     PUSH EBP                            ; 004e6163
@@ -1088,10 +1088,10 @@ section .text
     MOV EAX,0x58b8b0                    ; 004e6fb0 | = "..\\sound\\mp3.cpp"
     MOV EDX,0x9b8                       ; 004e6fb5
     PUSH 0x58b8c1                       ; 004e6fba | = "Error in streo processing.  File: %s"
-    MOV [0x01cc4800],EAX                ; 004e6fbf | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004e6fc4 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e6fca
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004e6fbf | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004e6fc4 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e6fca
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e6fcf
     JMP 0x004e637d                      ; 004e6fd2
         ;   XREF to: 004e637d (UNCONDITIONAL_JUMP)  ; LAB_004e637d

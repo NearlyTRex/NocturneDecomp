@@ -10,12 +10,12 @@
 ;   TerminatedCString s_Old_func_d_005774c8
 ;   TerminatedCString s_engine_3d_c_005774d6
 ;   undefined4 DAT_006b0288
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -37,10 +37,10 @@ section .text
     MOV EAX,ESP                         ; 00405512
     MOV ECX,0x5774d6                    ; 00405514 | = "..\\engine\\3d.c"
     PUSH EAX                            ; 00405519
-    MOV dword ptr [0x01cc4804],EBX      ; 0040551a | DAT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 00405520 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 00405526
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EBX      ; 0040551a | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 00405520 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 00405526
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     MOV EAX,0x6b0288                    ; 0040552b | DAT_006b0288
     ADD ESP,0x4                         ; 00405530
     ADD ESP,0x50                        ; 00405533

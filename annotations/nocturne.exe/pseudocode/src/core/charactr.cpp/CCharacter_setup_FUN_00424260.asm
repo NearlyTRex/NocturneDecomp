@@ -7,19 +7,19 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_004b48d0 at 004b48e5
-;   FUN_004ee9e0 at 004ee9e8
 ;   core_enemy.cpp_CEnemy_setup_FUN_004796b0 at 004796b5
+;   core_hero.cpp_FUN_004b48d0 at 004b48e5
+;   core_npc.cpp_FUN_004ee9e0 at 004ee9e8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_stake_b_kfm_00579dba
 ;   TerminatedCString s_core_charactr_cpp_00579dc6
 ;   TerminatedCString s_s_is_carrying_s_but_s_th_00579ddb
 ;   TerminatedCString s_bip01_head_00579e16
-;   undefined4 DAT_0059b094
+;   float FLOAT_0059b094 = 9999
 ;   undefined4 DAT_007658e4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00409fa0
@@ -32,10 +32,10 @@
 ;   core_cloth.cpp_CClothList_setup_FUN_00438510
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
+;   core_main.c_FUN_004c8440
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0051dcd0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -53,7 +53,7 @@ section .text
         ;   XREF to: 00409fc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_CDemonActor_setup_FUN_00409fc0()
     ADD ESP,0x4                         ; 00424271
     PUSH 0x579dba                       ; 00424274 | = "stake_b.kfm"
-    FLD float ptr [0x0059b094]          ; 00424279 | DAT_0059b094
+    FLD float ptr [0x0059b094]          ; 00424279 | FLOAT_0059b094
     MOV dword ptr [EBP + 0x2dec],0x0    ; 0042427f
     PUSH 0x7658e4                       ; 00424289 | DAT_007658e4
     FSTP float ptr [EBP + 0x240c]       ; 0042428e
@@ -212,10 +212,10 @@ section .text
     MOV EDX,0x579dc6                    ; 0042442b | = "..\\core\\charactr.cpp"
     MOV ECX,0x10c                       ; 00424430
     PUSH 0x579ddb                       ; 00424435 | = "%s is carrying %s, but %s thinks it i..."
-    MOV dword ptr [0x01cc4800],EDX      ; 0042443a | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00424440 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00424446
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0042443a | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00424440 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00424446
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x14                        ; 0042444b
     JMP 0x004242bf                      ; 0042444e
         ;   XREF to: 004242bf (UNCONDITIONAL_JUMP)  ; LAB_004242bf

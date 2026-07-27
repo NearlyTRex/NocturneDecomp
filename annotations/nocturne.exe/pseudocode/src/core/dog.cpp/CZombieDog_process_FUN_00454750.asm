@@ -48,7 +48,7 @@
 ;   double DOUBLE_0057cfbe = 0.5
 ;   double DOUBLE_0057cfc6 = 32
 ;   float FLOAT_0059c0d8 = 3
-;   undefined4 DAT_0059c0e4
+;   float FLOAT_0059c0e4 = 8
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_005be368
@@ -69,8 +69,8 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004798e0
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030
+;   core_gore.cpp_FUN_004b0480
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
-;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -413,8 +413,8 @@ section .text
     PUSH EAX                            ; 00454afb
     MOV ESI,dword ptr [0x005b96c4]      ; 00454afc | INT_005b96c4
     PUSH ESI                            ; 00454b02
-    CALL FUN_004b0480                   ; 00454b03
-        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()
+    CALL core_gore.cpp_FUN_004b0480     ; 00454b03
+        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004b0480()
     ADD ESP,0xc                         ; 00454b08
     MOV dword ptr [EBX + 0xbc90],0x1    ; 00454b0b
     JMP 0x00454862                      ; 00454b15
@@ -466,12 +466,12 @@ section .text
     FADDP                               ; 00454b95
     FSTP float ptr [EBP + 0x66]         ; 00454b97
     MOV EAX,dword ptr [EBP + 0x66]      ; 00454b9a
-    MOV EDX,dword ptr [0x01c7070c]      ; 00454b9d | DAT_01c7070c
+    MOV EDX,dword ptr [0x01c7070c]      ; 00454b9d | CVector3f_01c70708.y
     SAR EAX,0x1                         ; 00454ba3
     ADD EAX,EDX                         ; 00454ba5
     MOV dword ptr [EBP + 0x72],EAX      ; 00454ba7
     FLD float ptr [EBP + 0x72]          ; 00454baa
-    FCOMP float ptr [0x0059c0e4]        ; 00454bad | DAT_0059c0e4
+    FCOMP float ptr [0x0059c0e4]        ; 00454bad | FLOAT_0059c0e4
     FNSTSW AX                           ; 00454bb3
     SAHF                                ; 00454bb5
     JC 0x00454c00                       ; 00454bb6
@@ -536,7 +536,7 @@ section .text
     FMUL float ptr [EBP + 0x36]         ; 00454c5b
     FADDP                               ; 00454c5e
     FSQRT                               ; 00454c60
-    FCOMP float ptr [0x0059c0e4]        ; 00454c62 | DAT_0059c0e4
+    FCOMP float ptr [0x0059c0e4]        ; 00454c62 | FLOAT_0059c0e4
     FNSTSW AX                           ; 00454c68
     SAHF                                ; 00454c6a
     JBE 0x00454c7e                      ; 00454c6b

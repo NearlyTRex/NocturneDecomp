@@ -1,14 +1,14 @@
-// Name: FUN_00523170
+// Name: sound_sndmain.cpp_FUN_00523170
 // Address: 00523170
 // Address Range: [[00523170, 00523320]]
 // Convention: unknown
-// Signature: void FUN_00523170(void)
+// Signature: void sound_sndmain_cpp_FUN_00523170(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00523170(void)
+void sound_sndmain_cpp_FUN_00523170(void)
 
 {
   int iVar1;
@@ -32,17 +32,17 @@ void FUN_00523170(void)
   bVar7 = 0;
   if (_DAT_02dc84bc < 1) {
     pcStack_44 = "SfxSlot::kill - must be locked!";
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x4e0;
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x4e0;
     puStack_48 = (byte *)0x523319;
-    FUN_004c8440();
+    core_main_c_FUN_004c8440();
   }
   if (0 < _DAT_02dc8328) {
     pcStack_44 = "nextMixingBuffer - shouldn't have any data pending!";
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x4e4;
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x4e4;
     puStack_48 = (byte *)0x5231ad;
-    FUN_004c8440();
+    core_main_c_FUN_004c8440();
   }
   iVar5 = 0;
   iVar3 = _DAT_02dc8330 * 4;

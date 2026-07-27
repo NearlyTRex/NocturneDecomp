@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004e0290 at 004e02b1
 ;   core_morph.cpp_CMorph_setupModelFromDeformable_FUN_004e0170 at 004e019b
+;   core_morph.cpp_FUN_004e0290 at 004e02b1
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004df460

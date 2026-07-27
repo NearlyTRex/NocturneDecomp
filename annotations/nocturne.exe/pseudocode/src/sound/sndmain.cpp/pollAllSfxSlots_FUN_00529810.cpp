@@ -17,9 +17,9 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_00529810(void)
   float fVar4;
   
   if (_DAT_02dc84bc < 1) {
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x148c;
-    FUN_004c8440("SfxSlot::kill - must be locked!");
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x148c;
+    core_main_c_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
   sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_00522d10();
   iVar2 = _DAT_02dc84c0;

@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_0052d030 at 0052d076
-;   FUN_00547b30 at 00548046
-;   FUN_005485a0 at 005485d5
 ;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0 at 0042a2de
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004a9040 at 004a90ff
+;   core_sound.cpp_FUN_0052d030 at 0052d076
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_0052c930 at 0052c962
+;   core_trigger.cpp_FUN_00547b30 at 00548046
+;   core_trigger.cpp_FUN_005485a0 at 005485d5
 ;   engine_pod.cpp_CPod_getNextSearchResult_FUN_004f8da0 at 004f8e48
 ;
 ; Called Functions:

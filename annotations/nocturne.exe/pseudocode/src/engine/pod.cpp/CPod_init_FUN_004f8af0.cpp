@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_pod_cpp_CPod_init_FUN_004f8af0(int *param_1)
 
 {
   if (param_1 == (int *)0x0) {
-    _DAT_01cc4800 = "..\\engine\\pod.cpp";
-    _DAT_01cc4804 = 0x2be;
-    FUN_004c8440("CPod::init - No .POD to init!");
+    PTR_01cc4800 = "..\\engine\\pod.cpp";
+    INT_01cc4804 = 0x2be;
+    core_main_c_FUN_004c8440("CPod::init - No .POD to init!");
     if (iRam00000000 != 0) {
       return;
     }

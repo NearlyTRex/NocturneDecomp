@@ -19,9 +19,9 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginBackgroundScene_FUN_00440b20(int
   
   bVar5 = 0;
   if (*(int *)(param_1 + 0x11e4) == 0) {
-    _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-    _DAT_01cc4804 = 0x43b;
-    FUN_004c8440("CDemonCamera::beginBackgroundScene - Scene not open");
+    PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    INT_01cc4804 = 0x43b;
+    core_main_c_FUN_004c8440("CDemonCamera::beginBackgroundScene - Scene not open");
   }
   _DAT_0140efa8 = _DAT_0140efa8 + 1;
   if (_DAT_0140efa8 == 1) {

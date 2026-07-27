@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004c4260 at 004c4273
+;   core_ladder.cpp_FUN_004c4260 at 004c4273
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_null_kfm_0058772c
-;   undefined1* PTR_FUN_0059f954 = 004c4340
+;   undefined1* PTR_core_ladder.cpp_FUN_004c4340_0059f954 = 004c4340
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -36,7 +36,7 @@ section .text
     PUSH 0x58772c                       ; 004c42b2 | = "null.kfm"
     LEA EAX,[EBX + 0x150]               ; 004c42b7
     PUSH EAX                            ; 004c42bd
-    MOV dword ptr [EBX + 0x14c],0x59f954 ; 004c42be | PTR_FUN_0059f954
+    MOV dword ptr [EBX + 0x14c],0x59f954 ; 004c42be | PTR_core_ladder.cpp_FUN_004c4340_0059f954
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004c42c8
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     MOV dword ptr [EBX + 0x2cc],0x40000000 ; 004c42cd

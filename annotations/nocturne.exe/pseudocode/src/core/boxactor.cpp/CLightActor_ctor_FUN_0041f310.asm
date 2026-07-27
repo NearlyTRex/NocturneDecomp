@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0041f2e0 at 0041f2f3
+;   core_boxactor.cpp_FUN_0041f2e0 at 0041f2f3
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_core_boxactor.cpp_CLightActor_setup_FUN_0041f3a0_0059abb4 = 0041f3a0

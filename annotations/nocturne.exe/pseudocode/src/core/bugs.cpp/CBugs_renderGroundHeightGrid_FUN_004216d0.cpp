@@ -42,7 +42,7 @@ void core_bugs_cpp_CBugs_renderGroundHeightGrid_FUN_004216d0(int param_1)
       iStack_34 = (int)ROUND(((float)iVar3 * 0.5f + *(float *)(param_1 + 0x19858)) *
                              _DAT_0059ae90);
       iStack_18 = iVar3;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iStack_1c,&iStack_3c)
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + iStack_1c,&iStack_3c)
       ;
       iVar5 = iVar5 + 4;
       iStack_1c = iStack_1c + 0x240;

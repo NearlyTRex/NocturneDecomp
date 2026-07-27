@@ -606,7 +606,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(int param_1)
              (iVar5 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_00471360
                                 (0x01BCD074,"Enter image height",&DAT_005b9368,1,1,9999,1
                                 ), iVar5 != 0)) {
-            FUN_0046fe60(0x01BCD074,"Press CTRL+V to begin recording.");
+            shape_edittool_cpp_FUN_0046fe60(0x01BCD074,"Press CTRL+V to begin recording.");
             _DAT_01c78ac8 = 1;
           }
         }
@@ -1223,7 +1223,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004a0550(int param_1)
             core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,&DAT_005b92f0);
             break;
           }
-          FUN_0046fcd0(0x01BCD074,iVar5);
+          shape_edittool_cpp_FUN_0046fcd0(0x01BCD074,iVar5);
         }
       }
 LAB_004a2165:
@@ -1758,7 +1758,8 @@ LAB_004a2165:
           iStack_44 = iStack_44 + 4;
         }
         iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),_DAT_02dc9fe4);
+                          (*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),
+                           g_CStrangerActorType_02dc9fac.name_hash);
         if (iVar5 != 0) {
           if (*(int *)(param_1 + 0x204) == 0) {
             pcVar14 = "stranger-hat.kfm";
@@ -1830,7 +1831,7 @@ LAB_004a2165:
         iVar10 = FUN_0056497c(0x2d0);
         iVar5 = 0;
         if (iVar10 != 0) {
-          iVar5 = FUN_004a8a10(iVar10);
+          iVar5 = core_gasmask_cpp_FUN_004a8a10(iVar10);
         }
         core_mission_cpp_CDemonMission_generateActorName_FUN_004d9720(0x01CC9450,iVar5);
         (*(code *)**(uint **)(iVar5 + 0x14c))(iVar5);
@@ -1898,7 +1899,8 @@ LAB_004a2165:
       if (iStack_ec == iStack_f0) {
         DAT_01c78af0 = 0;
         iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                          (*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),_DAT_02dc9fe4);
+                          (*(uint *)(_DAT_01cae0e8 * 4 + 0x1cae0d8),
+                           g_CStrangerActorType_02dc9fac.name_hash);
         if (iVar5 != 0) {
           core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
                     (iVar5 + 0x1fb40,"oldhat.kfm");

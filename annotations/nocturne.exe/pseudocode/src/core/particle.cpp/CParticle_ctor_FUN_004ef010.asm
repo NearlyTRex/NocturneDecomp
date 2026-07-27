@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_0048c960 at 0048c965
-;   FUN_0048c990 at 0048c995
-;   FUN_0048c9c0 at 0048c9c5
-;   FUN_0048cb80 at 0048cb85
-;   FUN_0048cbb0 at 0048cbb5
-;   FUN_0048cbe0 at 0048cbe5
-;   FUN_004b0a30 at 004b0a35
 ;   core_fire.cpp_CGlassParticle_ctor_FUN_0048cb00 at 0048cb05
+;   core_fire.cpp_FUN_0048c960 at 0048c965
+;   core_fire.cpp_FUN_0048c990 at 0048c995
+;   core_fire.cpp_FUN_0048c9c0 at 0048c9c5
+;   core_fire.cpp_FUN_0048cb80 at 0048cb85
+;   core_fire.cpp_FUN_0048cbb0 at 0048cbb5
+;   core_fire.cpp_FUN_0048cbe0 at 0048cbe5
+;   core_gore.cpp_FUN_004b0a30 at 004b0a35
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_core_particle.cpp_CParticle_setup_FUN_004ef040_005a1034 = 004ef040

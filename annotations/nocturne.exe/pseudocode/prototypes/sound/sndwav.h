@@ -3,6 +3,10 @@
 // Function prototypes for sound/sndwav.cpp
 // Generated from Ghidra function signatures
 
+// Original: sound_sndwav.cpp_staticInit_FUN_0052c120
+// Address: 0052c120
+void __cdecl staticInit(void);
+
 // Original: sound_sndwav.cpp_writeWavOutBuffer_FUN_0052c130
 // Address: 0052c130
 undefined4 __cdecl writeWavOutBuffer(int param_1);
@@ -33,7 +37,7 @@ undefined4 enumerateWavOutDevice(UINT_PTR param_1,char *param_2);
 
 // Original: sound_sndwav.cpp_getWavOutDevice_FUN_0052c760
 // Address: 0052c760
-undefined1 * __cdecl getWavOutDevice(UINT_PTR param_1);
+undefined * __cdecl getWavOutDevice(UINT_PTR param_1);
 
 // Original: sound_sndwav.cpp_CWavOutDevice_hasHardware3D_FUN_0052c7b0
 // Address: 0052c7b0

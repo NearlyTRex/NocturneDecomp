@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004c2470 at 004c2c53
+;   core_inv.cpp_FUN_004c2470 at 004c2c53
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7624
@@ -22,8 +22,8 @@
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_0040eab0
-;   wincore_windll.cpp_renderAlphaRow16_FUN_005305f7
-;   wincore_windll.cpp_renderAlphaRow32_FUN_0053055c
+;   engine_special.cpp_renderAlphaRow16_FUN_005305f7
+;   engine_special.cpp_renderAlphaRow32_FUN_0053055c
 ;
 ; *****************************************************************************
 
@@ -84,8 +84,8 @@ section .text
     PUSH EDI                            ; 0040e94a
     ADD EAX,EBX                         ; 0040e94b
     PUSH EAX                            ; 0040e94d
-    CALL wincore_windll.cpp_renderAlphaRow32_FUN_0053055c ; 0040e94e
-        ;   XREF to: 0053055c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_renderAlphaRow32_FUN_0053055c()
+    CALL engine_special.cpp_renderAlphaRow32_FUN_0053055c ; 0040e94e
+        ;   XREF to: 0053055c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderAlphaRow32_FUN_0053055c()
     ADD ESP,0x14                        ; 0040e953
     MOV EBX,dword ptr [EBP + 0xc]       ; 0040e956
     MOV EDX,dword ptr [ESP + 0x14]      ; 0040e959
@@ -126,8 +126,8 @@ section .text
     PUSH EDI                            ; 0040e9a7
     ADD EAX,EBX                         ; 0040e9a8
     PUSH EAX                            ; 0040e9aa
-    CALL wincore_windll.cpp_renderAlphaRow16_FUN_005305f7 ; 0040e9ab
-        ;   XREF to: 005305f7 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_renderAlphaRow16_FUN_005305f7()
+    CALL engine_special.cpp_renderAlphaRow16_FUN_005305f7 ; 0040e9ab
+        ;   XREF to: 005305f7 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderAlphaRow16_FUN_005305f7()
     ADD ESP,0x14                        ; 0040e9b0
     MOV EBX,dword ptr [EBP + 0xc]       ; 0040e9b3
     MOV EDX,dword ptr [ESP + 0x18]      ; 0040e9b6

@@ -12,11 +12,11 @@
 ;   TerminatedCString s_data_00590c08
 ;
 ; Called Functions:
+;   core_setdir.cpp_FUN_00513670
+;   core_setdir.cpp_FUN_00513720
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_00513670
-;   FUN_00513720
 ;
 ; *****************************************************************************
 
@@ -38,14 +38,14 @@ section .text
     JNZ 0x0051364d                      ; 00513631
         ;   XREF to: 0051364d (CONDITIONAL_JUMP)  ; LAB_0051364d
     PUSH ESI                            ; 00513633
-    CALL FUN_00513720                   ; 00513634
-        ;   XREF to: 00513720 (UNCONDITIONAL_CALL)  ; undefined FUN_00513720()
+    CALL core_setdir.cpp_FUN_00513720   ; 00513634
+        ;   XREF to: 00513720 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00513720()
     ADD ESP,0x4                         ; 00513639
     MOV EBX,dword ptr [ESP + 0x10]      ; 0051363c
     PUSH EBX                            ; 00513640
     PUSH ESI                            ; 00513641
-    CALL FUN_00513670                   ; 00513642
-        ;   XREF to: 00513670 (UNCONDITIONAL_CALL)  ; undefined FUN_00513670()
+    CALL core_setdir.cpp_FUN_00513670   ; 00513642
+        ;   XREF to: 00513670 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_00513670()
     ADD ESP,0x8                         ; 00513647
     POP ESI                             ; 0051364a
     POP EBX                             ; 0051364b

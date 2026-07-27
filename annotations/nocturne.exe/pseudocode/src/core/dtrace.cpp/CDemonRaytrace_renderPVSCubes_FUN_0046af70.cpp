@@ -26,7 +26,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_0046af70(void)
       core_dcube_cpp_CDemonCube_rotateVertices_FUN_0044aff0(*(uint *)(iVar3 + 0x1b7b74c),0);
       iVar3 = iVar3 + 4;
       iVar2 = iVar2 + 1;
-      wincore_windll_cpp_sync_FUN_00532b30();
+      engine_special_cpp_sync_FUN_00532b30();
       puVar1 = puVar1 + 0xc;
     } while (iVar2 < _DAT_01b7b744);
   }

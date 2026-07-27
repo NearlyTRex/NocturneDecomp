@@ -20,8 +20,8 @@
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_stdio.c_sscanf_FUN_00566b5c
-;   FUN_0046fcd0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600
+;   shape_edittool.cpp_FUN_0046fcd0
 ;
 ; *****************************************************************************
 
@@ -109,8 +109,8 @@ section .text
     PUSH 0x57e757                       ; 00471403 | = "Please enter a valid integer."
         ;   Label: LAB_00471403
     PUSH EBX                            ; 00471408
-    CALL FUN_0046fcd0                   ; 00471409
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 00471409
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x8                         ; 0047140e
     JMP 0x00471383                      ; 00471411
         ;   XREF to: 00471383 (UNCONDITIONAL_JUMP)  ; LAB_00471383
@@ -119,8 +119,8 @@ section .text
     PUSH EDI                            ; 00471417
     PUSH 0x57e775                       ; 00471418 | = "Please enter a valid integer between ..."
     PUSH EBX                            ; 0047141d
-    CALL FUN_0046fcd0                   ; 0047141e
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 0047141e
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x10                        ; 00471423
     JMP 0x00471383                      ; 00471426
         ;   XREF to: 00471383 (UNCONDITIONAL_JUMP)  ; LAB_00471383

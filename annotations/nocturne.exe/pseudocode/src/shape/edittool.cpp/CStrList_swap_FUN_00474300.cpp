@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CStrList_swap_FUN_00474300(int *param_1,int param_2,int param_3)
 
 {
@@ -15,9 +13,9 @@ void __cdecl shape_edittool_cpp_CStrList_swap_FUN_00474300(int *param_1,int para
   uint *puVar2;
   
   if ((((param_2 < 0) || (*param_1 <= param_2)) || (param_3 < 0)) || (*param_1 <= param_3)) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0xab6;
-    FUN_004c8440("CStrList::swap - invalid indices");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0xab6;
+    core_main_c_FUN_004c8440("CStrList::swap - invalid indices");
     if (param_2 == param_3) {
       return;
     }

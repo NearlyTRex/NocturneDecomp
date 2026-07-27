@@ -13,13 +13,14 @@ void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0053beb0(int 
   
   if (*(int *)(param_1 + 0x1fa08) != 0) {
     if (*(int *)(param_1 + 0x1faa0) != 4) {
-      FUN_0046fb40(0x01BCD074,"actionPending = %d\nstranger.cpp line %d",*(int *)(param_1 + 0x1faa0),
-                   0xd49);
+      shape_edittool_cpp_FUN_0046fb40
+                (0x01BCD074,"actionPending = %d\nstranger.cpp line %d",*(int *)(param_1 + 0x1faa0),0xd49)
+      ;
     }
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                      (*(uint *)(param_1 + 0x1fa08),CDemonActorType_007641f8.name_hash);
+                      (*(uint *)(param_1 + 0x1fa08),g_CAmmoBoxActorType_007641f8.name_hash);
     if (iVar1 != 0) {
-      FUN_0040f1a0(iVar1,param_1 + 0x1f5a0);
+      core_ammobox_cpp_FUN_0040f1a0(iVar1,param_1 + 0x1f5a0);
     }
     *(uint *)(param_1 + 0x1faa0) = 1;
     *(uint *)(param_1 + 0x1fa08) = 0;

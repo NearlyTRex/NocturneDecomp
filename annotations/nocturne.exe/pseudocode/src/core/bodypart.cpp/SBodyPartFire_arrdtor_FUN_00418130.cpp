@@ -9,6 +9,6 @@
 void __cdecl core_bodypart_cpp_SBodyPartFire_arrdtor_FUN_00418130(uint param_1)
 
 {
-  __arrfini(param_1,2,&DAT_0059a840);
+  __arrfini(param_1,2,&g_SBodyPartFireTypeInfo_0059a840);
   return;
 }

@@ -10,14 +10,14 @@
 ; Referenced Globals:
 ;   TerminatedCString s_voicusummon_wav_00597229
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_01b7b32c
+;   undefined4 g_CDripActorType_01b7b2f4.name_hash
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
 ;   core_actor.cpp_randomChance_FUN_0040dea0
-;   FUN_00462710
+;   core_drip.cpp_FUN_00462710
 ;
 ; *****************************************************************************
 
@@ -46,7 +46,7 @@ section .text
     POP ESI                             ; 0054e0de
     POP EBX                             ; 0054e0df
     RET                                 ; 0054e0e0
-    MOV ECX,dword ptr [0x01b7b32c]      ; 0054e0e1 | DAT_01b7b32c
+    MOV ECX,dword ptr [0x01b7b32c]      ; 0054e0e1 | g_CDripActorType_01b7b2f4.name_hash
         ;   Label: LAB_0054e0e1
     PUSH ECX                            ; 0054e0e7
     MOV EBP,dword ptr [EDI + EBX*0x1 + 0x14cd70] ; 0054e0e8 | DAT_01fa3ff4
@@ -69,8 +69,8 @@ section .text
     JNZ 0x0054e121                      ; 0054e116
         ;   XREF to: 0054e121 (CONDITIONAL_JUMP)  ; LAB_0054e121
     PUSH EBX                            ; 0054e118
-    CALL FUN_00462710                   ; 0054e119
-        ;   XREF to: 00462710 (UNCONDITIONAL_CALL)  ; undefined FUN_00462710()
+    CALL core_drip.cpp_FUN_00462710     ; 0054e119
+        ;   XREF to: 00462710 (UNCONDITIONAL_CALL)  ; undefined core_drip.cpp_FUN_00462710()
     ADD ESP,0x4                         ; 0054e11e
     INC ESI                             ; 0054e121
         ;   Label: LAB_0054e121

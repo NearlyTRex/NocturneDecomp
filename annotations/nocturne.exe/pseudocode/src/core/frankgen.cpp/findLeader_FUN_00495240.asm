@@ -5,23 +5,23 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00494e80 at 00494e9a
 ;   core_frankgen.cpp_CFrankenstienMachine_process_FUN_00494950 at 00494967
+;   core_frankgen.cpp_FUN_00494e80 at 00494e9a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_frankgen_cpp_00581d72
 ;   TerminatedCString s_CFrankenstienMachine_fin_00581d87
 ;   undefined4 DAT_005be368
-;   undefined4 DAT_01c7133c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   undefined4 g_CFrankenstienMachineActorType_01c71304.name_hash
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01fa3ff0
 ;   undefined4 DAT_01fa3ff4
 ;   undefined4 DAT_01fa3ff8
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -39,7 +39,7 @@ section .text
     CMP EBX,dword ptr [EAX + 0x14cd6c]  ; 0049524d | DAT_01fa3ff0
     JGE 0x0049527a                      ; 00495253
         ;   XREF to: 0049527a (CONDITIONAL_JUMP)  ; LAB_0049527a
-    MOV EDI,dword ptr [0x01c7133c]      ; 00495255 | DAT_01c7133c
+    MOV EDI,dword ptr [0x01c7133c]      ; 00495255 | g_CFrankenstienMachineActorType_01c71304.name_hash
     PUSH EDI                            ; 0049525b
     MOV EBP,dword ptr [ESI + EAX*0x1 + 0x14cd70] ; 0049525c | DAT_01fa3ff4 | DAT_01fa3ff8
     PUSH EBP                            ; 00495263
@@ -57,10 +57,10 @@ section .text
         ;   Label: LAB_0049527a
     MOV EBX,0x1cf                       ; 0049527f
     PUSH 0x581d87                       ; 00495284 | = "CFrankenstienMachine::findLeader - no..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00495289 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0049528f | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00495295
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00495289 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0049528f | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00495295
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0049529a
     XOR EAX,EAX                         ; 0049529d
     POP EBP                             ; 0049529f

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(uint param_1,int *param_2)
 
 {
@@ -26,9 +24,9 @@ void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(uint p
   byte local_18 [12];
   
   bVar2 = 0;
-  local_3c = (float)*param_2 * _DAT_005a0888;
-  local_38 = (float)param_2[1] * _DAT_005a0888;
-  local_34 = (float)param_2[2] * _DAT_005a0888;
+  local_3c = (float)*param_2 * 0.00390625f;
+  local_38 = (float)param_2[1] * 0.00390625f;
+  local_34 = (float)param_2[2] * 0.00390625f;
   pfVar1 = (float *)core_mirror_cpp_CMirrorReflection_applyMirrorTransform_FUN_004d7480
                               (param_1,local_18,&local_3c);
   if (&local_30 != pfVar1) {
@@ -36,10 +34,10 @@ void core_mirror_cpp_CMirrorReflection_transformMirrorVertex_FUN_004d7b30(uint p
     local_2c = pfVar1[1];
     local_28 = pfVar1[2];
   }
-  local_24 = (int)ROUND(local_30 * _DAT_005a0880);
-  local_20[0] = (int)ROUND(local_2c * _DAT_005a0880);
-  local_20[1] = (int)ROUND(local_28 * _DAT_005a0880);
-  *unaff_ESI = (int)ROUND(local_30 * _DAT_005a0880);
+  local_24 = (int)ROUND(local_30 * 256.0f);
+  local_20[0] = (int)ROUND(local_2c * 256.0f);
+  local_20[1] = (int)ROUND(local_28 * 256.0f);
+  *unaff_ESI = (int)ROUND(local_30 * 256.0f);
   unaff_ESI[(uint)bVar2 * -2 + 1] = local_20[(uint)bVar2 * -2];
   (unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
        *(int *)(local_18 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + -4);

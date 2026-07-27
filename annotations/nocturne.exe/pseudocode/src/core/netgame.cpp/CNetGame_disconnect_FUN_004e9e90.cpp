@@ -39,7 +39,7 @@ void __cdecl core_netgame_cpp_CNetGame_disconnect_FUN_004e9e90(int *param_1,int 
       _DAT_01cea3f8 = iVar2;
       if (param_1[0x44] < 0) {
 LAB_004ea004:
-        FUN_004720c0(0x01BCD074);
+        shape_edittool_cpp_FUN_004720c0(0x01BCD074);
       }
       else {
         do {
@@ -59,7 +59,7 @@ LAB_004ea004:
           }
           _DAT_01cea3f4 = iVar1;
           if (((float)30 < local_24) || (0x40400000 < (int)local_24)) {
-            FUN_0046fe60(0x01BCD074,"Couldn't contact server to disconnect.");
+            shape_edittool_cpp_FUN_0046fe60(0x01BCD074,"Couldn't contact server to disconnect.");
             goto LAB_004ea004;
           }
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760
@@ -89,7 +89,7 @@ LAB_004ea004:
           iVar3 = _DAT_01cea3f8;
           core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);
         } while (-1 < param_1[0x44]);
-        FUN_004720c0(0x01BCD074);
+        shape_edittool_cpp_FUN_004720c0(0x01BCD074);
       }
     }
     if (*param_1 == 1) {
@@ -110,7 +110,7 @@ LAB_004ea004:
       _DAT_01cea3f8 = iVar2;
       if (param_1[7] < 2) {
 LAB_004ea227:
-        FUN_004720c0(0x01BCD074);
+        shape_edittool_cpp_FUN_004720c0(0x01BCD074);
       }
       else {
         do {
@@ -130,7 +130,7 @@ LAB_004ea227:
           }
           _DAT_01cea3f4 = iVar1;
           if (((float)30 < local_2c) || (0x40a00000 < (int)local_2c)) {
-            FUN_0046fe60(0x01BCD074,"Couldn't connect to all clients to disconnect.");
+            shape_edittool_cpp_FUN_0046fe60(0x01BCD074,"Couldn't connect to all clients to disconnect.");
             goto LAB_004ea227;
           }
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760
@@ -169,7 +169,7 @@ LAB_004ea227:
           iVar3 = _DAT_01cea3f8;
           core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);
         } while (1 < param_1[7]);
-        FUN_004720c0(0x01BCD074);
+        shape_edittool_cpp_FUN_004720c0(0x01BCD074);
       }
     }
   }

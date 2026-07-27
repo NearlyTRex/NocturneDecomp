@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00506b40 at 00506b45
+;   core_set.cpp_staticInit_FUN_00506b40 at 00506b45
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_none_005900ee
@@ -16,10 +16,10 @@
 ;   undefined4 s_one_005900f3+1
 ;   undefined4 s_ne_005900f3+2
 ;   undefined4 s_e_005900f3+3
-;   undefined4 DAT_005a1970
-;   undefined4 DAT_005a1990
-;   undefined4 DAT_005a19b0
-;   undefined4 DAT_005a19d0
+;   WatcomTypeInfo g_C3DSCameraTypeInfo_005a1970
+;   WatcomTypeInfo g_C3DSLightTypeInfo_005a1990
+;   WatcomTypeInfo g_SRoomTypeInfo_005a19b0
+;   WatcomTypeInfo g_SVDBoxTypeInfo_005a19d0
 ;
 ; Called Functions:
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00511750
@@ -34,28 +34,28 @@ section .text
     PUSH ESI                            ; 00506bc1
     PUSH EDI                            ; 00506bc2
     MOV EBX,dword ptr [ESP + 0x10]      ; 00506bc3
-    PUSH 0x5a1970                       ; 00506bc7 | DAT_005a1970
+    PUSH 0x5a1970                       ; 00506bc7 | g_C3DSCameraTypeInfo_005a1970
     PUSH 0xfa                           ; 00506bcc
     ADD EBX,0x4                         ; 00506bd1
     PUSH EBX                            ; 00506bd4
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00506bd5
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 00506bda
-    PUSH 0x5a1990                       ; 00506bdd | DAT_005a1990
+    PUSH 0x5a1990                       ; 00506bdd | g_C3DSLightTypeInfo_005a1990
     PUSH 0xc8                           ; 00506be2
     ADD EAX,0x19644                     ; 00506be7
     PUSH EAX                            ; 00506bec
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00506bed
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 00506bf2
-    PUSH 0x5a19b0                       ; 00506bf5 | DAT_005a19b0
+    PUSH 0x5a19b0                       ; 00506bf5 | g_SRoomTypeInfo_005a19b0
     PUSH 0x14                           ; 00506bfa
     ADD EAX,0x141490                    ; 00506bfc
     PUSH EAX                            ; 00506c01
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00506c02
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 00506c07
-    PUSH 0x5a19d0                       ; 00506c0a | DAT_005a19d0
+    PUSH 0x5a19d0                       ; 00506c0a | g_SVDBoxTypeInfo_005a19d0
     PUSH 0xfa                           ; 00506c0f
     ADD EAX,0x554                       ; 00506c14
     PUSH EAX                            ; 00506c19

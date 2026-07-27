@@ -12,10 +12,10 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[5]:
-;   FUN_00444600 at 004446f0
-;   FUN_00445750 at 0044579e
 ;   core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_00441c50 at 00442098
 ;   core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00444920 at 00444b76
+;   core_dcamera.cpp_FUN_00444600 at 004446f0
+;   core_dcamera.cpp_FUN_00445750 at 0044579e
 ;   core_game.cpp_CGame_beginFadeIn_FUN_004a37e0 at 004a3743
 ;
 ; Referenced Globals:

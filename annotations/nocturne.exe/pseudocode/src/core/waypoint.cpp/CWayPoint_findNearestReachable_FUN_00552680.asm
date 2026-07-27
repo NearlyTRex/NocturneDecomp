@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
-;   FUN_004b6d80 at 004b77f4
 ;   core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0 at 0042a35b
 ;   core_charactr.cpp_FUN_00428c00 at 00428e75
+;   core_hostage.cpp_FUN_004b6d80 at 004b77f4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005be368

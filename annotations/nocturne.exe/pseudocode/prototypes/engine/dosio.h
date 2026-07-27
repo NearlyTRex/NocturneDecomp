@@ -7,6 +7,10 @@
 // Address: 00456700
 void __cdecl getRelativeFilePath(char *param_1,char *param_2,char *param_3);
 
+// Original: engine_dosio.c_FUN_00456750
+// Address: 00456750
+void FUN_00456750(undefined4 param_1);
+
 // Original: engine_dosio.cpp_findFile_FUN_004567a0
 // Address: 004567a0
 undefined4 __cdecl findFile(undefined4 param_1);
@@ -27,9 +31,21 @@ undefined4 __cdecl getFileTimestamp(undefined4 param_1,undefined4 param_2);
 // Address: 00456950
 bool copyFileTimestamp(undefined4 param_1,undefined4 param_2);
 
+// Original: engine_dosio.cpp_FUN_004569a0
+// Address: 004569a0
+undefined4 FUN_004569a0(void);
+
+// Original: engine_dosio.cpp_FUN_00456a30
+// Address: 00456a30
+bool FUN_00456a30(void);
+
 // Original: engine_dosio.cpp_getFile_FUN_00456a60
 // Address: 00456a60
 int __cdecl getFile(int param_1,undefined4 param_2,char *param_3);
+
+// Original: engine_dosio.cpp_FUN_00456b20
+// Address: 00456b20
+void FUN_00456b20(int param_1,undefined4 param_2,uint param_3,int *param_4);
 
 // Original: engine_dosio.cpp_CFileFinder_ctor_FUN_00456c00
 // Address: 00456c00

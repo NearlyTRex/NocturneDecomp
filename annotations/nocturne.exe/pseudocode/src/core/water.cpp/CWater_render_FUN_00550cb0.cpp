@@ -88,7 +88,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(int *param_1,int param_2)
         local_60 = (int)ROUND(_DAT_005a3e8c * 0.0);
         local_5c = (int)ROUND(local_68 * _DAT_005a3e8c);
         local_58 = (int)ROUND(_DAT_005a3e8c * 0.0);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_60);
+        engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_60);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
                   (0x01E57284,&local_6c,&local_30,0);
         local_6c = (float)param_1[2];
@@ -102,7 +102,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(int *param_1,int param_2)
         local_54 = (int)ROUND(local_6c * _DAT_005a3e8c);
         local_50 = (int)ROUND(local_68 * _DAT_005a3e8c);
         local_4c = (int)ROUND(local_64 * _DAT_005a3e8c);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_54);
+        engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_54);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
                   (0x01E57284,&local_6c,&local_30,1);
         local_64 = (float)param_1[2];
@@ -117,7 +117,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(int *param_1,int param_2)
         local_48 = (int)ROUND(local_6c * _DAT_005a3e8c);
         local_44 = (int)ROUND(local_68 * _DAT_005a3e8c);
         local_40 = (int)ROUND(local_64 * _DAT_005a3e8c);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_48);
+        engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_48);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
                   (0x01E57284,&local_6c,&local_30,2);
         local_6c = 0.0;
@@ -131,7 +131,7 @@ void __cdecl core_water_cpp_CWater_render_FUN_00550cb0(int *param_1,int param_2)
         local_3c = (int)ROUND(_DAT_005a3e8c * 0.0);
         local_38 = (int)ROUND(local_68 * _DAT_005a3e8c);
         local_34 = (int)ROUND(local_64 * _DAT_005a3e8c);
-        wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_3c);
+        engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x90,&local_3c);
         core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20
                   (0x01E57284,&local_6c,&local_30,3);
         if (*param_1 == 0) {

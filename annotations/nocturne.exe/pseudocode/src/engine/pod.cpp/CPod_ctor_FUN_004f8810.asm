@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004f9280 at 004f9285
 ;   core_podmain.cpp_CDemonPod_ctor_FUN_004f93c0 at 004f93c5
+;   core_podmain.cpp_staticInit_FUN_004f9280 at 004f9285
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_engine_pod.cpp_CPod_dtor_FUN_004f8840_005a1484 = 004f8840

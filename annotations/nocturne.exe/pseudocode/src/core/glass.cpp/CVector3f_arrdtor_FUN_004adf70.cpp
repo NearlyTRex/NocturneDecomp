@@ -9,6 +9,6 @@
 void __cdecl core_glass_cpp_CVector3f_arrdtor_FUN_004adf70(uint param_1)
 
 {
-  __arrfini(param_1,0x19,&DAT_005993b0);
+  __arrfini(param_1,0x19,&g_CVectorTypeInfo_005993b0);
   return;
 }

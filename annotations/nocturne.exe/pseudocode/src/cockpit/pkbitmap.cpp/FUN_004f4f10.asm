@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004f4f10(void)
+; void cockpit_pkbitmap_cpp_FUN_004f4f10(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x10]:1  local_10
@@ -12,19 +12,19 @@
 ;   TerminatedCString s_Error_writing_PBG_header_0058d357
 ;   undefined4 DAT_005be180
 ;   undefined1 DAT_005be184
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fwrite_FUN_00563a50
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH ESI                            ; 004f4f10
-        ;   Label: FUN_004f4f10
+        ;   Label: cockpit_pkbitmap.cpp_FUN_004f4f10
     PUSH EDI                            ; 004f4f11
     SUB ESP,0x8                         ; 004f4f12
     MOV ECX,0x4                         ; 004f4f15
@@ -62,10 +62,10 @@ section .text
     MOV ECX,0x58d33f                    ; 004f4f60 | = "..\\cockpit\\pkbitmap.cpp"
     MOV EBX,0x53b                       ; 004f4f65
     PUSH 0x58d357                       ; 004f4f6a | = "Error writing PBG header"
-    MOV dword ptr [0x01cc4800],ECX      ; 004f4f6f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004f4f75 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f4f7b
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004f4f6f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004f4f75 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f4f7b
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f4f80
     POP EBX                             ; 004f4f83
     ADD ESP,0x8                         ; 004f4f84

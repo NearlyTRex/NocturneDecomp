@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0046eba0 at 0046ebb3
+;   core_dynamite.cpp_FUN_0046eba0 at 0046ebb3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_dynamitestick_kfm_0057e4d0

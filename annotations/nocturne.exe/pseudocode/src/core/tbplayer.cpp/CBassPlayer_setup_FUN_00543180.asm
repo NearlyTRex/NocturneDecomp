@@ -9,9 +9,9 @@
 ;   TerminatedCString s_Bip01_R_Hand_005964ad
 ;
 ; Called Functions:
+;   core_npc.cpp_FUN_004ee9e0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005179d0
-;   FUN_004ee9e0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     PUSH ESI                            ; 00543181
     MOV EBX,dword ptr [ESP + 0xc]       ; 00543182
     PUSH EBX                            ; 00543186
-    CALL FUN_004ee9e0                   ; 00543187
-        ;   XREF to: 004ee9e0 (UNCONDITIONAL_CALL)  ; undefined FUN_004ee9e0()
+    CALL core_npc.cpp_FUN_004ee9e0      ; 00543187
+        ;   XREF to: 004ee9e0 (UNCONDITIONAL_CALL)  ; undefined core_npc.cpp_FUN_004ee9e0()
     ADD ESP,0x4                         ; 0054318c
     LEA EAX,[EBX + 0x150]               ; 0054318f
     PUSH EAX                            ; 00543195

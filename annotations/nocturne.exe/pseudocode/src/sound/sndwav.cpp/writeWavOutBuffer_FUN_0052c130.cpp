@@ -28,7 +28,7 @@ uint __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_0052c130(int param_1)
   }
   MVar3 = waveOutUnprepareHeader(_DAT_02dc93a4,*(LPWAVEHDR *)(param_1 + 0x2dc93a8),0x20);
   if (MVar3 != 0) {
-    FUN_00529980("waveOutUnprepareHeader failed!");
+    sound_sndmain_cpp_FUN_00529980("waveOutUnprepareHeader failed!");
     return 0;
   }
   iVar4 = (int)((_DAT_02dc9428 + (_DAT_02dc9428 >> 0x1f) * -8) -
@@ -52,12 +52,12 @@ uint __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_0052c130(int param_1)
   *(uint *)(*(int *)(local_14 + 0x2dc93a8) + 4) = _DAT_02dc9438;
   MVar3 = waveOutPrepareHeader(_DAT_02dc93a4,*(LPWAVEHDR *)(local_14 + 0x2dc93a8),0x20);
   if (MVar3 != 0) {
-    FUN_00529980("waveOutPrepareHeader failed!");
+    sound_sndmain_cpp_FUN_00529980("waveOutPrepareHeader failed!");
     return 0;
   }
   MVar3 = waveOutWrite(_DAT_02dc93a4,*(LPWAVEHDR *)(local_14 + 0x2dc93a8),0x20);
   if (MVar3 != 0) {
-    FUN_00529980("waveOutWrite failed!");
+    sound_sndmain_cpp_FUN_00529980("waveOutWrite failed!");
     return 0;
   }
   return 1;

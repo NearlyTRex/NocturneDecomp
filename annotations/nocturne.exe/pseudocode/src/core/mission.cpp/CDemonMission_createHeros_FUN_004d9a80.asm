@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004a4b50 at 004a4eac
+;   core_game.cpp_FUN_004a4b50 at 004a4eac
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440 at 004d9596
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_004eb520 at 004ebb4d
 ;
@@ -19,8 +19,8 @@
 ;   undefined4 DAT_01c776b0
 ;   undefined4 DAT_01cae0d4
 ;   undefined4 DAT_01cae0e8
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cea280
 ;   undefined4 DAT_01cea29c
 ;   undefined4 DAT_01cea2b8
@@ -28,10 +28,10 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_isOfClass_FUN_0040d7e0
+;   core_main.c_FUN_004c8440
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004d8ee0
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004d8f90
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -168,10 +168,10 @@ section .text
         ;   Label: LAB_004d9be0
     MOV EDI,0x63b                       ; 004d9be5
     PUSH 0x589f7d                       ; 004d9bea | = "CDemonMission::createHeros - too many..."
-    MOV dword ptr [0x01cc4800],ESI      ; 004d9bef | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004d9bf5 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d9bfb
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 004d9bef | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004d9bf5 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d9bfb
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d9c00
     JMP 0x004d9aba                      ; 004d9c03
         ;   XREF to: 004d9aba (UNCONDITIONAL_JUMP)  ; LAB_004d9aba

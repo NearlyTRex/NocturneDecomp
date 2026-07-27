@@ -23,7 +23,8 @@ void __cdecl crt_fstream_cpp_ofstream_ctor_FUN_0056536a(uint *param_1,byte param
   piVar2 = (int *)(iVar1 + -0x44);
   *(int *)((int)piVar2 + *(int *)(*piVar2 + 4) + -4) = *(int *)(*piVar2 + 4);
   *(byte ***)(iVar1 + -4) = &PTR_crt_fstream_cpp_ofstream_dtor_FUN_005651ca_005a4824;
-  *(byte ***)(iVar1 + 4) = &PTR_FUN_005a482c;
-  *(byte ***)(*(int *)(*piVar2 + 4) + 0x28 + (int)piVar2) = &PTR_FUN_005a4834;
+  *(byte ***)(iVar1 + 4) = &PTR_crt_unknown_c_FUN_0056519c_005a482c;
+  *(byte ***)(*(int *)(*piVar2 + 4) + 0x28 + (int)piVar2) =
+       &PTR_crt_unknown_c_FUN_005651b2_005a4834;
   return;
 }

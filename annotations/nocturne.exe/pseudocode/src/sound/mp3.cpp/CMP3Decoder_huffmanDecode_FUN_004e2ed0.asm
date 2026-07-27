@@ -7,17 +7,17 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004e5200 at 004e5384
+;   sound_mp3.cpp_FUN_004e5200 at 004e5384
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0058b644
 ;   TerminatedCString s_Illegal_Huffman_code_in_0058b655
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cd944c
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   sound_mp3.cpp_CMP3Decoder_readBit_FUN_004e2dd0
 ;   sound_mp3.cpp_CMP3Decoder_readBits_FUN_004e2cf0
 ;
@@ -206,10 +206,10 @@ section .text
     MOV ECX,0x58b644                    ; 004e3072 | = "..\\sound\\mp3.cpp"
     MOV EBX,0x320                       ; 004e3077
     PUSH 0x58b655                       ; 004e307c | = "Illegal Huffman code in data.  File: %s"
-    MOV dword ptr [0x01cc4800],ECX      ; 004e3081 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004e3087 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004e308d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004e3081 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004e3087 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004e308d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004e3092
     JMP 0x004e2f39                      ; 004e3095
         ;   XREF to: 004e2f39 (UNCONDITIONAL_JUMP)  ; LAB_004e2f39

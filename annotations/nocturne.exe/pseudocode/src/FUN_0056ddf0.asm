@@ -5,6 +5,7 @@
 ;
 ;
 ; Referenced Globals:
+;   TerminatedCString s_Not_enough_memory_to_all_00598bec
 ;   undefined1 DAT_005c18a0
 ;   undefined4 DAT_005c18d5
 ;   undefined4 DAT_02de4e20
@@ -12,7 +13,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005635b0
-;   FUN_005635c0
+;   crt_unknown.c_FUN_005635c0
 ;   FUN_0056ddc0
 ;
 ; *****************************************************************************
@@ -35,8 +36,8 @@ section .text
         ;   XREF to: 0056de81 (CONDITIONAL_JUMP)  ; LAB_0056de81
     PUSH 0x1d                           ; 0056de1b
         ;   Label: LAB_0056de1b
-    CALL FUN_005635c0                   ; 0056de1d
-        ;   XREF to: 005635c0 (UNCONDITIONAL_CALL)  ; undefined FUN_005635c0()
+    CALL crt_unknown.c_FUN_005635c0     ; 0056de1d
+        ;   XREF to: 005635c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005635c0()
     ADD ESP,0x4                         ; 0056de22
     TEST EAX,EAX                        ; 0056de25
     JNZ 0x0056de4a                      ; 0056de27
@@ -50,7 +51,7 @@ section .text
     JNZ 0x0056de4c                      ; 0056de37
         ;   XREF to: 0056de4c (CONDITIONAL_JUMP)  ; LAB_0056de4c
     PUSH 0x1                            ; 0056de39
-    PUSH 0x598bec                       ; 0056de3b
+    PUSH 0x598bec                       ; 0056de3b | = "Not enough memory to allocate file st..."
     CALL FUN_0056ddc0                   ; 0056de40
         ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0056ddc0()
     ADD ESP,0x8                         ; 0056de45

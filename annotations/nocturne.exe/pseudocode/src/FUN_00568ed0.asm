@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
-;   FUN_00564670 at 00564682
 ;   FUN_0056ae10 at 0056ae69
 ;   FUN_00573660 at 00573687
 ;   crt_stdio.c_fputc_FUN_00566cc0 at 00566d3c
 ;   crt_stdio.c_fread_FUN_005636d0 at 00563740
 ;   crt_stdio.c_fwrite_FUN_00563a50 at 00563ac5
 ;   crt_stdio.c_ungetc_FUN_00564740 at 005647d6
+;   crt_unknown.c_FUN_00564670 at 00564682
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005635b0

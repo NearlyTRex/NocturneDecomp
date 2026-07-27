@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_00489990 at 004899e6
 ;   core_fire.cpp_CRainDrop_render_FUN_00489d00 at 00489d56
 ;   core_fire.cpp_CShell_render_FUN_004896d0 at 00489731
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00482950 at 004829a2
 ;   core_fire.cpp_CSpark_render_FUN_004838c0 at 00483924
+;   core_fire.cpp_FUN_00489990 at 004899e6
 ;   core_weather.cpp_CWeather_renderParticles_FUN_00555020 at 005551cc
 ;
 ; Referenced Globals:

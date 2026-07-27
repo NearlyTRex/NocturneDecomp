@@ -1,28 +1,34 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00456f60(int param_1)
+; void core_dpart_cpp_FUN_00456f60(int param_1)
 ;
 ;
 ; XREF[1]:
-;   FUN_004571f0 at 00457230
+;   core_dpart.cpp_FUN_004571f0 at 00457230
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_CDemonPart_alloc_Out_of_0057d35e
+;   TerminatedCString s_core_dpart_cpp_0057d38b
+;   TerminatedCString s_core_dpart_cpp_0057d39d
+;   TerminatedCString s_CDemonPart_alloc_Out_of_0057d3af
+;   TerminatedCString s_core_dpart_cpp_0057d3d9
+;   TerminatedCString s_CDemonPart_alloc_Out_of_0057d3eb
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_dpart.cpp_CDemonPart_free_FUN_00457060
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_sprintf_FUN_00563c90
-;   FUN_004c8440
-;   FUN_00565c50
+;   crt_unknown.c_FUN_00565c50
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00456f60
-        ;   Label: FUN_00456f60
+        ;   Label: core_dpart.cpp_FUN_00456f60
     PUSH EDI                            ; 00456f61
     PUSH EBP                            ; 00456f62
     SUB ESP,0x100                       ; 00456f63
@@ -49,8 +55,8 @@ section .text
     PUSH 0xc                            ; 00456f95
         ;   Label: LAB_00456f95
     PUSH EDX                            ; 00456f97
-    CALL FUN_00565c50                   ; 00456f98
-        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined FUN_00565c50()
+    CALL crt_unknown.c_FUN_00565c50     ; 00456f98
+        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565c50()
     ADD ESP,0x8                         ; 00456f9d
     MOV dword ptr [EBX + 0x2c],EAX      ; 00456fa0
     TEST EAX,EAX                        ; 00456fa3
@@ -58,40 +64,40 @@ section .text
         ;   XREF to: 00456fdd (CONDITIONAL_JUMP)  ; LAB_00456fdd
     MOV EDI,dword ptr [EBX + 0x20]      ; 00456fa7
     PUSH EDI                            ; 00456faa
-    PUSH 0x57d35e                       ; 00456fab
+    PUSH 0x57d35e                       ; 00456fab | = "CDemonPart::alloc - Out of vertex %d ..."
     LEA EAX,[ESP + 0x8]                 ; 00456fb0
     PUSH EAX                            ; 00456fb4
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00456fb5
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x8b                        ; 00456fba
     ADD ESP,0xc                         ; 00456fbf
-    MOV [0x01cc4804],EAX                ; 00456fc2 | DAT_01cc4804
+    MOV [0x01cc4804],EAX                ; 00456fc2 | INT_01cc4804
     MOV EAX,ESP                         ; 00456fc7
-    MOV EBP,0x57d38b                    ; 00456fc9
+    MOV EBP,0x57d38b                    ; 00456fc9 | = "..\\core\\dpart.cpp"
     PUSH EAX                            ; 00456fce
-    MOV dword ptr [0x01cc4800],EBP      ; 00456fcf | DAT_01cc4800
-    CALL FUN_004c8440                   ; 00456fd5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 00456fcf | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 00456fd5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00456fda
     PUSH 0xc                            ; 00456fdd
         ;   Label: LAB_00456fdd
     MOV EDX,dword ptr [EBX + 0x20]      ; 00456fdf
     PUSH EDX                            ; 00456fe2
-    CALL FUN_00565c50                   ; 00456fe3
-        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined FUN_00565c50()
+    CALL crt_unknown.c_FUN_00565c50     ; 00456fe3
+        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565c50()
     ADD ESP,0x8                         ; 00456fe8
     MOV dword ptr [EBX + 0x30],EAX      ; 00456feb
     TEST EAX,EAX                        ; 00456fee
     JNZ 0x00456f80                      ; 00456ff0
         ;   XREF to: 00456f80 (CONDITIONAL_JUMP)  ; LAB_00456f80
     PUSH ESI                            ; 00456ff2
-    MOV ESI,0x57d39d                    ; 00456ff3
+    MOV ESI,0x57d39d                    ; 00456ff3 | = "..\\core\\dpart.cpp"
     MOV EDI,0x91                        ; 00456ff8
-    PUSH 0x57d3af                       ; 00456ffd
-    MOV dword ptr [0x01cc4800],ESI      ; 00457002 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00457008 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0045700e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x57d3af                       ; 00456ffd | = "CDemonPart::alloc - Out of normal mem..."
+    MOV dword ptr [0x01cc4800],ESI      ; 00457002 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00457008 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0045700e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00457013
     POP ESI                             ; 00457016
     JMP 0x00456f80                      ; 00457017
@@ -99,20 +105,20 @@ section .text
     PUSH 0x20                           ; 0045701c
         ;   Label: LAB_0045701c
     PUSH EBP                            ; 0045701e
-    CALL FUN_00565c50                   ; 0045701f
-        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined FUN_00565c50()
+    CALL crt_unknown.c_FUN_00565c50     ; 0045701f
+        ;   XREF to: 00565c50 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565c50()
     ADD ESP,0x8                         ; 00457024
     MOV dword ptr [EBX + 0x34],EAX      ; 00457027
     TEST EAX,EAX                        ; 0045702a
     JNZ 0x00456f8b                      ; 0045702c
         ;   XREF to: 00456f8b (CONDITIONAL_JUMP)  ; LAB_00456f8b
-    MOV ECX,0x57d3d9                    ; 00457032
+    MOV ECX,0x57d3d9                    ; 00457032 | = "..\\core\\dpart.cpp"
     MOV EBX,0x99                        ; 00457037
-    PUSH 0x57d3eb                       ; 0045703c
-    MOV dword ptr [0x01cc4800],ECX      ; 00457041 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00457047 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0045704d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x57d3eb                       ; 0045703c | = "CDemonPart::alloc - Out of face memory!"
+    MOV dword ptr [0x01cc4800],ECX      ; 00457041 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00457047 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0045704d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00457052
     ADD ESP,0x100                       ; 00457055
     POP EBP                             ; 0045705b

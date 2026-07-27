@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005993b0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005644a7
@@ -16,7 +16,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0045b310
         ;   Label: core_dracbrid.cpp_SFreaky_ctor_FUN_0045b310
-    PUSH 0x5993b0                       ; 0045b314 | DAT_005993b0
+    PUSH 0x5993b0                       ; 0045b314 | g_CVectorTypeInfo_005993b0
     PUSH 0x4                            ; 0045b319
     ADD EAX,0x20                        ; 0045b31b
     PUSH EAX                            ; 0045b31e

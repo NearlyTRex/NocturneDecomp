@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00458610 at 00458623
+;   core_dracbrid.cpp_FUN_00458610 at 00458623
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_nbride2_dfm_0057d4ac

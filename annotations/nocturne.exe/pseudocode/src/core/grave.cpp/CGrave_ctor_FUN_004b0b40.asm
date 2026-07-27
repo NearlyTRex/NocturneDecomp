@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004b0b10 at 004b0b23
+;   core_grave.cpp_FUN_004b0b10 at 004b0b23
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_grave1_kfm_005851fd
-;   undefined1* PTR_FUN_0059e5d4 = 004b0bd0
+;   undefined1* PTR_core_grave.cpp_FUN_004b0bd0_0059e5d4 = 004b0bd0
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -36,7 +36,7 @@ section .text
     PUSH 0x5851fd                       ; 004b0b62 | = "grave1.kfm"
     LEA EAX,[EBX + 0x150]               ; 004b0b67
     PUSH EAX                            ; 004b0b6d
-    MOV dword ptr [EBX + 0x14c],0x59e5d4 ; 004b0b6e | PTR_FUN_0059e5d4
+    MOV dword ptr [EBX + 0x14c],0x59e5d4 ; 004b0b6e | PTR_core_grave.cpp_FUN_004b0bd0_0059e5d4
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 004b0b78
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580()
     MOV dword ptr [EBX + 0x2cc],0x0     ; 004b0b7d

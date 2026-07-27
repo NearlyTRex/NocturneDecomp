@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[16]:
-;   FUN_00473e90 at 00473eca
-;   FUN_00475470 at 004754db
-;   FUN_004759d0 at 00475c19
-;   FUN_004fe9d0 at 004feb27
-;   FUN_004fee30 at 004fee6f
-;   FUN_0052d030 at 0052d06c
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9cb4
+;   core_script.cpp_FUN_004fe9d0 at 004feb27
+;   core_script.cpp_FUN_004fee30 at 004fee6f
+;   core_sound.cpp_FUN_0052d030 at 0052d06c
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_0052c930 at 0052c958
 ;   shape_edittool.cpp_CPickList_handleInput_FUN_00474ea0 at 00475178
 ;   shape_edittool.cpp_CStrList_copyFrom_FUN_00473c00 at 00473c35
+;   shape_edittool.cpp_CStrList_copyToClipboard_FUN_00474380 at 00474397
+;   shape_edittool.cpp_CStrList_findByFirstField_FUN_00474180 at 004741b8
+;   shape_edittool.cpp_CStrList_findString_FUN_00474140 at 00474156
 ;   ... and 6 more
 ;
 ; *****************************************************************************

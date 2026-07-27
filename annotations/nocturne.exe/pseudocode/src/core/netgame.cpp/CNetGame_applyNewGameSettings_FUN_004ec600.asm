@@ -60,16 +60,16 @@
 ;   TerminatedCString s_core_netgame_cpp_0058c38a
 ;   TerminatedCString s_Hell_froze_0058c39e
 ;   undefined4 DAT_005bdee4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_netgame.cpp_assignInt1_FUN_004edfa0
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_004eb440
 ;   core_netgame.cpp_CNetGame_removePlayer_FUN_004ecc80
 ;   core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_004ed170
 ;   crt_string.c__strcmp_FUN_005649c0
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -93,10 +93,10 @@ section .text
         ;   Label: LAB_004ec623
     MOV EDI,0x7e6                       ; 004ec628
     PUSH 0x58c33e                       ; 004ec62d | = "CNetGame::applyNewGameSettings - shou..."
-    MOV dword ptr [0x01cc4800],EBX      ; 004ec632 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004ec638 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ec63e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004ec632 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004ec638 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ec63e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ec643
     MOV ECX,0x2c                        ; 004ec646
         ;   Label: LAB_004ec646
@@ -231,10 +231,10 @@ section .text
     MOV EAX,0x58c38a                    ; 004ec7d3 | = "..\\core\\netgame.cpp"
     MOV EDX,0x811                       ; 004ec7d8
     PUSH 0x58c39e                       ; 004ec7dd | = "Hell froze"
-    MOV [0x01cc4800],EAX                ; 004ec7e2 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 004ec7e7 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ec7ed
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 004ec7e2 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 004ec7e7 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ec7ed
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ec7f2
     MOV ECX,dword ptr [ESP + 0x14c]     ; 004ec7f5
         ;   Label: LAB_004ec7f5

@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined1* PTR_FUN_0059eda4 = 004b6750
-;   undefined4 DAT_0059eee0
+;   undefined1* PTR_core_hiram.cpp_FUN_004b6750_0059eda4 = 004b6750
+;   WatcomTypeInfo g_CHiramTypeInfo_0059eee0
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
@@ -17,7 +17,7 @@
 ;   core_path.cpp_CPathMap_dtor_FUN_004efdd0
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -33,7 +33,7 @@ section .text
     PUSH 0x0                            ; 004b6680
     ADD EBX,0xbc8c                      ; 004b6682
     PUSH EBX                            ; 004b6688
-    MOV dword ptr [EBX + 0xffff44c0],0x59eda4 ; 004b6689 | PTR_FUN_0059eda4
+    MOV dword ptr [EBX + 0xffff44c0],0x59eda4 ; 004b6689 | PTR_core_hiram.cpp_FUN_004b6750_0059eda4
     CALL core_path.cpp_CPathMap_dtor_FUN_004efdd0 ; 004b6693
         ;   XREF to: 004efdd0 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_CPathMap_dtor_FUN_004efdd0()
     ADD ESP,0x8                         ; 004b6698
@@ -87,7 +87,7 @@ section .text
     MOV EAX,EBX                         ; 004b6717
     POP EBX                             ; 004b6719
     RET                                 ; 004b671a
-    PUSH 0x59eee0                       ; 004b671b | DAT_0059eee0
+    PUSH 0x59eee0                       ; 004b671b | g_CHiramTypeInfo_0059eee0
         ;   Label: LAB_004b671b
     PUSH EBX                            ; 004b6720
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 004b6721
@@ -102,8 +102,8 @@ section .text
     RET                                 ; 004b6735
     PUSH EAX                            ; 004b6736
         ;   Label: LAB_004b6736
-    CALL FUN_00564494                   ; 004b6737
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 004b6737
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 004b673c
     MOV EAX,EBX                         ; 004b673f
     POP EBX                             ; 004b6741

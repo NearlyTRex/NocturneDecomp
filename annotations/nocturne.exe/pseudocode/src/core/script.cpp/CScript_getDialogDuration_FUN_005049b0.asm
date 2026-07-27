@@ -18,16 +18,16 @@
 ;   double DOUBLE_0058faa2 = 0.0200000000000000
 ;   double DOUBLE_0058faaa = 0.400000000000000
 ;   undefined4 DAT_005bed68
-;   CDemonActorType CDemonActorType_00765a60
-;   undefined4 CDemonActorType_00765a60.name_hash
+;   CDemonActorType g_CCharacterActorType_00765a60
+;   undefined4 g_CCharacterActorType_00765a60.name_hash
 ;   undefined4 DAT_01e56418
 ;   undefined4 DAT_01e56c2c
 ;
 ; Called Functions:
 ;   core_script.cpp_getActor_FUN_004fe180
 ;   core_sound.cpp_CSound_playSound_FUN_0052ea40
+;   core_sound.cpp_FUN_0052ebc0
 ;   crt_stdio.c_sscanf_FUN_00566b5c
-;   FUN_0052ebc0
 ;   shape_edittool.cpp_CStrList_add_FUN_00473cb0
 ;   sound_sndmain.cpp_popSfxOptions_FUN_005263c0
 ;   sound_sndmain.cpp_pushSfxOptions_FUN_00526340
@@ -57,9 +57,9 @@ section .text
         ;   XREF to: 00504a1d (CONDITIONAL_JUMP)  ; LAB_00504a1d
     MOV EAX,dword ptr [EBX + 0x44c]     ; 005049d5
     MOV dword ptr [ESP],EAX             ; 005049db
-    PUSH 0x765a60                       ; 005049de | CDemonActorType_00765a60
+    PUSH 0x765a60                       ; 005049de | g_CCharacterActorType_00765a60
         ;   Label: LAB_005049de
-    MOV ECX,dword ptr [0x00765a98]      ; 005049e3 | CDemonActorType_00765a60.name_hash
+    MOV ECX,dword ptr [0x00765a98]      ; 005049e3 | g_CCharacterActorType_00765a60.name_hash
     PUSH ECX                            ; 005049e9
     MOV EDI,dword ptr [EBP + 0x18]      ; 005049ea
     PUSH EDI                            ; 005049ed
@@ -97,8 +97,8 @@ section .text
     PUSH EDI                            ; 00504a39
     MOV EAX,[0x005bed68]                ; 00504a3a | DAT_005bed68
     PUSH EAX                            ; 00504a3f
-    CALL FUN_0052ebc0                   ; 00504a40
-        ;   XREF to: 0052ebc0 (UNCONDITIONAL_CALL)  ; undefined FUN_0052ebc0()
+    CALL core_sound.cpp_FUN_0052ebc0    ; 00504a40
+        ;   XREF to: 0052ebc0 (UNCONDITIONAL_CALL)  ; undefined core_sound.cpp_FUN_0052ebc0()
     MOV dword ptr [ESP + 0x1c],EAX      ; 00504a45
     FLD float ptr [ESP + 0x1c]          ; 00504a49
     ADD ESP,0x8                         ; 00504a4d

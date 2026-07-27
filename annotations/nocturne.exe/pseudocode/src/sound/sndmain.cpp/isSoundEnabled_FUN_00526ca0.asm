@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_0049f930 at 0049fa81
-;   FUN_004d23d0 at 004d26ad
-;   FUN_005289f0 at 00528b69
+;   core_game.cpp_FUN_0049f930 at 0049fa81
+;   core_menu.cpp_FUN_004d23d0 at 004d26ad
 ;   core_menu.cpp_configureSoundOptions_FUN_004d12e0 at 004d1393
 ;   core_sound.cpp_CSound_configure_FUN_0052e850 at 0052e8ce
 ;   core_sound.cpp_playSfxInternal_FUN_0052d120 at 0052d12f
+;   sound_sndmain.cpp_FUN_005289f0 at 00528b69
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00527e40 at 00527e52
 ;   sound_sndmain.cpp_writeIni_FUN_00528c80 at 00528d9f
 ;

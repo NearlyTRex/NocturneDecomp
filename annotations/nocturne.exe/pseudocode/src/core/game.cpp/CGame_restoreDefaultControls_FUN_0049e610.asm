@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004bdb80 at 004bde07
 ;   core_game.cpp_CGame_ctor_FUN_0049a650 at 0049a6af
+;   core_inivar.cpp_FUN_004bdb80 at 004bde07
 ;   core_menu.cpp_configureCustomKeyBindings_FUN_004d2d00 at 004d3bc7
 ;
 ; *****************************************************************************

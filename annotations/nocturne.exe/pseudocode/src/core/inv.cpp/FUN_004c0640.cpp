@@ -1,15 +1,14 @@
-// Name: FUN_004c0640
+// Name: core_inv.cpp_FUN_004c0640
 // Address: 004c0640
 // Address Range: [[004c0640, 004c0703]]
 // Convention: unknown
-// Signature: void FUN_004c0640(void)
+// Signature: void core_inv_cpp_FUN_004c0640(void)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-void FUN_004c0640(void)
+void core_inv_cpp_FUN_004c0640(void)
 
 {
   char cVar1;
@@ -30,9 +29,9 @@ void FUN_004c0640(void)
     pcVar3 = (char *)core_ammo_cpp_CAmmo_ctor_FUN_0040eb70(iVar2);
   }
   if (pcVar3 == (char *)0x0) {
-    _DAT_01cc4800 = "..\\core\\inv.cpp";
-    _DAT_01cc4804 = 0x2fd;
-    FUN_004c8440("Out of memory");
+    PTR_01cc4800 = "..\\core\\inv.cpp";
+    INT_01cc4804 = 0x2fd;
+    core_main_c_FUN_004c8440("Out of memory");
   }
   *(uint *)(pcVar3 + 0x30c) = *(uint *)(in_stack_00000008 + 0x560);
   *(uint *)(pcVar3 + 0x310) = *(uint *)(in_stack_00000008 + 0x564);

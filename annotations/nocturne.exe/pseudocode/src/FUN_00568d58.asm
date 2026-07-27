@@ -13,7 +13,7 @@
 ;   undefined4 DAT_005c1fe8
 ;
 ; Called Functions:
-;   FUN_005638e0
+;   crt_unknown.c_FUN_005638e0
 ;   FUN_00568ce0
 ;   FUN_00568e1c
 ;   VirtualAlloc
@@ -100,8 +100,8 @@ section .text
     INC EDI                             ; 00568df1
     PUSH EDX                            ; 00568df2
     MOV dword ptr [EBX + 0x18],EDI      ; 00568df3
-    CALL FUN_005638e0                   ; 00568df6
-        ;   XREF to: 005638e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638e0()
+    CALL crt_unknown.c_FUN_005638e0     ; 00568df6
+        ;   XREF to: 005638e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638e0()
     MOV EAX,0x1                         ; 00568dfb
     ADD ESP,0x4                         ; 00568e00
     POP EDI                             ; 00568e03

@@ -7,16 +7,16 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[49]:
-;   FUN_00401010 at 004010d1
-;   FUN_0046c300 at 0046c330
-;   FUN_00490210 at 0049026c
-;   FUN_004a4170 at 004a47bc
-;   FUN_004edfc0 at 004ee04f
 ;   core_actor.cpp_CDemonActor_load_FUN_0040c160 at 0040c19e
 ;   core_actor.cpp_archiveClothList_FUN_0040cf70 at 0040cfb4
 ;   core_actor.cpp_archiveFloat_FUN_0040c880 at 0040c89c
 ;   core_actor.cpp_archiveInteger_FUN_0040c900 at 0040c91d
 ;   core_actor.cpp_archiveLocation_FUN_0040c590 at 0040c5b9
+;   core_actor.cpp_archiveOrientation_FUN_0040c4f0 at 0040c514
+;   core_actor.cpp_archivePartStatus_FUN_0040cbf0 at 0040cc39
+;   core_actor.cpp_archiveQuaternion_FUN_0040c630 at 0040c658
+;   core_actor.cpp_archiveRules_FUN_0040d110 at 0040d154
+;   core_actor.cpp_archiveString_FUN_0040c6d0 at 0040c74f
 ;   ... and 39 more
 ;
 ; Called Functions:

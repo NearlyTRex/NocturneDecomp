@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -138,12 +138,6 @@
     "total_lines": 379
   },
   "cross_references": [
-    {
-      "addr": "00513720",
-      "from_addr": "00513809",
-      "name": "FUN_00513720",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "005084c0",
       "from_addr": "00508634",
@@ -172,6 +166,12 @@
       "addr": "0050a260",
       "from_addr": "0050a3cf",
       "name": "core_set.cpp_FUN_0050a260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00513720",
+      "from_addr": "00513809",
+      "name": "core_setdir.cpp_FUN_00513720",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -207,6 +207,16 @@
       "addr": "0046ace0",
       "is_variadic": false,
       "name": "core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_0046ace0"
+    },
+    {
+      "addr": "00469ce0",
+      "is_variadic": false,
+      "name": "core_dtrace.cpp_FUN_00469ce0"
+    },
+    {
+      "addr": "004ac7c0",
+      "is_variadic": false,
+      "name": "core_glass.cpp_FUN_004ac7c0"
     },
     {
       "addr": "004d7980",
@@ -262,16 +272,6 @@
       "addr": "00460c40",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_00460c40"
-    },
-    {
-      "addr": "00469ce0",
-      "is_variadic": false,
-      "name": "FUN_00469ce0"
-    },
-    {
-      "addr": "004ac7c0",
-      "is_variadic": false,
-      "name": "FUN_004ac7c0"
     }
   ],
   "globals": [
@@ -408,7 +408,7 @@
       {
         "call_addr": "00513809",
         "call_type": "direct",
-        "caller": "FUN_00513720",
+        "caller": "core_setdir.cpp_FUN_00513720",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -621,7 +621,7 @@
       "line": 33,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_00469ce0(&DAT_01fba938,param_2,uVar2);",
+      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,uVar2);",
       "type": "unnamed_param"
     },
     {
@@ -629,7 +629,7 @@
       "line": 33,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "FUN_00469ce0(&DAT_01fba938,param_2,uVar2);",
+      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,uVar2);",
       "type": "undefined_data"
     },
     {
@@ -773,7 +773,7 @@
       "line": 76,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_00469ce0(&DAT_01fba938,param_2,0);",
+      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,0);",
       "type": "unnamed_param"
     },
     {
@@ -781,7 +781,7 @@
       "line": 76,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "FUN_00469ce0(&DAT_01fba938,param_2,0);",
+      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,0);",
       "type": "undefined_data"
     },
     {
@@ -837,7 +837,7 @@
       "line": 91,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_00469ce0(&DAT_01fba938,param_2,0);",
+      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,0);",
       "type": "unnamed_param"
     },
     {
@@ -845,7 +845,7 @@
       "line": 91,
       "match": "DAT_01fba938",
       "severity": "mild",
-      "text": "FUN_00469ce0(&DAT_01fba938,param_2,0);",
+      "text": "core_dtrace_cpp_FUN_00469ce0(&DAT_01fba938,param_2,0);",
       "type": "undefined_data"
     },
     {

@@ -5,8 +5,7 @@
 ;
 ;
 ; XREF[13]:
-;   FUN_0042c4c0 at 0042c82c
-;   FUN_005159a0 at 00515bed
+;   core_chain.cpp_FUN_0042c4c0 at 0042c82c
 ;   core_fire.cpp_CBulletHole_render_FUN_00482f50 at 0048319b
 ;   core_fire.cpp_CCrater_render_FUN_00487af0 at 00487cfa
 ;   core_fire.cpp_CGlassParticle_render_FUN_004853c0 at 0048559d
@@ -15,6 +14,7 @@
 ;   core_fire.cpp_CTrail_render_FUN_00489360 at 00489606
 ;   core_gore.cpp_CBloodParticle_render_FUN_004ae190 at 004ae4f8
 ;   core_gore.cpp_CBloodPool_render_FUN_004af340 at 004af5e8
+;   core_gore.cpp_CBloodSplat_render_FUN_004aeb70 at 004aee53
 ;   ... and 3 more
 ;
 ; Referenced Globals:

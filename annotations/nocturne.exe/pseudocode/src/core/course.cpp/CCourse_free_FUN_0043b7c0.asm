@@ -7,8 +7,8 @@
 ; XREF[4]:
 ;   core_course.cpp_CCourse_allocMemory_FUN_0043b610 at 0043b617
 ;   core_course.cpp_CCourse_load_FUN_0043b690 at 0043b6a0
+;   core_course.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0 at 0043b5f6
 ;   core_moon.cpp_CMoon_free_FUN_004dea60 at 004dea75
-;   core_stairs.cpp_CDemonTriangle_arrdtor_FUN_0043b5f0 at 0043b5f6
 ;
 ; Called Functions:
 ;   shape_memdbg.cpp_free_FUN_00564486

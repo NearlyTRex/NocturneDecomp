@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(int param_1,float *param_2,float param_3)
 
 {
@@ -164,7 +162,8 @@ float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(int param_1
         iVar2 = *(int *)(local_18 + 0x1569c4);
         iVar3 = core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_005103f0(param_1,iVar2);
         if (iVar3 == 0) {
-          iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(iVar2,_DAT_02dc9e60);
+          iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                            (iVar2,g_CSpikeActorType_02dc9e28.name_hash);
           if (iVar3 == 0) {
             local_138 = iVar3;
             local_134 = iVar3;
@@ -178,9 +177,9 @@ float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(int param_1
                   iVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00454530
                                     (local_134);
                   if (*(int *)(iVar3 + 0x358) == 0) {
-                    _DAT_01cc4800 = "..\\core\\setcolid.cpp";
-                    _DAT_01cc4804 = 0xcb;
-                    FUN_004c8440("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",iVar3);
+                    PTR_01cc4800 = "..\\core\\setcolid.cpp";
+                    INT_01cc4804 = 0xcb;
+                    core_main_c_FUN_004c8440("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",iVar3);
                   }
                   fStack_58 = local_e8 - *(float *)(iVar2 + 0x20);
                   fStack_54 = local_e4 - *(float *)(iVar2 + 0x24);
@@ -203,7 +202,7 @@ float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(int param_1
                 }
                 else if (uVar4 < 2) {
                   if (uVar4 == 1) {
-                    __arrinit(auStack_308,8,&DAT_005993b0);
+                    __arrinit(auStack_308,8,&g_CVectorTypeInfo_005993b0);
                     puVar17 = auStack_308;
                     iVar3 = 0;
                     (**(code **)(*(int *)(iVar2 + 0x14c) + 0x14))(iVar2,auStack_130);
@@ -345,9 +344,9 @@ float core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_0050ec80(int param_1
                   }
                   else {
 LAB_0050f8bc:
-                    _DAT_01cc4800 = "..\\core\\setcolid.cpp";
-                    _DAT_01cc4804 = 299;
-                    FUN_004c8440("Invalid collision type!");
+                    PTR_01cc4800 = "..\\core\\setcolid.cpp";
+                    INT_01cc4804 = 299;
+                    core_main_c_FUN_004c8440("Invalid collision type!");
                   }
                 }
                 else if (2 < uVar4) {

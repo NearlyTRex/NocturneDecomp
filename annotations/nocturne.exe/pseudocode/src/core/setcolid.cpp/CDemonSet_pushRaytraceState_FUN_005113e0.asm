@@ -5,20 +5,20 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_0048b6f0 at 0048bc05
-;   FUN_004c71a0 at 004c7381
 ;   core_actor.cpp_FUN_0040a140 at 0040a156
+;   core_fire.cpp_FUN_0048b6f0 at 0048bc05
 ;   core_lightgun.cpp_CLightGun_canSeeTarget_FUN_004c70a0 at 004c70b6
+;   core_lightgun.cpp_FUN_004c71a0 at 004c7381
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_00590ac5
 ;   TerminatedCString s_CDemonSet_pushRaytraceSt_00590ada
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_020842d0
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -152,10 +152,10 @@ section .text
         ;   Label: LAB_00511556
     MOV ESI,0x406                       ; 0051155b
     PUSH 0x590ada                       ; 00511560 | = "CDemonSet::pushRaytraceState - stack ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00511565 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 0051156b | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00511571
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00511565 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 0051156b | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00511571
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00511576
     JMP 0x005113f5                      ; 00511579
         ;   XREF to: 005113f5 (UNCONDITIONAL_JUMP)  ; LAB_005113f5

@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[2]:
-;   FUN_0047a000 at 0047a021
-;   FUN_004eece0 at 004eed01
+;   core_enemy.cpp_FUN_0047a000 at 0047a021
+;   core_npc.cpp_FUN_004eece0 at 004eed01
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60

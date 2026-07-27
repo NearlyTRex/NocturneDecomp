@@ -5,9 +5,6 @@
 ;
 ;
 ; XREF[12]:
-;   FUN_0053f310 at 0053f5a2
-;   FUN_00540f50 at 005412f9
-;   FUN_0054dd50 at 0054df1e
 ;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00411530 at 004115cd
 ;   core_bodypart.cpp_createBodyPart_FUN_00415b30 at 00415bf3
 ;   core_gore.cpp_CGore_spawnFlies_FUN_004b0580 at 004b064c
@@ -15,6 +12,9 @@
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004d9920 at 004d9a40
 ;   core_mission.cpp_CDemonMission_ensureHeroPlaceholder_FUN_004d9c20 at 004d9d63
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004d7fe0 at 004d858e
+;   core_passngr.cpp_CPassenger_process_FUN_004ef890 at 004ef9b6
+;   core_stranger.cpp_FUN_0053f310 at 0053f5a2
+;   core_succubus.cpp_FUN_00540f50 at 005412f9
 ;   ... and 2 more
 ;
 ; Called Functions:

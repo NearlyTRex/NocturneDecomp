@@ -20,7 +20,7 @@
 ;   undefined4 DAT_005c1d98
 ;
 ; Called Functions:
-;   FUN_00565c12
+;   crt_unknown.c_FUN_00565c12
 ;   FUN_0056bd22
 ;   FUN_0056bdd2
 ;   FUN_0056bf67
@@ -120,8 +120,8 @@ section .text
     JNZ 0x00565b93                      ; 00565b86
         ;   XREF to: 00565b93 (CONDITIONAL_JUMP)  ; LAB_00565b93
     MOV AX,word ptr [EBP + -0x4]        ; 00565b88
-    CALL FUN_00565c12                   ; 00565b8c
-        ;   XREF to: 00565c12 (UNCONDITIONAL_CALL)  ; undefined FUN_00565c12()
+    CALL crt_unknown.c_FUN_00565c12     ; 00565b8c
+        ;   XREF to: 00565c12 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565c12()
     JMP 0x00565bbe                      ; 00565b91
         ;   XREF to: 00565bbe (UNCONDITIONAL_JUMP)  ; LAB_00565bbe
     INC AX                              ; 00565b93
@@ -132,8 +132,8 @@ section .text
     JZ 0x00565be8                       ; 00565b9b
         ;   XREF to: 00565be8 (CONDITIONAL_JUMP)  ; LAB_00565be8
     NEG AX                              ; 00565b9d
-    CALL FUN_00565c12                   ; 00565ba0
-        ;   XREF to: 00565c12 (UNCONDITIONAL_CALL)  ; undefined FUN_00565c12()
+    CALL crt_unknown.c_FUN_00565c12     ; 00565ba0
+        ;   XREF to: 00565c12 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565c12()
     FLD1                                ; 00565ba5
     TEST byte ptr [0x005c1d98],0x1      ; 00565ba7 | DAT_005c1d98
     JNZ 0x00565bb4                      ; 00565bae

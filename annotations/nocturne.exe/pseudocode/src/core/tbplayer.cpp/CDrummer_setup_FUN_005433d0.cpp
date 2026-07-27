@@ -12,7 +12,7 @@ void core_tbplayer_cpp_CDrummer_setup_FUN_005433d0(int param_1)
   uint uVar1;
   uint uVar2;
   
-  FUN_004ee9e0(param_1);
+  core_npc_cpp_FUN_004ee9e0(param_1);
   uVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(param_1 + 0x150);
   uVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(uVar1,"Bip01 L Hand",1);
   *(uint *)(param_1 + 0x1f570) = uVar2;

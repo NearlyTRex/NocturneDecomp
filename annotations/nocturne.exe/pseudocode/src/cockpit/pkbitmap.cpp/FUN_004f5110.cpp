@@ -1,14 +1,12 @@
-// Name: FUN_004f5110
+// Name: cockpit_pkbitmap.cpp_FUN_004f5110
 // Address: 004f5110
 // Address Range: [[004f5110, 004f5258]]
 // Convention: unknown
-// Signature: int FUN_004f5110(int *param_1,undefined4 param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6)
+// Signature: int cockpit_pkbitmap_cpp_FUN_004f5110(int *param_1,undefined4 param_2,int param_3,undefined4 param_4,undefined4 param_5,int param_6)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int FUN_004f5110(int *param_1,uint param_2,int param_3,uint param_4,uint param_5,int param_6)
+int cockpit_pkbitmap_cpp_FUN_004f5110(int *param_1,uint param_2,int param_3,uint param_4,uint param_5,int param_6)
 
 {
   int iVar1;
@@ -20,11 +18,11 @@ int FUN_004f5110(int *param_1,uint param_2,int param_3,uint param_4,uint param_5
   iVar1 = engine_dosio_cpp_getFile_FUN_00456a60("art",param_2,"rb");
   if (iVar1 == 0) {
     _sprintf(local_78,"Unable to open PBG file %s",param_2);
-    _DAT_01cc4804 = 0x598;
-    _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-    FUN_004c8440(local_78);
+    INT_01cc4804 = 0x598;
+    PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+    core_main_c_FUN_004c8440(local_78);
   }
-  iVar2 = FUN_004f4f90(param_1,iVar1,param_4,param_5,param_6);
+  iVar2 = cockpit_pkbitmap_cpp_FUN_004f4f90(param_1,iVar1,param_4,param_5,param_6);
   local_14 = iVar2;
   _fclose(iVar1);
   iVar1 = 0;

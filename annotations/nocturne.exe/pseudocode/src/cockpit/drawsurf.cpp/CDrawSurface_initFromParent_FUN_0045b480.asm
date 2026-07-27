@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0045e370 at 0045e3cc
-;   FUN_004fe9d0 at 004fea0e
+;   cockpit_drawsurf.cpp_FUN_0045e370 at 0045e3cc
+;   core_script.cpp_FUN_004fe9d0 at 004fea0e
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_init_FUN_0045b4c0

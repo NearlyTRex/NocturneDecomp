@@ -19,9 +19,9 @@ void core_netgame_cpp_CNetGame_processClientFrame_FUN_004ed720(int *param_1)
   
   if (((*param_1 == 2) && (param_1[1] == 3)) && (-1 < param_1[0x44])) {
     if (param_1[0x45] < 0) {
-      _DAT_01cc4800 = "..\\core\\netgame.cpp";
-      _DAT_01cc4804 = 0x97c;
-      FUN_004c8440("CNetGame::processClientFrame - I'm not in player list!");
+      PTR_01cc4800 = "..\\core\\netgame.cpp";
+      INT_01cc4804 = 0x97c;
+      core_main_c_FUN_004c8440("CNetGame::processClientFrame - I'm not in player list!");
     }
     core_netgame_cpp_CNetGame_updatePing_FUN_004ebe10(param_1,param_1[0x44],0x41200000);
     core_netgame_cpp_CNetGame_receivePackets_FUN_004ea740(param_1);

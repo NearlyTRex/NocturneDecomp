@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,23 +122,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1125,
-    "complexity_score": 1640,
+    "complexity_score": 1624,
     "cross_reference_count": 2,
     "function_call_count": 29,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 635,
-    "suspect_count": 97,
+    "pseudocode_lines": 634,
+    "suspect_count": 96,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
       "unnamed_param",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 1760
+    "total_lines": 1759
   },
   "cross_references": [
     {
@@ -169,24 +168,14 @@
   },
   "function_calls": [
     {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "00563a30",
       "is_variadic": false,
       "name": "crt_math.c_round_FUN_00563a30"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
-    },
-    {
-      "addr": "004e5200",
-      "is_variadic": false,
-      "name": "FUN_004e5200"
-    },
-    {
-      "addr": "004e6160",
-      "is_variadic": false,
-      "name": "FUN_004e6160"
     },
     {
       "addr": "004e7030",
@@ -294,6 +283,16 @@
       "name": "sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_004e7720"
     },
     {
+      "addr": "004e5200",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_FUN_004e5200"
+    },
+    {
+      "addr": "004e6160",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_FUN_004e6160"
+    },
+    {
       "addr": "004e5d80",
       "is_variadic": false,
       "name": "sound_mp3.cpp_reorderShortBlockSamples_FUN_004e5d80"
@@ -377,14 +376,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -1084,56 +1083,56 @@
         {
           "check_id": "uninitvar",
           "column": 13,
-          "line": 162,
+          "line": 160,
           "message": "Uninitialized variable: local_90",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 66,
-          "line": 621,
+          "line": 619,
           "message": "Uninitialized variable: local_104",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 82,
-          "line": 621,
+          "line": 619,
           "message": "Uninitialized variable: iStack_114",
           "severity": "error"
         },
         {
           "check_id": "uninitvar",
           "column": 13,
-          "line": 628,
+          "line": 626,
           "message": "Uninitialized variable: local_100",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 15,
-          "line": 614,
+          "line": 612,
           "message": "Uninitialized variable: iStack_108",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 28,
-          "line": 213,
+          "line": 211,
           "message": "Uninitialized variable: piStack_e4",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 20,
-          "line": 149,
+          "line": 147,
           "message": "Uninitialized variable: local_c8",
           "severity": "error"
         },
         {
           "check_id": "legacyUninitvar",
           "column": 36,
-          "line": 434,
+          "line": 432,
           "message": "Uninitialized variable: local_b8",
           "severity": "error"
         }
@@ -1144,16 +1143,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_1",
       "severity": "mild",
       "text": "int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ushort *param_2)",
@@ -1161,7 +1152,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 4,
+      "line": 2,
       "match": "param_2",
       "severity": "mild",
       "text": "int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_004e85b0(int **param_1,ushort *param_2)",
@@ -1169,7 +1160,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 109,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiVar11 = param_1 + 0x14c8;",
@@ -1177,7 +1168,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[0x14cf] == (int *)0x0) {",
@@ -1185,7 +1176,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
       "text": "if (((uint)param_1[0x14cb] & 7) != 0) {",
@@ -1193,7 +1184,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
       "text": "ppuStack_60d4 = (uint **)(8 - ((uint)param_1[0x14cb] & 7));",
@@ -1201,7 +1192,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
       "text": "while (((local_a4 & uVar3) != local_a8 && (param_1[0x14cf] == (int *)0x0))) {",
@@ -1209,7 +1200,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 130,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1[0x14cf] == (int *)0x0) {",
@@ -1217,7 +1208,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 131,
       "match": "param_1",
       "severity": "mild",
       "text": "local_b0 = param_1[0x14cb];",
@@ -1225,7 +1216,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 133,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60d8 = param_1 + 0x14c8;",
@@ -1233,7 +1224,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 147,
+      "line": 145,
       "match": "DAT_005bbc88",
       "severity": "mild",
       "text": "iVar5 = *(int *)(&DAT_005bbc88 + local_94 * 4 + local_14) / local_d0;",
@@ -1241,7 +1232,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 152,
+      "line": 150,
       "match": "DAT_005bbc48",
       "severity": "mild",
       "text": "(&DAT_005bbc48 +",
@@ -1249,7 +1240,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 175,
+      "line": 173,
       "match": "DAT_01cd8b28",
       "severity": "mild",
       "text": "ppiStack_60d8 = (int **)&DAT_01cd8b28;",
@@ -1257,7 +1248,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 193,
+      "line": 191,
       "match": "DAT_01cd8b28",
       "severity": "mild",
       "text": "ppiStack_60d8 = (int **)&DAT_01cd8b28;",
@@ -1265,7 +1256,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 207,
+      "line": 205,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiVar11 = param_1 + 0x14c8;",
@@ -1273,7 +1264,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 244,
+      "line": 242,
       "match": "(int *)((int)local_80",
       "severity": "moderate",
       "text": "piVar10 = (int *)((int)local_80 + local_60);",
@@ -1281,7 +1272,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 245,
+      "line": 243,
       "match": "(float *)((int)local_84",
       "severity": "moderate",
       "text": "pfVar6 = (float *)((int)local_84 + local_60);",
@@ -1289,7 +1280,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 250,
+      "line": 248,
       "match": "DAT_005bbdf0",
       "severity": "mild",
       "text": "*pfVar6 = *pfVar6 * (float)*(double *)(&DAT_005bbdf0 + iVar8 * 8);",
@@ -1297,7 +1288,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 262,
+      "line": 260,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60e4 = param_1;",
@@ -1305,7 +1296,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 263,
+      "line": 261,
       "match": "(ushort *)((int)ppiStack_60d8",
       "severity": "moderate",
       "text": "puVar12 = (ushort *)((int)ppiStack_60d8 + 0x480);",
@@ -1313,7 +1304,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 268,
+      "line": 266,
       "match": "(int **)((int)ppiVar11",
       "severity": "moderate",
       "text": "ppiVar11 = (int **)((int)ppiVar11 + 1);",
@@ -1321,7 +1312,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 313,
+      "line": 311,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 != (ushort *)0x0) {",
@@ -1329,7 +1320,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 319,
+      "line": 317,
       "match": "(int **)((int)apiStack_9cc",
       "severity": "moderate",
       "text": "ppiVar13 = (int **)((int)apiStack_9cc + local_30);",
@@ -1337,7 +1328,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 323,
+      "line": 321,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60e4 = param_1;",
@@ -1345,7 +1336,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 328,
+      "line": 326,
       "match": "(int **)((int)ppiVar11",
       "severity": "moderate",
       "text": "ppiVar11 = (int **)((int)ppiVar11 + 1);",
@@ -1353,7 +1344,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 344,
+      "line": 342,
       "match": "param_2",
       "severity": "mild",
       "text": "puVar12 = param_2;",
@@ -1361,7 +1352,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 346,
+      "line": 344,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = puVar12 + 1;",
@@ -1369,7 +1360,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 348,
+      "line": 346,
       "match": "(ushort *)((int)auStack_33cc",
       "severity": "moderate",
       "text": "*puVar12 = *(ushort *)((int)auStack_33cc + iVar9);",
@@ -1377,7 +1368,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 350,
+      "line": 348,
       "match": "param_2",
       "severity": "mild",
       "text": "puVar12 = param_2;",
@@ -1385,7 +1376,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 371,
+      "line": 369,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60e0 = param_1 + 0x14c8;",
@@ -1393,7 +1384,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 372,
+      "line": 370,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60e4 = param_1;",
@@ -1401,7 +1392,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 391,
+      "line": 389,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60e0 = param_1;",
@@ -1409,7 +1400,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 395,
+      "line": 393,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60d8 = param_1;",
@@ -1417,7 +1408,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 398,
+      "line": 396,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60d8 = param_1;",
@@ -1425,7 +1416,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 403,
+      "line": 401,
       "match": "(int **)((int)ppuStack_60d4",
       "severity": "moderate",
       "text": "ppiStack_60d8 = (int **)((int)ppuStack_60d4 - uVar4 % (uint)ppuStack_60d4);",
@@ -1433,7 +1424,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 404,
+      "line": 402,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60dc = param_1;",
@@ -1441,7 +1432,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 409,
+      "line": 407,
       "match": "param_1",
       "severity": "mild",
       "text": "local_74 = (int)param_1[0x14d3] + (-aiStack_4dc[0] - uVar3);",
@@ -1449,7 +1440,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 412,
+      "line": 410,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60dc = param_1;",
@@ -1457,7 +1448,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 413,
+      "line": 411,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x14d3] = param_1[0x14d3] + -0x400;",
@@ -1465,7 +1456,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 413,
+      "line": 411,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x14d3] = param_1[0x14d3] + -0x400;",
@@ -1473,7 +1464,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 425,
+      "line": 423,
       "match": "(int *)((int)param_1",
       "severity": "moderate",
       "text": "param_1[0x14d3] = (int *)((int)param_1[0x14d3] + iVar5);",
@@ -1481,7 +1472,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 425,
+      "line": 423,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x14d3] = (int *)((int)param_1[0x14d3] + iVar5);",
@@ -1489,7 +1480,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 425,
+      "line": 423,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x14d3] = (int *)((int)param_1[0x14d3] + iVar5);",
@@ -1497,7 +1488,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 436,
+      "line": 434,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60dc = param_1;",
@@ -1505,7 +1496,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 441,
+      "line": 439,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((param_2 != (ushort *)0x0) && (local_78 = 0, 0 < (int)local_b0)) {",
@@ -1513,7 +1504,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 448,
+      "line": 446,
       "match": "(int **)((int)apiStack_4c4",
       "severity": "moderate",
       "text": "ppiVar11 = (int **)((int)apiStack_4c4 + local_38);",
@@ -1521,7 +1512,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 450,
+      "line": 448,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60d8 = param_1;",
@@ -1529,7 +1520,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 459,
+      "line": 457,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60ec = param_1;",
@@ -1537,7 +1528,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 468,
+      "line": 466,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60ec = param_1;",
@@ -1545,7 +1536,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 477,
+      "line": 475,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60f0 = param_1;",
@@ -1553,7 +1544,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 529,
+      "line": 527,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60f0 = param_1;",
@@ -1561,7 +1552,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 544,
+      "line": 542,
       "match": "(float *)((int)afStack_18cc",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_18cc + iVar5) = -*(float *)((int)afStack_18cc + iVar5)",
@@ -1569,7 +1560,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 544,
+      "line": 542,
       "match": "(float *)((int)afStack_18cc",
       "severity": "moderate",
       "text": "*(float *)((int)afStack_18cc + iVar5) = -*(float *)((int)afStack_18cc + iVar5)",
@@ -1577,7 +1568,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 560,
+      "line": 558,
       "match": "(uint *)((int)afStack_18cc",
       "severity": "moderate",
       "text": "puVar1 = (uint *)((int)afStack_18cc + iVar9);",
@@ -1585,7 +1576,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 562,
+      "line": 560,
       "match": "(uint *)((int)apiStack_194",
       "severity": "moderate",
       "text": "*(uint *)((int)apiStack_194 + iVar8) = *puVar1;",
@@ -1593,7 +1584,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 567,
+      "line": 565,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60e4 = param_1;",
@@ -1601,7 +1592,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 569,
+      "line": 567,
       "match": "(ushort *)((int)ppiStack_60d8",
       "severity": "moderate",
       "text": "puVar12 = (ushort *)((int)ppiStack_60d8 + 0x40);",
@@ -1609,7 +1600,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 574,
+      "line": 572,
       "match": "(int **)((int)local_20",
       "severity": "moderate",
       "text": "local_20 = (int **)((int)local_20 + 1);",
@@ -1617,7 +1608,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 588,
+      "line": 586,
       "match": "param_2",
       "severity": "mild",
       "text": "puVar12 = param_2;",
@@ -1625,7 +1616,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 590,
+      "line": 588,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = puVar12 + 1;",
@@ -1633,7 +1624,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 592,
+      "line": 590,
       "match": "(ushort *)((int)auStack_33cc",
       "severity": "moderate",
       "text": "*puVar12 = *(ushort *)((int)auStack_33cc + iVar9);",
@@ -1641,7 +1632,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 594,
+      "line": 592,
       "match": "param_2",
       "severity": "mild",
       "text": "puVar12 = param_2;",
@@ -1649,7 +1640,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 614,
+      "line": 612,
       "match": "DAT_005bbc48",
       "severity": "mild",
       "text": "(&DAT_005bbc48 + local_104 * 8 + iStack_114 * 0x20))",
@@ -1657,7 +1648,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 615,
+      "line": 613,
       "match": "DAT_005bbc88",
       "severity": "mild",
       "text": "* (float10)*(int *)(&DAT_005bbc88 +",
@@ -1665,7 +1656,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 624,
+      "line": 622,
       "match": "param_1",
       "severity": "mild",
       "text": "local_68 = local_68 * (int)ppiStack_60d8 - ((int)param_1[0x14cb] + (0xc - local_b8));",
@@ -1673,7 +1664,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 629,
+      "line": 627,
       "match": "param_1",
       "severity": "mild",
       "text": "ppiStack_60dc = param_1 + 0x14c8;",
@@ -1681,7 +1672,7 @@
     },
     {
       "description": "Pointer value `local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 146,
+      "line": 144,
       "match": "(int)local_8c",
       "severity": "moderate",
       "text": "local_14 = (int)local_8c * 0xb4 + 0x3c;",
@@ -1689,7 +1680,7 @@
     },
     {
       "description": "Pointer value `local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 153,
+      "line": 151,
       "match": "(int)local_8c",
       "severity": "moderate",
       "text": "local_e0[4] * 8 + (int)local_8c * 0x20));",
@@ -1697,7 +1688,7 @@
     },
     {
       "description": "Pointer value `local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 191,
+      "line": 189,
       "match": "(int)local_8c",
       "severity": "moderate",
       "text": "if (((((int)local_8c < 1) || (3 < (int)local_8c)) || ((int)ppiVar11 < 0)) ||",
@@ -1705,7 +1696,7 @@
     },
     {
       "description": "Pointer value `local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 191,
+      "line": 189,
       "match": "(int)local_8c",
       "severity": "moderate",
       "text": "if (((((int)local_8c < 1) || (3 < (int)local_8c)) || ((int)ppiVar11 < 0)) ||",
@@ -1713,7 +1704,7 @@
     },
     {
       "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 191,
+      "line": 189,
       "match": "(int)ppiVar11",
       "severity": "moderate",
       "text": "if (((((int)local_8c < 1) || (3 < (int)local_8c)) || ((int)ppiVar11 < 0)) ||",
@@ -1721,7 +1712,7 @@
     },
     {
       "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 192,
+      "line": 190,
       "match": "(int)ppiVar11",
       "severity": "moderate",
       "text": "(3 < (int)ppiVar11)) {",
@@ -1729,7 +1720,7 @@
     },
     {
       "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 203,
+      "line": 201,
       "match": "(int)ppiVar11",
       "severity": "moderate",
       "text": "(\"$CMotionController$$\" + (int)ppiVar11 * 4 + (int)local_8c * 0x10 + 10);",
@@ -1737,7 +1728,7 @@
     },
     {
       "description": "Pointer value `local_8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 203,
+      "line": 201,
       "match": "(int)local_8c",
       "severity": "moderate",
       "text": "(\"$CMotionController$$\" + (int)ppiVar11 * 4 + (int)local_8c * 0x10 + 10);",
@@ -1745,7 +1736,7 @@
     },
     {
       "description": "Pointer value `local_80` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 244,
+      "line": 242,
       "match": "(int)local_80",
       "severity": "moderate",
       "text": "piVar10 = (int *)((int)local_80 + local_60);",
@@ -1753,7 +1744,7 @@
     },
     {
       "description": "Pointer value `local_84` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 245,
+      "line": 243,
       "match": "(int)local_84",
       "severity": "moderate",
       "text": "pfVar6 = (float *)((int)local_84 + local_60);",
@@ -1761,7 +1752,7 @@
     },
     {
       "description": "Pointer value `ppiStack_60d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 263,
+      "line": 261,
       "match": "(int)ppiStack_60d8",
       "severity": "moderate",
       "text": "puVar12 = (ushort *)((int)ppiStack_60d8 + 0x480);",
@@ -1769,7 +1760,7 @@
     },
     {
       "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 268,
+      "line": 266,
       "match": "(int)ppiVar11",
       "severity": "moderate",
       "text": "ppiVar11 = (int **)((int)ppiVar11 + 1);",
@@ -1777,7 +1768,7 @@
     },
     {
       "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 271,
+      "line": 269,
       "match": "(int)ppiVar11",
       "severity": "moderate",
       "text": "} while ((int)ppiVar11 < local_bc);",
@@ -1785,7 +1776,7 @@
     },
     {
       "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 328,
+      "line": 326,
       "match": "(int)ppiVar11",
       "severity": "moderate",
       "text": "ppiVar11 = (int **)((int)ppiVar11 + 1);",
@@ -1793,7 +1784,7 @@
     },
     {
       "description": "Pointer value `ppiVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 331,
+      "line": 329,
       "match": "(int)ppiVar11",
       "severity": "moderate",
       "text": "} while ((int)ppiVar11 < local_bc);",
@@ -1801,7 +1792,7 @@
     },
     {
       "description": "Pointer value `ppuStack_60d4` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 402,
+      "line": 400,
       "match": "(uint)ppuStack_60d4",
       "severity": "moderate",
       "text": "if (uVar4 % (uint)ppuStack_60d4 != 0) {",
@@ -1809,7 +1800,7 @@
     },
     {
       "description": "Pointer value `ppuStack_60d4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 403,
+      "line": 401,
       "match": "(int)ppuStack_60d4",
       "severity": "moderate",
       "text": "ppiStack_60d8 = (int **)((int)ppuStack_60d4 - uVar4 % (uint)ppuStack_60d4);",
@@ -1817,7 +1808,7 @@
     },
     {
       "description": "Pointer value `ppuStack_60d4` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 403,
+      "line": 401,
       "match": "(uint)ppuStack_60d4",
       "severity": "moderate",
       "text": "ppiStack_60d8 = (int **)((int)ppuStack_60d4 - uVar4 % (uint)ppuStack_60d4);",
@@ -1825,7 +1816,7 @@
     },
     {
       "description": "Pointer value `local_b0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 441,
+      "line": 439,
       "match": "(int)local_b0",
       "severity": "moderate",
       "text": "if ((param_2 != (ushort *)0x0) && (local_78 = 0, 0 < (int)local_b0)) {",
@@ -1833,7 +1824,7 @@
     },
     {
       "description": "Pointer value `ppiStack_60d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 569,
+      "line": 567,
       "match": "(int)ppiStack_60d8",
       "severity": "moderate",
       "text": "puVar12 = (ushort *)((int)ppiStack_60d8 + 0x40);",
@@ -1841,7 +1832,7 @@
     },
     {
       "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 574,
+      "line": 572,
       "match": "(int)local_20",
       "severity": "moderate",
       "text": "local_20 = (int **)((int)local_20 + 1);",
@@ -1849,7 +1840,7 @@
     },
     {
       "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 579,
+      "line": 577,
       "match": "(int)local_20",
       "severity": "moderate",
       "text": "} while ((int)local_20 < local_bc);",
@@ -1857,7 +1848,7 @@
     },
     {
       "description": "Pointer value `local_b0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 604,
+      "line": 602,
       "match": "(int)local_b0",
       "severity": "moderate",
       "text": "} while (local_78 < (int)local_b0);",
@@ -1865,7 +1856,7 @@
     },
     {
       "description": "Pointer value `ppiStack_60d8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 624,
+      "line": 622,
       "match": "(int)ppiStack_60d8",
       "severity": "moderate",
       "text": "local_68 = local_68 * (int)ppiStack_60d8 - ((int)param_1[0x14cb] + (0xc - local_b8));",
@@ -1873,7 +1864,7 @@
     },
     {
       "description": "Pointer value `local_b0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 635,
+      "line": 633,
       "match": "(int)local_b0",
       "severity": "moderate",
       "text": "return (int)local_b0 * 0x240;",
@@ -1881,7 +1872,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 378,
+      "line": 376,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -1889,7 +1880,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 419,
+      "line": 417,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {",
@@ -1897,7 +1888,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 151,
+      "line": 149,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "((float10)*(double *)",
@@ -1905,7 +1896,7 @@
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 202,
+      "line": 200,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "local_cc = *(uint ***)",
@@ -1924,7 +1915,7 @@
     },
     {
       "description": "Uninitialized variable: local_90",
-      "line": 162,
+      "line": 160,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (local_90 == 1) {",
@@ -1932,7 +1923,7 @@
     },
     {
       "description": "Uninitialized variable: local_104",
-      "line": 621,
+      "line": 619,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "(&DAT_005bbc48 + local_104 * 8 + iStack_114 * 0x20))",
@@ -1940,7 +1931,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_114",
-      "line": 621,
+      "line": 619,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "(&DAT_005bbc48 + local_104 * 8 + iStack_114 * 0x20))",
@@ -1948,7 +1939,7 @@
     },
     {
       "description": "Uninitialized variable: local_100",
-      "line": 628,
+      "line": 626,
       "match": "Cppcheck: uninitialized variable",
       "severity": "major",
       "text": "if (local_100 != 0) {",
@@ -1956,7 +1947,7 @@
     },
     {
       "description": "Uninitialized variable: iStack_108",
-      "line": 614,
+      "line": 612,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "if (0 < iStack_108) {",
@@ -1964,7 +1955,7 @@
     },
     {
       "description": "Uninitialized variable: piStack_e4",
-      "line": 213,
+      "line": 211,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_b0 = (int *)((*piStack_e4 != 0) + 1);",
@@ -1972,7 +1963,7 @@
     },
     {
       "description": "Uninitialized variable: local_c8",
-      "line": 149,
+      "line": 147,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "local_9c = local_c8;",
@@ -1980,7 +1971,7 @@
     },
     {
       "description": "Uninitialized variable: local_b8",
-      "line": 434,
+      "line": 432,
       "match": "Cppcheck: uninitialized variable (legacy detector)",
       "severity": "major",
       "text": "ppiStack_60d8 = (int **)(local_b8 + -1);",

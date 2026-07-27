@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(int param_1,uint param_2,int param_3)
 
 {
@@ -29,7 +27,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(int par
   int iStack_14;
   
   bVar9 = 0;
-  FUN_004f3f50(param_1);
+  cockpit_pkbitmap_cpp_FUN_004f3f50(param_1);
   do {
     iVar2 = _fread(abStack_2c,0x1c,1,param_2);
     if (iVar2 != 1) goto LAB_004f4d0f;
@@ -85,21 +83,21 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_004f4c80(int par
           }
         }
 LAB_004f4d0f:
-        _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-        _DAT_01cc4804 = 0x4b0;
-        FUN_004c8440("IO error reading PBM (possibly corrupt file).");
+        PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+        INT_01cc4804 = 0x4b0;
+        core_main_c_FUN_004c8440("IO error reading PBM (possibly corrupt file).");
         goto LAB_004f4cca;
       }
     }
     else {
 LAB_004f4cca:
-      _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-      _DAT_01cc4804 = 0x4b1;
-      FUN_004c8440("Corrupt data detected reading PBM.");
+      PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+      INT_01cc4804 = 0x4b1;
+      core_main_c_FUN_004c8440("Corrupt data detected reading PBM.");
     }
 LAB_004f4ced:
-    _DAT_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
-    _DAT_01cc4804 = 0x4b2;
-    FUN_004c8440("Out of memory reading PBM");
+    PTR_01cc4800 = "..\\cockpit\\pkbitmap.cpp";
+    INT_01cc4804 = 0x4b2;
+    core_main_c_FUN_004c8440("Out of memory reading PBM");
   } while( true );
 }

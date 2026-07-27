@@ -31,10 +31,10 @@
 ;   undefined4 DAT_01b4d738
 ;
 ; Called Functions:
+;   core_dcamera.cpp_FUN_004405d0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedDirect_FUN_0045f3c0
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
-;   FUN_004405d0
 ;
 ; *****************************************************************************
 
@@ -161,8 +161,8 @@ section .text
     PUSH EAX                            ; 004c212d
     PUSH 0x1fb8508                      ; 004c212e
     MOV dword ptr [ESP + 0x48],EBP      ; 004c2133
-    CALL FUN_004405d0                   ; 004c2137
-        ;   XREF to: 004405d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004405d0()
+    CALL core_dcamera.cpp_FUN_004405d0  ; 004c2137
+        ;   XREF to: 004405d0 (UNCONDITIONAL_CALL)  ; undefined core_dcamera.cpp_FUN_004405d0()
     ADD ESP,0x14                        ; 004c213c
     ADD ESP,0x38                        ; 004c213f
     POP EBP                             ; 004c2142

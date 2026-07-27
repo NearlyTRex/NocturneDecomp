@@ -1,14 +1,14 @@
-// Name: FUN_00461720
+// Name: engine_drender.cpp_FUN_00461720
 // Address: 00461720
 // Address Range: [[00461720, 004619ec]]
 // Convention: unknown
-// Signature: void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
+// Signature: void engine_drender_cpp_FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
+void engine_drender_cpp_FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
 
 {
   uint uVar1;
@@ -28,10 +28,10 @@ void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
     if (((param_1[4] == 0) && (param_1[3] == 0)) && (DAT_006b0280 != 0)) {
       if (param_1[1] == 0) {
         if (DAT_005b7624 == 0x20) {
-          _DAT_01c00c7c = FUN_0052f031;
+          _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
         }
         else {
-          _DAT_01c00c7c = FUN_0052f823;
+          _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
         }
         _DAT_01c039a0 = param_4;
         _DAT_01c039a4 = 6;
@@ -65,9 +65,9 @@ void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
                 *(ushort **)(&DAT_005ae70c + local_14) = param_2;
                 local_14 = iVar3;
                 if (1999 < iVar4) {
-                  _DAT_01cc4800 = "..\\engine\\drender.cpp";
-                  _DAT_01cc4804 = 0x9e1;
-                  FUN_004c8440("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar4);
+                  PTR_01cc4800 = "..\\engine\\drender.cpp";
+                  INT_01cc4804 = 0x9e1;
+                  core_main_c_FUN_004c8440("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar4);
                 }
               }
               local_18 = local_18 + 1;
@@ -75,14 +75,14 @@ void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
             } while (local_18 < param_3);
           }
           if (0 < iVar4) {
-            wincore_windll_cpp_drawPolyList2_FUN_005327c0
+            engine_special_cpp_drawPolyList2_FUN_005327c0
                       (*param_1,&DAT_005ae70c,iVar4,_DAT_01c039a0);
             return;
           }
         }
       }
       else {
-        _DAT_01c00c7c = FUN_00463a79;
+        _DAT_01c00c7c = core_dstrender_cpp_FUN_00463a79;
         _DAT_01c039a0 = 0;
         _DAT_01c039a4 = 0;
         uVar1 = 0;

@@ -186,12 +186,12 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(int param_
     for (iStack_40 = 0; iStack_40 < *(int *)(0x01E57284 + 0x152b38); iStack_40 = iStack_40 + 1) {
       iVar6 = core_actor_cpp_castToClassHash_FUN_0040d890
                         (*(uint *)(0x01E57284 + iStack_3c + 0x152b3c),
-                         CDemonActorType_00765a60.name_hash);
+                         g_CCharacterActorType_00765a60.name_hash);
       if ((iVar6 == 0) ||
          ((iVar7 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x104))(iVar6), iVar7 == 0 &&
           (iVar6 = (**(code **)(*(int *)(iVar6 + 0x14c) + 0x68))(iVar6), iVar6 == 0)))) {
         iStack_1c = *(int *)(0x01E57284 + iStack_3c + 0x152b3c);
-        __arrinit(auStack_1a0,10,&DAT_005993b0);
+        __arrinit(auStack_1a0,10,&g_CVectorTypeInfo_005993b0);
         iStack_28 = (**(code **)(*(int *)(iStack_1c + 0x14c) + 0x4c))(iStack_1c,auStack_1a0);
         if ((0 < iStack_28) && (iVar6 = 0, 0 < iStack_28)) {
           puVar10 = auStack_1a0;

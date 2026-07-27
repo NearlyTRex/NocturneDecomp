@@ -40,9 +40,9 @@ void core_set_cpp_CDemonSet_initScene_FUN_005084c0(int *param_1)
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00446740(0x1fb8508,param_1[0x5335a]);
   do {
     if (*(int *)(&DAT_01fb99d4 + iVar4) != 0) {
-      _DAT_01cc4800 = "..\\core\\set.cpp";
-      _DAT_01cc4804 = 0x35b;
-      FUN_004c8440("CDemonSet::initScene - Memory leakage detected in masterSpotList");
+      PTR_01cc4800 = "..\\core\\set.cpp";
+      INT_01cc4804 = 0x35b;
+      core_main_c_FUN_004c8440("CDemonSet::initScene - Memory leakage detected in masterSpotList");
     }
     iVar4 = iVar4 + 4;
   } while (iVar4 != 0x180);
@@ -57,9 +57,9 @@ void core_set_cpp_CDemonSet_initScene_FUN_005084c0(int *param_1)
         core_setutil_cpp_C3DSLight_apply_FUN_00515350(param_1 + iVar4 * 0x626 + 0x6592,uVar1);
         _DAT_01fb99d0 = _DAT_01fb99d0 + 1;
         if (0x60 < _DAT_01fb99d0) {
-          _DAT_01cc4800 = "..\\core\\set.cpp";
-          _DAT_01cc4804 = 0x372;
-          FUN_004c8440("CDemonSet::initScene - Too many spotlights!");
+          PTR_01cc4800 = "..\\core\\set.cpp";
+          INT_01cc4804 = 0x372;
+          core_main_c_FUN_004c8440("CDemonSet::initScene - Too many spotlights!");
         }
       }
       iVar4 = iVar4 + 1;

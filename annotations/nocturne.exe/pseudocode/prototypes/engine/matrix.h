@@ -7,6 +7,10 @@
 // Address: 004cc9d0
 undefined8 __cdecl initializeTrigTables(void);
 
+// Original: engine_matrix.c_FUN_004cca50
+// Address: 004cca50
+void FUN_004cca50(void);
+
 // Original: engine_matrix.c_interpolatedSin_FUN_004cca60
 // Address: 004cca60
 int __cdecl interpolatedSin(uint param_1);
@@ -26,6 +30,10 @@ void __cdecl buildRotationMatrix(undefined4 param_1,undefined4 param_2,undefined
 // Original: engine_matrix.c_transformWorldToView_FUN_004cd0e0
 // Address: 004cd0e0
 void transformWorldToView(int *param_1);
+
+// Original: engine_matrix.c_FUN_004cd1b0
+// Address: 004cd1b0
+int FUN_004cd1b0(void);
 
 // Original: engine_matrix.c_transformToCache_FUN_004cd210
 // Address: 004cd210
@@ -59,9 +67,25 @@ void __cdecl pop(void);
 // Address: 004cdcd0
 int calculate3DDistance(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
 
+// Original: engine_matrix.c_FUN_004cdd30
+// Address: 004cdd30
+int FUN_004cdd30(int param_1);
+
+// Original: engine_matrix.c_FUN_004cde10
+// Address: 004cde10
+void FUN_004cde10(int *param_1);
+
 // Original: engine_matrix.c_normalizeVector3DFloat_FUN_004cde90
 // Address: 004cde90
 int * normalizeVector3DFloat(int *param_1);
+
+// Original: engine_matrix.c_FUN_004cdf70
+// Address: 004cdf70
+int FUN_004cdf70(void);
+
+// Original: engine_matrix.c_FUN_004cdfa0
+// Address: 004cdfa0
+void FUN_004cdfa0(int param_1,undefined4 param_2,int param_3);
 
 // Original: engine_matrix.c_setCameraOrigin_FUN_004ce710
 // Address: 004ce710
@@ -86,3 +110,15 @@ void __cdecl pushViewport(int param_1,int param_2,int param_3,int param_4);
 // Original: engine_matrix.c_popViewport_FUN_004ce920
 // Address: 004ce920
 void __cdecl popViewport(void);
+
+// Original: engine_matrix.c_FUN_004cea50
+// Address: 004cea50
+int FUN_004cea50(int param_1);
+
+// Original: engine_matrix.c_FUN_004ceae0
+// Address: 004ceae0
+void FUN_004ceae0(int param_1,int param_2,int param_3);
+
+// Original: engine_matrix.c_FUN_004ceb90
+// Address: 004ceb90
+void FUN_004ceb90(void);

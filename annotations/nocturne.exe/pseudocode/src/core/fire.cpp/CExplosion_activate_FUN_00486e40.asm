@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_0048c0d0 at 0048c0f5
+;   core_fire.cpp_FUN_0048c0d0 at 0048c0f5
 ;
 ; Referenced Globals:
 ;   float FLOAT_00581210 = 30

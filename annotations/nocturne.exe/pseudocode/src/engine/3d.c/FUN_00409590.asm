@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00409510 at 00409575
 ;   engine_3d.c_FUN_00405900 at 00405986
+;   engine_3d.c_FUN_00409510 at 00409575
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006af5bc

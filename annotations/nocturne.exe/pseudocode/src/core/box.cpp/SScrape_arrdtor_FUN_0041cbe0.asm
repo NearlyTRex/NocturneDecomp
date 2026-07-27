@@ -8,7 +8,7 @@
 ;   core_box.cpp_CBox_dtor_FUN_0041a6c0 at 0041a6cc
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059aa60
+;   WatcomTypeInfo g_SScrapeTypeInfo_0059aa60
 ;
 ; Called Functions:
 ;   crt_memory.c___arrfini_FUN_0056494f
@@ -17,7 +17,7 @@
 
 section .text
 
-    PUSH 0x59aa60                       ; 0041cbe0 | DAT_0059aa60
+    PUSH 0x59aa60                       ; 0041cbe0 | g_SScrapeTypeInfo_0059aa60
         ;   Label: core_box.cpp_SScrape_arrdtor_FUN_0041cbe0
     PUSH 0x8                            ; 0041cbe5
     MOV EDX,dword ptr [ESP + 0xc]       ; 0041cbe7

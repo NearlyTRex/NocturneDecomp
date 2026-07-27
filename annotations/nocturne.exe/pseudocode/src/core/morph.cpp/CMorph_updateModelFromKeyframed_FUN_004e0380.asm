@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00415760 at 004157f5
-;   FUN_00541640 at 00541774
-;   FUN_0054dac0 at 0054dbea
+;   core_biggs.cpp_FUN_00415760 at 004157f5
+;   core_succubus.cpp_FUN_00541640 at 00541774
+;   core_vampboss.cpp_FUN_0054dac0 at 0054dbea
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_animateFromKeyframedModel_FUN_004df7c0

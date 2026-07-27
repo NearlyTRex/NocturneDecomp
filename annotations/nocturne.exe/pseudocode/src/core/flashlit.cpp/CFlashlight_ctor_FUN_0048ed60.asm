@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0048ed30 at 0048ed43
+;   core_flashlit.cpp_FUN_0048ed30 at 0048ed43
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_flashlit_kfm_005816c2

@@ -2,7 +2,7 @@
 // Address: 0052c760
 // Address Range: [[0052c760, 0052c7a6]]
 // Convention: __cdecl
-// Signature: undefined1 * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_0052c760(UINT_PTR param_1)
+// Signature: undefined * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_0052c760(UINT_PTR param_1)
 
 #include "nocturne.h"
 

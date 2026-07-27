@@ -1,14 +1,12 @@
-// Name: FUN_00431e10
+// Name: engine_clipper.c_FUN_00431e10
 // Address: 00431e10
 // Address Range: [[00431e10, 00431f3d]]
 // Convention: unknown
-// Signature: int FUN_00431e10(int *param_1,int param_2,int param_3)
+// Signature: int engine_clipper_c_FUN_00431e10(int *param_1,int param_2,int param_3)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int FUN_00431e10(int *param_1,int param_2,int param_3)
+int engine_clipper_c_FUN_00431e10(int *param_1,int param_2,int param_3)
 
 {
   int iVar1;
@@ -38,9 +36,9 @@ int FUN_00431e10(int *param_1,int param_2,int param_3)
         break;
       case 1:
         if (0xb < DAT_00767b38) {
-          _DAT_01cc4800 = "..\\engine\\clipper.c";
-          _DAT_01cc4804 = 0x5e;
-          FUN_004c8440("Ran out of clipped verts!");
+          PTR_01cc4800 = "..\\engine\\clipper.c";
+          INT_01cc4804 = 0x5e;
+          core_main_c_FUN_004c8440("Ran out of clipped verts!");
         }
         iVar3 = DAT_00767b38 * 0x30;
         iVar4 = iVar4 + 1;
@@ -51,9 +49,9 @@ int FUN_00431e10(int *param_1,int param_2,int param_3)
       case 2:
         *(int *)(param_2 + -4 + (iVar4 + 1) * 4) = iVar5;
         if (0xb < iVar3) {
-          _DAT_01cc4800 = "..\\engine\\clipper.c";
-          _DAT_01cc4804 = 0x5e;
-          FUN_004c8440("Ran out of clipped verts!");
+          PTR_01cc4800 = "..\\engine\\clipper.c";
+          INT_01cc4804 = 0x5e;
+          core_main_c_FUN_004c8440("Ran out of clipped verts!");
         }
         iVar3 = DAT_00767b38 * 0x30;
         iVar4 = iVar4 + 2;

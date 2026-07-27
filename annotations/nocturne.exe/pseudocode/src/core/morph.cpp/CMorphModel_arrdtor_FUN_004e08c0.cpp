@@ -9,6 +9,6 @@
 void __cdecl core_morph_cpp_CMorphModel_arrdtor_FUN_004e08c0(uint param_1)
 
 {
-  __arrfini(param_1,2,&DAT_005a0ce0);
+  __arrfini(param_1,2,&g_CMorphModelTypeInfo_005a0ce0);
   return;
 }

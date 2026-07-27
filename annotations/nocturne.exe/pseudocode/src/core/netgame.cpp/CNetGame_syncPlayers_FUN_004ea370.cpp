@@ -28,9 +28,9 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
   
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   if (param_2 < 1) {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 0x337;
-    FUN_004c8440("CNetGame::syncPlayers - don't use 0!");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 0x337;
+    core_main_c_FUN_004c8440("CNetGame::syncPlayers - don't use 0!");
   }
   if (*param_1 == 0) {
     return 1;
@@ -51,7 +51,7 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
     local_24 = _DAT_01cea3f8 + -0x1e0000;
     local_20 = param_1 + 8;
     while( true ) {
-      wincore_windll_cpp_clearScreen_FUN_0052ee70();
+      engine_special_cpp_clearScreen_FUN_0052ee70();
       _sprintf(local_194,"Syncing stage %d.",param_2);
       engine_2d_c_drawText_FUN_00402600(local_194,0,0xb);
       engine_2d_c_drawText_FUN_00402600("Waiting on:",0,0x16);
@@ -116,7 +116,7 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
       return 1;
     }
     while (_DAT_01cea400 < param_2) {
-      wincore_windll_cpp_clearScreen_FUN_0052ee70();
+      engine_special_cpp_clearScreen_FUN_0052ee70();
       _sprintf(local_94,"Waiting on sync code %d from server...",param_2);
       engine_2d_c_drawText_FUN_00402600(local_94,0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
@@ -129,9 +129,9 @@ uint __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_004ea370(int *param_1,int
     }
   }
   else {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 0x3c0;
-    FUN_004c8440("CNetGame::syncPlayers - invalid mode");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 0x3c0;
+    core_main_c_FUN_004c8440("CNetGame::syncPlayers - invalid mode");
   }
   return 1;
 }

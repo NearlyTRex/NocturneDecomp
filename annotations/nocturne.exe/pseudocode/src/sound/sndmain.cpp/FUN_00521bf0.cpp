@@ -1,15 +1,15 @@
-// Name: FUN_00521bf0
+// Name: sound_sndmain.cpp_FUN_00521bf0
 // Address: 00521bf0
 // Address Range: [[00521bf0, 00521c4f]]
 // Convention: unknown
-// Signature: int FUN_00521bf0(void)
+// Signature: int sound_sndmain_cpp_FUN_00521bf0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-int FUN_00521bf0(void)
+int sound_sndmain_cpp_FUN_00521bf0(void)
 
 {
   int iVar1;
@@ -17,9 +17,9 @@ int FUN_00521bf0(void)
   int iVar3;
   
   if (_DAT_02dc84bc < 1) {
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x1f6;
-    FUN_004c8440("SfxSlot::kill - must be locked!");
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x1f6;
+    core_main_c_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
   iVar3 = 0;
   iVar2 = 0;

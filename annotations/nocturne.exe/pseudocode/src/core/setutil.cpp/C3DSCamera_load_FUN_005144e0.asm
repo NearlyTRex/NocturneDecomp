@@ -29,10 +29,10 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_loadCameraFog_FUN_00447d10
+;   core_setutil.cpp_FUN_00514470
 ;   crt_stdio.c_fgets_FUN_00564b20
 ;   crt_stdio.c_fscanf_FUN_00563350
 ;   crt_stdio.c_sscanf_FUN_00566b5c
-;   FUN_00514470
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x114]     ; 005144ea
     MOV ESI,dword ptr [ESP + 0x118]     ; 005144f1
     PUSH EBX                            ; 005144f8
-    CALL FUN_00514470                   ; 005144f9
-        ;   XREF to: 00514470 (UNCONDITIONAL_CALL)  ; undefined FUN_00514470()
+    CALL core_setutil.cpp_FUN_00514470  ; 005144f9
+        ;   XREF to: 00514470 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_FUN_00514470()
     MOV EAX,[0x005be368]                ; 005144fe | DAT_005be368
     MOV EDX,dword ptr [EAX + 0x15a8c4]  ; 00514503 | DAT_01fb1b48
     ADD ESP,0x4                         ; 00514509

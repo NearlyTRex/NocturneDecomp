@@ -60,8 +60,8 @@
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_00423ed0
 ;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004798e0
 ;   core_enemy.cpp_CEnemy_updatePatrol_FUN_0047a030
+;   core_gore.cpp_FUN_004b0480
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
-;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004e1660
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -378,8 +378,8 @@ section .text
     PUSH EAX                            ; 0043c105
     MOV ESI,dword ptr [0x005b96c4]      ; 0043c106 | INT_005b96c4
     PUSH ESI                            ; 0043c10c
-    CALL FUN_004b0480                   ; 0043c10d
-        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()
+    CALL core_gore.cpp_FUN_004b0480     ; 0043c10d
+        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004b0480()
     ADD ESP,0xc                         ; 0043c112
     MOV dword ptr [EBX + 0xbc90],0x1    ; 0043c115
     JMP 0x0043beab                      ; 0043c11f

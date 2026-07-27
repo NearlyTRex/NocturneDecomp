@@ -77,7 +77,7 @@ uint sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0052c460(uint *param_1,uint para
     *param_4 = _DAT_02dc9434;
     return 1;
   }
-  FUN_00529980("waveOutOpen failed");
+  sound_sndmain_cpp_FUN_00529980("waveOutOpen failed");
 LAB_0052c613:
   (**(code **)*param_1)(param_1);
   return 0;

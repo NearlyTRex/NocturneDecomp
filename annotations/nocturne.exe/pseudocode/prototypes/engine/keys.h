@@ -3,6 +3,10 @@
 // Function prototypes for engine/keys.cpp
 // Generated from Ghidra function signatures
 
+// Original: engine_keys.cpp_staticInit_FUN_004c4170
+// Address: 004c4170
+void __cdecl staticInit(void);
+
 // Original: engine_keys.cpp_CKeys_getKeyState_FUN_004c4180
 // Address: 004c4180
 undefined1 CKeys::getKeyState(undefined4 param_1,int param_2);

@@ -1,21 +1,20 @@
-// Name: FUN_00548e70
+// Name: support_trisock.cpp_FUN_00548e70
 // Address: 00548e70
 // Address Range: [[00548e70, 00548e97]]
 // Convention: unknown
-// Signature: undefined4 FUN_00548e70(void)
+// Signature: undefined4 support_trisock_cpp_FUN_00548e70(void)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-uint FUN_00548e70(void)
+uint support_trisock_cpp_FUN_00548e70(void)
 
 {
   uint in_stack_00000004;
   
-  _DAT_01cc4800 = "..\\support\\trisock.cpp";
-  _DAT_01cc4804 = 0xd0;
-  FUN_004c8440("Should never be called!");
+  PTR_01cc4800 = "..\\support\\trisock.cpp";
+  INT_01cc4804 = 0xd0;
+  core_main_c_FUN_004c8440("Should never be called!");
   return in_stack_00000004;
 }

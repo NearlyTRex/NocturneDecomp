@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004dd900 at 004dd913
+;   core_moloch.cpp_FUN_004dd900 at 004dd913
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_moloch_h_dfm_0058a712
@@ -20,10 +20,10 @@
 ;   undefined1* PTR_core_moloch.cpp_CMoloch_setup_FUN_004dda70_005a0ac4 = 004dda70
 ;
 ; Called Functions:
+;   core_hero.cpp_FUN_004b46d0
 ;   core_morph.cpp_CMorph_ctor_FUN_004e0050
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0051b660
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0
-;   FUN_004b46d0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH EDI                            ; 004dd932
     MOV EBX,dword ptr [ESP + 0x10]      ; 004dd933
     PUSH EBX                            ; 004dd937
-    CALL FUN_004b46d0                   ; 004dd938
-        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined FUN_004b46d0()
+    CALL core_hero.cpp_FUN_004b46d0     ; 004dd938
+        ;   XREF to: 004b46d0 (UNCONDITIONAL_CALL)  ; undefined core_hero.cpp_FUN_004b46d0()
     ADD ESP,0x4                         ; 004dd93d
     ADD EAX,0x1fa3c                     ; 004dd940
     PUSH EAX                            ; 004dd945

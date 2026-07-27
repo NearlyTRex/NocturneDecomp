@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0051f080(int param_1,int param_2,int param_3)
 
 {
@@ -24,9 +22,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
   float10 fVar9;
   
   if (*(int *)(param_1 + 0x2230) < 0) {
-    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-    _DAT_01cc4804 = 0xfa7;
-    FUN_004c8440("CDeformableModelInstance::computeCylindricalUVs - points not generated");
+    PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    INT_01cc4804 = 0xfa7;
+    core_main_c_FUN_004c8440("CDeformableModelInstance::computeCylindricalUVs - points not generated");
   }
   iVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020(param_1);
   iVar1 = *(int *)(iVar1 + 0x2c + *(int *)(param_1 + 0x2230) * 4);

@@ -31,13 +31,13 @@
 ;   core_charactr.cpp_FUN_004259f0
 ;   core_charactr.cpp_FUN_00428c00
 ;   core_charactr.cpp_FUN_0042a150
+;   core_gore.cpp_FUN_004b0480
 ;   core_motion.cpp_CMotionController_advance_FUN_004e11c0
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004e1740
 ;   core_motion.cpp_CMotionList_findStateIndex_FUN_004e10a0
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
-;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -141,8 +141,8 @@ section .text
     PUSH EAX                            ; 004eeaec
     MOV EAX,[0x005b96c4]                ; 004eeaed | INT_005b96c4
     PUSH EAX                            ; 004eeaf2
-    CALL FUN_004b0480                   ; 004eeaf3
-        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()
+    CALL core_gore.cpp_FUN_004b0480     ; 004eeaf3
+        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004b0480()
     ADD ESP,0xc                         ; 004eeaf8
     MOV dword ptr [EBX + 0x1f56c],0x1   ; 004eeafb
     FLD float ptr [EBP + 0x18]          ; 004eeb05

@@ -49,8 +49,8 @@
 ;   engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0
 ;   engine_font.cpp_CBitFont_wrapText_FUN_00492f30
+;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;   support_newmsg.cpp_getLocalizedString_FUN_004ee370
-;   wincore_windll.cpp_clearScreen_FUN_0052ee70
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0 ; 004a66b1
         ;   XREF to: 0040e3c0 (UNCONDITIONAL_CALL)  ; undefined engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040e3c0()
     ADD ESP,0x10                        ; 004a66b6
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004a66b9
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004a66b9
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
     PUSH 0xffff                         ; 004a66be
     PUSH 0x0                            ; 004a66c3
     PUSH 0x0                            ; 004a66c5

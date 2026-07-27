@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_0049cc10 at 0049d3ed
-;   FUN_005464a0 at 00546648
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00480d60 at 00480e3e
+;   core_game.cpp_FUN_0049cc10 at 0049d3ed
+;   core_tommygun.cpp_FUN_005464a0 at 00546648
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005234b0

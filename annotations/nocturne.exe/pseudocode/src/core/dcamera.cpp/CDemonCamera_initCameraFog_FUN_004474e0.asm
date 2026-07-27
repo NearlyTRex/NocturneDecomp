@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
-;   wincore_windll.cpp_setFogColor_FUN_00532af0
+;   engine_special.cpp_setFogColor_FUN_00532af0
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 0044751d | DAT_00b0e1fc
     AND EAX,0xff                        ; 00447524
     PUSH EAX                            ; 00447529
-    CALL wincore_windll.cpp_setFogColor_FUN_00532af0 ; 0044752a
-        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_setFogColor_FUN_00532af0()
+    CALL engine_special.cpp_setFogColor_FUN_00532af0 ; 0044752a
+        ;   XREF to: 00532af0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_setFogColor_FUN_00532af0()
     FLD double ptr [0x0057bae3]         ; 0044752f | DOUBLE_0057bae3
     FLD float ptr [EBX + 0xc]           ; 00447535
     FMUL ST1                            ; 00447538

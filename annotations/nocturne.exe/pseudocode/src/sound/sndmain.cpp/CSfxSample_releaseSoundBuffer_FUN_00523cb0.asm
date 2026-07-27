@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00522480 at 005227a4
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60 at 00523a70
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 005243cd
+;   sound_sndmain.cpp_FUN_00522480 at 005227a4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02dc8318

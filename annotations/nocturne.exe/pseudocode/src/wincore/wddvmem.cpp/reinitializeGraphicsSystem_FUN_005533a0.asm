@@ -11,7 +11,7 @@
 ;   undefined4 DAT_005b761c
 ;   undefined4 DAT_005b7620
 ;   undefined4 DAT_005b7624
-;   undefined4 DAT_02dc9d60
+;   int INT_02dc9d60
 ;   undefined4 DAT_02ddf550
 ;   undefined4 DAT_02ddf554
 ;   undefined4 DAT_02ddf558
@@ -21,8 +21,8 @@
 ;
 ; Called Functions:
 ;   DirectDrawCreate
+;   engine_special.cpp_restoreVideoMode_FUN_005325f0
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
-;   wincore_windll.cpp_restoreVideoMode_FUN_005325f0
 ;
 ; *****************************************************************************
 
@@ -31,7 +31,7 @@ section .text
     PUSH EBP                            ; 005533a0
         ;   Label: wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005533a0
     XOR EDX,EDX                         ; 005533a1
-    MOV ECX,dword ptr [0x02dc9d60]      ; 005533a3 | DAT_02dc9d60
+    MOV ECX,dword ptr [0x02dc9d60]      ; 005533a3 | INT_02dc9d60
     MOV dword ptr [0x02ddf568],EDX      ; 005533a9 | DAT_02ddf568
     TEST ECX,ECX                        ; 005533af
     JNZ 0x005533b5                      ; 005533b1
@@ -42,8 +42,8 @@ section .text
         ;   Label: LAB_005533b5
     PUSH ESI                            ; 005533b6
     PUSH EBX                            ; 005533b7
-    CALL wincore_windll.cpp_restoreVideoMode_FUN_005325f0 ; 005533b8
-        ;   XREF to: 005325f0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_restoreVideoMode_FUN_005325f0()
+    CALL engine_special.cpp_restoreVideoMode_FUN_005325f0 ; 005533b8
+        ;   XREF to: 005325f0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_restoreVideoMode_FUN_005325f0()
     MOV EBX,dword ptr [0x02ddf55c]      ; 005533bd | DAT_02ddf55c
     TEST EBX,EBX                        ; 005533c3
     JZ 0x005533d5                       ; 005533c5

@@ -12,8 +12,8 @@
 ;   undefined4 DAT_005a46b8
 ;   undefined4 DAT_005a46c0
 ;   void* PTR_crt_strstream.cpp_ostrstream_dtor_FUN_00564e98_005a46cc = 00564e98
-;   void* PTR_FUN_005a46d4 = 00564e3d
-;   void* PTR_FUN_005a46dc = 00564e53
+;   void* PTR_crt_unknown.c_FUN_00564e3d_005a46d4 = 00564e3d
+;   void* PTR_crt_unknown.c_FUN_00564e53_005a46dc = 00564e53
 ;
 ; Called Functions:
 ;   FUN_0056b405
@@ -72,10 +72,10 @@ section .text
     MOV dword ptr [ECX + -0x4],EAX      ; 00564def
     MOV dword ptr [EDX + 0x44],0x5a46cc ; 00564df2 | PTR_crt_strstream.cpp_ostrstream_dtor_FUN_00564e98_005a46cc
     MOV EAX,dword ptr [EDX]             ; 00564df9
-    MOV dword ptr [EDX + 0x4c],0x5a46d4 ; 00564dfb | PTR_FUN_005a46d4
+    MOV dword ptr [EDX + 0x4c],0x5a46d4 ; 00564dfb | PTR_crt_unknown.c_FUN_00564e3d_005a46d4
     MOV EAX,dword ptr [EAX + 0x4]       ; 00564e02
     ADD ESP,0x8                         ; 00564e05
-    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a46dc ; 00564e08 | PTR_FUN_005a46dc
+    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a46dc ; 00564e08 | PTR_crt_unknown.c_FUN_00564e53_005a46dc
     MOV EAX,EDX                         ; 00564e10
     POP EBX                             ; 00564e12
     RET                                 ; 00564e13

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint core_actor_cpp_FUN_0040b300(int param_1,int param_2)
 
 {
@@ -129,15 +127,15 @@ uint core_actor_cpp_FUN_0040b300(int param_1,int param_2)
                 core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(auStack_254);
                 (**(code **)(*(int *)(param_1 + 0x14c) + 0x74))(param_1,param_2,auStack_254,iVar1);
                 (**(code **)(*(int *)(param_1 + 0x14c) + 0x78))(param_1,param_2,auStack_254,iVar1);
-                iVar1 = FUN_004aded0(iVar1);
+                iVar1 = core_glass_cpp_FUN_004aded0(iVar1);
                 if (iVar1 != 0) {
-                  FUN_004ada20();
+                  core_glass_cpp_FUN_004ada20();
                 }
               }
             }
           }
           else {
-            iVar3 = FUN_005485a0();
+            iVar3 = core_trigger_cpp_FUN_005485a0();
             if (iVar3 != 0) {
               core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_0040a290
                         (iVar1,auStack_74,&fStack_c8,0x40000000);
@@ -180,7 +178,7 @@ uint core_actor_cpp_FUN_0040b300(int param_1,int param_2)
   if (local_44 == 1) {
     core_setcolid_cpp_CDemonSet_setRayType_FUN_00511800();
     core_setcolid_cpp_CDemonSet_ignore_FUN_00511780();
-    FUN_00511740(0x01E57284);
+    core_setcolid_cpp_FUN_00511740(0x01E57284);
     if (iStack_28 != 0) {
       core_setcolid_cpp_CDemonSet_ignore_FUN_00511780();
     }
@@ -213,7 +211,7 @@ uint core_actor_cpp_FUN_0040b300(int param_1,int param_2)
             }
           }
           else {
-            iVar1 = FUN_005485a0();
+            iVar1 = core_trigger_cpp_FUN_005485a0();
             if (iVar1 != 0) {
               core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(auStack_164);
               (**(code **)(*(int *)(param_1 + 0x14c) + 0x74))(param_1,param_2,auStack_164,iVar3);
@@ -232,11 +230,11 @@ uint core_actor_cpp_FUN_0040b300(int param_1,int param_2)
           iVar1 = iStack_1c;
           (**(code **)(*(int *)(param_1 + 0x14c) + 0x74))(param_1,param_2,auStack_1dc,iStack_1c);
           (**(code **)(*(int *)(param_1 + 0x14c) + 0x78))(param_1,param_2,auStack_1dc,iVar1);
-          iVar1 = FUN_004aded0(iVar1);
+          iVar1 = core_glass_cpp_FUN_004aded0(iVar1);
           if (iVar1 == 0) {
             return 0;
           }
-          FUN_004ada20();
+          core_glass_cpp_FUN_004ada20();
         }
       }
       else if (((iStack_28 == 0) ||

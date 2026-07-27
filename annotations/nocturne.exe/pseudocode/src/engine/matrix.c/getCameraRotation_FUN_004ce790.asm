@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   FUN_00460d90 at 00460d9b
 ;   engine_drender.cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0 at 00460dc0
+;   engine_drender.cpp_FUN_00460d90 at 00460d9b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c039d0

@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00456b20 at 00456b93
-;   FUN_004a3b90 at 004a3e85
-;   FUN_004a4170 at 004a4450
+;   core_game.cpp_FUN_004a3b90 at 004a3e85
+;   core_game.cpp_FUN_004a4170 at 004a4450
+;   engine_dosio.cpp_FUN_00456b20 at 00456b93
 ;
 ; Called Functions:
-;   FUN_00565e94
+;   crt_unknown.c_FUN_00565e94
 ;   FUN_0056b327
 ;   FUN_0056cd9b
 ;
@@ -70,8 +70,8 @@ section .text
     PUSH 0x0                            ; 00565f08
     ADD EBX,EBP                         ; 00565f0a
     PUSH EBX                            ; 00565f0c
-    CALL FUN_00565e94                   ; 00565f0d
-        ;   XREF to: 00565e94 (UNCONDITIONAL_CALL)  ; undefined FUN_00565e94()
+    CALL crt_unknown.c_FUN_00565e94     ; 00565f0d
+        ;   XREF to: 00565e94 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00565e94()
     JMP 0x00565ef6                      ; 00565f12
         ;   XREF to: 00565ef6 (UNCONDITIONAL_JUMP)  ; LAB_00565ef6
 

@@ -42,10 +42,10 @@
 ;   ... and 11 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_memset_FUN_00563cc0
 ;   crt_stdio.c_fgets_FUN_00564b20
 ;   crt_stdio.c_fscanf_FUN_00563350
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -621,10 +621,10 @@ section .text
         ;   Label: LAB_005151c4
     MOV ECX,0x2a5                       ; 005151c9
     PUSH 0x590dfb                       ; 005151ce | = "Invalid camera number in visiblilty l..."
-    MOV dword ptr [0x01cc4800],EDX      ; 005151d3 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 005151d9 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005151df
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 005151d3 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 005151d9 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005151df
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005151e4
     JMP 0x0051513c                      ; 005151e7
         ;   XREF to: 0051513c (UNCONDITIONAL_JUMP)  ; LAB_0051513c

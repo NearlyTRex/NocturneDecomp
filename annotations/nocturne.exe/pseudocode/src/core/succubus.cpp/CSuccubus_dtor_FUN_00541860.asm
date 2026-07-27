@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a2a30
+;   WatcomTypeInfo g_CSuccubusTypeInfo_005a2a30
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00409ea0
@@ -16,7 +16,7 @@
 ;   core_morph.cpp_CMorph_dtor_FUN_004e0070
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0051b6e0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -97,7 +97,7 @@ section .text
     MOV EAX,EBX                         ; 0054191d
     POP EBX                             ; 0054191f
     RET                                 ; 00541920
-    PUSH 0x5a2a30                       ; 00541921 | DAT_005a2a30
+    PUSH 0x5a2a30                       ; 00541921 | g_CSuccubusTypeInfo_005a2a30
         ;   Label: LAB_00541921
     PUSH EBX                            ; 00541926
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00541927
@@ -112,8 +112,8 @@ section .text
     RET                                 ; 0054193b
     PUSH EAX                            ; 0054193c
         ;   Label: LAB_0054193c
-    CALL FUN_00564494                   ; 0054193d
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 0054193d
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 00541942
     MOV EAX,EBX                         ; 00541945
     POP EBX                             ; 00541947

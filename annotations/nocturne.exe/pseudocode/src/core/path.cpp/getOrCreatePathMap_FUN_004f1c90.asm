@@ -16,7 +16,7 @@
 ;   core_path.cpp_getPathMap_FUN_004f1e00 at 004f1e05
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a1200
+;   WatcomTypeInfo g_CPathMapTypeInfo_005a1200
 ;   undefined4 DAT_005be0a8
 ;   undefined4 DAT_005be0b8
 ;   undefined4 DAT_005be0bc
@@ -25,9 +25,9 @@
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_0046b700
+;   core_path.cpp_FUN_004f0360
 ;   crt_memory.c___arrinit_FUN_005644a7
-;   FUN_004f0360
-;   FUN_00564bb0
+;   crt_unknown.c_FUN_00564bb0
 ;
 ; *****************************************************************************
 
@@ -112,8 +112,8 @@ section .text
     PUSH EAX                            ; 004f1d6f
     ADD EBX,0x1d468a0                   ; 004f1d70
     PUSH EBX                            ; 004f1d76
-    CALL FUN_004f0360                   ; 004f1d77
-        ;   XREF to: 004f0360 (UNCONDITIONAL_CALL)  ; undefined FUN_004f0360()
+    CALL core_path.cpp_FUN_004f0360     ; 004f1d77
+        ;   XREF to: 004f0360 (UNCONDITIONAL_CALL)  ; undefined core_path.cpp_FUN_004f0360()
     ADD ESP,0xc                         ; 004f1d7c
     MOV EAX,EBX                         ; 004f1d7f
     ADD ESP,0x24                        ; 004f1d81
@@ -122,7 +122,7 @@ section .text
     POP ESI                             ; 004f1d86
     POP EBX                             ; 004f1d87
     RET                                 ; 004f1d88
-    PUSH 0x5a1200                       ; 004f1d89 | DAT_005a1200
+    PUSH 0x5a1200                       ; 004f1d89 | g_CPathMapTypeInfo_005a1200
         ;   Label: LAB_004f1d89
     MOV DL,AH                           ; 004f1d8e
     PUSH 0xc                            ; 004f1d90
@@ -133,8 +133,8 @@ section .text
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 004f1da5
     PUSH 0x5be0a8                       ; 004f1da8 | DAT_005be0a8
-    CALL FUN_00564bb0                   ; 004f1dad
-        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; undefined FUN_00564bb0()
+    CALL crt_unknown.c_FUN_00564bb0     ; 004f1dad
+        ;   XREF to: 00564bb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564bb0()
     ADD ESP,0x4                         ; 004f1db2
     JMP 0x004f1caa                      ; 004f1db5
         ;   XREF to: 004f1caa (UNCONDITIONAL_JUMP)  ; LAB_004f1caa

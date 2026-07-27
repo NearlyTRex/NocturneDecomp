@@ -20,9 +20,9 @@ float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_00524630(uint
   float local_20;
   
   if (_DAT_02dc84bc < 1) {
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x917;
-    FUN_004c8440("SfxSlot::kill - must be locked!");
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x917;
+    core_main_c_FUN_004c8440("SfxSlot::kill - must be locked!");
   }
   uVar1 = *(uint *)(param_1[0x1d] + 0x104);
   fVar3 = (float)sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(*param_1);

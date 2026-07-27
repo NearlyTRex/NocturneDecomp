@@ -79,9 +79,9 @@ float core_actor_cpp_CDemonActor_rayIntersect_FUN_0040a740(int param_1,float *pa
       goto LAB_0040a899;
     }
   }
-  _DAT_01cc4800 = "..\\core\\actor.cpp";
-  _DAT_01cc4804 = 0x45d;
-  FUN_004c8440();
+  PTR_01cc4800 = "..\\core\\actor.cpp";
+  INT_01cc4804 = 0x45d;
+  core_main_c_FUN_004c8440();
 LAB_0040a899:
   if ((local_a0 < 0.0) || (1.0 < local_a0)) {
     return 2.0;

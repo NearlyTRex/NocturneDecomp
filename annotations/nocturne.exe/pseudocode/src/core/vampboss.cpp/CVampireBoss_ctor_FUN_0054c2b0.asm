@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_0054c280 at 0054c293
+;   core_vampboss.cpp_FUN_0054c280 at 0054c293
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_nosfer_dfm_0059702a
 ;   TerminatedCString s_batboss_dfm_00597035
-;   undefined1* PTR_FUN_005a3a94 = 0054c3e0
+;   undefined1* PTR_core_vampboss.cpp_FUN_0054c3e0_005a3a94 = 0054c3e0
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_ctor_FUN_00435100
@@ -59,7 +59,7 @@ section .text
     PUSH 0x59702a                       ; 0054c30a | = "nosfer.dfm"
     LEA EAX,[EBX + 0x150]               ; 0054c30f
     PUSH EAX                            ; 0054c315
-    MOV dword ptr [EBX + 0x14c],0x5a3a94 ; 0054c316 | PTR_FUN_005a3a94
+    MOV dword ptr [EBX + 0x14c],0x5a3a94 ; 0054c316 | PTR_core_vampboss.cpp_FUN_0054c3e0_005a3a94
     CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0 ; 0054c320
         ;   XREF to: 0051e0c0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_CDeformableModelInstance_init_FUN_0051e0c0()
     ADD ESP,0x8                         ; 0054c325

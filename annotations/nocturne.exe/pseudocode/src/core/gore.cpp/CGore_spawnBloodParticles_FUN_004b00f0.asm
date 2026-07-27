@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[8]:
-;   FUN_004b6d80 at 004b7243
-;   FUN_00543c50 at 00544063
 ;   core_bodypart.cpp_CBodyPart_spawnGore_FUN_00417eb0 at 00417edd
 ;   core_charactr.cpp_CCharacter_processDamageDecals_FUN_004277f0 at 004278c9
 ;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_00427990 at 00427a10
 ;   core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0 at 00427973
 ;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004b0200 at 004b0230
+;   core_hostage.cpp_FUN_004b6d80 at 004b7243
 ;   core_melee.cpp_CMelee_process_FUN_004cf0c0 at 004cf164
+;   core_tentacle.cpp_FUN_00543c50 at 00544063
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c78ce8

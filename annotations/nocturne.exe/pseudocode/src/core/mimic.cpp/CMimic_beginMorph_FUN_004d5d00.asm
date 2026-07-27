@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004d4f30 at 004d52ef
+;   core_mimic.cpp_FUN_004d4f30 at 004d52ef
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_00589513
@@ -13,14 +13,14 @@
 ;   TerminatedCString s_s_morphing_into_type_s_0058956e
 ;   void* PTR_DAT_005ad350 = 0077ad0c
 ;   undefined4 DAT_0077ad0c
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004d5e20
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004e16b0
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -99,10 +99,10 @@ section .text
     MOV ECX,0x589513                    ; 004d5deb | = "..\\core\\mimic.cpp"
     MOV ESI,0x499                       ; 004d5df0
     PUSH 0x589525                       ; 004d5df5 | = "CMimic::beginMorph() - can't do this ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004d5dfa | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 004d5e00 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004d5e06
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004d5dfa | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 004d5e00 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004d5e06
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004d5e0b
     POP ESI                             ; 004d5e0e
     JMP 0x004d5d13                      ; 004d5e0f

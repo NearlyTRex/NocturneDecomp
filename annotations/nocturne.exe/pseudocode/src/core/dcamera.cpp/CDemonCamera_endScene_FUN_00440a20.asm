@@ -17,17 +17,17 @@
 ;   undefined4 DAT_01b4d738
 ;   undefined4 DAT_01bd4260
 ;   undefined4 DAT_01c02594
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
-;   undefined4 DAT_02dc9d60
+;   char* PTR_01cc4800
+;   int INT_01cc4804
+;   int INT_02dc9d60
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_00440270
+;   core_main.c_FUN_004c8440
 ;   crt_watcom.c__memcpy_FUN_00481a28
 ;   engine_drender.cpp_CDemonRenderer_popViewport_FUN_00460e70
-;   FUN_004c8440
-;   wincore_windll.cpp_endScene_FUN_00532360
-;   wincore_windll.cpp_masterZBuffer_FUN_00532c70
+;   engine_special.cpp_endScene_FUN_00532360
+;   engine_special.cpp_masterZBuffer_FUN_00532c70
 ;
 ; *****************************************************************************
 
@@ -42,12 +42,12 @@ section .text
     JZ 0x00440adc                       ; 00440a2e
         ;   XREF to: 00440adc (CONDITIONAL_JUMP)  ; LAB_00440adc
     MOV dword ptr [EBX + 0x11e4],0x0    ; 00440a34
-    CMP dword ptr [0x02dc9d60],0x0      ; 00440a3e | DAT_02dc9d60
+    CMP dword ptr [0x02dc9d60],0x0      ; 00440a3e | INT_02dc9d60
         ;   Label: LAB_00440a3e
     JZ 0x00440a4c                       ; 00440a45
         ;   XREF to: 00440a4c (CONDITIONAL_JUMP)  ; LAB_00440a4c
-    CALL wincore_windll.cpp_endScene_FUN_00532360 ; 00440a47
-        ;   XREF to: 00532360 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_endScene_FUN_00532360()
+    CALL engine_special.cpp_endScene_FUN_00532360 ; 00440a47
+        ;   XREF to: 00532360 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_endScene_FUN_00532360()
     MOV EBP,dword ptr [EBX + 0x168]     ; 00440a4c
         ;   Label: LAB_00440a4c
     TEST EBP,EBP                        ; 00440a52
@@ -104,17 +104,17 @@ section .text
         ;   Label: LAB_00440adc
     MOV ESI,0x3f9                       ; 00440ae1
     PUSH 0x57b718                       ; 00440ae6 | = "CDemonCamera::endScene - Scene not open!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00440aeb | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00440af1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00440af7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00440aeb | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00440af1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00440af7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00440afc
     JMP 0x00440a3e                      ; 00440aff
         ;   XREF to: 00440a3e (UNCONDITIONAL_JUMP)  ; LAB_00440a3e
     PUSH EBP                            ; 00440b04
         ;   Label: LAB_00440b04
-    CALL wincore_windll.cpp_masterZBuffer_FUN_00532c70 ; 00440b05
-        ;   XREF to: 00532c70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_masterZBuffer_FUN_00532c70()
+    CALL engine_special.cpp_masterZBuffer_FUN_00532c70 ; 00440b05
+        ;   XREF to: 00532c70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_masterZBuffer_FUN_00532c70()
     ADD ESP,0x4                         ; 00440b0a
     JMP 0x00440a6e                      ; 00440b0d
         ;   XREF to: 00440a6e (UNCONDITIONAL_JUMP)  ; LAB_00440a6e

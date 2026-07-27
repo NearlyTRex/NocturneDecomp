@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(int param_1)
 
 {
@@ -24,7 +22,7 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(int param_1)
   if (0 < *(int *)(param_1 + 0x14cd6c)) {
     do {
       iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(iVar5 + 0x14cd70),_DAT_01c78c78);
+                        (*(uint *)(iVar5 + 0x14cd70),g_CGlassActorType_01c78c40.name_hash);
       if ((iVar1 != 0) && (*(int *)(iVar1 + 0x1e0) != 0)) {
         core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(iVar1);
         uVar2 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x14))(iVar1,local_28,0);
@@ -34,9 +32,9 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_0050e210(int param_1)
           iVar1 = *(int *)(param_1 + 0x15a8cc) + 1;
           *(int *)(param_1 + 0x15a8cc) = iVar1;
           if (99 < iVar1) {
-            _DAT_01cc4800 = "..\\core\\set.cpp";
-            _DAT_01cc4804 = 0x1118;
-            FUN_004c8440("CDemonSet::buildMirrorList - Too many mirrors");
+            PTR_01cc4800 = "..\\core\\set.cpp";
+            INT_01cc4804 = 0x1118;
+            core_main_c_FUN_004c8440("CDemonSet::buildMirrorList - Too many mirrors");
           }
         }
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(DAT_005ae704);

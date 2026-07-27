@@ -15,11 +15,11 @@
 ;   TerminatedCString s_core_hero_cpp_0058569a
 ;   TerminatedCString s_closestHeroToPoint_no_he_005856ab
 ;   undefined4 DAT_01cae0d4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -92,10 +92,10 @@ section .text
         ;   Label: LAB_004b4582
     MOV EDI,0x34                        ; 004b4587
     PUSH 0x5856ab                       ; 004b458c | = "closestHeroToPoint - no heros!"
-    MOV dword ptr [0x01cc4800],EBX      ; 004b4591 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 004b4597 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004b459d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 004b4591 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 004b4597 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004b459d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b45a2
     MOV EAX,ESI                         ; 004b45a5
     ADD ESP,0x14                        ; 004b45a7

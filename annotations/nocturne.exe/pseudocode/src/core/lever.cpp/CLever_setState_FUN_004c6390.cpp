@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_lever_cpp_CLever_setState_FUN_004c6390(int param_1,float param_2)
 
 {
@@ -35,7 +33,8 @@ void __cdecl core_lever_cpp_CLever_setState_FUN_004c6390(int param_1,float param
     iVar2 = 0;
     for (iVar3 = 0; iVar3 < *(int *)(0x01E57284 + 0x14cd6c); iVar3 = iVar3 + 1) {
       iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(iVar2 + 0x14cd70 + 0x01E57284),_DAT_01cc3660);
+                        (*(uint *)(iVar2 + 0x14cd70 + 0x01E57284),
+                         g_CLeverActorType_01cc3628.name_hash);
       if ((iVar1 != 0) && (param_1 == *(int *)(iVar1 + 0x408))) {
         core_lever_cpp_CLever_setState_FUN_004c6390(iVar1,param_2);
       }

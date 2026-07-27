@@ -7,7 +7,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_icepick_die01_wav_00586255
 ;   TerminatedCString s_icepick_injured_wav_00586267
-;   undefined4 DAT_0059f3d8
+;   float FLOAT_0059f3d8 = 3
 ;   undefined4 DAT_005b9354
 ;   int INT_005b96c4 = 0x1c78c7c
 ;   undefined4 DAT_01c777bc
@@ -53,7 +53,7 @@ section .text
     TEST EBP,EBP                        ; 004bb52d
     JZ 0x004bb5b6                       ; 004bb52f
         ;   XREF to: 004bb5b6 (CONDITIONAL_JUMP)  ; LAB_004bb5b6
-    MOV EAX,[0x0059f3d8]                ; 004bb535 | DAT_0059f3d8
+    MOV EAX,[0x0059f3d8]                ; 004bb535 | FLOAT_0059f3d8
         ;   Label: LAB_004bb535
     MOV dword ptr [EBX + 0xbc8c],EAX    ; 004bb53a
     FLD float ptr [EDI + 0x4]           ; 004bb540

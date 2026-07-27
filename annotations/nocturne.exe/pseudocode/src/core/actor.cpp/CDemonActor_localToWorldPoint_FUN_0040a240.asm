@@ -7,16 +7,16 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[144]:
-;   FUN_00414930 at 00414993
-;   FUN_004181f0 at 0041828b
-;   FUN_00418a00 at 004190fc
-;   FUN_004196b0 at 004198e5
-;   FUN_0041f190 at 0041f214
-;   FUN_0041f3d0 at 0041f515
-;   FUN_0041fe40 at 0042000b
-;   FUN_0043d1c0 at 0043d1f4
-;   FUN_0045ab40 at 0045abda
-;   FUN_004777a0 at 004777fa
+;   core_actor.cpp_CDemonActor_processFootstepAt_FUN_0040d9f0 at 0040da03
+;   core_actor.cpp_FUN_0040b300 at 0040b36a
+;   core_baron.cpp_FUN_00410490 at 0041088a
+;   core_baron.cpp_FUN_00410cc0 at 00410e8b
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 0041271d
+;   core_batcreat.cpp_FUN_00413040 at 004130a3
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413b1a
+;   core_batman.cpp_FUN_00414930 at 00414993
+;   core_bodypart.cpp_CBodyPart_addFire_FUN_00417b40 at 00417ba1
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 at 0041762b
 ;   ... and 134 more
 ;
 ; Called Functions:

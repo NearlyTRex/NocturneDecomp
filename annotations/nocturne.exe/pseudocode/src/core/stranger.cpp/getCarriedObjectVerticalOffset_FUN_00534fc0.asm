@@ -9,14 +9,14 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[3]:
-;   FUN_005384d0 at 005391c8
-;   FUN_0053c800 at 0053cab9
 ;   core_stranger.cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760 at 0053b3c6
+;   core_stranger.cpp_FUN_005384d0 at 005391c8
+;   core_stranger.cpp_FUN_0053c800 at 0053cab9
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005951e7 = 0.00390625
-;   undefined4 CDemonActorType_00764800.name_hash
-;   undefined4 DAT_02dd1204
+;   undefined4 g_CBoxActorActorType_00764800.name_hash
+;   undefined4 g_CCryptVesselActorType_02dd11cc.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -32,7 +32,7 @@ section .text
     PUSH EBP                            ; 00534fc2
     SUB ESP,0xc                         ; 00534fc3
     MOV ESI,dword ptr [ESP + 0x1c]      ; 00534fc6
-    MOV EDX,dword ptr [0x00764838]      ; 00534fca | CDemonActorType_00764800.name_hash
+    MOV EDX,dword ptr [0x00764838]      ; 00534fca | g_CBoxActorActorType_00764800.name_hash
     PUSH EDX                            ; 00534fd0
     PUSH ESI                            ; 00534fd1
     XOR EBX,EBX                         ; 00534fd2
@@ -42,7 +42,7 @@ section .text
     TEST EAX,EAX                        ; 00534fdc
     JNZ 0x00535043                      ; 00534fde
         ;   XREF to: 00535043 (CONDITIONAL_JUMP)  ; LAB_00535043
-    MOV ECX,dword ptr [0x02dd1204]      ; 00534fe0 | DAT_02dd1204
+    MOV ECX,dword ptr [0x02dd1204]      ; 00534fe0 | g_CCryptVesselActorType_02dd11cc.name_hash
         ;   Label: LAB_00534fe0
     PUSH ECX                            ; 00534fe6
     PUSH ESI                            ; 00534fe7

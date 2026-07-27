@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[12]:
-;   FUN_00522480 at 005224f9
-;   FUN_005229f0 at 00522cec
-;   FUN_00522e00 at 00522e89
-;   FUN_005238f0 at 005238f6
-;   FUN_00527950 at 00527984
 ;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_00523910 at 005239f8
 ;   sound_sndmain.cpp_CSfxSample_pollStream_FUN_00523ea0 at 00524108
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570 at 00525688
+;   sound_sndmain.cpp_FUN_00522480 at 005224f9
+;   sound_sndmain.cpp_FUN_005229f0 at 00522cec
+;   sound_sndmain.cpp_FUN_00522e00 at 00522e89
+;   sound_sndmain.cpp_FUN_005238f0 at 005238f6
+;   sound_sndmain.cpp_FUN_00527950 at 00527984
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_005285b0 at 005285c7
 ;   sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_00521ca0 at 00521d54
 ;   ... and 2 more
@@ -20,13 +20,13 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00592956
 ;   TerminatedCString s_SfxSample_freeMemory_fre_0059296b
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
-;   FUN_004c8440
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   sound_mp3.cpp_CMP3Decoder_dtor_FUN_004e7dd0
 ;   sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_00523b70
 ;   sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_00523b20
@@ -66,8 +66,8 @@ section .text
         ;   XREF to: 004e7dd0 (UNCONDITIONAL_CALL)  ; undefined sound_mp3.cpp_CMP3Decoder_dtor_FUN_004e7dd0()
     ADD ESP,0x8                         ; 00523a9c
     PUSH EAX                            ; 00523a9f
-    CALL FUN_00564494                   ; 00523aa0
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 00523aa0
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 00523aa5
     MOV EDI,dword ptr [EBX + 0x14c]     ; 00523aa8
         ;   Label: LAB_00523aa8
@@ -88,10 +88,10 @@ section .text
     MOV ECX,0x592956                    ; 00523ae1 | = "..\\sound\\sndmain.cpp"
     MOV ESI,0x70a                       ; 00523ae6
     PUSH 0x59296b                       ; 00523aeb | = "SfxSample::freeMemory - freeing sampl..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00523af0 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00523af6 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00523afc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00523af0 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00523af6 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00523afc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00523b01
     POP ESI                             ; 00523b04
     JMP 0x00523a6f                      ; 00523b05

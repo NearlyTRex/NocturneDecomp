@@ -11,12 +11,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   FUN_004d5b20 at 004d5b8c
-;   FUN_0054dac0 at 0054db41
 ;   core_cloth.cpp_CClothList_render_FUN_004385a0 at 004385f6
 ;   core_gabriela.cpp_CGabriella_renderOpaque_FUN_00498cc0 at 00498d05
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004d5860 at 004d597a
+;   core_mimic.cpp_FUN_004d5b20 at 004d5b8c
 ;   core_svetlana.cpp_CSvetlana_renderOpaque_FUN_00542d20 at 00542e59
+;   core_vampboss.cpp_FUN_0054dac0 at 0054db41
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057aedd = 65535

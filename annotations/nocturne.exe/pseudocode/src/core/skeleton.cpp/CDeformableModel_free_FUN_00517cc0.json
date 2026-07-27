@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,27 +122,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 157,
+    "complexity_score": 142,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 32,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param"
     ],
     "total_lines": 100
   },
   "cross_references": [
-    {
-      "addr": "0051f650",
-      "from_addr": "0051f65e",
-      "name": "FUN_0051f650",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00517ec0",
       "from_addr": "0051801f",
@@ -159,6 +152,12 @@
       "addr": "00517c80",
       "from_addr": "00517c86",
       "name": "core_skeleton.cpp_CDeformableModel_dtor_FUN_00517c80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051f650",
+      "from_addr": "0051f65e",
+      "name": "core_skeleton.cpp_FUN_0051f650",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -194,8 +193,8 @@
   "globals": [
     {
       "addr": "005a1ee0",
-      "name": "DAT_005a1ee0",
-      "type": "undefined4",
+      "name": "g_SVertTypeInfo_005a1ee0",
+      "type": "WatcomTypeInfo",
       "value": null
     }
   ],
@@ -205,7 +204,7 @@
       {
         "call_addr": "0051f65e",
         "call_type": "direct",
-        "caller": "FUN_0051f650",
+        "caller": "core_skeleton.cpp_FUN_0051f650",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -311,14 +310,6 @@
       "severity": "mild",
       "text": "if (0 < *param_1) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_005a1ee0",
-      "severity": "mild",
-      "text": "uVar1 = __vec_delete(piVar2[0x10],&DAT_005a1ee0);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",

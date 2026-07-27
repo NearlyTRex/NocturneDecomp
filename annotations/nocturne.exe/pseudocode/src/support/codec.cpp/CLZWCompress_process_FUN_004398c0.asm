@@ -8,7 +8,7 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   FUN_004a3b90 at 004a3f42
+;   core_game.cpp_FUN_004a3b90 at 004a3f42
 ;
 ; Called Functions:
 ;   crt_iostream.cpp_istream_get_FUN_00564c53

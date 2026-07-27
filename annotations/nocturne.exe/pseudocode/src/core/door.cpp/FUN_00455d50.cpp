@@ -1,0 +1,41 @@
+// Name: core_door.cpp_FUN_00455d50
+// Address: 00455d50
+// Address Range: [[00455d50, 00455e03]]
+// Convention: unknown
+// Signature: int core_door_cpp_FUN_00455d50(int param_1)
+
+#include "nocturne.h"
+
+int core_door_cpp_FUN_00455d50(int param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  byte auStack_34 [24];
+  byte local_1c [24];
+  
+  if (2 < *(int *)(param_1 + 0x9c0)) {
+    return 0;
+  }
+  core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20(param_1);
+  uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,local_1c,0);
+  iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(uVar1);
+  if (iVar2 != 0) {
+    if (*(int *)(param_1 + 0x9cc) != 0) {
+      iVar3 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_00461090(DAT_005ae704);
+      if (iVar3 != 0) {
+        uVar1 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_34);
+        core_box_cpp_CBoundingBox3D_render_FUN_0041dcc0(uVar1);
+        goto LAB_00455dcd;
+      }
+    }
+    core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
+              (param_1 + 0x150,0,0xffffffff);
+    core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
+    return iVar2;
+  }
+LAB_00455dcd:
+  core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60(param_1);
+  return iVar2;
+}

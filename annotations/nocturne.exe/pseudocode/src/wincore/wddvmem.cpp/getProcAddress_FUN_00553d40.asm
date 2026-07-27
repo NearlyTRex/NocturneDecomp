@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00530e60 at 00530e92
-;   wincore_windll.cpp_loadExternalRenderer_FUN_00531780 at 005317e7
+;   engine_special.cpp_FUN_00530e60 at 00530e92
+;   engine_special.cpp_loadExternalRenderer_FUN_00531780 at 005317e7
 ;
 ; Referenced Globals:
 ;   void* PTR_GetProcAddress_00575534 = 00175ddc

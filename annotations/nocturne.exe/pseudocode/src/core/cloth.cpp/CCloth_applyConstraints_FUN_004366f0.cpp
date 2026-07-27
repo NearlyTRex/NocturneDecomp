@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,float *param_2)
 
 {
@@ -108,7 +106,7 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,flo
         local_74 = local_128;
       }
       local_5c = local_74 * local_74 + local_7c * local_7c + local_78 * local_78;
-      local_24 = (float)(((int)local_5c >> 1) + _DAT_01c7070c);
+      local_24 = (float)(((int)local_5c >> 1) + (int)CVector3f_01c70708.y);
       local_1c = pfVar7[0x1e];
       if (local_1c < local_24) {
         local_2c = local_24 - local_1c;
@@ -182,10 +180,10 @@ void __cdecl core_cloth_cpp_CCloth_applyConstraints_FUN_004366f0(int param_1,flo
         fVar1 = local_ac * *(float *)(iVar5 + 0x38);
         fVar2 = local_a8 * *(float *)(iVar5 + 0x3c);
         local_58 = fVar2 * fVar2 + fVar1 * fVar1;
-        local_54 = (float)(((int)local_58 >> 1) + _DAT_01c7070c);
+        local_54 = (float)(((int)local_58 >> 1) + (int)CVector3f_01c70708.y);
         if (local_54 < 1.0) {
           local_48 = local_ac * local_ac + local_a8 * local_a8;
-          local_44 = (float)(_DAT_01c70710 - ((int)local_48 >> 1));
+          local_44 = (float)((int)CVector3f_01c70708.z - ((int)local_48 >> 1));
           local_88 = *(float *)(iVar5 + 0x14) * (float)1.05 * local_ac * local_44;
           local_84 = (float)1.05 * *(float *)(iVar5 + 0x18) * local_a8 * local_44;
           local_80 = local_a4;

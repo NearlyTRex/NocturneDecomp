@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_dog_cpp_CZombieDog_process_FUN_00454750(int param_1,float param_2)
 
 {
@@ -82,8 +80,8 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(int param_1,float param_2)
           local_70 = *(float *)(iVar4 + 0x24) - *(float *)(param_1 + 0x24);
           local_6c = *(float *)(iVar4 + 0x28) - *(float *)(param_1 + 0x28);
           local_24 = local_6c * local_6c + local_74 * local_74 + local_70 * local_70;
-          local_18 = (float)(((int)local_24 >> 1) + _DAT_01c7070c);
-          if (local_18 < _DAT_0059c0e4) {
+          local_18 = (float)(((int)local_24 >> 1) + (int)CVector3f_01c70708.y);
+          if (local_18 < 8.0f) {
             uVar6 = 1;
           }
           else {
@@ -120,7 +118,7 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(int param_1,float param_2)
         local_5c = *(float *)(param_1 + 0x20) - *(float *)(iVar2 + 0x20);
         local_58 = *(float *)(param_1 + 0x24) - *(float *)(iVar2 + 0x24);
         local_54 = *(float *)(param_1 + 0x28) - *(float *)(iVar2 + 0x28);
-        if ((_DAT_0059c0e4 < SQRT(local_54 * local_54 + local_5c * local_5c + local_58 * local_58))
+        if ((8.0f < SQRT(local_54 * local_54 + local_5c * local_5c + local_58 * local_58))
            && (iVar4 == 1)) {
           core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0(iVar5,2,1);
         }
@@ -177,7 +175,7 @@ void core_dog_cpp_CZombieDog_process_FUN_00454750(int param_1,float param_2)
         uVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0051d2a0
                           (param_1 + 0x150,local_50,0);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_1,local_44,uVar6);
-        FUN_004b0480(INT_005b96c4,local_44,0);
+        core_gore_cpp_FUN_004b0480(INT_005b96c4,local_44,0);
         *(uint *)(param_1 + 0xbc90) = 1;
       }
     }

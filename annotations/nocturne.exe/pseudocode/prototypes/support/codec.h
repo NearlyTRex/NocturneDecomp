@@ -3,6 +3,10 @@
 // Function prototypes for support/codec.cpp
 // Generated from Ghidra function signatures
 
+// Original: support_codec.cpp_FUN_00438a40
+// Address: 00438a40
+uint FUN_00438a40(int *param_1,int *param_2);
+
 // Original: support_codec.cpp_resetBitBuffer_FUN_00438a90
 // Address: 00438a90
 void __cdecl resetBitBuffer(undefined4 *param_1);
@@ -146,6 +150,10 @@ undefined4 __cdecl CLZWDecompress::finalize(int param_1,undefined4 param_2);
 // Original: support_codec.cpp_CLZWDecompress_processBuffer_FUN_00439b30
 // Address: 00439b30
 undefined4 __cdecl CLZWDecompress::processBuffer(int *param_1,undefined4 param_2,undefined4 param_3,int param_4,int *param_5,int param_6);
+
+// Original: support_codec.cpp_FUN_00439bf0
+// Address: 00439bf0
+bool FUN_00439bf0(int param_1);
 
 // Original: support_codec.cpp_CLZWDecompress_dtor_FUN_00439c10
 // Address: 00439c10

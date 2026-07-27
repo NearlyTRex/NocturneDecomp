@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_pendulum_cpp_CPendulum_process_FUN_004f3a20(int param_1,uint param_2)
 
 {
@@ -55,15 +53,16 @@ void core_pendulum_cpp_CPendulum_process_FUN_004f3a20(int param_1,uint param_2)
       }
       uVar1 = *(uint *)(iVar4 + 0x14ecb4 + 0x01E57284);
       if ((*(int *)(param_1 + 0x420) == 0) ||
-         (iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(uVar1,_DAT_01cae124), iVar3 == 0))
-      break;
+         (iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                            (uVar1,g_CHeroActorType_01cae0ec.name_hash), iVar3 == 0)) break;
       core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(param_1,uVar1,iVar3,0);
 LAB_004f3aee:
       iVar2 = iVar2 + 1;
       iVar4 = iVar4 + 4;
     }
     if ((*(int *)(param_1 + 0x424) == 0) ||
-       (iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890(uVar1,_DAT_01bcdef4), iVar3 == 0))
+       (iVar3 = core_actor_cpp_castToClassHash_FUN_0040d890
+                          (uVar1,g_CEnemyActorType_01bcdebc.name_hash), iVar3 == 0))
     goto LAB_004f3aee;
     core_pendulum_cpp_CPendulum_testCollisionWithActor_FUN_004f2e60(param_1,uVar1,0,iVar3);
     iVar2 = iVar2 + 1;

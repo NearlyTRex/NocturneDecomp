@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0051cae0(int param_1,uint *param_2,float *param_3,float param_4,int param_5,code *param_6)
 
@@ -144,9 +143,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN
       }
     }
     else {
-      _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-      _DAT_01cc4804 = 0xad5;
-      FUN_004c8440("Write me!");
+      PTR_01cc4800 = "..\\core\\skeleton.cpp";
+      INT_01cc4804 = 0xad5;
+      core_main_c_FUN_004c8440("Write me!");
     }
     if (param_5 < 0) {
       fVar1 = param_3[1];

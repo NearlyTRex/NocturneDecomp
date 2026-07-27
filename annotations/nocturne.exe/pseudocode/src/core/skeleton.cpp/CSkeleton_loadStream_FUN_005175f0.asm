@@ -32,12 +32,12 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_motion.cpp_CMotionList_load_FUN_004e0920
 ;   core_skeleton.cpp_CSkeleton_allocMemory_FUN_005173c0
+;   core_skeleton.cpp_FUN_005174e0
 ;   crt_stdio.c_fgetc_FUN_00564570
 ;   crt_stdio.c_fscanf_FUN_00563350
-;   FUN_004c8440
-;   FUN_005174e0
 ;
 ; *****************************************************************************
 
@@ -51,8 +51,8 @@ section .text
     SUB ESP,0x14                        ; 005175f4
     MOV EDX,dword ptr [ESP + 0x28]      ; 005175f7
     PUSH EDX                            ; 005175fb
-    CALL FUN_005174e0                   ; 005175fc
-        ;   XREF to: 005174e0 (UNCONDITIONAL_CALL)  ; undefined FUN_005174e0()
+    CALL core_skeleton.cpp_FUN_005174e0 ; 005175fc
+        ;   XREF to: 005174e0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_005174e0()
     ADD ESP,0x4                         ; 00517601
     MOV ECX,0xffffffff                  ; 00517604
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00517609
@@ -83,10 +83,10 @@ section .text
     MOV EDI,0x59122c                    ; 0051763d | = "..\\core\\skeleton.cpp"
     MOV EBP,0x10d                       ; 00517642
     PUSH 0x591241                       ; 00517647 | = "Invalid skeleton version"
-    MOV dword ptr [0x01cc4800],EDI      ; 0051764c | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00517652 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00517658
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 0051764c | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00517652 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00517658
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0051765d
     MOV EAX,dword ptr [ESP]             ; 00517660
         ;   Label: LAB_00517660
@@ -97,10 +97,10 @@ section .text
     MOV EDX,0x59125a                    ; 00517669 | = "..\\core\\skeleton.cpp"
     MOV ECX,0x10e                       ; 0051766e
     PUSH 0x59126f                       ; 00517673 | = "Old skeleton version %d not supported"
-    MOV dword ptr [0x01cc4800],EDX      ; 00517678 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0051767e | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00517684
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00517678 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0051767e | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00517684
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00517689
     MOV EAX,dword ptr [ESP]             ; 0051768c
         ;   Label: LAB_0051768c
@@ -349,10 +349,10 @@ section .text
     MOV EBP,0x59132e                    ; 005178da | = "..\\core\\skeleton.cpp"
     MOV EAX,0x144                       ; 005178df
     PUSH 0x591343                       ; 005178e4 | = "CSkeleton::loadStream - error reading..."
-    MOV dword ptr [0x01cc4800],EBP      ; 005178e9 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 005178ef | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005178f4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 005178e9 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 005178ef | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005178f4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005178f9
     MOV EDX,dword ptr [ESP + 0x2c]      ; 005178fc
         ;   Label: LAB_005178fc
@@ -419,10 +419,10 @@ section .text
     MOV EDI,0x591295                    ; 00517971 | = "..\\core\\skeleton.cpp"
     MOV EBP,0x10f                       ; 00517976
     PUSH 0x5912aa                       ; 0051797b | = "Skeleton version %d is newer than .EX..."
-    MOV dword ptr [0x01cc4800],EDI      ; 00517980 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 00517986 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0051798c
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 00517980 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 00517986 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0051798c
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 00517991
     JMP 0x0051769d                      ; 00517994
         ;   XREF to: 0051769d (UNCONDITIONAL_JUMP)  ; LAB_0051769d
@@ -430,10 +430,10 @@ section .text
         ;   Label: LAB_00517999
     MOV ESI,0x15f                       ; 0051799e
     PUSH 0x591384                       ; 005179a3 | = "CSkeleton::loadStream - error reading..."
-    MOV dword ptr [0x01cc4800],EBX      ; 005179a8 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 005179ae | DAT_01cc4804
-    CALL FUN_004c8440                   ; 005179b4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBX      ; 005179a8 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 005179ae | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 005179b4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 005179b9
     ADD ESP,0x14                        ; 005179bc
     POP EBP                             ; 005179bf

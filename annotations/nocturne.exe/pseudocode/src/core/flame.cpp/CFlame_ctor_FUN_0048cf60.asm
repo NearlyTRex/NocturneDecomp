@@ -7,9 +7,9 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[5]:
-;   FUN_0048cf30 at 0048cf43
 ;   core_bodypart.cpp_SBodyPartFire_ctor_FUN_004180a0 at 004180a8
 ;   core_crossbow.cpp_CCrossbow_ctor_FUN_0043cf10 at 0043cf24
+;   core_flame.cpp_FUN_0048cf30 at 0048cf43
 ;   core_flamecan.cpp_CFlameCan_ctor_FUN_0048e370 at 0048e394
 ;   core_vessel.cpp_CCryptVessel_ctor_FUN_0054f920 at 0054f944
 ;

@@ -5,7 +5,9 @@
 ;
 ;
 ; Referenced Globals:
+;   TerminatedCString s_Enter_Server_IP_00584442
 ;   undefined4 DAT_005b6d50
+;   TerminatedCString s_s_10_0_0_105_005b9568
 ;   undefined4 DAT_005baf90
 ;   undefined4 DAT_005bdee0
 ;   undefined4 DAT_01c78598
@@ -33,9 +35,9 @@ section .text
     PUSH EAX                            ; 004a5e4e
     MOV ECX,0x19                        ; 004a5e4f
     LEA EDI,[ESP + 0xc]                 ; 004a5e54
-    PUSH 0x584442                       ; 004a5e58
+    PUSH 0x584442                       ; 004a5e58 | = "Enter Server IP"
     MOV EDX,dword ptr [0x005b6d50]      ; 004a5e5d | DAT_005b6d50
-    MOV ESI,0x5b9568                    ; 004a5e63
+    MOV ESI,0x5b9568                    ; 004a5e63 | = "10.0.0.105"
     PUSH EDX                            ; 004a5e68
     MOVSD.REP ES:EDI,ESI                ; 004a5e69
     CALL shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600 ; 004a5e6b

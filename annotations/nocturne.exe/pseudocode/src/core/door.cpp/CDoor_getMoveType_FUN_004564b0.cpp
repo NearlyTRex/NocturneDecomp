@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_door_cpp_CDoor_getMoveType_FUN_004564b0(int param_1,int param_2)
 
 {
@@ -50,9 +48,9 @@ LAB_0045663d:
       case 3:
         return 1;
       default:
-        _DAT_01cc4800 = "..\\core\\door.cpp";
-        _DAT_01cc4804 = 0x39e;
-        FUN_004c8440("CDoor::getMoveType - invalid door!");
+        PTR_01cc4800 = "..\\core\\door.cpp";
+        INT_01cc4804 = 0x39e;
+        core_main_c_FUN_004c8440("CDoor::getMoveType - invalid door!");
         return 0;
       }
     }

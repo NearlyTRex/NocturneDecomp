@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   FUN_004d4ba0 at 004d4e53
+;   core_mimic.cpp_FUN_004d4ba0 at 004d4e53
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00598336 = 2

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_trap_cpp_CTrap_process_FUN_00546900(int param_1)
 
 {
@@ -42,7 +40,8 @@ void core_trap_cpp_CTrap_process_FUN_00546900(int param_1)
     (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,&local_34);
     for (iVar2 = 0; iVar2 < *(int *)(0x01E57284 + 0x150bf4); iVar2 = iVar2 + 1) {
       iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(iVar3 + 0x150bf8 + 0x01E57284),_DAT_02de07c4);
+                        (*(uint *)(iVar3 + 0x150bf8 + 0x01E57284),
+                         g_CWerewolfActorType_02de078c.name_hash);
       if ((iVar1 != 0) && (*(int *)(iVar1 + 0xbd50) == 0)) {
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_00511990(auStack_5c);
         (**(code **)(*(int *)(iVar1 + 0x14c) + 0x34))(iVar1,auStack_5c);

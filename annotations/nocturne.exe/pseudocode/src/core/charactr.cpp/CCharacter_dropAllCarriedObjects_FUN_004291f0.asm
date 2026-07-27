@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_004eeea0 at 004eef49
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0f0 at 0041a0fc
 ;   core_charactr.cpp_CCharacter_kill_FUN_00424f40 at 00424fdb
 ;   core_charactr.cpp_CCharacter_processDamage_FUN_00428510 at 004286bf
+;   core_npc.cpp_FUN_004eeea0 at 004eef49
 ;
 ; *****************************************************************************
 

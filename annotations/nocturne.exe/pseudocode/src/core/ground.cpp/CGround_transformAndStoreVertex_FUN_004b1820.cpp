@@ -23,7 +23,7 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertex_FUN_004b1820(int *p
   local_18 = param_1[8] *
              (int)*(short *)(param_1[9] +
                             ((param_3 & param_1[3]) * *param_1 + (param_2 & param_1[2])) * 4);
-  wincore_windll_cpp_transformPoint_FUN_00530a25(&DAT_005c5014 + iVar1 * 0xc,&local_1c);
+  engine_special_cpp_transformPoint_FUN_00530a25(&DAT_005c5014 + iVar1 * 0xc,&local_1c);
   (&DAT_005c5034)[iVar1 * 0xc] = 0x3fff;
   (&DAT_005c5038)[iVar1 * 0xc] = 0x3fff;
   (&DAT_005c503c)[iVar1 * 0xc] = 0x3fff;

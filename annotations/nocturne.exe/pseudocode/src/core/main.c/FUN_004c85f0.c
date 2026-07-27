@@ -1,14 +1,14 @@
-// Name: FUN_004c85f0
+// Name: core_main.c_FUN_004c85f0
 // Address: 004c85f0
 // Address Range: [[004c85f0, 004c8db1]]
 // Convention: unknown
-// Signature: void FUN_004c85f0(void)
+// Signature: void core_main_c_FUN_004c85f0(void)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_004c85f0(void)
+void core_main_c_FUN_004c85f0(void)
 
 {
   uint *puVar1;
@@ -47,40 +47,40 @@ void FUN_004c85f0(void)
     _fclose();
     iVar4 = engine_dosio_cpp_setReadonlyAttribute_FUN_00565dd0("stderr.txt",0x1c0);
     if (iVar4 != 0) {
-      _DAT_01cc4800 = "..\\core\\main.c";
-      _DAT_01cc4804 = 0x28c;
-      FUN_004c8440();
+      PTR_01cc4800 = "..\\core\\main.c";
+      INT_01cc4804 = 0x28c;
+      core_main_c_FUN_004c8440();
     }
   }
   _freopen("stderr.txt","wt",&DAT_005c18c8);
   DAT_006af628 = 3;
-  FUN_0048ee80();
-  FUN_004bdb80();
+  xxx_unk_c_FUN_0048ee80();
+  core_inivar_cpp_FUN_004bdb80();
   _DAT_02dc9d6c = 2;
   engine_pod_cpp_CPod_init_FUN_004f8af0();
-  FUN_00456750();
-  FUN_00456750();
-  FUN_004edfc0();
+  engine_dosio_c_FUN_00456750();
+  engine_dosio_c_FUN_00456750();
+  support_newmsg_cpp_FUN_004edfc0();
   core_mmx_c_detectCPUFeatures_FUN_004d9e70();
   if (_DAT_01c03948 == 0) {
-    _DAT_01cc4800 = "..\\core\\main.c";
-    _DAT_01cc4804 = 0x2b7;
+    PTR_01cc4800 = "..\\core\\main.c";
+    INT_01cc4804 = 0x2b7;
     support_newmsg_cpp_getLocalizedString_FUN_004ee370();
-    FUN_004c8440();
+    core_main_c_FUN_004c8440();
   }
   pcVar10 = acStack_728;
   engine_matrix_c_initializeTrigTables_FUN_004cc9d0();
-  thunk_FUN_005458a0();
-  FUN_00401010();
+  engine_3d_c_FUN_005458a0();
+  engine_2d_c_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_005587f0();
   wincore_winrun_cpp_initJoystick_FUN_00559e20();
   iVar4 = wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(0x280,0x1e0,0x20);
   if (iVar4 == 0) {
-    _DAT_01cc4800 = "..\\core\\main.c";
-    _DAT_01cc4804 = 0x2c8;
-    FUN_004c8440();
+    PTR_01cc4800 = "..\\core\\main.c";
+    INT_01cc4804 = 0x2c8;
+    core_main_c_FUN_004c8440();
   }
-  FUN_0044c560();
+  core_dfont_cpp_FUN_0044c560();
   if (_DAT_02de20a8 < 0x3c00000) {
     pcVar5 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
     pcVar8 = acStack_528;
@@ -304,7 +304,7 @@ void FUN_004c85f0(void)
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    FUN_0046fb40(0x01BCD074,acStack_528);
+    shape_edittool_cpp_FUN_0046fb40(0x01BCD074,acStack_528);
   }
   if (_DAT_02de20ac < 0xc800000) {
     pcVar8 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
@@ -444,19 +444,19 @@ void FUN_004c85f0(void)
       pcVar5[1] = cVar2;
       pcVar5 = pcVar5 + 2;
     } while (cVar2 != '\0');
-    FUN_0046fb40(0x01BCD074,acStack_728);
+    shape_edittool_cpp_FUN_0046fb40(0x01BCD074,acStack_728);
   }
   puVar1 = 0x01C775EC;
   if (_DAT_01cae37c != 0) {
     *0x01C775EC = 0x280;
     _DAT_01cae37c = 0;
     puVar1[1] = 0x1e0;
-    _DAT_02dc9d60 = 0;
+    INT_02dc9d60 = 0;
     puVar1[2] = 0x20;
     core_menu_cpp_showCalibrationTest_FUN_004cffa0();
   }
   wincore_winvideo_cpp_FUN_0055a510("video","opening.avi");
-  wincore_windll_cpp_clearScreen_FUN_0052ee70();
+  engine_special_cpp_clearScreen_FUN_0052ee70();
   pcVar8 = (char *)support_newmsg_cpp_getLocalizedString_FUN_004ee370();
   pcVar10 = acStack_328;
   do {
@@ -477,7 +477,7 @@ void FUN_004c85f0(void)
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040e340(auStack_28,0);
   core_sound_cpp_CSound_findAllSoundFiles_FUN_0052dd20();
   iVar4 = 0;
-  FUN_004d7e00();
+  core_mission_cpp_FUN_004d7e00();
   iStack_14 = 0;
   do {
     puVar1 = (uint *)((int)&DAT_005ad51c + iVar4);
@@ -502,7 +502,7 @@ void FUN_004c85f0(void)
     iVar4 = iVar7;
   } while (iVar7 < 4);
   engine_ncursfx_cpp_CMouse_load_FUN_004ee5a0();
-  FUN_004940d0();
+  xxx_unk_c_FUN_004940d0();
   core_netgame_cpp_CNetGame_init_FUN_004e9910();
   wincore_winrun_cpp_setRegistryStringValue_FUN_00559da0
             ("SOFTWARE\\Matrox\\PowerDesk\\Current Settings","Flip on VBlank","0");

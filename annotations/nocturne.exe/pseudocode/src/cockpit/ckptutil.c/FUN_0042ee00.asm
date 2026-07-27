@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_0042ee00(undefined4 param_1,int param_2,int param_3)
+; void cockpit_ckptutil_c_FUN_0042ee00(undefined4 param_1,int param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c
@@ -19,22 +19,22 @@
 ;   TerminatedCString s_d_0057a968
 ;   TerminatedCString s_d_0057a96c
 ;   TerminatedCString s_s_3d_3d_3d_3d_d_0057a970
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fprintf_FUN_005644f0
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 0042ee00
-        ;   Label: FUN_0042ee00
+        ;   Label: cockpit_ckptutil.c_FUN_0042ee00
     PUSH ESI                            ; 0042ee01
     PUSH EDI                            ; 0042ee02
     PUSH EBP                            ; 0042ee03
@@ -63,13 +63,13 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x4ff                       ; 0042ee43
     ADD ESP,0xc                         ; 0042ee48
-    MOV [0x01cc4804],EAX                ; 0042ee4b | DAT_01cc4804
+    MOV [0x01cc4804],EAX                ; 0042ee4b | INT_01cc4804
     MOV EAX,ESP                         ; 0042ee50
     MOV EBP,0x57a952                    ; 0042ee52 | = "..\\cockpit\\ckptutil.c"
     PUSH EAX                            ; 0042ee57
-    MOV dword ptr [0x01cc4800],EBP      ; 0042ee58 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 0042ee5e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0042ee58 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 0042ee5e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042ee63
     PUSH EBX                            ; 0042ee66
         ;   Label: LAB_0042ee66
@@ -137,10 +137,10 @@ section .text
         ;   Label: LAB_0042ef04
     MOV EDI,0x4f8                       ; 0042ef09
     PUSH 0x57a90e                       ; 0042ef0e | = "Edge list array is empty!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0042ef13 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0042ef19 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0042ef1f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0042ef13 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0042ef19 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0042ef1f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0042ef24
     JMP 0x0042ee1a                      ; 0042ef27
         ;   XREF to: 0042ee1a (UNCONDITIONAL_JUMP)  ; LAB_0042ee1a

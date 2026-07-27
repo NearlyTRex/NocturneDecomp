@@ -32,9 +32,9 @@ ulonglong __cdecl engine_2d_c_drawVLine_FUN_00403ce0(int param_1,int param_2,int
         param_3 = iVar5;
         if (DAT_005b7624 != 8) {
 LAB_00403dde:
-          _DAT_01cc4800 = "..\\engine\\2d.c";
-          _DAT_01cc4804 = 0x8d6;
-          uVar6 = FUN_004c8440("vLine - invalid bitsPerPixel");
+          PTR_01cc4800 = "..\\engine\\2d.c";
+          INT_01cc4804 = 0x8d6;
+          uVar6 = core_main_c_FUN_004c8440("vLine - invalid bitsPerPixel");
           return uVar6;
         }
         for (; param_3 <= iVar2; param_3 = param_3 + 4) {

@@ -23,7 +23,7 @@
 ;   ... and 7 more
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -81,10 +81,10 @@ section .text
     MOV ECX,0x577489                    ; 00404403 | = "..\\engine\\2d.c"
     MOV ESI,0x9e8                       ; 00404408
     PUSH 0x577498                       ; 0040440d | = "unmapFrameBuffer - frame buffer was n..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00404412 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00404418 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0040441e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00404412 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00404418 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0040441e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00404423
     POP ESI                             ; 00404426
     JMP 0x00404376                      ; 00404427

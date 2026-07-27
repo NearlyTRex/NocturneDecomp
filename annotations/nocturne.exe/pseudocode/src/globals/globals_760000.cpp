@@ -5,29 +5,33 @@
 // =============================================================================
 
 // CDemonActorType
-CDemonActorType CDemonActorType_00763e48 = {};
-CDemonActorType CDemonActorType_007641bc = {};
-CDemonActorType CDemonActorType_007641f8 = {};
-CDemonActorType CDemonActorType_00764234 = {};
-CDemonActorType CDemonActorType_00764270 = {};
-CDemonActorType CDemonActorType_007642ac = {};
-CDemonActorType CDemonActorType_00764330 = {};
-CDemonActorType CDemonActorType_007644e8 = {};
-CDemonActorType CDemonActorType_00764524 = {};
-CDemonActorType CDemonActorType_00764560 = {};
-CDemonActorType CDemonActorType_007645cc = {};
-CDemonActorType CDemonActorType_00764638 = {};
-CDemonActorType CDemonActorType_00764674 = {};
-CDemonActorType CDemonActorType_007646b0 = {};
-CDemonActorType CDemonActorType_0076471c = {};
-CDemonActorType CDemonActorType_00764758 = {};
-CDemonActorType CDemonActorType_007647c0 = {};
-CDemonActorType CDemonActorType_00764800 = {};
-CDemonActorType CDemonActorType_00764a9c = {};
-CDemonActorType CDemonActorType_00764af0 = {};
-CDemonActorType CDemonActorType_00765888 = {};
-CDemonActorType CDemonActorType_00765a60 = {};
-CDemonActorType CDemonActorType_00765c30 = {};
+CDemonActorType g_CDemonActorActorType_00763e48 = {};
+CDemonActorType g_CAmmoActorType_007641bc = {};
+CDemonActorType g_CAmmoBoxActorType_007641f8 = {};
+CDemonActorType g_CAnvilActorType_00764234 = {};
+CDemonActorType g_CArmourActorType_00764270 = {};
+CDemonActorType g_CBackgroundActorActorType_007642ac = {};
+CDemonActorType g_CBaronActorType_00764330 = {};
+CDemonActorType g_CBaronWeaponActorType_007644e8 = {};
+CDemonActorType g_CBarrierActorType_00764524 = {};
+CDemonActorType g_CBatActorType_00764560 = {};
+CDemonActorType g_CBatCreatureActorType_007645cc = {};
+CDemonActorType g_CBatmanActorType_00764638 = {};
+CDemonActorType g_CBatteryActorType_00764674 = {};
+CDemonActorType g_CBeastActorType_007646b0 = {};
+CDemonActorType g_CBiggsActorType_0076471c = {};
+CDemonActorType g_CBodyPartActorType_00764758 = {};
+CDemonActorType g_CBoneGuyActorType_007647c0 = {};
+CDemonActorType g_CBoxActorActorType_00764800 = {};
+CDemonActorType g_CLightActorActorType_00764a9c = {};
+CDemonActorType g_CBrideActorType_00764af0 = {};
+CDemonActorType g_CBugsActorType_00765888 = {};
+CDemonActorType g_CCharacterActorType_00765a60 = {};
+CDemonActorType g_CChainActorType_00765c30 = {};
+
+// CVector3f
+CVector3f CVector3f_00764ad8 = {};
+CVector3f CVector3f_00764ae4 = {};
 
 // undefined1
 undefined1 DAT_00763e14 = {};

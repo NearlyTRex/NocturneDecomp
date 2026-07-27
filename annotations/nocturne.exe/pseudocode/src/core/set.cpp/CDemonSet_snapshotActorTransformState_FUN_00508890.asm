@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00478790 at 004789c5
+;   core_emitter.cpp_FUN_00478790 at 004789c5
 ;   core_grave.cpp_CGrave_startAnimation_FUN_004b0dc0 at 004b0e0e
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0 at 00508ae0
 ;

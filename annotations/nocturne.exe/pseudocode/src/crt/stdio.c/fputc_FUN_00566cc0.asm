@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[10]:
-;   FUN_0049a320 at 0049a58e
-;   FUN_0049cc10 at 0049d7df
-;   FUN_004f2990 at 004f2af6
 ;   FUN_0056adf0 at 0056adfe
 ;   FUN_005729e8 at 00572a2a
 ;   FUN_00573660 at 005736be
+;   core_game.cpp_FUN_0049a320 at 0049a58e
+;   core_game.cpp_FUN_0049cc10 at 0049d7df
 ;   crt_stdio.c_fwrite_FUN_00563a50 at 00563c0e
+;   engine_pcx.c_FUN_004f2990 at 004f2af6
 ;   engine_pcx.c_saveScreenRaw16_FUN_004f2620 at 004f274c
 ;   engine_pcx.c_saveScreenRaw32_FUN_004f27e0 at 004f28fa
 ;   engine_pcx.c_writePCXScanline_FUN_004f2550 at 004f2586

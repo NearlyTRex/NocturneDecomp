@@ -24,7 +24,7 @@ void core_actor_cpp_FUN_0040add0(int param_1)
   int iStack_18;
   uint uStack_14;
   
-  __arrinit(local_9c,10,&DAT_005993b0);
+  __arrinit(local_9c,10,&g_CVectorTypeInfo_005993b0);
   iStack_18 = (**(code **)(*(int *)(param_1 + 0x14c) + 0x4c))(param_1,local_9c);
   pfVar6 = local_9c;
   iVar4 = 0;
@@ -34,7 +34,7 @@ void core_actor_cpp_FUN_0040add0(int param_1)
       iStack_24 = (int)ROUND(*pfVar6 * _DAT_005992b0);
       iStack_20 = (int)ROUND(pfVar6[1] * _DAT_005992b0);
       iStack_1c = (int)ROUND(pfVar6[2] * _DAT_005992b0);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*0x01B4D738 + 0xea5d0,&iStack_24);
+      engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*0x01B4D738 + 0xea5d0,&iStack_24);
       iVar5 = *0x01B4D738;
       if ((*(byte *)(iVar5 + 0xea5e3) & 0x80) == 0) {
         iVar3 = *(int *)(iVar5 + 0xea5e0) >> 0x10;

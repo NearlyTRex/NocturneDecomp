@@ -11,13 +11,13 @@
 void core_dmodel_cpp_FUN_00454460(void)
 
 {
-  int iVar1;
+  CDemonActorType *pCVar1;
   
-  iVar1 = 0x1abb65c;
+  pCVar1 = (CDemonActorType *)0x1abb65c;
   do {
-    core_dmodel_cpp_FUN_00452f10(iVar1);
-    iVar1 = iVar1 + 0x398;
-  } while (iVar1 != 0x1af4e5c);
+    core_dmodel_cpp_FUN_00452f10(pCVar1);
+    pCVar1 = (CDemonActorType *)(pCVar1[0xf].class_name + 0x14);
+  } while (pCVar1 != &g_CZombieDogActorType_01af4e5c);
   _DAT_01abb658 = 0;
   return;
 }

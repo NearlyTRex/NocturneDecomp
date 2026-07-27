@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   FUN_0054b0e0 at 0054b0f3
+;   core_tvbat.cpp_FUN_0054b0e0 at 0054b0f3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_bat_kfm_00596ed4

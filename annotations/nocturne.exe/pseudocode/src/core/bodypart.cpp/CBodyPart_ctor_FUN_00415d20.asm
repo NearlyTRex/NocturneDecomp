@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00415cf0 at 00415d03
+;   core_bodypart.cpp_FUN_00415cf0 at 00415d03
 ;   core_bodypart.cpp_createBodyPart_FUN_00415b30 at 00415c32
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_core_bodypart.cpp_CBodyPart_setup_FUN_00416500_0059a744 = 00416500
-;   undefined4 DAT_0059a820
-;   undefined4 DAT_0059a840
+;   WatcomTypeInfo g_SBodyPartModelTypeInfo_0059a820
+;   WatcomTypeInfo g_SBodyPartFireTypeInfo_0059a840
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00409d30
@@ -28,14 +28,14 @@ section .text
     CALL core_actor.cpp_FUN_00409d30    ; 00415d25
         ;   XREF to: 00409d30 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d30()
     ADD ESP,0x4                         ; 00415d2a
-    PUSH 0x59a820                       ; 00415d2d | DAT_0059a820
+    PUSH 0x59a820                       ; 00415d2d | g_SBodyPartModelTypeInfo_0059a820
     PUSH 0x3                            ; 00415d32
     ADD EAX,0x288                       ; 00415d34
     PUSH EAX                            ; 00415d39
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00415d3a
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 00415d3f
-    PUSH 0x59a840                       ; 00415d42 | DAT_0059a840
+    PUSH 0x59a840                       ; 00415d42 | g_SBodyPartFireTypeInfo_0059a840
     PUSH 0x2                            ; 00415d47
     ADD EAX,0x4c0                       ; 00415d49
     PUSH EAX                            ; 00415d4e

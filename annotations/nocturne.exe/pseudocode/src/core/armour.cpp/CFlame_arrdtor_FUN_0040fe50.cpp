@@ -9,6 +9,6 @@
 void __cdecl core_armour_cpp_CFlame_arrdtor_FUN_0040fe50(uint param_1)
 
 {
-  __arrfini(param_1,0x32,&DAT_00599940);
+  __arrfini(param_1,0x32,&g_CFlameTypeInfo_00599940);
   return;
 }

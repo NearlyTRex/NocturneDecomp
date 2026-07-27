@@ -110,7 +110,8 @@ void __cdecl core_inv_cpp_CInventory_renderItemModel_FUN_004c0b40(uint param_1,i
     if (iVar8 != 0) {
       local_38 = local_38 + 1.570796f;
     }
-    iVar8 = core_actor_cpp_castToClassHash_FUN_0040d890(param_2,_DAT_01cc56dc);
+    iVar8 = core_actor_cpp_castToClassHash_FUN_0040d890
+                      (param_2,g_CMeleeActorType_01cc56a4.name_hash);
     if (iVar8 != 0) {
       iVar9 = _stricmp(iVar8 + 0x1c8,"axe1.kfm");
       if (iVar9 == 0) {

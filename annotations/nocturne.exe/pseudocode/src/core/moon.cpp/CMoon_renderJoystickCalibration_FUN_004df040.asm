@@ -36,8 +36,8 @@
 ;   engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_00460c00
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00460780
 ;   engine_matrix.c_normalizeVector3DFloat_FUN_004cde90
-;   wincore_windll.cpp_clearScreen_FUN_0052ee70
-;   wincore_windll.cpp_clearZBufferNative_FUN_0052eed4
+;   engine_special.cpp_clearScreen_FUN_0052ee70
+;   engine_special.cpp_clearZBufferNative_FUN_0052eed4
 ;
 ; *****************************************************************************
 
@@ -49,10 +49,10 @@ section .text
     PUSH EDI                            ; 004df042
     PUSH EBP                            ; 004df043
     SUB ESP,0x24                        ; 004df044
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004df047
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
-    CALL wincore_windll.cpp_clearZBufferNative_FUN_0052eed4 ; 004df04c
-        ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearZBufferNative_FUN_0052eed4()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004df047
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearZBufferNative_FUN_0052eed4 ; 004df04c
+        ;   XREF to: 0052eed4 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearZBufferNative_FUN_0052eed4()
     PUSH 0x2dd1184                      ; 004df051 | DAT_02dd1184
     MOV EDX,dword ptr [0x005ae704]      ; 004df056 | DAT_005ae704
     PUSH EDX                            ; 004df05c | DAT_01b4d738

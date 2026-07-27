@@ -11,16 +11,16 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[14]:
-;   FUN_004c46b0 at 004c46fb
-;   FUN_004d4ba0 at 004d4d3a
-;   FUN_004f6170 at 004f6381
-;   FUN_00543c50 at 00543f19
-;   FUN_00549cd0 at 00549dbd
-;   FUN_0055caf0 at 0055cb77
 ;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_00417320 at 0041754e
 ;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422370 at 00422470
 ;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00427310 at 0042763c
 ;   core_charactr.cpp_CCharacter_computePickup_FUN_00429010 at 00429050
+;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_004363e0 at 004364da
+;   core_fire.cpp_CBulletHole_init_FUN_00482c80 at 00482dbf
+;   core_ladder.cpp_FUN_004c46b0 at 004c46fb
+;   core_mimic.cpp_FUN_004d4ba0 at 004d4d3a
+;   core_platfrm.cpp_CPlatform_attachActor_FUN_004f75c0 at 004f7648
+;   core_platfrm.cpp_FUN_004f6170 at 004f6381
 ;   ... and 4 more
 ;
 ; *****************************************************************************

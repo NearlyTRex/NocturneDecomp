@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_fire_cpp_CToss_create_FUN_004873b0(int *param_1,int param_2,uint param_3,uint param_4,uint param_5,int param_6)
 
 {
@@ -29,9 +27,9 @@ void core_fire_cpp_CToss_create_FUN_004873b0(int *param_1,int param_2,uint param
     local_14 = 0x3f800000;
   }
   else {
-    _DAT_01cc4800 = "..\\core\\fire.cpp";
-    _DAT_01cc4804 = 0xb96;
-    FUN_004c8440("CToss::create - invalid toss type.");
+    PTR_01cc4800 = "..\\core\\fire.cpp";
+    INT_01cc4804 = 0xb96;
+    core_main_c_FUN_004c8440("CToss::create - invalid toss type.");
   }
   if ((float)param_1[0xf7] <= 0.0) {
     param_1[0xf7] = 0x40a00000;

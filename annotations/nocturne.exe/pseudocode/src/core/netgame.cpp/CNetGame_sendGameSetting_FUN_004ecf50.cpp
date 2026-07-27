@@ -31,18 +31,18 @@ void __cdecl core_netgame_cpp_CNetGame_sendGameSetting_FUN_004ecf50(int *param_1
   
   bVar8 = 0;
   if ((*param_1 != 1) || (param_1[1] != 1)) {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 0x8a8;
-    FUN_004c8440("CNetGame::sendGameSettingsPacket - should only call this in server lobby mode");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 0x8a8;
+    core_main_c_FUN_004c8440("CNetGame::sendGameSettingsPacket - should only call this in server lobby mode");
   }
   if ((param_2 < 0) || (param_1[7] <= param_2)) {
-    _DAT_01cc4800 = "..\\core\\netgame.cpp";
-    _DAT_01cc4804 = 0x8ae;
-    FUN_004c8440("CNetGame::send - invalid player index");
+    PTR_01cc4800 = "..\\core\\netgame.cpp";
+    INT_01cc4804 = 0x8ae;
+    core_main_c_FUN_004c8440("CNetGame::send - invalid player index");
   }
   uStack_c4 = 0xb;
   uStack_c8 = 0xb1;
-  __arrinit(acStack_67,2,0x5a0e00);
+  __arrinit(acStack_67,2,&g_SPlayerTypeInfo_005a0e00);
   iStack_bf = param_1[0x5b];
   uStack_c3 = _DAT_01cea404;
   pcVar7 = acStack_bb;

@@ -34,20 +34,20 @@
 ;   double DOUBLE_0058be4a = 0.100000000000000
 ;   int INT_005bac64 = 0x1cc30e4
 ;   undefined4 DAT_01cc30e4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   ... and 3 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_004ea740
 ;   core_netgame.cpp_CNetGame_send_FUN_004eb350
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_004ebe10
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_2d.c_clearInputAndWait_FUN_00403f50
 ;   engine_2d.c_drawText_FUN_00402600
-;   FUN_004c8440
+;   engine_special.cpp_clearScreen_FUN_0052ee70
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
-;   wincore_windll.cpp_clearScreen_FUN_0052ee70
 ;   wincore_winrun.cpp_getTime_FUN_00558a30
 ;
 ; *****************************************************************************
@@ -109,8 +109,8 @@ section .text
     MOV dword ptr [ESP + 0x174],EAX     ; 004ea40c
     LEA EAX,[ESI + 0x20]                ; 004ea413
     MOV dword ptr [ESP + 0x178],EAX     ; 004ea416
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004ea41d
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004ea41d
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
         ;   Label: LAB_004ea41d
     MOV EBX,dword ptr [EBP + 0x18]      ; 004ea422
     PUSH EBX                            ; 004ea425
@@ -280,10 +280,10 @@ section .text
         ;   Label: LAB_004ea5e3
     MOV EBX,0x337                       ; 004ea5e8
     PUSH 0x58bd3e                       ; 004ea5ed | = "CNetGame::syncPlayers - don't use 0!"
-    MOV dword ptr [0x01cc4800],ECX      ; 004ea5f2 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 004ea5f8 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ea5fe
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004ea5f2 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 004ea5f8 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ea5fe
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ea603
     JMP 0x004ea391                      ; 004ea606
         ;   XREF to: 004ea391 (UNCONDITIONAL_JUMP)  ; LAB_004ea391
@@ -320,8 +320,8 @@ section .text
     CMP EDX,dword ptr [0x01cea400]      ; 004ea63f | DAT_01cea400
     JLE 0x004ea6cf                      ; 004ea645
         ;   XREF to: 004ea6cf (CONDITIONAL_JUMP)  ; LAB_004ea6cf
-    CALL wincore_windll.cpp_clearScreen_FUN_0052ee70 ; 004ea64b
-        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_clearScreen_FUN_0052ee70()
+    CALL engine_special.cpp_clearScreen_FUN_0052ee70 ; 004ea64b
+        ;   XREF to: 0052ee70 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_clearScreen_FUN_0052ee70()
     MOV ECX,dword ptr [EBP + 0x18]      ; 004ea650
     PUSH ECX                            ; 004ea653
     PUSH 0x58bdd5                       ; 004ea654 | = "Waiting on sync code %d from server..."
@@ -365,10 +365,10 @@ section .text
         ;   Label: LAB_004ea6ac
     MOV ECX,0x3c0                       ; 004ea6b1
     PUSH 0x58be10                       ; 004ea6b6 | = "CNetGame::syncPlayers - invalid mode"
-    MOV dword ptr [0x01cc4800],EDX      ; 004ea6bb | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004ea6c1 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ea6c7
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004ea6bb | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004ea6c1 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ea6c7
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ea6cc
     MOV EAX,0x1                         ; 004ea6cf
         ;   Label: LAB_004ea6cf

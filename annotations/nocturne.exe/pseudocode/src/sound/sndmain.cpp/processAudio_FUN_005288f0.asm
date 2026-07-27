@@ -7,8 +7,8 @@
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[2]:
-;   FUN_00528670 at 00528688
 ;   core_moon.cpp_CMoon_render_FUN_004dec50 at 004dec5c
+;   sound_sndmain.cpp_FUN_00528670 at 00528688
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005939b6 = 3

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004c4850 at 004c4863
+;   core_larva.cpp_FUN_004c4850 at 004c4863
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_worm_dfm_0058777b

@@ -7,11 +7,11 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057f012
 ;   TerminatedCString s_CPickList_swap_can_t_do_0057f028
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;   shape_edittool.cpp_CStrList_swap_FUN_00474300
 ;
 ; *****************************************************************************
@@ -45,10 +45,10 @@ section .text
     MOV ECX,0x57f012                    ; 0047622c | = "..\\shape\\edittool.cpp"
     MOV EBX,0xe35                       ; 00476231
     PUSH 0x57f028                       ; 00476236 | = "CPickList::swap - can't do this after..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0047623b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00476241 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00476247
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0047623b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00476241 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00476247
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0047624c
     POP EBX                             ; 0047624f
     JMP 0x00476210                      ; 00476250

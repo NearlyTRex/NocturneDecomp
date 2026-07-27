@@ -10,16 +10,16 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[10]:
-;   FUN_00497900 at 00497ad5
-;   FUN_004fd1d0 at 004fd317
-;   FUN_0051d650 at 0051d739
-;   FUN_0053a260 at 0053a401
-;   FUN_0055d1f0 at 0055d206
 ;   core_charactr.cpp_FUN_00429e60 at 00429ed8
+;   core_gabriela.cpp_FUN_00497900 at 00497ad5
+;   core_scat.cpp_FUN_004fd1d0 at 004fd317
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0 at 0051d8d9
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0 at 0051ca25
 ;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0051cae0 at 0051cef9
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0051b920 at 0051be5e
+;   core_skeleton.cpp_FUN_0051d650 at 0051d739
+;   core_stranger.cpp_FUN_0053a260 at 0053a401
+;   core_xform.cpp_FUN_0055d1f0 at 0055d206
 ;
 ; *****************************************************************************
 

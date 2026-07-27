@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00554930 at 00554935
+;   core_weather.cpp_staticInit_FUN_00554930 at 00554935
 ;
 ; Called Functions:
 ;   core_weather.cpp_CWeather_setWeatherType_FUN_00555750

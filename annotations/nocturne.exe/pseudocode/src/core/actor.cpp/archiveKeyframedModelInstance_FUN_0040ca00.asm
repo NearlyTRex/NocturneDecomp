@@ -8,16 +8,16 @@
 ; undefined1       Stack[-0xcf]:1  local_cf
 ;
 ; XREF[29]:
-;   FUN_0040f390 at 0040f3aa
-;   FUN_0040f7d0 at 0040f7ea
-;   FUN_0043cc50 at 0043cc6a
-;   FUN_00481e20 at 00481e3a
-;   FUN_0048e830 at 0048e84a
-;   FUN_004a8b30 at 004a8b4c
-;   FUN_00546b50 at 00546b6a
-;   FUN_00546da0 at 00546dba
 ;   core_ammo.cpp_FUN_0040ecf0 at 0040ed0a
+;   core_ammobox.cpp_FUN_0040f390 at 0040f3aa
+;   core_anvil.cpp_FUN_0040f7d0 at 0040f7ea
 ;   core_backgnd.cpp_CBackgroundActor_archive_FUN_00410040 at 0041005a
+;   core_bat.cpp_CBat_archive_FUN_00411b50 at 00411bce
+;   core_battery.cpp_CBattery_archive_FUN_00414ef0 at 00414f0a
+;   core_boxactor.cpp_CBoxActor_archive_FUN_0041ec60 at 0041ec84
+;   core_bugs.cpp_CBugs_archive_FUN_00421880 at 00421909
+;   core_crate.cpp_FUN_0043cc50 at 0043cc6a
+;   core_door.cpp_CDoor_archive_FUN_00455ee0 at 00455efb
 ;   ... and 19 more
 ;
 ; Referenced Globals:

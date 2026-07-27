@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01c71300
 ;
 ; Called Functions:
-;   wincore_windll.cpp_renderScanline_FUN_00530710
+;   engine_special.cpp_renderScanline_FUN_00530710
 ;
 ; *****************************************************************************
 
@@ -327,8 +327,8 @@ section .text
         ;   Label: LAB_00494553
     MOV ESI,dword ptr [ESP + 0xc]       ; 00494557
     MOV EBX,dword ptr [ESP + 0x8]       ; 0049455b
-    CALL wincore_windll.cpp_renderScanline_FUN_00530710 ; 0049455f
-        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_renderScanline_FUN_00530710()
+    CALL engine_special.cpp_renderScanline_FUN_00530710 ; 0049455f
+        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderScanline_FUN_00530710()
     MOV EAX,dword ptr [ESP + 0xc]       ; 00494564
     MOV EDX,dword ptr [ESP + 0xc]       ; 00494568
     MOV EAX,dword ptr [EAX + 0xc]       ; 0049456c

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00495a20 at 004961ec
+;   core_gabriela.cpp_FUN_00495a20 at 004961ec
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005be368

@@ -14,16 +14,16 @@
 ;   undefined4 DAT_005b7624
 ;   undefined4 DAT_014b9904
 ;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cc64a4
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010
+;   core_main.c_FUN_004c8440
 ;   engine_2d.c_resetGraphicsSystem_FUN_00403760
-;   FUN_004c8440
+;   engine_special.cpp_selectCard_FUN_00532d00
 ;   wincore_wddvmem.cpp_setScreenResolution_FUN_00552e00
-;   wincore_windll.cpp_selectCard_FUN_00532d00
 ;
 ; *****************************************************************************
 
@@ -80,10 +80,10 @@ section .text
     MOV EBP,0x58276a                    ; 0049d8da | = "..\\core\\game.cpp"
     MOV EAX,0x497                       ; 0049d8df
     PUSH 0x58277b                       ; 0049d8e4 | = "CGame::setGameRes - Unable to set the..."
-    MOV dword ptr [0x01cc4800],EBP      ; 0049d8e9 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0049d8ef | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0049d8f4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 0049d8e9 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0049d8ef | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0049d8f4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x10                        ; 0049d8f9
     CALL engine_2d.c_resetGraphicsSystem_FUN_00403760 ; 0049d8fc
         ;   XREF to: 00403760 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_resetGraphicsSystem_FUN_00403760()
@@ -105,8 +105,8 @@ section .text
     RET                                 ; 0049d927
     PUSH EDX                            ; 0049d928
         ;   Label: LAB_0049d928
-    CALL wincore_windll.cpp_selectCard_FUN_00532d00 ; 0049d929
-        ;   XREF to: 00532d00 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_selectCard_FUN_00532d00()
+    CALL engine_special.cpp_selectCard_FUN_00532d00 ; 0049d929
+        ;   XREF to: 00532d00 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_selectCard_FUN_00532d00()
     ADD ESP,0x4                         ; 0049d92e
     JMP 0x0049d886                      ; 0049d931
         ;   XREF to: 0049d886 (UNCONDITIONAL_JUMP)  ; LAB_0049d886

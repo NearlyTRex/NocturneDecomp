@@ -27,7 +27,7 @@
 ;   ... and 5 more
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -62,10 +62,10 @@ section .text
         ;   Label: LAB_00440b55
     MOV ESI,0x43b                       ; 00440b5a
     PUSH 0x57b755                       ; 00440b5f | = "CDemonCamera::beginBackgroundScene - ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00440b64 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00440b6a | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00440b70
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00440b64 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00440b6a | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00440b70
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00440b75
     JMP 0x00440b31                      ; 00440b78
         ;   XREF to: 00440b31 (UNCONDITIONAL_JUMP)  ; LAB_00440b31

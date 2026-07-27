@@ -5,12 +5,12 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a33e0
+;   WatcomTypeInfo g_CTommyGunTypeInfo_005a33e0
 ;
 ; Called Functions:
 ;   core_weapon.cpp_CWeapon_dtor_FUN_00553ea0
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   shape_memdbg.cpp_free_FUN_00564486
 ;
 ; *****************************************************************************
@@ -36,7 +36,7 @@ section .text
     MOV EAX,EBX                         ; 00546792
     POP EBX                             ; 00546794
     RET                                 ; 00546795
-    PUSH 0x5a33e0                       ; 00546796 | DAT_005a33e0
+    PUSH 0x5a33e0                       ; 00546796 | g_CTommyGunTypeInfo_005a33e0
         ;   Label: LAB_00546796
     PUSH EBX                            ; 0054679b
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 0054679c
@@ -51,8 +51,8 @@ section .text
     RET                                 ; 005467b0
     PUSH EAX                            ; 005467b1
         ;   Label: LAB_005467b1
-    CALL FUN_00564494                   ; 005467b2
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 005467b2
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 005467b7
     MOV EAX,EBX                         ; 005467ba
     POP EBX                             ; 005467bc

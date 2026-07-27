@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -125,7 +125,7 @@
     "complexity_score": 1012,
     "cross_reference_count": 1,
     "function_call_count": 26,
-    "global_count": 19,
+    "global_count": 39,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 277,
     "suspect_count": 70,
@@ -258,9 +258,9 @@
       "name": "engine_2d.c_drawText_FUN_00402600"
     },
     {
-      "addr": "0046fe60",
+      "addr": "0052ee70",
       "is_variadic": false,
-      "name": "FUN_0046fe60"
+      "name": "engine_special.cpp_clearScreen_FUN_0052ee70"
     },
     {
       "addr": "0046fff0",
@@ -273,6 +273,11 @@
       "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600"
     },
     {
+      "addr": "0046fe60",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_0046fe60"
+    },
+    {
       "addr": "00548bb0",
       "is_variadic": false,
       "name": "support_trisock.cpp_formatIPAddress_FUN_00548bb0"
@@ -283,17 +288,132 @@
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00553910"
     },
     {
-      "addr": "0052ee70",
-      "is_variadic": false,
-      "name": "wincore_windll.cpp_clearScreen_FUN_0052ee70"
-    },
-    {
       "addr": "00558a30",
       "is_variadic": false,
       "name": "wincore_winrun.cpp_getTime_FUN_00558a30"
     }
   ],
   "globals": [
+    {
+      "addr": "0058c160",
+      "name": "s_You_have_been_disconnect_0058c160",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c18a",
+      "name": "s_Mission_s_0058c18a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c196",
+      "name": "s_MyGameSettigsId_d_0058c196",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1aa",
+      "name": "s_Player_0058c1aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1b1",
+      "name": "s_IP_0058c1b1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1b4",
+      "name": "s_Ping_0058c1b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1b9",
+      "name": "s_Ready_0058c1b9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1bf",
+      "name": "s_heroType_0058c1bf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1c8",
+      "name": "s_gameSettings_0058c1c8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1d5",
+      "name": "s_Local_0058c1d5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1dd",
+      "name": "s_Local_0058c1dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1e5",
+      "name": "s_dms_0058c1e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1ea",
+      "name": "s_anon_0058c1ea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1ec",
+      "name": "s_Ready_0058c1ec",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1f2",
+      "name": "s_Not_ready_0058c1f2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1fc",
+      "name": "s_d_0058c1fc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c1ff",
+      "name": "s_d_0058c1ff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c202",
+      "name": "s_Loading_s_0058c202",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c20d",
+      "name": "s_Loading_s_0058c20d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0058c218",
+      "name": "s_Send_chat_0058c218",
+      "type": "TerminatedCString",
+      "value": null
+    },
     {
       "addr": "0058c222",
       "name": "FLOAT_0058c222",

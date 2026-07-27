@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,15 +122,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1084,
-    "complexity_score": 3704,
+    "complexity_score": 3659,
     "cross_reference_count": 8,
     "function_call_count": 6,
     "global_count": 41,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 539,
-    "suspect_count": 311,
+    "suspect_count": 307,
     "suspect_types": [
-      "fast_inv_sqrt_inline",
       "pointer_cast",
       "pointer_stride_bytecount",
       "pointer_truncation",
@@ -146,24 +145,6 @@
   },
   "cross_references": [
     {
-      "addr": "0043f330",
-      "from_addr": "0043f4a4",
-      "name": "FUN_0043f330",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ac440",
-      "from_addr": "004ac583",
-      "name": "FUN_004ac440",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ac600",
-      "from_addr": "004ac73f",
-      "name": "FUN_004ac600",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00416030",
       "from_addr": "00416084",
       "name": "core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030",
@@ -176,9 +157,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0043f330",
+      "from_addr": "0043f4a4",
+      "name": "core_curtain.cpp_FUN_0043f330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004530c0",
       "from_addr": "00453127",
       "name": "core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ac440",
+      "from_addr": "004ac583",
+      "name": "core_glass.cpp_FUN_004ac440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ac600",
+      "from_addr": "004ac73f",
+      "name": "core_glass.cpp_FUN_004ac600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -214,6 +213,16 @@
       "name": "core_dcamera.cpp_CDemonCamera_transformVectorWithAlpha_FUN_00441a10"
     },
     {
+      "addr": "00441440",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_FUN_00441440"
+    },
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
+    {
       "addr": "0050b7f0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_lightVertexColor_FUN_0050b7f0"
@@ -227,16 +236,6 @@
       "addr": "00461090",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_00461090"
-    },
-    {
-      "addr": "00441440",
-      "is_variadic": false,
-      "name": "FUN_00441440"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -392,20 +391,20 @@
     },
     {
       "addr": "01c70710",
-      "name": "DAT_01c70710",
+      "name": "CVector3f_01c70708.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -1088,7 +1087,7 @@
       "line": 91,
       "match": "param_2",
       "severity": "mild",
-      "text": "FUN_004c8440(\"CDemonSet::lightVerticies - tried to light %d vertices, but GLOBAL_VERTEX_COUNT = %d\",param_2,20000);",
+      "text": "core_main_c_FUN_004c8440(\"CDemonSet::lightVerticies - tried to light %d vertices, but GLOBAL_VERTEX_COUNT = %d\",param_2,20000);",
       "type": "unnamed_param"
     },
     {
@@ -1192,7 +1191,7 @@
       "line": 110,
       "match": "&stack0xfffffee4",
       "severity": "moderate",
-      "text": "FUN_00441440(0x1fb8508,&stack0xfffffee4);",
+      "text": "core_dcamera_cpp_FUN_00441440(0x1fb8508,&stack0xfffffee4);",
       "type": "stack_ref"
     },
     {
@@ -1296,7 +1295,7 @@
       "line": 135,
       "match": "&stack0xfffffecc",
       "severity": "moderate",
-      "text": "FUN_00441440(0x1fb8508,&stack0xfffffecc);",
+      "text": "core_dcamera_cpp_FUN_00441440(0x1fb8508,&stack0xfffffecc);",
       "type": "stack_ref"
     },
     {
@@ -2144,7 +2143,7 @@
       "line": 377,
       "match": "&stack0xfffffef0",
       "severity": "moderate",
-      "text": "FUN_00441440(0x1fb8508,&stack0xfffffef0);",
+      "text": "core_dcamera_cpp_FUN_00441440(0x1fb8508,&stack0xfffffef0);",
       "type": "stack_ref"
     },
     {
@@ -2400,7 +2399,7 @@
       "line": 448,
       "match": "&stack0xfffffe9c",
       "severity": "moderate",
-      "text": "FUN_00441440(0x1fb8508,&stack0xfffffe9c);",
+      "text": "core_dcamera_cpp_FUN_00441440(0x1fb8508,&stack0xfffffe9c);",
       "type": "stack_ref"
     },
     {
@@ -3434,38 +3433,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&DAT_005c5040 + iVar5) = 0;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01c70710`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01c70710` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 176,
-      "match": "local_8c = (float)(_DAT_01c70710 - ((int)local_90 >> 1));",
-      "severity": "moderate",
-      "text": "local_8c = (float)(_DAT_01c70710 - ((int)local_90 >> 1));",
-      "type": "fast_inv_sqrt_inline"
-    },
-    {
-      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01c70710`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01c70710` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 238,
-      "match": "local_28 = (float)(_DAT_01c70710 - ((int)local_2c >> 1));",
-      "severity": "moderate",
-      "text": "local_28 = (float)(_DAT_01c70710 - ((int)local_2c >> 1));",
-      "type": "fast_inv_sqrt_inline"
-    },
-    {
-      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01c70710`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01c70710` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 307,
-      "match": "local_70 = (float)(_DAT_01c70710 - ((int)local_74 >> 1));",
-      "severity": "moderate",
-      "text": "local_70 = (float)(_DAT_01c70710 - ((int)local_74 >> 1));",
-      "type": "fast_inv_sqrt_inline"
-    },
-    {
-      "description": "Inlined fast inverse sqrt bit-trick (bias `_DAT_01c70710`). Ghidra's numeric `(int)` cast is wrong; the asm reinterprets the float's bit pattern. Bias `_DAT_01c70710` is not a known magic - this may be a sibling-program variant. Confirm against the .asm (SAR/ADD on the float's bits), then express it via a bit-cast helper in a .keep; no named helper is guaranteed to exist in this program.",
-      "line": 339,
-      "match": "local_7c = (float)(_DAT_01c70710 - ((int)local_80 >> 1));",
-      "severity": "moderate",
-      "text": "local_7c = (float)(_DAT_01c70710 - ((int)local_80 >> 1));",
-      "type": "fast_inv_sqrt_inline"
     },
     {
       "description": "mem* byte count hardcodes an element stride (param_2 * 0xc) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",

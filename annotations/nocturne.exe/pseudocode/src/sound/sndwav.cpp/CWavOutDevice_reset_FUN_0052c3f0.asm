@@ -11,7 +11,7 @@
 ;   undefined4 DAT_02dc93a4
 ;
 ; Called Functions:
-;   FUN_00529980
+;   sound_sndmain.cpp_FUN_00529980
 ;   sound_sndmain.cpp_killSoundThread_FUN_00528780
 ;   waveOutReset
 ;   waveOutUnprepareHeader
@@ -63,8 +63,8 @@ section .text
     JZ 0x0052c402                       ; 0052c43f
         ;   XREF to: 0052c402 (CONDITIONAL_JUMP)  ; LAB_0052c402
     PUSH 0x59492d                       ; 0052c441 | = "waveOutReset failed!"
-    CALL FUN_00529980                   ; 0052c446
-        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined FUN_00529980()
+    CALL sound_sndmain.cpp_FUN_00529980 ; 0052c446
+        ;   XREF to: 00529980 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00529980()
     XOR ESI,ESI                         ; 0052c44b
     ADD ESP,0x4                         ; 0052c44d
     JMP 0x0052c402                      ; 0052c450

@@ -3,9 +3,25 @@
 // Function prototypes for core/passngr.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_passngr.cpp_staticInit_FUN_004ef480
+// Address: 004ef480
+void __cdecl staticInit(void);
+
+// Original: core_passngr.cpp_FUN_004ef4b0
+// Address: 004ef4b0
+void FUN_004ef4b0(void);
+
+// Original: core_passngr.cpp_FUN_004ef4d0
+// Address: 004ef4d0
+CDemonActorType * FUN_004ef4d0(void);
+
 // Original: core_passngr.cpp_CPassenger_ctor_FUN_004ef4e0
 // Address: 004ef4e0
 int CPassenger::ctor(undefined4 param_1);
+
+// Original: core_passngr.cpp_FUN_004ef5c0
+// Address: 004ef5c0
+int FUN_004ef5c0(int param_1,byte param_2);
 
 // Original: core_passngr.cpp_CPassenger_setup_FUN_004ef6d0
 // Address: 004ef6d0
@@ -14,6 +30,10 @@ void CPassenger::setup(int param_1);
 // Original: core_passngr.cpp_CPassenger_process_FUN_004ef890
 // Address: 004ef890
 void CPassenger::process(int param_1,float param_2);
+
+// Original: core_passngr.cpp_FUN_004efa60
+// Address: 004efa60
+int FUN_004efa60(int param_1);
 
 // Original: core_passngr.cpp_CPassenger_archive_FUN_004efb30
 // Address: 004efb30

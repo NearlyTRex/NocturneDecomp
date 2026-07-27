@@ -25,9 +25,9 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_004ff170(int param_1
       iVar3 = core_script_cpp_CScript_findLabelIndex_FUN_00504c10(param_1,"initSectionEnd")
       ;
       if (iVar3 < 0) {
-        _DAT_01cc4800 = "..\\core\\script.cpp";
-        _DAT_01cc4804 = 0x41c;
-        FUN_004c8440("Script has \"initSection\" label, but no \"initSectionEnd\" label.");
+        PTR_01cc4800 = "..\\core\\script.cpp";
+        INT_01cc4804 = 0x41c;
+        core_main_c_FUN_004c8440("Script has \"initSection\" label, but no \"initSectionEnd\" label.");
       }
       local_10 = *(uint *)(param_1 + 0x40);
       _DAT_01e56c24 = 0;
@@ -38,18 +38,19 @@ void __cdecl core_script_cpp_CScript_executeInitSection_FUN_004ff170(int param_1
         local_14 = 0x3e800000;
         iVar4 = core_script_cpp_CScript_step_FUN_004ff2c0(param_1,&local_14);
         if (iVar4 < 0) {
-          _DAT_01cc4800 = "..\\core\\script.cpp";
-          _DAT_01cc4804 = 0x438;
-          FUN_004c8440("Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
-                       *(uint *)(*(int *)(param_1 + 0x2c) + iVar1 * 8),
-                       *(uint *)(*(int *)(param_1 + 0x2c) + 4 + iVar1 * 8),&DAT_01e56420);
+          PTR_01cc4800 = "..\\core\\script.cpp";
+          INT_01cc4804 = 0x438;
+          core_main_c_FUN_004c8440
+                    ("Error processing script.\nLine: %d\nText: %s\nWhat's wrong: %s\n",
+                     *(uint *)(*(int *)(param_1 + 0x2c) + iVar1 * 8),
+                     *(uint *)(*(int *)(param_1 + 0x2c) + 4 + iVar1 * 8),&DAT_01e56420);
         }
         if (iVar3 == *(int *)(param_1 + 0x40)) break;
         iVar2 = iVar2 + 1;
         if (10000 < iVar2) {
-          _DAT_01cc4800 = "..\\core\\script.cpp";
-          _DAT_01cc4804 = 0x44a;
-          FUN_004c8440("Infinite loop detected in initSection.\n");
+          PTR_01cc4800 = "..\\core\\script.cpp";
+          INT_01cc4804 = 0x44a;
+          core_main_c_FUN_004c8440("Infinite loop detected in initSection.\n");
         }
       }
       if (_DAT_01e56c24 != 0) {

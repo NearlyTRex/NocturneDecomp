@@ -3,6 +3,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "constants.h"
+#include "prototypes/prototypes_480000.h"
 
 // =============================================================================
 // CONSTANTS
@@ -246,7 +247,9 @@ static TerminatedCString s_CDeformableModelInstance_005be9cd = "$CDeformableMode
 static TerminatedCString s_SVert_CDeformableModel_005be9ed = "$SVert$:CDeformableModel$$";
 static TerminatedCString s_CSmiley_005bea14 = "$CSmiley$$";
 static TerminatedCString s_CMP3Decoder_005beca4 = "$CMP3Decoder$$";
+static TerminatedCString s_SfxSample_005becc4 = "$SfxSample$$";
 static TerminatedCString s_SfxOptions_005bece4 = "$SfxOptions$$";
+static TerminatedCString s_SfxSlot_005bed04 = "$SfxSlot$$";
 static TerminatedCString s_DEST_005bed39 = ":DEST";
 static TerminatedCString s_STrainNoise_005beff4 = "$STrainNoise$$";
 
@@ -261,7 +264,7 @@ static int DAT_005B75C4 = 0x1;
 static int DAT_005B91C4 = 0x1;
 static int DAT_005B91DC = 0x1;
 static int DAT_005B91F8 = 0x1;
-static int DAT_005B9288 = 0x1;
+static int DAT_005B963C = 0x1;
 static int DAT_005BA900 = 0x1;
 static int DAT_005BA910 = 0x1;
 static int DAT_005BA944 = 0x1;
@@ -275,9 +278,25 @@ static int DAT_005BAD54 = 0x1;
 static int DAT_005BADB8 = 0x1;
 static int DAT_005BAF5C = 0x1;
 static int DAT_005BB144 = 0x1;
+static int DAT_005BE1E8 = 0x1;
 static int DAT_005BE93C = 0x1;
 static int DAT_005BE950 = 0x1;
 static int DAT_005BEA0C = 0x1;
+
+// string constants
+static string s_CFilmReel_005b803c = "$CFilmReel$$";
+static string s_CPopcorn_005b8c34 = "$CPopcorn$$";
+static string s_CShell_005b8c44 = "$CShell$$";
+static string s_CTrail_005b8c54 = "$CTrail$$";
+static string s_CToss_005b8cb4 = "$CToss$$";
+static string s_CRock_005b8d04 = "$CRock$$";
+static string s_CSpark_005b8d94 = "$CSpark$$";
+static string s_CStake_005b8da4 = "$CStake$$";
+static string s_SBat_005bb218 = "$SBat$$";
+static string s_CCourse_005bb224 = "$CCourse$$";
+static string s_CNetGame_005bdf3c = "$CNetGame$$";
+static string s_SVDBox_005be69c = "$SVDBox$$";
+static string s_C3DSLight_005be6c4 = "$C3DSLight$$";
 
 // undefined1 constants
 static undefined1 DAT_005b6d08 = 0x01;
@@ -287,21 +306,21 @@ static undefined1 DAT_005b9385 = 0x46;
 
 // undefined1* constants
 static undefined1* DAT_005B7FB0 = (undefined1*)0x00481A01; // LAB_00481a01
-static undefined1* DAT_005B7FB4 = (undefined1*)0x00481A20; // FUN_00481a20
+static undefined1* DAT_005B7FB4 = (undefined1*)crt_unknown_c_FUN_00481a20;
 static undefined1* DAT_005B7FB8 = (undefined1*)0x00481A17; // LAB_00481a17
-static undefined1* DAT_005B7FBC = (undefined1*)0x00481A14; // FUN_00481a14
+static undefined1* DAT_005B7FBC = (undefined1*)crt_unknown_c_FUN_00481a14;
 static undefined1* DAT_005B7FC0 = (undefined1*)0x004819FF; // LAB_004819ff
-static undefined1* DAT_005B7FC4 = (undefined1*)0x00481A08; // FUN_00481a08
+static undefined1* DAT_005B7FC4 = (undefined1*)crt_unknown_c_FUN_00481a08;
 static undefined1* DAT_005B7FC8 = (undefined1*)0x004819FB; // LAB_004819fb
-static undefined1* DAT_005B7FCC = (undefined1*)0x004819F8; // FUN_004819f8
+static undefined1* DAT_005B7FCC = (undefined1*)crt_unknown_c_FUN_004819f8;
 static undefined1* DAT_005B7FF4 = (undefined1*)0x00481AC8; // LAB_00481ac8
-static undefined1* DAT_005B7FF8 = (undefined1*)0x00481B04; // FUN_00481b04
+static undefined1* DAT_005B7FF8 = (undefined1*)crt_unknown_c_FUN_00481b04;
 static undefined1* DAT_005B7FFC = (undefined1*)0x00481AFA; // LAB_00481afa
-static undefined1* DAT_005B8000 = (undefined1*)0x00481AF4; // FUN_00481af4
+static undefined1* DAT_005B8000 = (undefined1*)crt_unknown_c_FUN_00481af4;
 static undefined1* DAT_005B8004 = (undefined1*)0x00481ADA; // LAB_00481ada
-static undefined1* DAT_005B8008 = (undefined1*)0x00481AE4; // FUN_00481ae4
+static undefined1* DAT_005B8008 = (undefined1*)crt_unknown_c_FUN_00481ae4;
 static undefined1* DAT_005B800C = (undefined1*)0x00481AD2; // LAB_00481ad2
-static undefined1* DAT_005B8010 = (undefined1*)0x00481ACC; // FUN_00481acc
+static undefined1* DAT_005B8010 = (undefined1*)crt_unknown_c_FUN_00481acc;
 static undefined1* DAT_005B9458 = (undefined1*)s_forest_msn_005846f7;
 static undefined1* DAT_005B945C = (undefined1*)s_castle1_msn_00584702;
 static undefined1* DAT_005B9460 = (undefined1*)s_dungeon_msn_0058470e;

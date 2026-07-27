@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(int param_1)
 
 {
@@ -18,12 +16,13 @@ void core_hero_cpp_CHero_createDefaultWeapon_FUN_004b4dd0(int param_1)
   char *pcVar5;
   
   core_inv_cpp_CInventory_initialize_FUN_004bef10(param_1 + 0x1f5a0);
-  uVar2 = core_actor_cpp_createActorByName_FUN_0040d540("CGun",_DAT_02ddf9a8);
+  uVar2 = core_actor_cpp_createActorByName_FUN_0040d540
+                    ("CGun",g_CWeaponActorType_02ddf970.name_hash);
   pcVar3 = (char *)core_actor_cpp_castToClassHash_FUN_0040d890(uVar2);
   if (pcVar3 == (char *)0x0) {
-    _DAT_01cc4800 = "..\\core\\hero.cpp";
-    _DAT_01cc4804 = 0x1b2;
-    FUN_004c8440("Out of memory!");
+    PTR_01cc4800 = "..\\core\\hero.cpp";
+    INT_01cc4804 = 0x1b2;
+    core_main_c_FUN_004c8440("Out of memory!");
   }
   pcVar4 = "Your_weapon";
   pcVar5 = pcVar3;

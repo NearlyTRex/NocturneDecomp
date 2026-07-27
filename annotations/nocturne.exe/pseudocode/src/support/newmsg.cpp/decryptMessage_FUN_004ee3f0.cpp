@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 byte * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(byte *param_1)
 
 {
@@ -19,9 +17,9 @@ byte * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(byte *param_1)
   if (param_1[2] != 0x3e) {
     bVar2 = *param_1;
     if ((param_1[2] ^ bVar2) != 0x3e) {
-      _DAT_01cc4800 = "..\\support\\newmsg.cpp";
-      _DAT_01cc4804 = 0xca;
-      FUN_004c8440("decryptMessage - invalid initial mask value!");
+      PTR_01cc4800 = "..\\support\\newmsg.cpp";
+      INT_01cc4804 = 0xca;
+      core_main_c_FUN_004c8440("decryptMessage - invalid initial mask value!");
     }
     iVar4 = 2;
     pbVar3 = param_1 + 2;
@@ -30,15 +28,15 @@ byte * __cdecl support_newmsg_cpp_decryptMessage_FUN_004ee3f0(byte *param_1)
       pbVar3 = pbVar3 + 1;
       iVar4 = iVar4 + 1;
       if (1000 < iVar4) {
-        _DAT_01cc4800 = "..\\support\\newmsg.cpp";
-        _DAT_01cc4804 = 0xd5;
-        FUN_004c8440("decryptMessage - error decrypting text!");
+        PTR_01cc4800 = "..\\support\\newmsg.cpp";
+        INT_01cc4804 = 0xd5;
+        core_main_c_FUN_004c8440("decryptMessage - error decrypting text!");
       }
     }
     if (iVar4 < 0x17) {
-      _DAT_01cc4800 = "..\\support\\newmsg.cpp";
-      _DAT_01cc4804 = 0xe8;
-      FUN_004c8440("decryptMessage - premature null terminator!");
+      PTR_01cc4800 = "..\\support\\newmsg.cpp";
+      INT_01cc4804 = 0xe8;
+      core_main_c_FUN_004c8440("decryptMessage - premature null terminator!");
       return param_1 + 0x17;
     }
   }

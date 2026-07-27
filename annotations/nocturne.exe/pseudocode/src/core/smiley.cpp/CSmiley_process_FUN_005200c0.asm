@@ -624,8 +624,8 @@ section .text
     PUSH EAX                            ; 00520689
     MOV EAX,[0x005b96c4]                ; 0052068a | INT_005b96c4
     PUSH EAX                            ; 0052068f
-    CALL FUN_004b0480                   ; 00520690
-        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined FUN_004b0480()
+    CALL core_gore.cpp_FUN_004b0480     ; 00520690
+        ;   XREF to: 004b0480 (UNCONDITIONAL_CALL)  ; undefined core_gore.cpp_FUN_004b0480()
     ADD ESP,0xc                         ; 00520695
     MOV dword ptr [EBX + 0xbc90],0x1    ; 00520698
     JMP 0x0052037b                      ; 005206a2

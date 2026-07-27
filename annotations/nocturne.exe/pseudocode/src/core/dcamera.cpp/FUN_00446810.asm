@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00446810(int param_1)
+; void core_dcamera_cpp_FUN_00446810(int param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x274]:1  local_274
@@ -33,7 +33,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   FUN_004421b0 at 00442402
+;   core_dcamera.cpp_FUN_004421b0 at 00442402
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_fog_0057b9fb
@@ -58,6 +58,7 @@
 ;   core_dcamera.cpp_resetFogSamplingOffset_FUN_0043fa20
 ;   core_dcamera.cpp_sampleFogAlongRay_FUN_0043fc80
 ;   core_dcamera.cpp_updateFogScrollOffset_FUN_0043fe60
+;   core_main.c_FUN_004c8440
 ;   crt_fstream.cpp_ofstream_ctor_FUN_0056511e
 ;   crt_fstream.cpp_ofstream_dtor_FUN_005651ca
 ;   crt_fstream.cpp_ostream_write_FUN_00565a13
@@ -65,7 +66,6 @@
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;   support_codec.cpp_CCodec_dtor_FUN_00438f30
 ;   support_codec.cpp_CCodec_processFromBuffer_FUN_004390b0
 ;   support_codec.cpp_CLZWCompress_ctor_FUN_00439830
@@ -76,7 +76,7 @@
 section .text
 
     PUSH ESI                            ; 00446810
-        ;   Label: FUN_00446810
+        ;   Label: core_dcamera.cpp_FUN_00446810
     PUSH EDI                            ; 00446811
     PUSH EBP                            ; 00446812
     SUB ESP,0x268                       ; 00446813
@@ -145,10 +145,10 @@ section .text
     MOV ESI,0x57ba1a                    ; 004468f4 | = "..\\core\\dcamera.cpp"
     MOV EDI,0x12d0                      ; 004468f9
     PUSH 0x57ba2e                       ; 004468fe | = "Can't create %s"
-    MOV dword ptr [0x01cc4800],ESI      ; 00446903 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00446909 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0044690f
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00446903 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00446909 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0044690f
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00446914
     PUSH 0x1000                         ; 00446917
         ;   Label: LAB_00446917
@@ -412,10 +412,10 @@ section .text
     MOV ESI,0x57ba67                    ; 00446d1e | = "..\\core\\dcamera.cpp"
     MOV EDI,0x133f                      ; 00446d23
     PUSH 0x57ba7b                       ; 00446d28 | = "Not all bytes consumed compressing %s"
-    MOV dword ptr [0x01cc4800],ESI      ; 00446d2d | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 00446d33 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00446d39
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ESI      ; 00446d2d | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 00446d33 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00446d39
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00446d3e
     CMP dword ptr [ESP + 0x164],0x0     ; 00446d41
         ;   Label: LAB_00446d41
@@ -506,22 +506,22 @@ section .text
     MOV EDX,0x57ba3e                    ; 00446e3e | = "..\\core\\dcamera.cpp"
     MOV ECX,0x133d                      ; 00446e43
     PUSH 0x57ba52                       ; 00446e48 | = "Error compressing %s"
-    MOV dword ptr [0x01cc4800],EDX      ; 00446e4d | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 00446e53 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00446e59
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 00446e4d | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 00446e53 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00446e59
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00446e5e
     JMP 0x00446d0c                      ; 00446e61
         ;   XREF to: 00446d0c (UNCONDITIONAL_JUMP)  ; LAB_00446d0c
-    MOV dword ptr [0x01cc4800],0x57baa1 ; 00446e66 | DAT_01cc4800 | = "..\\core\\dcamera.cpp"
+    MOV dword ptr [0x01cc4800],0x57baa1 ; 00446e66 | PTR_01cc4800 | = "..\\core\\dcamera.cpp"
         ;   Label: LAB_00446e66
     LEA EAX,[ESP + 0x180]               ; 00446e70
     PUSH EAX                            ; 00446e77
     MOV EDX,0x1340                      ; 00446e78
     PUSH 0x57bab5                       ; 00446e7d | = "Error writing compressed file %s"
-    MOV dword ptr [0x01cc4804],EDX      ; 00446e82 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00446e88
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EDX      ; 00446e82 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00446e88
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00446e8d
     JMP 0x00446d4f                      ; 00446e90
         ;   XREF to: 00446d4f (UNCONDITIONAL_JUMP)  ; LAB_00446d4f

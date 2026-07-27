@@ -16,9 +16,9 @@ uint __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_005280c0(uint param_1,uint
   
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00528490();
   if (iVar1 != 0) {
-    _DAT_01cc4800 = "..\\sound\\sndmain.cpp";
-    _DAT_01cc4804 = 0x1168;
-    FUN_004c8440("setSoundOutputMode - can't do this while sound active!");
+    PTR_01cc4800 = "..\\sound\\sndmain.cpp";
+    INT_01cc4804 = 0x1168;
+    core_main_c_FUN_004c8440("setSoundOutputMode - can't do this while sound active!");
   }
   DAT_005bea64 = param_1;
   DAT_005bea68 = param_2;

@@ -18,8 +18,8 @@
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_004401d0
 ;   core_dlight.cpp_FUN_0044e1c0
 ;   core_dlight.cpp_resetRestoreMemoryAllocator_FUN_0044e3b0
-;   FUN_00515410
-;   FUN_00564494
+;   core_setutil.cpp_FUN_00515410
+;   crt_unknown.c_FUN_00564494
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     LEA EBX,[EDI + 0x19648]             ; 0050ad69
     PUSH EBX                            ; 0050ad6f
         ;   Label: LAB_0050ad6f
-    CALL FUN_00515410                   ; 0050ad70
-        ;   XREF to: 00515410 (UNCONDITIONAL_CALL)  ; undefined FUN_00515410()
+    CALL core_setutil.cpp_FUN_00515410  ; 0050ad70
+        ;   XREF to: 00515410 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_FUN_00515410()
     INC ESI                             ; 0050ad75
     ADD ESP,0x4                         ; 0050ad76
     MOV ECX,dword ptr [EDI + 0x19644]   ; 0050ad79
@@ -92,8 +92,8 @@ section .text
         ;   XREF to: 0044e1c0 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_0044e1c0()
     ADD ESP,0x8                         ; 0050adaf
     PUSH EAX                            ; 0050adb2
-    CALL FUN_00564494                   ; 0050adb3
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 0050adb3
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 0050adb8
     JMP 0x0050ad40                      ; 0050adbb
         ;   XREF to: 0050ad40 (UNCONDITIONAL_JUMP)  ; LAB_0050ad40

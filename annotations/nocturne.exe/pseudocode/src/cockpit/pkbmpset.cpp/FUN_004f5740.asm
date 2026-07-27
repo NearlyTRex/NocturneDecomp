@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004f5740(int *param_1,int param_2,int param_3)
+; void cockpit_pkbmpset_cpp_FUN_004f5740(int *param_1,int param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x148]:1  local_148
@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   FUN_004f5a50 at 004f5b0d
+;   cockpit_pkbmpset.cpp_FUN_004f5a50 at 004f5b0d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rb_0058d642
@@ -23,27 +23,27 @@
 ;   TerminatedCString s_cockpit_pkbmpset_cpp_0058d6e2
 ;   TerminatedCString s_Error_reading_from_s_in_0058d6fa
 ;   TerminatedCString s_cockpit_pkbmpset_cpp_0058d733
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_004f4700
+;   cockpit_pkbmpset.cpp_FUN_004f5c60
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_malloc_FUN_005635b0
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fread_FUN_005636d0
 ;   crt_stdio.c_fseek_FUN_0056582c
 ;   crt_stdio.c_sprintf_FUN_00563c90
+;   crt_unknown.c_FUN_005638d0
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
-;   FUN_004f5c60
-;   FUN_005638d0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004f5740
-        ;   Label: FUN_004f5740
+        ;   Label: cockpit_pkbmpset.cpp_FUN_004f5740
     PUSH ESI                            ; 004f5741
     PUSH EDI                            ; 004f5742
     PUSH EBP                            ; 004f5743
@@ -79,13 +79,13 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x114                       ; 004f57a1
     ADD ESP,0xc                         ; 004f57a6
-    MOV [0x01cc4804],EAX                ; 004f57a9 | DAT_01cc4804
+    MOV [0x01cc4804],EAX                ; 004f57a9 | INT_01cc4804
     MOV EAX,ESP                         ; 004f57ae
     MOV EDI,0x58d6e2                    ; 004f57b0 | = "..\\cockpit\\pkbmpset.cpp"
     PUSH EAX                            ; 004f57b5
-    MOV dword ptr [0x01cc4800],EDI      ; 004f57b6 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 004f57bc
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004f57b6 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 004f57bc
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f57c1
     MOV EDX,dword ptr [ESI]             ; 004f57c4
         ;   Label: LAB_004f57c4
@@ -121,8 +121,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x130]     ; 004f580c
         ;   Label: LAB_004f580c
     PUSH EBX                            ; 004f5813
-    CALL FUN_005638d0                   ; 004f5814
-        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined FUN_005638d0()
+    CALL crt_unknown.c_FUN_005638d0     ; 004f5814
+        ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005638d0()
     ADD ESP,0x4                         ; 004f5819
     MOV EDI,dword ptr [ESP + 0x134]     ; 004f581c
     PUSH EDI                            ; 004f5823
@@ -150,10 +150,10 @@ section .text
     LEA EAX,[ESP + 0x64]                ; 004f585d
     MOV ECX,0x107                       ; 004f5861
     PUSH EAX                            ; 004f5866
-    MOV dword ptr [0x01cc4800],EDX      ; 004f5867 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004f586d | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004f5873
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004f5867 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004f586d | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004f5873
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f5878
     JMP 0x004f5776                      ; 004f587b
         ;   XREF to: 004f5776 (UNCONDITIONAL_JUMP)  ; LAB_004f5776
@@ -179,13 +179,13 @@ section .text
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_sprintf_FUN_00563c90()
     MOV EAX,0x127                       ; 004f58ba
     ADD ESP,0xc                         ; 004f58bf
-    MOV [0x01cc4804],EAX                ; 004f58c2 | DAT_01cc4804
+    MOV [0x01cc4804],EAX                ; 004f58c2 | INT_01cc4804
     LEA EAX,[ESP + 0xc8]                ; 004f58c7
     MOV ECX,0x58d733                    ; 004f58ce | = "..\\cockpit\\pkbmpset.cpp"
     PUSH EAX                            ; 004f58d3
-    MOV dword ptr [0x01cc4800],ECX      ; 004f58d4 | DAT_01cc4800
-    CALL FUN_004c8440                   ; 004f58da
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004f58d4 | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 004f58da
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004f58df
     MOV EDX,dword ptr [ESI + 0x1c]      ; 004f58e2
         ;   Label: LAB_004f58e2
@@ -201,8 +201,8 @@ section .text
         ;   XREF to: 004f57ff (UNCONDITIONAL_JUMP)  ; LAB_004f57ff
     PUSH ESI                            ; 004f58fe
         ;   Label: LAB_004f58fe
-    CALL FUN_004f5c60                   ; 004f58ff
-        ;   XREF to: 004f5c60 (UNCONDITIONAL_CALL)  ; undefined FUN_004f5c60()
+    CALL cockpit_pkbmpset.cpp_FUN_004f5c60 ; 004f58ff
+        ;   XREF to: 004f5c60 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbmpset.cpp_FUN_004f5c60()
     ADD ESP,0x4                         ; 004f5904
     ADD ESP,0x138                       ; 004f5907
     POP EBP                             ; 004f590d

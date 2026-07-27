@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
+; void engine_drender_cpp_FUN_00461720(int *param_1,ushort *param_2,int param_3,int param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x24]:4  local_24
@@ -23,24 +23,24 @@
 ;   undefined4 DAT_01c02594
 ;   undefined4 DAT_01c039a0
 ;   undefined4 DAT_01c039a4
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_drender.cpp_CDemonRenderer_captureFace_FUN_00461bd0
 ;   engine_drender.cpp_CDemonRenderer_renderTexturedFace_FUN_0045f5e0
 ;   engine_drender.cpp_renderTriangleSimple_FUN_00458080
 ;   engine_drender.cpp_renderTriangleTextured_FUN_00457a00
 ;   engine_prim.c_getTriangleWindingFromPackedIndices_FUN_004f9cb0
-;   FUN_004c8440
-;   wincore_windll.cpp_drawPolyList2_FUN_005327c0
+;   engine_special.cpp_drawPolyList2_FUN_005327c0
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00461720
-        ;   Label: FUN_00461720
+        ;   Label: engine_drender.cpp_FUN_00461720
     PUSH ESI                            ; 00461721
     PUSH EDI                            ; 00461722
     PUSH EBP                            ; 00461723
@@ -288,10 +288,10 @@ section .text
     MOV ECX,0x57dcfa                    ; 00461993 | = "..\\engine\\drender.cpp"
     MOV EAX,0x9e1                       ; 00461998
     PUSH 0x57dd10                       ; 0046199d | = "CDemonRenderer::demonGZFacetList - To..."
-    MOV dword ptr [0x01cc4800],ECX      ; 004619a2 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004619a8 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004619ad
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 004619a2 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004619a8 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004619ad
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 004619b2
     MOV EDX,dword ptr [ESP + 0xc]       ; 004619b5
         ;   Label: LAB_004619b5
@@ -311,8 +311,8 @@ section .text
     PUSH 0x5ae70c                       ; 004619d5 | DAT_005ae70c
     MOV EDI,dword ptr [ESI]             ; 004619da
     PUSH EDI                            ; 004619dc
-    CALL wincore_windll.cpp_drawPolyList2_FUN_005327c0 ; 004619dd
-        ;   XREF to: 005327c0 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolyList2_FUN_005327c0()
+    CALL engine_special.cpp_drawPolyList2_FUN_005327c0 ; 004619dd
+        ;   XREF to: 005327c0 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList2_FUN_005327c0()
     ADD ESP,0x10                        ; 004619e2
     ADD ESP,0x14                        ; 004619e5
     POP EBP                             ; 004619e8

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00408fc0(byte *param_1)
+; void engine_3d_c_FUN_00408fc0(byte *param_1)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x110]:1  local_110
@@ -17,10 +17,11 @@
 ;   undefined4 DAT_00761ec8
 ;   undefined4 DAT_00761ecc
 ;   undefined4 DAT_01c02594
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   engine_3d.c_FUN_00408e80
 ;   engine_3d.c_isVisiblePlane_FUN_00404610
@@ -30,16 +31,15 @@
 ;   engine_3d.c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90
 ;   engine_3d.c_transformAndBufferVertices_FUN_00404530
 ;   engine_model.c_getMRGLSize_FUN_004dd520
+;   engine_special.cpp_drawPolyList_FUN_00532680
 ;   engine_texture.cpp_ensureTextureLoaded_FUN_00545920
-;   FUN_004c8440
-;   wincore_windll.cpp_drawPolyList_FUN_00532680
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00408fc0
-        ;   Label: FUN_00408fc0
+        ;   Label: engine_3d.c_FUN_00408fc0
     PUSH ESI                            ; 00408fc1
     PUSH EDI                            ; 00408fc2
     PUSH EBP                            ; 00408fc3
@@ -93,8 +93,8 @@ section .text
     PUSH ECX                            ; 0040903d
     PUSH 0x761ec8                       ; 0040903e | DAT_00761ec8
     PUSH 0x5c5014                       ; 00409043 | DAT_005c5014
-    CALL wincore_windll.cpp_drawPolyList_FUN_00532680 ; 00409048
-        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolyList_FUN_00532680()
+    CALL engine_special.cpp_drawPolyList_FUN_00532680 ; 00409048
+        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList_FUN_00532680()
     ADD ESP,0x10                        ; 0040904d
     XOR EDX,EDX                         ; 00409050
         ;   Label: LAB_00409050
@@ -139,8 +139,8 @@ section .text
     PUSH EBX                            ; 004090a6
     PUSH 0x761ec8                       ; 004090a7 | DAT_00761ec8
     PUSH 0x5c5014                       ; 004090ac | DAT_005c5014
-    CALL wincore_windll.cpp_drawPolyList_FUN_00532680 ; 004090b1
-        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolyList_FUN_00532680()
+    CALL engine_special.cpp_drawPolyList_FUN_00532680 ; 004090b1
+        ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolyList_FUN_00532680()
     ADD ESP,0x10                        ; 004090b6
     XOR EDX,EDX                         ; 004090b9
         ;   Label: LAB_004090b9
@@ -189,10 +189,10 @@ section .text
     MOV EAX,0x57751c                    ; 0040911c | = "..\\engine\\3d.c"
     MOV EDX,0xd89                       ; 00409121
     PUSH 0x57752b                       ; 00409126 | = "renderFaceList - too many faces"
-    MOV [0x01cc4800],EAX                ; 0040912b | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 00409130 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00409136
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0040912b | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 00409130 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00409136
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0040913b
     MOV EAX,[0x00761ec4]                ; 0040913e | DAT_00761ec4
         ;   Label: LAB_0040913e
@@ -254,10 +254,10 @@ section .text
     MOV EAX,ESP                         ; 004091be
     MOV ECX,0x577562                    ; 004091c0 | = "..\\engine\\3d.c"
     PUSH EAX                            ; 004091c5
-    MOV dword ptr [0x01cc4804],EBX      ; 004091c6 | DAT_01cc4804
-    MOV dword ptr [0x01cc4800],ECX      ; 004091cc | DAT_01cc4800
-    CALL FUN_004c8440                   ; 004091d2
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4804],EBX      ; 004091c6 | INT_01cc4804
+    MOV dword ptr [0x01cc4800],ECX      ; 004091cc | PTR_01cc4800
+    CALL core_main.c_FUN_004c8440       ; 004091d2
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004091d7
     JMP 0x0040900f                      ; 004091da
         ;   XREF to: 0040900f (UNCONDITIONAL_JUMP)  ; LAB_0040900f

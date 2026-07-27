@@ -25,9 +25,9 @@ void core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670(uint para
     _DAT_01c038f4 = (float *)0x0;
     return;
   }
-  local_10 = (int)ROUND(*param_2 * _DAT_0059bddc);
-  local_c = (int)ROUND(param_2[1] * _DAT_0059bddc);
-  local_8 = (int)ROUND(param_2[2] * _DAT_0059bddc);
+  local_10 = (int)ROUND(*param_2 * 256.0f);
+  local_c = (int)ROUND(param_2[1] * 256.0f);
+  local_8 = (int)ROUND(param_2[2] * 256.0f);
   _DAT_01c038f4 =
        (float *)core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0
                           (param_1,&local_10,param_3);

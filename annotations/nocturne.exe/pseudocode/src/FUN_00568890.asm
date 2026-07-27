@@ -5,7 +5,6 @@
 ;
 ;
 ; XREF[9]:
-;   FUN_005634b0 at 005634dc
 ;   FUN_0056ae10 at 0056aebf
 ;   FUN_0056aefc at 0056af27
 ;   FUN_0056b35c at 0056b3a5
@@ -14,6 +13,7 @@
 ;   crt_stdio.c_fputc_FUN_00566cc0 at 00566d81
 ;   crt_stdio.c_fseek_FUN_0056582c at 0056585c
 ;   crt_stdio.c_fwrite_FUN_00563a50 at 00563b98
+;   crt_unknown.c_FUN_005634b0 at 005634dc
 ;
 ; Referenced Globals:
 ;   void* PTR_FUN_005c1ac0 = 005671e4

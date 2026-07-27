@@ -66,7 +66,7 @@ void core_hostage_cpp_CHostage_setup_FUN_004b6b20(int param_1)
     _DAT_01cae1a0 =
          core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(uVar4,"gunup",1);
   }
-  FUN_004ee9e0(param_1);
+  core_npc_cpp_FUN_004ee9e0(param_1);
   *(uint *)(param_1 + 0x1f918) = 0;
   return;
 }

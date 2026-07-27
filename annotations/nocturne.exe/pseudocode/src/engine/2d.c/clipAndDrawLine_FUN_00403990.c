@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8)
 
 {
@@ -104,9 +102,9 @@ void __cdecl engine_2d_c_clipAndDrawLine_FUN_00403990(int param_1,int param_2,in
     local_1c = local_1c + 1;
   } while (local_1c < 100);
   if (local_1c == 100) {
-    _DAT_01cc4800 = "..\\engine\\2d.c";
-    _DAT_01cc4804 = 0x86e;
-    FUN_004c8440("2d line clipping exceeded max iterations");
+    PTR_01cc4800 = "..\\engine\\2d.c";
+    INT_01cc4804 = 0x86e;
+    core_main_c_FUN_004c8440("2d line clipping exceeded max iterations");
   }
   if (local_20 != 0) {
     engine_2d_c_drawLine_FUN_004015a0(param_1,param_2,param_3,param_4);

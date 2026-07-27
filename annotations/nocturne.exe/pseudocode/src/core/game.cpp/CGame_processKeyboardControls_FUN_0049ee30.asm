@@ -39,7 +39,7 @@
 ;   core_inv.cpp_CInventory_selectWeapon_FUN_004c0850
 ;   core_inv.cpp_CInventory_toggleDetailView_FUN_004c32e0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_005088f0
-;   FUN_005125a0
+;   core_setdir.cpp_FUN_005125a0
 ;
 ; *****************************************************************************
 
@@ -524,8 +524,8 @@ section .text
     MOV EAX,[0x005be368]                ; 0049f3a6 | DAT_005be368
     PUSH EAX                            ; 0049f3ab | DAT_01e57284
     MOV EBX,dword ptr [EAX + 0x15aabc]  ; 0049f3ac | DAT_01fb1d40
-    CALL FUN_005125a0                   ; 0049f3b2
-        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; undefined FUN_005125a0()
+    CALL core_setdir.cpp_FUN_005125a0   ; 0049f3b2
+        ;   XREF to: 005125a0 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_005125a0()
     MOV EAX,[0x005be220]                ; 0049f3b7 | DAT_005be220
     MOV dword ptr [EAX + 0x10],0x0      ; 0049f3bc | DAT_01e56db0
     MOV EAX,[0x005be368]                ; 0049f3c3 | DAT_005be368 | DAT_01e57284

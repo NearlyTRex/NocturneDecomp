@@ -20,7 +20,7 @@ float __cdecl core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004c1b20(i
   if (0 < *(int *)(param_1 + 8)) {
     do {
       iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (*(uint *)(iVar3 + 0xc),CDemonActorType_00764674.name_hash);
+                        (*(uint *)(iVar3 + 0xc),g_CBatteryActorType_00764674.name_hash);
       if (iVar1 != 0) {
         local_20 = 1.0 / *(float *)(iVar1 + 0x2d0) + local_20;
       }

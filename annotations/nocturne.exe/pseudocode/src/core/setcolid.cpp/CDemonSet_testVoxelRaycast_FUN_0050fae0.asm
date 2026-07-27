@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004d4f30 at 004d5232
 ;   core_enemy.cpp_CEnemy_canSeeTarget_FUN_00479ab0 at 00479b43
+;   core_mimic.cpp_FUN_004d4f30 at 004d5232
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fba938

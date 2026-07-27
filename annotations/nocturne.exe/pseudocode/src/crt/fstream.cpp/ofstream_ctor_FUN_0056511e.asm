@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_00446810 at 004468da
+;   core_dcamera.cpp_FUN_00446810 at 004468da
 ;   support_codec.cpp_CCodec_processFiles_FUN_004391b0 at 0043920d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005a4810
 ;   undefined4 DAT_005a4818
 ;   void* PTR_crt_fstream.cpp_ofstream_dtor_FUN_005651ca_005a4824 = 005651ca
-;   void* PTR_FUN_005a482c = 0056519c
-;   void* PTR_FUN_005a4834 = 005651b2
+;   void* PTR_crt_unknown.c_FUN_0056519c_005a482c = 0056519c
+;   void* PTR_crt_unknown.c_FUN_005651b2_005a4834 = 005651b2
 ;
 ; Called Functions:
 ;   FUN_0056b4a9
@@ -54,10 +54,10 @@ section .text
     MOV dword ptr [ECX + -0x4],EDX      ; 0056515c
     MOV dword ptr [EAX + 0x40],0x5a4824 ; 0056515f | PTR_crt_fstream.cpp_ofstream_dtor_FUN_005651ca_005a4824
     MOV EDX,dword ptr [EAX]             ; 00565166
-    MOV dword ptr [EAX + 0x48],0x5a482c ; 00565168 | PTR_FUN_005a482c
+    MOV dword ptr [EAX + 0x48],0x5a482c ; 00565168 | PTR_crt_unknown.c_FUN_0056519c_005a482c
     MOV EDX,dword ptr [EDX + 0x4]       ; 0056516f
     ADD ESP,0x8                         ; 00565172
-    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a4834 ; 00565175 | PTR_FUN_005a4834
+    MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a4834 ; 00565175 | PTR_crt_unknown.c_FUN_005651b2_005a4834
     RET                                 ; 0056517d
     MOV dword ptr [EAX],0x5a4810        ; 0056517e | DAT_005a4810
         ;   Label: LAB_0056517e

@@ -9,7 +9,7 @@
 void __cdecl notifyAbnormalTermination(void)
 
 {
-  (*(code *)PTR_FUN_005c1890)();
+  (*(code *)PTR_crt_unknown_c_FUN_00566f98_005c1890)();
   FUN_0056ddc0("ABNORMAL TERMINATION\r\n",0xff);
   return;
 }

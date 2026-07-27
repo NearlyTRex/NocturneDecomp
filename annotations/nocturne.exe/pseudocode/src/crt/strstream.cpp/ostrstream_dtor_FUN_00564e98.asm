@@ -5,20 +5,20 @@
 ;
 ;
 ; XREF[4]:
-;   FUN_00564e3d at 00564e4a
-;   FUN_00564e53 at 00564e62
+;   crt_unknown.c_FUN_00564e3d at 00564e4a
+;   crt_unknown.c_FUN_00564e53 at 00564e62
 ;   support_codec.cpp_CCodec_finalizeBuffer_FUN_004392d0 at 00439334
 ;   support_codec.cpp_CCodec_processToBuffer_FUN_00439000 at 0043908c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059b490
+;   WatcomTypeInfo g_ostrstreamTypeInfo_0059b490
 ;   void* PTR_crt_strstream.cpp_ostrstream_dtor_FUN_00564e98_005a46cc = 00564e98
-;   void* PTR_FUN_005a46d4 = 00564e3d
-;   void* PTR_FUN_005a46dc = 00564e53
+;   void* PTR_crt_unknown.c_FUN_00564e3d_005a46d4 = 00564e3d
+;   void* PTR_crt_unknown.c_FUN_00564e53_005a46dc = 00564e53
 ;
 ; Called Functions:
 ;   crt_memory.c___vec_delete_FUN_0056445f
-;   FUN_00564494
+;   crt_unknown.c_FUN_00564494
 ;   FUN_0056b538
 ;   FUN_0056b5ad
 ;   FUN_0056b633
@@ -41,11 +41,11 @@ section .text
     MOV dword ptr [EBX + 0x44],0x5a46cc ; 00564eaf | PTR_crt_strstream.cpp_ostrstream_dtor_FUN_00564e98_005a46cc
     PUSH 0x1                            ; 00564eb6
     MOV EAX,dword ptr [EBX]             ; 00564eb8
-    MOV dword ptr [EBX + 0x4c],0x5a46d4 ; 00564eba | PTR_FUN_005a46d4
+    MOV dword ptr [EBX + 0x4c],0x5a46d4 ; 00564eba | PTR_crt_unknown.c_FUN_00564e3d_005a46d4
     ADD EBX,0x48                        ; 00564ec1
     MOV EAX,dword ptr [EAX + 0x4]       ; 00564ec4
     PUSH EBX                            ; 00564ec7
-    MOV dword ptr [EBX + EAX*0x1 + -0x20],0x5a46dc ; 00564ec8 | PTR_FUN_005a46dc
+    MOV dword ptr [EBX + EAX*0x1 + -0x20],0x5a46dc ; 00564ec8 | PTR_crt_unknown.c_FUN_00564e53_005a46dc
     CALL FUN_0056b538                   ; 00564ed0
         ;   XREF to: 0056b538 (UNCONDITIONAL_CALL)  ; undefined FUN_0056b538()
     ADD ESP,0x8                         ; 00564ed5
@@ -67,7 +67,7 @@ section .text
     MOV EAX,EBX                         ; 00564ef8
     POP EBX                             ; 00564efa
     RET                                 ; 00564efb
-    PUSH 0x59b490                       ; 00564efc | DAT_0059b490
+    PUSH 0x59b490                       ; 00564efc | g_ostrstreamTypeInfo_0059b490
         ;   Label: LAB_00564efc
     PUSH EBX                            ; 00564f01
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00564f02
@@ -93,8 +93,8 @@ section .text
         ;   XREF to: 00564ef1 (UNCONDITIONAL_JUMP)  ; LAB_00564ef1
     PUSH EBX                            ; 00564f2a
         ;   Label: LAB_00564f2a
-    CALL FUN_00564494                   ; 00564f2b
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 00564f2b
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     JMP 0x00564f10                      ; 00564f30
         ;   XREF to: 00564f10 (UNCONDITIONAL_JUMP)  ; LAB_00564f10
 

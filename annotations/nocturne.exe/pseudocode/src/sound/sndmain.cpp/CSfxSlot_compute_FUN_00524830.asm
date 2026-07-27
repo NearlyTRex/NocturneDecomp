@@ -20,11 +20,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[13]:
-;   FUN_00523170 at 00523292
-;   FUN_00526dd0 at 00526dec
-;   FUN_00526f00 at 00526f2a
-;   FUN_00526f60 at 00526fba
-;   FUN_00527060 at 00527090
+;   sound_sndmain.cpp_FUN_00523170 at 00523292
+;   sound_sndmain.cpp_FUN_00526dd0 at 00526dec
+;   sound_sndmain.cpp_FUN_00526f00 at 00526f2a
+;   sound_sndmain.cpp_FUN_00526f60 at 00526fba
+;   sound_sndmain.cpp_FUN_00527060 at 00527090
 ;   sound_sndmain.cpp_pollAllSfxSlots_FUN_00529810 at 00529856
 ;   sound_sndmain.cpp_pollAndMixSfx_FUN_005294f0 at 005296ba
 ;   sound_sndmain.cpp_setSfxBaseFrequency_FUN_00527130 at 00527153
@@ -51,8 +51,8 @@
 ;   ... and 18 more
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_console.cpp_CConsole_printf_FUN_0043ac60
-;   FUN_004c8440
 ;   sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_005247a0
 ;   sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00524520
 ;   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00524630
@@ -319,10 +319,10 @@ section .text
         ;   Label: LAB_00524aba
     MOV EBX,0x95d                       ; 00524abf
     PUSH 0x592e22                       ; 00524ac4 | = "SfxSlot::compute - must be locked!"
-    MOV dword ptr [0x01cc4800],ECX      ; 00524ac9 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00524acf | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00524ad5
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00524ac9 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00524acf | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00524ad5
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00524ada
     JMP 0x0052484c                      ; 00524add
         ;   XREF to: 0052484c (UNCONDITIONAL_JUMP)  ; LAB_0052484c

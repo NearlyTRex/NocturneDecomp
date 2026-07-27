@@ -5,8 +5,8 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005993b0
-;   undefined4 DAT_005993f0
+;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
+;   WatcomTypeInfo g_CBoundingBox3D_005993f0
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005644a7
@@ -19,14 +19,14 @@ section .text
     PUSH EBX                            ; 00517b70
         ;   Label: core_skeleton.cpp_CDeformableModel_ctor_FUN_00517b70
     MOV EBX,dword ptr [ESP + 0x8]       ; 00517b71
-    PUSH 0x5993b0                       ; 00517b75 | DAT_005993b0
+    PUSH 0x5993b0                       ; 00517b75 | g_CVectorTypeInfo_005993b0
     PUSH 0x64                           ; 00517b7a
     ADD EBX,0x1750                      ; 00517b7c
     PUSH EBX                            ; 00517b82
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 00517b83
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; undefined crt_memory.c___arrinit_FUN_005644a7()
     ADD ESP,0xc                         ; 00517b88
-    PUSH 0x5993f0                       ; 00517b8b | DAT_005993f0
+    PUSH 0x5993f0                       ; 00517b8b | g_CBoundingBox3D_005993f0
     PUSH 0x64                           ; 00517b90
     ADD EAX,0x4bc                       ; 00517b92
     PUSH EAX                            ; 00517b97

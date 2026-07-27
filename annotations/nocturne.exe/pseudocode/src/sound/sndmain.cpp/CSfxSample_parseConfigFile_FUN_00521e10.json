@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 528,
-    "complexity_score": 481,
+    "complexity_score": 489,
     "cross_reference_count": 4,
     "function_call_count": 12,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 186,
+    "pseudocode_lines": 194,
     "suspect_count": 27,
     "suspect_types": [
       "param_count_too_few",
@@ -136,19 +136,19 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 714
+    "total_lines": 722
   },
   "cross_references": [
     {
       "addr": "00522480",
       "from_addr": "00522659",
-      "name": "FUN_00522480",
+      "name": "sound_sndmain.cpp_FUN_00522480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005229f0",
       "from_addr": "00522b65",
-      "name": "FUN_005229f0",
+      "name": "sound_sndmain.cpp_FUN_005229f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -178,6 +178,11 @@
     "signature": "void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_00521e10(int param_1)"
   },
   "function_calls": [
+    {
+      "addr": "004c8440",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004c8440"
+    },
     {
       "addr": "0056626c",
       "is_variadic": false,
@@ -232,11 +237,6 @@
       "addr": "004568c0",
       "is_variadic": false,
       "name": "engine_dosio.cpp_getFileSize_FUN_004568c0"
-    },
-    {
-      "addr": "004c8440",
-      "is_variadic": false,
-      "name": "FUN_004c8440"
     }
   ],
   "globals": [
@@ -482,14 +482,14 @@
     },
     {
       "addr": "01cc4800",
-      "name": "DAT_01cc4800",
-      "type": "undefined4",
+      "name": "PTR_01cc4800",
+      "type": "char*",
       "value": null
     },
     {
       "addr": "01cc4804",
-      "name": "DAT_01cc4804",
-      "type": "undefined4",
+      "name": "INT_01cc4804",
+      "type": "int",
       "value": null
     },
     {
@@ -527,7 +527,7 @@
       {
         "call_addr": "00522659",
         "call_type": "direct",
-        "caller": "FUN_00522480",
+        "caller": "sound_sndmain.cpp_FUN_00522480",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -538,7 +538,7 @@
       {
         "call_addr": "00522841",
         "call_type": "direct",
-        "caller": "FUN_00522480",
+        "caller": "sound_sndmain.cpp_FUN_00522480",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -560,7 +560,7 @@
       {
         "call_addr": "00522b65",
         "call_type": "direct",
-        "caller": "FUN_005229f0",
+        "caller": "sound_sndmain.cpp_FUN_005229f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -571,7 +571,7 @@
       {
         "call_addr": "00522c7c",
         "call_type": "direct",
-        "caller": "FUN_005229f0",
+        "caller": "sound_sndmain.cpp_FUN_005229f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -807,14 +807,14 @@
         {
           "check_id": "invalidScanfArgType_float",
           "column": 17,
-          "line": 124,
+          "line": 125,
           "message": "%f in format string (no. 1) requires 'float *' but the argument type is 'signed int'.",
           "severity": "warning"
         },
         {
           "check_id": "invalidScanfArgType_float",
           "column": 19,
-          "line": 140,
+          "line": 143,
           "message": "%f in format string (no. 1) requires 'float *' but the argument type is 'signed int'.",
           "severity": "warning"
         },
@@ -945,23 +945,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 109,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Reference volume distance %g is too small in %s line %d!\",(double)*(float *)(param_1 + 0x114),",
+      "text": "(\"Reference volume distance %g is too small in %s line %d!\",(double)*(float *)(param_1 + 0x114),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / 4.0f;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / 4.0f;",
@@ -969,7 +961,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 114,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / 4.0f;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 127,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(float *)(param_1 + 0x118) < (float)0.10000000000000001) {",
@@ -977,23 +977,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
+      "line": 131,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Reference volume distance %g is too small in %s line %d!\",(double)*(float *)(param_1 + 0x118),",
+      "text": "(\"Reference volume distance %g is too small in %s line %d!\",(double)*(float *)(param_1 + 0x118),",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 154,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / local_470;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 154,
+      "line": 159,
       "match": "param_1",
       "severity": "mild",
       "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / local_470;",
@@ -1004,20 +996,28 @@
       "line": 159,
       "match": "param_1",
       "severity": "mild",
+      "text": "*(float *)(param_1 + 0x118) = *(float *)(param_1 + 0x114) / local_470;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 164,
+      "match": "param_1",
+      "severity": "mild",
       "text": "if (-1 < *(int *)(param_1 + 0x110)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 162,
+      "line": 168,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_004c8440(\"Length for %s already known, then specified again in %s line %d\",param_1,local_340,local_38);",
+      "text": "(\"Length for %s already known, then specified again in %s line %d\",param_1,local_340,local_38);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 169,
+      "line": 176,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x110) = local_34;",
@@ -1025,7 +1025,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 174,
+      "line": 181,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x124) = 1;",

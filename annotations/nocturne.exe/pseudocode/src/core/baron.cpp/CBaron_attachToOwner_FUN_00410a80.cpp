@@ -22,7 +22,7 @@ void __cdecl core_baron_cpp_CBaron_attachToOwner_FUN_00410a80(int param_1,int pa
   if ((((param_2 != 0) && (param_2 != *(int *)(param_1 + 0x1fb14))) &&
       (*(int *)(param_1 + 0x1fb14) == 0)) &&
      ((iVar1 = core_actor_cpp_castToClassHash_FUN_0040d890
-                         (param_2,CDemonActorType_00765a60.name_hash), iVar1 == 0 ||
+                         (param_2,g_CCharacterActorType_00765a60.name_hash), iVar1 == 0 ||
       (iVar1 = (**(code **)(*(int *)(iVar1 + 0x14c) + 0x104))(iVar1), iVar1 < 1)))) {
     *(int *)(param_1 + 0x1fb14) = param_2;
     local_1c = 0;

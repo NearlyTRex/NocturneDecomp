@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004a4170 at 004a44c1
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_00443250 at 00443506
+;   core_game.cpp_FUN_004a4170 at 004a44c1
 ;
 ; Called Functions:
 ;   support_codec.cpp_CLZWDictionary_init_FUN_004393d0

@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -138,39 +138,15 @@
   },
   "cross_references": [
     {
-      "addr": "0045ab40",
-      "from_addr": "0045afce",
-      "name": "FUN_0045ab40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004c79a0",
-      "from_addr": "004c7c1d",
-      "name": "FUN_004c79a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0052d790",
-      "from_addr": "0052da8f",
-      "name": "FUN_0052d790",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0052dff0",
-      "from_addr": "0052e625",
-      "name": "FUN_0052dff0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00535900",
-      "from_addr": "00537c8c",
-      "name": "FUN_00535900",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004269b0",
       "from_addr": "00426d33",
       "name": "core_charactr.cpp_CCharacter_processFire_FUN_004269b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045ab40",
+      "from_addr": "0045afce",
+      "name": "core_dracbrid.cpp_FUN_0045ab40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -180,15 +156,39 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004c79a0",
+      "from_addr": "004c7c1d",
+      "name": "core_lightgun.cpp_FUN_004c79a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004caef0",
       "from_addr": "004cafb5",
       "name": "core_manpuz.cpp_updateGemHumChannel_FUN_004caef0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0052d790",
+      "from_addr": "0052da8f",
+      "name": "core_sound.cpp_FUN_0052d790",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052dff0",
+      "from_addr": "0052e625",
+      "name": "core_sound.cpp_FUN_0052dff0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0052d120",
       "from_addr": "0052d33b",
       "name": "core_sound.cpp_playSfxInternal_FUN_0052d120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00535900",
+      "from_addr": "00537c8c",
+      "name": "core_stranger.cpp_FUN_00535900",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -219,7 +219,7 @@
       {
         "call_addr": "0052e625",
         "call_type": "direct",
-        "caller": "FUN_0052dff0",
+        "caller": "core_sound.cpp_FUN_0052dff0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -230,7 +230,7 @@
       {
         "call_addr": "0052e65e",
         "call_type": "direct",
-        "caller": "FUN_0052dff0",
+        "caller": "core_sound.cpp_FUN_0052dff0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -252,7 +252,7 @@
       {
         "call_addr": "0045afce",
         "call_type": "direct",
-        "caller": "FUN_0045ab40",
+        "caller": "core_dracbrid.cpp_FUN_0045ab40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -274,7 +274,7 @@
       {
         "call_addr": "00537c8c",
         "call_type": "direct",
-        "caller": "FUN_00535900",
+        "caller": "core_stranger.cpp_FUN_00535900",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -296,7 +296,7 @@
       {
         "call_addr": "004c7c1d",
         "call_type": "direct",
-        "caller": "FUN_004c79a0",
+        "caller": "core_lightgun.cpp_FUN_004c79a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -318,7 +318,7 @@
       {
         "call_addr": "0052da8f",
         "call_type": "direct",
-        "caller": "FUN_0052d790",
+        "caller": "core_sound.cpp_FUN_0052d790",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

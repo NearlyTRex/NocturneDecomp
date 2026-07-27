@@ -1,26 +1,26 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00438410(int *param_1,int param_2)
+; void core_cloth_cpp_FUN_00438410(int *param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_0057af5c
 ;   TerminatedCString s_CClothList_remove_invali_0057af6e
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_dtor_FUN_00435160
-;   FUN_004c8440
-;   FUN_00564494
+;   core_main.c_FUN_004c8440
+;   crt_unknown.c_FUN_00564494
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00438410
-        ;   Label: FUN_00438410
+        ;   Label: core_cloth.cpp_FUN_00438410
     PUSH ESI                            ; 00438411
     PUSH EBP                            ; 00438412
     MOV EBP,dword ptr [ESP + 0x14]      ; 00438413
@@ -35,10 +35,10 @@ section .text
         ;   Label: LAB_00438423
     MOV EBX,0x5e4                       ; 00438428
     PUSH 0x57af6e                       ; 0043842d | = "CClothList::remove - invalid index"
-    MOV dword ptr [0x01cc4800],ECX      ; 00438432 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 00438438 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0043843e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00438432 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 00438438 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0043843e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 00438443
     MOV ESI,dword ptr [ESP + 0x10]      ; 00438446
         ;   Label: LAB_00438446
@@ -54,8 +54,8 @@ section .text
         ;   XREF to: 00435160 (UNCONDITIONAL_CALL)  ; undefined core_cloth.cpp_CCloth_dtor_FUN_00435160()
     ADD ESP,0x8                         ; 00438465
     PUSH EAX                            ; 00438468
-    CALL FUN_00564494                   ; 00438469
-        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined FUN_00564494()
+    CALL crt_unknown.c_FUN_00564494     ; 00438469
+        ;   XREF to: 00564494 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00564494()
     ADD ESP,0x4                         ; 0043846e
     MOV EAX,dword ptr [ESP + 0x10]      ; 00438471
         ;   Label: LAB_00438471

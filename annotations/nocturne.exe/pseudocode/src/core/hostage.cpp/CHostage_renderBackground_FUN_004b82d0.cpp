@@ -18,7 +18,7 @@ void core_hostage_cpp_CHostage_renderBackground_FUN_004b82d0(int param_1,int par
       if (param_2 != 0) {
         *(uint *)(param_1 + 0x2404) = 1;
       }
-      FUN_004eece0(param_1,param_2);
+      core_npc_cpp_FUN_004eece0(param_1,param_2);
       return;
     }
   }

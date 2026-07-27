@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x38]:1  local_38
 ;
 ; XREF[1]:
-;   FUN_004b8700 at 004b8b53
+;   core_hostage.cpp_FUN_004b8700 at 004b8b53
 ;
 ; Called Functions:
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_0055aa00

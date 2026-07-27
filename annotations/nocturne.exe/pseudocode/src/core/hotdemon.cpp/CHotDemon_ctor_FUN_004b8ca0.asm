@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_004b8c70 at 004b8c83
-;   FUN_00540f50 at 00541202
+;   core_hotdemon.cpp_FUN_004b8c70 at 004b8c83
+;   core_succubus.cpp_FUN_00540f50 at 00541202
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hotdemon_dfm_00585df7

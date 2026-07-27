@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_004c2470 at 004c2dd3
 ;   core_game.cpp_CGame_loadAssets_FUN_004a3660 at 004a368e
 ;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004c2150 at 004c23d1
+;   core_inv.cpp_FUN_004c2470 at 004c2dd3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_rt_00586d91

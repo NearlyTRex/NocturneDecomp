@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(int *param_1,int param_2)
 
 {
@@ -58,14 +56,14 @@ void __cdecl core_skeleton_cpp_CDeformableModel_loadStream_FUN_00519280(int *par
   if (iVar1 == 1) goto LAB_005192e4;
 LAB_005192c1:
   do {
-    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-    _DAT_01cc4804 = 0x4c7;
-    FUN_004c8440("Deformable model file is corrupt");
+    PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    INT_01cc4804 = 0x4c7;
+    core_main_c_FUN_004c8440("Deformable model file is corrupt");
 LAB_005192e4:
     if (0x00000007 < local_64) {
-      _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-      _DAT_01cc4804 = 0x4ca;
-      FUN_004c8440("Can't load model of version %d, this .exe can only handle up to version %d",local_64,0x00000007);
+      PTR_01cc4800 = "..\\core\\skeleton.cpp";
+      INT_01cc4804 = 0x4ca;
+      core_main_c_FUN_004c8440("Can't load model of version %d, this .exe can only handle up to version %d",local_64,0x00000007);
     }
     if (local_64 < 3) {
       do {
@@ -262,9 +260,9 @@ LAB_005192e4:
     core_skeleton_cpp_CDeformableModel_computePartDominantBones_FUN_0051ad20(param_1);
   }
   if ((*(byte *)(param_2 + 0xc) & 0x20) != 0) {
-    _DAT_01cc4800 = "..\\core\\skeleton.cpp";
-    _DAT_01cc4804 = 0x596;
-    FUN_004c8440("CDeformableModel::loadStream - error reading file!");
+    PTR_01cc4800 = "..\\core\\skeleton.cpp";
+    INT_01cc4804 = 0x596;
+    core_main_c_FUN_004c8440("CDeformableModel::loadStream - error reading file!");
     return;
   }
   return;

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int FUN_004b1090(undefined4 param_1,char *param_2,char *param_3,undefined4 param_4)
+; int core_ground_cpp_FUN_004b1090(undefined4 param_1,char *param_2,char *param_3,undefined4 param_4)
 ;
 ; Local Variables:
 ; undefined1       Stack[-0x60]:1  local_60
@@ -12,19 +12,19 @@
 ;   TerminatedCString s_eopen_ext_not_found_00585270
 ;   TerminatedCString s_core_ground_cpp_00585287
 ;   TerminatedCString s_eopen_Cannot_open_file_0058529a
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004b1090
-        ;   Label: FUN_004b1090
+        ;   Label: core_ground.cpp_FUN_004b1090
     PUSH ESI                            ; 004b1091
     PUSH EDI                            ; 004b1092
     PUSH EBP                            ; 004b1093
@@ -76,10 +76,10 @@ section .text
     MOV EDX,0x58525d                    ; 004b10d9 | = "..\\core\\ground.cpp"
     MOV ECX,0x40                        ; 004b10de
     PUSH 0x585270                       ; 004b10e3 | = "eopen - ext not found!"
-    MOV dword ptr [0x01cc4800],EDX      ; 004b10e8 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 004b10ee | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004b10f4
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 004b10e8 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 004b10ee | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004b10f4
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b10f9
     MOV ESI,dword ptr [ESP + 0x6c]      ; 004b10fc
         ;   Label: LAB_004b10fc
@@ -124,10 +124,10 @@ section .text
         ;   Label: LAB_004b1142
     MOV EBP,0x44                        ; 004b1147
     PUSH 0x58529a                       ; 004b114c | = "eopen - Cannot open file"
-    MOV dword ptr [0x01cc4800],EDI      ; 004b1151 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBP      ; 004b1157 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004b115d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDI      ; 004b1151 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBP      ; 004b1157 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004b115d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004b1162
     MOV EAX,ESI                         ; 004b1165
     ADD ESP,0x50                        ; 004b1167

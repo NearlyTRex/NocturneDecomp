@@ -5,22 +5,22 @@
 ;
 ;
 ; XREF[6]:
-;   FUN_0041f3d0 at 0041f5e1
-;   FUN_004777a0 at 0047787b
-;   FUN_004c79a0 at 004c7b8e
-;   FUN_00515db0 at 00515e8b
+;   core_boxactor.cpp_FUN_0041f3d0 at 0041f5e1
+;   core_elephant.cpp_FUN_004777a0 at 0047787b
+;   core_lightgun.cpp_FUN_004c79a0 at 004c7b8e
 ;   core_set.cpp_FUN_00509a80 at 00509ac8
+;   core_shotgun.cpp_FUN_00515db0 at 00515e8b
 ;   core_weapon.cpp_CWeapon_process_FUN_00554030 at 00554160
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_0059058a
 ;   TerminatedCString s_Too_many_dynamic_lights_0059059a
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01fba2d8
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -66,10 +66,10 @@ section .text
     MOV ECX,0x59058a                    ; 0050a9c4 | = "..\\core\\set.cpp"
     MOV EDI,0x865                       ; 0050a9c9
     PUSH 0x59059a                       ; 0050a9ce | = "Too many dynamic lights!"
-    MOV dword ptr [0x01cc4800],ECX      ; 0050a9d3 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDI      ; 0050a9d9 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050a9df
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0050a9d3 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDI      ; 0050a9d9 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050a9df
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0050a9e4
     POP EDI                             ; 0050a9e7
     JMP 0x0050a9ac                      ; 0050a9e8

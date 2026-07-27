@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_00535900 at 005364b8
+;   core_stranger.cpp_FUN_00535900 at 005364b8
 ;
 ; Referenced Globals:
 ;   float FLOAT_005a2704 = 10
-;   undefined4 DAT_01bca0c0
+;   undefined4 g_CDynamiteActorType_01bca088.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
-;   FUN_0046eda0
+;   core_dynamite.cpp_FUN_0046eda0
 ;
 ; *****************************************************************************
 
@@ -39,7 +39,7 @@ section .text
     PUSH EDX                            ; 0054067f
     CALL dword ptr [ESI + 0x4]          ; 00540680
     ADD ESP,0x8                         ; 00540683
-    MOV ECX,dword ptr [0x01bca0c0]      ; 00540686 | DAT_01bca0c0
+    MOV ECX,dword ptr [0x01bca0c0]      ; 00540686 | g_CDynamiteActorType_01bca088.name_hash
     PUSH ECX                            ; 0054068c
     MOV ESI,dword ptr [EBX + 0x1fa94]   ; 0054068d
     PUSH ESI                            ; 00540693
@@ -51,8 +51,8 @@ section .text
     JZ 0x00540671                       ; 005406a0
         ;   XREF to: 00540671 (CONDITIONAL_JUMP)  ; LAB_00540671
     PUSH EAX                            ; 005406a2
-    CALL FUN_0046eda0                   ; 005406a3
-        ;   XREF to: 0046eda0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046eda0()
+    CALL core_dynamite.cpp_FUN_0046eda0 ; 005406a3
+        ;   XREF to: 0046eda0 (UNCONDITIONAL_CALL)  ; undefined core_dynamite.cpp_FUN_0046eda0()
     ADD ESP,0x4                         ; 005406a8
     TEST EAX,EAX                        ; 005406ab
     JZ 0x00540671                       ; 005406ad

@@ -24,10 +24,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(int 
   if (((param_1[4] == 0) && (param_1[3] == 0)) && (DAT_006b0280 != 0)) {
     if (param_1[1] == 0) {
       if (DAT_005b7624 == 0x20) {
-        _DAT_01c00c7c = FUN_0052f031;
+        _DAT_01c00c7c = engine_special_cpp_FUN_0052f031;
       }
       else {
-        _DAT_01c00c7c = FUN_0052f823;
+        _DAT_01c00c7c = engine_special_cpp_FUN_0052f823;
       }
       _DAT_01c039a0 = param_5;
       _DAT_01c039a4 = 6;
@@ -69,9 +69,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(int 
               *(int *)(&DAT_005ae70c + local_18) = param_2;
               local_18 = iVar2;
               if (1999 < iVar3) {
-                _DAT_01cc4800 = "..\\engine\\drender.cpp";
-                _DAT_01cc4804 = 0x967;
-                FUN_004c8440("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar3);
+                PTR_01cc4800 = "..\\engine\\drender.cpp";
+                INT_01cc4804 = 0x967;
+                core_main_c_FUN_004c8440("CDemonRenderer::demonGZFacetList - Too many visible faces at once : %d",iVar3);
               }
             }
             local_14 = local_14 + 1;
@@ -79,13 +79,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_004614b0(int 
           } while (local_14 < param_3);
         }
         if (0 < iVar3) {
-          wincore_windll_cpp_drawPolyList_FUN_00532680(*param_1,&DAT_005ae70c,iVar3,_DAT_01c039a0);
+          engine_special_cpp_drawPolyList_FUN_00532680(*param_1,&DAT_005ae70c,iVar3,_DAT_01c039a0);
           return;
         }
       }
     }
     else {
-      _DAT_01c00c7c = FUN_00463a79;
+      _DAT_01c00c7c = core_dstrender_cpp_FUN_00463a79;
       _DAT_01c039a0 = 0;
       _DAT_01c039a4 = _DAT_01c039a0;
       for (; 0 < param_3; param_3 = param_3 + -1) {

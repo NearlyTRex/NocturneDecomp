@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[100]:
-;   FUN_0040fa20 at 0040faa1
-;   FUN_00414930 at 00414ab4
-;   FUN_00418a00 at 00418dfc
-;   FUN_0041fe40 at 0041fe9c
-;   FUN_00439f50 at 0043a2d7
-;   FUN_0043ab40 at 0043ab45
-;   FUN_00495a20 at 00496654
-;   FUN_004996b0 at 0049972f
-;   FUN_004a9270 at 004a932d
-;   FUN_004ab450 at 004ab522
+;   core_armour.cpp_FUN_0040fa20 at 0040faa1
+;   core_baron.cpp_CBaronWeapon_isReadyToFire_FUN_00411440 at 00411483
+;   core_baron.cpp_FUN_00410490 at 00410a35
+;   core_baron.cpp_FUN_004110f0 at 0041111c
+;   core_batcreat.cpp_CBatCreature_process_FUN_00412480 at 00412516
+;   core_batcreat.cpp_FUN_00413040 at 004131c4
+;   core_batman.cpp_CBatman_process_FUN_00413800 at 00413896
+;   core_batman.cpp_FUN_00414930 at 00414ab4
+;   core_biggs.cpp_CBiggs_process_FUN_004154b0 at 00415530
+;   core_boneguy.cpp_FUN_00418a00 at 00418dfc
 ;   ... and 90 more
 ;
 ; *****************************************************************************

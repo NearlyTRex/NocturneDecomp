@@ -19,7 +19,7 @@ int core_vessel_cpp_CCryptVessel_ctor_FUN_0054f920(uint param_1)
   iVar2 = core_flame_cpp_CFlame_ctor_FUN_0048cf60(iVar2 + 0x26c);
   iVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar2 + 0x2a0);
   pcVar3 = "none";
-  *(byte ***)(iVar2 + -0x510) = &PTR_FUN_005a3d84;
+  *(byte ***)(iVar2 + -0x510) = &PTR_core_vessel_cpp_FUN_0054fa80_005a3d84;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580
             (iVar2 + -0x50c,"vsslbase.kfm");
   *(uint *)(iVar2 + -0x390) = 0;

@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   FUN_00456a30 at 00456a49
-;   FUN_004bdb80 at 004bdb93
-;   FUN_004c85f0 at 004c8665
+;   core_inivar.cpp_FUN_004bdb80 at 004bdb93
+;   core_main.c_FUN_004c85f0 at 004c8665
+;   engine_dosio.cpp_FUN_00456a30 at 00456a49
 ;
 ; Referenced Globals:
 ;   void* PTR_SetFileAttributesA_0057559c = 00175fde

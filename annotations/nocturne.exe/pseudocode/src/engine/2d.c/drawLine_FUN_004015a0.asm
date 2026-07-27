@@ -10,14 +10,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   FUN_004759d0 at 00475a93
-;   FUN_00493760 at 0049382d
 ;   cockpit_ckptutil.c_drawClippedEdges_FUN_0042ef60 at 0042f025
 ;   core_game.cpp_CGame_drawScreenBorder_FUN_0049a960 at 0049a972
 ;   engine_2d.c_clipAndDrawLine_FUN_00403990 at 00403bb5
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00409290 at 004094fe
 ;   engine_console.cpp_CConsole_render_FUN_0043aec0 at 0043afb9
+;   engine_font.cpp_FUN_00493760 at 0049382d
 ;   shape_edittool.cpp_CInputString_draw_FUN_0046f680 at 0046f7cd
+;   shape_edittool.cpp_FUN_004759d0 at 00475a93
 ;
 ; Called Functions:
 ;   engine_2d.c_plotPixel_FUN_00401530

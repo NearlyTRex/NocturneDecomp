@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x68]:1  local_68
 ;
 ; XREF[1]:
-;   FUN_0053f310 at 0053f8cf
+;   core_stranger.cpp_FUN_0053f310 at 0053f8cf
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_fuse_wav_0057e4e2

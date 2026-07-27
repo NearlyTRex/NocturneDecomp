@@ -16,9 +16,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   FUN_00461720 at 0046193a
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 at 0045edb6
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_004614b0 at 0046155d
+;   engine_drender.cpp_FUN_00461720 at 0046193a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c5014
@@ -42,8 +42,8 @@
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_004f9a10
 ;   engine_prim.c_prepareDepthBuffer_FUN_004f9870
 ;   engine_prim.c_replaceWWithDepth_FUN_004f99d0
-;   wincore_windll.cpp_drawPolygon2_FUN_00532650
-;   wincore_windll.cpp_renderScanline_FUN_00530710
+;   engine_special.cpp_drawPolygon2_FUN_00532650
+;   engine_special.cpp_renderScanline_FUN_00530710
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     PUSH EDI                            ; 004580f7
     LEA EAX,[ESP + 0x8]                 ; 004580f8
     PUSH EAX                            ; 004580fc
-    CALL wincore_windll.cpp_drawPolygon2_FUN_00532650 ; 004580fd
-        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_drawPolygon2_FUN_00532650()
+    CALL engine_special.cpp_drawPolygon2_FUN_00532650 ; 004580fd
+        ;   XREF to: 00532650 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_drawPolygon2_FUN_00532650()
     ADD ESP,0xc                         ; 00458102
     MOV EBP,dword ptr [0x01b4cd30]      ; 00458105 | DAT_01b4cd30
         ;   Label: LAB_00458105
@@ -319,8 +319,8 @@ section .text
         ;   Label: LAB_0045836a
     MOV ESI,dword ptr [ESP + 0x60]      ; 0045836e
     MOV EBX,dword ptr [ESP + 0x58]      ; 00458372
-    CALL wincore_windll.cpp_renderScanline_FUN_00530710 ; 00458376
-        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_renderScanline_FUN_00530710()
+    CALL engine_special.cpp_renderScanline_FUN_00530710 ; 00458376
+        ;   XREF to: 00530710 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_renderScanline_FUN_00530710()
     CMP dword ptr [0x01b4d768],0x0      ; 0045837b | DAT_01b4d768
     JNZ 0x00458105                      ; 00458382
         ;   XREF to: 00458105 (CONDITIONAL_JUMP)  ; LAB_00458105

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,uint *param_2,uint param_3,float param_4,uint *param_5)
 
 {
@@ -19,12 +17,12 @@ int core_gore_cpp_CGore_spawnFlies_FUN_004b0580(uint param_1,uint *param_2,uint 
   iVar3 = FUN_0056497c(0x2a18);
   iVar4 = 0;
   if (iVar3 != 0) {
-    iVar4 = FUN_0048eef0(iVar3);
+    iVar4 = core_flies_cpp_FUN_0048eef0(iVar3);
   }
   if (iVar4 == 0) {
-    _DAT_01cc4800 = "..\\core\\gore.cpp";
-    _DAT_01cc4804 = 0x675;
-    FUN_004c8440("Can't create flies!");
+    PTR_01cc4800 = "..\\core\\gore.cpp";
+    INT_01cc4804 = 0x675;
+    core_main_c_FUN_004c8440("Can't create flies!");
   }
   fVar2 = (float)60;
   *(uint *)(iVar4 + 0x20) = *param_2;

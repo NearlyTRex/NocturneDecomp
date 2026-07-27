@@ -7,8 +7,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   FUN_005055f0 at 005057ff
 ;   core_script.cpp_CScript_loadState_FUN_005052c0 at 005055b7
+;   core_script.cpp_FUN_005055f0 at 005057ff
 ;
 ; Called Functions:
 ;   core_actor.cpp_crc32ProcessByte_FUN_0040dfc0

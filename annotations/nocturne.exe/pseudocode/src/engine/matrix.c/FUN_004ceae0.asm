@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_004ceae0(int param_1,int param_2,int param_3)
+; void engine_matrix_c_FUN_004ceae0(int param_1,int param_2,int param_3)
 ;
 ;
 ; Referenced Globals:
@@ -10,19 +10,19 @@
 ;   undefined4 DAT_01c039b8
 ;   undefined4 DAT_01c039bc
 ;   undefined4 DAT_01c039c0
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;   undefined4 DAT_01cc5174
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 004ceae0
-        ;   Label: FUN_004ceae0
+        ;   Label: engine_matrix.c_FUN_004ceae0
     PUSH ESI                            ; 004ceae1
     PUSH EBP                            ; 004ceae2
     MOV EAX,[0x01cc5174]                ; 004ceae3 | DAT_01cc5174
@@ -58,10 +58,10 @@ section .text
         ;   Label: LAB_004ceb5b
     MOV EAX,0x5c9                       ; 004ceb60
     PUSH 0x588324                       ; 004ceb65 | = "Matrix unbalance3"
-    MOV dword ptr [0x01cc4800],EBP      ; 004ceb6a | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 004ceb70 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 004ceb75
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EBP      ; 004ceb6a | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 004ceb70 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 004ceb75
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 004ceb7a
     POP EBP                             ; 004ceb7d
     POP ESI                             ; 004ceb7e

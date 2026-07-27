@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -122,12 +122,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 553,
-    "complexity_score": 606,
+    "complexity_score": 609,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 18,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 236,
+    "pseudocode_lines": 239,
     "suspect_count": 33,
     "suspect_types": [
       "fnstsw_flag_artifact",
@@ -139,7 +139,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 789
+    "total_lines": 792
   },
   "cross_references": [
     {
@@ -189,6 +189,21 @@
       "name": "core_flamecan.cpp_CFlameCan_ignite_FUN_0048e550"
     },
     {
+      "addr": "004ada20",
+      "is_variadic": false,
+      "name": "core_glass.cpp_FUN_004ada20"
+    },
+    {
+      "addr": "004aded0",
+      "is_variadic": false,
+      "name": "core_glass.cpp_FUN_004aded0"
+    },
+    {
+      "addr": "004f0360",
+      "is_variadic": false,
+      "name": "core_path.cpp_FUN_004f0360"
+    },
+    {
       "addr": "005119b0",
       "is_variadic": false,
       "name": "core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_005119b0"
@@ -202,21 +217,6 @@
       "addr": "0043ac60",
       "is_variadic": false,
       "name": "engine_console.cpp_CConsole_printf_FUN_0043ac60"
-    },
-    {
-      "addr": "004ada20",
-      "is_variadic": false,
-      "name": "FUN_004ada20"
-    },
-    {
-      "addr": "004aded0",
-      "is_variadic": false,
-      "name": "FUN_004aded0"
-    },
-    {
-      "addr": "004f0360",
-      "is_variadic": false,
-      "name": "FUN_004f0360"
     },
     {
       "addr": "00558a30",
@@ -281,7 +281,7 @@
     },
     {
       "addr": "00765a98",
-      "name": "CDemonActorType_00765a60.name_hash",
+      "name": "g_CCharacterActorType_00765a60.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -293,7 +293,7 @@
     },
     {
       "addr": "01c7068c",
-      "name": "DAT_01c7068c",
+      "name": "g_CFlameCanActorType_01c70654.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -311,7 +311,7 @@
     },
     {
       "addr": "01c78c78",
-      "name": "DAT_01c78c78",
+      "name": "g_CGlassActorType_01c78c40.name_hash",
       "type": "undefined4",
       "value": null
     },
@@ -329,7 +329,7 @@
     },
     {
       "addr": "02dd10bc",
-      "name": "DAT_02dd10bc",
+      "name": "g_CTriggerActorType_02dd1084.name_hash",
       "type": "undefined4",
       "value": null
     }
@@ -754,7 +754,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 134,
+      "line": 135,
       "match": "code *",
       "severity": "moderate",
       "text": "if (((iVar9 != 0) && (iVar8 = (**(code **)(*(int *)(iVar9 + 0x14c) + 0x104))(), iVar8 == 0))",
@@ -762,7 +762,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 145,
+      "line": 146,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(local_38 + 0x14c) + 0x100))(local_38);",
@@ -770,7 +770,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 177,
+      "line": 180,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar7 < *(int *)(param_1 + 0x14cd6c));",
@@ -778,7 +778,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 233,
+      "line": 236,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0x14cd6c)) {",
@@ -786,7 +786,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 236,
+      "line": 239,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar6 < *(int *)(param_1 + 0x14cd6c));",
@@ -794,7 +794,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&uStack_98 != &uStack_68)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 140,
+      "line": 141,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&uStack_98 != &uStack_68) {",

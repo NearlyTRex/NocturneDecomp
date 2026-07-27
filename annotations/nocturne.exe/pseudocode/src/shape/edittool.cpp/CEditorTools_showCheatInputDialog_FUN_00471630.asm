@@ -8,7 +8,7 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004a0550 at 004a1e77
 ;
 ; Called Functions:
-;   FUN_0046f7e0
+;   shape_edittool.cpp_FUN_0046f7e0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH EBX                            ; 00471642
     MOV ESI,dword ptr [ESP + 0x20]      ; 00471643
     PUSH ESI                            ; 00471647
-    CALL FUN_0046f7e0                   ; 00471648
-        ;   XREF to: 0046f7e0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046f7e0()
+    CALL shape_edittool.cpp_FUN_0046f7e0 ; 00471648
+        ;   XREF to: 0046f7e0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046f7e0()
     ADD ESP,0x14                        ; 0047164d
     POP ESI                             ; 00471650
     POP EBX                             ; 00471651

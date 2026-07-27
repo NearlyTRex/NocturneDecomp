@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void engine_model_c_byteswapMRGLData_FUN_004dcc90(uint *param_1,int param_2)
 
 {
@@ -90,9 +88,9 @@ joined_r0x004dcc9d:
     case 0x40:
       goto switchD_004dccb6_caseD_d;
     default:
-      _DAT_01cc4800 = "..\\engine\\model.c";
-      _DAT_01cc4804 = 0xce;
-      FUN_004c8440("Need a new byteswap!");
+      PTR_01cc4800 = "..\\engine\\model.c";
+      INT_01cc4804 = 0xce;
+      core_main_c_FUN_004c8440("Need a new byteswap!");
       param_2 = param_2 - uVar1;
       param_1 = (uint *)((int)param_1 + uVar1);
       if (param_2 < 1) {

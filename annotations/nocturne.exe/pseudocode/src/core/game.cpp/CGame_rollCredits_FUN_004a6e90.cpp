@@ -67,9 +67,9 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(uint param_1)
     iVar4 = malloc(~uVar6 + 9);
     *(int *)((int)local_1134 + iVar2) = iVar4;
     if (iVar4 == 0) {
-      _DAT_01cc4800 = "..\\core\\game.cpp";
-      _DAT_01cc4804 = 0x1242;
-      FUN_004c8440("CGame::rollCredits - Out of memory");
+      PTR_01cc4800 = "..\\core\\game.cpp";
+      INT_01cc4804 = 0x1242;
+      core_main_c_FUN_004c8440("CGame::rollCredits - Out of memory");
     }
     pcVar5 = local_134;
     pcVar8 = *(char **)((int)local_1134 + iVar2);
@@ -111,7 +111,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(uint param_1)
     local_10 = (int)ROUND(fVar10);
     if (local_10 != iVar4) {
       iStack_24 = local_10;
-      wincore_windll_cpp_clearScreen_FUN_0052ee70(uVar11);
+      engine_special_cpp_clearScreen_FUN_0052ee70(uVar11);
       engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040e710(auStack_38,0,0,0xffff);
       if (0 < local_20) {
         iVar4 = local_20 * 4;

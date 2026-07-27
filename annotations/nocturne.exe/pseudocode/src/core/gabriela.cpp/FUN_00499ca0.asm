@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void FUN_00499ca0(int param_1,float param_2)
+; void core_gabriela_cpp_FUN_00499ca0(int param_1,float param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x160]:1  local_160
@@ -36,12 +36,13 @@
 ;   float FLOAT_005822ca = 0.5
 ;   double DOUBLE_005822d2 = 0.700000000000000
 ;   double DOUBLE_005822da = 0.300000000000000
-;   undefined4 CDemonActorType_00764a9c.name_hash
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   undefined4 g_CLightActorActorType_00764a9c.name_hash
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
+;   core_main.c_FUN_004c8440
 ;   core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_0055afb0
 ;   core_xform.cpp_buildRotationY_FUN_0055c7b0
 ;   core_xform.cpp_matrixToEulerAngles_FUN_0055b180
@@ -49,14 +50,13 @@
 ;   core_xform.cpp_setIdentityMatrix3x4_FUN_0055abf0
 ;   core_xform.cpp_transformVector3x4_FUN_0055a8b0
 ;   core_xform.cpp_transformVector3x4InPlace_FUN_0055a910
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
 section .text
 
     PUSH EBX                            ; 00499ca0
-        ;   Label: FUN_00499ca0
+        ;   Label: core_gabriela.cpp_FUN_00499ca0
     PUSH EDI                            ; 00499ca1
     PUSH EBP                            ; 00499ca2
     MOV EBP,ESP                         ; 00499ca3
@@ -75,7 +75,7 @@ section .text
     XOR ECX,ECX                         ; 00499cce
     MOV dword ptr [ESP + 0x180],EAX     ; 00499cd0
     MOV dword ptr [ESP + 0x140],ECX     ; 00499cd7
-    MOV EAX,[0x00764ad4]                ; 00499cde | CDemonActorType_00764a9c.name_hash
+    MOV EAX,[0x00764ad4]                ; 00499cde | g_CLightActorActorType_00764a9c.name_hash
     MOV dword ptr [ESP + 0x13c],ECX     ; 00499ce3
     PUSH EAX                            ; 00499cea
     MOV dword ptr [ESP + 0x13c],ECX     ; 00499ceb
@@ -323,10 +323,10 @@ section .text
     MOV EAX,0x582292                    ; 0049a074 | = "..\\core\\gabriela.cpp"
     MOV EDX,0x945                       ; 0049a079
     PUSH 0x5822a7                       ; 0049a07e | = "Don't know how to carry light %s"
-    MOV [0x01cc4800],EAX                ; 0049a083 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EDX      ; 0049a088 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0049a08e
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV [0x01cc4800],EAX                ; 0049a083 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EDX      ; 0049a088 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0049a08e
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0049a093
     JMP 0x00499d1a                      ; 0049a096
         ;   XREF to: 00499d1a (UNCONDITIONAL_JUMP)  ; LAB_00499d1a

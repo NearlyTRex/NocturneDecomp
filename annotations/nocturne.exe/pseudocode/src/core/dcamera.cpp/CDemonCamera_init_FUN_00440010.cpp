@@ -35,17 +35,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_init_FUN_00440010(int param_1,int par
                     (*(int *)(param_1 + 0x13c) * *(int *)(param_1 + 0x140) * 4 + 0x1010);
   *(int *)(param_1 + 0x160) = iVar1;
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-    _DAT_01cc4804 = 0x248;
-    FUN_004c8440("CDemonCamera::init - Unable to alloc frame buffer");
+    PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    INT_01cc4804 = 0x248;
+    core_main_c_FUN_004c8440("CDemonCamera::init - Unable to alloc frame buffer");
   }
   iVar1 = malloc
                     (*(int *)(param_1 + 0x13c) * *(int *)(param_1 + 0x140) * 4 + 0x1010);
   *(int *)(param_1 + 0x164) = iVar1;
   if (iVar1 == 0) {
-    _DAT_01cc4800 = "..\\core\\dcamera.cpp";
-    _DAT_01cc4804 = 0x24d;
-    FUN_004c8440("CDemonCamera::init - Unable to alloc z buffer");
+    PTR_01cc4800 = "..\\core\\dcamera.cpp";
+    INT_01cc4804 = 0x24d;
+    core_main_c_FUN_004c8440("CDemonCamera::init - Unable to alloc z buffer");
   }
   *(uint *)(param_1 + 0x158) = *(int *)(param_1 + 0x160) + 0x10U & 0xfffffff0;
   *(uint *)(param_1 + 0x15c) = *(int *)(param_1 + 0x164) + 0x10U & 0xfffffff0;

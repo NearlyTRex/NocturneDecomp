@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_004363e0(int param_1,int param_2,int param_3)
 
 {
@@ -53,9 +51,9 @@ void __cdecl core_cloth_cpp_CCloth_orientBoneToChild_FUN_004363e0(int param_1,in
     } while (iVar3 < *(int *)(local_1c + 0x28558));
   }
   if (local_18 < 0) {
-    _DAT_01cc4800 = "..\\core\\cloth.cpp";
-    _DAT_01cc4804 = 0x2bf;
-    FUN_004c8440("Can't orient bone with no children!");
+    PTR_01cc4800 = "..\\core\\cloth.cpp";
+    INT_01cc4804 = 0x2bf;
+    core_main_c_FUN_004c8440("Can't orient bone with no children!");
   }
   core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_0054e4a0
             (local_34,local_18 * 0xc + param_3 + 0x58);

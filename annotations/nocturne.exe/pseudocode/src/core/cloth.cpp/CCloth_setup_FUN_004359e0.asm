@@ -61,12 +61,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   FUN_004d4650 at 004d483b
-;   FUN_0054c3e0 at 0054c43c
 ;   core_cloth.cpp_CClothList_setup_FUN_00438510 at 0043853c
 ;   core_gabriela.cpp_CGabriella_setup_FUN_004957c0 at 0049580b
 ;   core_mimic.cpp_CMimic_setupCloth_FUN_004d5770 at 004d5796
+;   core_mimic.cpp_FUN_004d4650 at 004d483b
 ;   core_svetlana.cpp_CSvetlana_setup_FUN_00541a40 at 00541c49
+;   core_vampboss.cpp_FUN_0054c3e0 at 0054c43c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0059b360

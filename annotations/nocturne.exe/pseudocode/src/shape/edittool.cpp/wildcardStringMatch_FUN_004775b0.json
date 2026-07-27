@@ -21,56 +21,32 @@
       },
       {
         "category": "other",
-        "column": 150,
-        "line": 166,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 164,
-        "line": 168,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 153,
-        "line": 170,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
-        "column": 152,
-        "line": 177,
-        "message": "unknown type name 'code'"
-      },
-      {
-        "category": "other",
         "column": 51,
-        "line": 76,
+        "line": 77,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 62,
-        "line": 78,
+        "line": 79,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 44,
-        "line": 153,
+        "line": 154,
         "message": "unknown type name 'HMODULE'"
       },
       {
         "category": "other",
         "column": 59,
-        "line": 160,
+        "line": 161,
         "message": "unknown type name 'LPTHREAD_START_ROUTINE'; did you mean 'PTHREAD_START_ROUTINE'?"
       },
       {
         "category": "other",
         "column": 1,
-        "line": 165,
+        "line": 166,
         "message": "unknown type name 'MMRESULT'"
       },
       {
@@ -81,7 +57,7 @@
       },
       {
         "category": "other",
-        "column": 82,
+        "column": 96,
         "line": 58,
         "message": "unknown type name 'code'"
       },
@@ -114,6 +90,30 @@
         "column": 70,
         "line": 237,
         "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 20,
+        "line": 442,
+        "message": "unknown type name 'HMODULE'"
+      },
+      {
+        "category": "other",
+        "column": 25,
+        "line": 449,
+        "message": "unknown type name 'PEXCEPTION_RECORD'"
+      },
+      {
+        "category": "other",
+        "column": 150,
+        "line": 167,
+        "message": "unknown type name 'code'"
+      },
+      {
+        "category": "other",
+        "column": 164,
+        "line": 169,
+        "message": "unknown type name 'code'"
       }
     ],
     "success": false,
@@ -137,24 +137,6 @@
   },
   "cross_references": [
     {
-      "addr": "0052d030",
-      "from_addr": "0052d076",
-      "name": "FUN_0052d030",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00547b30",
-      "from_addr": "00548046",
-      "name": "FUN_00547b30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005485a0",
-      "from_addr": "005485d5",
-      "name": "FUN_005485a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0042a1e0",
       "from_addr": "0042a2de",
       "name": "core_charactr.cpp_CCharacter_updateWanderToWaypoint_FUN_0042a1e0",
@@ -167,9 +149,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0052d030",
+      "from_addr": "0052d076",
+      "name": "core_sound.cpp_FUN_0052d030",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0052c930",
       "from_addr": "0052c962",
       "name": "core_sound.cpp_filterSoundFilesByPattern_FUN_0052c930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00547b30",
+      "from_addr": "00548046",
+      "name": "core_trigger.cpp_FUN_00547b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005485a0",
+      "from_addr": "005485d5",
+      "name": "core_trigger.cpp_FUN_005485a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -216,7 +216,7 @@
       {
         "call_addr": "0052d076",
         "call_type": "direct",
-        "caller": "FUN_0052d030",
+        "caller": "core_sound.cpp_FUN_0052d030",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -249,7 +249,7 @@
       {
         "call_addr": "00548046",
         "call_type": "direct",
-        "caller": "FUN_00547b30",
+        "caller": "core_trigger.cpp_FUN_00547b30",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -260,7 +260,7 @@
       {
         "call_addr": "005485d5",
         "call_type": "direct",
-        "caller": "FUN_005485a0",
+        "caller": "core_trigger.cpp_FUN_005485a0",
         "estimated_params": 3,
         "instructions_analyzed": 5,
         "method": "push_count",

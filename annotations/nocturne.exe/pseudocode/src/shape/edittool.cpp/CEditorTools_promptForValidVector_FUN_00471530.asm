@@ -4,11 +4,16 @@
 ; undefined4 shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_00471530(undefined4 param_1,undefined4 param_2,float *param_3,byte param_4)
 ;
 ;
+; Referenced Globals:
+;   TerminatedCString s_g_g_g_0057e7fa
+;   TerminatedCString s_f_f_f_0057e803
+;   TerminatedCString s_Please_enter_a_valid_vec_0057e816
+;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
 ;   crt_stdio.c_sscanf_FUN_00566b5c
-;   FUN_0046fcd0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_00471600
+;   shape_edittool.cpp_FUN_0046fcd0
 ;
 ; *****************************************************************************
 
@@ -55,7 +60,7 @@ section .text
     SUB ESP,0x8                         ; 0047157e
     FLD float ptr [EDI]                 ; 00471581
     FSTP double ptr [ESP]               ; 00471583
-    PUSH 0x57e7fa                       ; 00471586
+    PUSH 0x57e7fa                       ; 00471586 | = "%g,%g,%g"
     LEA EAX,[ESP + 0x1c]                ; 0047158b
     PUSH EAX                            ; 0047158f
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 00471590
@@ -70,7 +75,7 @@ section .text
     PUSH EAX                            ; 004715a3
     LEA EAX,[ESP + 0x30]                ; 004715a4
     PUSH EAX                            ; 004715a8
-    PUSH 0x57e803                       ; 004715a9
+    PUSH 0x57e803                       ; 004715a9 | = "%f%*[ ,]%f%*[ ,]%f"
     LEA EAX,[ESP + 0x10]                ; 004715ae
     PUSH EAX                            ; 004715b2
     CALL crt_stdio.c_sscanf_FUN_00566b5c ; 004715b3
@@ -96,11 +101,11 @@ section .text
     POP ESI                             ; 004715e5
     POP EBX                             ; 004715e6
     RET                                 ; 004715e7
-    PUSH 0x57e816                       ; 004715e8
+    PUSH 0x57e816                       ; 004715e8 | = "Please enter a valid vector."
         ;   Label: LAB_004715e8
     PUSH EBX                            ; 004715ed
-    CALL FUN_0046fcd0                   ; 004715ee
-        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined FUN_0046fcd0()
+    CALL shape_edittool.cpp_FUN_0046fcd0 ; 004715ee
+        ;   XREF to: 0046fcd0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0046fcd0()
     ADD ESP,0x8                         ; 004715f3
     JMP 0x0047154e                      ; 004715f6
         ;   XREF to: 0047154e (UNCONDITIONAL_JUMP)  ; LAB_0047154e

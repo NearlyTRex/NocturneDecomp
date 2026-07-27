@@ -17,12 +17,12 @@
 ;   TerminatedCString s_CBodyPart_setCounts_out_00578ec3
 ;   TerminatedCString s_core_bodypart_cpp_00578f08
 ;   TerminatedCString s_CBodyPart_setCounts_out_00578f1d
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   crt_memory.c_realloc_FUN_00564a70
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -97,10 +97,10 @@ section .text
     MOV ECX,0x578eae                    ; 00415fb4 | = "..\\core\\bodypart.cpp"
     MOV ESI,0xb2                        ; 00415fb9
     PUSH 0x578ec3                       ; 00415fbe | = "CBodyPart::setCounts - out of memory ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 00415fc3 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00415fc9 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00415fcf
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 00415fc3 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00415fc9 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00415fcf
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 00415fd4
     CMP dword ptr [EBX + 0x178],0x0     ; 00415fd7
         ;   Label: LAB_00415fd7
@@ -124,10 +124,10 @@ section .text
     MOV ECX,0x578f08                    ; 00415ffe | = "..\\core\\bodypart.cpp"
     MOV ESI,0xb7                        ; 00416003
     PUSH 0x578f1d                       ; 00416008 | = "CBodyPart::setCounts - out of memory ..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0041600d | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ESI      ; 00416013 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 00416019
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0041600d | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ESI      ; 00416013 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 00416019
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0041601e
     POP EBP                             ; 00416021
     POP EDI                             ; 00416022

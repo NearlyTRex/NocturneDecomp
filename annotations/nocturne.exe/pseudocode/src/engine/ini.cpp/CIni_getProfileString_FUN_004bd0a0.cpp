@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(uint param_1,uint param_2,uint param_3,char *param_4,char *param_5,int param_6,uint param_7)
 
 {
@@ -28,9 +26,9 @@ uint __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004bd0a0(uint param_1,uint
   bVar3 = false;
   iVar4 = _fopen(param_7,"rt");
   if (iVar4 == 0) {
-    _DAT_01cc4800 = "..\\engine\\ini.cpp";
-    _DAT_01cc4804 = 0x57;
-    FUN_004c8440("cIni::getProfileString: Unable to open input");
+    PTR_01cc4800 = "..\\engine\\ini.cpp";
+    INT_01cc4804 = 0x57;
+    core_main_c_FUN_004c8440("cIni::getProfileString: Unable to open input");
   }
   _sprintf(local_110,"[%s]\n",param_2);
   do {

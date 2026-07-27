@@ -12,7 +12,7 @@ void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_005144e0(int param_1,uint para
   int iVar1;
   byte local_110 [256];
   
-  FUN_00514470(param_1);
+  core_setutil_cpp_FUN_00514470(param_1);
   if (10 < *(int *)(0x01E57284 + 0x15a8c4)) {
     _fgets(local_110,0xff,param_2);
   }

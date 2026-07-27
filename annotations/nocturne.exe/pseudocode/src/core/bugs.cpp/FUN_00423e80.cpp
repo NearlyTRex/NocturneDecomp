@@ -9,6 +9,6 @@
 void core_bugs_cpp_FUN_00423e80(uint param_1)
 
 {
-  __arrfini(param_1,400,&DAT_0059b010);
+  __arrfini(param_1,400,&g_SBugsTypeInfo_0059b010);
   return;
 }

@@ -7,15 +7,15 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   FUN_004fbe80 at 004fbed9
 ;   core_game.cpp_CGame_processKeyboardControls_FUN_0049ee30 at 0049f10b
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004b4dd0 at 004b4e46
 ;   core_inv.cpp_CInventory_addItem_FUN_004bf360 at 004c02d0
 ;   core_inv.cpp_CInventory_select_FUN_004c1580 at 004c169c
+;   core_scat.cpp_FUN_004fbe80 at 004fbed9
 ;   core_script.cpp_CScript_step_FUN_004ff2c0 at 0050338a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02ddf9a8
+;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040d890
@@ -72,7 +72,7 @@ section .text
     JL 0x004c08dc                       ; 004c08a1
         ;   XREF to: 004c08dc (CONDITIONAL_JUMP)  ; LAB_004c08dc
     XOR EBX,EBX                         ; 004c08a3
-    MOV EAX,[0x02ddf9a8]                ; 004c08a5 | DAT_02ddf9a8
+    MOV EAX,[0x02ddf9a8]                ; 004c08a5 | g_CWeaponActorType_02ddf970.name_hash
         ;   Label: LAB_004c08a5
     PUSH EAX                            ; 004c08aa
     MOV EDX,dword ptr [ESI + EBX*0x4 + 0xc] ; 004c08ab

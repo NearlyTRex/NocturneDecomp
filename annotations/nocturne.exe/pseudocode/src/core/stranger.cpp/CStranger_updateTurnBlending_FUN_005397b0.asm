@@ -15,7 +15,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   FUN_00535900 at 005360ae
+;   core_stranger.cpp_FUN_00535900 at 005360ae
 ;
 ; Referenced Globals:
 ;   double DOUBLE_005958bf = 10

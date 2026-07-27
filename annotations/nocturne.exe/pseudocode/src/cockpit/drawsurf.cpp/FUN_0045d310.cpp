@@ -1,14 +1,14 @@
-// Name: FUN_0045d310
+// Name: cockpit_drawsurf.cpp_FUN_0045d310
 // Address: 0045d310
 // Address Range: [[0045d310, 0045d6cd]]
 // Convention: unknown
-// Signature: void FUN_0045d310(int param_1,int param_2,int *param_3)
+// Signature: void cockpit_drawsurf_cpp_FUN_0045d310(int param_1,int param_2,int *param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void FUN_0045d310(int param_1,int param_2,int *param_3)
+void cockpit_drawsurf_cpp_FUN_0045d310(int param_1,int param_2,int *param_3)
 
 {
   uint uVar1;
@@ -64,9 +64,9 @@ void FUN_0045d310(int param_1,int param_2,int *param_3)
           if ((*(int *)(param_1 + 0x14) <= iVar6) && (iVar8 <= *(int *)(param_1 + 0x1c))) {
             if (0x27 < local_20) {
               pcStack_e0 = "CDrawSurface::fillPoly - too many edges!";
-              _DAT_01cc4800 = "..\\cockpit\\drawsurf.cpp";
-              _DAT_01cc4804 = 0x578;
-              FUN_004c8440();
+              PTR_01cc4800 = "..\\cockpit\\drawsurf.cpp";
+              INT_01cc4804 = 0x578;
+              core_main_c_FUN_004c8440();
             }
             piVar9[2] = iVar7 << 0x10;
             piVar9[1] = iVar6;

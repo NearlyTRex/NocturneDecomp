@@ -5,15 +5,17 @@
 ;
 ;
 ; XREF[2]:
-;   FUN_0045bfb0 at 0045c011
-;   FUN_0045c050 at 0045c0b1
+;   cockpit_drawsurf.cpp_FUN_0045bfb0 at 0045c011
+;   cockpit_drawsurf.cpp_FUN_0045c050 at 0045c0b1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   TerminatedCString s_cockpit_drawsurf_cpp_0057d97e
+;   TerminatedCString s_s_2d_line_clipping_excee_0057d996
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
-;   FUN_004c8440
+;   core_main.c_FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -312,14 +314,14 @@ section .text
         ;   XREF to: 0045c4e9 (CONDITIONAL_JUMP)  ; LAB_0045c4e9
     JMP 0x0045c513                      ; 0045c6ee
         ;   XREF to: 0045c513 (UNCONDITIONAL_JUMP)  ; LAB_0045c513
-    MOV EBP,0x57d97e                    ; 0045c6f3
+    MOV EBP,0x57d97e                    ; 0045c6f3 | = "..\\cockpit\\drawsurf.cpp"
         ;   Label: LAB_0045c6f3
     MOV EAX,0x369                       ; 0045c6f8
-    PUSH 0x57d996                       ; 0045c6fd
-    MOV dword ptr [0x01cc4800],EBP      ; 0045c702 | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0045c708 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0045c70d
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    PUSH 0x57d996                       ; 0045c6fd | = "2d line clipping exceeded max iterations"
+    MOV dword ptr [0x01cc4800],EBP      ; 0045c702 | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0045c708 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0045c70d
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0045c712
     MOV EAX,dword ptr [ESP + 0x18]      ; 0045c715
     ADD ESP,0x48                        ; 0045c719

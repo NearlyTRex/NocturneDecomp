@@ -13,7 +13,7 @@
 ;   core_weapon.cpp_CWeapon_ctor_FUN_00553d90 at 00553db2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059aa60
+;   WatcomTypeInfo g_SScrapeTypeInfo_0059aa60
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005644a7
@@ -24,7 +24,7 @@ section .text
 
     MOV EAX,dword ptr [ESP + 0x4]       ; 0041a610
         ;   Label: core_box.cpp_CBox_ctor_FUN_0041a610
-    PUSH 0x59aa60                       ; 0041a614 | DAT_0059aa60
+    PUSH 0x59aa60                       ; 0041a614 | g_SScrapeTypeInfo_0059aa60
     PUSH 0x8                            ; 0041a619
     ADD EAX,0xb4                        ; 0041a61b
     PUSH EAX                            ; 0041a620

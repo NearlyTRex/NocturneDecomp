@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(int param_1,int param_2)
 
 {
@@ -43,7 +41,7 @@ uint __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(int param_1,in
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240(param_2,&fStack_40,&fStack_4c);
     if (*(int *)(param_1 + 0x210) != 0) {
       iVar5 = core_actor_cpp_castToClassHash_FUN_0040d890
-                        (param_2,CDemonActorType_00765a60.name_hash);
+                        (param_2,g_CCharacterActorType_00765a60.name_hash);
       if ((iVar5 != 0) && (*(int *)(iVar5 + 0x2408) == 0)) {
         return 0;
       }
@@ -70,13 +68,13 @@ uint __cdecl core_trigger_cpp_CTrigger_containsActor_FUN_005487b0(int param_1,in
       }
       else {
         if (*(int *)(param_1 + 0x168) != 1) {
-          _DAT_01cc4800 = "..\\core\\trigger.cpp";
-          _DAT_01cc4804 = 0x37d;
-          FUN_004c8440("CTrigger::containsActor - invalid trigger shape %d for %s",*(uint *)(param_1 + 0x168),param_1)
-          ;
-          _DAT_01cc4804 = 899;
-          _DAT_01cc4800 = "..\\core\\trigger.cpp";
-          FUN_004c8440("Hell froze...");
+          PTR_01cc4800 = "..\\core\\trigger.cpp";
+          INT_01cc4804 = 0x37d;
+          core_main_c_FUN_004c8440
+                    ("CTrigger::containsActor - invalid trigger shape %d for %s",*(uint *)(param_1 + 0x168),param_1);
+          INT_01cc4804 = 899;
+          PTR_01cc4800 = "..\\core\\trigger.cpp";
+          core_main_c_FUN_004c8440("Hell froze...");
           return 0;
         }
         (**(code **)(*(int *)(param_1 + 0x14c) + 0x14))(param_1,auStack_94);

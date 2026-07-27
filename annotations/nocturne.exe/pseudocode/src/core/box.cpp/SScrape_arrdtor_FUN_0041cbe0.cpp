@@ -9,6 +9,6 @@
 void __cdecl core_box_cpp_SScrape_arrdtor_FUN_0041cbe0(uint param_1)
 
 {
-  __arrfini(param_1,8,&DAT_0059aa60);
+  __arrfini(param_1,8,&g_SScrapeTypeInfo_0059aa60);
   return;
 }

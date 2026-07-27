@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(int param_1,int param_2)
 
 {
@@ -20,9 +18,9 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004cb5a0(in
   piVar3 = (int *)(param_1 + 0x5e8 + iVar2 * 100);
   if ((((*piVar1 == 0) || (*piVar3 != 0)) || ((piVar1[1] & 0x7fffffffU) != 0)) ||
      ((piVar1[2] & 0x7fffffffU) != 0)) {
-    _DAT_01cc4800 = "..\\core\\manpuz.cpp";
-    _DAT_01cc4804 = 0x554;
-    FUN_004c8440("CMansionPuzzleCircle::shiftPanelLeft - fubared.");
+    PTR_01cc4800 = "..\\core\\manpuz.cpp";
+    INT_01cc4804 = 0x554;
+    core_main_c_FUN_004c8440("CMansionPuzzleCircle::shiftPanelLeft - fubared.");
   }
   *piVar3 = *piVar1;
   piVar3[1] = piVar1[1];

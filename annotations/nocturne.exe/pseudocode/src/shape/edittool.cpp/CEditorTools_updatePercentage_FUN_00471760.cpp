@@ -27,9 +27,9 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(uint 
   float local_2c;
   
   if (_DAT_01bcd07c < 1) {
-    _DAT_01cc4800 = "..\\shape\\edittool.cpp";
-    _DAT_01cc4804 = 0x605;
-    FUN_004c8440("CEditorTools::updatePercentageWindow - no window open!");
+    PTR_01cc4800 = "..\\shape\\edittool.cpp";
+    INT_01cc4804 = 0x605;
+    core_main_c_FUN_004c8440("CEditorTools::updatePercentageWindow - no window open!");
   }
   local_2c = 0.0;
   if (0.0 < param_3) {
@@ -49,7 +49,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_00471760(uint 
   iVar1 = (_DAT_01bcd07c + -1) * 0x1d8;
   if (((int)ROUND(fVar9) != *(int *)(iVar1 + 0x1bcd250)) ||
      (0x47ffff < iVar4 - *(int *)(iVar1 + 0x1bcd254))) {
-    FUN_004722b0(param_1);
+    shape_edittool_cpp_FUN_004722b0(param_1);
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
               (_DAT_01bcd070,_DAT_01c00c58,_DAT_01c00c60,_DAT_01c00c5c,_DAT_01bcddec,0xffffffff,

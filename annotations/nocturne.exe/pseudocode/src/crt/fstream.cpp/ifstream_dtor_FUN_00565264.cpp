@@ -15,8 +15,9 @@ int * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_00565264(int *param_1,byte param
   if ((param_2 & 4) == 0) {
     *(int *)((int)param_1 + *(int *)(*param_1 + 4) + -4) = *(int *)(*param_1 + 4);
     param_1[0x10] = (int)&PTR_crt_fstream_cpp_ifstream_dtor_FUN_00565264_005a47b8;
-    param_1[0x13] = (int)&PTR_FUN_005a47c0;
-    *(byte ***)((int)param_1 + *(int *)(*param_1 + 4) + 0x28) = &PTR_FUN_005a47c8;
+    param_1[0x13] = (int)&PTR_crt_unknown_c_FUN_005650f0_005a47c0;
+    *(byte ***)((int)param_1 + *(int *)(*param_1 + 4) + 0x28) =
+         &PTR_crt_unknown_c_FUN_00565106_005a47c8;
     iVar1 = FUN_0056b6e8(param_1 + 0x11,1);
     param_1 = (int *)FUN_0056b810(iVar1 + -0x44,1);
     if ((param_2 & 1) == 0) {
@@ -29,7 +30,7 @@ int * __cdecl crt_fstream_cpp_ifstream_dtor_FUN_00565264(int *param_1,byte param
     FUN_00564494(param_1);
   }
   else {
-    uVar2 = __vec_delete(param_1,&DAT_0059b4d0);
+    uVar2 = __vec_delete(param_1,&g_ifstreamTypeInfo_0059b4d0);
     shape_memdbg_cpp_free_FUN_00564486(uVar2);
   }
   return param_1;

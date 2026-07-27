@@ -35,10 +35,10 @@ int core_batman_cpp_FUN_00414340(int param_1)
       }
       else {
         if (*(int *)(param_1 + 0xbdc0) == 1) {
-          fStack_30 = (1.0 - *(float *)(param_1 + 0xbdc4)) / 0x3F800000;
+          fStack_30 = (1.0 - *(float *)(param_1 + 0xbdc4)) / 1.0f;
         }
         else {
-          fStack_30 = ((float)0.5 - *(float *)(param_1 + 0xbdc4)) / 0x3F800000;
+          fStack_30 = ((float)0.5 - *(float *)(param_1 + 0xbdc4)) / 1.0f;
           if (fStack_30 < 0.0) {
             fStack_30 = 0.0;
           }

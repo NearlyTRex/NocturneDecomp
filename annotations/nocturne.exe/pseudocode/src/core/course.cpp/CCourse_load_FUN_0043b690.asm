@@ -7,11 +7,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   FUN_004f5f60 at 004f5fbd
 ;   core_bat.cpp_CBat_setup_FUN_00411ae0 at 00411b05
 ;   core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004946c0 at 004948d0
 ;   core_marquee.cpp_CMarquee_setup_FUN_004cc2e0 at 004cc2fc
 ;   core_moon.cpp_CMoon_init_FUN_004de860 at 004dea12
+;   core_platfrm.cpp_FUN_004f5f60 at 004f5fbd
 ;   core_vehicle.cpp_CVehicle_setup_FUN_0054e7f0 at 0054eaa7
 ;
 ; Referenced Globals:
@@ -22,17 +22,17 @@
 ;   TerminatedCString s_d_0057b29f
 ;   TerminatedCString s_d_d_0057b2a3
 ;   TerminatedCString s_f_f_f_f_f_f_f_0057b2aa
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
 ;   core_course.cpp_CCourse_allocMemory_FUN_0043b610
 ;   core_course.cpp_CCourse_free_FUN_0043b7c0
+;   core_main.c_FUN_004c8440
 ;   crt_stdio.c_fclose_FUN_00563380
 ;   crt_stdio.c_fgetc_FUN_00564570
 ;   crt_stdio.c_fscanf_FUN_00563350
 ;   engine_dosio.cpp_getFile_FUN_00456a60
-;   FUN_004c8440
 ;
 ; *****************************************************************************
 
@@ -173,10 +173,10 @@ section .text
     MOV EDX,0x57b269                    ; 0043b792 | = "..\\core\\course.cpp"
     MOV ECX,0x7c                        ; 0043b797
     PUSH 0x57b27c                       ; 0043b79c | = "CCourse::load - can't open data\\%s"
-    MOV dword ptr [0x01cc4800],EDX      ; 0043b7a1 | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],ECX      ; 0043b7a7 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0043b7ad
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],EDX      ; 0043b7a1 | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],ECX      ; 0043b7a7 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0043b7ad
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x8                         ; 0043b7b2
     JMP 0x0043b6c5                      ; 0043b7b5
         ;   XREF to: 0043b6c5 (UNCONDITIONAL_JUMP)  ; LAB_0043b6c5

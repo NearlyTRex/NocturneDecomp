@@ -18,7 +18,7 @@ void __cdecl core_inivar_cpp_writeIniData_FUN_004be2d0(void)
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(local_210,"gamePIXX",*0x01C775EC);
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(local_210,"gamePIXY",0x01C775EC[1]);
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(local_210,"gameBPP",0x01C775EC[2]);
-  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(local_210,"useDirect3D",_DAT_02dc9d60);
+  engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(local_210,"useDirect3D",INT_02dc9d60);
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(local_210,"useAGPFlag",_DAT_02dc9d6c);
   engine_ini_cpp_CIniFile_setString_FUN_004bd9a0(local_210,"rendererDLLPath",&DAT_005c0e80)
   ;

@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   FUN_00513e20 at 00513e69
 ;   core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_00514340 at 0051435a
+;   core_setdir.cpp_FUN_00513e20 at 00513e69
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_0044daa0

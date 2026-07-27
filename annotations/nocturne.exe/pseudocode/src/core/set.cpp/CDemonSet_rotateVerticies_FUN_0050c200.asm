@@ -7,16 +7,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[11]:
-;   FUN_0043f330 at 0043f42f
-;   FUN_004574e0 at 0045753f
-;   FUN_004ac440 at 004ac52f
-;   FUN_004ac600 at 004ac6ee
-;   FUN_004ac9b0 at 004acaa1
-;   FUN_00551c00 at 00551d15
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00416030 at 00416050
 ;   core_box.cpp_CBoundingBox3D_render_FUN_0041dcc0 at 0041dd2b
 ;   core_cloth.cpp_CCloth_render_FUN_00437db0 at 00437dd4
+;   core_curtain.cpp_FUN_0043f330 at 0043f42f
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004530c0 at 004530f5
+;   core_glass.cpp_FUN_004ac440 at 004ac52f
+;   core_glass.cpp_FUN_004ac600 at 004ac6ee
+;   core_glass.cpp_FUN_004ac9b0 at 004acaa1
+;   core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_00518440 at 0051845f
+;   core_wateract.cpp_FUN_00551c00 at 00551d15
 ;   ... and 1 more
 ;
 ; Referenced Globals:
@@ -24,14 +24,14 @@
 ;   TerminatedCString s_CDemonSet_rotateVerticie_00590662
 ;   undefined4 DAT_005ae704
 ;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01cc4800
-;   undefined4 DAT_01cc4804
+;   char* PTR_01cc4800
+;   int INT_01cc4804
 ;
 ; Called Functions:
+;   core_main.c_FUN_004c8440
 ;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
-;   FUN_004c8440
-;   wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c
+;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     PUSH EBP                            ; 0050c243
         ;   Label: LAB_0050c243
     PUSH ESI                            ; 0050c244
-    CALL wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c ; 0050c245
-        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined wincore_windll.cpp_transformAndProjectPoint_FUN_0053075c()
+    CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0050c245
+        ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_transformAndProjectPoint_FUN_0053075c()
     MOV AH,byte ptr [ESI + 0x13]        ; 0050c24a
     ADD ESP,0x8                         ; 0050c24d
     TEST AH,0x80                        ; 0050c250
@@ -108,10 +108,10 @@ section .text
     MOV ECX,0x590652                    ; 0050c290 | = "..\\core\\set.cpp"
     MOV EBX,0xce7                       ; 0050c295
     PUSH 0x590662                       ; 0050c29a | = "CDemonSet::rotateVerticies - tried to..."
-    MOV dword ptr [0x01cc4800],ECX      ; 0050c29f | DAT_01cc4800
-    MOV dword ptr [0x01cc4804],EBX      ; 0050c2a5 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0050c2ab
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0050c29f | PTR_01cc4800
+    MOV dword ptr [0x01cc4804],EBX      ; 0050c2a5 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0050c2ab
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0xc                         ; 0050c2b0
     JMP 0x0050c21b                      ; 0050c2b3
         ;   XREF to: 0050c21b (UNCONDITIONAL_JUMP)  ; LAB_0050c21b

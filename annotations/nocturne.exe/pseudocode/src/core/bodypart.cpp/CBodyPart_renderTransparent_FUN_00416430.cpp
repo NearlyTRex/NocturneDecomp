@@ -27,7 +27,7 @@ uint core_bodypart_cpp_CBodyPart_renderTransparent_FUN_00416430(int param_1)
     if (0 < *(int *)(param_1 + 0x744)) {
       iVar2 = param_1 + 0x754;
       do {
-        FUN_0048d5d0(iVar2);
+        core_flame_cpp_FUN_0048d5d0(iVar2);
         iVar1 = iVar1 + 1;
         iVar2 = iVar2 + 0x2a8;
       } while (iVar1 < *(int *)(param_1 + 0x744));

@@ -100,7 +100,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520
     local_24 = local_20 * local_20;
     if (local_1c <= local_24) {
       local_130[0] = 1.0 - local_1c / local_24;
-      FUN_00460d10(DAT_005ae704);
+      engine_drender_cpp_FUN_00460d10(DAT_005ae704);
       local_5c = local_d4;
       local_58[(uint)bVar6 * -2] = aiStack_d0[(uint)bVar6 * -2];
       local_58[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
@@ -157,24 +157,24 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00450520
             local_74 = (int)ROUND(local_18 * _DAT_0059c030);
             local_70 = (int)ROUND(local_18 * _DAT_0059c030);
             local_6c = (int)ROUND(_DAT_0059c030 * 0.0);
-            wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_74);
+            engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704,&local_74);
             local_50 = -local_50;
             local_44 = (int)ROUND(local_50 * _DAT_0059c030);
             local_40 = (int)ROUND(local_4c * _DAT_0059c030);
             local_3c = (int)ROUND(local_48 * _DAT_0059c030);
-            wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_44)
+            engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x30,&local_44)
             ;
             local_4c = -local_4c;
             local_f8 = (int)ROUND(local_50 * _DAT_0059c030);
             local_f4 = (int)ROUND(local_4c * _DAT_0059c030);
             local_f0 = (int)ROUND(local_48 * _DAT_0059c030);
-            wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_f8)
+            engine_special_cpp_transformAndProjectPoint_FUN_0053075c(*DAT_005ae704 + 0x60,&local_f8)
             ;
             local_50 = -local_50;
             aiStack_d0[2] = (int)ROUND(local_50 * _DAT_0059c030);
             aiStack_d0[3] = (int)ROUND(local_4c * _DAT_0059c030);
             local_c0 = (int)ROUND(local_48 * _DAT_0059c030);
-            wincore_windll_cpp_transformAndProjectPoint_FUN_0053075c
+            engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                       (*DAT_005ae704 + 0x90,aiStack_d0 + 2);
             engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
                       (DAT_005ae704,&DAT_005ae470);

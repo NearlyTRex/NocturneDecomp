@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   FUN_004cec30 at 004cec43
+;   core_melee.cpp_FUN_004cec30 at 004cec43
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_melee_kfm_00588362

@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(int param_1,uint param_2,uint param_3)
 
 {
   if (*(int *)(param_1 + 8) != 0) {
-    _DAT_01cc4800 = "..\\engine\\drender.cpp";
-    _DAT_01cc4804 = 0xac;
-    FUN_004c8440("CDemonRenderer::clipAndFillPoly - Bad projection mode");
+    PTR_01cc4800 = "..\\engine\\drender.cpp";
+    INT_01cc4804 = 0xac;
+    core_main_c_FUN_004c8440("CDemonRenderer::clipAndFillPoly - Bad projection mode");
   }
   if (*(int *)(param_1 + 0x10) == 0) {
     if (((*(int *)(param_1 + 4) == 0) || ((DAT_01c039a0 & 1) != 0)) && ((DAT_01c039a0 & 5) != 0)) {

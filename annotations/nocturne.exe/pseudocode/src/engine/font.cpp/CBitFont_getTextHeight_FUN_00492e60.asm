@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[10]:
-;   FUN_0046fb40 at 0046fbff
-;   FUN_0046fcd0 at 0046fd8f
-;   FUN_0046fe60 at 0046ff1f
-;   FUN_004722b0 at 00472446
-;   FUN_00476f40 at 00476f80
-;   FUN_00477100 at 00477183
-;   FUN_004771f0 at 00477265
-;   FUN_00477390 at 004773ea
 ;   core_menu.cpp_renderMenuAndGetChoice_FUN_004cf440 at 004cf5db
 ;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00471b50 at 00471d39
+;   shape_edittool.cpp_FUN_0046fb40 at 0046fbff
+;   shape_edittool.cpp_FUN_0046fcd0 at 0046fd8f
+;   shape_edittool.cpp_FUN_0046fe60 at 0046ff1f
+;   shape_edittool.cpp_FUN_004722b0 at 00472446
+;   shape_edittool.cpp_FUN_00476f40 at 00476f80
+;   shape_edittool.cpp_FUN_00477100 at 00477183
+;   shape_edittool.cpp_FUN_004771f0 at 00477265
+;   shape_edittool.cpp_FUN_00477390 at 004773ea
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0

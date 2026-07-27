@@ -588,10 +588,10 @@ section .text
         ;   Label: LAB_0054ccaf
     MOV EAX,0xcf                        ; 0054ccb4
     PUSH 0x597088                       ; 0054ccb9 | = "CVampireBoss::process - Need 4 waypoints"
-    MOV dword ptr [0x01cc4800],ECX      ; 0054ccbe | DAT_01cc4800
-    MOV [0x01cc4804],EAX                ; 0054ccc4 | DAT_01cc4804
-    CALL FUN_004c8440                   ; 0054ccc9
-        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined FUN_004c8440()
+    MOV dword ptr [0x01cc4800],ECX      ; 0054ccbe | PTR_01cc4800
+    MOV [0x01cc4804],EAX                ; 0054ccc4 | INT_01cc4804
+    CALL core_main.c_FUN_004c8440       ; 0054ccc9
+        ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; undefined core_main.c_FUN_004c8440()
     ADD ESP,0x4                         ; 0054ccce
     JMP 0x0054c6b4                      ; 0054ccd1
         ;   XREF to: 0054c6b4 (UNCONDITIONAL_JUMP)  ; LAB_0054c6b4
@@ -1193,8 +1193,8 @@ section .text
         ;   XREF to: 0054cc7f (UNCONDITIONAL_JUMP)  ; LAB_0054cc7f
     PUSH EBX                            ; 0054d3a6
         ;   Label: LAB_0054d3a6
-    CALL FUN_0054e130                   ; 0054d3a7
-        ;   XREF to: 0054e130 (UNCONDITIONAL_CALL)  ; undefined FUN_0054e130()
+    CALL core_vampboss.cpp_FUN_0054e130 ; 0054d3a7
+        ;   XREF to: 0054e130 (UNCONDITIONAL_CALL)  ; undefined core_vampboss.cpp_FUN_0054e130()
     JMP 0x0054d1ae                      ; 0054d3ac
         ;   XREF to: 0054d1ae (UNCONDITIONAL_JUMP)  ; LAB_0054d1ae
     PUSH EBX                            ; 0054d3b1
@@ -1241,7 +1241,7 @@ section .text
     CMP EDX,dword ptr [EAX + 0x150bf4]  ; 0054d436 | DAT_01fa7e78
     JGE 0x0054d1bb                      ; 0054d43c
         ;   XREF to: 0054d1bb (CONDITIONAL_JUMP)  ; LAB_0054d1bb
-    MOV ESI,dword ptr [0x02dd1144]      ; 0054d442 | DAT_02dd1144
+    MOV ESI,dword ptr [0x02dd1144]      ; 0054d442 | g_CTVBatActorType_02dd110c.name_hash
     PUSH ESI                            ; 0054d448
     MOV EDX,dword ptr [EDI + EAX*0x1 + 0x150bf8] ; 0054d449
     PUSH EDX                            ; 0054d450

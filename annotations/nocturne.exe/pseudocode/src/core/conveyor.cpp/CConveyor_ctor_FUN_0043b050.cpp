@@ -14,8 +14,8 @@ int core_conveyor_cpp_CConveyor_ctor_FUN_0043b050(uint param_1)
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = FUN_004f5d90(param_1);
-  *(byte ***)(iVar2 + 0x14c) = &PTR_FUN_0059b734;
+  iVar2 = core_platfrm_cpp_FUN_004f5d90(param_1);
+  *(byte ***)(iVar2 + 0x14c) = &PTR_core_conveyor_cpp_FUN_0043b110_0059b734;
   pcVar3 = "none";
   *(uint *)(iVar2 + 0x720) = 0x3f800000;
   *(uint *)(iVar2 + 0x728) = 0x3f800000;

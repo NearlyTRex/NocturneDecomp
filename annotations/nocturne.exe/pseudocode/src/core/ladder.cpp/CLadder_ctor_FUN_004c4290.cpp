@@ -13,7 +13,7 @@ int core_ladder_cpp_CLadder_ctor_FUN_004c4290(uint param_1)
   
   iVar1 = core_actor_cpp_FUN_00409d30(param_1);
   iVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00454490(iVar1 + 0x150);
-  *(byte ***)(iVar1 + -4) = &PTR_FUN_0059f954;
+  *(byte ***)(iVar1 + -4) = &PTR_core_ladder_cpp_FUN_004c4340_0059f954;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(iVar1,"null.kfm");
   *(uint *)(iVar1 + 0x17c) = 0x40000000;
   *(uint *)(iVar1 + 0x180) = 0x41200000;
